@@ -1,7 +1,7 @@
 ﻿<#
 .SYNOPSIS
     Synchronizes all project repositories from SYSTEMS & CREATIONS into
-    OVERVIEW-OF-KELLERSYSTEMS, recalculates language metrics, and pushes to GitHub.
+    OVERVIEW-OF-KELLERSYSTEMS, recalculates language and Markdown metrics, and pushes to GitHub.
 #>
 [CmdletBinding()]
 param(
@@ -40,11 +40,12 @@ foreach ($proj in $projects) {
     robocopy $pSource $pDest /MIR /XD $excludeDirs /XF $excludeFiles /R:1 /W:1 /NFL /NDL /NJH /NJS /NC /NS /NP | Out-Null
 }
 
-Write-Host "[2/4] Recalculating Language Breakdown..." -ForegroundColor Yellow
+Write-Host "[2/4] Recalculating Language & Markdown Breakdown..." -ForegroundColor Yellow
 
 $langMap = @{
     '.rs' = 'Rust'
     '.py' = 'Python'
+    '.md' = 'Markdown (Docs)'
     '.c' = 'C/C++'
     '.h' = 'C/C++'
     '.cpp' = 'C/C++'
@@ -84,9 +85,9 @@ foreach ($g in $grouped) {
 }
 
 $totalLines = ($rows | Measure-Object -Property Lines -Sum).Sum
-$sortedRows = $rows | Select-Object Language, Files, Lines, @{Name="PctLines"; Expression={[Math]::Round(($_.Lines / $totalLines) * 100, 2)}}, SizeMB, PctBytes | Sort-Object PctBytes -Descending
+$sortedRows = $rows | Select-Object Language, Files, Lines, @{Name="PctLines"; Expression={[Math]::Round(($_.Lines / $totalLines) * 100, 2)}}, SizeMB, PctBytes | Sort-Object Lines -Descending
 
-Write-Host "`nLanguage Breakdown Results:" -ForegroundColor Green
+Write-Host "`nLanguage & Markdown Breakdown Results:" -ForegroundColor Green
 $sortedRows | Format-Table -AutoSize | Out-String | Write-Host
 
 Write-Host "[3/4] Staging Git Changes..." -ForegroundColor Yellow
@@ -96,7 +97,7 @@ $status = git -C $DestDir status --porcelain
 if ($status) {
     Write-Host "[4/4] Committing & Pushing to GitHub..." -ForegroundColor Yellow
     git -C $DestDir commit -m "$CommitMessage [$(Get-Date -Format 'yyyy-MM-dd HH:mm')]"
-    git -C $DestDir push -u origin main
+    git -C $DestDir push origin main
     Write-Host "`nSuccessfully pushed to GitHub: https://github.com/KELLERBABG/OVERVIEW-OF-KELLERSYSTEMS" -ForegroundColor Green
 } else {
     Write-Host "No changes detected. Working tree clean." -ForegroundColor Cyan
