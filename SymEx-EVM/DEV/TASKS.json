@@ -1,0 +1,36 @@
+{
+  "project": "SymEx-EVM",
+  "language": "Rust",
+  "summary": "A 2-crate Rust symbolic execution engine for EVM bytecode (`crates/core` and `crates/cli`) integrating Z3 SMT solving, abstract interpretation, concolic fuzzing, opcode parsing, gas accounting, and reentrancy/overflow vulnerability pattern matching.",
+  "tasks": [
+    {
+      "id": "TASK-01",
+      "title": "Implement cross-function reentrancy detection with state-write after call constraint matching",
+      "status": "pending",
+      "target_files": [
+        "crates/core/src/vulnerabilities/mod.rs",
+        "crates/core/src/evm/executor.rs"
+      ],
+      "context_files": [
+        "crates/core/src/path_constraints/mod.rs",
+        "crates/core/src/z3_backend/mod.rs"
+      ],
+      "spec": "Enhance `crates/core/src/vulnerabilities/mod.rs` and `executor.rs` to detect the classic reentrancy pattern (SWC-107).\n\n1. Flag a critical vulnerability if an execution path contains an external `CALL` instruction that forwards value or control followed by an `SSTORE` updating balance or state variables without a preceding non-reentrant mutex guard.\n2. Use the Z3 backend to solve for concrete calldata that triggers the reentrancy loop and generates a reproducible witness.\n3. Add integration tests in `tests/integration_test.rs` analyzing vulnerable vs. guarded reentrancy test bytecodes.",
+      "verify_cmd": "cargo test -p symbolic_execution_core -p symbolic-execution-cli --quiet"
+    },
+    {
+      "id": "TASK-02",
+      "title": "Add quadratic memory expansion gas accounting and unbounded loop DoS solver",
+      "status": "pending",
+      "target_files": [
+        "crates/core/src/evm/gas.rs",
+        "crates/core/src/analysis/mod.rs"
+      ],
+      "context_files": [
+        "crates/core/src/evm/opcodes.rs"
+      ],
+      "spec": "Update `crates/core/src/evm/gas.rs` to compute exact EVM gas schedules including memory expansion cost $C_{\\text{mem}}(a) = 3 \\cdot a + \\lfloor \\frac{a^2}{512} \\rfloor$.\n\n1. In `analysis/mod.rs`, detect loop backward branches whose iteration bounds are unconstrained or controlled by user-supplied array lengths without pagination, asserting `GasExhaustionDoS` if required gas $> 30\\text{M}$ block limit.\n2. Add unit tests for gas calculation and unbounded loop detection.",
+      "verify_cmd": "cargo test -p symbolic_execution_core --quiet"
+    }
+  ]
+}

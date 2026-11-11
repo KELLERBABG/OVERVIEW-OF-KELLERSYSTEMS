@@ -1,0 +1,87 @@
+{
+  "slug": "daten-010",
+  "source": "generated",
+  "domain": "Auftragsverarbeitung",
+  "traps": [
+    {
+      "marker": "Nach Beendigung des Vertrags ist der Kunde",
+      "expectedType": "non_compete",
+      "note": "Paraphrase/Umstellung: nennt 'Nach Beendigung des Vertrags ist der Kunde' statt der Registerwendung."
+    },
+    {
+      "marker": "ein unwiderrufliches Nutzungsrecht an den Transaktionsdaten",
+      "expectedType": "data_grant",
+      "note": "Paraphrase/Umstellung: nennt 'ein unwiderrufliches Nutzungsrecht an den Tra' statt der Registerwendung."
+    },
+    {
+      "marker": "Die Zinsmarge von 1250 Basispunkten",
+      "expectedType": "default_interest",
+      "note": "Paraphrase/Umstellung: nennt 'Die Zinsmarge von 1250 Basispunkten' statt der Registerwendung."
+    },
+    {
+      "marker": "behält sich vor, die Konditionen dieses Rahmenvertrags einseitig anzupassen",
+      "expectedType": "unilateral_change",
+      "note": "Paraphrase/Umstellung: nennt 'behält sich vor, die Konditionen dieses Rahme' statt der Registerwendung."
+    },
+    {
+      "marker": "nur nach vorheriger schriftlicher Bestätigung durch die Gesellschaft in Ansatz gebracht werden",
+      "expectedType": "setoff_restriction",
+      "note": "Paraphrase/Umstellung: nennt 'nur nach vorheriger schriftlicher Bestätigung' statt der Registerwendung."
+    },
+    {
+      "marker": "gilt das Abnahmeprotokoll als vorbehaltlos abgenommen",
+      "expectedType": "deemed_acceptance",
+      "note": "Paraphrase/Umstellung: nennt 'gilt das Abnahmeprotokoll als vorbehaltlos ab' statt der Registerwendung."
+    },
+    {
+      "marker": "Ansprüche wegen fehlerhafter Abrechnung erlöschen zwölf Monate",
+      "expectedType": "statute_of_limitations",
+      "note": "Paraphrase/Umstellung: nennt 'Ansprüche wegen fehlerhafter Abrechnung erlös' statt der Registerwendung."
+    },
+    {
+      "marker": "ausschließlich durch handschriftlich unterzeichnete Papierform wirksam",
+      "expectedType": "written_form_trap",
+      "note": "Paraphrase/Umstellung: nennt 'ausschließlich durch handschriftlich unterzei' statt der Registerwendung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "mit ihren jeweiligen Lizenzen aufgeführt",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "gesetzliche Haftung für Vorsatz und grobe Fahrlässigkeit",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "aus wichtigem Grund jederzeit fristlos beenden",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Streitigkeiten vorrangig durch Mediation zu klären",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "nur im gegenseitigen Einvernehmen.",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "alle vertraulichen Informationen der jeweils anderen Seite",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "spätestens zehn Werktage vor einer beabsichtigten Kontoauflösung",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "bleibt beiden Parteien unbenommen.",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Zweitschrift der Dokumentation gegen eine Gebühr von fünfzehn Euro",
+      "note": "Täuschende Klausel ohne passenden Detektortyp."
+    }
+  ]
+}

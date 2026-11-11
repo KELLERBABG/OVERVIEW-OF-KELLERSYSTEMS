@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  signaling-server:
+    build: .
+    ports:
+      - "8765:8765"
+    environment:
+      - PORT=8765
+      - MAX_PEERS_PER_ROOM=50
+      - LOG_LEVEL=info
+    restart: unless-stopped

@@ -1,0 +1,115 @@
+AUFTRAGSVERARBEITUNGSVERTRAG
+
+zwischen
+
+der Juniper GmbH, Residenzstraße 27, 80333 München (nachfolgend Verantwortlicher)
+
+und
+
+der Hartmann GmbH, Boschstraße 22, 70565 Stuttgart (nachfolgend Auftragsverarbeiter)
+
+Präambel
+
+Der Verantwortliche beauftragt den Auftragsverarbeiter mit der Verarbeitung personenbezogener Daten nach Maßgabe von Art. 28 DSGVO. Es gelten die nachstehenden Bedingungen.
+
+§ 4 Vereinbarung
+
+Nach Beendigung des Vertrags ist der Kunde für achtzehn Monate nicht tätig im Bereich der Lizenzierung.
+
+§ 5 Modalität
+
+Sämtliche Open-Source-Komponenten werden in der Anlage 2 mit ihren jeweiligen Lizenzen aufgeführt.
+
+§ 6 Ordnung
+
+Der Kunde räumt der Gesellschaft ein unwiderrufliches Nutzungsrecht an den Transaktionsdaten ein.
+
+§ 7 Ausgestaltung
+
+Die gesetzliche Haftung für Vorsatz und grobe Fahrlässigkeit sowie für Personenschäden bleibt unberührt.
+
+§ 8 Durchführung
+
+Die Zinsmarge von 1250 Basispunkten über dem Referenzsatz gilt für die gesamte Restlaufzeit.
+
+§ 9 Vorkehrung
+
+Der Auftraggeber kann den Vertrag aus wichtigem Grund jederzeit fristlos beenden.
+
+§ 10 Zusatz
+
+Der Anbieter behält sich vor, die Konditionen dieses Rahmenvertrags einseitig anzupassen.
+
+§ 11 Klarstellung
+
+Die Parteien vereinbaren, Streitigkeiten vorrangig durch Mediation zu klären.
+
+§ 12 Ergänzung
+
+Gegenansprüche können nur nach vorheriger schriftlicher Bestätigung durch die Gesellschaft in Ansatz gebracht werden.
+
+§ 13 Verfahren
+
+Die Parteien veröffentlichen Ergebnisse der gemeinsamen Forschung nur im gegenseitigen Einvernehmen.
+
+§ 14 Ausführung
+
+Unterbleibt eine Meldung der Abweichungen binnen zehn Werktagen, gilt das Abnahmeprotokoll als vorbehaltlos abgenommen.
+
+§ 15 Hinweis
+
+Beide Parteien verpflichten sich, alle vertraulichen Informationen der jeweils anderen Seite mit der gebotenen Sorgfalt geheim zu halten.
+
+§ 16 Maßnahme
+
+Ansprüche wegen fehlerhafter Abrechnung erlöschen zwölf Monate nach ihrer Entstehung.
+
+§ 17 Vorgehen
+
+Die Bank gibt dem Kunden spätestens zehn Werktage vor einer beabsichtigten Kontoauflösung eine schriftliche Ankündigung.
+
+§ 18 Abstimmung
+
+Die Beendigung ist ausschließlich durch handschriftlich unterzeichnete Papierform wirksam.
+
+§ 19 Koordination
+
+Die Kündigung aus wichtigem Grund bleibt beiden Parteien unbenommen.
+
+§ 20 Umsetzung
+
+Der Auftragnehmer stellt eine Zweitschrift der Dokumentation gegen eine Gebühr von fünfzehn Euro bereit.
+
+§ 21 Beachtung
+
+Die Vertragsparteien bestätigen die Vollständigkeit der in Bezug genommenen Anlagen.
+
+§ 1 Allgemeines
+
+Erfüllungsort ist der Sitz des Auftraggebers.
+
+§ 2 Bestimmung
+
+Dieser Vertrag ist in zwei gleichlautenden Ausfertigungen erstellt.
+
+§ 3 Regelung
+
+Jede Partei trägt ihre eigenen Kosten der Vertragsverhandlungen.
+
+§ 4 Vereinbarung
+
+Datenschutzrechtliche Hinweise ergeben sich aus der Anlage 4.
+
+§ 5 Modalität
+
+Ansprechpartner für operative Fragen ist die in der Anlage 2 genannte Stelle.
+
+§ 6 Ordnung
+
+Die Parteien arbeiten bei der Durchführung vertrauensvoll zusammen.
+
+Ort, Datum: ______________________
+
+Für Verantwortlicher: ______________________
+
+Für Auftragsverarbeiter: ______________________

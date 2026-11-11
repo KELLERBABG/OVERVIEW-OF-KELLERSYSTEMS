@@ -1,0 +1,74 @@
+{
+  "slug": "einkauf-007",
+  "source": "generated",
+  "domain": "Einkauf und Lieferantenrahmenvertrag, deutsches und oesterreichisches Recht",
+  "traps": [
+    {
+      "marker": "Für Direktgeschäfte zwischen dem Lieferanten und Abnehmern steht dem Besteller keine Provision zu",
+      "expectedType": "agency_commission_exclusion",
+      "note": "Provisionsausschluss fuer Direktgeschaeft, ohne die Woerter Ausgleichsanspruch oder Vermittlungsprovision"
+    },
+    {
+      "marker": "Auf einen Ausgleich für den Kundenstamm verzichtet der Besteller ausdrücklich",
+      "expectedType": "agency_goodwill_waiver",
+      "note": "Verzicht auf Kundenschutzausgleich, ohne das Registerwort Ausgleichsanspruch"
+    },
+    {
+      "marker": "Der Export der Bestandsdaten erfolgt gegen eine gesonderte Vergütung",
+      "expectedType": "data_lockin",
+      "note": "Datenherausgabe nur gegen Gebuehr"
+    },
+    {
+      "marker": "Auf den tatsächlichen Abruf kommt es nicht an",
+      "expectedType": "fictitious_receipt",
+      "note": "Zugangsfiktion durch Abstellen auf den Abruf"
+    },
+    {
+      "marker": "behält sich vor, die Leistungsbeschreibung anzupassen",
+      "expectedType": "unilateral_change",
+      "note": "Einseitiger Aenderungsvorbehalt ohne Zustimmungserfordernis"
+    },
+    {
+      "marker": "Tritt Zahlungsunfähigkeit ein, endet das Vertragsverhältnis ohne weiteres",
+      "expectedType": "insolvency_termination",
+      "note": "Automatische Beendigung bei Insolvenz, ohne die Formel Insolvenzantrag berechtigt"
+    },
+    {
+      "marker": "§ 314 BGB findet keine Anwendung",
+      "expectedType": "asymmetric_termination",
+      "note": "Ausschluss des Rechts zur Loesung aus wichtigem Grund durch Gesetzesverweis"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Rechnungen sind innerhalb von dreißig Tagen ohne Abzug zu begleichen",
+      "note": "Marktueblicher Zahlungstermin"
+    },
+    {
+      "marker": "Der Besteller erhält die Vermittlungslisten bei Vertragsende unentgeltlich in einem gängigen Format",
+      "note": "Kostenfreier Datenexport"
+    },
+    {
+      "marker": "Mitteilungen werden zusätzlich per E-Mail bestätigt",
+      "note": "Zusaetzliche Bestaetigung ohne Fiktion"
+    },
+    {
+      "marker": "Änderungen der Anlage 2 bedürfen der Zustimmung beider Parteien in Textform",
+      "note": "Symmetrische Aenderungsklausel"
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag einvernehmlich beenden",
+      "note": "Einvernehmliche Beendigung"
+    },
+    {
+      "marker": "Es gilt das Recht der Bundesrepublik Deutschland",
+      "note": "Neutrale Rechtswahl ohne Gerichtsstandsregel"
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Die Parteien benennen jeweils einen kaufmännischen Ansprechpartner",
+      "note": "Benennung von Ansprechpartnern ohne Pflichten, kein Detektor"
+    }
+  ]
+}

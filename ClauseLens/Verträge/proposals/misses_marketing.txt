@@ -1,0 +1,314 @@
+# marketing engine misses (78)
+Each block: slug:line, expected type, label technique note, and the full marker paragraph.
+
+### marketing-001:L45  type=marketing_reference
+note: Referenznutzung als Aufzählung ohne das Wort Referenz oder Logo.
+§ 8 Referenznennung Die Agentur führt den Auftraggeber in Angeboten, Fallstudien und auf ihrer Website als Kunden auf, ohne dass es einer Zustimmung bedarf.
+
+### marketing-002:L30  type=asymmetric_confidentiality
+note: Einseitige Geheimhaltung durch Ausschluss der Gegenseite; vermeidet 'einseitige Geheimhaltungspflicht'.
+§ 5 Vertraulichkeit Der Sponsor verpflichtet sich, Betriebsgeheimnisse des Auftragnehmers streng vertraulich zu behandeln; für den Auftragnehmer gilt dies nicht.
+
+### marketing-002:L33  type=excessive_survival
+note: Unbefristete Nachwirkung als Fortbestehen umschrieben; vermeidet 'zeitlich unbegrenzt'.
+§ 6 Nachwirkung Die Verschwiegenheitspflichten beider Parteien bestehen über die Beendigung dieses Vertrages hinaus unverändert fort.
+
+### marketing-002:L36  type=setoff_restriction
+note: Aufrechnung nur mit Zustimmung des Verwenders; vermeidet 'Aufrechnung ist ausgeschlossen'.
+§ 7 Aufrechnung Die Aufrechnung mit Gegenansprüchen bedarf der vorherigen Zustimmung des Auftragnehmers.
+
+### marketing-002:L39  type=marketing_reference
+note: Marken- und Namensnutzung ohne Freigabevorbehalt; vermeidet das Wort Referenz.
+§ 8 Referenznutzung Der Firmenname und die Bildmarke des Sponsors dürfen in Pressemitteilungen, Angeboten und Marketingunterlagen erscheinen.
+
+### marketing-005:L24  type=force_majeure_asymmetry
+note: Einseitige Befreiung nur des Auftragnehmers bei unveränderter Zahlungspflicht; vermeidet 'höhere Gewalt befreit den Anbieter'.
+§ 3 Höhere Gewalt Ereignisse höherer Gewalt entbinden den Auftragnehmer von der Leistungspflicht; der Auftraggeber bleibt zur Zahlung der vereinbarten Vergütung verpflichtet.
+
+### marketing-005:L30  type=subcontractor_uncontrolled
+note: Unbeschränkter Subunternehmereinsatz ohne Zustimmung.
+§ 5 Subunternehmen Der Auftragnehmer darf zur Erbringung der Leistungen jederzeit Nachunternehmen einsetzen; einer Zustimmung bedarf es nicht.
+
+### marketing-005:L36  type=liability
+note: Abgeltung weitergehender Ansprüche; vermeidet 'Haftung ausgeschlossen'.
+§ 7 Haftung Weitergehende Ansprüche des Auftraggebers wegen einfacher Fahrlässigkeit sind mit der Vergütung abgegolten.
+
+### marketing-005:L42  type=maintenance_conditional_shutdown
+note: Abschaltung an fehlenden Wartungsvertrag geknüpft; vermeidet 'außer Betrieb setzen'.
+§ 9 Wartung Mangels Wartungsvertrag wird die Anlage des Auftragnehmers stillgelegt.
+
+### marketing-006:L27  type=price_escalation
+note: Automatische Erhöhung ohne Sonderkündigungsrecht, als Zahlenwort.
+§ 4 Vergütung Die Monatspauschale steigt mit jedem Kalenderjahr um fünf Prozent, ohne dass dem Auftraggeber ein Sonderkündigungsrecht zusteht.
+
+### marketing-007:L33  type=entire_agreement
+note: Vollständigkeitsklausel über Außerkrafttreten früherer Absprachen; vermeidet 'entire agreement'.
+§ 6 Vollständigkeit Frühere Absprachen über Liefermengen treten mit Unterzeichnung außer Kraft.
+
+### marketing-007:L42  type=vicarious_agents
+note: Haftungsfreizeichnung für Dritte; vermeidet 'Erfüllungsgehilfen'.
+§ 9 Erfüllungsgehilfen Eine Verantwortung für Handlungen beauftragter Dritter wird nicht übernommen.
+
+### marketing-008:L19  type=marketing_reference
+note: Marken- und Namensnutzung ohne Rücksprache; vermeidet das Wort Referenz.
+§ 2 Referenznutzung Der Anbieter darf Firmenname und Bildmarke des Kunden in Werbung und Marketingunterlagen verwenden.
+
+### marketing-008:L22  type=asymmetric_confidentiality
+note: Einseitige Verschwiegenheit, Anbieter befreit; vermeidet 'Geheimhaltung trifft nur den Kunden'.
+§ 3 Vertraulichkeit Der Kunde verpflichtet sich zur Verschwiegenheit über alle Geschäftsvorfälle; den Anbieter trifft keine entsprechende Pflicht.
+
+### marketing-008:L28  type=assignment_restriction
+note: Zessionsbeschränkung zulasten des Kunden.
+§ 5 Weitergabe Der Kunde kann Ansprüche gegen den Anbieter nur mit dessen Einverständnis an Dritte weiterreichen.
+
+### marketing-008:L34  type=fictitious_receipt
+note: Zugangsfiktion über Portal.
+§ 7 Zugang Erklärungen gelten mit Einstellung in das Kundenportal als zugegangen; auf den Abruf kommt es nicht an.
+
+### marketing-009:L31  type=mandatory_expert_determination
+note: Vorgeschaltetes Gutachterverfahren auf Kosten des Kunden, drei Sätze als ein Absatz.
+§ 6 Streitbeilegung Streitigkeiten werden zunächst durch ein gutachterliches Verfahren geklärt. Die Verfahrenskosten hat der Kunde vorzustrecken. Der gerichtliche Rechtsweg ist erst nach Abschluss des Verfahrens zulässig.
+
+### marketing-010:L27  type=non_compete
+note: Nachvertragliches Tätigkeitsverbot als Untätigkeit formuliert.
+§ 4 Wettbewerb Nach dem Ende der Zusammenarbeit bleibt der Creator für neun Monate untätig, soweit Wettbewerber der Agentur betroffen sind.
+
+### marketing-010:L33  type=default_interest
+note: Monatszins als Verzugsschaden.
+§ 6 Zahlungsverzug Bei verspäteter Zahlung werden Zinsen von acht Prozent monatlich berechnet.
+
+### marketing-011:L28  type=excessive_survival
+note: Unbefristete Nachwirkung der Werberechte.
+§ 5 Nachwirkung Die Werberechte des Auftragnehmers überdauern die Beendigung auf unbestimmte Zeit.
+
+### marketing-011:L31  type=setoff_restriction
+note: Einbehaltsverbot; vermeidet 'Aufrechnung ausgeschlossen'.
+§ 6 Einbehalte Für Einbehalte steht dem Auftraggeber kein Recht zu.
+
+### marketing-011:L37  type=assignment_restriction
+note: Zustimmungserfordernis für Rechtsübertragung.
+§ 8 Abtretung Übertragung von Rechten des Auftraggebers auf Dritte bedarf der Zustimmung.
+
+### marketing-012:L28  type=setoff_restriction
+note: Gegenforderungen bleiben unberücksichtigt.
+§ 5 Einbehalte Gegenforderungen des Bestellers bleiben unberücksichtigt, solange der Lieferant nicht zustimmt.
+
+### marketing-013:L19  type=maintenance_conditional_shutdown
+note: Abschaltung des Systems an fehlenden Wartungsvertrag geknüpft.
+§ 2 Technik Ohne abgeschlossenen Wartungsvertrag wird das Konferenzsystem abgeschaltet.
+
+### marketing-013:L22  type=service_suspension
+note: Sofortsperre des Zugangs ohne Abmahnung; vermeidet das Wort Sperre im Nominalstil.
+§ 3 Zugang Bei offenen Rechnungen sperrt der Betreiber den Zugang zum Veranstaltungsportal unverzüglich.
+
+### marketing-013:L25  type=deemed_acceptance
+note: Abnahmefiktion bei Fristversäumnis, 48 Stunden als Zahlwort.
+§ 4 Abnahme Werden Mängel nicht binnen achtundvierzig Stunden gerügt, gilt der Aufbau als vertragsgemäß.
+
+### marketing-013:L28  type=price_escalation
+note: Jährliche Mietsteigerung ohne Sonderkündigungsrecht.
+§ 5 Miete Die Raummiete erhöht sich zum Beginn jedes Kalenderjahres um vier Prozent.
+
+### marketing-014:L19  type=deemed_acceptance
+note: Freigabefiktion durch Schweigen.
+§ 2 Abnahme Schweigt der Auftraggeber zehn Tage, gilt das Material als freigegeben.
+
+### marketing-014:L22  type=statute_of_limitations
+note: Verkürzte Verjährung auf ein Jahr.
+§ 3 Mängelansprüche Mängelansprüche verjähren ein Jahr nach Lieferung.
+
+### marketing-014:L25  type=burden_of_proof
+note: Nachweislast beim Auftraggeber; vermeidet 'Beweislast trägt der Kunde'.
+§ 4 Nachweis Den Nachweis eines bei Übergabe vorliegenden Mangels hat der Auftraggeber zu führen.
+
+### marketing-014:L28  type=feedback_ip_grab
+note: Unentgeltlicher Eigentumsübergang von Kundenideen.
+§ 5 Verbesserungen Verbesserungsvorschläge des Auftraggebers werden unentgeltlich Eigentum des Auftragnehmers.
+
+### marketing-015:L19  type=unilateral_change
+note: Einseitige Redaktionsplanänderung ohne Bestandsschutz.
+§ 2 Redaktionsplan Der Auftragnehmer ändert den Redaktionsplan einseitig; der Auftraggeber hat keinen Anspruch auf Beibehaltung.
+
+### marketing-015:L25  type=marketing_reference
+note: Referenznennung ohne Zustimmung.
+§ 4 Referenzen Der Auftragnehmer darf den Auftraggeber in Fallstudien und Angeboten als Referenz nennen.
+
+### marketing-016:L19  type=agency_commission_exclusion
+note: Provisionsausschluss für Direktverkäufe.
+§ 2 Provision Direktverkäufe des Kunden an Grosskunden lösen keine Provision aus.
+
+### marketing-016:L22  type=agency_goodwill_waiver
+note: Ausgleichsanspruch für Kundenstamm abbedungen.
+§ 3 Ausgleich Ein Ausgleichsanspruch nach Vertragsende ist ausgeschlossen.
+
+### marketing-016:L28  type=setoff_restriction
+note: Verzicht auf Aufrechnung.
+§ 5 Aufrechnung Der Kunde verzichtet auf die Aufrechnung mit Gegenansprüchen.
+
+### marketing-016:L34  type=excessive_survival
+note: Unbefristete Nachwirkung der Provisionspflicht.
+§ 7 Nachwirkung Die Provision für Nachbestellungen wird auf Dauer geschuldet.
+
+### marketing-017:L22  type=asymmetric_confidentiality
+note: Einseitige Geheimhaltungslast.
+§ 3 Vertraulichkeit Nur der Kunde ist zur Geheimhaltung der Pressearbeit verpflichtet.
+
+### marketing-017:L25  type=non_solicitation
+note: Einstellungsverbot für frühere Mitarbeiter.
+§ 4 Personal Der Auftragnehmer stellt für zwei Jahre keine ehemaligen Mitarbeiter des Kunden ein.
+
+### marketing-017:L28  type=non_compete
+note: Nachvertragliches Beratungsverbot für Wettbewerber.
+§ 5 Wettbewerb Nach dem Ende des Mandats wird der Auftragnehmer für Wettbewerber nicht beratend tätig.
+
+### marketing-017:L31  type=unreasonable_audit
+note: Anlasslose Prüfungen.
+§ 6 Prüfungen Der Kunde kann Prüfungen im Unternehmen des Auftragnehmers ohne Anlass durchführen.
+
+### marketing-017:L34  type=liability
+note: Haftungsdeckel auf die Monatspauschale.
+§ 7 Haftung Die Haftung für leichte Fahrlässigkeit ist auf die Monatspauschale beschränkt.
+
+### marketing-018:L19  type=marketing_reference
+note: Unbeschränkte Referenznutzung.
+§ 2 Referenz Der Auftragnehmer führt den Kunden zeitlich unbeschränkt als Referenzkunden.
+
+### marketing-018:L28  type=subcontractor_uncontrolled
+note: Unkontrollierte Weitergabe an Dritte.
+§ 5 Weiterverkauf Der Auftragnehmer darf Werbeplätze nach eigenem Ermessen an Dritte weiterverkaufen.
+
+### marketing-018:L37  type=dynamic_url_referral
+note: Dynamischer Verweis auf Kundenportal-Fassungen; vermeidet URL.
+§ 8 Richtlinien Ergänzend gelten die unter der Adresse des Kundenportals abrufbaren Fassungen der Werberichtlinien.
+
+### marketing-019:L19  type=marketing_reference
+note: Marken- und Namensnutzung ohne Freigabevorbehalt.
+§ 2 Werbenutzung Der Auftragnehmer verwendet Firmenname und Bildmarke des Kunden in allen Werbeträgern.
+
+### marketing-019:L22  type=price_escalation
+note: Automatische Jahreserhöhung.
+§ 3 Lizenzgebühr Die Lizenzgebühr für das Namensrecht erhöht sich jährlich um sechs Prozent.
+
+### marketing-019:L37  type=setoff_restriction
+note: Ausschluss des Zurückbehaltungsrechts.
+§ 8 Verrechnung Gegenansprüche des Auftraggebers begründen kein Zurückbehaltungsrecht.
+
+### marketing-020:L22  type=liability
+note: Haftungsdeckel auf die Lizenzgebühr.
+§ 3 Haftung Die Haftung für Rechtsmängel ist auf die Lizenzgebühr begrenzt.
+
+### marketing-020:L34  type=as_is_software_disclaimer
+note: Gewährleistungsausschluss für Inhalte.
+§ 7 Beschaffenheit Die Inhalte werden ohne Mängelgewähr und ohne Zusicherung der Marktgängigkeit überlassen.
+
+### marketing-020:L37  type=vicarious_agents
+note: Freizeichnung für Dritte; vermeidet Erfüllungsgehilfe.
+§ 8 Unterlizenznehmer Für das Verhalten der Unterlizenznehmer wird keine Einstandspflicht übernommen.
+
+### marketing-021:L25  type=non_compete
+note: Nachvertragliches Werbeverbot fuer Wettbewerber.
+§ 4 Wettbewerb Nach Beendigung der Zusammenarbeit ist der Creator für konkurrierende Marken nicht werblich tätig.
+
+### marketing-021:L28  type=liability
+note: Haftungsdeckel bei einfacher Fahrlässigkeit.
+§ 5 Haftung Die Haftung des Auftragnehmers für einfache Fahrlässigkeit ist auf 5.000 EUR begrenzt.
+
+### marketing-021:L31  type=written_form_trap
+note: Mündliche Abreden ohne Wirkung.
+§ 6 Nebenabreden Mündliche Absprachen über Zusatzleistungen sind ohne Rechtswirkung.
+
+### marketing-021:L37  type=setoff_restriction
+note: Verrechnungsverbot; vermeidet Aufrechnung.
+§ 8 Verrechnung Eine Verrechnung mit Gegenforderungen des Kunden ist nicht möglich.
+
+### marketing-022:L19  type=force_majeure_asymmetry
+note: Einseitige Befreiung, Gegenleistung bleibt geschuldet.
+§ 2 Höhere Gewalt Wird die Durchführung durch höhere Gewalt verhindert, entfällt nur die Leistungspflicht des Auftragnehmers.
+
+### marketing-022:L22  type=service_suspension
+note: Leistungsunterbrechung ohne Ankündigung.
+§ 3 Unterbrechung Der Auftragnehmer darf die Betreuung ohne Vorankündigung unterbrechen.
+
+### marketing-022:L34  type=setoff_restriction
+note: Gegenforderungen bleiben ausser Betracht.
+§ 7 Abrechnung Gegenforderungen des Kunden bleiben bei der Abrechnung außer Betracht.
+
+### marketing-023:L19  type=agency_commission_exclusion
+note: Provisionsausschluss bei Direktauftrag.
+§ 2 Provision Direktaufträge des Kunden beim Sender lösen keinen Provisionsanspruch aus.
+
+### marketing-023:L22  type=agency_goodwill_waiver
+note: Verzicht auf Kundenschutzausgleich.
+§ 3 Ausgleich Ein Ausgleich für den vom Kunden geworbenen Kundenstamm ist ausgeschlossen.
+
+### marketing-023:L30  type=price_escalation
+note: Preisindexanpassung ohne Sonderkündigungsrecht.
+Ein Sonderkündigungsrecht besteht nicht.
+
+### marketing-023:L36  type=subcontractor_uncontrolled
+note: Subunternehmer ohne vorherige Ankündigung.
+§ 7 Dienstleister Die Agentur setzt Medienpartner ohne Ankündigung ein.
+
+### marketing-023:L39  type=dynamic_url_referral
+note: Einbezug dynamischer Portal-Fassungen.
+§ 8 Bedingungen Ergänzend gelten die im Kundenportal hinterlegten Einkaufsbedingungen.
+
+### marketing-024:L25  type=asymmetric_confidentiality
+note: Einseitige Vertraulichkeitspflicht.
+§ 4 Vertraulichkeit Die Vertraulichkeitspflicht trifft nur den Auftraggeber.
+
+### marketing-024:L37  type=vicarious_agents
+note: Freizeichnung fuer Dritte; vermeidet Erfuellungsgehilfe.
+§ 8 Dritte Für Handlungen beauftragter Dritter wird keine Verantwortung übernommen.
+
+### marketing-025:L31  type=liability
+note: Haftungsdeckel mit Betrag.
+§ 6 Haftung Die Haftung des Vereins für leichte Fahrlässigkeit ist auf 10.000 EUR begrenzt.
+
+### marketing-026:L25  type=subcontractor_uncontrolled
+note: Subunternehmer ohne Ankündigung.
+§ 4 Dienstleister Der Auftragnehmer darf ohne vorherige Ankündigung Nachunternehmer einsetzen.
+
+### marketing-026:L28  type=service_suspension
+note: Fristlose Leistungseinstellung ohne Abmahnung.
+§ 5 Sperrung Der Auftragnehmer darf die Plakatierung ohne Abmahnung fristlos einstellen.
+
+### marketing-026:L34  type=written_form_trap
+note: Papierformzwang.
+§ 7 Form Änderungen sind nur gültig, wenn sie in Papierform mit Originalunterschrift erfolgen.
+
+### marketing-026:L37  type=fictitious_receipt
+note: Zugangsfiktion ab Uebergabe an den Versender.
+§ 8 Zugang Mitteilungen gelten nach Absenderübergabe an den Versanddienstleister als zugegangen.
+
+### marketing-027:L19  type=maintenance_conditional_shutdown
+note: Abschaltung mangels Wartungsvertrag.
+§ 2 Wartung Mangels abgeschlossenen Wartungsvertrags wird die Anlage des Kunden abgeschaltet.
+
+### marketing-028:L19  type=marketing_reference
+note: Unbeschraenkte Referenznutzung in Case Studies.
+§ 2 Referenznutzung Der Auftragnehmer darf Firmenname und Logo des Kunden zeitlich unbeschränkt in Case Studies verwenden.
+
+### marketing-028:L22  type=asymmetric_confidentiality
+note: Anbieter von Geheimhaltung ausgenommen.
+§ 3 Vertraulichkeit Für den Auftragnehmer besteht keine Geheimhaltungspflicht gegenüber dem Kunden.
+
+### marketing-028:L25  type=unilateral_change
+note: Einseitige Leistungsanpassung.
+§ 4 Leistungsumfang Der Auftragnehmer darf den Leistungsumfang nach billigem Ermessen angleichen.
+
+### marketing-030:L28  type=burden_of_proof
+note: Beweislast beim Kunden; vermeidet Beweislast als Wort.
+§ 5 Nachweis Den lückenlosen Nachweis der Leistungserbringung hat der Kunde zu führen.
+
+### marketing-031:L31  type=non_compete
+note: Nachvertragliches Taetigkeitsverbot.
+§ 6 Wettbewerb Nach Vertragsende ist der Auftragnehmer für konkurrierende Vermarkter nicht tätig.
+
+### marketing-032:L34  type=marketing_reference
+note: Referenznutzung ohne Zustandsvorbehalt.
+§ 7 Referenzen Der Lizenzgeber darf den Lizenznehmer als Referenzkunden nennen.
+
+### marketing-032:L37  type=excessive_survival
+note: Unbegrenzte Nachwirkung der Geheimhaltung.
+§ 8 Nachwirkung Die Geheimhaltungspflicht gilt unbegrenzt fort.

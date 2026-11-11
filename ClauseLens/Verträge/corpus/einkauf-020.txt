@@ -1,0 +1,61 @@
+QUALITÄTSSICHERUNGSVEREINBARUNG FÜR ANLAGENPRÜFUNGEN
+
+zwischen
+
+der Marienberg Maschinenbau GmbH, Werkstraße 8, 09120 Chemnitz (nachfolgend „Besteller“)
+
+und
+
+der Thalheim Prüfservice GmbH, Annaberger Straße 55, 09126 Chemnitz (nachfolgend „Auftragnehmer“).
+
+§ 1 Gegenstand
+
+1.1 Der Auftragnehmer prüft Anlagen nach Anlage 1.
+
+Der Auftragnehmer stellt die Prüfprotokolle in Textform bereit.
+
+Der Besteller wählt unter den in Anlage 3 genannten Varianten eine aus.
+
+§ 2 Prüfungen
+
+Der Besteller kann die Fertigungslinien jederzeit auditieren.
+
+Prüfungen werden mit angemessener Vorlaufzeit angekündigt.
+
+§ 3 Software
+
+Die Überlassung der Steuerungssoftware erfolgt im Ist-Zustand.
+
+Ergänzend gelten die im Kundenportal hinterlegten Qualitätsrichtlinien in der dort jeweils abrufbaren Fassung.
+
+§ 4 Verfügbarkeit
+
+4.1 Der Auftragnehmer stellt Sicherheitspatches nach Anlage 2 bereit.
+
+Versäumt der Auftragnehmer die Bereitstellung eines Sicherheitspatches, verfällt der Anspruch auf die vereinbarte Gutschrift.
+
+§ 5 Daten
+
+Die Verarbeitung personenbezogener Daten erfolgt außerhalb der Europäischen Union, unter anderem in Indien.
+
+5.2 Der Auftragnehmer löscht personenbezogene Daten nach Vertragsende.
+
+§ 6 Mitteilungen
+
+Mit der Einstellung in das Benachrichtigungsportal sind Mitteilungen bekannt.
+
+Die Verschwiegenheitspflicht endet nicht mit der Beendigung, sondern besteht unbefristet fort.
+
+§ 7 Streitbeilegung
+
+Streitigkeiten über die Qualität der Lieferungen werden zunächst einem Sachverständigenverfahren unterworfen. Die Verfahrenskosten hat der Besteller vorzustrecken. Der gerichtliche Rechtsweg ist erst nach Abschluss des Verfahrens eröffnet.
+
+§ 8 Schlussbestimmungen
+
+Rechnungen sind innerhalb von dreißig Tagen ohne Abzug zu begleichen.
+
+Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt.
+
+Beide Parteien können den Vertrag einvernehmlich beenden.
+
+Bei berechtigter Rüge bessert der Auftragnehmer innerhalb von zehn Werktagen nach.

@@ -1,0 +1,2185 @@
+{
+  "dir": "ltr",
+  "ausbildungsvertrag_title": "Berufsausbildungsvertrag (Ausbildung)",
+  "ausbildungsvertrag_agency": "Ausbildungsbetrieb / IHK / HWK",
+  "ausbildungsvertrag_desc": "Dieser Vertrag regelt Ihr rechtliches Berufsausbildungsverhältnis, die Ausbildungsdauer, die monatliche Ausbildungsvergütung, Probezeit, Urlaubstage und Pflichten zwischen Ihnen und Ihrem Ausbildungsbetrieb.",
+  "ausbildungsvertrag_actions": [
+    "Ausbildungsbeginn, Ausbildungsberuf, Probezeit und monatliche Vergütung auf Richtigkeit prüfen",
+    "Von beiden Seiten unterschriebenes Exemplar dauerhaft bei den Ausbildungsunterlagen aufbewahren",
+    "Eintragungsbestätigung der zuständigen Kammer (IHK / HWK) beifügen"
+  ],
+  "leihvertrag_title": "Leihvertrag / Sachüberlassung (Betrieb)",
+  "leihvertrag_agency": "Arbeitgeber / Betrieb",
+  "leihvertrag_desc": "Dieses Dokument ist ein betrieblicher Leihvertrag bzw. eine Sachüberlassungsvereinbarung über die unentgeltliche Bereitstellung von betrieblichen Arbeitsmitteln (z. B. Laptop, Werkzeuge, Diensthandy, Schlüssel) zur Nutzung während Ihrer Tätigkeit.",
+  "leihvertrag_actions": [
+    "Überlassene Gegenstände, Seriennummern und Zustand im Übergabeprotokoll abgleichen",
+    "Sorgfaltspflichten und Bedingungen zur Rückgabe bei Beendigung beachten",
+    "Unterzeichnete Vereinbarung sicher bei den Beschäftigungsunterlagen aufbewahren"
+  ],
+  "arbeitsvertrag_title": "Arbeitsvertrag (Anstellungsverhältnis)",
+  "arbeitsvertrag_agency": "Arbeitgeber / Unternehmen",
+  "arbeitsvertrag_desc": "Dieser Vertrag regelt Ihr verbindliches Arbeitsverhältnis, Ihre Arbeitszeit, Gehalt, Urlaubstage und Kündigungsfristen mit Ihrem Arbeitgeber.",
+  "arbeitsvertrag_actions": [
+    "Gehalt, wöchentliche Arbeitszeit, Tätigkeitsbezeichnung und Probezeit prüfen",
+    "Unterzeichnetes Exemplar fristgerecht an die Personalabteilung senden",
+    "Originalvertrag sicher bei den persönlichen Berufsunterlagen ablegen"
+  ],
+  "leiharbeit_vertrag_title": "Arbeitnehmerüberlassungsvertrag (Zeitarbeit)",
+  "leiharbeit_vertrag_agency": "Personaldienstleister / Verleihbetrieb",
+  "leiharbeit_vertrag_desc": "Dieser Vertrag regelt Ihren Einsatz als Leiharbeitnehmer bei einem Einsatzbetrieb gemäß Arbeitnehmerüberlassungsgesetz (AÜG).",
+  "leiharbeit_vertrag_actions": [
+    "Tarifgruppe, Stundenlohn, Einsatzort und Zulagen prüfen",
+    "Stundenzettel und Einsatznachweise wöchentlich dokumentieren",
+    "Vertrag sicher aufbewahren"
+  ],
+  "praktikumsvertrag_title": "Praktikumsvertrag",
+  "praktikumsvertrag_agency": "Praktikumsbetrieb / Unternehmen",
+  "praktikumsvertrag_desc": "Dieser Vertrag regelt die Rahmenbedingungen Ihres Praktikums, Lernziele, Dauer und etwaige Praktikumsvergütung.",
+  "praktikumsvertrag_actions": [
+    "Praktikumsdauer und Tätigkeitsbereich prüfen",
+    "Bescheinigung für Hochschule / Schule nach Abschluss anfordern",
+    "Vertrag ablegen"
+  ],
+  "hero_title": "Dokument erfassen",
+  "hero_subtitle": "Brief fotografieren oder Datei auswählen.",
+  "btn_camera": "Kamera",
+  "btn_gallery": "Galerie / Datei",
+  "sample_label": "Muster:",
+  "chip_rvnr": "Sozialversicherung",
+  "chip_tax": "Steuer-ID",
+  "chip_jobcenter": "Jobcenter",
+  "chip_finanzamt": "Finanzamt",
+  "ocr_recognizing": "Erkenne Text...",
+  "meta_ref_label": "Aktenzeichen / Nummer",
+  "meta_deadline_label": "Frist",
+  "no_deadline_text": "Keine Frist gesetzt",
+  "info_status_text": "Dauerhaft gültig — Keine Rückmeldung erforderlich",
+  "section_meaning": "Was bedeutet dieser Brief?",
+  "section_actions": "Was musst du tun?",
+  "btn_extend_deadline": "Frist verlängern",
+  "btn_objection": "Widerspruch einlegen",
+  "btn_calendar": "In Kalender",
+  "btn_copy_text": "Text kopieren",
+  "btn_modal_close": "Schließen",
+  "raw_text_summary": "Erkannten Text prüfen & bearbeiten",
+  "btn_reanalyze": "Neu auswerten",
+  "modal_title": "Antwortschreiben erstellen",
+  "modal_name_label": "Dein Name",
+  "modal_address_label": "Deine Adresse",
+  "modal_reason_label": "Begründung (optional)",
+  "badge_info": "Information",
+  "badge_deadline": "Frist beachten",
+  "toast_copied": "Brief kopiert",
+  "toast_calendar": "Kalendereintrag erstellt",
+  "rvnr_title": "Versicherungsnummernachweis (Sozialversicherung)",
+  "rvnr_agency": "Deutsche Rentenversicherung (DRV)",
+  "rvnr_desc": "Dieser Brief ist Ihr offizieller Nachweis über Ihre deutsche Sozialversicherungsnummer (VSNR). Er bestätigt Ihre Registrierung im gesetzlichen Rentensystem.",
+  "rvnr_actions": [
+    "Diesen Nachweis bei Aufnahme einer Beschäftigung dem Arbeitgeber vorlegen",
+    "Nummer für Anträge bei Krankenkasse, Arbeitsagentur oder Rente bereithalten",
+    "Dokument dauerhaft und sicher bei den persönlichen Unterlagen aufbewahren"
+  ],
+  "tax_title": "Zuteilung der Steuer-ID (IdNr)",
+  "tax_agency": "Bundeszentralamt für Steuern (BZSt)",
+  "tax_desc": "Dieser Brief enthält Ihre lebenslange persönliche Steuer-Identifikationsnummer (11 Ziffern). Sie bleibt dauerhaft gültig.",
+  "tax_actions": [
+    "Steuer-ID dem Arbeitgeber für die Lohnabrechnung mitteilen",
+    "Steuer-ID bei der Bank für Freistellungsaufträge angeben",
+    "Brief sicher zu den Steuerunterlagen ablegen"
+  ],
+  "job_title": "Aufforderung zur Mitwirkung",
+  "job_agency": "Jobcenter / Agentur für Arbeit",
+  "job_desc": "Das Jobcenter fordert fehlende Nachweise an, um Ihren Leistungsanspruch (Bürgergeld / Miete) zu berechnen oder weiterzubewilligen.",
+  "job_actions": [
+    "Geforderte Unterlagen (Kontoauszüge, Mietbescheinigung, Lohnabrechnungen) zusammenstellen",
+    "Unterlagen vor Ablauf der Frist beim Jobcenter einreichen",
+    "Fristverlängerung schriftlich beantragen, falls Belege von Dritten fehlen"
+  ],
+  "fin_title": "Erinnerung Steuererklärung",
+  "fin_agency": "Finanzamt",
+  "fin_desc": "Das Finanzamt erinnert an die Abgabe der Steuererklärung. Bei Fristüberschreitung drohen Verspätungszuschläge.",
+  "fin_actions": [
+    "Steuererklärung über ELSTER oder Steuersoftware übermitteln",
+    "Bei Verzögerung schriftlich Fristverlängerung beantragen"
+  ],
+  "melde_title": "Amtliche Meldebestätigung",
+  "melde_agency": "Bürgeramt / Einwohnermeldeamt",
+  "melde_desc": "Dies ist Ihre offizielle Bestätigung über Ihre Wohnsitzanmeldung in Deutschland. Sie dient als rechtsgültiger Adressnachweis.",
+  "melde_actions": [
+    "Dokument sicher aufbewahren (wird bei Banken, Verträgen & Behörden benötigt)",
+    "Kopie bei Arbeitgeber und Krankenkasse vorlegen",
+    "Keine Rückmeldung an das Bürgeramt erforderlich"
+  ],
+  "gez_title": "Rundfunkbeitrag (Zahlung / Auskunft)",
+  "gez_agency": "ARD ZDF Deutschlandradio Beitragsservice",
+  "gez_desc": "Dieses Schreiben betrifft den gesetzlichen Rundfunkbeitrag für Ihre Wohnung (18,36 € pro Monat).",
+  "gez_actions": [
+    "Prüfen, ob Befreiung vorliegt (z. B. Bürgergeld, BAföG) und Befreiungsantrag einreichen",
+    "Falls ein Mitbewohner bereits zahlt: Dessen Beitragsnummer mitteilen",
+    "Andernfalls den offenen Betrag überweisen oder SEPA-Lastschrift einrichten"
+  ],
+  "auslaender_title": "Aufenthaltsangelegenheit / Anhörung",
+  "auslaender_agency": "Ausländerbehörde (Landesamt für Einwanderung)",
+  "auslaender_desc": "Die Ausländerbehörde informiert Sie über Ihren Aufenthaltstitel, eine Terminvergabe oder fordert wichtige Nachweise an.",
+  "auslaender_actions": [
+    "Fristen und Termine unbedingt genau einhalten",
+    "Geforderte Unterlagen (Pass, Arbeitsvertrag, Gehaltsnachweise) vollständig einreichen",
+    "Bei Terminverhinderung sofort schriftlich um Verlegung bitten"
+  ],
+  "krankenkasse_title": "Krankenversicherung / Mitgliedsnachweis",
+  "krankenkasse_agency": "Gesetzliche Krankenkasse (AOK / TK / Barmer / DAK)",
+  "krankenkasse_desc": "Dieses Schreiben betrifft Ihre Krankenversicherung, Mitgliedsbescheinigung oder fordert aktuelle Einkommensnachweise an.",
+  "krankenkasse_actions": [
+    "Mitgliedsbescheinigung bei Bedarf dem Arbeitgeber oder der Universität vorlegen",
+    "Falls ein Fragebogen beiliegt (z.B. Familienversicherung): Ausfüllen und zurücksenden",
+    "Dokument zu den Versicherungsunterlagen ablegen"
+  ],
+  "online_ausweis_title": "PIN-Brief zur Online-Ausweisfunktion (eID)",
+  "online_ausweis_agency": "Bundesdruckerei / Personalausweisbehörde",
+  "online_ausweis_desc": "Dieser Brief enthält Ihre geheime Transport-PIN (5-stellig), PUK und das Sperrkennwort zur Aktivierung der Online-Ausweisfunktion Ihres Personalausweises oder elektronischen Aufenthaltstitels (eAT).",
+  "online_ausweis_actions": [
+    "PIN-Brief dauerhaft sicher bei den persönlichen Dokumenten aufbewahren",
+    "Transport-PIN mit der AusweisApp auf dem Smartphone in eine 6-stellige PIN ändern",
+    "Sperrkennwort notieren für den Fall von Verlust oder Diebstahl"
+  ],
+  "general_title": "Amtliches Behördenschreiben",
+  "general_agency": "Behörde / Institution",
+  "general_desc": "Dieses Dokument ist ein offizielles Behördenschreiben mit wichtigen Angaben zu Ihren Unterlagen oder behördlichen Vorgängen.",
+  "general_actions": [
+    "Brief sorgfältig durchlesen und auf etwaige Fristen oder Aufforderungen prüfen",
+    "Erforderliche Nachweise oder Unterlagen zusammenstellen",
+    "Dokument sicher bei den persönlichen Unterlagen aufbewahren"
+  ],
+  "renteninfo_title": "Renteninformation / Rentenbescheid",
+  "renteninfo_agency": "Deutsche Rentenversicherung (DRV)",
+  "renteninfo_desc": "Dieses Schreiben informiert Sie über Ihre bisher erworbenen Rentenansprüche und die voraussichtliche Höhe Ihrer zukünftigen Altersrente.",
+  "renteninfo_actions": [
+    "Versicherungsverlauf auf Lücken prüfen",
+    "Bei fehlenden Beitragszeiten (z. B. Ausbildung, Kindererziehung) Kontenklärung beantragen",
+    "Dokument zu den Rentenunterlagen ablegen"
+  ],
+  "tax_id_title": "Zuteilung der Steuer-Identifikationsnummer (IdNr)",
+  "tax_id_agency": "Bundeszentralamt für Steuern (BZSt)",
+  "tax_id_desc": "Dieser Brief enthält Ihre persönliche, lebenslang gültige Steuer-Identifikationsnummer (11 Ziffern).",
+  "tax_id_actions": [
+    "Steuer-ID dem Arbeitgeber für die Lohnsteuer mitteilen",
+    "Steuer-ID der Bank für Freistellungsaufträge angeben",
+    "Schreiben dauerhaft bei den Steuerunterlagen aufbewahren"
+  ],
+  "steuerbescheid_title": "Einkommensteuerbescheid",
+  "steuerbescheid_agency": "Finanzamt",
+  "steuerbescheid_desc": "Das Finanzamt hat Ihre Steuererklärung festgesetzt. Der Bescheid weist ein Steuerguthaben (Erstattung) oder eine Steuernachzahlung aus.",
+  "steuerbescheid_actions": [
+    "Festgesetzte Steuer und Bankverbindung auf Richtigkeit prüfen",
+    "Falls Nachzahlung: Fälligen Betrag vor Fristablauf überweisen",
+    "Bei Fehlern: Innerhalb von 1 Monat schriftlich Einspruch einlegen"
+  ],
+  "finanzamt_erinnerung_title": "Erinnerung zur Abgabe der Steuererklärung",
+  "finanzamt_erinnerung_agency": "Finanzamt",
+  "finanzamt_erinnerung_desc": "Das Finanzamt fordert Sie auf, die noch ausstehende Steuererklärung für das genannte Steuerjahr fristgerecht einzureichen.",
+  "finanzamt_erinnerung_actions": [
+    "Steuererklärung über ELSTER oder Steuersoftware erstellen und übermitteln",
+    "Falls Unterlagen fehlen: Schriftlich Fristverlängerung beim Finanzamt beantragen",
+    "Frist unbedingt beachten, um Verspätungszuschläge zu vermeiden"
+  ],
+  "ausweis_abholung_title": "Abholbereitschaft Ausweisdokument",
+  "ausweis_abholung_agency": "Bürgeramt / Passbehörde",
+  "ausweis_abholung_desc": "Ihr beantragter Personalausweis, Reisepass oder elektronischer Aufenthaltstitel liegt zur Abholung beim Bürgeramt bereit.",
+  "ausweis_abholung_actions": [
+    "Bisheriges Ausweisdokument zur Entwertung mitbringen",
+    "Abholtermin buchen oder innerhalb der Öffnungszeiten abholen",
+    "PIN-Brief (falls erhalten) für Online-Ausweisfunktion bereithalten"
+  ],
+  "jobcenter_bewilligung_title": "Bewilligungsbescheid Bürgergeld",
+  "jobcenter_bewilligung_agency": "Jobcenter",
+  "jobcenter_bewilligung_desc": "Dieser Bescheid legt fest, welche monatlichen Leistungen (Regelbedarf und Kosten der Unterkunft / Miete) Ihnen bewilligt wurden.",
+  "jobcenter_bewilligung_actions": [
+    "Bewilligungszeitraum und monatliche Auszahlungsbeträge prüfen",
+    "Miet- und Heizkostenübernahme auf Richtigkeit kontrollieren",
+    "Rechtzeitig vor Ablauf (ca. 6 Wochen vorher) Weiterbewilligungsantrag (WBA) stellen"
+  ],
+  "mahnbescheid_title": "Gerichtlicher Mahnbescheid",
+  "mahnbescheid_agency": "Zentrales Mahngericht / Amtsgericht",
+  "mahnbescheid_desc": "Ein Gläubiger hat über das Mahngericht eine Geldforderung gegen Sie geltend gemacht. WICHTIG: Sie haben ab Zustellung genau 2 Wochen Frist!",
+  "mahnbescheid_actions": [
+    "Forderung sofort auf Berechtigung prüfen",
+    "Falls unberechtigt: Binnen 2 Wochen Widerspruch auf dem beiliegenden Formular einlegen",
+    "Falls berechtigt: Den Betrag sofort begleichen, um einen Vollstreckungsbescheid zu vermeiden"
+  ],
+  "bussgeldbescheid_title": "Bußgeldbescheid / Anhörung",
+  "bussgeldbescheid_agency": "Zentrale Bußgeldstelle / Polizei",
+  "bussgeldbescheid_desc": "Ihnen wird eine Ordnungswidrigkeit (z. B. Geschwindigkeitsüberschreitung, Parkverstoß) zur Last gelegt. Es wird ein Bußgeld festgesetzt.",
+  "bussgeldbescheid_actions": [
+    "Tatvorwurf, Datum, Kennzeichen und Beweisfoto prüfen",
+    "Falls berechtigt: Geldbuße vor Ablauf der 2-Wochen-Zahlungsfrist überweisen",
+    "Falls unberechtigt: Innerhalb von 2 Wochen schriftlich Einspruch einlegen"
+  ],
+  "rechnung_title": "Rechnung / Zahlungsaufforderung",
+  "rechnung_agency": "Rechnungssteller / Unternehmen",
+  "rechnung_desc": "Dieses Dokument ist eine Rechnung für erbrachte Lieferungen oder Dienstleistungen mit Fälligkeitsdatum und Überweisungsdaten.",
+  "rechnung_actions": [
+    "Rechnungsbetrag und Leistungszeitraum prüfen",
+    "Offenen Betrag unter Angabe der Rechnungsnummer bis zum Fälligkeitsdatum überweisen",
+    "Rechnung zu den Buchhaltungs- und Garantieunterlagen ablegen"
+  ],
+  "mahnung_title": "Zahlungserinnerung / Mahnung",
+  "mahnung_agency": "Gläubiger / Mahnwesen",
+  "mahnung_desc": "Der Aussteller erinnert an eine noch offene Rechnung. Bitte überweisen Sie den Betrag zügig, um Mahngebühren oder Inkasso zu vermeiden.",
+  "mahnung_actions": [
+    "Prüfen, ob der Betrag eventuell bereits überwiesen wurde",
+    "Offenen Betrag inkl. Mahngebühren sofort unter Angabe der Referenz überweisen",
+    "Bei Unstimmigkeiten sofort Kontakt mit dem Gläubiger aufnehmen"
+  ],
+  "nebenkosten_title": "Nebenkosten- / Betriebskostenabrechnung",
+  "nebenkosten_agency": "Vermieter / Hausverwaltung",
+  "nebenkosten_desc": "Ihr Vermieter rechnet die Vorauszahlungen für Heizung, Wasser und Betriebskosten des vergangenen Abrechnungsjahres ab.",
+  "nebenkosten_actions": [
+    "Abrechnungszeitraum und Verteilerschlüssel prüfen",
+    "Falls Nachzahlung: Betrag fristgerecht überweisen",
+    "Falls Guthaben: Auszahlung auf dem Bankkonto kontrollieren"
+  ],
+  "stadtwerke_title": "Jahresabrechnung Strom / Gas / Wasser",
+  "stadtwerke_agency": "Stadtwerke / Energieversorger",
+  "stadtwerke_desc": "Ihr Energieversorger rechnet Ihren tatsächlichen Verbrauch gegen die geleisteten monatlichen Abschläge ab.",
+  "stadtwerke_actions": [
+    "Zählerstände mit den eigenen Ablesungen abgleichen",
+    "Neuen monatlichen Abschlagsbetrag zur Kenntnis nehmen",
+    "Guthaben bzw. Nachzahlungsbetrag prüfen"
+  ],
+  "kindergeld_title": "Kindergeldbescheid / Familienkasse",
+  "kindergeld_agency": "Familienkasse der Bundesagentur für Arbeit",
+  "kindergeld_desc": "Dieses Schreiben betrifft die Bewilligung oder Prüfung Ihres Anspruchs auf staatliches Kindergeld.",
+  "kindergeld_actions": [
+    "Kindergeld-Nummer und Auszahlungstermine notieren",
+    "Änderungen (z. B. Ausbildungsbeginn, Volljährigkeit) unverzüglich der Familienkasse melden",
+    "Bescheid sorgfältig ablegen"
+  ],
+  "arbeitszeugnis_title": "Arbeitszeugnis / Qualifiziertes Zeugnis",
+  "arbeitszeugnis_agency": "Arbeitgeber / Unternehmen",
+  "arbeitszeugnis_desc": "Dieses Dokument ist ein offizielles Arbeitszeugnis oder Zwischenzeugnis Ihres Arbeitgebers. Es dokumentiert Ihre Beschäftigungsdauer, Aufgaben und Leistungsbeurteilung.",
+  "arbeitszeugnis_actions": [
+    "Tätigkeitsbeschreibung und Beurteilungsnoten (Zeugnissprache) sorgfältig prüfen",
+    "Bei unvollständigen Angaben oder ungerechter Bewertung innerhalb von 3-6 Monaten Korrektur verlangen",
+    "Originalzeugnis dauerhaft in den Bewerbungsunterlagen ablegen"
+  ],
+  "schulzeugnis_title": "Schulzeugnis / Abschluss- & Prüfungszeugnis",
+  "schulzeugnis_agency": "Schule / IHK / HWK / Berufskolleg",
+  "schulzeugnis_desc": "Dieses Dokument ist ein offizielles Schul-, Ausbildungs- oder IHK-Abschlusszeugnis (z.B. Abitur, Mittlere Reife, Gesellenbrief).",
+  "schulzeugnis_actions": [
+    "Notenübersicht und Abschlussbezeichnung kontrollieren",
+    "Beglaubigte Kopien für Bewerbungen oder Universitätszulassungen anfertigen lassen",
+    "Originalzeugnis dauerhaft und knickfrei im persönlichen Dokumentenordner aufbewahren"
+  ],
+  "hochschulzeugnis_title": "Hochschulabschluss / Bachelor / Master / Diplom",
+  "hochschulzeugnis_agency": "Universität / Hochschule",
+  "hochschulzeugnis_desc": "Dieses Dokument ist Ihre offizielle Urkunde, Ihr Bachelor-/Masterzeugnis oder Transcript of Records über Ihren Hochschulabschluss.",
+  "hochschulzeugnis_actions": [
+    "Abschlussurkunde, Notenübersicht und Diploma Supplement auf Vollständigkeit prüfen",
+    "Beglaubigte Kopien für Arbeitgeber und Behörden anfertigen",
+    "Dokument dauerhaft im Studienarchiv aufbewahren"
+  ],
+  "fuehrungszeugnis_title": "Amtliches Führungszeugnis",
+  "fuehrungszeugnis_agency": "Bundesamt für Justiz (BfJ) / Bürgeramt",
+  "fuehrungszeugnis_desc": "Dieses Dokument ist Ihr behördliches Führungszeugnis (Nachweis über Vorstrafenfreiheit), das häufig von Arbeitgebern oder Behörden verlangt wird.",
+  "fuehrungszeugnis_actions": [
+    "Eintragungen prüfen (bei Vorstrafenfreiheit: „Keine Eintragung“)",
+    "Führungszeugnis dem anfordernden Arbeitgeber oder der Behörde im Original vorlegen",
+    "Dokument ist in der Regel 3 Monate ab Ausstellungsdatum als aktuell gültig"
+  ],
+  "arbeitsunfaehigkeit_title": "Ärztliche Bescheinigung / Krankschreibung (AU)",
+  "arbeitsunfaehigkeit_agency": "Arztpraxis / Facharzt / MVZ",
+  "arbeitsunfaehigkeit_desc": "Dieses Dokument ist eine ärztliche Arbeitsunfähigkeitsbescheinigung (Krankschreibung / Attest) über den Zeitraum Ihrer krankheitsbedingten Abwesenheit.",
+  "arbeitsunfaehigkeit_actions": [
+    "Arbeitgeber unverzüglich über die Dauer der Arbeitsunfähigkeit informieren",
+    "Elektronische Übermittlung (eAU) an Krankenkasse und Arbeitgeber sicherstellen",
+    "Nach Ablauf bei fortdauernder Krankheit rechtzeitig Folgebescheinigung einholen"
+  ],
+  "sprachzertifikat_title": "Sprachzertifikat / Zertifikat Deutsch (A1–C2)",
+  "sprachzertifikat_agency": "Goethe-Institut / telc / TestDaF / BAMF",
+  "sprachzertifikat_desc": "Dieses Dokument ist Ihr offizielles Sprachprüfungszertifikat über Ihre Deutschkenntnisse (z. B. DTZ B1, telc B2, TestDaF).",
+  "sprachzertifikat_actions": [
+    "Prüfungsergebnisse in den Fertigkeiten (Hören, Lesen, Schreiben, Sprechen) prüfen",
+    "Zertifikat bei Ausländerbehörde (für Einbürgerung/Niederlassung) oder Arbeitgeber vorlegen",
+    "Original dauerhaft und sicher aufbewahren"
+  ],
+  "kontoauszug_title": "Kontoauszug",
+  "kontoauszug_agency": "Bank / Kreditinstitut",
+  "kontoauszug_desc": "Dieser Beleg zeigt die Kontostände und Buchungen auf Ihrem Konto für einen bestimmten Zeitraum.",
+  "kontoauszug_actions": [
+    "Kontostand und einzelne Buchungen mit eigenen Unterlagen abgleichen",
+    "Unerwartete Beträge der Bank melden",
+    "Auszug für Steuer- und Unterlagenzwecke aufbewahren"
+  ],
+  "bank_gebuehren_title": "Kontoführungsgebühren / Preisänderung",
+  "bank_gebuehren_agency": "Bank / Kreditinstitut",
+  "bank_gebuehren_desc": "Ihr Kreditinstitut informiert über Kontoführungsgebühren, Entgelte oder Preisänderungen für Ihr Konto.",
+  "bank_gebuehren_actions": [
+    "Neue Konditionen und Gebühren prüfen",
+    "Bei Unzufriedenheit Wechsel des Kontomodells oder der Bank abwägen",
+    "Schreiben zu Ihren Bankunterlagen legen"
+  ],
+  "kredit_vertrag_title": "Kreditvertrag / Darlehen",
+  "kredit_vertrag_agency": "Bank / Kreditinstitut",
+  "kredit_vertrag_desc": "Vertragsunterlagen über ein Darlehen, einen Ratenkredit oder ein Annuitätendarlehen inklusive Tilgungsplan.",
+  "kredit_vertrag_actions": [
+    "Konditionen, Zins und Tilgungsplan nachrechnen",
+    "Monatliche Raten fristgerecht bedienen",
+    "Vertrag sicher aufbewahren"
+  ],
+  "sparkonto_title": "Sparvertrag / Geldanlage",
+  "sparkonto_agency": "Bank / Sparkasse",
+  "sparkonto_desc": "Unterlagen über eine Sparanlage, ein Vorsorgeprodukt oder eine Kapitalanlage.",
+  "sparkonto_actions": [
+    "Anlagebedingungen und Zinsen prüfen",
+    "Laufzeit und Kündigungsfristen beachten",
+    "Unterlagen aufbewahren"
+  ],
+  "kfz_versicherung_title": "Kfz-Versicherung",
+  "kfz_versicherung_agency": "Versicherungsgesellschaft",
+  "kfz_versicherung_desc": "Unterlagen zu Ihrer Fahrzeugversicherung, z. B. Haftpflicht-, Teil- oder Vollkaskoversicherung.",
+  "kfz_versicherung_actions": [
+    "Versicherungsschein und Deckungssummen prüfen",
+    "Schadenfreiheitsklasse und Beitrag prüfen",
+    "Bei Wechsel rechtzeitig kündigen"
+  ],
+  "haftpflicht_versicherung_title": "Haftpflichtversicherung",
+  "haftpflicht_versicherung_agency": "Versicherungsgesellschaft",
+  "haftpflicht_versicherung_desc": "Unterlagen zu Ihrer Privat- oder Betriebshaftpflichtversicherung.",
+  "haftpflicht_versicherung_actions": [
+    "Versicherungssumme und Deckung prüfen",
+    "Änderungen dem Versicherer melden",
+    "Vertrag aufbewahren"
+  ],
+  "hausrat_versicherung_title": "Hausratversicherung",
+  "hausrat_versicherung_agency": "Versicherungsgesellschaft",
+  "hausrat_versicherung_desc": "Unterlagen zu Ihrer Hausratversicherung für Wohnung und Hausrat.",
+  "hausrat_versicherung_actions": [
+    "Versicherungssumme und Einbruchschutz prüfen",
+    "Bei Umzug neuen Wohnsitz melden",
+    "Vertrag sicher aufbewahren"
+  ],
+  "versicherung_schaden_title": "Schadenmeldung / Regulierung",
+  "versicherung_schaden_agency": "Versicherungsgesellschaft",
+  "versicherung_schaden_desc": "Bestätigung oder Bearbeitung einer Schadenmeldung, z. B. nach einem Unfall oder Schadenfall.",
+  "versicherung_schaden_actions": [
+    "Schadensnummer notieren und Unterlagen bereitlegen",
+    "Fristen und Rückfragen des Versicherers beachten",
+    "Schriftverkehr zu den Akten legen"
+  ],
+  "bausparvertrag_title": "Bausparvertrag",
+  "bausparvertrag_agency": "Bausparkasse",
+  "bausparvertrag_desc": "Unterlagen zu Ihrem Bausparvertrag mit Bausparsumme und Einzahlungen.",
+  "bausparvertrag_actions": [
+    "Ansparphase und Zuteilungsvoraussetzungen prüfen",
+    "Sparrate fristgerecht einzahlen",
+    "Vertrag aufbewahren"
+  ],
+  "wohngeld_title": "Wohngeldbescheid",
+  "wohngeld_agency": "Wohngeldstelle",
+  "wohngeld_desc": "Bescheid über die Bewilligung oder Änderung von Wohngeld für Ihre Wohnung.",
+  "wohngeld_actions": [
+    "Bewilligten Betrag und Zahlungszeitraum prüfen",
+    "Änderungen bei Einkommen oder Haushalt mitteilen",
+    "Bescheid sicher aufbewahren"
+  ],
+  "bafoeg_title": "BAföG / Ausbildungsförderung",
+  "bafoeg_agency": "Amt für Ausbildungsförderung",
+  "bafoeg_desc": "Bescheid oder Unterlagen über BAföG bzw. Ausbildungsförderung für Ihr Studium oder Ihre Ausbildung.",
+  "bafoeg_actions": [
+    "Förderbetrag und Förderungszeitraum prüfen",
+    "Einkommensänderungen umgehend melden",
+    "Bescheid zu den Ausbildungsunterlagen legen"
+  ],
+  "mietvertrag_title": "Mietvertrag",
+  "mietvertrag_agency": "Vermieter / Wohnungsgesellschaft",
+  "mietvertrag_desc": "Mietvertrag über Ihre Wohnung inklusive Mietpreis (Kalt- und Warmmiete) und Regelungen.",
+  "mietvertrag_actions": [
+    "Mietpreis und Nebenkosten tragen prüfen",
+    "Kündigungsfristen und Sonderregelungen beachten",
+    "Vertrag sicher aufbewahren"
+  ],
+  "pflegeversicherung_title": "Pflegeversicherung / Pflegegrad",
+  "pflegeversicherung_agency": "Pflegekasse / Versicherung",
+  "pflegeversicherung_desc": "Schreiben zur Pflegeversicherung, zum Pflegegrad oder zur Pflegebedürftigkeit.",
+  "pflegeversicherung_actions": [
+    "Pflegegrad und Leistungen prüfen",
+    "Nachweise fristgerecht einreichen",
+    "Schriftverkehr zu den Unterlagen legen"
+  ],
+  "versicherungsverlauf_title": "Versicherungsverlauf",
+  "versicherungsverlauf_agency": "Rentenversicherung / Versicherung",
+  "versicherungsverlauf_desc": "Aufstellung Ihrer Versicherungszeiten und Beiträge, z. B. für Ihre Rentenversicherung.",
+  "versicherungsverlauf_actions": [
+    "Eintragungen auf fehlende Zeiten prüfen",
+    "Lücken mit Nachweisen klären",
+    "Dokument zu Ihren Rentenunterlagen legen"
+  ],
+  "lebensversicherung_title": "Lebensversicherung",
+  "lebensversicherung_agency": "Versicherungsgesellschaft",
+  "lebensversicherung_desc": "Unterlagen zu Ihrer Lebens-, Kapital- oder Risikoversicherung.",
+  "lebensversicherung_actions": [
+    "Ablauf und Auszahlung prüfen",
+    "Begünstigte und Beiträge anpassen",
+    "Vertrag sicher aufbewahren"
+  ],
+  "kuendigung_title": "Kündigung",
+  "kuendigung_agency": "Vertragspartner",
+  "kuendigung_desc": "Schreiben zur Beendigung eines Vertrags (z. B. Miet-, Arbeits- oder Versicherungsvertrag) mit Kündigungsfrist.",
+  "kuendigung_actions": [
+    "Kündigungsfrist und -termin prüfen",
+    "Fristgerecht reagieren (z. B. Widerspruch oder Auszug)",
+    "Schreiben sicher aufbewahren"
+  ],
+  "elster_title": "ELSTER / Elektronische Steuererklärung",
+  "elster_agency": "Finanzamt",
+  "elster_desc": "Nachricht oder Zugangsdaten zur elektronischen Steuererklärung über ELSTER.",
+  "elster_actions": [
+    "Zugangsdaten sicher aufbewahren",
+    "Steuererklärung fristgerecht über ELSTER übermitteln",
+    "Bei Fragen an das Finanzamt wenden"
+  ],
+  "gez_befreiung_title": "Befreiung vom Rundfunkbeitrag",
+  "gez_befreiung_agency": "ARD ZDF Deutschlandradio Beitragsservice",
+  "gez_befreiung_desc": "Antrag oder Bescheid über eine Befreiung vom gesetzlichen Rundfunkbeitrag (z. B. bei Bürgergeld, BAföG oder sozialer Härte).",
+  "gez_befreiung_actions": [
+    "Befreiungsnachweis prüfen und beilegen",
+    "Antrag fristgerecht ausfüllen",
+    "Bescheid sicher aufbewahren"
+  ],
+  "iban_nachweis_title": "IBAN-Benachrichtigung / Zahlungsnachweis",
+  "iban_nachweis_agency": "Bank / Kreditinstitut",
+  "iban_nachweis_desc": "Hinweis mit IBAN oder Bankverbindung für Überweisungen oder Zahlungen.",
+  "iban_nachweis_actions": [
+    "IBAN und Empfänger prüfen",
+    "Betrag mit korrekter IBAN überweisen",
+    "Beleg aufbewahren"
+  ],
+  "versicherungsschein_title": "Versicherungsschein / Police",
+  "versicherungsschein_agency": "Versicherungsgesellschaft",
+  "versicherungsschein_desc": "Ihr Versicherungsschein bestätigt den Abschluss und die Konditionen einer Versicherung.",
+  "versicherungsschein_actions": [
+    "Versicherungsumfang und Beiträge prüfen",
+    "Änderungen dem Versicherer melden",
+    "Schein sicher aufbewahren"
+  ],
+  "bonusprogramm_title": "Bonusprogramm / Prämiensprogramm",
+  "bonusprogramm_agency": "Krankenkasse / Versicherung",
+  "bonusprogramm_desc": "Informationen zum Bonus- oder Prämiensprogramm einer Krankenkasse (z. B. Bonusheft).",
+  "bonusprogramm_actions": [
+    "Bonusnachweise sammeln",
+    "Prämien- und Bonusregeln prüfen",
+    "Dokument aufbewahren"
+  ],
+  "vollstreckung_title": "Vollstreckung / Kontopfändung",
+  "vollstreckung_agency": "Amtsgericht / Gerichtsvollzieher",
+  "vollstreckung_desc": "Ankündigung einer Zwangsvollstreckung oder Kontopfändung wegen einer offenen Forderung.",
+  "vollstreckung_actions": [
+    "Sofort Rechtsschutz oder Rückfrage beim Gericht prüfen",
+    "Forderung prüfen und ggf. Zahlung oder Einspruch einleiten",
+    "Schreiben dringend aufbewahren"
+  ],
+  "kfz_steuer_title": "Kraftfahrzeugsteuerbescheid",
+  "kfz_steuer_agency": "Zollamt / Finanzamt",
+  "kfz_steuer_desc": "Bescheid über die Kraftfahrzeugsteuer für Ihr Fahrzeug.",
+  "kfz_steuer_actions": [
+    "Berechnung und Fälligkeit prüfen",
+    "Bei Änderungen (Abmeldung/Umzug) Bescheid prüfen",
+    "Zahlung fristgerecht leisten"
+  ],
+  "abmahnung_title": "Abmahnung (Arbeitsrecht)",
+  "abmahnung_agency": "Arbeitgeber",
+  "abmahnung_desc": "Abmahnung wegen Fehlverhaltens im Arbeitsverhältnis mit Aufforderung zu künftigem Wohlverhalten.",
+  "abmahnung_actions": [
+    "Vorwürfe genau prüfen",
+    "Ggf. schriftlich zur Abmahnung Stellung nehmen",
+    "Abmahnung zu den Arbeitsunterlagen legen"
+  ],
+  "einbuergerung_title": "Einbürgerung / Staatsangehörigkeit",
+  "einbuergerung_agency": "Einbürgerungsbehörde / Stadt",
+  "einbuergerung_desc": "Antrag oder Bescheid zur Einbürgerung und zum Erwerb der deutschen Staatsangehörigkeit.",
+  "einbuergerung_actions": [
+    "Voraussetzungen und Unterlagen prüfen",
+    "Bescheid und Urkunde sicher aufbewahren",
+    "Fristen und Auflagen der Behörde beachten"
+  ],
+  "arbeitslosengeld_title": "Arbeitslosengeld-Bescheid",
+  "arbeitslosengeld_agency": "Agentur für Arbeit",
+  "arbeitslosengeld_desc": "Bescheid über die Bewilligung oder Höhe von Arbeitslosengeld (ALG 1).",
+  "arbeitslosengeld_actions": [
+    "Anspruchsdauer und Bemessungsgrundlage prüfen",
+    "Widerspruch prüfen, falls Leistungen abgelehnt werden",
+    "Bescheid zu den Arbeitsunterlagen legen"
+  ],
+  "beitragserhoehung_title": "Beitragserhöhung / Tarifänderung",
+  "beitragserhoehung_agency": "Versicherungsgesellschaft",
+  "beitragserhoehung_desc": "Ankündigung einer Beitrags- oder Tariferhöhung bei Ihrer Versicherung.",
+  "beitragserhoehung_actions": [
+    "Neuen Beitrag und Fälligkeit prüfen",
+    "Ggf. Sonderkündigungsrecht nach Erhöhung nutzen",
+    "Schreiben aufbewahren"
+  ],
+  "sepa_mandat_title": "SEPA-Lastschriftmandat",
+  "sepa_mandat_agency": "Bank / Zahlungsempfänger",
+  "sepa_mandat_desc": "Mandat für die Abbuchung per Lastschrift (SEPA) von Ihrem Konto.",
+  "sepa_mandat_actions": [
+    "Mandatsreferenz und Betrag prüfen",
+    "Belastungen auf dem Konto kontrollieren",
+    "Mandat widerrufen, falls unberechtigt"
+  ],
+  "umzugsmitteilung_title": "Umzugsmitteilung / Abmeldung",
+  "umzugsmitteilung_agency": "Bürgeramt / Meldebehörde",
+  "umzugsmitteilung_desc": "Bestätigung über einen Wohnungswechsel oder die Um-/Abmeldung Ihrer Adresse.",
+  "umzugsmitteilung_actions": [
+    "Adressänderung bei Behörden und Versicherern nachziehen",
+    "Bestätigung als Nachweis aufbewahren",
+    "Fristen bei Ummeldung beachten"
+  ],
+  "rentenbescheid_title": "Rentenbescheid",
+  "rentenbescheid_agency": "Deutsche Rentenversicherung",
+  "rentenbescheid_desc": "Bescheid über die Festsetzung oder Zahlung Ihrer gesetzlichen Rente (z. B. Alters- oder Erwerbsminderungsrente).",
+  "rentenbescheid_actions": [
+    "Rentenberechnung und Zahlbetrag prüfen",
+    "Bei fehlenden Zeiten oder Differenzen Widerspruch prüfen",
+    "Bescheid sicher zu den Rentenunterlagen legen"
+  ],
+  "krankenkassen_bescheid_title": "Krankenkassen-Bescheid / Beitragsaufforderung",
+  "krankenkassen_bescheid_agency": "Gesetzliche Krankenkasse",
+  "krankenkassen_bescheid_desc": "Bescheid oder Zahlungsaufforderung der Krankenkasse, z. B. zu Beiträgen oder Einkommensnachweisen.",
+  "krankenkassen_bescheid_actions": [
+    "Aufforderung und Frist zur Vorlage von Nachweisen beachten",
+    "Bei Forderungen Zahlung oder Einspruch prüfen",
+    "Schriftverkehr zu den Versicherungsunterlagen legen"
+  ],
+  "beitragsbescheid_title": "Beitragsbescheid / Beitragsnachweis",
+  "beitragsbescheid_agency": "Krankenkasse / Sozialversicherung",
+  "beitragsbescheid_desc": "Nachweis oder Rechnung über Ihre geleisteten bzw. fälligen Sozial- und KV-Beiträge.",
+  "beitragsbescheid_actions": [
+    "Beitragsberechnung und Zeitraum prüfen",
+    "Fehlende Beiträge bei der Stelle nachfragen",
+    "Nachweis zu den Versicherungsunterlagen legen"
+  ],
+  "steuer_erstattung_title": "Steuererstattung / Steuergutschrift",
+  "steuer_erstattung_agency": "Finanzamt",
+  "steuer_erstattung_desc": "Das Finanzamt erstattet Ihnen einen zu viel gezahlten Steuerbetrag oder weist eine Gutschrift aus.",
+  "steuer_erstattung_actions": [
+    "Erstattungsbetrag und Bankverbindung prüfen",
+    "Auszahlung auf dem Konto überwachen",
+    "Bescheid zu den Steuerunterlagen legen"
+  ],
+  "arbeitsgericht_klage_title": "Arbeitsgericht / Kündigungsschutzklage",
+  "arbeitsgericht_klage_agency": "Arbeitsgericht",
+  "arbeitsgericht_klage_desc": "Schreiben des Arbeitsgerichts, z. B. zur Kündigungsschutzklage oder Güteverhandlung in einem Arbeitsverhältnis.",
+  "arbeitsgericht_klage_actions": [
+    "Frist zur Klage unbedingt beachten (i. d. R. 3 Wochen)",
+    "Anwalt oder Beratungsstelle einschalten",
+    "Termin zum Gütevergleich wahrnehmen"
+  ],
+  "widerspruch_title": "Widerspruch / Rechtsbehelf",
+  "widerspruch_agency": "Behörde / Gericht",
+  "widerspruch_desc": "Schreiben im Zusammenhang mit einem Widerspruch oder Einspruch gegen einen Verwaltungs- oder Steuerbescheid.",
+  "widerspruch_actions": [
+    "Widerspruchsfrist (i. d. R. 1 Monat) prüfen",
+    "Begründung und Nachweise zusammentragen",
+    "Widerspruch fristgerecht schriftlich einlegen"
+  ],
+  "inkasso_title": "Inkasso / Forderungsmanagement",
+  "inkasso_agency": "Inkassobüro",
+  "inkasso_desc": "Zahlungsaufforderung eines Inkassobüros im Zusammenhang mit einer offenen Forderung.",
+  "inkasso_actions": [
+    "Forderung und Ursprungsrechnung genau prüfen",
+    "Bei Fehlern/falscher Forderung schriftlich widersprechen",
+    "Berechtigte Forderung zeitnah begleichen"
+  ],
+  "schufa_auskunft_title": "SCHUFA / Bonitätsauskunft",
+  "schufa_auskunft_agency": "SCHUFA Holding",
+  "schufa_auskunft_desc": "Schreiben oder Auskunft über Ihre Bonität bzw. gespeicherten SCHUFA-Daten.",
+  "schufa_auskunft_actions": [
+    "Gespeicherte Daten auf Richtigkeit prüfen",
+    "Falsche Einträge kostenlos korrigieren lassen",
+    "Dokument zu den Finanzunterlagen legen"
+  ],
+  "kontoschliessung_title": "Kontoschließung / Kontoauflösung",
+  "kontoschliessung_agency": "Bank / Kreditinstitut",
+  "kontoschliessung_desc": "Bescheid oder Bestätigung über die Schließung bzw. Auflösung Ihres Bankkontos.",
+  "kontoschliessung_actions": [
+    "Restguthaben und Abbuchungen prüfen",
+    "Lastschriften und Daueraufträge umstellen",
+    "Bestätigung zu den Bankunterlagen legen"
+  ],
+  "gez_nachzahlung_title": "Rundfunkbeitrag-Nachzahlung",
+  "gez_nachzahlung_agency": "ARD ZDF Deutschlandradio Beitragsservice",
+  "gez_nachzahlung_desc": "Nachzahlungsaufforderung oder Säumniszuschlag zum gesetzlichen Rundfunkbeitrag.",
+  "gez_nachzahlung_actions": [
+    "Zahlungsrückstand und Zuschläge prüfen",
+    "Betrag fristgerecht überweisen",
+    "Beleg zu den Unterlagen legen"
+  ],
+  "elterngeld_title": "Elterngeldbescheid",
+  "elterngeld_agency": "Elterngeldstelle",
+  "elterngeld_desc": "Bescheid über die Bewilligung oder Höhe von Elterngeld (Basiselterngeld, ElterngeldPlus) für Ihr Kind.",
+  "elterngeld_actions": [
+    "Förderbetrag und Bezugszeitraum prüfen",
+    "Einkommensänderungen dem Amt mitteilen",
+    "Bescheid sicher aufbewahren"
+  ],
+  "steuer_nachzahlung_title": "Steuernachzahlung",
+  "steuer_nachzahlung_agency": "Finanzamt",
+  "steuer_nachzahlung_desc": "Das Finanzamt fordert eine nachzuzahlende Steuer an, die Sie bis zum Fälligkeitstag zahlen müssen.",
+  "steuer_nachzahlung_actions": [
+    "Nachzahlungsbetrag und Fälligkeit prüfen",
+    "Zahlung fristgerecht leisten",
+    "Bei Fehlern Einspruch einlegen"
+  ],
+  "widerspruchsbescheid_title": "Widerspruchsbescheid",
+  "widerspruchsbescheid_agency": "Behörde / Gericht",
+  "widerspruchsbescheid_desc": "Entscheidung der Behörde über Ihren zuvor eingelegten Widerspruch.",
+  "widerspruchsbescheid_actions": [
+    "Entscheidung und Begründung prüfen",
+    "Ggf. Klage vor dem Verwaltungsgericht prüfen",
+    "Bescheid sicher aufbewahren"
+  ],
+  "zahnersatz_title": "Zahnersatz / Heilmittel-Antrag",
+  "zahnersatz_agency": "Krankenkasse",
+  "zahnersatz_desc": "Antrag oder Kostenvoranschlag für Zahnersatz bzw. Heil- und Hilfsmittel bei Ihrer Krankenkasse.",
+  "zahnersatz_actions": [
+    "Kostenvoranschlag und Zuschuss der Kasse prüfen",
+    "Heil- und Kostenplan fristgerecht einreichen",
+    "Bestätigung zu den Gesundheitsunterlagen legen"
+  ],
+  "dauerauftrag_title": "Dauerauftrag / Terminüberweisung",
+  "dauerauftrag_agency": "Bank / Kreditinstitut",
+  "dauerauftrag_desc": "Bestätigung oder Einrichtung eines Dauerauftrags bzw. einer termingebundenen Überweisung.",
+  "dauerauftrag_actions": [
+    "Betrag, Intervall und Empfänger prüfen",
+    "Bei Änderungen Dauerauftrag anpassen",
+    "Bestätigung zu den Bankunterlagen legen"
+  ],
+  "stadtwerke_nachzahlung_title": "Stadtwerke-Nachzahlung",
+  "stadtwerke_nachzahlung_agency": "Stadtwerke / Energieversorger",
+  "stadtwerke_nachzahlung_desc": "Jahresabrechnung mit Nachzahlung für Strom, Gas oder Wasser, die Sie zahlen müssen.",
+  "stadtwerke_nachzahlung_actions": [
+    "Nachzahlungsbetrag und Zählerstand prüfen",
+    "Zahlung fristgerecht leisten",
+    "Beleg zu den Unterlagen legen"
+  ],
+  "krankenkasse_einkommen_title": "Krankenkassen-Einkommensnachweis",
+  "krankenkasse_einkommen_agency": "Gesetzliche Krankenkasse",
+  "krankenkasse_einkommen_desc": "Aufforderung der Krankenkasse zur Vorlage eines Einkommensnachweises oder Fragebogens zur (Familien-)Versicherung.",
+  "krankenkasse_einkommen_actions": [
+    "Fragebogen vollständig ausfüllen",
+    "Einkommensnachweis bis zur Frist einreichen",
+    "Unterlagen zu den Versicherungsakten legen"
+  ],
+  "krankenkassen_wechsel_title": "Krankenkassenwechsel",
+  "krankenkassen_wechsel_agency": "Gesetzliche Krankenkasse",
+  "krankenkassen_wechsel_desc": "Bestätigung oder Information über einen Wechsel Ihrer gesetzlichen Krankenkasse.",
+  "krankenkassen_wechsel_actions": [
+    "Wechsel und Wirksamkeitsdatum prüfen",
+    "Versichertenkarte der neuen Kasse beantragen",
+    "Bestätigung zu den Versicherungsakten legen"
+  ],
+  "pflegekasse_bescheid_title": "Pflegekassen-Bescheid / Pflegegrad",
+  "pflegekasse_bescheid_agency": "Pflegekasse",
+  "pflegekasse_bescheid_desc": "Bescheid der Pflegekasse über die Feststellung Ihres Pflegegrades und die daraus resultierenden Leistungen.",
+  "pflegekasse_bescheid_actions": [
+    "Festgestellten Pflegegrad prüfen",
+    "Gegen den Bescheid Widerspruch einlegen, falls zu niedrig",
+    "Bescheid zu den Pflegeunterlagen legen"
+  ],
+  "bafoeg_widerruf_title": "BAföG-Widerruf / Aufhebung",
+  "bafoeg_widerruf_agency": "Amt für Ausbildungsförderung",
+  "bafoeg_widerruf_desc": "Widerruf oder Aufhebung eines BAföG-Bescheids bzw. der Ausbildungsförderung.",
+  "bafoeg_widerruf_actions": [
+    "Grund und Zeitpunkt des Widerrufs prüfen",
+    "Ggf. Widerspruch gegen die Aufhebung einlegen",
+    "Bescheid zu den Ausbildungsakten legen"
+  ],
+  "steuerbescheid_einspruch_title": "Einspruch gegen den Steuerbescheid",
+  "steuerbescheid_einspruch_agency": "Finanzamt",
+  "steuerbescheid_einspruch_desc": "Schreiben mit Einspruchsfrist oder Bearbeitung Ihres Einspruchs gegen einen Steuerbescheid.",
+  "steuerbescheid_einspruch_actions": [
+    "Einspruchsfrist (i. d. R. 1 Monat) prüfen",
+    "Begründung und Nachweise einreichen",
+    "Einspruch fristgerecht einlegen"
+  ],
+  "alg_widerspruch_title": "Widerspruchsbescheid Arbeitslosengeld",
+  "alg_widerspruch_agency": "Agentur für Arbeit",
+  "alg_widerspruch_desc": "Entscheidung der Agentur für Arbeit über Ihren Widerspruch gegen einen Arbeitslosengeld-Bescheid.",
+  "alg_widerspruch_actions": [
+    "Entscheidung und Begründung prüfen",
+    "Ggf. Klage beim Sozialgericht prüfen",
+    "Bescheid zu den Arbeitsakten legen"
+  ],
+  "rentenbescheid_nachzahlung_title": "Rentenbescheid mit Nachzahlung",
+  "rentenbescheid_nachzahlung_agency": "Deutsche Rentenversicherung",
+  "rentenbescheid_nachzahlung_desc": "Rentenbescheid mit ausgewiesener Nachzahlung, die auf Ihr Konto überwiesen wird.",
+  "rentenbescheid_nachzahlung_actions": [
+    "Nachzahlungsbetrag und Zeitraum prüfen",
+    "Auszahlung auf dem Konto überwachen",
+    "Bescheid zu den Rentenunterlagen legen"
+  ],
+  "gez_kontoauszug_title": "Rundfunkbeitrag-Kontoauszug",
+  "gez_kontoauszug_agency": "ARD ZDF Deutschlandradio Beitragsservice",
+  "gez_kontoauszug_desc": "Übersicht über Ihre Zahlungen bzw. Ihr Beitragskonto zum Rundfunkbeitrag.",
+  "gez_kontoauszug_actions": [
+    "Zahlbeträge und Zeitraum prüfen",
+    "Bei Abweichungen den Beitragsservice kontaktieren",
+    "Kontoauszug aufbewahren"
+  ],
+  "steuer_korrektur_title": "Änderungsbescheid / Steuerkorrektur",
+  "steuer_korrektur_agency": "Finanzamt",
+  "steuer_korrektur_desc": "Änderung oder Korrektur Ihres bisherigen Steuerbescheids durch das Finanzamt.",
+  "steuer_korrektur_actions": [
+    "Geänderten Bescheid mit vorherigem abgleichen",
+    "Neuen Zahlbetrag bzw. Erstattung prüfen",
+    "Bescheid zu den Steuerunterlagen legen"
+  ],
+  "krankenkassen_zahnersatz_title": "Krankenkassen-Zahnersatz-Bescheid",
+  "krankenkassen_zahnersatz_agency": "Gesetzliche Krankenkasse",
+  "krankenkassen_zahnersatz_desc": "Bescheid der Krankenkasse über die Genehmigung oder Ablehnung von Zahnersatz bzw. Heilmitteln.",
+  "krankenkassen_zahnersatz_actions": [
+    "Genehmigten Zuschuss und Eigenanteil prüfen",
+    "Ablehnung ggf. widersprechen",
+    "Bescheid zu den Gesundheitsunterlagen legen"
+  ],
+  "alg_bewilligung_title": "ALG-Bewilligungsbescheid",
+  "alg_bewilligung_agency": "Agentur für Arbeit",
+  "alg_bewilligung_desc": "Bewilligungsbescheid über die Höhe und Dauer Ihres Arbeitslosengeldes (ALG 1).",
+  "alg_bewilligung_actions": [
+    "Anspruchsdauer und Bemessung prüfen",
+    "Bei Fehlern Widerspruch einlegen",
+    "Bescheid zu den Arbeitsakten legen"
+  ],
+  "gebuehrenbescheid_title": "Gebührenbescheid",
+  "gebuehrenbescheid_agency": "Behörde / Bürgeramt",
+  "gebuehrenbescheid_desc": "Festsetzung einer Verwaltungs- oder Amtsgebühr für einen behördlichen Vorgang.",
+  "gebuehrenbescheid_actions": [
+    "Gebührenhöhe und Gegenstand prüfen",
+    "Gebühr fristgerecht zahlen",
+    "Bescheid zu den Behördenunterlagen legen"
+  ],
+  "versicherungswiderspruch_title": "Versicherungs-Widerspruch",
+  "versicherungswiderspruch_agency": "Versicherungsgesellschaft",
+  "versicherungswiderspruch_desc": "Schreiben im Zusammenhang mit einem Widerspruch oder Einspruch gegen eine Versicherungsentscheidung.",
+  "versicherungswiderspruch_actions": [
+    "Entscheidung und Widerspruchsfrist prüfen",
+    "Begründung und Nachweise einreichen",
+    "Schriftverkehr aufbewahren"
+  ],
+  "elterngeld_widerruf_title": "Elterngeld-Widerruf / Aufhebung",
+  "elterngeld_widerruf_agency": "Elterngeldstelle",
+  "elterngeld_widerruf_desc": "Widerruf oder Aufhebung eines Elterngeld-Bescheids, ggf. mit Rückforderung.",
+  "elterngeld_widerruf_actions": [
+    "Widerrufsgrund und Frist prüfen",
+    "Rückforderung verstehen und ggf. widersprechen",
+    "Bescheid aufbewahren"
+  ],
+  "abschlagsaenderung_title": "Abschlagsänderung Strom / Gas",
+  "abschlagsaenderung_agency": "Stadtwerke / Energieversorger",
+  "abschlagsaenderung_desc": "Mitteilung über die Änderung Ihres monatlichen Abschlags für Strom, Gas oder Wasser.",
+  "abschlagsaenderung_actions": [
+    "Neuen Abschlag und Verbrauch prüfen",
+    "Ggf. Abschlag anpassen lassen",
+    "Schreiben aufbewahren"
+  ],
+  "steuerbescheid_widerruf_title": "Widerruf des Steuerbescheids",
+  "steuerbescheid_widerruf_agency": "Finanzamt",
+  "steuerbescheid_widerruf_desc": "Widerruf oder Aufhebung einer Steuerfestsetzung durch das Finanzamt.",
+  "steuerbescheid_widerruf_actions": [
+    "Neue Steuerfestsetzung prüfen",
+    "Ggf. gegen den geänderten Bescheid Einspruch einlegen",
+    "Bescheid zu den Steuerunterlagen legen"
+  ],
+  "bafoeg_zulage_title": "BAföG-Zulage / Auslandszuschlag",
+  "bafoeg_zulage_agency": "Amt für Ausbildungsförderung",
+  "bafoeg_zulage_desc": "Zuschläge und Zulagen zum BAföG, z. B. Auslands- oder Bedarfssatzzulage.",
+  "bafoeg_zulage_actions": [
+    "Zulage und Voraussetzungen prüfen",
+    "Nachweise fristgerecht einreichen",
+    "Bescheid zu den Ausbildungsakten legen"
+  ],
+  "beitragsbefreiung_title": "Beitragsbefreiung Krankenversicherung",
+  "beitragsbefreiung_agency": "Gesetzliche Krankenkasse",
+  "beitragsbefreiung_desc": "Mitteilung über eine Befreiung von den Krankenversicherungsbeiträgen.",
+  "beitragsbefreiung_actions": [
+    "Befreiungsgrund und Zeitraum prüfen",
+    "Änderungen der Kasse melden",
+    "Bescheid aufbewahren"
+  ],
+  "alg_ablehnung_title": "ALG-Ablehnungsbescheid",
+  "alg_ablehnung_agency": "Agentur für Arbeit",
+  "alg_ablehnung_desc": "Bescheid, mit dem ein Antrag auf Arbeitslosengeld (ALG 1) abgelehnt wurde.",
+  "alg_ablehnung_actions": [
+    "Ablehnungsgrund prüfen",
+    "Innerhalb von einem Monat Widerspruch einlegen",
+    "Unterlagen zu den Arbeitsakten legen"
+  ],
+  "kfz_versicherungserhoehung_title": "Kfz-Versicherungsbeitragserhöhung",
+  "kfz_versicherungserhoehung_agency": "Kfz-Versicherer",
+  "kfz_versicherungserhoehung_desc": "Ankündigung einer Beitragserhöhung Ihrer Kfz-Versicherung.",
+  "kfz_versicherungserhoehung_actions": [
+    "Neuen Beitrag prüfen",
+    "Ggf. Sonderkündigungsrecht nach Erhöhung nutzen",
+    "Schreiben aufbewahren"
+  ],
+  "vermieterwechsel_title": "Vermieterwechsel",
+  "vermieterwechsel_agency": "Neuer Eigentümer / Hausverwaltung",
+  "vermieterwechsel_desc": "Mitteilung über den Wechsel des Vermieters bzw. Eigentümers Ihrer Wohnung.",
+  "vermieterwechsel_actions": [
+    "Neuen Vermieter und Zahlungsweg prüfen",
+    "Mietkaution und Kontodaten überprüfen",
+    "Schreiben zu den Mietunterlagen legen"
+  ],
+  "gez_teilerstattung_title": "Rundfunkbeitrag-Erstattung",
+  "gez_teilerstattung_agency": "ARD ZDF Deutschlandradio Beitragsservice",
+  "gez_teilerstattung_desc": "Rückerstattung oder Gutschrift zu viel gezahlter Rundfunkbeiträge.",
+  "gez_teilerstattung_actions": [
+    "Erstattungsbetrag und Zeitraum prüfen",
+    "Auszahlung auf dem Konto überwachen",
+    "Beleg aufbewahren"
+  ],
+  "rentenueberzahlung_title": "Rentenüberzahlung / Rückforderung",
+  "rentenueberzahlung_agency": "Deutsche Rentenversicherung",
+  "rentenueberzahlung_desc": "Rückforderung einer zu viel gezahlten Rente (Überzahlung).",
+  "rentenueberzahlung_actions": [
+    "Überzahlungsbetrag und Ursache prüfen",
+    "Ggf. Ratenzahlung oder Widerspruch prüfen",
+    "Schreiben zu den Rentenunterlagen legen"
+  ],
+  "pfaendungsschutz_title": "Pfändungsschutzkonto",
+  "pfaendungsschutz_agency": "Bank / Kreditinstitut",
+  "pfaendungsschutz_desc": "Bestätigung oder Einrichtung eines Pfändungsschutzkontos (P-Konto).",
+  "pfaendungsschutz_actions": [
+    "Freibetrag und Pfändungsschutz prüfen",
+    "Nachweise für erhöhte Freibeträge einreichen",
+    "Konto einrichten und Bestätigung aufbewahren"
+  ],
+  "abschlagszahlung_title": "Abschlagszahlung",
+  "abschlagszahlung_agency": "Stadtwerke / Energieversorger",
+  "abschlagszahlung_desc": "Aufforderung zur Zahlung Ihres fälligen Abschlags für Strom, Gas oder Wasser.",
+  "abschlagszahlung_actions": [
+    "Abschlagsbetrag prüfen",
+    "Zahlung fristgerecht leisten",
+    "Beleg aufbewahren"
+  ],
+  "renten_widerspruchsbescheid_title": "Renten-Widerspruchsbescheid",
+  "renten_widerspruchsbescheid_agency": "Deutsche Rentenversicherung",
+  "renten_widerspruchsbescheid_desc": "Entscheidung der Rentenversicherung über Ihren Widerspruch gegen einen Rentenbescheid.",
+  "renten_widerspruchsbescheid_actions": [
+    "Entscheidung und Begründung prüfen",
+    "Ggf. Klage beim Sozialgericht prüfen",
+    "Bescheid zu den Rentenunterlagen legen"
+  ],
+  "mitgliedsbeitrag_rueck_title": "Krankenkassen-Beitragsrückerstattung",
+  "mitgliedsbeitrag_rueck_agency": "Gesetzliche Krankenkasse",
+  "mitgliedsbeitrag_rueck_desc": "Gutschrift oder Erstattung eines zu viel gezahlten Krankenkassen-Mitgliedsbeitrags.",
+  "mitgliedsbeitrag_rueck_actions": [
+    "Erstattungsbetrag und Zeitraum prüfen",
+    "Auszahlung auf dem Konto überwachen",
+    "Gutschrift als Nachweis aufbewahren"
+  ],
+  "alg_weiterbewilligung_title": "ALG-Weiterbewilligung",
+  "alg_weiterbewilligung_agency": "Agentur für Arbeit",
+  "alg_weiterbewilligung_desc": "Bescheid über die Fortzahlung bzw. Weiterbewilligung Ihres Arbeitslosengeldes.",
+  "alg_weiterbewilligung_actions": [
+    "Bewilligungszeitraum und Betrag prüfen",
+    "Vor Ablauf rechtzeitig Folgeantrag stellen",
+    "Bescheid zu den Arbeitsakten legen"
+  ],
+  "kfz_wechsel_title": "Kfz-Versicherungswechsel",
+  "kfz_wechsel_agency": "Kfz-Versicherer",
+  "kfz_wechsel_desc": "Mitteilung über den Wechsel Ihrer Kfz-Versicherung bzw. des Versicherers.",
+  "kfz_wechsel_actions": [
+    "Wirksamkeitsdatum und Deckung prüfen",
+    "Alten Versicherer rechtzeitig kündigen",
+    "Bestätigung aufbewahren"
+  ],
+  "mietminderung_title": "Mietminderung",
+  "mietminderung_agency": "Mieter / Hausverwaltung",
+  "mietminderung_desc": "Schreiben über die Minderung der Miete wegen Mängeln an der Wohnung.",
+  "mietminderung_actions": [
+    "Mängel und Minderungshöhe prüfen",
+    "Rechtlich zulässige Minderung beachten",
+    "Schriftverkehr aufbewahren"
+  ],
+  "gez_zahlungsplan_title": "Rundfunkbeitrag-Zahlungsplan",
+  "gez_zahlungsplan_agency": "ARD ZDF Deutschlandradio Beitragsservice",
+  "gez_zahlungsplan_desc": "Vereinbarung über Ratenzahlung oder Stundung des Rundfunkbeitrags.",
+  "gez_zahlungsplan_actions": [
+    "Raten und Fälligkeiten prüfen",
+    "Raten fristgerecht zahlen",
+    "Vereinbarung aufbewahren"
+  ],
+  "konto_ueberziehung_title": "Kontoüberziehung / Dispokredit",
+  "konto_ueberziehung_agency": "Bank / Kreditinstitut",
+  "konto_ueberziehung_desc": "Hinweis auf eine Überziehung Ihres Kontos und den berechneten Überziehungszins.",
+  "konto_ueberziehung_actions": [
+    "Überziehungsbetrag und Zinsen prüfen",
+    "Konto schnellstmöglich ausgleichen",
+    "Schreiben aufbewahren"
+  ],
+  "stadtwerke_verbrauchssteuer_title": "Stromsteuer / Energiesteuer",
+  "stadtwerke_verbrauchssteuer_agency": "Stadtwerke / Energieversorger",
+  "stadtwerke_verbrauchssteuer_desc": "Ausweis einer Verbrauchssteuer (z. B. Strom- oder Energiesteuer) auf Ihrer Abrechnung.",
+  "stadtwerke_verbrauchssteuer_actions": [
+    "Steueranteil und Betrag prüfen",
+    "Bei Fragen an den Versorger wenden",
+    "Abrechnung aufbewahren"
+  ],
+  "bafoeg_elternunabhaengig_title": "Elternunabhängiges BAföG",
+  "bafoeg_elternunabhaengig_agency": "Amt für Ausbildungsförderung",
+  "bafoeg_elternunabhaengig_desc": "Förderung nach BAföG, die unabhängig vom Einkommen der Eltern gewährt wird.",
+  "bafoeg_elternunabhaengig_actions": [
+    "Voraussetzungen für Elternunabhängigkeit prüfen",
+    "Nachweise fristgerecht einreichen",
+    "Bescheid aufbewahren"
+  ],
+  "mitgliedsbescheinigung_beitraege_title": "Krankenkassen-Mitgliedsbescheinigung mit Beiträgen",
+  "mitgliedsbescheinigung_beitraege_agency": "Gesetzliche Krankenkasse",
+  "mitgliedsbescheinigung_beitraege_desc": "Mitgliedsbescheinigung Ihrer Krankenkasse inklusive Beitragsübersicht oder Beitragsnachweis.",
+  "mitgliedsbescheinigung_beitraege_actions": [
+    "Mitgliedsstatus und Beitragshöhe prüfen",
+    "Nachweis bei Bedarf vorlegen",
+    "Dokument zu den Versicherungsakten legen"
+  ],
+  "alg_antrag_title": "Antrag auf Arbeitslosengeld",
+  "alg_antrag_agency": "Agentur für Arbeit",
+  "alg_antrag_desc": "Antragsformular bzw. Einladung zur Stellung des Antrags auf Arbeitslosengeld (ALG 1).",
+  "alg_antrag_actions": [
+    "Antrag fristgerecht stellen",
+    "Unterlagen (Arbeitsbescheinigung, Ausweise) bereitlegen",
+    "Antragsbestätigung aufbewahren"
+  ],
+  "kfz_schadenregulierung_title": "Kfz-Schadenregulierung",
+  "kfz_schadenregulierung_agency": "Kfz-Versicherer",
+  "kfz_schadenregulierung_desc": "Bearbeitung oder Regulierung eines Kfz-Schadens durch Ihre Versicherung.",
+  "kfz_schadenregulierung_actions": [
+    "Schadensnummer und Deckung prüfen",
+    "Gutachten bzw. Nachweise zur Verfügung stellen",
+    "Schriftverkehr aufbewahren"
+  ],
+  "mieterhoehung_title": "Mieterhöhung",
+  "mieterhoehung_agency": "Vermieter / Hausverwaltung",
+  "mieterhoehung_desc": "Mitteilung über eine Erhöhung Ihrer Mietzahlung durch den Vermieter.",
+  "mieterhoehung_actions": [
+    "Mieterhöhung und Fälligkeit prüfen",
+    "Zustimmungsfrist und Formalien beachten",
+    "Schreiben zu den Mietunterlagen legen"
+  ],
+  "rentenantrag_title": "Rentenantrag",
+  "rentenantrag_agency": "Deutsche Rentenversicherung",
+  "rentenantrag_desc": "Antrag auf eine gesetzliche Rente (z. B. Altersrente) bzw. Bestätigung des Eingangs.",
+  "rentenantrag_actions": [
+    "Rentenart und Vollständigkeit prüfen",
+    "Unterlagen fristgerecht einreichen",
+    "Bestätigung zu den Rentenakten legen"
+  ],
+  "kontokuendigung_title": "Kontokündigung",
+  "kontokuendigung_agency": "Bank / Kreditinstitut",
+  "kontokuendigung_desc": "Kündigung Ihres Bankkontos bzw. Girokontos durch Sie oder die Bank.",
+  "kontokuendigung_actions": [
+    "Kündigungstermin und Restguthaben prüfen",
+    "Lastschriften und Daueraufträge umstellen",
+    "Bestätigung aufbewahren"
+  ],
+  "verbrauchsabschlag_title": "Verbrauchsabschlag",
+  "verbrauchsabschlag_agency": "Stadtwerke / Energieversorger",
+  "verbrauchsabschlag_desc": "Information über die Höhe des monatlichen Abschlags auf Basis Ihres Verbrauchs.",
+  "verbrauchsabschlag_actions": [
+    "Abschlagsbetrag und Verbrauch prüfen",
+    "Zahlung fristgerecht leisten",
+    "Schreiben aufbewahren"
+  ],
+  "bafoeg_ablehnung_title": "BAföG-Ablehnung",
+  "bafoeg_ablehnung_agency": "Amt für Ausbildungsförderung",
+  "bafoeg_ablehnung_desc": "Bescheid, mit dem ein BAföG-Antrag abgelehnt wurde.",
+  "bafoeg_ablehnung_actions": [
+    "Ablehnungsgrund prüfen",
+    "Innerhalb eines Monats Widerspruch einlegen",
+    "Bescheid aufbewahren"
+  ],
+  "steuer_datenuebersicht_title": "Steuer-Datenübersicht",
+  "steuer_datenuebersicht_agency": "Finanzamt",
+  "steuer_datenuebersicht_desc": "Übersicht Ihrer beim Finanzamt gespeicherten Steuerdaten bzw. Ihres Steuerkontos.",
+  "steuer_datenuebersicht_actions": [
+    "Gespeicherte Daten prüfen",
+    "Fehler dem Finanzamt melden",
+    "Übersicht zu den Steuerakten legen"
+  ],
+  "gesundheitskur_title": "Gesundheitskur / Rehabilitationsmaßnahme",
+  "gesundheitskur_agency": "Gesetzliche Krankenkasse",
+  "gesundheitskur_desc": "Bewilligung oder Information zu einer Rehabilitations- oder Vorsorgemaßnahme (Kur) durch Ihre Krankenkasse.",
+  "gesundheitskur_actions": [
+    "Bewilligung und Leistungsumfang prüfen",
+    "Termine und Nachweise einhalten",
+    "Bescheid zu den Gesundheitsunterlagen legen"
+  ],
+  "alg_bemessung_title": "ALG-Bemessungsbescheid",
+  "alg_bemessung_agency": "Agentur für Arbeit",
+  "alg_bemessung_desc": "Bescheid über die Bemessungsgrundlage Ihres Arbeitslosengeldes (ALG 1).",
+  "alg_bemessung_actions": [
+    "Bemessung und Anspruchsdauer prüfen",
+    "Bei Fehlern Widerspruch einlegen",
+    "Bescheid zu den Arbeitsakten legen"
+  ],
+  "kfz_vollkasko_title": "Kfz-Vollkaskoversicherung",
+  "kfz_vollkasko_agency": "Kfz-Versicherer",
+  "kfz_vollkasko_desc": "Unterlagen zur Vollkaskoversicherung für Ihr Fahrzeug (auch Teilkasko).",
+  "kfz_vollkasko_actions": [
+    "Deckung und Selbstbeteiligung prüfen",
+    "Bei Schäden die Vollkasko nutzen",
+    "Vertrag aufbewahren"
+  ],
+  "mietkaution_title": "Mietkautionsabrechnung",
+  "mietkaution_agency": "Vermieter / Hausverwaltung",
+  "mietkaution_desc": "Abrechnung oder Rückzahlung Ihrer Mietkaution nach Ende des Mietverhältnisses.",
+  "mietkaution_actions": [
+    "Kautionsabrechnung und Abzüge prüfen",
+    "Rückzahlungsbetrag ggf. nachfordern",
+    "Schreiben zu den Mietunterlagen legen"
+  ],
+  "gez_befreiungs_ablehnung_title": "Ablehnung der Rundfunkbeitrag-Befreiung",
+  "gez_befreiungs_ablehnung_agency": "ARD ZDF Deutschlandradio Beitragsservice",
+  "gez_befreiungs_ablehnung_desc": "Ablehnung des Befreiungsantrags vom Rundfunkbeitrag.",
+  "gez_befreiungs_ablehnung_actions": [
+    "Ablehnungsgrund prüfen",
+    "Ggf. Nachweise nachreichen oder Widerspruch einlegen",
+    "Bescheid aufbewahren"
+  ],
+  "renten_volksversicherung_title": "Volksversicherung / Rentenversicherung",
+  "renten_volksversicherung_agency": "Deutsche Rentenversicherung",
+  "renten_volksversicherung_desc": "Schreiben im Zusammenhang mit Ihrem Rentenanspruch bei der Sozial-/Volksversicherung.",
+  "renten_volksversicherung_actions": [
+    "Versicherungszeiten und Anspruch prüfen",
+    "Fehlende Zeiten mit Nachweisen klären",
+    "Dokument zu den Rentenunterlagen legen"
+  ],
+  "konto_wechselbank_title": "Kontowechsel",
+  "konto_wechselbank_agency": "Bank / Kreditinstitut",
+  "konto_wechselbank_desc": "Mitteilung über den Wechsel Ihres Bankkontos bzw. die Umstellung zur neuen Bank.",
+  "konto_wechselbank_actions": [
+    "Lastschriften und Daueraufträge umziehen",
+    "Neue IBAN mitteilen",
+    "Bestätigung aufbewahren"
+  ],
+  "tarifwechsel_title": "Tarifwechsel Strom / Gas",
+  "tarifwechsel_agency": "Stadtwerke / Energieversorger",
+  "tarifwechsel_desc": "Mitteilung über den Wechsel bzw. die Umstellung Ihres Strom- oder Gas-Tarifs.",
+  "tarifwechsel_actions": [
+    "Neuen Tarifpreis prüfen",
+    "Ggf. Kündigungsrecht geltend machen",
+    "Schreiben aufbewahren"
+  ],
+  "bafoeg_vorleistung_title": "BAföG-Vorleistungsbescheid",
+  "bafoeg_vorleistung_agency": "Amt für Ausbildungsförderung",
+  "bafoeg_vorleistung_desc": "Vorleistung der Ausbildungsförderung vor endgültiger Entscheidung über Ihren BAföG-Antrag.",
+  "bafoeg_vorleistung_actions": [
+    "Vorleistung und ggf. Rückforderung beachten",
+    "Fehlende Unterlagen nachreichen",
+    "Bescheid aufbewahren"
+  ],
+  "steuer_bescheidankuendigung_title": "Ankündigung Steuerbescheid",
+  "steuer_bescheidankuendigung_agency": "Finanzamt",
+  "steuer_bescheidankuendigung_desc": "Vorankündigung, dass Ihnen ein Steuerbescheid innerhalb der Frist zugestellt wird.",
+  "steuer_bescheidankuendigung_actions": [
+    "Frist und Zustellung beachten",
+    "Bescheid nach Eingang prüfen",
+    "Schreiben zu den Steuerakten legen"
+  ],
+  "krankenkasse_aenderung_title": "Krankenkassen-Änderungsmitteilung",
+  "krankenkasse_aenderung_agency": "Gesetzliche Krankenkasse",
+  "krankenkasse_aenderung_desc": "Änderungsmitteilung der Krankenkasse zu Ihrer Mitgliedschaft oder Ihren Personalien.",
+  "krankenkasse_aenderung_actions": [
+    "Geänderte Daten prüfen",
+    "Korrekturen unverzüglich melden",
+    "Schreiben zu den Versicherungsakten legen"
+  ],
+  "kfz_steuer_neu_title": "Kfz-Steuer Neufestsetzung",
+  "kfz_steuer_neu_agency": "Zollamt / Finanzamt",
+  "kfz_steuer_neu_desc": "Neufestsetzung oder Änderung der Kraftfahrzeugsteuer nach Änderung Ihres Fahrzeugs.",
+  "kfz_steuer_neu_actions": [
+    "Neue Steuerhöhe prüfen",
+    "Zahlung fristgerecht leisten",
+    "Bescheid aufbewahren"
+  ],
+  "mietzuschuss_title": "Mietzuschuss / Wohngeld",
+  "mietzuschuss_agency": "Wohngeldstelle",
+  "mietzuschuss_desc": "Bewilligung eines Zuschusses zu Ihrer Miete (Wohnkostenzuschuss, Mietbeihilfe).",
+  "mietzuschuss_actions": [
+    "Zuschussbetrag und Zeitraum prüfen",
+    "Änderungen melden",
+    "Bescheid aufbewahren"
+  ],
+  "gez_wohnungswechsel_title": "Rundfunkbeitrag Wohnungswechsel",
+  "gez_wohnungswechsel_agency": "ARD ZDF Deutschlandradio Beitragsservice",
+  "gez_wohnungswechsel_desc": "Mitteilung über eine Änderung des Rundfunkbeitrags anlässlich eines Wohnungswechsels.",
+  "gez_wohnungswechsel_actions": [
+    "Neue Adresse und Beitrag prüfen",
+    "Ummeldung beim Beitragsservice bestätigen",
+    "Schreiben aufbewahren"
+  ],
+  "renten_kontoklarung_title": "Renten-Kontoklärung",
+  "renten_kontoklarung_agency": "Deutsche Rentenversicherung",
+  "renten_kontoklarung_desc": "Unterlagen zur Klärung Ihres Rentenkontos bzw. Ihrer Versicherungszeiten.",
+  "renten_kontoklarung_actions": [
+    "Kontokläungsbogen ausfüllen und zurücksenden",
+    "Nachweise für fehlende Zeiten beilegen",
+    "Dokumente zu den Rentenunterlagen legen"
+  ],
+  "stadtwerke_verbrauchsmeldung_title": "Stadtwerke-Verbrauchsmeldung",
+  "stadtwerke_verbrauchsmeldung_agency": "Stadtwerke / Energieversorger",
+  "stadtwerke_verbrauchsmeldung_desc": "Aufforderung, Ihren Zählerstand bzw. Verbrauch für die Abrechnung mitzuteilen.",
+  "stadtwerke_verbrauchsmeldung_actions": [
+    "Zählerstand ablesen und melden",
+    "Frist beachten",
+    "Bestätigung aufbewahren"
+  ],
+  "steuer_nebenrechnung_title": "Nebenrechnung zur Steuer",
+  "steuer_nebenrechnung_agency": "Finanzamt",
+  "steuer_nebenrechnung_desc": "Nebenrechnung des Finanzamts (z. B. Zinsen, Säumniszuschläge) zu Ihrem Steuerfall.",
+  "steuer_nebenrechnung_actions": [
+    "Nebenrechnungsbetrag prüfen",
+    "Zahlung fristgerecht leisten",
+    "Bescheid aufbewahren"
+  ],
+  "alg_sperrzeit_title": "ALG-Sperrzeit",
+  "alg_sperrzeit_agency": "Agentur für Arbeit",
+  "alg_sperrzeit_desc": "Mitteilung über eine Sperrzeit, in der kein Arbeitslosengeld gezahlt wird.",
+  "alg_sperrzeit_actions": [
+    "Sperrzeit und Dauer prüfen",
+    "Ggf. Widerspruch einlegen",
+    "Bescheid aufbewahren"
+  ],
+  "dauerauftrag_aenderung_title": "Dauerauftragsänderung",
+  "dauerauftrag_aenderung_agency": "Bank / Kreditinstitut",
+  "dauerauftrag_aenderung_desc": "Bestätigung oder Ankündigung einer Änderung Ihres Dauerauftrags.",
+  "dauerauftrag_aenderung_actions": [
+    "Geänderten Betrag/Intervall prüfen",
+    "Bei Fehlern Bank kontaktieren",
+    "Bestätigung aufbewahren"
+  ],
+  "zahnersatz_erstattung_title": "Zahnersatz-Kostenerstattung",
+  "zahnersatz_erstattung_agency": "Gesetzliche Krankenkasse",
+  "zahnersatz_erstattung_desc": "Erstattung der Kosten für Zahnersatz durch Ihre Krankenkasse.",
+  "zahnersatz_erstattung_actions": [
+    "Erstattungsbetrag und Eigenanteil prüfen",
+    "Belege einreichen",
+    "Erstattung zu den Gesundheitsakten legen"
+  ],
+  "mietvertrag_aenderung_title": "Mietvertragsänderung",
+  "mietvertrag_aenderung_agency": "Vermieter / Hausverwaltung",
+  "mietvertrag_aenderung_desc": "Nachträgliche Änderung oder Ergänzung Ihres Mietvertrags.",
+  "mietvertrag_aenderung_actions": [
+    "Geänderte Konditionen prüfen",
+    "Änderung schriftlich bestätigen",
+    "Mietvertrag aktualisieren"
+  ],
+  "gez_nachholzahlung_title": "Rundfunkbeitrag-Nachholzahlung",
+  "gez_nachholzahlung_agency": "ARD ZDF Deutschlandradio Beitragsservice",
+  "gez_nachholzahlung_desc": "Nacherhebung bzw. Nachholzahlung von Rundfunkbeiträgen für vergangene Zeiträume.",
+  "gez_nachholzahlung_actions": [
+    "Nacherhebungszeitraum und Betrag prüfen",
+    "Zahlung fristgerecht leisten",
+    "Beleg aufbewahren"
+  ],
+  "renten_berechnungshinweis_title": "Renten-Berechnungshinweis",
+  "renten_berechnungshinweis_agency": "Deutsche Rentenversicherung",
+  "renten_berechnungshinweis_desc": "Hinweis zur Berechnung Ihrer künftigen Rente bzw. Rentenberechnung.",
+  "renten_berechnungshinweis_actions": [
+    "Berechnungsgrundlagen prüfen",
+    "Fehlende Zeiten nachweisen",
+    "Dokument zu den Rentenunterlagen legen"
+  ],
+  "tarifinfo_title": "Tarifinformation",
+  "tarifinfo_agency": "Stadtwerke / Energieversorger",
+  "tarifinfo_desc": "Information oder Übersicht zu Ihrem Strom-, Gas- oder Wassertarif.",
+  "tarifinfo_actions": [
+    "Tarifkonditionen prüfen",
+    "Ggf. Tarif anpassen lassen",
+    "Schreiben aufbewahren"
+  ],
+  "steuer_vorauszahlung_title": "Steuer-Vorauszahlungsbescheid",
+  "steuer_vorauszahlung_agency": "Finanzamt",
+  "steuer_vorauszahlung_desc": "Bescheid über eine zu leistende Vorauszahlung zur Einkommensteuer.",
+  "steuer_vorauszahlung_actions": [
+    "Vorauszahlungsbetrag und Termine prüfen",
+    "Zahlungen fristgerecht leisten",
+    "Bescheid aufbewahren"
+  ],
+  "bafoeg_erstantrag_title": "BAföG-Erstantrag",
+  "bafoeg_erstantrag_agency": "Amt für Ausbildungsförderung",
+  "bafoeg_erstantrag_desc": "Erstantrag auf BAföG bzw. Ausbildungsförderung für Ihre Ausbildung.",
+  "bafoeg_erstantrag_actions": [
+    "Antrag vollständig ausfüllen",
+    "Unterlagen fristgerecht einreichen",
+    "Bestätigung aufbewahren"
+  ],
+  "kartenwechsel_title": "Kartenwechsel / Bankkarte",
+  "kartenwechsel_agency": "Bank / Kreditinstitut",
+  "kartenwechsel_desc": "Mitteilung über den Versand einer neuen oder Ersatzkarte für Ihr Konto.",
+  "kartenwechsel_actions": [
+    "Neue Karte aktivieren",
+    "Alte Karte entsorgen",
+    "Bestätigung aufbewahren"
+  ],
+  "krankengeld_title": "Krankengeld",
+  "krankengeld_agency": "Gesetzliche Krankenkasse",
+  "krankengeld_desc": "Mitteilung über die Zahlung von Krankengeld bzw. Ihren Krankengeldanspruch.",
+  "krankengeld_actions": [
+    "Anspruch und Dauer prüfen",
+    "Bei weiterer Krankheit AU verlängern",
+    "Bescheid aufbewahren"
+  ],
+  "alg_erstantrag_title": "ALG-Erstantrag",
+  "alg_erstantrag_agency": "Agentur für Arbeit",
+  "alg_erstantrag_desc": "Erstantrag auf Arbeitslosengeld (ALG 1) nach Arbeitslosigkeit.",
+  "alg_erstantrag_actions": [
+    "Antrag fristgerecht stellen",
+    "Unterlagen bereitlegen",
+    "Bestätigung aufbewahren"
+  ],
+  "kfz_haftpflicht_erhoeht_title": "Kfz-Haftpflicht-Beitragserhöhung",
+  "kfz_haftpflicht_erhoeht_agency": "Kfz-Versicherer",
+  "kfz_haftpflicht_erhoeht_desc": "Erhöhung Ihres Kfz-Haftpflichtbeitrags.",
+  "kfz_haftpflicht_erhoeht_actions": [
+    "Neuen Beitrag prüfen",
+    "Ggf. Sonderkündigungsrecht nutzen",
+    "Schreiben aufbewahren"
+  ],
+  "gez_meldedaten_title": "GEZ-Meldedatenabgleich",
+  "gez_meldedaten_agency": "ARD ZDF Deutschlandradio Beitragsservice",
+  "gez_meldedaten_desc": "Datenabgleich der Meldedaten zum Rundfunkbeitrag.",
+  "gez_meldedaten_actions": [
+    "Meldedaten prüfen",
+    "Korrekturen mitteilen",
+    "Schreiben aufbewahren"
+  ],
+  "verbraucherzentrale_title": "Verbraucherzentrale / Energieberatung",
+  "verbraucherzentrale_agency": "Verbraucherzentrale",
+  "verbraucherzentrale_desc": "Beratung oder Schreiben der Verbraucherzentrale zu Ihrem Tarif oder Vertrag.",
+  "verbraucherzentrale_actions": [
+    "Beratung nutzen",
+    "Unterlagen bereitlegen",
+    "Schreiben aufbewahren"
+  ],
+  "steuer_bescheiderklaerung_title": "Steuer-Bescheiderklärung",
+  "steuer_bescheiderklaerung_agency": "Finanzamt",
+  "steuer_bescheiderklaerung_desc": "Erläuterung oder Erklärung zu einem Steuerbescheid.",
+  "steuer_bescheiderklaerung_actions": [
+    "Erläuterung prüfen",
+    "Bei Unklarheiten nachfragen",
+    "Schreiben zu den Steuerakten legen"
+  ],
+  "bafoeg_rueckzahlung_title": "BAföG-Rückzahlung",
+  "bafoeg_rueckzahlung_agency": "Amt für Ausbildungsförderung",
+  "bafoeg_rueckzahlung_desc": "Rückforderung oder Rückzahlung von zu viel erhaltenem BAföG.",
+  "bafoeg_rueckzahlung_actions": [
+    "Rückforderungsbetrag prüfen",
+    "Ggf. Ratenzahlung vereinbaren",
+    "Schreiben aufbewahren"
+  ],
+  "kontokartennummer_title": "Kredit-/Bankkartennummer",
+  "kontokartennummer_agency": "Bank / Kreditinstitut",
+  "kontokartennummer_desc": "Unterlagen bzw. Hinweis mit Ihrer Kredit- oder Bankkartennummer.",
+  "kontokartennummer_actions": [
+    "Kartennummer sicher aufbewahren",
+    "Nicht weitergeben",
+    "Bei Verlust Karte sperren"
+  ],
+  "beitragsaenderung_title": "Krankenkassen-Beitragsänderung",
+  "beitragsaenderung_agency": "Gesetzliche Krankenkasse",
+  "beitragsaenderung_desc": "Mitteilung über eine Änderung Ihres Krankenkassenbeitrags.",
+  "beitragsaenderung_actions": [
+    "Neuen Beitrag prüfen",
+    "Änderung nachvollziehen",
+    "Schreiben aufbewahren"
+  ],
+  "kasko_schaden_title": "Kaskoschaden / Vollkasko-Schadensfall",
+  "kasko_schaden_agency": "Kfz-Versicherer",
+  "kasko_schaden_desc": "Bearbeitung eines Schadens über Ihre Vollkasko- bzw. Kaskoversicherung.",
+  "kasko_schaden_actions": [
+    "Schadensnummer notieren",
+    "Nachweise und Gutachten bereitstellen",
+    "Schriftverkehr aufbewahren"
+  ],
+  "mietvertragsguthaben_title": "Mietvertragsguthaben",
+  "mietvertragsguthaben_agency": "Vermieter / Hausverwaltung",
+  "mietvertragsguthaben_desc": "Erstattung eines Guthabens aus Ihrer Miet- bzw. Nebenkostenabrechnung.",
+  "mietvertragsguthaben_actions": [
+    "Guthabenbetrag und Zeitraum prüfen",
+    "Erstattung auf dem Konto überwachen",
+    "Schreiben aufbewahren"
+  ],
+  "renten_unterlagen_title": "Renten-Unterlagenanforderung",
+  "renten_unterlagen_agency": "Deutsche Rentenversicherung",
+  "renten_unterlagen_desc": "Aufforderung, Unterlagen bzw. Nachweise für Ihren Rentenfall einzureichen.",
+  "renten_unterlagen_actions": [
+    "Geforderte Unterlagen zusammenstellen",
+    "Fristgerecht einreichen",
+    "Bestätigung aufbewahren"
+  ],
+  "stadtwerke_jahresabschluss_title": "Stadtwerke-Jahresabschluss",
+  "stadtwerke_jahresabschluss_agency": "Stadtwerke / Energieversorger",
+  "stadtwerke_jahresabschluss_desc": "Ihr jährlicher Abrechnungsabschluss für Strom, Gas oder Wasser.",
+  "stadtwerke_jahresabschluss_actions": [
+    "Verbrauch und Abschläge prüfen",
+    "Ggf. Nachzahlung oder Guthaben",
+    "Abrechnung aufbewahren"
+  ],
+  "steuer_erklaerungsassistent_title": "Steuer-Erklärungsassistent",
+  "steuer_erklaerungsassistent_agency": "Finanzamt / Steuerportal",
+  "steuer_erklaerungsassistent_desc": "Hilfe oder Anleitung zur Erstellung Ihrer Steuererklärung.",
+  "steuer_erklaerungsassistent_actions": [
+    "Anleitung folgen",
+    "Unterlagen bereitlegen",
+    "Erklärung fristgerecht einreichen"
+  ],
+  "bafoeg_widerspruch_title": "BAföG-Widerspruch",
+  "bafoeg_widerspruch_agency": "Amt für Ausbildungsförderung",
+  "bafoeg_widerspruch_desc": "Schreiben im Zusammenhang mit einem Widerspruch gegen einen BAföG-Bescheid.",
+  "bafoeg_widerspruch_actions": [
+    "Widerspruchsfrist prüfen",
+    "Begründung und Nachweise einreichen",
+    "Bescheid aufbewahren"
+  ],
+  "kartensperre_title": "Kartensperre",
+  "kartensperre_agency": "Bank / Kreditinstitut",
+  "kartensperre_desc": "Mitteilung über die Sperrung Ihrer Bank- oder Kreditkarte.",
+  "kartensperre_actions": [
+    "Sperrung und Grund prüfen",
+    "Karte sperren lassen",
+    "Bestätigung aufbewahren"
+  ],
+  "bonusscheck_title": "Krankenkassen-Bonusscheck",
+  "bonusscheck_agency": "Gesetzliche Krankenkasse",
+  "bonusscheck_desc": "Bonusgutschrift oder -auszahlung der Krankenkasse für Vorsorgeleistungen.",
+  "bonusscheck_actions": [
+    "Bonusbetrag und Voraussetzungen prüfen",
+    "Auszahlung überwachen",
+    "Gutschrift aufbewahren"
+  ],
+  "alg_neufestsetzung_title": "ALG-Neufestsetzung",
+  "alg_neufestsetzung_agency": "Agentur für Arbeit",
+  "alg_neufestsetzung_desc": "Neufestsetzung Ihres Arbeitslosengeldes mit veränderter Bemessung.",
+  "alg_neufestsetzung_actions": [
+    "Neuen Leistungsbetrag prüfen",
+    "Bei Fehlern Widerspruch einlegen",
+    "Bescheid aufbewahren"
+  ],
+  "kfz_steuer_zahlung_title": "Kfz-Steuer zur Zahlung",
+  "kfz_steuer_zahlung_agency": "Zollamt / Finanzamt",
+  "kfz_steuer_zahlung_desc": "Aufforderung zur Zahlung Ihrer fälligen Kraftfahrzeugsteuer.",
+  "kfz_steuer_zahlung_actions": [
+    "Steuerbetrag und Fälligkeit prüfen",
+    "Zahlung fristgerecht leisten",
+    "Beleg aufbewahren"
+  ],
+  "gez_abmeldung_title": "Abmeldung Rundfunkbeitrag",
+  "gez_abmeldung_agency": "ARD ZDF Deutschlandradio Beitragsservice",
+  "gez_abmeldung_desc": "Bestätigung oder Aufforderung zur Abmeldung des Rundfunkbeitrags.",
+  "gez_abmeldung_actions": [
+    "Abmeldung prüfen",
+    "Bei Umzug rechtzeitig abmelden",
+    "Bestätigung aufbewahren"
+  ],
+  "verbrauchsnachweis_title": "Verbrauchsnachweis",
+  "verbrauchsnachweis_agency": "Stadtwerke / Energieversorger",
+  "verbrauchsnachweis_desc": "Nachweis des Verbrauchs bzw. Zählerstands für Ihre Abrechnung.",
+  "verbrauchsnachweis_actions": [
+    "Zählerstand und Verbrauch prüfen",
+    "Nachweis einreichen",
+    "Beleg aufbewahren"
+  ],
+  "steuer_erlass_title": "Steuererlass",
+  "steuer_erlass_agency": "Finanzamt",
+  "steuer_erlass_desc": "Bescheid über den Erlass bzw. die Erlassung einer Steuerschuld.",
+  "steuer_erlass_actions": [
+    "Erlassbetrag und Bedingungen prüfen",
+    "Bei Ablehnung Widerspruch prüfen",
+    "Bescheid aufbewahren"
+  ],
+  "dauerauftrag_storno_title": "Dauerauftrag-Storno",
+  "dauerauftrag_storno_agency": "Bank / Kreditinstitut",
+  "dauerauftrag_storno_desc": "Storno bzw. Löschung eines eingerichteten Dauerauftrags.",
+  "dauerauftrag_storno_actions": [
+    "Storno und Auswirkungen prüfen",
+    "Ggf. Zahlung anders sicherstellen",
+    "Bestätigung aufbewahren"
+  ],
+  "fragebogen_auswertung_title": "Krankenkassen-Fragebogen-Auswertung",
+  "fragebogen_auswertung_agency": "Gesetzliche Krankenkasse",
+  "fragebogen_auswertung_desc": "Mitteilung über das Ergebnis der Auswertung Ihres Mitgliedschafts- bzw. Fragebogens.",
+  "fragebogen_auswertung_actions": [
+    "Ergebnis prüfen",
+    "Bei Unklarheiten nachfragen",
+    "Schreiben aufbewahren"
+  ],
+  "renten_uebertragung_title": "Rentenübertragung",
+  "renten_uebertragung_agency": "Deutsche Rentenversicherung",
+  "renten_uebertragung_desc": "Mitteilung über die Übertragung von Rentenansprüchen zwischen Versicherungsträgern.",
+  "renten_uebertragung_actions": [
+    "Übertragungsbetrag prüfen",
+    "Bescheid aufbewahren",
+    "Bei Fragen an die Rentenversicherung wenden"
+  ],
+  "hausordnung_title": "Hausordnung",
+  "hausordnung_agency": "Vermieter / Hausverwaltung",
+  "hausordnung_desc": "Die Hausordnung Ihrer Wohnanlage mit Regeln für das Zusammenleben.",
+  "hausordnung_actions": [
+    "Regeln beachten",
+    "Bei Beschwerden an die Verwaltung wenden",
+    "Dokument nachlesen"
+  ],
+  "verbrauchseinbruch_title": "Verbrauchsüberprüfung",
+  "verbrauchseinbruch_agency": "Stadtwerke / Energieversorger",
+  "verbrauchseinbruch_desc": "Hinweis auf eine Prüfung bzw. ungewöhnliche Änderung Ihres Verbrauchs.",
+  "verbrauchseinbruch_actions": [
+    "Verbrauchsangaben prüfen",
+    "Zählerstand nachprüfen",
+    "Schreiben aufbewahren"
+  ],
+  "steuer_vertretung_title": "Steuervertretung",
+  "steuer_vertretung_agency": "Finanzamt / Steuerberater",
+  "steuer_vertretung_desc": "Mitteilung oder Vollmacht zur Vertretung in Ihrer Steuerangelegenheit.",
+  "steuer_vertretung_actions": [
+    "Vollmacht prüfen",
+    "Vertretung bestätigen",
+    "Schreiben zu den Steuerakten legen"
+  ],
+  "bafoeg_nachweis_einkommen_title": "BAföG-Einkommensnachweis",
+  "bafoeg_nachweis_einkommen_agency": "Amt für Ausbildungsförderung",
+  "bafoeg_nachweis_einkommen_desc": "Aufforderung zur Vorlage eines Einkommensnachweises für BAföG.",
+  "bafoeg_nachweis_einkommen_actions": [
+    "Einkommensnachweise zusammenstellen",
+    "Fristgerecht einreichen",
+    "Nachweis aufbewahren"
+  ],
+  "zahlungsverkehr_title": "Zahlungsverkehrsübersicht",
+  "zahlungsverkehr_agency": "Bank / Kreditinstitut",
+  "zahlungsverkehr_desc": "Übersicht über die Zahlungsumsätze bzw. den Zahlungsverkehr Ihres Kontos.",
+  "zahlungsverkehr_actions": [
+    "Umsätze prüfen",
+    "Unregelmäßigkeiten melden",
+    "Übersicht aufbewahren"
+  ],
+  "arbeitsbescheinigung_title": "Arbeitsbescheinigung",
+  "arbeitsbescheinigung_agency": "Arbeitgeber",
+  "arbeitsbescheinigung_desc": "Bescheinigung des Arbeitgebers über Ihr Beschäftigungsverhältnis, z. B. für ALG I.",
+  "arbeitsbescheinigung_actions": [
+    "Angaben auf Richtigkeit prüfen",
+    "Bescheinigung der Agentur vorlegen",
+    "Kopie aufbewahren"
+  ],
+  "nachmieter_title": "Nachmieter",
+  "nachmieter_agency": "Vermieter / Mieter",
+  "nachmieter_desc": "Mitteilung über einen Nachmieter für Ihren Mietvertrag.",
+  "nachmieter_actions": [
+    "Übernahmevereinbarung prüfen",
+    "Kosten für Übergabe regeln",
+    "Schreiben aufbewahren"
+  ],
+  "auslandsrente_title": "Auslandsrente",
+  "auslandsrente_agency": "Deutsche Rentenversicherung",
+  "auslandsrente_desc": "Information über Ihre Rente bei Wohnsitz bzw. Auslandsbezug im Ausland.",
+  "auslandsrente_actions": [
+    "Auslandszahlungsbedingungen prüfen",
+    "Zahlungsweg anpassen",
+    "Schreiben aufbewahren"
+  ],
+  "sammelbescheid_title": "Steuer-Sammelbescheid",
+  "sammelbescheid_agency": "Finanzamt",
+  "sammelbescheid_desc": "Sammelbescheid des Finanzamts, der mehrere Steuerarten zusammenfasst.",
+  "sammelbescheid_actions": [
+    "Einzelposten prüfen",
+    "Zahlbetrag und Fälligkeit beachten",
+    "Bescheid aufbewahren"
+  ],
+  "zahlungsanweisung_title": "BAföG-Zahlungsanweisung",
+  "zahlungsanweisung_agency": "Amt für Ausbildungsförderung",
+  "zahlungsanweisung_desc": "Anweisung zur Auszahlung Ihrer Ausbildungsförderung (BAföG).",
+  "zahlungsanweisung_actions": [
+    "Auszahlungsbetrag prüfen",
+    "Zahlung auf dem Konto überwachen",
+    "Anweisung aufbewahren"
+  ],
+  "widerruf_unterlagen_title": "Konto-Widerrufsunterlagen",
+  "widerruf_unterlagen_agency": "Bank / Kreditinstitut",
+  "widerruf_unterlagen_desc": "Unterlagen bzw. Aufforderung zum Widerruf bei einem Konto- oder Vertragsverhältnis.",
+  "widerruf_unterlagen_actions": [
+    "Widerrufsfrist prüfen",
+    "Ggf. Widerruf einlegen",
+    "Unterlagen aufbewahren"
+  ],
+  "sonderzahlung_title": "Krankenkassen-Sonderzahlung",
+  "sonderzahlung_agency": "Gesetzliche Krankenkasse",
+  "sonderzahlung_desc": "Mitteilung über eine Sonderzahlung der Krankenkasse.",
+  "sonderzahlung_actions": [
+    "Betrag und Voraussetzungen prüfen",
+    "Auszahlung überwachen",
+    "Schreiben aufbewahren"
+  ],
+  "kfz_steuer_rueckerstattung_title": "Kfz-Steuer-Rückerstattung",
+  "kfz_steuer_rueckerstattung_agency": "Zollamt / Finanzamt",
+  "kfz_steuer_rueckerstattung_desc": "Erstattung einer zu viel gezahlten Kraftfahrzeugsteuer.",
+  "kfz_steuer_rueckerstattung_actions": [
+    "Erstattungsbetrag prüfen",
+    "Auszahlung auf dem Konto überwachen",
+    "Beleg aufbewahren"
+  ],
+  "beschaeftigungszeiten_title": "Nachweis Beschäftigungszeiten",
+  "beschaeftigungszeiten_agency": "Deutsche Rentenversicherung / Arbeitgeber",
+  "beschaeftigungszeiten_desc": "Nachweis bzw. Aufforderung zu Ihren Beschäftigungszeiten für die Rente.",
+  "beschaeftigungszeiten_actions": [
+    "Zeiten auf Vollständigkeit prüfen",
+    "Nachweise einreichen",
+    "Unterlagen aufbewahren"
+  ],
+  "stadtwerke_widerruf_title": "Stadtwerke-Widerruf",
+  "stadtwerke_widerruf_agency": "Stadtwerke / Energieversorger",
+  "stadtwerke_widerruf_desc": "Mitteilung im Zusammenhang mit einem Widerruf Ihres Strom- bzw. Energievertrags.",
+  "stadtwerke_widerruf_actions": [
+    "Widerrufsfrist prüfen",
+    "Ggf. Widerruf einlegen",
+    "Schreiben aufbewahren"
+  ],
+  "behoerdenauskunft_title": "Steuer-Behördenauskunft",
+  "behoerdenauskunft_agency": "Finanzamt",
+  "behoerdenauskunft_desc": "Auskunft der Finanzbehörde in einer Steuerangelegenheit.",
+  "behoerdenauskunft_actions": [
+    "Auskunft prüfen",
+    "Bei Fragen Rückfragen stellen",
+    "Schreiben zu den Steuerakten legen"
+  ],
+  "ueberweisungsauftrag_title": "Überweisungsauftrag",
+  "ueberweisungsauftrag_agency": "Bank / Kreditinstitut",
+  "ueberweisungsauftrag_desc": "Auftrag zur Überweisung bzw. Bestätigung einer ausgeführten Überweisung.",
+  "ueberweisungsauftrag_actions": [
+    "Betrag, Empfänger und IBAN prüfen",
+    "Bei Fehlern Bank kontaktieren",
+    "Beleg aufbewahren"
+  ],
+  "alg_weiterbewilligungsantrag_title": "ALG-Weiterbewilligungsantrag",
+  "alg_weiterbewilligungsantrag_agency": "Agentur für Arbeit",
+  "alg_weiterbewilligungsantrag_desc": "Antrag auf Weiterbewilligung des Arbeitslosengeldes vor Ablauf des Bewilligungszeitraums.",
+  "alg_weiterbewilligungsantrag_actions": [
+    "Frist für den Antrag beachten",
+    "Unterlagen bereitlegen",
+    "Antrag fristgerecht einreichen"
+  ],
+  "versicherungsschutzbestaetigung_title": "Versicherungsschutzbestätigung",
+  "versicherungsschutzbestaetigung_agency": "Versicherungsgesellschaft",
+  "versicherungsschutzbestaetigung_desc": "Bestätigung über den bestehenden Versicherungsschutz (vielfach für Kfz oder andere Policen).",
+  "versicherungsschutzbestaetigung_actions": [
+    "Deckung und Gültigkeit prüfen",
+    "Bestätigung ggf. vorlegen",
+    "Ausfertigung aufbewahren"
+  ],
+  "gez_zahlungsverbot_title": "Rundfunkbeitrag-Zahlungsverbot",
+  "gez_zahlungsverbot_agency": "ARD ZDF Deutschlandradio Beitragsservice",
+  "gez_zahlungsverbot_desc": "Verfügung zur Einstellung bzw. Unterlassung der Rundfunkbeitragszahlung.",
+  "gez_zahlungsverbot_actions": [
+    "Verfügung prüfen",
+    "Ggf. Zahlungsweise anpassen",
+    "Schreiben aufbewahren"
+  ],
+  "renten_steuerbescheid_title": "Renten-Steuerbescheid",
+  "renten_steuerbescheid_agency": "Deutsche Rentenversicherung / Finanzamt",
+  "renten_steuerbescheid_desc": "Bescheid über die Besteuerung Ihrer Rentenzahlungen.",
+  "renten_steuerbescheid_actions": [
+    "Steuerabzug prüfen",
+    "Steuererkläerung beachten",
+    "Bescheid aufbewahren"
+  ],
+  "steuer_dauerzahlung_title": "Steuer-Dauerzahlung",
+  "steuer_dauerzahlung_agency": "Finanzamt",
+  "steuer_dauerzahlung_desc": "Vereinbarung oder Anordnung zur dauerhaften Steuerzahlung.",
+  "steuer_dauerzahlung_actions": [
+    "Betrag und Rhythmus prüfen",
+    "Zahlungen fristgerecht leisten",
+    "Bestätigung aufbewahren"
+  ],
+  "verbrauchsaenderung_title": "Verbrauchsänderung",
+  "verbrauchsaenderung_agency": "Stadtwerke / Energieversorger",
+  "verbrauchsaenderung_desc": "Mitteilung über eine Änderung Ihres Verbrauchs bzw. der Verbrauchsabrechnung.",
+  "verbrauchsaenderung_actions": [
+    "Verbrauch und Abschlag prüfen",
+    "Bei Rückfragen an den Versorger wenden",
+    "Schreiben aufbewahren"
+  ],
+  "foerderungsverzicht_title": "BAföG-Förderungsverzicht",
+  "foerderungsverzicht_agency": "Amt für Ausbildungsförderung",
+  "foerderungsverzicht_desc": "Erklärung bzw. Bescheid über den Verzicht auf Ausbildungsförderung.",
+  "foerderungsverzicht_actions": [
+    "Verzicht und Folgen prüfen",
+    "Ggf. rückgängig machen",
+    "Erklärung aufbewahren"
+  ],
+  "meldepflicht_title": "ALG-Meldepflicht",
+  "meldepflicht_agency": "Agentur für Arbeit",
+  "meldepflicht_desc": "Hinweis bzw. Aufforderung zur Erfüllung Ihrer Meldepflicht als Arbeitsuchende(r).",
+  "meldepflicht_actions": [
+    "Meldetermin beachten",
+    "Arbeitsuche fristgerecht melden",
+    "Bestätigung aufbewahren"
+  ],
+  "kfz_abrechnung_title": "Kfz-Versicherer-Abrechnung",
+  "kfz_abrechnung_agency": "Kfz-Versicherer",
+  "kfz_abrechnung_desc": "Abrechnung oder Beitragsübersicht Ihrer Kfz-Versicherung.",
+  "kfz_abrechnung_actions": [
+    "Beitrag und Leistung prüfen",
+    "Ggf. Wechsel prüfen",
+    "Abrechnung aufbewahren"
+  ],
+  "wohnungsabgabe_title": "Wohnungsabgabe",
+  "wohnungsabgabe_agency": "Vermieter / Hausverwaltung",
+  "wohnungsabgabe_desc": "Mitteilung über die Abgabe bzw. Schlüsselübergabe Ihrer Wohnung.",
+  "wohnungsabgabe_actions": [
+    "Übergabeprotokoll prüfen",
+    "Schlüssel und Geräte übergeben",
+    "Protokoll aufbewahren"
+  ],
+  "erwerbsminderung_title": "Erwerbsminderungsrente",
+  "erwerbsminderung_agency": "Deutsche Rentenversicherung",
+  "erwerbsminderung_desc": "Bescheid oder Prüfung einer Erwerbsminderungsrente bzw. Berufsunfähigkeitsrente.",
+  "erwerbsminderung_actions": [
+    "Voraussetzungen prüfen",
+    "Nachweise einreichen",
+    "Bescheid aufbewahren"
+  ],
+  "vertragsverlaengerung_title": "Vertragsverlängerung",
+  "vertragsverlaengerung_agency": "Stadtwerke / Energieversorger",
+  "vertragsverlaengerung_desc": "Mitteilung über die automatische oder vereinbarte Verlängerung Ihres Vertrags.",
+  "vertragsverlaengerung_actions": [
+    "Laufzeit und Konditionen prüfen",
+    "Ggf. rechtzeitig kündigen",
+    "Schreiben aufbewahren"
+  ],
+  "lohnsteuerbescheinigung_title": "Lohnsteuerbescheinigung",
+  "lohnsteuerbescheinigung_agency": "Arbeitgeber",
+  "lohnsteuerbescheinigung_desc": "Ihre (elektronische) Lohnsteuerbescheinigung für das Steuerjahr.",
+  "lohnsteuerbescheinigung_actions": [
+    "Auszahlungen und Steuerabzug prüfen",
+    "Für die Steuererklärung verwenden",
+    "Beleg aufbewahren"
+  ],
+  "krankenversicherungsverlauf_title": "Krankenversicherungsverlauf",
+  "krankenversicherungsverlauf_agency": "Krankenkasse",
+  "krankenversicherungsverlauf_desc": "Aufstellung Ihrer Krankenversicherungs- und Beitragszeiten.",
+  "krankenversicherungsverlauf_actions": [
+    "Zeiten auf Vollständigkeit prüfen",
+    "Fehlende Zeiten mit Nachweisen klären",
+    "Dokument aufbewahren"
+  ],
+  "kfz_bonus_malus_title": "Kfz-Bonus-Malus",
+  "kfz_bonus_malus_agency": "Kfz-Versicherer",
+  "kfz_bonus_malus_desc": "Mitteilung über Ihre Schadenfreiheits-/Bonus-Malus-Stufe.",
+  "kfz_bonus_malus_actions": [
+    "Stufe und Beitrag prüfen",
+    "Bei Schäden Auswirkungen beachten",
+    "Schreiben aufbewahren"
+  ],
+  "indexierung_title": "Indexmiete / Indexierung",
+  "indexierung_agency": "Vermieter / Hausverwaltung",
+  "indexierung_desc": "Mitteilung über die Indexierung bzw. Anpassung Ihrer Miete nach Index.",
+  "indexierung_actions": [
+    "Indexanpassung prüfen",
+    "Zulässigkeit der Erhöhung beachten",
+    "Schreiben aufbewahren"
+  ],
+  "nachversicherung_title": "Renten-Nachversicherung",
+  "nachversicherung_agency": "Deutsche Rentenversicherung",
+  "nachversicherung_desc": "Mitteilung über eine Nachversicherung zur Rentenversicherung.",
+  "nachversicherung_actions": [
+    "Nachversicherungsbetrag prüfen",
+    "Zahlung bzw. Anerkennung klären",
+    "Schreiben aufbewahren"
+  ],
+  "steuer_freibetrag_title": "Steuer-Freibetrag",
+  "steuer_freibetrag_agency": "Finanzamt",
+  "steuer_freibetrag_desc": "Bescheid über Ihren (Kinder-)Freibetrag bzw. die Steuerfreibeträge.",
+  "steuer_freibetrag_actions": [
+    "Freibetrag prüfen",
+    "Für Gehaltsabrechnung angeben",
+    "Bescheid aufbewahren"
+  ],
+  "bafoeg_erstausstattung_title": "BAföG-Erstausstattung",
+  "bafoeg_erstausstattung_agency": "Amt für Ausbildungsförderung",
+  "bafoeg_erstausstattung_desc": "Erstattung von Erstausstattungsbedarf bei Ausbildungsbeginn.",
+  "bafoeg_erstausstattung_actions": [
+    "Anspruch und Betrag prüfen",
+    "Nachweise einreichen",
+    "Bescheid aufbewahren"
+  ],
+  "anschlussverguetung_title": "Anschlussvergütung",
+  "anschlussverguetung_agency": "Stadtwerke / Energieversorger",
+  "anschlussverguetung_desc": "Vergütung für eingespeisten Strom bzw. eine Anschlussvergütung.",
+  "anschlussverguetung_actions": [
+    "Vergütungsbetrag prüfen",
+    "Zahlung auf dem Konto überwachen",
+    "Beleg aufbewahren"
+  ],
+  "auszahlungskarte_title": "Auszahlungskarte",
+  "auszahlungskarte_agency": "Bank / Kreditinstitut",
+  "auszahlungskarte_desc": "Karte zum Geldabheben bzw. zur Auszahlung von Ihrem Konto.",
+  "auszahlungskarte_actions": [
+    "Karte und PIN sicher aufbewahren",
+    "Bei Verlust sperren",
+    "Bestätigung aufbewahren"
+  ],
+  "krankenkassen_ablehnung_title": "Krankenkassen-Ablehnungsbescheid",
+  "krankenkassen_ablehnung_agency": "Gesetzliche Krankenkasse",
+  "krankenkassen_ablehnung_desc": "Ablehnung eines Antrags bzw. einer Leistung durch die Krankenkasse.",
+  "krankenkassen_ablehnung_actions": [
+    "Ablehnungsgrund prüfen",
+    "Ggf. Widerspruch einlegen",
+    "Bescheid aufbewahren"
+  ],
+  "nebeneinkommen_title": "ALG-Nebeneinkommen-Meldung",
+  "nebeneinkommen_agency": "Agentur für Arbeit",
+  "nebeneinkommen_desc": "Aufforderung, Nebeneinkommen bzw. Nebenverdienst zu melden.",
+  "nebeneinkommen_actions": [
+    "Nebeneinkommen angeben",
+    "Fristgerecht melden",
+    "Bestätigung aufbewahren"
+  ],
+  "renten_auszahlungsmitteilung_title": "Renten-Auszahlungsmitteilung",
+  "renten_auszahlungsmitteilung_agency": "Deutsche Rentenversicherung",
+  "renten_auszahlungsmitteilung_desc": "Mitteilung über die Auszahlung Ihrer Rentenleistung.",
+  "renten_auszahlungsmitteilung_actions": [
+    "Zahlbetrag und Zeitpunkt prüfen",
+    "Auszahlung überwachen",
+    "Mitteilung aufbewahren"
+  ],
+  "stadtwerke_sperrung_title": "Stadtwerke-Sperrung",
+  "stadtwerke_sperrung_agency": "Stadtwerke / Energieversorger",
+  "stadtwerke_sperrung_desc": "Ankündigung der Sperrung Ihrer Strom- bzw. Gasversorgung.",
+  "stadtwerke_sperrung_actions": [
+    "Sperrgrund prüfen",
+    "Zahlungen sofort regulieren",
+    "Anschreiben aufbewahren"
+  ],
+  "bafoeg_verlaengerung_title": "BAföG-Verlängerung",
+  "bafoeg_verlaengerung_agency": "Amt für Ausbildungsförderung",
+  "bafoeg_verlaengerung_desc": "Mitteilung über die Verlängerung Ihrer Ausbildungsförderung.",
+  "bafoeg_verlaengerung_actions": [
+    "Verlängerungszeitraum prüfen",
+    "Nachweise einreichen",
+    "Bescheid aufbewahren"
+  ],
+  "waehrungsrechnung_title": "Währungsrechnung",
+  "waehrungsrechnung_agency": "Bank / Kreditinstitut",
+  "waehrungsrechnung_desc": "Rechnung bzw. Auszug in einer Fremdwährung auf Ihrem Konto.",
+  "waehrungsrechnung_actions": [
+    "Kurs und Betrag prüfen",
+    "Umrechnung nachvollziehen",
+    "Beleg aufbewahren"
+  ],
+  "praevention_title": "Krankenkassen-Prävention",
+  "praevention_agency": "Gesetzliche Krankenkasse",
+  "praevention_desc": "Präventionsangebot bzw. -kurs Ihrer Krankenkasse zur Gesundheitsförderung.",
+  "praevention_actions": [
+    "Angebot und Zuschuss prüfen",
+    "Kurs wahrnehmen",
+    "Bestätigung aufbewahren"
+  ],
+  "alg_nachzahlungsmitteilung_title": "ALG-Nachzahlungsmitteilung",
+  "alg_nachzahlungsmitteilung_agency": "Agentur für Arbeit",
+  "alg_nachzahlungsmitteilung_desc": "Mitteilung über eine Nachzahlung von Arbeitslosengeld.",
+  "alg_nachzahlungsmitteilung_actions": [
+    "Nachzahlungsbetrag prüfen",
+    "Zahlung überwachen",
+    "Mitteilung aufbewahren"
+  ],
+  "kfz_schaden_ablehnung_title": "Kfz-Schaden-Ablehnung",
+  "kfz_schaden_ablehnung_agency": "Kfz-Versicherer",
+  "kfz_schaden_ablehnung_desc": "Ablehnung der Regulierung eines Kfz-Schadens durch die Versicherung.",
+  "kfz_schaden_ablehnung_actions": [
+    "Ablehnungsgrund prüfen",
+    "Ggf. Widerspruch bzw. Klage prüfen",
+    "Schreiben aufbewahren"
+  ],
+  "mietpreisbremse_title": "Mietpreisbremse",
+  "mietpreisbremse_agency": "Vermieter / Hausverwaltung",
+  "mietpreisbremse_desc": "Mitteilung über die Begrenzung bzw. Anwendung der Mietpreisbremse.",
+  "mietpreisbremse_actions": [
+    "Zulässige Miete nach Bremse prüfen",
+    "Ggf. Minderung geltend machen",
+    "Schreiben aufbewahren"
+  ],
+  "versorgungsausgleich_title": "Versorgungsausgleich",
+  "versorgungsausgleich_agency": "Deutsche Rentenversicherung",
+  "versorgungsausgleich_desc": "Schreiben zum Versorgungsausgleich bzw. Rentensplitting nach Trennung.",
+  "versorgungsausgleich_actions": [
+    "Ausgleichsbetrag prüfen",
+    "Hinweise der Behörde beachten",
+    "Schreiben aufbewahren"
+  ],
+  "begruessungsschreiben_title": "Begrüßungsschreiben",
+  "begruessungsschreiben_agency": "Stadtwerke / Energieversorger",
+  "begruessungsschreiben_desc": "Willkommens- bzw. Begrüßungsschreiben Ihres neuen Versorgers.",
+  "begruessungsschreiben_actions": [
+    "Vertragsdaten prüfen",
+    "Zählerstand notieren",
+    "Schreiben aufbewahren"
+  ],
+  "weiterbildungszuschuss_title": "Krankenkassen-Weiterbildungszuschuss",
+  "weiterbildungszuschuss_agency": "Gesetzliche Krankenkasse",
+  "weiterbildungszuschuss_desc": "Zuschuss der Krankenkasse zu einer Weiter- bzw. Fortbildung.",
+  "weiterbildungszuschuss_actions": [
+    "Zuschuss und Voraussetzungen prüfen",
+    "Antrag fristgerecht stellen",
+    "Bescheid aufbewahren"
+  ],
+  "sonderkuendigungsrecht_title": "Sonderkündigungsrecht",
+  "sonderkuendigungsrecht_agency": "Vermieter / Vertragspartner",
+  "sonderkuendigungsrecht_desc": "Mitteilung über ein außerordentliches Sonderkündigungsrecht.",
+  "sonderkuendigungsrecht_actions": [
+    "Kündigungsfrist prüfen",
+    "Sonderkündigung ggfs. nutzen",
+    "Schreiben aufbewahren"
+  ],
+  "hinterbliebenenrente_title": "Hinterbliebenenrente",
+  "hinterbliebenenrente_agency": "Deutsche Rentenversicherung",
+  "hinterbliebenenrente_desc": "Bescheid über Hinterbliebenen-, Witwen- oder Waisenrente.",
+  "hinterbliebenenrente_actions": [
+    "Anspruch und Höhe prüfen",
+    "Nachweise einreichen",
+    "Bescheid aufbewahren"
+  ],
+  "einkunftsnachweis_title": "Steuer-Einkunftsnachweis",
+  "einkunftsnachweis_agency": "Finanzamt / Steuerberater",
+  "einkunftsnachweis_desc": "Aufforderung zum Nachweis Ihrer steuerlichen Einkünfte.",
+  "einkunftsnachweis_actions": [
+    "Einkünfte zusammenzustellen",
+    "Nachweise einreichen",
+    "Bestätigung aufbewahren"
+  ],
+  "lieferaufnahme_title": "Lieferaufnahme",
+  "lieferaufnahme_agency": "Stadtwerke / Energieversorger",
+  "lieferaufnahme_desc": "Mitteilung über den Beginn der Belieferung mit Strom, Gas oder Wasser.",
+  "lieferaufnahme_actions": [
+    "Beginn der Lieferung prüfen",
+    "Zählerstand ablesen",
+    "Schreiben aufbewahren"
+  ],
+  "einzahlungsbeleg_title": "Einzahlungsbeleg",
+  "einzahlungsbeleg_agency": "Bank / Kreditinstitut",
+  "einzahlungsbeleg_desc": "Beleg über eine Einzahlung auf Ihrem Konto.",
+  "einzahlungsbeleg_actions": [
+    "Betrag und Konto prüfen",
+    "Beleg aufbewahren",
+    "Bei Abweichungen Bank kontaktieren"
+  ],
+  "alg_bescheid_korrektur_title": "ALG-Bescheid-Korrektur",
+  "alg_bescheid_korrektur_agency": "Agentur für Arbeit",
+  "alg_bescheid_korrektur_desc": "Mitteilung über eine Korrektur Ihres ALG-Bescheids.",
+  "alg_bescheid_korrektur_actions": [
+    "Korrigierten Bescheid prüfen",
+    "Zahlbetrag nachvollziehen",
+    "Bescheid aufbewahren"
+  ],
+  "kfz_kostenuebernahme_title": "Kfz-Kostenübernahme",
+  "kfz_kostenuebernahme_agency": "Kfz-Versicherer",
+  "kfz_kostenuebernahme_desc": "Bestätigung, dass die Versicherung die Schadenskosten übernimmt.",
+  "kfz_kostenuebernahme_actions": [
+    "Deckung und Kostenrahmen prüfen",
+    "Nachweise bereitstellen",
+    "Bestätigung aufbewahren"
+  ],
+  "mitbewohner_title": "Mitbewohner",
+  "mitbewohner_agency": "Vermieter / Hausverwaltung",
+  "mitbewohner_desc": "Mitteilung über den Einzug bzw. das Mietverhältnis eines Mitbewohners.",
+  "mitbewohner_actions": [
+    "Angaben zum Mitbewohner prüfen",
+    "Ggf. melderechtlich ummelden",
+    "Schreiben aufbewahren"
+  ],
+  "ueberfuehrungspruefung_title": "Renten-Überführungsprüfung",
+  "ueberfuehrungspruefung_agency": "Deutsche Rentenversicherung",
+  "ueberfuehrungspruefung_desc": "Prüfung zur Überführung von Versorgungszeiten in die Rentenversicherung.",
+  "ueberfuehrungspruefung_actions": [
+    "Prüfungsergebnis nachvollziehen",
+    "Nachweise einreichen",
+    "Schreiben aufbewahren"
+  ],
+  "umsatzsteuer_voranmeldung_title": "Umsatzsteuer-Voranmeldung",
+  "umsatzsteuer_voranmeldung_agency": "Finanzamt",
+  "umsatzsteuer_voranmeldung_desc": "Bescheid bzw. Aufforderung zur Umsatzsteuer-Voranmeldung.",
+  "umsatzsteuer_voranmeldung_actions": [
+    "Frist des Voranmeldungszeitraums beachten",
+    "Erklärung übermitteln",
+    "Bescheid aufbewahren"
+  ],
+  "bafoeg_aenderungsbescheid_title": "BAföG-Änderungsbescheid",
+  "bafoeg_aenderungsbescheid_agency": "Amt für Ausbildungsförderung",
+  "bafoeg_aenderungsbescheid_desc": "Änderung Ihres BAföG-Bescheids aufgrund geänderter Verhältnisse.",
+  "bafoeg_aenderungsbescheid_actions": [
+    "Geänderten Förderbetrag prüfen",
+    "Bei Fehlern Widerspruch einlegen",
+    "Bescheid aufbewahren"
+  ],
+  "zinsabrechnung_title": "Zinsabrechnung",
+  "zinsabrechnung_agency": "Bank / Kreditinstitut",
+  "zinsabrechnung_desc": "Abrechnung von Zinsen auf Ihrem Konto.",
+  "zinsabrechnung_actions": [
+    "Zinsertrag und Berechnung prüfen",
+    "Bei Abweichungen Bank kontaktieren",
+    "Beleg aufbewahren"
+  ],
+  "beitragsausgleich_title": "Krankenkassen-Beitragsausgleich",
+  "beitragsausgleich_agency": "Gesetzliche Krankenkasse",
+  "beitragsausgleich_desc": "Ausgleich bzw. Verrechnung von Krankenkassenbeiträgen.",
+  "beitragsausgleich_actions": [
+    "Ausgleichsbetrag prüfen",
+    "Zahlung bzw. Gutschrift nachvollziehen",
+    "Schreiben aufbewahren"
+  ],
+  "selbststaendigkeit_title": "ALG-Selbstständigkeit",
+  "selbststaendigkeit_agency": "Agentur für Arbeit",
+  "selbststaendigkeit_desc": "Schreiben zur Selbstständigkeit im Zusammenhang mit Arbeitslosengeld.",
+  "selbststaendigkeit_actions": [
+    "Einkommen aus Selbstständigkeit melden",
+    "Nachweise einreichen",
+    "Schreiben aufbewahren"
+  ],
+  "kfz_steuer_ummeldung_title": "Kfz-Steuer-Ummeldung",
+  "kfz_steuer_ummeldung_agency": "Zollamt / Finanzamt",
+  "kfz_steuer_ummeldung_desc": "Mitteilung über die Kfz-Steuer anlässlich einer Ummeldung Ihres Fahrzeugs.",
+  "kfz_steuer_ummeldung_actions": [
+    "Neue Steuerhöhe prüfen",
+    "Zahlung fristgerecht leisten",
+    "Schreiben aufbewahren"
+  ],
+  "untervermietung_title": "Untervermietung",
+  "untervermietung_agency": "Vermieter / Mieter",
+  "untervermietung_desc": "Mitteilung bzw. Genehmigung einer Untervermietung Ihrer Wohnung.",
+  "untervermietung_actions": [
+    "Erlaubnis und Frist beachten",
+    "Untermietvertrag abschließen",
+    "Schreiben aufbewahren"
+  ],
+  "gasbezug_title": "Gasbezug",
+  "gasbezug_agency": "Stadtwerke / Energieversorger",
+  "gasbezug_desc": "Mitteilung über den Beginn bzw. die Aufnahme Ihrer Gaslieferung.",
+  "gasbezug_actions": [
+    "Lieferbeginn prüfen",
+    "Zählerstand ablesen",
+    "Schreiben aufbewahren"
+  ],
+  "spendenbescheinigung_title": "Spendenbescheinigung",
+  "spendenbescheinigung_agency": "Gemeinnützige Organisation",
+  "spendenbescheinigung_desc": "Zuwendungsbestätigung bzw. Spendenbescheinigung für Ihre Steuererklärung.",
+  "spendenbescheinigung_actions": [
+    "Betrag und Empfänger prüfen",
+    "Für die Steuererklärung verwenden",
+    "Beleg aufbewahren"
+  ],
+  "umbuchung_title": "Umbuchung",
+  "umbuchung_agency": "Bank / Kreditinstitut",
+  "umbuchung_desc": "Mitteilung über eine Umbuchung bzw. Übertrag auf Ihrem Konto.",
+  "umbuchung_actions": [
+    "Betrag und Konten prüfen",
+    "Bei Fehlern Bank kontaktieren",
+    "Beleg aufbewahren"
+  ],
+  "freistellungsbescheinigung_title": "Freistellungsbescheinigung",
+  "freistellungsbescheinigung_agency": "Krankenkasse / Bank / Steuer",
+  "freistellungsbescheinigung_desc": "Bescheinigung über eine Freistellung von Beiträgen bzw. Steuern.",
+  "freistellungsbescheinigung_actions": [
+    "Freistellungsbetrag prüfen",
+    "Für Steuer- bzw. Beitragsunterlagen verwenden",
+    "Beleg aufbewahren"
+  ],
+  "kontostandsmeldung_title": "Renten-Kontostandsmeldung",
+  "kontostandsmeldung_agency": "Deutsche Rentenversicherung",
+  "kontostandsmeldung_desc": "Meldung über den Stand Ihres Rentenkontos.",
+  "kontostandsmeldung_actions": [
+    "Kontostand prüfen",
+    "Fehlende Zeiten nachweisen",
+    "Meldung aufbewahren"
+  ],
+  "netzbetreiber_title": "Netzbetreiber",
+  "netzbetreiber_agency": "Stadtwerke / Netzbetreiber",
+  "netzbetreiber_desc": "Mitteilung des Strom- bzw. Gasnetzbetreibers.",
+  "netzbetreiber_actions": [
+    "Netzbetreiber und Tarif prüfen",
+    "Bei Störungen an die Netzgesellschaft wenden",
+    "Schreiben aufbewahren"
+  ],
+  "gewinnermittlung_title": "Steuer-Gewinnermittlung",
+  "gewinnermittlung_agency": "Finanzamt / Steuerberater",
+  "gewinnermittlung_desc": "Unterlagen zur Ermittlung Ihres steuerlichen Gewinns.",
+  "gewinnermittlung_actions": [
+    "Berechnung und Einnahmen prüfen",
+    "Belege zusammenstellen",
+    "Unterlagen aufbewahren"
+  ],
+  "einkommensanrechnung_title": "BAföG-Einkommensanrechnung",
+  "einkommensanrechnung_agency": "Amt für Ausbildungsförderung",
+  "einkommensanrechnung_desc": "Berechnung der Anrechnung Ihres Einkommens auf das BAföG.",
+  "einkommensanrechnung_actions": [
+    "Anrechnungsbetrag prüfen",
+    "Einkommensnachweise einreichen",
+    "Bescheid aufbewahren"
+  ],
+  "girocard_title": "Girocard",
+  "girocard_agency": "Bank / Kreditinstitut",
+  "girocard_desc": "Mitteilung über Ihre neue bzw. aktuelle Girocard.",
+  "girocard_actions": [
+    "Karte aktivieren und PIN prüfen",
+    "Bei Verlust sperren",
+    "Bestätigung aufbewahren"
+  ],
+  "beauftragtenvollmacht_title": "Krankenkassen-Beauftragtenvollmacht",
+  "beauftragtenvollmacht_agency": "Gesetzliche Krankenkasse",
+  "beauftragtenvollmacht_desc": "Vollmacht zur Vertretung gegenüber der Krankenkasse.",
+  "beauftragtenvollmacht_actions": [
+    "Umfang der Vollmacht prüfen",
+    "Ggf. widerrufen",
+    "Kopie aufbewahren"
+  ],
+  "halterwechsel_title": "Kfz-Halterwechsel",
+  "halterwechsel_agency": "Zulassungsstelle / Zollamt",
+  "halterwechsel_desc": "Mitteilung über den Wechsel des Fahrzeughalters.",
+  "halterwechsel_actions": [
+    "Halter und Steuer prüfen",
+    "Zulassung ummelden",
+    "Schreiben aufbewahren"
+  ],
+  "sicherheitsabschlag_title": "Sicherheitsabschlag",
+  "sicherheitsabschlag_agency": "Vermieter / Hausverwaltung",
+  "sicherheitsabschlag_desc": "Sicherheitsabschlag bzw. Kaution im Mietverhältnis.",
+  "sicherheitsabschlag_actions": [
+    "Abschlag und Rückzahlung prüfen",
+    "Beleg aufbewahren",
+    "Bei Auszug geltend machen"
+  ],
+  "sonderausgaben_title": "Sonderausgaben",
+  "sonderausgaben_agency": "Finanzamt",
+  "sonderausgaben_desc": "Nachweis bzw. Abzug Ihrer steuerlichen Sonderausgaben.",
+  "sonderausgaben_actions": [
+    "Abzugsfähige Beträge prüfen",
+    "Belege für die Steuererklärung nutzen",
+    "Beleg aufbewahren"
+  ],
+  "foerderungsende_title": "Förderungsende",
+  "foerderungsende_agency": "Amt für Ausbildungsförderung",
+  "foerderungsende_desc": "Mitteilung über das Ende der BAföG-Förderung.",
+  "foerderungsende_actions": [
+    "Ende und Gründe prüfen",
+    "Ggf. Verlängerung beantragen",
+    "Bescheid aufbewahren"
+  ],
+  "pin_brief_title": "Konto-PIN-Brief",
+  "pin_brief_agency": "Bank / Kreditinstitut",
+  "pin_brief_desc": "Brief mit Ihrer PIN für das Bankkonto bzw. die Karte.",
+  "pin_brief_actions": [
+    "PIN sicher aufbewahren",
+    "Nicht weitergeben",
+    "Schreiben entsorgen"
+  ],
+  "gesundheitspraemie_title": "Krankenkassen-Gesundheitsprämie",
+  "gesundheitspraemie_agency": "Gesetzliche Krankenkasse",
+  "gesundheitspraemie_desc": "Mitteilung über eine Prämie bzw. Prämienerstattung der Krankenkasse.",
+  "gesundheitspraemie_actions": [
+    "Prämienhöhe und Voraussetzungen prüfen",
+    "Auszahlung überwachen",
+    "Schreiben aufbewahren"
+  ],
+  "kfz_steuer_aussetzung_title": "Kfz-Steuer-Aussetzung",
+  "kfz_steuer_aussetzung_agency": "Zollamt / Finanzamt",
+  "kfz_steuer_aussetzung_desc": "Mitteilung über die Aussetzung der Kraftfahrzeugsteuer.",
+  "kfz_steuer_aussetzung_actions": [
+    "Aussetzungszeitraum prüfen",
+    "Bei Änderungen Bescheid prüfen",
+    "Bescheid aufbewahren"
+  ],
+  "raeumungsvergleich_title": "Räumungsvergleich",
+  "raeumungsvergleich_agency": "Vermieter / Gericht",
+  "raeumungsvergleich_desc": "Vergleich zur Räumung der Wohnung bzw. Aufhebung des Mietverhältnisses.",
+  "raeumungsvergleich_actions": [
+    "Bedingungen prüfen",
+    "Räumungstermin beachten",
+    "Vergleich aufbewahren"
+  ],
+  "renten_abschlag_title": "Rentenabschlag",
+  "renten_abschlag_agency": "Deutsche Rentenversicherung",
+  "renten_abschlag_desc": "Mitteilung über einen Abschlag bei vorzeitigem Rentenbezug.",
+  "renten_abschlag_actions": [
+    "Abschlagsbetrag prüfen",
+    "Vor- und Nachteile abwägen",
+    "Bescheid aufbewahren"
+  ],
+  "grundversorgung_title": "Grundversorgung",
+  "grundversorgung_agency": "Stadtwerke / Energieversorger",
+  "grundversorgung_desc": "Mitteilung über die Belieferung im Rahmen der Grundversorgung.",
+  "grundversorgung_actions": [
+    "Tarif und Konditionen prüfen",
+    "Bei Angeboten Vergleich anstellen",
+    "Schreiben aufbewahren"
+  ],
+  "verlustabzug_title": "Verlustabzug",
+  "verlustabzug_agency": "Finanzamt",
+  "verlustabzug_desc": "Mitteilung über den Abzug bzw. Vortrag von steuerlichen Verlusten.",
+  "verlustabzug_actions": [
+    "Verlustbetrag prüfen",
+    "Für spätere Jahre vortragen",
+    "Bescheid aufbewahren"
+  ],
+  "kontoverbindung_title": "Kontoverbindung",
+  "kontoverbindung_agency": "Bank / Kreditinstitut",
+  "kontoverbindung_desc": "Angabe bzw. Bestätigung Ihrer Bankkontoverbindung.",
+  "kontoverbindung_actions": [
+    "IBAN und Kontoinhaber prüfen",
+    "Für Zahlungen verwenden",
+    "Beleg aufbewahren"
+  ],
+  "mitgliedschaftsbeginn_title": "Krankenkassen-Mitgliedschaftsbeginn",
+  "mitgliedschaftsbeginn_agency": "Gesetzliche Krankenkasse",
+  "mitgliedschaftsbeginn_desc": "Mitteilung über den Beginn Ihrer Krankenkassen-Mitgliedschaft.",
+  "mitgliedschaftsbeginn_actions": [
+    "Beginn und Versicherungsstatus prüfen",
+    "Versichertenkarte verwenden",
+    "Schreiben aufbewahren"
+  ],
+  "altersgrenze_title": "Renten-Altersgrenze",
+  "altersgrenze_agency": "Deutsche Rentenversicherung",
+  "altersgrenze_desc": "Mitteilung über Ihre Regelaltersgrenze für den Rentenbeginn.",
+  "altersgrenze_actions": [
+    "Altersgrenze prüfen",
+    "Rentenantrag rechtzeitig stellen",
+    "Schreiben aufbewahren"
+  ],
+  "erklaerungspflicht_title": "Steuer-Erklärungspflicht",
+  "erklaerungspflicht_agency": "Finanzamt",
+  "erklaerungspflicht_desc": "Mitteilung über Ihre Pflicht zur Abgabe einer Steuererklärung.",
+  "erklaerungspflicht_actions": [
+    "Abgabepflicht prüfen",
+    "Frist beachten",
+    "Erklärung einreichen"
+  ],
+  "hoechstdauer_title": "BAföG-Höchstdauer",
+  "hoechstdauer_agency": "Amt für Ausbildungsförderung",
+  "hoechstdauer_desc": "Mitteilung über die Höchstdauer Ihrer Ausbildungsförderung.",
+  "hoechstdauer_actions": [
+    "Höchstdauer prüfen",
+    "Ggf. Verlängerung beantragen",
+    "Bescheid aufbewahren"
+  ],
+  "gewerbeanzeige_title": "Gewerbeanzeige / Gewerbeanmeldung",
+  "gewerbeanzeige_agency": "Gewerbeamt / Bürgerservice",
+  "gewerbeanzeige_desc": "Schreiben zur Gewerbeanmeldung bzw. Gewerbeurkunde bei Ihrer Behörde.",
+  "gewerbeanzeige_actions": [
+    "Gewerbeurkunde prüfen",
+    "Änderungen der Behörde melden",
+    "Unterlagen zu den Gewerbeakten legen"
+  ],
+  "integrationskurs_title": "Integrationskurs / Sprachkurs",
+  "integrationskurs_agency": "Integrationsamt / BAMF / Sprachschule",
+  "integrationskurs_desc": "Mitteilung oder Aufforderung zu einem Integrations-, Sprach- oder Berufssprachkurs.",
+  "integrationskurs_actions": [
+    "Teilnahmepflicht und Frist prüfen",
+    "Kursanmeldung wahrnehmen",
+    "Nachweis aufbewahren"
+  ]
+}

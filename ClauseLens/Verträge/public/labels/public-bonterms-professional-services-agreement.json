@@ -1,0 +1,71 @@
+{
+  "slug": "public-bonterms-professional-services-agreement",
+  "source": "https://raw.githubusercontent.com/Bonterms/Professional-Services-Agreement/main/Professional-Services-Agreement%20V1.0.md",
+  "license": "CC BY 4.0",
+  "retrieved": "2026-10-15",
+  "domain": "Dienstleistungsvertrag (Bonterms)",
+  "traps": [
+    {
+      "marker": "(a) License. Provider hereby grants",
+      "expectedType": "data_grant",
+      "note": "Reale Klausel, Engine-Typ data_grant"
+    },
+    {
+      "marker": "“Uncapped Claims” means (a) the",
+      "expectedType": "third_party_indemnity",
+      "note": "Reale Klausel, Engine-Typ third_party_indemnity"
+    },
+    {
+      "marker": "13.1. Indemnification by Provider.",
+      "expectedType": "third_party_indemnity",
+      "note": "Reale Klausel, Engine-Typ third_party_indemnity"
+    },
+    {
+      "marker": "13.2. Indemnification by Customer.",
+      "expectedType": "third_party_indemnity",
+      "note": "Reale Klausel, Engine-Typ third_party_indemnity"
+    },
+    {
+      "marker": "13.7. Exclusive Remedy. This Section",
+      "expectedType": "third_party_indemnity",
+      "note": "Reale Klausel, Engine-Typ third_party_indemnity"
+    },
+    {
+      "marker": "17.2. Governing Law and Courts.",
+      "expectedType": "jurisdiction",
+      "note": "Reale Klausel, Engine-Typ jurisdiction"
+    },
+    {
+      "marker": "17.4. Entire Agreement. This Agreement",
+      "expectedType": "entire_agreement",
+      "note": "Reale Klausel, Engine-Typ entire_agreement"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Bonterms Professional Services Agreement(Version",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "NOTE - OLDER VERSION: The most",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "1. The Agreement. The Bonterms",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "2.1. “Action” means any actual",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "2.2. “Additional Terms” means any",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "2.3. “Affiliate” means an entity",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

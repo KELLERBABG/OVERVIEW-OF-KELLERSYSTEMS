@@ -1,0 +1,74 @@
+{
+  "slug": "vertrieb-020",
+  "source": "generated",
+  "domain": "reseller",
+  "traps": [
+    {
+      "marker": "Mängelansprüche entfallen 24 Monate ab Übergabe der Ware endgültig, unabhängig von der gesetzlichen",
+      "expectedType": "statute_of_limitations",
+      "note": "Verkürzte Verjährungsfrist."
+    },
+    {
+      "marker": "Änderungen und Ergänzungen dieses Vertrags bedürfen der Schriftform, die Textform ist ausdrücklich",
+      "expectedType": "written_form_trap",
+      "note": "Formzwang, der spätere Ansprüche erschwert."
+    },
+    {
+      "marker": "Der Kunde trägt die Beweislast dafür, dass ein Ausfall nicht auf Störungen in seinem Betrieb beruht.",
+      "expectedType": "burden_of_proof",
+      "note": "Beweislast wird auf den Kunden verlagert."
+    },
+    {
+      "marker": "Für die Nutzung gelten die Bedingungen, die unter der Adresse",
+      "expectedType": "dynamic_url_referral",
+      "note": "Einbeziehung änderbarer Bedingungen über einen Link."
+    },
+    {
+      "marker": "Eine Haftung des Anbieters für das Verschulden von Erfüllungsgehilfen ist ausgeschlossen.",
+      "expectedType": "vicarious_agents",
+      "note": "Haftung für Erfüllungsgehilfen wird ausgeschlossen."
+    },
+    {
+      "marker": "Prüfungen werden unmittelbar durchgeführt, eine Terminabstimmung entfällt, und die Aufwendungen für",
+      "expectedType": "unreasonable_audit",
+      "note": "Audit ohne Ankündigung und ohne Vorlauf."
+    },
+    {
+      "marker": "Ein Anspruch auf Bereitstellung der Bestandsdaten in einem maschinenlesbaren Standardformat besteht",
+      "expectedType": "data_lockin",
+      "note": "Datenherausgabe nur gegen Zusatzentgelt."
+    },
+    {
+      "marker": "Der Kunde hält den Anbieter auf erstes Anfordern von allen Ansprüchen Dritter schadlos.",
+      "expectedType": "third_party_indemnity",
+      "note": "Weite Freistellung von Ansprüchen Dritter."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Für die Vertragsdauer gelten die vereinbarten Konditionen unverändert.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien halten die geltenden Datenschutzvorschriften ein und verarbeiten personenbezogene",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Anbieter benennt einen technischen Ansprechpartner für den Kunden.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde führt die ihm übertragenen Aufgaben mit der Sorgfalt eines ordentlichen Kaufmanns aus.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Die Parteien regeln Einzelheiten in den beigefügten Anlagen 1 bis 3.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde meldet vermittelte Geschäfte unverzüglich und vollständig an den Anbieter.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    }
+  ],
+  "uncovered": []
+}

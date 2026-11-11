@@ -1,0 +1,92 @@
+{
+  "slug": "service-014",
+  "source": "generated",
+  "domain": "Garantie- und Serviceverlängerung",
+  "traps": [
+    {
+      "marker": "Der Anbieter verweist in seiner Außendarstellung auf die Zusammenarbeit; Widerspruch des Kunden ist ",
+      "expectedType": "marketing_reference",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: consent assumed, objection only after publication"
+    },
+    {
+      "marker": "Der Kunde überträgt dem Anbieter jede Nutzung von Anregungen, die er im Rahmen der Zusammenarbeit",
+      "expectedType": "feedback_ip_grab",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: every suggestion may be used by the provider"
+    },
+    {
+      "marker": "Für den Zugang genügt die Absendung an die zuletzt vom Kunden benannte Adresse; der Kunde trägt das ",
+      "expectedType": "fictitious_receipt",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: dispatch suffices, customer bears the risk"
+    },
+    {
+      "marker": "Der Anbieter strebt die vereinbarten Reaktionszeiten an; bei Überschreitung entstehen dem Kunden",
+      "expectedType": "unverbindliche_sla_falle",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: provider merely strives, no rights for the customer"
+    },
+    {
+      "marker": "Provisionen und Stornoreserven entfallen, wenn der Vermittler den Vertragsschluss nicht innerhalb",
+      "expectedType": "agency_commission_exclusion",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: proof deadline and reserve forfeiture"
+    },
+    {
+      "marker": "Ansprüche wegen der vom Anbieter übernommenen Kundenbeziehungen bestehen nach Beendigung nicht.",
+      "expectedType": "agency_goodwill_waiver",
+      "note": "GAP: engine miss. Legally abusive (§ 89b HGB); technique: paraphrase: claims for the transferred customer base are excluded"
+    },
+    {
+      "marker": "Die Verarbeitung erfolgt auch in Anlage 4 genannten Staaten, welche die Europäische Kommission nicht",
+      "expectedType": "international_data_processing",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: transfer hidden in an annex list"
+    },
+    {
+      "marker": "Sollte eine Bestimmung unwirksam sein, gilt diejenige Regelung, die der Anbieter nach billigem",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "Legally abusive (§ 306 BGB); engine hit; technique: literal gap filling at the provider's discretion"
+    },
+    {
+      "marker": "Der Anbieter behält sich das Eigentum an allen gelieferten Gegenständen bis zur vollständigen",
+      "expectedType": "extended_retention_of_title",
+      "note": "GAP: engine miss. Legally abusive (§ 449 BGB); technique: literal retention of title securing all claims of the business relationship"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Anbieter unterhält eine Betriebshaftpflichtversicherung mit einer Deckungssumme von fünf",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Der Kunde erhält auf Wunsch eine Kopie der über ihn gespeicherten Daten.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Preisanpassungen erfolgen nur mit Zustimmung des Kunden oder bei Änderung gesetzlicher Abgaben.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Der Anbieter teilt beabsichtigte Preisanpassungen mindestens sechs Wochen vorher mit.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Die Parteien benennen jeweils einen Ansprechpartner und informieren unverzüglich über einen Wechsel.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich und verwenden sie",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Der Kunde kann den Vertrag mit einer Frist von vier Wochen zum Monatsende ohne Angabe von Gründen",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Über die Verlängerung notwendiger Zertifizierungen entscheidet der Anbieter; die dadurch",
+      "note": "Deceptive clause without a matching detector type (coverage gap)."
+    },
+    {
+      "marker": "Der Anbieter darf eingesetzte Fachkräfte nach Anlage 5 austauschen, ohne dass der Kunde hiergegen",
+      "note": "Deceptive clause without a matching detector type (coverage gap)."
+    }
+  ]
+}

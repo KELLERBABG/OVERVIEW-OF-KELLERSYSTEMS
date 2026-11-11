@@ -1,0 +1,2 @@
+[console_scripts]
+herzschrittmacher = herzschrittmacher.cli:main

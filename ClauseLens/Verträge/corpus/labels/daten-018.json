@@ -1,0 +1,87 @@
+{
+  "slug": "daten-018",
+  "source": "generated",
+  "domain": "Auftragsverarbeitung",
+  "traps": [
+    {
+      "marker": "Mangels eines Wartungsvertrags kann der Anbieter das System stilllegen",
+      "expectedType": "maintenance_conditional_shutdown",
+      "note": "Paraphrase/Umstellung: nennt 'Mangels eines Wartungsvertrags kann der Anbie' statt der Registerwendung."
+    },
+    {
+      "marker": "setzt sich die Lizenz jeweils um ein weiteres Kalenderjahr fort",
+      "expectedType": "auto_renewal",
+      "note": "Paraphrase/Umstellung: nennt 'setzt sich die Lizenz jeweils um ein weiteres' statt der Registerwendung."
+    },
+    {
+      "marker": "Eine Beendigung ist frühestens nach einundzwanzig Monaten zulässig",
+      "expectedType": "notice_period",
+      "note": "Paraphrase/Umstellung: nennt 'Eine Beendigung ist frühestens nach einundzwa' statt der Registerwendung."
+    },
+    {
+      "marker": "Die Haftung ist der Höhe nach auf die Bereitstellungsprovision begrenzt",
+      "expectedType": "liability",
+      "note": "Paraphrase/Umstellung: nennt 'Die Haftung ist der Höhe nach auf die Bereits' statt der Registerwendung."
+    },
+    {
+      "marker": "verwirkt bei Zahlungsverzug eine Buße in Höhe von zwei Prozent",
+      "expectedType": "penalty",
+      "note": "Paraphrase/Umstellung: nennt 'verwirkt bei Zahlungsverzug eine Buße in Höhe' statt der Registerwendung."
+    },
+    {
+      "marker": "bei der Niederlassung der Anbieterin in Zug zur Entscheidung gebracht",
+      "expectedType": "jurisdiction",
+      "note": "Paraphrase/Umstellung: nennt 'bei der Niederlassung der Anbieterin in Zug z' statt der Registerwendung."
+    },
+    {
+      "marker": "Nach Beendigung des Vertrags ist der Kunde",
+      "expectedType": "non_compete",
+      "note": "Paraphrase/Umstellung: nennt 'Nach Beendigung des Vertrags ist der Kunde' statt der Registerwendung."
+    },
+    {
+      "marker": "ein unwiderrufliches Nutzungsrecht an den Transaktionsdaten",
+      "expectedType": "data_grant",
+      "note": "Paraphrase/Umstellung: nennt 'ein unwiderrufliches Nutzungsrecht an den Tra' statt der Registerwendung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "zum Quartalsende ordentlich kündigen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "dieselben Datenschutzstandards einhalten",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "mit ihren jeweiligen Lizenzen aufgeführt",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "gesetzliche Haftung für Vorsatz und grobe Fahrlässigkeit",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "aus wichtigem Grund jederzeit fristlos beenden",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Streitigkeiten vorrangig durch Mediation zu klären",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "nur im gegenseitigen Einvernehmen.",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "alle vertraulichen Informationen der jeweils anderen Seite",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "eine Bearbeitungsgebühr von fünfzig Euro",
+      "note": "Täuschende Klausel ohne passenden Detektortyp."
+    }
+  ]
+}

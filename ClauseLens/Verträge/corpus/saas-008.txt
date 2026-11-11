@@ -1,0 +1,71 @@
+Vertrag über die Nutzung der Zahlungs-API Hanseatic Pay
+
+zwischen Hanseatic Pay GmbH, Alter Wall 20, 20457 Hamburg (nachfolgend "Anbieterin")
+
+und Rheinland Handel AG, Domstraße 15, 50668 Köln (nachfolgend "Kunde")
+
+Präambel
+
+Die Anbieterin betreibt eine Zahlungs-API für den europäischen Zahlungsverkehr und stellt sie dem Kunden über eine Schnittstelle bereit.
+
+§ 1 Gegenstand
+
+(1) Die Anbieterin stellt dem Kunden die Zahlungs-API Hanseatic Pay zur Einbindung in dessen Onlineshop bereit.
+
+(2) Die technische Spezifikation ergibt sich aus Anlage 1.
+
+§ 2 Vergütung und Verzug
+
+(1) Das Transaktionsentgelt beträgt 0,29 EUR je Transaktion.
+
+(2) Die Rechnung ist innerhalb von 30 Tagen nach Zugang ohne Abzug fällig.
+
+(3) Verzugszinsen betragen 12 Punkte über dem Basiszinssatz.
+
+§ 3 Freistellung
+
+(1) Der Kunde verpflichtet sich, die Anbieterin von Ansprüchen Dritter freizustellen.
+
+§ 4 Steuern
+
+(1) Nachträgliche Abgabenbelastungen trägt der Kunde.
+
+§ 5 Abtretung
+
+(1) Die Abtretung von Forderungen des Kunden ist ohne vorherige schriftliche Zustimmung ausgeschlossen.
+
+§ 6 Aufrechnung
+
+(1) Der Kunde darf mit unbestrittenen Forderungen aufrechnen.
+
+§ 7 Haftung
+
+(1) Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt.
+
+(2) Die Haftung für mittelbare Schäden und entgangenen Gewinn ist abbedungen.
+
+§ 8 Mitteilungen
+
+(1) Mitteilungen gelten nach Versand als zugegangen; auf den tatsächlichen Abruf kommt es nicht an.
+
+§ 9 Datenschutz
+
+(1) Die Verarbeitung erfolgt ausschließlich in Rechenzentren innerhalb der Europäischen Union.
+
+§ 10 Gerichtsstand
+
+(1) Rechtsstreitigkeiten sind ausschließlich vor den Gerichten am Sitz des Anbieters auszutragen.
+
+§ 11 Vertraulichkeit
+
+(1) Die Vertragsparteien behandeln die wechselseitig offengelegten Informationen vertraulich.
+
+§ 12 Datenrückgabe
+
+(1) Die Anbieterin stellt dem Kunden bei Vertragsende eine vollständige Kopie aller Kundendaten in maschinenlesbarer Form kostenfrei bereit.
+
+Hamburg, den 12.08.2025
+
+Für die Anbieterin: gez. J. Hanseatic
+
+Für den Kunden: gez. C. Rheinland

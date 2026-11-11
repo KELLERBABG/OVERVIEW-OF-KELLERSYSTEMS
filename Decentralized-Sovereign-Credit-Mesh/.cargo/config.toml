@@ -1,0 +1,12 @@
+[alias]
+audit = "deny --all-features check"
+check-all = "clippy --all-targets -- -D warnings"
+fix-all = "clippy --fix --all-targets --allow-dirty -- -D warnings"
+test-all = "test --workspace --all-features"
+bench-all = "bench --workspace"
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+strip = "symbols"

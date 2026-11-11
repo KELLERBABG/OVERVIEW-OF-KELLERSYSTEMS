@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "crate_name": "city_types",
+  "completed": false,
+  "coverage": {
+    "functions": 0,
+    "reachable_assertions": 0,
+    "supported_assertions": 0,
+    "unsupported_assertions": 0,
+    "unsupported_kinds": [],
+    "passed": 0,
+    "failed": 0,
+    "warnings": 0,
+    "without_verdict": 0,
+    "panic_sites": 0,
+    "panic_sites_decided": 0,
+    "obligation_solver_calls": 0,
+    "solver_elapsed_ms": 0
+  },
+  "findings": [],
+  "compiler": null,
+  "evidence": [],
+  "obligations": []
+}

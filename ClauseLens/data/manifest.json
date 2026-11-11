@@ -1,0 +1,256 @@
+{
+  "schemaVersion": "1.0.0",
+  "description": "Authoritative registry of the ClauseLens clause database. Every clause record lives in exactly one slice file listed here; the build refuses to load a slice that exists on disk but is not registered, so this manifest owns the set.",
+  "recordSchema": "schema/clause.schema.json",
+  "clausesDirectory": "data/clauses",
+  "exportDirectory": "data/export",
+  "docFamilies": [
+    "arbeitsvertrag",
+    "mietvertrag",
+    "werkvertrag_kaufvertrag",
+    "b2b_agb",
+    "b2c_agb",
+    "gesellschaftsvertrag",
+    "lizenz_saas_nda",
+    "aufhebungs_abfindung",
+    "dach_varianten",
+    "en_law_msa_sow_dpa",
+    "handelsvertretervertrag",
+    "franchisevertrag",
+    "leasingvertrag",
+    "darlehen_verbraucherkredit",
+    "versicherungsvertrag",
+    "anteilskauf_spa",
+    "reisevertrag",
+    "telekommunikationsvertrag",
+    "energieliefervertrag",
+    "pflege_behandlungsvertrag",
+    "arbeitnehmerueberlassung",
+    "bausparvertrag",
+    "kommission",
+    "spedition_lager",
+    "insolvenzplan_starug",
+    "bautraegervertrag"
+  ],
+  "slices": [
+    {
+      "file": "arbeitsvertrag.jsonl",
+      "prefix": "arb",
+      "label": "Arbeitsvertrag",
+      "families": ["arbeitsvertrag"],
+      "focus": "Arbeitsrechtliche Klauseln: Befristung, Ausschlussfristen, Überstunden, Widerrufs- und Freiwilligkeitsvorbehalte, Wettbewerbsverbote, Rückzahlungs- und Vertragsstrafenklauseln."
+    },
+    {
+      "file": "mietvertrag.jsonl",
+      "prefix": "miet",
+      "label": "Mietvertrag",
+      "families": ["mietvertrag"],
+      "focus": "Wohn- und Gewerberaummietrecht: Schönheitsreparaturen, Kaution, Kleinreparaturklauseln, Index- und Staffelmiete, Kündigungsausschluss, Instandhaltung."
+    },
+    {
+      "file": "werkvertrag-kaufvertrag.jsonl",
+      "prefix": "wkg",
+      "label": "Werk- und Kaufvertrag",
+      "families": ["werkvertrag_kaufvertrag"],
+      "focus": "BGB Werkvertrag und Kauf einschliesslich Lieferung: Abnahmefiktionen, Maengelrechte, Verjaehrung, Eigentumsvorbehalt, Ruegepflichten, Zahlungs- und Gerichtsstandsklauseln."
+    },
+    {
+      "file": "b2b-agb.jsonl",
+      "prefix": "agbb2b",
+      "label": "B2B-AGB",
+      "families": ["b2b_agb"],
+      "focus": "Allgemeine Geschaeftsbedingungen im unternehmerischen Verkehr nach §§ 305-310 BGB: Haftung, Laufzeit, Preisanpassung, Daten- und IP-Rechte, Audit, Sperr- und Freistellungsrechte."
+    },
+    {
+      "file": "b2c-agb.jsonl",
+      "prefix": "agbb2c",
+      "label": "B2C-AGB und Verbraucherschutz",
+      "families": ["b2c_agb"],
+      "focus": "Verbrauchervertraege: Widerrufsrecht, Button-Loesung, Preisangaben, Laufzeitverlaengerung, Mahn- und Inkassokosten, Konto- und Leistungssperren, Garantiezusagen."
+    },
+    {
+      "file": "gesellschaftsvertrag.jsonl",
+      "prefix": "ges",
+      "label": "Gesellschafts- und Geschaeftsfuehrervertrag",
+      "families": ["gesellschaftsvertrag"],
+      "focus": "GmbH-/AG-Satzung, Gesellschaftervereinbarung und Geschaeftsfuehrerdienstvertrag: Abfindung, Vesting, Call/Put, Stimmbindung, Karenz, Haftungsfreistellung."
+    },
+    {
+      "file": "lizenz-saas-nda.jsonl",
+      "prefix": "lsa",
+      "label": "Lizenz-, SaaS- und NDA-Klauseln",
+      "families": ["lizenz_saas_nda"],
+      "focus": "Softwarelizenz, SaaS-Bedingungen, Wartung und Geheimhaltung: Rechtsuebertragung, KI-Training, SLA-Entkernung, Lock-in, Residuals, Audit- und Sperrrechte."
+    },
+    {
+      "file": "aufhebung-abfindung.jsonl",
+      "prefix": "aufh",
+      "label": "Aufhebungs- und Abfindungsvereinbarung",
+      "families": ["aufhebungs_abfindung"],
+      "focus": "Beendigungsvereinbarungen: Abfindungshoehe und Faelligkeit, Ausgleichsklauseln, Verzichte, Rueckforderungen, Zeugnis- und Verschwiegenheitsregelungen."
+    },
+    {
+      "file": "dach-varianten-at-ch.jsonl",
+      "prefix": "dach",
+      "label": "DACH-Varianten (AT/CH)",
+      "families": ["dach_varianten"],
+      "focus": "Oesterreichisches und schweizerisches Recht: KSchG und ABGB, AngG und MRG, Art. 19/20/27/100/101/199/340 OR, zwingendes Arbeitsrecht, DSG und ZPO-Besonderheiten."
+    },
+    {
+      "file": "en-law-msa-sow-dpa.jsonl",
+      "prefix": "enlaw",
+      "label": "English-law und bilinguale Vertraege (MSA, SOW, DPA)",
+      "families": ["en_law_msa_sow_dpa"],
+      "focus": "Englischsprachige und zweisprachige Instrumente: Haftungs- und Freistellungsklauseln, Geoeltliches Recht und Gerichtsstand, Schiedsklauseln, Sprachklauseln, Datenverarbeitung und Auftragsverarbeitung."
+    },
+    {
+      "file": "klauselverbote-308-309-sweep.jsonl",
+      "prefix": "sweep",
+      "label": "Klauselverbote nach §§ 308/309 BGB (systematischer Sweep)",
+      "families": [
+        "b2b_agb",
+        "b2c_agb",
+        "arbeitsvertrag",
+        "mietvertrag",
+        "werkvertrag_kaufvertrag",
+        "lizenz_saas_nda",
+        "gesellschaftsvertrag",
+        "aufhebungs_abfindung",
+        "dach_varianten",
+        "en_law_msa_sow_dpa"
+      ],
+      "focus": "Systematische Abdeckung der Klauselverbote ohne und mit Wertung (§ 308 Nr. 1-8, § 309 Nr. 1-13 BGB) sowie der Generalklauseln §§ 305b, 305c, 306, 307 und 310 Abs. 1 BGB."
+    },
+    {
+      "file": "ohne-detektor.jsonl",
+      "prefix": "nodet",
+      "label": "Klauseltypen ohne Detektor (Abdeckungsluecken)",
+      "families": [
+        "b2b_agb",
+        "b2c_agb",
+        "arbeitsvertrag",
+        "mietvertrag",
+        "werkvertrag_kaufvertrag",
+        "lizenz_saas_nda",
+        "gesellschaftsvertrag",
+        "aufhebungs_abfindung",
+        "dach_varianten",
+        "en_law_msa_sow_dpa"
+      ],
+      "focus": "Klauseltypen, die ein Pruefer zwingend beanstanden muss, fuer die die Regelmaschine aber keine Regel besitzt. Diese Datei macht die Abdeckungsluecken zaehlbar."
+    },
+    {
+      "file": "klauselverbote-308-nrn.jsonl",
+      "prefix": "sweep308",
+      "label": "Klauselverbote § 308 BGB (Nr. 1-8, Tiefenschnitt)",
+      "families": [
+        "b2b_agb",
+        "b2c_agb",
+        "arbeitsvertrag",
+        "mietvertrag",
+        "werkvertrag_kaufvertrag",
+        "lizenz_saas_nda",
+        "gesellschaftsvertrag",
+        "aufhebungs_abfindung",
+        "dach_varianten",
+        "en_law_msa_sow_dpa"
+      ],
+      "focus": "Tiefenschnitt der Klauselverbote ohne Wertungsmoeglichkeit: Aufrechnungsverbote, Zurueckbehaltungsrecht, Aenderungs- und Leistungsbestimmungsvorbehalte, Zustimmungs- und Genehmigungsfiktionen, Leistungsverweigerung, Ruege- und Verjaehrungspflichten in Werkvertraegen."
+    },
+    {
+      "file": "klauselverbote-309-nrn.jsonl",
+      "prefix": "sweep309",
+      "label": "Klauselverbote § 309 BGB (Nr. 1-13, Tiefenschnitt)",
+      "families": [
+        "b2b_agb",
+        "b2c_agb",
+        "arbeitsvertrag",
+        "mietvertrag",
+        "werkvertrag_kaufvertrag",
+        "lizenz_saas_nda",
+        "gesellschaftsvertrag",
+        "aufhebungs_abfindung",
+        "dach_varianten",
+        "en_law_msa_sow_dpa"
+      ],
+      "focus": "Tiefenschnitt der Klauselverbote mit Wertungsmoeglichkeit: Preiserhoehungsvorbehalte, Zwangslage, Aufrechnungsausschluss, Leistungsverweigerung, Vertragsstrafen und pauschalierter Schadensersatz, Verwirkung, Haftungsausschluesse, Gewaehrleistungsausschluss, Bindungsdauer und Laufzeitverlaengerung, Wechsel des Vertragspartners, Abschlussvertreter, Beweislast und Formvorschriften."
+    },
+    {
+      "file": "b2c-verbraucherschutz-part2.jsonl",
+      "prefix": "b2c2",
+      "label": "Verbraucherschutz, Vertiefung",
+      "families": ["b2c_agb"],
+      "focus": "Tiefenschnitt der Verbraucherschutzklauseln: Widerrufsrecht, Bestellprozess und Button-Loesung, Preisangaben, Laufzeit- und Verlaengerungsfallen, Mahn- und Inkassokosten, Sperr- und Loeschungsrechte, Garantiezusagen."
+    },
+    {
+      "file": "arbeitsrecht-part2.jsonl",
+      "prefix": "arb2",
+      "label": "Arbeitsrecht, Vertiefung",
+      "families": ["arbeitsvertrag"],
+      "focus": "Vertiefung arbeitsrechtlicher Klauseln: Befristung und Teilzeit, Entgelt und Sonderzahlungen, Urlaub und Entgeltfortzahlung, Direktions- und Weisungsrechte, Beendigung, Zeugnis und nachvertragliche Pflichten."
+    },
+    {
+      "file": "mietrecht-part2.jsonl",
+      "prefix": "miet2",
+      "label": "Mietrecht, Vertiefung",
+      "families": ["mietvertrag"],
+      "focus": "Vertiefung des Wohn- und Gewerberaummietrechts: Miethoehe und Anpassung, Betriebskosten, Instandhaltung und Rueckbau, Nutzung und Untervermietung, Beendigung und Abwicklung."
+    },
+    {
+      "file": "handelsvertreter-franchise.jsonl",
+      "prefix": "hvf",
+      "label": "Handelsvertreter- und Franchisevertrag",
+      "families": ["handelsvertretervertrag", "franchisevertrag"],
+      "focus": "Handelsvertreterrecht (§§ 84-92c HGB: Ausgleichsanspruch § 89b, Wettbewerbsabrede §§ 90, 90a, Provision, Bezirksvertretung nach § 87 Abs. 2, Buchauszug § 87c, Kündigung § 89) und Franchiserecht (Systemnutzung, Gebietsschutz, Systemhandbuch, Warenbezug, Absatzvorgaben, Vertragsende und Nachwirkungen)."
+    },
+    {
+      "file": "leasing-darlehen.jsonl",
+      "prefix": "lsd",
+      "label": "Leasing- und Darlehens-/Verbraucherkreditvertrag",
+      "families": ["leasingvertrag", "darlehen_verbraucherkredit"],
+      "focus": "Leasing (Amortisation, Restwertgarantie, Abrechnung nach Mehrerloes, Instandhaltung, Verwertung, Rueckgabe und Minderwert) und Verbraucherkredit (Pflichtangaben §§ 491, 492, 493 BGB, Widerruf § 495, vorzeitige Rueckzahlung § 500, Vorfälligkeitsentschaedigung § 502, Zinsanpassung, Bearbeitungsentgelte, Restschuldversicherung, Gesamtkosten/Wucher)."
+    },
+    {
+      "file": "versicherung-reise.jsonl",
+      "prefix": "vsr",
+      "label": "Versicherungs- und Reisevertrag",
+      "families": ["versicherungsvertrag", "reisevertrag"],
+      "focus": "Versicherungsvertragsrecht (Obliegenheiten § 28 VVG, vorvertragliche Anzeigepflicht § 19 VVG, Rueckwaertsversicherung, Leistungsausschluesse, Wartezeiten, Praemienanpassung, AVB-Kontrollfreiheit nach § 307 Abs. 3, Kuendigung §§ 11, 205 VVG) und Reiserecht (§§ 651a-651y BGB: Anzahlung § 651r, Stornopauschalen, Umbuchung, Höhere Gewalt § 651h, Mängelanzeige und Abhilfe, Kreditkartenentgelt, Insolvenzabsicherung § 651r)."
+    },
+    {
+      "file": "spa-telekom.jsonl",
+      "prefix": "spt",
+      "label": "Anteilskauf-/SPA und Telekommunikationsvertrag",
+      "families": ["anteilskauf_spa", "telekommunikationsvertrag"],
+      "focus": "Unternehmens- und Anteilskauf (Gewaehrleistung, Verschweigen § 444 BGB, Freistellung und Haftungsobergrenzen, Earn-out, Kaufpreisanpassung, Notarform § 15 GmbHG, W&I-Versicherung, Wettbewerbsverbot ohne Karenz § 74 HGB) und Telekommunikation (TKG 2021: Vertragslaufzeit § 56 TKG, Kuendigungsfristen, Rufnummernmitnahme, Entgeltanpassung, Drosselung, Vertragslaufzeitverlaengerung, Messverfahren)."
+    },
+    {
+      "file": "energie-bauspar.jsonl",
+      "prefix": "enb",
+      "label": "Energieliefervertrag und Bausparvertrag",
+      "families": ["energieliefervertrag", "bausparvertrag"],
+      "focus": "Energielieferung (Grundversorgung nach StromGVV/GasGVV, Preisgarantie und Preisanpassung nach § 41 EnWG, Kuendigungsfristen, Messstellenbetrieb und Preisgleitklauseln, unterjaehrige Verbrauchsabrechnung, Abschlagsanpassung) und Bausparen (Tarifwahl, Sparphase, Zuteilungsreife, Darlehensanspruch, Kündigung und Abschlagszahlung nach der Bausparbedingungen, Verwendung des Sparguthabens)."
+    },
+    {
+      "file": "pflege-aueg.jsonl",
+      "prefix": "pfa",
+      "label": "Pflege-/Behandlungsvertrag und Arbeitnehmerueberlassung",
+      "families": ["pflege_behandlungsvertrag", "arbeitnehmerueberlassung"],
+      "focus": "Behandlungs- und Pflegevertrag (§§ 630a-630h BGB: Aufklaerung und Einwilligung § 630e, Dokumentation § 630f, Einsichtnahme § 630g, Verguetung und Honorar, Wahlleistungsvereinbarung § 17 KHEntgG, Heimvertrag und Entgeltanpassung nach WBVG, Heimaufnahme) und Arbeitnehmerueberlassung (§§ 1, 8-13 AUEG: Erlaubnispflicht, Equal Pay § 8, Ueberlassungshoehstdauer, Verleihverbot, Unterrichtungspflichten § 13, Vertragsstrafe und Equal-Treatment)."
+    },
+    {
+      "file": "kommission-spedition.jsonl",
+      "prefix": "kms",
+      "label": "Kommissions-, Speditions- und Lagervertrag",
+      "families": ["kommission", "spedition_lager"],
+      "focus": "Kommission (§§ 383-406 HGB: Kommissionsgut, Delkredere § 394, Ausfuehrung und Weisungen § 385, Provision § 396, Verkauf unter Preisgrenze, Selbsteintritt § 400) und Spedition/Lager (Haftungsbeschraenkungen nach ADSp und §§ 431, 438 HGB, Wertdeklaration, Lieferfristen, Verlust und Beschaedigung, Lagerrecht §§ 467 ff HGB, Pfandrecht, Einlagerung und Inventar)."
+    },
+    {
+      "file": "insolvenz-bautraeger.jsonl",
+      "prefix": "isb",
+      "label": "Insolvenzplan/StaRUG und Bautraegervertrag",
+      "families": ["insolvenzplan_starug", "bautraegervertrag"],
+      "focus": "Insolvenz und Restrukturierung (Insolvenzplan § 217 InsO, Gruppenbildung § 222 InsO, Drittrechte § 223 InsO, Vergleichsrechnung, Anfechtung §§ 129 ff InsO, Rangruecktritt § 39 Abs. 2 InsO, StaRUG-Plan §§ 4 ff StaRUG, Aussonderung § 47 InsO und Absonderung §§ 49 ff InsO) und Bautraegervertrag (MaBV Ratenplan § 3 MaBV, Notarform § 311b BGB, Bezugsfertigkeit, Abnahme, Sonderwunsch und Nachtraege, Wartungsvertrag, Aufgabenerfuellung, Rueckabwicklung und Ersatzwohnraum)."
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+Werkvertrag über die Fertigung und Lieferung einer Sondermaschine mit Steuerungssoftware
+
+zwischen der Präzisa Maschinenbau GmbH, Industrieweg 5, 73037 Göppingen (nachfolgend Anbieter), und der Vulkan Stahl AG, Hüttenstraße 90, 47119 Duisburg (nachfolgend Kunde).
+
+Präambel
+Der Kunde modernisiert sein Walzwerk und benötigt eine Sondermaschine mit Steuerungssoftware. Der Anbieter fertigt die Maschine und liefert die Steuerung. Die Parteien vereinbaren Folgendes.
+
+§ 1 Gegenstand
+Gegenstand ist die Fertigung, Lieferung und Inbetriebnahme der Sondermaschine gemäß Anlage 1.
+
+§ 2 Leistungsumfang
+(1) Der Anbieter schuldet die Herstellung der vereinbarten Funktionalität.
+
+(2) Der Anbieter führt die Arbeiten mit der vereinbarten Sorgfalt aus.
+
+§ 3 Termine
+(1) Der Anbieter übergibt die Maschine am 30. November 2026.
+
+(2) Überschreitet der Anbieter den Meilenstein, schuldet er eine Schadenspauschale von 5.000 EUR je Woche.
+
+§ 4 Abnahme
+(1) Die Abnahme erfolgt nach einem Probelauf.
+
+(2) Für Meinungsverschiedenheiten über die Abnahme gilt ein gutachterliches Verfahren; die Verfahrenskosten sind vom Kunden vorzustrecken; eine Klage ist erst nach Abschluss des Verfahrens zulässig.
+
+§ 5 Rechte an Ergebnissen
+(1) Alle Rechte an den Ergebnissen gehen in das Alleineigentum des Anbieters über.
+
+(2) Der Kunde erhält ein einfaches Nutzungsrecht an der Steuerungssoftware.
+
+§ 6 Eigentumsvorbehalt
+(1) Title shall remain with the provider until payment in full of all amounts owed under any agreement.
+
+(2) Der Anbieter dokumentiert die Änderungen im Änderungsprotokoll.
+
+§ 7 Zusicherungen
+(1) Zusicherungen zur Eignung für einen bestimmten Zweck sind nicht Bestandteil dieses Vertrages.
+
+(2) Der Anbieter stellt die Maschine ab dem vereinbarten Bereitstellungstermin zur Verfügung.
+
+§ 8 Vermittlung
+(1) Für einen Direktauftrag ist eine Provision ausgeschlossen.
+
+(2) Der Kunde verzichtet auf einen Ausgleich oder eine Entschädigung.
+
+§ 9 Referenznennung
+(1) Der Name und das Logo des Kunden dürfen zu Referenzzwecken auf der Website verwendet werden.
+
+(2) Der Kunde kann der Nennung jederzeit widersprechen.
+
+§ 10 Haftung
+(1) Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt.
+
+(2) Der Anbieter unterhält eine Berufshaftpflichtversicherung mit einer Deckungssumme von zwei Millionen EUR.
+
+§ 11 Vergütung
+(1) Die Vergütung ist innerhalb von dreißig Tagen nach Rechnungseingang fällig.
+
+(2) Jede Partei trägt ihre eigenen Kosten aus der Vertragsverhandlung.
+
+§ 12 Kündigung
+(1) Die Kündigung aus wichtigem Grund bleibt beiden Parteien unbenommen.
+
+(2) Alle Fristen werden in Kalendertagen gerechnet.
+
+§ 13 Schlussbestimmungen
+(1) Änderungen dieses Vertrages können in Textform vereinbart werden.
+
+(2) Dieser Vertrag unterliegt deutschem Recht.
+
+Anlage 1: Leistungsbeschreibung
+
+Anlage 2: Probelauf
+
+Göppingen, den 6. März 2026
+
+Präzisa Maschinenbau GmbH
+
+Vulkan Stahl AG

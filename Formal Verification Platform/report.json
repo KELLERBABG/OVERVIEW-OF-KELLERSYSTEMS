@@ -1,0 +1,943 @@
+{
+  "build_elapsed_ms": 1362,
+  "completed": true,
+  "coverage": {
+    "failed": 19,
+    "functions": 1,
+    "obligation_solver_calls": 46,
+    "panic_sites": 11,
+    "panic_sites_decided": 11,
+    "passed": 27,
+    "reachable_assertions": 46,
+    "solver_elapsed_ms": 1362,
+    "supported_assertions": 46,
+    "unsupported_assertions": 0,
+    "unsupported_kinds": [],
+    "warnings": 0,
+    "without_verdict": 0
+  },
+  "crate": "test_parity.py",
+  "evidence": [],
+  "findings": [
+    {
+      "block": "L14",
+      "crate": "test_parity",
+      "defect_class": "python-index-out-of-bounds",
+      "details": "IndexError: sequence index out of bounds reachable at line 14",
+      "file": "test_parity.py",
+      "function": "loop_range_bounds",
+      "kind": "bounds",
+      "line": 14,
+      "status": "FAIL",
+      "witness": [
+        {
+          "input": "i (arg)",
+          "symbol": "i",
+          "value": "0"
+        },
+        {
+          "input": "len_items (arg)",
+          "symbol": "len_items",
+          "value": "0"
+        },
+        {
+          "input": "res (arg)",
+          "symbol": "res",
+          "value": "0"
+        },
+        {
+          "input": "res_is_none (arg)",
+          "symbol": "res_is_none",
+          "value": "0"
+        }
+      ],
+      "witness_kind": "pinned"
+    },
+    {
+      "block": "L51",
+      "crate": "test_parity",
+      "defect_class": "python-zero-division",
+      "details": "ZeroDivisionError: division or modulo by zero reachable at line 51",
+      "file": "test_parity.py",
+      "function": "unhandled_div_in_handler",
+      "kind": "divzero",
+      "line": 51,
+      "status": "FAIL",
+      "witness": [
+        {
+          "input": "b (arg)",
+          "symbol": "b",
+          "value": "0"
+        }
+      ],
+      "witness_kind": "pinned"
+    },
+    {
+      "block": "L75",
+      "crate": "test_parity",
+      "defect_class": "python-assertion-failure",
+      "details": "AssertionError: assertion can fail at line 75",
+      "file": "test_parity.py",
+      "function": "assert_guarded_none_check",
+      "kind": "assert",
+      "line": 75,
+      "status": "FAIL",
+      "witness": [
+        {
+          "input": "config_is_none (arg)",
+          "symbol": "config_is_none",
+          "value": "1"
+        }
+      ],
+      "witness_kind": "pinned"
+    },
+    {
+      "block": "L79",
+      "crate": "test_parity",
+      "defect_class": "python-attribute-error",
+      "details": "AttributeError: 'NoneType' object attribute dereference reachable at line 79",
+      "file": "test_parity.py",
+      "function": "buggy_none_deref",
+      "kind": "none_deref",
+      "line": 79,
+      "status": "FAIL",
+      "witness": [
+        {
+          "input": "item_is_none (arg)",
+          "symbol": "item_is_none",
+          "value": "1"
+        }
+      ],
+      "witness_kind": "pinned"
+    },
+    {
+      "block": "L101",
+      "crate": "test_parity",
+      "defect_class": "python-key-error",
+      "details": "KeyError: dictionary key missing reachable at line 101",
+      "file": "test_parity.py",
+      "function": "buggy_key_lookup",
+      "kind": "key_error",
+      "line": 101,
+      "status": "FAIL",
+      "witness": [
+        {
+          "input": "key_in_cfg (arg)",
+          "symbol": "key_in_cfg",
+          "value": "0"
+        }
+      ],
+      "witness_kind": "pinned"
+    },
+    {
+      "block": "L114",
+      "crate": "test_parity",
+      "defect_class": "python-type-error",
+      "details": "TypeError: incompatible operand or argument type at line 114",
+      "file": "test_parity.py",
+      "function": "buggy_len_on_scalar",
+      "kind": "type_error",
+      "line": 114,
+      "status": "FAIL",
+      "witness": [
+        {
+          "input": "type_mismatch (arg)",
+          "symbol": "type_mismatch",
+          "value": "1"
+        }
+      ],
+      "witness_kind": "pinned"
+    },
+    {
+      "block": "L123",
+      "crate": "test_parity",
+      "defect_class": "python-type-error",
+      "details": "TypeError: incompatible operand or argument type at line 123",
+      "file": "test_parity.py",
+      "function": "buggy_str_subtraction",
+      "kind": "type_error",
+      "line": 123,
+      "status": "FAIL",
+      "witness": [
+        {
+          "input": "type_mismatch (arg)",
+          "symbol": "type_mismatch",
+          "value": "1"
+        }
+      ],
+      "witness_kind": "pinned"
+    },
+    {
+      "block": "L130",
+      "crate": "test_parity",
+      "defect_class": "python-assertion-failure",
+      "details": "AssertionError: assertion can fail at line 130",
+      "file": "test_parity.py",
+      "function": "test_negative_index_safe",
+      "kind": "assert",
+      "line": 130,
+      "status": "FAIL",
+      "witness": [
+        {
+          "input": "len_items (arg)",
+          "symbol": "len_items",
+          "value": "0"
+        }
+      ],
+      "witness_kind": "pinned"
+    },
+    {
+      "block": "L143",
+      "crate": "test_parity",
+      "defect_class": "python-key-error",
+      "details": "KeyError: dictionary key missing reachable at line 143",
+      "file": "test_parity.py",
+      "function": "test_dict_pop_buggy",
+      "kind": "key_error",
+      "line": 143,
+      "status": "FAIL",
+      "witness": [
+        {
+          "input": "k_in_d (arg)",
+          "symbol": "k_in_d",
+          "value": "0"
+        }
+      ],
+      "witness_kind": "pinned"
+    },
+    {
+      "block": "L155",
+      "crate": "test_parity",
+      "defect_class": "python-type-error",
+      "details": "TypeError: incompatible operand or argument type at line 155",
+      "file": "test_parity.py",
+      "function": "test_scalar_subscript_buggy",
+      "kind": "type_error",
+      "line": 155,
+      "status": "FAIL",
+      "witness": [
+        {
+          "input": "type_mismatch (arg)",
+          "symbol": "type_mismatch",
+          "value": "1"
+        }
+      ],
+      "witness_kind": "pinned"
+    },
+    {
+      "block": "L171",
+      "crate": "test_parity",
+      "defect_class": "python-attribute-error",
+      "details": "AttributeError: 'NoneType' object attribute dereference reachable at line 171",
+      "file": "test_parity.py",
+      "function": "test_getattr_reflection_buggy",
+      "kind": "none_deref",
+      "line": 171,
+      "status": "FAIL",
+      "witness": [
+        {
+          "input": "item_is_none (arg)",
+          "symbol": "item_is_none",
+          "value": "1"
+        }
+      ],
+      "witness_kind": "pinned"
+    },
+    {
+      "block": "L179",
+      "crate": "test_parity",
+      "defect_class": "python-attribute-error",
+      "details": "AttributeError: 'NoneType' object attribute dereference reachable at line 179",
+      "file": "test_parity.py",
+      "function": "test_setattr_reflection_buggy",
+      "kind": "none_deref",
+      "line": 179,
+      "status": "FAIL",
+      "witness": [
+        {
+          "input": "item_is_none (arg)",
+          "symbol": "item_is_none",
+          "value": "1"
+        }
+      ],
+      "witness_kind": "pinned"
+    },
+    {
+      "block": "L183",
+      "crate": "test_parity",
+      "defect_class": "python-stop-iteration",
+      "details": "StopIteration: iterator exhaustion without default reachable at line 183",
+      "file": "test_parity.py",
+      "function": "test_next_iterator_exhaust_buggy",
+      "kind": "stop_iteration",
+      "line": 183,
+      "status": "FAIL",
+      "witness": [
+        {
+          "input": "it_exhausted (arg)",
+          "symbol": "it_exhausted",
+          "value": "1"
+        }
+      ],
+      "witness_kind": "pinned"
+    },
+    {
+      "block": "L198",
+      "crate": "test_parity",
+      "defect_class": "python-dynamic-eval",
+      "details": "SecurityRisk: unconstrained dynamic code execution (eval/exec) reachable at line 198",
+      "file": "test_parity.py",
+      "function": "test_eval_code_buggy",
+      "kind": "eval_exec",
+      "line": 198,
+      "status": "FAIL",
+      "witness": [
+        {
+          "input": "eval_injection (arg)",
+          "symbol": "eval_injection",
+          "value": "1"
+        }
+      ],
+      "witness_kind": "pinned"
+    },
+    {
+      "block": "L213",
+      "crate": "test_parity",
+      "defect_class": "python-unpacking-mismatch",
+      "details": "ValueError: sequence length does not match unpacking target at line 213",
+      "file": "test_parity.py",
+      "function": "test_static_unpacking_mismatch",
+      "kind": "unpacking_error",
+      "line": 213,
+      "status": "FAIL",
+      "witness": [
+        {
+          "input": "unpacking_mismatch (arg)",
+          "symbol": "unpacking_mismatch",
+          "value": "1"
+        }
+      ],
+      "witness_kind": "pinned"
+    },
+    {
+      "block": "L218",
+      "crate": "test_parity",
+      "defect_class": "python-unpacking-mismatch",
+      "details": "ValueError: sequence length does not match unpacking target at line 218",
+      "file": "test_parity.py",
+      "function": "test_dynamic_unpacking_mismatch",
+      "kind": "unpacking_error",
+      "line": 218,
+      "status": "FAIL",
+      "witness": [
+        {
+          "input": "len_items (arg)",
+          "symbol": "len_items",
+          "value": "0"
+        }
+      ],
+      "witness_kind": "pinned"
+    },
+    {
+      "block": "L232",
+      "crate": "test_parity",
+      "defect_class": "python-format-error",
+      "details": "TypeError/ValueError: format string argument count/type mismatch at line 232",
+      "file": "test_parity.py",
+      "function": "test_modulo_format_mismatch",
+      "kind": "format_error",
+      "line": 232,
+      "status": "FAIL",
+      "witness": [
+        {
+          "input": "format_mismatch (arg)",
+          "symbol": "format_mismatch",
+          "value": "1"
+        },
+        {
+          "input": "template (arg)",
+          "symbol": "template",
+          "value": "0"
+        },
+        {
+          "input": "template_is_none (arg)",
+          "symbol": "template_is_none",
+          "value": "0"
+        }
+      ],
+      "witness_kind": "pinned"
+    },
+    {
+      "block": "L243",
+      "crate": "test_parity",
+      "defect_class": "python-format-error",
+      "details": "TypeError/ValueError: format string argument count/type mismatch at line 243",
+      "file": "test_parity.py",
+      "function": "test_fstring_format_mismatch",
+      "kind": "format_error",
+      "line": 243,
+      "status": "FAIL",
+      "witness": [
+        {
+          "input": "format_mismatch (arg)",
+          "symbol": "format_mismatch",
+          "value": "1"
+        }
+      ],
+      "witness_kind": "pinned"
+    },
+    {
+      "block": "L253",
+      "crate": "test_parity",
+      "defect_class": "python-concurrency-race",
+      "details": "RuntimeError/RaceRisk: unconstrained thread spawning without synchronization lock at line 253",
+      "file": "test_parity.py",
+      "function": "test_unlocked_thread_spawn",
+      "kind": "concurrency_race",
+      "line": 253,
+      "status": "FAIL",
+      "witness": [
+        {
+          "input": "concurrency_race (arg)",
+          "symbol": "concurrency_race",
+          "value": "1"
+        },
+        {
+          "input": "t (arg)",
+          "symbol": "t",
+          "value": "0"
+        }
+      ],
+      "witness_kind": "pinned"
+    }
+  ],
+  "language": "python",
+  "obligations": [
+    {
+      "artifact": "",
+      "block": "L58",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "caller_good",
+      "kind": "helper-precondition",
+      "line": 58,
+      "status": "PASS",
+      "verdict": "PASS (helper-precondition)"
+    },
+    {
+      "artifact": "",
+      "block": "L62",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "caller_branch",
+      "kind": "helper-precondition",
+      "line": 62,
+      "status": "PASS",
+      "verdict": "PASS (helper-precondition)"
+    },
+    {
+      "artifact": "test_parity_loop_range_len_index_bounds_L8_1.smt2",
+      "block": "L8",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "loop_range_len",
+      "kind": "index_bounds",
+      "line": 8,
+      "status": "PASS",
+      "verdict": "PASS (unsat)"
+    },
+    {
+      "artifact": "test_parity_loop_range_bounds_index_bounds_L14_1.smt2",
+      "block": "L14",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "loop_range_bounds",
+      "kind": "index_bounds",
+      "line": 14,
+      "pinned_artifact": "test_parity_loop_range_bounds_index_bounds_L14_1.witness.smt2",
+      "status": "FAIL",
+      "verdict": "FAIL (sat)"
+    },
+    {
+      "artifact": "test_parity_loop_enumerate_index_bounds_L20_1.smt2",
+      "block": "L20",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "loop_enumerate",
+      "kind": "index_bounds",
+      "line": 20,
+      "status": "PASS",
+      "verdict": "PASS (unsat)"
+    },
+    {
+      "artifact": "test_parity_loop_while_bound_index_bounds_L26_1.smt2",
+      "block": "L26",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "loop_while_bound",
+      "kind": "index_bounds",
+      "line": 26,
+      "status": "PASS",
+      "verdict": "PASS (unsat)"
+    },
+    {
+      "artifact": "test_parity_handled_div_zero_div_zero_L31_1.smt2",
+      "block": "L31",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "handled_div_zero",
+      "kind": "div_zero",
+      "line": 31,
+      "status": "PASS",
+      "verdict": "PASS (handled)"
+    },
+    {
+      "artifact": "test_parity_handled_multi_except_index_bounds_L37_1.smt2",
+      "block": "L37",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "handled_multi_except",
+      "kind": "index_bounds",
+      "line": 37,
+      "status": "PASS",
+      "verdict": "PASS (handled)"
+    },
+    {
+      "artifact": "test_parity_handled_catch_all_div_zero_L43_1.smt2",
+      "block": "L43",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "handled_catch_all",
+      "kind": "div_zero",
+      "line": 43,
+      "status": "PASS",
+      "verdict": "PASS (handled)"
+    },
+    {
+      "artifact": "test_parity_unhandled_div_in_handler_div_zero_L51_1.smt2",
+      "block": "L51",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "unhandled_div_in_handler",
+      "kind": "div_zero",
+      "line": 51,
+      "pinned_artifact": "test_parity_unhandled_div_in_handler_div_zero_L51_1.witness.smt2",
+      "status": "FAIL",
+      "verdict": "FAIL (sat)"
+    },
+    {
+      "artifact": "test_parity_helper_precond_assert_L54_1.smt2",
+      "block": "L54",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "helper_precond",
+      "kind": "assert",
+      "line": 54,
+      "status": "PASS",
+      "verdict": "PASS (unsat)"
+    },
+    {
+      "artifact": "test_parity_helper_precond_div_zero_L55_2.smt2",
+      "block": "L55",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "helper_precond",
+      "kind": "div_zero",
+      "line": 55,
+      "status": "PASS",
+      "verdict": "PASS (unsat)"
+    },
+    {
+      "artifact": "test_parity_guarded_none_check_none_deref_L71_1.smt2",
+      "block": "L71",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "guarded_none_check",
+      "kind": "none_deref",
+      "line": 71,
+      "status": "PASS",
+      "verdict": "PASS (unsat)"
+    },
+    {
+      "artifact": "test_parity_assert_guarded_none_check_assert_L75_1.smt2",
+      "block": "L75",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "assert_guarded_none_check",
+      "kind": "assert",
+      "line": 75,
+      "pinned_artifact": "test_parity_assert_guarded_none_check_assert_L75_1.witness.smt2",
+      "status": "FAIL",
+      "verdict": "FAIL (sat)"
+    },
+    {
+      "artifact": "test_parity_assert_guarded_none_check_none_deref_L76_2.smt2",
+      "block": "L76",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "assert_guarded_none_check",
+      "kind": "none_deref",
+      "line": 76,
+      "status": "PASS",
+      "verdict": "PASS (unsat)"
+    },
+    {
+      "artifact": "test_parity_buggy_none_deref_none_deref_L79_1.smt2",
+      "block": "L79",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "buggy_none_deref",
+      "kind": "none_deref",
+      "line": 79,
+      "pinned_artifact": "test_parity_buggy_none_deref_none_deref_L79_1.witness.smt2",
+      "status": "FAIL",
+      "verdict": "FAIL (sat)"
+    },
+    {
+      "artifact": "test_parity_handled_none_deref_none_deref_L83_1.smt2",
+      "block": "L83",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "handled_none_deref",
+      "kind": "none_deref",
+      "line": 83,
+      "status": "PASS",
+      "verdict": "PASS (handled)"
+    },
+    {
+      "artifact": "test_parity_guarded_key_lookup_key_error_L93_1.smt2",
+      "block": "L93",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "guarded_key_lookup",
+      "kind": "key_error",
+      "line": 93,
+      "status": "PASS",
+      "verdict": "PASS (unsat)"
+    },
+    {
+      "artifact": "test_parity_assigned_key_lookup_key_error_L97_1.smt2",
+      "block": "L97",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "assigned_key_lookup",
+      "kind": "key_error",
+      "line": 97,
+      "status": "PASS",
+      "verdict": "PASS (unsat)"
+    },
+    {
+      "artifact": "test_parity_assigned_key_lookup_key_error_L98_2.smt2",
+      "block": "L98",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "assigned_key_lookup",
+      "kind": "key_error",
+      "line": 98,
+      "status": "PASS",
+      "verdict": "PASS (unsat)"
+    },
+    {
+      "artifact": "test_parity_buggy_key_lookup_key_error_L101_1.smt2",
+      "block": "L101",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "buggy_key_lookup",
+      "kind": "key_error",
+      "line": 101,
+      "pinned_artifact": "test_parity_buggy_key_lookup_key_error_L101_1.witness.smt2",
+      "status": "FAIL",
+      "verdict": "FAIL (sat)"
+    },
+    {
+      "artifact": "test_parity_handled_key_lookup_key_error_L105_1.smt2",
+      "block": "L105",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "handled_key_lookup",
+      "kind": "key_error",
+      "line": 105,
+      "status": "PASS",
+      "verdict": "PASS (handled)"
+    },
+    {
+      "artifact": "test_parity_buggy_len_on_scalar_type_error_L114_1.smt2",
+      "block": "L114",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "buggy_len_on_scalar",
+      "kind": "type_error",
+      "line": 114,
+      "pinned_artifact": "test_parity_buggy_len_on_scalar_type_error_L114_1.witness.smt2",
+      "status": "FAIL",
+      "verdict": "FAIL (sat)"
+    },
+    {
+      "artifact": "test_parity_handled_type_error_type_error_L118_1.smt2",
+      "block": "L118",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "handled_type_error",
+      "kind": "type_error",
+      "line": 118,
+      "status": "PASS",
+      "verdict": "PASS (handled)"
+    },
+    {
+      "artifact": "test_parity_buggy_str_subtraction_type_error_L123_1.smt2",
+      "block": "L123",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "buggy_str_subtraction",
+      "kind": "type_error",
+      "line": 123,
+      "pinned_artifact": "test_parity_buggy_str_subtraction_type_error_L123_1.witness.smt2",
+      "status": "FAIL",
+      "verdict": "FAIL (sat)"
+    },
+    {
+      "artifact": "test_parity_test_negative_index_safe_assert_L130_1.smt2",
+      "block": "L130",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "test_negative_index_safe",
+      "kind": "assert",
+      "line": 130,
+      "pinned_artifact": "test_parity_test_negative_index_safe_assert_L130_1.witness.smt2",
+      "status": "FAIL",
+      "verdict": "FAIL (sat)"
+    },
+    {
+      "artifact": "test_parity_test_negative_index_safe_index_bounds_L131_2.smt2",
+      "block": "L131",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "test_negative_index_safe",
+      "kind": "index_bounds",
+      "line": 131,
+      "status": "PASS",
+      "verdict": "PASS (unsat)"
+    },
+    {
+      "artifact": "test_parity_test_dict_pop_buggy_key_error_L143_1.smt2",
+      "block": "L143",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "test_dict_pop_buggy",
+      "kind": "key_error",
+      "line": 143,
+      "pinned_artifact": "test_parity_test_dict_pop_buggy_key_error_L143_1.witness.smt2",
+      "status": "FAIL",
+      "verdict": "FAIL (sat)"
+    },
+    {
+      "artifact": "test_parity_test_ternary_none_safe_none_deref_L147_1.smt2",
+      "block": "L147",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "test_ternary_none_safe",
+      "kind": "none_deref",
+      "line": 147,
+      "status": "PASS",
+      "verdict": "PASS (unsat)"
+    },
+    {
+      "artifact": "test_parity_test_ternary_div_safe_div_zero_L151_1.smt2",
+      "block": "L151",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "test_ternary_div_safe",
+      "kind": "div_zero",
+      "line": 151,
+      "status": "PASS",
+      "verdict": "PASS (unsat)"
+    },
+    {
+      "artifact": "test_parity_test_scalar_subscript_buggy_type_error_L155_1.smt2",
+      "block": "L155",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "test_scalar_subscript_buggy",
+      "kind": "type_error",
+      "line": 155,
+      "pinned_artifact": "test_parity_test_scalar_subscript_buggy_type_error_L155_1.witness.smt2",
+      "status": "FAIL",
+      "verdict": "FAIL (sat)"
+    },
+    {
+      "artifact": "test_parity_test_while_symmetric_bound_index_bounds_L165_1.smt2",
+      "block": "L165",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "test_while_symmetric_bound",
+      "kind": "index_bounds",
+      "line": 165,
+      "status": "PASS",
+      "verdict": "PASS (unsat)"
+    },
+    {
+      "artifact": "test_parity_test_getattr_reflection_buggy_none_deref_L171_1.smt2",
+      "block": "L171",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "test_getattr_reflection_buggy",
+      "kind": "none_deref",
+      "line": 171,
+      "pinned_artifact": "test_parity_test_getattr_reflection_buggy_none_deref_L171_1.witness.smt2",
+      "status": "FAIL",
+      "verdict": "FAIL (sat)"
+    },
+    {
+      "artifact": "test_parity_test_setattr_reflection_buggy_none_deref_L179_1.smt2",
+      "block": "L179",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "test_setattr_reflection_buggy",
+      "kind": "none_deref",
+      "line": 179,
+      "pinned_artifact": "test_parity_test_setattr_reflection_buggy_none_deref_L179_1.witness.smt2",
+      "status": "FAIL",
+      "verdict": "FAIL (sat)"
+    },
+    {
+      "artifact": "test_parity_test_next_iterator_exhaust_buggy_stop_iteration_L183_1.smt2",
+      "block": "L183",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "test_next_iterator_exhaust_buggy",
+      "kind": "stop_iteration",
+      "line": 183,
+      "pinned_artifact": "test_parity_test_next_iterator_exhaust_buggy_stop_iteration_L183_1.witness.smt2",
+      "status": "FAIL",
+      "verdict": "FAIL (sat)"
+    },
+    {
+      "artifact": "test_parity_test_next_iterator_handled_stop_iteration_L188_1.smt2",
+      "block": "L188",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "test_next_iterator_handled",
+      "kind": "stop_iteration",
+      "line": 188,
+      "status": "PASS",
+      "verdict": "PASS (handled)"
+    },
+    {
+      "artifact": "test_parity_test_eval_code_buggy_eval_exec_L198_1.smt2",
+      "block": "L198",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "test_eval_code_buggy",
+      "kind": "eval_exec",
+      "line": 198,
+      "pinned_artifact": "test_parity_test_eval_code_buggy_eval_exec_L198_1.witness.smt2",
+      "status": "FAIL",
+      "verdict": "FAIL (sat)"
+    },
+    {
+      "artifact": "test_parity_test_eval_code_handled_eval_exec_L203_1.smt2",
+      "block": "L203",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "test_eval_code_handled",
+      "kind": "eval_exec",
+      "line": 203,
+      "status": "PASS",
+      "verdict": "PASS (handled)"
+    },
+    {
+      "artifact": "test_parity_test_static_unpacking_mismatch_unpacking_error_L213_1.smt2",
+      "block": "L213",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "test_static_unpacking_mismatch",
+      "kind": "unpacking_error",
+      "line": 213,
+      "pinned_artifact": "test_parity_test_static_unpacking_mismatch_unpacking_error_L213_1.witness.smt2",
+      "status": "FAIL",
+      "verdict": "FAIL (sat)"
+    },
+    {
+      "artifact": "test_parity_test_dynamic_unpacking_mismatch_unpacking_error_L218_1.smt2",
+      "block": "L218",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "test_dynamic_unpacking_mismatch",
+      "kind": "unpacking_error",
+      "line": 218,
+      "pinned_artifact": "test_parity_test_dynamic_unpacking_mismatch_unpacking_error_L218_1.witness.smt2",
+      "status": "FAIL",
+      "verdict": "FAIL (sat)"
+    },
+    {
+      "artifact": "test_parity_test_unpacking_handled_unpacking_error_L224_1.smt2",
+      "block": "L224",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "test_unpacking_handled",
+      "kind": "unpacking_error",
+      "line": 224,
+      "status": "PASS",
+      "verdict": "PASS (handled)"
+    },
+    {
+      "artifact": "test_parity_test_modulo_format_mismatch_format_error_L232_1.smt2",
+      "block": "L232",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "test_modulo_format_mismatch",
+      "kind": "format_error",
+      "line": 232,
+      "pinned_artifact": "test_parity_test_modulo_format_mismatch_format_error_L232_1.witness.smt2",
+      "status": "FAIL",
+      "verdict": "FAIL (sat)"
+    },
+    {
+      "artifact": "test_parity_test_modulo_format_handled_format_error_L237_1.smt2",
+      "block": "L237",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "test_modulo_format_handled",
+      "kind": "format_error",
+      "line": 237,
+      "status": "PASS",
+      "verdict": "PASS (handled)"
+    },
+    {
+      "artifact": "test_parity_test_fstring_format_mismatch_format_error_L243_1.smt2",
+      "block": "L243",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "test_fstring_format_mismatch",
+      "kind": "format_error",
+      "line": 243,
+      "pinned_artifact": "test_parity_test_fstring_format_mismatch_format_error_L243_1.witness.smt2",
+      "status": "FAIL",
+      "verdict": "FAIL (sat)"
+    },
+    {
+      "artifact": "test_parity_test_unlocked_thread_spawn_concurrency_race_L253_1.smt2",
+      "block": "L253",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "test_unlocked_thread_spawn",
+      "kind": "concurrency_race",
+      "line": 253,
+      "pinned_artifact": "test_parity_test_unlocked_thread_spawn_concurrency_race_L253_1.witness.smt2",
+      "status": "FAIL",
+      "verdict": "FAIL (sat)"
+    },
+    {
+      "artifact": "test_parity_test_handled_thread_spawn_concurrency_race_L266_1.smt2",
+      "block": "L266",
+      "crate": "test_parity",
+      "file": "test_parity.py",
+      "function": "test_handled_thread_spawn",
+      "kind": "concurrency_race",
+      "line": 266,
+      "status": "PASS",
+      "verdict": "PASS (handled)"
+    }
+  ],
+  "schema_version": 1
+}

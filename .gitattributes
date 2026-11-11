@@ -1,0 +1,25 @@
+﻿# Linguist language detection overrides
+*.smt2 linguist-generated=true
+*.json linguist-detectable=false
+*.jsonl linguist-detectable=false
+*.lock linguist-detectable=false
+*.txt linguist-documentation=true
+*.html linguist-detectable=false
+
+# External / Vendored code
+**/.z3/** linguist-vendored
+**/wintun/** linguist-vendored
+
+# Language mappings
+*.rs linguist-language=Rust
+*.py linguist-language=Python
+*.c linguist-language=C
+*.h linguist-language=C
+*.cpp linguist-language=C++
+*.hpp linguist-language=C++
+*.ino linguist-language=C++
+*.sol linguist-language=Solidity
+*.circom linguist-language=Circom
+*.ts linguist-language=TypeScript
+*.tsx linguist-language=TypeScript
+*.js linguist-language=JavaScript

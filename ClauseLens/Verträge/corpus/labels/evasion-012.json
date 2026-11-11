@@ -1,0 +1,79 @@
+{
+  "slug": "evasion-012",
+  "source": "generated",
+  "domain": "evasion",
+  "traps": [
+    {
+      "marker": "Für die Dauer von achtzehn Monaten nach Auslaufen der Zusammenarbeit ist der Kunde im gesamten",
+      "expectedType": "non_compete",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: non_compete (Technik: long)."
+    },
+    {
+      "marker": "Der Kunde räumt dem Anbieter ein unwiderrufliches Nutzungsrecht an allen Kundendaten und",
+      "expectedType": "data_grant",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: data_grant (Technik: long)."
+    },
+    {
+      "marker": "Bei Zahlungsverzug schuldet der Kunde Verzugszinsen in Höhe von vierzehn Prozent über dem",
+      "expectedType": "default_interest",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: default_interest (Technik: long)."
+    },
+    {
+      "marker": "Der Anbieter behält sich vor, die Preise sowie das Systemhandbuch jederzeit anzupassen und die",
+      "expectedType": "unilateral_change",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: unilateral_change (Technik: long)."
+    },
+    {
+      "marker": "Der Kunde ist nicht berechtigt, gegen Forderungen des Anbieters aufzurechnen oder Zahlungen",
+      "expectedType": "setoff_restriction",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: setoff_restriction (Technik: long)."
+    },
+    {
+      "marker": "Die Abrechnung gilt als genehmigt, wenn der Kunde nicht binnen sieben Kalendertagen nach Erhalt",
+      "expectedType": "deemed_acceptance",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: deemed_acceptance (Technik: long)."
+    },
+    {
+      "marker": "Alle Ansprüche aus diesem Vertrag verjähren innerhalb von 540 Tagen ab Entstehung des Anspruchs.",
+      "expectedType": "statute_of_limitations",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: statute_of_limitations (Technik: long)."
+    },
+    {
+      "marker": "Kündigungen bedürfen der Schriftform und sind per eingeschriebenem Brief an den Anbieter zu",
+      "expectedType": "written_form_trap",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: written_form_trap (Technik: long)."
+    },
+    {
+      "marker": "Es obliegt dem Kunden, darzulegen und nachzuweisen, dass die Ursache nicht auf Umständen aus seinem",
+      "expectedType": "burden_of_proof",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: burden_of_proof (Technik: long)."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Für die Vertragsdauer gelten die vereinbarten Konditionen unverändert.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien halten die geltenden Datenschutzvorschriften ein und verarbeiten personenbezogene",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Anbieter benennt einen technischen Ansprechpartner für den Kunden.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde führt die ihm übertragenen Aufgaben mit der Sorgfalt eines ordentlichen Kaufmanns aus.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Die Parteien regeln Einzelheiten in den beigefügten Anlagen 1 bis 3.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde meldet vermittelte Geschäfte unverzüglich und vollständig an den Anbieter.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    }
+  ],
+  "uncovered": []
+}

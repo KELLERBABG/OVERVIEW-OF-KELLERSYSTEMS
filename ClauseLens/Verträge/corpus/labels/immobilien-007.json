@@ -1,0 +1,74 @@
+{
+  "slug": "immobilien-007",
+  "source": "generated",
+  "domain": "Erbbaurecht",
+  "traps": [
+    {
+      "marker": "Der Erbbauzins erhöht sich jährlich um drei Prozent",
+      "expectedType": "price_escalation",
+      "note": "GAP: Automatische Erhoehung des Erbbauzinses."
+    },
+    {
+      "marker": "Die Pflichten aus dem Erbbaurechtsvertrag bestehen auf Dauer fort",
+      "expectedType": "excessive_survival",
+      "note": "Unbefristete Nachwirkung von Pflichten."
+    },
+    {
+      "marker": "nicht berechtigt, gegen den Erbbauzins aufzurechnen",
+      "expectedType": "setoff_restriction",
+      "note": "Aufrechnungsverbot des Erbbauberechtigten."
+    },
+    {
+      "marker": "darf die Betriebsstätten ohne Anlass inspizieren",
+      "expectedType": "unreasonable_audit",
+      "note": "GAP: Kontrollrecht ohne Anlass."
+    },
+    {
+      "marker": "Die Abtretung von Forderungen aus dem Erbbaurecht bedarf der Zustimmung des Eigentümers",
+      "expectedType": "assignment_restriction",
+      "note": "Zustimmungsvorbehalt fuer die Abtretung."
+    },
+    {
+      "marker": "Die Haftung des Eigentümers ist auf den Jahreserbbauzins begrenzt",
+      "expectedType": "liability",
+      "note": "Haftungsdeckel auf den Jahreserbbauzins."
+    },
+    {
+      "marker": "Nachträgliche Abgabenbelastungen trägt der Erbbauberechtigte vollumfänglich",
+      "expectedType": "tax_indemnity_shift",
+      "note": "GAP: Nachtraegliche Abgaben vollstaendig beim Erbbauberechtigten."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "Symmetrische Vertraulichkeit."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform zugelassen."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhalt."
+    },
+    {
+      "marker": "Zahlungen sind innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Zahlungsfrist."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende beenden",
+      "note": "Symmetrisches Kuendigungsrecht."
+    },
+    {
+      "marker": "Änderungen des Leistungsumfangs bedürfen der Abstimmung beider Parteien",
+      "note": "Einvernehmliche Aenderung."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Eigentümer bestellt dem Erbbauberechtigten ein Erbbaurecht",
+      "note": "Kein Detektor fuer Heimfall oder Zustimmung nach ErbbauRG."
+    }
+  ]
+}

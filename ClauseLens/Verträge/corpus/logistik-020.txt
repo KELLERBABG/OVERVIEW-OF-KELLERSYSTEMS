@@ -1,0 +1,53 @@
+Vertrag über Zollabfertigungsleistungen
+zwischen
+ZollAgent Nord GmbH, Speicherstraße 9, 20457 Hamburg (nachfolgend Anbieter)
+und
+Import Handel GmbH, Warenhausstraße 4, 28195 Bremen (nachfolgend Kunde)
+
+§ 1 Vertragsgegenstand
+
+1.1 Der Anbieter übernimmt für den Kunden die Zollabfertigung und Tarifierung.
+
+1.2 Die Parteien stimmen die Warennummern je Sendung ab.
+
+§ 2 Haftung
+
+2.1 Die Haftung des Anbieters ist der Höhe nach auf fünfzig Prozent der Jahresvergütung begrenzt.
+
+2.2 Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt.
+
+§ 3 Gerichtsstand
+
+3.1 Ausschließlich zuständig sind die Gerichte am Sitz des Anbieters.
+
+3.2 Die Parteien verständigen sich bei Streitigkeiten zunächst gütlich.
+
+§ 4 Steuern und Abgaben
+
+4.1 Nachträgliche Abgabenbelastungen trägt der Kunde.
+
+4.2 Der Anbieter unterstützt den Kunden bei Betriebsprüfungen.
+
+§ 5 Freistellung
+
+5.1 Der Kunde stellt den Anbieter von sämtlichen Ansprüchen Dritter frei, unabhängig davon, ob den Anbieter ein Verschulden trifft.
+
+5.2 Der Anbieter unterhält eine Vermögensschadenhaftpflichtversicherung.
+
+§ 6 Daten
+
+6.1 The Customer grants the Provider a perpetual, irrevocable, worldwide, royalty-free license to use the customs data.
+
+6.2 Die personenbezogenen Daten werden außerhalb der Europäischen Union verarbeitet.
+
+§ 7 Vergütung und Schlussbestimmungen
+
+7.1 Rechnungen sind innerhalb von 30 Tagen ohne Abzug zahlbar.
+
+7.2 Die gesetzlichen Rechte beider Parteien zur außerordentlichen Kündigung aus wichtigem Grund bleiben unberührt.
+
+7.3 Es gilt deutsches Recht.
+
+7.4 Der Kunde kann seine Zolldaten jederzeit in einem gängigen Format exportieren.
+
+7.5 Beide Parteien behandeln die Zolldaten vertraulich.

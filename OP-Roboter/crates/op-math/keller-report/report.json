@@ -1,0 +1,108 @@
+[
+  {
+    "crate": "op_math",
+    "function": "matrix::Matrix3::at",
+    "block": "bb2",
+    "status": "WARN",
+    "kind": "unmodelled-panic",
+    "file": "crates/op-math/src/matrix.rs",
+    "line": 75,
+    "details": "Unmodelled panic site: the call to `core::panicking::panic` can panic, and its body is not read by this analysis, so whether this site can panic was not decided."
+  },
+  {
+    "crate": "op_math",
+    "function": "matrix::_::<impl matrix::_::_serde::Serialize for matrix::Matrix3>::serialize",
+    "block": "bb0",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_10` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "op_math",
+    "function": "matrix::_::<impl matrix::_::_serde::Serialize for matrix::Matrix3>::serialize",
+    "block": "bb1",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_10` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "op_math",
+    "function": "matrix::_::<impl matrix::_::_serde::Serialize for matrix::Matrix3>::serialize",
+    "block": "bb2",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_10` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "op_math",
+    "function": "quaternion::_::<impl matrix::_::_serde::Serialize for quaternion::Quaternion>::serialize",
+    "block": "bb0",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_11` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "op_math",
+    "function": "quaternion::_::<impl matrix::_::_serde::Serialize for quaternion::Quaternion>::serialize",
+    "block": "bb1",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_11` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "op_math",
+    "function": "quaternion::_::<impl matrix::_::_serde::Serialize for quaternion::Quaternion>::serialize",
+    "block": "bb2",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_11` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "op_math",
+    "function": "quaternion::_::<impl matrix::_::_serde::Serialize for quaternion::Quaternion>::serialize",
+    "block": "bb3",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_11` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "op_math",
+    "function": "transform::_::<impl matrix::_::_serde::Serialize for transform::Isometry3>::serialize",
+    "block": "bb0",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_9` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "op_math",
+    "function": "transform::_::<impl matrix::_::_serde::Serialize for transform::Isometry3>::serialize",
+    "block": "bb1",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_9` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "op_math",
+    "function": "vector::_::<impl matrix::_::_serde::Serialize for vector::Vector3>::serialize",
+    "block": "bb0",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_10` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "op_math",
+    "function": "vector::_::<impl matrix::_::_serde::Serialize for vector::Vector3>::serialize",
+    "block": "bb1",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_10` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "op_math",
+    "function": "vector::_::<impl matrix::_::_serde::Serialize for vector::Vector3>::serialize",
+    "block": "bb2",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_10` is a cast of an operand this analysis does not model"
+  }
+]

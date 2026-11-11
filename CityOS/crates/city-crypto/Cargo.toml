@@ -1,0 +1,15 @@
+[package]
+name = "city-crypto"
+description = "KELLER OS cryptographic core: secp256k1, AES-XTS vault, keyed SipHash-2-4 MAC, PRF entropy"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[features]
+# Host profile: enables the OS-entropy source (`fill_os_random`).
+# The kernel profile (no_std) derives seeds from the tick counter +
+# sensor entropy instead, so this stays off there.
+std = []
+
+[dependencies]

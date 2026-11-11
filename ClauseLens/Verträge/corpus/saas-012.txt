@@ -1,0 +1,77 @@
+Software-Abonnementvertrag Weser ERP
+
+zwischen Weser ERP GmbH, Böttcherstraße 4, 28195 Bremen (nachfolgend "Anbieterin")
+
+und Oldenburger Maschinenbau GmbH, Bremer Heerstraße 90, 26135 Oldenburg (nachfolgend "Kunde")
+
+Präambel
+
+Die Anbieterin überlässt dem Kunden das ERP-System Weser ERP zur Nutzung über das Internet und betreibt es in Bremen.
+
+§ 1 Gegenstand
+
+(1) Die Anbieterin überlässt dem Kunden das ERP-System Weser ERP zur Nutzung.
+
+(2) Der Leistungsumfang ergibt sich aus Anlage 1.
+
+§ 2 Salvatorische Klausel
+
+(1) Unwirksame Regelungen werden durch eine interessengerechte Ersatzregelung ersetzt, die der Anbieter nach billigem Ermessen bestimmt.
+
+§ 3 Hardware
+
+(1) Bis der Kunde alle Verbindlichkeiten beglichen hat, bleibt die gelieferte Hardware unser Eigentum.
+
+§ 4 Unterauftragnehmer
+
+(1) Der Einsatz von Unterauftragnehmern bedarf keiner Zustimmung des Kunden.
+
+§ 5 Form
+
+(1) Die Beendigung ist nur durch ein handschriftlich unterzeichnetes Schreiben in Papierform möglich.
+
+§ 6 Haftung
+
+(1) Die Haftung für mittelbare Schäden und entgangenen Gewinn ist abbedungen.
+
+§ 7 Aufrechnung
+
+(1) Gegenansprüche bleiben bei der Abrechnung außer Betracht.
+
+§ 8 Wartung
+
+(1) Der Anbieter ist berechtigt, den Betrieb abzuschalten, sofern kein gesonderter Wartungsvertrag vorliegt.
+
+§ 9 Zahlung
+
+(1) Die Rechnung ist innerhalb von 30 Tagen nach Zugang ohne Abzug fällig.
+
+(2) Der Kunde bleibt zur Zahlung des anteiligen Entgelts für bereits erbrachte Leistungen verpflichtet.
+
+§ 10 Daten
+
+(1) Nach Vertragsende werden die Daten auf Wahl des Kunden gelöscht oder exportiert.
+
+§ 11 Datenschutz
+
+(1) Der Anbieter trifft angemessene technische und organisatorische Maßnahmen zum Schutz der Daten.
+
+§ 12 Mängel
+
+(1) Die Anbieterin gewährleistet, dass die Anwendung im Wesentlichen der Leistungsbeschreibung entspricht.
+
+§ 13 Vertraulichkeit
+
+(1) Die Vertragsparteien behandeln die wechselseitig offengelegten Informationen vertraulich.
+
+§ 14 Schlussbestimmungen
+
+(1) Es gilt deutsches Recht.
+
+(2) Gerichtsstand ist Bremen.
+
+Bremen, den 08.09.2025
+
+Für die Anbieterin: gez. N. Weser
+
+Für den Kunden: gez. D. Oldenburger

@@ -1,0 +1,67 @@
+ALLGEMEINE GESCHÄFTSBEDINGUNGEN FÜR B2B-SOFTWAREPFLEGE, WARTUNG UND TECHNISCHEN SUPPORT (STAND 2026)
+
+§ 1 Vertragsgegenstand und Leistungsumfang
+
+(1) Diese Allgemeinen Geschäftsbedingungen regeln die Erbringung von Softwarepflege-, Wartungs- und Supportleistungen durch die Varix Enterprise Solutions GmbH (nachfolgend „Anbieter“) für die beim Auftraggeber (nachfolgend „Kunde“) eingesetzte Standard-Unternehmenssoftware.
+
+(2) Die Pflegeleistungen umfassen die Bereitstellung von Fehlerkorrekturen (Patches, Bugfixes), funktionalen Programmaktualisierungen (Releases) sowie den telefonischen und elektronischen technischen Support während der vereinbarten Servicezeiten von Montag bis Freitag zwischen 08:00 Uhr und 18:00 Uhr (ausgenommen bundeseinheitliche Feiertage).
+
+§ 2 Bereitstellung von Updates und Gewährleistungsausschluss
+
+(1) Der Anbieter stellt dem Kunden neue Programmversionen und Sicherheitspatches über das Kundenportal zum Download bereit. Der Kunde ist gehalten, bereitgestellte Updates zeitnah in seiner Systemumgebung zu installieren.
+
+(2) Sämtliche im Rahmen der Softwarepflege ausgelieferten Updates, Patches, Hotfixes und Workarounds werden dem Kunden ausschließlich „wie besehen“ (as is) im jeweiligen Entwicklungszustand überlassen; jegliche Sach- und Rechtsmängelgewährleistung für Pflege-Releases wird vollständig ausgeschlossen.
+
+§ 3 Service-Level, Störungsbehebung und Service-Gutschriften
+
+(1) Der Anbieter klassifiziert gemeldete Störungen nach Schweregraden (Priorität 1: Betriebsverhindernder Fehler bis Priorität 4: Kosmetische Abweichung) und nimmt die Bearbeitung innerhalb der im Service-Schein definierten Reaktionszeiten auf.
+
+(2) Bei einer schuldhaften Unterschreitung der vereinbarten Reaktions- oder Wiederherstellungszeiten kann der Kunde eine Service-Gutschrift (Service Credit) auf die monatliche Pflegegebühr beantragen.
+
+(3) Der Anspruch auf eine Service-Gutschrift verfällt jedoch ersatzlos, wenn der Kunde den Antrag nicht innerhalb einer Ausschlussfrist von 48 Stunden nach Behebung der Störung schriftlich einreicht oder wenn der Kunde in den vorangegangenen zwölf Monaten ein beliebiges optionales Zwischen-Update nicht innerhalb von drei Werktagen nach Veröffentlichung eingespielt hatte.
+
+§ 4 Mitwirkungspflichten, Fernzugriff und Lizenz-Audit
+
+(1) Der Kunde benennt dem Anbieter bis zu drei fachkundige Systemadministratoren als autorisierte Ansprechpartner für die Abwicklung von Supportanfragen und ermöglicht bei Bedarf einen gesicherten Fernzugriff (Remote-Access).
+
+(2) Zur Überprüfung der vertragsgemäßen Lizenz- und Wartungsnutzung ist der Anbieter berechtigt, jederzeit ohne Vorankündigung und ohne konkreten Verdachtsgrund die Geschäftsräume und Rechenzentren des Kunden zu betreten sowie auf eigene oder fremde Server-Systeme des Kunden unmittelbar zuzugreifen; sämtliche Kosten der Prüfung trägt unabhängig vom Ergebnis stets der Kunde.
+
+§ 5 Geistiges Eigentum und Verbesserungsvorschläge
+
+(1) An den im Rahmen der Softwarepflege bereitgestellten Programmständen erhält der Kunde dieselben Nutzungsrechte wie an der ursprünglich lizenzierten Hauptsoftware.
+
+(2) Sofern der Kunde oder seine Mitarbeiter im Rahmen von Fehlermeldungen, Support-Tickets oder Anwendertreffen Anregungen, Änderungswünsche, Konzepte oder Verbesserungsvorschläge (Feedback) äußern, gehen sämtliche ausschließlichen, zeitlich und räumlich unbeschränkten Verwertungs- und Urheberrechte hieran automatisch und unentgeltlich auf den Anbieter über, der diese auch zur Patentanmeldung im eigenen Namen verwerten darf.
+
+§ 6 Vergütung und Folgen der Beendigung des Pflegevertrages
+
+(1) Die jährliche Pflegevergütung beträgt 22 % des aktuellen Listenpreises der lizenzierten Softwaremodule und ist jeweils im Voraus zu Beginn eines Vertragsjahres innerhalb von 30 Tagen nach Rechnungszugang zur Zahlung fällig.
+
+(2) Gegenüber Ansprüchen des Anbieters auf Zahlung der Pflegevergütung kann der Kunde mit unbestrittenen oder rechtskräftig festgestellten Gegenforderungen aufrechnen.
+
+(3) Wird dieser Softwarepflegevertrag – gleich aus welchem Grund – gekündigt oder nicht verlängert, ist der Anbieter berechtigt, mittels eines integrierten Lizenzschlüssel-Mechanismus auch die vom Kunden bereits dauerhaft gekaufte und vollständig bezahlte Hauptsoftware (Perpetual License) zum Ablauf des Pflegezeitraums technisch zu deaktivieren und für jede weitere produktive Nutzung zu sperren.
+
+§ 7 Vertragslaufzeit, Verlängerung und Kündigungsform
+
+(1) Der Softwarepflegevertrag hat eine Mindestlaufzeit von 24 Monaten. Er verlängert sich nach Ablauf der Mindestlaufzeit jeweils automatisch um weitere 36 Monate, sofern er nicht mindestens neun Monate vor Ablauf der jeweiligen Laufzeit gekündigt wird.
+
+(2) Jede ordentliche oder außerordentliche Kündigung dieses Vertrages durch den Kunden bedarf zu ihrer Wirksamkeit zwingend der eigenhändigen Unterschrift der Geschäftsführung auf Papier und muss dem Anbieter per eingeschriebenem Brief mit Rückschein (Einschreiben/Rückschein) zugestellt werden; eine Übermittlung per Telefax, E-Mail oder elektronischer Signatur ist unwirksam.
+
+§ 8 Haftung
+
+(1) Der Anbieter haftet unbeschränkt bei Vorsatz und grober Fahrlässigkeit sowie bei schuldhafter Verletzung von Leben, Körper oder Gesundheit.
+
+(2) Bei leicht fahrlässiger Verletzung wesentlicher Vertragspflichten (Kardinalpflichten) ist die Haftung des Anbieters auf den vertragstypischen, bei Vertragsschluss vorhersehbaren Schaden begrenzt.
+
+§ 9 Abwerbeverbot für IT-Fachkräfte
+
+(1) Der Kunde verpflichtet sich, während der Laufzeit dieses Vertrages sowie für einen Zeitraum von fünf Jahren nach dessen Beendigung keine Mitarbeiter, Support-Ingenieure oder freiberuflichen Berater des Anbieters direkt oder indirekt abzuwerben, anzusprechen oder in seinem Unternehmen einzustellen, selbst wenn die Initiative zur Bewerbung ausschließlich vom jeweiligen Mitarbeiter ausgeht; für jeden Fall der Zuwiderhandlung wird eine Vertragsstrafe von 75.000,00 Euro fällig.
+
+§ 10 Datenschutz, Geheimhaltung und Schlussbestimmungen
+
+(1) Soweit der Anbieter im Rahmen des Fernzugriffs mit personenbezogenen Daten des Kunden in Berührung kommt, schließen die Parteien eine Vereinbarung zur Auftragsverarbeitung gemäß Art. 28 DSGVO ab.
+
+(2) Beide Parteien verpflichten sich zur strengen Vertraulichkeit über alle ihnen im Rahmen der Vertragserfüllung bekannt gewordenen vertraulichen Informationen der jeweils anderen Partei.
+
+(3) Sollte eine Bestimmung dieses Vertrages unwirksam oder undurchführbar sein, so gilt anstelle der unwirksamen Bestimmung automatisch diejenige gesetzlich gerade noch zulässige Regelung als vereinbart, die dem wirtschaftlichen Interesse des Anbieters am nächsten kommt (geltungserhaltende Reduktion).
+
+(4) Unabhängig vom Ausgang eines Rechtsstreits oder eines gerichtlichen Vergleichs verpflichtet sich der Kunde, im Falle einer rechtlichen Auseinandersetzung stets sämtliche außergerichtlichen und gerichtlichen Anwalts-, Gutachter- und Verfahrenskosten beider Parteien in voller Höhe allein zu tragen.

@@ -1,0 +1,99 @@
+Cloud-Infrastrukturvertrag (IaaS)
+
+zwischen
+
+der Nordlicht Cloud GmbH, Überseering 12, 22297 Hamburg
+(nachfolgend "Anbieterin")
+
+und
+
+der Weber Fertigungstechnik GmbH, Industriestraße 4, 73037 Göppingen
+(nachfolgend "Kunde")
+
+Präambel
+
+Die Anbieterin betreibt in Hamburg ein Rechenzentrum und stellt dem Kunden virtualisierte Rechenressourcen, Blockspeicher und Netzwerkdienste bereit. Der Kunde ist Unternehmer im Sinne des § 14 BGB.
+
+§ 1 Gegenstand des Vertrags
+
+(1) Die Anbieterin überlässt dem Kunden für die Dauer dieses Vertrags virtuelle Maschinen, Speichervolumen und Bandbreite in dem in Anlage 1 beschriebenen Umfang.
+
+(2) Nicht geschuldet sind die Installation von Anwendungen des Kunden, die Auswahl der Betriebssysteme sowie die Administration der vom Kunden betriebenen Systeme.
+
+§ 2 Laufzeit und Kündigung
+
+(1) Der Vertrag beginnt am 01.03.2025 und läuft zunächst vierundzwanzig Monate.
+
+(2) Das Abonnement setzt sich nach Ablauf der Festlaufzeit jeweils um zwölf Monate fort, sofern es keine Partei kündigt.
+
+(3) Die ordentliche Kündigung ist mit einer Frist von dreißig Tagen zum Monatsende möglich.
+
+(4) Das Recht beider Parteien, den Vertrag aus wichtigem Grund fristlos zu kündigen, bleibt unberührt.
+
+§ 3 Entgelte und Zahlung
+
+(1) Die monatlichen Entgelte ergeben sich aus der Preisliste in Anlage 2.
+
+(2) Rechnungen sind innerhalb von 30 Tagen nach Rechnungsstellung ohne Abzug fällig.
+
+§ 4 Verfügbarkeit
+
+(1) Die Verfügbarkeitsangaben in Anlage 2 sind bloße Zielgröße ohne Rechtsanspruch.
+
+(2) Ansprüche des Kunden wegen einer Unterschreitung dieser Quote sind ausgeschlossen, soweit nicht Vorsatz vorliegt.
+
+(3) Wartungsfenster werden mit einer Frist von sieben Tagen angekündigt.
+
+§ 5 Änderungen des Leistungsumfangs
+
+(1) Der Anbieter ist berechtigt, den Leistungsumfang jederzeit einzuschränken.
+
+(2) Über Änderungen informiert die Anbieterin mindestens dreißig Tage vorher per E-Mail.
+
+§ 6 Abnahme von Konfigurationsleistungen
+
+(1) Mängel sind binnen fünf Werktagen nach Erhalt anzuzeigen; danach gilt die Leistung als genehmigt.
+
+(2) Nach Ablauf von zwölf Monaten nach der Abnahme sind Ansprüche wegen offener Mängel ausgeschlossen.
+
+§ 7 Wartung und Abschaltung
+
+(1) Die Anbieterin ist berechtigt, den Betrieb der virtuellen Maschinen abzuschalten, sofern kein gesonderter Wartungsvertrag geschlossen wurde.
+
+(2) Die Abschaltung erfolgt nur nach vorheriger Mitteilung an den Kunden.
+
+§ 8 Haftung
+
+(1) Die Haftung für mittelbare Schäden und entgangenen Gewinn ist abbedungen.
+
+(2) Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt.
+
+§ 9 Streitbeilegung und anwendbares Recht
+
+(1) Rechtsstreitigkeiten sind ausschließlich vor den Gerichten am Sitz des Anbieters auszutragen.
+
+(2) Es gilt deutsches Recht unter Ausschluss des UN-Kaufrechts.
+
+§ 10 Vertraulichkeit und Erklärungen
+
+(1) Die Anbieterin und der Kunde verpflichten sich, vertrauliche Informationen der jeweils anderen Partei nicht an Dritte weiterzugeben.
+
+(2) Erklärungen im Rahmen dieses Vertrags können per E-Mail in Textform abgegeben werden.
+
+§ 11 Daten und Unterauftragnehmer
+
+(1) Der Kunde erhält bei Vertragsende seine Daten in einem gängigen Format kostenfrei zurück.
+
+(2) Der Kunde kann Unterauftragnehmer der Anbieterin ablehnen, die nicht die Voraussetzungen der Anlage 3 erfüllen.
+
+§ 12 Schlussbestimmungen
+
+(1) Änderungen dieses Vertrags bedürfen der Textform und der Zustimmung beider Parteien.
+
+(2) Die Anlagen 1 bis 3 sind Bestandteil dieses Vertrags.
+
+Ort, Datum: Hamburg, den 14.02.2025
+
+Für die Anbieterin: gez. M. Nordmann
+
+Für den Kunden: gez. T. Weber

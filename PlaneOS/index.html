@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PlaneOS &mdash; trustless execution gate for flight envelope protection</title>
+<meta name="description" content="PlaneOS replaces fly-by-wire voting with formal satisfiability checking, proving on every 500-microsecond control cycle that a commanded manoeuvre cannot violate lethal aerodynamic invariants.">
+<meta name="theme-color" content="#0d1117">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--cock:#0d1117;--cock2:#151b23;--edge:#2b3441;--grey:#7d8b9c;--ink:#e8eef5;--green:#4ade80;--amber:#fbbf24;--red:#ef4444}
+*{box-sizing:border-box} html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--cock);color:#9fb0c2;font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+main{position:relative;z-index:1}
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(16px,4vw,44px)}
+header{padding:clamp(28px,5vw,56px) 0 clamp(14px,2vw,20px)}
+.kick{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--green)}
+h1{margin:.4rem 0 .3rem;font-weight:600;font-size:clamp(2.1rem,5.4vw,3.6rem);line-height:1.03;letter-spacing:-.03em;color:var(--ink)}
+.sub{margin:0;max-width:64ch;color:#8fa0b3}
+.pfd{margin:clamp(18px,3vw,30px) 0;border:1px solid var(--edge);background:linear-gradient(180deg,rgba(16,22,29,.82),rgba(13,17,23,.9))}
+.pfd .hd{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;border-bottom:1px solid var(--edge);padding:.5rem .9rem;
+ font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--grey)}
+.pfd .hd b{color:var(--green);font-weight:500}
+.env{fill:rgba(74,222,128,.07);stroke:var(--green);stroke-width:1.6}
+.g{stroke:#232c37;stroke-width:.7} .ax{font-family:'IBM Plex Mono',monospace;font-size:8px;fill:#5c6b7d}
+.vne{stroke:var(--red);stroke-width:1.2;stroke-dasharray:6 4} .vnel{font-family:'IBM Plex Mono',monospace;font-size:8.5px;fill:var(--red)}
+.stall{stroke:var(--amber);stroke-width:1.2;stroke-dasharray:4 4} .stalll{font-family:'IBM Plex Mono',monospace;font-size:8.5px;fill:var(--amber)}
+.now{fill:var(--ink)} .nowr{stroke:#3d4b5c;stroke-width:.8;stroke-dasharray:3 3}
+.nowl{font-family:'IBM Plex Mono',monospace;font-size:9px;fill:var(--ink)}
+.pulse{fill:none;stroke:var(--green);stroke-width:1.4;animation:ping 2.4s ease-out infinite}
+@keyframes ping{0%{r:5;opacity:.85}100%{r:26;opacity:0}}
+.lab{font-family:'IBM Plex Mono',monospace;font-size:8px;fill:#5c6b7d;letter-spacing:.1em}
+.pfd svg{display:block;width:100%;height:auto;padding:clamp(10px,2vw,20px)}
+.readouts{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:var(--edge);border-top:1px solid var(--edge)}
+.ro{background:var(--cock2);padding:.9rem 1rem}
+.rn{display:block;font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--grey);margin-bottom:.35rem}
+.ro b{display:block;font-family:'IBM Plex Mono',monospace;font-size:1.35rem;font-weight:500;color:var(--ink);line-height:1.1}
+.rl{display:block;font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--grey);margin-top:.2rem}
+.bar{display:block;height:3px;background:#232c37;margin:.6rem 0 .35rem}
+.bar i{display:block;height:100%;background:var(--green)}
+.rnote{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--green)}
+section{border-top:1px solid var(--edge);padding:clamp(24px,4vw,42px) 0}
+h2{margin:0 0 1rem;font-weight:600;font-size:clamp(1.25rem,2.6vw,1.75rem);letter-spacing:-.02em;color:var(--ink)}
+h2 i{font-family:'IBM Plex Mono',monospace;font-style:normal;font-size:10px;letter-spacing:.2em;color:var(--green);display:block;margin-bottom:.4rem;font-weight:400}
+p{margin:0 0 .9rem;max-width:76ch} b{color:var(--ink);font-weight:500}
+pre{margin:1rem 0 0;border:1px solid var(--edge);border-left:3px solid var(--green);background:rgba(10,14,19,.86);padding:.9rem 1rem;
+ font-family:'IBM Plex Mono',monospace;font-size:.74rem;line-height:1.9;color:var(--ink);white-space:pre-wrap;overflow-wrap:anywhere}
+.foot{position:relative;z-index:1;border-top:1px solid var(--edge);padding:1.5rem 0 3rem;font-family:'IBM Plex Mono',monospace;font-size:9.5px;
+ letter-spacing:.14em;text-transform:uppercase;color:var(--grey)}
+.foot .wrap{display:flex;justify-content:space-between;gap:1.4rem;flex-wrap:wrap} .foot a{color:var(--green)}
+@media (prefers-reduced-motion:reduce){.pulse{animation:none;opacity:.4}}
+html{scrollbar-color:#2b3441 #0d1117;scrollbar-width:thin}
+::-webkit-scrollbar{width:12px}::-webkit-scrollbar-track{background:#0d1117}
+::-webkit-scrollbar-thumb{background:#2b3441;border:3px solid #0d1117}::-webkit-scrollbar-thumb:hover{background:#4ade80}
+
+/* --- Keller Systems Subtle Masthead Lockup --- */
+header { padding-top: clamp(18px, 3.2vw, 30px) !important; }
+.ks-masthead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 12px;
+  margin-bottom: clamp(18px, 3vw, 28px);
+  border-bottom: 1px solid #2b3441;
+}
+.ks-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+.ks-mark {
+  width: 22px !important;
+  min-width: 22px !important;
+  max-width: 22px !important;
+  height: 22px !important;
+  min-height: 22px !important;
+  max-height: 22px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: block !important;
+  flex-shrink: 0 !important;
+}
+.ks-titles {
+  display: inline-flex;
+  flex-direction: column;
+  line-height: 1.12;
+}
+.ks-name {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #e8eef5;
+  letter-spacing: -0.01em;
+}
+.ks-sub {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 8.5px;
+  font-weight: 500;
+  color: #7d8b9c;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.ks-brand:hover .ks-name {
+  color: #4ade80;
+}
+.ks-links {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+.ks-link {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 10.5px;
+  color: #7d8b9c;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  letter-spacing: 0.03em;
+  transition: color 0.15s;
+}
+.ks-link:hover {
+  color: #e8eef5;
+}
+</style></head><body><!-- noscript-fallback --><noscript><style>html *{opacity:1!important;transform:none!important;filter:none!important;animation:none!important}[data-a],[data-b],.d,.o,.fade,.draw,.chapter,.step,.panel,.hlab{opacity:1!important}</style></noscript>
+<canvas id="fx" data-kind="cloud" data-count="26" data-colors="rgba(150,175,205,A)|rgba(110,140,175,A)|rgba(200,215,235,A)" aria-hidden="true"></canvas>
+<style>
+#fx{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;pointer-events:none}
+/* mobile-figure */@media (max-width:900px){.panel,.chart,.die,.pfd,.cfg,.console,.figs,.seqblock,.map{overflow-x:auto;-webkit-overflow-scrolling:touch}.panel svg,.chart svg,.die svg,.pfd svg,.cfg svg,.figs svg,.map svg{min-width:660px;max-width:none}}</style>
+<script>
+(function(){
+  var c=document.getElementById('fx'); if(!c) return;
+  var x=c.getContext('2d'), kind=c.dataset.kind, N=+c.dataset.count, cols=c.dataset.colors.split('|');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var W=0,H=0,dpr=Math.min(2,window.devicePixelRatio||1),P=[],C=[],t=0,run=!reduce;
+  function size(){ W=c.clientWidth; H=c.clientHeight; c.width=W*dpr; c.height=H*dpr; x.setTransform(dpr,0,0,dpr,0,0); }
+  function init(){
+    P=[];C=[];
+    for(var i=0;i<N;i++){
+      P.push({x:Math.random()*W,y:Math.random()*H,r:kind==='water'?(0.8+Math.random()*2.2):(70+Math.random()*140),
+               vx:(Math.random()-0.5)*(kind==='water'?0.22:0.09),vy:kind==='water'?(-0.10-Math.random()*0.16):(Math.random()-0.5)*0.012,
+               a:kind==='water'?(0.10+Math.random()*0.34):(0.05+Math.random()*0.11),ph:Math.random()*6.28,sp:0.4+Math.random()*0.9,c:cols[i%cols.length]});
+    }
+  }
+  function draw(){
+    x.clearRect(0,0,W,H);
+    for(var i=0;i<P.length;i++){
+      var p=P[i]; var yy=p.y+Math.sin(t*p.sp+p.ph)*(kind==='water'?9:0);
+      var g=x.createRadialGradient(p.x,yy,0,p.x,yy,p.r);
+      var C=function(v){return p.c.replace('A',String(v));}; if(kind==='water'){ g.addColorStop(0,C(p.a)); } else { g.addColorStop(0,C(p.a*0.5)); g.addColorStop(0.42,C(p.a*0.42)); g.addColorStop(0.75,C(p.a*0.16)); }
+      g.addColorStop(1,C(0));
+      x.fillStyle=g; x.beginPath(); x.arc(p.x,yy,p.r,0,6.2832); x.fill();
+      if(kind==='water' && p.r>1.6){ x.fillStyle=p.c.replace('A',String(p.a*0.9)); x.beginPath(); x.arc(p.x,yy,p.r*0.32,0,6.2832); x.fill(); }
+    }
+  }
+  function step(){
+    t+=0.016;
+    for(var i=0;i<P.length;i++){
+      var p=P[i]; p.x+=p.vx; p.y+=p.vy;
+      if(kind==='water'){ p.x+=Math.sin(t*0.5+p.ph)*0.13; if(p.y<-20){p.y=H+20;p.x=Math.random()*W;} }
+      else { p.y+=Math.sin(t*0.22+p.ph)*0.05; }
+      if(p.x<-p.r-10) p.x=W+p.r; if(p.x>W+p.r+10) p.x=-p.r;
+      if(p.y<-p.r-10) p.y=H+p.r; if(p.y>H+p.r+10) p.y=-p.r;
+    }
+  }
+  function loop(){ if(!run) return; step(); draw(); requestAnimationFrame(loop); }
+  size(); init(); draw();
+  if(run) requestAnimationFrame(loop);
+  window.addEventListener('resize', function(){ size(); init(); draw(); });
+  document.addEventListener('visibilitychange', function(){
+    var was=run; run=!reduce && !document.hidden; if(run && !was) requestAnimationFrame(loop);
+  });
+})();
+</script>
+<main>
+<div class="wrap"><header>
+      <div class="ks-masthead">
+        <a href="https://kellersystems.dev" class="ks-brand" title="Keller Systems">
+          <svg class="ks-mark" viewBox="0 0 100 100" width="22" height="22" aria-hidden="true">
+            <rect x="18" y="14" width="18" height="72" rx="3" fill="#e8eef5"/>
+            <path d="M46 50 L72 16 H90 L60 54 Z" fill="#4ade80"/>
+            <path d="M60 46 L90 84 H72 L46 50 Z" fill="#7d8b9c"/>
+          </svg>
+          <span class="ks-titles">
+            <span class="ks-name">PlaneOS</span>
+            <span class="ks-sub">KELLER SYSTEMS</span>
+          </span>
+        </a>
+        <div class="ks-links">
+          <a href="https://kellersystems.dev" class="ks-link">kellersystems.dev &rarr;</a>
+        <a href="https://github.com/KELLERBABG/PlaneOS" target="_blank" rel="noopener noreferrer" class="ks-link">Source &#8599;</a>
+        </div>
+      </div>
+  <span class="kick">Flight envelope verification gate</span>
+  <h1>PlaneOS</h1>
+  <p class="sub">A trustless execution gate in pure Rust. It isolates the flight surfaces from pilot and autopilot error by proving, on every 500-microsecond control cycle, that the requested manoeuvre cannot violate a lethal aerodynamic invariant.</p>
+</header></div>
+
+<div class="wrap"><div class="pfd">
+  <div class="hd"><span>Primary flight display &middot; live invariant telemetry</span><b>gate open &middot; command verified</b></div>
+  <svg viewBox="0 0 700 320" role="img" aria-label="V-n flight envelope">
+<line class="g" x1="54" y1="40.9" x2="678" y2="40.9"/><text class="ax" x="45" y="43.9" text-anchor="end">+2.5</text><line class="g" x1="54" y1="72.4" x2="678" y2="72.4"/><text class="ax" x="45" y="75.4" text-anchor="end">+2.0</text><line class="g" x1="54" y1="135.4" x2="678" y2="135.4"/><text class="ax" x="45" y="138.4" text-anchor="end">+1.0</text><line class="g" x1="54" y1="198.4" x2="678" y2="198.4"/><text class="ax" x="45" y="201.4" text-anchor="end">+0.0</text><line class="g" x1="54" y1="261.4" x2="678" y2="261.4"/><text class="ax" x="45" y="264.4" text-anchor="end">-1.0</text><line class="g" x1="54.0" y1="22" x2="54.0" y2="274"/><text class="ax" x="54.0" y="290" text-anchor="middle">0</text><line class="g" x1="202.6" y1="22" x2="202.6" y2="274"/><text class="ax" x="202.6" y="290" text-anchor="middle">100</text><line class="g" x1="351.1" y1="22" x2="351.1" y2="274"/><text class="ax" x="351.1" y="290" text-anchor="middle">200</text><line class="g" x1="499.7" y1="22" x2="499.7" y2="274"/><text class="ax" x="499.7" y="290" text-anchor="middle">300</text><line class="g" x1="574.0" y1="22" x2="574.0" y2="274"/><text class="ax" x="574.0" y="290" text-anchor="middle">350</text><line class="g" x1="648.3" y1="22" x2="648.3" y2="274"/><text class="ax" x="648.3" y="290" text-anchor="middle">400</text>
+<polygon class="env" points="54.0,198.4 232.3,261.4 232.3,40.9 470.0,40.9 559.1,72.4 618.6,122.8 678.0,198.4 678.0,261.4 232.3,261.4"/>
+<line class="vne" x1="574.0" y1="22" x2="574.0" y2="274"/>
+<text class="vnel" x="579.0" y="35">V_NE 350</text>
+<line class="stall" x1="232.3" y1="22" x2="232.3" y2="274"/>
+<text class="stalll" x="237.3" y="268">stall boundary</text>
+<line class="nowr" x1="54" y1="134.1" x2="470.0" y2="134.1"/>
+<line class="nowr" x1="470.0" y1="134.1" x2="470.0" y2="274"/>
+<circle class="pulse" cx="470.0" cy="134.1" r="6"/>
+<circle class="now" cx="470.0" cy="134.1" r="5"/>
+<text class="nowl" x="480.0" y="127.1">here: 280 KT, +1.02 G</text>
+<text class="lab" x="678" y="304" text-anchor="end">indicated airspeed, kt</text>
+<text class="lab" x="12" y="24">load factor, g</text>
+</svg>
+  <div class="readouts"><div class="ro"><span class="rn">Indicated airspeed</span><b>280 KT</b><span class="rl">V_NE = 350 KT</span><span class="bar"><i style="width:20%"></i></span><span class="rnote">70 KT margin</span></div><div class="ro"><span class="rn">Angle of attack</span><b>4.2&deg;</b><span class="rl">&alpha;_max = 16.0&deg;</span><span class="bar"><i style="width:26%"></i></span><span class="rnote">no stall risk</span></div><div class="ro"><span class="rn">Normal acceleration</span><b>+1.02 G</b><span class="rl">envelope &minus;1.0 to +2.5 G</span><span class="bar"><i style="width:58%"></i></span><span class="rnote">inside</span></div><div class="ro"><span class="rn">Gate evaluation</span><b>180 &micro;s</b><span class="rl">budget 500 &micro;s</span><span class="bar"><i style="width:36%"></i></span><span class="rnote">within cycle</span></div></div>
+</div></div>
+
+<section><div class="wrap"><h2><i>01 &mdash; the problem</i>Why voting fails</h2>
+<p>Commercial airliners fly on voting schemes: two out of three flight control computers must agree before a surface moves. When sensors ice over, or a software edge case appears, <b>voting algorithms can agree on a catastrophic manoeuvre</b> &mdash; agreement is not correctness, and three computers running the same faulty model will agree with each other.</p>
+<p>PlaneOS replaces heuristic agreement with formal satisfiability. A command does not reach a flight surface unless its safety has been proven in advance.</p>
+</div></section>
+
+<section><div class="wrap"><h2><i>02 &mdash; the gate</i>UNSAT opens, SAT clamps</h2>
+<p>The execution gate sits directly between the flight control computers and the hydraulic and electric surface servos. When a pitch-up is commanded, the gate translates the resulting trajectory into a hazard formula and asks the solver one question: can this command lead to a stall, an overspeed, or a terrain collision within horizon H?</p>
+<p>If the answer is <b>UNSAT</b> &mdash; the hazard is physically impossible &mdash; the gate opens and the actuator deflects. If the hazard is <b>SAT</b>, an excursion is reachable, and the command is clamped to the nearest verified-safe alternative. The pilot keeps authority over everything that is provably survivable; nothing else reaches the surface.</p>
+<pre>git clone https://github.com/KELLERBABG/PlaneOS.git
+cd PlaneOS &amp;&amp; cargo test      # the reproducible verification suite</pre>
+</div></section>
+</main>
+
+<div class="foot"><div class="wrap"><span>PlaneOS &middot; Keller Systems</span>
+<span><a href="https://github.com/KELLERBABG/PlaneOS">repository</a> &nbsp;/&nbsp; <a href="https://kellersystems.dev">kellersystems.dev</a></span></div></div>
+</body></html>

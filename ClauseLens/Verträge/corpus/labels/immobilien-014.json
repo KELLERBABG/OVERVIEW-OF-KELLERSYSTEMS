@@ -1,0 +1,74 @@
+{
+  "slug": "immobilien-014",
+  "source": "generated",
+  "domain": "Architektenvertrag",
+  "traps": [
+    {
+      "marker": "trägt die Beweislast für die rechtzeitige Anzeige eines Bedenkenhinweises",
+      "expectedType": "burden_of_proof",
+      "note": "Beweislast fuer den Bedenkenhinweis beim Auftraggeber."
+    },
+    {
+      "marker": "verjähren ausschließlich innerhalb von zwei Jahren",
+      "expectedType": "statute_of_limitations",
+      "note": "GAP: Verkuerzte Verjaehrung fuer Planungsfehler."
+    },
+    {
+      "marker": "Nach Übergabe gilt das Werk als vorbehaltlos abgenommen",
+      "expectedType": "deemed_acceptance",
+      "note": "Abnahmefiktion durch Uebergabe."
+    },
+    {
+      "marker": "Die Haftung des Architekten ist auf die Höhe des Architektenhonorars gedeckelt",
+      "expectedType": "liability",
+      "note": "GAP: Haftungsdeckel auf das Honorar."
+    },
+    {
+      "marker": "kann Ansprüche aus dem Vertrag nicht abtreten",
+      "expectedType": "assignment_restriction",
+      "note": "GAP: Abtretungsverbot fuer Ansprueche des Auftraggebers."
+    },
+    {
+      "marker": "Frühere Planungsabsprachen treten mit Unterzeichnung außer Kraft",
+      "expectedType": "entire_agreement",
+      "note": "GAP: Vorvertragliche Absprachen entwertet."
+    },
+    {
+      "marker": "abrufbar unter https://archiv.example.de in ihrer jeweils gültigen Fassung",
+      "expectedType": "dynamic_url_referral",
+      "note": "Regelwerke nur per URL in wechselnder Fassung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "Symmetrische Vertraulichkeit."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhalt."
+    },
+    {
+      "marker": "Zahlungen sind innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Zahlungsfrist."
+    },
+    {
+      "marker": "Änderungen des Leistungsumfangs bedürfen der Abstimmung beider Parteien",
+      "note": "Einvernehmliche Aenderung."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende beenden",
+      "note": "Symmetrisches Kuendigungsrecht."
+    },
+    {
+      "marker": "Nach Vertragsende erhält der Kunde die Vertragsdaten kostenfrei in einem offenen Format",
+      "note": "Kostenfreier Datenexport."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Grundlagenermittlung, Vorplanung und Bauüberwachung",
+      "note": "Kein Detektor fuer Leistungsphasen nach HOAI."
+    }
+  ]
+}

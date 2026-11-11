@@ -1,0 +1,15 @@
+[package]
+name = "sybil-sybil"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Sybil-Resistance by Graph Entropy: entropy-based anomaly detection identifying artificial clusters with abnormal connectivity patterns"
+
+[dependencies]
+sybil-core = { path = "../core" }
+sybil-graph = { path = "../graph" }
+serde.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+rand.workspace = true
+rayon.workspace = true

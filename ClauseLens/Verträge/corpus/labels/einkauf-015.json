@@ -1,0 +1,91 @@
+{
+  "slug": "einkauf-015",
+  "source": "generated",
+  "domain": "Einkauf und Lieferantenrahmenvertrag, deutsches Recht",
+  "traps": [
+    {
+      "marker": "bis alle Ansprüche aus der gesamten Geschäftsbeziehung ausgeglichen sind",
+      "expectedType": "extended_retention_of_title",
+      "note": "Kontokorrentvorbehalt"
+    },
+    {
+      "marker": "stellt den Auftragnehmer von Ansprüchen Dritter frei, unabhängig von einem Verschulden",
+      "expectedType": "third_party_indemnity",
+      "note": "Verschuldensunabhaengige Drittfreistellung"
+    },
+    {
+      "marker": "Höhere Gewalt befreit den Auftragnehmer von seiner Leistungspflicht",
+      "expectedType": "force_majeure_asymmetry",
+      "note": "Einseitige Risikoverteilung bei hoeherer Gewalt"
+    },
+    {
+      "marker": "kann der Auftragnehmer die Diagnosesoftware abschalten",
+      "expectedType": "maintenance_conditional_shutdown",
+      "note": "Abschaltung an fehlenden Wartungsvertrag gekoppelt"
+    },
+    {
+      "marker": "eine pauschale Abstandszahlung in Höhe von drei Monatsentgelten fällig",
+      "expectedType": "early_termination_charge",
+      "note": "Strafzahlung bei vorzeitiger Beendigung"
+    },
+    {
+      "marker": "Datenbestand wird ausschließlich im herstellereigenen Binärformat bereitgestellt",
+      "expectedType": "data_lockin",
+      "note": "Lock-in durch Proprietaerformat"
+    },
+    {
+      "marker": "Firmennamen des Kunden zu Referenzzwecken verwenden",
+      "expectedType": "marketing_reference",
+      "note": "Referenznutzung ohne Zustimmungsvorbehalt"
+    },
+    {
+      "marker": "kann die Fertigungslinien jederzeit auditieren",
+      "expectedType": "unreasonable_audit",
+      "note": "Auditrecht ohne Anlass und Vorlaufzeit"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Lieferant stellt die Prüfprotokolle in Textform bereit",
+      "note": "Bereitstellung in Textform"
+    },
+    {
+      "marker": "Der Lieferant unterhält eine Betriebshaftpflichtversicherung mit Deckung von zwei Millionen EUR",
+      "note": "Versicherungsnachweis ohne Haftungsverzicht"
+    },
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Zulaessige Haftungsklausel"
+    },
+    {
+      "marker": "Prüfungen werden mit angemessener Vorlaufzeit angekündigt",
+      "note": "Ankuendigungspflicht fuer Pruefungen"
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag einvernehmlich beenden",
+      "note": "Einvernehmliche Beendigung"
+    },
+    {
+      "marker": "Der Kunde erhält seine Bestandsdaten bei Vertragsende unentgeltlich in einem gängigen Format",
+      "note": "Kostenfreier Datenexport"
+    },
+    {
+      "marker": "Rechnungen sind innerhalb von dreißig Tagen ohne Abzug zu begleichen",
+      "note": "Marktueblicher Zahlungstermin"
+    },
+    {
+      "marker": "Änderungen der Anlage 1 bedürfen der Zustimmung beider Parteien in Textform",
+      "note": "Symmetrische Aenderungsklausel"
+    },
+    {
+      "marker": "Beide Parteien behandeln die Zeichnungen der anderen Seite vertraulich",
+      "note": "Wechselseitige Vertraulichkeit"
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Die Parteien benennen jeweils einen technischen Ansprechpartner",
+      "note": "Benennung von Ansprechpartnern ohne Pflichten, kein Detektor"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "slug": "public-commonpaper-ai-addendum",
+  "source": "https://raw.githubusercontent.com/CommonPaper/AI-Addendum/main/AI-Addendum.md",
+  "license": "CC BY 4.0",
+  "retrieved": "2026-10-15",
+  "domain": "KI-Addendum (Common Paper)",
+  "traps": [],
+  "benign": [
+    {
+      "marker": "1. Using AI Services. The AI Services",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "2. Restrictions. Without limiting",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "3. Model Training. Unless the Cover",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "4. Non-Training Improvement. Subject",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "2. Intellectual Property and Privacy",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "1. Ownership. As between the parties,",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

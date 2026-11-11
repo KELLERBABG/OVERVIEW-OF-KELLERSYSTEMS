@@ -1,0 +1,75 @@
+{
+  "slug": "personal-017",
+  "source": "generated",
+  "domain": "Personalberatung",
+  "traps": [
+    {
+      "marker": "Bei einem Direktgeschäft steht der Beraterin keine Provision zu",
+      "expectedType": "agency_commission_exclusion",
+      "note": "keine Provision bei Direktgeschäft"
+    },
+    {
+      "marker": "Die Beraterin hat keinen Anspruch auf Ausgleich für den Kundenstamm",
+      "expectedType": "agency_goodwill_waiver",
+      "note": "kein Ausgleich für den Kundenstamm"
+    },
+    {
+      "marker": "Der Anbieter ist berechtigt, den Kunden als Referenz zu nennen",
+      "expectedType": "marketing_reference",
+      "note": "Referenznennung ohne Zustimmung"
+    },
+    {
+      "marker": "die Geschäftsräume des Kunden ohne Vorankündigung zu betreten",
+      "expectedType": "unreasonable_audit",
+      "note": "Betreten der Geschäftsräume ohne Vorankündigung"
+    },
+    {
+      "marker": "Der Kunde verpflichtet sich, alle überlassenen Informationen vertraulich zu behandeln",
+      "expectedType": "asymmetric_confidentiality",
+      "note": "Vertraulichkeit nur einseitig zulasten des Kunden"
+    },
+    {
+      "marker": "Steuernachforderungen aus der Beratung sind vollumfänglich vom Kunden zu tragen",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Steuernachforderungen trägt der Kunde"
+    },
+    {
+      "marker": "den Kunden von sämtlichen Ansprüchen Dritter freizustellen",
+      "expectedType": "third_party_indemnity",
+      "note": "Freistellung von Ansprüchen Dritter"
+    },
+    {
+      "marker": "nach billigem Ermessen anpassen; eine Obergrenze besteht nicht",
+      "expectedType": "price_escalation",
+      "note": "Preisanpassung ohne Obergrenze"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Anbieter erhält eine erfolgsunabhängige Grundvergütung",
+      "note": "erfolgsunabhängige Grundvergütung"
+    },
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "wechselseitige Vertraulichkeit"
+    },
+    {
+      "marker": "Die Parteien benennen je einen Ansprechpartner",
+      "note": "wechselseitige Ansprechpartner"
+    },
+    {
+      "marker": "Rechnungen sind innerhalb von vierzehn Tagen ohne Abzug zu zahlen",
+      "note": "Zahlungsziel vierzehn Tage"
+    },
+    {
+      "marker": "Die Beraterin dokumentiert den Projektverlauf in einem Abschlussbericht",
+      "note": "Projektdokumentation"
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Die Zusammenarbeit beginnt am 1. März 2026",
+      "note": "Vertragsbeginn als starres Datum ohne Anpassungsklausel, vom Detektor nicht erfasst"
+    }
+  ]
+}

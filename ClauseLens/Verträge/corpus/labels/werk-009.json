@@ -1,0 +1,88 @@
+{
+  "slug": "werk-009",
+  "source": "generated",
+  "domain": "Wartung und Service, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Nach Ablauf der Grundlaufzeit erneuert sich die Vereinbarung stillschweigend, sofern keine Seite wid",
+      "expectedType": "auto_renewal",
+      "note": "Verifizierte Klausel im Bereich auto_renewal."
+    },
+    {
+      "marker": "Der Kunde verzichtet auf Ersatzansprüche, die über die in Ziffer 12 genannten Beträge hinausgehen.",
+      "expectedType": "liability",
+      "note": "Verifizierte Klausel im Bereich liability."
+    },
+    {
+      "marker": "Überschreitet der Anbieter den Meilenstein, schuldet er eine Schadenspauschale von 5.000 EUR je Woch",
+      "expectedType": "penalty",
+      "note": "Verifizierte Klausel im Bereich penalty."
+    },
+    {
+      "marker": "Der Kunde räumt dem Anbieter ein unwiderrufliches, weltweites und übertragbares Nutzungsrecht an den",
+      "expectedType": "data_grant",
+      "note": "Verifizierte Klausel im Bereich data_grant."
+    },
+    {
+      "marker": "Erhebt der Kunde nicht binnen zehn Kalendertagen nach Bereitstellung Einwände, gilt die Leistung als",
+      "expectedType": "deemed_acceptance",
+      "note": "Verifizierte Klausel im Bereich deemed_acceptance."
+    },
+    {
+      "marker": "Kündigungen müssen per Einschreiben mit Rückschein erklärt werden.",
+      "expectedType": "written_form_trap",
+      "note": "Verifizierte Klausel im Bereich written_form_trap."
+    },
+    {
+      "marker": "The provider shall not be liable for acts of subcontractors or agents.",
+      "expectedType": "vicarious_agents",
+      "note": "Verifizierte Klausel im Bereich vicarious_agents."
+    },
+    {
+      "marker": "Wird der Vertrag nicht mit einer Frist von drei Monaten zum Laufzeitende gekündigt, setzt sich die Z",
+      "expectedType": "auto_renewal",
+      "note": "Verifizierte Klausel im Bereich auto_renewal."
+    },
+    {
+      "marker": "Wird die Abnahme nicht binnen vierzehn Tagen erklärt, gilt die Leistung als genehmigt.",
+      "expectedType": "deemed_acceptance",
+      "note": "Verifizierte Klausel im Bereich deemed_acceptance."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Vergütung ist innerhalb von dreißig Tagen nach Rechnungseingang fällig.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Beide Parteien verpflichten sich wechselseitig, die offengelegten Informationen vertraulich zu behan",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Der Anbieter zeigt den Einsatz von Unterauftragnehmern vierzehn Tage vorher an.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Der Kunde erhält zum Vertragsende einen kostenfreien Datenexport in einem gängigen Format.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Änderungen dieses Vertrages können in Textform vereinbart werden.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Monatsende kündigen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Die Parteien benennen je einen Ansprechpartner für die Projektabwicklung",
+      "note": "Beiderseitige Benennung ohne Detektorbezug."
+    }
+  ]
+}

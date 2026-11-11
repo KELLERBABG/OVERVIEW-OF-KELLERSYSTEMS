@@ -1,0 +1,87 @@
+Software-Abonnementvertrag (CRM)
+
+zwischen der Helvetia Software AG, Bahnhofstrasse 44, 8001 Zürich (nachfolgend "Anbieterin")
+
+und der Bündner Treuhand AG, Postplatz 6, 7000 Chur (nachfolgend "Kunde")
+
+Präambel
+
+Die Anbieterin betreibt die CRM-Plattform Alpenblick als gehostete Anwendung und überlässt sie dem Kunden zur Nutzung über das Internet.
+
+§ 1 Gegenstand
+
+(1) Die Anbieterin überlässt dem Kunden die CRM-Plattform Alpenblick zur Nutzung über das Internet.
+
+(2) Der Funktionsumfang ergibt sich aus Anlage 1.
+
+§ 2 Laufzeit
+
+(1) Der Vertrag hat eine feste Laufzeit von zwölf Monaten ab der Bereitstellung.
+
+(2) Er verlängert sich um jeweils ein weiteres Jahr, wenn er nicht drei Monate vor Ablauf gekündigt wird.
+
+§ 3 Nutzungsrechte an Daten
+
+(1) Die Anbieterin darf die Betriebsdaten zur Weiterentwicklung ihrer Modelle nutzen.
+
+(2) Im Übrigen verwendet die Anbieterin die Daten nur zur Erbringung der Leistungen.
+
+§ 4 Datenverarbeitung
+
+(1) Die Verarbeitung der Nutzungsdaten erfolgt in einem Drittland; ein Angemessenheitsbeschluss liegt nicht vor.
+
+(2) Der Kunde wird über Änderungen der Verarbeitungsorte informiert.
+
+§ 5 Referenzen
+
+(1) Die Nennung als Referenzkunde erfolgt ohne gesonderte Zustimmung.
+
+§ 6 Wettbewerbsverbot
+
+(1) Der Kunde verpflichtet sich, für die Dauer von achtzehn Monaten nach Beendigung des Vertrags keine konkurrierende Cloudlösung zu betreiben.
+
+§ 7 Servicegutschriften
+
+(1) Unterlässt der Kunde eine kritische Aktualisierung, verfällt der Anspruch auf Servicegutschriften.
+
+§ 8 Streitbeilegung
+
+(1) Streitigkeiten entscheidet ein Sachverständigenverfahren verbindlich. Die Verfahrenskosten trägt der Besteller und hat sie vorauszuzahlen. Eine Klage ist erst nach Abschluss des Verfahrens zulässig.
+
+§ 9 Gerichtsstand
+
+(1) Rechtsstreitigkeiten sind ausschließlich vor den Gerichten am Sitz des Anbieters auszutragen.
+
+§ 10 Haftung
+
+(1) Die Anbieterin haftet für Schäden, die sie oder ihre Hilfspersonen durch grobe Fahrlässigkeit verursachen.
+
+§ 11 Beendigung durch den Kunden
+
+(1) Der Kunde kann den Vertrag jeweils zum Ende eines Kalenderjahres beenden.
+
+§ 12 Verfügbarkeit
+
+(1) Die Anbieterin sichert eine Verfügbarkeit von 99,5 Prozent pro Kalendermonat zu.
+
+§ 13 Datenrückgabe
+
+(1) Nach Beendigung des Vertrags werden die Daten des Kunden nach Wahl des Kunden gelöscht oder in einem gängigen Format exportiert.
+
+§ 14 Änderungen
+
+(1) Änderungen dieses Vertrags erfolgen nur einvernehmlich.
+
+§ 15 Zahlungsverzug
+
+(1) Jede Partei darf den Vertrag bei Zahlungsverzug der anderen Partei nach Ablauf einer Nachfrist von 30 Tagen kündigen.
+
+§ 16 Schlussbestimmungen
+
+(1) Es gilt Schweizer Recht.
+
+Ort, Datum: Zürich, den 21.05.2025
+
+Für die Anbieterin: gez. L. Helvetia
+
+Für den Kunden: gez. A. Bündner

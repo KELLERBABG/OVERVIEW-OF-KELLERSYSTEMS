@@ -1,0 +1,10 @@
+[package]
+name = "mesh-reputation"
+version = "0.1.0"
+license = "proprietary"
+edition = "2021"
+publish = false
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+mesh-graph-core = { path = "../graph-core" }

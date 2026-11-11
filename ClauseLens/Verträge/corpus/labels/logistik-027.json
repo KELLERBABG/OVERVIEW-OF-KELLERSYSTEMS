@@ -1,0 +1,81 @@
+{
+  "slug": "logistik-027",
+  "source": "generated",
+  "domain": "Facility Management",
+  "traps": [
+    {
+      "marker": "Der Anbieter darf ein Audit ohne vorherige Ankündigung durchführen.",
+      "expectedType": "unreasonable_audit",
+      "note": "Red-team Klausel: unreasonable_audit"
+    },
+    {
+      "marker": "Der Anbieter darf Subunternehmer ohne vorherige Ankündigung einsetzen.",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "Red-team Klausel: subcontractor_uncontrolled"
+    },
+    {
+      "marker": "Der Anbieter ist berechtigt, die Leistung ohne Vorankündigung einzustellen.",
+      "expectedType": "service_suspension",
+      "note": "Red-team Klausel: service_suspension"
+    },
+    {
+      "marker": "Die außerordentliche Kündigung nach § 314 BGB ist abbedungen.",
+      "expectedType": "asymmetric_termination",
+      "note": "Red-team Klausel: asymmetric_termination"
+    },
+    {
+      "marker": " Beendigung durch den Kunden wird eine pauschale Abstandszahlung",
+      "expectedType": "early_termination_charge",
+      "note": "Red-team Klausel: early_termination_charge"
+    },
+    {
+      "marker": " sich, für die Dauer von zwei Jahren nach Vertragsende keine",
+      "expectedType": "non_solicitation",
+      "note": "Red-team Klausel: non_solicitation"
+    },
+    {
+      "marker": "Die Kündigung bedarf der Schriftform.",
+      "expectedType": "written_form_trap",
+      "note": "Red-team Klausel: written_form_trap"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Leistungsverzeichnisse quartalsweise ab",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Leistungsnachweise im Portal bereit",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Unterauftragnehmer auf Anfrage",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "informiert den Kunden unverzüglich über den Grund der Sperrung",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "schult das eingesetzte Personal regelmäßig",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "bestätigen Änderungen im Objektportal",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "innerhalb von 30 Tagen ohne Abzug zahlbar",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "8.3 Es gilt deutsches Recht.",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Beide Parteien behandeln die Objektdaten vertraulich",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

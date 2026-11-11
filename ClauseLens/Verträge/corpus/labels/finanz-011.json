@@ -1,0 +1,87 @@
+{
+  "slug": "finanz-011",
+  "source": "generated",
+  "domain": "Kreditlinie",
+  "traps": [
+    {
+      "marker": "Einbehalte sind nur mit Zustimmung des Anbieters zulässig",
+      "expectedType": "setoff_restriction",
+      "note": "Paraphrase/Umstellung: nennt 'Einbehalte sind nur mit Zustimmung des Anbiet' statt der Registerwendung."
+    },
+    {
+      "marker": "Erfolgt keine Beanstandung innerhalb von fünf Kalendertagen, verfallen",
+      "expectedType": "deemed_acceptance",
+      "note": "Paraphrase/Umstellung: nennt 'Erfolgt keine Beanstandung innerhalb von fünf' statt der Registerwendung."
+    },
+    {
+      "marker": "must be asserted within nine months of the event giving rise to it",
+      "expectedType": "statute_of_limitations",
+      "note": "Paraphrase/Umstellung: nennt 'must be asserted within nine months of the ev' statt der Registerwendung."
+    },
+    {
+      "marker": "Mündliche Nebenabreden haben keine Geltung",
+      "expectedType": "written_form_trap",
+      "note": "Paraphrase/Umstellung: nennt 'Mündliche Nebenabreden haben keine Geltung' statt der Registerwendung."
+    },
+    {
+      "marker": "Nachweis, dass der Schaden nicht auf einer Pflichtverletzung beruht, trägt der Kunde",
+      "expectedType": "burden_of_proof",
+      "note": "Paraphrase/Umstellung: nennt 'Nachweis, dass der Schaden nicht auf einer Pf' statt der Registerwendung."
+    },
+    {
+      "marker": "published at https://finance.example.com/terms and are amended from time to time",
+      "expectedType": "dynamic_url_referral",
+      "note": "Paraphrase/Umstellung: nennt 'published at https://finance.example.com/term' statt der Registerwendung."
+    },
+    {
+      "marker": "shall not be responsible for the acts or omissions of subcontractors",
+      "expectedType": "vicarious_agents",
+      "note": "Paraphrase/Umstellung: nennt 'shall not be responsible for the acts or omis' statt der Registerwendung."
+    },
+    {
+      "marker": "Kontrollrechte der Bank bestehen unabhängig von einem konkreten Anlass",
+      "expectedType": "unreasonable_audit",
+      "note": "Paraphrase/Umstellung: nennt 'Kontrollrechte der Bank bestehen unabhängig v' statt der Registerwendung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "mindestens vierzehn Tage vor dem Einsatz eines Unterauftragnehmers",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "vollständigen Export seiner Daten in einem gängigen maschinenlesbaren Format",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "zum Quartalsende ordentlich kündigen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "spätestens zehn Werktage vor einer beabsichtigten Kontoauflösung",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "einen festen Ansprechpartner für alle Fragen der Vertragsabwicklung",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "ohne Angabe von Gründen zum Monatsende kündigen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Streitigkeiten vorrangig durch Mediation zu klären",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "gesetzliche Haftung für Vorsatz und grobe Fahrlässigkeit",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "zuerst mit Nebenforderungen und Kosten",
+      "note": "Täuschende Klausel ohne passenden Detektortyp."
+    }
+  ]
+}

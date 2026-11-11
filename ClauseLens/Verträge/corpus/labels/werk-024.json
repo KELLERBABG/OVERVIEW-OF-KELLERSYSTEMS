@@ -1,0 +1,88 @@
+{
+  "slug": "werk-024",
+  "source": "generated",
+  "domain": "Prozessindustrie, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Zusicherungen zur Eignung für einen bestimmten Zweck sind nicht Bestandteil dieses Vertrages.",
+      "expectedType": "as_is_software_disclaimer",
+      "note": "Verifizierte Klausel im Bereich as_is_software_disclaimer."
+    },
+    {
+      "marker": "Auf den tatsächlichen Abruf kommt es nicht an.",
+      "expectedType": "fictitious_receipt",
+      "note": "Verifizierte Klausel im Bereich fictitious_receipt."
+    },
+    {
+      "marker": "Für Meinungsverschiedenheiten über die Abnahme gilt ein gutachterliches Verfahren; die Verfahrenskos",
+      "expectedType": "mandatory_expert_determination",
+      "note": "Verifizierte Klausel im Bereich mandatory_expert_determination."
+    },
+    {
+      "marker": "The term shall automatically renew for successive periods of twelve months unless either party gives",
+      "expectedType": "auto_renewal",
+      "note": "Verifizierte Klausel im Bereich auto_renewal."
+    },
+    {
+      "marker": "Schadensersatzansprüche wegen einfacher Fahrlässigkeit sind ausgeschlossen, ausgenommen Kardinalpfli",
+      "expectedType": "liability",
+      "note": "Verifizierte Klausel im Bereich liability."
+    },
+    {
+      "marker": "Als Ort der Streitbeilegung wird der Hauptsitz des Anbieters in Leipzig bestimmt; Klagen sind dort z",
+      "expectedType": "jurisdiction",
+      "note": "Verifizierte Klausel im Bereich jurisdiction."
+    },
+    {
+      "marker": "The customer grants the provider a perpetual, irrevocable license to use the deliverables to train m",
+      "expectedType": "data_grant",
+      "note": "Verifizierte Klausel im Bereich data_grant."
+    },
+    {
+      "marker": "Der Anbieter ist berechtigt, das System abzuschalten, wenn der Kunde den Wartungsvertrag nicht verlä",
+      "expectedType": "maintenance_conditional_shutdown",
+      "note": "Verifizierte Klausel im Bereich maintenance_conditional_shutdown."
+    },
+    {
+      "marker": "Der Anbieter behält sich vor, die Leistungsbeschreibung mit Wirkung für laufende Projekte einseitig",
+      "expectedType": "unilateral_change",
+      "note": "Verifizierte Klausel im Bereich unilateral_change."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Parteien arbeiten bei der Fehleranalyse eng zusammen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Für Mängel während der Gewährleistung leistet der Anbieter kostenfrei Nacherfüllung.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Parteien treffen sich monatlich zu einem Lenkungskreis.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Der Anbieter führt die Arbeiten mit der vereinbarten Sorgfalt aus.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Vertragsparteien informieren sich unverzüglich über Störungen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Der Anbieter meldet Sicherheitsvorfälle unverzüglich an den Kunden.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Vergütung ist innerhalb von dreißig Tagen nach Rechnungseingang fällig.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Die Parteien behandeln die Vertragsverhandlung vertraulich",
+      "note": "Verschwiegenheit ohne Nachwirkung."
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+[package]
+name = "op-verifier"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "Z3 SMT verification engine + lethal invariant enforcement (feature-gated)"
+readme = "README.md"
+
+[features]
+default = []
+# Enables the real Z3 SMT solver integration. Requires Z3 library available to
+# the linker (e.g. `z3` package / Z3 shared library on PATH).
+z3-solver = ["dep:z3"]
+
+[dependencies]
+op-constraints = { workspace = true }
+op-math = { workspace = true }
+serde = { workspace = true }
+thiserror = "1"
+z3 = { version = "0.2", optional = true }

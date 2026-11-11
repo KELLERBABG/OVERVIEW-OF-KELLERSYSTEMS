@@ -1,0 +1,89 @@
+{
+  "slug": "logistik-016",
+  "source": "generated",
+  "domain": "Retail-Logistik",
+  "traps": [
+    {
+      "marker": "Der Vertrag verlängert sich jeweils um weitere zwölf Monate",
+      "expectedType": "auto_renewal",
+      "note": "Red-team Klausel: auto_renewal"
+    },
+    {
+      "marker": "behält sich vor, den Leistungsumfang an geänderte Marktbedingungen anzupassen",
+      "expectedType": "unilateral_change",
+      "note": "Red-team Klausel: unilateral_change"
+    },
+    {
+      "marker": "gilt die Ware als abgenommen",
+      "expectedType": "deemed_acceptance",
+      "note": "Red-team Klausel: deemed_acceptance"
+    },
+    {
+      "marker": "den Kunden als Referenzkunden zu führen",
+      "expectedType": "marketing_reference",
+      "note": "Red-team Klausel: marketing_reference"
+    },
+    {
+      "marker": "Der Kunde verpflichtet sich, sämtliche Betriebs- und Handelsdaten streng vertraulich zu behandeln",
+      "expectedType": "asymmetric_confidentiality",
+      "note": "Red-team Klausel: asymmetric_confidentiality"
+    },
+    {
+      "marker": "keine Mitarbeiter des Anbieters abzuwerben",
+      "expectedType": "non_solicitation",
+      "note": "Red-team Klausel: non_solicitation"
+    },
+    {
+      "marker": "die dem wirtschaftlichen Zweck am nächsten kommt",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "Red-team Klausel: salvatorische_klausel_falle"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "stimmen die Tourenpläne wöchentlich ab",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "zur außerordentlichen Kündigung aus wichtigem Grund bleiben unberührt",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "informiert den Kunden über wesentliche Änderungen",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "prüft die Lieferungen unverzüglich nach Erhalt",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "nennt den Kunden nicht in Pressemitteilungen",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Informationssicherheitsmanagementsystem",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "schult das eingesetzte Personal regelmäßig",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "innerhalb von 30 Tagen ohne Abzug zahlbar",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "9.3 Es gilt deutsches Recht.",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Unterauftragnehmer mit einer Vorlaufzeit von vierzehn Tagen",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

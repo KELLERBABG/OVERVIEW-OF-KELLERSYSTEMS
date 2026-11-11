@@ -1,0 +1,79 @@
+{
+  "slug": "evasion-021",
+  "source": "generated",
+  "domain": "evasion",
+  "traps": [
+    {
+      "marker": "Die Servicelevel sind unverbindlich, es handelt sich um Richtwerte ohne Rechtsanspruch. Ansprüche",
+      "expectedType": "unverbindliche_sla_falle",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: unverbindliche_sla_falle (Technik: altunit)."
+    },
+    {
+      "marker": "Der Kunde erhält keine Provision für Direktgeschäfte, die der Anbieter ohne seine Mitwirkung",
+      "expectedType": "agency_commission_exclusion",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: agency_commission_exclusion (Technik: altunit)."
+    },
+    {
+      "marker": "Der Kunde hat keinen Anspruch auf einen Ausgleich für den von ihm aufgebauten Kundenstamm.",
+      "expectedType": "agency_goodwill_waiver",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: agency_goodwill_waiver (Technik: altunit)."
+    },
+    {
+      "marker": "Eine Übermittlung von Kundendaten in ein Drittland ist zulässig, soweit der Anbieter geeignete",
+      "expectedType": "international_data_processing",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: international_data_processing (Technik: altunit)."
+    },
+    {
+      "marker": "Ein gutachterliches Verfahren ist vor Einleitung des gerichtlichen Rechtswegs durchzuführen. Die",
+      "expectedType": "mandatory_expert_determination",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: mandatory_expert_determination (Technik: altunit)."
+    },
+    {
+      "marker": "Kritische Aktualisierungen muss der Kunde unverzüglich einspielen, andernfalls erlischt der",
+      "expectedType": "service_credit_forfeiture",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: service_credit_forfeiture (Technik: altunit)."
+    },
+    {
+      "marker": "Bei vorzeitiger Auflösung des Vertrags durch den Kunden wird eine pauschale Abstandszahlung in Höhe",
+      "expectedType": "early_termination_charge",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: early_termination_charge (Technik: altunit)."
+    },
+    {
+      "marker": "Ohne gültigen Wartungsvertrag kann der Anbieter die Anlage abschalten.",
+      "expectedType": "maintenance_conditional_shutdown",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: maintenance_conditional_shutdown (Technik: altunit)."
+    },
+    {
+      "marker": "Der Vertrag verlängert sich jeweils um ein weiteres Jahr, sofern er nicht mit einer Frist von drei",
+      "expectedType": "auto_renewal",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: auto_renewal (Technik: altunit)."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende kündigen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Zahlungen sind innerhalb von 30 Tagen nach Rechnungsstellung fällig.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde erhält für vermittelte Geschäfte eine Provision von fünf Prozent des Nettoumsatzes.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Anbieter stellt dem Kunden die vereinbarten Unterlagen unentgeltlich zur Verfügung.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Vertrag wird für die Dauer von zwei Jahren geschlossen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien behandeln die ausgetauschten Informationen vertraulich, die Pflicht gilt für die",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    }
+  ],
+  "uncovered": []
+}

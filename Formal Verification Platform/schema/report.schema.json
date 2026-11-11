@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kellersystems.dev/schemas/report-v1.json",
+  "title": "KellerVerificationReport",
+  "description": "Output schema for Keller-Verify report.json findings array.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["crate", "function", "block", "status", "details"],
+    "properties": {
+      "crate": {
+        "type": "string",
+        "description": "Name of the verified crate."
+      },
+      "function": {
+        "type": "string",
+        "description": "Demangled or MIR function name containing the checked obligation."
+      },
+      "block": {
+        "type": "string",
+        "description": "MIR basic block identifier (e.g. bb0, bb1)."
+      },
+      "status": {
+        "type": "string",
+        "enum": ["PASS", "FAIL", "WARN"],
+        "description": "Verification status of this obligation."
+      },
+      "kind": {
+        "type": "string",
+        "description": "Machine-readable class of the obligation: bounds, overflow, divzero, path-insensitive, unsupported-assertion, unmodelled-panic, etc."
+      },
+      "defect_class": {
+        "type": "string",
+        "enum": ["guard-limited", "widening-limited", "unguarded", "constant-folded", ""],
+        "description": "Actionable defect taxonomy for FAIL findings."
+      },
+      "file": {
+        "type": "string",
+        "description": "Source file path where the function is defined."
+      },
+      "line": {
+        "type": ["integer", "null"],
+        "description": "1-based source line number."
+      },
+      "details": {
+        "type": "string",
+        "description": "Human-readable diagnostic description of the obligation and verdict."
+      },
+      "witness": {
+        "type": "array",
+        "description": "Concrete variable assignments satisfying the counterexample.",
+        "items": {
+          "type": "object",
+          "required": ["symbol", "value"],
+          "properties": {
+            "input": {
+              "type": "string",
+              "description": "The source operand or local name plus MIR local (e.g. 'a (_1)')."
+            },
+            "symbol": {
+              "type": "string",
+              "description": "MIR local variable or parameter identifier."
+            },
+            "value": {
+              "type": "string",
+              "description": "Assigned concrete value from the SMT model or constant evaluator."
+            }
+          }
+        }
+      },
+      "witness_kind": {
+        "type": "string",
+        "enum": ["pinned", "one-of-many", ""],
+        "description": "Whether the witness values are uniquely pinned or one of multiple satisfying assignments."
+      }
+    }
+  }
+}

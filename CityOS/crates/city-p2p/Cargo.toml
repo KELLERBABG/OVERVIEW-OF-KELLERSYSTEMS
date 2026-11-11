@@ -1,0 +1,12 @@
+[package]
+name = "city-p2p"
+description = "P2P gossip transport with verified frames, e1000 NIC bridge, and SDR HAL seam"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+city-types = { workspace = true }
+city-crypto = { workspace = true }
+city-ipc = { workspace = true }

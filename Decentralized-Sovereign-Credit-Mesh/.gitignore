@@ -1,0 +1,13 @@
+/target
+.reasonix/
+**/mesh_state.json
+*.json.bak
+mesh_state.json
+mesh_server_state.json
+*.corrupt.*.json
+mesh-keys/
+solvency_*.json
+zkp_*.json
+**/*.rs.bk
+.env
+*.tmp.*

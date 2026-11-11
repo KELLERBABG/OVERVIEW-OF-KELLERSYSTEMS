@@ -1,0 +1,74 @@
+{
+  "slug": "immobilien-003",
+  "source": "generated",
+  "domain": "Gewerbemiete",
+  "traps": [
+    {
+      "marker": "Die Haftung des Vermieters für leichte Fahrlässigkeit ist auf zwei Monatsmieten begrenzt",
+      "expectedType": "liability",
+      "note": "GAP: Haftungsbegrenzung auch bei leichter Fahrlaessigkeit."
+    },
+    {
+      "marker": "Ausschließlicher Gerichtsstand ist Linz",
+      "expectedType": "jurisdiction",
+      "note": "Ausschliesslicher Gerichtsstand am Sitz des Vermieters."
+    },
+    {
+      "marker": "Ohne handschriftliche Unterzeichnung entfalten Erklärungen keine Wirkung",
+      "expectedType": "written_form_trap",
+      "note": "Schriftformzwang mit handschriftlicher Unterzeichnung."
+    },
+    {
+      "marker": "gelten nach Absenderübergabe an den Versanddienstleister als zugegangen",
+      "expectedType": "fictitious_receipt",
+      "note": "GAP: Zugangsfiktion bereits bei Absendung."
+    },
+    {
+      "marker": "gilt das Übergabeprotokoll als genehmigt",
+      "expectedType": "deemed_acceptance",
+      "note": "Genehmigungsfiktion durch Schweigen."
+    },
+    {
+      "marker": "überdauern die Beendigung auf unbestimmte Zeit",
+      "expectedType": "excessive_survival",
+      "note": "Unbeschraenkte Nachwirkung von Pflichten."
+    },
+    {
+      "marker": "darf die Nebenkosten nach billigem Ermessen angleichen",
+      "expectedType": "unilateral_change",
+      "note": "GAP: Einseitige Anpassung der Nebenkosten."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "Symmetrische Vertraulichkeit."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform zugelassen."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhalt."
+    },
+    {
+      "marker": "Zahlungen sind innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Zahlungsfrist."
+    },
+    {
+      "marker": "Änderungen des Leistungsumfangs bedürfen der Abstimmung beider Parteien",
+      "note": "Einvernehmliche Aenderung."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende beenden",
+      "note": "Symmetrisches Kuendigungsrecht."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Vermieter überlässt dem Mieter Lager- und Umschlagsflächen in Linz",
+      "note": "Kein Detektor fuer Schriftformfiktion bei langfristiger Gewerbemiete."
+    }
+  ]
+}

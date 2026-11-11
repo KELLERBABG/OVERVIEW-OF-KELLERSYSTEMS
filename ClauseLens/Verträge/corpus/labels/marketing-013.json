@@ -1,0 +1,74 @@
+{
+  "slug": "marketing-013",
+  "source": "generated",
+  "domain": "Veranstaltungsstätte und Messe, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Ohne abgeschlossenen Wartungsvertrag wird das Konferenzsystem abgeschaltet",
+      "expectedType": "maintenance_conditional_shutdown",
+      "note": "Abschaltung des Systems an fehlenden Wartungsvertrag geknüpft."
+    },
+    {
+      "marker": "sperrt der Betreiber den Zugang zum Veranstaltungsportal unverzüglich",
+      "expectedType": "service_suspension",
+      "note": "Sofortsperre des Zugangs ohne Abmahnung; vermeidet das Wort Sperre im Nominalstil."
+    },
+    {
+      "marker": "Mängel nicht binnen achtundvierzig Stunden gerügt, gilt der Aufbau",
+      "expectedType": "deemed_acceptance",
+      "note": "Abnahmefiktion bei Fristversäumnis, 48 Stunden als Zahlwort."
+    },
+    {
+      "marker": "erhöht sich zum Beginn jedes Kalenderjahres um vier Prozent",
+      "expectedType": "price_escalation",
+      "note": "Jährliche Mietsteigerung ohne Sonderkündigungsrecht."
+    },
+    {
+      "marker": "Ausschließlich der Sitz des Auftragnehmers ist zuständig",
+      "expectedType": "jurisdiction",
+      "note": "Ausschließliche Zuständigkeit am Verwendersitz ohne Gerichtsstand."
+    },
+    {
+      "marker": "trägt der Besteller die Beweislast",
+      "expectedType": "burden_of_proof",
+      "note": "Beweislast beim Kunden."
+    },
+    {
+      "marker": "Nebenabreden entfalten keine Wirkung, ungeachtet",
+      "expectedType": "entire_agreement",
+      "note": "Vollständigkeitsklausel über Nebenabreden; vermeidet 'entire agreement'."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Unterlagen vertraulich",
+      "note": "Symmetrische Vertraulichkeit."
+    },
+    {
+      "marker": "erhält der Besteller die Teilnehmerlisten kostenfrei in einem offenen Format",
+      "note": "Kostenfreier Datenexport."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende beenden",
+      "note": "Symmetrische Kündigung."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform zugelassen."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhaltung."
+    },
+    {
+      "marker": "innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Üblicher Zahlungstermin."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Auftragnehmer überlässt dem Besteller Räume und Veranstaltungstechnik für die gebuchten Termine",
+      "note": "Kein Detektor für fehlende Ersatztermin-Zusagen."
+    }
+  ]
+}

@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FluidIP &mdash; patent claims as first-order logic</title>
+<meta name="description" content="FluidIP translates patent claims into first-order logic, proves prior-art subsumption with Z3 and CVC5, and streams fractional royalties along the dependency DAG.">
+<meta name="theme-color" content="#f2efe4">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Spectral:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--sheet:#f2efe4;--ink:#171614;--body:#3d3a33;--dim:#7d7669;--rule:#cdc6b4;--pass:#2c6b46}
+*{box-sizing:border-box} html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--sheet);color:var(--body);font-family:'Spectral',Georgia,serif;font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(16px,4vw,44px)}
+header{border-bottom:2px solid var(--ink);padding:clamp(22px,4vw,44px) 0 clamp(12px,2vw,18px)}
+.kick{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--dim)}
+h1{margin:.45rem 0 .3rem;font-family:'Spectral',Georgia,serif;font-weight:600;font-size:clamp(1.9rem,4.6vw,3rem);line-height:1.06;letter-spacing:-.015em;color:var(--ink)}
+.sub{margin:0;max-width:66ch}
+.figs{display:grid;grid-template-columns:minmax(0,1.9fr) minmax(0,1fr);gap:clamp(12px,2vw,22px);margin:clamp(16px,3vw,28px) 0}
+.sheet{fill:#faf8f1;stroke:var(--ink);stroke-width:1}
+.fig{font-family:'Spectral',serif;font-size:14px;font-weight:600;fill:var(--ink)}
+.figsub{font-family:'IBM Plex Mono',monospace;font-size:8.5px;fill:var(--dim);letter-spacing:.14em}
+.edge{fill:none;stroke:var(--ink);stroke-width:1.2}
+.el{font-family:'IBM Plex Mono',monospace;font-size:8px;fill:var(--dim)}
+.nd{fill:#fff;stroke:var(--ink);stroke-width:1.6} .nd2{fill:#fff;stroke:var(--ink);stroke-width:1;stroke-dasharray:4 3}
+.nl{font-family:'IBM Plex Mono',monospace;font-size:12px;fill:var(--ink)}
+.lead{fill:none;stroke:var(--ink);stroke-width:.9}
+.rl{font-family:'IBM Plex Mono',monospace;font-size:10px;fill:var(--ink)}
+.note{font-family:'IBM Plex Mono',monospace;font-size:8.5px;fill:var(--dim)}
+.note2{font-family:'IBM Plex Mono',monospace;font-size:8.5px;fill:var(--ink)}
+.bar{fill:#fff;stroke:var(--ink);stroke-width:1.2} .bl2{font-family:'IBM Plex Mono',monospace;font-size:9px;fill:var(--dim)}
+.axl{stroke:var(--ink);stroke-width:1}
+svg{display:block;width:100%;height:auto}
+.claims{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.c{background:var(--sheet);padding:.8rem 1rem}
+.c .k{display:block;font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+.c b{display:block;font-family:'Spectral',serif;font-size:1.15rem;font-weight:600;color:var(--ink);margin-top:.2rem}
+.c span{display:block;font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--pass);margin-top:.15rem}
+section{border-top:1px solid var(--rule);padding:clamp(20px,3.4vw,38px) 0}
+h2{margin:0 0 .9rem;font-family:'Spectral',serif;font-weight:600;font-size:clamp(1.25rem,2.6vw,1.8rem);color:var(--ink)}
+h2 i{font-family:'IBM Plex Mono',monospace;font-style:normal;font-size:9.5px;letter-spacing:.2em;color:var(--dim);display:block;margin-bottom:.35rem}
+p{margin:0 0 .85rem;max-width:74ch} b{color:var(--ink);font-weight:600}
+.para{font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:2;color:var(--body)}
+.para b{color:var(--ink);font-weight:500}
+.log{border:1px solid var(--rule);background:#eae6d8;font-family:'IBM Plex Mono',monospace;font-size:11px;line-height:1.95;margin-top:.9rem}
+.log .l{display:flex;gap:.7rem;padding:.15rem 1rem;white-space:pre-wrap}
+.log .l:first-child{padding-top:.8rem} .log .l:last-child{padding-bottom:.8rem}
+.tg{flex:0 0 auto;color:var(--pass);font-weight:500} .txt{color:var(--body)}
+table{width:100%;border-collapse:collapse;margin-top:.9rem;font-size:.92rem}
+th,td{text-align:left;padding:.5rem .6rem;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);font-weight:400}
+td.fi{background:rgba(44,107,70,.1);color:var(--ink);font-weight:500}
+pre{margin:.9rem 0 0;border:1px solid var(--rule);border-left:3px solid var(--ink);background:#eae6d8;padding:.85rem 1rem;
+ font-family:'IBM Plex Mono',monospace;font-size:.73rem;line-height:1.9;color:var(--ink);white-space:pre-wrap;overflow-wrap:anywhere}
+.foot{border-top:2px solid var(--ink);padding:1.4rem 0 3rem;font-family:'IBM Plex Mono',monospace;font-size:9.5px;
+ letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+.foot .wrap{display:flex;justify-content:space-between;gap:1.4rem;flex-wrap:wrap} .foot a{color:var(--ink)}
+@media (max-width:860px){.figs{grid-template-columns:minmax(0,1fr)}}
+html{scrollbar-color:#bdb6a4 #f2efe4;scrollbar-width:thin}
+::-webkit-scrollbar{width:12px}::-webkit-scrollbar-track{background:#f2efe4}
+::-webkit-scrollbar-thumb{background:#bdb6a4;border:3px solid #f2efe4}::-webkit-scrollbar-thumb:hover{background:#171614}
+/* mobile-figure */@media (max-width:900px){.panel,.chart,.die,.pfd,.cfg,.console,.figs,.seqblock,.map{overflow-x:auto;-webkit-overflow-scrolling:touch}.panel svg,.chart svg,.die svg,.pfd svg,.cfg svg,.figs svg,.map svg{min-width:660px;max-width:none}}
+/* --- Keller Systems Subtle Masthead Lockup --- */
+header { padding-top: clamp(18px, 3.2vw, 30px) !important; }
+.ks-masthead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 12px;
+  margin-bottom: clamp(18px, 3vw, 28px);
+  border-bottom: 1px solid #cdc6b4;
+}
+.ks-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+.ks-mark {
+  width: 22px !important;
+  min-width: 22px !important;
+  max-width: 22px !important;
+  height: 22px !important;
+  min-height: 22px !important;
+  max-height: 22px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: block !important;
+  flex-shrink: 0 !important;
+}
+.ks-titles {
+  display: inline-flex;
+  flex-direction: column;
+  line-height: 1.12;
+}
+.ks-name {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #171614;
+  letter-spacing: -0.01em;
+}
+.ks-sub {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 8.5px;
+  font-weight: 500;
+  color: #7d7669;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.ks-brand:hover .ks-name {
+  color: #2c6b46;
+}
+.ks-links {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+.ks-link {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 10.5px;
+  color: #7d7669;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  letter-spacing: 0.03em;
+  transition: color 0.15s;
+}
+.ks-link:hover {
+  color: #171614;
+}
+</style></head><body><!-- noscript-fallback --><noscript><style>html *{opacity:1!important;transform:none!important;filter:none!important;animation:none!important}[data-a],[data-b],.d,.o,.fade,.draw,.chapter,.step,.panel,.hlab{opacity:1!important}</style></noscript>
+<div class="wrap"><header>
+      <div class="ks-masthead">
+        <a href="https://kellersystems.dev" class="ks-brand" title="Keller Systems">
+          <svg class="ks-mark" viewBox="0 0 100 100" width="22" height="22" aria-hidden="true">
+            <rect x="18" y="14" width="18" height="72" rx="3" fill="#171614"/>
+            <path d="M46 50 L72 16 H90 L60 54 Z" fill="#2c6b46"/>
+            <path d="M60 46 L90 84 H72 L46 50 Z" fill="#171614"/>
+          </svg>
+          <span class="ks-titles">
+            <span class="ks-name">FluidIP</span>
+            <span class="ks-sub">KELLER SYSTEMS</span>
+          </span>
+        </a>
+        <div class="ks-links">
+          <a href="https://kellersystems.dev" class="ks-link">kellersystems.dev &rarr;</a>
+        <a href="https://github.com/KELLERBABG/FluidIP" target="_blank" rel="noopener noreferrer" class="ks-link">Source &#8599;</a>
+        </div>
+      </div>
+  <span class="kick">SMT prior-art DAG &middot; patent routing</span>
+  <h1>Patent claims as first-order logic</h1>
+  <p class="sub">Ambiguous claim language becomes machine-checkable predicates. Overlap with prior art is decided by a solver, and royalties stream along the dependency tree that falls out of it.</p>
+</header></div>
+
+<div class="wrap"><div class="figs">
+  <svg viewBox="0 0 760 420" role="img" aria-label="Patent figure 1, claim dependency graph"><rect class="sheet" x="8" y="8" width="744" height="404" rx="2"/><text class="fig" x="30" y="36">FIG. 1</text><text class="figsub" x="30" y="52">CLAIM DEPENDENCY DAG &middot; PRIOR-ART SUBSUMPTION</text><path class="edge" d="M176 92 C 225.0 92, 225.0 60, 274 60"/><text class="el" x="225" y="69" text-anchor="middle">0&rarr;1</text><path class="edge" d="M176 92 C 225.0 92, 225.0 132, 274 132"/><text class="el" x="225" y="105" text-anchor="middle">0&rarr;2</text><path class="edge" d="M326 60 C 376.0 60, 376.0 96, 426 96"/><text class="el" x="376" y="71" text-anchor="middle">1&rarr;3</text><path class="edge" d="M326 132 C 376.0 132, 376.0 96, 426 96"/><text class="el" x="376" y="107" text-anchor="middle">2&rarr;3</text><path class="edge" d="M326 132 C 376.0 132, 376.0 176, 426 176"/><text class="el" x="376" y="147" text-anchor="middle">2&rarr;4</text><path class="edge" d="M478 96 C 528.0 96, 528.0 128, 578 128"/><text class="el" x="528" y="105" text-anchor="middle">3&rarr;5</text><path class="edge" d="M478 176 C 528.0 176, 528.0 128, 578 128"/><text class="el" x="528" y="145" text-anchor="middle">4&rarr;5</text><circle class="nd" cx="150" cy="92" r="26"/><text class="nl" x="150" y="96" text-anchor="middle">12</text><circle class="nd2" cx="300" cy="60" r="26"/><text class="nl" x="300" y="64" text-anchor="middle">14</text><circle class="nd2" cx="300" cy="132" r="26"/><text class="nl" x="300" y="136" text-anchor="middle">16</text><circle class="nd2" cx="452" cy="96" r="26"/><text class="nl" x="452" y="100" text-anchor="middle">18</text><circle class="nd2" cx="452" cy="176" r="26"/><text class="nl" x="452" y="180" text-anchor="middle">20</text><circle class="nd" cx="604" cy="128" r="26"/><text class="nl" x="604" y="132" text-anchor="middle">22</text><path class="lead" d="M604 154 L604 258 L690 258"/><text class="rl" x="694" y="262">22</text><path class="lead" d="M452 202 L452 240 L690 240"/><text class="note" x="30" y="300">Claim 1 parses to 18 first-order predicates. Each edge is an entailment query;</text><text class="note" x="30" y="318">the chain from 12 to 22 is discharged UNSAT against 412,980 prior-art nodes.</text><text class="note2" x="30" y="352">REFERENCE NUMERALS &mdash; 12 independent claim &middot; 14, 16 dependent claims &middot; 18, 20 prior-art clusters &middot; 22 royalty sink</text></svg>
+  <svg viewBox="0 0 380 260" role="img" aria-label="Patent figure 2, royalty distribution"><rect class="sheet" x="6" y="6" width="368" height="248" rx="2"/><text class="fig" x="24" y="32">FIG. 2</text><text class="figsub" x="24" y="47">ROYALTY DISTRIBUTION ALONG THE DAG</text><rect class="bar" x="40" y="100" width="26" height="96"/><text class="bl2" x="53" y="212" text-anchor="middle">1</text><rect class="bar" x="94" y="113" width="26" height="83"/><text class="bl2" x="107" y="212" text-anchor="middle">2</text><rect class="bar" x="148" y="126" width="26" height="70"/><text class="bl2" x="161" y="212" text-anchor="middle">3</text><rect class="bar" x="202" y="139" width="26" height="57"/><text class="bl2" x="215" y="212" text-anchor="middle">4</text><rect class="bar" x="256" y="152" width="26" height="44"/><text class="bl2" x="269" y="212" text-anchor="middle">5</text><rect class="bar" x="310" y="165" width="26" height="31"/><text class="bl2" x="323" y="212" text-anchor="middle">6</text><line class="axl" x1="26" y1="196" x2="354" y2="196"/><text class="note" x="26" y="234">fractional micro-payment per hop, 0.00042 ETH/s</text></svg>
+</div></div>
+
+<div class="wrap"><div class="claims">
+  <div class="c"><span class="k">Claim invariant</span><b>UNSAT</b><span>novel against corpus</span></div>
+  <div class="c"><span class="k">Prior-art nodes</span><b>412,980</b><span>indexed</span></div>
+  <div class="c"><span class="k">Dependency depth</span><b>12 levels</b><span>topological</span></div>
+  <div class="c"><span class="k">Royalty stream</span><b>0.00042 ETH/s</b><span>per downstream use</span></div>
+</div></div>
+
+<section><div class="wrap"><h2><i>01 &mdash; the translation</i>What a claim becomes</h2>
+<p>A patent claim is written to be argued over, not to be computed. FluidIP parses the independent claim into <b>first-order logic predicates</b> &mdash; in the reference case, eighteen of them from Claim 1 &mdash; and from there the question &ldquo;is this already covered?&rdquo; becomes a satisfiability query rather than an examiner's judgement.</p>
+<div class="para">
+<b>[0001]</b> A method comprising receiving a first signal, wherein the first signal is transformed according to a predetermined relation&hellip;<br>
+<b>[0002]</b> Parsed to: &exist;x &forall;y ( S(x) &and; R(x,y) &rarr; T(y) ) &mdash; 18 predicates, 4 free variables.<br>
+<b>[0003]</b> Entailment against prior-art clusters: C<sub>1</sub> &not;(P<sub>A</sub> &or; P<sub>B</sub>) &rarr; <b>UNSAT</b>, no counterexample returned.
+</div>
+<div class="log">
+<div class="l"><span class="tg">[AST-PARSE]</span><span class="txt">Independent Claim 1 parsed into 18 first-order logic predicates</span></div>
+<div class="l"><span class="tg">[SMT-SOLVER]</span><span class="txt">Checking entailment: C_1 &not;(P_A &or; P_B) &rarr; UNSAT, counterexample none</span></div>
+<div class="l"><span class="tg">[ROYALTY-MESH]</span><span class="txt">Micro-licence dispatched along the topological dependency DAG</span></div>
+<div class="l"><span class="tg">[SETTLEMENT]</span><span class="txt">Zero-knowledge proof of non-infringement verified</span></div>
+</div>
+</div></section>
+
+<section><div class="wrap"><h2><i>02 &mdash; compared</i>Against the patent office</h2>
+<table><thead><tr><th>Metric</th><th>Legacy patent offices</th><th>FluidIP protocol</th></tr></thead><tbody>
+<tr><td>examination duration</td><td>2 to 4 years of backlog</td><td class="fi">sub-minute automated SMT proof</td></tr>
+<tr><td>infringement resolution</td><td>years of high-court litigation, $2M+ in fees</td><td class="fi">algorithmic AST equivalence proof</td></tr>
+<tr><td>royalty distribution</td><td>lump sums behind closed NDAs and lawyers</td><td class="fi">continuous micropayment streaming mesh</td></tr>
+<tr><td>prior-art coverage</td><td>manual examiner keyword searching</td><td class="fi">topological DAG satisfiability check</td></tr>
+</tbody></table>
+<pre>git clone https://github.com/KELLERBABG/FluidIP.git
+cd FluidIP &amp;&amp; cargo test        # verify a claim against the local prior-art SMT corpus</pre>
+</div></section>
+
+<div class="foot"><div class="wrap"><span>FluidIP &middot; Keller Systems</span>
+<span><a href="https://github.com/KELLERBABG/FluidIP">repository</a> &nbsp;/&nbsp; <a href="https://kellersystems.dev">kellersystems.dev</a></span></div></div>
+</body></html>

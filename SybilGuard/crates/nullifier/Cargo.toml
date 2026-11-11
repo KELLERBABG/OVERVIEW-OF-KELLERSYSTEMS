@@ -1,0 +1,11 @@
+[package]
+name = "sybil-nullifier"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Deterministic Identity Nullifiers: hash-based nullifiers preventing double-credential creation"
+
+[dependencies]
+sybil-core = { path = "../core" }
+serde.workspace = true
+thiserror.workspace = true

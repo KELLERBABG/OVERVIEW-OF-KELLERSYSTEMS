@@ -1,0 +1,51 @@
+Zwischen der Marchand Analytics GmbH, Sophienstraße 5, 76133 Karlsruhe (nachfolgend "Anbieter") und der Orbis Handels GmbH, Rheinufer 30, 50668 Köln (nachfolgend "Kunde") wird der nachfolgende Beratungsvertrag geschlossen.
+
+§ 1 Gegenstand
+
+(1) Der Anbieter erbringt Beratungsleistungen für die Datenplattform des Kunden.
+
+(2) Der Anbieter ist berechtigt, S​ubunternehmer ohne Zustimmung des Kunden einzusetzen.
+
+§ 2 Verfügbarkeit
+
+(1) Der Anbieter bemüht sich, eine Verfügbarkeit von 99 Prozent zu erreichen.
+
+(2) Die Leistungen werden nach dem Stand der Technik erbracht.
+
+§ 3 Daten
+
+(1) Der Kunde räumt dem Anbieter ein unwiderrufliches Nutzungsrecht an den Daten zu Trainingszwecken ein.
+
+(2) Die personenbezogenen Daten werden außerhalb der Europäischen Union verarbeitet.
+
+(3) Ein maschinenlesbarer Export der Daten ist nicht Bestandteil dieses Vertrages.
+
+§ 4 Software
+
+(1) Die Software wird wie besehen bereitgestellt.
+
+§ 5 Gutschriften
+
+(1) Eine Gutschrift entfällt, wenn der Kunde kritische Aktualisierungen nicht fristgerecht einspielt.
+
+§ 6 Ergebnisse
+
+(1) Feedback und Verbesserungsvorschläge gehen unentgeltlich in das Eigentum des Anbieters über.
+
+§ 7 Schlussbestimmungen
+
+(1) Die Parteien benennen je einen Ansprechpartner.
+
+(2) Die Vergütung wird jeweils zum Monatsende fällig.
+
+(3) Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich.
+
+(4) Die Anlagen 1 und 2 sind Bestandteil dieses Vertrages.
+
+(5) Der Anbieter dokumentiert die Ergebnisse in einem Projektbericht.
+
+Karlsruhe, den 1. August 2026
+
+Marchand Analytics GmbH
+
+Orbis Handels GmbH

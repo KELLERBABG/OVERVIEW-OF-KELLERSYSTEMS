@@ -1,0 +1,74 @@
+{
+  "slug": "immobilien-013",
+  "source": "generated",
+  "domain": "Verwaltervertrag",
+  "traps": [
+    {
+      "marker": "dürfen die Geschäftsräume des Verwalters jederzeit ohne Anlass inspizieren",
+      "expectedType": "unreasonable_audit",
+      "note": "GAP: Kontrollrecht ohne Anlass und ohne Vorlauf."
+    },
+    {
+      "marker": "nicht berechtigt, gegen Verwalterhonorare aufzurechnen",
+      "expectedType": "setoff_restriction",
+      "note": "Aufrechnungsverbot der Eigentuemer."
+    },
+    {
+      "marker": "Änderungen der Leistungsbeschreibung werden mit der Veröffentlichung",
+      "expectedType": "unilateral_change",
+      "note": "GAP: Aenderung durch Veroeffentlichung ohne Zustimmung."
+    },
+    {
+      "marker": "setzt ohne vorherige Ankündigung Dienstleister für Hausmeisterservice ein",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "GAP: Subunternehmer ohne Ankuendigung oder Zustimmung."
+    },
+    {
+      "marker": "Die Pflichten aus dem Verwaltervertrag bestehen auf Dauer fort",
+      "expectedType": "excessive_survival",
+      "note": "Unbefristete Nachwirkung der Pflichten."
+    },
+    {
+      "marker": "Mündliche Nebenabreden sind nur mit handschriftlich unterzeichnetem Zusatz gültig",
+      "expectedType": "written_form_trap",
+      "note": "Schriftformzwang mit handschriftlichem Zusatz."
+    },
+    {
+      "marker": "vollumfänglich an die Eigentümergemeinschaft weitergegeben",
+      "expectedType": "price_escalation",
+      "note": "GAP: Kostensteigerungen ohne Sonderkündigungsrecht weitergegeben."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "Symmetrische Vertraulichkeit."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform zugelassen."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhalt."
+    },
+    {
+      "marker": "Zahlungen sind innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Zahlungsfrist."
+    },
+    {
+      "marker": "Änderungen des Leistungsumfangs bedürfen der Abstimmung beider Parteien",
+      "note": "Einvernehmliche Aenderung."
+    },
+    {
+      "marker": "Nach Vertragsende erhält der Kunde die Vertragsdaten kostenfrei in einem offenen Format",
+      "note": "Kostenfreier Datenexport."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Verwaltung der Wohnungseigentumsanlage Lindenpark mit 64 Einheiten",
+      "note": "Kein Detektor fuer Beiratsrechte oder Beschlussanfechtung."
+    }
+  ]
+}

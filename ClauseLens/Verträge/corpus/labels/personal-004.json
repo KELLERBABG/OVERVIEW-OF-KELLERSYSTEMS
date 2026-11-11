@@ -1,0 +1,74 @@
+{
+  "slug": "personal-004",
+  "source": "generated",
+  "domain": "Interim-Management",
+  "traps": [
+    {
+      "marker": "setzt sich der Vertrag um jeweils weitere zwölf Monate fort",
+      "expectedType": "auto_renewal",
+      "note": "automatische Fortsetzung um weitere zwölf Monate"
+    },
+    {
+      "marker": "Die Arbeitsergebnisse gelten als abgenommen",
+      "expectedType": "deemed_acceptance",
+      "note": "Abnahmefiktion ohne Mängelrüge"
+    },
+    {
+      "marker": "Die Haftung des Anbieters für Erfüllungsgehilfen ist auf Auswahlverschulden beschränkt",
+      "expectedType": "vicarious_agents",
+      "note": "Haftung auf Auswahlverschulden begrenzt"
+    },
+    {
+      "marker": "verpflichtet sich, den Auftraggeber von sämtlichen Ansprüchen Dritter freizustellen",
+      "expectedType": "third_party_indemnity",
+      "note": "Freistellung von Ansprüchen Dritter"
+    },
+    {
+      "marker": "Nur der Anbieter ist berechtigt, den Vertrag ordentlich zu kündigen",
+      "expectedType": "unilateral_convenience_termination",
+      "note": "ordentliche Kündigung nur für den Anbieter"
+    },
+    {
+      "marker": "Der Anbieter ist berechtigt, den Auftraggeber als Referenz zu nennen",
+      "expectedType": "marketing_reference",
+      "note": "Referenznennung ohne Zustimmung"
+    },
+    {
+      "marker": "Die Verjährungsfrist für Ansprüche aus diesem Vertrag beträgt sechs Monate",
+      "expectedType": "statute_of_limitations",
+      "note": "Verjährungsfrist auf sechs Monate verkürzt"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Rechnungen des Anbieters sind innerhalb von 30 Tagen",
+      "note": "Zahlungsfrist 30 Tage"
+    },
+    {
+      "marker": "Reisekosten werden nur nach vorheriger Abstimmung erstattet",
+      "note": "Reisekostenerstattung nach Abstimmung"
+    },
+    {
+      "marker": "Beide Parteien benennen eine Ansprechperson für die Abstimmung",
+      "note": "Ansprechperson"
+    },
+    {
+      "marker": "Der Auftraggeber stellt die für die Leistungserbringung erforderlichen Unterlagen rechtzeitig bereit",
+      "note": "Bereitstellung von Unterlagen"
+    },
+    {
+      "marker": "Dieser Vertrag wird in zwei Ausfertigungen erstellt",
+      "note": "Ausfertigungen"
+    },
+    {
+      "marker": "Die Parteien kommunizieren während der Laufzeit in deutscher Sprache",
+      "note": "Vertragssprache"
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Die Parteien können den Vertrag einvernehmlich jederzeit beenden",
+      "note": "einvernehmliche Beendigung jederzeit"
+    }
+  ]
+}

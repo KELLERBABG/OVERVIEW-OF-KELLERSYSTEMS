@@ -1,0 +1,55 @@
+Allgemeine Geschäftsbedingungen für Telekommunikations-, Glasfaser- und Mobilfunkdienstleistungen der NordNetz Connect GmbH
+
+§ 1 Geltungsbereich und Vertragsgegenstand
+
+Diese Allgemeinen Geschäftsbedingungen regeln die Bereitstellung eines öffentlichen Telekommunikationsnetzes sowie die Erbringung von Sprach-, Daten-, Glasfaser- und Mobilfunkdiensten durch die NordNetz Connect GmbH gegenüber dem Kunden. Abweichende Bedingungen des Kunden finden keine Anwendung, sofern die NordNetz Connect GmbH ihrer Geltung nicht ausdrücklich in Textform zugestimmt hat.
+
+§ 2 Vertragsschluss, Leistungsänderung und Zusatzoptionen
+
+Der Vertrag kommt mit Zugang der Auftragsbestätigung oder spätestens mit Freischaltung des Anschlusses zustande. Die jeweils gültige Leistungsbeschreibung sowie die technischen Schnittstellenspezifikationen ergeben sich verbindlich aus den unter www.nordnetz-connect.de/agb-technik-aktuell abrufbaren Dokumenten in ihrer jeweils zum Zeitpunkt der Nutzung gültigen Fassung, die der Anbieter jederzeit online aktualisieren kann.
+
+Darüber hinaus ist die NordNetz Connect GmbH berechtigt, die vertraglich vereinbarten Übertragungsraten, das enthaltene Datenvolumen sowie die Tarifstruktur jederzeit nach freiem Ermessen anzupassen, sofern dies aus betrieblichen oder technischen Gründen zweckmäßig erscheint.
+
+Mit Freischaltung der SIM-Karte wird automatisch das kostenpflichtige Sicherheitspaket „CyberShield Pro“ aktiviert, das ab dem zweiten Vertragsmonat mit monatlich 4,99 Euro berechnet wird, sofern der Kunde dieser Zusatzoption nicht innerhalb von 14 Tagen nach Vertragsschluss aktiv im Kundenportal widerspricht.
+
+§ 3 Preise, Entgeltanpassung und Zahlungsbedingungen
+
+Die monatlichen Grundpreise sind jeweils im Voraus zum ersten Werktag eines Kalendermonats fällig, nutzungsabhängige Entgelte mit Rechnungsstellung. Die NordNetz Connect GmbH behält sich vor, die monatlichen Grundentgelte bei gestiegenen Netzausbaukosten oder allgemeinen Marktveränderungen einseitig zu erhöhen; etwaige Kostensenkungen müssen nicht an den Kunden weitergegeben werden und ein Sonderkündigungsrecht des Kunden besteht bei Erhöhungen bis zu zehn Prozent pro Kalenderjahr nicht.
+
+Gegen Ansprüche der NordNetz Connect GmbH kann der Kunde nur mit unbestrittenen oder rechtskräftig festgestellten Gegenforderungen aufrechnen. Ein Zurückbehaltungsrecht steht dem Kunden zu, soweit es auf demselben Vertragsverhältnis beruht.
+
+§ 4 Zahlungsverzug, Anschlusssperre und Einwendungen gegen die Rechnung
+
+Gerät der Kunde mit einer fälligen Zahlung in Verzug, berechnet der Anbieter Verzugszinsen in Höhe von 18 Prozent pro Jahr, wobei die Geltendmachung eines weiteren Verzugsschadens unberührt bleibt.
+
+Befindet sich der Kunde mit einem Betrag von mindestens 15,00 Euro in Zahlungsverzug, ist die NordNetz Connect GmbH berechtigt, den Mobilfunk- und Glasfaseranschluss sofort und ohne vorherige Androhung oder Nachfristsetzung vollständig zu sperren; die Pflicht zur Zahlung der monatlichen Grundpreise bleibt während der Sperre unberührt.
+
+Einwendungen gegen die Höhe der abgerechneten Verbindungsentgelte hat der Kunde innerhalb einer Ausschlussfrist von vier Wochen ab Rechnungszugang schriftlich zu erheben. Die vom Abrechnungssystem der NordNetz Connect GmbH erzeugten Verbindungsprotokolle und Server-Logdaten gelten dabei als unwiderlegbarer Beweis für die Richtigkeit der abgerechneten Datenmengen und Verbindungen; der Nachweis einer fehlerhaften Messung oder technischer Manipulation ist ausgeschlossen.
+
+§ 5 Pflichten des Kunden und Endgeräte
+
+Der Kunde ist verpflichtet, seine Zugangsdaten und PIN-Codes vor dem Zugriff unbefugter Dritter zu schützen und bei Verlust der SIM-Karte unverzüglich eine Sperrung zu veranlassen. Überlassene Mietrouter sind pfleglich zu behandeln und nach Vertragsende im ordnungsgemäßen Zustand zurückzugeben.
+
+§ 6 Vertragslaufzeit, Verlängerung und Kündigung
+
+Der Vertrag wird mit einer festen Mindestvertragslaufzeit von 24 Monaten geschlossen. Wird der Vertrag nicht spätestens drei Monate vor Ablauf der Mindestvertragslaufzeit gekündigt, verlängert er sich jeweils automatisch um weitere 24 Monate zu den dann geltenden Standardkonditionen.
+
+Jede Kündigung des Vertrages bedarf zu ihrer Wirksamkeit zwingend der eigenhändigen Unterschrift des Kunden im Original und muss der NordNetz Connect GmbH per eingeschriebenem Brief (Einschreiben mit Rückschein) zugestellt werden; eine Kündigung per E-Mail, Telefax oder über das Online-Kundenportal ist unwirksam.
+
+Kündigt die NordNetz Connect GmbH den Vertrag vorzeitig aus einem vom Kunden zu vertretenden Grund, ist der Kunde verpflichtet, 100 Prozent sämtlicher bis zum regulären Ende der Mindestvertragslaufzeit noch anfallenden monatlichen Grundentgelte sofort in einer Summe als Schadensersatz zu zahlen, ohne dass ersparte Aufwendungen oder Vorteile aus anderweitiger Kapazitätsnutzung angerechnet werden.
+
+§ 7 Haftung und Gewährleistung
+
+Die NordNetz Connect GmbH haftet unbeschränkt für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit sowie für Schäden, die auf Vorsatz oder grober Fahrlässigkeit beruhen. Bei leicht fahrlässiger Verletzung wesentlicher Vertragspflichten ist die Haftung auf den vertragstypischen, vorhersehbaren Schaden begrenzt.
+
+Mängelansprüche wegen Störungen der bereitgestellten Telekommunikationsendgeräte richten sich nach den gesetzlichen Bestimmungen zur Mängelhaftung.
+
+§ 8 Datenschutz und Vertraulichkeit
+
+Die Erhebung und Verarbeitung personenbezogener Daten sowie von Verkehrsdaten erfolgt streng nach Maßgabe der Datenschutz-Grundverordnung (DSGVO), des Bundesdatenschutzgesetzes (BDSG) und des Telekommunikationsgesetzes (TKG).
+
+§ 9 Vertragsübernahme und Schlussbestimmungen
+
+Die NordNetz Connect GmbH ist berechtigt, diesen Vertrag mit sämtlichen Rechten und Pflichten jederzeit ohne Zustimmung des Kunden mit schuldbefreiender Wirkung auf ein beliebiges drittes Telekommunikationsunternehmen im In- oder Ausland zu übertragen, ohne dass die Übernehmerin im Vertrag namentlich benannt wird.
+
+Es gilt das Recht der Bundesrepublik Deutschland. Sofern der Kunde Kaufmann, juristische Person des öffentlichen Rechts oder öffentlich-rechtliches Sondervermögen ist, ist Gerichtsstand für alle Streitigkeiten aus diesem Vertragsverhältnis der Sitz der NordNetz Connect GmbH.

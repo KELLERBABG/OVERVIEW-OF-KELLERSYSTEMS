@@ -1,0 +1,74 @@
+{
+  "slug": "immobilien-001",
+  "source": "generated",
+  "domain": "Gewerbemiete",
+  "traps": [
+    {
+      "marker": "verlängert sich jeweils um ein Jahr, wenn es nicht drei Monate vor Ablauf gekündigt wird",
+      "expectedType": "auto_renewal",
+      "note": "Verlaengerungsautomatik ohne Widerspruchsfrist des Mieters."
+    },
+    {
+      "marker": "frühestens nach zwei Jahren mit einer Vorlaufzeit von achtzehn Monaten",
+      "expectedType": "notice_period",
+      "note": "Lange Vorlaufzeit und Mindestbindung zulasten des Mieters."
+    },
+    {
+      "marker": "Nur der Vermieter ist berechtigt, ordentlich zu kündigen",
+      "expectedType": "unilateral_convenience_termination",
+      "note": "GAP: Ordentliches Kuendigungsrecht nur fuer den Vermieter."
+    },
+    {
+      "marker": "Die Miete erhöht sich jährlich um fünf Prozent",
+      "expectedType": "price_escalation",
+      "note": "GAP: Automatische Mietsteigerung ohne Sonderkündigungsrecht."
+    },
+    {
+      "marker": "nicht berechtigt, gegen Mietforderungen aufzurechnen",
+      "expectedType": "setoff_restriction",
+      "note": "Aufrechnungsverbot des Mieters."
+    },
+    {
+      "marker": "ohne Vorankündigung jederzeit inspizieren",
+      "expectedType": "unreasonable_audit",
+      "note": "GAP: Zutrittsrecht ohne Anlass und ohne Vorlauf."
+    },
+    {
+      "marker": "für einfache Fahrlässigkeit ist auf eine Monatsmiete begrenzt",
+      "expectedType": "liability",
+      "note": "GAP: Haftungsdeckel auf eine Monatsmiete."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "Symmetrische Vertraulichkeit."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform ausdruecklich zugelassen."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhalt bei Vorsatz und Personenschaeden."
+    },
+    {
+      "marker": "Zahlungen sind innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Klare Zahlungsfrist ohne Verzugszins."
+    },
+    {
+      "marker": "Änderungen des Leistungsumfangs bedürfen der Abstimmung beider Parteien",
+      "note": "Einvernehmliche Aenderung."
+    },
+    {
+      "marker": "Nach Vertragsende erhält der Kunde die Vertragsdaten kostenfrei in einem offenen Format",
+      "note": "Kostenfreier Datenexport."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Büroflächen im Objekt Hafenstraße 12 zum gewerblichen Gebrauch",
+      "note": "Kein Detektor fuer Schriftformfiktion oder Zweckbindung der Gewerbemiete."
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "slug": "finanz-003",
+  "source": "generated",
+  "domain": "Factoring",
+  "traps": [
+    {
+      "marker": "Jede Zession der Vergütungsansprüche bedarf der vorherigen Zustimmung",
+      "expectedType": "assignment_restriction",
+      "note": "Paraphrase/Umstellung: nennt 'Jede Zession der Vergütungsansprüche bedarf d' statt der Registerwendung."
+    },
+    {
+      "marker": "Einbehalte sind nur mit Zustimmung des Anbieters zulässig",
+      "expectedType": "setoff_restriction",
+      "note": "Paraphrase/Umstellung: nennt 'Einbehalte sind nur mit Zustimmung des Anbiet' statt der Registerwendung."
+    },
+    {
+      "marker": "Nachträgliche Abgabenbelastungen trägt der Kunde",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Paraphrase/Umstellung: nennt 'Nachträgliche Abgabenbelastungen trägt der Ku' statt der Registerwendung."
+    },
+    {
+      "marker": "Abweichende Nachweise des Kunden bleiben ohne Bedeutung",
+      "expectedType": "audit_log_manipulation",
+      "note": "Paraphrase/Umstellung: nennt 'Abweichende Nachweise des Kunden bleiben ohne' statt der Registerwendung."
+    },
+    {
+      "marker": "erlischt mit Beendigung des Rahmenvertrags automatisch",
+      "expectedType": "data_lockin",
+      "note": "Paraphrase/Umstellung: nennt 'erlischt mit Beendigung des Rahmenvertrags au' statt der Registerwendung."
+    },
+    {
+      "marker": "Nur der Anbieter ist berechtigt, den Vertrag mit einer Frist von vier Wochen",
+      "expectedType": "unilateral_convenience_termination",
+      "note": "Paraphrase/Umstellung: nennt 'Nur der Anbieter ist berechtigt, den Vertrag ' statt der Registerwendung."
+    },
+    {
+      "marker": "bei der Niederlassung der Anbieterin in Zug zur Entscheidung gebracht",
+      "expectedType": "jurisdiction",
+      "note": "Paraphrase/Umstellung: nennt 'bei der Niederlassung der Anbieterin in Zug z' statt der Registerwendung."
+    },
+    {
+      "marker": "Die Freistellung gilt verschuldensunabhängig",
+      "expectedType": "third_party_indemnity",
+      "note": "Paraphrase/Umstellung: nennt 'Die Freistellung gilt verschuldensunabhängig' statt der Registerwendung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "gesetzliche Haftung für Vorsatz und grobe Fahrlässigkeit",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "alle vertraulichen Informationen der jeweils anderen Seite",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "vollständigen Export seiner Daten in einem gängigen maschinenlesbaren Format",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "können in Textform, insbesondere per E-Mail, vereinbart werden",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "zum Quartalsende ordentlich kündigen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "ohne Angabe von Gründen zum Monatsende kündigen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Streitigkeiten vorrangig durch Mediation zu klären",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "eine Bearbeitungsgebühr von fünfzehn Euro zu erheben",
+      "note": "Täuschende Klausel ohne passenden Detektortyp."
+    }
+  ]
+}

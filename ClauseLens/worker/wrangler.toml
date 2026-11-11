@@ -1,0 +1,9 @@
+name = "clauselens-license"
+main = "index.js"
+compatibility_date = "2026-01-01"
+
+routes = [{ pattern = "license.kellersystems.dev", custom_domain = true }]
+workers_dev = true
+
+[vars]
+POLAR_ORGANIZATION_ID = "6898f4c5-7bc8-4ec5-bc97-a16b69b0498c"

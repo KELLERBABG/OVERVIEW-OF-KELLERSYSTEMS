@@ -1,0 +1,87 @@
+{
+  "slug": "werk-004",
+  "source": "generated",
+  "domain": "Bau-IT, Errichtung und Betrieb, deutsches Recht",
+  "traps": [
+    {
+      "marker": "All payments shall be made free of any set-off or deduction",
+      "expectedType": "setoff_restriction",
+      "note": "Aufrechnungsausschluss englisch formuliert, umgeht Aufrechnung ausgeschlossen."
+    },
+    {
+      "marker": "Der Eigentumsvorbehalt erstreckt sich auf die gesamte Geschäftsbeziehung",
+      "expectedType": "extended_retention_of_title",
+      "note": "Erweiterter Eigentumsvorbehalt ohne den Zusatz bis zum Ausgleich aller Forderungen."
+    },
+    {
+      "marker": "Ereignisse höherer Gewalt befreien den Anbieter",
+      "expectedType": "force_majeure_asymmetry",
+      "note": "Einseitige Befreiung nur des Anbieters."
+    },
+    {
+      "marker": "The customer shall not solicit or hire personnel of the provider",
+      "expectedType": "non_solicitation",
+      "note": "Abwerbeverbot englisch."
+    },
+    {
+      "marker": "Bei einem Insolvenzantrag endet der Vertrag automatisch",
+      "expectedType": "insolvency_termination",
+      "note": "Automatische Beendigung bei Insolvenzantrag."
+    },
+    {
+      "marker": "Die Systemprotokolle des Anbieters gelten als Vollbeweis",
+      "expectedType": "audit_log_manipulation",
+      "note": "Protokolle als Vollbeweis."
+    },
+    {
+      "marker": "Ungeachtet etwaiger Nebenabreden enthält dieser Vertrag alle Vereinbarungen der Parteien",
+      "expectedType": "entire_agreement",
+      "note": "Vollstaendigkeitsklausel."
+    },
+    {
+      "marker": "The software is provided as is, without warranty of any kind",
+      "expectedType": "as_is_software_disclaimer",
+      "note": "Gewaehrleistungsausschluss englisch."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Zulaessige Freizeichnung, muss still bleiben."
+    },
+    {
+      "marker": "Die Vergütung ist innerhalb von dreißig Tagen nach Rechnungseingang fällig",
+      "note": "Marktuebliche Zahlungsfrist."
+    },
+    {
+      "marker": "Änderungen dieses Vertrages können in Textform vereinbart werden",
+      "note": "Textform ausdruecklich erlaubt."
+    },
+    {
+      "marker": "eine Berufshaftpflichtversicherung mit einer Deckungssumme von zwei Millionen EUR",
+      "note": "Vernuenftige Absicherung, unbedenklich."
+    },
+    {
+      "marker": "Jede Partei trägt ihre eigenen Kosten aus der Vertragsverhandlung",
+      "note": "Neutrale Kostentragung."
+    },
+    {
+      "marker": "Der Anbieter dokumentiert die Änderungen im Änderungsprotokoll",
+      "note": "Dokumentationspflicht, unbedenklich."
+    },
+    {
+      "marker": "Die Kündigung aus wichtigem Grund bleibt beiden Parteien unbenommen",
+      "note": "Symmetrisches Sonderkündigungsrecht."
+    },
+    {
+      "marker": "Alle Fristen werden in Kalendertagen gerechnet",
+      "note": "Neutrale Fristenregelung."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Kunde stellt die erforderlichen Räume kostenfrei zur Verfügung",
+      "note": "Harmlose Mitwirkungspflicht ohne Detektorbezug."
+    }
+  ]
+}

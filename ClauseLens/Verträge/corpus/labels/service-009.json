@@ -1,0 +1,92 @@
+{
+  "slug": "service-009",
+  "source": "generated",
+  "domain": "Reise- und Veranstaltungsvertrag",
+  "traps": [
+    {
+      "marker": "The provider shall not be liable for any loss of data or profit, however caused, and all risk of the",
+      "expectedType": "liability",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: English clause shifting all operational risk"
+    },
+    {
+      "marker": "Bei verspäteter Auskunft fallen je Fall 750,00 EUR an, unabhängig vom tatsächlichen Schaden des",
+      "expectedType": "penalty",
+      "note": "Legally abusive (§ 343 BGB); engine hit; technique: penalty disguised as flat fee independent of damage"
+    },
+    {
+      "marker": "All disputes shall be brought exclusively before the courts at the provider's registered office, to ",
+      "expectedType": "jurisdiction",
+      "note": "GAP: engine miss. Legally abusive (§ 38 ZPO); technique: English forum clause excluding every other court"
+    },
+    {
+      "marker": "Nach Beendigung ist es dem Kunden achtundvierzig Monate lang untersagt, vergleichbare",
+      "expectedType": "non_compete",
+      "note": "Legally abusive (§ 307 BGB); engine hit; technique: number words and open-ended scope"
+    },
+    {
+      "marker": "Soweit es dem Anbieter zweckmäßig erscheint, darf er Kundendaten für Produktverbesserungen",
+      "expectedType": "data_grant",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: permission phrased as the provider's discretion"
+    },
+    {
+      "marker": "Die Einzelheiten der zulässigen Datenverwendung ergeben sich aus Anlage 3, die dem Anbieter eine",
+      "expectedType": "data_grant",
+      "note": "GAP: engine miss. Legally abusive (§ 305c BGB); technique: grant hidden in an annex reference"
+    },
+    {
+      "marker": "Verspätete Zahlungen werden mit fünfzehn Prozentpunkten über dem Basiszinssatz verzinst, ohne",
+      "expectedType": "default_interest",
+      "note": "Legally abusive (§ 288 Abs. 2 BGB); engine hit; technique: number word and damage-independent markup"
+    },
+    {
+      "marker": "Der Anbieter ist berechtigt, die Geschäftsräume des Kunden jederzeit ohne Ankündigung zu prüfen.",
+      "expectedType": "unreasonable_audit",
+      "note": "Legally abusive (§ 307 BGB); engine hit; technique: literal unannounced audit at any time"
+    },
+    {
+      "marker": "Eine Übertragung der beim Anbieter gespeicherten Daten an den Kunden oder Dritte ist nicht",
+      "expectedType": "data_lockin",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: literal no transfer of stored data"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Kunde erhält auf Wunsch eine Kopie der über ihn gespeicherten Daten.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Preisanpassungen erfolgen nur mit Zustimmung des Kunden oder bei Änderung gesetzlicher Abgaben.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Der Anbieter teilt beabsichtigte Preisanpassungen mindestens sechs Wochen vorher mit.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Die Parteien benennen jeweils einen Ansprechpartner und informieren unverzüglich über einen Wechsel.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich und verwenden sie",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Der Kunde kann den Vertrag mit einer Frist von vier Wochen zum Monatsende ohne Angabe von Gründen",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Kündigungen können in Textform, insbesondere per E-Mail, erklärt werden.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Die Einhaltung terminlicher Zusagen des Anbieters steht unter dem Vorbehalt der jederzeitigen",
+      "note": "Deceptive clause without a matching detector type (coverage gap)."
+    },
+    {
+      "marker": "Der Kunde trägt Aufwendungen für Reisen, Unterkunft und Schulungen auch dann, wenn der Termin nicht ",
+      "note": "Deceptive clause without a matching detector type (coverage gap)."
+    }
+  ]
+}

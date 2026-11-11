@@ -1,0 +1,86 @@
+{
+  "slug": "einkauf-023",
+  "source": "generated",
+  "domain": "Einkauf und Lieferantenrahmenvertrag, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Erklärungen per E-Mail sind für die Vertragsabwicklung nicht wirksam",
+      "expectedType": "written_form_trap",
+      "note": "Formzwang durch Ausschluss elektronischer Erklaerungen"
+    },
+    {
+      "marker": "wird die Lieferung als vertragsgemäß behandelt",
+      "expectedType": "deemed_acceptance",
+      "note": "Fiktionswirkung ohne die Registerformel"
+    },
+    {
+      "marker": "Sachmängelansprüche erlöschen neun Monate nach Abnahme",
+      "expectedType": "statute_of_limitations",
+      "note": "Abgekuerzte Verjaehrung als Zahlwort"
+    },
+    {
+      "marker": "ohne Zustimmung des Bestellers unwirksam",
+      "expectedType": "assignment_restriction",
+      "note": "Zessionsverbot ohne die Registerwoerter Abtretung"
+    },
+    {
+      "marker": "Verbot jedweder Tätigkeit für Wettbewerber gilt über die Beendigung",
+      "expectedType": "non_compete",
+      "note": "Nachvertragliches Wettbewerbsverbot ohne Entschaedigung"
+    },
+    {
+      "marker": "shall not solicit the supplier personnel for a period of twenty-four months",
+      "expectedType": "non_solicitation",
+      "note": "Abwerbeverbot auf Englisch statt in der Registersprache"
+    },
+    {
+      "marker": "eine pauschale Abstandszahlung in Höhe von drei Monatsentgelten fällig",
+      "expectedType": "early_termination_charge",
+      "note": "Strafzahlung bei vorzeitiger Beendigung"
+    },
+    {
+      "marker": "Unternehmenssitz der Anbieterin ausschließlich zuständig",
+      "expectedType": "jurisdiction",
+      "note": "Gerichtsstand als Unternehmenssitz der Anbieterin"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Anbieterin stellt die Prüfprotokolle in Textform bereit",
+      "note": "Bereitstellung in Textform"
+    },
+    {
+      "marker": "Der Besteller wählt unter den in Anlage 3 genannten Varianten eine aus",
+      "note": "Einseitiges Wahlrecht ohne Pflichten"
+    },
+    {
+      "marker": "Bei berechtigter Rüge bessert die Anbieterin innerhalb von zehn Werktagen nach",
+      "note": "Nachbesserungspflicht"
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag einvernehmlich beenden",
+      "note": "Einvernehmliche Beendigung"
+    },
+    {
+      "marker": "Es gilt das Recht der Bundesrepublik Deutschland",
+      "note": "Neutrale Rechtswahl"
+    },
+    {
+      "marker": "Rechnungen sind innerhalb von dreißig Tagen ohne Abzug zu begleichen",
+      "note": "Marktueblicher Zahlungstermin"
+    },
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Zulaessige Haftungsklausel"
+    },
+    {
+      "marker": "Beide Parteien behandeln die technischen Unterlagen der anderen Seite vertraulich",
+      "note": "Wechselseitige Vertraulichkeit"
+    },
+    {
+      "marker": "Änderungen der Anlage 1 bedürfen der Zustimmung beider Parteien in Textform",
+      "note": "Symmetrische Aenderungsklausel"
+    }
+  ],
+  "uncovered": []
+}

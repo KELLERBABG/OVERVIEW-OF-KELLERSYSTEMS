@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SMPC Dark Pool — Trading Console</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --panel: #131720;
+    --panel-border: #1f2733;
+    --text: #d7dde8;
+    --muted: #6a7a90;
+    --accent: #4f8cff;
+    --bid: #26c281;
+    --ask: #ff5f6d;
+    --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    min-height: 100vh;
+  }
+  header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 24px; border-bottom: 1px solid var(--panel-border);
+    background: var(--panel);
+  }
+  header h1 { font-size: 18px; font-weight: 600; letter-spacing: 0.5px; }
+  header h1 span { color: var(--accent); }
+  #conn { font-size: 13px; color: var(--muted); font-family: var(--mono); }
+  #conn.ok { color: var(--bid); }
+  #conn.err { color: var(--ask); }
+  main { display: grid; grid-template-columns: 320px 1fr; gap: 16px; padding: 16px 24px; }
+  @media (max-width: 900px) { main { grid-template-columns: 1fr; } }
+  .panel {
+    background: var(--panel); border: 1px solid var(--panel-border);
+    border-radius: 8px; padding: 16px; margin-bottom: 16px;
+  }
+  .panel h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 12px; }
+  label { display: block; font-size: 12px; color: var(--muted); margin: 10px 0 4px; }
+  input, select {
+    width: 100%; padding: 8px 10px; border-radius: 6px;
+    border: 1px solid var(--panel-border); background: var(--bg);
+    color: var(--text); font-size: 13px; font-family: var(--mono);
+  }
+  input:focus, select:focus { outline: none; border-color: var(--accent); }
+  button {
+    width: 100%; margin-top: 14px; padding: 10px; border: none; border-radius: 6px;
+    background: var(--accent); color: #fff; font-size: 14px; font-weight: 600;
+    cursor: pointer; transition: opacity 0.15s;
+  }
+  button:hover { opacity: 0.85; }
+  button:disabled { opacity: 0.4; cursor: not-allowed; }
+  .err { color: var(--ask); font-size: 13px; margin-top: 8px; font-family: var(--mono); }
+  .ok { color: var(--bid); font-size: 13px; margin-top: 8px; font-family: var(--mono); }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 16px; }
+  @media (max-width: 700px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+  .stat { background: var(--panel); border: 1px solid var(--panel-border); border-radius: 8px; padding: 12px 14px; }
+  .stat .lbl { font-size: 11px; text-transform: uppercase; color: var(--muted); letter-spacing: 0.5px; }
+  .stat .val { font-size: 18px; font-family: var(--mono); margin-top: 4px; }
+  .stat .val.bid { color: var(--bid); }
+  .stat .val.ask { color: var(--ask); }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { text-align: left; color: var(--muted); font-size: 11px; text-transform: uppercase;
+       letter-spacing: 0.5px; padding: 8px; border-bottom: 1px solid var(--panel-border); }
+  td { padding: 8px; border-bottom: 1px solid var(--panel-border); font-family: var(--mono); }
+  tr:hover td { background: rgba(79, 140, 255, 0.05); }
+  .empty { color: var(--muted); text-align: center; padding: 24px; font-size: 13px; }
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; text-transform: uppercase; }
+  .tag.bid { background: rgba(38, 194, 129, 0.15); color: var(--bid); }
+  .tag.ask { background: rgba(255, 95, 109, 0.15); color: var(--ask); }
+</style>
+</head>
+<body>
+<header>
+  <h1>⛁ <span>SMPC</span> Dark Pool — Trading Console</h1>
+  <div id="conn">connecting…</div>
+</header>
+<main>
+  <div>
+    <div class="panel">
+      <h2>Submit Order</h2>
+      <label for="party">Party ID</label>
+      <input id="party" type="number" value="1" min="1">
+      <label for="side">Side</label>
+      <select id="side">
+        <option value="bid">Bid (Buy)</option>
+        <option value="ask">Ask (Sell)</option>
+      </select>
+      <label for="price">Price <span style="text-transform:none">(base units)</span></label>
+      <input id="price" type="text" value="100" placeholder="e.g. 1000000000000000000">
+      <label for="qty">Quantity <span style="text-transform:none">(base units)</span></label>
+      <input id="qty" type="text" value="10" placeholder="e.g. 500000000000000000">
+      <button id="submit">Place Order</button>
+      <div id="submit-result"></div>
+    </div>
+    <div class="panel">
+      <h2>Order Status</h2>
+      <label for="order-id">Order ID</label>
+      <input id="order-id" type="number" placeholder="e.g. 42">
+      <button id="lookup">Check Status</button>
+      <div id="status-result"></div>
+    </div>
+  </div>
+  <div>
+    <div class="stats">
+      <div class="stat"><div class="lbl">Best Bid</div><div class="val bid" id="best-bid">—</div></div>
+      <div class="stat"><div class="lbl">Best Ask</div><div class="val ask" id="best-ask">—</div></div>
+      <div class="stat"><div class="lbl">Spread</div><div class="val" id="spread">—</div></div>
+      <div class="stat"><div class="lbl">Book Depth</div><div class="val" id="depth">0 / 0</div></div>
+    </div>
+    <div class="panel">
+      <h2>Trade History <span style="text-transform:none; float:right" id="ws-tag"></span></h2>
+      <table>
+        <thead><tr><th>Trade</th><th>Buy ID</th><th>Sell ID</th><th>Price</th><th>Quantity</th><th>Time</th></tr></thead>
+        <tbody id="trades"><tr><td colspan="6" class="empty">No trades yet</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+</main>
+<script>
+"use strict";
+const $ = (id) => document.getElementById(id);
+
+function setConn(text, cls) {
+  $("conn").textContent = text;
+  $("conn").className = cls || "";
+}
+
+async function api(path, opts) {
+  const res = await fetch(path, opts);
+  const body = await res.json().catch(() => ({}));
+  if (!res.ok) throw new Error(body.message || ("HTTP " + res.status));
+  return body;
+}
+
+function fmtTime(ts) {
+  if (!ts) return "—";
+  const d = new Date(ts);
+  return isNaN(d) ? ts : d.toLocaleTimeString();
+}
+
+async function refreshBook() {
+  try {
+    const b = await api("/api/book");
+    $("best-bid").textContent = b.best_bid ?? "—";
+    $("best-ask").textContent = b.best_ask ?? "—";
+    $("spread").textContent = b.spread ?? "—";
+    $("depth").textContent = (b.bid_depth ?? 0) + " / " + (b.ask_depth ?? 0);
+  } catch (e) {
+    $("best-bid").textContent = "—";
+    $("best-ask").textContent = "—";
+    $("spread").textContent = "—";
+    $("depth").textContent = "0 / 0";
+  }
+}
+
+async function loadTrades() {
+  try {
+    const trades = await api("/api/trades");
+    renderTrades(trades);
+  } catch (e) { /* server not ready yet */ }
+}
+
+function renderTrades(trades) {
+  const tbody = $("trades");
+  if (!trades || trades.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="6" class="empty">No trades yet</td></tr>';
+    return;
+  }
+  tbody.innerHTML = trades
+    .slice()
+    .reverse()
+    .map((t) =>
+      "<tr>" +
+      "<td>" + (t.trade_id ?? "—") + "</td>" +
+      "<td>" + (t.buy_order_id ?? "—") + "</td>" +
+      "<td>" + (t.sell_order_id ?? "—") + "</td>" +
+      "<td>" + (t.price ?? "—") + "</td>" +
+      "<td>" + (t.quantity ?? "—") + "</td>" +
+      "<td>" + fmtTime(t.timestamp) + "</td>" +
+      "</tr>"
+    )
+    .join("");
+}
+
+$("submit").addEventListener("click", async () => {
+  const btn = $("submit");
+  btn.disabled = true;
+  $("submit-result").className = "";
+  $("submit-result").textContent = "";
+  try {
+    const res = await api("/api/orders", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        party_id: parseInt($("party").value, 10) || 0,
+        side: $("side").value,
+        price: $("price").value.trim(),
+        quantity: $("qty").value.trim(),
+      }),
+    });
+    $("submit-result").textContent =
+      "Order " + res.order_id + " → " + res.status + " at " + fmtTime(res.submitted_at);
+    $("submit-result").className = "ok";
+    $("order-id").value = parseInt(res.order_id, 10) || "";
+    await refreshBook();
+    await loadTrades();
+  } catch (e) {
+    $("submit-result").textContent = "Failed: " + e.message;
+    $("submit-result").className = "err";
+  } finally {
+    btn.disabled = false;
+  }
+});
+
+$("lookup").addEventListener("click", async () => {
+  const id = $("order-id").value.trim();
+  $("status-result").className = "";
+  $("status-result").textContent = "";
+  if (!id) { $("status-result").textContent = "Enter an order ID"; $("status-result").className = "err"; return; }
+  try {
+    const s = await api("/api/orders/" + encodeURIComponent(id));
+    $("status-result").textContent =
+      "Order " + s.order_id + ": " + s.status + (s.matched ? " (matched)" : "");
+    $("status-result").className = "ok";
+  } catch (e) {
+    $("status-result").textContent = "Failed: " + e.message;
+    $("status-result").className = "err";
+  }
+});
+
+// Live trade feed over WebSocket
+function connectWs() {
+  const proto = location.protocol === "https:" ? "wss://" : "ws://";
+  const ws = new WebSocket(proto + location.host + "/api/ws");
+  ws.onopen = () => { setConn("● LIVE", "ok"); $("ws-tag").textContent = "● live"; };
+  ws.onmessage = (ev) => {
+    try {
+      const trade = JSON.parse(ev.data);
+      const tbody = $("trades");
+      const row = tbody.querySelector(".empty");
+      if (row) tbody.innerHTML = "";
+      tbody.insertAdjacentHTML(
+        "afterbegin",
+        "<tr>" +
+        "<td>" + (trade.trade_id ?? "—") + "</td>" +
+        "<td>" + (trade.buy_order_id ?? "—") + "</td>" +
+        "<td>" + (trade.sell_order_id ?? "—") + "</td>" +
+        "<td>" + (trade.price ?? "—") + "</td>" +
+        "<td>" + (trade.quantity ?? "—") + "</td>" +
+        "<td>" + fmtTime(trade.timestamp) + "</td>" +
+        "</tr>"
+      );
+      refreshBook();
+    } catch (e) { /* ignore malformed frames */ }
+  };
+  ws.onclose = () => { setConn("reconnecting…"); setTimeout(connectWs, 2000); };
+  ws.onerror = () => ws.close();
+}
+
+refreshBook();
+loadTrades();
+connectWs();
+setInterval(refreshBook, 10000);
+</script>
+</body>
+</html>

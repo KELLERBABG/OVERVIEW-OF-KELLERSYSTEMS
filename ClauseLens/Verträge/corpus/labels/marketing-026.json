@@ -1,0 +1,74 @@
+{
+  "slug": "marketing-026",
+  "source": "generated",
+  "domain": "Werbeplakatierung, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Nur der Auftragnehmer kann den Vertrag jederzeit ohne Grund",
+      "expectedType": "unilateral_convenience_termination",
+      "note": "Einseitiges jederzeitiges Kündigungsrecht des Anbieters."
+    },
+    {
+      "marker": "ohne Vorankündigung jederzeit inspizieren",
+      "expectedType": "unreasonable_audit",
+      "note": "Anlasslose Inspektion ohne Vorlauf."
+    },
+    {
+      "marker": "ohne vorherige Ankündigung Nachunternehmer einsetzen",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "Subunternehmer ohne Ankündigung."
+    },
+    {
+      "marker": "ohne Abmahnung fristlos einstellen",
+      "expectedType": "service_suspension",
+      "note": "Fristlose Leistungseinstellung ohne Abmahnung."
+    },
+    {
+      "marker": "gilt die Kampagne als vorbehaltlos abgenommen",
+      "expectedType": "deemed_acceptance",
+      "note": "Abnahmefiktion durch Schweigen."
+    },
+    {
+      "marker": "in Papierform mit Originalunterschrift erfolgen",
+      "expectedType": "written_form_trap",
+      "note": "Papierformzwang."
+    },
+    {
+      "marker": "nach Absenderübergabe an den Versanddienstleister als zugegangen",
+      "expectedType": "fictitious_receipt",
+      "note": "Zugangsfiktion ab Uebergabe an den Versender."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien wahren über die wechselseitig ausgetauschten Informationen Stillschweigen",
+      "note": "Symmetrische Verschwiegenheit."
+    },
+    {
+      "marker": "erhält der Kunde die Aushangnachweise kostenfrei in einem offenen Format",
+      "note": "Kostenfreier Datenexport."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende beenden",
+      "note": "Symmetrische Kündigung."
+    },
+    {
+      "marker": "Für die Leistungsbeschreibung genügt die Textform, auch per E-Mail",
+      "note": "Textform ausdruecklich zugelassen."
+    },
+    {
+      "marker": "innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Üblicher Zahlungstermin."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhaltung."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Auftragnehmer belegt Werbeflächen im Stadtgebiet und dokumentiert die Aushangkampagnen",
+      "note": "Kein Detektor fuer fehlende Standortlisten und Motivfreigaben."
+    }
+  ]
+}

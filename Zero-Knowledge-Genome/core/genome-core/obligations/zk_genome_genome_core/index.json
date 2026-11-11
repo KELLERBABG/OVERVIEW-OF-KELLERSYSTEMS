@@ -1,0 +1,19 @@
+{
+  "crate": "zk_genome_genome_core",
+  "obligations": [
+    {
+      "artifact": "add_bb0.smt2",
+      "block": "bb0",
+      "crate": "zk_genome_genome_core",
+      "file": "src/lib.rs",
+      "function": "add",
+      "kind": "overflow",
+      "line": 1,
+      "pinned_artifact": "add_bb0.witness.smt2",
+      "status": "FAIL",
+      "verdict": "FAIL (sat)"
+    }
+  ],
+  "re_discharge": "z3 -smt2 obligations/zk_genome_genome_core/<artifact>",
+  "schema_version": 1
+}

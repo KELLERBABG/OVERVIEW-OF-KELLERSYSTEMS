@@ -1,0 +1,31 @@
+# Decentralized Sovereign Credit Mesh — single-node API server.
+#
+# The API is configured purely via MESH_* environment variables:
+#   MESH_API_HOST / MESH_API_PORT   bind address and port
+#   MESH_STATE_FILE / MESH_KEYRING_FILE   persistence locations (under /data volume)
+#   MESH_API_TOKEN        Bearer token required by every endpoint except /health (required, no default)
+#   MESH_CORS_ORIGINS     optional comma-separated allowed origins (empty = same-origin only)
+#
+# NOTE: MESH_API_TOKEN is REQUIRED — `docker compose up` fails fast without it.
+# NOTE: there is no P2P/multi-node networking yet; each container is an independent node.
+version: "3.9"
+
+services:
+  node:
+    build: .
+    ports:
+      - "8899:8899"
+    volumes:
+      - mesh-data:/data
+    environment:
+      - MESH_API_HOST=0.0.0.0
+      - MESH_API_PORT=8899
+      - MESH_STATE_FILE=/data/mesh_server_state.json
+      - MESH_KEYRING_FILE=/data/mesh-keys/server.keyring.json
+      # Required: fail fast rather than expose an unauthenticated node.
+      - MESH_API_TOKEN=${MESH_API_TOKEN:?set MESH_API_TOKEN before docker compose up}
+      # - MESH_CORS_ORIGINS=https://app.example.com,http://localhost:3000
+    restart: unless-stopped
+
+volumes:
+  mesh-data:

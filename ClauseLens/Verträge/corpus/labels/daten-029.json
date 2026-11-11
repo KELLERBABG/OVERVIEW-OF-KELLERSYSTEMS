@@ -1,0 +1,87 @@
+{
+  "slug": "daten-029",
+  "source": "generated",
+  "domain": "Open-Source-Compliance",
+  "traps": [
+    {
+      "marker": "An die Stelle einer nichtigen Klausel tritt diejenige Gestaltung",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "Paraphrase/Umstellung: nennt 'An die Stelle einer nichtigen Klausel tritt d' statt der Registerwendung."
+    },
+    {
+      "marker": "bis zur vollständigen Erfüllung aller Ansprüche aus der Geschäftsverbindung",
+      "expectedType": "extended_retention_of_title",
+      "note": "Paraphrase/Umstellung: nennt 'bis zur vollständigen Erfüllung aller Ansprüc' statt der Registerwendung."
+    },
+    {
+      "marker": "Der Zustimmung des Kunden bedarf es nicht, wenn Unterauftragnehmer",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "Paraphrase/Umstellung: nennt 'Der Zustimmung des Kunden bedarf es nicht, we' statt der Registerwendung."
+    },
+    {
+      "marker": "Abweichende Nachweise des Kunden bleiben ohne Bedeutung",
+      "expectedType": "audit_log_manipulation",
+      "note": "Paraphrase/Umstellung: nennt 'Abweichende Nachweise des Kunden bleiben ohne' statt der Registerwendung."
+    },
+    {
+      "marker": "Die Gesellschaft kann den Zugang sofort ohne Vorankündigung sperren",
+      "expectedType": "service_suspension",
+      "note": "Paraphrase/Umstellung: nennt 'Die Gesellschaft kann den Zugang sofort ohne ' statt der Registerwendung."
+    },
+    {
+      "marker": "berechtigt, den Vertrag fristlos zu kündigen",
+      "expectedType": "insolvency_termination",
+      "note": "Paraphrase/Umstellung: nennt 'berechtigt, den Vertrag fristlos zu kündigen' statt der Registerwendung."
+    },
+    {
+      "marker": "Nachträgliche Abgabenbelastungen trägt der Kunde",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Paraphrase/Umstellung: nennt 'Nachträgliche Abgabenbelastungen trägt der Ku' statt der Registerwendung."
+    },
+    {
+      "marker": "Die Verschwiegenheitsverpflichtung obliegt ausschließlich dem Kunden",
+      "expectedType": "asymmetric_confidentiality",
+      "note": "Paraphrase/Umstellung: nennt 'Die Verschwiegenheitsverpflichtung obliegt au' statt der Registerwendung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "aus wichtigem Grund jederzeit fristlos beenden",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Streitigkeiten vorrangig durch Mediation zu klären",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "nur im gegenseitigen Einvernehmen.",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "alle vertraulichen Informationen der jeweils anderen Seite",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "spätestens zehn Werktage vor einer beabsichtigten Kontoauflösung",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "bleibt beiden Parteien unbenommen.",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "meldet Datenschutzverletzungen unverzüglich an den Auftraggeber",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "mindestens vierzehn Tage vor dem Einsatz eines Unterauftragnehmers",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Mindestabnahme von fünfhundert Datensätzen je Kalendermonat",
+      "note": "Täuschende Klausel ohne passenden Detektortyp."
+    }
+  ]
+}

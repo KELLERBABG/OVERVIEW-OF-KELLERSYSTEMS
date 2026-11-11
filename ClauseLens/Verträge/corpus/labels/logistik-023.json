@@ -1,0 +1,85 @@
+{
+  "slug": "logistik-023",
+  "source": "generated",
+  "domain": "Präferenznachweise",
+  "traps": [
+    {
+      "marker": " über die Beschaffenheit der Ersatzteile gilt das Sachverständigenverfahren.",
+      "expectedType": "mandatory_expert_determination",
+      "note": "Red-team Klausel: mandatory_expert_determination"
+    },
+    {
+      "marker": "Ansprüche des Kunden verjähren innerhalb von sechs Monaten nach Ablieferung.",
+      "expectedType": "statute_of_limitations",
+      "note": "Red-team Klausel: statute_of_limitations"
+    },
+    {
+      "marker": "Der Dienstleister haftet für Unterauftragnehmer nur bei eigenem Auswahlverschulden.",
+      "expectedType": "vicarious_agents",
+      "note": "Red-team Klausel: vicarious_agents"
+    },
+    {
+      "marker": "Die Abtretung von Forderungen bedarf der vorherigen schriftlichen Zustimmung des Anbieters.",
+      "expectedType": "assignment_restriction",
+      "note": "Red-team Klausel: assignment_restriction"
+    },
+    {
+      "marker": "Erklärungen gelten mit Absendung als zugegangen.",
+      "expectedType": "fictitious_receipt",
+      "note": "Red-team Klausel: fictitious_receipt"
+    },
+    {
+      "marker": "Eine Aufrechnung des Kunden gegen Forderungen des Anbieters ist ausgeschlossen.",
+      "expectedType": "setoff_restriction",
+      "note": "Red-team Klausel: setoff_restriction"
+    },
+    {
+      "marker": "Dieser Vertrag enthält alle Vereinbarungen der Parteien und ersetzt frühere Absprachen.",
+      "expectedType": "entire_agreement",
+      "note": "Red-team Klausel: entire_agreement"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Warennummern je Sendung ab",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "dokumentiert den Verfahrensverlauf",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "prüft die Nachweise unverzüglich nach Erhalt",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Berufshaftpflichtversicherung",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "informiert den Anbieter über geplante Forderungsverkäufe",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "zustellfähige Anschrift im Portal",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Rechnung innerhalb von zwanzig Tagen prüfen",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "innerhalb von 30 Tagen ohne Abzug zahlbar",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Es gilt schweizerisches Recht.",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Beide Parteien behandeln die Nachweise vertraulich",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

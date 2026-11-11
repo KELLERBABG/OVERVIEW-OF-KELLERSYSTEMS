@@ -1,0 +1,92 @@
+{
+  "slug": "service-015",
+  "source": "generated",
+  "domain": "Garantie- und Serviceverlängerung",
+  "traps": [
+    {
+      "marker": "Bewertungsfragen entscheidet ein vom Anbieter benannter Gutachter abschließend; der Rechtsweg bleibt",
+      "expectedType": "mandatory_expert_determination",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: provider-appointed expert decides valuation questions"
+    },
+    {
+      "marker": "Gutschriften wegen Verfügbarkeitsunterschreitung sind innerhalb eines Monats nach dem Störungsmonat ",
+      "expectedType": "service_credit_forfeiture",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: one month claim window for availability credits"
+    },
+    {
+      "marker": "Beendet der Kunde vor Ablauf, zahlt er die Vergütung für die verbleibenden Monate als Entschädigung ",
+      "expectedType": "early_termination_charge",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: remaining installments without deduction of saved costs"
+    },
+    {
+      "marker": "Störungsbehebung erfolgt bei Kunden ohne erweitertes Servicepaket ausschließlich nach Verfügbarkeit ",
+      "expectedType": "maintenance_conditional_shutdown",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: fault clearance only as capacity allows without the extended package"
+    },
+    {
+      "marker": "Ohne rechtzeitige Kündigung durch den Kunden läuft das Wartungsabonnement um zwölf weitere Monate",
+      "expectedType": "auto_renewal",
+      "note": "GAP: engine miss. Legally abusive (§ 309 Nr. 9 BGB); technique: paraphrase: renewal expressed as a continuation, not \"verlängert sich\""
+    },
+    {
+      "marker": "Nur der Kunde muss die Beendigung aktiv erklären, andernfalls gilt die Betreuung als für ein",
+      "expectedType": "auto_renewal",
+      "note": "GAP: engine miss. Legally abusive (§ 307 Abs. 2 BGB); technique: negation asymmetry: only the customer must act to end it"
+    },
+    {
+      "marker": "Der Kunde kann die Zusammenarbeit mit einer Ankündigungsfrist von neun Monaten beenden, während der ",
+      "expectedType": "notice_period",
+      "note": "Legally abusive (§ 307 BGB); engine hit; technique: asymmetry hidden behind \"Ankündigungsfrist\""
+    },
+    {
+      "marker": "Der Anbieter ist berechtigt, Leistungen ohne Zustimmung des Kunden vollständig auf Dritte zu",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: literal free substitution without consent"
+    },
+    {
+      "marker": "Der Anbieter darf Protokolldaten zur Qualitätssicherung jederzeit nachträglich anpassen.",
+      "expectedType": "audit_log_manipulation",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: literal right to change log data afterwards"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Kündigungen können in Textform, insbesondere per E-Mail, erklärt werden.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Der Anbieter kann Leistungen auf Nachunternehmer übertragen, wenn er dies dem Kunden vierzehn Tage",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Die Vergütung ist innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Am Ende der Laufzeit stellt der Anbieter alle Kundendaten in einem gängigen Format kostenfrei zur",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Jede Partei kann den Vertrag aus wichtigem Grund ohne Einhaltung einer Frist kündigen.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Der Anbieter unterhält eine Betriebshaftpflichtversicherung mit einer Deckungssumme von fünf",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Der Kunde erhält auf Wunsch eine Kopie der über ihn gespeicherten Daten.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Die Einhaltung terminlicher Zusagen des Anbieters steht unter dem Vorbehalt der jederzeitigen",
+      "note": "Deceptive clause without a matching detector type (coverage gap)."
+    },
+    {
+      "marker": "Der Kunde trägt Aufwendungen für Reisen, Unterkunft und Schulungen auch dann, wenn der Termin nicht ",
+      "note": "Deceptive clause without a matching detector type (coverage gap)."
+    }
+  ]
+}

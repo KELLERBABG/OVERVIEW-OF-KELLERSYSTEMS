@@ -1,0 +1,23 @@
+[package]
+name = "bft"
+version.workspace = true
+edition.workspace = true
+description = "Byzantine fault tolerance consensus layer for MPC validator nodes"
+
+[dependencies]
+threshold-crypto = { path = "../threshold-crypto" }
+ark-bn254.workspace = true
+ark-ff.workspace = true
+sha2.workspace = true
+hex.workspace = true
+rand.workspace = true
+thiserror.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tracing.workspace = true
+tokio.workspace = true
+uuid.workspace = true
+chrono.workspace = true
+
+[lints]
+rust.unsafe_code = "forbid"

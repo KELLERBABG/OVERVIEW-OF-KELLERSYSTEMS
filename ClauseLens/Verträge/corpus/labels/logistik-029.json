@@ -1,0 +1,76 @@
+{
+  "slug": "logistik-029",
+  "source": "generated",
+  "domain": "Facility Management Sicherheit",
+  "traps": [
+    {
+      "marker": " verpflichtet sich, nach Beendigung des Vertrages für zwei Jahre",
+      "expectedType": "non_compete",
+      "note": "Red-team Klausel: non_compete"
+    },
+    {
+      "marker": "Bei Überschreitung der Reaktionszeit wird eine Vertragsstrafe von 500 EUR je Verstoß fällig.",
+      "expectedType": "penalty",
+      "note": "Red-team Klausel: penalty"
+    },
+    {
+      "marker": "Die Haftung des Anbieters ist der Höhe nach auf fünfzig Prozent der Jahresvergütung begrenzt.",
+      "expectedType": "liability",
+      "note": "Red-team Klausel: liability"
+    },
+    {
+      "marker": " ist berechtigt, den Vertrag mit einer Frist von sechzig Tagen",
+      "expectedType": "unilateral_convenience_termination",
+      "note": "Red-team Klausel: unilateral_convenience_termination"
+    },
+    {
+      "marker": "Die Geheimhaltungspflichten gelten zeitlich unbefristet fort.",
+      "expectedType": "excessive_survival",
+      "note": "Red-team Klausel: excessive_survival"
+    },
+    {
+      "marker": " den Anbieter von sämtlichen Ansprüchen Dritter frei, unabhängig",
+      "expectedType": "third_party_indemnity",
+      "note": "Red-team Klausel: third_party_indemnity"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Dienstpläne wöchentlich ab",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "schult sein Personal regelmäßig",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "dokumentiert die Einsatzzeiten im Wachbuch",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "unterrichtet den Kunden über geplante Umstellungen",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "gibt Sicherheitsausweise nach Vertragsende zurück",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Betriebshaftpflichtversicherung",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "innerhalb von 30 Tagen ohne Abzug zahlbar",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "8.2 Es gilt deutsches Recht.",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Beide Parteien behandeln die Einsatzdaten vertraulich",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

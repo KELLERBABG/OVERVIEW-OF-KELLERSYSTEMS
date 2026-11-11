@@ -1,0 +1,115 @@
+OPEN-SOURCE-COMPLIANCE-VEREINBARUNG
+
+zwischen
+
+der Cranach AG, Neuer Wall 40, 20354 Hamburg (nachfolgend Anbieter)
+
+und
+
+der Adlerstein GmbH, Maximilianstraße 5, 80333 München (nachfolgend Kunde)
+
+Präambel
+
+Der Anbieter liefert die in Anlage 4 bezeichnete Software, die Open-Source-Komponenten enthält. Es gelten die nachstehenden Bedingungen.
+
+§ 15 Hinweis
+
+An die Stelle einer nichtigen Klausel tritt diejenige Gestaltung, die den Parteien wirtschaftlich am nächsten steht.
+
+§ 16 Maßnahme
+
+Der Auftraggeber kann den Vertrag aus wichtigem Grund jederzeit fristlos beenden.
+
+§ 17 Vorgehen
+
+Der Verkäufer behält sich das Eigentum vor bis zur vollständigen Erfüllung aller Ansprüche aus der Geschäftsverbindung.
+
+§ 18 Abstimmung
+
+Die Parteien vereinbaren, Streitigkeiten vorrangig durch Mediation zu klären.
+
+§ 19 Koordination
+
+Der Zustimmung des Kunden bedarf es nicht, wenn Unterauftragnehmer eingesetzt werden.
+
+§ 20 Umsetzung
+
+Die Parteien veröffentlichen Ergebnisse der gemeinsamen Forschung nur im gegenseitigen Einvernehmen.
+
+§ 21 Beachtung
+
+Abweichende Nachweise des Kunden bleiben ohne Bedeutung.
+
+§ 1 Allgemeines
+
+Beide Parteien verpflichten sich, alle vertraulichen Informationen der jeweils anderen Seite mit der gebotenen Sorgfalt geheim zu halten.
+
+§ 2 Bestimmung
+
+Die Gesellschaft kann den Zugang sofort ohne Vorankündigung sperren.
+
+§ 3 Regelung
+
+Die Bank gibt dem Kunden spätestens zehn Werktage vor einer beabsichtigten Kontoauflösung eine schriftliche Ankündigung.
+
+§ 4 Vereinbarung
+
+Die Gesellschaft ist bei einem Insolvenzantrag des Kunden berechtigt, den Vertrag fristlos zu kündigen.
+
+§ 5 Modalität
+
+Die Kündigung aus wichtigem Grund bleibt beiden Parteien unbenommen.
+
+§ 6 Ordnung
+
+Nachträgliche Abgabenbelastungen trägt der Kunde.
+
+§ 7 Ausgestaltung
+
+Der Auftragnehmer meldet Datenschutzverletzungen unverzüglich an den Auftraggeber.
+
+§ 8 Durchführung
+
+Die Verschwiegenheitsverpflichtung obliegt ausschließlich dem Kunden.
+
+§ 9 Vorkehrung
+
+Der Auftragnehmer informiert den Auftraggeber mindestens vierzehn Tage vor dem Einsatz eines Unterauftragnehmers.
+
+§ 10 Zusatz
+
+Die Parteien vereinbaren eine Mindestabnahme von fünfhundert Datensätzen je Kalendermonat.
+
+§ 11 Klarstellung
+
+Jede Partei trägt ihre eigenen Kosten der Vertragsverhandlungen.
+
+§ 12 Ergänzung
+
+Datenschutzrechtliche Hinweise ergeben sich aus der Anlage 4.
+
+§ 13 Verfahren
+
+Ansprechpartner für operative Fragen ist die in der Anlage 2 genannte Stelle.
+
+§ 14 Ausführung
+
+Die Parteien arbeiten bei der Durchführung vertrauensvoll zusammen.
+
+§ 15 Hinweis
+
+Dieser Vertrag unterliegt deutschem Recht.
+
+§ 16 Maßnahme
+
+Die Unwirksamkeit einzelner Bestimmungen lässt die Wirksamkeit des Vertrages im Übrigen unberührt.
+
+§ 17 Vorgehen
+
+Beide Parteien halten die gesetzlichen Aufbewahrungsfristen ein.
+
+Ort, Datum: ______________________
+
+Für Anbieter: ______________________
+
+Für Kunde: ______________________

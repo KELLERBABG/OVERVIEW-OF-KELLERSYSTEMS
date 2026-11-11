@@ -1,0 +1,74 @@
+{
+  "slug": "marketing-007",
+  "source": "generated",
+  "domain": "Contentlizenz, österreichisches Recht",
+  "traps": [
+    {
+      "marker": "darf der Lizenzgeber in eigener Verantwortung verwerten",
+      "expectedType": "data_grant",
+      "note": "Eigennützige Verwertung der Nutzungsdaten; vermeidet Nutzungsrecht und Trainingszwecke."
+    },
+    {
+      "marker": "provided in its current state with all faults and without warranty",
+      "expectedType": "as_is_software_disclaimer",
+      "note": "Englischer Gewährleistungsausschluss; vermeidet die deutsche Ist-Zustand-Formel."
+    },
+    {
+      "marker": "als Referenzkunden zeitlich und räumlich unbeschränkt",
+      "expectedType": "marketing_reference",
+      "note": "Unbeschränkte Referenznennung."
+    },
+    {
+      "marker": "Frühere Absprachen über Liefermengen treten mit Unterzeichnung außer Kraft",
+      "expectedType": "entire_agreement",
+      "note": "Vollständigkeitsklausel über Außerkrafttreten früherer Absprachen; vermeidet 'entire agreement'."
+    },
+    {
+      "marker": "so gilt das, was die Parteien redlicherweise vereinbart hätten",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "Ersatzregelung nach hypothetischem Parteiwillen; vermeidet 'wirtschaftlicher Zweck'."
+    },
+    {
+      "marker": "gehen nicht ohne Zustimmung des Lizenzgebers auf Dritte über",
+      "expectedType": "assignment_restriction",
+      "note": "Zessionsverbot als Übergangsverbot formuliert; vermeidet 'Abtretung ausgeschlossen'."
+    },
+    {
+      "marker": "Eine Verantwortung für Handlungen beauftragter Dritter wird nicht übernommen",
+      "expectedType": "vicarious_agents",
+      "note": "Haftungsfreizeichnung für Dritte; vermeidet 'Erfüllungsgehilfen'."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "Symmetrische Vertraulichkeit."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten auf das Jahresende beenden",
+      "note": "Symmetrische Kündigung."
+    },
+    {
+      "marker": "innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Üblicher Zahlungstermin."
+    },
+    {
+      "marker": "Änderungen dieses Vertrages können in Textform vereinbart werden",
+      "note": "Textform zugelassen."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhaltung."
+    },
+    {
+      "marker": "Die Unwirksamkeit einzelner Bestimmungen lässt die übrigen Bestimmungen unberührt",
+      "note": "Bereinigte Salvatorische Klausel."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Eine Unterlizenzierung bedarf der Zustimmung des Lizenzgebers",
+      "note": "Kein Detektor für Unterlizenzierungsverbote."
+    }
+  ]
+}

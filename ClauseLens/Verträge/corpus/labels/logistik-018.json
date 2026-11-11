@@ -1,0 +1,76 @@
+{
+  "slug": "logistik-018",
+  "source": "generated",
+  "domain": "Gefahrgutlagerung",
+  "traps": [
+    {
+      "marker": "Mangels Wartungsvereinbarung erfolgt eine Stilllegung der Anlage.",
+      "expectedType": "maintenance_conditional_shutdown",
+      "note": "Red-team Klausel: maintenance_conditional_shutdown"
+    },
+    {
+      "marker": "Bei Insolvenz des Kunden endet der Vertrag ohne weiteres.",
+      "expectedType": "insolvency_termination",
+      "note": "Red-team Klausel: insolvency_termination"
+    },
+    {
+      "marker": " an der Ware bleibt bis zum vollständigen Ausgleich sämtlicher",
+      "expectedType": "extended_retention_of_title",
+      "note": "Red-team Klausel: extended_retention_of_title"
+    },
+    {
+      "marker": "Der Anbieter darf Subunternehmer ohne vorherige Ankündigung einsetzen.",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "Red-team Klausel: subcontractor_uncontrolled"
+    },
+    {
+      "marker": "Die Kündigung bedarf der Schriftform.",
+      "expectedType": "written_form_trap",
+      "note": "Red-team Klausel: written_form_trap"
+    },
+    {
+      "marker": "Dieser Vertrag enthält alle Vereinbarungen der Parteien und ersetzt frühere Absprachen.",
+      "expectedType": "entire_agreement",
+      "note": "Red-team Klausel: entire_agreement"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Mengenströme monatlich ab",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Prüfungen nach Gefahrstoffrecht",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Sicherheiten bei Zahlungsverzug unverzüglich frei",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "versichert die eingelagerte Ware gegen Feuer",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Unterauftragnehmer auf Anfrage",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "bestätigen Änderungen im Projektportal",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "innerhalb von 30 Tagen ohne Abzug zahlbar",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "7.4 Es gilt deutsches Recht.",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Beide Parteien behandeln die Lagerdaten vertraulich",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

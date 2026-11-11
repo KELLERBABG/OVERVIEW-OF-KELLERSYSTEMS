@@ -1,0 +1,161 @@
+# ==============================================================================
+# MuonScope Tomography - Materials Database & Physical Constants
+# ==============================================================================
+# Radiation length X0, atomic number Z, atomic mass A, mass density rho (g/cm^3),
+# mean excitation energy I (eV), MIP energy loss dE/dx (MeV*cm^2/g),
+# and bound negative muon capture lifetime tau_capture (ns).
+
+materials:
+  Air:
+    formula: "N_0.755 O_0.232 Ar_0.013"
+    effective_Z: 7.2
+    effective_A: 14.4
+    density_g_cm3: 0.001205
+    radiation_length_cm: 30420.0
+    scattering_density_cm_inv: 0.00003287
+    dedx_mip_mev_per_cm: 0.0022
+    capture_lifetime_ns: 2197.0
+    color_rgba: [0.1, 0.4, 0.8, 0.05]
+
+  Water:
+    formula: "H2O"
+    effective_Z: 7.42
+    effective_A: 18.015
+    density_g_cm3: 1.000
+    radiation_length_cm: 36.08
+    scattering_density_cm_inv: 0.0277
+    dedx_mip_mev_per_cm: 1.99
+    capture_lifetime_ns: 2197.0
+    color_rgba: [0.0, 0.6, 1.0, 0.3]
+
+  Standard_Concrete:
+    formula: "SiO2 + CaCO3 + Al2O3"
+    effective_Z: 11.5
+    effective_A: 23.0
+    density_g_cm3: 2.35
+    radiation_length_cm: 11.55
+    scattering_density_cm_inv: 0.0865
+    dedx_mip_mev_per_cm: 3.98
+    capture_lifetime_ns: 1200.0
+    color_rgba: [0.7, 0.7, 0.7, 0.4]
+
+  Standard_Rock:
+    formula: "Standard Crustal Rock (Z/A=0.5)"
+    effective_Z: 11.0
+    effective_A: 22.0
+    density_g_cm3: 2.65
+    radiation_length_cm: 10.4
+    scattering_density_cm_inv: 0.0961
+    dedx_mip_mev_per_cm: 4.51
+    capture_lifetime_ns: 1180.0
+    color_rgba: [0.65, 0.6, 0.55, 0.5]
+
+  Granite:
+    formula: "SiO2 + Al2O3 + K2O + Na2O"
+    effective_Z: 11.8
+    effective_A: 23.5
+    density_g_cm3: 2.75
+    radiation_length_cm: 10.1
+    scattering_density_cm_inv: 0.099
+    dedx_mip_mev_per_cm: 4.68
+    capture_lifetime_ns: 1150.0
+    color_rgba: [0.6, 0.5, 0.5, 0.5]
+
+  Basalt:
+    formula: "SiO2 + FeO + CaO + MgO"
+    effective_Z: 12.4
+    effective_A: 24.8
+    density_g_cm3: 3.00
+    radiation_length_cm: 8.95
+    scattering_density_cm_inv: 0.111
+    dedx_mip_mev_per_cm: 5.12
+    capture_lifetime_ns: 1050.0
+    color_rgba: [0.35, 0.35, 0.4, 0.6]
+
+  Limestone:
+    formula: "CaCO3"
+    effective_Z: 11.9
+    effective_A: 23.8
+    density_g_cm3: 2.70
+    radiation_length_cm: 10.3
+    scattering_density_cm_inv: 0.097
+    dedx_mip_mev_per_cm: 4.59
+    capture_lifetime_ns: 1160.0
+    color_rgba: [0.8, 0.8, 0.75, 0.5]
+
+  Sandstone:
+    formula: "SiO2 (Porous)"
+    effective_Z: 11.6
+    effective_A: 23.2
+    density_g_cm3: 2.20
+    radiation_length_cm: 12.6
+    scattering_density_cm_inv: 0.079
+    dedx_mip_mev_per_cm: 3.74
+    capture_lifetime_ns: 1220.0
+    color_rgba: [0.85, 0.75, 0.55, 0.5]
+
+  Hematite_Ore:
+    formula: "Fe2O3"
+    effective_Z: 21.3
+    effective_A: 45.6
+    density_g_cm3: 5.26
+    radiation_length_cm: 2.75
+    scattering_density_cm_inv: 0.363
+    dedx_mip_mev_per_cm: 8.95
+    capture_lifetime_ns: 320.0
+    color_rgba: [0.7, 0.2, 0.1, 0.7]
+
+  Aluminum:
+    symbol: "Al"
+    Z: 13
+    A: 26.98
+    density_g_cm3: 2.70
+    radiation_length_cm: 8.89
+    scattering_density_cm_inv: 0.112
+    dedx_mip_mev_per_cm: 4.36
+    capture_lifetime_ns: 864.0
+    color_rgba: [0.8, 0.8, 0.9, 0.6]
+
+  Iron_Steel:
+    symbol: "Fe"
+    Z: 26
+    A: 55.84
+    density_g_cm3: 7.874
+    radiation_length_cm: 1.76
+    scattering_density_cm_inv: 0.568
+    dedx_mip_mev_per_cm: 11.4
+    capture_lifetime_ns: 206.0
+    color_rgba: [0.9, 0.5, 0.1, 0.8]
+
+  Lead:
+    symbol: "Pb"
+    Z: 82
+    A: 207.2
+    density_g_cm3: 11.35
+    radiation_length_cm: 0.56
+    scattering_density_cm_inv: 1.785
+    dedx_mip_mev_per_cm: 12.8
+    capture_lifetime_ns: 75.0
+    color_rgba: [0.8, 0.1, 0.1, 0.9]
+
+  Tungsten:
+    symbol: "W"
+    Z: 74
+    A: 183.84
+    density_g_cm3: 19.30
+    radiation_length_cm: 0.35
+    scattering_density_cm_inv: 2.857
+    dedx_mip_mev_per_cm: 22.1
+    capture_lifetime_ns: 68.0
+    color_rgba: [0.9, 0.2, 0.4, 0.95]
+
+  Uranium:
+    symbol: "U"
+    Z: 92
+    A: 238.03
+    density_g_cm3: 19.10
+    radiation_length_cm: 0.32
+    scattering_density_cm_inv: 3.125
+    dedx_mip_mev_per_cm: 20.6
+    capture_lifetime_ns: 50.0
+    color_rgba: [0.95, 0.0, 0.6, 0.98]

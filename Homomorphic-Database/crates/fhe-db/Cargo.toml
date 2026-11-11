@@ -1,0 +1,13 @@
+[package]
+name = "fhe-db"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "Encrypted database engine: storage and homomorphic queries"
+
+[dependencies]
+fhe-core.workspace = true
+serde.workspace = true
+bincode.workspace = true
+thiserror.workspace = true

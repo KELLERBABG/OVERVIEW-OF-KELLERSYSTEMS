@@ -1,0 +1,74 @@
+{
+  "slug": "marketing-027",
+  "source": "generated",
+  "domain": "Messeservice, schweizerisches Recht",
+  "traps": [
+    {
+      "marker": "Mangels abgeschlossenen Wartungsvertrags wird die Anlage des Kunden abgeschaltet",
+      "expectedType": "maintenance_conditional_shutdown",
+      "note": "Abschaltung mangels Wartungsvertrag."
+    },
+    {
+      "marker": "Entfällt ein kritischer Sicherheitspatch, verfällt jeder Service-Credit",
+      "expectedType": "service_credit_forfeiture",
+      "note": "Verfall des Service-Credits bei fehlendem Patch."
+    },
+    {
+      "marker": "gelten als unwiderlegbarer Nachweis",
+      "expectedType": "audit_log_manipulation",
+      "note": "Aufzeichnungen als unwiderlegbarer Beweis."
+    },
+    {
+      "marker": "endet der Vertrag ohne weiteres",
+      "expectedType": "insolvency_termination",
+      "note": "Automatisches Ende bei Zahlungsunfähigkeit."
+    },
+    {
+      "marker": "trägt der Kunde vollumfänglich, auch rückwirkend",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Rückwirkende Steuernachforderungen beim Kunden."
+    },
+    {
+      "marker": "wird eine Stornogebühr pauschal geschuldet",
+      "expectedType": "early_termination_charge",
+      "note": "Pauschale Stornogebuehr bei vorzeitiger Kuendigung."
+    },
+    {
+      "marker": "überdauern die Beendigung auf unbestimmte Zeit",
+      "expectedType": "excessive_survival",
+      "note": "Unbefristete Nachwirkung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "Symmetrische Vertraulichkeit."
+    },
+    {
+      "marker": "erhält der Kunde die Standdaten kostenfrei in einem offenen Format",
+      "note": "Kostenfreier Datenexport."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende beenden",
+      "note": "Symmetrische Kündigung."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform zugelassen."
+    },
+    {
+      "marker": "innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Üblicher Zahlungstermin."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhaltung."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Auftragnehmer plant und errichtet den Messestand des Kunden an der Fachmesse",
+      "note": "Kein Detektor fuer fehlende Versicherungsnachweise."
+    }
+  ]
+}

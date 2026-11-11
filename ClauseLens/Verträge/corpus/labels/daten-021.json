@@ -1,0 +1,87 @@
+{
+  "slug": "daten-021",
+  "source": "generated",
+  "domain": "Open-Source-Compliance",
+  "traps": [
+    {
+      "marker": "Nachträgliche Abgabenbelastungen trägt der Kunde",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Paraphrase/Umstellung: nennt 'Nachträgliche Abgabenbelastungen trägt der Ku' statt der Registerwendung."
+    },
+    {
+      "marker": "Die Verschwiegenheitsverpflichtung obliegt ausschließlich dem Kunden",
+      "expectedType": "asymmetric_confidentiality",
+      "note": "Paraphrase/Umstellung: nennt 'Die Verschwiegenheitsverpflichtung obliegt au' statt der Registerwendung."
+    },
+    {
+      "marker": "Sämtliche Zusicherungen zur Funktionsfähigkeit sind nicht Bestandteil dieses Vertrages",
+      "expectedType": "as_is_software_disclaimer",
+      "note": "Paraphrase/Umstellung: nennt 'Sämtliche Zusicherungen zur Funktionsfähigkei' statt der Registerwendung."
+    },
+    {
+      "marker": "Sämtliche zuvor kommunizierten Kostenschätzungen treten außer Kraft",
+      "expectedType": "entire_agreement",
+      "note": "Paraphrase/Umstellung: nennt 'Sämtliche zuvor kommunizierten Kostenschätzun' statt der Registerwendung."
+    },
+    {
+      "marker": "den Firmennamen des Kunden zu Referenzzwecken auf der Website",
+      "expectedType": "marketing_reference",
+      "note": "Paraphrase/Umstellung: nennt 'den Firmennamen des Kunden zu Referenzzwecken' statt der Registerwendung."
+    },
+    {
+      "marker": "Anregungen und Vorschläge des Kunden gehen unentgeltlich in das Eigentum",
+      "expectedType": "feedback_ip_grab",
+      "note": "Paraphrase/Umstellung: nennt 'Anregungen und Vorschläge des Kunden gehen un' statt der Registerwendung."
+    },
+    {
+      "marker": "Mitteilungen gelten nach Absendung als dem Kunden zugegangen",
+      "expectedType": "fictitious_receipt",
+      "note": "Paraphrase/Umstellung: nennt 'Mitteilungen gelten nach Absendung als dem Ku' statt der Registerwendung."
+    },
+    {
+      "marker": "Die angegebene Verfügbarkeit von 99,9 % ist unverbindlich",
+      "expectedType": "unverbindliche_sla_falle",
+      "note": "Paraphrase/Umstellung: nennt 'Die angegebene Verfügbarkeit von 99,9 % ist u' statt der Registerwendung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "nur im gegenseitigen Einvernehmen.",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "alle vertraulichen Informationen der jeweils anderen Seite",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "spätestens zehn Werktage vor einer beabsichtigten Kontoauflösung",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "bleibt beiden Parteien unbenommen.",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "meldet Datenschutzverletzungen unverzüglich an den Auftraggeber",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "mindestens vierzehn Tage vor dem Einsatz eines Unterauftragnehmers",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "binnen zwei Werktagen nach Eingang auf dem Geschäftskonto",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "ausschließlich auf dokumentierte Weisung des Auftraggebers",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "eine Bearbeitungsgebühr von fünfzig Euro",
+      "note": "Täuschende Klausel ohne passenden Detektortyp."
+    }
+  ]
+}

@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preise &mdash; BauLens</title>
+<meta name="description" content="Lizenzen für BauLens: Starter 49 € einmalig, Pro Architekt 89 € pro Monat (890 € / Jahr), Büro/Kanzlei 199 € pro Monat für drei Arbeitsplätze. Kauf über Polar.">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="index, follow">
+<link rel="icon" type="image/svg+xml" href="../assets/icon.svg">
+<style>
+/* Self-hosted IBM Plex; see assets/fonts/OFL.txt */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./plex-mono-400-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./plex-mono-400-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./plex-mono-500-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./plex-mono-500-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("./plex-mono-600-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("./plex-mono-600-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./plex-sans-300-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./plex-sans-300-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./plex-sans-400-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./plex-sans-400-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./plex-sans-500-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./plex-sans-500-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./plex-sans-600-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./plex-sans-600-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./plex-sans-700-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./plex-sans-700-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+  :root {
+    --ink-900: #05070c; --ink-800: #080b12; --ink-700: #0b0f18; --ink-600: #101623; --ink-500: #161e2e;
+    --line: #1a2434; --line-strong: #26334a; --ink-line: #33415a;
+    --accent: #2fb6cf; --accent-hi: #57cde2;
+    --accent-wash: rgba(47, 182, 207, 0.08); --accent-edge: rgba(47, 182, 207, 0.32);
+    --on-accent: #04141a;
+    --warn: #d9a441; --warn-wash: rgba(217, 164, 65, 0.1);
+    --fg: #e9edf3; --fg-muted: #98a4b6; --fg-dim: #6b7788; --fg-faint: #4d5768;
+    --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --r-sm: 3px; --r-md: 5px; --r-lg: 8px;
+    --dur-fast: 120ms; --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+    --content: 74ch;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+  body {
+    margin: 0; min-height: 100vh;
+    background-color: var(--ink-900);
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,0.028) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.028) 1px, transparent 1px);
+    background-size: 88px 88px; background-attachment: fixed;
+    color: var(--fg); font-family: var(--font-sans); font-size: 1rem; line-height: 1.7;
+    overflow-x: clip; -webkit-font-smoothing: antialiased;
+  }
+  :focus-visible { outline: 2px solid var(--accent-hi); outline-offset: 2px; border-radius: var(--r-sm); }
+  ::selection { background: var(--accent-edge); color: var(--fg); }
+  .skip-link {
+    position: absolute; left: 1rem; top: -100px; z-index: 100;
+    padding: 0.6rem 1rem; background: var(--ink-500); border: 1px solid var(--accent);
+    border-radius: var(--r-md); font-family: var(--font-mono); font-size: 0.8125rem; text-decoration: none;
+    transition: top var(--dur-fast) var(--ease-out);
+  }
+  .skip-link:focus { top: 1rem; }
+
+  .site-header {
+    position: sticky; top: 0; z-index: 60;
+    background: rgba(5,7,12,0.88); border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(12px) saturate(140%);
+  }
+  .header-inner {
+    display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+    height: 64px; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;
+  }
+  .brand { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; color: inherit; }
+  .brand-mark {
+    display: grid; place-items: center; width: 32px; height: 32px;
+    background: var(--ink-700); border: 1px solid var(--line-strong); border-radius: var(--r-md);
+  }
+  .brand-mark img { display: block; width: 22px; height: 22px; }
+  .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+  .brand-name { font-size: 1rem; font-weight: 600; letter-spacing: -0.02em; }
+  .brand-owner {
+    font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--fg-dim);
+  }
+  .header-actions { display: flex; align-items: center; gap: 0.5rem; }
+  .header-link {
+    font-size: 0.875rem; color: var(--fg-muted); text-decoration: none;
+    padding: 0.4rem 0.6rem; border-radius: var(--r-md);
+    transition: color var(--dur-fast) var(--ease-out), background-color var(--dur-fast) var(--ease-out);
+  }
+  .header-link:hover { color: var(--fg); background: var(--ink-600); }
+  .header-cta {
+    font-size: 0.8125rem; font-weight: 550; text-decoration: none; color: var(--on-accent);
+    background: var(--accent); padding: 0.5rem 0.9rem; border-radius: var(--r-md);
+    transition: background-color var(--dur-fast) var(--ease-out);
+  }
+  .header-cta:hover { background: var(--accent-hi); }
+
+  .shell { max-width: 1200px; margin: 0 auto; padding: 3rem 1.5rem 6rem; }
+  .prose { max-width: var(--content); }
+  .prose h1 {
+    font-size: clamp(1.75rem, 1.35rem + 1.6vw, 2.4rem); font-weight: 300;
+    line-height: 1.14; letter-spacing: -0.026em; margin: 0 0 1.25rem;
+  }
+  .prose h2 {
+    font-size: clamp(1.2rem, 1.08rem + 0.6vw, 1.45rem); font-weight: 600;
+    letter-spacing: -0.018em; margin: 2.75rem 0 0.85rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+  }
+  .prose h3 { font-size: 1.05rem; font-weight: 600; margin: 1.9rem 0 0.6rem; }
+  .prose p { margin: 0 0 1.05rem; color: var(--fg-muted); }
+  .prose strong { color: var(--fg); font-weight: 600; }
+  .prose a { color: var(--accent-hi); text-decoration: none; border-bottom: 1px solid var(--accent-edge); }
+  .prose a:hover { border-bottom-color: var(--accent-hi); }
+  .prose ul, .prose ol { margin: 0 0 1.05rem; padding-left: 1.35rem; color: var(--fg-muted); }
+  .prose li { margin-bottom: 0.4rem; }
+  .prose ul li::marker { color: var(--fg-faint); }
+  .prose ol li::marker { color: var(--accent); font-family: var(--font-mono); font-size: 0.85em; }
+  .prose code {
+    font-family: var(--font-mono); font-size: 0.86em; background: var(--ink-600);
+    border: 1px solid var(--line); border-radius: var(--r-sm); padding: 0.1em 0.35em; color: var(--fg);
+  }
+  .prose hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
+  .prose .lead { font-size: 1.05rem; color: var(--fg-muted); }
+  .prose .meta { font-family: var(--font-mono); font-size: 0.75rem; color: var(--fg-dim); letter-spacing: 0.04em; }
+
+  .callout {
+    max-width: var(--content); margin: 1.25rem 0; padding: 0.95rem 1.15rem;
+    background: var(--warn-wash); border: 1px solid rgba(217,164,65,0.32);
+    border-radius: var(--r-md); color: var(--fg-muted); font-size: 0.9375rem;
+  }
+  .callout strong { color: var(--fg); }
+  .callout--accent { background: var(--accent-wash); border-color: var(--accent-edge); }
+
+  .data-block {
+    max-width: var(--content);
+    background: var(--ink-800); border: 1px solid var(--line); border-radius: var(--r-lg);
+    padding: 1.15rem 1.35rem; margin: 1.25rem 0;
+    font-size: 0.9375rem; color: var(--fg-muted);
+  }
+  .data-block p { margin: 0 0 0.35rem; }
+  .data-block p:last-child { margin-bottom: 0; }
+  .data-block strong { color: var(--fg); }
+
+  .site-footer { border-top: 1px solid var(--line); background: var(--ink-800); }
+  .footer-inner {
+    max-width: 1200px; margin: 0 auto; padding: 2.5rem 1.5rem;
+    display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: space-between;
+  }
+  .footer-links { display: flex; flex-wrap: wrap; gap: 1.25rem; list-style: none; margin: 0; padding: 0; }
+  .footer-links a { font-size: 0.875rem; color: var(--fg-muted); text-decoration: none; }
+  .footer-links a:hover { color: var(--accent-hi); }
+  .footer-note { font-size: 0.8125rem; color: var(--fg-dim); max-width: 62ch; margin: 0; }
+  .footer-meta { font-family: var(--font-mono); font-size: 0.72rem; color: var(--fg-faint); }
+
+  @media (max-width: 720px) {
+    .header-link { display: none; }
+    .shell { padding: 2rem 1.1rem 4rem; }
+    .header-inner { padding: 0 1.1rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  }
+  @media print {
+    body { background: #fff; color: #000; }
+    .site-header, .site-footer, .skip-link { display: none !important; }
+    .prose p, .prose li, .data-block, .callout { color: #000 !important; }
+    .prose h1, .prose h2, .prose h3 { color: #000 !important; border-color: #ccc !important; }
+    .prose a { color: #000 !important; border: 0 !important; }
+  }
+
+  .plan-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
+  @media (max-width: 980px) { .plan-grid { grid-template-columns: minmax(0, 1fr); } }
+  .plan {
+    display: flex; flex-direction: column; min-width: 0;
+    background: var(--ink-800); border: 1px solid var(--line);
+    border-radius: var(--r-lg); padding: 1.6rem;
+  }
+  .plan--featured { border-color: var(--accent-edge); background: linear-gradient(180deg, var(--accent-wash), var(--ink-800) 42%); }
+  .plan-tier { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; margin-bottom: 0.9rem; }
+  .plan-tier h3 { font-size: 1rem; font-weight: 600; margin: 0; }
+  .plan-flag {
+    font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--accent-hi); border: 1px solid var(--accent-edge); border-radius: var(--r-sm); padding: 0.15rem 0.45rem;
+    white-space: nowrap;
+  }
+  .plan-price {
+    display: flex; align-items: baseline; gap: 0.45rem; margin: 0 0 0.35rem;
+    font-family: var(--font-mono); font-variant-numeric: tabular-nums;
+  }
+  .plan-amount { font-size: 1.85rem; font-weight: 500; letter-spacing: -0.02em; color: var(--fg); }
+  .plan-price small { font-size: 0.78rem; color: var(--fg-dim); }
+  .plan-for { font-size: 0.875rem; color: var(--fg-muted); margin: 0 0 1.25rem; min-height: 3.4em; }
+  .plan ul { list-style: none; margin: 0 0 1.4rem; padding: 0; display: flex; flex-direction: column; gap: 0.55rem; flex: 1; }
+  .plan li { display: grid; grid-template-columns: 1rem minmax(0,1fr); gap: 0.5rem; font-size: 0.85rem; color: var(--fg-muted); }
+  .plan li svg { color: var(--accent); margin-top: 0.3rem; }
+  .plan li strong { color: var(--fg); font-weight: 550; }
+  .plan-note { font-size: 0.75rem; color: var(--fg-faint); margin: 0.75rem 0 0; text-align: center; }
+  .plan-annual { font-size: 0.72rem; color: var(--fg-faint); display: block; margin-top: 0.15rem; }
+  .plan-price { flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.45rem;
+    font-size: 0.9rem; font-weight: 550; line-height: 1; padding: 0.72rem 1.2rem;
+    border: 1px solid transparent; border-radius: var(--r-md); text-decoration: none;
+    white-space: nowrap; transition: background-color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+  }
+  .btn svg { flex: none; opacity: 0.75; }
+  .btn--primary { background: var(--accent); color: var(--on-accent); font-weight: 600; }
+  .btn--primary:hover { background: var(--accent-hi); }
+  .btn--primary svg { opacity: 1; }
+  .btn--ghost { background: transparent; border-color: var(--line-strong); color: var(--fg); }
+  .btn--ghost:hover { background: var(--ink-600); border-color: var(--ink-line); }
+  .btn--block { width: 100%; }
+  .btn--sm { padding: 0.5rem 0.85rem; font-size: 0.8rem; }
+  .enterprise {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.25rem;
+    margin-top: 1rem; padding: 1.25rem 1.6rem; border: 1px solid var(--line);
+    border-radius: var(--r-lg); background: var(--ink-800);
+  }
+  .enterprise p { margin: 0; font-size: 0.9rem; color: var(--fg-muted); max-width: 62ch; }
+  .enterprise strong { color: var(--fg); }
+  .enterprise .num { font-family: var(--font-mono); color: var(--accent-hi); white-space: nowrap; }
+  .billing-note { font-size: 0.8rem; color: var(--fg-dim); max-width: 74ch; margin-top: 1.5rem; }
+  .price-table { width: 100%; border-collapse: collapse; margin-top: 1.5rem; font-size: 0.875rem; }
+  .price-table th, .price-table td { text-align: left; padding: 0.7rem 0.9rem; border-bottom: 1px solid var(--line); }
+  .price-table thead th {
+    font-family: var(--font-mono); font-size: 0.68rem; font-weight: 500; letter-spacing: 0.09em;
+    text-transform: uppercase; color: var(--fg-dim); background: var(--ink-700);
+  }
+  .price-table td { color: var(--fg-muted); }
+  .price-table td:first-child { color: var(--fg); }
+
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../index.html">
+      <span class="brand-mark"><img src="../assets/icon.svg" alt="" width="22" height="22"></span>
+      <span class="brand-text">
+        <span class="brand-name">BauLens</span>
+        <span class="brand-owner">Aureal Watermark Software Development</span>
+      </span>
+    </a>
+    <div class="header-actions">
+      <a class="header-link" href="../pricing/">Preise</a>
+      <a class="header-link" href="../downloads/">Downloads</a>
+      <a class="header-link" href="../docs.html">Dokumentation</a>
+      <a class="header-cta" href="../downloads/">BauLens herunterladen</a>
+    </div>
+  </div>
+</header>
+
+<main class="shell" id="main">
+<article class="prose" style="max-width:100%;">
+  <h1>Preise</h1>
+  <p class="lead" style="max-width:62ch;">Alle Lizenzen arbeiten mit demselben Regelkern. Unterschiedlich sind Umfang,
+  Ausgabeformate und Anzahl der Arbeitsplätze. Der Kauf läuft über Polar als Merchant of Record.</p>
+
+  <div class="plan-grid">
+        <article class="plan">
+          <div class="plan-tier">
+            <h3>Starter</h3>
+            <span class="plan-flag">Projekt-Pass</span>
+          </div>
+          <p class="plan-price"><span class="plan-amount">49 €</span> <small>&middot; einmalig</small></p>
+          <p class="plan-for">Der risikolose Einstieg für Skeptiker: ein konkretes Bauvorhaben 30 Tage lang prüfen.</p>
+          <ul>
+            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Ein konkretes Bauvorhaben, 30 Tage lang</span></li>
+            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Bis zu <strong>10 Re-Runs</strong> für Entwurfsänderungen</span></li>
+            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span><strong>DIN-A4-Dossier</strong> mit Prüfsiegel</span></li>
+            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>XBau 2.3 XML für den Antrag</span></li>
+          </ul>
+          <a class="btn btn--ghost btn--block" href="../downloads/">Desktop-App laden</a>
+          <p class="plan-note">Einmalzahlung, kein Abonnement. Ab dem zweiten Vorhaben rechnet sich Pro.</p>
+        </article>
+        <article class="plan plan--featured">
+          <div class="plan-tier">
+            <h3>Pro Architekt</h3>
+            <span class="plan-flag">Für Einzelbüros</span>
+          </div>
+          <p class="plan-price"><span class="plan-amount">89 €</span> <small>/ Monat &middot; Arbeitsplatz</small><small class="plan-annual">oder 890 € / Jahr</small></p>
+          <p class="plan-for">Für freie Architektinnen und Architekten und Einzelplaner. Ein Arbeitsplatz.</p>
+          <ul>
+            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Unbegrenzte</strong> Projektprüfungen</span></li>
+            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Unbegrenzte Dossier-Exporte</span></li>
+            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Compliance-Repair-Engine mit Heilungsvorschlägen</span></li>
+            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Alle 34 DACH-Regelprofile, 1 Arbeitsplatz</span></li>
+          </ul>
+          <a class="btn btn--primary btn--block" href="../downloads/">Desktop-App laden</a>
+          <p class="plan-note">Monatlich kündbar. Jahreszahlung 890 € — zwei Monate geschenkt.</p>
+        </article>
+        <article class="plan">
+          <div class="plan-tier">
+            <h3>Büro / Kanzlei</h3>
+            <span class="plan-flag">Für Planungsbüros</span>
+          </div>
+          <p class="plan-price"><span class="plan-amount">199 €</span> <small>/ Monat &middot; Arbeitsplatz</small><small class="plan-annual">oder 1.990 € / Jahr</small></p>
+          <p class="plan-for">Für Planungsbüros und Teams. Drei Arbeitsplätze inklusive, weitere zubuchbar.</p>
+          <ul>
+            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span><strong>3 Arbeitsplätze</strong> inklusive (~66 € je Platz)</span></li>
+            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Jeder weitere Arbeitsplatz +49 € / Monat</span></li>
+            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Firmenlogo und Kopfzeile im Dossier</span></li>
+            <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>DACH-Quervergleich über alle 34 Profile</span></li>
+          </ul>
+          <a class="btn btn--ghost btn--block" href="../downloads/">Desktop-App laden</a>
+          <p class="plan-note">Monatlich kündbar, Jahreszahlung 1.990 €. Weiterer Arbeitsplatz 49 € / Monat.</p>
+        </article>
+  </div>
+
+  <div class="enterprise">
+    <p><strong>Serien- und Fertighaushersteller:</strong> Massenprüfung von Typen- und Kataloglisten, API-Zugang und BCF-Pipeline in die eigene BIM-Umgebung.
+    <span class="num">1.490 € / Monat</span></p>
+    <a class="btn btn--ghost btn--sm" href="mailto:info@kellersystems.dev?subject=BauLens%20Enterprise-Anfrage">Enterprise anfragen</a>
+  </div>
+
+  <p class="billing-note">Alle Preise in Euro. Die Umsatzsteuer ist im Preis enthalten; die Berechnung erfolgt im Checkout anhand deiner Rechnungsadresse. Polar tritt als Merchant of Record als Verkäufer auf. Die Checkout-Verweise werden hier eingetragen, sobald die Produkte in Polar angelegt sind — bis dahin führt jeder Kauf-Button in den Download-Hub, wo die Desktop-App 14 Tage lang kostenlos getestet werden kann.</p>
+
+  <h2>Leistungsumfang im Vergleich</h2>
+  <div style="overflow-x:auto;">
+    <table class="price-table">
+      <caption class="meta" style="caption-side:top;text-align:left;padding:0 0 0.75rem;">Starter, Pro Architekt und Büro/Kanzlei im direkten Vergleich.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Leistung</th>
+          <th scope="col">Starter</th>
+          <th scope="col">Pro Architekt</th>
+          <th scope="col">Büro / Kanzlei</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Preis</th><td>49 € einmalig</td><td>89 € / Monat<br><span class="meta">890 € / Jahr</span></td><td>199 € / Monat<br><span class="meta">1.990 € / Jahr</span></td></tr>
+        <tr><th scope="row">Arbeitsplätze</th><td>1</td><td>1</td><td>3 inklusive, weitere +49 € / Monat</td></tr>
+        <tr><th scope="row">Umfang</th><td>1 Vorhaben, 30 Tage</td><td>unbegrenzt</td><td>unbegrenzt</td></tr>
+        <tr><th scope="row">Re-Runs bei Entwurfsänderung</th><td>bis zu 10</td><td>unbegrenzt</td><td>unbegrenzt</td></tr>
+        <tr><th scope="row">DACH-Regelprofile</th><td>alle 34</td><td>alle 34</td><td>alle 34</td></tr>
+        <tr><th scope="row">Multi-Projekt-Workspace</th><td>ja</td><td>ja</td><td>ja</td></tr>
+        <tr><th scope="row">CAD-/BIM-Ingestion</th><td>DXF, IFC, XPlanung</td><td>DXF, IFC, XPlanung</td><td>DXF, IFC, XPlanung</td></tr>
+        <tr><th scope="row">DIN-A4-Dossier mit Prüfsiegel</th><td>ja</td><td>ja</td><td>ja</td></tr>
+        <tr><th scope="row">XBau-Antrag, BCF-Export</th><td>ja</td><td>ja</td><td>ja</td></tr>
+        <tr><th scope="row">Compliance-Repair-Engine</th><td>nein</td><td>ja</td><td>ja</td></tr>
+        <tr><th scope="row">Firmenlogo im Dossier</th><td>nein</td><td>nein</td><td>ja</td></tr>
+        <tr><th scope="row">DACH-Quervergleich</th><td>nein</td><td>nein</td><td>ja</td></tr>
+        <tr><th scope="row">Support</th><td>E-Mail</td><td>E-Mail</td><td>vorrangig</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Abwicklung und Rechnungsstellung</h2>
+  <p>Der Kauf kostenpflichtiger Lizenzen wird von <strong>Polar</strong>
+  (Polar Software Inc.) als Merchant of Record abgewickelt. Das bedeutet: Polar ist dein
+  Vertragspartner für den Erwerb, wickelt die Zahlung ab, stellt die Rechnung aus und führt die
+  Umsatzsteuer ab. Kartendaten erreichen uns zu keinem Zeitpunkt.</p>
+  <p>Nach dem Kauf sendet Polar den Lizenzschlüssel per E-Mail. Du kannst ihn in der
+  <a href="../downloads/">Desktop-App</a> hinterlegen; die Prüfung funktioniert auch ohne Aktivierung.</p>
+
+  <h2>Fragen vor dem Kauf</h2>
+  <p>Unsicher, welche Lizenz passt? Die <a href="../docs.html">Dokumentation</a> beschreibt jedes der
+  15 Prüfmodule mit Formel, Fundstelle und den dokumentierten Vereinfachungen. Für eine
+  Enterprise-Anfrage genügt eine E-Mail an <a href="mailto:info@kellersystems.dev">info@kellersystems.dev</a>.</p>
+
+  <p class="meta">Rechtliches: <a href="../legal/agb/">AGB</a> &middot;
+  <a href="../legal/widerruf/">Widerrufsbelehrung</a> &middot;
+  <a href="../legal/lizenz/">Lizenzvereinbarung</a> &middot;
+  <a href="../legal/impressum/">Impressum</a> &middot;
+  <a href="../legal/datenschutz/">Datenschutz</a></p>
+</article>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <p class="footer-note">BauLens &mdash; deterministische Bauordnungs-Vorprüfung. Vorprüfung, keine Rechtsberatung.</p>
+      <p class="footer-meta">&copy; 2026 Lukas Negenborn &bull; Keller Systems</p>
+    </div>
+    <ul class="footer-links">
+      <li><a href="../pricing/">Preise</a></li>
+      <li><a href="../legal/impressum/">Impressum</a></li>
+      <li><a href="../legal/datenschutz/">Datenschutz</a></li>
+      <li><a href="../legal/agb/">AGB</a></li>
+      <li><a href="../legal/lizenz/">Lizenz</a></li>
+      <li><a href="../legal/widerruf/">Widerruf</a></li>
+      <li><a href="../docs.html">Dokumentation</a></li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>

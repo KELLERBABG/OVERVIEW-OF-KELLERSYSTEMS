@@ -1,0 +1,79 @@
+{
+  "slug": "evasion-023",
+  "source": "generated",
+  "domain": "evasion",
+  "traps": [
+    {
+      "marker": "Die in Anlage 2 Ziffer 1 geregelte Maßnahme gilt für alle Ansprüche aus diesem Vertrag.",
+      "expectedType": "deemed_acceptance",
+      "note": "GAP: Tatbestand nur über Querverweis auf Anlage 2 erreichbar. Erwartet: deemed_acceptance."
+    },
+    {
+      "marker": "Die in Anlage 2 Ziffer 2 geregelte Maßnahme gilt für alle Ansprüche aus diesem Vertrag.",
+      "expectedType": "statute_of_limitations",
+      "note": "GAP: Tatbestand nur über Querverweis auf Anlage 2 erreichbar. Erwartet: statute_of_limitations."
+    },
+    {
+      "marker": "Die in Anlage 2 Ziffer 3 geregelte Maßnahme gilt für alle Ansprüche aus diesem Vertrag.",
+      "expectedType": "written_form_trap",
+      "note": "GAP: Tatbestand nur über Querverweis auf Anlage 2 erreichbar. Erwartet: written_form_trap."
+    },
+    {
+      "marker": "Die in Anlage 2 Ziffer 4 geregelte Maßnahme gilt für alle Ansprüche aus diesem Vertrag.",
+      "expectedType": "burden_of_proof",
+      "note": "GAP: Tatbestand nur über Querverweis auf Anlage 2 erreichbar. Erwartet: burden_of_proof."
+    },
+    {
+      "marker": "Die in Anlage 2 Ziffer 5 geregelte Maßnahme gilt für alle Ansprüche aus diesem Vertrag.",
+      "expectedType": "dynamic_url_referral",
+      "note": "GAP: Tatbestand nur über Querverweis auf Anlage 2 erreichbar. Erwartet: dynamic_url_referral."
+    },
+    {
+      "marker": "Die in Anlage 2 Ziffer 6 geregelte Maßnahme gilt für alle Ansprüche aus diesem Vertrag.",
+      "expectedType": "vicarious_agents",
+      "note": "GAP: Tatbestand nur über Querverweis auf Anlage 2 erreichbar. Erwartet: vicarious_agents."
+    },
+    {
+      "marker": "Die in Anlage 2 Ziffer 7 geregelte Maßnahme gilt für alle Ansprüche aus diesem Vertrag.",
+      "expectedType": "unreasonable_audit",
+      "note": "GAP: Tatbestand nur über Querverweis auf Anlage 2 erreichbar. Erwartet: unreasonable_audit."
+    },
+    {
+      "marker": "Die in Anlage 2 Ziffer 8 geregelte Maßnahme gilt für alle Ansprüche aus diesem Vertrag.",
+      "expectedType": "data_lockin",
+      "note": "GAP: Tatbestand nur über Querverweis auf Anlage 2 erreichbar. Erwartet: data_lockin."
+    },
+    {
+      "marker": "Die in Anlage 2 Ziffer 9 geregelte Maßnahme gilt für alle Ansprüche aus diesem Vertrag.",
+      "expectedType": "third_party_indemnity",
+      "note": "GAP: Tatbestand nur über Querverweis auf Anlage 2 erreichbar. Erwartet: third_party_indemnity."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Anbieter überlässt dem Kunden die Daten in einem gängigen Format.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag aus wichtigem Grund ohne Einhaltung einer Frist kündigen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien benennen jeweils einen Ansprechpartner für die operative Zusammenarbeit.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien sind berechtigt, gegen fällige Forderungen aufzurechnen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde erhält Schulungen und Zugang zum Systemhandbuch in der jeweils aktuellen Fassung.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde informiert den Anbieter unverzüglich über wesentliche Störungen im Vertrieb.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    }
+  ],
+  "uncovered": []
+}

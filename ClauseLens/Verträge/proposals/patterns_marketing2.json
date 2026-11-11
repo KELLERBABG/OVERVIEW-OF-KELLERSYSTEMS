@@ -1,0 +1,45 @@
+{
+  "slice": "marketing",
+  "patterns": [
+    {
+      "type": "burden_of_proof",
+      "regex": "aufzeichnungen\\s+des\\s+(?:anbieters|auftragnehmers|dienstleisters)[^.!?;:\\n]{0,80}?(?:ma(?:ß|ss)geblich|verbindlich|entscheidend|entscheiden)",
+      "flags": "i",
+      "closes": [
+        "marketing-008:L37"
+      ],
+      "evidence": "Aufzeichnungen des Anbieters sind für die Nutzung maßgeblich",
+      "risk": "medium"
+    },
+    {
+      "type": "vicarious_agents",
+      "regex": "(?:haftet|haften)\\s+(?:der\\s+(?:anbieter|auftragnehmer|dienstleister)\\s+)?nicht\\s+f(?:ü|ue)r\\s+handlungen\\s+(?:und\\s+unterlassungen\\s+)?von\\s+(?:nach|unter|sub)unternehmer",
+      "flags": "i",
+      "closes": [
+        "marketing-009:L25"
+      ],
+      "evidence": "Der Anbieter haftet nicht für Handlungen von Nachunternehmern",
+      "risk": "medium"
+    },
+    {
+      "type": "entire_agreement",
+      "regex": "nebenabreden[^.!?;:\\n]{0,60}?(?:entfalten|entfaltet|haben|hat)\\s+keine\\s+(?:rechtliche\\s+)?wirkung",
+      "flags": "i",
+      "closes": [
+        "marketing-013:L37"
+      ],
+      "evidence": "Nebenabreden entfalten keine Wirkung, ungeachtet ihres Zustands",
+      "risk": "medium"
+    },
+    {
+      "type": "data_grant",
+      "regex": "(?:erh(?:ä|ae)lt|erhalten|einger(?:ä|ae)umt)[^.!?;:\\n]{0,60}?(?:unwiderruflich|unbefristet|unentgeltlich|weltweit|perpetual|irrevocable)[^.!?;:\\n]{0,40}?(?:nutzungsrecht|licen[cs]e)",
+      "flags": "i",
+      "closes": [
+        "marketing-021:L22"
+      ],
+      "evidence": "Der Auftragnehmer erhält ein unwiderrufliches Nutzungsrecht an den erstellten Inhalten",
+      "risk": "medium"
+    }
+  ]
+}

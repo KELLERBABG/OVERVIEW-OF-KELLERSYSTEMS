@@ -1,0 +1,74 @@
+{
+  "slug": "saas-004",
+  "source": "generated",
+  "domain": "API-Plattform Partnervertrag, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Schließt der Anbieter einen Direktauftrag ab, wird keine Provision geschuldet",
+      "expectedType": "agency_commission_exclusion",
+      "note": "Provisionsausschluss fuer Direktgeschaefte."
+    },
+    {
+      "marker": "verzichtet auf jeden Ausgleich für den von ihm aufgebauten Kundenstamm",
+      "expectedType": "agency_goodwill_waiver",
+      "note": "Verzicht auf Ausgleich fuer Kundenstamm."
+    },
+    {
+      "marker": "Die Haftung für mittelbare Schäden und entgangenen Gewinn ist abbedungen.",
+      "expectedType": "liability",
+      "note": "Paraphrase. Deutscher Haftungsausschluss fuer mittelbare Schaeden."
+    },
+    {
+      "marker": "Für Datenverluste übernimmt die Anbieterin keine Haftung.",
+      "expectedType": "liability",
+      "note": "Paraphrase. Englischer Haftungsausschluss im deutschen Vertrag."
+    },
+    {
+      "marker": "Das Abonnement setzt sich nach Ablauf der Festlaufzeit jeweils um zwölf Monate fort, sofern es keine",
+      "expectedType": "auto_renewal",
+      "note": "Paraphrase. Stillschweigende Verlaengerung."
+    },
+    {
+      "marker": "Rechtsstreitigkeiten sind ausschließlich vor den Gerichten am Sitz des Anbieters auszutragen.",
+      "expectedType": "jurisdiction",
+      "note": "Paraphrase. Zustaendigkeit am Sitz des Anbieters."
+    },
+    {
+      "marker": "Der Anbieter ist berechtigt, den Leistungsumfang jederzeit einzuschränken.",
+      "expectedType": "unilateral_change",
+      "note": "Paraphrase. Einseitige Aenderung der API-Spezifikation."
+    },
+    {
+      "marker": "Die Verfügbarkeitsangaben in Anlage 2 sind bloße Zielgröße ohne Rechtsanspruch.",
+      "expectedType": "unverbindliche_sla_falle",
+      "note": "Paraphrase. Unverbindliche Verfuegbarkeitsangabe."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "eine Provision in Höhe von 18 Prozent des Nettoentgelts",
+      "note": "Klare Provisionsregel."
+    },
+    {
+      "marker": "den Partnervertrag mit einer Frist von sechs Monaten zum Jahresende zu kündigen",
+      "note": "Wechselseitiges Kuendigungsrecht."
+    },
+    {
+      "marker": "für die Erbringung von Nebenleistungen weitere Dienstleister einsetzen",
+      "note": "Kontrollierter Einsatz weiterer Dienstleister mit Anzeige."
+    },
+    {
+      "marker": "behandeln alle wechselseitig ausgetauschten Informationen vertraulich",
+      "note": "Wechselseitige Vertraulichkeit."
+    },
+    {
+      "marker": "verwendet die Marken des Anbieters nur im Rahmen der vereinbarten Richtlinien",
+      "note": "Markennutzung nach Richtlinie."
+    },
+    {
+      "marker": "technische Dokumentation der Schnittstellen kostenfrei zur Verfügung",
+      "note": "Kostenfreie Dokumentation."
+    }
+  ],
+  "uncovered": []
+}

@@ -1,0 +1,25 @@
+[package]
+name = "node"
+version.workspace = true
+edition.workspace = true
+description = "Node discovery, networking, and reputation system for MPC validators"
+
+[dependencies]
+bft = { path = "../bft" }
+threshold-crypto = { path = "../threshold-crypto" }
+settlement = { path = "../settlement" }
+ark-bn254.workspace = true
+sha2.workspace = true
+hex.workspace = true
+rand.workspace = true
+thiserror.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tracing.workspace = true
+tokio.workspace = true
+uuid.workspace = true
+chrono.workspace = true
+anyhow.workspace = true
+
+[lints]
+rust.unsafe_code = "forbid"

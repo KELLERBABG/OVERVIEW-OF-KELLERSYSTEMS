@@ -1,0 +1,65 @@
+RAHMENVERTRAG ÜBER DATENAUSTAUSCH UND PORTALNUTZUNG
+
+zwischen
+
+der Vosshagen Handels GmbH, Fischereihafen 7, 27572 Bremerhaven (nachfolgend „Kunde“)
+
+und
+
+der Lindenberg Datentechnik GmbH, Blaubeurer Straße 55, 89077 Ulm (nachfolgend „Auftragnehmer“).
+
+§ 1 Gegenstand
+
+1.1 Der Auftragnehmer betreibt für den Kunden das Lieferantenportal.
+
+1.2 Die Parteien benennen jeweils eine verantwortliche Person für den Datenaustausch.
+
+§ 2 Datenverarbeitung
+
+2.1 Die Verarbeitung personenbezogener Daten erfolgt außerhalb der Europäischen Union, unter anderem in Indien.
+
+2.2 Der Kunde erhält Auskunft über die eingesetzten Unterauftragnehmer.
+
+2.3 Bei Störungen unterrichtet der Auftragnehmer den Kunden unverzüglich.
+
+§ 3 Datenbestand und Export
+
+3.1 Der Datenbestand wird ausschließlich im herstellereigenen Binärformat bereitgestellt.
+
+3.2 Auf Verlangen des Kunden wird ein Auszug erstellt.
+
+3.3 Der Kunde erhält seine Bestandsdaten bei Vertragsende unentgeltlich in einem gängigen Format.
+
+§ 4 Mitteilungen
+
+4.1 Mit der Einstellung in das Benachrichtigungsportal sind Mitteilungen bekannt.
+
+4.2 Mitteilungen des Kunden werden zusätzlich per E-Mail bestätigt.
+
+§ 5 Steuern und Abgaben
+
+5.1 Nachträgliche Abgabenbelastungen trägt der Kunde unabhängig davon, ob den Kunden ein Verschulden trifft.
+
+§ 6 Laufzeit
+
+6.1 Der Auftragnehmer kann den Rahmenvertrag mit einer Frist von sechzig Tagen beenden, ohne Gründe zu nennen.
+
+6.2 Beide Parteien können den Vertrag einvernehmlich beenden.
+
+§ 7 Ergänzende Bedingungen
+
+7.1 Ergänzend gelten die im Kundenportal hinterlegten Qualitätsrichtlinien in der dort jeweils abrufbaren Fassung.
+
+7.2 Die im Portal eingestellten Formulare werden von beiden Parteien genutzt.
+
+§ 8 Personal
+
+8.1 The customer shall not solicit the supplier's personnel for a period of twenty-four months.
+
+8.2 Die Parteien arbeiten bei der Personalplanung zusammen.
+
+§ 9 Schlussbestimmungen
+
+9.1 Änderungen dieses Vertrags bedürfen der Zustimmung beider Parteien in Textform.
+
+9.2 Der Vertrag bleibt im Übrigen wirksam.

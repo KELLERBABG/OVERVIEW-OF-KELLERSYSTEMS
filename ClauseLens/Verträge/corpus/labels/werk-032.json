@@ -1,0 +1,88 @@
+{
+  "slug": "werk-032",
+  "source": "generated",
+  "domain": "Sportstätten, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Der Kunde räumt dem Anbieter ein unwiderrufliches, weltweites und übertragbares Nutzungsrecht an den",
+      "expectedType": "data_grant",
+      "note": "Verifizierte Klausel im Bereich data_grant."
+    },
+    {
+      "marker": "Erhebt der Kunde nicht binnen zehn Kalendertagen nach Bereitstellung Einwände, gilt die Leistung als",
+      "expectedType": "deemed_acceptance",
+      "note": "Verifizierte Klausel im Bereich deemed_acceptance."
+    },
+    {
+      "marker": "Kündigungen müssen per Einschreiben mit Rückschein erklärt werden.",
+      "expectedType": "written_form_trap",
+      "note": "Verifizierte Klausel im Bereich written_form_trap."
+    },
+    {
+      "marker": "The provider shall not be liable for acts of subcontractors or agents.",
+      "expectedType": "vicarious_agents",
+      "note": "Verifizierte Klausel im Bereich vicarious_agents."
+    },
+    {
+      "marker": "Der Kunde kann den Vertrag nicht aus wichtigem Grund kündigen.",
+      "expectedType": "asymmetric_termination",
+      "note": "Verifizierte Klausel im Bereich asymmetric_termination."
+    },
+    {
+      "marker": "Der Kunde ist für die Dauer der Grundlaufzeit gebunden.",
+      "expectedType": "unilateral_convenience_termination",
+      "note": "Verifizierte Klausel im Bereich unilateral_convenience_termination."
+    },
+    {
+      "marker": "Das Material bleibt Eigentum des Anbieters, bis der Kunde alle Verbindlichkeiten aus der Geschäftsbe",
+      "expectedType": "extended_retention_of_title",
+      "note": "Verifizierte Klausel im Bereich extended_retention_of_title."
+    },
+    {
+      "marker": "Der Kunde verpflichtet sich, keine Mitarbeiter des Anbieters abzuwerben.",
+      "expectedType": "non_solicitation",
+      "note": "Verifizierte Klausel im Bereich non_solicitation."
+    },
+    {
+      "marker": "Die Software wird wie gesehen bereitgestellt; eine Gewährleistung für die Funktionsfähigkeit wird ni",
+      "expectedType": "as_is_software_disclaimer",
+      "note": "Verifizierte Klausel im Bereich as_is_software_disclaimer."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien können mit unbestrittenen Forderungen aufrechnen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Alle Fristen werden in Kalendertagen gerechnet.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Parteien arbeiten bei der Fehleranalyse eng zusammen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Für Mängel während der Gewährleistung leistet der Anbieter kostenfrei Nacherfüllung.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Parteien treffen sich monatlich zu einem Lenkungskreis.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Der Anbieter führt die Arbeiten mit der vereinbarten Sorgfalt aus.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Vertragsparteien informieren sich unverzüglich über Störungen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Die Parteien behandeln die Vertragsverhandlung vertraulich",
+      "note": "Verschwiegenheit ohne Nachwirkung."
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+// Windows resources for the Vantablack application binaries.
+//
+// Two things live here that a user only sees through the shell, never at
+// runtime:
+//
+//   1. The application icon. Without it Explorer shows the generic .exe glyph
+//      and the taskbar has nothing to group the window under. (The *running*
+//      window's icon comes from src/ghost/icon.rs, which uses the small
+//      icon-ui.ico embedded in the binary.)
+//   2. A version block, so the Properties dialog shows a product name and a
+//      version instead of blank fields, and so the installer and Add/Remove
+//      Programs can read a real version number.
+//
+// Compiled by build.rs through embed-resource (rc.exe / windres). Icon indices
+// are positional: 1 is the lowest application icon ID, which is what the shell
+// picks up by default. No windows.h is included, so the symbolic constants are
+// spelled as the literals they expand to.
+
+1 ICON "assets/icon.ico"
+
+// NOTE: the id must be written as the literal `1`, not the symbol
+// `VS_VERSION_INFO`. Without windows.h that symbol is undefined, so rc.exe
+// compiles it as the *string* name "VS_VERSION_INFO" — and Windows looks the
+// resource up by ordinal 1 (`FindResourceW(h, MAKEINTRESOURCE(1), RT_VERSION)`).
+// The block then exists in the file but every shell API reports empty version
+// fields, which is exactly what `Explorer -> Properties -> Details` would show.
+// `version_resource_is_readable_by_the_shell` in src/ghost/icon.rs guards this.
+1 VERSIONINFO
+ FILEVERSION 1,0,0,0
+ PRODUCTVERSION 1,0,0,0
+ FILEFLAGSMASK 0x3fL
+ FILEFLAGS 0x0L
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "Keller Systems"
+            VALUE "FileDescription", "Vantablack Desktop Client"
+            VALUE "FileVersion", "1.0.0"
+            VALUE "InternalName", "ggn"
+            VALUE "LegalCopyright", "Copyright (c) 2026 Keller Systems"
+            VALUE "OriginalFilename", "ggn.exe"
+            VALUE "ProductName", "Vantablack"
+            VALUE "ProductVersion", "1.0.0"
+            VALUE "Comments", "https://github.com/KELLERBABG/Vantablack"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END

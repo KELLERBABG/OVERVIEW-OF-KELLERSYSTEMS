@@ -1,0 +1,21 @@
+[package]
+name = "muonscope-daq"
+version = "0.1.0"
+edition = "2021"
+authors = ["MuonScope Team"]
+description = "High-Throughput Edge DAQ Engine & Real-Time Tracking Core for MuonScope"
+
+[dependencies]
+nalgebra = { version = "0.33", features = ["serde-serialize"] }
+rayon = "1.10"
+tokio = { version = "1.38", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+byteorder = "1.5"
+crc32fast = "1.4"
+thiserror = "1.0"
+log = "0.4"
+
+[dev-dependencies]
+criterion = "0.5"
+rand = "0.8"

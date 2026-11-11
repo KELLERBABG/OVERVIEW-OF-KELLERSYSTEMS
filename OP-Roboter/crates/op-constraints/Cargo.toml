@@ -1,0 +1,13 @@
+[package]
+name = "op-constraints"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "Kinetic path constraint generation (boolean action paths) for surgical actuation"
+
+[dependencies]
+op-math = { workspace = true }
+op-trajectory = { workspace = true }
+serde = { workspace = true }
+thiserror = "1"

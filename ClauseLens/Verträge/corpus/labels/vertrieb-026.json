@@ -1,0 +1,74 @@
+{
+  "slug": "vertrieb-026",
+  "source": "generated",
+  "domain": "franchise",
+  "traps": [
+    {
+      "marker": "Kündigungen bedürfen der Schriftform und sind per eingeschriebenem Brief an den Anbieter zu richten.",
+      "expectedType": "written_form_trap",
+      "note": "Formzwang, der spätere Ansprüche erschwert."
+    },
+    {
+      "marker": "Es obliegt dem Kunden, darzulegen und nachzuweisen, dass die Ursache nicht auf Umständen aus seinem",
+      "expectedType": "burden_of_proof",
+      "note": "Beweislast wird auf den Kunden verlagert."
+    },
+    {
+      "marker": "Ergänzend gelten die jeweils unter www.anbieter-systemhaus.de/bedingungen abrufbaren Regelungen in",
+      "expectedType": "dynamic_url_referral",
+      "note": "Einbeziehung änderbarer Bedingungen über einen Link."
+    },
+    {
+      "marker": "Der Anbieter haftet für Erfüllungsgehilfen nur bei einem eigenen Auswahlverschulden.",
+      "expectedType": "vicarious_agents",
+      "note": "Haftung für Erfüllungsgehilfen wird ausgeschlossen."
+    },
+    {
+      "marker": "Der Anbieter ist berechtigt, die Geschäftsräume des Kunden ohne vorherige Ankündigung zu",
+      "expectedType": "unreasonable_audit",
+      "note": "Audit ohne Ankündigung und ohne Vorlauf."
+    },
+    {
+      "marker": "Die Herausgabe der Daten erfolgt gegen eine gesonderte Aufwandspauschale, die der Kunde zu tragen",
+      "expectedType": "data_lockin",
+      "note": "Datenherausgabe nur gegen Zusatzentgelt."
+    },
+    {
+      "marker": "Der Kunde stellt den Anbieter von sämtlichen Ansprüchen Dritter frei, und zwar unabhängig davon, ob",
+      "expectedType": "third_party_indemnity",
+      "note": "Weite Freistellung von Ansprüchen Dritter."
+    },
+    {
+      "marker": "Das Recht des Anbieters zur außerordentlichen Kündigung aus wichtigem Grund wird nicht",
+      "expectedType": "asymmetric_termination",
+      "note": "Kündigungsrecht nur für den Anbieter."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Haftung beider Parteien richtet sich nach den gesetzlichen Bestimmungen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Jede Partei trägt ihre eigenen Kosten der Vertragsverhandlungen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde ist berechtigt, Rechte aus diesem Vertrag mit Zustimmung des Anbieters auf verbundene",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Für die Nutzung der bereitgestellten Software gilt die beigefügte Leistungsbeschreibung.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Ansprüche aus diesem Vertrag verjähren nach den gesetzlichen Vorschriften.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde trägt die Kosten für die von ihm gewünschten Zusatzleistungen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    }
+  ],
+  "uncovered": []
+}

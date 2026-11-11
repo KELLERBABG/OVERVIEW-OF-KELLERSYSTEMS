@@ -1,0 +1,57 @@
+Technisches Facility-Management-Vertrag
+zwischen
+TechnikService West GmbH, Industriepark 12, 45881 Gelsenkirchen (nachfolgend Anbieter)
+und
+Klinikum Vest GmbH, Gesundheitsstraße 4, 45881 Gelsenkirchen (nachfolgend Kunde)
+
+§ 1 Vertragsgegenstand
+
+1.1 Der Anbieter betreibt für den Kunden die technische Gebäudeausrüstung des Klinikums.
+
+1.2 Die Parteien stimmen die Wartungspläne monatlich ab.
+
+§ 2 Anlagentechnik
+
+2.1 Mangels Wartungsvereinbarung erfolgt eine Stilllegung der Anlage.
+
+2.2 Der Anbieter führt die vorgeschriebenen Prüfungen nach Betriebssicherheitsverordnung durch.
+
+§ 3 Servicegutschriften
+
+3.1 Wird ein kritischer Sicherheitspatch nicht binnen sieben Tagen installiert, entfällt der Anspruch auf eine Gutschrift.
+
+3.2 Der Anbieter stellt monatlich einen Verfügbarkeitsbericht bereit.
+
+§ 4 Software
+
+4.1 Der Kunde akzeptiert das Buchungssystem wie besehen.
+
+4.2 Der Anbieter behebt Störungen des Leitsystems innerhalb von vier Stunden.
+
+§ 5 Daten
+
+5.1 Die Herausgabe der Daten erfolgt nur gegen eine gesonderte Gebühr.
+
+5.2 Der Anbieter informiert den Kunden über geplante Wartungsarbeiten.
+
+§ 6 Systemprotokolle
+
+6.1 Die Systemprotokolle des Anbieters gelten als Vollbeweis für die Einhaltung der Wartungsintervalle.
+
+6.2 Der Kunde kann die Protokolle während der Geschäftszeiten einsehen.
+
+§ 7 Zahlungsverzug und Gerichtsstand
+
+7.1 Zinsen werden mit zwölf Prozentpunkten über dem Basiszinssatz berechnet.
+
+7.2 Ausschließlich zuständig sind die Gerichte am Sitz des Anbieters.
+
+§ 8 Vergütung und Schlussbestimmungen
+
+8.1 Rechnungen sind innerhalb von 30 Tagen ohne Abzug zahlbar.
+
+8.2 Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt.
+
+8.3 Beide Parteien behandeln die Betriebsdaten vertraulich.
+
+8.4 Der Anbieter benennt Unterauftragnehmer mit einer Vorlaufzeit von vierzehn Tagen.

@@ -1,0 +1,78 @@
+{
+  "slug": "einkauf-010",
+  "source": "generated",
+  "domain": "Einkauf und Lieferantenrahmenvertrag, deutsches und oesterreichisches Recht",
+  "traps": [
+    {
+      "marker": "setzt sich jeweils um vierundzwanzig Monate fort",
+      "expectedType": "auto_renewal",
+      "note": "Automatische Verlaengerung ohne die Registerfloskel verlaengert sich automatisch"
+    },
+    {
+      "marker": "Im Verzugsfall schuldet der Besteller Zinsen in Höhe von zehn Prozent",
+      "expectedType": "default_interest",
+      "note": "Verzugszins ueber Leitzins ohne das Registerwort Verzugszinsen"
+    },
+    {
+      "marker": "Einstandspflicht der Anbieterin für mittelbare Schäden wird nicht übernommen",
+      "expectedType": "liability",
+      "note": "Freizeichnung fuer mittelbare Schaeden ohne das Wort Haftung"
+    },
+    {
+      "marker": "Datenbestand wird ausschließlich im herstellereigenen Binärformat bereitgestellt",
+      "expectedType": "data_lockin",
+      "note": "Lock-in durch Proprietaerformat"
+    },
+    {
+      "marker": "Zuvor kommunizierte Leistungsbeschreibungen treten mit Unterzeichnung",
+      "expectedType": "entire_agreement",
+      "note": "Vollstaendigkeitsklausel ohne die Woerter gesamte Vereinbarung"
+    },
+    {
+      "marker": "Erklärungen per E-Mail sind für die Vertragsabwicklung nicht wirksam",
+      "expectedType": "written_form_trap",
+      "note": "Formzwang durch Ausschluss elektronischer Erklaerungen"
+    },
+    {
+      "marker": "Unternehmenssitz der Anbieterin ausschließlich zuständig",
+      "expectedType": "jurisdiction",
+      "note": "Gerichtsstand ueber den Unternehmenssitz ohne das Registerwort Gerichtsstand"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien können den Vertrag einvernehmlich beenden",
+      "note": "Einvernehmliche Beendigung statt einseitiger Verlaengerung"
+    },
+    {
+      "marker": "Rechnungen sind innerhalb von dreißig Tagen netto zu begleichen",
+      "note": "Marktueblicher Zahlungstermin"
+    },
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Zulaessige Haftungsklausel"
+    },
+    {
+      "marker": "Der Besteller erhält seine Bestandsdaten bei Vertragsende unentgeltlich in einem gängigen Format",
+      "note": "Kostenfreier Datenexport"
+    },
+    {
+      "marker": "Es gilt das Recht der Bundesrepublik Deutschland",
+      "note": "Neutrale Rechtswahl ohne Gerichtsstandsklausel"
+    },
+    {
+      "marker": "Beide Parteien behandeln die kaufmännischen Unterlagen der anderen Seite vertraulich",
+      "note": "Wechselseitige Vertraulichkeit"
+    },
+    {
+      "marker": "Änderungen dieses Vertrags bedürfen der Zustimmung beider Parteien in Textform",
+      "note": "Symmetrische Aenderungsklausel"
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Die Parteien benennen jeweils einen kaufmännischen Ansprechpartner",
+      "note": "Benennung von Ansprechpartnern ohne Pflichten, kein Detektor"
+    }
+  ]
+}

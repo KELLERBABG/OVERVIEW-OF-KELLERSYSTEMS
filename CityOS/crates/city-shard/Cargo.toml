@@ -1,0 +1,11 @@
+[package]
+name = "city-shard"
+description = "Geofenced localized shard distribution with AES-XTS encrypted vault storage"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+city-types = { workspace = true }
+city-crypto = { workspace = true }

@@ -1,0 +1,72 @@
+{
+  "slug": "logistik-005",
+  "source": "generated",
+  "domain": "Kurier-, Express- und Paketdienste",
+  "traps": [
+    {
+      "marker": "Der Vertrag verlängert sich jeweils um weitere zwölf Monate",
+      "expectedType": "auto_renewal",
+      "note": "Red-team Klausel: auto_renewal"
+    },
+    {
+      "marker": "bemüht sich nach besten Kräften um eine Verfügbarkeit",
+      "expectedType": "unverbindliche_sla_falle",
+      "note": "Red-team Klausel: unverbindliche_sla_falle"
+    },
+    {
+      "marker": "gilt die Sendung als abgenommen",
+      "expectedType": "deemed_acceptance",
+      "note": "Red-team Klausel: deemed_acceptance"
+    },
+    {
+      "marker": "die Telemetriedaten weltweit und unbegrenzt für eigene Zwecke zu verwerten",
+      "expectedType": "data_grant",
+      "note": "Red-team Klausel: data_grant"
+    },
+    {
+      "marker": "Die Systemprotokolle des Auftragnehmers gelten als Vollbeweis",
+      "expectedType": "audit_log_manipulation",
+      "note": "Red-team Klausel: audit_log_manipulation"
+    },
+    {
+      "marker": "die dem wirtschaftlichen Zweck am nächsten kommt",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "Red-team Klausel: salvatorische_klausel_falle"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "arbeiten zur Einhaltung der Zustellzeiten eng zusammen",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "mit einer Frist von drei Monaten zum Quartalsende kündigen",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "zur außerordentlichen Kündigung aus wichtigem Grund bleiben unberührt",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "seine Sendungsdaten jederzeit in einem gängigen Format exportieren",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Beide Parteien behandeln die Sendungsdaten vertraulich",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "innerhalb von 30 Tagen ohne Abzug zahlbar",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "9.1 Es gilt deutsches Recht.",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

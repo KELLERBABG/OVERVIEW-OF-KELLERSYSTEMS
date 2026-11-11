@@ -1,0 +1,12 @@
+[package]
+name = "op-energy"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "Symbolic force and energy analysis for surgical tool actions"
+
+[dependencies]
+op-math = { workspace = true }
+serde = { workspace = true }
+thiserror = "1"

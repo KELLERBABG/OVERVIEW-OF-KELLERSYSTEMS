@@ -1,0 +1,74 @@
+{
+  "slug": "personal-009",
+  "source": "generated",
+  "domain": "Zeitarbeit und ANUE",
+  "traps": [
+    {
+      "marker": "Der Vertrag verlängert sich um jeweils weitere zwölf Monate",
+      "expectedType": "auto_renewal",
+      "note": "stillschweigende Verlängerung"
+    },
+    {
+      "marker": "mit einer Frist von 6 Monaten zum Vertragsende kündigen",
+      "expectedType": "notice_period",
+      "note": "asymmetrische Kündigungsfristen im Überlassungsvertrag"
+    },
+    {
+      "marker": "Die Überlasserin behält sich vor, die Stundensätze mit einer Frist von vier Wochen anzupassen",
+      "expectedType": "unilateral_change",
+      "note": "einseitiger Anpassungsvorbehalt"
+    },
+    {
+      "marker": "Die Stundennachweise gelten als genehmigt, wenn der Kunde nicht binnen fünf Werktagen widerspricht",
+      "expectedType": "deemed_acceptance",
+      "note": "Genehmigungsfiktion für Stundennachweise"
+    },
+    {
+      "marker": "Verzugszinsen in Höhe von zwölf Prozentpunkten über dem Basiszinssatz",
+      "expectedType": "default_interest",
+      "note": "Verzugszinsen ohne Obergrenze"
+    },
+    {
+      "marker": "Die Haftung der Überlasserin für einfache Fahrlässigkeit ist ausgeschlossen",
+      "expectedType": "liability",
+      "note": "Haftungsausschluss für einfache Fahrlässigkeit"
+    },
+    {
+      "marker": "Gerichtsstand ist ausschließlich der Sitz der Überlasserin in Dortmund",
+      "expectedType": "jurisdiction",
+      "note": "Gerichtsstand am Sitz der Überlasserin"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Überlasserin weist die Leiharbeitnehmer vor dem Einsatz in die Tätigkeit ein",
+      "note": "Einweisung vor dem Einsatz"
+    },
+    {
+      "marker": "Die Vergütung wird monatlich nach tatsächlicher Arbeitszeit abgerechnet",
+      "note": "Abrechnung nach Arbeitszeit"
+    },
+    {
+      "marker": "Beide Parteien benennen eine Ansprechperson für den operativen Ablauf",
+      "note": "Ansprechpersonen"
+    },
+    {
+      "marker": "Nach Ende des Einsatzes gibt die Überlasserin die überlassenen Unterlagen zurück",
+      "note": "Rückgabe der Unterlagen"
+    },
+    {
+      "marker": "Die Parteien unterrichten sich unverzüglich über Störungen im Einsatzablauf",
+      "note": "Informationspflicht bei Störungen"
+    },
+    {
+      "marker": "Dieser Vertrag wird in zwei Ausfertigungen erstellt",
+      "note": "Ausfertigungen"
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Eine Verlängerung des Vertrages ist nur mit Zustimmung beider Parteien möglich",
+      "note": "Verlängerung nur einvernehmlich, deshalb vom Detektor nicht erfasst"
+    }
+  ]
+}

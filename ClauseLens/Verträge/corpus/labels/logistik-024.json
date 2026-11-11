@@ -1,0 +1,76 @@
+{
+  "slug": "logistik-024",
+  "source": "generated",
+  "domain": "Verpackung",
+  "traps": [
+    {
+      "marker": " an der Ware bleibt bis zum vollständigen Ausgleich sämtlicher",
+      "expectedType": "extended_retention_of_title",
+      "note": "Red-team Klausel: extended_retention_of_title"
+    },
+    {
+      "marker": "Bei Überschreitung der Verladezeit wird eine Pauschale von 250 EUR je Tag fällig.",
+      "expectedType": "penalty",
+      "note": "Red-team Klausel: penalty"
+    },
+    {
+      "marker": "Die Mindestlaufzeit beträgt 36 Monate und eine vorzeitige Kündigung ist ausgeschlossen.",
+      "expectedType": "notice_period",
+      "note": "Red-team Klausel: notice_period"
+    },
+    {
+      "marker": "Die Haftung des Anbieters ist der Höhe nach auf fünfzig Prozent der Jahresvergütung begrenzt.",
+      "expectedType": "liability",
+      "note": "Red-team Klausel: liability"
+    },
+    {
+      "marker": "Eine Aufrechnung des Kunden gegen Forderungen des Anbieters ist ausgeschlossen.",
+      "expectedType": "setoff_restriction",
+      "note": "Red-team Klausel: setoff_restriction"
+    },
+    {
+      "marker": " Bestimmung unwirksam sein, gilt eine solche Regelung als vereinbart,",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "Red-team Klausel: salvatorische_klausel_falle"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Verpackungsspezifikationen quartalsweise ab",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "versichert das Verpackungsmaterial gegen Feuer",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "dokumentiert die Verpackungszeiten im Schichtbuch",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "zur außerordentlichen Kündigung aus wichtigem Grund bleiben unberührt",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Rechnung innerhalb von zwanzig Tagen prüfen",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "innerhalb von 30 Tagen ohne Abzug zahlbar",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "7.3 Es gilt deutsches Recht.",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Beide Parteien behandeln die Verpackungsdaten vertraulich",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Unterauftragnehmer mit einer Vorlaufzeit von vierzehn Tagen",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

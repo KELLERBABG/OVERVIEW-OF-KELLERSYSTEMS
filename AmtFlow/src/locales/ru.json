@@ -1,0 +1,305 @@
+{
+  "dir": "ltr",
+  "hero_title": "Захват документа",
+  "hero_subtitle": "Сфотографируйте письмо или выберите файл.",
+  "btn_camera": "Сделать фото (Камера)",
+  "btn_gallery": "Галерея / Файл",
+  "sample_label": "Примеры:",
+  "chip_rvnr": "Пенс. страхование",
+  "chip_tax": "ИНН (Steuer-ID)",
+  "chip_jobcenter": "Джобцентр",
+  "chip_finanzamt": "Налоговая",
+  "ocr_recognizing": "Распознавание текста...",
+  "meta_ref_label": "Номер дела / ИНН",
+  "meta_deadline_label": "Срок",
+  "no_deadline_text": "Срок не установлен",
+  "info_status_text": "Бессрочно — Ответ в ведомство не требуется",
+  "section_meaning": "Что означает это письмо?",
+  "section_actions": "Что вам нужно сделать?",
+  "btn_extend_deadline": "Продлить срок",
+  "btn_objection": "Подать возражение",
+  "btn_calendar": "В календарь",
+  "btn_copy_text": "Скопировать текст",
+  "btn_modal_close": "Закрыть",
+  "raw_text_summary": "Проверить и изменить текст",
+  "btn_reanalyze": "Заново распознать",
+  "modal_title": "Создать ответное письмо",
+  "modal_name_label": "Ваше имя",
+  "modal_address_label": "Ваш адрес",
+  "modal_reason_label": "Обоснование (необязательно)",
+  "badge_info": "Информация",
+  "badge_deadline": "Внимание: Срок",
+  "toast_copied": "Текст скопирован",
+  "toast_calendar": "Событие добавлено в календарь",
+  "ausbildungsvertrag_title": "Vocational Training Contract (Ausbildungsvertrag)",
+  "ausbildungsvertrag_agency": "Training Company / Chamber of Commerce (IHK/HWK)",
+  "ausbildungsvertrag_desc": "This contract governs your legal vocational training relationship, duration, monthly training allowance, probation period, and leave entitlement with your training employer.",
+  "ausbildungsvertrag_actions": [
+    "Verify start date, occupation, probation period, and monthly remuneration",
+    "Keep signed contract permanently with your educational and career records",
+    "Attach registration confirmation from the responsible chamber (IHK / HWK)"
+  ],
+  "leihvertrag_title": "Equipment Loan Agreement (Company Property)",
+  "leihvertrag_agency": "Employer / Company",
+  "leihvertrag_desc": "This document is a company loan and equipment handover agreement for tools or IT equipment (e.g. laptop, phone, keys, tools) provided for your professional duties.",
+  "leihvertrag_actions": [
+    "Cross-check listed items, serial numbers, and condition in the handover protocol",
+    "Comply with care obligations and return requirements upon contract termination",
+    "Keep signed agreement safely with employment documents"
+  ],
+  "arbeitsvertrag_title": "Employment Contract (Arbeitsvertrag)",
+  "arbeitsvertrag_agency": "Employer / Company",
+  "arbeitsvertrag_desc": "This contract establishes your binding employment relationship, working hours, remuneration, vacation days, and notice periods.",
+  "arbeitsvertrag_actions": [
+    "Review salary, working hours, job description, and probation period",
+    "Sign and return designated copy to human resources",
+    "Store original contract safely with personal records"
+  ],
+  "leiharbeit_vertrag_title": "Temporary Employment Agreement (Zeitarbeit)",
+  "leiharbeit_vertrag_agency": "Staffing Agency / Employer",
+  "leiharbeit_vertrag_desc": "This contract governs your assignment as a temporary employee under the German Temporary Employment Act (AÜG).",
+  "leiharbeit_vertrag_actions": [
+    "Review hourly wage, tariff classification, assignment location, and allowances",
+    "Submit timesheets weekly to the agency",
+    "File contract safely"
+  ],
+  "praktikumsvertrag_title": "Internship Agreement (Praktikumsvertrag)",
+  "praktikumsvertrag_agency": "Internship Host / Company",
+  "praktikumsvertrag_desc": "This agreement outlines the terms of your internship, learning objectives, duration, and any internship compensation.",
+  "praktikumsvertrag_actions": [
+    "Verify internship period and scope of activities",
+    "Request formal internship certificate upon completion",
+    "File agreement"
+  ],
+  "rvnr_title": "Свидетельство о номере пенсионного страхования (RVNR)",
+  "rvnr_agency": "Пенсионный фонд Германии (DRV)",
+  "rvnr_desc": "Это письмо является официальным подтверждением вашего номера социального и пенсионного страхования в Германии.",
+  "rvnr_actions": [
+    "Предоставить документ работодателю при трудоустройстве",
+    "Использовать номер при обращениях в больничную кассу или Джобцентр",
+    "Надежно сохранить оригинал в личных документах"
+  ],
+  "tax_title": "Присвоение налогового номера (Steuer-ID / IdNr)",
+  "tax_agency": "Федеральное налоговое ведомство (BZSt)",
+  "tax_desc": "В этом письме содержится ваш постоянный личный налоговый номер в Германии (11 цифр).",
+  "tax_actions": [
+    "Сообщить налоговый номер работодателю для начисления зарплаты",
+    "Указать налоговый номер в банке для налоговых вычетов",
+    "Сохранить письмо в личных налоговых документах"
+  ],
+  "job_title": "Требование о предоставлении документов (Mitwirkung)",
+  "job_agency": "Джобцентр (Jobcenter)",
+  "job_desc": "Джобцентр запрашивает недостающие документы для расчета или продления пособия (Bürgergeld).",
+  "job_actions": [
+    "Собрать запрашиваемые документы (выписки со счета, справку об аренде, справку о доходах)",
+    "Предоставить все документы строго до окончания срока",
+    "Запросить продление срока письменно, если документы задерживаются"
+  ],
+  "fin_title": "Напоминание о налоговой декларации",
+  "fin_agency": "Налоговая инспекция (Finanzamt)",
+  "fin_desc": "Налоговая инспекция напоминает о необходимости подать декларацию о доходах.",
+  "fin_actions": [
+    "Заполнить и отправить налоговую декларацию через ELSTER",
+    "При задержке подать письменное заявление о продлении срока"
+  ],
+  "melde_title": "Официальная регистрация по месту жительства (Прописка)",
+  "melde_agency": "Бюро регистрации граждан (Bürgeramt)",
+  "melde_desc": "Это официальное подтверждение вашей регистрации по адресу проживания в Германии (Meldebestätigung).",
+  "melde_actions": [
+    "Сохранить документ (требуется для открытия банковских счетов, договоров и ведомств)",
+    "Предоставить копию работодателю и в страховую компанию",
+    "Ответ в Bürgeramt не требуется"
+  ],
+  "gez_title": "Телерадиовещательный сбор (Rundfunkbeitrag / GEZ)",
+  "gez_agency": "Служба сборов ARD ZDF Deutschlandradio",
+  "gez_desc": "Письмо касается обязательного сбора за телевидение и радио в Германии (18,36 € в месяц за жилье).",
+  "gez_actions": [
+    "Проверить право на освобождение (например, получатели Bürgergeld или BAföG)",
+    "Если сосед по квартире уже платит: сообщить его номер сбора",
+    "В противном случае оплатить указанную сумму или оформить регулярный платеж"
+  ],
+  "auslaender_title": "Вопросы пребывания / Ведомство по делам иностранцев",
+  "auslaender_agency": "Ведомство по делам иностранцев (Ausländerbehörde)",
+  "auslaender_desc": "Ведомство информирует о вашем виде на жительство (Aufenthaltstitel), назначении термина или запрашивает документы.",
+  "auslaender_actions": [
+    "Строго соблюдайте указанные сроки и даты терминов",
+    "Своевременно предоставьте запрашиваемые документы (паспорт, трудовой договор, справки о доходах)",
+    "В случае невозможности явки на термин — немедленно письменно уведомите ведомство"
+  ],
+  "krankenkasse_title": "Уведомление медицинской страховки (Krankenkasse)",
+  "krankenkasse_agency": "Больничная касса (AOK / TK / Barmer / DAK)",
+  "krankenkasse_desc": "Письмо касается вашей медицинской страховки, членства или подтверждения доходов.",
+  "krankenkasse_actions": [
+    "Предоставить справку работодателю или в университет при необходимости",
+    "Заполнить и отправить приложенную анкету (например, семейное страхование)",
+    "Сохранить письмо в архиве медицинских документов"
+  ],
+  "online_ausweis_title": "PIN-письмо для Онлайн-паспорта (eID)",
+  "online_ausweis_agency": "Федеральная типография / Bürgeramt",
+  "online_ausweis_desc": "Письмо содержит 5-значный транспортный PIN-код, PUK и пароль блокировки для активации онлайн-функции паспорта или ВНЖ.",
+  "online_ausweis_actions": [
+    "Надежно сохранить письмо вместе с важными документами",
+    "Сменить транспортный PIN на личный 6-значный PIN через приложение AusweisApp",
+    "Записать пароль блокировки (Sperrkennwort) на случай утери карты"
+  ],
+  "general_title": "Amtliches Behördenschreiben",
+  "general_agency": "Behörde / Institution",
+  "general_desc": "Dieses Dokument ist ein offizielles Behördenschreiben mit wichtigen Angaben zu Ihren Unterlagen oder behördlichen Vorgängen.",
+  "general_actions": [
+    "Brief sorgfältig durchlesen und auf etwaige Fristen oder Aufforderungen prüfen",
+    "Erforderliche Nachweise oder Unterlagen zusammenstellen",
+    "Dokument sicher bei den persönlichen Unterlagen aufbewahren"
+  ],
+  "renteninfo_title": "Пенсионное уведомление (Renteninformation)",
+  "renteninfo_agency": "Пенсионный фонд Германии (DRV)",
+  "renteninfo_desc": "В этом письме содержится расчет ваших накопленных пенсионных баллов и предполагаемый размер будущей пенсии по старости.",
+  "renteninfo_actions": [
+    "Проверить страховой стаж на наличие пропусков",
+    "При необходимости подать заявление на уточнение страхового стажа (Kontenklärung)",
+    "Сохранить документ в пенсионных архивах"
+  ],
+  "tax_id_title": "Присвоение налогового номера (Steuer-ID)",
+  "tax_id_agency": "Федеральное налоговое ведомство (BZSt)",
+  "tax_id_desc": "Письмо содержит ваш постоянный персональный налоговый номер в Германии (11 цифр).",
+  "tax_id_actions": [
+    "Сообщить номер работодателю для начисления зарплаты",
+    "Предоставить номер банку для налоговых льгот",
+    "Сохранить оригинал в налоговых документах"
+  ],
+  "steuerbescheid_title": "Налоговое решение (Einkommensteuerbescheid)",
+  "steuerbescheid_agency": "Налоговая инспекция (Finanzamt)",
+  "steuerbescheid_desc": "Налоговая инспекция рассчитала вашу налоговую декларацию. В решении указана сумма возврата или доплаты налога.",
+  "steuerbescheid_actions": [
+    "Проверить расчет суммы и банковские реквизиты",
+    "В случае доплаты: перевести сумму до указанного срока",
+    "При несогласии: подать письменное возражение (Einspruch) в течение 1 месяца"
+  ],
+  "finanzamt_erinnerung_title": "Напоминание о сдаче налоговой декларации",
+  "finanzamt_erinnerung_agency": "Налоговая инспекция (Finanzamt)",
+  "finanzamt_erinnerung_desc": "Налоговая напоминает о необходимости вовремя подать декларацию о доходах за указанный год.",
+  "finanzamt_erinnerung_actions": [
+    "Заполнить и отправить декларацию через ELSTER или налоговую программу",
+    "Если не хватает документов: запросить продление срока в письменном виде",
+    "Соблюдать срок, чтобы избежать штрафа за просрочку"
+  ],
+  "ausweis_abholung_title": "Готовность паспорта / документа к выдаче",
+  "ausweis_abholung_agency": "Bürgeramt / Паспортный стол",
+  "ausweis_abholung_desc": "Ваш готовый паспорт, удостоверение личности или ВНЖ готов к выдаче в отделении Bürgeramt.",
+  "ausweis_abholung_actions": [
+    "Взять с собой старый документ для аннулирования",
+    "Записаться на получение или забрать в часы приема",
+    "Иметь при себе PIN-письмо при получении"
+  ],
+  "jobcenter_bewilligung_title": "Решение о назначении пособия (Bewilligungsbescheid)",
+  "jobcenter_bewilligung_agency": "Джобцентр (Jobcenter)",
+  "jobcenter_bewilligung_desc": "В этом решении утверждены суммы выплат на проживание и покрытие расходов на жилье и отопление.",
+  "jobcenter_bewilligung_actions": [
+    "Проверить период действия решения и размер ежемесячных выплат",
+    "Убедиться в правильности учета расходов на аренду и отопление",
+    "Подать заявление на продление (WBA) за 6 недель до окончания периода"
+  ],
+  "mahnbescheid_title": "Судебный приказ о взыскании (Mahnbescheid)",
+  "mahnbescheid_agency": "Суд по делам о взыскании задолженностей (Amtsgericht)",
+  "mahnbescheid_desc": "Кредитор подал судебное требование о взыскании долга. ВНИМАНИЕ: У вас есть ровно 2 недели с момента получения!",
+  "mahnbescheid_actions": [
+    "Срочно проверить законность и сумму требования",
+    "Если требование необоснованно: подать возражение (Widerspruch) на бланке в течение 2 недель",
+    "Если требование верно: оплатить сумму во избежание принудительного взыскания"
+  ],
+  "bussgeldbescheid_title": "Постановление о штрафе (Bußgeldbescheid)",
+  "bussgeldbescheid_agency": "Ведомство по штрафам / Полиция",
+  "bussgeldbescheid_desc": "Вам вменяется административное правонарушение (превышение скорости, парковка) с назначением денежного штрафа.",
+  "bussgeldbescheid_actions": [
+    "Проверить дату нарушения, номер машины и фотофиксацию",
+    "Если штраф обоснован: оплатить сумму в течение 2 недель",
+    "Если штраф ошибочен: подать письменный протест (Einspruch) в течение 2 недель"
+  ],
+  "rechnung_title": "Счет на оплату (Rechnung)",
+  "rechnung_agency": "Поставщик услуг / Организация",
+  "rechnung_desc": "Этот документ является счетом за оказанные услуги или товары с указанием срока оплаты и банковских реквизитов.",
+  "rechnung_actions": [
+    "Проверить сумму счета и период оказания услуг",
+    "Оплатить счет с указанием номера счета до даты платежа",
+    "Сохранить счет для гарантии и учета"
+  ],
+  "mahnung_title": "Напоминание об оплате / Предупреждение (Mahnung)",
+  "mahnung_agency": "Кредитор / Отдел претензий",
+  "mahnung_desc": "Отправитель напоминает о просроченном счете. Оплатите сумму как можно скорее, чтобы избежать штрафов и передачи в инкассо.",
+  "mahnung_actions": [
+    "Проверить, не была ли сумма уже оплачена ранее",
+    "Срочно перевести остаток с указанием номера счета",
+    "При возникновении вопросов немедленно связаться с отправителем"
+  ],
+  "nebenkosten_title": "Перерасчет коммунальных услуг (Nebenkostenabrechnung)",
+  "nebenkosten_agency": "Арендодатель / Управляющая компания",
+  "nebenkosten_desc": "Арендодатель предоставил годовой перерасчет авансовых платежей за отопление, воду и коммунальные услуги.",
+  "nebenkosten_actions": [
+    "Проверить расчетный период и коэффициенты распределения",
+    "В случае доплаты: перевести сумму до указанного срока",
+    "В случае переплаты: проверить поступление возврата на банковский счет"
+  ],
+  "stadtwerke_title": "Годовой перерасчет за электричество / газ / воду",
+  "stadtwerke_agency": "Коммунальные службы (Stadtwerke) / Энергокомпания",
+  "stadtwerke_desc": "Поставщик энергии производит перерасчет фактического потребления за год относительно ежемесячных авансов.",
+  "stadtwerke_actions": [
+    "Сверить показания счетчиков со своими записями",
+    "Обратить внимание на новый размер ежемесячного платежа (Abschlag)",
+    "Проверить сумму возврата или доплаты"
+  ],
+  "kindergeld_title": "Решение о детском пособии (Kindergeldbescheid)",
+  "kindergeld_agency": "Семейная касса (Familienkasse)",
+  "kindergeld_desc": "Письмо касается назначения или проверки вашего права на государственное детское пособие (Kindergeld).",
+  "kindergeld_actions": [
+    "Записать номер детского пособия и график выплат",
+    "Своевременно сообщать в кассу об изменениях (начало учебы, совершеннолетие)",
+    "Сохранить документ в семейном архиве"
+  ],
+  "arbeitszeugnis_title": "Характеристика с работы (Arbeitszeugnis)",
+  "arbeitszeugnis_agency": "Работодатель / Компания",
+  "arbeitszeugnis_desc": "Официальная характеристика от работодателя с описанием ваших трудовых обязанностей, периода работы и оценкой результатов.",
+  "arbeitszeugnis_actions": [
+    "Внимательно проверить список обязанностей и формулировки оценки работы",
+    "При необходимости запросить исправление формулировок у работодателя",
+    "Сохранить оригинал в папке документов для трудоустройства"
+  ],
+  "schulzeugnis_title": "Школьный аттестат / Диплом об образовании",
+  "schulzeugnis_agency": "Школа / Торгово-промышленная палата (IHK) / Колледж",
+  "schulzeugnis_desc": "Официальный аттестат об окончании школы, профессионального училища или диплом с оценками.",
+  "schulzeugnis_actions": [
+    "Проверить оценки и правильность написания имени",
+    "Сделать заверенные копии для работы или поступления в университет",
+    "Бережно хранить оригинал документа в личном архиве"
+  ],
+  "hochschulzeugnis_title": "Диплом о высшем образовании (Bachelor / Master)",
+  "hochschulzeugnis_agency": "Университет / Высшее учебное заведение",
+  "hochschulzeugnis_desc": "Официальный диплом бакалавра, магистра или выписка с оценками (Transcript of Records).",
+  "hochschulzeugnis_actions": [
+    "Проверить приложение к диплому и перечень пройденных дисциплин",
+    "Подготовить заверенные копии для признания диплома или работы",
+    "Хранить диплом в постоянном архиве личных документов"
+  ],
+  "fuehrungszeugnis_title": "Справка о несудимости (Führungszeugnis)",
+  "fuehrungszeugnis_agency": "Федеральное ведомство юстиции (BfJ) / Bürgeramt",
+  "fuehrungszeugnis_desc": "Официальная справка о несудимости и благонадежности, требуемая работодателями или ведомствами в Германии.",
+  "fuehrungszeugnis_actions": [
+    "Проверить запись (при отсутствии судимостей: «Keine Eintragung»)",
+    "Предоставить оригинал справки работодателю или в запрашивающий орган",
+    "Справка обычно считается актуальной в течение 3 месяцев с даты выдачи"
+  ],
+  "arbeitsunfaehigkeit_title": "Больничный лист / Медицинская справка (AU)",
+  "arbeitsunfaehigkeit_agency": "Врачебный кабинет / Медицинский центр",
+  "arbeitsunfaehigkeit_desc": "Медицинская справка о нетрудоспособности (больничный лист), подтверждающая период болезни.",
+  "arbeitsunfaehigkeit_actions": [
+    "Немедленно уведомить работодателя о периоде нетрудоспособности",
+    "Убедиться в передаче электронного больничного (eAU) в больничную кассу",
+    "При продолжении болезни вовремя получить справку о продлении"
+  ],
+  "sprachzertifikat_title": "Сертификат по немецкому языку (A1–C2)",
+  "sprachzertifikat_agency": "Институт им. Гёте / telc / TestDaF / BAMF",
+  "sprachzertifikat_desc": "Официальный языковой сертификат, подтверждающий ваш уровень владения немецким языком (DTZ B1, telc B2, TestDaF).",
+  "sprachzertifikat_actions": [
+    "Проверить баллы по всем модулям (аудирование, чтение, письмо, говорение)",
+    "Предоставить сертификат в ведомство по делам иностранцев (для ПМЖ/гражданства) или работодателю",
+    "Бережно хранить оригинал документа"
+  ]
+}

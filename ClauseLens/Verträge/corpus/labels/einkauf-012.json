@@ -1,0 +1,83 @@
+{
+  "slug": "einkauf-012",
+  "source": "generated",
+  "domain": "Einkauf und Lieferantenrahmenvertrag, deutsches und oesterreichisches Recht",
+  "traps": [
+    {
+      "marker": "ist berechtigt, für Teilleistungen Nachunternehmen einzusetzen",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "Unkontrollierter Unterauftragnehmereinsatz ohne Anzeige"
+    },
+    {
+      "marker": "übernimmt der Besteller keine Verantwortung",
+      "expectedType": "vicarious_agents",
+      "note": "Freizeichnung fuer Nachunternehmer mit keine Verantwortung"
+    },
+    {
+      "marker": "stellt den Auftragnehmer von Ansprüchen Dritter frei, unabhängig von einem Verschulden",
+      "expectedType": "third_party_indemnity",
+      "note": "Verschuldensunabhaengige Drittfreistellung"
+    },
+    {
+      "marker": "Höhere Gewalt befreit den Auftragnehmer von seiner Leistungspflicht",
+      "expectedType": "force_majeure_asymmetry",
+      "note": "Einseitige Risikoverteilung bei hoeherer Gewalt"
+    },
+    {
+      "marker": "kann die Leistung ohne Vorwarnung aussetzen",
+      "expectedType": "service_suspension",
+      "note": "Leistungssperre ohne Vorwarnung"
+    },
+    {
+      "marker": "kann der Auftragnehmer die Diagnosesoftware abschalten",
+      "expectedType": "maintenance_conditional_shutdown",
+      "note": "Abschaltung an fehlenden Wartungsvertrag gekoppelt"
+    },
+    {
+      "marker": "eine pauschale Abstandszahlung in Höhe von drei Monatsentgelten fällig",
+      "expectedType": "early_termination_charge",
+      "note": "Strafzahlung bei vorzeitiger Beendigung"
+    },
+    {
+      "marker": "Die angegebene Verfügbarkeit von 99,5 Prozent ist eine bloße Zielgröße",
+      "expectedType": "unverbindliche_sla_falle",
+      "note": "Weichmacher fuer SLA als bloße Zielgroesse"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Einsatz von Nachunternehmen wird dem Besteller spätestens vierzehn Tage vorher angezeigt",
+      "note": "Anzeigepflicht statt unkontrolliertem Einsatz"
+    },
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Zulaessige Haftungsklausel"
+    },
+    {
+      "marker": "Wartungsarbeiten werden spätestens zehn Werktage vorher angekündigt",
+      "note": "Ankuendigungspflicht fuer Wartung"
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag einvernehmlich beenden",
+      "note": "Einvernehmliche Beendigung"
+    },
+    {
+      "marker": "Änderungen der Anlage 1 bedürfen der Zustimmung beider Parteien in Textform",
+      "note": "Symmetrische Aenderungsklausel"
+    },
+    {
+      "marker": "Beide Parteien behandeln die Zeichnungen der anderen Seite vertraulich",
+      "note": "Wechselseitige Vertraulichkeit"
+    },
+    {
+      "marker": "Der Besteller erhält seine Bestandsdaten bei Vertragsende unentgeltlich in einem gängigen Format",
+      "note": "Kostenfreier Datenexport"
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Die Parteien führen bei Bedarf einen technischen Jour fixe durch",
+      "note": "Jour fixe ohne Pflichten, kein Detektor"
+    }
+  ]
+}

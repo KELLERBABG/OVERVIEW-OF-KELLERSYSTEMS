@@ -1,0 +1,72 @@
+{
+  "slug": "logistik-031",
+  "source": "generated",
+  "domain": "Glasfassadenreinigung",
+  "traps": [
+    {
+      "marker": "Die Haftung des Anbieters ist der Höhe nach auf fünfzig Prozent der Jahresvergütung begrenzt.",
+      "expectedType": "liability",
+      "note": "Red-team Klausel: liability"
+    },
+    {
+      "marker": "Ausschließlich zuständig sind die Gerichte am Sitz des Anbieters.",
+      "expectedType": "jurisdiction",
+      "note": "Red-team Klausel: jurisdiction"
+    },
+    {
+      "marker": " Gewalt wird der Anbieter von der Leistungspflicht entbunden,",
+      "expectedType": "force_majeure_asymmetry",
+      "note": "Red-team Klausel: force_majeure_asymmetry"
+    },
+    {
+      "marker": "Der Anbieter darf Subunternehmer ohne vorherige Ankündigung einsetzen.",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "Red-team Klausel: subcontractor_uncontrolled"
+    },
+    {
+      "marker": "Die Kündigung bedarf der Schriftform.",
+      "expectedType": "written_form_trap",
+      "note": "Red-team Klausel: written_form_trap"
+    },
+    {
+      "marker": "Dieser Vertrag enthält alle Vereinbarungen der Parteien und ersetzt frühere Absprachen.",
+      "expectedType": "entire_agreement",
+      "note": "Red-team Klausel: entire_agreement"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Reinigungsintervalle halbjährlich ab",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "verständigen sich bei Streitigkeiten zunächst gütlich",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "informieren sich unverzüglich über eingetretene Störungen",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Unterauftragnehmer auf Anfrage",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "bestätigen Änderungen im Objektportal",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "innerhalb von 30 Tagen ohne Abzug zahlbar",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "7.3 Es gilt deutsches Recht.",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Beide Parteien behandeln die Objektdaten vertraulich",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

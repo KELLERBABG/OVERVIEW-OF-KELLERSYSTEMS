@@ -1,0 +1,79 @@
+{
+  "slug": "evasion-020",
+  "source": "generated",
+  "domain": "evasion",
+  "traps": [
+    {
+      "marker": "Bei Zahlungsverzug kann der Anbieter die Leistung sofort einstellen, die Vergütung ist weiterhin zu",
+      "expectedType": "service_suspension",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: service_suspension (Technik: numberword)."
+    },
+    {
+      "marker": "Bei Eröffnung des Insolvenzverfahrens über das Vermögen des Kunden ist der Anbieter zur fristlosen",
+      "expectedType": "insolvency_termination",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: insolvency_termination (Technik: numberword)."
+    },
+    {
+      "marker": "Der Kunde stellt den Anbieter von allen Steuernachforderungen frei, unabhängig davon, ob den Kunden",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: tax_indemnity_shift (Technik: numberword)."
+    },
+    {
+      "marker": "Die Geheimhaltungspflicht trifft nur den Kunden, der Anbieter darf Informationen über den Kunden an",
+      "expectedType": "asymmetric_confidentiality",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: asymmetric_confidentiality (Technik: numberword)."
+    },
+    {
+      "marker": "Eine Gewährleistung für die Funktionsfähigkeit der Software ist ausgeschlossen, ein Anspruch auf",
+      "expectedType": "as_is_software_disclaimer",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: as_is_software_disclaimer (Technik: numberword)."
+    },
+    {
+      "marker": "Mündliche Nebenabreden bestehen nicht, Zusagen von Vertriebsmitarbeitern entfalten keine rechtliche",
+      "expectedType": "entire_agreement",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: entire_agreement (Technik: numberword)."
+    },
+    {
+      "marker": "Der Anbieter darf den Kunden als Referenzkunden führen, eine gesonderte Zustimmung des Kunden ist",
+      "expectedType": "marketing_reference",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: marketing_reference (Technik: numberword)."
+    },
+    {
+      "marker": "Der Kunde überträgt dem Anbieter sämtliche Rechte an Ideen und Feedback, die im Rahmen der",
+      "expectedType": "feedback_ip_grab",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: feedback_ip_grab (Technik: numberword)."
+    },
+    {
+      "marker": "Leistungsnachweise und Stundenzettel gelten als vorbehaltlos genehmigt, wenn der Kunde nicht binnen",
+      "expectedType": "fictitious_receipt",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: fictitious_receipt (Technik: numberword)."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Für die Vertragsdauer gelten die vereinbarten Konditionen unverändert.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien halten die geltenden Datenschutzvorschriften ein und verarbeiten personenbezogene",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Anbieter benennt einen technischen Ansprechpartner für den Kunden.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde führt die ihm übertragenen Aufgaben mit der Sorgfalt eines ordentlichen Kaufmanns aus.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Die Parteien regeln Einzelheiten in den beigefügten Anlagen 1 bis 3.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde meldet vermittelte Geschäfte unverzüglich und vollständig an den Anbieter.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    }
+  ],
+  "uncovered": []
+}

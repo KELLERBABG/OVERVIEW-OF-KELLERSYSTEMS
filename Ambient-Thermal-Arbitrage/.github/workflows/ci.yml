@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build-and-test:
+    name: Build + test (gateway & fleet)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+
+      - name: Build workspace (release)
+        run: cargo build --release --workspace
+
+      - name: Test workspace
+        run: cargo test --workspace
+
+      - name: Clippy (gateway — shipped product, strict)
+        run: cargo clippy --manifest-path crates/gateway/Cargo.toml --all-targets -- -D warnings
+
+      # Fleet is a research/simulation engine: keep warnings advisory (pre-existing
+      # dead-code output fields + too_many_arguments), not a release gate.
+      - name: Clippy (fleet — advisory)
+        run: cargo clippy --manifest-path crates/fleet/Cargo.toml --all-targets
+
+      # NOTE: no `cargo fmt --check` gate — the codebase predates rustfmt (large
+      # pre-existing formatting drift). Formatting is not a release blocker.
+
+  e2e-closed-loop:
+    name: E2E — closed-loop PLC (fake PLC harness)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Run E2E test (gateway vs fake Modbus PLC)
+        run: bash scripts/e2e/e2e-test.sh

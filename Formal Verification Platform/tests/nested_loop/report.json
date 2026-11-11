@@ -1,0 +1,31 @@
+[
+  {
+    "crate": "nested_loop",
+    "function": "nested_walk",
+    "block": "bb6",
+    "status": "FAIL",
+    "kind": "overflow",
+    "defect_class": "widening-limited",
+    "file": "src/main.rs",
+    "line": 47,
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found! [_14 = 255, 1_u8 = 1, total (_3) = 255]",
+    "witness": [
+      {
+        "input": "_14",
+        "symbol": "overflow_l",
+        "value": "255"
+      },
+      {
+        "input": "1_u8",
+        "symbol": "overflow_r",
+        "value": "1"
+      },
+      {
+        "input": "total (_3)",
+        "symbol": "mir_3",
+        "value": "255"
+      }
+    ],
+    "witness_kind": "pinned"
+  }
+]

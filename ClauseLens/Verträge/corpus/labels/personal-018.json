@@ -1,0 +1,74 @@
+{
+  "slug": "personal-018",
+  "source": "generated",
+  "domain": "Geschaeftsfuehrer",
+  "traps": [
+    {
+      "marker": "Der Vertrag setzt sich um jeweils weitere zwölf Monate fort",
+      "expectedType": "auto_renewal",
+      "note": "stillschweigende Verlängerung um jeweils zwölf Monate"
+    },
+    {
+      "marker": "nur mit einer Frist von sechs Monaten zum Periodenende kündigen",
+      "expectedType": "notice_period",
+      "note": "sechsmonatige Kündigungsfrist nur für den Geschäftsführer"
+    },
+    {
+      "marker": "Eine K​arenzentschädigung ist nicht zugesagt",
+      "expectedType": "non_compete",
+      "note": "Wettbewerbsverbot ohne Karenzentschädigung"
+    },
+    {
+      "marker": "verwirkt der Geschäftsführer eine Aufwandspauschale von 2.500,00 EUR",
+      "expectedType": "penalty",
+      "note": "pauschalierte Vertragsstrafe bei Verstoß"
+    },
+    {
+      "marker": "Gerichtsstand ist der Sitz der Gesellschaft",
+      "expectedType": "jurisdiction",
+      "note": "Gerichtsstand am Sitz der Gesellschaft"
+    },
+    {
+      "marker": "Änderungen und Ergänzungen dieses Vertrages bedürfen der Schriftform",
+      "expectedType": "written_form_trap",
+      "note": "Schriftformklausel mit Erschwernis"
+    },
+    {
+      "marker": "An die Stelle der unwirksamen Regelung tritt diejenige",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "Ersetzungsklausel mit wirtschaftlich naechster Regelung"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Geschäftsführer erhält ein festes Jahresgehalt von 180.000,00 EUR",
+      "note": "festes Jahresgehalt"
+    },
+    {
+      "marker": "Die Gesellschaft gewährt dem Geschäftsführer einen Firmenwagen",
+      "note": "Firmenwagen als Sachleistung"
+    },
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "wechselseitige Vertraulichkeit"
+    },
+    {
+      "marker": "Der Urlaubsanspruch beträgt 30 Arbeitstage je Kalenderjahr",
+      "note": "Urlaubsanspruch je Kalenderjahr"
+    },
+    {
+      "marker": "Die Parteien benennen je einen Ansprechpartner",
+      "note": "wechselseitige Ansprechpartner"
+    },
+    {
+      "marker": "Der Geschäftsführer meldet die Arbeitsunfähigkeit unverzüglich",
+      "note": "unverzügliche Krankmeldung"
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Geschäftsführer leitet die Gesellschaft als alleinvertretungsberechtigtes Organ",
+      "note": "Organstellung ohne Ressortabgrenzung, vom Detektor nicht erfasst"
+    }
+  ]
+}

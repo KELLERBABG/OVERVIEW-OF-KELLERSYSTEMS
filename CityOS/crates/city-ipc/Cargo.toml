@@ -1,0 +1,12 @@
+[package]
+name = "city-ipc"
+description = "Keyed-MAC IPC channels with anti-replay sequence numbers"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+city-types = { workspace = true }
+city-crypto = { workspace = true }
+city-caps = { workspace = true }

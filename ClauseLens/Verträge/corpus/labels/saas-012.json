@@ -1,0 +1,69 @@
+{
+  "slug": "saas-012",
+  "source": "generated",
+  "domain": "ERP-Abonnement, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Unwirksame Regelungen werden durch eine interessengerechte Ersatzregelung ersetzt, die der Anbieter",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "Ersatzregelung nach Anbietergusto"
+    },
+    {
+      "marker": "Bis der Kunde alle Verbindlichkeiten beglichen hat, bleibt die gelieferte Hardware unser Eigentum.",
+      "expectedType": "extended_retention_of_title",
+      "note": "Erweiterter Eigentumsvorbehalt"
+    },
+    {
+      "marker": "Der Einsatz von Unterauftragnehmern bedarf keiner Zustimmung des Kunden.",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "Unkontrollierter Subunternehmereinsatz"
+    },
+    {
+      "marker": "Die Beendigung ist nur durch ein handschriftlich unterzeichnetes Schreiben in Papierform möglich.",
+      "expectedType": "written_form_trap",
+      "note": "Paraphrase. Schriftformerfordernis ohne Ausnahme"
+    },
+    {
+      "marker": "Die Haftung für mittelbare Schäden und entgangenen Gewinn ist abbedungen.",
+      "expectedType": "liability",
+      "note": "Paraphrase. Haftungsausschluss"
+    },
+    {
+      "marker": "Gegenansprüche bleiben bei der Abrechnung außer Betracht.",
+      "expectedType": "setoff_restriction",
+      "note": "Paraphrase. Aufrechnungsverbot"
+    },
+    {
+      "marker": "Der Anbieter ist berechtigt, den Betrieb abzuschalten, sofern kein gesonderter Wartungsvertrag",
+      "expectedType": "maintenance_conditional_shutdown",
+      "note": "Abschaltung ohne Wartungsvertrag"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Rechnung ist innerhalb von 30 Tagen nach Zugang ohne Abzug fällig.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Nach Vertragsende werden die Daten auf Wahl des Kunden gelöscht oder exportiert.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Der Anbieter trifft angemessene technische und organisatorische Maßnahmen zum Schutz der Daten.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Anbieterin gewährleistet, dass die Anwendung im Wesentlichen der Leistungsbeschreibung",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Vertragsparteien behandeln die wechselseitig offengelegten Informationen vertraulich.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Der Kunde bleibt zur Zahlung des anteiligen Entgelts für bereits erbrachte Leistungen verpflichtet.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    }
+  ],
+  "uncovered": []
+}

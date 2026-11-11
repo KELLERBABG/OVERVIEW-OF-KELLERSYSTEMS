@@ -1,0 +1,14 @@
+[package]
+name = "ehar-firmware-core"
+version = "0.1.0"
+edition = "2021"
+description = "EHAR Field Node MVP — no_std firmware core (energy model, task tiers, Ghost-Net telemetry, entropy, cap health). Reuses eh-sim-core."
+license = "Proprietary"
+
+[lib]
+name = "ehar_firmware_core"
+path = "src/lib.rs"
+
+[dependencies]
+eh-sim-core = { path = "../simulation/simulation_core" }
+libm = "0.2"

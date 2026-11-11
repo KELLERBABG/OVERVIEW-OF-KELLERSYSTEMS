@@ -1,0 +1,74 @@
+{
+  "slug": "immobilien-028",
+  "source": "generated",
+  "domain": "Immobilienkauf",
+  "traps": [
+    {
+      "marker": "governed by the laws of the State of Delaware",
+      "expectedType": "jurisdiction",
+      "note": "Englische Rechtswahlklausel mit US-Recht."
+    },
+    {
+      "marker": "gilt diejenige Regelung, die dem wirtschaftlichen Zweck am nächsten kommt",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "Ersatzregelung nach wirtschaftlichem Zweck statt Gesetzesrecht."
+    },
+    {
+      "marker": "nach billigem Ermessen der Verkäuferin festgesetzt",
+      "expectedType": "price_escalation",
+      "note": "Beitragsfestsetzung ohne Obergrenze."
+    },
+    {
+      "marker": "stellt die Verkäuferin von sämtlichen Steuernachforderungen frei",
+      "expectedType": "tax_indemnity_shift",
+      "note": "GAP: Freistellung von saemtlichen Steuernachforderungen."
+    },
+    {
+      "marker": "hält die Verkäuferin von Ansprüchen Dritter aus Altlasten schadlos",
+      "expectedType": "third_party_indemnity",
+      "note": "GAP: Freistellung fuer Drittansprueche aus Altlasten."
+    },
+    {
+      "marker": "Mündliche Zusagen der Vertriebsmitarbeiter entfalten keine Wirkung",
+      "expectedType": "entire_agreement",
+      "note": "GAP: Muendliche Zusagen entwertet."
+    },
+    {
+      "marker": "gelten die Aufzeichnungen der Verkäuferin als Vollbeweis",
+      "expectedType": "audit_log_manipulation",
+      "note": "GAP: Aufzeichnungen als Vollbeweis."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "Symmetrische Vertraulichkeit."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform zugelassen."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhalt."
+    },
+    {
+      "marker": "Zahlungen sind innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Zahlungsfrist."
+    },
+    {
+      "marker": "Änderungen des Leistungsumfangs bedürfen der Abstimmung beider Parteien",
+      "note": "Einvernehmliche Aenderung."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende beenden",
+      "note": "Symmetrisches Kuendigungsrecht."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Grundstück An der Kohlebahn 9 mit einer Fläche von 42.000 Quadratmetern",
+      "note": "Kein Detektor fuer Altlastenfreistellung, Kaufpreisanpassung oder Erschliessungsvertrag mit der Gemeinde."
+    }
+  ]
+}

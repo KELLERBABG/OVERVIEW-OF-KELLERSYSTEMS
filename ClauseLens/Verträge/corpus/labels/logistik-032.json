@@ -1,0 +1,89 @@
+{
+  "slug": "logistik-032",
+  "source": "generated",
+  "domain": "Unterhaltsreinigung Österreich",
+  "traps": [
+    {
+      "marker": " verlängert sich jeweils um weitere zwölf Monate, wenn er nicht",
+      "expectedType": "auto_renewal",
+      "note": "Red-team Klausel: auto_renewal"
+    },
+    {
+      "marker": " sich, für die Dauer von zwei Jahren nach Vertragsende keine",
+      "expectedType": "non_solicitation",
+      "note": "Red-team Klausel: non_solicitation"
+    },
+    {
+      "marker": "Der Anbieter behält sich vor, den Leistungsumfang an geänderte Marktbedingungen anzupassen.",
+      "expectedType": "unilateral_change",
+      "note": "Red-team Klausel: unilateral_change"
+    },
+    {
+      "marker": "Der Anbieter ist berechtigt, die Leistung ohne Vorankündigung einzustellen.",
+      "expectedType": "service_suspension",
+      "note": "Red-team Klausel: service_suspension"
+    },
+    {
+      "marker": "Ansprüche des Kunden verjähren innerhalb von sechs Monaten nach Ablieferung.",
+      "expectedType": "statute_of_limitations",
+      "note": "Red-team Klausel: statute_of_limitations"
+    },
+    {
+      "marker": "Es gelten die jeweils aktuellen Reinigungsbedingungen unter https://www.anbieter.at/bedingungen.",
+      "expectedType": "dynamic_url_referral",
+      "note": "Red-team Klausel: dynamic_url_referral"
+    },
+    {
+      "marker": "Der Handelsvertreter verzichtet auf einen Ausgleichsanspruch nach § 89b HGB.",
+      "expectedType": "agency_goodwill_waiver",
+      "note": "Red-team Klausel: agency_goodwill_waiver"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Reinigungspläne monatlich ab",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "zur außerordentlichen Kündigung aus wichtigem Grund bleiben unberührt",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "schult das eingesetzte Personal regelmäßig",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "informiert den Kunden über wesentliche Änderungen",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "informiert den Kunden unverzüglich über den Grund der Sperrung",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "prüft die Leistungen unverzüglich nach Erbringung",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Reinigungsplan der Anlage 1",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Kundenliste auf Anfrage bereit",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "innerhalb von 30 Tagen ohne Abzug zahlbar",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Es gilt österreichisches Recht.",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Beide Parteien behandeln die Objektdaten vertraulich",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

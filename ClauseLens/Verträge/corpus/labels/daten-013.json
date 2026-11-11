@@ -1,0 +1,87 @@
+{
+  "slug": "daten-013",
+  "source": "generated",
+  "domain": "Open-Source-Compliance",
+  "traps": [
+    {
+      "marker": "Mitteilungen gelten nach Absendung als dem Kunden zugegangen",
+      "expectedType": "fictitious_receipt",
+      "note": "Paraphrase/Umstellung: nennt 'Mitteilungen gelten nach Absendung als dem Ku' statt der Registerwendung."
+    },
+    {
+      "marker": "Die angegebene Verfügbarkeit von 99,9 % ist unverbindlich",
+      "expectedType": "unverbindliche_sla_falle",
+      "note": "Paraphrase/Umstellung: nennt 'Die angegebene Verfügbarkeit von 99,9 % ist u' statt der Registerwendung."
+    },
+    {
+      "marker": "Für Direktgeschäfte des Kunden steht dem Anbieter keine Provision zu",
+      "expectedType": "agency_commission_exclusion",
+      "note": "Paraphrase/Umstellung: nennt 'Für Direktgeschäfte des Kunden steht dem Anbi' statt der Registerwendung."
+    },
+    {
+      "marker": "keinen Anspruch auf Ausgleich für den aufgebauten Kundenstamm",
+      "expectedType": "agency_goodwill_waiver",
+      "note": "Paraphrase/Umstellung: nennt 'keinen Anspruch auf Ausgleich für den aufgeba' statt der Registerwendung."
+    },
+    {
+      "marker": "Kundendaten können in Rechenzentren eines Drittlands gespiegelt werden",
+      "expectedType": "international_data_processing",
+      "note": "Paraphrase/Umstellung: nennt 'Kundendaten können in Rechenzentren eines Dri' statt der Registerwendung."
+    },
+    {
+      "marker": "Die Verfahrenskosten sind vom Kunden vorauszuzahlen",
+      "expectedType": "mandatory_expert_determination",
+      "note": "Paraphrase/Umstellung: nennt 'Die Verfahrenskosten sind vom Kunden vorauszu' statt der Registerwendung."
+    },
+    {
+      "marker": "Versäumt der Kunde einen Sicherheitspatch, verfällt sein Anspruch",
+      "expectedType": "service_credit_forfeiture",
+      "note": "Paraphrase/Umstellung: nennt 'Versäumt der Kunde einen Sicherheitspatch, ve' statt der Registerwendung."
+    },
+    {
+      "marker": "Bei vorzeitiger Beendigung wird eine pauschale Abstandszahlung fällig",
+      "expectedType": "early_termination_charge",
+      "note": "Paraphrase/Umstellung: nennt 'Bei vorzeitiger Beendigung wird eine pauschal' statt der Registerwendung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "spätestens zehn Werktage vor einer beabsichtigten Kontoauflösung",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "bleibt beiden Parteien unbenommen.",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "meldet Datenschutzverletzungen unverzüglich an den Auftraggeber",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "mindestens vierzehn Tage vor dem Einsatz eines Unterauftragnehmers",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "binnen zwei Werktagen nach Eingang auf dem Geschäftskonto",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "ausschließlich auf dokumentierte Weisung des Auftraggebers",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "benennt für Datenschutzfragen eine Ansprechperson",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "innerhalb von dreißig Tagen nach Zugang ohne Abzug",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Zweitschrift der Dokumentation gegen eine Gebühr von fünfzehn Euro",
+      "note": "Täuschende Klausel ohne passenden Detektortyp."
+    }
+  ]
+}

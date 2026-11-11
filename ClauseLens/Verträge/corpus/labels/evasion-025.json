@@ -1,0 +1,79 @@
+{
+  "slug": "evasion-025",
+  "source": "generated",
+  "domain": "evasion",
+  "traps": [
+    {
+      "marker": "Der Anbieter ist berechtigt, für die Erbringung seiner Pflichten jederzeit Subunternehmer",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: subcontractor_uncontrolled (Technik: long)."
+    },
+    {
+      "marker": "Die Systemprotokolle des Anbieters gelten als vollständiger Beweis für Umfang und Art der",
+      "expectedType": "audit_log_manipulation",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: audit_log_manipulation (Technik: long)."
+    },
+    {
+      "marker": "Der Anbieter ist berechtigt, den Zugang zum Portal ohne Vorankündigung zu sperren. Dies gilt",
+      "expectedType": "service_suspension",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: service_suspension (Technik: long)."
+    },
+    {
+      "marker": "Im Falle der Insolvenz des Kunden endet der Vertrag automatisch ohne weiteres. Dies gilt unabhängig",
+      "expectedType": "insolvency_termination",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: insolvency_termination (Technik: long)."
+    },
+    {
+      "marker": "Sämtliche Steuern und Abgaben aus diesem Vertrag trägt der Kunde, auch soweit sie rückwirkend",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: tax_indemnity_shift (Technik: long)."
+    },
+    {
+      "marker": "Der Kunde verpflichtet sich, alle Informationen streng vertraulich zu behandeln, für den Anbieter",
+      "expectedType": "asymmetric_confidentiality",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: asymmetric_confidentiality (Technik: long)."
+    },
+    {
+      "marker": "Die Software wird im Zustand wie gesehen bereitgestellt, eine Zusicherung zur Eignung für einen",
+      "expectedType": "as_is_software_disclaimer",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: as_is_software_disclaimer (Technik: long)."
+    },
+    {
+      "marker": "Dieser Vertrag enthält alle Vereinbarungen der Parteien und ersetzt frühere Absprachen und",
+      "expectedType": "entire_agreement",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: entire_agreement (Technik: long)."
+    },
+    {
+      "marker": "Der Anbieter darf den Firmennamen und die Bildmarke des Kunden unentgeltlich zu Referenzzwecken auf",
+      "expectedType": "marketing_reference",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: marketing_reference (Technik: long)."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende kündigen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Zahlungen sind innerhalb von 30 Tagen nach Rechnungsstellung fällig.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde erhält für vermittelte Geschäfte eine Provision von fünf Prozent des Nettoumsatzes.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Anbieter stellt dem Kunden die vereinbarten Unterlagen unentgeltlich zur Verfügung.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Vertrag wird für die Dauer von zwei Jahren geschlossen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien behandeln die ausgetauschten Informationen vertraulich, die Pflicht gilt für die",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    }
+  ],
+  "uncovered": []
+}

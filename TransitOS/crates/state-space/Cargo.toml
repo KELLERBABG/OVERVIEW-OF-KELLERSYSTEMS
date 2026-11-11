@@ -1,0 +1,10 @@
+[package]
+name = "transit-state-space"
+edition = "2021"
+version = "1.0.0"
+license = "Apache-2.0"
+
+[dependencies]
+serde = { workspace = true }
+rand = { workspace = true }
+transit-state-machine = { path = "../state-machine" }

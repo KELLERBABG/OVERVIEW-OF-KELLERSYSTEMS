@@ -1,0 +1,115 @@
+AUFTRAGSVERARBEITUNGSVERTRAG
+
+zwischen
+
+der Zedernhaus AG, Ringstraße 6, 99084 Erfurt (nachfolgend Verantwortlicher)
+
+und
+
+der Xaverius GmbH & Co. KG, Rathausplatz 1, 90403 Nürnberg (nachfolgend Auftragsverarbeiter)
+
+Präambel
+
+Der Verantwortliche beauftragt den Auftragsverarbeiter mit der Verarbeitung personenbezogener Daten nach Maßgabe von Art. 28 DSGVO. Es gelten die nachstehenden Bedingungen.
+
+§ 21 Beachtung
+
+Bei einem Direktauftrag des Kunden steht dem Anbieter keine Provision zu.
+
+§ 1 Allgemeines
+
+Der Lizenzgeber räumt dem Lizenznehmer ein einfaches, nicht ausschließliches Nutzungsrecht für den vereinbarten Zweck ein.
+
+§ 2 Bestimmung
+
+Der Anbieter verzichtet auf jeden Ausgleich für den aufgebauten Kundenstamm.
+
+§ 3 Regelung
+
+Der Nutzungsumfang ist auf den in der Präambel bezeichneten Zweck beschränkt.
+
+§ 4 Vereinbarung
+
+Kundendaten können in Rechenzentren eines Drittlands gespiegelt werden.
+
+§ 5 Modalität
+
+Jede Partei kann diesen Vertrag zum Quartalsende ordentlich kündigen.
+
+§ 6 Ordnung
+
+Für Streitigkeiten über die Bewertung der Sicherheiten wird ein Sachverständigenverfahren durchgeführt. Die Verfahrenskosten sind vom Kunden vorauszuzahlen. Der gerichtliche Rechtsweg ist erst nach Abschluss des Verfahrens eröffnet.
+
+§ 7 Ausgestaltung
+
+Der Anbieter stellt sicher, dass die von ihm eingesetzten Nachunternehmer dieselben Datenschutzstandards einhalten.
+
+§ 8 Durchführung
+
+Versäumt der Kunde einen Sicherheitspatch, verfällt sein Anspruch auf Service-Gutschriften.
+
+§ 9 Vorkehrung
+
+Sämtliche Open-Source-Komponenten werden in der Anlage 2 mit ihren jeweiligen Lizenzen aufgeführt.
+
+§ 10 Zusatz
+
+Bei vorzeitiger Beendigung wird eine pauschale Abstandszahlung fällig.
+
+§ 11 Klarstellung
+
+Die gesetzliche Haftung für Vorsatz und grobe Fahrlässigkeit sowie für Personenschäden bleibt unberührt.
+
+§ 12 Ergänzung
+
+Mangels eines Wartungsvertrags kann der Anbieter das System stilllegen.
+
+§ 13 Verfahren
+
+Der Auftraggeber kann den Vertrag aus wichtigem Grund jederzeit fristlos beenden.
+
+§ 14 Ausführung
+
+Ohne fristgerechte Abbestellung setzt sich die Lizenz jeweils um ein weiteres Kalenderjahr fort.
+
+§ 15 Hinweis
+
+Die Parteien vereinbaren, Streitigkeiten vorrangig durch Mediation zu klären.
+
+§ 16 Maßnahme
+
+Die Parteien vereinbaren eine Mindestabnahme von fünfhundert Datensätzen je Kalendermonat.
+
+§ 17 Vorgehen
+
+Änderungen und Ergänzungen dieses Vertrages bedürfen der Textform.
+
+§ 18 Abstimmung
+
+Die Präambel beschreibt den Zweck der Zusammenarbeit.
+
+§ 19 Koordination
+
+Die Parteien benennen bei Vertragsschluss die jeweiligen Ansprechpartner und Vertretungsberechtigten.
+
+§ 20 Umsetzung
+
+Die Vertragsparteien bestätigen die Vollständigkeit der in Bezug genommenen Anlagen.
+
+§ 21 Beachtung
+
+Erfüllungsort ist der Sitz des Auftraggebers.
+
+§ 1 Allgemeines
+
+Dieser Vertrag ist in zwei gleichlautenden Ausfertigungen erstellt.
+
+§ 2 Bestimmung
+
+Jede Partei trägt ihre eigenen Kosten der Vertragsverhandlungen.
+
+Ort, Datum: ______________________
+
+Für Verantwortlicher: ______________________
+
+Für Auftragsverarbeiter: ______________________

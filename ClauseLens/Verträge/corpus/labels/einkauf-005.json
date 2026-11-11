@@ -1,0 +1,78 @@
+{
+  "slug": "einkauf-005",
+  "source": "generated",
+  "domain": "Einkauf und Lieferantenrahmenvertrag, deutsches und oesterreichisches Recht",
+  "traps": [
+    {
+      "marker": "Die angegebene Verfügbarkeit von 99,5 Prozent ist eine bloße Zielgröße",
+      "expectedType": "unverbindliche_sla_falle",
+      "note": "Weichmacher fuer SLA, ohne die Woerter unverbindlich oder ohne Rechtsanspruch im selben Satz"
+    },
+    {
+      "marker": "Die Überlassung der Steuerungssoftware erfolgt im Ist-Zustand",
+      "expectedType": "as_is_software_disclaimer",
+      "note": "Software im Ist-Zustand, ohne die Formel wie gesehen oder as is"
+    },
+    {
+      "marker": "Einstandspflicht der Auftragnehmerin für mittelbare Schäden wird nicht übernommen",
+      "expectedType": "liability",
+      "note": "Freizeichnung fuer mittelbare Schaeden ohne die Woerter Haftungsausschluss oder Haftung"
+    },
+    {
+      "marker": "Im Verzugsfall schuldet der Besteller Zinsen in Höhe von zwölf Prozent über dem Leitzins",
+      "expectedType": "default_interest",
+      "note": "Verzugszins ueber Leitzins, aber ohne das Registerwort Verzugszinsen"
+    },
+    {
+      "marker": "Sachmängelansprüche erlöschen neun Monate nach Abnahme",
+      "expectedType": "statute_of_limitations",
+      "note": "Abgekuerzte Verjaehrung mit Zahlwort, ohne das Wort verjaehren"
+    },
+    {
+      "marker": "Die Verschwiegenheitspflicht endet nicht mit der Beendigung, sondern besteht unbefristet fort",
+      "expectedType": "excessive_survival",
+      "note": "Unbefristete Nachwirkung der Verschwiegenheit, ohne die Formel Geheimhaltung auf Dauer"
+    },
+    {
+      "marker": "Unternehmenssitz der Auftragnehmerin ausschließlich zuständig",
+      "expectedType": "jurisdiction",
+      "note": "Gerichtsstand ueber den Unternehmenssitz, ohne das Registerwort Gerichtsstand"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Wartungsarbeiten werden spätestens zehn Werktage vorher angekündigt",
+      "note": "Ankuendigungspflicht fuer Wartungsarbeiten"
+    },
+    {
+      "marker": "Eine Dokumentation wird in elektronischer Form bereitgestellt",
+      "note": "Elektronische Dokumentation ausdruecklich vorgesehen"
+    },
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Zulaessige Haftungsklausel"
+    },
+    {
+      "marker": "Rechnungen sind innerhalb von dreißig Tagen netto zu begleichen",
+      "note": "Marktueblicher Zahlungstermin"
+    },
+    {
+      "marker": "Die gesetzlichen Mängelrechte des Bestellers bleiben im Übrigen unberührt",
+      "note": "Gesetzliche Maengelrechte bleiben erhalten"
+    },
+    {
+      "marker": "Beide Parteien behandeln die technischen Unterlagen der anderen Seite vertraulich",
+      "note": "Wechselseitige Vertraulichkeit"
+    },
+    {
+      "marker": "Änderungen dieses Vertrags bedürfen der Zustimmung beider Parteien in Textform",
+      "note": "Symmetrische Aenderungsklausel"
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Die Parteien benennen jeweils einen technischen Ansprechpartner",
+      "note": "Benennung von Ansprechpartnern ohne Pflichten oder Fristen, kein Detektor"
+    }
+  ]
+}

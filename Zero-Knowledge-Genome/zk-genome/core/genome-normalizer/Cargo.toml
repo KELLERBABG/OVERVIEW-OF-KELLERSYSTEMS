@@ -1,0 +1,13 @@
+[package]
+name = "zk-genome-genome-normalizer"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "VCF normalization — left-alignment, trimming, multi-allelic splitting"
+
+[dependencies]
+zk-genome-genome-core = { path = "../genome-core" }
+heapless = "0.8"
+
+[lints]
+workspace = true

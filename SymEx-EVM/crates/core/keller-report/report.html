@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keller Formal Verification Report</title>
+    <style>
+        :root {
+            --bg-main: #0d1117;
+            --bg-card: #161b22;
+            --bg-card-hover: #1f242c;
+            --border: #30363d;
+            --text-main: #c9d1d9;
+            --text-muted: #8b949e;
+            --text-bright: #f0f6fc;
+            --green: #238636;
+            --green-glow: rgba(35, 134, 54, 0.2);
+            --red: #da3633;
+            --red-glow: rgba(218, 54, 51, 0.2);
+            --amber: #d29922;
+            --amber-glow: rgba(210, 153, 34, 0.2);
+            --blue: #58a6ff;
+            --blue-glow: rgba(88, 166, 255, 0.15);
+            --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--bg-main);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+            padding: 2rem 3rem;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .header h1 {
+            color: var(--text-bright);
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .header .subtitle {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 0.35rem;
+        }
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.65rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .badge-pass { background: var(--green); color: #fff; box-shadow: 0 0 10px var(--green-glow); }
+        .badge-fail { background: var(--red); color: #fff; box-shadow: 0 0 10px var(--red-glow); }
+        .badge-warn { background: var(--amber); color: #000; box-shadow: 0 0 10px var(--amber-glow); }
+        .status-pill-big {
+            padding: 0.6rem 1.4rem;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .bg-green { background: var(--green-glow); border: 1px solid var(--green); color: #3fb950; }
+        .bg-red { background: var(--red-glow); border: 1px solid var(--red); color: #f85149; }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .metric-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.25rem;
+            transition: transform 0.15s ease, border-color 0.15s ease;
+        }
+        .metric-card:hover {
+            border-color: var(--blue);
+            transform: translateY(-2px);
+        }
+        .metric-card .title {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+        .metric-card .val {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-bright);
+        }
+        .metric-card .val.val-pass { color: #3fb950; }
+        .metric-card .val.val-fail { color: #f85149; }
+        .metric-card .val.val-warn { color: #e3b341; }
+        .coverage-gap {
+            background: rgba(210, 153, 34, 0.12);
+            border: 1px solid var(--amber);
+            border-radius: 8px;
+            color: var(--text-bright);
+            padding: 0.9rem 1.1rem;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+        }
+        .progress-bar-container {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin-bottom: 2rem;
+        }
+        .progress-bar {
+            height: 12px;
+            background: #21262d;
+            border-radius: 6px;
+            overflow: hidden;
+            display: flex;
+            margin: 0.75rem 0;
+        }
+        .progress-fill-pass { background: #2ea043; }
+        .progress-fill-fail { background: #da3633; }
+        .progress-fill-warn { background: #d29922; }
+        .explorer-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+        .toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.25rem;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+            padding: 0.6rem 1rem;
+            background: #0d1117;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-bright);
+            font-family: inherit;
+        }
+        .search-box:focus { outline: none; border-color: var(--blue); }
+        .filter-buttons { display: flex; gap: 0.5rem; }
+        .filter-btn {
+            background: #21262d;
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 0.4rem 0.85rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.15s ease;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--blue);
+            color: #fff;
+            border-color: var(--blue);
+        }
+        table.findings-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        table.findings-table th {
+            text-align: left;
+            padding: 0.75rem 1rem;
+            border-bottom: 2px solid var(--border);
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+        table.findings-table td {
+            padding: 0.85rem 1rem;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+        table.findings-table tr:hover {
+            background: var(--bg-card-hover);
+        }
+        code {
+            font-family: var(--font-mono);
+            background: rgba(110, 118, 129, 0.15);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.85em;
+            color: #79c0ff;
+        }
+        .kind-tag {
+            background: #21262d;
+            border: 1px solid #30363d;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-family: var(--font-mono);
+        }
+        .file-loc {
+            color: var(--text-muted);
+            font-family: var(--font-mono);
+            font-size: 0.85em;
+        }
+        .witness-box {
+            margin-top: 0.5rem;
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            padding: 0.6rem 0.85rem;
+            font-size: 0.85rem;
+        }
+        .witness-box ul {
+            list-style: none;
+            margin-top: 0.35rem;
+        }
+        .witness-box li {
+            margin-bottom: 0.25rem;
+            font-family: var(--font-mono);
+        }
+        footer {
+            margin-top: 3rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            padding-top: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div>
+            <h1>Keller-Verify Formal Verification Report</h1>
+            <div class="subtitle">Run ID: <code>9624-1794049497674594900</code> &bull; Profile: A release build wraps instead of panicking, so a PASS here is not a guarantee about a shipped release artifact. &bull; Build: 42.05 s &bull; SMT: 30.32 s</div>
+        </div>
+        <div class="status-pill-big bg-red">
+            FAIL
+        </div>
+    </div>
+
+    <div class="metrics-grid">
+        <div class="metric-card">
+            <div class="title">Total Obligations</div>
+            <div class="val">241</div>
+        </div>
+        <div class="metric-card">
+            <div class="title">Proved (Sound)</div>
+            <div class="val val-pass">212</div>
+        </div>
+        <div class="metric-card">
+            <div class="title">Counterexamples</div>
+            <div class="val val-fail">19</div>
+        </div>
+        <div class="metric-card">
+            <div class="title">Undecided / Warnings</div>
+            <div class="val val-warn">10</div>
+        </div>
+        <div class="metric-card">
+            <div class="title">Panic Sites (Not Modelled)</div>
+            <div class="val">1</div>
+        </div>
+        <div class="metric-card">
+            <div class="title">Not Modelled (Unsupported)</div>
+            <div class="val val-warn">0</div>
+        </div>
+        <div class="metric-card">
+            <div class="title">Panic Sites Decided</div>
+            <div class="val">0</div>
+        </div>
+    </div>
+
+    
+
+    <div class="progress-bar-container">
+        <div style="display:flex; justify-content:space-between; font-size:0.9rem;">
+            <span>Proof Soundness Ratio</span>
+            <strong>88.0% Verified Safe</strong>
+        </div>
+        <div class="progress-bar">
+            <div class="progress-fill-pass" style="width: 88.0%"></div>
+            <div class="progress-fill-fail" style="width: 7.9%"></div>
+            <div class="progress-fill-warn" style="width: 4.1%"></div>
+        </div>
+        <div style="display:flex; gap:1.5rem; font-size:0.8rem; color:var(--text-muted);">
+            <span><span style="color:#2ea043;">&#9632;</span> Proved: 212</span>
+            <span><span style="color:#da3633;">&#9632;</span> Fail: 19</span>
+            <span><span style="color:#d29922;">&#9632;</span> Undecided: 10</span>
+        </div>
+    </div>
+
+    <div class="explorer-section">
+        <div class="toolbar">
+            <input type="text" id="searchInput" class="search-box" placeholder="Search by function, kind, or file..." onkeyup="filterRows()">
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="setFilter('all', this)">All (30)</button>
+                <button class="filter-btn" onclick="setFilter('fail', this)">Failures (19)</button>
+                <button class="filter-btn" onclick="setFilter('warn', this)">Warnings (11)</button>
+                <button class="filter-btn" onclick="setFilter('pass', this)">Passing</button>
+            </div>
+        </div>
+
+        <div id="countSummary" style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.75rem;">Showing 30 findings</div>
+
+        <table class="findings-table">
+            <thead>
+                <tr>
+                    <th style="width: 80px;">Status</th>
+                    <th style="width: 250px;">Function</th>
+                    <th style="width: 140px;">Kind</th>
+                    <th style="width: 200px;">Location</th>
+                    <th>Details & Witness</th>
+                </tr>
+            </thead>
+            <tbody id="findingsBody">
+                <tr class="finding-row status-fail" data-search="&lt;z3_backend::smtlibbackend as z3_backend::z3backend&gt;::pop overflow crates/core/src/z3_backend/mod.rs" onclick="toggleDetails(this)">
+                <td><span class="badge badge-fail">FAIL</span></td>
+                <td><code>&lt;z3_backend::SmtLibBackend as z3_backend::Z3Backend&gt;::pop</code></td>
+                <td><span class="kind-tag">overflow</span></td>
+                <td><span class="file-loc">crates/core/src/z3_backend/mod.rs:264</span></td>
+                <td>
+                    <div class="details-summary">Arithmetic Overflow Detection (Sub) -&gt; Exploit path found! [((*_1).1: usize) = 0, 1_usize = 1]</div>
+                    <div class='witness-box'><strong>SMT Counterexample Witness:</strong><ul><li><code>((*_1).1: usize)</code> = <strong>0</strong> <em>(symbol: overflow_l)</em></li><li><code>1_usize</code> = <strong>1</strong> <em>(symbol: overflow_r)</em></li></ul></div>
+                </td>
+            </tr><tr class="finding-row status-fail" data-search="&lt;z3_backend::smtlibbackend as z3_backend::z3backend&gt;::push overflow crates/core/src/z3_backend/mod.rs" onclick="toggleDetails(this)">
+                <td><span class="badge badge-fail">FAIL</span></td>
+                <td><code>&lt;z3_backend::SmtLibBackend as z3_backend::Z3Backend&gt;::push</code></td>
+                <td><span class="kind-tag">overflow</span></td>
+                <td><span class="file-loc">crates/core/src/z3_backend/mod.rs:258</span></td>
+                <td>
+                    <div class="details-summary">Arithmetic Overflow Detection (Add) -&gt; Exploit path found! [((*_1).1: usize) = 18446744073709551615, 1_usize = 1]</div>
+                    <div class='witness-box'><strong>SMT Counterexample Witness:</strong><ul><li><code>((*_1).1: usize)</code> = <strong>18446744073709551615</strong> <em>(symbol: overflow_l)</em></li><li><code>1_usize</code> = <strong>1</strong> <em>(symbol: overflow_r)</em></li></ul></div>
+                </td>
+            </tr><tr class="finding-row status-fail" data-search="abstract_interpretation::abstractinterpreter::fresh_variable overflow crates/core/src/abstract_interpretation/mod.rs" onclick="toggleDetails(this)">
+                <td><span class="badge badge-fail">FAIL</span></td>
+                <td><code>abstract_interpretation::AbstractInterpreter::fresh_variable</code></td>
+                <td><span class="kind-tag">overflow</span></td>
+                <td><span class="file-loc">crates/core/src/abstract_interpretation/mod.rs:67</span></td>
+                <td>
+                    <div class="details-summary">Arithmetic Overflow Detection (Add) -&gt; Exploit path found! [((*_1).2: u64) = 18446744073709551615, 1_u64 = 1]</div>
+                    <div class='witness-box'><strong>SMT Counterexample Witness:</strong><ul><li><code>((*_1).2: u64)</code> = <strong>18446744073709551615</strong> <em>(symbol: overflow_l)</em></li><li><code>1_u64</code> = <strong>1</strong> <em>(symbol: overflow_r)</em></li></ul></div>
+                </td>
+            </tr><tr class="finding-row status-fail" data-search="evm::executor::symbolicexecutor::fresh_sym overflow crates/core/src/evm/executor.rs" onclick="toggleDetails(this)">
+                <td><span class="badge badge-fail">FAIL</span></td>
+                <td><code>evm::executor::SymbolicExecutor::fresh_sym</code></td>
+                <td><span class="kind-tag">overflow</span></td>
+                <td><span class="file-loc">crates/core/src/evm/executor.rs:47</span></td>
+                <td>
+                    <div class="details-summary">Arithmetic Overflow Detection (Add) -&gt; Exploit path found! [((*_1).1: u64) = 18446744073709551615, 1_u64 = 1]</div>
+                    <div class='witness-box'><strong>SMT Counterexample Witness:</strong><ul><li><code>((*_1).1: u64)</code> = <strong>18446744073709551615</strong> <em>(symbol: overflow_l)</em></li><li><code>1_u64</code> = <strong>1</strong> <em>(symbol: overflow_r)</em></li></ul></div>
+                </td>
+            </tr><tr class="finding-row status-warn" data-search="evm::executor::symbolicexecutor::step overflow crates/core/src/evm/executor.rs" onclick="toggleDetails(this)">
+                <td><span class="badge badge-warn">WARN</span></td>
+                <td><code>evm::executor::SymbolicExecutor::step</code></td>
+                <td><span class="kind-tag">overflow</span></td>
+                <td><span class="file-loc">crates/core/src/evm/executor.rs:60</span></td>
+                <td>
+                    <div class="details-summary">Arithmetic Overflow Detection (Sub) -&gt; Undecided: `gas_cost (_21)` is read from `((*_461).4: u64)`, which this analysis does not model; the value behind it is not modelled either: `_461` is read from `((*_20).0: &amp;evm::opcodes::Instruction)`, which this analysis does not model; the value behind it is not modelled either: `instruction (_20)` is read from `((_3 as Continue).0: &amp;evm::parser::ParsedInstruction)`, which this analysis does not model; the value behind it is not modelled either: the result of the call to `&lt;std::result::Result&lt;&amp;evm::parser::ParsedInstruction, types::error::ExecutionError&gt; as std::ops::Try&gt;::branch` is not modelled</div>
+                    
+                </td>
+            </tr><tr class="finding-row status-warn" data-search="evm::executor::symbolicexecutor::step overflow crates/core/src/evm/executor.rs" onclick="toggleDetails(this)">
+                <td><span class="badge badge-warn">WARN</span></td>
+                <td><code>evm::executor::SymbolicExecutor::step</code></td>
+                <td><span class="kind-tag">overflow</span></td>
+                <td><span class="file-loc">crates/core/src/evm/executor.rs:60</span></td>
+                <td>
+                    <div class="details-summary">Arithmetic Overflow Detection (Sub) -&gt; Undecided: `_378` is read from `((*_468).0: u8)`, which this analysis does not model; the value behind it is not modelled either: `_468` is read from `((*_20).0: &amp;evm::opcodes::Instruction)`, which this analysis does not model; the value behind it is not modelled either: `instruction (_20)` is read from `((_3 as Continue).0: &amp;evm::parser::ParsedInstruction)`, which this analysis does not model; the value behind it is not modelled either: the result of the call to `&lt;std::result::Result&lt;&amp;evm::parser::ParsedInstruction, types::error::ExecutionError&gt; as std::ops::Try&gt;::branch` is not modelled</div>
+                    
+                </td>
+            </tr><tr class="finding-row status-fail" data-search="evm::executor::symbolicexecutor::step overflow crates/core/src/evm/executor.rs" onclick="toggleDetails(this)">
+                <td><span class="badge badge-fail">FAIL</span></td>
+                <td><code>evm::executor::SymbolicExecutor::step</code></td>
+                <td><span class="kind-tag">overflow</span></td>
+                <td><span class="file-loc">crates/core/src/evm/executor.rs:60</span></td>
+                <td>
+                    <div class="details-summary">Arithmetic Overflow Detection (Add) -&gt; Exploit path found! [((*_2).3: usize) = 18446744073709551615, 1_usize = 1]</div>
+                    <div class='witness-box'><strong>SMT Counterexample Witness:</strong><ul><li><code>((*_2).3: usize)</code> = <strong>18446744073709551615</strong> <em>(symbol: overflow_l)</em></li><li><code>1_usize</code> = <strong>1</strong> <em>(symbol: overflow_r)</em></li></ul></div>
+                </td>
+            </tr><tr class="finding-row status-fail" data-search="evm::executor::symbolicexecutor::step overflow crates/core/src/evm/executor.rs" onclick="toggleDetails(this)">
+                <td><span class="badge badge-fail">FAIL</span></td>
+                <td><code>evm::executor::SymbolicExecutor::step</code></td>
+                <td><span class="kind-tag">overflow</span></td>
+                <td><span class="file-loc">crates/core/src/evm/executor.rs:60</span></td>
+                <td>
+                    <div class="details-summary">Arithmetic Overflow Detection (Sub) -&gt; Exploit path found! [32_usize = 32, _364 = 33]</div>
+                    <div class='witness-box'><strong>SMT Counterexample Witness:</strong><ul><li><code>32_usize</code> = <strong>32</strong> <em>(symbol: overflow_l)</em></li><li><code>_364</code> = <strong>33</strong> <em>(symbol: overflow_r)</em></li></ul></div>
+                </td>
+            </tr><tr class="finding-row status-warn" data-search="evm::executor::symbolicexecutor::step overflow crates/core/src/evm/executor.rs" onclick="toggleDetails(this)">
+                <td><span class="badge badge-warn">WARN</span></td>
+                <td><code>evm::executor::SymbolicExecutor::step</code></td>
+                <td><span class="kind-tag">overflow</span></td>
+                <td><span class="file-loc">crates/core/src/evm/executor.rs:60</span></td>
+                <td>
+                    <div class="details-summary">Arithmetic Overflow Detection (Sub) -&gt; Undecided: `_405` is read from `((*_470).0: u8)`, which this analysis does not model; the value behind it is not modelled either: `_470` is read from `((*_20).0: &amp;evm::opcodes::Instruction)`, which this analysis does not model; the value behind it is not modelled either: `instruction (_20)` is read from `((_3 as Continue).0: &amp;evm::parser::ParsedInstruction)`, which this analysis does not model; the value behind it is not modelled either: the result of the call to `&lt;std::result::Result&lt;&amp;evm::parser::ParsedInstruction, types::error::ExecutionError&gt; as std::ops::Try&gt;::branch` is not modelled</div>
+                    
+                </td>
+            </tr><tr class="finding-row status-fail" data-search="evm::executor::symbolicexecutor::step overflow crates/core/src/evm/executor.rs" onclick="toggleDetails(this)">
+                <td><span class="badge badge-fail">FAIL</span></td>
+                <td><code>evm::executor::SymbolicExecutor::step</code></td>
+                <td><span class="kind-tag">overflow</span></td>
+                <td><span class="file-loc">crates/core/src/evm/executor.rs:60</span></td>
+                <td>
+                    <div class="details-summary">Arithmetic Overflow Detection (Sub) -&gt; Exploit path found! [len (_407) = 0, 1_usize = 1]</div>
+                    <div class='witness-box'><strong>SMT Counterexample Witness:</strong><ul><li><code>len (_407)</code> = <strong>0</strong> <em>(symbol: overflow_l)</em></li><li><code>1_usize</code> = <strong>1</strong> <em>(symbol: overflow_r)</em></li></ul></div>
+                </td>
+            </tr><tr class="finding-row status-fail" data-search="evm::gas::contract_creation_cost overflow crates/core/src/evm/gas.rs" onclick="toggleDetails(this)">
+                <td><span class="badge badge-fail">FAIL</span></td>
+                <td><code>evm::gas::contract_creation_cost</code></td>
+                <td><span class="kind-tag">overflow</span></td>
+                <td><span class="file-loc">crates/core/src/evm/gas.rs:188</span></td>
+                <td>
+                    <div class="details-summary">Arithmetic Overflow Detection (Mul) -&gt; Exploit path found! [_2 = 92233720368547759, 200_u64 = 200]</div>
+                    <div class='witness-box'><strong>SMT Counterexample Witness:</strong><ul><li><code>_2</code> = <strong>92233720368547759</strong> <em>(symbol: overflow_l)</em></li><li><code>200_u64</code> = <strong>200</strong> <em>(symbol: overflow_r)</em></li></ul></div>
+                </td>
+            </tr><tr class="finding-row status-fail" data-search="evm::gas::intrinsic_gas overflow crates/core/src/evm/gas.rs" onclick="toggleDetails(this)">
+                <td><span class="badge badge-fail">FAIL</span></td>
+                <td><code>evm::gas::intrinsic_gas</code></td>
+                <td><span class="kind-tag">overflow</span></td>
+                <td><span class="file-loc">crates/core/src/evm/gas.rs:78</span></td>
+                <td>
+                    <div class="details-summary">Arithmetic Overflow Detection (Add) -&gt; Exploit path found! [gas (_3) = 18446744073709551612, 4_u64 = 4, byte (_9) = 0]</div>
+                    <div class='witness-box'><strong>SMT Counterexample Witness:</strong><ul><li><code>gas (_3)</code> = <strong>18446744073709551612</strong> <em>(symbol: overflow_l)</em></li><li><code>4_u64</code> = <strong>4</strong> <em>(symbol: overflow_r)</em></li><li><code>byte (_9)</code> = <strong>0</strong> <em>(symbol: mir_9)</em></li></ul></div>
+                </td>
+            </tr><tr class="finding-row status-fail" data-search="evm::gas::intrinsic_gas overflow crates/core/src/evm/gas.rs" onclick="toggleDetails(this)">
+                <td><span class="badge badge-fail">FAIL</span></td>
+                <td><code>evm::gas::intrinsic_gas</code></td>
+                <td><span class="kind-tag">overflow</span></td>
+                <td><span class="file-loc">crates/core/src/evm/gas.rs:78</span></td>
+                <td>
+                    <div class="details-summary">Arithmetic Overflow Detection (Add) -&gt; Exploit path found! [gas (_3) = 18446744073709551600, 16_u64 = 16]</div>
+                    <div class='witness-box'><strong>SMT Counterexample Witness:</strong><ul><li><code>gas (_3)</code> = <strong>18446744073709551600</strong> <em>(symbol: overflow_l)</em></li><li><code>16_u64</code> = <strong>16</strong> <em>(symbol: overflow_r)</em></li></ul></div>
+                </td>
+            </tr><tr class="finding-row status-fail" data-search="evm::gas::keccak256_gas overflow crates/core/src/evm/gas.rs" onclick="toggleDetails(this)">
+                <td><span class="badge badge-fail">FAIL</span></td>
+                <td><code>evm::gas::keccak256_gas</code></td>
+                <td><span class="kind-tag">overflow</span></td>
+                <td><span class="file-loc">crates/core/src/evm/gas.rs:181</span></td>
+                <td>
+                    <div class="details-summary">Arithmetic Overflow Detection (Add) -&gt; Exploit path found! [data_size (_1) = 18446744073709551600, 31_u64 = 31]</div>
+                    <div class='witness-box'><strong>SMT Counterexample Witness:</strong><ul><li><code>data_size (_1)</code> = <strong>18446744073709551600</strong> <em>(symbol: overflow_l)</em></li><li><code>31_u64</code> = <strong>31</strong> <em>(symbol: overflow_r)</em></li></ul></div>
+                </td>
+            </tr><tr class="finding-row status-fail" data-search="evm::gas::log_gas overflow crates/core/src/evm/gas.rs" onclick="toggleDetails(this)">
+                <td><span class="badge badge-fail">FAIL</span></td>
+                <td><code>evm::gas::log_gas</code></td>
+                <td><span class="kind-tag">overflow</span></td>
+                <td><span class="file-loc">crates/core/src/evm/gas.rs:116</span></td>
+                <td>
+                    <div class="details-summary">Arithmetic Overflow Detection (Mul) -&gt; Exploit path found! [data_size (_2) = 2305843009213693952, 8_u64 = 8]</div>
+                    <div class='witness-box'><strong>SMT Counterexample Witness:</strong><ul><li><code>data_size (_2)</code> = <strong>2305843009213693952</strong> <em>(symbol: overflow_l)</em></li><li><code>8_u64</code> = <strong>8</strong> <em>(symbol: overflow_r)</em></li></ul></div>
+                </td>
+            </tr><tr class="finding-row status-fail" data-search="evm::gas::log_gas overflow crates/core/src/evm/gas.rs" onclick="toggleDetails(this)">
+                <td><span class="badge badge-fail">FAIL</span></td>
+                <td><code>evm::gas::log_gas</code></td>
+                <td><span class="kind-tag">overflow</span></td>
+                <td><span class="file-loc">crates/core/src/evm/gas.rs:116</span></td>
+                <td>
+                    <div class="details-summary">Arithmetic Overflow Detection (Add) -&gt; Exploit path found! [_3 = 3000, _8 = 18446744073709548616]</div>
+                    <div class='witness-box'><strong>SMT Counterexample Witness:</strong><ul><li><code>_3</code> = <strong>3000</strong> <em>(symbol: overflow_l)</em></li><li><code>_8</code> = <strong>18446744073709548616</strong> <em>(symbol: overflow_r)</em></li></ul></div>
+                </td>
+            </tr><tr class="finding-row status-fail" data-search="evm::gas::memory_expansion_cost overflow crates/core/src/evm/gas.rs" onclick="toggleDetails(this)">
+                <td><span class="badge badge-fail">FAIL</span></td>
+                <td><code>evm::gas::memory_expansion_cost</code></td>
+                <td><span class="kind-tag">overflow</span></td>
+                <td><span class="file-loc">crates/core/src/evm/gas.rs:63</span></td>
+                <td>
+                    <div class="details-summary">Arithmetic Overflow Detection (Mul) -&gt; Exploit path found! [words_target (_8) = 4294967297, words_target (_8) = 4294967297]</div>
+                    <div class='witness-box'><strong>SMT Counterexample Witness:</strong><ul><li><code>words_target (_8)</code> = <strong>4294967297</strong> <em>(symbol: overflow_l)</em></li><li><code>words_target (_8)</code> = <strong>4294967297</strong> <em>(symbol: overflow_r)</em></li></ul></div>
+                </td>
+            </tr><tr class="finding-row status-warn" data-search="evm::gas::memory_expansion_cost overflow crates/core/src/evm/gas.rs" onclick="toggleDetails(this)">
+                <td><span class="badge badge-warn">WARN</span></td>
+                <td><code>evm::gas::memory_expansion_cost</code></td>
+                <td><span class="kind-tag">overflow</span></td>
+                <td><span class="file-loc">crates/core/src/evm/gas.rs:63</span></td>
+                <td>
+                    <div class="details-summary">Arithmetic Overflow Detection (Sub)</div>
+                    
+                </td>
+            </tr><tr class="finding-row status-fail" data-search="evm::gas::memory_expansion_cost overflow crates/core/src/evm/gas.rs" onclick="toggleDetails(this)">
+                <td><span class="badge badge-fail">FAIL</span></td>
+                <td><code>evm::gas::memory_expansion_cost</code></td>
+                <td><span class="kind-tag">overflow</span></td>
+                <td><span class="file-loc">crates/core/src/evm/gas.rs:63</span></td>
+                <td>
+                    <div class="details-summary">Arithmetic Overflow Detection (Add) -&gt; Exploit path found! [current_size (_1) = 18446744073709551585, 31_usize = 31]</div>
+                    <div class='witness-box'><strong>SMT Counterexample Witness:</strong><ul><li><code>current_size (_1)</code> = <strong>18446744073709551585</strong> <em>(symbol: overflow_l)</em></li><li><code>31_usize</code> = <strong>31</strong> <em>(symbol: overflow_r)</em></li></ul></div>
+                </td>
+            </tr><tr class="finding-row status-fail" data-search="evm::gas::memory_expansion_cost overflow crates/core/src/evm/gas.rs" onclick="toggleDetails(this)">
+                <td><span class="badge badge-fail">FAIL</span></td>
+                <td><code>evm::gas::memory_expansion_cost</code></td>
+                <td><span class="kind-tag">overflow</span></td>
+                <td><span class="file-loc">crates/core/src/evm/gas.rs:63</span></td>
+                <td>
+                    <div class="details-summary">Arithmetic Overflow Detection (Add) -&gt; Exploit path found! [target_size (_2) = 18446744073709551585, 31_usize = 31]</div>
+                    <div class='witness-box'><strong>SMT Counterexample Witness:</strong><ul><li><code>target_size (_2)</code> = <strong>18446744073709551585</strong> <em>(symbol: overflow_l)</em></li><li><code>31_usize</code> = <strong>31</strong> <em>(symbol: overflow_r)</em></li></ul></div>
+                </td>
+            </tr><tr class="finding-row status-fail" data-search="evm::gas::memory_expansion_cost overflow crates/core/src/evm/gas.rs" onclick="toggleDetails(this)">
+                <td><span class="badge badge-fail">FAIL</span></td>
+                <td><code>evm::gas::memory_expansion_cost</code></td>
+                <td><span class="kind-tag">overflow</span></td>
+                <td><span class="file-loc">crates/core/src/evm/gas.rs:63</span></td>
+                <td>
+                    <div class="details-summary">Arithmetic Overflow Detection (Mul) -&gt; Exploit path found! [words_current (_4) = 4294967297, words_current (_4) = 4294967297]</div>
+                    <div class='witness-box'><strong>SMT Counterexample Witness:</strong><ul><li><code>words_current (_4)</code> = <strong>4294967297</strong> <em>(symbol: overflow_l)</em></li><li><code>words_current (_4)</code> = <strong>4294967297</strong> <em>(symbol: overflow_r)</em></li></ul></div>
+                </td>
+            </tr><tr class="finding-row status-warn" data-search="evm::parser::parsedbytecode::parse overflow crates/core/src/evm/parser.rs" onclick="toggleDetails(this)">
+                <td><span class="badge badge-warn">WARN</span></td>
+                <td><code>evm::parser::ParsedBytecode::parse</code></td>
+                <td><span class="kind-tag">overflow</span></td>
+                <td><span class="file-loc">crates/core/src/evm/parser.rs:31</span></td>
+                <td>
+                    <div class="details-summary">Arithmetic Overflow Detection (Sub) -&gt; Undecided: `opcode (_8)` is read from `(*_1)[_9]`, which this analysis does not model</div>
+                    
+                </td>
+            </tr><tr class="finding-row status-warn" data-search="evm::parser::parsedbytecode::parse overflow crates/core/src/evm/parser.rs" onclick="toggleDetails(this)">
+                <td><span class="badge badge-warn">WARN</span></td>
+                <td><code>evm::parser::ParsedBytecode::parse</code></td>
+                <td><span class="kind-tag">overflow</span></td>
+                <td><span class="file-loc">crates/core/src/evm/parser.rs:31</span></td>
+                <td>
+                    <div class="details-summary">Arithmetic Overflow Detection (Sub) -&gt; Undecided: `_51` is read from `((*_18).0: u8)`, which this analysis does not model; the value behind it is not modelled either: `instr (_18)` is read from `((_12 as Continue).0: &amp;evm::opcodes::Instruction)`, which this analysis does not model; the value behind it is not modelled either: the result of the call to `&lt;std::result::Result&lt;&amp;evm::opcodes::Instruction, types::error::ExecutionError&gt; as std::ops::Try&gt;::branch` is not modelled</div>
+                    
+                </td>
+            </tr><tr class="finding-row status-warn" data-search="hash::symbolichashtable::generate_storage_slot overflow crates/core/src/hash/mod.rs" onclick="toggleDetails(this)">
+                <td><span class="badge badge-warn">WARN</span></td>
+                <td><code>hash::SymbolicHashTable::generate_storage_slot</code></td>
+                <td><span class="kind-tag">overflow</span></td>
+                <td><span class="file-loc">crates/core/src/hash/mod.rs:111</span></td>
+                <td>
+                    <div class="details-summary">Arithmetic Overflow Detection (Add) -&gt; Undecided: the result of the call to `hash::SymbolicHashTable::hash_symbolic` is not modelled</div>
+                    
+                </td>
+            </tr><tr class="finding-row status-warn" data-search="hash::symbolichashtable::generate_storage_slot overflow crates/core/src/hash/mod.rs" onclick="toggleDetails(this)">
+                <td><span class="badge badge-warn">WARN</span></td>
+                <td><code>hash::SymbolicHashTable::generate_storage_slot</code></td>
+                <td><span class="kind-tag">overflow</span></td>
+                <td><span class="file-loc">crates/core/src/hash/mod.rs:111</span></td>
+                <td>
+                    <div class="details-summary">Arithmetic Overflow Detection (Add) -&gt; Undecided: the result of the call to `hash::SymbolicHashTable::hash_symbolic` is not modelled</div>
+                    
+                </td>
+            </tr><tr class="finding-row status-fail" data-search="hash::symbolichashtable::hash_symbolic overflow crates/core/src/hash/mod.rs" onclick="toggleDetails(this)">
+                <td><span class="badge badge-fail">FAIL</span></td>
+                <td><code>hash::SymbolicHashTable::hash_symbolic</code></td>
+                <td><span class="kind-tag">overflow</span></td>
+                <td><span class="file-loc">crates/core/src/hash/mod.rs:88</span></td>
+                <td>
+                    <div class="details-summary">Arithmetic Overflow Detection (Add) -&gt; Exploit path found! [((*_1).2: u64) = 18446744073709551615, 1_u64 = 1]</div>
+                    <div class='witness-box'><strong>SMT Counterexample Witness:</strong><ul><li><code>((*_1).2: u64)</code> = <strong>18446744073709551615</strong> <em>(symbol: overflow_l)</em></li><li><code>1_u64</code> = <strong>1</strong> <em>(symbol: overflow_r)</em></li></ul></div>
+                </td>
+            </tr><tr class="finding-row status-fail" data-search="ir::controlflowgraph::from_jump_dests overflow crates/core/src/ir/mod.rs" onclick="toggleDetails(this)">
+                <td><span class="badge badge-fail">FAIL</span></td>
+                <td><code>ir::ControlFlowGraph::from_jump_dests</code></td>
+                <td><span class="kind-tag">overflow</span></td>
+                <td><span class="file-loc">crates/core/src/ir/mod.rs:50</span></td>
+                <td>
+                    <div class="details-summary">Arithmetic Overflow Detection (Add) -&gt; Exploit path found! [id_counter (_12) = 18446744073709551615, 1_usize = 1]</div>
+                    <div class='witness-box'><strong>SMT Counterexample Witness:</strong><ul><li><code>id_counter (_12)</code> = <strong>18446744073709551615</strong> <em>(symbol: overflow_l)</em></li><li><code>1_usize</code> = <strong>1</strong> <em>(symbol: overflow_r)</em></li></ul></div>
+                </td>
+            </tr><tr class="finding-row status-warn" data-search="ir::build_ir bounds crates/core/src/ir/mod.rs" onclick="toggleDetails(this)">
+                <td><span class="badge badge-warn">WARN</span></td>
+                <td><code>ir::build_ir</code></td>
+                <td><span class="kind-tag">bounds</span></td>
+                <td><span class="file-loc">crates/core/src/ir/mod.rs:139</span></td>
+                <td>
+                    <div class="details-summary">Slice Boundary Analysis -&gt; Undecided: `i (_17)` is read from `((_14 as Some).0: usize)`, which this analysis does not model; the value behind it is not modelled either: the result of the call to `&lt;std::ops::RangeInclusive&lt;usize&gt; as std::iter::Iterator&gt;::next` is not modelled</div>
+                    
+                </td>
+            </tr><tr class="finding-row status-warn" data-search="types::value::u256::from_be_bytes unmodelled-panic crates/core/src/types/mod.rs" onclick="toggleDetails(this)">
+                <td><span class="badge badge-warn">WARN</span></td>
+                <td><code>types::value::U256::from_be_bytes</code></td>
+                <td><span class="kind-tag">unmodelled-panic</span></td>
+                <td><span class="file-loc">crates/core/src/types/mod.rs:113</span></td>
+                <td>
+                    <div class="details-summary">Unmodelled panic site: the call to `std::result::Result::&lt;[u8; 8], std::array::TryFromSliceError&gt;::unwrap` panics when it has no value to return, and its body is not read by this analysis, so whether this site can panic was not decided.</div>
+                    
+                </td>
+            </tr><tr class="finding-row status-warn" data-search="z3_backend::smtlibbackend::value_to_smt overflow crates/core/src/z3_backend/mod.rs" onclick="toggleDetails(this)">
+                <td><span class="badge badge-warn">WARN</span></td>
+                <td><code>z3_backend::SmtLibBackend::value_to_smt</code></td>
+                <td><span class="kind-tag">overflow</span></td>
+                <td><span class="file-loc">crates/core/src/z3_backend/mod.rs:165</span></td>
+                <td>
+                    <div class="details-summary">Arithmetic Overflow Detection (Add) -&gt; Undecided: the result of the call to `&lt;&amp;u8 as std::ops::Mul&lt;u8&gt;&gt;::mul` is not modelled</div>
+                    
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        Keller-Verify &bull; Automated Z3 SMT Formal Verification Engine for Rust &bull; <a href="https://github.com/KELLERBABG/Formal-Verification" style="color:var(--blue); text-decoration:none;">GitHub</a>
+    </footer>
+
+    <script>
+        let currentFilter = 'all';
+
+        function setFilter(filter, btn) {
+            currentFilter = filter;
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            filterRows();
+        }
+
+        function filterRows() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const rows = document.querySelectorAll('.finding-row');
+            let visible = 0;
+
+            rows.forEach(row => {
+                const matchesSearch = row.getAttribute('data-search').includes(query);
+                const isFail = row.classList.contains('status-fail');
+                const isWarn = row.classList.contains('status-warn');
+                const isPass = row.classList.contains('status-pass');
+
+                let matchesFilter = false;
+                if (currentFilter === 'all') matchesFilter = true;
+                else if (currentFilter === 'fail' && isFail) matchesFilter = true;
+                else if (currentFilter === 'warn' && isWarn) matchesFilter = true;
+                else if (currentFilter === 'pass' && isPass) matchesFilter = true;
+
+                const show = matchesSearch && matchesFilter;
+                row.style.display = show ? '' : 'none';
+                if (show) visible++;
+            });
+
+            const counter = document.getElementById('countSummary');
+            if (counter) {
+                counter.textContent = 'Showing ' + visible + ' of ' + rows.length + ' findings';
+            }
+        }
+
+        function toggleDetails(row) {
+            const witness = row.querySelector('.witness-box');
+            if (witness) {
+                witness.style.display = (witness.style.display === 'none') ? '' : 'none';
+            }
+        }
+    </script>
+</body>
+</html>

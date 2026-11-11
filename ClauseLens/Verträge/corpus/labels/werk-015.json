@@ -1,0 +1,88 @@
+{
+  "slug": "werk-015",
+  "source": "generated",
+  "domain": "Industrie und Anlagenbau, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Die Teillieferung wird als vertragsgemäß behandelt, sofern keine Rüge erfolgt.",
+      "expectedType": "deemed_acceptance",
+      "note": "Verifizierte Klausel im Bereich deemed_acceptance."
+    },
+    {
+      "marker": "Die Beweislast für die Richtigkeit der Abrechnung trägt der Kunde.",
+      "expectedType": "burden_of_proof",
+      "note": "Verifizierte Klausel im Bereich burden_of_proof."
+    },
+    {
+      "marker": "Der Datenexport ist nur gegen eine gesonderte Vergütung erhältlich.",
+      "expectedType": "data_lockin",
+      "note": "Verifizierte Klausel im Bereich data_lockin."
+    },
+    {
+      "marker": "Die Übertragung von Rechten und Pflichten aus diesem Vertrag ist ohne Zustimmung des Anbieters unwir",
+      "expectedType": "assignment_restriction",
+      "note": "Verifizierte Klausel im Bereich assignment_restriction."
+    },
+    {
+      "marker": "Die Vertraulichkeitspflicht endet nicht mit der Beendigung, sondern besteht bis die Information öffe",
+      "expectedType": "excessive_survival",
+      "note": "Verifizierte Klausel im Bereich excessive_survival."
+    },
+    {
+      "marker": "Der Anbieter ist berechtigt, zur Erfüllung Subunternehmer einzusetzen, ohne dies vorher anzuzeigen.",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "Verifizierte Klausel im Bereich subcontractor_uncontrolled."
+    },
+    {
+      "marker": "Der Kunde stellt den Anbieter von allen steuerlichen Nachforderungen frei.",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Verifizierte Klausel im Bereich tax_indemnity_shift."
+    },
+    {
+      "marker": "Nach Beendigung wird die Lizenz nicht verlängert; ein maschinenlesbarer Export ist nicht Bestandteil",
+      "expectedType": "data_lockin",
+      "note": "Verifizierte Klausel im Bereich data_lockin."
+    },
+    {
+      "marker": "Die Systemprotokolle des Anbieters gelten als Vollbeweis für die erbrachten Leistungen.",
+      "expectedType": "audit_log_manipulation",
+      "note": "Verifizierte Klausel im Bereich audit_log_manipulation."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Parteien arbeiten bei der Fehleranalyse eng zusammen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Für Mängel während der Gewährleistung leistet der Anbieter kostenfrei Nacherfüllung.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Parteien treffen sich monatlich zu einem Lenkungskreis.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Der Anbieter führt die Arbeiten mit der vereinbarten Sorgfalt aus.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Vertragsparteien informieren sich unverzüglich über Störungen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Der Anbieter meldet Sicherheitsvorfälle unverzüglich an den Kunden.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Vergütung ist innerhalb von dreißig Tagen nach Rechnungseingang fällig.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Jede Partei trägt ihre eigenen Kosten aus der Vertragsverhandlung",
+      "note": "Neutrale Kostentragung."
+    }
+  ]
+}

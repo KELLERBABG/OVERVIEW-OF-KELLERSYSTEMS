@@ -1,0 +1,54 @@
+[workspace]
+members = [
+    "crates/sss",
+    "crates/smpc-engine",
+    "crates/homomorphic-compare",
+    "crates/commitments",
+    "crates/matching-engine",
+    "crates/price-discovery",
+    "crates/threshold-crypto",
+    "crates/zk-validation",
+    "crates/front-running",
+    "crates/settlement",
+    "crates/bft",
+    "crates/node",
+    "crates/api-server",
+    "smpc-cli",
+]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+description = "SMPC Dark Pool - Private decentralized exchange using threshold cryptography"
+
+[workspace.dependencies]
+ark-bn254 = "0.4"
+ark-ff = "0.4"
+ark-ec = "0.4"
+ark-serialize = "0.4"
+ark-relations = "0.4"
+ark-r1cs-std = "0.4"
+ark-groth16 = "0.4"
+rand = "0.8"
+rand_chacha = "0.3"
+rand_core = "0.6"
+thiserror = "1"
+sha2 = "0.10"
+hex = "0.4"
+anyhow = "1"
+clap = { version = "4", features = ["derive", "env"] }
+tokio = { version = "1", features = ["full"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+criterion = { version = "0.5", features = ["html_reports"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+futures-util = "0.3"
+axum = { version = "0.7", features = ["ws"] }
+tower-http = { version = "0.5", features = ["cors"] }
+uuid = { version = "1", features = ["v4", "serde"] }
+chrono = { version = "0.4", features = ["serde"] }
+axum-server = { version = "0.7", features = ["tls-rustls"] }
+dotenvy = "0.15"
+tower = { version = "0.4", features = ["util"] }

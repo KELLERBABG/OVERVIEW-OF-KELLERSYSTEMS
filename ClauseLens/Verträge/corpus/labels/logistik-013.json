@@ -1,0 +1,80 @@
+{
+  "slug": "logistik-013",
+  "source": "generated",
+  "domain": "Multimodale Logistik",
+  "traps": [
+    {
+      "marker": "Ausgleich sämtlicher Forderungen aus der gesamten Geschäftsbeziehung",
+      "expectedType": "extended_retention_of_title",
+      "note": "Red-team Klausel: extended_retention_of_title"
+    },
+    {
+      "marker": "governed by the laws of the Netherlands",
+      "expectedType": "jurisdiction",
+      "note": "Red-team Klausel: jurisdiction"
+    },
+    {
+      "marker": "Nachträgliche Abgabenbelastungen trägt der Kunde",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Red-team Klausel: tax_indemnity_shift"
+    },
+    {
+      "marker": "die Leistung ohne Vorankündigung einzustellen",
+      "expectedType": "service_suspension",
+      "note": "Red-team Klausel: service_suspension"
+    },
+    {
+      "marker": "Es gelten die jeweils aktuellen Transportbedingungen unter",
+      "expectedType": "dynamic_url_referral",
+      "note": "Red-team Klausel: dynamic_url_referral"
+    },
+    {
+      "marker": "a perpetual, irrevocable, worldwide, royalty-free license",
+      "expectedType": "data_grant",
+      "note": "Red-team Klausel: data_grant"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "stimmen die Verkehre monatlich ab",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "versichert die Ware während des Transports",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "verständigen sich bei Streitigkeiten zunächst gütlich",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "unterstützt den Kunden bei der Erstellung der Zolldokumente",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "informiert den Kunden unverzüglich über den Grund der Sperre",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Beide Parteien behandeln die Transportdaten vertraulich",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "innerhalb von 30 Tagen ohne Abzug zahlbar",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "zur außerordentlichen Kündigung aus wichtigem Grund bleiben unberührt",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "seine Sendungsdaten jederzeit in einem gängigen Format exportieren",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

@@ -1,0 +1,305 @@
+{
+  "dir": "ltr",
+  "hero_title": "Skanimi i dokumentit",
+  "hero_subtitle": "Fotografoni letrën ose zgjidhni një skedar.",
+  "btn_camera": "Bëj foto (Kamera)",
+  "btn_gallery": "Galeria / Skedar",
+  "sample_label": "Shembuj:",
+  "chip_rvnr": "Sigurimet Shoqërore",
+  "chip_tax": "Numri Fiskal (IdNr)",
+  "chip_jobcenter": "Jobcenter",
+  "chip_finanzamt": "Zyra e Tatimeve",
+  "ocr_recognizing": "Duke njohur tekstin...",
+  "meta_ref_label": "Numri i dosjes / Numri",
+  "meta_deadline_label": "Afati",
+  "no_deadline_text": "Nuk ka afat të caktuar",
+  "info_status_text": "E vlefshme përgjithmonë — Nuk kërkohet përgjigje",
+  "section_meaning": "Çfarë do të thotë kjo letër?",
+  "section_actions": "Çfarë duhet të bëni?",
+  "btn_extend_deadline": "Shtyj afatin",
+  "btn_objection": "Bëj ankesë (Widerspruch)",
+  "btn_calendar": "Në kalendar",
+  "btn_copy_text": "Kopjo tekstin",
+  "btn_modal_close": "Mbyll",
+  "raw_text_summary": "Kontrollo & modifiko tekstin",
+  "btn_reanalyze": "Analizo sërish",
+  "modal_title": "Krijo letër përgjigjeje",
+  "modal_name_label": "Emri juaj",
+  "modal_address_label": "Adresa juaj",
+  "modal_reason_label": "Arsyeja (opsionale)",
+  "badge_info": "Informacion",
+  "badge_deadline": "Vëmendje te afati",
+  "toast_copied": "Teksti u kopjua",
+  "toast_calendar": "U regjistrua në kalendar",
+  "ausbildungsvertrag_title": "Vocational Training Contract (Ausbildungsvertrag)",
+  "ausbildungsvertrag_agency": "Training Company / Chamber of Commerce (IHK/HWK)",
+  "ausbildungsvertrag_desc": "This contract governs your legal vocational training relationship, duration, monthly training allowance, probation period, and leave entitlement with your training employer.",
+  "ausbildungsvertrag_actions": [
+    "Verify start date, occupation, probation period, and monthly remuneration",
+    "Keep signed contract permanently with your educational and career records",
+    "Attach registration confirmation from the responsible chamber (IHK / HWK)"
+  ],
+  "leihvertrag_title": "Equipment Loan Agreement (Company Property)",
+  "leihvertrag_agency": "Employer / Company",
+  "leihvertrag_desc": "This document is a company loan and equipment handover agreement for tools or IT equipment (e.g. laptop, phone, keys, tools) provided for your professional duties.",
+  "leihvertrag_actions": [
+    "Cross-check listed items, serial numbers, and condition in the handover protocol",
+    "Comply with care obligations and return requirements upon contract termination",
+    "Keep signed agreement safely with employment documents"
+  ],
+  "arbeitsvertrag_title": "Employment Contract (Arbeitsvertrag)",
+  "arbeitsvertrag_agency": "Employer / Company",
+  "arbeitsvertrag_desc": "This contract establishes your binding employment relationship, working hours, remuneration, vacation days, and notice periods.",
+  "arbeitsvertrag_actions": [
+    "Review salary, working hours, job description, and probation period",
+    "Sign and return designated copy to human resources",
+    "Store original contract safely with personal records"
+  ],
+  "leiharbeit_vertrag_title": "Temporary Employment Agreement (Zeitarbeit)",
+  "leiharbeit_vertrag_agency": "Staffing Agency / Employer",
+  "leiharbeit_vertrag_desc": "This contract governs your assignment as a temporary employee under the German Temporary Employment Act (AÜG).",
+  "leiharbeit_vertrag_actions": [
+    "Review hourly wage, tariff classification, assignment location, and allowances",
+    "Submit timesheets weekly to the agency",
+    "File contract safely"
+  ],
+  "praktikumsvertrag_title": "Internship Agreement (Praktikumsvertrag)",
+  "praktikumsvertrag_agency": "Internship Host / Company",
+  "praktikumsvertrag_desc": "This agreement outlines the terms of your internship, learning objectives, duration, and any internship compensation.",
+  "praktikumsvertrag_actions": [
+    "Verify internship period and scope of activities",
+    "Request formal internship certificate upon completion",
+    "File agreement"
+  ],
+  "rvnr_title": "Social Security Certificate (RVNR)",
+  "rvnr_agency": "German Pension Insurance (DRV)",
+  "rvnr_desc": "This letter is your official proof of your German social security and pension number (VSNR).",
+  "rvnr_actions": [
+    "Present this proof to your employer when starting a job",
+    "Keep number ready for health insurance or pension applications",
+    "Store document safely and permanently with personal records"
+  ],
+  "tax_title": "Assignment of Tax ID (IdNr)",
+  "tax_agency": "Federal Central Tax Office (BZSt)",
+  "tax_desc": "This letter contains your permanent German Tax Identification Number (11 digits). It remains valid for your lifetime.",
+  "tax_actions": [
+    "Provide Tax ID to your employer for payroll accounting",
+    "Give Tax ID to your bank for tax exemption orders",
+    "File the letter safely with your tax records"
+  ],
+  "job_title": "Request for Cooperation (Mitwirkung)",
+  "job_agency": "Jobcenter / Federal Employment Agency",
+  "job_desc": "The Jobcenter requests missing supporting documents to calculate or continue your benefits (Bürgergeld).",
+  "job_actions": [
+    "Compile requested documents (bank statements, tenancy certificates, salary slips)",
+    "Submit documents before the specified deadline",
+    "Apply in writing for a deadline extension if third-party certificates are pending"
+  ],
+  "fin_title": "Kujtesë për deklaratën e të ardhurave",
+  "fin_agency": "Zyra e Tatimeve (Finanzamt)",
+  "fin_desc": "Zyra tatimore ju kujton të dorëzoni deklaratën e të ardhurave.",
+  "fin_actions": [
+    "Dorëzoni deklaratën nëpërmjet ELSTER",
+    "Në rast vonese, bëni kërkesë me shkrim për shtyrjen e afatit"
+  ],
+  "melde_title": "Official Registration Certificate (Meldebestätigung)",
+  "melde_agency": "Citizens Office (Bürgeramt)",
+  "melde_desc": "This is your official registration certificate confirming your residence address in Germany.",
+  "melde_actions": [
+    "Keep document safe (needed for banks, contracts and public authorities)",
+    "Provide copy to employer and health insurance",
+    "No reply required to the Bürgeramt"
+  ],
+  "gez_title": "Broadcasting Fee (Rundfunkbeitrag)",
+  "gez_agency": "ARD ZDF Deutschlandradio Contribution Service",
+  "gez_desc": "This letter concerns the mandatory broadcasting fee for your residence in Germany (€18.36 per month).",
+  "gez_actions": [
+    "Check if you qualify for exemption (e.g. Bürgergeld, BAföG) and submit proof",
+    "If a flatmate is already paying: Provide their contribution number to the service",
+    "Otherwise pay the outstanding fee or set up SEPA direct debit"
+  ],
+  "auslaender_title": "Immigration & Residence Notice",
+  "auslaender_agency": "Immigration Office (Ausländerbehörde)",
+  "auslaender_desc": "The immigration office contacts you regarding your residence permit, appointment, or requested supporting documents.",
+  "auslaender_actions": [
+    "Strictly adhere to specified deadlines and appointment dates",
+    "Submit requested documents (passport, employment contract, salary slips) completely",
+    "If unable to attend an appointment, notify authority immediately in writing"
+  ],
+  "krankenkasse_title": "Health Insurance Notice",
+  "krankenkasse_agency": "Statutory Health Insurance (AOK / TK / Barmer / DAK)",
+  "krankenkasse_desc": "This letter concerns your health insurance coverage, membership certificate, or income declarations.",
+  "krankenkasse_actions": [
+    "Provide membership proof to employer or university if needed",
+    "Complete and return attached questionnaire (e.g. family insurance)",
+    "File document with health insurance records"
+  ],
+  "online_ausweis_title": "PIN Letter for Online ID (eID)",
+  "online_ausweis_agency": "Federal Printing Office / ID Authority",
+  "online_ausweis_desc": "This letter contains your 5-digit Transport PIN, PUK, and blocking password to activate the online identification function of your German ID or residence permit.",
+  "online_ausweis_actions": [
+    "Keep this PIN letter permanently safe with private records",
+    "Change Transport PIN to personal 6-digit PIN via AusweisApp on smartphone",
+    "Note down blocking password to lock eID if card is lost"
+  ],
+  "general_title": "Amtliches Behördenschreiben",
+  "general_agency": "Behörde / Institution",
+  "general_desc": "Dieses Dokument ist ein offizielles Behördenschreiben mit wichtigen Angaben zu Ihren Unterlagen oder behördlichen Vorgängen.",
+  "general_actions": [
+    "Brief sorgfältig durchlesen und auf etwaige Fristen oder Aufforderungen prüfen",
+    "Erforderliche Nachweise oder Unterlagen zusammenstellen",
+    "Dokument sicher bei den persönlichen Unterlagen aufbewahren"
+  ],
+  "renteninfo_title": "Pension Statement / Notice",
+  "renteninfo_agency": "German Pension Insurance (DRV)",
+  "renteninfo_desc": "This letter provides details about your accrued pension points and estimated future statutory retirement pension.",
+  "renteninfo_actions": [
+    "Check pension history for any missing contribution periods",
+    "Request clarification of account if periods are missing (e.g. studies, child raising)",
+    "File document with retirement records"
+  ],
+  "tax_id_title": "Tax Identification Number Notice (IdNr)",
+  "tax_id_agency": "Federal Central Tax Office (BZSt)",
+  "tax_id_desc": "This letter contains your permanent personal German Tax ID Number (11 digits). It remains valid for your lifetime.",
+  "tax_id_actions": [
+    "Provide Tax ID to employer for salary tax accounting",
+    "Give Tax ID to banks for tax exemption orders",
+    "File document permanently with tax records"
+  ],
+  "steuerbescheid_title": "Income Tax Assessment Notice",
+  "steuerbescheid_agency": "Tax Office (Finanzamt)",
+  "steuerbescheid_desc": "The tax office has assessed your tax return. The notice shows a tax refund or an amount due.",
+  "steuerbescheid_actions": [
+    "Verify calculation and bank details for accuracy",
+    "If payment due: Transfer amount before the stated due date",
+    "In case of errors: File a written objection (Einspruch) within 1 month"
+  ],
+  "finanzamt_erinnerung_title": "Tax Return Filing Reminder",
+  "finanzamt_erinnerung_agency": "Tax Office (Finanzamt)",
+  "finanzamt_erinnerung_desc": "The tax office reminds you to submit your outstanding tax return for the specified tax year before the deadline.",
+  "finanzamt_erinnerung_actions": [
+    "Prepare and submit tax return via ELSTER or tax software",
+    "If documents missing: Apply for a deadline extension in writing",
+    "Observe deadline strictly to avoid late submission penalties"
+  ],
+  "ausweis_abholung_title": "ID Document Ready for Collection",
+  "ausweis_abholung_agency": "Citizens Office / Passport Authority",
+  "ausweis_abholung_desc": "Your newly issued ID card, passport, or electronic residence permit is ready for collection at the Bürgeramt.",
+  "ausweis_abholung_actions": [
+    "Bring your old/current ID document for cancellation",
+    "Book collection appointment or visit during open counter hours",
+    "Bring PIN letter if online ID function is being activated"
+  ],
+  "jobcenter_bewilligung_title": "Benefits Approval Notice (Bürgergeld)",
+  "jobcenter_bewilligung_agency": "Jobcenter",
+  "jobcenter_bewilligung_desc": "This notice confirms the monthly benefits granted to you for standard living costs and housing/heating.",
+  "jobcenter_bewilligung_actions": [
+    "Check approval period and monthly transfer amounts",
+    "Verify correct coverage of rent and heating expenses",
+    "Submit continuing approval application (WBA) 6 weeks before expiry"
+  ],
+  "mahnbescheid_title": "Court Payment Order (Mahnbescheid)",
+  "mahnbescheid_agency": "Central Summary Court / District Court",
+  "mahnbescheid_desc": "A creditor has filed a formal monetary claim against you through the court. CRITICAL: You have exactly 2 weeks from service to act!",
+  "mahnbescheid_actions": [
+    "Check claim validity immediately",
+    "If unjustified: File formal objection (Widerspruch) using attached form within 2 weeks",
+    "If justified: Pay the claim immediately to avoid enforcement orders"
+  ],
+  "bussgeldbescheid_title": "Traffic Fine / Infringement Notice",
+  "bussgeldbescheid_agency": "Fines Authority / Police",
+  "bussgeldbescheid_desc": "You are accused of an administrative offence (e.g. speeding, parking violation) with an imposed fine.",
+  "bussgeldbescheid_actions": [
+    "Check violation details, date, vehicle license plate, and photo evidence",
+    "If justified: Pay fine within the 2-week payment period",
+    "If unjustified: File written objection (Einspruch) within 2 weeks"
+  ],
+  "rechnung_title": "Invoice / Payment Notice",
+  "rechnung_agency": "Billing Issuer / Merchant",
+  "rechnung_desc": "This document is an invoice for provided goods or services with payment due date and bank details.",
+  "rechnung_actions": [
+    "Check billed amount and billing period",
+    "Transfer outstanding amount stating the invoice number before due date",
+    "File invoice with receipt and warranty records"
+  ],
+  "mahnung_title": "Payment Reminder / Dunning Notice",
+  "mahnung_agency": "Creditor / Dunning Department",
+  "mahnung_desc": "The sender reminds you of an overdue invoice. Please transfer the outstanding balance quickly to prevent additional fees or debt collection.",
+  "mahnung_actions": [
+    "Check if payment was already transferred recently",
+    "Pay outstanding balance including dunning fees stating the reference immediately",
+    "Contact the creditor immediately in case of discrepancies"
+  ],
+  "nebenkosten_title": "Utility / Operating Cost Statement",
+  "nebenkosten_agency": "Landlord / Property Management",
+  "nebenkosten_desc": "Your landlord calculates the advance payments against actual heating, water, and operating costs for the past billing year.",
+  "nebenkosten_actions": [
+    "Review billing period and cost allocation keys",
+    "If payment due: Transfer balance before due date",
+    "If refund: Verify credit transfer to your bank account"
+  ],
+  "stadtwerke_title": "Electricity / Gas / Water Annual Bill",
+  "stadtwerke_agency": "Public Utility / Energy Provider",
+  "stadtwerke_desc": "Your utility provider reconciles your actual consumption against monthly advance installment payments.",
+  "stadtwerke_actions": [
+    "Compare meter readings with own records",
+    "Note the new monthly installment amount",
+    "Check refund credit or transfer due balance"
+  ],
+  "kindergeld_title": "Child Benefit Notice (Kindergeld)",
+  "kindergeld_agency": "Family Benefits Office (Familienkasse)",
+  "kindergeld_desc": "This notice concerns the approval or review of your statutory child benefits.",
+  "kindergeld_actions": [
+    "Note child benefit number and monthly payment schedule",
+    "Report any changes (e.g. apprenticeship, turning 18) promptly to the office",
+    "Store notice safely with family documents"
+  ],
+  "arbeitszeugnis_title": "Employment Reference Letter (Arbeitszeugnis)",
+  "arbeitszeugnis_agency": "Employer / Company",
+  "arbeitszeugnis_desc": "This document is an official reference letter from your employer certifying your employment period, job responsibilities, and performance evaluation.",
+  "arbeitszeugnis_actions": [
+    "Review job descriptions and performance evaluations carefully",
+    "Request correction within 3 to 6 months if details are incomplete or inaccurate",
+    "Store original reference safely with your job application documents"
+  ],
+  "schulzeugnis_title": "School / Vocational Certificate (Zeugnis)",
+  "schulzeugnis_agency": "School / Chamber of Commerce (IHK) / College",
+  "schulzeugnis_desc": "This is an official school graduation, vocational, or trade exam certificate (e.g. Abitur, vocational diploma, Gesellenbrief).",
+  "schulzeugnis_actions": [
+    "Check grades and formal degree qualification details",
+    "Obtain certified copies for job or university applications",
+    "Keep original graduation certificate safely in your permanent records"
+  ],
+  "hochschulzeugnis_title": "University Degree Certificate (Diploma)",
+  "hochschulzeugnis_agency": "University / Higher Education Institution",
+  "hochschulzeugnis_desc": "This document is your official university degree certificate, Bachelor/Master diploma, or Transcript of Records.",
+  "hochschulzeugnis_actions": [
+    "Verify degree certificate, transcript of records, and diploma supplement",
+    "Make certified copies for employers or recognition procedures",
+    "Store diploma permanently with your academic records"
+  ],
+  "fuehrungszeugnis_title": "Police Clearance Certificate (Führungszeugnis)",
+  "fuehrungszeugnis_agency": "Federal Office of Justice (BfJ) / Citizens Office",
+  "fuehrungszeugnis_desc": "This document is your official certificate of conduct / police clearance record certifying the absence of criminal entries.",
+  "fuehrungszeugnis_actions": [
+    "Verify entries (clean record states 'Keine Eintragung')",
+    "Submit original certificate to requesting employer or government agency",
+    "Typically recognized as up to date for 3 months from issuance"
+  ],
+  "arbeitsunfaehigkeit_title": "Doctor's Sick Leave Note (AU / Attest)",
+  "arbeitsunfaehigkeit_agency": "Doctor's Practice / Medical Center",
+  "arbeitsunfaehigkeit_desc": "This document is an official medical certificate of incapacity for work (sick note) specifying the duration of absence.",
+  "arbeitsunfaehigkeit_actions": [
+    "Notify employer immediately regarding the sick leave duration",
+    "Ensure electronic transmission (eAU) to health insurance and employer",
+    "Consult doctor for a follow-up extension before expiry if sickness continues"
+  ],
+  "sprachzertifikat_title": "Language Certificate (German A1–C2)",
+  "sprachzertifikat_agency": "Goethe-Institut / telc / TestDaF / BAMF",
+  "sprachzertifikat_desc": "This document is your official German language exam certificate (e.g. DTZ B1, telc B2, TestDaF, Goethe-Zertifikat).",
+  "sprachzertifikat_actions": [
+    "Check score results for modules (Listening, Reading, Writing, Speaking)",
+    "Present certificate to immigration office (for citizenship/PR) or employer",
+    "Keep original certificate permanently safe"
+  ]
+}

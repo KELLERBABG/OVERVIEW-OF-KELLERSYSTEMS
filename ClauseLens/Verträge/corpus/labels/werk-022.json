@@ -1,0 +1,88 @@
+{
+  "slug": "werk-022",
+  "source": "generated",
+  "domain": "Tourismus, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Der Anbieter ist berechtigt, den Kunden als Referenz zu nennen.",
+      "expectedType": "marketing_reference",
+      "note": "Verifizierte Klausel im Bereich marketing_reference."
+    },
+    {
+      "marker": "Der Kunde verzichtet auf einen Ausgleich oder eine Entschädigung.",
+      "expectedType": "agency_goodwill_waiver",
+      "note": "Verifizierte Klausel im Bereich agency_goodwill_waiver."
+    },
+    {
+      "marker": "Die Vertragslaufzeit erneuert sich um jeweils zwölf Monate, sofern nicht drei Monate vorher gekündig",
+      "expectedType": "auto_renewal",
+      "note": "Verifizierte Klausel im Bereich auto_renewal."
+    },
+    {
+      "marker": "In no event shall the provider be liable for lost profits or indirect damages.",
+      "expectedType": "liability",
+      "note": "Verifizierte Klausel im Bereich liability."
+    },
+    {
+      "marker": "Der Kunde räumt dem Anbieter ein unwiderrufliches, weltweites und übertragbares Nutzungsrecht an den",
+      "expectedType": "data_grant",
+      "note": "Verifizierte Klausel im Bereich data_grant."
+    },
+    {
+      "marker": "Änderungen bedürfen der Schriftform; die Textform ist ausgeschlossen.",
+      "expectedType": "written_form_trap",
+      "note": "Verifizierte Klausel im Bereich written_form_trap."
+    },
+    {
+      "marker": "Der Export erfolgt ausschließlich im herstellereigenen Binärformat.",
+      "expectedType": "data_lockin",
+      "note": "Verifizierte Klausel im Bereich data_lockin."
+    },
+    {
+      "marker": "Bei einem Insolvenzantrag endet der Vertrag automatisch, ohne dass es einer Kündigung bedarf.",
+      "expectedType": "insolvency_termination",
+      "note": "Verifizierte Klausel im Bereich insolvency_termination."
+    },
+    {
+      "marker": "Für eine vorzeitige Kündigung wird eine pauschale Stornogebühr berechnet.",
+      "expectedType": "early_termination_charge",
+      "note": "Verifizierte Klausel im Bereich early_termination_charge."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Änderungen dieses Vertrages können in Textform vereinbart werden.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Prüfungen erfolgen nur bei konkretem Anlass und nach Ankündigung mit einer Frist von dreißig Tagen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Dieser Vertrag unterliegt deutschem Recht.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Beide Parteien können mit unbestrittenen Forderungen aufrechnen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Alle Fristen werden in Kalendertagen gerechnet.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Für Mängel während der Gewährleistung leistet der Anbieter kostenfrei Nacherfüllung.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Der Anbieter meldet Sicherheitsvorfälle unverzüglich an den Kunden.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Anbieter stellt die Anwendung ab dem vereinbarten Bereitstellungstermin zur Verfügung",
+      "note": "Terminzusage."
+    }
+  ]
+}

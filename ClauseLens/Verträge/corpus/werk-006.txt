@@ -1,0 +1,83 @@
+Rahmenvertrag über die Migration und den Betrieb der Logistiksysteme der Crane Logistics AG
+
+zwischen der Delta Flow Services GmbH, Elbufer 12, 01067 Dresden (nachfolgend Anbieter), und der Crane Logistics AG, Hafenkai 30, 28217 Bremen (nachfolgend Kunde).
+
+Präambel
+Der Kunde übernimmt seine Logistiksysteme in eine neue Betriebsumgebung. Der Anbieter migriert und betreibt die Systeme langfristig. Die Parteien vereinbaren Folgendes.
+
+§ 1 Gegenstand
+Gegenstand ist die Migration der Logistiksysteme gemäß Anlage 1 sowie deren anschließender Betrieb.
+
+§ 2 Leistungsbeschreibung
+(1) Der Anbieter erbringt die Leistungen gemäß Anlage 1.
+
+(2) Der Kunde benennt einen Projektleiter als Ansprechpartner.
+
+§ 3 Anpassungen
+(1) Der Anbieter behält sich vor, die Leistungsbeschreibung mit Wirkung für laufende Projekte einseitig anzupassen.
+
+(2) Änderungen dieses Vertrages können in Textform vereinbart werden.
+
+§ 4 Nutzungsrechte
+(1) Telemetriedaten der Anwendung darf der Anbieter kommerziell verwerten.
+
+(2) Der Kunde erhält ein einfaches Nutzungsrecht an der Dokumentation.
+
+§ 5 Zusammenarbeit
+(1) Der Anbieter ist berechtigt, zur Erfüllung Subunternehmer einzusetzen, ohne dies vorher anzuzeigen.
+
+(2) Die Parteien arbeiten bei der Fehleranalyse eng zusammen.
+
+§ 6 Laufzeit und Kündigung
+(1) Ein ordentliches Kündigungsrecht des Kunden ist ausgeschlossen.
+
+(2) Das Recht zur Kündigung aus wichtigem Grund ist für den Kunden ausgeschlossen.
+
+(3) Für eine vorzeitige Kündigung wird eine pauschale Stornogebühr berechnet.
+
+§ 7 Wettbewerb
+(1) Der Kunde betreibt für die Dauer von zwölf Monaten nach Beendigung des Vertrages kein vergleichbares System.
+
+(2) Eine Karenzentschädigung wird nicht gezahlt.
+
+§ 8 Haftung
+(1) Für Handlungen von Erfüllungsgehilfen haftet der Anbieter nur bei Auswahlverschulden.
+
+(2) Der Anbieter unterhält eine Berufshaftpflichtversicherung mit einer Deckungssumme von zwei Millionen EUR.
+
+§ 9 Vertraulichkeit
+(1) The customer shall keep all information confidential; the provider assumes no confidentiality obligation.
+
+(2) Die Geheimhaltungspflicht gilt zeitlich unbeschränkt fort.
+
+§ 10 Anregungen
+(1) Der Anbieter darf Anregungen und Vorschläge ohne Vergütung verwerten.
+
+(2) Der Anbieter dokumentiert die Änderungen im Änderungsprotokoll.
+
+§ 11 Vergütung
+(1) Die Vergütung ist innerhalb von dreißig Tagen nach Rechnungseingang fällig.
+
+(2) Jede Partei trägt ihre eigenen Kosten aus der Vertragsverhandlung.
+
+§ 12 Abnahme
+(1) Die Abnahme erfolgt je Welle durch ein Abnahmeprotokoll.
+
+(2) Für Mängel während der Gewährleistung leistet der Anbieter kostenfrei Nacherfüllung.
+
+§ 13 Schlussbestimmungen
+(1) Die Kündigung aus wichtigem Grund bleibt beiden Parteien unbenommen.
+
+(2) Alle Fristen werden in Kalendertagen gerechnet.
+
+(3) Die Parteien behandeln die Vertragsverhandlung vertraulich.
+
+Anlage 1: Leistungsbeschreibung
+
+Anlage 2: Betriebsstandorte
+
+Dresden, den 27. Februar 2026
+
+Delta Flow Services GmbH
+
+Crane Logistics AG

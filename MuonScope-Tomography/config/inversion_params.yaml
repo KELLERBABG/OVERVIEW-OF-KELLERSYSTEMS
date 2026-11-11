@@ -1,0 +1,45 @@
+# ==============================================================================
+# MuonScope Tomography - 3D Inversion & Optimization Parameters
+# ==============================================================================
+
+volume:
+  grid_size: [128, 128, 128]     # [Nx, Ny, Nz] voxel resolution
+  physical_bounds_mm:
+    x_min: -250.0
+    x_max: 250.0
+    y_min: -250.0
+    y_max: 250.0
+    z_min: -200.0
+    z_max: 200.0
+
+poca:
+  min_scattering_angle_mrad: 1.0  # Cutoff below which events are treated as unscattered
+  max_miss_distance_mm: 50.0      # Maximum Euclidean distance between rays at PoCA
+  weight_by_momentum: true
+  deposit_kernel: "trilinear"     # "nearest", "trilinear", or "gaussian"
+  kernel_sigma_voxels: 1.0
+
+map_em:
+  max_iterations: 100
+  convergence_tolerance: 1.0e-5
+  regularization:
+    type: "huber"                 # "huber", "total_variation", or "tikhonov"
+    beta: 0.05                    # Regularization weight
+    huber_delta: 0.01             # Huber loss threshold parameter δ
+    tv_epsilon: 1.0e-6            # TV smoothing parameter
+  non_negativity: true
+  acceleration:
+    gpu_enabled: true
+    precision: "float32"          # "float32" or "float64"
+    batch_size_rays: 50000
+
+joint_inversion:
+  enabled: false
+  gravimetry_weight_beta: 0.2
+  muon_weight_alpha: 1.0
+
+bim_export:
+  void_threshold_density: 0.15    # g/cm^3
+  rebar_threshold_density: 5.5    # g/cm^3
+  dense_inclusion_threshold: 9.0  # g/cm^3
+  iso_surface_step_size: 1

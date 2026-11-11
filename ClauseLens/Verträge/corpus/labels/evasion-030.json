@@ -1,0 +1,79 @@
+{
+  "slug": "evasion-030",
+  "source": "generated",
+  "domain": "evasion",
+  "traps": [
+    {
+      "marker": "An die Stel‍le der unwi‍rksamen Best‍immung tritt diej‍enige, die den Part‍eien wirt‍schaftlich am",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: salvatorische_klausel_falle (Technik: zwj)."
+    },
+    {
+      "marker": "Der Eige‍ntumsvorbehalt erst‍reckt sich auch auf Waren, die bere‍its voll‍ständig beza‍hlt sind.",
+      "expectedType": "extended_retention_of_title",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: extended_retention_of_title (Technik: zwj)."
+    },
+    {
+      "marker": "Der Eins‍atz von Unte‍rauftragnehmern beda‍rf kein‍er Zust‍immung des Kund‍en und ist nicht",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: subcontractor_uncontrolled (Technik: zwj)."
+    },
+    {
+      "marker": "Der Kunde unte‍rwirft sich der absc‍hließenden Fest‍stellung des Anbi‍eters.",
+      "expectedType": "audit_log_manipulation",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: audit_log_manipulation (Technik: zwj)."
+    },
+    {
+      "marker": "Bei Zahl‍ungsverzug kann der Anbi‍eter die Leis‍tung sofo‍rt eins‍tellen, die Verg‍ütung ist",
+      "expectedType": "service_suspension",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: service_suspension (Technik: zwj)."
+    },
+    {
+      "marker": "Bei Eröf‍fnung des Inso‍lvenzverfahrens über das Verm‍ögen des Kund‍en ist der Anbi‍eter zur",
+      "expectedType": "insolvency_termination",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: insolvency_termination (Technik: zwj)."
+    },
+    {
+      "marker": "Der Kunde stel‍lt den Anbi‍eter von allen Steu‍ernachforderungen frei, unab‍hängig davon, ob den",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: tax_indemnity_shift (Technik: zwj)."
+    },
+    {
+      "marker": "Die Gehe‍imhaltungspflicht trif‍ft nur den Kund‍en, der Anbi‍eter darf Info‍rmationen über den",
+      "expectedType": "asymmetric_confidentiality",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: asymmetric_confidentiality (Technik: zwj)."
+    },
+    {
+      "marker": "Eine Gewä‍hrleistung für die Funk‍tionsfähigkeit der Soft‍ware ist ausg‍eschlossen, ein Ansp‍ruch",
+      "expectedType": "as_is_software_disclaimer",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: as_is_software_disclaimer (Technik: zwj)."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Haftung beider Parteien richtet sich nach den gesetzlichen Bestimmungen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Jede Partei trägt ihre eigenen Kosten der Vertragsverhandlungen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde ist berechtigt, Rechte aus diesem Vertrag mit Zustimmung des Anbieters auf verbundene",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Für die Nutzung der bereitgestellten Software gilt die beigefügte Leistungsbeschreibung.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Ansprüche aus diesem Vertrag verjähren nach den gesetzlichen Vorschriften.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde trägt die Kosten für die von ihm gewünschten Zusatzleistungen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    }
+  ],
+  "uncovered": []
+}

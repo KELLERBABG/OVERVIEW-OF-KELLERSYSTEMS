@@ -1,0 +1,62 @@
+[
+  {
+    "crate": "panic_sites",
+    "function": "asserted_equal",
+    "block": "bb5",
+    "status": "WARN",
+    "kind": "unmodelled-panic",
+    "file": "src/main.rs",
+    "line": 78,
+    "details": "Unmodelled panic site: the analysis assumed this assertion holds; the panic the call to `core::panicking::assert_failed::<u8, u8>` raises when it does not is not modelled."
+  },
+  {
+    "crate": "panic_sites",
+    "function": "expected",
+    "block": "bb0",
+    "status": "WARN",
+    "kind": "unmodelled-panic",
+    "file": "src/main.rs",
+    "line": 43,
+    "details": "Unmodelled panic site: the call to `std::result::Result::<u8, u8>::expect` panics when it has no value to return, and its body is not read by this analysis, so whether this site can panic was not decided."
+  },
+  {
+    "crate": "panic_sites",
+    "function": "explicit_program_panic",
+    "block": "bb2",
+    "status": "WARN",
+    "kind": "unmodelled-panic",
+    "file": "src/main.rs",
+    "line": 49,
+    "details": "Unmodelled panic site: the call to `std::rt::panic_fmt` can panic, and its body is not read by this analysis, so whether this site can panic was not decided."
+  },
+  {
+    "crate": "panic_sites",
+    "function": "guarded_by_assert",
+    "block": "bb2",
+    "status": "WARN",
+    "kind": "unmodelled-panic",
+    "file": "src/main.rs",
+    "line": 68,
+    "details": "Unmodelled panic site: the call to `core::panicking::panic` can panic, and its body is not read by this analysis, so whether this site can panic was not decided."
+  },
+  {
+    "crate": "panic_sites",
+    "function": "never_reached",
+    "block": "bb3",
+    "status": "WARN",
+    "kind": "unmodelled-panic",
+    "file": "src/main.rs",
+    "line": 58,
+    "details": "Unmodelled panic site: the call to `std::rt::panic_fmt` can panic, and its body is not read by this analysis, so whether this site can panic was not decided."
+  },
+  {
+    "crate": "panic_sites",
+    "function": "unwrapped",
+    "block": "bb0",
+    "status": "WARN",
+    "kind": "unmodelled-panic",
+    "file": "src/main.rs",
+    "line": 38,
+    "details": "Unmodelled panic site: the call to `std::option::Option::<u8>::unwrap` panics when it has no value to return, and its body is not read by this analysis, so whether this site can panic was not decided."
+  }
+]

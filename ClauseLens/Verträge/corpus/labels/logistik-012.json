@@ -1,0 +1,85 @@
+{
+  "slug": "logistik-012",
+  "source": "generated",
+  "domain": "Internationaler Straßentransport CMR",
+  "traps": [
+    {
+      "marker": "Haftung des Auftragnehmers ist der Höhe nach auf fünfzig Prozent",
+      "expectedType": "liability",
+      "note": "Red-team Klausel: liability"
+    },
+    {
+      "marker": "haftet für Unterauftragnehmer nur bei eigenem Auswahlverschulden",
+      "expectedType": "vicarious_agents",
+      "note": "Red-team Klausel: vicarious_agents"
+    },
+    {
+      "marker": "governed by the laws of Switzerland",
+      "expectedType": "jurisdiction",
+      "note": "Red-team Klausel: jurisdiction"
+    },
+    {
+      "marker": "ohne dass sich die Vergütungspflicht des Kunden ändert",
+      "expectedType": "force_majeure_asymmetry",
+      "note": "Red-team Klausel: force_majeure_asymmetry"
+    },
+    {
+      "marker": "stellt den Auftragnehmer von sämtlichen Ansprüchen Dritter frei",
+      "expectedType": "third_party_indemnity",
+      "note": "Red-team Klausel: third_party_indemnity"
+    },
+    {
+      "marker": "Abtretung von Forderungen bedarf der vorherigen schriftlichen Zustimmung",
+      "expectedType": "assignment_restriction",
+      "note": "Red-team Klausel: assignment_restriction"
+    },
+    {
+      "marker": "Zinsen werden mit zwölf Prozentpunkten über dem Basiszinssatz berechnet",
+      "expectedType": "default_interest",
+      "note": "Red-team Klausel: default_interest"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "stimmen die Abholtermine wöchentlich ab",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "für die Beförderung geeignete Fahrzeuge ein.",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "benennt die eingesetzten Unterauftragnehmer im Frachtbrief",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "schließen die Anwendung des UN-Kaufrechts nicht aus.",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "informiert den Kunden unverzüglich über das Hindernis",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "unterrichtet den Kunden über geltend gemachte Ansprüche",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "innerhalb von 30 Tagen ohne Abzug zahlbar",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Beide Parteien behandeln die Frachtdaten vertraulich",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "seine Sendungsdaten jederzeit in einem gängigen Format exportieren",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

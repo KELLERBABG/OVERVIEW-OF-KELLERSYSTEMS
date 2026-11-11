@@ -1,0 +1,13 @@
+[package]
+name = "city-brp"
+description = "Blind Randomization Protocol: identity-less service access via Schnorr proofs"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+city-types = { workspace = true }
+city-crypto = { workspace = true }
+city-caps = { workspace = true }
+city-ipc = { workspace = true }

@@ -1,0 +1,87 @@
+{
+  "slug": "finanz-024",
+  "source": "generated",
+  "domain": "Factoring",
+  "traps": [
+    {
+      "marker": "die Rechte und Pflichten ohne Zustimmung des Kunden auf einen Dritten übertragen",
+      "expectedType": "asymmetric_termination",
+      "note": "Paraphrase/Umstellung: nennt 'die Rechte und Pflichten ohne Zustimmung des ' statt der Registerwendung."
+    },
+    {
+      "marker": "Jede Zession der Vergütungsansprüche bedarf der vorherigen Zustimmung",
+      "expectedType": "assignment_restriction",
+      "note": "Paraphrase/Umstellung: nennt 'Jede Zession der Vergütungsansprüche bedarf d' statt der Registerwendung."
+    },
+    {
+      "marker": "Ein Recht zur Vertragsauflösung besteht für den Kunden bei Betriebsstörungen nicht",
+      "expectedType": "force_majeure_asymmetry",
+      "note": "Paraphrase/Umstellung: nennt 'Ein Recht zur Vertragsauflösung besteht für d' statt der Registerwendung."
+    },
+    {
+      "marker": "achtzehn Monaten nach Beendigung keine Mitarbeiter der Bank abzuwerben",
+      "expectedType": "non_solicitation",
+      "note": "Paraphrase/Umstellung: nennt 'achtzehn Monaten nach Beendigung keine Mitarb' statt der Registerwendung."
+    },
+    {
+      "marker": "Der Kunde ist für die Dauer der Grundlaufzeit an die Konditionen gebunden",
+      "expectedType": "unilateral_convenience_termination",
+      "note": "Paraphrase/Umstellung: nennt 'Der Kunde ist für die Dauer der Grundlaufzeit' statt der Registerwendung."
+    },
+    {
+      "marker": "Bestimmungen zu Abrechnung und Sicherheiten entfalten auch nach Vertragsende Nachwirkung",
+      "expectedType": "excessive_survival",
+      "note": "Paraphrase/Umstellung: nennt 'Bestimmungen zu Abrechnung und Sicherheiten e' statt der Registerwendung."
+    },
+    {
+      "marker": "behält sich vor, die Vergütung nach billigem Ermessen anzupassen",
+      "expectedType": "price_escalation",
+      "note": "Paraphrase/Umstellung: nennt 'behält sich vor, die Vergütung nach billigem ' statt der Registerwendung."
+    },
+    {
+      "marker": "Unwirksame Regelungen werden durch eine interessengerechte Ersatzregelung ersetzt",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "Paraphrase/Umstellung: nennt 'Unwirksame Regelungen werden durch eine inter' statt der Registerwendung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "dieselben Datenschutzstandards einhalten",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "bleibt beiden Parteien unbenommen.",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "alle vertraulichen Informationen der jeweils anderen Seite",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "innerhalb von dreißig Tagen nach Zugang ohne Abzug",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "können in Textform, insbesondere per E-Mail, vereinbart werden",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "aus wichtigem Grund jederzeit fristlos beenden",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "binnen zwei Werktagen nach Eingang auf dem Geschäftskonto",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "führen Gespräche auf Leitungsebene.",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "keine Vorfälligkeitsentschädigung.",
+      "note": "Täuschende Klausel ohne passenden Detektortyp."
+    }
+  ]
+}

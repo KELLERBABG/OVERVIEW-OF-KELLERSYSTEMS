@@ -1,0 +1,103 @@
+{
+  "slug": "einkauf-013",
+  "source": "generated",
+  "domain": "Einkauf und Lieferantenrahmenvertrag, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Bei Überschreitung des vereinbarten Liefertermins wird eine Pauschale von 2 Prozent",
+      "expectedType": "penalty",
+      "note": "Pauschale als Prozentwert ohne das Registerwort Vertragsstrafe"
+    },
+    {
+      "marker": "Gelingt dem Besteller der Gegenbeweis nicht",
+      "expectedType": "burden_of_proof",
+      "note": "Beweislastumkehr im Nebensatz"
+    },
+    {
+      "marker": "Sachmängelansprüche erlöschen neun Monate nach Abnahme",
+      "expectedType": "statute_of_limitations",
+      "note": "Abgekuerzte Verjaehrung als Zahlwort"
+    },
+    {
+      "marker": "setzt sich jeweils um vierundzwanzig Monate fort",
+      "expectedType": "auto_renewal",
+      "note": "Automatische Verlaengerung ohne die Registerfloskel"
+    },
+    {
+      "marker": "Einstandspflicht des Lieferanten für mittelbare Schäden wird nicht übernommen",
+      "expectedType": "liability",
+      "note": "Freizeichnung ohne das Wort Haftung"
+    },
+    {
+      "marker": "kann die Leistung ohne Vorwarnung aussetzen",
+      "expectedType": "service_suspension",
+      "note": "Leistungssperre ohne Vorwarnung"
+    },
+    {
+      "marker": "mit einer Frist von sechzig Tagen beenden, ohne Gründe zu nennen",
+      "expectedType": "unilateral_convenience_termination",
+      "note": "Einseitige Beendigung ohne Grund"
+    },
+    {
+      "marker": "ist berechtigt, für Teilleistungen Nachunternehmen einzusetzen",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "Unkontrollierter Unterauftragnehmereinsatz"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Lieferant stellt die Prüfprotokolle in Textform bereit",
+      "note": "Bereitstellung in Textform"
+    },
+    {
+      "marker": "Der Lieferant hält für jeden Abruf eine Sicherheitsreserve von zwei Prozent vor",
+      "note": "Sicherheitsreserve ohne Sanktion"
+    },
+    {
+      "marker": "Bei berechtigter Rüge bessert der Lieferant innerhalb von zehn Werktagen nach",
+      "note": "Nachbesserungspflicht"
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag einvernehmlich beenden",
+      "note": "Einvernehmliche Beendigung"
+    },
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Zulaessige Haftungsklausel"
+    },
+    {
+      "marker": "Nach Wegfall des Rückstands nimmt der Auftragnehmer die Leistung unverzüglich wieder auf",
+      "note": "Wiederaufnahme der Leistung"
+    },
+    {
+      "marker": "Nach Beendigung rechnet der Auftragnehmer über bereits abgerufene Mengen ab",
+      "note": "Schlussabrechnung ohne Nachteile"
+    },
+    {
+      "marker": "Der Einsatz von Nachunternehmen wird dem Besteller spätestens vierzehn Tage vorher angezeigt",
+      "note": "Anzeigepflicht statt unkontrolliertem Einsatz"
+    },
+    {
+      "marker": "Rechnungen sind innerhalb von dreißig Tagen ohne Abzug zu begleichen",
+      "note": "Marktueblicher Zahlungstermin"
+    },
+    {
+      "marker": "Änderungen dieses Vertrags bedürfen der Zustimmung beider Parteien in Textform",
+      "note": "Symmetrische Aenderungsklausel"
+    },
+    {
+      "marker": "Es gilt das Recht der Bundesrepublik Deutschland",
+      "note": "Neutrale Rechtswahl"
+    },
+    {
+      "marker": "Beide Parteien behandeln die Zeichnungen der anderen Seite vertraulich",
+      "note": "Wechselseitige Vertraulichkeit"
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Die Parteien benennen jeweils einen technischen Ansprechpartner",
+      "note": "Benennung von Ansprechpartnern ohne Pflichten, kein Detektor"
+    }
+  ]
+}

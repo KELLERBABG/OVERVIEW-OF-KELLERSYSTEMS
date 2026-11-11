@@ -1,0 +1,78 @@
+# FHE-DB build configuration (this machine).
+#
+# Why target-dir is here:
+#   1. The workspace path contains a space (`...\SYSTEMS & CREATIONS\FHE-DB`).
+#      rustc's raw-dylib import-lib generation for the windows-gnu target
+#      invokes GNU `dlltool`/`as`, and `as` splits its temp-file argument at
+#      the space ("can't create C:\Users\INTAL: Permission denied").
+#   2. The MSVC toolchain cannot link on this machine at all: the Windows SDK
+#      `Lib` tree is not installed (no kernel32.lib / dbghelp.lib). The
+#      self-contained `x86_64-pc-windows-gnu` toolchain is therefore the
+#      default (set via `rustup default nightly-x86_64-pc-windows-gnu`), and
+#      GNU `dlltool`+`as` live in `~/.cargo/bin` (already on PATH).
+#
+# A space-free target dir keeps every documented cargo command working.
+# ---------------------------------------------------------------------------
+# Windows GNU toolchain runtime note (2026-08-05):
+#
+# The MSYS2 binutils in `~/.cargo/bin` (dlltool.exe, as.exe, ld.exe, ...)
+# are the ones rustc invokes for raw-dylib import-lib generation. They link
+# against mingw `libintl-8.dll`, which in turn requires `libiconv-2.dll`.
+# That DLL was missing from `~/.cargo/bin`, so every GNU tool crashed at
+# launch with STATUS_DLL_NOT_FOUND (0xC0000135). rustc then reported:
+#
+#   failed to add native library .../kernel32.dll_imports.lib:
+#   Das System kann die angegebene Datei nicht finden. (os error 2)
+#
+# because dlltool died before creating the import library.
+#
+# Fix (already applied): copy a compatible `libiconv-2.dll` into `~/.cargo/bin`.
+# The copy from `C:\Program Files\Git\mingw64\bin\libiconv-2.dll` depends only
+# on system KERNEL32/msvcrt, so it is fully self-contained. If the DLL ever
+# disappears again (e.g. rustup recreating `~/.cargo/bin`), re-copy it:
+#
+#   copy "C:\Program Files\Git\mingw64\bin\libiconv-2.dll" "%USERPROFILE%\.cargo\bin\"
+#
+# Do NOT switch to the rustup `self-contained` binutils (`...\bin\self-contained\`
+# dlltool.exe/ld.exe) — they lack the `--as-flags=...`/import-lib plumbing rustc
+# relies on, and the MSYS2 2.43.1 build in `~/.cargo/bin` is the one AGENTS.md pins.
+#
+# ---------------------------------------------------------------------------
+# PE export-table note (2026-08-05):
+#
+# `tfhe` 1.7.0 declares `crate-type = ["lib", "staticlib", "cdylib"]`, so cargo
+# must build its cdylib as a PE DLL. That DLL exports 165,566 symbols — beyond
+# the PE/COFF export-table cap of 65,535 ordinals — so NO Windows linker (GNU
+# ld.bfd nor LLVM lld) can produce it:
+#
+#   ld: error: export ordinal too large: 165566
+#   rust-lld: error: too many exported symbols (got 165566, max 65535)
+#
+# The permanent fix is in the workspace manifest, not here: `vendor/tfhe`
+# ships the exact 1.7.0 source with `crate-type = ["lib"]`, wired via
+# `[patch.crates-io] tfhe = { path = "vendor/tfhe" }`. The workspace links
+# `tfhe` as an rlib only, so the impossible cdylib artifact is never built.
+#
+# `rust-lld` remains configured below as the PE/COFF linker (TFHE-rs's
+# documented recommendation on windows-gnu; the full workspace build was
+# verified green with it). `link-self-contained=yes` keeps the bundled mingw
+# CRT objects/import libraries on the search path, mirroring the default
+# windows-gnu `-nostartfiles` + `self-contained\dllcrt2.o` handling.
+[target.x86_64-pc-windows-gnu]
+linker = "rust-lld"
+rustflags = ["-C", "link-self-contained=yes"]
+# rustdoc doctests do NOT receive `[target.*].rustflags` (cargo passes only
+# `rustdocflags` to rustdoc), so runnable doc examples were linking without
+# `link-self-contained=yes` and rust-lld could not find the mingw/system
+# import libs (`-lbcrypt`, `-lkernel32`, ...) in the rustdoc temp dir:
+#
+#   lld: error: unable to find library -lbcrypt
+#   lld: error: unable to find library -lkernel32 ...
+#   error: doctest failed (Encryptor example, encrypt.rs)
+#
+# Mirroring the flag here keeps doc tests on the same self-contained
+# CRT/import-lib search path as normal builds.
+rustdocflags = ["-C", "link-self-contained=yes"]
+
+[build]
+target-dir = "C:/fhe-target"

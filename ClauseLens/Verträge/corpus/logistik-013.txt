@@ -1,0 +1,61 @@
+Multimodaler Transport- und Lagervertrag
+zwischen
+CargoFlow Multimodal GmbH, Stromkai 25, 20457 Hamburg (nachfolgend Anbieter)
+und
+Baltic Trade GmbH, Kaufmannsstraße 8, 23552 Lübeck (nachfolgend Kunde)
+
+§ 1 Vertragsgegenstand
+
+1.1 Der Anbieter organisiert für den Kunden multimodale Transporte über Seehafen, Schiene und Straße.
+
+1.2 Die Parteien stimmen die Verkehre monatlich ab.
+
+1.3 Der Anbieter erstellt für jede Sendung ein Transportdokument.
+
+§ 2 Eigentumsvorbehalt
+
+2.1 Das Eigentum an der Ware bleibt bis zum vollständigen Ausgleich sämtlicher Forderungen aus der gesamten Geschäftsbeziehung beim Anbieter.
+
+2.2 Der Kunde versichert die Ware während des Transports.
+
+§ 3 Rechtswahl
+
+3.1 This Agreement shall be governed by the laws of the Netherlands.
+
+3.2 Die Parteien verständigen sich bei Streitigkeiten zunächst gütlich.
+
+§ 4 Steuern und Abgaben
+
+4.1 Nachträgliche Abgabenbelastungen trägt der Kunde.
+
+4.2 Der Anbieter unterstützt den Kunden bei der Erstellung der Zolldokumente.
+
+§ 5 Sperrung
+
+5.1 Der Anbieter ist berechtigt, die Leistung ohne Vorankündigung einzustellen.
+
+5.2 Die Vergütung ist während der Sperre unverändert zu entrichten.
+
+5.3 Der Anbieter informiert den Kunden unverzüglich über den Grund der Sperre.
+
+§ 6 Bedingungen und Daten
+
+6.1 Es gelten die jeweils aktuellen Transportbedingungen unter https://www.cargoflow.de/bedingungen.
+
+6.2 The Customer grants the Provider a perpetual, irrevocable, worldwide, royalty-free license to use the telemetry data.
+
+6.3 Beide Parteien behandeln die Transportdaten vertraulich.
+
+§ 7 Vergütung
+
+7.1 Rechnungen sind innerhalb von 30 Tagen ohne Abzug zahlbar.
+
+7.2 Die Vergütung richtet sich nach der Anlage 2.
+
+§ 8 Schlussbestimmungen
+
+8.1 Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt.
+
+8.2 Die gesetzlichen Rechte beider Parteien zur außerordentlichen Kündigung aus wichtigem Grund bleiben unberührt.
+
+8.3 Der Kunde kann seine Sendungsdaten jederzeit in einem gängigen Format exportieren.

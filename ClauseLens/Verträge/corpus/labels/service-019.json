@@ -1,0 +1,92 @@
+{
+  "slug": "service-019",
+  "source": "generated",
+  "domain": "SLA und Support",
+  "traps": [
+    {
+      "marker": "Rechte des Kunden aus diesem Vertrag können nur mit Billigung des Anbieters auf Dritte übergehen.",
+      "expectedType": "assignment_restriction",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: passive paraphrase with approval instead of consent"
+    },
+    {
+      "marker": "Ereignisse außerhalb des Einflussbereichs des Anbieters verlängern dessen Fristen; Zahlungspflichten",
+      "expectedType": "force_majeure_asymmetry",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: events outside the provider's control extend its deadlines while payment duties continue"
+    },
+    {
+      "marker": "Innerhalb von sechsunddreißig Monaten nach Beendigung darf der Kunde weder Mitarbeiter noch",
+      "expectedType": "non_solicitation",
+      "note": "Legally abusive (§ 307 BGB); engine hit; technique: number words and scope extended to intermediaries"
+    },
+    {
+      "marker": "Der Anbieter darf die Zusammenarbeit beenden, wenn er sie für nicht mehr wirtschaftlich hält;",
+      "expectedType": "unilateral_convenience_termination",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: soft paraphrase: economic discretion and no compensation"
+    },
+    {
+      "marker": "Vertraulichkeit und Wettbewerbsschutz bestehen noch fünfzehn Jahre nach dem letzten Leistungstag",
+      "expectedType": "excessive_survival",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: survival in number words for two obligation groups"
+    },
+    {
+      "marker": "Steigen die Kosten des Anbieters, gibt er die Erhöhung vollumfänglich weiter; eine Obergrenze ist",
+      "expectedType": "price_escalation",
+      "note": "GAP: engine miss. Legally abusive (§ 309 Nr. 1 BGB); technique: paraphrase: full pass-through without any cap"
+    },
+    {
+      "marker": "Unwirksame Klauseln werden durch eine Regelung ersetzt, die der Anbieter für wirtschaftlich",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "GAP: engine miss. Legally abusive (§ 306 BGB); technique: soft paraphrase of the replacement rule"
+    },
+    {
+      "marker": "Der Anbieter darf den Kunden als Referenzkunden benennen und das Logo zu Werbezwecken verwenden.",
+      "expectedType": "marketing_reference",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: literal reference naming and logo use permitted"
+    },
+    {
+      "marker": "Alle Rückmeldungen und Verbesserungsvorschläge des Kunden gehen unentgeltlich in das Eigentum des",
+      "expectedType": "feedback_ip_grab",
+      "note": "Legally abusive (§ 307 BGB); engine hit; technique: literal transfer of all feedback and suggestions"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Jede Partei kann den Vertrag aus wichtigem Grund ohne Einhaltung einer Frist kündigen.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Der Anbieter unterhält eine Betriebshaftpflichtversicherung mit einer Deckungssumme von fünf",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Der Kunde erhält auf Wunsch eine Kopie der über ihn gespeicherten Daten.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Preisanpassungen erfolgen nur mit Zustimmung des Kunden oder bei Änderung gesetzlicher Abgaben.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Der Anbieter teilt beabsichtigte Preisanpassungen mindestens sechs Wochen vorher mit.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Die Parteien benennen jeweils einen Ansprechpartner und informieren unverzüglich über einen Wechsel.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich und verwenden sie",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Die Einhaltung terminlicher Zusagen des Anbieters steht unter dem Vorbehalt der jederzeitigen",
+      "note": "Deceptive clause without a matching detector type (coverage gap)."
+    },
+    {
+      "marker": "Der Kunde trägt Aufwendungen für Reisen, Unterkunft und Schulungen auch dann, wenn der Termin nicht ",
+      "note": "Deceptive clause without a matching detector type (coverage gap)."
+    }
+  ]
+}

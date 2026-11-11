@@ -1,0 +1,88 @@
+{
+  "slug": "werk-026",
+  "source": "generated",
+  "domain": "Bildungsträger, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Verfügbarkeitsangaben sind unverbindlich und begründen keine Ansprüche.",
+      "expectedType": "unverbindliche_sla_falle",
+      "note": "Verifizierte Klausel im Bereich unverbindliche_sla_falle."
+    },
+    {
+      "marker": "Bei vorzeitiger Beendigung durch den Kunden wird eine pauschale Abstandszahlung von drei Monatsraten",
+      "expectedType": "early_termination_charge",
+      "note": "Verifizierte Klausel im Bereich early_termination_charge."
+    },
+    {
+      "marker": "Die Kündigung ist mit einer Frist von vierundzwanzig Monaten zum Laufzeitende zu erklären.",
+      "expectedType": "notice_period",
+      "note": "Verifizierte Klausel im Bereich notice_period."
+    },
+    {
+      "marker": "The provider's aggregate liability shall not exceed the fees paid in the preceding six months.",
+      "expectedType": "liability",
+      "note": "Verifizierte Klausel im Bereich liability."
+    },
+    {
+      "marker": "Nach Auslaufen des Vertrages enthält sich der Kunde für achtzehn Monate jeder Wettbewerbstätigkeit;",
+      "expectedType": "non_compete",
+      "note": "Verifizierte Klausel im Bereich non_compete."
+    },
+    {
+      "marker": "Ein Zurückbehaltungsrecht des Kunden ist ausgeschlossen.",
+      "expectedType": "setoff_restriction",
+      "note": "Verifizierte Klausel im Bereich setoff_restriction."
+    },
+    {
+      "marker": "Ersatzansprüche erlöschen mit Ablauf von zwölf Monaten.",
+      "expectedType": "statute_of_limitations",
+      "note": "Verifizierte Klausel im Bereich statute_of_limitations."
+    },
+    {
+      "marker": "Klagen sind ausschließlich vor den Gerichten am Sitz des Anbieters zu erheben.",
+      "expectedType": "jurisdiction",
+      "note": "Verifizierte Klausel im Bereich jurisdiction."
+    },
+    {
+      "marker": "Für Handlungen von Unterauftragnehmern haftet der Anbieter nur bei Auswahlverschulden.",
+      "expectedType": "vicarious_agents",
+      "note": "Verifizierte Klausel im Bereich vicarious_agents."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Vertragsparteien informieren sich unverzüglich über Störungen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Der Anbieter meldet Sicherheitsvorfälle unverzüglich an den Kunden.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Vergütung ist innerhalb von dreißig Tagen nach Rechnungseingang fällig.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Beide Parteien verpflichten sich wechselseitig, die offengelegten Informationen vertraulich zu behan",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Der Anbieter zeigt den Einsatz von Unterauftragnehmern vierzehn Tage vorher an.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Der Kunde erhält zum Vertragsende einen kostenfreien Datenexport in einem gängigen Format.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Kunde erhält Zugang zu einer Testumgebung",
+      "note": "Harmlose Leistungszusage."
+    }
+  ]
+}

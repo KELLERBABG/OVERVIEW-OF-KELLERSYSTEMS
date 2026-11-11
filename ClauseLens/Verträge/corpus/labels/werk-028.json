@@ -1,0 +1,88 @@
+{
+  "slug": "werk-028",
+  "source": "generated",
+  "domain": "Agrarwirtschaft, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Der Anbieter kann den Betrieb stilllegen, falls der Wartungsvertrag ausläuft.",
+      "expectedType": "maintenance_conditional_shutdown",
+      "note": "Verifizierte Klausel im Bereich maintenance_conditional_shutdown."
+    },
+    {
+      "marker": "Schadensersatzansprüche wegen einfacher Fahrlässigkeit sind ausgeschlossen, ausgenommen Kardinalpfli",
+      "expectedType": "liability",
+      "note": "Verifizierte Klausel im Bereich liability."
+    },
+    {
+      "marker": "Nach Auslaufen des Vertrages enthält sich der Kunde für achtzehn Monate jeder Wettbewerbstätigkeit;",
+      "expectedType": "non_compete",
+      "note": "Verifizierte Klausel im Bereich non_compete."
+    },
+    {
+      "marker": "Die Ansprüche des Kunden verwirken mit Ablauf von vierundzwanzig Monaten.",
+      "expectedType": "statute_of_limitations",
+      "note": "Verifizierte Klausel im Bereich statute_of_limitations."
+    },
+    {
+      "marker": "Für die Herausgabe der Daten wird eine Gebühr von 2.500 EUR berechnet.",
+      "expectedType": "data_lockin",
+      "note": "Verifizierte Klausel im Bereich data_lockin."
+    },
+    {
+      "marker": "Es ist untersagt, Mitarbeiter der anderen Partei abzuwerben.",
+      "expectedType": "non_solicitation",
+      "note": "Verifizierte Klausel im Bereich non_solicitation."
+    },
+    {
+      "marker": "Das Material bleibt Eigentum des Anbieters, bis der Kunde alle Verbindlichkeiten aus der Geschäftsbe",
+      "expectedType": "extended_retention_of_title",
+      "note": "Verifizierte Klausel im Bereich extended_retention_of_title."
+    },
+    {
+      "marker": "Mitteilungen gelten mit Absendung als zugegangen.",
+      "expectedType": "fictitious_receipt",
+      "note": "Verifizierte Klausel im Bereich fictitious_receipt."
+    },
+    {
+      "marker": "Alle Rechte an den Ergebnissen gehen in das Alleineigentum des Anbieters über.",
+      "expectedType": "data_grant",
+      "note": "Verifizierte Klausel im Bereich data_grant."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Für Mängel während der Gewährleistung leistet der Anbieter kostenfrei Nacherfüllung.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Der Anbieter meldet Sicherheitsvorfälle unverzüglich an den Kunden.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Vertragsparteien informieren sich unverzüglich über Störungen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Parteien treffen sich monatlich zu einem Lenkungskreis.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Der Anbieter führt die Arbeiten mit der vereinbarten Sorgfalt aus.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Der Anbieter schult die Mitarbeiter des Kunden in der Anwendung.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Der Anbieter übergibt eine Dokumentation der Schnittstellen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Jede Partei trägt ihre eigenen Kosten aus der Vertragsverhandlung",
+      "note": "Neutrale Kostentragung."
+    }
+  ]
+}

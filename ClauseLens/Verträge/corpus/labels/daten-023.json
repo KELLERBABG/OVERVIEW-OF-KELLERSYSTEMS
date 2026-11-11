@@ -1,0 +1,87 @@
+{
+  "slug": "daten-023",
+  "source": "generated",
+  "domain": "Coproduktion",
+  "traps": [
+    {
+      "marker": "Im Verzugsfall erhöht sich der Entgeltzins auf 16 Prozent",
+      "expectedType": "default_interest",
+      "note": "Paraphrase/Umstellung: nennt 'Im Verzugsfall erhöht sich der Entgeltzins au' statt der Registerwendung."
+    },
+    {
+      "marker": "gelten die angepassten Konditionen als akzeptiert",
+      "expectedType": "unilateral_change",
+      "note": "Paraphrase/Umstellung: nennt 'gelten die angepassten Konditionen als akzept' statt der Registerwendung."
+    },
+    {
+      "marker": "Einbehalte sind nur mit Zustimmung des Anbieters zulässig",
+      "expectedType": "setoff_restriction",
+      "note": "Paraphrase/Umstellung: nennt 'Einbehalte sind nur mit Zustimmung des Anbiet' statt der Registerwendung."
+    },
+    {
+      "marker": "Erfolgt keine Beanstandung innerhalb von fünf Kalendertagen, verfallen",
+      "expectedType": "deemed_acceptance",
+      "note": "Paraphrase/Umstellung: nennt 'Erfolgt keine Beanstandung innerhalb von fünf' statt der Registerwendung."
+    },
+    {
+      "marker": "must be asserted within nine months of the event giving rise to it",
+      "expectedType": "statute_of_limitations",
+      "note": "Paraphrase/Umstellung: nennt 'must be asserted within nine months of the ev' statt der Registerwendung."
+    },
+    {
+      "marker": "Mündliche Nebenabreden haben keine Geltung",
+      "expectedType": "written_form_trap",
+      "note": "Paraphrase/Umstellung: nennt 'Mündliche Nebenabreden haben keine Geltung' statt der Registerwendung."
+    },
+    {
+      "marker": "Nachweis, dass der Schaden nicht auf einer Pflichtverletzung beruht, trägt der Kunde",
+      "expectedType": "burden_of_proof",
+      "note": "Paraphrase/Umstellung: nennt 'Nachweis, dass der Schaden nicht auf einer Pf' statt der Registerwendung."
+    },
+    {
+      "marker": "published at https://finance.example.com/terms and are amended from time to time",
+      "expectedType": "dynamic_url_referral",
+      "note": "Paraphrase/Umstellung: nennt 'published at https://finance.example.com/term' statt der Registerwendung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "vollständigen Export seiner Daten in einem gängigen maschinenlesbaren Format",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "führen Gespräche auf Leitungsebene.",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Protokolle stehen beiden Parteien zur Einsicht offen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "nur nach vorheriger Anzeige an den Auftraggeber einsetzen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "können in Textform, insbesondere per E-Mail, vereinbart werden",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "ohne Angabe von Gründen zum Monatsende kündigen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "einfaches, nicht ausschließliches Nutzungsrecht für den vereinbarten Zweck",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "auf den in der Präambel bezeichneten Zweck beschränkt",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Mindestabnahme von fünfhundert Datensätzen je Kalendermonat",
+      "note": "Täuschende Klausel ohne passenden Detektortyp."
+    }
+  ]
+}

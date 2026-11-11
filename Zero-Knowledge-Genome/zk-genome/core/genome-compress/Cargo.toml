@@ -1,0 +1,12 @@
+[package]
+name = "zk-genome-genome-compress"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Genomic data compression — delta-encoding, bit-packing for mobile storage"
+
+[dependencies]
+zk-genome-genome-core = { path = "../genome-core" }
+
+[lints]
+workspace = true

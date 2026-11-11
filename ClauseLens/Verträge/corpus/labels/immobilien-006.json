@@ -1,0 +1,70 @@
+{
+  "slug": "immobilien-006",
+  "source": "generated",
+  "domain": "Immobilienkauf",
+  "traps": [
+    {
+      "marker": "Das Eigentum bleibt bis zum Ausgleich aller Forderungen aus der Geschäftsbeziehung beim Verkäufer",
+      "expectedType": "extended_retention_of_title",
+      "note": "GAP: Erweiterter Eigentumsvorbehalt bis zum Ausgleich aller Forderungen."
+    },
+    {
+      "marker": "Die Erschließungsbeiträge erhöhen sich jährlich um vier Prozent",
+      "expectedType": "price_escalation",
+      "note": "GAP: Automatische Erhoehung ohne Sonderkündigungsrecht."
+    },
+    {
+      "marker": "Der Käufer stellt den Verkäufer von Ansprüchen Dritter aus Altlasten frei",
+      "expectedType": "third_party_indemnity",
+      "note": "GAP: Freistellung des Verkaeufers durch den Kaeufer."
+    },
+    {
+      "marker": "anstelle der unwirksamen Bestimmung diejenige, die dem wirtschaftlichen Erfolg am nächsten kommt",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "Ersatzregelung verdrängt die gesetzliche Regelung."
+    },
+    {
+      "marker": "behält sich vor, den Bebauungsplan einseitig anzupassen",
+      "expectedType": "unilateral_change",
+      "note": "Einseitige Aenderungsbefugnis des Verkaeufers."
+    },
+    {
+      "marker": "Dieser Vertrag enthält alle Vereinbarungen und ersetzt frühere Abreden vollständig",
+      "expectedType": "entire_agreement",
+      "note": "Vollstaendigkeitsklausel entwertet fruehere Abreden."
+    },
+    {
+      "marker": "ausschließlich das Gericht am Sitz des Verkäufers zuständig",
+      "expectedType": "jurisdiction",
+      "note": "Gerichtsstand am Sitz des Verkaeufers."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "Symmetrische Vertraulichkeit."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform zugelassen."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhalt."
+    },
+    {
+      "marker": "Zahlungen sind innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Zahlungsfrist."
+    },
+    {
+      "marker": "Änderungen des Leistungsumfangs bedürfen der Abstimmung beider Parteien",
+      "note": "Einvernehmliche Aenderung."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Verkäufer verkauft dem Käufer die Grundstücke Flurstück 118/4 und 119/2",
+      "note": "Kein Detektor fuer Erschliessungskosten oder Baulastuebernahme."
+    }
+  ]
+}

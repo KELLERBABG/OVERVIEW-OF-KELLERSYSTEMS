@@ -1,0 +1,74 @@
+{
+  "slug": "marketing-030",
+  "source": "generated",
+  "domain": "Social Listening und Medienanalyse, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Analysedaten zeitlich und räumlich uneingeschränkt nutzen",
+      "expectedType": "data_grant",
+      "note": "Uneingeschraenktes Nutzungsrecht an Analysedaten."
+    },
+    {
+      "marker": "auf Servern in einem Drittland ausgewertet",
+      "expectedType": "international_data_processing",
+      "note": "Drittlandverarbeitung personenbezogener Daten."
+    },
+    {
+      "marker": "Ohne handschriftliche Unterzeichnung entfalten Erklärungen keine Wirkung",
+      "expectedType": "written_form_trap",
+      "note": "Schriftformzwang mit Originalunterschrift."
+    },
+    {
+      "marker": "lückenlosen Nachweis der Leistungserbringung hat der Kunde zu führen",
+      "expectedType": "burden_of_proof",
+      "note": "Beweislast beim Kunden; vermeidet Beweislast als Wort."
+    },
+    {
+      "marker": "Entfällt ein kritischer Sicherheitspatch, verfällt jeder Service-Credit",
+      "expectedType": "service_credit_forfeiture",
+      "note": "Verfall des Service-Credits."
+    },
+    {
+      "marker": "Verschwiegenheitspflicht obliegt ausschließlich dem Kunden",
+      "expectedType": "asymmetric_confidentiality",
+      "note": "Einseitige Verschwiegenheitspflicht."
+    },
+    {
+      "marker": "Nur der Anbieter ist berechtigt, ordentlich zu kündigen",
+      "expectedType": "unilateral_convenience_termination",
+      "note": "Ordentliche Kuendigung nur fuer den Anbieter."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien wahren über die wechselseitig ausgetauschten Informationen Stillschweigen",
+      "note": "Symmetrische Verschwiegenheit."
+    },
+    {
+      "marker": "erhält der Kunde die Rohdaten kostenfrei in einem offenen Format",
+      "note": "Kostenfreier Datenexport."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende beenden",
+      "note": "Symmetrische Kündigung."
+    },
+    {
+      "marker": "Für die Leistungsbeschreibung genügt die Textform, auch per E-Mail",
+      "note": "Textform ausdruecklich zugelassen."
+    },
+    {
+      "marker": "innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Üblicher Zahlungstermin."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhaltung."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Auftragnehmer wertet öffentliche Beiträge über den Kunden und seine Wettbewerber aus",
+      "note": "Kein Detektor fuer fehlende Zweckbindung bei Social-Media-Monitoring."
+    }
+  ]
+}

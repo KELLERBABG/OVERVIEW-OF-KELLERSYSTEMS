@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keller Systems | Deterministic Systems, Post-Quantum Networks, Physical Computing</title>
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#f6f1e6">
+<meta name="description" content="Independent research and systems engineering: post-quantum mesh routing, cosmic-ray tomography, deterministic flight control, zero-knowledge identity and passive water harvesting.">
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<link rel="stylesheet" href="style.css?v=9.5">
+<style>
+/* Embedded critical styling to guarantee instant render regardless of CDN cache */
+.tile { position: relative; }
+.tile.tile-focus {
+  position: relative;
+  border-color: #2ea44f !important;
+  background: #fbfdf9 !important;
+  box-shadow: inset 0 0 0 1px #2ea44f;
+}
+.tile.tile-focus:hover {
+  background: var(--ink) !important;
+  color: var(--onink) !important;
+  border-color: #3fb950 !important;
+  box-shadow: inset 0 0 0 1px #3fb950;
+}
+.tile-focus-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.625rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #1a7f37;
+  font-weight: 700;
+  background: rgba(46, 164, 79, 0.12);
+  border: 1px solid rgba(46, 164, 79, 0.4);
+  padding: 3px 8px;
+  border-radius: 2px;
+  z-index: 2;
+}
+.tile.tile-focus:hover .tile-focus-badge {
+  color: #3fb950;
+  background: rgba(46, 164, 79, 0.25);
+  border-color: rgba(46, 164, 79, 0.6);
+}
+.shelf-focus-callout {
+  background: #f7faf5;
+  border: 1.5px solid #2ea44f;
+  border-left: 5px solid #2ea44f;
+  padding: 1.15rem 1.4rem;
+  margin-bottom: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+@media (min-width: 820px) {
+  .shelf-focus-callout {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+}
+.focus-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #1a7f37;
+  white-space: nowrap;
+}
+.focus-callout-desc {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--ink-2);
+  margin: 0;
+}
+.focus-link {
+  color: #1a7f37;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.focus-link:hover {
+  background: #2ea44f;
+  color: #fff;
+  text-decoration: none;
+}
+/* CTA Architectural Styling */
+#contact, .cta {
+  scroll-margin-top: var(--header, 60px);
+  background: var(--ink, #141310);
+  color: var(--onink, #f6f1e6);
+  position: relative;
+  padding-block: clamp(80px, 9vw, 130px);
+}
+.cta::before, .cta::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 9px;
+  background: var(--stripe);
+}
+.cta::before { top: 0; }
+.cta::after { bottom: 0; }
+.cta-wrap {
+  display: grid;
+  gap: clamp(32px, 5vw, 64px);
+  align-items: start;
+}
+@media (min-width: 900px) {
+  .cta-wrap {
+    grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+  }
+}
+.tag-onink {
+  color: var(--signal, #ffb000) !important;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+.tag-onink i {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: var(--signal, #ffb000);
+}
+.cta h2 {
+  font-family: var(--font-display, sans-serif);
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: clamp(2.2rem, 5.2vw, 3.8rem);
+  line-height: 0.96;
+  letter-spacing: -0.038em;
+  color: var(--paper, #f6f1e6);
+  margin-bottom: 1.2rem;
+}
+.cta-p {
+  font-size: clamp(1rem, 1.15vw, 1.125rem);
+  line-height: 1.7;
+  color: rgba(246, 241, 230, 0.82);
+  max-width: 58ch;
+  margin-bottom: 2rem;
+}
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+.btn-onink {
+  background: transparent;
+  color: var(--paper, #f6f1e6);
+  border: 1.5px solid rgba(246, 241, 230, 0.35);
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.6rem 1.1rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.15s ease;
+}
+.btn-onink:hover {
+  background: var(--signal, #ffb000);
+  color: var(--ink, #141310);
+  border-color: var(--signal, #ffb000);
+}
+.cta-dossier {
+  background: #1c1a16;
+  border: 2px solid rgba(246, 241, 230, 0.2);
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.45);
+  padding: 1.4rem 1.6rem;
+}
+.cta-dossier-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid rgba(246, 241, 230, 0.2);
+}
+.cta-dossier-title {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--paper, #f6f1e6);
+  font-weight: 700;
+}
+.cta-dossier-badge {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.625rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.5rem;
+  background: var(--signal, #ffb000);
+  color: var(--ink, #141310);
+  font-weight: 700;
+}
+.cta-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.7rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(246, 241, 230, 0.1);
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  color: var(--paper, #f6f1e6);
+}
+.cta-row:last-child {
+  border-bottom: 0;
+}
+.cta-row span:first-child {
+  color: rgba(246, 241, 230, 0.55);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.625rem;
+}
+.cta-row span:last-child {
+  text-align: right;
+  color: rgba(246, 241, 230, 0.92);
+}
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body><!-- noscript-fallback --><noscript><style>html *{opacity:1!important;transform:none!important;filter:none!important;animation:none!important}[data-a],[data-b],.d,.o,.fade,.draw,.chapter,.step,.panel,.hlab{opacity:1!important}</style></noscript>
+
+<a class="skip" href="#work">Skip to the work</a>
+
+<!-- progress rail: the fill is computed by the browser, not by script -->
+<div class="progress" aria-hidden="true">
+  <span class="progress-fill"></span>
+  <span class="progress-ticks" id="progressTicks"></span>
+</div>
+
+<!-- ============================== Header ============================== -->
+<header class="top">
+  <div class="wrap toprow">
+    <a class="brand" href="#top">
+      <span class="brandmark" aria-hidden="true"></span>
+      <span class="brandname">Keller Systems<em>Independent R&amp;D</em></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#work">Work</a>
+      <a href="#shelf">All systems</a>
+      <a href="#principles">How we work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <button class="motion-toggle" id="motionToggle" type="button" aria-pressed="false" title="Turn the scroll motion on or off">Motion: off</button>
+      <a class="btn btn-primary btn-sm" href="https://github.com/KELLERBABG" target="_blank" rel="noopener noreferrer">Source &#8599;</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ==================== Hero: the pinned sheet ==================== -->
+  <div class="sheet">
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <div>
+          <p class="tag"><i aria-hidden="true"></i>Engineering systems &amp; R&amp;D</p>
+          <h1 class="h-lines">
+            <span class="h-line">Machines that</span>
+            <span class="h-line">have to be</span>
+            <span class="h-line"><em>right.</em></span>
+          </h1>
+          <p class="lead">
+            Five systems: a post-quantum WAN mesh, a deterministic building-code solver, an
+            SMT contract risk engine, a thermodynamic virtual battery, and a volumetric 3D printer.
+            Independent research where the timing has to be provable and the maths has to hold.
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#work">See the work</a>
+            <a class="skipwork" href="#shelf">Skip to all systems &#8595;</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="objectplate drift">
+            <svg class="artlines" viewBox="0 0 320 240" aria-hidden="true">
+              <!-- Coordinate Reticle & Precision Baseline -->
+              <line x1="20" y1="120" x2="300" y2="120" stroke="var(--ink)" stroke-width="0.8" opacity="0.25"/>
+              <line x1="160" y1="15" x2="160" y2="225" stroke="var(--ink)" stroke-width="0.8" opacity="0.25"/>
+              <circle cx="160" cy="120" r="102" fill="none" stroke="var(--ink)" stroke-width="0.8" opacity="0.18" stroke-dasharray="2 3"/>
+              
+              <!-- Outer Astrolabe Scale with Precision Radial Ticks -->
+              <circle cx="160" cy="120" r="92" fill="none" stroke="var(--ink)" stroke-width="1.8"/>
+              <g stroke="var(--ink)" stroke-width="1.2">
+                <line x1="160" y1="28" x2="160" y2="35"/>
+                <line x1="160" y1="205" x2="160" y2="212"/>
+                <line x1="68" y1="120" x2="75" y2="120"/>
+                <line x1="245" y1="120" x2="252" y2="120"/>
+                <line x1="95" y1="55" x2="100" y2="60"/>
+                <line x1="225" y1="55" x2="220" y2="60"/>
+                <line x1="95" y1="185" x2="100" y2="180"/>
+                <line x1="225" y1="185" x2="220" y2="180"/>
+              </g>
+
+              <!-- Counter-rotating Gimbal Ring (Outer Orbit) -->
+              <g class="spin-slow">
+                <circle cx="160" cy="120" r="76" fill="none" stroke="var(--ink)" stroke-width="1" stroke-dasharray="8 6"/>
+                <circle cx="160" cy="44" r="3.5" fill="var(--signal)"/>
+                <circle cx="160" cy="196" r="3.5" fill="var(--signal)"/>
+                <circle cx="84" cy="120" r="2.5" fill="var(--ink)"/>
+                <circle cx="236" cy="120" r="2.5" fill="var(--ink)"/>
+              </g>
+
+              <!-- Counter-rotating Astrolabe Ellipse (Inner Precession) -->
+              <g class="spin-reverse">
+                <ellipse cx="160" cy="120" rx="72" ry="28" fill="none" stroke="var(--signal)" stroke-width="2"/>
+                <ellipse cx="160" cy="120" rx="72" ry="28" fill="none" stroke="var(--ink)" stroke-width="1" stroke-dasharray="3 3" transform="rotate(60 160 120)"/>
+              </g>
+
+              <!-- Harmonic Lissajous Lemniscate Wave -->
+              <path class="ln draw" pathLength="1" d="M 115 120 C 115 82, 205 158, 205 120 C 205 82, 115 158, 115 120 Z"/>
+              
+              <!-- Inner Core Resonance Focus -->
+              <circle cx="160" cy="120" r="32" fill="none" stroke="var(--ink)" stroke-width="1.2" opacity="0.6"/>
+              <circle cx="160" cy="120" r="18" fill="none" stroke="var(--signal)" stroke-width="1.5" stroke-dasharray="4 2"/>
+              <g class="pulse-slow">
+                <circle cx="160" cy="120" r="6.5" fill="var(--signal)"/>
+                <circle cx="160" cy="120" r="2.5" fill="var(--ink)"/>
+              </g>
+
+              <!-- Precise Corner Metadata -->
+              <text x="14" y="24" font-family="var(--font-mono)" font-size="7px" fill="var(--ink)" opacity="0.6">COORD // 1420.405 MHz</text>
+              <text x="306" y="24" font-family="var(--font-mono)" font-size="7px" fill="var(--ink)" opacity="0.6" text-anchor="end">RESONANCE: 2&pi;</text>
+              <text x="14" y="228" font-family="var(--font-mono)" font-size="7px" fill="var(--ink)" opacity="0.6">3-AXIS GIMBAL</text>
+              <text x="306" y="228" font-family="var(--font-mono)" font-size="7px" fill="var(--ink)" opacity="0.6" text-anchor="end">PRECISION: 10&minus;12 s</text>
+            </svg>
+          </div>
+          <p class="caption"><span>Plate 01 &middot; <b>resonance manifold</b></span><span>kellersystems.dev</span></p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================== Contents: what is coming ================== -->
+  <section class="contents" aria-label="Contents">
+    <div class="contents-pin">
+      <div class="wrap">
+        <ol class="contents-list" id="contentsList">
+          <li data-for="ch1"><span class="cnum">01</span><span class="cname"><a href="#ch1">Vantablack</a></span><span class="ctag">Cryptography &amp; ZK</span></li>
+          <li data-for="ch2"><span class="cnum">02</span><span class="cname"><a href="#ch2">BauLens</a></span><span class="ctag">Geometric rule check</span></li>
+          <li data-for="ch3"><span class="cnum">03</span><span class="cname"><a href="#ch3">ClauseLens</a></span><span class="ctag">Deontic Logic &amp; SMT</span></li>
+          <li data-for="ch4"><span class="cnum">04</span><span class="cname"><a href="#ch4">Ambient Thermal Arbitrage</a></span><span class="ctag">Thermodynamics &amp; Energy</span></li>
+          <li data-for="ch5"><span class="cnum">05</span><span class="cname"><a href="#ch5">HoloForge</a></span><span class="ctag">Volumetric 3D printing</span></li>
+        </ol>
+        <p class="contents-intro">Five completed core engines (final stress-testing, bug hardening &amp; deployment underway).</p>
+      </div>
+    </div>
+  </section>
+
+  <div id="work">
+
+
+
+
+    <!-- 01 VANTABLACK -->
+    <section class="chapter" id="ch1" data-index="01" data-name="Vantablack" aria-labelledby="t01">
+      <div class="wrap chapter-grid">
+        <div class="chapter-art">
+          <span class="chapter-num" aria-hidden="true">01</span>
+                                        <div class="measured">
+  <div class="m-head"><b>Vantablack</b><span>Three shards &middot; three roads &middot; chaos failover</span></div>
+  <svg class="tech-schematic ts" viewBox="0 0 500 320" role="img" aria-label="A message is sealed with ML-KEM-768 and X25519, split into three Reed-Solomon shards and sent over three carrier routes. One shard is altered and dropped on a failed authentication tag, the satellite route is severed and rerouted to a hot reserve, and the exit node rebuilds the message from two of three shards.">
+    <rect class="bg" width="500" height="320"/>
+    <text x="16" y="22" class="m sm cap">SESSION 7F3A · HYBRID ML-KEM-768 + X25519</text>
+    <text x="484" y="22" class="m sm cap end">RS(2,1) · ANY 2 OF 3 REBUILD</text>
+    <line x1="16" y1="30" x2="484" y2="30" class="grid"/>
+
+    <!-- wires -->
+    <path class="w" d="M88 160 H104"/>
+    <path class="w" d="M168 136 H182 V80 H206"/>
+    <path class="w" d="M282 80 H304"/>
+    <path class="w" d="M380 80 H392 V136 H400"/>
+    <path class="w" d="M168 160 H206"/>
+    <path class="w-bad" d="M282 160 H400"/>
+    <path class="w" d="M168 184 H182 V240 H206"/>
+    <path fill="none" stroke="#f85149" stroke-width="1.2" d="M282 240 H288"/>
+    <path fill="none" stroke="#2a3544" stroke-width="1.2" d="M298 240 H304"/>
+    <path class="w-sig" d="M190 240 V284 H342 V258"/>
+    <path class="w" d="M380 240 H392 V184 H400"/>
+    <path class="w" d="M439 208 V228"/>
+
+    <!-- packets travel under the boxes -->
+    <circle class="pk pk0" r="3"/>
+    <circle class="pk pk1" r="3"/>
+    <circle class="pk pk2" r="3"/>
+
+    <text x="186" y="74" class="m xs">S0</text>
+    <text x="186" y="155" class="m xs">S1</text>
+    <text x="194" y="236" class="m xs">S2</text>
+
+    <!-- client -->
+    <rect x="16" y="128" width="72" height="64" rx="3" class="pn2"/>
+    <text x="52" y="146" class="t b md mid">CLIENT</text>
+    <text x="52" y="158" class="m xs mid">SOCKS5 :1080</text>
+    <text x="52" y="168" class="m xs mid">172.28.1.10</text>
+    <text x="52" y="182" class="sig xs mid">msg 1.4 kB</text>
+
+    <!-- seal + split -->
+    <rect x="104" y="112" width="64" height="96" rx="3" class="pn2"/>
+    <text x="136" y="126" class="t b sm mid">SEAL</text>
+    <text x="136" y="137" class="m xs mid">ML-KEM-768</text>
+    <text x="136" y="146" class="m xs mid">+ X25519</text>
+    <g fill="rgba(255,176,0,.18)" stroke="var(--signal,#ffb000)" stroke-width=".8">
+      <rect x="110" y="155" width="14" height="11" rx="1.5"/>
+      <rect x="129" y="155" width="14" height="11" rx="1.5"/>
+      <rect x="148" y="155" width="14" height="11" rx="1.5"/>
+    </g>
+    <text x="117" y="163" class="sig xs mid">S0</text>
+    <text x="136" y="163" class="sig xs mid">S1</text>
+    <text x="155" y="163" class="sig xs mid">S2</text>
+    <text x="136" y="184" class="m xs mid">HKDF key ×3</text>
+    <text x="136" y="195" class="m xs mid">RS 2 + 1</text>
+
+    <!-- lane 0 -->
+    <rect x="206" y="62" width="76" height="36" rx="3" class="pn2"/>
+    <text x="212" y="76" class="t b sm">C1 TRANSATLANTIC</text>
+    <text x="212" y="88" class="m xs">45 ms · 1% loss</text>
+    <rect x="304" y="62" width="76" height="36" rx="3" class="pn2"/>
+    <text x="310" y="76" class="t b sm">C4 BACKBONE</text>
+    <text x="310" y="88" class="m xs">25 ms · 0.5% loss</text>
+
+    <!-- lane 1 -->
+    <rect x="206" y="142" width="76" height="36" rx="3" class="pn-bad"/>
+    <text x="212" y="156" class="t b sm">C2 TRANSPACIFIC</text>
+    <text x="212" y="168" class="bad xs">85 ms · BYZANTINE</text>
+    <text x="342" y="154" class="bad xs mid">PAYLOAD ALTERED</text>
+    <text x="342" y="172" class="bad xs mid">Poly1305 tag ✗</text>
+
+    <!-- lane 2 -->
+    <rect x="206" y="222" width="76" height="36" rx="3" class="pn-bad"/>
+    <text x="212" y="236" class="t b sm">C3 SATELLITE</text>
+    <text x="212" y="248" class="bad xs">160 ms · SEVERED</text>
+    <g class="blink" stroke="#f85149" stroke-width="1.6" stroke-linecap="round">
+      <line x1="289" y1="236" x2="297" y2="244"/><line x1="289" y1="244" x2="297" y2="236"/>
+    </g>
+    <rect x="304" y="222" width="76" height="36" rx="3" class="pn-sig"/>
+    <text x="310" y="236" class="sig b sm">C5 HOT RESERVE</text>
+    <text x="310" y="248" class="ok xs">55 ms · PROMOTED</text>
+    <text x="266" y="279" class="sig xs mid b">FAILOVER REROUTE ≤ 55 ms</text>
+
+    <!-- exit -->
+    <rect x="400" y="112" width="78" height="96" rx="3" class="pn2"/>
+    <text x="439" y="125" class="t b sm mid">EXIT · REBUILD</text>
+    <circle cx="400" cy="136" r="2" fill="#3fb950"/>
+    <circle cx="400" cy="160" r="2" fill="#f85149"/>
+    <circle cx="400" cy="184" r="2" fill="#3fb950"/>
+    <text x="408" y="139" class="m xs">S0 <tspan class="ok">✓ verified</tspan></text>
+    <text x="408" y="163" class="m xs">S1 <tspan class="bad">✗ dropped</tspan></text>
+    <text x="408" y="187" class="m xs">S2 <tspan class="ok">✓ verified</tspan></text>
+    <text x="439" y="202" class="ok b xs mid">2 / 3 → REBUILT</text>
+
+    <!-- egress -->
+    <rect x="400" y="228" width="78" height="40" rx="3" class="pn2"/>
+    <text x="439" y="241" class="t b xs mid">INTERNET</text>
+    <text x="439" y="252" class="m xs mid">198.51.100.x</text>
+    <text x="439" y="262" class="m xs mid">egress rotates</text>
+
+    <!-- legend -->
+    <line x1="16" y1="307" x2="30" y2="307" class="w"/>
+    <text x="34" y="310" class="m xs">shard path</text>
+    <line x1="92" y1="307" x2="106" y2="307" class="w-sig"/>
+    <text x="110" y="310" class="m xs">reroute</text>
+    <g stroke="#f85149" stroke-width="1.2"><line x1="158" y1="304" x2="164" y2="310"/><line x1="158" y1="310" x2="164" y2="304"/></g>
+    <text x="170" y="310" class="m xs">severed / dropped</text>
+    <text x="484" y="310" class="m xs end">no hop holds more than one shard</text>
+  </svg>
+  <div class="m-foot">7-node L2 carrier mesh (simulated) &middot; Reed&ndash;Solomon RS(2,1) &middot; Hybrid ML-KEM-768 / X25519 &middot; per-shard HKDF + Poly1305 &middot; &le;55&nbsp;ms failover</div>
+</div>
+<div class="docket">
+            <h4>Figures</h4>
+            <div class="fr"><span>Source files</span><span>74 in src/</span></div><div class="fr"><span>Test files</span><span>32</span></div><div class="fr"><span>Runtime</span><span>Tokio async</span></div><div class="fr"><span>Crypto</span><span>ML-KEM-768 / X25519</span></div><div class="fr"><span>Sharding</span><span>Reed-Solomon RS(2,1)</span></div><div class="fr"><span>Live at</span><span>vantablack.kellersystems.dev</span></div>
+            <div class="fr"><span>Lines of code</span><span>Rust 69,197 &middot; Python 4,362 &middot; Notebook 420</span></div>
+          </div>
+        </div>
+        <div class="chapter-body">
+          <div class="meta"><span class="chip">Cryptography &amp; privacy</span><span class="chip">Rust</span><span class="chip">Tokio async</span></div>
+          <h2 id="t01">Vantablack</h2>
+          <p class="lede">Every message leaves by three roads at once, and no machine on any of them holds the whole thing.</p>
+          <div class="blk"><h4>The problem</h4><p>A VPN provider sees every site you visit, keeps logs, and can be ordered to hand them over. Separately, traffic recorded today can be decrypted later if quantum computers get strong enough.</p></div>
+          <div class="blk"><h4>How it works</h4><p>Vantablack connects your machine to other machines and uses them to carry your traffic. Each message is encrypted with hybrid ML-KEM-768 and X25519, split into three Reed&#8211;Solomon shards, and sent along divergent routes. A shard that arrives modified fails its own authentication tag and is discarded before reassembly.</p></div>
+          <div class="blk"><h4>What it gives you</h4><ul class="gives"><li><b>No provider.</b> There is nobody holding your traffic to log it.</li><li><b>Post-quantum encryption.</b> ML-KEM-768 with X25519, so a recording made today has to be broken against a cipher built for later.</li><li><b>Tamper detection.</b> Every shard carries its own HKDF-derived key and Poly1305 tag.</li><li><b>Packet-loss tolerance.</b> Any two of the three shards rebuild the message.</li></ul></div>
+          <div class="blk"><h4>Setup</h4><div class="steps"><div class="step"><span class="sn">1</span><span>Install the Windows installer, or build with <code>cargo</code></span></div><div class="step"><span class="sn">2</span><span>Point it at a peer, or let it discover one over Cloudflare</span></div><div class="step"><span class="sn">3</span><span>Route traffic through the mesh SOCKS5 proxy</span></div></div>
+            <div class="diff"><span class="dots"><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span>One binary. You run a node.</div></div>
+          <div class="blk limits"><h4>Limits</h4><p>Running it means running a node. There is no support and no company responsible for your uptime. The seven-node Level 2 carrier mesh is a simulation, and the physical-anchor modules ship disabled by default.</p></div>
+          <div class="chapter-links"><a class="btn btn-sm" href="https://vantablack.kellersystems.dev" target="_blank" rel="noopener noreferrer">Open system</a><a class="btn btn-quiet btn-sm" href="https://github.com/KELLERBABG/Vantablack" target="_blank" rel="noopener noreferrer">Source</a></div>
+        </div>
+      </div>
+    </section>
+    <!-- 02 BAULENS -->
+    <section class="chapter chapter-dark" id="ch2" data-index="02" data-name="BauLens" aria-labelledby="t02">
+      <div class="wrap chapter-grid">
+        <div class="chapter-art">
+          <span class="chapter-num" aria-hidden="true">02</span>
+                                        <div class="measured">
+  <div class="m-head"><b>BauLens</b><span>Regelprofil NRW // Abstandsfl&auml;chen</span></div>
+  <svg class="tech-schematic ts" viewBox="0 0 500 320" role="img" aria-label="Isometric LOD200 massing, 7.50 m high, with setback areas on all four sides. The north setback crosses the plot boundary by 0.40 m: 3.35 m present, 3.75 m required, flagged as a defect. East, south and west pass.">
+    <rect class="bg" width="500" height="320"/>
+    <circle cx="20" cy="19" r="3" class="cy"/>
+    <text x="28" y="22" class="t b sm cap">BAULENS · DETERMINISTISCHE VORPRÜFUNG</text>
+    <text x="484" y="22" class="m xs end">MASSING LOD200 · H 7,50 m · NRW</text>
+    <line x1="16" y1="30" x2="484" y2="30" class="grid"/>
+
+    <!-- plot boundary -->
+    <polygon points="133.8,85.6 262.6,160 149.4,225.4 20.5,151" fill="rgba(57,197,207,.025)" stroke="#3d4a5a" stroke-width="1" stroke-dasharray="4 3"/>
+
+    <!-- setback areas (Abstandsflächen) -->
+    <g fill="rgba(57,197,207,.13)" stroke="rgba(57,197,207,.65)" stroke-width=".8">
+      <polygon points="131,124 200.3,164 226.3,149 157,109"/>
+      <polygon points="131,124 75.6,156 49.6,141 105,109"/>
+      <polygon points="200.3,164 226.3,179 170.8,211 144.9,196"/>
+    </g>
+    <polygon points="75.6,156 144.9,196 118.9,211 49.6,171" fill="rgba(248,81,73,.18)" stroke="#f85149" stroke-width=".9"/>
+    <polygon class="pulse" points="52.4,169.4 121.6,209.4 118.9,211 49.6,171" fill="#f85149" stroke="#f85149" stroke-width="1"/>
+
+    <!-- hidden edges -->
+    <g stroke="#4b5a6d" stroke-width=".7" stroke-dasharray="2 2">
+      <line x1="131" y1="124" x2="200.3" y2="164"/>
+      <line x1="131" y1="124" x2="75.6" y2="156"/>
+      <line x1="131" y1="124" x2="131" y2="64"/>
+    </g>
+    <!-- massing -->
+    <polygon points="75.6,156 144.9,196 144.9,136 75.6,96" fill="rgba(90,108,130,.30)" stroke="#8da0b5" stroke-width=".8"/>
+    <polygon points="200.3,164 144.9,196 144.9,136 200.3,104" fill="rgba(120,140,165,.24)" stroke="#8da0b5" stroke-width=".8"/>
+    <polygon points="131,64 200.3,104 144.9,136 75.6,96" fill="rgba(200,214,229,.16)" stroke="#c8d6e5" stroke-width=".9"/>
+    <g stroke="#8da0b5" stroke-width=".5" opacity=".6">
+      <line x1="200.3" y1="144" x2="144.9" y2="176"/><line x1="75.6" y1="136" x2="144.9" y2="176"/>
+      <line x1="200.3" y1="124" x2="144.9" y2="156"/><line x1="75.6" y1="116" x2="144.9" y2="156"/>
+    </g>
+
+    <!-- height dimension -->
+    <g stroke="#7d8b9c" stroke-width=".8">
+      <line x1="44" y1="96" x2="44" y2="156"/>
+      <line x1="40" y1="96" x2="48" y2="96"/><line x1="40" y1="156" x2="48" y2="156"/>
+    </g>
+    <g stroke="#4b5a6d" stroke-width=".6" stroke-dasharray="2 2">
+      <line x1="48" y1="96" x2="75" y2="96"/><line x1="48" y1="156" x2="75" y2="156"/>
+    </g>
+    <text x="40" y="129" class="m xs end">H 7,50</text>
+
+    <!-- side labels -->
+    <polyline points="86,189 72,202 16,202" fill="none" stroke="#f85149" stroke-width=".8"/>
+    <text x="16" y="211" class="bad b xs">NORD 3,35 m</text>
+    <text x="16" y="220" class="bad xs">fehlt 0,40 m</text>
+    <text x="214" y="207" class="cy xs">OST 4,00</text>
+    <text x="232" y="134" class="cy xs">SÜD 5,00</text>
+    <text x="52" y="108" class="cy xs">WEST 4,60</text>
+
+    <!-- compass -->
+    <line x1="244" y1="213" x2="235" y2="218" stroke="#e6edf3" stroke-width="1"/>
+    <polygon points="230,221 236.7,220.6 233.7,215.4" fill="#e6edf3"/>
+    <text x="224" y="229" class="t b xs">N</text>
+
+    <!-- legend -->
+    <rect x="16" y="294" width="10" height="6" fill="rgba(57,197,207,.3)" stroke="#39c5cf" stroke-width=".6"/>
+    <text x="30" y="300" class="m xs">Abstandsfläche</text>
+    <rect x="98" y="294" width="10" height="6" fill="rgba(248,81,73,.35)" stroke="#f85149" stroke-width=".6"/>
+    <text x="112" y="300" class="m xs">Mangel</text>
+    <line x1="150" y1="297" x2="164" y2="297" stroke="#3d4a5a" stroke-dasharray="3 2"/>
+    <text x="168" y="300" class="m xs">Grundstück</text>
+
+    <!-- results panel -->
+    <rect x="284" y="40" width="200" height="258" rx="4" class="pn"/>
+    <text x="294" y="56" class="m xs cap">§ 6 BAUO NRW · ABSTANDSFLÄCHEN</text>
+    <rect x="294" y="64" width="180" height="30" rx="2" fill="#0b0f14"/>
+    <text x="300" y="76" class="t sm">T = max(0,5·H ; 3,00 m)</text>
+    <text x="300" y="88" class="m sm">  = max(3,75 ; 3,00) = <tspan class="cy b">3,75 m</tspan></text>
+
+    <text x="294" y="108" class="m xs cap">SEITE</text>
+    <text x="346" y="108" class="m xs cap">IST</text>
+    <text x="392" y="108" class="m xs cap">SOLL</text>
+    <text x="474" y="108" class="m xs cap end">STATUS</text>
+    <line x1="290" y1="113" x2="478" y2="113" class="grid"/>
+
+    <rect x="290" y="118" width="188" height="22" rx="2" fill="rgba(248,81,73,.14)" stroke="rgba(248,81,73,.45)"/>
+    <text x="296" y="132" class="t b sm">NORD</text><text x="346" y="132" class="bad b sm">3,35 m</text><text x="392" y="132" class="m sm">3,75 m</text><text x="472" y="132" class="bad b xs end">MANGEL</text>
+    <rect x="290" y="144" width="188" height="22" rx="2" fill="#161e29"/>
+    <text x="296" y="158" class="t b sm">OST</text><text x="346" y="158" class="cy b sm">4,00 m</text><text x="392" y="158" class="m sm">3,75 m</text><text x="472" y="158" class="ok b xs end">OK</text>
+    <rect x="290" y="170" width="188" height="22" rx="2" fill="#161e29"/>
+    <text x="296" y="184" class="t b sm">SÜD</text><text x="346" y="184" class="cy b sm">5,00 m</text><text x="392" y="184" class="m sm">3,75 m</text><text x="472" y="184" class="ok b xs end">OK</text>
+    <rect x="290" y="196" width="188" height="22" rx="2" fill="#161e29"/>
+    <text x="296" y="210" class="t b sm">WEST</text><text x="346" y="210" class="cy b sm">4,60 m</text><text x="392" y="210" class="m sm">3,75 m</text><text x="472" y="210" class="ok b xs end">OK</text>
+
+    <text x="294" y="236" class="m xs cap">HEILUNGSVORSCHLAG</text>
+    <text x="294" y="249" class="t sm">Baukörper 0,45 m nach Süden</text>
+    <text x="294" y="260" class="m xs">→ NORD 3,80 ✓ · SÜD 4,55 ✓</text>
+    <rect x="290" y="270" width="188" height="20" rx="2" fill="rgba(57,197,207,.08)" stroke="rgba(57,197,207,.4)"/>
+    <text x="384" y="283" class="cy b xs mid">1 MANGEL · 3 OK · REPRODUZIERBAR</text>
+  </svg>
+  <div class="m-foot">IFC4 / BIM &middot; &sect; 6 BauO NRW Abstandsfl&auml;chen &middot; DIN 18040 &middot; BauGB &sect;34 &middot; 100% on-device</div>
+</div>
+<div class="docket">
+            <h4>Figures</h4>
+            <div class="fr"><span>Rule modules</span><span>42 DIN / LBO engines</span></div><div class="fr"><span>Parsing speed</span><span>sub-50ms per floor</span></div><div class="fr"><span>Data policy</span><span>100% on-device / air-gapped</span></div><div class="fr"><span>Standards</span><span>DIN 18040, DIN 4102, Eurocode</span></div><div class="fr"><span>Formats</span><span>IFC, BIM, JSON schemas</span></div><div class="fr"><span>Live at</span><span>lens.kellersystems.dev</span></div>
+            <div class="fr"><span>Tech stack</span><span>JavaScript &middot; TypeScript &middot; WebAssembly</span></div>
+          </div>
+        </div>
+        <div class="chapter-body">
+          <div class="meta"><span class="chip">Compliance verification</span><span class="chip">JavaScript / TS</span><span class="chip">DIN &amp; Eurocode</span></div>
+          <h2 id="t02">BauLens</h2>
+          <p class="lede">Deterministic German and EU building code compliance validation engine, checking architectural parameters before ground is broken.</p>
+          <div class="blk"><h4>The problem</h4><p>Building regulations in Germany (BauGB, LBO) and European standards are intricate, distributed across state-specific ordinances, and traditionally validated through manual expert reviews. Errors caught late incur severe project delays and permit rejections.</p></div>
+          <div class="blk"><h4>How it works</h4><p>BauLens parses IFC/BIM structural models and dimensional specs into an abstract regulatory syntax tree. Rule engines run deterministic geometric, fire safety, escape route width, and accessibility clearance checks against DIN and Eurocode criteria without cloud dependencies or black-box heuristics.</p></div>
+          <div class="blk"><h4>What it gives you</h4><ul class="gives"><li><b>Zero-hallucination compliance.</b> Pure deterministic rule execution against authoritative state building ordinances.</li><li><b>IFC &amp; BIM integration.</b> Direct spatial parsing of architectural geometry, egress corridors, and stair pitch tolerances.</li><li><b>Instant permit pre-check.</b> Generates audit-ready compliance dossiers with exact legal citations.</li><li><b>Local air-gapped runtime.</b> All calculation happens on-device with zero exposure of confidential architectural blueprints.</li></ul></div>
+          <div class="blk"><h4>Setup</h4><div class="steps"><div class="step"><span class="sn">1</span><span>Launch the web studio or connect via API</span></div><div class="step"><span class="sn">2</span><span>Load an <code>.ifc</code> architectural model or dimensional JSON</span></div><div class="step"><span class="sn">3</span><span>Run the compliance verification suite against targeted state LBO</span></div></div>
+            <div class="diff"><span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>Pure rules engine. No hardware.</div></div>
+          <div class="blk limits"><h4>Limits</h4><p>Validates geometric, structural, and dimensional criteria; legal interpretations of discretionary zoning clauses still require licensed surveyor sign-off.</p></div>
+          <div class="chapter-links"><a class="btn btn-sm" href="https://lens.kellersystems.dev" target="_blank" rel="noopener noreferrer">Open Studio</a><a class="btn btn-quiet btn-sm" href="https://lens.kellersystems.dev/pricing/" target="_blank" rel="noopener noreferrer">Pricing &amp; Docs</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 CLAUSELENS -->
+    <section class="chapter" id="ch3" data-index="03" data-name="ClauseLens" aria-labelledby="t03">
+      <div class="wrap chapter-grid">
+        <div class="chapter-art">
+          <span class="chapter-num" aria-hidden="true">03</span>
+                                        <div class="measured">
+  <div class="m-head"><b>ClauseLens</b><span>Klausel-Konsistenzprüfung // Deontische Logik + SMT</span></div>
+  <svg class="tech-schematic ts" viewBox="0 0 500 320" role="img" aria-label="Contract clauses translated into deontic formulas of obligation, permission and prohibition. The Z3 solver returns UNSAT for clauses 4.2 and 6.1, which contradict each other. Risk score 72 of 100 with three findings under BGB sections 307 and 309.">
+    <rect class="bg" width="500" height="320"/>
+    <circle cx="20" cy="19" r="3" fill="#f85149" opacity=".8"/>
+    <circle cx="30" cy="19" r="3" fill="#d29922" opacity=".8"/>
+    <circle cx="40" cy="19" r="3" fill="#3fb950" opacity=".8"/>
+    <text x="52" y="22" class="t b sm">SaaS-Nutzungsbedingungen.docx<tspan class="m"> · 14 Klauseln</tspan></text>
+    <text x="484" y="22" class="m xs end">Z3 · BGB §§ 305–310</text>
+    <line x1="16" y1="30" x2="484" y2="30" class="grid"/>
+
+    <!-- clause → formula -->
+    <rect x="14" y="38" width="288" height="264" rx="4" class="pn"/>
+    <text x="24" y="52" class="m xs cap">KLAUSEL → DEONTISCHE FORMEL</text>
+    <text x="292" y="52" class="d xs end">O Pflicht · P Erlaubnis · F Verbot</text>
+
+    <g>
+      <rect x="22" y="60" width="272" height="56" rx="3" fill="#1a1417" stroke="rgba(248,81,73,.35)"/>
+      <rect x="23" y="62"  width="2" height="52" rx="1" fill="#f85149"/>
+      <text x="32" y="74" class="bad b sm">§ 4.2</text>
+      <text x="62" y="74" class="t b sm">Automatische Verlängerung</text>
+      <rect x="226" y="65" width="62" height="12" rx="2" fill="rgba(248,81,73,.2)"/>
+      <text x="257" y="73.5" class="bad b xs mid">§ 309 Nr. 9</text>
+      <text x="32" y="87" class="m xs">„… verlängert sich automatisch um je 24 Monate.“</text>
+      <rect x="30" y="94" width="256" height="15" rx="2" fill="#0b0f14"/>
+      <text x="36" y="104.5" class="t sm"><tspan class="sig b">O</tspan>(verlängern, 24M) ∧ <tspan class="sig b">F</tspan>(kündigen, t &lt; 24M)</text>
+    </g>
+    <g>
+      <rect x="22" y="120" width="272" height="56" rx="3" fill="#1a1417" stroke="rgba(248,81,73,.35)"/>
+      <rect x="23" y="122" width="2" height="52" rx="1" fill="#f85149"/>
+      <text x="32" y="134" class="bad b sm">§ 6.1</text>
+      <text x="62" y="134" class="t b sm">Kündigungsrecht</text>
+      <rect x="226" y="125" width="62" height="12" rx="2" fill="rgba(248,81,73,.2)"/>
+      <text x="257" y="133.5" class="bad b xs mid">KONFLIKT</text>
+      <text x="32" y="147" class="m xs">„Der Kunde kann jederzeit mit 30 Tagen kündigen.“</text>
+      <rect x="30" y="154" width="256" height="15" rx="2" fill="#0b0f14"/>
+      <text x="36" y="164.5" class="t sm"><tspan class="sig b">P</tspan>(kündigen, t = 30T)</text>
+    </g>
+    <g>
+      <rect x="22" y="180" width="272" height="56" rx="3" fill="#1a1417" stroke="rgba(248,81,73,.35)"/>
+      <rect x="23" y="182" width="2" height="52" rx="1" fill="#f85149"/>
+      <text x="32" y="194" class="bad b sm">§ 8.1</text>
+      <text x="62" y="194" class="t b sm">Haftungsausschluss</text>
+      <rect x="226" y="185" width="62" height="12" rx="2" fill="rgba(248,81,73,.2)"/>
+      <text x="257" y="193.5" class="bad b xs mid">§ 309 Nr. 7b</text>
+      <text x="32" y="207" class="m xs">„Haftung auch für grobe Fahrlässigkeit ausgeschlossen.“</text>
+      <rect x="30" y="214" width="256" height="15" rx="2" fill="#0b0f14"/>
+      <text x="36" y="224.5" class="t sm"><tspan class="sig b">F</tspan>(Anspruch | grobe Fahrlässigkeit)</text>
+    </g>
+    <g>
+      <rect x="22" y="240" width="272" height="56" rx="3" fill="#1b1810" stroke="rgba(210,153,34,.35)"/>
+      <rect x="23" y="242" width="2" height="52" rx="1" fill="#d29922"/>
+      <text x="32" y="254" class="warn b sm">§ 12</text>
+      <text x="62" y="254" class="t b sm">Preisanpassung</text>
+      <rect x="226" y="245" width="62" height="12" rx="2" fill="rgba(210,153,34,.2)"/>
+      <text x="257" y="253.5" class="warn b xs mid">§ 307</text>
+      <text x="32" y="267" class="m xs">„Der Anbieter kann Preise einseitig anpassen.“</text>
+      <rect x="30" y="274" width="256" height="15" rx="2" fill="#0b0f14"/>
+      <text x="36" y="284.5" class="t sm"><tspan class="sig b">P</tspan>(Anbieter, Preis↑) ∧ ¬<tspan class="sig b">P</tspan>(Kunde, Sonderkündigung)</text>
+    </g>
+
+    <g class="cl-scan" pointer-events="none">
+      <rect x="21.5" y="59.5" width="273" height="57" rx="3.5" fill="rgba(255,176,0,.05)" stroke="var(--signal,#ffb000)" stroke-width="1.2"/>
+    </g>
+
+    <!-- contradiction & finding wiring (connects all clauses to verdicts/findings) -->
+    <!-- Konflikt: § 4.2 & § 6.1 -> Z3 UNSAT & § 309 Nr. 9 -->
+    <path d="M294 88 H307 V197 H320 M294 148 H307 M307 145 H320" fill="none" stroke="#f85149" stroke-width="1"/>
+    <circle cx="294" cy="88" r="1.8" fill="#f85149"/>
+    <circle cx="294" cy="148" r="1.8" fill="#f85149"/>
+    <circle cx="320" cy="145" r="1.8" fill="#f85149"/>
+    <circle cx="320" cy="197" r="1.8" fill="#f85149"/>
+
+    <!-- Befund: § 8.1 -> § 309 Nr. 7b Haftung -->
+    <path d="M294 208 H307 V219 H320" fill="none" stroke="#f85149" stroke-width="1"/>
+    <circle cx="294" cy="208" r="1.8" fill="#f85149"/>
+    <circle cx="320" cy="219" r="1.8" fill="#f85149"/>
+
+    <!-- Befund: § 12 -> § 307 Preisklausel -->
+    <path d="M294 268 H307 V241 H320" fill="none" stroke="#d29922" stroke-width="1"/>
+    <circle cx="294" cy="268" r="1.8" fill="#d29922"/>
+    <circle cx="320" cy="241" r="1.8" fill="#d29922"/>
+
+    <!-- verdict -->
+    <rect x="312" y="38" width="174" height="264" rx="4" class="pn"/>
+    <circle cx="338" cy="70" r="18" fill="none" stroke="#222c39" stroke-width="4"/>
+    <circle cx="338" cy="70" r="18" fill="none" stroke="#f85149" stroke-width="4" stroke-dasharray="81.4 113.1" stroke-linecap="round" transform="rotate(-90 338 70)"/>
+    <text x="338" y="74" class="t b lg mid">72</text>
+    <text x="364" y="62" class="m xs cap">RISIKO</text>
+    <text x="364" y="76" class="bad b md">HOCH · 72/100</text>
+    <text x="364" y="87" class="m xs">3 Befunde · 1 Konflikt</text>
+    <line x1="320" y1="100" x2="478" y2="100" class="grid"/>
+
+    <rect class="pulse" x="320" y="110" width="158" height="68" rx="3" fill="#1a1417" stroke="#f85149"/>
+    <text x="328" y="123" class="bad b sm">Z3 → UNSAT</text>
+    <text x="470" y="123" class="m xs end">12 ms</text>
+    <text x="328" y="135" class="t xs">Kern { § 4.2, § 6.1 }</text>
+    <text x="328" y="147" class="t xs">P(kündigen,30T) ∧ F(kündigen,t&lt;24M)</text>
+    <text x="328" y="158" class="bad xs">⊢ ⊥ · Klauseln widersprechen sich</text>
+    <text x="328" y="170" class="m xs">§ 305c II: gegen den Verwender</text>
+
+    <rect x="320" y="188" width="158" height="18" rx="2" fill="#161e29"/>
+    <rect x="324" y="192" width="30" height="10" rx="1.5" fill="#f85149"/>
+    <text x="339" y="199.5" class="t b xs mid">HOCH</text>
+    <text x="360" y="200" class="t xs">§ 309 Nr. 9 · Laufzeit</text>
+    <rect x="320" y="210" width="158" height="18" rx="2" fill="#161e29"/>
+    <rect x="324" y="214" width="30" height="10" rx="1.5" fill="#f85149"/>
+    <text x="339" y="221.5" class="t b xs mid">HOCH</text>
+    <text x="360" y="222" class="t xs">§ 309 Nr. 7b · Haftung</text>
+    <rect x="320" y="232" width="158" height="18" rx="2" fill="#161e29"/>
+    <rect x="324" y="236" width="30" height="10" rx="1.5" fill="#d29922"/>
+    <text x="339" y="243.5" class="t b xs mid">MITTEL</text>
+    <text x="360" y="244" class="t xs">§ 307 · Preisklausel</text>
+
+    <rect x="320" y="262" width="74" height="18" rx="2" fill="none" stroke="#2a3544"/>
+    <text x="357" y="274" class="m xs mid">JSON-Export</text>
+    <rect x="404" y="262" width="74" height="18" rx="2" fill="none" stroke="#2a3544"/>
+    <text x="441" y="274" class="m xs mid">PDF-Befund</text>
+    <text x="320" y="294" class="d xs">lokal · kein LLM · kein Upload</text>
+  </svg>
+  <div class="m-foot">Deontische Modallogik &middot; BGB &sect;&sect; 305&ndash;310 AGB-Pr&uuml;fung &middot; SMT-Z3 Solver &middot; 100% Client-Side</div>
+</div>
+<div class="docket">
+            <h4>Figures</h4>
+            <div class="fr"><span>Logic framework</span><span>Deontic modal logic &amp; SMT</span></div><div class="fr"><span>Evaluation time</span><span>sub-100ms per agreement</span></div><div class="fr"><span>Contradiction scope</span><span>Bilateral covenants &amp; indemnities</span></div><div class="fr"><span>Exfiltration risk</span><span>Zero (in-memory client evaluation)</span></div><div class="fr"><span>Format support</span><span>DIN 5008, Markdown, Plain Text</span></div><div class="fr"><span>Live at</span><span>clause.kellersystems.dev</span></div>
+            <div class="fr"><span>Lines of code</span><span>JavaScript &middot; TypeScript</span></div>
+          </div>
+        </div>
+        <div class="chapter-body">
+          <div class="meta"><span class="chip">LegalTech &amp; SMT</span><span class="chip">JavaScript</span><span class="chip">Formal semantics</span></div>
+          <h2 id="t03">ClauseLens</h2>
+          <p class="lede">Automated contract clause contradiction and risk scoring engine grounded in formal logic.</p>
+          <div class="blk"><h4>The problem</h4><p>Commercial agreements hide conflicting indemnities, ambiguous termination rights, and contradictory governing law clauses across hundreds of pages of schedules and amendments.</p></div>
+          <div class="blk"><h4>How it works</h4><p>ClauseLens translates contractual commitments into deontic logic specifications (obligations, permissions, prohibitions). It then evaluates mutual consistency and liability caps across interdependent documents, surfacing direct logical contradictions and unmitigated exposure.</p></div>
+          <div class="blk"><h4>What it gives you</h4><ul class="gives"><li><b>Automated contradiction detection.</b> Identifies conflicting covenants, overlapping notice windows, and mutual exclusivity paradoxes.</li><li><b>Bounded risk scoring.</b> Quantifies structural exposure across indemnity caps, force majeure, and dispute escalation trees.</li><li><b>Deontic logic graph.</b> Visualizes dependency chains between conditioned obligations and payment milestones.</li><li><b>Client-side execution.</b> Complete confidentiality. Documents are analyzed locally in-memory without third-party LLM transmission.</li></ul></div>
+          <div class="blk"><h4>Setup</h4><div class="steps"><div class="step"><span class="sn">1</span><span>Load web studio or ingest contract draft</span></div><div class="step"><span class="sn">2</span><span>Ingest bilateral agreement clauses or markdown contracts</span></div><div class="step"><span class="sn">3</span><span>Execute formal consistency check and risk audit</span></div></div>
+            <div class="diff"><span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>Formal logic consistency. Client-side verified.</div></div>
+          <div class="blk limits"><h4>Limits</h4><p>Evaluates logical contradictions and parameter boundaries; jurisdiction-specific common law case law nuances require human legal counsel.</p></div>
+          <div class="chapter-links"><a class="btn btn-sm" href="https://clause.kellersystems.dev" target="_blank" rel="noopener noreferrer">Open Studio</a><a class="btn btn-quiet btn-sm" href="https://clause.kellersystems.dev/pricing.html" target="_blank" rel="noopener noreferrer">Pricing &amp; Docs</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 AMBIENT THERMAL ARBITRAGE -->
+    <section class="chapter chapter-dark" id="ch4" data-index="04" data-name="Ambient Thermal Arbitrage" aria-labelledby="t04">
+      <div class="wrap chapter-grid">
+        <div class="chapter-art">
+          <span class="chapter-num" aria-hidden="true">04</span>
+                                        <div class="measured">
+  <div class="m-head"><b>Ambient Thermal Arbitrage</b><span>Geb&auml;ude als virtuelle Batterie // EPEX Day-Ahead</span></div>
+  <svg class="tech-schematic ts" viewBox="0 0 500 320" role="img" aria-label="24-hour simulation. The building pre-cools from 10 to 15 h during negative day-ahead prices, lets indoor temperature drift within the plus or minus 0.5 K comfort band, and draws zero heat-pump power from 17 to 21 h during the evening peak, saving 41.8 percent.">
+    <rect class="bg" width="500" height="320"/>
+
+    <!-- KPIs -->
+    <rect x="15" y="8" width="150" height="26" rx="3" fill="#0d1a22" stroke="rgba(57,197,207,.4)"/>
+    <text x="23" y="18" class="cy xs cap">12:00 · SOLAR-SENKE</text>
+    <text x="23" y="29" class="t b md">−38 €/MWh · laden</text>
+    <rect x="175" y="8" width="150" height="26" rx="3" fill="#1f1215" stroke="rgba(248,81,73,.4)"/>
+    <text x="183" y="18" class="bad xs cap">18:00 · ABENDSPITZE</text>
+    <text x="183" y="29" class="t b md">+115 €/MWh · 0 kW</text>
+    <rect x="335" y="8" width="150" height="26" rx="3" fill="#1d1910" stroke="rgba(255,176,0,.45)"/>
+    <text x="343" y="18" class="sig xs cap">NETTO-ERSPARNIS</text>
+    <text x="343" y="29" class="t b md">−41,8 % · 0 Zyklen</text>
+
+    <!-- phase windows -->
+    <rect x="224.2" y="54" width="89.5" height="208" fill="rgba(57,197,207,.05)"/>
+    <rect x="349.6" y="54" width="71.6" height="208" fill="rgba(248,81,73,.05)"/>
+    <rect x="224.2" y="40" width="89.5" height="12" rx="2" fill="rgba(57,197,207,.16)" stroke="rgba(57,197,207,.5)"/>
+    <text x="269" y="48.5" class="cy b xs mid">VORKÜHLEN · 10–15 h</text>
+    <rect x="349.6" y="40" width="71.6" height="12" rx="2" fill="rgba(248,81,73,.16)" stroke="rgba(248,81,73,.5)"/>
+    <text x="385.4" y="48.5" class="bad b xs mid">COASTEN · 17–21 h</text>
+
+    <!-- price panel -->
+    <g class="grid">
+      <line x1="45" y1="56" x2="475" y2="56"/><line x1="45" y1="86" x2="475" y2="86"/>
+      <line x1="45" y1="146" x2="475" y2="146"/>
+    </g>
+    <line x1="45" y1="116" x2="475" y2="116" stroke="#34404f" stroke-dasharray="3 3"/>
+    <text x="40" y="58" class="m xs end">120</text>
+    <text x="40" y="88" class="m xs end">60</text>
+    <text x="40" y="118" class="m xs end">0</text>
+    <text x="40" y="148" class="m xs end">−60</text>
+    <text x="50" y="66" class="d xs cap">EPEX DAY-AHEAD · €/MWh</text>
+    <path d="M242.1 116 V122 H260 V135 H277.9 V131.5 H295.8 V119 H313.75 V116 Z" fill="rgba(57,197,207,.28)"/>
+    <path d="M45 75 H62.9 V77 H80.8 V78.5 H98.75 V79 H116.7 V78 H134.6 V74 H152.5 V68 H170.4 V62 H188.3 V64 H206.25 V85 H224.2 V107 H242.1 V122 H260 V135 H277.9 V131.5 H295.8 V119 H313.75 V102 H331.7 V84 H349.6 V67 H367.5 V58.5 H385.4 V55.5 H403.3 V62 H421.25 V68 H439.2 V72 H457.1 V74 H475" fill="none" stroke="var(--signal,#ffb000)" stroke-width="1.6" stroke-linejoin="round"/>
+
+    <!-- temperature panel -->
+    <rect x="45" y="172" width="430" height="24" fill="rgba(255,255,255,.035)"/>
+    <line x1="45" y1="172" x2="475" y2="172" stroke="#2a3544" stroke-dasharray="3 3"/>
+    <line x1="45" y1="196" x2="475" y2="196" stroke="#2a3544" stroke-dasharray="3 3"/>
+    <line x1="45" y1="184" x2="475" y2="184" class="grid"/>
+    <text x="40" y="174.5" class="m xs end">22,5</text>
+    <text x="40" y="186.5" class="m xs end">22,0</text>
+    <text x="40" y="198.5" class="m xs end">21,5</text>
+    <text x="50" y="167" class="d xs cap">RAUMTEMPERATUR °C · KOMFORT ±0,5 K</text>
+    <path d="M45 184 H224.2 C250 184 280 193 313.75 193.6 L349.6 192.5 C375 188 400 177 421.25 174.4 C440 173 455 183 475 184" fill="none" stroke="#e6edf3" stroke-width="1.6"/>
+
+    <!-- heat pump power -->
+    <text x="50" y="229" class="d xs cap">WÄRMEPUMPE · kW</text>
+    <g fill="#3a4656">
+      <rect x="47" y="246" width="14" height="16"/><rect x="64.9" y="247" width="14" height="15"/>
+      <rect x="82.8" y="247" width="14" height="15"/><rect x="100.75" y="247" width="14" height="15"/>
+      <rect x="118.7" y="246" width="14" height="16"/><rect x="136.6" y="245" width="14" height="17"/>
+      <rect x="154.5" y="243" width="14" height="19"/><rect x="172.4" y="241" width="14" height="21"/>
+      <rect x="190.3" y="242" width="14" height="20"/><rect x="208.25" y="244" width="14" height="18"/>
+      <rect x="315.75" y="240" width="14" height="22"/><rect x="333.7" y="242" width="14" height="20"/>
+      <rect x="423.25" y="238" width="14" height="24"/><rect x="441.2" y="242" width="14" height="20"/>
+      <rect x="459.1" y="245" width="14" height="17"/>
+    </g>
+    <g fill="rgba(57,197,207,.75)">
+      <rect x="226.2" y="224" width="14" height="38"/><rect x="244.1" y="224" width="14" height="38"/>
+      <rect x="262" y="224" width="14" height="38"/><rect x="279.9" y="224" width="14" height="38"/>
+      <rect x="297.8" y="224" width="14" height="38"/>
+    </g>
+    <text x="385.4" y="256" class="bad b xs mid">0 kW</text>
+    <line x1="45" y1="262" x2="475" y2="262" stroke="#2a3544"/>
+
+    <!-- time axis -->
+    <text x="45" y="274" class="m xs mid">00:00</text>
+    <text x="116.7" y="274" class="m xs mid">04:00</text>
+    <text x="188.3" y="274" class="m xs mid">08:00</text>
+    <text x="260" y="274" class="m xs mid">12:00</text>
+    <text x="331.7" y="274" class="m xs mid">16:00</text>
+    <text x="403.3" y="274" class="m xs mid">20:00</text>
+    <text x="475" y="274" class="m xs mid">24:00</text>
+
+    <g class="am-sweep"><line x1="45" y1="54" x2="45" y2="262" stroke="rgba(255,255,255,.5)" stroke-width="1"/></g>
+
+    <!-- summary -->
+    <rect x="15" y="286" width="470" height="20" rx="3" fill="#111821" stroke="#222c39"/>
+    <text x="25" y="299" class="m xs">Referenz 41,20 €/Tag</text>
+    <text x="150" y="299" class="t xs">optimiert 23,98 €/Tag</text>
+    <text x="280" y="299" class="ok b xs">Komfortverletzung 0 h</text>
+    <text x="475" y="299" class="sig b xs end">−41,8 %</text>
+  </svg>
+  <div class="m-foot">Sensible W&auml;rmekapazit&auml;t C<sub>th</sub> &middot; 48h Rolling MPC &middot; EPEX Spot Day-Ahead &middot; 0% Zyklendegradation</div>
+</div>
+<div class="docket">
+            <h4>Figures</h4>
+            <div class="fr"><span>Storage mechanism</span><span>Sensible building thermal mass</span></div><div class="fr"><span>Battery degradation</span><span>0% cycle degradation</span></div><div class="fr"><span>Prediction horizon</span><span>48-hour rolling MPC</span></div><div class="fr"><span>Comfort tolerance</span><span>&plusmn;0.5 &deg;C bounded deadband</span></div><div class="fr"><span>Arbitrage market</span><span>EPEX Spot day-ahead &amp; intraday</span></div><div class="fr"><span>Live at</span><span>ambient.kellersystems.dev</span></div>
+            <div class="fr"><span>Lines of code</span><span>Rust 3,840</span></div>
+          </div>
+        </div>
+        <div class="chapter-body">
+          <div class="meta"><span class="chip">Thermodynamics &amp; Energy</span><span class="chip">Rust</span><span class="chip">Virtual battery</span></div>
+          <h2 id="t04">Ambient Thermal Arbitrage</h2>
+          <p class="lede">Virtual battery energy management system that turns building thermal mass into high-efficiency distributed grid storage.</p>
+          <div class="blk"><h4>The problem</h4><p>Electrochemical batteries (lithium-ion) carry heavy capital costs, degradation cycles, and supply chain constraints. Meanwhile, existing heat pumps and HVAC systems consume energy reactively rather than leveraging dynamic day/night thermal capacitance.</p></div>
+          <div class="blk"><h4>How it works</h4><p>Ambient Thermal Arbitrage calculates high-resolution thermodynamic drift models for physical building structures. By predicting ambient weather gradients and dynamic electricity spot prices, it pre-cools or pre-heats structural thermal mass within tight comfort deadbands, arbitraging power prices without electrochemical wear.</p></div>
+          <div class="blk"><h4>What it gives you</h4><ul class="gives"><li><b>Zero chemical degradation.</b> Exploits physical structural mass as a maintenance-free virtual storage battery.</li><li><b>Spot-market price arbitrage.</b> Shifts megawatt-scale demand curves to negative or lowest-cost tariff windows.</li><li><b>Rigorous comfort envelopes.</b> Guaranteed interior temperature adherence using bounded predictive control.</li><li><b>Rust embedded runtime.</b> Low-power determinism suitable for direct edge deployment on building automation controllers.</li></ul></div>
+          <div class="blk"><h4>Setup</h4><div class="steps"><div class="step"><span class="sn">1</span><span><code>cargo test</code> to verify the thermodynamic solver</span></div><div class="step"><span class="sn">2</span><span>Configure building heat capacitance and envelope U-values</span></div><div class="step"><span class="sn">3</span><span>Connect dynamic spot price API and dispatch schedule generator</span></div></div>
+            <div class="diff"><span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i></span>Thermodynamic mass control. Pure software and sensorics.</div></div>
+          <div class="blk limits"><h4>Limits</h4><p>Effective thermal storage capacity depends on structural insulation and thermal mass; dynamic spot pricing requires smart metering infrastructure.</p></div>
+          <div class="chapter-links"><a class="btn btn-sm" href="https://ambient.kellersystems.dev" target="_blank" rel="noopener noreferrer">Open system</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 HOLOFORGE -->
+    <section class="chapter" id="ch5" data-index="05" data-name="HoloForge" aria-labelledby="t05">
+      <div class="wrap chapter-grid">
+        <div class="chapter-art">
+          <span class="chapter-num" aria-hidden="true">05</span>
+                                        <div class="measured">
+  <div class="m-head"><b>HoloForge</b><span>Volumetrischer 3D-Druck (CAL) &middot; Digital Twin</span></div>
+  <svg class="tech-schematic ts" viewBox="0 0 500 320" role="img" aria-label="Computed axial lithography: a 405 nm projector shines computed patterns through a rotating resin vial, curing a whole dental crown at once. Beside it, the projection sinogram over 0 to 360 degrees and the dose histogram, with part and background voxels separated by the gel threshold. IoU 96.7 percent, overcure under 0.02 percent, no supports.">
+    <defs>
+      <linearGradient id="hfBeam" x1="0" x2="1" y1="0" y2="0">
+        <stop offset="0" stop-color="#a371f7" stop-opacity=".42"/>
+        <stop offset="1" stop-color="#a371f7" stop-opacity=".06"/>
+      </linearGradient>
+      <linearGradient id="hfCrown" x1="0" x2="0" y1="0" y2="1">
+        <stop offset="0" stop-color="#ffd98a"/>
+        <stop offset=".55" stop-color="#ffb000"/>
+        <stop offset="1" stop-color="#b87400"/>
+      </linearGradient>
+      <clipPath id="hfSino"><rect x="274" y="58" width="200" height="62"/></clipPath>
+      <clipPath id="hfVial"><rect x="120" y="74" width="80" height="148"/></clipPath>
+      <linearGradient id="hfSheen" x1="0" x2="1" y1="0" y2="0">
+        <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+        <stop offset=".5" stop-color="#fff" stop-opacity=".10"/>
+        <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <rect class="bg" width="500" height="320"/>
+    <text x="16" y="22" class="t b sm cap">HOLOFORGE · CAL DIGITAL TWIN</text>
+    <text x="484" y="22" class="sig b xs end">VOLLTEIL 11,4 s · KEINE SCHICHTEN</text>
+    <line x1="16" y1="30" x2="484" y2="30" class="grid"/>
+
+    <!-- side view -->
+    <rect x="14" y="38" width="236" height="240" rx="4" class="pn"/>
+    <text x="24" y="52" class="m xs cap">SEITENANSICHT</text>
+    <path d="M116 66 A44 9 0 1 1 204 66" fill="none" stroke="#7d8b9c" stroke-width="1"/>
+    <polygon points="201,62 208,63 204,70" fill="#7d8b9c"/>
+    <text x="160" y="51" class="m xs mid">Ω 30 °/s</text>
+
+    <rect x="24" y="120" width="34" height="52" rx="2" class="pn2"/>
+    <rect x="52" y="128" width="6" height="36" fill="#a371f7" opacity=".6"/>
+    <text x="41" y="184" class="m xs mid">DMD</text>
+    <text x="41" y="193" class="vi xs mid">405 nm</text>
+    <ellipse cx="72" cy="146" rx="3.5" ry="26" fill="rgba(163,113,247,.15)" stroke="#a371f7" stroke-width=".8"/>
+
+    <rect x="76" y="120" width="164" height="52" fill="url(#hfBeam)"/>
+    <g stroke="#c9a7ff" stroke-width="1.2">
+      <line x1="76" y1="124" x2="238" y2="124" opacity=".25"/>
+      <line x1="76" y1="131" x2="238" y2="131" opacity=".6"/>
+      <line x1="76" y1="138" x2="238" y2="138" opacity=".9"/>
+      <line x1="76" y1="145" x2="238" y2="145" opacity=".5"/>
+      <line x1="76" y1="152" x2="238" y2="152" opacity=".85"/>
+      <line x1="76" y1="159" x2="238" y2="159" opacity=".65"/>
+      <line x1="76" y1="166" x2="238" y2="166" opacity=".3"/>
+    </g>
+    <rect x="240" y="116" width="4" height="60" fill="#2a3544"/>
+
+    <rect x="121" y="84" width="78" height="138" fill="rgba(255,176,0,.07)"/>
+    <ellipse cx="160" cy="84" rx="39" ry="6" fill="rgba(255,176,0,.10)" stroke="rgba(255,176,0,.35)" stroke-width=".6"/>
+    <rect x="120" y="74" width="80" height="148" fill="rgba(255,255,255,.02)" stroke="#4b5a6d"/>
+    <ellipse cx="160" cy="74" rx="40" ry="7" fill="none" stroke="#4b5a6d"/>
+    <path d="M120 222 A40 7 0 0 0 200 222" fill="none" stroke="#4b5a6d"/>
+
+    <g class="hf-cure">
+      <path d="M140 166 C137 156 136 144 139 137 C141 131 144 128 148 128 C152 128 155 133 160 134 C165 133 168 127 173 127 C178 127 181 132 182 138 C184 146 183 157 180 166 C172 169 148 169 140 166 Z" fill="url(#hfCrown)" stroke="#ffe2a6" stroke-width=".8"/>
+      <path d="M146 141 C152 147 168 147 175 140" fill="none" stroke="rgba(0,0,0,.25)" stroke-width="1"/>
+    </g>
+    <g clip-path="url(#hfVial)">
+      <g class="hf-spin"><rect x="114" y="74" width="16" height="148" fill="url(#hfSheen)"/></g>
+    </g>
+    <line x1="182" y1="140" x2="208" y2="104" stroke="#7d8b9c" stroke-width=".6"/>
+    <text x="210" y="101" class="m xs">Gelfront</text>
+
+    <rect x="114" y="229" width="92" height="6" rx="1" fill="#2a3544"/>
+    <text x="160" y="248" class="m xs mid">Drehtisch · Vial Ø 25 mm</text>
+    <text x="24" y="268" class="d xs">ein Belichtungszyklus, keine Schichten</text>
+
+    <!-- sinogram -->
+    <rect x="262" y="38" width="224" height="240" rx="4" class="pn"/>
+    <text x="272" y="52" class="m xs cap">SINOGRAMM · s × θ</text>
+    <text x="476" y="52" class="d xs end">Projektionen</text>
+    <rect x="274" y="58" width="200" height="62" fill="#07090d" stroke="#222c39"/>
+    <g clip-path="url(#hfSino)" fill="none" stroke="#a371f7" stroke-linejoin="round" stroke-linecap="round">
+      <line x1="274" y1="89" x2="474" y2="89" stroke-width="10" opacity=".18"/>
+      <path stroke-width="5" opacity=".55"
+            d="M274 89 C316.4 57 331.6 57 374 89 C416.4 121 431.6 121 474 89"/>
+      <path stroke-width="3.5" opacity=".75"
+            d="M207.3 89 C249.8 70.3 264.9 70.3 307.3 89 C349.8 107.7 364.9 107.7 407.3 89 C449.8 70.3 464.9 70.3 507.3 89"/>
+      <path stroke-width="2.5" opacity=".9" stroke="#c9a7ff"
+            d="M240.7 89 C283.1 99.7 298.2 99.7 340.7 89 C383.1 78.3 398.2 78.3 440.7 89 C483.1 99.7 498.2 99.7 540.7 89"/>
+      <g class="hf-sweep"><line x1="274" y1="58" x2="274" y2="120" stroke="#ffffff" stroke-width="1" opacity=".7"/></g>
+    </g>
+    <text x="274" y="129" class="d xs">0°</text>
+    <text x="374" y="129" class="d xs mid">180°</text>
+    <text x="474" y="129" class="d xs end">360°</text>
+
+    <!-- dose histogram -->
+    <text x="272" y="146" class="m xs cap">DOSISVERTEILUNG</text>
+    <text x="476" y="146" class="d xs end">Voxel</text>
+    <rect x="380" y="152" width="12" height="54" fill="rgba(63,185,80,.12)"/>
+    <path d="M274 206 C292 206 298 158 316 158 C336 158 348 206 380 206 Z" fill="rgba(125,139,156,.35)" stroke="#7d8b9c" stroke-width=".8"/>
+    <path d="M392 206 C408 206 418 164 432 164 C446 164 456 206 472 206 Z" fill="rgba(255,176,0,.35)" stroke="var(--signal,#ffb000)" stroke-width=".8"/>
+    <line x1="386" y1="150" x2="386" y2="206" stroke="#e6edf3" stroke-width=".8" stroke-dasharray="2 2"/>
+    <text x="390" y="160" class="t xs">D<tspan font-size="4.5" dy="1.5">gel</tspan></text>
+    <line x1="274" y1="206" x2="474" y2="206" stroke="#2a3544"/>
+    <text x="316" y="215" class="d xs mid">außerhalb</text>
+    <text x="386" y="215" class="ok xs mid">Fenster</text>
+    <text x="432" y="215" class="d xs mid">Bauteil</text>
+
+    <rect x="274" y="224" width="64" height="40" rx="2" fill="#161e29"/>
+    <text x="282" y="236" class="m xs">IoU</text>
+    <text x="282" y="256" class="ok b lg">96,7 %</text>
+    <rect x="342" y="224" width="64" height="40" rx="2" fill="#161e29"/>
+    <text x="350" y="236" class="m xs">Überhärtung</text>
+    <text x="350" y="256" class="t b lg">&lt;0,02 %</text>
+    <rect x="410" y="224" width="64" height="40" rx="2" fill="#161e29"/>
+    <text x="418" y="236" class="m xs">Stützen</text>
+    <text x="418" y="256" class="sig b lg">0</text>
+
+    <rect x="14" y="286" width="472" height="20" rx="3" fill="#111821" stroke="#222c39"/>
+    <text x="24" y="299" class="m xs">STATUS · DIGITALER ZWILLING · KEINE HARDWARE · REINES PYTHON</text>
+    <text x="476" y="299" class="sig b xs end">405 nm · Ω 30 °/s</text>
+  </svg>
+  <div class="m-foot">Computed Axial Lithography &middot; Radon-Transformation &middot; Wellenoptik &middot; Photochemisches Radikalmodell &middot; Zero Supports</div>
+</div>
+<div class="docket">
+            <h4>Figures</h4>
+            <div class="fr"><span>Files</span><span>113</span></div><div class="fr"><span>Python</span><span>4,842 lines</span></div><div class="fr"><span>Whole part cured</span><span>under 15 s</span></div><div class="fr"><span>Cure accuracy</span><span>94.6&#8211;96.7% IoU</span></div><div class="fr"><span>Overcure</span><span>under 0.02%</span></div><div class="fr"><span>Hardware needed</span><span>none</span></div>
+            <div class="fr"><span>Lines of code</span><span>Python 4,842</span></div>
+          </div>
+        </div>
+        <div class="chapter-body">
+          <div class="meta"><span class="chip">Volumetric 3D printing</span><span class="chip">Python</span><span class="chip">wave optics</span></div>
+          <h2 id="t05">HoloForge</h2>
+          <p class="lede">It prints the whole object at once, in the time a normal printer spends on its first hundred layers.</p>
+          <div class="blk"><h4>The problem</h4><p>Layer-by-layer resin printers run for hours, leave stair-stepping striations where one layer meets the next, and print supports that have to be cut off afterwards.</p></div>
+          <div class="blk"><h4>How it works</h4><p>HoloForge computes holograms that make 405&nbsp;nm light from several rotary angles intersect only where the part should cure, then models what follows: radical polymerisation, dissolved-oxygen inhibition, and the surface the finished part measures.</p></div>
+          <div class="blk"><h4>What it gives you</h4><ul class="gives"><li><b>Under fifteen seconds per part,</b> with no support structures to remove.</li><li><b>Cure accuracy of 94.6&#8211;96.7% IoU</b> in simulation, with under 0.02% overcure.</li><li><b>Parametric generators</b> for dental crowns, microfluidic chips and aspheric lenses, plus arbitrary .stl voxelisation.</li><li><b>A vat aberration conjugate mask</b> that cancels cylindrical vial astigmatism on the SLM, without an index-matching bath.</li></ul></div>
+          <div class="blk"><h4>Setup</h4><div class="steps"><div class="step"><span class="sn">1</span><span><code>py -m pip install -e .</code></span></div><div class="step"><span class="sn">2</span><span>Load an <code>.stl</code> and synthesise the holograms</span></div><div class="step"><span class="sn">3</span><span>Run a simulated rotary print against the digital twin</span></div></div>
+            <div class="diff"><span class="dots"><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></span>Python only. No hardware.</div></div>
+          <div class="blk limits"><h4>Limits</h4><p>A simulated print is not a physical print. The optical and photochemical models are physical; the machine is emulated, and real output depends on your laser, your resin and your vat.</p></div>
+          <div class="chapter-links"><a class="btn btn-sm" href="https://holoforge.kellersystems.dev" target="_blank" rel="noopener noreferrer">Open system</a></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============================ Shelf ============================ -->
+  <section class="shelf" id="shelf">
+    <div class="wrap">
+      <div class="shelfhead">
+        <div class="shelf-focus-callout">
+          <div class="focus-pill">
+            <svg class="pulse-dot-green" width="10" height="10" viewBox="0 0 10 10" style="display:inline-block;vertical-align:middle;margin-right:5px;flex-shrink:0;" aria-hidden="true">
+              <circle cx="5" cy="5" r="3.5" fill="#2ea44f">
+                <animate attributeName="r" values="3.2;4.2;3.2" dur="1.8s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="1;0.7;1" dur="1.8s" repeatCount="indefinite"/>
+              </circle>
+              <circle cx="5" cy="5" r="4.5" fill="none" stroke="#2ea44f" stroke-width="1.2" opacity="0.8">
+                <animate attributeName="r" values="4;8.5;4" dur="1.8s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0.8;0;0.8" dur="1.8s" repeatCount="indefinite"/>
+              </circle>
+            </svg>
+            <span>Sprint Focus &middot; 1 Project at a time</span>
+          </div>
+          <p class="focus-callout-desc">
+            The 5 highlighted systems are completed engines (final stress-testing, bug hardening &amp; deployment). Development proceeds strictly one system at a time. <strong>active target: <a href="https://resonance.kellersystems.dev" target="_blank" rel="noopener noreferrer" class="focus-link">AeroResonance &#8599;</a></strong>
+          </p>
+        </div>
+        <h2>The rest of the fleet</h2>
+        <p>Kernels, protocols, solvers, and instruments across 35 independent systems. Some systems are source-available to encourage verification and community improvements.</p>
+      </div>
+      <div class="grid" id="moreGrid">
+        <a class="tile" href="https://abos.kellersystems.dev" target="_blank" rel="noopener noreferrer">
+          <span class="tile-mark" aria-hidden="true">A</span>
+          <h3>ABOS</h3>
+          <p class="tile-desc">Atmospheric Broadcast OS: an SDR and radio-level fallback for internet access, carried by Vantablack as an opt-in submodule</p>
+          <span class="tilemeta">Real-time / OS &middot; Rust</span>
+        </a>
+        <a class="tile" href="https://aero.kellersystems.dev" target="_blank" rel="noopener noreferrer">
+          <span class="tile-mark" aria-hidden="true">A</span>
+          <h3>AeroDose</h3>
+          <p class="tile-desc">Occupational wildfire PM2.5 shift dose and compliance ledger</p>
+          <span class="tilemeta">Real-time / OS &middot; Rust</span>
+        </a>
+        <a class="tile tile-focus" id="aeroresonance" href="https://resonance.kellersystems.dev" target="_blank" rel="noopener noreferrer">
+          <span class="tile-focus-badge">
+            <svg class="pulse-dot-green" width="10" height="10" viewBox="0 0 10 10" style="display:inline-block;vertical-align:middle;margin-right:5px;flex-shrink:0;" aria-hidden="true">
+              <circle cx="5" cy="5" r="3.5" fill="#2ea44f">
+                <animate attributeName="r" values="3.2;4.2;3.2" dur="1.8s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="1;0.7;1" dur="1.8s" repeatCount="indefinite"/>
+              </circle>
+              <circle cx="5" cy="5" r="4.5" fill="none" stroke="#2ea44f" stroke-width="1.2" opacity="0.8">
+                <animate attributeName="r" values="4;8.5;4" dur="1.8s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0.8;0;0.8" dur="1.8s" repeatCount="indefinite"/>
+              </circle>
+            </svg>
+            In Progress
+          </span>
+          <span class="tile-mark" aria-hidden="true">A</span>
+          <h3>AeroResonance</h3>
+          <p class="tile-desc">Atmospheric electromagnetic and acoustic resonance energy harvester</p>
+          <span class="tilemeta">Systems &amp; Rust &middot; Rust</span>
+        </a>
+        <a class="tile" href="https://supply.kellersystems.dev" target="_blank" rel="noopener noreferrer">
+          <span class="tile-mark" aria-hidden="true">A</span>
+          <h3>Algorithmic Supply Chain Arbitrage</h3>
+          <p class="tile-desc">Algorithmic Supply Chain Arbitrage and multi-modal freight routing engine</p>
+          <span class="tilemeta">Systems &amp; Rust &middot; Rust</span>
+        </a>
+        <a class="tile" href="https://amt.kellersystems.dev" target="_blank" rel="noopener noreferrer">
+          <span class="tile-mark" aria-hidden="true">A</span>
+          <h3>AmtFlow</h3>
+          <p class="tile-desc">Kostenloser, lokaler Assistent fuer deutsche Behoerdenbriefe mit OCR-Texterkennung, Fristberechnung, 20 Sprachen und DIN 5008 Antwortschreiben.</p>
+          <span class="tilemeta">Applied systems &middot; JavaScript</span>
+        </a>
+        <a class="tile" href="https://aquamof.kellersystems.dev" target="_blank" rel="noopener noreferrer">
+          <span class="tile-mark" aria-hidden="true">A</span>
+          <h3>AquaMOF</h3>
+          <p class="tile-desc">Passive atmospheric water harvester using MOF-303 isotherm thermodynamics</p>
+          <span class="tilemeta">Systems &amp; Rust &middot; Rust</span>
+        </a>
+        <a class="tile" href="https://aureal.kellersystems.dev" target="_blank" rel="noopener noreferrer">
+          <span class="tile-mark" aria-hidden="true">A</span>
+          <h3>Aureal Watermark</h3>
+          <p class="tile-desc">Audio watermarking for anti-theft and AI detection</p>
+          <span class="tilemeta">Applied systems &middot; HTML</span>
+        </a>
+        <a class="tile" href="https://pod.kellersystems.dev" target="_blank" rel="noopener noreferrer">
+          <span class="tile-mark" aria-hidden="true">A</span>
+          <h3>AutoPoD</h3>
+          <p class="tile-desc">Autonomous Proof-of-Damage layer with cryptographic incident audit</p>
+          <span class="tilemeta">Systems &amp; Rust &middot; Rust</span>
+        </a>
+        <a class="tile" href="https://city.kellersystems.dev" target="_blank" rel="noopener noreferrer">
+          <span class="tile-mark" aria-hidden="true">C</span>
+          <h3>CityOS</h3>
+          <p class="tile-desc">Decentralized civic infrastructure and urban resource routing engine</p>
+          <span class="tilemeta">Real-time / OS &middot; Rust</span>
+        </a>
+        <a class="tile" href="https://credit.kellersystems.dev" target="_blank" rel="noopener noreferrer">
+          <span class="tile-mark" aria-hidden="true">D</span>
+          <h3>Decentralized Sovereign Credit Mesh</h3>
+          <p class="tile-desc">Decentralized Sovereign Credit Mesh using zero-knowledge proofs and web-of-trust vouching</p>
+          <span class="tilemeta">Cryptography &amp; ZK &middot; Rust</span>
+        </a>
+        <a class="tile" href="https://dps.kellersystems.dev" target="_blank" rel="noopener noreferrer">
+          <span class="tile-mark" aria-hidden="true">D</span>
+          <h3>Differential Privacy Synthesizer</h3>
+          <p class="tile-desc">Differential Privacy Synthesizer with bounded epsilon privacy leak budgets</p>
+          <span class="tilemeta">Cryptography &amp; ZK &middot; Python</span>
+        </a>
+        <a class="tile" href="https://patent.kellersystems.dev" target="_blank" rel="noopener noreferrer">
+          <span class="tile-mark" aria-hidden="true">F</span>
+          <h3>FluidIP</h3>
+          <p class="tile-desc">Decoupled Fluid IP routing protocol and packet mesh</p>
+          <span class="tilemeta">Systems &amp; Rust &middot; Rust</span>
+        </a>
+        <a class="tile" href="https://veritas.kellersystems.dev" target="_blank" rel="noopener noreferrer">
+          <span class="tile-mark" aria-hidden="true">F</span>
+          <h3>Formal Verification</h3>
+          <p class="tile-desc">High-assurance engineering codebase and research implementation.</p>
+          <span class="tilemeta">Systems &amp; Rust &middot; Rust</span>
+        </a>
+        <a class="tile" href="https://fhe.kellersystems.dev" target="_blank" rel="noopener noreferrer">
+          <span class="tile-mark" aria-hidden="true">H</span>
+          <h3>Homomorphic Database</h3>
+          <p class="tile-desc">Homomorphic Encrypted Database (FHE-DB): Relational queries on ciphertext</p>
+          <span class="tilemeta">Cryptography &amp; ZK &middot; Rust</span>
+        </a>
+        <a class="tile" href="https://kernel.kellersystems.dev" target="_blank" rel="noopener noreferrer">
+          <span class="tile-mark" aria-hidden="true">K</span>
+          <h3>KELLER-OS</h3>
+          <p class="tile-desc">High-assurance engineering codebase and research implementation.</p>
+          <span class="tilemeta">Real-time / OS &middot; Rust</span>
+        </a>
+        <a class="tile" href="https://muon.kellersystems.dev" target="_blank" rel="noopener noreferrer">
+          <span class="tile-mark" aria-hidden="true">M</span>
+          <h3>MuonScope Tomography</h3>
+          <p class="tile-desc">MuonScope™: Cosmic-Ray Muon Scattering Tomography Digital Twin, 3D Inversion Engine &amp; Silicon FPGA Architecture</p>
+          <span class="tilemeta">Applied systems &middot; Python</span>
+        </a>
+        <a class="tile" href="https://bio.kellersystems.dev" target="_blank" rel="noopener noreferrer">
+          <span class="tile-mark" aria-hidden="true">M</span>
+          <h3>MycoSwarm</h3>
+          <p class="tile-desc">Mycelium biological network computation and bio-routing simulator</p>
+          <span class="tilemeta">Real-time / OS &middot; TypeScript</span>
+        </a>
+        <a class="tile" href="https://kinematics.kellersystems.dev" target="_blank" rel="noopener noreferrer">
+          <span class="tile-mark" aria-hidden="true">O</span>
+          <h3>OP-Roboter</h3>
+          <p class="tile-desc">Robotic surgical teleoperation and real-time kinematic safety kernel</p>
+          <span class="tilemeta">Real-time / OS &middot; Rust</span>
+        </a>
+        <a class="tile" href="https://pulse.kellersystems.dev" target="_blank" rel="noopener noreferrer">
+          <span class="tile-mark" aria-hidden="true">P</span>
+          <h3>PacePulse</h3>
+          <p class="tile-desc">Zero-latency medical telemetry and cardiac rhythm monitoring platform</p>
+          <span class="tilemeta">Applied systems &middot; Python</span>
+        </a>
+        <a class="tile" href="https://plane.kellersystems.dev" target="_blank" rel="noopener noreferrer">
+          <span class="tile-mark" aria-hidden="true">P</span>
+          <h3>PlaneOS</h3>
+          <p class="tile-desc">Avionics real-time operating system and flight envelope safety supervisor</p>
+          <span class="tilemeta">Real-time / OS &middot; Rust</span>
+        </a>
+        <a class="tile" href="https://pem.kellersystems.dev" target="_blank" rel="noopener noreferrer">
+          <span class="tile-mark" aria-hidden="true">P</span>
+          <h3>Planetary Entropy Mining</h3>
+          <p class="tile-desc">Certificates grounded in a measured window of physical noise, with a zero-knowledge proof of honest capture that hides the node&#39;s location</p>
+          <span class="tilemeta">Cryptography &amp; ZK &middot; Python</span>
+        </a>
+        <a class="tile" href="https://github.com/KELLERBABG/QEL" target="_blank" rel="noopener noreferrer">
+          <span class="tile-mark" aria-hidden="true">Q</span>
+          <h3>Quantum Entanglement Link</h3>
+          <p class="tile-desc">Quantum communication network simulation stack: density-matrix states and noise, QKD and error-correcting codes, and fidelity-constrained repeater routing over a mesh topology</p>
+          <span class="tilemeta">Cryptography &amp; ZK &middot; Python</span>
+        </a>
+        <a class="tile" href="https://smart-matter.kellersystems.dev" target="_blank" rel="noopener noreferrer">
+          <span class="tile-mark" aria-hidden="true">S</span>
+          <h3>Smart Matter</h3>
+          <p class="tile-desc">High-assurance engineering codebase and research implementation.</p>
+          <span class="tilemeta">Systems &amp; Rust &middot; Rust</span>
+        </a>
+        <a class="tile" href="https://enclave.kellersystems.dev" target="_blank" rel="noopener noreferrer">
+          <span class="tile-mark" aria-hidden="true">S</span>
+          <h3>SMPC Dark Pool</h3>
+          <p class="tile-desc">Secure Multi-Party Computation Dark Pool with differential privacy guarantees</p>
+          <span class="tilemeta">Cryptography &amp; ZK &middot; Rust</span>
+        </a>
+        <a class="tile" href="https://citadel.kellersystems.dev" target="_blank" rel="noopener noreferrer">
+          <span class="tile-mark" aria-hidden="true">S</span>
+          <h3>SybilGuard</h3>
+          <p class="tile-desc">Zero-knowledge Sybil-resistant Proof-of-Personhood biometric protocol</p>
+          <span class="tilemeta">Cryptography &amp; ZK &middot; Rust</span>
+        </a>
+        <a class="tile" href="https://axiom.kellersystems.dev" target="_blank" rel="noopener noreferrer">
+          <span class="tile-mark" aria-hidden="true">S</span>
+          <h3>SymEx EVM</h3>
+          <p class="tile-desc">Symbolic execution engine for EVM bytecode vulnerability detection and SMT verification</p>
+          <span class="tilemeta">Cryptography &amp; ZK &middot; Rust</span>
+        </a>
+        <a class="tile" href="https://terra.kellersystems.dev" target="_blank" rel="noopener noreferrer">
+          <span class="tile-mark" aria-hidden="true">T</span>
+          <h3>TerraFlux</h3>
+          <p class="tile-desc">Precision autonomous soil moisture micro-irrigation controller</p>
+          <span class="tilemeta">Applied systems &middot; Python</span>
+        </a>
+        <a class="tile" href="https://trade.kellersystems.dev" target="_blank" rel="noopener noreferrer">
+          <span class="tile-mark" aria-hidden="true">T</span>
+          <h3>TradeShield</h3>
+          <p class="tile-desc">Zero-fraud DEX wash-trading detector and volume integrity ledger</p>
+          <span class="tilemeta">Cryptography &amp; ZK &middot; TypeScript</span>
+        </a>
+        <a class="tile" href="https://transit.kellersystems.dev" target="_blank" rel="noopener noreferrer">
+          <span class="tile-mark" aria-hidden="true">T</span>
+          <h3>TransitOS</h3>
+          <p class="tile-desc">Autonomous public transit fleet scheduling and demand-responsive routing kernel</p>
+          <span class="tilemeta">Real-time / OS &middot; Rust</span>
+        </a>
+        <a class="tile" href="https://zkg.kellersystems.dev" target="_blank" rel="noopener noreferrer">
+          <span class="tile-mark" aria-hidden="true">Z</span>
+          <h3>Zero Knowledge Genome</h3>
+          <p class="tile-desc">Zero-Knowledge Genome: Private biological sequence matching and genomic proofs</p>
+          <span class="tilemeta">Cryptography &amp; ZK &middot; Rust</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================== Principles ========================== -->
+  <section class="principles" id="principles">
+    <div class="wrap">
+      <div class="shelfhead"><h2>How the work gets made</h2></div>
+      <div class="pgrid">
+        <article class="principle">
+          <b>Deterministic by default</b>
+          <p>Static memory, fixed schedules, no hidden allocation on a control path. If the timing cannot be reasoned about, it does not ship.</p>
+        </article>
+        <article class="principle">
+          <b>Verified, not asserted</b>
+          <p>Formal methods, SMT solvers, symbolic execution and reproducible builds. A claim without a check is a marketing line.</p>
+        </article>
+        <article class="principle">
+          <b>Own the whole stack</b>
+          <p>The kernel, the protocol layers and the domain surface are held to one engineering standard.</p>
+        </article>
+        <article class="principle">
+          <b>Open research &amp; verification</b>
+          <p>Selected systems are made open source or source-available to encourage independent verification and community improvements, alongside dedicated live runtimes.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ About ============================= -->
+  <section class="about-sec" id="about">
+    <div class="wrap">
+      <div class="shelfhead">
+        <p class="tag"><i aria-hidden="true"></i>Personal Lab &amp; Background</p>
+        <h2>About Keller Systems</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-prose">
+          <p>
+            I work as an <strong>IT Systems Integration Specialist</strong> (<em>Fachinformatiker f&uuml;r Systemintegration</em>) in the industrial manufacturing sector in Germany. Keller Systems serves as my independent lab and development hub, where I design and build software systems with the goal of commercializing select platforms once fully validated.
+          </p>
+          <p>
+            Every system in this registry stems from genuine curiosity about how complex architectures function under the hood, covering post-quantum mesh routing, SMT logic engines, real-time operating systems, and physical computing. You will find no bloat or redundant cloud dependencies here, only clean, self-contained code in Rust, Python, and TypeScript focused on solving challenging engineering problems.
+          </p>
+        </div>
+        <aside class="about-dossier" aria-label="Quick Dossier">
+          <h3>Quick Dossier</h3>
+          <div class="fr"><span>Role</span><span>IT Systems Integration (<em>FiSi</em>)</span></div>
+          <div class="fr"><span>Industry</span><span>Industrial Manufacturing IT</span></div>
+          <div class="fr"><span>Location</span><span>Germany</span></div>
+          <div class="fr"><span>Core Stack</span><span>Rust &middot; Python &middot; TypeScript</span></div>
+          <div class="fr"><span>Interests</span><span>PQC Nets, SMT Logic, Kernels</span></div>
+          <div class="fr"><span>Nature</span><span>Independent Hobby &amp; R&amp;D Lab</span></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================== Engagement & Contact =========================== -->
+  <section class="cta" id="contact">
+    <div class="wrap cta-wrap">
+      <div class="cta-main">
+        <p class="tag tag-onink"><i aria-hidden="true"></i>Direct Engagement &amp; Inquiries</p>
+        <h2>Work with Keller Systems.</h2>
+        <p class="cta-p">
+          Independent systems research built for reliability. If you want to evaluate an engine, discuss deterministic architectures, or review technical specifications, you will communicate directly with me without ticketing queues.
+        </p>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="mailto:info@kellersystems.dev?subject=Inquiry%20-%20Keller%20Systems">info@kellersystems.dev &rarr;</a>
+          <a class="btn btn-onink" href="https://github.com/KELLERBABG" target="_blank" rel="noopener noreferrer">github.com/KELLERBABG &#8599;</a>
+          <a class="btn btn-onink" href="#top">&uarr; Back to top</a>
+        </div>
+      </div>
+      <aside class="cta-dossier" aria-label="Direct Inquiries">
+        <div class="cta-dossier-head">
+          <span class="cta-dossier-title">Direct Inquiries</span>
+          <span class="cta-dossier-badge">Active</span>
+        </div>
+        <div class="cta-row">
+          <span>Pilots</span>
+          <span>BauLens &middot; ClauseLens &middot; Aureal</span>
+        </div>
+        <div class="cta-row">
+          <span>Advisory</span>
+          <span>Industrial Systems &middot; Real-time IT</span>
+        </div>
+        <div class="cta-row">
+          <span>Stack</span>
+          <span>Rust &middot; Python &middot; TypeScript</span>
+        </div>
+        <div class="cta-row">
+          <span>Response</span>
+          <span>Within 24&ndash;48h &middot; Direct</span>
+        </div>
+        <div class="cta-row">
+          <span>Location</span>
+          <span>Germany &middot; CET</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap footrow">
+    <div>
+      <p class="footword">Keller Systems</p>
+      <p class="footmeta">Independent R&amp;D &middot; kellersystems.dev &middot; <span id="totalLine">systems published</span></p>
+    </div>
+    <div class="footlinks">
+      <a class="btn btn-quiet btn-sm" href="#work">Work</a>
+      <a class="btn btn-quiet btn-sm" href="#shelf">All systems</a>
+      <a class="btn btn-quiet btn-sm" href="#about">About</a>
+      <a class="btn btn-quiet btn-sm" href="#contact">Contact</a>
+      <a class="btn btn-quiet btn-sm" href="/impressum/">Impressum</a>
+      <a class="btn btn-quiet btn-sm" href="/privacy/">Datenschutz</a>
+      <a class="btn btn-quiet btn-sm" href="/legal/">Legal &amp; Terms</a>
+    </div>
+  </div>
+</footer>
+
+<div class="chapterlabel" id="chapterLabel" aria-hidden="true"><b>01</b> <span>Global Ghost Net</span></div>
+
+<script src="data.js?v=9.6"></script>
+<script src="script.js?v=9.6"></script>
+<script src="/assets/chat.js" defer></script>
+</body>
+</html>

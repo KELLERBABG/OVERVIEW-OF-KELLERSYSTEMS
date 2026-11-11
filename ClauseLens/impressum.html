@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Impressum &mdash; ClauseLens</title>
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f6f3ec;
+      --card: #ffffff;
+      --ink: #22201c;
+      --body: #4b463d;
+      --dim: #8b8375;
+      --red: #b8442c;
+      --green: #3f7a4a;
+      --rule: #d8d1c0;
+      --accent: #2c5282;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--paper);
+      color: var(--body);
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .container {
+      width: 100%;
+      max-width: 820px;
+      margin: 0 auto;
+      padding: clamp(24px, 4vw, 44px) 20px;
+      flex: 1;
+    }
+    header.nav-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 18px;
+      margin-bottom: 32px;
+      border-bottom: 1px solid var(--rule);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .brand {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-weight: 600;
+      font-size: 1.3rem;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 8px;
+    }
+    .nav-btn {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      padding: 6px 12px;
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      background: var(--card);
+      color: var(--ink);
+      text-decoration: none;
+      transition: all .15s ease;
+    }
+    .nav-btn:hover {
+      background: #e8e3d6;
+    }
+    h1 {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: clamp(2rem, 4vw, 2.7rem);
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12.5px;
+      color: var(--dim);
+      margin-bottom: 28px;
+    }
+    .legal-card {
+      background: var(--card);
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      padding: 24px 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+    }
+    h2 {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 1.3rem;
+      color: var(--ink);
+      margin: 20px 0 8px;
+    }
+    .legal-card h2:first-child {
+      margin-top: 0;
+    }
+    p, li {
+      font-size: 14px;
+      color: #555047;
+      margin-bottom: 12px;
+      line-height: 1.65;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    footer.site-foot {
+      background: var(--card);
+      border-top: 1px solid var(--rule);
+      padding: 24px 0;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      color: var(--dim);
+    }
+    footer .wrap {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header class="nav-header">
+      <a href="index.html" class="brand">ClauseLens</a>
+      <div class="nav-links">
+        <a href="studio.html" class="nav-btn">&larr; Studio</a>
+        <a href="pricing.html" class="nav-btn">Preise</a>
+        <a href="index.html" class="nav-btn">Startseite</a>
+      </div>
+    </header>
+
+    <h1>Impressum</h1>
+    <div class="subtitle">Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)</div>
+
+        <div style="margin-bottom:24px;padding:12px 16px;background:rgba(44,82,130,0.08);border:1px solid rgba(44,82,130,0.25);border-radius:6px;font-size:13.5px;">
+      <strong>Zentrales Impressum &amp; Rechtliche Hinweise:</strong> Dieses Dokument wird zentral im <a href="https://kellersystems.dev/impressum/" target="_blank" style="color:var(--accent);font-weight:600;">Keller Systems Portal</a> geführt.
+    </div>
+    <div class="legal-card">
+      <h2>Diensteanbieter</h2>
+      <p>
+        <strong>Keller Systems &mdash; Software Development</strong><br>
+        Inhaber / Vertretungsberechtigt: <strong>Lukas Negenborn</strong><br>
+        Geschäftsanschrift:<br>
+        c/o Block Services<br>
+        Stuttgarter Str. 106<br>
+        70736 Fellbach<br>
+        Deutschland
+      </p>
+
+      <h2>Kontakt</h2>
+      <p>
+        E-Mail: <a href="mailto:info@kellersystems.dev">info@kellersystems.dev</a><br>
+        Website: <a href="https://kellersystems.dev" target="_blank">https://kellersystems.dev</a>
+      </p>
+
+      <h2>Umsatzsteuer</h2>
+      <p>
+        Gemäß § 19 UStG wird keine Umsatzsteuer berechnet (Kleinunternehmerregelung).<br>
+        <em>(Beim Vertrieb kommerzieller Lizenzen über Polar.sh tritt die Plattform als autorisierter Merchant of Record, Wiederverkäufer und Steuerschuldner auf).</em>
+      </p>
+
+      <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+      <p>
+        Lukas Negenborn<br>
+        c/o Block Services, Stuttgarter Str. 106, 70736 Fellbach
+      </p>
+
+      <h2>Rechtlicher Hinweis / RDG (§§ 1, 2 Rechtsdienstleistungsgesetz)</h2>
+      <p>
+        ClauseLens ist eine automatisierte Softwarelösung für die kaufmännische Vorprüfung und Risikoeinschätzung von Vertragstexten und AGB. Die Software stellt ausdrücklich <strong>keine Rechtsberatung</strong> im Sinne des Rechtsdienstleistungsgesetzes (RDG) dar. Sie ersetzt keine anwaltliche Einzelfallberatung durch einen zugelassenen Rechtsanwalt oder Notar.
+      </p>
+    </div>
+
+    <div class="legal-card">
+      <h2>EU-Streitschlichtung</h2>
+      <p>
+        Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: 
+        <a href="https://ec.europa.eu/consumers/odr" target="_blank">https://ec.europa.eu/consumers/odr</a>.<br>
+        Unsere E-Mail-Adresse finden Sie oben im Impressum.
+      </p>
+
+      <h2>Verbraucherstreitbeilegung / Universalschlichtungsstelle</h2>
+      <p>
+        Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+      </p>
+    </div>
+  </div>
+
+  <footer class="site-foot">
+    <div class="wrap">
+      <span>ClauseLens &middot; Keller Systems &copy; 2026</span>
+      <span>
+        <a href="https://kellersystems.dev/privacy/" target="_blank" rel="noopener noreferrer">Datenschutz</a> &nbsp;&bull;&nbsp;
+        <a href="https://kellersystems.dev/legal/" target="_blank" rel="noopener noreferrer">EULA &amp; AGB</a> &nbsp;&bull;&nbsp;
+        <a href="pricing.html">Preise</a> &nbsp;&bull;&nbsp;
+        <a href="docs.html">Handbuch</a>
+      </span>
+    </div>
+  </footer>
+
+</body>
+</html>

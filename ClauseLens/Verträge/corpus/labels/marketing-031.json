@@ -1,0 +1,73 @@
+{
+  "slug": "marketing-031",
+  "source": "generated",
+  "domain": "Digital Out of Home, österreichisches Recht",
+  "traps": [
+    {
+      "marker": "Grundgebühr erhöht sich jährlich um acht Prozent",
+      "expectedType": "price_escalation",
+      "note": "Automatische Jahreserhoehung der Grundgebuehr."
+    },
+    {
+      "marker": "Zinsen in Höhe von 12 Prozent",
+      "expectedType": "default_interest",
+      "note": "Verzugszins ohne Leitzinsbezug."
+    },
+    {
+      "marker": "bedarf der vorherigen Zustimmung des Kunden",
+      "expectedType": "assignment_restriction",
+      "note": "Zustimmungserfordernis fuer Abtretung."
+    },
+    {
+      "marker": "kostenpflichtig und nur in einem herstellereigenen Binärformat",
+      "expectedType": "data_lockin",
+      "note": "Kostenpflichtiger Export in proprietaerem Format."
+    },
+    {
+      "marker": "für konkurrierende Vermarkter nicht tätig",
+      "expectedType": "non_compete",
+      "note": "Nachvertragliches Taetigkeitsverbot."
+    },
+    {
+      "marker": "bemüht sich um eine Verfügbarkeit von 99 Prozent, ohne eine Zusage",
+      "expectedType": "unverbindliche_sla_falle",
+      "note": "Unverbindliche Verfuegbarkeitszusage."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "Symmetrische Vertraulichkeit."
+    },
+    {
+      "marker": "erhält der Kunde die Sichtkontakte kostenfrei in einem offenen Format",
+      "note": "Kostenfreier Datenexport."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende beenden",
+      "note": "Symmetrische Kündigung."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform zugelassen."
+    },
+    {
+      "marker": "innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Üblicher Zahlungstermin."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhaltung."
+    },
+    {
+      "marker": "stellt den Kunden von Ansprüchen Dritter aus der Werbenutzung frei",
+      "note": "Anbieter-Freistellung zugunsten des Kunden, kein Finding."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Auftragnehmer bucht und betreibt digitale Werbeflächen für den Kunden",
+      "note": "Kein Detektor fuer fehlende Frequenznachweise bei DOOH."
+    }
+  ]
+}

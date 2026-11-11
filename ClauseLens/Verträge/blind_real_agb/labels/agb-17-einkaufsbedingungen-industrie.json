@@ -1,0 +1,94 @@
+{
+  "slug": "agb-17-einkaufsbedingungen-industrie",
+  "domain": "Allgemeine Einkaufsbedingungen AEB eines Industrieunternehmens",
+  "source": "Blind Real-AGB Benchmark 2026 (vor Engine-Lauf gelabelt)",
+  "traps": [
+    {
+      "marker": "jederzeit berechtigt, laufende Lieferverträge, Rahmenbestellungen und Einzelaufträge ohne Angabe von Gründen",
+      "expectedType": "unilateral_convenience_termination",
+      "statutoryBasis": "§ 307 Abs. 1 und 2 BGB",
+      "note": "Einseitiges fristloses ordentliches Kündigungsrecht nur für den Einkäufer bei gleichzeitigem Ausschluss des Kündigungsrechts für den Lieferanten verstößt gegen das Gebot ausgewogener Vertragsgestaltung."
+    },
+    {
+      "marker": "für jeden angefangenen Kalendertag der Verspätung eine Vertragsstrafe in Höhe von 2,5 %",
+      "expectedType": "penalty",
+      "statutoryBasis": "§ 307 Abs. 1 BGB / § 309 Nr. 6 BGB",
+      "note": "Verschuldensunabhängige Vertragsstrafe mit überhöhtem Tagessatz von 2,5 % und fehlender Gesamtobergrenze (über 5 %) ist nach ständiger BGH-Rechtsprechung unwirksam."
+    },
+    {
+      "marker": "seine bestehenden oder künftigen Geldforderungen gegen den Auftraggeber ohne dessen vorherige",
+      "expectedType": "assignment_restriction",
+      "statutoryBasis": "§ 308 Nr. 9 BGB / § 354a HGB / § 307 BGB",
+      "note": "Pauschales Abtretungsverbot für Geldforderungen verstößt gegen § 308 Nr. 9 BGB und ignoriert § 354a HGB."
+    },
+    {
+      "marker": "dem Lieferanten obliegt die volle Beweislast dafür, dass ein Schaden im Werk des Auftraggebers",
+      "expectedType": "burden_of_proof",
+      "statutoryBasis": "§ 309 Nr. 12 BGB / § 307 BGB",
+      "note": "Unwiderlegbare Vermutung von Mangel und Organisationsverschulden sowie pauschale Beweislastumkehr zulasten des Lieferanten."
+    },
+    {
+      "marker": "völlig unabhängig davon, ob den Lieferanten hieran ein Verschulden trifft oder ob die Verletzung auf zwingenden Konstruktionsvorgaben",
+      "expectedType": "third_party_indemnity",
+      "statutoryBasis": "§ 307 Abs. 2 Nr. 1 BGB",
+      "note": "Verschuldensunabhängige Freistellung selbst für Schäden, die auf zwingenden Konstruktionsvorgaben des Auftraggebers selbst beruhen, ist grob unangemessen."
+    },
+    {
+      "marker": "jederzeit zu jeder Tages- und Nachtzeit ohne vorherige Ankündigung und ohne konkreten Anlass zu betreten",
+      "expectedType": "unreasonable_audit",
+      "statutoryBasis": "§ 307 Abs. 1 BGB",
+      "note": "Anlassloses Zutrittsrecht zu Tag- und Nachtzeiten ohne Vorankündigung samt pauschaler Prüfkostenabwälzung von 5.000 Euro ist unwirksam."
+    },
+    {
+      "marker": "während der Auftraggeber berechtigt ist, alle vom Lieferanten erhaltenen technischen Unterlagen",
+      "expectedType": "asymmetric_confidentiality",
+      "statutoryBasis": "§ 307 Abs. 1 BGB / GeschGehG",
+      "note": "Krass asymmetrische Geheimhaltungsklausel, die dem Auftraggeber erlaubt, Betriebsgeheimnisse und Kalkulationen des Lieferanten an dessen Wettbewerber weiterzugeben."
+    },
+    {
+      "marker": "nach Beendigung der Geschäftsbeziehung zeitlich unbefristet, mindestens jedoch für einen Zeitraum von 50 Jahren",
+      "expectedType": "excessive_survival",
+      "statutoryBasis": "§ 307 Abs. 1 BGB",
+      "note": "Unbefristete bzw. 50-jährige nachvertragliche Fortwirkung auch für Ersatzteilbereithaltungspflichten überdauert jede wirtschaftlich vernünftige Grenze."
+    },
+    {
+      "marker": "enden sämtliche bestehenden Rahmen- und Einzelverträge automatisch und entschädigungslos",
+      "expectedType": "insolvency_termination",
+      "statutoryBasis": "§ 119 InsO / § 103 InsO / § 307 BGB",
+      "note": "Insolvenzabhängige Lösungsklausel mit automatischer Vertragsbeendigung und unentgeltlichem Eigentumsübergang verstößt gegen § 119 InsO."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Entgegenstehende oder von diesen AEB abweichende Verkaufs- oder Lieferbedingungen",
+      "note": "Standardmäßige Abwehrklausel im kaufmännischen Einkaufsverkehr."
+    },
+    {
+      "marker": "Die Sach- und Preisgefahr geht gemäß den gesetzlichen Vorschriften erst mit der ordnungsgemäßen",
+      "note": "Gesetzeskonforme Regelung des Gefahrübergangs bei Übergabe am Erfüllungsort (§ 446 BGB)."
+    },
+    {
+      "marker": "Rechnungen sind innerhalb von 30 Tagen netto nach ordnungsgemäßer Lieferung und Rechnungseingang",
+      "note": "Angemessene Zahlungsfrist von 30 Tagen gemäß § 271a BGB."
+    },
+    {
+      "marker": "Der Einsatz von Nach- oder Unterauftragnehmern für die Fertigung wesentlicher Baugruppen bedarf",
+      "note": "Sachgerechter Zustimmungsvorbehalt für wesentliche Unterauftragnehmer mit Verbot unbilliger Verweigerung."
+    },
+    {
+      "marker": "Vom Auftraggeber beigestellte Werkzeuge, Formen und Materialien bleiben im Eigentum",
+      "note": "Rechtmäßige Eigentumssicherung und Kennzeichnungspflicht für beigestellte Werkzeuge."
+    },
+    {
+      "marker": "Gerichtsstand für Kaufleute im Sinne des Handelsgesetzbuches ist der Sitz des Auftraggebers",
+      "note": "Zulässige Gerichtsstandsvereinbarung ausschließlich für Kaufleute nach § 38 Abs. 1 ZPO."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "und alle vom Lieferanten gefertigten Werkzeuge gehen unentgeltlich in das Eigentum des Auftraggebers über",
+      "statutoryBasis": "§ 138 BGB / § 307 Abs. 1 BGB / § 119 InsO",
+      "note": "Entschädigungslose Zwangsenteignung eigener Werkzeuge des Lieferanten im Insolvenzfall benachteiligt den Lieferanten und die Insolvenzmasse sittenwidrig."
+    }
+  ]
+}

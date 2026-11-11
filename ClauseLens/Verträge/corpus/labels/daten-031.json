@@ -1,0 +1,87 @@
+{
+  "slug": "daten-031",
+  "source": "generated",
+  "domain": "Coproduktion",
+  "traps": [
+    {
+      "marker": "eine Beendigung erst mit sieben Jahren Vorlauf erklären",
+      "expectedType": "notice_period",
+      "note": "Paraphrase/Umstellung: nennt 'eine Beendigung erst mit sieben Jahren Vorlau' statt der Registerwendung."
+    },
+    {
+      "marker": "stellt die Gesellschaft von sämtlichen Ansprüchen Dritter",
+      "expectedType": "liability",
+      "note": "Paraphrase/Umstellung: nennt 'stellt die Gesellschaft von sämtlichen Ansprü' statt der Registerwendung."
+    },
+    {
+      "marker": "verwirkt bei Zahlungsverzug eine Buße in Höhe von zwei Prozent",
+      "expectedType": "penalty",
+      "note": "Paraphrase/Umstellung: nennt 'verwirkt bei Zahlungsverzug eine Buße in Höhe' statt der Registerwendung."
+    },
+    {
+      "marker": "submit to the venue of the courts of the provider's seat in London",
+      "expectedType": "jurisdiction",
+      "note": "Paraphrase/Umstellung: nennt 'submit to the venue of the courts of the prov' statt der Registerwendung."
+    },
+    {
+      "marker": "Nach Beendigung des Vertrags ist der Kunde",
+      "expectedType": "non_compete",
+      "note": "Paraphrase/Umstellung: nennt 'Nach Beendigung des Vertrags ist der Kunde' statt der Registerwendung."
+    },
+    {
+      "marker": "dürfen zum Training interner Modelle der Gesellschaft verwendet werden",
+      "expectedType": "data_grant",
+      "note": "Paraphrase/Umstellung: nennt 'dürfen zum Training interner Modelle der Gese' statt der Registerwendung."
+    },
+    {
+      "marker": "Im Verzugsfall erhöht sich der Entgeltzins auf 16 Prozent",
+      "expectedType": "default_interest",
+      "note": "Paraphrase/Umstellung: nennt 'Im Verzugsfall erhöht sich der Entgeltzins au' statt der Registerwendung."
+    },
+    {
+      "marker": "gelten die angepassten Konditionen als akzeptiert",
+      "expectedType": "unilateral_change",
+      "note": "Paraphrase/Umstellung: nennt 'gelten die angepassten Konditionen als akzept' statt der Registerwendung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "löscht nach Beendigung der Datenverarbeitung alle personenbezogenen Daten",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "in maschinenlesbarer Form ohne Zusatzkosten",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "vollständigen Export seiner Daten in einem gängigen maschinenlesbaren Format",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "führen Gespräche auf Leitungsebene.",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Protokolle stehen beiden Parteien zur Einsicht offen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "nur nach vorheriger Anzeige an den Auftraggeber einsetzen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "können in Textform, insbesondere per E-Mail, vereinbart werden",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "ohne Angabe von Gründen zum Monatsende kündigen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Zweitschrift der Dokumentation gegen eine Gebühr von fünfzehn Euro",
+      "note": "Täuschende Klausel ohne passenden Detektortyp."
+    }
+  ]
+}

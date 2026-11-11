@@ -1,0 +1,87 @@
+{
+  "slug": "daten-006",
+  "source": "generated",
+  "domain": "Datenraum",
+  "traps": [
+    {
+      "marker": "gelten die angepassten Konditionen als akzeptiert",
+      "expectedType": "unilateral_change",
+      "note": "Paraphrase/Umstellung: nennt 'gelten die angepassten Konditionen als akzept' statt der Registerwendung."
+    },
+    {
+      "marker": "Einbehalte sind nur mit Zustimmung des Anbieters zulässig",
+      "expectedType": "setoff_restriction",
+      "note": "Paraphrase/Umstellung: nennt 'Einbehalte sind nur mit Zustimmung des Anbiet' statt der Registerwendung."
+    },
+    {
+      "marker": "Erfolgt keine Beanstandung innerhalb von fünf Kalendertagen, verfallen",
+      "expectedType": "deemed_acceptance",
+      "note": "Paraphrase/Umstellung: nennt 'Erfolgt keine Beanstandung innerhalb von fünf' statt der Registerwendung."
+    },
+    {
+      "marker": "must be asserted within nine months of the event giving rise to it",
+      "expectedType": "statute_of_limitations",
+      "note": "Paraphrase/Umstellung: nennt 'must be asserted within nine months of the ev' statt der Registerwendung."
+    },
+    {
+      "marker": "Mündliche Nebenabreden haben keine Geltung",
+      "expectedType": "written_form_trap",
+      "note": "Paraphrase/Umstellung: nennt 'Mündliche Nebenabreden haben keine Geltung' statt der Registerwendung."
+    },
+    {
+      "marker": "Nachweis, dass der Schaden nicht auf einer Pflichtverletzung beruht, trägt der Kunde",
+      "expectedType": "burden_of_proof",
+      "note": "Paraphrase/Umstellung: nennt 'Nachweis, dass der Schaden nicht auf einer Pf' statt der Registerwendung."
+    },
+    {
+      "marker": "published at https://finance.example.com/terms and are amended from time to time",
+      "expectedType": "dynamic_url_referral",
+      "note": "Paraphrase/Umstellung: nennt 'published at https://finance.example.com/term' statt der Registerwendung."
+    },
+    {
+      "marker": "shall not be responsible for the acts or omissions of subcontractors",
+      "expectedType": "vicarious_agents",
+      "note": "Paraphrase/Umstellung: nennt 'shall not be responsible for the acts or omis' statt der Registerwendung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "gesetzliche Haftung für Vorsatz und grobe Fahrlässigkeit",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "aus wichtigem Grund jederzeit fristlos beenden",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Streitigkeiten vorrangig durch Mediation zu klären",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "nur im gegenseitigen Einvernehmen.",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "alle vertraulichen Informationen der jeweils anderen Seite",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "spätestens zehn Werktage vor einer beabsichtigten Kontoauflösung",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "bleibt beiden Parteien unbenommen.",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "meldet Datenschutzverletzungen unverzüglich an den Auftraggeber",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "eine Bearbeitungsgebühr von fünfzig Euro",
+      "note": "Täuschende Klausel ohne passenden Detektortyp."
+    }
+  ]
+}

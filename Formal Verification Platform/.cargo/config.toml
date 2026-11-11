@@ -1,0 +1,21 @@
+# Cargo configuration for keller-verify.
+#
+# Z3 is resolved portably, with no machine-specific absolute paths:
+#   1. `Z3_HOME` / `Z3_SYS_Z3_HEADER` from the environment (always wins)
+#   2. the `[env]` defaults below, pointing at a project-local `.z3/current`
+#   3. the per-platform default in build.rs
+#
+# Unpack a Z3 release so that `.z3/current/bin` and `.z3/current/include/z3.h`
+# exist (on Windows: `mklink /J .z3\current .z3\z3-4.16.0-x64-win`), or install
+# Z3 system-wide and export Z3_HOME. `.z3/` is gitignored.
+#
+# `Z3_SYS_Z3_HEADER` must live here (not in build.rs): cargo applies `[env]` to
+# every build script, and z3-sys' bindgen is a separate crate whose build script
+# cannot be reached from ours. Because cargo's `[env]` only fills in variables
+# that are *not* already set, an explicit environment value still takes priority.
+#
+# `relative = true` resolves the value against this file's directory, so these
+# entries stay valid on any checkout (and on Linux/macOS too).
+[env]
+Z3_HOME = { value = ".z3/current", relative = true }
+Z3_SYS_Z3_HEADER = { value = ".z3/current/include/z3.h", relative = true }

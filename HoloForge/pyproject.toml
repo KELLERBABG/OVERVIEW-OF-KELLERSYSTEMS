@@ -1,0 +1,87 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "holoforge-opt"
+dynamic = ["version"]
+description = "HoloForge - holographic volumetric printing: tomographic light-shaping engine, wavefront-matched CGH optimizer, cure simulation, hardware & web control suite"
+readme = "README.md"
+license = { text = "BUSL-1.1" }
+classifiers = [
+    "License :: Other/Proprietary License",
+    "Topic :: Scientific/Engineering",
+    "Programming Language :: Python :: 3",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "pillow>=10.0",
+]
+
+[project.optional-dependencies]
+accel = ["scipy>=1.11", "cupy-cuda12x"]
+dev = ["pytest>=7", "ruff>=0.9", "mypy>=1.10"]
+
+[project.scripts]
+holoforge = "holoforge.cli:main"
+
+[tool.setuptools.dynamic]
+version = {attr = "holoforge.__version__"}
+
+[tool.setuptools.packages.find]
+include = ["holoforge*"]
+
+[tool.setuptools.package-data]
+"holoforge.web" = ["static/*"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+# Conservative explicit rule set (phase 2, see ASSESSMENT.md): classic
+# pycodestyle/pyflakes error rules plus import sorting, pyupgrade and
+# comprehension rules, all of which the current codebase passes after
+# safe autofixes. Broader rule families (S, BLE, RUF, ...) are deferred
+# to the safety-hardening phase so CI stays green without large refactors.
+select = ["E4", "E7", "E9", "F", "I", "UP", "C4"]
+
+[tool.mypy]
+python_version = "3.10"
+files = ["holoforge"]
+warn_unused_configs = true
+
+[[tool.mypy.overrides]]
+# Optional hardware/acceleration libraries that ship no type stubs.
+module = ["serial", "scipy.*"]
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+# Modules carrying pre-existing annotation debt (50 errors across 16
+# modules when this baseline was set, see ASSESSMENT.md phase 2). They
+# are scoped off until annotated; every other module stays fully
+# type-checked so new code cannot regress silently.
+module = [
+    "holoforge.backend",
+    "holoforge.benchmark",
+    "holoforge.calibration",
+    "holoforge.cli",
+    "holoforge.config",
+    "holoforge.dose_compensate",
+    "holoforge.hardware.laser",
+    "holoforge.hardware.runner",
+    "holoforge.hardware.stage",
+    "holoforge.io_hfp",
+    "holoforge.optimize",
+    "holoforge.optics",
+    "holoforge.player",
+    "holoforge.render",
+    "holoforge.simulate",
+    "holoforge.web.server",
+]
+ignore_errors = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"
+

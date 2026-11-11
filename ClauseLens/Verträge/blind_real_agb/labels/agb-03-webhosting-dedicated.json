@@ -1,0 +1,82 @@
+{
+  "slug": "agb-03-webhosting-dedicated",
+  "domain": "Webhosting, Domains & Server-Housing AGB",
+  "source": "Blind Real-AGB Benchmark 2026 (vor Engine-Lauf gelabelt)",
+  "traps": [
+    {
+      "marker": "unabhängig von einem eigenen Verschulden vollumfänglich von sämtlichen Ansprüchen",
+      "expectedType": "third_party_indemnity",
+      "statutoryBasis": "§ 307 Abs. 1, Abs. 2 Nr. 1 BGB",
+      "note": "Unzulässige verschuldensunabhängige Freistellungsklausel für Ansprüche Dritter entgegen dem Verschuldensprinzip des BGB."
+    },
+    {
+      "marker": "Eine Aufrechnung oder die Ausübung eines Zurückbehaltungsrechts durch den Kunden",
+      "expectedType": "setoff_restriction",
+      "statutoryBasis": "§ 309 Nr. 3, Nr. 2 BGB",
+      "note": "Verstoß gegen das Klauselverbot des § 309 Nr. 3 BGB durch Ausschluss der Aufrechnung auch mit unbestrittenen oder rechtskräftig festgestellten Forderungen."
+    },
+    {
+      "marker": "gegen den Provider gerichtete Ansprüche – einschließlich reiner Geldforderungen aus",
+      "expectedType": "assignment_restriction",
+      "statutoryBasis": "§ 308 Nr. 9 lit. a BGB, § 354a HGB",
+      "note": "Unwirksames Abtretungsverbot für auf Geld gerichtete Ansprüche des Kunden."
+    },
+    {
+      "marker": "der Kunde bleibt während des gesamten Zeitraums der Nichtleistung jedoch",
+      "expectedType": "force_majeure_asymmetry",
+      "statutoryBasis": "§ 307 Abs. 2 Nr. 1 BGB, § 326 Abs. 1 BGB",
+      "note": "Asymmetrische Force-Majeure-Klausel, die den Provider von der Leistung befreit, dem Kunden aber die volle Zahlungspflicht auferlegt."
+    },
+    {
+      "marker": "gilt unwiderlegbar genau zwei Stunden nach dem Absendezeitpunkt des Ausgangsservers",
+      "expectedType": "fictitious_receipt",
+      "statutoryBasis": "§ 308 Nr. 6 BGB, § 130 BGB",
+      "note": "Unwirksame Zugangsfiktion für E-Mails unabhängig vom tatsächlichen Eingang im Machtbereich des Empfängers."
+    },
+    {
+      "marker": "Wird über das Vermögen des Kunden ein Antrag auf Eröffnung des Insolvenzverfahrens",
+      "expectedType": "insolvency_termination",
+      "statutoryBasis": "§§ 103, 112, 119 InsO, § 307 BGB",
+      "note": "Unwirksame insolvenzabhängige Lösungsklausel, die das Wahlrecht des Insolvenzverwalters nach § 103 InsO unterläuft."
+    },
+    {
+      "marker": "Für ein Verschulden seiner gesetzlichen Vertreter sowie seiner leitenden und",
+      "expectedType": "vicarious_agents",
+      "statutoryBasis": "§ 309 Nr. 7 lit. b BGB, § 278 BGB",
+      "note": "Unzulässiger Haftungsausschluss für Vorsatz und grobe Fahrlässigkeit von gesetzlichen Vertretern und Erfüllungsgehilfen."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Wartungsarbeiten werden, soweit betrieblich möglich, in verkehrsarmen Zeiten",
+      "note": "Rücksichtnahmegebot bei geplanten Wartungsarbeiten im Rechenzentrum."
+    },
+    {
+      "marker": "Bei der Verschaffung und Pflege von Internet-Domains wird der Provider im Verhältnis",
+      "note": "Branchenübliche und BGH-konforme Leistungsbeschreibung bei der Domain-Registrierung."
+    },
+    {
+      "marker": "Der Kunde ist verpflichtet, seine auf den Servern abgelegten Inhalte und Skripte",
+      "note": "Angemessene IT-Sicherheitsobliegenheit des Kunden bei Hosting-Diensten."
+    },
+    {
+      "marker": "laufen Webhosting-Verträge auf unbestimmte Zeit und können von beiden Parteien mit",
+      "note": "Kundenfreundliche, symmetrische Kündigungsfrist von einem Monat in Textform."
+    },
+    {
+      "marker": "ist die Haftung des Providers für Datenverlust auf den typischen",
+      "note": "In der Rechtsprechung anerkannte Konkretisierung des Mitverschuldens (§ 254 BGB) bei unterlassener Datensicherung."
+    },
+    {
+      "marker": "Ist der Kunde Kaufmann oder juristische Person des öffentlichen Rechts, ist",
+      "note": "Wirksame kaufmännische Gerichtsstandsvereinbarung nach § 38 ZPO."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "erhebt der Provider für die Freigabe des gesetzlich geschuldeten AuthInfo-Codes eine",
+      "statutoryBasis": "§ 307 Abs. 1, Abs. 2 Nr. 1 BGB",
+      "note": "Unzulässiges Entgelt für die Erfüllung einer gesetzlichen Nebenpflicht bei Vertragsende (Herausgabe des Domain-AuthInfo-Codes für den Providerwechsel)."
+    }
+  ]
+}

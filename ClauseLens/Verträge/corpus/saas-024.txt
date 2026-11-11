@@ -1,0 +1,71 @@
+Software-Abonnementvertrag Feldwerk Service
+
+zwischen Feldwerk Service Cloud GmbH, Königstraße 28, 70173 Stuttgart (nachfolgend "Anbieterin")
+
+und Schwarzwälder Anlagenbau GmbH, Guntramstraße 9, 79106 Freiburg (nachfolgend "Kunde")
+
+Präambel
+
+Die Anbieterin überlässt dem Kunden die Service-Plattform Feldwerk für den Außendienst.
+
+§ 1 Gegenstand
+
+(1) Die Anbieterin überlässt dem Kunden die Service-Plattform Feldwerk.
+
+(2) Die Nutzung ist auf 80 benannte Nutzer begrenzt.
+
+§ 2 Beschaffenheit
+
+(1) Die Software wird im Zustand wie gesehen bereitgestellt; eine Gewährleistung ist ausgeschlossen.
+
+§ 3 Form
+
+(1) Die Beendigung ist nur durch ein handschriftlich unterzeichnetes Schreiben in Papierform möglich.
+
+§ 4 Verjährung
+
+(1) Mängelansprüche erlöschen sechs Monate nach der Übergabe.
+
+§ 5 Abnahme
+
+(1) Mängel sind binnen fünf Werktagen nach Erhalt anzuzeigen; danach gilt die Leistung als genehmigt.
+
+§ 6 Leistungsumfang
+
+(1) Der Anbieter ist berechtigt, den Leistungsumfang jederzeit einzuschränken.
+
+§ 7 Laufzeit
+
+(1) Die feste Laufzeit beträgt sechsunddreißig Monate, eine Kündigung ist ausgeschlossen.
+
+§ 8 Haftung
+
+(1) Die Haftung für mittelbare Schäden und entgangenen Gewinn ist abbedungen.
+
+§ 9 Zahlung
+
+(1) Die Rechnung ist innerhalb von 30 Tagen nach Zugang ohne Abzug fällig.
+
+§ 10 Datenexport
+
+(1) Die Anbieterin stellt dem Kunden bei Vertragsende eine vollständige Kopie aller Kundendaten in maschinenlesbarer Form kostenfrei bereit.
+
+(2) Die Anbieterin übergibt die Daten in einem gängigen Format.
+
+§ 11 Mängel
+
+(1) Die Anbieterin gewährleistet, dass die Anwendung im Wesentlichen der Leistungsbeschreibung entspricht.
+
+§ 12 Haftungsgrenze
+
+(1) Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt.
+
+§ 13 Datenschutz
+
+(1) Die Verarbeitung erfolgt ausschließlich in Rechenzentren innerhalb der Europäischen Union.
+
+Stuttgart, den 01.12.2025
+
+Für die Anbieterin: gez. F. Feldwerk
+
+Für den Kunden: gez. S. Schwarzwälder

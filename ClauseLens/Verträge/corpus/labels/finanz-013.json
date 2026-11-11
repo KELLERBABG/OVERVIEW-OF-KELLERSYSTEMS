@@ -1,0 +1,87 @@
+{
+  "slug": "finanz-013",
+  "source": "generated",
+  "domain": "Darlehen",
+  "traps": [
+    {
+      "marker": "Die Grundgebühr steigt jährlich um bis zu fünfzehn Prozent",
+      "expectedType": "price_escalation",
+      "note": "Paraphrase/Umstellung: nennt 'Die Grundgebühr steigt jährlich um bis zu fün' statt der Registerwendung."
+    },
+    {
+      "marker": "Unwirksame Regelungen werden durch eine interessengerechte Ersatzregelung ersetzt",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "Paraphrase/Umstellung: nennt 'Unwirksame Regelungen werden durch eine inter' statt der Registerwendung."
+    },
+    {
+      "marker": "Die Übereignung steht unter der aufschiebenden Bedingung der Erfüllung",
+      "expectedType": "extended_retention_of_title",
+      "note": "Paraphrase/Umstellung: nennt 'Die Übereignung steht unter der aufschiebende' statt der Registerwendung."
+    },
+    {
+      "marker": "Unterauftragnehmer heranziehen, ohne dies dem Kunden vorher anzuzeigen",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "Paraphrase/Umstellung: nennt 'Unterauftragnehmer heranziehen, ohne dies dem' statt der Registerwendung."
+    },
+    {
+      "marker": "shall constitute conclusive evidence of any service failure",
+      "expectedType": "audit_log_manipulation",
+      "note": "Paraphrase/Umstellung: nennt 'shall constitute conclusive evidence of any s' statt der Registerwendung."
+    },
+    {
+      "marker": "läuft während der Sperre unverändert weiter",
+      "expectedType": "service_suspension",
+      "note": "Paraphrase/Umstellung: nennt 'läuft während der Sperre unverändert weiter' statt der Registerwendung."
+    },
+    {
+      "marker": "erlischt der Vertrag ohne dass es einer Kündigung bedarf",
+      "expectedType": "insolvency_termination",
+      "note": "Paraphrase/Umstellung: nennt 'erlischt der Vertrag ohne dass es einer Kündi' statt der Registerwendung."
+    },
+    {
+      "marker": "The customer shall bear any taxes, interest or penalties retrospectively assessed",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Paraphrase/Umstellung: nennt 'The customer shall bear any taxes, interest o' statt der Registerwendung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "gesetzliche Haftung für Vorsatz und grobe Fahrlässigkeit",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "mindestens vierzehn Tage vor dem Einsatz eines Unterauftragnehmers",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "vollständigen Export seiner Daten in einem gängigen maschinenlesbaren Format",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "zum Quartalsende ordentlich kündigen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "spätestens zehn Werktage vor einer beabsichtigten Kontoauflösung",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "einen festen Ansprechpartner für alle Fragen der Vertragsabwicklung",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "ohne Angabe von Gründen zum Monatsende kündigen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Streitigkeiten vorrangig durch Mediation zu klären",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "eine Bearbeitungsgebühr von fünfzehn Euro zu erheben",
+      "note": "Täuschende Klausel ohne passenden Detektortyp."
+    }
+  ]
+}

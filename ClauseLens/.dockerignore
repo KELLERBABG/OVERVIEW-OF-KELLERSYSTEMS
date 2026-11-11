@@ -1,0 +1,10 @@
+node_modules
+npm-debug.log
+test
+.git
+.gitignore
+.github
+.gemini
+*.tgz
+*.log
+tmp

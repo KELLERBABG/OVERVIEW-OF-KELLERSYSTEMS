@@ -1,0 +1,69 @@
+Vertrag über die Lagerlogistik
+zwischen
+Nordlicht Lagerlogistik GmbH, Hafenpromenade 9, 30159 Hannover (nachfolgend Anbieter)
+und
+Bode Pharma GmbH, Ringstraße 22, 70567 Stuttgart (nachfolgend Kunde)
+
+§ 1 Vertragsgegenstand
+
+1.1 Der Anbieter betreibt für den Kunden das Zentrallager am Standort Hannover.
+
+1.2 Die Parteien stimmen die Lagerkapazitäten monatlich ab.
+
+1.3 Der Anbieter hält die Ware unter den vereinbarten Klimabedingungen vor.
+
+§ 2 Laufzeit
+
+2.1 Die Mindestlaufzeit beträgt achtundvierzig Monate und eine vorzeitige Kündigung ist ausgeschlossen.
+
+2.2 Das Recht beider Parteien zur Kündigung aus wichtigem Grund bleibt unberührt.
+
+§ 3 Vertraulichkeit
+
+3.1 Der Kunde verpflichtet sich, sämtliche Betriebs- und Handelsdaten streng vertraulich zu behandeln.
+
+3.2 Der Anbieter unterhält ein Sicherheitsmanagementsystem nach ISO 9001.
+
+§ 4 Prüfungen
+
+4.1 Der Anbieter darf ein Audit ohne vorherige Ankündigung durchführen.
+
+4.2 Die Kosten des Audits trägt der Kunde.
+
+4.3 Der Kunde erhält einmal jährlich einen Prüfbericht.
+
+§ 5 Daten und Export
+
+5.1 Der Export der Daten ist nur gegen eine gesonderte Herausgabegebühr möglich.
+
+5.2 Der Kunde kann seine Bestandsdaten jederzeit in einem gängigen Format exportieren.
+
+§ 6 Referenzen
+
+6.1 Der Anbieter ist berechtigt, den Kunden als Referenzkunden zu führen.
+
+6.2 Die Nennung des Kunden in Pressemitteilungen bedarf der vorherigen Zustimmung.
+
+§ 7 Servicegutschriften
+
+7.1 Wird ein kritischer Sicherheitspatch nicht binnen sieben Tagen installiert, entfällt der Anspruch auf eine Gutschrift.
+
+7.2 Der Anbieter stellt monatlich einen Verfügbarkeitsbericht bereit.
+
+§ 8 Ergänzende Bedingungen
+
+8.1 Es gelten die jeweils aktuellen Lagerbedingungen unter https://www.nordlicht-lager.de/bedingungen.
+
+8.2 Der Anbieter informiert den Kunden über Änderungen der Bedingungen.
+
+§ 9 Vergütung und Haftung
+
+9.1 Rechnungen sind innerhalb von 30 Tagen ohne Abzug zahlbar.
+
+9.2 Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt.
+
+9.3 Es gilt deutsches Recht.
+
+§ 10 Unterauftragnehmer
+
+10.1 Der Anbieter kann Unterauftragnehmer mit einer Vorlaufzeit von vierzehn Tagen benennen.

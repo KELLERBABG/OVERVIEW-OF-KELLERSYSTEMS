@@ -1,0 +1,87 @@
+{
+  "slug": "werk-007",
+  "source": "generated",
+  "domain": "Sondermaschinenbau mit Steuerungssoftware, deutsches Recht",
+  "traps": [
+    {
+      "marker": "schuldet er eine Schadenspauschale von 5.000 EUR je Woche",
+      "expectedType": "penalty",
+      "note": "Pauschaler Schadensersatz ohne das Wort Vertragsstrafe."
+    },
+    {
+      "marker": "Für Meinungsverschiedenheiten über die Abnahme gilt ein gutachterliches Verfahren",
+      "expectedType": "mandatory_expert_determination",
+      "note": "Gutachterliches Verfahren mit Kostenvorschuss und Klagesperre, ohne das Wort Sachverstaendigenverfahren."
+    },
+    {
+      "marker": "Alle Rechte an den Ergebnissen gehen in das Alleineigentum des Anbieters über",
+      "expectedType": "data_grant",
+      "note": "Rechteuebertragung an den Anbieter."
+    },
+    {
+      "marker": "Title shall remain with the provider until payment in full of all amounts owed under any agreement",
+      "expectedType": "extended_retention_of_title",
+      "note": "Erweiterter Eigentumsvorbehalt englisch."
+    },
+    {
+      "marker": "Zusicherungen zur Eignung für einen bestimmten Zweck sind nicht Bestandteil dieses Vertrages",
+      "expectedType": "as_is_software_disclaimer",
+      "note": "Zusicherungsausschluss ohne wie gesehen."
+    },
+    {
+      "marker": "Für einen Direktauftrag ist eine Provision ausgeschlossen",
+      "expectedType": "agency_commission_exclusion",
+      "note": "Provisionsausschluss bei Direktgeschaeft."
+    },
+    {
+      "marker": "Der Kunde verzichtet auf einen Ausgleich oder eine Entschädigung",
+      "expectedType": "agency_goodwill_waiver",
+      "note": "Ausgleichsverzicht ohne Paragraf 89b HGB."
+    },
+    {
+      "marker": "Der Name und das Logo des Kunden dürfen zu Referenzzwecken auf der Website verwendet werden",
+      "expectedType": "marketing_reference",
+      "note": "Referenznutzung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Zulaessige Freizeichnung, muss still bleiben."
+    },
+    {
+      "marker": "Die Vergütung ist innerhalb von dreißig Tagen nach Rechnungseingang fällig",
+      "note": "Marktuebliche Zahlungsfrist."
+    },
+    {
+      "marker": "Änderungen dieses Vertrages können in Textform vereinbart werden",
+      "note": "Textform ausdruecklich erlaubt."
+    },
+    {
+      "marker": "eine Berufshaftpflichtversicherung mit einer Deckungssumme von zwei Millionen EUR",
+      "note": "Vernuenftige Absicherung, unbedenklich."
+    },
+    {
+      "marker": "Jede Partei trägt ihre eigenen Kosten aus der Vertragsverhandlung",
+      "note": "Neutrale Kostentragung."
+    },
+    {
+      "marker": "Der Anbieter dokumentiert die Änderungen im Änderungsprotokoll",
+      "note": "Dokumentationspflicht, unbedenklich."
+    },
+    {
+      "marker": "Die Kündigung aus wichtigem Grund bleibt beiden Parteien unbenommen",
+      "note": "Symmetrisches Sonderkündigungsrecht."
+    },
+    {
+      "marker": "Alle Fristen werden in Kalendertagen gerechnet",
+      "note": "Neutrale Fristenregelung."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Kunde kann der Nennung jederzeit widersprechen",
+      "note": "Widerspruchsrecht ohne eigenen Detektor."
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+Servicevertrag über den Betrieb der Netzleitsysteme
+
+zwischen GridWorks IT AG, Bonn (nachfolgend Anbieter) und Stadtwerke Rheinbach GmbH, Rheinbach (nachfolgend Kunde).
+
+Präambel
+Die Parteien beabsichtigen die in § 1 beschriebene Zusammenarbeit. Der Anbieter erbringt die Leistungen, der Kunde vergütet sie. Die Parteien vereinbaren Folgendes.
+
+§ 1 Gegenstand
+Gegenstand des Vertrages ist den Betrieb und die Überwachung der Netzleitsysteme gemäß Anlage 1.
+
+§ 2 Leistungsumfang
+Der Anbieter erbringt die Leistungen gemäß Anlage 1 und dokumentiert die Ergebnisse.
+
+§ 3 Kündigungsfristen
+(3) Die Kündigung ist mit einer Frist von vierundzwanzig Monaten zum Laufzeitende zu erklären.
+
+§ 4 Haftung
+(4) The provider's aggregate liability shall not exceed the fees paid in the preceding six months.
+
+§ 5 Wettbewerbsverbot
+(5) Nach Auslaufen des Vertrages enthält sich der Kunde für achtzehn Monate jeder Wettbewerbstätigkeit; eine Karenzentschädigung wird nicht gezahlt.
+
+§ 6 Aufrechnung und Zurückbehaltung
+(6) Ein Zurückbehaltungsrecht des Kunden ist ausgeschlossen.
+
+§ 7 Verjährung
+(7) Ersatzansprüche erlöschen mit Ablauf von zwölf Monaten.
+
+§ 8 Einbezogene Bedingungen
+(8) Ergänzend gelten die jeweils aktuellen Supportbedingungen, abrufbar unter https://kernzeit.example/support.
+
+§ 9 Freistellung
+(9) The customer shall indemnify and hold harmless the provider against any third party claims.
+
+§ 10 Vertragsstrafe und Pauschalen
+(10) Für den Fall der Verspätung wird eine Konventionalstrafe von 0,3 Prozent je Kalendertag fällig.
+
+§ 11 Beweislast
+(11) Die Beweislast für die Mangelhaftigkeit der Werkleistung trägt der Kunde.
+
+§ 12 Vertraulichkeit
+(12) Beide Parteien verpflichten sich wechselseitig, die offengelegten Informationen vertraulich zu behandeln.
+
+§ 13 Unterauftragnehmer
+(13) Der Anbieter zeigt den Einsatz von Unterauftragnehmern vierzehn Tage vorher an.
+
+§ 14 Datenrückgabe
+(14) Der Kunde erhält zum Vertragsende einen kostenfreien Datenexport in einem gängigen Format.
+
+§ 15 Form
+(15) Änderungen dieses Vertrages können in Textform vereinbart werden.
+
+§ 16 Kündigung
+(16) Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Monatsende kündigen.
+
+§ 17 Sonderkündigung
+(17) Die Kündigung aus wichtigem Grund bleibt beiden Parteien unbenommen.
+
+§ 18 Prüfungen
+(18) Prüfungen erfolgen nur bei konkretem Anlass und nach Ankündigung mit einer Frist von dreißig Tagen.
+
+§ 19 Vollständigkeit
+(19) Der Kunde erhält Zugang zu einer Testumgebung.
+
+Anlage 1: Leistungsbeschreibung
+Anlage 2: Servicezeiten
+
+Bonn, den 3. Februar 2026
+GridWorks IT AG
+Stadtwerke Rheinbach GmbH

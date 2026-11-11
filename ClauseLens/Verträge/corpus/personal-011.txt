@@ -1,0 +1,69 @@
+Beratungsvertrag
+
+Zwischen der Vantage Analytics GmbH, Spitalerstraße 10, 20095 Hamburg (nachfolgend "Kunde") und Herrn Timo Reinhardt, Gartenstraße 21, 79098 Freiburg (nachfolgend "Anbieter") wird der folgende Vertrag geschlossen.
+
+§ 1 Leistungen
+
+(1) Der Anbieter erstellt ein Datenmodell für die Absatzplanung des Kunden.
+
+(2) Der Anbieter stimmt den Projektplan mit dem Kunden ab.
+
+§ 2 Vergütung
+
+(1) Die Vergütung wird nach abgenommenen Arbeitspaketen abgerechnet.
+
+(2) Zahlungen sind innerhalb von 14 Tagen zu leisten.
+
+§ 3 Daten und Rechte
+
+(1) Der Kunde räumt dem Anbieter ein unwiderrufliches Nutzungsrecht an den Daten zu Trainingszwecken ein.
+
+§ 4 Feedback
+
+(1) Feedback des Kunden geht unentgeltlich in das Eigentum des Anbieters über.
+
+§ 5 Referenzen
+
+(1) Der Anbieter ist berechtigt, den Kunden als Referenz zu nennen.
+
+§ 6 Vollständige Vereinbarung
+
+(1) Mündliche N​ebenabreden bestehen nicht.
+
+§ 7 Abtretung
+
+(1) Eine Abtretung von Ansprüchen des Kunden bedarf der vorherigen Zustimmung des Anbieters.
+
+§ 8 Erfüllungsgehilfen
+
+(1) Die Haftung des Anbieters für Erfüllungsgehilfen ist ausgeschlossen.
+
+§ 9 Datenherausgabe
+
+(1) Ein maschinenlesbarer Export der Daten ist nicht Bestandteil dieses Vertrages.
+
+§ 10 Höhere Gewalt
+
+(1) Höhere Gewalt befreit den Anbieter von der Leistungspflicht; die Zahlungspflicht des Kunden bleibt unberührt.
+
+§ 11 Zusammenarbeit
+
+(1) Der Anbieter stellt den Projektfortschritt wöchentlich dar.
+
+(2) Der Kunde benennt eine fachliche Ansprechperson.
+
+(3) Die Parteien bewahren die Projektunterlagen geordnet auf.
+
+§ 12 Schlussbestimmungen
+
+(1) Dieser Vertrag wird in zwei Ausfertigungen erstellt.
+
+(2) Der Vertrag läuft bis zur Abnahme des letzten Arbeitspakets.
+
+Hamburg, den 13.03.2025
+
+_______________________
+Vantage Analytics GmbH
+
+_______________________
+Timo Reinhardt

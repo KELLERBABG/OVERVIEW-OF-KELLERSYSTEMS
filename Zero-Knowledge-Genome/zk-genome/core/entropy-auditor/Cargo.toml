@@ -1,0 +1,13 @@
+[package]
+name = "zk-genome-entropy-auditor"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Genetic entropy audit — SHA-3-512 hash chain integrity verification"
+
+[dependencies]
+zk-genome-genome-core = { path = "../genome-core" }
+sha3 = "0.10"
+
+[lints]
+workspace = true

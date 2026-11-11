@@ -1,0 +1,79 @@
+{
+  "slug": "personal-003",
+  "source": "generated",
+  "domain": "Zeitarbeit und ANUE",
+  "traps": [
+    {
+      "marker": "berechtigt, S​ubunternehmer ohne Zustimmung des Kunden einzusetzen",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "Subunternehmereinsatz ohne Zustimmung"
+    },
+    {
+      "marker": "ohne Vorankündigung zu sperren",
+      "expectedType": "service_suspension",
+      "note": "Leistungssperre ohne Vorankündigung bei fortlaufender Zahlungspflicht"
+    },
+    {
+      "marker": "Bei Insolvenz des Kunden endet der Vertrag",
+      "expectedType": "insolvency_termination",
+      "note": "Automatische Beendigung bei Insolvenz"
+    },
+    {
+      "marker": "Steuernachforderungen aus der Überlassung sind vollumfänglich vom Kunden",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Steuernachforderungen vollumfänglich beim Kunden"
+    },
+    {
+      "marker": "nach billigem Ermessen anpassen; eine Obergrenze besteht nicht",
+      "expectedType": "price_escalation",
+      "note": "Einseitige Preisanpassung ohne Obergrenze"
+    },
+    {
+      "marker": "Eine Aufrechnung des Kunden ist ausgeschlossen",
+      "expectedType": "setoff_restriction",
+      "note": "Ausschluss der Aufrechnung"
+    },
+    {
+      "marker": "Verzugszinsen in Höhe von 12 Prozent jährlich",
+      "expectedType": "default_interest",
+      "note": "Hohe Verzugszinsen"
+    },
+    {
+      "marker": "Beweislast für die Richtigkeit der übermittelten Stundennachweise",
+      "expectedType": "burden_of_proof",
+      "note": "Beweislast zu Lasten des Kunden"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende beenden",
+      "note": "symmetrische Beendigungsfrist"
+    },
+    {
+      "marker": "Die Arbeitszeiten werden durch den Kunden täglich erfasst",
+      "note": "Zeiterfassung"
+    },
+    {
+      "marker": "Der Kunde stellt die erforderliche Schutzausrüstung bereit",
+      "note": "Arbeitsschutz"
+    },
+    {
+      "marker": "Die Abrechnung erfolgt monatlich auf Grundlage der freigegebenen Stundennachweise",
+      "note": "Abrechnungsmodalität"
+    },
+    {
+      "marker": "Die Anlagen 1 und 2 sind Bestandteil dieses Vertrages",
+      "note": "Anlagenbezug"
+    },
+    {
+      "marker": "Beschwerden des Kunden zu einzelnen Arbeitnehmern werden innerhalb von zehn Werktagen bearbeitet",
+      "note": "Bearbeitungszusage ohne Sanktion"
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Kunde prüft die vorgelegten Nachweise vor dem ersten Einsatz",
+      "note": "harmlose Prüfpflicht"
+    }
+  ]
+}

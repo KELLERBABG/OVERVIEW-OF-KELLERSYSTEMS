@@ -1,0 +1,10 @@
+export { TaskDistributor } from './distributor.js';
+export type { MeshLike, NodeRegistryLike } from './distributor.js';
+export { TaskSplitter } from './splitter.js';
+export { WorkScheduler } from './scheduler.js';
+export { ResultReassembler } from './reassembler.js';
+export { ProgressTracker } from './progress-tracker.js';
+export { PriorityQueue } from './queue.js';
+export type { DistributionConfig } from './config.js';
+export type { DistributionPlan } from './types.js';
+export { defaultConfig } from './config.js';

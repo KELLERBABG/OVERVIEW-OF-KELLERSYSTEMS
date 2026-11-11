@@ -1,0 +1,99 @@
+{
+  "slug": "agb-01-telekommunikation-mobilfunk",
+  "domain": "Telekommunikation & Glasfaser/Mobilfunk AGB",
+  "source": "Blind Real-AGB Benchmark 2026 (vor Engine-Lauf gelabelt)",
+  "traps": [
+    {
+      "marker": "www.nordnetz-connect.de/agb-technik-aktuell abrufbaren Dokumenten in ihrer jeweils",
+      "expectedType": "dynamic_url_referral",
+      "statutoryBasis": "§ 305 Abs. 2, § 307 Abs. 1 S. 2, § 308 Nr. 4 BGB",
+      "note": "Unzulässiger dynamischer Verweis auf online abrufbare Dokumente in der jeweils gültigen Fassung mit jederzeitiger Änderungsmöglichkeit."
+    },
+    {
+      "marker": "vertraglich vereinbarten Übertragungsraten, das enthaltene Datenvolumen sowie die",
+      "expectedType": "unilateral_change",
+      "statutoryBasis": "§ 308 Nr. 4 BGB",
+      "note": "Einseitiger Leistungsänderungsvorbehalt nach freiem Ermessen ohne triftigen Grund und Zumutbarkeitsgrenze."
+    },
+    {
+      "marker": "etwaige Kostensenkungen müssen nicht an den Kunden weitergegeben werden und ein",
+      "expectedType": "price_escalation",
+      "statutoryBasis": "§ 307 Abs. 1 BGB",
+      "note": "Asymmetrische Preiserhöhungsklausel ohne Pflicht zur Weitergabe von Kostensenkungen und unter Ausschluss des Sonderkündigungsrechts."
+    },
+    {
+      "marker": "Gerät der Kunde mit einer fälligen Zahlung in Verzug, berechnet der Anbieter",
+      "expectedType": "default_interest",
+      "statutoryBasis": "§ 309 Nr. 5 BGB, § 288 BGB",
+      "note": "Überhöhter pauschalierter Verzugszinssatz von 18 % p.a. ohne Nachweismöglichkeit eines geringeren Schadens."
+    },
+    {
+      "marker": "sofort und ohne vorherige Androhung oder Nachfristsetzung vollständig zu sperren",
+      "expectedType": "service_suspension",
+      "statutoryBasis": "§ 307 Abs. 1 BGB, § 61 TKG",
+      "note": "Sofortige Anschlusssperre bereits bei geringfügigem Verzug (15 Euro) und ohne vorherige Androhung/Fristsetzung."
+    },
+    {
+      "marker": "gelten dabei als unwiderlegbarer Beweis für die Richtigkeit der abgerechneten",
+      "expectedType": "audit_log_manipulation",
+      "statutoryBasis": "§ 309 Nr. 12 BGB",
+      "note": "Unzulässige Beweislaständerung durch unwiderlegbare Beweiskraft eigener Server-Logdaten unter Ausschluss des Gegenbeweises."
+    },
+    {
+      "marker": "verlängert er sich jeweils automatisch um weitere 24 Monate zu den dann geltenden",
+      "expectedType": "auto_renewal",
+      "statutoryBasis": "§ 309 Nr. 9 lit. b BGB, § 56 TKG",
+      "note": "Unzulässige automatische Vertragsverlängerung um 24 Monate bei dreimonatiger Kündigungsfrist."
+    },
+    {
+      "marker": "zwingend der eigenhändigen Unterschrift des Kunden im Original und muss der NordNetz",
+      "expectedType": "written_form_trap",
+      "statutoryBasis": "§ 309 Nr. 13 BGB",
+      "note": "Verstoß gegen das Verbot strengerer Formerfordernisse als Textform (strenge Schriftform und Einschreiben mit Rückschein)."
+    },
+    {
+      "marker": "100 Prozent sämtlicher bis zum regulären Ende der Mindestvertragslaufzeit noch",
+      "expectedType": "early_termination_charge",
+      "statutoryBasis": "§ 309 Nr. 5 BGB",
+      "note": "Überhöhter pauschalierter Schadensersatz bei vorzeitiger Vertragsbeendigung (100 % der Restlaufzeit-Entgelte ohne Abzug ersparter Aufwendungen)."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Gegen Ansprüche der NordNetz Connect GmbH kann der Kunde nur mit unbestrittenen oder",
+      "note": "Wirksames Aufrechnungsverbot mit Ausnahmen für unbestrittene und rechtskräftig festgestellte Forderungen sowie Wahrung des Zurückbehaltungsrechts aus demselben Vertrag."
+    },
+    {
+      "marker": "Der Kunde ist verpflichtet, seine Zugangsdaten und PIN-Codes vor dem Zugriff",
+      "note": "Übliche und angemessene Sorgfaltspflicht des Kunden zum Schutz von Zugangsdaten und Mietgeräten."
+    },
+    {
+      "marker": "Die NordNetz Connect GmbH haftet unbeschränkt für Schäden aus der Verletzung des",
+      "note": "AGB-konforme Haftungsklausel nach dem Vorbild von § 309 Nr. 7 BGB und der Kardinalpflichten-Rechtsprechung."
+    },
+    {
+      "marker": "Mängelansprüche wegen Störungen der bereitgestellten Telekommunikationsendgeräte",
+      "note": "Gesetzeskonformer Verweis auf das gesetzliche Gewährleistungsrecht."
+    },
+    {
+      "marker": "Die Erhebung und Verarbeitung personenbezogener Daten sowie von Verkehrsdaten",
+      "note": "Rechtskonformer Hinweis auf die gesetzlichen Datenschutzvorgaben."
+    },
+    {
+      "marker": "Sofern der Kunde Kaufmann, juristische Person des öffentlichen Rechts oder",
+      "note": "Wirksame Gerichtsstandsvereinbarung beschränkt auf Kaufleute und juristische Personen des öffentlichen Rechts gemäß § 38 ZPO."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Mit Freischaltung der SIM-Karte wird automatisch das kostenpflichtige",
+      "statutoryBasis": "§ 312a Abs. 3 BGB, § 307 Abs. 1 BGB",
+      "note": "Unzulässige Negative-Option-Klausel (automatisch aktiviertes kostenpflichtiges Zusatzpaket ohne ausdrückliche Vereinbarung)."
+    },
+    {
+      "marker": "diesen Vertrag mit sämtlichen Rechten und Pflichten jederzeit ohne Zustimmung des",
+      "statutoryBasis": "§ 309 Nr. 10 BGB",
+      "note": "Unzulässige Klausel zur Vertragsübernahme durch einen unbenannten Dritten ohne Kündigungsrecht des Kunden."
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+name: CI Test Suite
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    name: Node ${{ matrix.node-version }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ ubuntu-latest, macos-latest, windows-latest ]
+        node-version: [ 18.x, 20.x, 22.x ]
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Setup ffmpeg
+        # test/codec.test.js and the CLI MP3 round-trip skip themselves when ffmpeg
+        # is absent; installing it makes those checks run in CI.
+        uses: FedericoCarboni/setup-ffmpeg@v3
+        with:
+          ffmpeg-version: release
+
+      - name: Check Generated Site Aliases For Drift
+        run: npm run sync:site:check
+
+      - name: Run Test Suite
+        run: node --test

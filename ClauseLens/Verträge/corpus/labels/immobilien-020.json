@@ -1,0 +1,74 @@
+{
+  "slug": "immobilien-020",
+  "source": "generated",
+  "domain": "Miete und Pacht",
+  "traps": [
+    {
+      "marker": "während der Pachtzins ungekürzt weiter zu entrichten ist",
+      "expectedType": "force_majeure_asymmetry",
+      "note": "GAP: Naturereignis befreit nur den Verpaechter, Zins bleibt geschuldet."
+    },
+    {
+      "marker": "Ertrags- und Bodendaten für eigene Zwecke verwerten",
+      "expectedType": "data_grant",
+      "note": "GAP: Datenverwertung fuer eigene Zwecke."
+    },
+    {
+      "marker": "an einen Dienstleister außerhalb der Europäischen Union übermittelt",
+      "expectedType": "international_data_processing",
+      "note": "GAP: Datenuebermittlung ausserhalb der EU."
+    },
+    {
+      "marker": "wenn der Verpächter eine kritische Aktualisierung der Bewässerungssteuerung nicht bereitstellt",
+      "expectedType": "service_credit_forfeiture",
+      "note": "Gutschrift entfaellt bei fehlender kritischer Aktualisierung."
+    },
+    {
+      "marker": "keine Beschäftigten des Verpächters abzuwerben",
+      "expectedType": "non_solicitation",
+      "note": "Abwerbeverbot einseitig zulasten des Paechters."
+    },
+    {
+      "marker": "Haftung des Verpächters ist auf den Betrag der Jahrespacht begrenzt",
+      "expectedType": "liability",
+      "note": "Haftungsdeckel auf die Jahrespacht."
+    },
+    {
+      "marker": "ohne Ankündigung jederzeit betreten",
+      "expectedType": "unreasonable_audit",
+      "note": "GAP: Zutrittsrecht ohne Ankuendigung und Anlass."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "Symmetrische Vertraulichkeit."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform zugelassen."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhalt."
+    },
+    {
+      "marker": "Zahlungen sind innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Zahlungsfrist."
+    },
+    {
+      "marker": "Änderungen des Leistungsumfangs bedürfen der Abstimmung beider Parteien",
+      "note": "Einvernehmliche Aenderung."
+    },
+    {
+      "marker": "Nach Vertragsende erhält der Kunde die Vertragsdaten kostenfrei in einem offenen Format",
+      "note": "Kostenfreier Datenexport."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Flächen Flurstück 114 und 117 zur Ackernutzung",
+      "note": "Kein Detektor fuer Pachtzinsanpassung nach Landpachtverkehrsgesetz."
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "slug": "vertrieb-023",
+  "source": "generated",
+  "domain": "kommission",
+  "traps": [
+    {
+      "marker": "Mündliche Nebenabreden bestehen nicht, Zusagen von Vertriebsmitarbeitern entfalten keine rechtliche",
+      "expectedType": "entire_agreement",
+      "note": "Vollständigkeitsklausel verdrängt mündliche Zusagen."
+    },
+    {
+      "marker": "Der Anbieter darf den Kunden als Referenzkunden führen, eine gesonderte Zustimmung des Kunden ist",
+      "expectedType": "marketing_reference",
+      "note": "Referenznutzung ohne Zustimmung des Kunden."
+    },
+    {
+      "marker": "Der Kunde überträgt dem Anbieter sämtliche Rechte an Ideen und Feedback, die im Rahmen der",
+      "expectedType": "feedback_ip_grab",
+      "note": "Rechte an Rückmeldungen gehen unentgeltlich über."
+    },
+    {
+      "marker": "Leistungsnachweise und Stundenzettel gelten als vorbehaltlos genehmigt, wenn der Kunde nicht binnen",
+      "expectedType": "fictitious_receipt",
+      "note": "Zugangsfiktion zulasten des Kunden."
+    },
+    {
+      "marker": "Die Servicelevel sind unverbindlich, es handelt sich um Richtwerte ohne Rechtsanspruch. Ansprüche",
+      "expectedType": "unverbindliche_sla_falle",
+      "note": "Unverbindliche Servicelevel ohne Anspruch."
+    },
+    {
+      "marker": "Der Kunde erhält keine Provision für Direktgeschäfte, die der Anbieter ohne seine Mitwirkung",
+      "expectedType": "agency_commission_exclusion",
+      "note": "Provision für Direktgeschäfte ausgeschlossen."
+    },
+    {
+      "marker": "Der Kunde hat keinen Anspruch auf einen Ausgleich für den von ihm aufgebauten Kundenstamm.",
+      "expectedType": "agency_goodwill_waiver",
+      "note": "Ausgleichsanspruch nach § 89b HGB abbedungen."
+    },
+    {
+      "marker": "Eine Übermittlung von Kundendaten in ein Drittland ist zulässig, soweit der Anbieter geeignete",
+      "expectedType": "international_data_processing",
+      "note": "Datenübermittlung außerhalb der EU ohne Schutzgarantie."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Anbieter überlässt dem Kunden die Daten in einem gängigen Format.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag aus wichtigem Grund ohne Einhaltung einer Frist kündigen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien benennen jeweils einen Ansprechpartner für die operative Zusammenarbeit.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien sind berechtigt, gegen fällige Forderungen aufzurechnen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde erhält Schulungen und Zugang zum Systemhandbuch in der jeweils aktuellen Fassung.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde informiert den Anbieter unverzüglich über wesentliche Störungen im Vertrieb.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    }
+  ],
+  "uncovered": []
+}

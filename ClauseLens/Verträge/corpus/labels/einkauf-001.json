@@ -1,0 +1,82 @@
+{
+  "slug": "einkauf-001",
+  "source": "generated",
+  "domain": "Einkauf und Lieferantenrahmenvertrag, deutsches und oesterreichisches Recht",
+  "traps": [
+    {
+      "marker": "eine Aufwandspauschale von 480 EUR fällig, ohne dass der Gegenbeweis offensteht",
+      "expectedType": "penalty",
+      "note": "Getarnte Pauschale: vermeidet das Registerwort Vertragsstrafe/Konventionalstrafe und verbirgt den Ausschluss des Gegenbeweises in einem Nebensatz mit ohne dass"
+    },
+    {
+      "marker": "wird die Lieferung als vertragsgemäß behandelt",
+      "expectedType": "deemed_acceptance",
+      "note": "Fiktionswirkung ohne die Registerformel gilt als genehmigt; umschrieben mit als vertragsgemäß behandelt"
+    },
+    {
+      "marker": "Die Vergütung wird jährlich um bis zu 12 Prozent angehoben",
+      "expectedType": "price_escalation",
+      "note": "Einseitige Preisanhebung ohne Anpassungsmechanismus und ohne Sonderkündigungsrecht; Registerwort Preisanpassungsklausel vermieden"
+    },
+    {
+      "marker": "bis alle Ansprüche aus der gesamten Geschäftsbeziehung ausgeglichen sind",
+      "expectedType": "extended_retention_of_title",
+      "note": "Kontokorrentvorbehalt ueber die gesamte Geschaeftsbeziehung; Eigentumsvorbehalt wird nicht als solcher benannt"
+    },
+    {
+      "marker": "kann die Fertigungslinien jederzeit auditieren",
+      "expectedType": "unreasonable_audit",
+      "note": "Auditrecht ohne Anlass und ohne Vorlaufzeit, ohne die Woerter Kontrollrecht oder Pruefung zu verwenden"
+    },
+    {
+      "marker": "nur nach vorheriger schriftlicher Bestätigung durch den Lieferanten in Ansatz gebracht",
+      "expectedType": "setoff_restriction",
+      "note": "Faktischer Aufrechnungsausschluss durch Zustimmungserfordernis; Wort Aufrechnung vermieden"
+    },
+    {
+      "marker": "ist berechtigt, für Teilleistungen Nachunternehmen einzusetzen",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "Unkontrollierter Unterauftragnehmereinsatz ohne Anzeige oder Zustimmung; Anzeigepflicht steht in separatem Absatz"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Änderungen der Anlage 1 bedürfen der Zustimmung beider Parteien in Textform",
+      "note": "Symmetrische Aenderungsklausel mit Zustimmungserfordernis, kein einseitiger Aenderungsvorbehalt"
+    },
+    {
+      "marker": "Prüfungen werden mit angemessener Vorlaufzeit angekündigt",
+      "note": "Ordentliche Ankuendigung von Pruefungen, kein Audit ohne Vorlaufzeit"
+    },
+    {
+      "marker": "Ein Zurückbehaltungsrecht wegen unstreitiger Gegenforderungen bleibt unberührt",
+      "note": "Gesetzeskonformer Erhalt des Zurueckbehaltungsrechts, kein Ausschluss"
+    },
+    {
+      "marker": "Der Einsatz von Nachunternehmen wird dem Besteller spätestens vierzehn Tage vorher angezeigt",
+      "note": "Vierzehntaegige Anzeigepflicht fuer Nachunternehmer, kontrollierter Einsatz"
+    },
+    {
+      "marker": "Rechnungen sind innerhalb von dreißig Tagen ohne Abzug zu begleichen",
+      "note": "Marktueblicher Zahlungstermin ohne Verzugszinsregelung"
+    },
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Zulaessige Haftungsklausel, kein Ausschluss von Kardinalpflichten"
+    },
+    {
+      "marker": "Beide Parteien behandeln die technischen Unterlagen der anderen Seite vertraulich",
+      "note": "Wechselseitige Vertraulichkeit, keine einseitige Geheimhaltungspflicht"
+    },
+    {
+      "marker": "Sollten einzelne Bestimmungen unwirksam sein, gilt die gesetzliche Regelung",
+      "note": "Korrekte salvatorische Klausel mit gesetzlicher Ersatzregelung"
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "wird ein gesondertes Nutzungsprotokoll geführt",
+      "note": "Beistellungspflicht ohne Ersatzpflicht fuer Werkzeugverschleiss, kein Detektor beschreibt sie"
+    }
+  ]
+}

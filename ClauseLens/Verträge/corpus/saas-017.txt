@@ -1,0 +1,73 @@
+Vertrag über Cloud-Identity-Dienste
+
+zwischen Aare Identity AG, Bahnhofstrasse 61, 8001 Zürich (nachfolgend "Anbieterin")
+
+und Basler Handels AG, Aeschenvorstadt 4, 4051 Basel (nachfolgend "Kunde")
+
+Präambel
+
+Die Anbieterin betreibt für den Kunden die Identitätsverwaltung seiner Beschäftigten als Cloud-Dienst.
+
+§ 1 Gegenstand
+
+(1) Die Anbieterin betreibt die Identitätsverwaltung des Kunden in der Region Zürich.
+
+(2) Der Kunde verwaltet die Rollen über die Administrationsoberfläche.
+
+§ 2 Freistellung
+
+(1) Der Kunde verpflichtet sich, die Anbieterin von Ansprüchen Dritter freizustellen.
+
+§ 3 Erfüllungsgehilfen
+
+(1) Die Anbieterin haftet für die von ihr eingesetzten Unterauftragnehmer nur im Rahmen der sorgfältigen Auswahl.
+
+§ 4 Datenverarbeitung
+
+(1) Die Verarbeitung der Nutzungsdaten erfolgt in einem Drittland; ein Angemessenheitsbeschluss liegt nicht vor.
+
+§ 5 Haftung
+
+(1) Die Haftung für mittelbare Schäden und entgangenen Gewinn ist abbedungen.
+
+§ 6 Steuern
+
+(1) Nachträgliche Abgabenbelastungen trägt der Kunde.
+
+§ 7 Gerichtsstand
+
+(1) Rechtsstreitigkeiten sind ausschließlich vor den Gerichten am Sitz des Anbieters auszutragen.
+
+§ 8 Nutzungsrechte
+
+(1) Die Anbieterin darf die Betriebsdaten zur Weiterentwicklung ihrer Modelle nutzen.
+
+§ 9 Zahlung
+
+(1) Die Rechnung ist innerhalb von 30 Tagen nach Zugang ohne Abzug fällig.
+
+§ 10 Vertraulichkeit
+
+(1) Die Vertragsparteien behandeln die wechselseitig offengelegten Informationen vertraulich.
+
+§ 11 Datenschutz
+
+(1) Der Anbieter trifft angemessene technische und organisatorische Maßnahmen zum Schutz der Daten.
+
+§ 12 Datenrückgabe
+
+(1) Die Anbieterin stellt dem Kunden bei Vertragsende eine vollständige Kopie aller Kundendaten in maschinenlesbarer Form kostenfrei bereit.
+
+§ 13 Verfügbarkeit
+
+(1) Die Anbieterin sichert eine Verfügbarkeit von 99,5 Prozent pro Kalendermonat zu.
+
+§ 14 Vergütung
+
+(1) Der Kunde bleibt zur Zahlung des anteiligen Entgelts für bereits erbrachte Leistungen verpflichtet.
+
+Zürich, den 13.10.2025
+
+Für die Anbieterin: gez. A. Aare
+
+Für den Kunden: gez. B. Basler

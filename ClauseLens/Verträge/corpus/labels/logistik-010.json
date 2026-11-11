@@ -1,0 +1,85 @@
+{
+  "slug": "logistik-010",
+  "source": "generated",
+  "domain": "Kühllogistik",
+  "traps": [
+    {
+      "marker": "Mangels Wartungsvereinbarung erfolgt eine Stilllegung der Kühlanlage",
+      "expectedType": "maintenance_conditional_shutdown",
+      "note": "Red-team Klausel: maintenance_conditional_shutdown"
+    },
+    {
+      "marker": "Mindestlaufzeit beträgt 36 Monate und eine vorzeitige Kündigung ist ausgeschlossen",
+      "expectedType": "notice_period",
+      "note": "Red-team Klausel: notice_period"
+    },
+    {
+      "marker": "Bei Insolvenz des Kunden endet der Vertrag ohne weiteres",
+      "expectedType": "insolvency_termination",
+      "note": "Red-team Klausel: insolvency_termination"
+    },
+    {
+      "marker": "Bei Überschreitung der Temperaturabweichung wird eine Pauschale",
+      "expectedType": "penalty",
+      "note": "Red-team Klausel: penalty"
+    },
+    {
+      "marker": "Die Systemprotokolle des Anbieters gelten als Vollbeweis",
+      "expectedType": "audit_log_manipulation",
+      "note": "Red-team Klausel: audit_log_manipulation"
+    },
+    {
+      "marker": "entfällt der Anspruch auf eine Gutschrift",
+      "expectedType": "service_credit_forfeiture",
+      "note": "Red-team Klausel: service_credit_forfeiture"
+    },
+    {
+      "marker": "für die Dauer von zwei Jahren nach Vertragsende nicht im Bereich der Kühllogistik tätig zu werden",
+      "expectedType": "non_compete",
+      "note": "Red-team Klausel: non_compete"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "stimmen die Temperaturführung monatlich ab",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Wartungsplan der Anlage 3",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "zur außerordentlichen Kündigung aus wichtigem Grund bleiben unberührt",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Temperaturprotokolle jederzeit einsehen",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "monatlich einen Verfügbarkeitsbericht bereit",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "berechtigten Interessen des Kunden",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "innerhalb von 30 Tagen ohne Abzug zahlbar",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "9.2 Es gilt deutsches Recht.",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Unterauftragnehmer mit einer Vorlaufzeit von vierzehn Tagen",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

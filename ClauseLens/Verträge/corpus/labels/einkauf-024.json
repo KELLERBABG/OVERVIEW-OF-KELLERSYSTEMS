@@ -1,0 +1,82 @@
+{
+  "slug": "einkauf-024",
+  "source": "generated",
+  "domain": "Einkauf und Lieferantenrahmenvertrag, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Gelingt dem Besteller der Gegenbeweis nicht",
+      "expectedType": "burden_of_proof",
+      "note": "Beweislastumkehr im Nebensatz"
+    },
+    {
+      "marker": "Bei Überschreitung des vereinbarten Liefertermins wird eine Pauschale von 2 Prozent",
+      "expectedType": "penalty",
+      "note": "Pauschale als Prozentwert ohne das Registerwort Vertragsstrafe"
+    },
+    {
+      "marker": "setzt sich jeweils um vierundzwanzig Monate fort",
+      "expectedType": "auto_renewal",
+      "note": "Automatische Verlaengerung ohne die Registerfloskel"
+    },
+    {
+      "marker": "Vorlaufzeit für eine Beendigung des Rahmenvertrags durch den Besteller währt",
+      "expectedType": "notice_period",
+      "note": "Kuendigungsbindung als Vorlaufzeit statt Kuendigungsfrist"
+    },
+    {
+      "marker": "bis alle Ansprüche aus der gesamten Geschäftsbeziehung ausgeglichen sind",
+      "expectedType": "extended_retention_of_title",
+      "note": "Kontokorrentvorbehalt"
+    },
+    {
+      "marker": "nur nach vorheriger schriftlicher Bestätigung durch den Lieferanten in Ansatz gebracht",
+      "expectedType": "setoff_restriction",
+      "note": "Aufrechnungsausschluss ohne das Wort Aufrechnung"
+    },
+    {
+      "marker": "Einstandspflicht des Lieferanten für mittelbare Schäden wird nicht übernommen",
+      "expectedType": "liability",
+      "note": "Freizeichnung ohne das Wort Haftung"
+    },
+    {
+      "marker": "ist berechtigt, für Teilleistungen Nachunternehmen einzusetzen",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "Unkontrollierter Unterauftragnehmereinsatz"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Lieferant stellt die Prüfprotokolle in Textform bereit",
+      "note": "Bereitstellung in Textform"
+    },
+    {
+      "marker": "Der Besteller wählt unter den in Anlage 3 genannten Varianten eine aus",
+      "note": "Einseitiges Wahlrecht ohne Pflichten"
+    },
+    {
+      "marker": "Bei berechtigter Rüge bessert der Lieferant innerhalb von zehn Werktagen nach",
+      "note": "Nachbesserungspflicht"
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag einvernehmlich beenden",
+      "note": "Einvernehmliche Beendigung"
+    },
+    {
+      "marker": "Rechnungen sind innerhalb von dreißig Tagen ohne Abzug zu begleichen",
+      "note": "Marktueblicher Zahlungstermin"
+    },
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Zulaessige Haftungsklausel"
+    },
+    {
+      "marker": "Der Einsatz von Nachunternehmen wird dem Besteller spätestens vierzehn Tage vorher angezeigt",
+      "note": "Anzeigepflicht statt unkontrolliertem Einsatz"
+    },
+    {
+      "marker": "Es gilt das Recht der Bundesrepublik Deutschland",
+      "note": "Neutrale Rechtswahl"
+    }
+  ],
+  "uncovered": []
+}

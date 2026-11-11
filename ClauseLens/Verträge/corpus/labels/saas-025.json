@@ -1,0 +1,69 @@
+{
+  "slug": "saas-025",
+  "source": "generated",
+  "domain": "Managed NOC, oesterreichisches Recht",
+  "traps": [
+    {
+      "marker": "Das Kontrollrecht des Anbieters besteht jederzeit und ohne Anlass.",
+      "expectedType": "unreasonable_audit",
+      "note": "Paraphrase. Kontrollrecht ohne Anlass oder Kostenlast"
+    },
+    {
+      "marker": "Ohne Mahnung darf die Anbieterin den Plattformzugang sperren.",
+      "expectedType": "service_suspension",
+      "note": "Paraphrase. Sperrung ohne Mahnung"
+    },
+    {
+      "marker": "Steuernachforderungen sind vollumfänglich vom Kunden zu tragen, unabhängig davon, ob den Kunden ein",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Steuerlast auf den Kunden verlagert"
+    },
+    {
+      "marker": "Der Kunde verpflichtet sich, die Anbieterin von Ansprüchen Dritter freizustellen.",
+      "expectedType": "third_party_indemnity",
+      "note": "Paraphrase. Freistellung fuer Drittansprueche"
+    },
+    {
+      "marker": "Die Haftung für mittelbare Schäden und entgangenen Gewinn ist abbedungen.",
+      "expectedType": "liability",
+      "note": "Paraphrase. Haftungsausschluss"
+    },
+    {
+      "marker": "Für die Dauer der Betriebsstörung befreit die Anbieterin ihre Leistungspflicht.",
+      "expectedType": "force_majeure_asymmetry",
+      "note": "Einseitige Force-Majeure-Wirkung"
+    },
+    {
+      "marker": "Rechtsstreitigkeiten sind ausschließlich vor den Gerichten am Sitz des Anbieters auszutragen.",
+      "expectedType": "jurisdiction",
+      "note": "Paraphrase. Gerichtsstand beim Anbieter"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Rechnung ist innerhalb von 30 Tagen nach Zugang ohne Abzug fällig.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Der Kunde darf die Einhaltung der Lizenzbedingungen nach vorheriger Abstimmung mit einer",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Kosten einer berechtigten Prüfung trägt die Partei, die sie veranlasst hat.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Vertragsparteien behandeln die wechselseitig offengelegten Informationen vertraulich.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Anbieterin sichert eine Verfügbarkeit von 99,5 Prozent pro Kalendermonat zu.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Der Anbieter trifft angemessene technische und organisatorische Maßnahmen zum Schutz der Daten.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    }
+  ],
+  "uncovered": []
+}

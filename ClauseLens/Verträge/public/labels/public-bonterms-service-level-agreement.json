@@ -1,0 +1,41 @@
+{
+  "slug": "public-bonterms-service-level-agreement",
+  "source": "https://raw.githubusercontent.com/Bonterms/Service-Level-Agreement/main/Service-Level-Agreement.md",
+  "license": "CC BY 4.0",
+  "retrieved": "2026-10-15",
+  "domain": "Service Level Agreement (Bonterms)",
+  "traps": [
+    {
+      "marker": "5. Exclusive Remedies. Service",
+      "expectedType": "penalty",
+      "note": "Reale Klausel, Engine-Typ penalty"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Attachment to Bonterms Cloud Terms",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "How to Use: This Bonterms Service",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "SLA, Customer and Provider incorporate",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "SLA Key Terms Chart (see Section",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "1. Service Levels. Provider will",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "2. Monitoring. Provider will provide",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

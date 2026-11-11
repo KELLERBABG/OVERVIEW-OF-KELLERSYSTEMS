@@ -1,0 +1,1323 @@
+﻿2026-10-19T16:52:47.2634225Z Current runner version: '2.337.0'
+2026-10-19T16:52:47.2669209Z ##[group]Runner Image Provisioner
+2026-10-19T16:52:47.2670576Z Hosted Compute Agent
+2026-10-19T16:52:47.2671543Z Version: 20261012.601
+2026-10-19T16:52:47.2673054Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+2026-10-19T16:52:47.2674332Z Build Date: 2026-10-12T17:48:21Z
+2026-10-19T16:52:47.2675645Z Worker ID: {ef5e3b59-7e7c-455d-b21a-4d00d05e5508}
+2026-10-19T16:52:47.2676881Z Region: eastus2
+2026-10-19T16:52:47.2677916Z Cloud: Azure
+2026-10-19T16:52:47.2678811Z ##[endgroup]
+2026-10-19T16:52:47.2681590Z ##[group]Operating System
+2026-10-19T16:52:47.2683081Z Ubuntu
+2026-10-19T16:52:47.2683951Z 26.04.1
+2026-10-19T16:52:47.2684924Z LTS
+2026-10-19T16:52:47.2685797Z ##[endgroup]
+2026-10-19T16:52:47.2686922Z ##[group]Runner Image
+2026-10-19T16:52:47.2687932Z Image: ubuntu-26.04
+2026-10-19T16:52:47.2688941Z Version: 20261012.163.1
+2026-10-19T16:52:47.2691060Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261012.163/images/ubuntu/Ubuntu2604-Readme.md
+2026-10-19T16:52:47.2694141Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261012.163
+2026-10-19T16:52:47.2695822Z ##[endgroup]
+2026-10-19T16:52:47.2698003Z ##[group]GITHUB_TOKEN Permissions
+2026-10-19T16:52:47.2700901Z Contents: read
+2026-10-19T16:52:47.2702389Z Metadata: read
+2026-10-19T16:52:47.2703404Z Packages: read
+2026-10-19T16:52:47.2704434Z ##[endgroup]
+2026-10-19T16:52:47.2707384Z Secret source: Actions
+2026-10-19T16:52:47.2708975Z Cache mode: write
+2026-10-19T16:52:47.2710653Z Prepare workflow directory
+2026-10-19T16:52:47.3205968Z Prepare all required actions
+2026-10-19T16:52:47.3280099Z Getting action download info
+2026-10-19T16:52:47.5151376Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-19T16:52:47.6784108Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-10-19T16:52:47.9340335Z Complete job name: test
+2026-10-19T16:52:48.0092431Z ##[group]Run actions/checkout@v4
+2026-10-19T16:52:48.0093383Z with:
+2026-10-19T16:52:48.0093846Z   repository: KELLERBABG/ClauseLens
+2026-10-19T16:52:48.0097567Z   token: ***
+2026-10-19T16:52:48.0097999Z   ssh-strict: true
+2026-10-19T16:52:48.0098447Z   ssh-user: git
+2026-10-19T16:52:48.0098895Z   persist-credentials: true
+2026-10-19T16:52:48.0099398Z   clean: true
+2026-10-19T16:52:48.0099837Z   sparse-checkout-cone-mode: true
+2026-10-19T16:52:48.0100350Z   fetch-depth: 1
+2026-10-19T16:52:48.0100800Z   fetch-tags: false
+2026-10-19T16:52:48.0101230Z   show-progress: true
+2026-10-19T16:52:48.0101676Z   lfs: false
+2026-10-19T16:52:48.0102428Z   submodules: false
+2026-10-19T16:52:48.0102889Z   set-safe-directory: true
+2026-10-19T16:52:48.0103406Z   allow-unsafe-pr-checkout: false
+2026-10-19T16:52:48.0104220Z ##[endgroup]
+2026-10-19T16:52:48.1332310Z Syncing repository: KELLERBABG/ClauseLens
+2026-10-19T16:52:48.1365070Z ##[group]Getting Git version info
+2026-10-19T16:52:48.1383254Z Working directory is '/home/runner/work/ClauseLens/ClauseLens'
+2026-10-19T16:52:48.1388159Z [command]/usr/bin/git version
+2026-10-19T16:52:48.1389147Z git version 2.55.0
+2026-10-19T16:52:48.1392523Z ##[endgroup]
+2026-10-19T16:52:48.1412509Z Temporarily overriding HOME='/home/runner/work/_temp/c96552c4-544e-4832-88fd-ee7bdfd3f8cd' before making global git config changes
+2026-10-19T16:52:48.1415275Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-19T16:52:48.1417513Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ClauseLens/ClauseLens
+2026-10-19T16:52:48.1543434Z Deleting the contents of '/home/runner/work/ClauseLens/ClauseLens'
+2026-10-19T16:52:48.1547023Z ##[group]Initializing the repository
+2026-10-19T16:52:48.1548416Z [command]/usr/bin/git init /home/runner/work/ClauseLens/ClauseLens
+2026-10-19T16:52:48.1655710Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-19T16:52:48.1659871Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-19T16:52:48.1682706Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-19T16:52:48.1703164Z hint: call:
+2026-10-19T16:52:48.1715297Z hint:
+2026-10-19T16:52:48.1733532Z hint: 	git config --global init.defaultBranch <name>
+2026-10-19T16:52:48.1752755Z hint:
+2026-10-19T16:52:48.1758766Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-19T16:52:48.1761697Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-19T16:52:48.1763336Z hint:
+2026-10-19T16:52:48.1764197Z hint: 	git branch -m <name>
+2026-10-19T16:52:48.1765215Z hint:
+2026-10-19T16:52:48.1766485Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-19T16:52:48.1768396Z Initialized empty Git repository in /home/runner/work/ClauseLens/ClauseLens/.git/
+2026-10-19T16:52:48.1771674Z [command]/usr/bin/git remote add origin https://github.com/KELLERBABG/ClauseLens
+2026-10-19T16:52:48.1775471Z ##[endgroup]
+2026-10-19T16:52:48.1777147Z ##[group]Disabling automatic garbage collection
+2026-10-19T16:52:48.1778423Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-19T16:52:48.1840310Z ##[endgroup]
+2026-10-19T16:52:48.1841646Z ##[group]Setting up auth
+2026-10-19T16:52:48.1843630Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-19T16:52:48.1917138Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-19T16:52:48.2732476Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-19T16:52:48.2794675Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-19T16:52:48.3185904Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-19T16:52:48.3276595Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-19T16:52:48.3716181Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-19T16:52:48.3758515Z ##[endgroup]
+2026-10-19T16:52:48.3760321Z ##[group]Fetching the repository
+2026-10-19T16:52:48.3773385Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +21bc365e9985fa354ab22ebbca86e122f51c9d41:refs/remotes/origin/main
+2026-10-19T16:52:48.9662459Z From https://github.com/KELLERBABG/ClauseLens
+2026-10-19T16:52:48.9683255Z  * [new ref]         21bc365e9985fa354ab22ebbca86e122f51c9d41 -> origin/main
+2026-10-19T16:52:48.9702498Z ##[endgroup]
+2026-10-19T16:52:48.9704201Z ##[group]Determining the checkout info
+2026-10-19T16:52:48.9705801Z ##[endgroup]
+2026-10-19T16:52:48.9707102Z [command]/usr/bin/git sparse-checkout disable
+2026-10-19T16:52:48.9799181Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-19T16:52:48.9864009Z ##[group]Checking out the ref
+2026-10-19T16:52:48.9867694Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-10-19T16:52:49.0939420Z Switched to a new branch 'main'
+2026-10-19T16:52:49.0942425Z branch 'main' set up to track 'origin/main'.
+2026-10-19T16:52:49.0948151Z ##[endgroup]
+2026-10-19T16:52:49.1017697Z [command]/usr/bin/git log -1 --format=%H
+2026-10-19T16:52:49.1050121Z 21bc365e9985fa354ab22ebbca86e122f51c9d41
+2026-10-19T16:52:49.1455821Z ##[group]Run actions/setup-node@v4
+2026-10-19T16:52:49.1457096Z with:
+2026-10-19T16:52:49.1458031Z   node-version: 20
+2026-10-19T16:52:49.1459069Z   always-auth: false
+2026-10-19T16:52:49.1460114Z   check-latest: false
+2026-10-19T16:52:49.1469175Z   token: ***
+2026-10-19T16:52:49.1470169Z ##[endgroup]
+2026-10-19T16:52:49.3441745Z Attempting to download 20...
+2026-10-19T16:52:49.3565756Z (node:2163) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-19T16:52:49.3569803Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-19T16:52:50.0025113Z Acquiring 20.20.2 - x64 from https://github.com/actions/node-versions/releases/download/20.20.2-23521894959/node-20.20.2-linux-x64.tar.gz
+2026-10-19T16:52:50.4281317Z Extracting ...
+2026-10-19T16:52:50.4432224Z [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/63faad5f-380c-459e-b1db-65e0470ed75f -f /home/runner/work/_temp/7565769d-8766-4ee9-bffd-061a2fdc8f5e
+2026-10-19T16:52:51.2290231Z Adding to the cache ...
+2026-10-19T16:52:53.7320656Z ##[group]Environment details
+2026-10-19T16:52:54.2123579Z node: v20.20.2
+2026-10-19T16:52:54.2124467Z npm: 10.8.2
+2026-10-19T16:52:54.2125033Z yarn: 1.22.22
+2026-10-19T16:52:54.2125812Z ##[endgroup]
+2026-10-19T16:52:54.2405907Z ##[group]Run node --test
+2026-10-19T16:52:54.2406279Z [36;1mnode --test[0m
+2026-10-19T16:52:54.3262432Z shell: /usr/bin/bash -e {0}
+2026-10-19T16:52:54.3262795Z ##[endgroup]
+2026-10-19T16:52:54.4019567Z TAP version 13
+2026-10-19T16:52:54.4845295Z # Subtest: account: getMachineFingerprint produces deterministic 32-character hex ID
+2026-10-19T16:52:54.4863516Z ok 1 - account: getMachineFingerprint produces deterministic 32-character hex ID
+2026-10-19T16:52:54.4873718Z   ---
+2026-10-19T16:52:54.4881705Z   duration_ms: 2.443796
+2026-10-19T16:52:54.4882761Z   ...
+2026-10-19T16:52:54.4884034Z # Subtest: account: verifySeatOnline rejects invalid email and malformed license
+2026-10-19T16:52:54.4885540Z ok 2 - account: verifySeatOnline rejects invalid email and malformed license
+2026-10-19T16:52:54.4886534Z   ---
+2026-10-19T16:52:54.4887128Z   duration_ms: 1.218476
+2026-10-19T16:52:54.4887764Z   ...
+2026-10-19T16:52:54.5923907Z # Subtest: account: verifySeatOnline validates seat against mock auth server
+2026-10-19T16:52:54.5927778Z ok 3 - account: verifySeatOnline validates seat against mock auth server
+2026-10-19T16:52:54.5969027Z   ---
+2026-10-19T16:52:54.5971362Z   duration_ms: 66.080111
+2026-10-19T16:52:54.6005271Z   ...
+2026-10-19T16:52:54.6033049Z # Subtest: account: unreachable licence server falls back to the local signature check
+2026-10-19T16:52:54.6044209Z ok 4 - account: unreachable licence server falls back to the local signature check
+2026-10-19T16:52:54.6049425Z   ---
+2026-10-19T16:52:54.6072713Z   duration_ms: 78.328478
+2026-10-19T16:52:54.6092537Z   ...
+2026-10-19T16:52:54.6203571Z # Subtest: account: exhausted server quota (429) falls back to the local signature check
+2026-10-19T16:52:54.6205212Z ok 5 - account: exhausted server quota (429) falls back to the local signature check
+2026-10-19T16:52:54.6206295Z   ---
+2026-10-19T16:52:54.6206857Z   duration_ms: 20.206296
+2026-10-19T16:52:54.6207484Z   ...
+2026-10-19T16:52:54.6208636Z # Subtest: account: storage lifecycle (save, load, clear) and requireActiveAccount
+2026-10-19T16:52:54.6210007Z ok 6 - account: storage lifecycle (save, load, clear) and requireActiveAccount
+2026-10-19T16:52:54.6210897Z   ---
+2026-10-19T16:52:54.6211478Z   duration_ms: 3.086587
+2026-10-19T16:52:54.6212313Z   ...
+2026-10-19T16:53:00.7997112Z # Subtest: dirty fixture triggers every detector type
+2026-10-19T16:53:00.8041699Z ok 7 - dirty fixture triggers every detector type
+2026-10-19T16:53:00.8086425Z   ---
+2026-10-19T16:53:00.8142589Z   duration_ms: 1.300776
+2026-10-19T16:53:00.8144669Z   ...
+2026-10-19T16:53:00.8145796Z # Subtest: findings have complete shape and valid severity
+2026-10-19T16:53:00.8146846Z ok 8 - findings have complete shape and valid severity
+2026-10-19T16:53:00.8147607Z   ---
+2026-10-19T16:53:00.8148125Z   duration_ms: 0.256017
+2026-10-19T16:53:00.8148714Z   ...
+2026-10-19T16:53:00.8149608Z # Subtest: severity mapping: key traps are rated 'hoch'
+2026-10-19T16:53:00.8150593Z ok 9 - severity mapping: key traps are rated 'hoch'
+2026-10-19T16:53:00.8151352Z   ---
+2026-10-19T16:53:00.8152642Z   duration_ms: 0.190395
+2026-10-19T16:53:00.8153208Z   ...
+2026-10-19T16:53:00.8153914Z # Subtest: clean fixture produces no 'hoch' findings
+2026-10-19T16:53:00.8154826Z ok 10 - clean fixture produces no 'hoch' findings
+2026-10-19T16:53:00.8155549Z   ---
+2026-10-19T16:53:00.8172636Z   duration_ms: 0.167302
+2026-10-19T16:53:00.8192639Z   ...
+2026-10-19T16:53:00.8194364Z # Subtest: line numbers are sane and point at the right clauses
+2026-10-19T16:53:00.8195463Z ok 11 - line numbers are sane and point at the right clauses
+2026-10-19T16:53:00.8196250Z   ---
+2026-10-19T16:53:00.8196789Z   duration_ms: 0.422548
+2026-10-19T16:53:00.8197381Z   ...
+2026-10-19T16:53:00.8198332Z # Subtest: deduplication: same-type hits in one paragraph merge into one finding
+2026-10-19T16:53:00.8199673Z ok 12 - deduplication: same-type hits in one paragraph merge into one finding
+2026-10-19T16:53:00.8200586Z   ---
+2026-10-19T16:53:00.8201126Z   duration_ms: 1.826307
+2026-10-19T16:53:00.8202463Z   ...
+2026-10-19T16:53:00.8203296Z # Subtest: excerpt quotes the matched clause
+2026-10-19T16:53:00.8209658Z ok 13 - excerpt quotes the matched clause
+2026-10-19T16:53:00.8211387Z   ---
+2026-10-19T16:53:00.8212417Z   duration_ms: 0.358679
+2026-10-19T16:53:00.8213015Z   ...
+2026-10-19T16:53:00.8213622Z # Subtest: riskScore ordering and bounds
+2026-10-19T16:53:00.8214344Z ok 14 - riskScore ordering and bounds
+2026-10-19T16:53:00.8215010Z   ---
+2026-10-19T16:53:00.8215501Z   duration_ms: 0.25219
+2026-10-19T16:53:00.8215991Z   ...
+2026-10-19T16:53:00.8216650Z # Subtest: summary is plain German and reflects counts
+2026-10-19T16:53:00.8217634Z ok 15 - summary is plain German and reflects counts
+2026-10-19T16:53:00.8218309Z   ---
+2026-10-19T16:53:00.8218775Z   duration_ms: 0.292365
+2026-10-19T16:53:00.8219274Z   ...
+2026-10-19T16:53:00.8219945Z # Subtest: empty input yields zero findings and score 0
+2026-10-19T16:53:00.8220927Z ok 16 - empty input yields zero findings and score 0
+2026-10-19T16:53:00.8221823Z   ---
+2026-10-19T16:53:00.8222699Z   duration_ms: 0.850927
+2026-10-19T16:53:00.8223304Z   ...
+2026-10-19T16:53:00.8224231Z # Subtest: duration parser understands digits and German number words
+2026-10-19T16:53:00.8225596Z ok 17 - duration parser understands digits and German number words
+2026-10-19T16:53:00.8226470Z   ---
+2026-10-19T16:53:00.8227050Z   duration_ms: 0.253373
+2026-10-19T16:53:00.8227669Z   ...
+2026-10-19T16:53:00.8228546Z # Subtest: textio tolerates Latin-1 umlauts and strips UTF-8 BOM
+2026-10-19T16:53:00.8229695Z ok 18 - textio tolerates Latin-1 umlauts and strips UTF-8 BOM
+2026-10-19T16:53:00.8230460Z   ---
+2026-10-19T16:53:00.8230969Z   duration_ms: 2.371483
+2026-10-19T16:53:00.8231501Z   ...
+2026-10-19T16:53:01.2214044Z # Subtest: batch: collects fixtures and produces portfolio summary
+2026-10-19T16:53:01.2223513Z ok 19 - batch: collects fixtures and produces portfolio summary
+2026-10-19T16:53:01.2232990Z   ---
+2026-10-19T16:53:01.2234471Z   duration_ms: 338.169267
+2026-10-19T16:53:01.2237006Z   ...
+2026-10-19T16:53:01.7336193Z # Subtest: PDF unkomprimiert: Extraktion liefert Klauseln
+2026-10-19T16:53:01.7362895Z ok 20 - PDF unkomprimiert: Extraktion liefert Klauseln
+2026-10-19T16:53:01.7392805Z   ---
+2026-10-19T16:53:01.7393493Z   duration_ms: 2.73987
+2026-10-19T16:53:01.7394166Z   ...
+2026-10-19T16:53:01.7395191Z # Subtest: PDF mit FlateDecode: Extraktion liefert Klauseln inkl. Umlaute
+2026-10-19T16:53:01.7396558Z ok 21 - PDF mit FlateDecode: Extraktion liefert Klauseln inkl. Umlaute
+2026-10-19T16:53:01.7397456Z   ---
+2026-10-19T16:53:01.7397980Z   duration_ms: 1.242147
+2026-10-19T16:53:01.7398555Z   ...
+2026-10-19T16:53:01.7399399Z # Subtest: PDF-Analyse End-to-End: liability + auto_renewal erkannt
+2026-10-19T16:53:01.7400532Z ok 22 - PDF-Analyse End-to-End: liability + auto_renewal erkannt
+2026-10-19T16:53:01.7401305Z   ---
+2026-10-19T16:53:01.7401819Z   duration_ms: 176.219505
+2026-10-19T16:53:01.7402654Z   ...
+2026-10-19T16:53:01.7403424Z # Subtest: Verschluesseltes PDF -> klare Fehlermeldung
+2026-10-19T16:53:01.7404798Z ok 23 - Verschluesseltes PDF -> klare Fehlermeldung
+2026-10-19T16:53:01.7405522Z   ---
+2026-10-19T16:53:01.7406024Z   duration_ms: 0.685729
+2026-10-19T16:53:01.7406581Z   ...
+2026-10-19T16:53:01.7407175Z # Subtest: Kein-PDF -> PdfError
+2026-10-19T16:53:01.7407855Z ok 24 - Kein-PDF -> PdfError
+2026-10-19T16:53:01.7408454Z   ---
+2026-10-19T16:53:01.7408950Z   duration_ms: 0.209932
+2026-10-19T16:53:01.7409661Z   ...
+2026-10-19T16:53:01.7410724Z # Subtest: PDF mit TJ-Kerning-Arrays trennt Worte mit negativen Spacing-Werten
+2026-10-19T16:53:01.7433004Z ok 25 - PDF mit TJ-Kerning-Arrays trennt Worte mit negativen Spacing-Werten
+2026-10-19T16:53:01.7435998Z   ---
+2026-10-19T16:53:01.7446249Z   duration_ms: 0.374087
+2026-10-19T16:53:01.7446861Z   ...
+2026-10-19T16:53:01.7447708Z # Subtest: PDF mit Tm-Matrix-Positionierung trennt Zeilen sauber
+2026-10-19T16:53:01.7448846Z ok 26 - PDF mit Tm-Matrix-Positionierung trennt Zeilen sauber
+2026-10-19T16:53:01.7449661Z   ---
+2026-10-19T16:53:01.7450617Z   duration_ms: 0.328081
+2026-10-19T16:53:01.7451314Z   ...
+2026-10-19T16:53:01.7452595Z # Subtest: Scan-only PDF ohne Textstrom liefert praezise OCR-Fehlermeldung
+2026-10-19T16:53:01.7453964Z ok 27 - Scan-only PDF ohne Textstrom liefert praezise OCR-Fehlermeldung
+2026-10-19T16:53:01.7454885Z   ---
+2026-10-19T16:53:01.7455470Z   duration_ms: 0.320678
+2026-10-19T16:53:01.7456101Z   ...
+2026-10-19T16:53:01.7456877Z # Subtest: DOCX: Extraktion ueber selbstgebauten ZIP
+2026-10-19T16:53:01.7457885Z ok 28 - DOCX: Extraktion ueber selbstgebauten ZIP
+2026-10-19T16:53:01.7458649Z   ---
+2026-10-19T16:53:01.7459230Z   duration_ms: 2.3057
+2026-10-19T16:53:01.7459836Z   ...
+2026-10-19T16:53:01.7460625Z # Subtest: DOCX Umlaute + Entities korrekt dekodiert
+2026-10-19T16:53:01.7461617Z ok 29 - DOCX Umlaute + Entities korrekt dekodiert
+2026-10-19T16:53:01.7462632Z   ---
+2026-10-19T16:53:01.7463148Z   duration_ms: 0.823486
+2026-10-19T16:53:01.7463711Z   ...
+2026-10-19T16:53:01.7471762Z # Subtest: Kein ZIP -> DocxError
+2026-10-19T16:53:01.7472885Z ok 30 - Kein ZIP -> DocxError
+2026-10-19T16:53:01.7473601Z   ---
+2026-10-19T16:53:01.7479413Z   duration_ms: 0.237673
+2026-10-19T16:53:01.7502590Z   ...
+2026-10-19T16:53:01.7503553Z # Subtest: detectFormat snifft PDF und DOCX ohne Extension
+2026-10-19T16:53:01.7511201Z ok 31 - detectFormat snifft PDF und DOCX ohne Extension
+2026-10-19T16:53:01.7532535Z   ---
+2026-10-19T16:53:01.7536234Z   duration_ms: 0.738828
+2026-10-19T16:53:01.7552553Z   ...
+2026-10-19T16:53:01.7567238Z # Subtest: CLI Smoke: analyse einer PDF-Datei endet mit Exit 0 und Befunden
+2026-10-19T16:53:01.7572903Z ok 32 - CLI Smoke: analyse einer PDF-Datei endet mit Exit 0 und Befunden
+2026-10-19T16:53:01.7577851Z   ---
+2026-10-19T16:53:01.7578424Z   duration_ms: 248.661339
+2026-10-19T16:53:01.7579028Z   ...
+2026-10-19T16:53:02.1007466Z # Subtest: brain corpus: detects strict written form trap (§ 309 Nr. 13 BGB)
+2026-10-19T16:53:02.1015257Z ok 33 - brain corpus: detects strict written form trap (§ 309 Nr. 13 BGB)
+2026-10-19T16:53:02.1023113Z   ---
+2026-10-19T16:53:02.1042496Z   duration_ms: 166.449055
+2026-10-19T16:53:02.1055214Z   ...
+2026-10-19T16:53:02.1056516Z # Subtest: brain corpus: compliant text form clause is clean (§ 126b BGB)
+2026-10-19T16:53:02.1057913Z ok 34 - brain corpus: compliant text form clause is clean (§ 126b BGB)
+2026-10-19T16:53:02.1058740Z   ---
+2026-10-19T16:53:02.1059269Z   duration_ms: 7.102356
+2026-10-19T16:53:02.1059819Z   ...
+2026-10-19T16:53:02.1061532Z # Subtest: brain corpus: detects deemed completeness & burden of proof shift (§ 309 Nr. 12 BGB)
+2026-10-19T16:53:02.1063569Z ok 35 - brain corpus: detects deemed completeness & burden of proof shift (§ 309 Nr. 12 BGB)
+2026-10-19T16:53:02.1064544Z   ---
+2026-10-19T16:53:02.1065081Z   duration_ms: 1.605515
+2026-10-19T16:53:02.1065644Z   ...
+2026-10-19T16:53:02.1066618Z # Subtest: brain corpus: detects dynamic online AGB URL referral (BGH III ZR 59/24)
+2026-10-19T16:53:02.1068025Z ok 36 - brain corpus: detects dynamic online AGB URL referral (BGH III ZR 59/24)
+2026-10-19T16:53:02.1069398Z   ---
+2026-10-19T16:53:02.1069945Z   duration_ms: 0.957596
+2026-10-19T16:53:02.1070521Z   ...
+2026-10-19T16:53:02.1071698Z # Subtest: brain corpus: detects all 6 traps in enterprise cloud agreement with high risk score
+2026-10-19T16:53:02.1075923Z ok 37 - brain corpus: detects all 6 traps in enterprise cloud agreement with high risk score
+2026-10-19T16:53:02.1077932Z   ---
+2026-10-19T16:53:02.1078598Z   duration_ms: 99.385587
+2026-10-19T16:53:02.1080617Z   ...
+2026-10-19T16:53:02.8045668Z # Klauseldatenbank: 1365 Datensaetze, 1347 Klauseltypen
+2026-10-19T16:53:02.8082664Z #   Datensaetze je Dokumentfamilie
+2026-10-19T16:53:02.8098569Z #     arbeitsvertrag             140
+2026-10-19T16:53:02.8112789Z #     mietvertrag                130
+2026-10-19T16:53:02.8132896Z #     werkvertrag_kaufvertrag     94
+2026-10-19T16:53:02.8137785Z #     b2b_agb                    162
+2026-10-19T16:53:02.8138514Z #     b2c_agb                    177
+2026-10-19T16:53:02.8139731Z #     gesellschaftsvertrag        65
+2026-10-19T16:53:02.8140624Z #     lizenz_saas_nda             94
+2026-10-19T16:53:02.8141378Z #     aufhebungs_abfindung        62
+2026-10-19T16:53:02.8142299Z #     dach_varianten              66
+2026-10-19T16:53:02.8143023Z #     en_law_msa_sow_dpa          63
+2026-10-19T16:53:02.8143953Z #     handelsvertretervertrag     22
+2026-10-19T16:53:02.8144732Z #     franchisevertrag            20
+2026-10-19T16:53:02.8145467Z #     leasingvertrag              20
+2026-10-19T16:53:02.8146264Z #     darlehen_verbraucherkredit  24
+2026-10-19T16:53:02.8147033Z #     versicherungsvertrag        22
+2026-10-19T16:53:02.8147782Z #     anteilskauf_spa             20
+2026-10-19T16:53:02.8148502Z #     reisevertrag                20
+2026-10-19T16:53:02.8149218Z #     telekommunikationsvertrag   18
+2026-10-19T16:53:02.8150005Z #     energieliefervertrag        18
+2026-10-19T16:53:02.8150788Z #     pflege_behandlungsvertrag   20
+2026-10-19T16:53:02.8151561Z #     arbeitnehmerueberlassung    18
+2026-10-19T16:53:02.8152603Z #     bausparvertrag              16
+2026-10-19T16:53:02.8153380Z #     kommission                  14
+2026-10-19T16:53:02.8154098Z #     spedition_lager             18
+2026-10-19T16:53:02.8154862Z #     insolvenzplan_starug        20
+2026-10-19T16:53:02.8155622Z #     bautraegervertrag           22
+2026-10-19T16:53:02.8156445Z #   Klauseltypen je Detektor (Abdeckungsmatrix)
+2026-10-19T16:53:02.8157342Z #     (kein Detektor)                   711
+2026-10-19T16:53:02.8158173Z #     liability                          62
+2026-10-19T16:53:02.8158974Z #     penalty                            56
+2026-10-19T16:53:02.8159786Z #     setoff_restriction                 45
+2026-10-19T16:53:02.8160628Z #     unilateral_change                  36
+2026-10-19T16:53:02.8161428Z #     statute_of_limitations             32
+2026-10-19T16:53:02.8162471Z #     notice_period                      27
+2026-10-19T16:53:02.8163255Z #     written_form_trap                  26
+2026-10-19T16:53:02.8164034Z #     price_escalation                   25
+2026-10-19T16:53:02.8164843Z #     jurisdiction                       23
+2026-10-19T16:53:02.8165621Z #     auto_renewal                       22
+2026-10-19T16:53:02.8166383Z #     burden_of_proof                    21
+2026-10-19T16:53:02.8167167Z #     deemed_acceptance                  19
+2026-10-19T16:53:02.8167969Z #     service_suspension                 18
+2026-10-19T16:53:02.8168744Z #     data_grant                         15
+2026-10-19T16:53:02.8169531Z #     asymmetric_termination             14
+2026-10-19T16:53:02.8170321Z #     fictitious_receipt                 13
+2026-10-19T16:53:02.8171082Z #     non_compete                        13
+2026-10-19T16:53:02.8171860Z #     default_interest                   12
+2026-10-19T16:53:02.8172958Z #     entire_agreement                   12
+2026-10-19T16:53:02.8173754Z #     as_is_software_disclaimer          11
+2026-10-19T16:53:02.8174565Z #     assignment_restriction             11
+2026-10-19T16:53:02.8175375Z #     vicarious_agents                   11
+2026-10-19T16:53:02.8176478Z #     excessive_survival                 10
+2026-10-19T16:53:02.8177259Z #     non_solicitation                    9
+2026-10-19T16:53:02.8178051Z #     third_party_indemnity               9
+2026-10-19T16:53:02.8178815Z #     data_lockin                         8
+2026-10-19T16:53:02.8179548Z #     marketing_reference                 8
+2026-10-19T16:53:02.8180343Z #     subcontractor_uncontrolled          8
+2026-10-19T16:53:02.8181125Z #     insolvency_termination              7
+2026-10-19T16:53:02.8182100Z #     dynamic_url_referral                6
+2026-10-19T16:53:02.8182937Z #     feedback_ip_grab                    6
+2026-10-19T16:53:02.8183705Z #     salvatorische_klausel_falle         6
+2026-10-19T16:53:02.8184504Z #     unreasonable_audit                  6
+2026-10-19T16:53:02.8185285Z #     audit_log_manipulation              5
+2026-10-19T16:53:02.8186077Z #     unilateral_convenience_termination  5
+2026-10-19T16:53:02.8187144Z #     asymmetric_confidentiality          4
+2026-10-19T16:53:02.8188133Z #     extended_retention_of_title         4
+2026-10-19T16:53:02.8188923Z #     tax_indemnity_shift                 4
+2026-10-19T16:53:02.8189728Z #     unverbindliche_sla_falle            4
+2026-10-19T16:53:02.8190535Z #     force_majeure_asymmetry             3
+2026-10-19T16:53:02.8191268Z #   Abgedeckte Detektoren: 40/47
+2026-10-19T16:53:04.0217537Z #   Engine-Verifikation: 585 verifiziert · 61 blind (9.4% der Klauseln mit beanspruchter Regel) · 719 ohne Regel (67 mit Fremdtreffer)
+2026-10-19T16:53:05.7803623Z # Subtest: klauseldb: das Manifest besitzt jeden Datensatz und der Vertrag ist eingehalten
+2026-10-19T16:53:05.7813388Z ok 38 - klauseldb: das Manifest besitzt jeden Datensatz und der Vertrag ist eingehalten
+2026-10-19T16:53:05.7831163Z   ---
+2026-10-19T16:53:05.7882475Z   duration_ms: 554.931069
+2026-10-19T16:53:05.7883181Z   ...
+2026-10-19T16:53:05.7902766Z # Subtest: klauseldb: jede Dokumentfamilie ist belegt
+2026-10-19T16:53:05.7922729Z ok 39 - klauseldb: jede Dokumentfamilie ist belegt
+2026-10-19T16:53:05.7927541Z   ---
+2026-10-19T16:53:05.7928085Z   duration_ms: 3.50102
+2026-10-19T16:53:05.7928633Z   ...
+2026-10-19T16:53:05.7929577Z # Subtest: klauseldb: umformulierte Klauseltexte sind ein Buildfehler
+2026-10-19T16:53:05.7930683Z ok 40 - klauseldb: umformulierte Klauseltexte sind ein Buildfehler
+2026-10-19T16:53:05.7931444Z   ---
+2026-10-19T16:53:05.7932167Z   duration_ms: 0.639553
+2026-10-19T16:53:05.7932728Z   ...
+2026-10-19T16:53:05.7933625Z # Subtest: klauseldb: die Exporte halten den veroeffentlichten Datensatzvertrag ein
+2026-10-19T16:53:05.7934891Z ok 41 - klauseldb: die Exporte halten den veroeffentlichten Datensatzvertrag ein
+2026-10-19T16:53:05.7935722Z   ---
+2026-10-19T16:53:05.7936210Z   duration_ms: 48.633757
+2026-10-19T16:53:05.7936731Z   ...
+2026-10-19T16:53:05.7937514Z # Subtest: klauseldb: Schema, Validator und Engine stimmen ueberein
+2026-10-19T16:53:05.7938579Z ok 42 - klauseldb: Schema, Validator und Engine stimmen ueberein
+2026-10-19T16:53:05.7939327Z   ---
+2026-10-19T16:53:05.7939820Z   duration_ms: 0.687462
+2026-10-19T16:53:05.7940345Z   ...
+2026-10-19T16:53:05.7941097Z # Subtest: klauseldb: Abdeckungsmatrix macht die Luecken zaehlbar
+2026-10-19T16:53:05.7942325Z ok 43 - klauseldb: Abdeckungsmatrix macht die Luecken zaehlbar
+2026-10-19T16:53:05.7943235Z   ---
+2026-10-19T16:53:05.7943871Z   duration_ms: 22.779716
+2026-10-19T16:53:05.7944553Z   ...
+2026-10-19T16:53:05.7945607Z # Subtest: klauseldb: die drei Zuordnungszustaende werden von der Engine gemessen
+2026-10-19T16:53:05.7947107Z ok 44 - klauseldb: die drei Zuordnungszustaende werden von der Engine gemessen
+2026-10-19T16:53:05.7948097Z   ---
+2026-10-19T16:53:05.7948688Z   duration_ms: 1215.629432
+2026-10-19T16:53:05.7949307Z   ...
+2026-10-19T16:53:05.7950305Z # Subtest: klauseldb: die drei Zuordnungszustaende sind in den Exporten sichtbar
+2026-10-19T16:53:05.7951689Z ok 45 - klauseldb: die drei Zuordnungszustaende sind in den Exporten sichtbar
+2026-10-19T16:53:05.7952917Z   ---
+2026-10-19T16:53:05.7953914Z   duration_ms: 15.523542
+2026-10-19T16:53:05.7954484Z   ...
+2026-10-19T16:53:05.7955425Z # Subtest: klauseldb: die Exporte sind deterministisch und auf der Platte aktuell
+2026-10-19T16:53:05.7956788Z ok 46 - klauseldb: die Exporte sind deterministisch und auf der Platte aktuell
+2026-10-19T16:53:05.7957673Z   ---
+2026-10-19T16:53:05.7958214Z   duration_ms: 1735.41428
+2026-10-19T16:53:05.7958801Z   ...
+2026-10-19T16:53:05.7959576Z # Subtest: klauseldb: die Abfrageoberflaeche filtert korrekt
+2026-10-19T16:53:05.7960605Z ok 47 - klauseldb: die Abfrageoberflaeche filtert korrekt
+2026-10-19T16:53:05.7961331Z   ---
+2026-10-19T16:53:05.7961866Z   duration_ms: 2.579822
+2026-10-19T16:53:05.7962678Z   ...
+2026-10-19T16:53:07.4594206Z # Registrierungsfehler: Online-Lizenzprüfung fehlgeschlagen (HTTP 403).
+2026-10-19T16:53:07.4660035Z # Subtest: CLI smoke test: analyze fixture, writes JSON + Markdown report, exit code 0
+2026-10-19T16:53:07.4697133Z ok 48 - CLI smoke test: analyze fixture, writes JSON + Markdown report, exit code 0
+2026-10-19T16:53:07.4712493Z   ---
+2026-10-19T16:53:07.4736589Z   duration_ms: 277.714724
+2026-10-19T16:53:07.4752637Z   ...
+2026-10-19T16:53:07.4762372Z # Subtest: CLI fails with nonzero exit code for bad usage and missing files
+2026-10-19T16:53:07.4767355Z ok 49 - CLI fails with nonzero exit code for bad usage and missing files
+2026-10-19T16:53:07.4768129Z   ---
+2026-10-19T16:53:07.4768672Z   duration_ms: 202.423118
+2026-10-19T16:53:07.4769175Z   ...
+2026-10-19T16:53:07.4769774Z # Subtest: CLI supports --version and -v flags
+2026-10-19T16:53:07.4771364Z ok 50 - CLI supports --version and -v flags
+2026-10-19T16:53:07.4771863Z   ---
+2026-10-19T16:53:07.4773438Z   duration_ms: 132.859546
+2026-10-19T16:53:07.4773827Z   ...
+2026-10-19T16:53:07.4774325Z # Subtest: CLI exports SARIF report via --sarif flag
+2026-10-19T16:53:07.4774990Z ok 51 - CLI exports SARIF report via --sarif flag
+2026-10-19T16:53:07.4775464Z   ---
+2026-10-19T16:53:07.4775832Z   duration_ms: 265.019978
+2026-10-19T16:53:07.4776223Z   ...
+2026-10-19T16:53:07.4776710Z # Subtest: CLI exports PDF report via --pdf flag
+2026-10-19T16:53:07.4777384Z ok 52 - CLI exports PDF report via --pdf flag
+2026-10-19T16:53:07.4777858Z   ---
+2026-10-19T16:53:07.4778161Z   duration_ms: 265.52018
+2026-10-19T16:53:07.4778506Z   ...
+2026-10-19T16:53:07.4779169Z # Subtest: CLI blocks execution without active account when test guard is off
+2026-10-19T16:53:07.4780140Z ok 53 - CLI blocks execution without active account when test guard is off
+2026-10-19T16:53:07.4780746Z   ---
+2026-10-19T16:53:07.4781109Z   duration_ms: 66.588893
+2026-10-19T16:53:07.4781477Z   ...
+2026-10-19T16:53:07.4782674Z # Subtest: CLI account commands: register, whoami, and logout lifecycle
+2026-10-19T16:53:07.4783592Z not ok 54 - CLI account commands: register, whoami, and logout lifecycle
+2026-10-19T16:53:07.4784194Z   ---
+2026-10-19T16:53:07.4784518Z   duration_ms: 388.815249
+2026-10-19T16:53:07.4785307Z   location: '/home/runner/work/ClauseLens/ClauseLens/test/cli.test.js:136:1'
+2026-10-19T16:53:07.4786035Z   failureType: 'testCodeFailure'
+2026-10-19T16:53:07.4786482Z   error: |-
+2026-10-19T16:53:07.4787589Z     Command failed: "/opt/hostedtoolcache/node/20.20.2/x64/bin/node" bin/clauselens.js register --email test.user@firma.de --name "Firma Test"
+2026-10-19T16:53:07.4789378Z     Registrierungsfehler: Online-Lizenzprüfung fehlgeschlagen (HTTP 403).
+2026-10-19T16:53:07.4790086Z     
+2026-10-19T16:53:07.4790436Z   code: 'ERR_TEST_FAILURE'
+2026-10-19T16:53:07.4790828Z   stack: |-
+2026-10-19T16:53:07.4791284Z     genericNodeError (node:internal/errors:984:15)
+2026-10-19T16:53:07.4792392Z     wrappedFn (node:internal/errors:538:14)
+2026-10-19T16:53:07.4793067Z     checkExecSyncError (node:child_process:891:11)
+2026-10-19T16:53:07.4793676Z     execSync (node:child_process:963:15)
+2026-10-19T16:53:07.4794461Z     exec (file:///home/runner/work/ClauseLens/ClauseLens/test/cli.test.js:16:10)
+2026-10-19T16:53:07.4795773Z     TestContext.<anonymous> (file:///home/runner/work/ClauseLens/ClauseLens/test/cli.test.js:138:21)
+2026-10-19T16:53:07.4797196Z     Test.runInAsyncScope (node:async_hooks:206:9)
+2026-10-19T16:53:07.4797891Z     Test.run (node:internal/test_runner/test:796:25)
+2026-10-19T16:53:07.4798716Z     Test.processPendingSubtests (node:internal/test_runner/test:526:18)
+2026-10-19T16:53:07.4799584Z     Test.postRun (node:internal/test_runner/test:889:19)
+2026-10-19T16:53:07.4800129Z   ...
+2026-10-19T16:53:07.7229326Z # Subtest: compare: detects resolved liability and newly introduced penalty
+2026-10-19T16:53:07.7244232Z ok 55 - compare: detects resolved liability and newly introduced penalty
+2026-10-19T16:53:07.7255497Z   ---
+2026-10-19T16:53:07.7256195Z   duration_ms: 178.385445
+2026-10-19T16:53:07.7256865Z   ...
+2026-10-19T16:53:07.9050382Z # Subtest: config: loads default policy correctly
+2026-10-19T16:53:07.9066833Z ok 56 - config: loads default policy correctly
+2026-10-19T16:53:07.9082735Z   ---
+2026-10-19T16:53:07.9103054Z   duration_ms: 1.353384
+2026-10-19T16:53:07.9122587Z   ...
+2026-10-19T16:53:07.9123585Z # Subtest: config: merges b2b_saas profile with custom thresholds
+2026-10-19T16:53:07.9142812Z ok 57 - config: merges b2b_saas profile with custom thresholds
+2026-10-19T16:53:07.9156022Z   ---
+2026-10-19T16:53:07.9157019Z   duration_ms: 0.161551
+2026-10-19T16:53:07.9157631Z   ...
+2026-10-19T16:53:07.9158428Z # Subtest: config: custom rule execution in analyzeContract
+2026-10-19T16:53:07.9159470Z ok 58 - config: custom rule execution in analyzeContract
+2026-10-19T16:53:07.9160217Z   ---
+2026-10-19T16:53:07.9160751Z   duration_ms: 103.705751
+2026-10-19T16:53:07.9161312Z   ...
+2026-10-19T16:53:07.9162567Z # Subtest: config: activeDetectors filter limits executed rules
+2026-10-19T16:53:07.9170635Z ok 59 - config: activeDetectors filter limits executed rules
+2026-10-19T16:53:07.9171435Z   ---
+2026-10-19T16:53:07.9172229Z   duration_ms: 9.047184
+2026-10-19T16:53:07.9172834Z   ...
+2026-10-19T16:53:08.2113687Z # Subtest: enterprise benchmark: detects all 54 standard commercial contract clauses & boilerplates
+2026-10-19T16:53:08.2115593Z ok 60 - enterprise benchmark: detects all 54 standard commercial contract clauses & boilerplates
+2026-10-19T16:53:08.2132491Z   ---
+2026-10-19T16:53:08.2149418Z   duration_ms: 230.060735
+2026-10-19T16:53:08.2156755Z   ...
+2026-10-19T16:53:08.4982357Z # Subtest: evidence QA harness: golden contract corpus satisfies scoring baselines
+2026-10-19T16:53:08.4985312Z ok 61 - evidence QA harness: golden contract corpus satisfies scoring baselines
+2026-10-19T16:53:08.4987566Z   ---
+2026-10-19T16:53:08.4991736Z   duration_ms: 202.65987
+2026-10-19T16:53:08.4993907Z   ...
+2026-10-19T16:53:08.4996342Z # Subtest: evidence QA harness: false-positive resistance against compliant statutory clauses
+2026-10-19T16:53:08.5001573Z ok 62 - evidence QA harness: false-positive resistance against compliant statutory clauses
+2026-10-19T16:53:08.5002947Z   ---
+2026-10-19T16:53:08.5003574Z   duration_ms: 2.751953
+2026-10-19T16:53:08.5004215Z   ...
+2026-10-19T16:53:08.5005401Z # Subtest: evidence QA harness: finding data model strictly adheres to schema contracts
+2026-10-19T16:53:08.5006983Z ok 63 - evidence QA harness: finding data model strictly adheres to schema contracts
+2026-10-19T16:53:08.5008001Z   ---
+2026-10-19T16:53:08.5008626Z   duration_ms: 7.8499
+2026-10-19T16:53:08.5009288Z   ...
+2026-10-19T16:53:08.6123820Z # Subtest: extractTextFromBuffer: extracts plain text directly from buffer
+2026-10-19T16:53:08.6153190Z ok 64 - extractTextFromBuffer: extracts plain text directly from buffer
+2026-10-19T16:53:08.6182664Z   ---
+2026-10-19T16:53:08.6193585Z   duration_ms: 3.896127
+2026-10-19T16:53:08.6222604Z   ...
+2026-10-19T16:53:08.6573763Z # Subtest: server API /extract: extracts text via POST /api/v1/extract
+2026-10-19T16:53:08.6575052Z ok 65 - server API /extract: extracts text via POST /api/v1/extract
+2026-10-19T16:53:08.6592436Z   ---
+2026-10-19T16:53:08.6612590Z   duration_ms: 75.176381
+2026-10-19T16:53:08.6623305Z   ...
+2026-10-19T16:53:09.7543238Z # Subtest: hardening: detects vicarious agents liability exclusion (§ 278, § 307 BGB)
+2026-10-19T16:53:09.7551287Z ok 66 - hardening: detects vicarious agents liability exclusion (§ 278, § 307 BGB)
+2026-10-19T16:53:09.7556654Z   ---
+2026-10-19T16:53:09.7564514Z   duration_ms: 103.33527
+2026-10-19T16:53:09.7573209Z   ...
+2026-10-19T16:53:09.7574471Z # Subtest: hardening: detects unreasonable audit & inspection rights (§ 307 BGB)
+2026-10-19T16:53:09.7583509Z ok 67 - hardening: detects unreasonable audit & inspection rights (§ 307 BGB)
+2026-10-19T16:53:09.7596204Z   ---
+2026-10-19T16:53:09.7596822Z   duration_ms: 70.113218
+2026-10-19T16:53:09.7601619Z   ...
+2026-10-19T16:53:09.7603067Z # Subtest: hardening: detects data lock-in and paid data export (§ 307 BGB, Art. 20 DSGVO)
+2026-10-19T16:53:09.7604310Z ok 68 - hardening: detects data lock-in and paid data export (§ 307 BGB, Art. 20 DSGVO)
+2026-10-19T16:53:09.7604975Z   ---
+2026-10-19T16:53:09.7605288Z   duration_ms: 3.862524
+2026-10-19T16:53:09.7606004Z   ...
+2026-10-19T16:53:09.7606945Z # Subtest: hardening: detects third-party indemnity without fault (§ 307 BGB)
+2026-10-19T16:53:09.7608129Z ok 69 - hardening: detects third-party indemnity without fault (§ 307 BGB)
+2026-10-19T16:53:09.7608786Z   ---
+2026-10-19T16:53:09.7609111Z   duration_ms: 5.264869
+2026-10-19T16:53:09.7609471Z   ...
+2026-10-19T16:53:09.7610222Z # Subtest: hardening: detects exclusion of extraordinary termination (§ 314 BGB)
+2026-10-19T16:53:09.7610926Z ok 70 - hardening: detects exclusion of extraordinary termination (§ 314 BGB)
+2026-10-19T16:53:09.7611315Z   ---
+2026-10-19T16:53:09.7611518Z   duration_ms: 1.019902
+2026-10-19T16:53:09.7611736Z   ...
+2026-10-19T16:53:09.7612598Z # Subtest: hardening: neutralizes soft-hyphens (\\u00ad) inserted to evade regex
+2026-10-19T16:53:09.7613678Z ok 71 - hardening: neutralizes soft-hyphens (\\u00ad) inserted to evade regex
+2026-10-19T16:53:09.7614343Z   ---
+2026-10-19T16:53:09.7614674Z   duration_ms: 3.013551
+2026-10-19T16:53:09.7615030Z   ...
+2026-10-19T16:53:09.7615717Z # Subtest: hardening: neutralizes zero-width and non-breaking spaces
+2026-10-19T16:53:09.7616754Z ok 72 - hardening: neutralizes zero-width and non-breaking spaces
+2026-10-19T16:53:09.7617351Z   ---
+2026-10-19T16:53:09.7617673Z   duration_ms: 69.74454
+2026-10-19T16:53:09.7618032Z   ...
+2026-10-19T16:53:09.7618809Z # Subtest: hardening: DACH regional variations (Austrian ABGB / Swiss OR legal terms)
+2026-10-19T16:53:09.7619962Z ok 73 - hardening: DACH regional variations (Austrian ABGB / Swiss OR legal terms)
+2026-10-19T16:53:09.7620619Z   ---
+2026-10-19T16:53:09.7620914Z   duration_ms: 5.339268
+2026-10-19T16:53:09.7621327Z   ...
+2026-10-19T16:53:09.7622402Z # Subtest: hardening: clean, balanced commercial contract yields ZERO high findings
+2026-10-19T16:53:09.7623456Z ok 74 - hardening: clean, balanced commercial contract yields ZERO high findings
+2026-10-19T16:53:09.7624079Z   ---
+2026-10-19T16:53:09.7624380Z   duration_ms: 7.074374
+2026-10-19T16:53:09.7624710Z   ...
+2026-10-19T16:53:09.7625422Z # Subtest: hardening: ReDoS performance check against massive 5000-line repeated text
+2026-10-19T16:53:09.7626520Z ok 75 - hardening: ReDoS performance check against massive 5000-line repeated text
+2026-10-19T16:53:09.7627175Z   ---
+2026-10-19T16:53:09.7627479Z   duration_ms: 668.743449
+2026-10-19T16:53:09.7627832Z   ...
+2026-10-19T16:53:10.2810337Z # adv-cloud-plattform                9/9 traps  0/10 FP  findings=10  score=100
+2026-10-19T16:53:10.2822239Z # adv-it-wartungsvertrag             6/6 traps  0/6 FP  findings=6  score=74
+2026-10-19T16:53:10.2823848Z # adv-marketing-agentur              5/5 traps  0/6 FP  findings=6  score=66
+2026-10-19T16:53:10.2825148Z # adv-personalberatung               7/7 traps  0/6 FP  findings=8  score=100
+2026-10-19T16:53:10.2826401Z # adv-spedition-kontraktlogistik     6/6 traps  0/7 FP  findings=6  score=82
+2026-10-19T16:53:10.2833160Z # adv-zuliefervertrag                6/6 traps  0/8 FP  findings=6  score=82
+2026-10-19T16:53:10.2834440Z # gen-franchise-handelsvertreter     14/14 traps  0/6 FP  findings=13  score=100
+2026-10-19T16:53:10.2835983Z # gen-saas-subscription              16/16 traps  0/7 FP  findings=16  score=100
+2026-10-19T16:53:10.2837192Z # gen-werkvertrag-systemhaus         26/26 traps  0/6 FP  findings=26  score=100
+2026-10-19T16:53:10.2838357Z # web-real-clauses                   14/14 traps  0/1 FP  findings=20  score=100
+2026-10-19T16:53:10.2839272Z # TOTAL 109/109 (100%)  FP=0/63  uncovered=0
+2026-10-19T16:53:10.2840283Z # scorecard: /home/runner/work/ClauseLens/ClauseLens/test/holdout/scorecard.md
+2026-10-19T16:53:10.2968247Z # Subtest: /home/runner/work/ClauseLens/ClauseLens/test/holdout/runner.mjs
+2026-10-19T16:53:10.2973816Z ok 14 - /home/runner/work/ClauseLens/ClauseLens/test/holdout/runner.mjs
+2026-10-19T16:53:10.2974744Z   ---
+2026-10-19T16:53:10.2975299Z   duration_ms: 510.500967
+2026-10-19T16:53:10.2975867Z   ...
+2026-10-19T16:53:10.5329658Z # Subtest: htmlreport: generates valid self-contained HTML with SVG gauge and filters
+2026-10-19T16:53:10.5331243Z ok 77 - htmlreport: generates valid self-contained HTML with SVG gauge and filters
+2026-10-19T16:53:10.5332332Z   ---
+2026-10-19T16:53:10.5332668Z   duration_ms: 170.143434
+2026-10-19T16:53:10.5333052Z   ...
+2026-10-19T16:53:10.5341821Z # Subtest: htmlreport: writeHtmlReport writes file to disk
+2026-10-19T16:53:10.5342900Z ok 78 - htmlreport: writeHtmlReport writes file to disk
+2026-10-19T16:53:10.5343438Z   ---
+2026-10-19T16:53:10.5343768Z   duration_ms: 8.657691
+2026-10-19T16:53:10.5344130Z   ...
+2026-10-19T16:53:10.5932415Z # Subtest: license ui: both pages load the Polar module and activate seats through it
+2026-10-19T16:53:10.5934943Z ok 79 - license ui: both pages load the Polar module and activate seats through it
+2026-10-19T16:53:10.5935979Z   ---
+2026-10-19T16:53:10.5936611Z   duration_ms: 5.336214
+2026-10-19T16:53:10.5937257Z   ...
+2026-10-19T16:53:10.5954797Z # Subtest: license ui: no offline or prefix-only shortcut unlocks a Polar key
+2026-10-19T16:53:10.5956306Z ok 80 - license ui: no offline or prefix-only shortcut unlocks a Polar key
+2026-10-19T16:53:10.5957506Z   ---
+2026-10-19T16:53:10.5958214Z   duration_ms: 4.442026
+2026-10-19T16:53:10.5958893Z   ...
+2026-10-19T16:53:10.6584381Z # Subtest: licensing: generate and verify pro license
+2026-10-19T16:53:10.6622860Z ok 81 - licensing: generate and verify pro license
+2026-10-19T16:53:10.6623871Z   ---
+2026-10-19T16:53:10.6630347Z   duration_ms: 2.075761
+2026-10-19T16:53:10.6652574Z   ...
+2026-10-19T16:53:10.6672340Z # Subtest: licensing: generate and verify enterprise license
+2026-10-19T16:53:10.6673556Z ok 82 - licensing: generate and verify enterprise license
+2026-10-19T16:53:10.6674452Z   ---
+2026-10-19T16:53:10.6675061Z   duration_ms: 0.268821
+2026-10-19T16:53:10.6675730Z   ...
+2026-10-19T16:53:10.6676620Z # Subtest: licensing: generate and verify team license
+2026-10-19T16:53:10.6677721Z ok 83 - licensing: generate and verify team license
+2026-10-19T16:53:10.6678555Z   ---
+2026-10-19T16:53:10.6706981Z   duration_ms: 0.31067
+2026-10-19T16:53:10.6707663Z   ...
+2026-10-19T16:53:10.6710580Z # Subtest: licensing: reject tampered or corrupted license key
+2026-10-19T16:53:10.6711735Z ok 84 - licensing: reject tampered or corrupted license key
+2026-10-19T16:53:10.6712762Z   ---
+2026-10-19T16:53:10.6713294Z   duration_ms: 0.343871
+2026-10-19T16:53:10.6713857Z   ...
+2026-10-19T16:53:10.6714518Z # Subtest: licensing: reject expired license
+2026-10-19T16:53:10.6715443Z ok 85 - licensing: reject expired license
+2026-10-19T16:53:10.6716148Z   ---
+2026-10-19T16:53:10.6716692Z   duration_ms: 0.415655
+2026-10-19T16:53:10.6717269Z   ...
+2026-10-19T16:53:10.6718057Z # Subtest: licensing: resolve fallback when no key is provided
+2026-10-19T16:53:10.6719129Z ok 86 - licensing: resolve fallback when no key is provided
+2026-10-19T16:53:10.6719896Z   ---
+2026-10-19T16:53:10.6720558Z   duration_ms: 0.18746
+2026-10-19T16:53:10.6721140Z   ...
+2026-10-19T16:53:10.6722113Z # Subtest: licensing: Polar keys are not validated offline
+2026-10-19T16:53:10.6723180Z ok 87 - licensing: Polar keys are not validated offline
+2026-10-19T16:53:10.6724518Z   ---
+2026-10-19T16:53:10.6727296Z   duration_ms: 0.170358
+2026-10-19T16:53:10.6727917Z   ...
+2026-10-19T16:53:10.6728845Z # Subtest: licensing: verifyPolarLicense accepts granted ClauseLens Pro key
+2026-10-19T16:53:10.6730132Z ok 88 - licensing: verifyPolarLicense accepts granted ClauseLens Pro key
+2026-10-19T16:53:10.6731002Z   ---
+2026-10-19T16:53:10.6731524Z   duration_ms: 1.188747
+2026-10-19T16:53:10.6732356Z   ...
+2026-10-19T16:53:10.6733327Z # Subtest: licensing: verifyPolarLicense activates a seat for a limited Team key
+2026-10-19T16:53:10.6734680Z ok 89 - licensing: verifyPolarLicense activates a seat for a limited Team key
+2026-10-19T16:53:10.6735588Z   ---
+2026-10-19T16:53:10.6736112Z   duration_ms: 1.218072
+2026-10-19T16:53:10.6736696Z   ...
+2026-10-19T16:53:10.6737723Z # Subtest: licensing: verifyPolarLicense rejects foreign and unknown keys
+2026-10-19T16:53:10.6763638Z ok 90 - licensing: verifyPolarLicense rejects foreign and unknown keys
+2026-10-19T16:53:10.6766504Z   ---
+2026-10-19T16:53:10.6768310Z   duration_ms: 0.467873
+2026-10-19T16:53:10.6768953Z   ...
+2026-10-19T16:53:10.6769935Z # Subtest: licensing: verifyPolarLicense reports seat limit and network loss
+2026-10-19T16:53:10.6771313Z ok 91 - licensing: verifyPolarLicense reports seat limit and network loss
+2026-10-19T16:53:10.6772483Z   ---
+2026-10-19T16:53:10.6773002Z   duration_ms: 0.652687
+2026-10-19T16:53:10.6773537Z   ...
+2026-10-19T16:53:10.6774388Z # Subtest: licensing: resolveActiveLicenseAsync routes Polar keys online
+2026-10-19T16:53:10.6775568Z ok 92 - licensing: resolveActiveLicenseAsync routes Polar keys online
+2026-10-19T16:53:10.6776376Z   ---
+2026-10-19T16:53:10.6776890Z   duration_ms: 0.794873
+2026-10-19T16:53:10.6777411Z   ...
+2026-10-19T16:53:10.6778177Z # Subtest: licensing: cliDeviceLabel is stable and machine scoped
+2026-10-19T16:53:10.6779218Z ok 93 - licensing: cliDeviceLabel is stable and machine scoped
+2026-10-19T16:53:10.6779985Z   ---
+2026-10-19T16:53:10.6780484Z   duration_ms: 0.24136
+2026-10-19T16:53:10.6781021Z   ...
+2026-10-19T16:53:10.9965770Z # Subtest: cybersentinel mdr-msa real-world audit: detects the hidden cyber-liability traps
+2026-10-19T16:53:10.9970471Z ok 94 - cybersentinel mdr-msa real-world audit: detects the hidden cyber-liability traps
+2026-10-19T16:53:10.9971644Z   ---
+2026-10-19T16:53:10.9972575Z   duration_ms: 253.477949
+2026-10-19T16:53:10.9973278Z   ...
+2026-10-19T16:53:11.0744735Z # Subtest: new detectors suite: all newly defined detectors trigger accurately
+2026-10-19T16:53:11.0753186Z ok 95 - new detectors suite: all newly defined detectors trigger accurately
+2026-10-19T16:53:11.0761635Z   ---
+2026-10-19T16:53:11.0762564Z   duration_ms: 10.518611
+2026-10-19T16:53:11.0763984Z   ...
+2026-10-19T16:53:11.4084656Z # Subtest: nexusscale msa real-world audit: detects all comprehensive traps
+2026-10-19T16:53:11.4093424Z ok 96 - nexusscale msa real-world audit: detects all comprehensive traps
+2026-10-19T16:53:11.4094424Z   ---
+2026-10-19T16:53:11.4095138Z   duration_ms: 267.68006
+2026-10-19T16:53:11.4095775Z   ...
+2026-10-19T16:53:11.5160607Z # Subtest: openapi: getOpenApiSpec returns valid OpenAPI 3.0.3 specification
+2026-10-19T16:53:11.5172622Z ok 97 - openapi: getOpenApiSpec returns valid OpenAPI 3.0.3 specification
+2026-10-19T16:53:11.5173499Z   ---
+2026-10-19T16:53:11.5174091Z   duration_ms: 1.585176
+2026-10-19T16:53:11.5174731Z   ...
+2026-10-19T16:53:11.5175481Z # Subtest: openapi: renderApiDocsHtml returns intact HTML
+2026-10-19T16:53:11.5176484Z ok 98 - openapi: renderApiDocsHtml returns intact HTML
+2026-10-19T16:53:11.5177224Z   ---
+2026-10-19T16:53:11.5177740Z   duration_ms: 0.317482
+2026-10-19T16:53:11.5178296Z   ...
+2026-10-19T16:53:11.7330193Z # Subtest: server API /openapi: serves spec at /api/v1/openapi.json and docs at /docs
+2026-10-19T16:53:11.7332351Z ok 99 - server API /openapi: serves spec at /api/v1/openapi.json and docs at /docs
+2026-10-19T16:53:11.7333404Z   ---
+2026-10-19T16:53:11.7334107Z   duration_ms: 247.382259
+2026-10-19T16:53:11.7335391Z   ...
+2026-10-19T16:53:11.9912938Z # Subtest: pdfreport: generates valid DIN A4 PDF 1.4 buffer with inspection seal
+2026-10-19T16:53:11.9918200Z ok 100 - pdfreport: generates valid DIN A4 PDF 1.4 buffer with inspection seal
+2026-10-19T16:53:11.9922153Z   ---
+2026-10-19T16:53:11.9922877Z   duration_ms: 172.301011
+2026-10-19T16:53:11.9926628Z   ...
+2026-10-19T16:53:11.9927747Z # Subtest: pdfreport: generates clean report with affirmative badge when 0 findings
+2026-10-19T16:53:11.9931824Z ok 101 - pdfreport: generates clean report with affirmative badge when 0 findings
+2026-10-19T16:53:11.9936147Z   ---
+2026-10-19T16:53:11.9936809Z   duration_ms: 7.341414
+2026-10-19T16:53:11.9938665Z   ...
+2026-10-19T16:53:11.9943393Z # Subtest: pdfreport: generates multi-page PDF when findings exceed page capacity
+2026-10-19T16:53:11.9944951Z ok 102 - pdfreport: generates multi-page PDF when findings exceed page capacity
+2026-10-19T16:53:11.9945982Z   ---
+2026-10-19T16:53:11.9947035Z   duration_ms: 2.910689
+2026-10-19T16:53:11.9947799Z   ...
+2026-10-19T16:53:11.9948773Z # Subtest: pdfreport: writePdfReport writes binary PDF file to disk
+2026-10-19T16:53:11.9950062Z ok 103 - pdfreport: writePdfReport writes binary PDF file to disk
+2026-10-19T16:53:11.9951000Z   ---
+2026-10-19T16:53:11.9951640Z   duration_ms: 5.058375
+2026-10-19T16:53:11.9952588Z   ...
+2026-10-19T16:53:12.0628481Z # Subtest: polar: validate sends key and public organization id
+2026-10-19T16:53:12.0643537Z ok 104 - polar: validate sends key and public organization id
+2026-10-19T16:53:12.0662916Z   ---
+2026-10-19T16:53:12.0673718Z   duration_ms: 2.636779
+2026-10-19T16:53:12.0674520Z   ...
+2026-10-19T16:53:12.0723161Z # Subtest: polar: unknown key is reported as not found
+2026-10-19T16:53:12.0763015Z ok 105 - polar: unknown key is reported as not found
+2026-10-19T16:53:12.0763933Z   ---
+2026-10-19T16:53:12.0764528Z   duration_ms: 1.114038
+2026-10-19T16:53:12.0765114Z   ...
+2026-10-19T16:53:12.0765823Z # Subtest: polar: revoked key is rejected
+2026-10-19T16:53:12.0766694Z ok 106 - polar: revoked key is rejected
+2026-10-19T16:53:12.0767377Z   ---
+2026-10-19T16:53:12.0767933Z   duration_ms: 0.347328
+2026-10-19T16:53:12.0768507Z   ...
+2026-10-19T16:53:12.0769361Z # Subtest: polar: expired key is rejected even when status is granted
+2026-10-19T16:53:12.0770518Z ok 107 - polar: expired key is rejected even when status is granted
+2026-10-19T16:53:12.0771379Z   ---
+2026-10-19T16:53:12.0772196Z   duration_ms: 0.462633
+2026-10-19T16:53:12.0772808Z   ...
+2026-10-19T16:53:12.0773698Z # Subtest: polar: network failure is reported, not treated as valid
+2026-10-19T16:53:12.0774910Z ok 108 - polar: network failure is reported, not treated as valid
+2026-10-19T16:53:12.0775766Z   ---
+2026-10-19T16:53:12.0776342Z   duration_ms: 0.409755
+2026-10-19T16:53:12.0776922Z   ...
+2026-10-19T16:53:12.0777903Z # Subtest: polar: parseLicenseKey handles unlimited activations and missing fields
+2026-10-19T16:53:12.0779311Z ok 109 - polar: parseLicenseKey handles unlimited activations and missing fields
+2026-10-19T16:53:12.0780255Z   ---
+2026-10-19T16:53:12.0780806Z   duration_ms: 0.154619
+2026-10-19T16:53:12.0781355Z   ...
+2026-10-19T16:53:12.0782405Z # Subtest: polar: activate binds a seat label after validation
+2026-10-19T16:53:12.0783551Z ok 110 - polar: activate binds a seat label after validation
+2026-10-19T16:53:12.0784361Z   ---
+2026-10-19T16:53:12.0784919Z   duration_ms: 0.599338
+2026-10-19T16:53:12.0785507Z   ...
+2026-10-19T16:53:12.0786413Z # Subtest: polar: a key from another product in the same org is rejected
+2026-10-19T16:53:12.0787626Z ok 111 - polar: a key from another product in the same org is rejected
+2026-10-19T16:53:12.0788455Z   ---
+2026-10-19T16:53:12.0789004Z   duration_ms: 0.354021
+2026-10-19T16:53:12.0789576Z   ...
+2026-10-19T16:53:12.0790537Z # Subtest: polar: activate skips the seat call for keys without an activation limit
+2026-10-19T16:53:12.0791866Z ok 112 - polar: activate skips the seat call for keys without an activation limit
+2026-10-19T16:53:12.0793091Z   ---
+2026-10-19T16:53:12.0794144Z   duration_ms: 0.410866
+2026-10-19T16:53:12.0794873Z   ...
+2026-10-19T16:53:12.0795868Z # Subtest: polar: activate falls back to validation when Polar refuses activations
+2026-10-19T16:53:12.0797269Z ok 113 - polar: activate falls back to validation when Polar refuses activations
+2026-10-19T16:53:12.0798175Z   ---
+2026-10-19T16:53:12.0798727Z   duration_ms: 0.49312
+2026-10-19T16:53:12.0799319Z   ...
+2026-10-19T16:53:12.0800203Z # Subtest: polar: activate does not call Polar when the key is unknown
+2026-10-19T16:53:12.0801384Z ok 114 - polar: activate does not call Polar when the key is unknown
+2026-10-19T16:53:12.0802465Z   ---
+2026-10-19T16:53:12.0803039Z   duration_ms: 0.336507
+2026-10-19T16:53:12.0803698Z   ...
+2026-10-19T16:53:12.0804584Z # Subtest: polar: activate reports a full seat pool
+2026-10-19T16:53:12.0805592Z ok 115 - polar: activate reports a full seat pool
+2026-10-19T16:53:12.0806322Z   ---
+2026-10-19T16:53:12.0807138Z   duration_ms: 0.392512
+2026-10-19T16:53:12.0807745Z   ...
+2026-10-19T16:53:12.0808588Z # Subtest: polar: device label is stable and depends on the device
+2026-10-19T16:53:12.0809718Z ok 116 - polar: device label is stable and depends on the device
+2026-10-19T16:53:12.0810547Z   ---
+2026-10-19T16:53:12.0811070Z   duration_ms: 0.513708
+2026-10-19T16:53:12.0811619Z   ...
+2026-10-19T16:53:12.1339939Z # ================================================================================
+2026-10-19T16:53:12.1352869Z #  ClauseLens Red Team Stress-Test: IP, Data Rights & Lock-in Clauses
+2026-10-19T16:53:12.1353855Z # ================================================================================
+2026-10-19T16:53:12.3263603Z # [D1] ADVERSARIAL DECEPTIVE: IP & Telemetry (§ 307 / § 305c BGB)
+2026-10-19T16:53:12.3287421Z # Clause: "Sämtliche vom Kunden eingebrachten Automatisierungsskripte, Prompts, Vorlagen und Konfigurationsdaten gehen zur Sicherung und Fortentwicklung des Plattformbetriebs entschädigungslos in das unbeschränkte geistige Eigentum des Anbieters über."
+2026-10-19T16:53:12.3290354Z # Expected: hoch (§ 305c BGB, § 307 BGB (Überraschende Enteignung kundenindividueller IP))
+2026-10-19T16:53:12.3291648Z # Actual: Detected=true, HighestSeverity=hoch, Score=15
+2026-10-19T16:53:12.3292887Z #    -> Hit: [data_grant] severity=hoch
+2026-10-19T16:53:12.3293893Z # --------------------------------------------------------------------------------
+2026-10-19T16:53:12.3295140Z # [D2] ADVERSARIAL DECEPTIVE: IP & Telemetry (§ 307 / § 305c BGB)
+2026-10-19T16:53:12.3298416Z # Clause: "Der Anbieter ist berechtigt, aus Telemetriedaten, Diagnoseprotokollen und Kundenfeedback abgeleitete Workflows weltweit und zeitlich unbegrenzt kommerziell zu lizenzieren oder zu veräußern, ohne dass dem Kunden hieraus Vergütungs- oder Beteiligungsansprüche erwachsen."
+2026-10-19T16:53:12.3301309Z # Expected: hoch (§ 307 BGB, § 31 UrhG, § 32 UrhG (Unentgeltlicher Entzug von Verwertungsrechten))
+2026-10-19T16:53:12.3302858Z # Actual: Detected=true, HighestSeverity=hoch, Score=15
+2026-10-19T16:53:12.3303869Z #    -> Hit: [data_grant] severity=hoch
+2026-10-19T16:53:12.3304975Z # --------------------------------------------------------------------------------
+2026-10-19T16:53:12.3306389Z # [D3] ADVERSARIAL DECEPTIVE: Post-Contractual Non-Compete (§ 74 HGB)
+2026-10-19T16:53:12.3309901Z # Clause: "Dem Auftragnehmer ist es für die Dauer von 24 Monaten nach Beendigung des Vertragsverhältnisses untersagt, für Kunden oder unmittelbare Geschäftspartner des Auftraggebers in dessen Geschäftsbereich beratend, vermittelnd oder operativ tätig zu werden; eine Karenzentschädigung wird nicht gewährt."
+2026-10-19T16:53:12.3313503Z # Expected: hoch (§ 74 Abs. 2 HGB analog, § 138 BGB, § 307 BGB (Verstecktes Wettbewerbsverbot ohne Karenz))
+2026-10-19T16:53:12.3314797Z # Actual: Detected=true, HighestSeverity=hoch, Score=15
+2026-10-19T16:53:12.3315739Z #    -> Hit: [non_compete] severity=hoch
+2026-10-19T16:53:12.3316750Z # --------------------------------------------------------------------------------
+2026-10-19T16:53:12.3318358Z # [D4] ADVERSARIAL DECEPTIVE: Post-Contractual Non-Compete (§ 74 HGB)
+2026-10-19T16:53:12.3321053Z # Clause: "Das Verbot jedweder Tätigkeit im Tätigkeitsbereich des Dienstleisters gilt über die Beendigung dieses Vertrages hinaus für weitere zwei Jahre fort; jeglicher Anspruch auf Ausgleichszahlung ist abbedungen."
+2026-10-19T16:53:12.3323877Z # Expected: hoch (§ 74 Abs. 2 HGB, § 138 BGB, § 307 BGB (Existenzgefährdendes Tätigkeitsverbot))
+2026-10-19T16:53:12.3325122Z # Actual: Detected=true, HighestSeverity=hoch, Score=45
+2026-10-19T16:53:12.3326173Z #    -> Hit: [notice_period] severity=hoch
+2026-10-19T16:53:12.3327053Z #    -> Hit: [non_compete] severity=hoch
+2026-10-19T16:53:12.3327972Z #    -> Hit: [agency_goodwill_waiver] severity=hoch
+2026-10-19T16:53:12.3329097Z # --------------------------------------------------------------------------------
+2026-10-19T16:53:12.3330472Z # [D5] ADVERSARIAL DECEPTIVE: Jurisdiction (§ 38 ZPO / § 307 BGB)
+2026-10-19T16:53:12.3334370Z # Clause: "Ausschließlicher Gerichtsstand für sämtliche Klagen und Ansprüche des Kunden gegen den Anbieter ist Wilmington, Delaware, USA; der Anbieter bleibt demgegenüber berechtigt, Klagen an jedem anderen gesetzlichen Gerichtsstand zu erheben."
+2026-10-19T16:53:12.3337440Z # Expected: hoch (§ 307 BGB, § 305c BGB (Asymmetrische Zwangszuweisung in Auslandsgerichtsstand))
+2026-10-19T16:53:12.3338894Z # Actual: Detected=true, HighestSeverity=hoch, Score=15
+2026-10-19T16:53:12.3339913Z #    -> Hit: [jurisdiction] severity=hoch
+2026-10-19T16:53:12.3341065Z # --------------------------------------------------------------------------------
+2026-10-19T16:53:12.3342679Z # [D6] ADVERSARIAL DECEPTIVE: Jurisdiction (§ 38 ZPO / § 307 BGB)
+2026-10-19T16:53:12.3345875Z # Clause: "Sämtliche Streitigkeiten aus oder im Zusammenhang mit diesem Vertrag sind ausschließlich vor den sachlich und örtlich zuständigen Gerichten am Sitz des Anbieters auszutragen, wobei der Anbieter berechtigt ist, den Kunden an dessen allgemeinem Forum zu verklagen."
+2026-10-19T16:53:12.3348828Z # Expected: hoch (§ 307 BGB (Asymmetrische Gerichtsstandsregelung getarnt als Gerichts-Zuständigkeit))
+2026-10-19T16:53:12.3350145Z # Actual: Detected=true, HighestSeverity=hoch, Score=15
+2026-10-19T16:53:12.3351046Z #    -> Hit: [jurisdiction] severity=hoch
+2026-10-19T16:53:12.3352252Z # --------------------------------------------------------------------------------
+2026-10-19T16:53:12.3353416Z # [C1] COMPLIANT BASELINE: IP & License (Compliant)
+2026-10-19T16:53:12.3356332Z # Clause: "Der Kunde räumt dem Anbieter für die Dauer der Vertragslaufzeit ein einfaches, nicht ausschließliches, widerrufliches und auf den Zweck der vertragsgemäßen Leistungserbringung beschränktes Recht ein, die übermittelten Daten zu verarbeiten."
+2026-10-19T16:53:12.3358911Z # Expected: kein Befund / unbedenklich (Konform mit § 31 Abs. 2 UrhG)
+2026-10-19T16:53:12.3359979Z # Actual: Detected=false, HighestSeverity=none, Score=0
+2026-10-19T16:53:12.3360800Z #    -> No findings detected.
+2026-10-19T16:53:12.3361739Z # --------------------------------------------------------------------------------
+2026-10-19T16:53:12.3363750Z # [C2] COMPLIANT BASELINE: Non-Compete (Compliant)
+2026-10-19T16:53:12.3367995Z # Clause: "Dem Mitarbeiter ist für die Dauer von einem Jahr nach Beendigung des Arbeitsverhältnisses eine Konkurrenztätigkeit untersagt, wobei der Arbeitgeber für die Dauer des Verbots eine monatliche Karenzentschädigung in Höhe von mindestens der Hälfte der zuletzt bezogenen vertragsmäßigen Leistungen nach § 74 Abs. 2 HGB zahlt."
+2026-10-19T16:53:12.3371254Z # Expected: kein Befund / unbedenklich (Konform mit § 74 Abs. 2 HGB)
+2026-10-19T16:53:12.3372935Z # Actual: Detected=false, HighestSeverity=none, Score=0
+2026-10-19T16:53:12.3374101Z #    -> No findings detected.
+2026-10-19T16:53:12.3375431Z # --------------------------------------------------------------------------------
+2026-10-19T16:53:12.3376541Z # [C3] COMPLIANT BASELINE: Jurisdiction (Compliant)
+2026-10-19T16:53:12.3378637Z # Clause: "Für alle Streitigkeiten aus oder im Zusammenhang mit diesem Vertrag gilt der gesetzliche Gerichtsstand nach den Vorschriften der Zivilprozessordnung."
+2026-10-19T16:53:12.3383575Z # Expected: kein Befund / unbedenklich (Konform mit §§ 12 ff. ZPO)
+2026-10-19T16:53:12.3384768Z # Actual: Detected=false, HighestSeverity=none, Score=0
+2026-10-19T16:53:12.3385510Z #    -> No findings detected.
+2026-10-19T16:53:12.3386400Z # --------------------------------------------------------------------------------
+2026-10-19T16:53:12.3387211Z # Summary Evaluation:
+2026-10-19T16:53:12.3387858Z # Deceptive Clauses Detected: 6/6 (100%)
+2026-10-19T16:53:12.3388639Z # Deceptive Clauses Flagged as 'hoch': 6/6 (100%)
+2026-10-19T16:53:12.3389375Z # Compliant Baseline Clean: 3/3 (100%)
+2026-10-19T16:53:12.3390151Z # Compliant Baseline False Alarms (mittel/hoch): 0/3
+2026-10-19T16:53:12.3442906Z # Subtest: /home/runner/work/ClauseLens/ClauseLens/test/redteam_ip_runner.js
+2026-10-19T16:53:12.3444134Z ok 24 - /home/runner/work/ClauseLens/ClauseLens/test/redteam_ip_runner.js
+2026-10-19T16:53:12.3444741Z   ---
+2026-10-19T16:53:12.3445176Z   duration_ms: 252.626814
+2026-10-19T16:53:12.3445651Z   ...
+2026-10-19T16:53:12.3885087Z # ================================================================================
+2026-10-19T16:53:12.3890545Z #  ClauseLens Red Team Stress-Test: Payment, Set-off & Penalty Clauses
+2026-10-19T16:53:12.3892121Z # ================================================================================
+2026-10-19T16:53:12.5863818Z # [D1] ADVERSARIAL DECEPTIVE: Set-off / Zurückbehaltung
+2026-10-19T16:53:12.5884944Z # Clause: "Sämtliche Zahlungen haben ohne jeden Abzug oder Einbehalt zu erfolgen; ein Zurückbehaltungsrecht sowie Gegenrechte jeglicher Art gegenüber Forderungen des Verwenders werden hiermit ausdrücklich abbedungen."
+2026-10-19T16:53:12.5887050Z # Expected: hoch/mittel (§ 309 Nr. 2 lit. b, § 309 Nr. 3 BGB, § 307 BGB)
+2026-10-19T16:53:12.5887587Z # Actual: Detected=true, HighestSeverity=hoch, Score=15
+2026-10-19T16:53:12.5888048Z #    -> Hit: [setoff_restriction] severity=hoch
+2026-10-19T16:53:12.5888524Z # --------------------------------------------------------------------------------
+2026-10-19T16:53:12.5889016Z # [D2] ADVERSARIAL DECEPTIVE: Set-off / Verrechnungsverbot
+2026-10-19T16:53:12.5890183Z # Clause: "Eine Verrechnung mit etwaigen Gegenforderungen des Vertragspartners ist unzulässig, es sei denn, die Geschäftsleitung hat dieser Verrechnung im Voraus schriftlich zugestimmt."
+2026-10-19T16:53:12.5891068Z # Expected: hoch (§ 309 Nr. 3 BGB, § 307 BGB)
+2026-10-19T16:53:12.5891471Z # Actual: Detected=true, HighestSeverity=hoch, Score=15
+2026-10-19T16:53:12.5892114Z #    -> Hit: [setoff_restriction] severity=hoch
+2026-10-19T16:53:12.5892645Z # --------------------------------------------------------------------------------
+2026-10-19T16:53:12.5893100Z # [D3] ADVERSARIAL DECEPTIVE: Contractual Penalty
+2026-10-19T16:53:12.5894513Z # Clause: "Für jeden schuldhaften Fall der Zuwiderhandlung gegen die Geheimhaltungsbestimmungen verpflichtet sich der Auftragnehmer zur Zahlung einer pauschalen Pönale in Höhe von 10.000,00 EUR unter Ausschluss des Fortsetzungszusammenhangs."
+2026-10-19T16:53:12.5895661Z # Expected: hoch (§ 309 Nr. 6 BGB, § 307 BGB, § 348 HGB)
+2026-10-19T16:53:12.5896093Z # Actual: Detected=true, HighestSeverity=hoch, Score=15
+2026-10-19T16:53:12.5896463Z #    -> Hit: [penalty] severity=hoch
+2026-10-19T16:53:12.5896898Z # --------------------------------------------------------------------------------
+2026-10-19T16:53:12.5897378Z # [D4] ADVERSARIAL DECEPTIVE: Liquidated Damages / Penalty
+2026-10-19T16:53:12.5899032Z # Clause: "Kündigt der Auftraggeber den Vertrag vorzeitig ohne wichtigen Grund, so ist der Auftragnehmer berechtigt, eine Schadenspauschale in Höhe von 80 % der vereinbarten Gesamtvergütung zu verlangen; der Nachweis eines geringeren oder nicht entstandenen Schadens ist dem Auftraggeber verwehrt."
+2026-10-19T16:53:12.5900314Z # Expected: hoch (§ 309 Nr. 5 lit. b BGB, § 309 Nr. 6 BGB)
+2026-10-19T16:53:12.5900760Z # Actual: Detected=true, HighestSeverity=hoch, Score=15
+2026-10-19T16:53:12.5901471Z #    -> Hit: [penalty] severity=hoch
+2026-10-19T16:53:12.5919648Z # --------------------------------------------------------------------------------
+2026-10-19T16:53:12.5920581Z # [D5] ADVERSARIAL DECEPTIVE: Default Interest
+2026-10-19T16:53:12.5922486Z # Clause: "Gerät der Besteller mit einer Zahlung in Verzug, so werden Verzugszinsen in Höhe von 1,5 % je angefangenem Monat berechnet."
+2026-10-19T16:53:12.5923972Z # Expected: hoch (§ 288 BGB, § 138 BGB (Wucher))
+2026-10-19T16:53:12.5924786Z # Actual: Detected=true, HighestSeverity=hoch, Score=15
+2026-10-19T16:53:12.5925570Z #    -> Hit: [default_interest] severity=hoch
+2026-10-19T16:53:12.5926450Z # --------------------------------------------------------------------------------
+2026-10-19T16:53:12.5927310Z # [D6] ADVERSARIAL DECEPTIVE: Default Interest
+2026-10-19T16:53:12.5929901Z # Clause: "Im Verzugsfall ist die offene Forderung mit dem jeweiligen Leitzins der Europäischen Zentralbank zzgl. einer Zinsmarge von 1200 Basispunkten per annum zu verzinsen."
+2026-10-19T16:53:12.5931653Z # Expected: hoch (§ 288 BGB, § 307 BGB)
+2026-10-19T16:53:12.5932778Z # Actual: Detected=true, HighestSeverity=hoch, Score=15
+2026-10-19T16:53:12.5933483Z #    -> Hit: [default_interest] severity=hoch
+2026-10-19T16:53:12.5934359Z # --------------------------------------------------------------------------------
+2026-10-19T16:53:12.5935252Z # [C1] COMPLIANT BASELINE: Set-off (Compliant)
+2026-10-19T16:53:12.5937171Z # Clause: "Ein Recht zur Aufrechnung steht dem Kunden nur zu, soweit seine Gegenansprüche rechtskräftig festgestellt oder von uns unbestritten sind."
+2026-10-19T16:53:12.5939248Z # Expected: kein Befund / unbedenklich (Konform mit § 309 Nr. 3 BGB)
+2026-10-19T16:53:12.5940171Z # Actual: Detected=false, HighestSeverity=none, Score=0
+2026-10-19T16:53:12.5940835Z #    -> No findings detected.
+2026-10-19T16:53:12.5941772Z # --------------------------------------------------------------------------------
+2026-10-19T16:53:12.5943027Z # [C2] COMPLIANT BASELINE: Default Interest (Compliant)
+2026-10-19T16:53:12.5944984Z # Clause: "Bei Zahlungsverzug ist der Rechnungsbetrag mit den gesetzlichen Verzugszinsen gemäß § 288 BGB in Höhe von 5 Prozentpunkten über dem Basiszinssatz zu verzinsen."
+2026-10-19T16:53:12.5946561Z # Expected: kein Befund / unbedenklich (oder 'niedrig') (Konform mit § 288 Abs. 1 BGB)
+2026-10-19T16:53:12.5947118Z # Actual: Detected=true, HighestSeverity=niedrig, Score=2
+2026-10-19T16:53:12.5947526Z #    -> Hit: [default_interest] severity=niedrig
+2026-10-19T16:53:12.5947985Z # --------------------------------------------------------------------------------
+2026-10-19T16:53:12.5948465Z # [C3] COMPLIANT BASELINE: Liquidated Damages (Compliant)
+2026-10-19T16:53:12.5949764Z # Clause: "Im Falle eines Zahlungsverzugs berechnen wir eine Mahnpauschale von 15,00 EUR; dem Kunden bleibt der Nachweis vorbehalten, dass ein Schaden überhaupt nicht oder in wesentlich niedrigerer Höhe entstanden ist."
+2026-10-19T16:53:12.5950895Z # Expected: kein Befund / unbedenklich (Konform mit § 309 Nr. 5 lit. b BGB)
+2026-10-19T16:53:12.5951396Z # Actual: Detected=false, HighestSeverity=none, Score=0
+2026-10-19T16:53:12.5951757Z #    -> No findings detected.
+2026-10-19T16:53:12.5954258Z # --------------------------------------------------------------------------------
+2026-10-19T16:53:12.5954999Z # Summary Evaluation:
+2026-10-19T16:53:12.5955554Z # Deceptive Clauses Detected: 6/6 (100%)
+2026-10-19T16:53:12.5956249Z # Deceptive Clauses Flagged as 'hoch': 6/6 (100%)
+2026-10-19T16:53:12.5956929Z # Compliant Baseline Clean: 3/3 (100%)
+2026-10-19T16:53:12.5957751Z # Compliant Baseline False Alarms (mittel/hoch): 0/3
+2026-10-19T16:53:12.6009034Z # Subtest: /home/runner/work/ClauseLens/ClauseLens/test/redteam_payment_runner.js
+2026-10-19T16:53:12.6010435Z ok 25 - /home/runner/work/ClauseLens/ClauseLens/test/redteam_payment_runner.js
+2026-10-19T16:53:12.6011374Z   ---
+2026-10-19T16:53:12.6011870Z   duration_ms: 258.157857
+2026-10-19T16:53:12.6013011Z   ...
+2026-10-19T16:53:12.8479560Z # Subtest: compliant baselines: must NOT trigger any 'hoch' findings and remain low risk
+2026-10-19T16:53:12.8493253Z ok 119 - compliant baselines: must NOT trigger any 'hoch' findings and remain low risk
+2026-10-19T16:53:12.8512674Z   ---
+2026-10-19T16:53:12.8513386Z   duration_ms: 178.067848
+2026-10-19T16:53:12.8514067Z   ...
+2026-10-19T16:53:12.8515395Z # Subtest: adversarial stress-test: execute against analyzeContract and record detection telemetry
+2026-10-19T16:53:12.8517150Z ok 120 - adversarial stress-test: execute against analyzeContract and record detection telemetry
+2026-10-19T16:53:12.8518318Z   ---
+2026-10-19T16:53:12.8519674Z   duration_ms: 10.377257
+2026-10-19T16:53:12.8520354Z   ...
+2026-10-19T16:53:12.9051369Z # ================================================================================
+2026-10-19T16:53:12.9063336Z # RED TEAM STRESS TEST EXECUTION: ClauseLens src/analyze.js
+2026-10-19T16:53:12.9083896Z # ================================================================================
+2026-10-19T16:53:12.9085127Z # --- PART 1: DECEPTIVE VARIATIONS (ADVERSARIAL STRESS TEST) ---
+2026-10-19T16:53:13.0445598Z # [VAR-1-LIABILITY-CAP] V1: Broad Liability Cap at Contract Fee masking Gross Negligence & Bodily Harm
+2026-10-19T16:53:13.0449633Z # Text: "Die Verpflichtung des Auftragnehmers zum Ersatz von Schäden jeglicher Art – sei es aus Verzug, Unmöglichkeit, positiver Forderungsverletzung oder deliktischer Handlung – ist dem Grunde nach auf die Höhe des für die jeweilige Einzelleistung vereinbarten Netto-Auftragswertes beschränkt."
+2026-10-19T16:53:13.0452603Z # Status: DETECTED
+2026-10-19T16:53:13.0464066Z # Risk Score: 15 (niedrig)
+2026-10-19T16:53:13.0464832Z # Findings count: 1
+2026-10-19T16:53:13.0466036Z #   - Type: liability | Severity: hoch | Title: "Weitgehender Haftungsausschluss oder Freistellung"
+2026-10-19T16:53:13.0469977Z #     Excerpt: "Die Verpflichtung des Auftragnehmers zum Ersatz von Schäden jeglicher Art – sei es aus Verzug, Unmöglichkeit, positiver Forderungsverletzung oder deliktischer Handlung – ist dem Grunde nach auf die Höhe des für die jeweilige Einzelleistung vereinbarten Netto-Auftragswertes beschränkt."
+2026-10-19T16:53:13.0473206Z # --------------------------------------------------------------------------------
+2026-10-19T16:53:13.1105025Z # [VAR-2-LIABILITY-JARGON] V2: Masked Gross Negligence & Consequential Damages Waiver using Archaic Jargon ('abbedungen')
+2026-10-19T16:53:13.1114528Z # Text: "Schadensersatzansprüche gegen das Unternehmen, gleich aus welchem Rechtsgrund, insbesondere für mittelbare Schäden, Folgeschäden, entgangenen Gewinn oder Betriebsunterbrechungen, werden hiermit vollumfänglich abbedungen, es sei denn, die Schadensursache beruht auf vorsätzlicher Pflichtverletzung der gesetzlichen Vertreter."
+2026-10-19T16:53:13.1117430Z # Status: DETECTED
+2026-10-19T16:53:13.1118043Z # Risk Score: 15 (niedrig)
+2026-10-19T16:53:13.1118699Z # Findings count: 1
+2026-10-19T16:53:13.1119896Z #   - Type: liability | Severity: hoch | Title: "Weitgehender Haftungsausschluss oder Freistellung"
+2026-10-19T16:53:13.1124360Z #     Excerpt: "Schadensersatzansprüche gegen das Unternehmen, gleich aus welchem Rechtsgrund, insbesondere für mittelbare Schäden, Folgeschäden, entgangenen Gewinn oder Betriebsunterbrechungen, werden hiermit vollumfänglich abbedungen, es sei denn, die Schadensursache beruht auf vorsätzlicher Pflichtverletzung der gesetzlichen Vertreter."
+2026-10-19T16:53:13.1127473Z # --------------------------------------------------------------------------------
+2026-10-19T16:53:13.1190632Z # [VAR-3-LIMITATION-DAYS] V3: Limitation Reduction phrased in Days ('180 Kalendertage')
+2026-10-19T16:53:13.1205640Z # Text: "Sämtliche Ansprüche des Bestellers wegen Sach- und Rechtsmängeln verjähren mit Ablauf von 180 Kalendertagen nach Gefahrübergang bzw. Bereitstellung der Leistung."
+2026-10-19T16:53:13.1206975Z # Status: DETECTED
+2026-10-19T16:53:13.1207375Z # Risk Score: 15 (niedrig)
+2026-10-19T16:53:13.1207832Z # Findings count: 1
+2026-10-19T16:53:13.1209607Z #   - Type: statute_of_limitations | Severity: hoch | Title: "Pauschale Verjährungsverkürzung oder Verfall"
+2026-10-19T16:53:13.1212218Z #     Excerpt: "Sämtliche Ansprüche des Bestellers wegen Sach- und Rechtsmängeln verjähren mit Ablauf von 180 Kalendertagen nach Gefahrübergang bzw. Bereitstellung der Leistung."
+2026-10-19T16:53:13.1213933Z # --------------------------------------------------------------------------------
+2026-10-19T16:53:13.1228287Z # [VAR-4-LIMITATION-FORFEITURE] V4: Hidden Statute of Limitations Reduction disguised as 3-Month Forfeiture Clause ('erlöschen endgültig / treten in den Verfall')
+2026-10-19T16:53:13.1264476Z # Text: "Jegliche Mängel- und Ersatzansprüche des Kunden erlöschen endgültig und treten mit einer Frist von drei Monaten nach Kenntnisnahme oder grob fahrlässiger Unkenntnis der anspruchsbegründenden Umstände in den Verfall."
+2026-10-19T16:53:13.1272661Z # Status: DETECTED
+2026-10-19T16:53:13.1273794Z # Risk Score: 15 (niedrig)
+2026-10-19T16:53:13.1274625Z # Findings count: 1
+2026-10-19T16:53:13.1276064Z #   - Type: statute_of_limitations | Severity: hoch | Title: "Pauschale Verjährungsverkürzung oder Verfall"
+2026-10-19T16:53:13.1279179Z #     Excerpt: "Jegliche Mängel- und Ersatzansprüche des Kunden erlöschen endgültig und treten mit einer Frist von drei Monaten nach Kenntnisnahme oder grob fahrlässiger Unkenntnis der anspruchsbegründenden Umstände in den Verfall."
+2026-10-19T16:53:13.1281443Z # --------------------------------------------------------------------------------
+2026-10-19T16:53:13.1318856Z # [VAR-5-NOTICE-HOURS] V5: Ultra-short Notice Period in Hours ('48 Stunden') with Deemed Acceptance Fiction
+2026-10-19T16:53:13.1325683Z # Text: "Erkennbare Mängel sind binnen einer Ausschlussfrist von 48 Stunden nach Ablieferung der Ware schriftlich zu rügen; unterbleibt die rechtzeitige Rüge, gilt das Produkt als vorbehaltlos genehmigt und vertragsgemäß abgenommen."
+2026-10-19T16:53:13.1327712Z # Status: DETECTED
+2026-10-19T16:53:13.1328369Z # Risk Score: 15 (niedrig)
+2026-10-19T16:53:13.1329036Z # Findings count: 1
+2026-10-19T16:53:13.1330427Z #   - Type: deemed_acceptance | Severity: hoch | Title: "Fingierte Abnahme, Mängelgenehmigung & Rügefrist"
+2026-10-19T16:53:13.1333823Z #     Excerpt: "Erkennbare Mängel sind binnen einer Ausschlussfrist von 48 Stunden nach Ablieferung der Ware schriftlich zu rügen; unterbleibt die rechtzeitige Rüge, gilt das Produkt als vorbehaltlos genehmigt und vertragsgemäß abgenommen."
+2026-10-19T16:53:13.1336165Z # --------------------------------------------------------------------------------
+2026-10-19T16:53:13.1351480Z # [VAR-6-NOTICE-WORDNUM] V6: 5-Day Notice Period with Word Number ('fünf Werktagen') and Absolute Acceptance Fiction
+2026-10-19T16:53:13.1359432Z # Text: "Der Besteller hat die Leistungen nach Übergabe unverzüglich zu prüfen; Beanstandungen müssen innerhalb von fünf Werktagen schriftlich gerügt werden, widrigenfalls gilt die gesamte Lieferung als vollumfänglich mangelfrei genehmigt und jedwede Mängelhaftung als erloschen."
+2026-10-19T16:53:13.1361842Z # Status: DETECTED
+2026-10-19T16:53:13.1362738Z # Risk Score: 15 (niedrig)
+2026-10-19T16:53:13.1363370Z # Findings count: 1
+2026-10-19T16:53:13.1364746Z #   - Type: deemed_acceptance | Severity: hoch | Title: "Fingierte Abnahme, Mängelgenehmigung & Rügefrist"
+2026-10-19T16:53:13.1367714Z #     Excerpt: "Beanstandungen müssen innerhalb von fünf Werktagen schriftlich gerügt werden, widrigenfalls gilt die gesamte Lieferung als vollumfänglich mangelfrei genehmigt und jedwede Mängelhaftung als erloschen."
+2026-10-19T16:53:13.1370052Z # --------------------------------------------------------------------------------
+2026-10-19T16:53:13.1371290Z # --- PART 2: COMPLIANT BASELINE CLAUSES (FALSE-POSITIVE RESISTANCE) ---
+2026-10-19T16:53:13.1386898Z # [BASE-1-LIABILITY-COMPLIANT] B1: Fully Compliant BGB § 309 Nr. 7 Standard Liability Clause
+2026-10-19T16:53:13.1424701Z # Text: "Der Auftragnehmer haftet unbeschränkt für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit sowie für vorsätzlich oder grob fahrlässig verursachte Schäden. Bei leichter Fahrlässigkeit haftet der Auftragnehmer nur bei Verletzung wesentlicher Vertragspflichten (Kardinalpflichten), begrenzt auf den vertragstypischen, vorhersehbaren Schaden."
+2026-10-19T16:53:13.1442780Z # False Positive: NO (CLEAN)
+2026-10-19T16:53:13.1443576Z # Risk Score: 0 (niedrig)
+2026-10-19T16:53:13.1444270Z # Findings count: 0
+2026-10-19T16:53:13.1445217Z # --------------------------------------------------------------------------------
+2026-10-19T16:53:13.1446976Z # [BASE-2-LIMITATION-COMPLIANT] B2: Fully Compliant Statutory Limitation Clause (§§ 438, 634a BGB)
+2026-10-19T16:53:13.1450641Z # Text: "Ansprüche des Kunden wegen Sachmängeln verjähren nach den gesetzlichen Vorschriften in zwei Jahren ab Ablieferung der Sache. Für Schadensersatzansprüche bei Vorsatz, grober Fahrlässigkeit oder Körperschäden gelten die regelmäßigen gesetzlichen Verjährungsfristen."
+2026-10-19T16:53:13.1453557Z # False Positive: NO (CLEAN)
+2026-10-19T16:53:13.1454314Z # Risk Score: 0 (niedrig)
+2026-10-19T16:53:13.1454983Z # Findings count: 0
+2026-10-19T16:53:13.1455904Z # --------------------------------------------------------------------------------
+2026-10-19T16:53:13.1457744Z # [BASE-3-NOTICE-COMPLIANT] B3: Fully Compliant Commercial Defect Notice Clause (§ 377 HGB / § 308 Nr. 5 BGB)
+2026-10-19T16:53:13.1468021Z # Text: "Der kaufmännische Kunde hat gelieferte Waren unverzüglich nach Ablieferung auf Mängel zu untersuchen und offenkundige Mängel innerhalb einer angemessenen Frist von mindestens zwei Wochen schriftlich anzuzeigen. Die gesetzlichen Vorschriften des § 377 HGB bleiben unberührt."
+2026-10-19T16:53:13.1470312Z # False Positive: NO (CLEAN)
+2026-10-19T16:53:13.1471013Z # Risk Score: 0 (niedrig)
+2026-10-19T16:53:13.1471623Z # Findings count: 0
+2026-10-19T16:53:13.1472719Z # --------------------------------------------------------------------------------
+2026-10-19T16:53:13.1542650Z # Subtest: /home/runner/work/ClauseLens/ClauseLens/test/redteam_stress.js
+2026-10-19T16:53:13.1553544Z ok 27 - /home/runner/work/ClauseLens/ClauseLens/test/redteam_stress.js
+2026-10-19T16:53:13.1554398Z   ---
+2026-10-19T16:53:13.1554907Z   duration_ms: 294.87026
+2026-10-19T16:53:13.1555449Z   ...
+2026-10-19T16:53:13.3887387Z # Subtest: sarif: generates valid OASIS SARIF 2.1.0 JSON format
+2026-10-19T16:53:13.3892604Z ok 122 - sarif: generates valid OASIS SARIF 2.1.0 JSON format
+2026-10-19T16:53:13.3894835Z   ---
+2026-10-19T16:53:13.3895515Z   duration_ms: 171.23335
+2026-10-19T16:53:13.3897669Z   ...
+2026-10-19T16:53:13.3898548Z # Subtest: sarif: writeSarif writes file to disk
+2026-10-19T16:53:13.3902219Z ok 123 - sarif: writeSarif writes file to disk
+2026-10-19T16:53:13.3902958Z   ---
+2026-10-19T16:53:13.3904083Z   duration_ms: 7.00184
+2026-10-19T16:53:13.3904810Z   ...
+2026-10-19T16:53:13.4511018Z # Subtest: Abkuerzungen erzeugen keine Satzgrenze
+2026-10-19T16:53:13.4512225Z ok 124 - Abkuerzungen erzeugen keine Satzgrenze
+2026-10-19T16:53:13.4522570Z   ---
+2026-10-19T16:53:13.4523291Z   duration_ms: 2.126436
+2026-10-19T16:53:13.4524205Z   ...
+2026-10-19T16:53:13.4525150Z # Subtest: Nr., Abs. und vgl. werden nicht gesplittet
+2026-10-19T16:53:13.4526236Z ok 125 - Nr., Abs. und vgl. werden nicht gesplittet
+2026-10-19T16:53:13.4527093Z   ---
+2026-10-19T16:53:13.4527799Z   duration_ms: 0.377935
+2026-10-19T16:53:13.4528464Z   ...
+2026-10-19T16:53:13.4529369Z # Subtest: Klausel-Ueberschrift ohne Punkt startet neuen Satz
+2026-10-19T16:53:13.4530653Z ok 126 - Klausel-Ueberschrift ohne Punkt startet neuen Satz
+2026-10-19T16:53:13.4531565Z   ---
+2026-10-19T16:53:13.4532533Z   duration_ms: 0.526733
+2026-10-19T16:53:13.4533232Z   ...
+2026-10-19T16:53:13.4545688Z # Subtest: Nummerierte Klauseln (1. und (1)) starten neue Saetze
+2026-10-19T16:53:13.4554712Z ok 127 - Nummerierte Klauseln (1. und (1)) starten neue Saetze
+2026-10-19T16:53:13.4555668Z   ---
+2026-10-19T16:53:13.4556297Z   duration_ms: 0.302484
+2026-10-19T16:53:13.4557006Z   ...
+2026-10-19T16:53:13.4557992Z # Subtest: Zahlen ohne Punkt am Zeilenanfang sind KEINE Klauselgrenze
+2026-10-19T16:53:13.4559720Z ok 128 - Zahlen ohne Punkt am Zeilenanfang sind KEINE Klauselgrenze
+2026-10-19T16:53:13.4560682Z   ---
+2026-10-19T16:53:13.4561320Z   duration_ms: 0.20363
+2026-10-19T16:53:13.4562260Z   ...
+2026-10-19T16:53:13.4563118Z # Subtest: Offsets bleiben stabil nach Segmentierung
+2026-10-19T16:53:13.4564190Z ok 129 - Offsets bleiben stabil nach Segmentierung
+2026-10-19T16:53:13.4565037Z   ---
+2026-10-19T16:53:13.4565762Z   duration_ms: 0.222124
+2026-10-19T16:53:13.4566440Z   ...
+2026-10-19T16:53:13.4567899Z # Subtest: Juristische Zitate (S., lit., Art., i.V.m.) werden nicht fälschlich gesplittet
+2026-10-19T16:53:13.4569682Z ok 130 - Juristische Zitate (S., lit., Art., i.V.m.) werden nicht fälschlich gesplittet
+2026-10-19T16:53:13.4570745Z   ---
+2026-10-19T16:53:13.4571352Z   duration_ms: 0.254074
+2026-10-19T16:53:13.4572252Z   ...
+2026-10-19T16:53:13.8069223Z # Subtest: server: serves intact index.html at root and API endpoints
+2026-10-19T16:53:13.8079470Z ok 131 - server: serves intact index.html at root and API endpoints
+2026-10-19T16:53:13.8080561Z   ---
+2026-10-19T16:53:13.8081193Z   duration_ms: 278.091561
+2026-10-19T16:53:13.8081865Z   ...
+2026-10-19T16:53:13.8506413Z # Subtest: /home/runner/work/ClauseLens/ClauseLens/test/stress/corpus/corpus_accountability.js
+2026-10-19T16:53:13.8510041Z ok 31 - /home/runner/work/ClauseLens/ClauseLens/test/stress/corpus/corpus_accountability.js
+2026-10-19T16:53:13.8511090Z   ---
+2026-10-19T16:53:13.8511615Z   duration_ms: 30.731651
+2026-10-19T16:53:13.8512518Z   ...
+2026-10-19T16:53:13.8799625Z # Subtest: /home/runner/work/ClauseLens/ClauseLens/test/stress/corpus/corpus_baselines.js
+2026-10-19T16:53:13.8801145Z ok 32 - /home/runner/work/ClauseLens/ClauseLens/test/stress/corpus/corpus_baselines.js
+2026-10-19T16:53:13.8802437Z   ---
+2026-10-19T16:53:13.8803008Z   duration_ms: 29.127693
+2026-10-19T16:53:13.8803742Z   ...
+2026-10-19T16:53:13.9093922Z # Subtest: /home/runner/work/ClauseLens/ClauseLens/test/stress/corpus/corpus_binding.js
+2026-10-19T16:53:13.9104066Z ok 33 - /home/runner/work/ClauseLens/ClauseLens/test/stress/corpus/corpus_binding.js
+2026-10-19T16:53:13.9105178Z   ---
+2026-10-19T16:53:13.9105703Z   duration_ms: 29.575565
+2026-10-19T16:53:13.9106306Z   ...
+2026-10-19T16:53:13.9375771Z # Subtest: /home/runner/work/ClauseLens/ClauseLens/test/stress/corpus/corpus_contracts.js
+2026-10-19T16:53:13.9377496Z ok 34 - /home/runner/work/ClauseLens/ClauseLens/test/stress/corpus/corpus_contracts.js
+2026-10-19T16:53:13.9378466Z   ---
+2026-10-19T16:53:13.9378992Z   duration_ms: 28.022961
+2026-10-19T16:53:13.9379581Z   ...
+2026-10-19T16:53:13.9715945Z # Subtest: /home/runner/work/ClauseLens/ClauseLens/test/stress/corpus/corpus_datarights.js
+2026-10-19T16:53:13.9723259Z ok 35 - /home/runner/work/ClauseLens/ClauseLens/test/stress/corpus/corpus_datarights.js
+2026-10-19T16:53:13.9724229Z   ---
+2026-10-19T16:53:13.9724771Z   duration_ms: 34.174287
+2026-10-19T16:53:13.9725399Z   ...
+2026-10-19T16:53:14.0033344Z # Subtest: /home/runner/work/ClauseLens/ClauseLens/test/stress/corpus/corpus_generalization.js
+2026-10-19T16:53:14.0035168Z ok 36 - /home/runner/work/ClauseLens/ClauseLens/test/stress/corpus/corpus_generalization.js
+2026-10-19T16:53:14.0036220Z   ---
+2026-10-19T16:53:14.0036785Z   duration_ms: 30.978201
+2026-10-19T16:53:14.0037385Z   ...
+2026-10-19T16:53:14.0343559Z # Subtest: /home/runner/work/ClauseLens/ClauseLens/test/stress/corpus/corpus_ingestion.js
+2026-10-19T16:53:14.0361010Z ok 37 - /home/runner/work/ClauseLens/ClauseLens/test/stress/corpus/corpus_ingestion.js
+2026-10-19T16:53:14.0382692Z   ---
+2026-10-19T16:53:14.0383340Z   duration_ms: 29.408417
+2026-10-19T16:53:14.0384450Z   ...
+2026-10-19T16:53:14.0646200Z # Subtest: /home/runner/work/ClauseLens/ClauseLens/test/stress/corpus/corpus_misc_evasion.js
+2026-10-19T16:53:14.0649774Z ok 38 - /home/runner/work/ClauseLens/ClauseLens/test/stress/corpus/corpus_misc_evasion.js
+2026-10-19T16:53:14.0650799Z   ---
+2026-10-19T16:53:14.0651356Z   duration_ms: 32.352337
+2026-10-19T16:53:14.0652652Z   ...
+2026-10-19T16:53:14.0937125Z # Subtest: /home/runner/work/ClauseLens/ClauseLens/test/stress/corpus/corpus_money.js
+2026-10-19T16:53:14.0939275Z ok 39 - /home/runner/work/ClauseLens/ClauseLens/test/stress/corpus/corpus_money.js
+2026-10-19T16:53:14.0940330Z   ---
+2026-10-19T16:53:14.0941022Z   duration_ms: 28.540394
+2026-10-19T16:53:14.0941671Z   ...
+2026-10-19T16:53:14.1218249Z # Subtest: /home/runner/work/ClauseLens/ClauseLens/test/stress/corpus/corpus_process.js
+2026-10-19T16:53:14.1231594Z ok 40 - /home/runner/work/ClauseLens/ClauseLens/test/stress/corpus/corpus_process.js
+2026-10-19T16:53:14.1233132Z   ---
+2026-10-19T16:53:14.1233664Z   duration_ms: 27.996562
+2026-10-19T16:53:14.1234251Z   ...
+2026-10-19T16:53:14.1498800Z # Subtest: /home/runner/work/ClauseLens/ClauseLens/test/stress/corpus/corpus_uncovered.js
+2026-10-19T16:53:14.1502303Z ok 41 - /home/runner/work/ClauseLens/ClauseLens/test/stress/corpus/corpus_uncovered.js
+2026-10-19T16:53:14.1503668Z   ---
+2026-10-19T16:53:14.1504264Z   duration_ms: 28.623822
+2026-10-19T16:53:14.1504953Z   ...
+2026-10-19T16:53:14.8891065Z # Stress-Korpus: 380 Faelle (290 täuschend, 90 harmlos) · 652ms
+2026-10-19T16:53:14.8900466Z #   Erkennung: 288/290 (99.3%) · ausreichend scharf: 288 (99.3%) · stille Blindspots: 2
+2026-10-19T16:53:14.8901604Z #   Klartext-Kontrollgruppe: 40/40 (100%)
+2026-10-19T16:53:14.8903250Z #   Harmlose Klauseln sauber: 90/90 (100%) · False-Positive-Faelle: 0
+2026-10-19T16:53:14.8904551Z #   Schwaechste Detektoren:
+2026-10-19T16:53:14.8905573Z #      1 Fehlschläge von 12  deemed_acceptance
+2026-10-19T16:53:14.8906627Z #      1 Fehlschläge von 17  liability
+2026-10-19T16:53:14.8907773Z #      0 Fehlschläge von  1  agency_commission_exclusion
+2026-10-19T16:53:14.8908904Z #      0 Fehlschläge von  1  agency_goodwill_waiver
+2026-10-19T16:53:14.8910020Z #      0 Fehlschläge von  6  as_is_software_disclaimer
+2026-10-19T16:53:14.8911171Z #      0 Fehlschläge von  4  assignment_restriction
+2026-10-19T16:53:14.8912616Z #      0 Fehlschläge von  4  asymmetric_confidentiality
+2026-10-19T16:53:14.8913790Z #      0 Fehlschläge von  6  asymmetric_termination
+2026-10-19T16:53:14.8914683Z #   Schwaechste Evasionstechniken:
+2026-10-19T16:53:14.8915464Z #      2 fehlend von 52  typo-evasion
+2026-10-19T16:53:14.8916239Z #      0 fehlend von  4  compound-multi
+2026-10-19T16:53:14.8917039Z #      0 fehlend von 12  cross-reference
+2026-10-19T16:53:14.8917765Z #      0 fehlend von  4  dach
+2026-10-19T16:53:14.8918478Z #      0 fehlend von 40  direct
+2026-10-19T16:53:14.8919129Z #      0 fehlend von 25  english
+2026-10-19T16:53:14.8920016Z #   Blindspot-Liste: 2 Einträge in test/stress/report.md
+2026-10-19T16:53:14.8951555Z # Subtest: stress corpus: schema, Detektor-Abdeckung und Engine-Integration
+2026-10-19T16:53:14.8956216Z ok 143 - stress corpus: schema, Detektor-Abdeckung und Engine-Integration
+2026-10-19T16:53:14.8958317Z   ---
+2026-10-19T16:53:14.8958969Z   duration_ms: 684.505941
+2026-10-19T16:53:14.8963378Z   ...
+2026-10-19T16:53:14.8965601Z # Subtest: stress corpus: Berichtsartefakte sind vollständig und konsistent
+2026-10-19T16:53:14.8969026Z ok 144 - stress corpus: Berichtsartefakte sind vollständig und konsistent
+2026-10-19T16:53:14.8970235Z   ---
+2026-10-19T16:53:14.8970844Z   duration_ms: 3.597841
+2026-10-19T16:53:14.8971496Z   ...
+2026-10-19T16:53:14.9558676Z # Subtest: /home/runner/work/ClauseLens/ClauseLens/test/stress/harness.js
+2026-10-19T16:53:14.9559844Z ok 43 - /home/runner/work/ClauseLens/ClauseLens/test/stress/harness.js
+2026-10-19T16:53:14.9560481Z   ---
+2026-10-19T16:53:14.9560927Z   duration_ms: 46.078822
+2026-10-19T16:53:14.9583639Z   ...
+2026-10-19T16:53:15.1973744Z # Subtest: new uncovered-clause detectors flag the marked risk and avoid nearby benign wording
+2026-10-19T16:53:15.1978087Z ok 146 - new uncovered-clause detectors flag the marked risk and avoid nearby benign wording
+2026-10-19T16:53:15.1983643Z   ---
+2026-10-19T16:53:15.1984521Z   duration_ms: 184.805563
+2026-10-19T16:53:15.1985255Z   ...
+2026-10-19T16:53:15.1987128Z # Subtest: international-data detector handles both countries-and-EU wording and arbitrary third countries
+2026-10-19T16:53:15.1989150Z ok 147 - international-data detector handles both countries-and-EU wording and arbitrary third countries
+2026-10-19T16:53:15.1990453Z   ---
+2026-10-19T16:53:15.1991113Z   duration_ms: 1.155906
+2026-10-19T16:53:15.1991783Z   ...
+2026-10-19T16:53:15.4656733Z # Subtest: adversarial enterprise development contract: detects all 8 disguised traps
+2026-10-19T16:53:15.4660891Z ok 148 - adversarial enterprise development contract: detects all 8 disguised traps
+2026-10-19T16:53:15.4662316Z   ---
+2026-10-19T16:53:15.4663058Z   duration_ms: 192.520677
+2026-10-19T16:53:15.4663734Z   ...
+2026-10-19T16:53:15.7890419Z # Subtest: vortex engineering msa-dev real-world audit: detects all comprehensive traps with zero false positives
+2026-10-19T16:53:15.7895780Z ok 149 - vortex engineering msa-dev real-world audit: detects all comprehensive traps with zero false positives
+2026-10-19T16:53:15.7897225Z   ---
+2026-10-19T16:53:15.7897902Z   duration_ms: 255.099604
+2026-10-19T16:53:15.7898601Z   ...
+2026-10-19T16:53:15.8491717Z # Subtest: webhook: processes Stripe checkout and provisions pro license
+2026-10-19T16:53:15.8505065Z ok 150 - webhook: processes Stripe checkout and provisions pro license
+2026-10-19T16:53:15.8510973Z   ---
+2026-10-19T16:53:15.8512387Z   duration_ms: 2.41236
+2026-10-19T16:53:15.8513096Z   ...
+2026-10-19T16:53:15.8514213Z # Subtest: webhook: processes Polar order and provisions enterprise license
+2026-10-19T16:53:15.8515607Z ok 151 - webhook: processes Polar order and provisions enterprise license
+2026-10-19T16:53:15.8516607Z   ---
+2026-10-19T16:53:15.8517219Z   duration_ms: 0.288538
+2026-10-19T16:53:15.8517881Z   ...
+2026-10-19T16:53:15.8520418Z # Subtest: webhook: processes Stripe checkout and provisions team license
+2026-10-19T16:53:15.8524639Z ok 152 - webhook: processes Stripe checkout and provisions team license
+2026-10-19T16:53:15.8525686Z   ---
+2026-10-19T16:53:15.8526352Z   duration_ms: 0.294439
+2026-10-19T16:53:15.8527025Z   ...
+2026-10-19T16:53:15.8534515Z # Subtest: webhook: signature verification verifies HMAC correctly
+2026-10-19T16:53:15.8544654Z ok 153 - webhook: signature verification verifies HMAC correctly
+2026-10-19T16:53:15.8546404Z   ---
+2026-10-19T16:53:15.8547148Z   duration_ms: 0.243054
+2026-10-19T16:53:15.8547840Z   ...
+2026-10-19T16:53:15.9375272Z # Subtest: worker: health endpoint responds
+2026-10-19T16:53:15.9392805Z ok 154 - worker: health endpoint responds
+2026-10-19T16:53:15.9393383Z   ---
+2026-10-19T16:53:15.9393762Z   duration_ms: 21.810754
+2026-10-19T16:53:15.9394190Z   ...
+2026-10-19T16:53:15.9394721Z # Subtest: worker: unknown route returns 404
+2026-10-19T16:53:15.9395400Z ok 155 - worker: unknown route returns 404
+2026-10-19T16:53:15.9395925Z   ---
+2026-10-19T16:53:15.9396276Z   duration_ms: 0.483312
+2026-10-19T16:53:15.9396670Z   ...
+2026-10-19T16:53:15.9472870Z # Subtest: worker: signed CL- key verifies and returns a seat
+2026-10-19T16:53:15.9476339Z ok 156 - worker: signed CL- key verifies and returns a seat
+2026-10-19T16:53:15.9484615Z   ---
+2026-10-19T16:53:15.9485269Z   duration_ms: 12.497772
+2026-10-19T16:53:15.9486281Z   ...
+2026-10-19T16:53:15.9487532Z # Subtest: worker: tampered CL- key is rejected
+2026-10-19T16:53:15.9512898Z ok 157 - worker: tampered CL- key is rejected
+2026-10-19T16:53:15.9529369Z   ---
+2026-10-19T16:53:15.9536934Z   duration_ms: 4.890463
+2026-10-19T16:53:15.9552748Z   ...
+2026-10-19T16:53:15.9569189Z # Subtest: worker: expired CL- key is rejected
+2026-10-19T16:53:15.9582669Z ok 158 - worker: expired CL- key is rejected
+2026-10-19T16:53:15.9602409Z   ---
+2026-10-19T16:53:15.9622493Z   duration_ms: 3.767066
+2026-10-19T16:53:15.9631077Z   ...
+2026-10-19T16:53:15.9632257Z # Subtest: worker: missing email or key is a client error
+2026-10-19T16:53:15.9640402Z ok 159 - worker: missing email or key is a client error
+2026-10-19T16:53:15.9641207Z   ---
+2026-10-19T16:53:15.9641770Z   duration_ms: 1.199898
+2026-10-19T16:53:15.9642978Z   ...
+2026-10-19T16:53:15.9643847Z # Subtest: worker: worker-issued keys verify with the node verifier
+2026-10-19T16:53:15.9682987Z ok 160 - worker: worker-issued keys verify with the node verifier
+2026-10-19T16:53:15.9693526Z   ---
+2026-10-19T16:53:15.9712475Z   duration_ms: 2.687643
+2026-10-19T16:53:15.9713208Z   ...
+2026-10-19T16:53:15.9732927Z # Subtest: worker: Polar key activates a seat through Polar
+2026-10-19T16:53:15.9752866Z ok 161 - worker: Polar key activates a seat through Polar
+2026-10-19T16:53:15.9772529Z   ---
+2026-10-19T16:53:15.9773204Z   duration_ms: 3.957783
+2026-10-19T16:53:15.9925526Z   ...
+2026-10-19T16:53:15.9944766Z # Subtest: worker: foreign Polar benefit is rejected
+2026-10-19T16:53:15.9962745Z ok 162 - worker: foreign Polar benefit is rejected
+2026-10-19T16:53:15.9978428Z   ---
+2026-10-19T16:53:16.0002571Z   duration_ms: 2.143869
+2026-10-19T16:53:16.0003367Z   ...
+2026-10-19T16:53:16.0009425Z # Subtest: worker: Polar webhook is rejected without configured secret
+2026-10-19T16:53:16.0010838Z ok 163 - worker: Polar webhook is rejected without configured secret
+2026-10-19T16:53:16.0011764Z   ---
+2026-10-19T16:53:16.0027216Z   duration_ms: 1.321204
+2026-10-19T16:53:16.0048780Z   ...
+2026-10-19T16:53:16.0062888Z # Subtest: worker: Polar webhook rejects a wrong signature
+2026-10-19T16:53:16.0079610Z ok 164 - worker: Polar webhook rejects a wrong signature
+2026-10-19T16:53:16.0102755Z   ---
+2026-10-19T16:53:16.0111262Z   duration_ms: 11.14136
+2026-10-19T16:53:16.0124458Z   ...
+2026-10-19T16:53:16.0126146Z # Subtest: worker: Polar order issues a CL- key that the CLI verifies
+2026-10-19T16:53:16.0127637Z ok 165 - worker: Polar order issues a CL- key that the CLI verifies
+2026-10-19T16:53:16.0128627Z   ---
+2026-10-19T16:53:16.0134940Z   duration_ms: 7.247279
+2026-10-19T16:53:16.0153520Z   ...
+2026-10-19T16:53:16.0154416Z # Subtest: worker: order webhook emails the licence key via Resend
+2026-10-19T16:53:16.0155597Z ok 166 - worker: order webhook emails the licence key via Resend
+2026-10-19T16:53:16.0156376Z   ---
+2026-10-19T16:53:16.0156856Z   duration_ms: 7.554031
+2026-10-19T16:53:16.0157360Z   ...
+2026-10-19T16:53:16.0158169Z # Subtest: worker: Resend failure returns 502 so Polar retries the delivery
+2026-10-19T16:53:16.0159403Z ok 167 - worker: Resend failure returns 502 so Polar retries the delivery
+2026-10-19T16:53:16.0160263Z   ---
+2026-10-19T16:53:16.0160794Z   duration_ms: 9.1304
+2026-10-19T16:53:16.0161358Z   ...
+2026-10-19T16:53:16.0163016Z # Subtest: worker: missing RESEND_API_KEY still issues the key without retry
+2026-10-19T16:53:16.0164280Z ok 168 - worker: missing RESEND_API_KEY still issues the key without retry
+2026-10-19T16:53:16.0165136Z   ---
+2026-10-19T16:53:16.0165669Z   duration_ms: 5.697087
+2026-10-19T16:53:16.0166215Z   ...
+2026-10-19T16:53:16.0167088Z # Subtest: worker: webhook signature check rejects stale timestamps
+2026-10-19T16:53:16.0168202Z ok 169 - worker: webhook signature check rejects stale timestamps
+2026-10-19T16:53:16.0168996Z   ---
+2026-10-19T16:53:16.0169530Z   duration_ms: 0.433588
+2026-10-19T16:53:16.0170102Z   ...
+2026-10-19T16:53:16.0210558Z 1..169
+2026-10-19T16:53:16.0223028Z # tests 169
+2026-10-19T16:53:16.0238481Z # suites 0
+2026-10-19T16:53:16.0238872Z # pass 168
+2026-10-19T16:53:16.0272665Z # fail 1
+2026-10-19T16:53:16.0291506Z # cancelled 0
+2026-10-19T16:53:16.0293059Z # skipped 0
+2026-10-19T16:53:16.0314394Z # todo 0
+2026-10-19T16:53:16.0315161Z # duration_ms 21656.575504
+2026-10-19T16:53:16.0346707Z ##[error]Process completed with exit code 1.
+2026-10-19T16:53:16.0499114Z Post job cleanup.
+2026-10-19T16:53:16.1462992Z [command]/usr/bin/git version
+2026-10-19T16:53:16.1543099Z git version 2.55.0
+2026-10-19T16:53:16.1604821Z Temporarily overriding HOME='/home/runner/work/_temp/ef6face4-0735-40a3-9af6-a0b250d1f684' before making global git config changes
+2026-10-19T16:53:16.1612406Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-19T16:53:16.1616169Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ClauseLens/ClauseLens
+2026-10-19T16:53:16.1723199Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-19T16:53:16.1771271Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-19T16:53:16.2205583Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-19T16:53:16.2226112Z http.https://github.com/.extraheader
+2026-10-19T16:53:16.2249909Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-19T16:53:16.2309524Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-19T16:53:16.3085874Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-19T16:53:16.3156528Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-19T16:53:16.3799669Z Cleaning up orphan processes
+2026-10-19T16:53:16.4063720Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

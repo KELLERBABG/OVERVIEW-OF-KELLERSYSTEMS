@@ -1,0 +1,57 @@
+Beratungsvertrag
+
+Zwischen der Aventis Chemie GmbH, Industriepark 3, 60313 Frankfurt am Main (nachfolgend "Kunde") und Herrn Dr. Jonas Feldmann, Lindenallee 8, 50667 Köln (nachfolgend "Anbieter") wird der folgende Vertrag geschlossen.
+
+§ 1 Leistungsgegenstand
+
+(1) Der Anbieter berät den Kunden bei der Optimierung der Produktionsprozesse.
+
+(2) Der Anbieter erbringt seine Leistungen weisungsfrei und eigenverantwortlich.
+
+§ 2 Vertraulichkeit
+
+(1) Der Kunde verpflichtet sich, alle überlassenen Informationen vertraulich zu behandeln; für den Anbieter gilt dies nicht.
+
+§ 3 Datenverarbeitung
+
+(1) Personenbezogene Daten werden ausschließlich außerhalb der Europäischen Union verarbeitet.
+
+(2) Der Kunde räumt dem Anbieter ein unwiderrufliches Nutzungsrecht zum Training eigener Modelle ein.
+
+§ 4 Verfügbarkeit
+
+(1) Der Anbieter bemüht sich, eine Verfügbarkeit von 99 Prozent zu erreichen.
+
+§ 5 Rückmeldungen
+
+(1) Feedback und Verbesserungsvorschläge gehen unentgeltlich in das Eigentum des Anbieters über.
+
+§ 6 Nachweise
+
+(1) Die Systemprotokolle des Anbieters gelten als Vollbeweis.
+
+§ 7 Anpassungen
+
+(1) An die Stelle der unwirksamen Regelung tritt diejenige, die dem wirtschaftlichen Zweck am nächsten kommt.
+
+§ 8 Projektabwicklung
+
+(1) Ort der Leistungserbringung ist der Sitz des Kunden.
+
+(2) Der Kunde stellt die benötigten Unterlagen spätestens zehn Tage vor Projektbeginn bereit.
+
+(3) Der Anbieter darf die gewonnenen Erkenntnisse nach Projektende für eigene Zwecke verwenden.
+
+§ 9 Zusammenarbeit
+
+(1) Die Parteien treffen sich monatlich zu einem Statusgespräch.
+
+(2) Dieser Vertrag wird in deutscher Sprache geführt.
+
+Köln, den 18.02.2025
+
+_______________________
+Aventis Chemie GmbH
+
+_______________________
+Dr. Jonas Feldmann

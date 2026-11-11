@@ -1,0 +1,87 @@
+Rahmenvertrag über Errichtung und Betrieb der Baustellen-IT des Bauvorhabens Rheinufer
+
+zwischen der Nordlicht Systeme GmbH, Hafenallee 7, 40213 Düsseldorf (nachfolgend Anbieter), und der Steinbach Bau GmbH, Werkstraße 18, 50667 Köln (nachfolgend Kunde).
+
+Präambel
+Der Kunde errichtet am Rheinufer einen Bürokomplex und benötigt eine leistungsfähige Baustellen-IT. Der Anbieter errichtet und betreibt die Anlagen. Die Parteien vereinbaren Folgendes.
+
+§ 1 Gegenstand
+Gegenstand ist die Errichtung, Inbetriebnahme und der Betrieb der Baustellen-IT gemäß Anlage 1.
+
+§ 2 Leistungen
+(1) Der Anbieter errichtet die Netzwerk- und Serverkomponenten gemäß Anlage 1.
+
+(2) Der Anbieter führt die Arbeiten mit der vereinbarten Sorgfalt aus.
+
+§ 3 Mitwirkung
+(1) Der Kunde benennt einen Projektleiter als Ansprechpartner.
+
+(2) Der Kunde stellt die erforderlichen Räume kostenfrei zur Verfügung.
+
+§ 4 Vergütung
+(1) Die Vergütung ist innerhalb von dreißig Tagen nach Rechnungseingang fällig.
+
+(2) All payments shall be made free of any set-off or deduction.
+
+§ 5 Eigentumsvorbehalt
+(1) Gelieferte Komponenten bleiben bis zur vollständigen Bezahlung Eigentum des Anbieters.
+
+(2) Der Eigentumsvorbehalt erstreckt sich auf die gesamte Geschäftsbeziehung.
+
+§ 6 Abnahme
+(1) Die Abnahme erfolgt je Bauabschnitt durch ein Abnahmeprotokoll.
+
+(2) Für Mängel während der Gewährleistung leistet der Anbieter kostenfrei Nacherfüllung.
+
+§ 7 Haftung
+(1) Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt.
+
+(2) Der Anbieter unterhält eine Berufshaftpflichtversicherung mit einer Deckungssumme von zwei Millionen EUR.
+
+§ 8 Höhere Gewalt
+(1) Ereignisse höherer Gewalt befreien den Anbieter; die Zahlungsverpflichtungen des Kunden sind unverändert zu erfüllen.
+
+(2) Die Vertragsparteien informieren sich unverzüglich über Störungen.
+
+§ 9 Personal
+(1) The customer shall not solicit or hire personnel of the provider.
+
+(2) Jede Partei trägt ihre eigenen Kosten aus der Vertragsverhandlung.
+
+§ 10 Insolvenz
+(1) Bei einem Insolvenzantrag endet der Vertrag automatisch, ohne dass es einer Kündigung bedarf.
+
+(2) Die Parteien informieren sich unverzüglich über wirtschaftliche Schwierigkeiten.
+
+§ 11 Systemprotokolle
+(1) Die Systemprotokolle des Anbieters gelten als Vollbeweis für die erbrachten Leistungen.
+
+(2) Der Anbieter dokumentiert die Änderungen im Änderungsprotokoll.
+
+§ 12 Vertragswerk
+(1) Ungeachtet etwaiger Nebenabreden enthält dieser Vertrag alle Vereinbarungen der Parteien.
+
+(2) Änderungen dieses Vertrages können in Textform vereinbart werden.
+
+§ 13 Software-Komponenten
+(1) The software is provided as is, without warranty of any kind.
+
+(2) Der Anbieter stellt die Anwendung ab dem vereinbarten Bereitstellungstermin zur Verfügung.
+
+§ 14 Kündigung
+(1) Die Kündigung aus wichtigem Grund bleibt beiden Parteien unbenommen.
+
+(2) Alle Fristen werden in Kalendertagen gerechnet.
+
+§ 15 Schlussbestimmungen
+(1) Nebenabreden bestehen nicht.
+
+(2) Dieser Vertrag unterliegt deutschem Recht.
+
+Anlage 1: Leistungsbeschreibung
+
+Düsseldorf, den 4. Februar 2026
+
+Nordlicht Systeme GmbH
+
+Steinbach Bau GmbH

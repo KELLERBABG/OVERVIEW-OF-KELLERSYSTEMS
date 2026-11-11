@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://clauselens.dev/schemas/v1/findings.json",
+  "title": "ClauseLensAnalysisReport",
+  "description": "Standardized, versioned JSON contract audit report emitted by the ClauseLens deterministic rule engine.",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "riskScore",
+    "riskLevel",
+    "counts",
+    "summary",
+    "findings"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "enum": ["1.0.0", "1.1.0"]
+    },
+    "riskScore": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Composite audit risk score from 0 (harmless) to 100 (critical liabilities)."
+    },
+    "riskLevel": {
+      "type": "string",
+      "enum": ["niedrig", "mittel", "hoch"],
+      "description": "Risk category derived from riskScore: hoch (>= 70), mittel (>= 35), niedrig (< 35)."
+    },
+    "counts": {
+      "type": "object",
+      "required": ["hoch", "mittel", "niedrig"],
+      "properties": {
+        "hoch": { "type": "integer", "minimum": 0 },
+        "mittel": { "type": "integer", "minimum": 0 },
+        "niedrig": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "summary": {
+      "type": "string",
+      "description": "Human-readable executive summary in plain German."
+    },
+    "meta": {
+      "type": "object",
+      "properties": {
+        "source": { "type": "string" },
+        "format": { "type": "string", "enum": ["txt", "pdf", "docx", "unknown"] },
+        "analyzedAt": { "type": "string", "format": "date-time" },
+        "engineVersion": { "type": "string" },
+        "profile": { "type": "string" },
+        "licenseTier": { "type": "string", "enum": ["community", "pro", "enterprise"] }
+      },
+      "additionalProperties": true
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Finding"
+      }
+    }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "Finding": {
+      "type": "object",
+      "required": [
+        "type",
+        "titlePlainGerman",
+        "severity",
+        "excerpt",
+        "lineNumbers",
+        "why",
+        "suggestion"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique deterministic finding identifier."
+        },
+        "type": {
+          "type": "string",
+          "description": "Identifier of the rule detector (e.g., auto_renewal, liability, penalty)."
+        },
+        "titlePlainGerman": {
+          "type": "string",
+          "description": "Plain German headline for the risk type."
+        },
+        "severity": {
+          "type": "string",
+          "enum": ["niedrig", "mittel", "hoch"],
+          "description": "Severity assessment for this finding."
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Deterministic confidence score (1.0 for exact regex, 0.85-0.95 for contextual patterns)."
+        },
+        "excerpt": {
+          "type": "string",
+          "description": "Exact quoted sentence or clause text from the contract document."
+        },
+        "lineNumbers": {
+          "type": "array",
+          "items": { "type": "integer", "minimum": 1 },
+          "minItems": 2,
+          "maxItems": 2,
+          "description": "[startLine, endLine] inclusive 1-indexed."
+        },
+        "why": {
+          "type": "string",
+          "description": "Plain German explanation of the commercial or legal risk."
+        },
+        "suggestion": {
+          "type": "string",
+          "description": "Concrete negotiation redline counter-proposal."
+        },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Taxonomy classification tags (e.g., bgb-307, termination, financial)."
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}

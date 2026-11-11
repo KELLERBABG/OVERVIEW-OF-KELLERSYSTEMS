@@ -1,0 +1,78 @@
+{
+  "slug": "logistik-001",
+  "source": "generated",
+  "domain": "Spedition nationaler Strassengueterverkehr (DE)",
+  "traps": [
+    {
+      "marker": "schuldet der Auftraggeber eine Aufwandspauschale von 45 EUR",
+      "expectedType": "penalty",
+      "note": "Pauschalstrafe je Stunde, Gegenbeweis ausgeschlossen"
+    },
+    {
+      "marker": "Zinsen werden mit zwölf Prozentpunkten über dem Basiszinssatz",
+      "expectedType": "default_interest",
+      "note": "hoher Verzugszins als Zahlwort"
+    },
+    {
+      "marker": "Gegenansprüche des Auftraggebers bleiben bei der Abrechnung unberücksichtigt",
+      "expectedType": "setoff_restriction",
+      "note": "Aufrechnung faktisch ausgeschlossen"
+    },
+    {
+      "marker": "hat nachzuweisen, dass die Ursache nicht auf einem Umstand",
+      "expectedType": "burden_of_proof",
+      "note": "Beweislast auf Auftraggeber verlagert"
+    },
+    {
+      "marker": "Das Entgelt wird unverändert weiter geschuldet",
+      "expectedType": "service_suspension",
+      "note": "Verguetung laeuft waehrend Sperre weiter"
+    },
+    {
+      "marker": "eine vorzeitige Kündigung ist ausgeschlossen",
+      "expectedType": "notice_period",
+      "note": "48 Monate Mindestlaufzeit"
+    },
+    {
+      "marker": "Ausschließlich zuständig sind die Gerichte am Sitz des Spediteurs",
+      "expectedType": "jurisdiction",
+      "note": "Gerichtsstand am Sitz des Anbieters"
+    },
+    {
+      "marker": "die dem wirtschaftlichen Zweck am nächsten kommt",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "Ersetzungsklausel"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Parteien arbeiten bei der Abwicklung der Transporte vertrauensvoll zusammen",
+      "note": "Kooperation"
+    },
+    {
+      "marker": "Rechnungen sind innerhalb von 30 Tagen ohne Abzug zur Zahlung fällig",
+      "note": "normale Zahlungsfrist"
+    },
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "gesetzliche Haftung"
+    },
+    {
+      "marker": "Beide Parteien behandeln die Geschäftsgeheimnisse der jeweils anderen Seite vertraulich",
+      "note": "beidseitige Vertraulichkeit"
+    },
+    {
+      "marker": "gesetzlichen Rechte beider Parteien zur außerordentlichen Kündigung",
+      "note": "wichtiger Grund"
+    },
+    {
+      "marker": "Der Spediteur benennt Unterauftragnehmer mit einer Vorlaufzeit von vierzehn Tagen",
+      "note": "transparenter Subunternehmereinsatz"
+    },
+    {
+      "marker": "Auf diesen Vertrag ist deutsches Recht anzuwenden",
+      "note": "deutsches Recht"
+    }
+  ],
+  "uncovered": []
+}

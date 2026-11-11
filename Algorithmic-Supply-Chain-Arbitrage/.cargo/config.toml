@@ -1,0 +1,30 @@
+# Workspace-level build configuration for ASCA on Windows.
+#
+# The workspace pins the stable MSVC toolchain in rust-toolchain.toml so the
+# same toolchain is used locally and in CI. Local builds on this machine are
+# blocked by two constraints:
+#
+#  1. The default PATH resolves the linker command "link.exe" to GNU coreutils
+#     /usr/bin/link.exe (a symlink creator), not a real MSVC linker. This
+#     causes rustc's MSVC link step to fail with "link: extra operand …".
+#
+#  2. Even when the real Visual Studio 2022 Community link.exe is used, the
+#     Windows 10/11 SDK (which provides kernel32.lib, ws2_32.lib, etc.) is
+#     not installed on this machine, so the linker still cannot resolve the
+#     Windows SDK import libs that every MSVC binary needs.
+#
+# The known-working local workaround that doesn't require installing the SDK is
+# to use the GNU target instead of the MSVC target. That works because the
+# GNU linker (mingw) is available in this shell's PATH and does not need the
+# Windows SDK import libs. Use:
+#
+#   cargo +stable-x86_64-pc-windows-gnu test --workspace
+#
+# CI runs on windows-latest where both the real MSVC link.exe and the Windows
+# SDK are present, so the pinned stable MSVC toolchain builds without any
+# workaround. The rust-toolchain.toml still pins stable (MSVC) for CI;
+# locally, select the GNU toolchain explicitly.
+
+[target.x86_64-pc-windows-msvc]
+# linker left unconfigured here; local MSVC builds are blocked by the missing
+# Windows SDK. Use the GNU toolchain locally.

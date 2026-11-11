@@ -1,0 +1,19 @@
+[package]
+name = "mesh-cli"
+version = "0.1.0"
+license = "proprietary"
+edition = "2021"
+publish = false
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+chrono = "0.4"
+mesh-graph-core = { path = "../graph-core" }
+mesh-wot = { path = "../wot" }
+mesh-reputation = { path = "../reputation" }
+mesh-credit = { path = "../credit" }
+mesh-settlement = { path = "../settlement" }
+mesh-smpc = { path = "../smpc" }
+mesh-zkp = { path = "../zkp" }

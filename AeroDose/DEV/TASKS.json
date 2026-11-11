@@ -1,0 +1,135 @@
+{
+    "project":  "AeroDose",
+    "language":  "Rust",
+    "summary":  "The project has a working audit hash-chain (Ed25519 + SHA-256), a compliance report generator, and a dose tracker skeleton. Missing are the thermodynamic drift compensation engine, taint-coded sensor stream validation, non-disableable haptic emergency veto state machine, full CLI wiring, and integration test coverage.",
+    "tasks":  [
+                  {
+                      "id":  "TASK-01",
+                      "title":  "Implement thermodynamic drift compensation module",
+                      "status":  "completed",
+                      "target_files":  [
+                                           "src/thermo.rs"
+                                       ],
+                      "context_files":  [
+                                            "Cargo.toml",
+                                            "src/sensor.rs",
+                                            "src/lib.rs"
+                                        ],
+                      "spec":  "Create `src/thermo.rs` implementing hygroscopic growth correction for Sensirion SPS30 optical particle counts.\n\n**Structs:**\n```rust\n#[derive(Debug, Clone, Copy)]\npub struct AmbientConditions {\n    pub temperature_c: f64,   // °C, range -20..60\n    pub relative_humidity_pct: f64, // 0.0..100.0\n}\n\n#[derive(Debug, Clone, Copy)]\npub struct CorrectedReading {\n    pub pm1_0_ug_m3: f64,\n    pub pm2_5_ug_m3: f64,\n    pub pm4_0_ug_m3: f64,\n    pub pm10_ug_m3: f64,\n    pub particle_count_p_cc: f64,\n}\n\n#[derive(Debug, Clone)]\npub struct ThermoCompensator;\n```\n\n**Functions on `ThermoCompensator`:**\n- `pub fn new() -\u003e Self` — unit struct, no state.\n- `pub fn correct(\u0026self, raw: \u0026CorrectedReading, ambient: \u0026AmbientConditions) -\u003e CorrectedReading` — applies a multiplicative hygroscopic growth factor to mass concentrations. The growth factor is computed as:\n  - `g = 1.0 + 0.0045 * (rh - 50.0).max(0.0)` where rh is relative_humidity_pct. This models the well-known ~0.45%/RH-point mass inflation above 50% RH for NaCl-like aerosols.\n  - Temperature correction: `t_factor = 1.0 + 0.002 * (25.0 - temperature_c)` — compensates for laser diode power drift (SPS30 datasheet specifies ~0.2%/°C around 25 °C reference).\n  - Final corrected value = raw_value / (g * t_factor). Clamp all outputs to \u003e= 0.0.\n- `pub fn validate_ambient(\u0026self, ambient: \u0026AmbientConditions) -\u003e Result\u003c(), ThermoError\u003e` — returns Err if temperature outside [-20, 60] or RH outside [0, 100].\n\n**Error type:**\n```rust\n#[derive(Debug, thiserror::Error)]\npub enum ThermoError {\n    #[error(\"temperature {0}°C out of sensor range [-20, 60]\")]\n    TemperatureOutOfRange(f64),\n    #[error(\"relative humidity {0}% out of range [0, 100]\")]\n    HumidityOutOfRange(f64),\n}\n```\n\n**Unit tests (in `#[cfg(test)] mod tests`):**\n- Test that at 25 °C / 50% RH the corrected reading equals the raw reading exactly.\n- Test that at 80% RH the PM2.5 value is reduced by approximately the expected factor (1/(1+0.0045*30) ≈ 0.847).\n- Test that out-of-range ambient returns Err.\n- Test that negative raw values are clamped to 0.0 in output.\n\nAdd `pub mod thermo;` to `src/lib.rs`.",
+                      "verify_cmd":  "cargo check --quiet",
+                      "last_metrics":  {
+                                           "model":  "qwen3.8-coder:fast",
+                                           "think":  false,
+                                           "gen_tps":  20.37,
+                                           "prompt_tps":  634.85,
+                                           "wall_seconds":  213.26,
+                                           "completed_at":  "2026-11-10T23:32:47Z"
+                                       }
+                  },
+                  {
+                      "id":  "TASK-02",
+                      "title":  "Implement taint-coded sensor stream audit module",
+                      "status":  "completed",
+                      "target_files":  [
+                                           "src/taint.rs"
+                                       ],
+                      "context_files":  [
+                                            "Cargo.toml",
+                                            "src/sensor.rs",
+                                            "src/lib.rs"
+                                        ],
+                      "spec":  "Create `src/taint.rs` implementing continuous data-integrity validation of the raw sensor stream to detect clogged intake, stuck optical window, or spoofed telemetry.\n\n**Enums and structs:**\n```rust\n#[derive(Debug, Clone, Copy, PartialEq, Eq)]\npub enum TaintFlag {\n    Clean,\n    CloggedIntake,\n    StuckOpticalWindow,\n    SpoofedTelemetry,\n}\n\n#[derive(Debug, Clone)]\npub struct TaintDetector {\n    window_size: usize,\n    recent_readings: Vec\u003cf64\u003e, // rolling PM2.5 values\n    min_variance_threshold: f64,\n    max_jump_threshold: f64,\n}\n\n#[derive(Debug, Clone)]\npub struct TaintReport {\n    pub flag: TaintFlag,\n    pub window_stddev: f64,\n    pub max_consecutive_equal: usize,\n    pub max_single_step_jump_pct: f64,\n}\n```\n\n**Functions on `TaintDetector`:**\n- `pub fn new(window_size: usize) -\u003e Self` — sets `min_variance_threshold = 0.5` (µg/m³), `max_jump_threshold = 200.0` (%). The window must be \u003e= 4.\n- `pub fn push_sample(\u0026mut self, pm25_ug_m3: f64)` — appends to rolling window, evicts oldest if len \u003e window_size.\n- `pub fn evaluate(\u0026self) -\u003e TaintReport` — computes:\n  - `window_stddev`: population standard deviation of the window. If stddev \u003c min_variance_threshold AND window is full → `StuckOpticalWindow`.\n  - `max_consecutive_equal`: longest run of identical values (exact f64 equality). If \u003e= window_size/2 → `CloggedIntake`.\n  - `max_single_step_jump_pct`: max absolute percentage change between consecutive samples in the window. If \u003e max_jump_threshold → `SpoofedTelemetry`.\n  - Priority: SpoofedTelemetry \u003e CloggedIntake \u003e StuckOpticalWindow \u003e Clean.\n- `pub fn reset(\u0026mut self)` — clears the window.\n\n**Unit tests:**\n- Feed 10 identical values → expect `StuckOpticalWindow` or `CloggedIntake`.\n- Feed a sequence with one 500% jump → expect `SpoofedTelemetry`.\n- Feed a noisy realistic sequence (e.g., 12.3, 14.1, 13.8, 15.2, ...) → expect `Clean`.\n- Test that `reset()` clears state.\n\nAdd `pub mod taint;` to `src/lib.rs`.",
+                      "verify_cmd":  "cargo check --quiet",
+                      "last_metrics":  {
+                                           "model":  "qwen3.8-coder:fast",
+                                           "think":  "low",
+                                           "gen_tps":  19.95,
+                                           "prompt_tps":  627.18,
+                                           "wall_seconds":  166.53,
+                                           "completed_at":  "2026-11-11T05:35:13Z"
+                                       }
+                  },
+                  {
+                      "id":  "TASK-03",
+                      "title":  "Implement non-disableable haptic emergency veto state machine",
+                      "status":  "completed",
+                      "target_files":  [
+                                           "src/veto.rs"
+                                       ],
+                      "context_files":  [
+                                            "Cargo.toml",
+                                            "src/dose.rs",
+                                            "src/lib.rs"
+                                        ],
+                      "spec":  "Create `src/veto.rs` implementing the autonomous safety mechanism that enforces haptic + piezo alerts at critical toxic thresholds and CANNOT be muted by the wearer.\n\n**Enums and structs:**\n```rust\n#[derive(Debug, Clone, Copy, PartialEq, Eq)]\npub enum VetoState {\n    Nominal,\n    Advisory,      // TWA approaching limit\n    Mandatory,     // TWA exceeded — alert cannot be dismissed\n    EmergencyVeto, // Acute spike — maximum intensity, no software override\n}\n\n#[derive(Debug, Clone)]\npub struct HapticVeto {\n    state: VetoState,\n    /// Peak PM2.5 in the current acute window (last 60 s)\n    acute_peak_ug_m3: f64,\n    /// Running TWA in µg/m³\n    twa_ug_m3: f64,\n    /// OSHA 8-hr PEL for PM2.5 (µg/m³) — configurable\n    pel_ug_m3: f64,\n    /// Acute spike threshold (µg/m³) — triggers EmergencyVeto\n    acute_spike_threshold_ug_m3: f64,\n    /// Whether the wearer attempted to mute (logged, never acted on)\n    mute_attempts: u32,\n}\n```\n\n**Functions:**\n- `pub fn new(pel_ug_m3: f64, acute_spike_threshold_ug_m3: f64) -\u003e Self` — defaults state to Nominal.\n- `pub fn update(\u0026mut self, current_pm25: f64, twa: f64)` — transitions state:\n  - If `current_pm25 \u003e= acute_spike_threshold_ug_m3` → `EmergencyVeto` (irreversible until PM drops below 0.5× threshold for 3 consecutive calls — track with a counter).\n  - Else if `twa \u003e= pel_ug_m3` → `Mandatory`.\n  - Else if `twa \u003e= 0.8 * pel_ug_m3` → `Advisory`.\n  - Else → `Nominal` (can only downgrade from Advisory, never from Mandatory/EmergencyVeto without the acute recovery condition).\n- `pub fn attempt_mute(\u0026mut self) -\u003e bool` — increments `mute_attempts`, ALWAYS returns `false` (mute is never honored). This is the invariant: the function exists to log intent but never change state.\n- `pub fn current_state(\u0026self) -\u003e VetoState`\n- `pub fn mute_attempt_count(\u0026self) -\u003e u32`\n- `pub fn haptic_intensity(\u0026self) -\u003e f64` — returns 0.0 (Nominal), 0.3 (Advisory), 0.7 (Mandatory), 1.0 (EmergencyVeto).\n\n**Unit tests:**\n- Start Nominal, push TWA at 90% PEL → Advisory.\n- Push TWA at 110% PEL → Mandatory.\n- Push PM spike above acute threshold → EmergencyVeto.\n- Call `attempt_mute()` in EmergencyVeto → state unchanged, returns false, count increments.\n- After 3 calls below 0.5× threshold → transitions out of EmergencyVeto to Mandatory (if TWA still \u003e PEL).\n\nAdd `pub mod veto;` to `src/lib.rs`.",
+                      "verify_cmd":  "cargo check --quiet",
+                      "last_metrics":  {
+                                           "model":  "qwen3.8-coder:fast",
+                                           "think":  false,
+                                           "gen_tps":  20.19,
+                                           "prompt_tps":  578.19,
+                                           "wall_seconds":  226.32,
+                                           "completed_at":  "2026-11-11T05:39:00Z"
+                                       }
+                  },
+                  {
+                      "id":  "TASK-04",
+                      "title":  "Wire thermo, taint, and veto modules into lib.rs with integration tests",
+                      "status":  "completed",
+                      "target_files":  [
+                                           "src/lib.rs"
+                                       ],
+                      "context_files":  [
+                                            "src/thermo.rs",
+                                            "src/taint.rs",
+                                            "src/veto.rs",
+                                            "src/dose.rs",
+                                            "src/audit.rs",
+                                            "src/compliance.rs"
+                                        ],
+                      "spec":  "Update `src/lib.rs` to:\n\n1. Ensure all public modules are declared: `pub mod audit; pub mod compliance; pub mod dose; pub mod sensor; pub mod thermo; pub mod taint; pub mod veto;`\n2. Add a top-level integration test module `#[cfg(test)] mod integration_tests` that exercises the full pipeline:\n\n**Test: `full_shift_pipeline_with_thermo_and_taint`:**\n- Create a `ThermoCompensator`, feed a raw reading at 35 °C / 70% RH, verify corrected PM2.5 \u003c raw PM2.5.\n- Create a `TaintDetector` with window_size=10, push 10 corrected readings that are realistic (varying by ±2 µg/m³), assert `evaluate().flag == TaintFlag::Clean`.\n- Then push 8 identical values, assert flag is no longer Clean.\n\n**Test: `veto_escalation_and_mute_invariant`:**\n- Create `HapticVeto::new(50.0, 300.0)` (PEL=50, spike=300).\n- Update with twa=45 → Advisory.\n- Update with twa=55 → Mandatory.\n- Update with pm25=350 → EmergencyVeto.\n- Call `attempt_mute()` 5 times → state still EmergencyVeto, `mute_attempt_count() == 5`.\n\n**Test: `audit_chain_survives_thermo_correction`:**\n- Create an `AuditLog` with a fresh `SigningKey` (use `ed25519_dalek::SigningKey::generate(\u0026mut rand::thread_rng())`).\n- Append 3 entries using thermo-corrected values.\n- Call `verify_chain` with the corresponding `VerifyingKey` → Ok.\n\nKeep all existing module declarations intact. Do not modify any other source files.",
+                      "verify_cmd":  "cargo check --quiet",
+                      "last_metrics":  {
+                                           "model":  "qwen3.8-coder:fast",
+                                           "think":  "medium",
+                                           "gen_tps":  19.94,
+                                           "prompt_tps":  3395.27,
+                                           "wall_seconds":  358.65,
+                                           "completed_at":  "2026-11-11T11:26:33Z"
+                                       }
+                  },
+                  {
+                      "id":  "TASK-05",
+                      "title":  "Complete CLI with subcommands for dose, audit, compliance, and veto simulation",
+                      "status":  "completed",
+                      "target_files":  [
+                                           "src/main.rs"
+                                       ],
+                      "context_files":  [
+                                            "Cargo.toml",
+                                            "src/lib.rs",
+                                            "src/dose.rs",
+                                            "src/audit.rs",
+                                            "src/compliance.rs",
+                                            "src/veto.rs"
+                                        ],
+                      "spec":  "Rewrite `src/main.rs` as a full CLI using `clap` derive API.\n\n**Top-level struct:**\n```rust\n#[derive(clap::Parser)]\n#[command(name = \"smokeshift-cli\", version, about = \"AeroDose occupational PM2.5 shift dosimeter\")]\nstruct Cli {\n    #[command(subcommand)]\n    command: Commands,\n}\n\n#[derive(clap::Subcommand)]\nenum Commands {\n    /// Calculate cumulative shift dose from a JSON sample file\n    Dose {\n        /// Path to JSON file containing an array of {\"t\": seconds, \"pm25\": f64} objects\n        #[arg(short, long)]\n        input: std::path::PathBuf,\n        /// OSHA PEL in µg/m³ (default 50)\n        #[arg(short = \u0027p\u0027, long, default_value_t = 50.0)]\n        pel: f64,\n    },\n    /// Verify an audit log JSON file for chain integrity\n    Audit {\n        /// Path to JSON file containing the serialized audit entries array\n        #[arg(short, long)]\n        input: std::path::PathBuf,\n        /// Hex-encoded Ed25519 verifying public key (32 bytes)\n        #[arg(short, long)]\n        pubkey_hex: String,\n    },\n    /// Generate a compliance report from a completed shift\n    Report {\n        /// Path to JSON sample file (same format as Dose)\n        #[arg(short, long)]\n        input: std::path::PathBuf,\n        /// Worker pseudonym UUID\n        #[arg(short, long)]\n        worker_id: uuid::Uuid,\n        /// Output path for the JSON report (default: stdout)\n        #[arg(short, long)]\n        output: Option\u003cstd::path::PathBuf\u003e,\n    },\n    /// Simulate haptic veto state transitions from a sample stream\n    Veto {\n        /// Path to JSON sample file\n        #[arg(short, long)]\n        input: std::path::PathBuf,\n        /// Acute spike threshold µg/m³ (default 300)\n        #[arg(short = \u0027s\u0027, long, default_value_t = 300.0)]\n        spike: f64,\n    },\n}\n```\n\n**Implementation:**\n- `Dose`: Read JSON file as `Vec\u003cSample\u003e` where `Sample { t: u64, pm25: f64 }`. Use `ShiftDoseTracker` (from `crate::dose`) to integrate. Print a summary table to stdout: total seconds, TWA, peak, cumulative dose, final alert tier.\n- `Audit`: Read JSON as `Vec\u003cAuditEntry\u003e`. Reconstruct the hash chain manually (recompute each entry\u0027s SHA-256 from its fields + previous_hash), verify each Ed25519 signature against `pubkey_hex`. Print PASS/FAIL per entry and overall verdict.\n- `Report`: Same input parsing as Dose. Build a `ShiftDoseTracker`, run it, create an `AuditLog` (generate ephemeral key), append entries at each sample, then call `ComplianceEngine::generate_report`. Serialize the report to JSON and write to output path or stdout.\n- `Veto`: Parse samples, feed into `HapticVeto`, print state transitions as they occur (only print when state changes).\n\n**Error handling:** Use `Box\u003cdyn std::error::Error\u003e` for main return. Print errors to stderr with `eprintln!` and return non-zero exit code.\n\nEnsure `cargo check --quiet` passes with no warnings.",
+                      "verify_cmd":  "cargo check --quiet"
+                  },
+                  {
+                      "id":  "TASK-06",
+                      "title":  "Add property-based edge-case tests for dose integration and audit chain",
+                      "status":  "completed",
+                      "target_files":  [
+                                           "src/dose.rs",
+                                           "src/audit.rs"
+                                       ],
+                      "context_files":  [
+                                            "Cargo.toml",
+                                            "src/lib.rs"
+                                        ],
+                      "spec":  "Append a `#[cfg(test)] mod edge_tests` block to BOTH `src/dose.rs` and `src/audit.rs`. Do not modify any existing function signatures or logic — only add test modules.\n\n**In `src/dose.rs` edge tests:**\n- `test_zero_duration_no_panic`: Create a tracker, call `twa_pm25_ug_m3()` with zero samples → must return 0.0, not panic or divide by zero.\n- `test_single_sample_twa_equals_value`: One sample of 42.0 µg/m³ at t=60s → TWA should be 42.0 (or very close, within 1e-9).\n- `test_monotonic_dose_accumulation`: Feed 100 samples with increasing PM2.5 (1.0, 2.0, ..., 100.0) at 60s intervals. Assert that `cumulative_dose_ug_h_m3` is strictly monotonically non-decreasing after each push.\n- `test_extreme_concentration`: Feed a single sample of 1e6 µg/m³ (physically impossible but tests numeric stability). Assert no NaN, no infinity, dose \u003e 0.\n- `test_negative_pm25_clamped`: If the tracker accepts negative input (or if you can push -5.0), assert the resulting TWA and dose are \u003e= 0.0.\n\n**In `src/audit.rs` edge tests:**\n- `test_empty_chain_verifies`: Create an AuditLog, call `verify_chain` with a valid key → Ok (empty chain is trivially valid).\n- `test_single_entry_chain`: Append one entry, verify → Ok.\n- `test_tampered_hash_detected`: Append 3 entries. Manually mutate `entries[1].pm25_ug_m3` to a different value (you\u0027ll need a way to access — if entries is private, add a `pub fn entries(\u0026self) -\u003e \u0026[AuditEntry]` accessor). Verify → must return Err.\n- `test_tampered_signature_detected`: Append 2 entries. Mutate `entries[1].signature_hex` to a different valid hex string of same length. Verify → Err.\n- `test_sequence_continuity`: Append 5 entries, assert `entries[i].sequence == i as u64` for all i, and `entries[i].previous_hash == entries[i-1].entry_hash` for i \u003e 0.\n\nIf `entries` field is private in `AuditLog`, add a public accessor: `pub fn entries(\u0026self) -\u003e \u0026[AuditEntry] { \u0026self.entries }`. This is the only non-test code change allowed.\n\nEnsure `cargo check --quiet` and `cargo test --quiet` both pass.",
+                      "verify_cmd":  "cargo test --quiet"
+                  }
+              ]
+}

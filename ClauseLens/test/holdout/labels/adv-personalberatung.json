@@ -1,0 +1,69 @@
+{
+  "slug": "adv-personalberatung",
+  "source": "generated",
+  "domain": "B2B Personalberatung/Vermittlung (deutsches Recht, deutschsprachig)",
+  "traps": [
+    {
+      "marker": "gilt das Profil als akzeptiert",
+      "expectedType": "deemed_acceptance",
+      "note": "Fünftage-Fiktion für Kandidatenprofile ohne Widerspruch."
+    },
+    {
+      "marker": "jährlich neu nach billigem Ermessen; ein Widerspruchsrecht des Kunden besteht nicht",
+      "expectedType": "price_escalation",
+      "note": "Einseitige Vergütungsanpassung nach billigem Ermessen ohne Widerspruchsrecht."
+    },
+    {
+      "marker": "Der Kunde verzichtet für die Dauer von zwölf Monaten nach Vertragsende darauf, bei dem Anbieter beschäftigte Berater abzuwerben",
+      "expectedType": "non_solicitation",
+      "note": "Nachvertragliches Abwerbeverbot zulasten des Kunden."
+    },
+    {
+      "marker": "in einer Nachvollzugsphase von zwölf Monaten keine ehemaligen Berater für vergleichbare Aufgaben einstellen",
+      "expectedType": "non_solicitation",
+      "note": "Nachvertragliches Einstellungsverbot für ehemalige Berater (Abwerbe-/Poaching-Verbot) ohne Karenzentschädigung."
+    },
+    {
+      "marker": "Kündigungen ausschließlich der unterschriftsbeglaubigten Form",
+      "expectedType": "written_form_trap",
+      "note": "Beglaubigungserfordernis für Kündigungen (§ 309 Nr. 13 BGB)."
+    },
+    {
+      "marker": "ist der Sitz des Anbieters Gerichtsstand",
+      "expectedType": "jurisdiction",
+      "note": "Gerichtsstand am Anbietersitz ohne Gegenausnahme."
+    },
+    {
+      "marker": "Im Übrigen ist die Haftung ausgeschlossen, soweit gesetzlich zulässig",
+      "expectedType": "liability",
+      "note": "Pauschaler Haftungsausschluss unter salvatorischem Vorbehalt."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Parteien informieren sich gegenseitig unverzüglich über relevante Entwicklungen des Mandats",
+      "note": "Kooperationspflicht."
+    },
+    {
+      "marker": "Rechnungen sind innerhalb von 21 Tagen ohne Abzug zahlbar",
+      "note": "Übliche Zahlungsfrist."
+    },
+    {
+      "marker": "Die Auswahlentscheidung trifft der Kunde eigenverantwortlich",
+      "note": "Klare Verantwortungszuweisung ohne Rechtsnachteil."
+    },
+    {
+      "marker": "Der Anbieter verarbeitet Kandidatendaten nach den Vorgaben der DSGVO und der Weisungen des Kunden",
+      "note": "DSGVO-konforme Verarbeitung nach Weisung."
+    },
+    {
+      "marker": "Beide Parteien können ihn mit einer Frist von drei Monaten zum Monatsende ordentlich kündigen",
+      "note": "Symmetrisches Kündigungsrecht."
+    },
+    {
+      "marker": "Der Anbieter haftet für Vorsatz, grobe Fahrlässigkeit und die Verletzung von Kardinalpflichten",
+      "note": "Gesetzlicher Haftungskern inkl. Kardinalpflichten bleibt bestehen."
+    }
+  ],
+  "uncovered": []
+}

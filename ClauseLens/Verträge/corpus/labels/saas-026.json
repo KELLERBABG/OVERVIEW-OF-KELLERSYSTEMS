@@ -1,0 +1,69 @@
+{
+  "slug": "saas-026",
+  "source": "generated",
+  "domain": "SaaS E-Learning, Schweizer Recht",
+  "traps": [
+    {
+      "marker": "Nebenabreden haben keine Geltung.",
+      "expectedType": "entire_agreement",
+      "note": "Paraphrase. Vollstaendigkeitsklausel"
+    },
+    {
+      "marker": "Sollte eine Bestimmung unwirksam sein, gilt diejenige Regelung als vereinbart, die dem",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "Ersatzregelung nach Anbietergusto"
+    },
+    {
+      "marker": "Der Kunde verzichtet darauf, Beschäftigte der Anbieterin anzusprechen.",
+      "expectedType": "non_solicitation",
+      "note": "Abwerbeverbot"
+    },
+    {
+      "marker": "Der Kunde verpflichtet sich, über alle Informationen Stillschweigen zu bewahren; für den Anbieter",
+      "expectedType": "asymmetric_confidentiality",
+      "note": "Einseitige Geheimhaltung"
+    },
+    {
+      "marker": "Das Abonnement setzt sich nach Ablauf der Festlaufzeit jeweils um zwölf Monate fort, sofern es keine",
+      "expectedType": "auto_renewal",
+      "note": "Paraphrase. Stillschweigende Verlaengerung"
+    },
+    {
+      "marker": "Die Anbieterin darf die Betriebsdaten zur Weiterentwicklung ihrer Modelle nutzen.",
+      "expectedType": "data_grant",
+      "note": "Paraphrase. Umfassender Rechteerwerb"
+    },
+    {
+      "marker": "Anregungen und Vorschläge des Kunden verwertet die Anbieterin ohne Vergütung.",
+      "expectedType": "feedback_ip_grab",
+      "note": "Paraphrase. Unentgeltlicher IP-Anfall"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Vertragsparteien behandeln die wechselseitig offengelegten Informationen vertraulich.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Änderungen dieses Vertrags bedürfen der Textform.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Anbieterin sichert eine Verfügbarkeit von 99,5 Prozent pro Kalendermonat zu.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Anbieterin stellt dem Kunden bei Vertragsende eine vollständige Kopie aller Kundendaten in",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Anbieterin übergibt die Daten in einem gängigen Format.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Verarbeitung erfolgt ausschließlich in Rechenzentren innerhalb der Europäischen Union.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    }
+  ],
+  "uncovered": []
+}

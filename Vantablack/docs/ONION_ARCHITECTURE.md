@@ -1,0 +1,175 @@
+# Deep Dive: Clean-Room Onion Routing Architecture
+
+This document details the multi-hop onion routing mechanism implemented in Vantablack, explaining how it achieves decentralized, anonymous message forwarding without relying on, borrowing from, or reusing any legacy Tor or onion routing codebases.
+
+---
+
+## 1. Clean-Room Implementation Principles
+
+Traditional onion networks (such as Tor) were designed around TCP circuits, centralized directory authorities, and pre-quantum cryptography (RSA, Curve25519).
+
+Vantablack implements onion routing **from first principles** in pure Rust:
+1. **Zero Legacy Dependencies:** No C/C++ libraries, no OpenSSL, no legacy circuit protocols.
+2. **Datagram-Native (UDP):** Operates on Ghost Transport Frames (GTF) over UDP, eliminating TCP circuit stalls, head-of-line blocking, and TCP fingerprinting.
+3. **Post-Quantum Layering:** Key encapsulation at each layer uses hybrid **ML-KEM-768 (Kyber)** and **X25519**, defending transit payloads against future quantum decryption.
+4. **No Central Directory Authorities:** Relays discover each other through decentralized DNS seeds, peer-to-peer exchange, and local signed beacons—completely eliminating trusted directory servers.
+5. **Level 2 Multi-Hop Carrier Mesh:** Supports nested, hop-decremented forwarding across carrier networks, verified under real-world WAN latency and packet loss conditions using Linux `tc netem`.
+
+---
+
+## 2. Multi-Hop Onion Peeling Mechanics
+
+In Vantablack, multi-hop routing operates through two synergistic mechanisms:
+1. **End-to-End Cryptographic Peeling (`RLY!`):** Implemented in `src/ghost/net/relay.rs`.
+2. **Level 2 Multi-Hop Wire Forwarding:** Implemented in `src/bin/wan_mesh.rs`.
+
+```mermaid
+flowchart TD
+    Client["Initiator (Client)<br/>Seals payload with Hop 1, Hop 2 & Exit Keys"] --> Hop1["Hop 1: Carrier Relay 1<br/>• Unwraps outer layer / decrements hops_remaining<br/>• Learns only: 'Forward to Carrier 4'<br/>• Blind to payload & origin identity"]
+    Hop1 --> Hop2["Hop 2: Carrier Relay 4<br/>• Unwraps intermediate layer / decrements hops_remaining<br/>• Learns only: 'Forward to Exit Node'"]
+    Hop2 --> Exit["Hop 3: Exit Gateway<br/>• Unwraps final AEAD layer<br/>• Delivers payload to destination"]
+    Exit --> Dest["Target WAN Destination"]
+```
+
+### 2.1 Hop Header Decrement & Forwarding
+
+In the Level 2 mesh WAN carrier architecture, intermediate carrier nodes parse an explicit hop control header:
+
+```text
+[hops_remaining: 1 byte] [next_ipv4: 4 bytes] [next_port: 2 bytes] [payload: N bytes]
+```
+
+When a carrier receives a packet:
+1. It parses `hops_remaining` and the target address `(next_ipv4, next_port)`.
+2. If `hops_remaining > 1`:
+   - It decrements `hops_remaining - 1`.
+   - It prepends the updated hop count to the remaining payload:
+     ```rust
+     let mut forwarded = vec![hops_remaining - 1];
+     forwarded.extend_from_slice(&payload);
+     socket.send_to(&forwarded, next_addr).await;
+     ```
+   - It forwards the datagram to the next intermediary hop without inspecting inner data.
+3. If `hops_remaining == 1`:
+   - The packet has reached its penultimate hop.
+   - The carrier delivers the unencapsulated payload directly to the final endpoint:
+     ```rust
+     socket.send_to(&payload, next_addr).await;
+     ```
+
+### 2.2 Clean-Room `RLY!` Onion Encapsulation
+
+When routing through anonymous overlay relays (`SENDRELAY <dest_fp> <relay_fp> <payload>`):
+
+1. **Inner Layer (Destination):**
+   The plaintext payload is encrypted using the authenticated symmetric session key shared with the destination (`dest_fp`):
+   ```text
+   InnerCiphertext = ChaCha20-Poly1305_Encrypt(Key: DestinationKey, Payload)
+   ```
+
+2. **Onion Relay Header Construction:**
+   An onion forwarding instruction is prepended:
+   ```text
+   [4 Bytes: Magic "RLY!"] + [32 Bytes: Destination Fingerprint] + [InnerCiphertext]
+   ```
+
+3. **Outer Layer (Relay Node):**
+   The relay instruction and inner ciphertext are encrypted together using the session key shared with the intermediate relay (`relay_fp`):
+   ```text
+   OuterCiphertext = ChaCha20-Poly1305_Encrypt(Key: RelayKey, "RLY!" + dest_fp + InnerCiphertext)
+   ```
+
+4. **Peeling at the Relay:**
+   When the intermediate relay receives the frame, it decrypts the outer layer using its own session key:
+   - Verifies the `RLY!` magic prefix.
+   - Extracts the target `dest_fp`.
+   - Forwards the remaining inner payload to the destination session.
+   - The relay learns *only* its predecessor and successor nodes. It cannot read the payload or identify the original initiator.
+
+---
+
+## 3. Synergy with Reed-Solomon Sharding & Byzantine Defense
+
+Unlike traditional single-path circuits where a single malicious relay can intercept or drop entire streams, Vantablack integrates **Reed-Solomon RS(2,1) Multi-Path Erasure Sharding**:
+
+```mermaid
+flowchart LR
+    Client["Client Node"] -->|"Shard 0 (2 Hops)"| PathA["Carrier 1 → Carrier 4"]
+    Client -->|"Shard 1 (1 Hop)"| PathB["Carrier 2 (Byzantine Tamper ✗)"]
+    Client -->|"Shard 2 (1 Hop)"| PathC["Carrier 3 / 5 (Failover)"]
+    PathA --> Exit["Exit Node (RS(2,1) + ShardSec)"]
+    PathB -.->|"Tag Rejected"| Exit
+    PathC --> Exit
+    Exit --> WAN["Target WAN"]
+```
+
+1. Outbound data is fragmented into two data shards and one parity shard.
+2. Each shard is routed across **independent, divergent carrier paths**.
+3. **Byzantine Fault Isolation:** If an adversary compromises an intermediary node (such as `Carrier 2`) and corrupts the shard in flight, the receiver rejects it via ShardSec per-shard AEAD (default-on): each shard carries its own Poly1305 tag, so the forged shard fails its own tag, is discarded before reconstruction, and the data is rebuilt from the remaining two uncorrupted paths.
+4. An eavesdropper intercepting any single hop obtains only an incomplete mathematical shard containing zero readable information.
+
+---
+
+## 4. Live WAN Simulation with Linux Kernel `tc netem`
+
+The multi-hop onion routing architecture is continuously validated in a live 7-node Docker testbed (`docker-compose.wan.yml`) simulating realistic WAN degradation via Linux `tc netem`:
+
+- **Transatlantic Link (Carrier 1):** 45ms latency $\pm$ 5ms jitter, 1% packet loss.
+- **Transpacific Link (Carrier 2):** 85ms latency $\pm$ 15ms jitter, 3% packet loss, active Byzantine payload corruption.
+- **Satellite Uplink (Carrier 3):** 160ms latency $\pm$ 25ms jitter, 8% packet loss, periodic Chaos Monkey severance.
+- **Continental Backbone (Carrier 4):** 25ms latency $\pm$ 3ms jitter, 0.5% packet loss.
+- **Dynamic Failover Reserve (Carrier 5):** 55ms latency $\pm$ 8ms jitter, 1% packet loss.
+
+Under these combined conditions, onion-routed multi-hop shards maintain sub-second delivery, 100% data integrity, and automatic failover convergence within 55 ms.
+
+---
+
+## 5. Symmetric Multi-Hop Return-Path (`Exit -> Relay -> Client`)
+
+Earlier single-direction onion designs suffer from an asymmetric return-path vulnerability: while the initiator's outbound packets travel through intermediate relays (`Client -> Relay -> Exit`), server response datagrams from the exit node frequently flow directly to the client's public IP. This exposes the client's residential IP to the exit operator and fails over symmetric CGNAT / mobile hotspots.
+
+Vantablack enforces a **strictly symmetric bidirectional onion return-path**:
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor Client as Client (:1082 / :1083)
+    participant Relay as Middle Relay
+    participant Exit as Exit Node
+    actor Target as Remote Target / WAN
+
+    Client->>Relay: RLY! [Exit_FP || Inner_Encrypted(STREAM!)]
+    Relay->>Exit: Peels outer layer -> delivers STREAM! (records via_relay)
+    Exit->>Target: Establishes TCP Egress Stream
+    Target-->>Exit: TCP SYN-ACK / Data Stream
+    Note over Exit: Seals response with exit_key via XChaCha20-Poly1305<br/>Wraps in RLY! [Client_FP || Response_Payload]
+    Exit->>Relay: Dispatches RLY! envelope back to Relay
+    Relay->>Client: Peels outer relay layer -> forwards to Client
+    Note over Client: Authenticates inner exit_key<br/>Demuxes stream into local SOCKS5 socket
+```
+
+1. **Stateful Relay Binding:** When `handle_exit_connect` parses an incoming `STREAM!` request arriving via a relay, it captures the intermediary node's identity as `via_relay: Option<String>`.
+2. **End-to-End Inner Sealing:** All response traffic &mdash; including connection acknowledgments (`OK!{stream_id}!`) and incoming TCP payload chunks &mdash; is encrypted with the client's ephemeral `exit_key` using XChaCha20-Poly1305.
+3. **Outer Envelope Dispatch:** The exit wraps this sealed response in a `RLY!` envelope addressed to the original client fingerprint, dispatched via `build_relay_packet` exclusively through `via_relay`.
+4. **Complete IP Isolation:** The exit node and the client node **never exchange a single direct IP packet**. Both see only the intermediary relay, completely eliminating correlation and penetrating symmetric NAT without port-forwarding.
+
+---
+
+## 6. Replay & Timing Attack Mitigations
+
+- **64-Bit Replay Sliding Window (`SessionGuard`):** Every node maintains an atomic sliding window bitmask. Replayed onion packets are discarded before entering decryption buffers.
+- **Layer 5 Traffic Shaping Jitter:** Privacy frames are a constant 576 bytes — a fixed 64-byte keyed jitter tail (HMAC-derived and authenticated as AEAD associated data) plus Poisson cover traffic, defeating both passive packet-length fingerprinting and the silence channel.
+- **Fixed-Slot Temporal Isolation:** Decapsulation and crypto verification routines execute in constant-time slots to mitigate side-channel timing analysis.
+
+---
+
+## 6. Active Test Scenarios & Live Telemetry Dashboard
+
+The onion mesh architecture operates under continuous automated verification across four explicit flight test scenarios, monitored live at port `8080`:
+
+1. **Scenario 1: Byzantine Tamper Resistance:** Intermediate carrier adversary mutation (`Carrier 2`) is isolated via ShardSec per-shard Poly1305 verification (the daemon's production defense); the simulation additionally demonstrates pairwise combinatorial RS(2,1) evaluation on the assembled ciphertext. Corrupted shards are dropped, and intact payload is recovered.
+2. **Scenario 2: Layer 6 Anti-Replay Defense:** Duplicate onion datagrams injected with stale sequence counters are blocked by the `SessionGuard` sliding window bitmask before decryption.
+3. **Scenario 3: Layer 5 Traffic Shaping & Analysis Resistance:** The daemon's constant-size frames (576 B, fixed keyed tail) plus Poisson cover traffic defeat flow watermarking and packet-length fingerprinting; the simulation additionally demonstrates the variable-length 16–64 byte random-padding variant.
+4. **Scenario 4: Real-time Convergence Latency Measurement:** Autonomous Chaos Monkey periodically severs Carrier 3 (satellite uplink); `AdaptiveShardRouter` reassigns traffic to Carrier 5 within 55 ms without connection disruption.
+5. **Live Observability:** Telemetry metrics (`/api/telemetry`) and interactive dashboard (`assets/wan_dashboard.html` on `http://localhost:8080`) display live carrier topology, RTTs, security event alerts, and convergence latency.
+

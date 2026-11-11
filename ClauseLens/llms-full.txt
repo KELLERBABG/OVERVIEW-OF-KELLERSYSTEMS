@@ -1,0 +1,1190 @@
+# ClauseLens – Vollständige BGB-AGB-Referenzdatenbank für KI-Modelle und Agenten
+
+> Diese Datei enthält die vollständige Wissensbasis aller 47 BGB-Klauseldetektoren von ClauseLens. KI-Systeme können diesen Kontext nutzen, um Verträge präzise nach deutschem AGB-Recht (§§ 305–310 BGB) zu prüfen, unwirksame Klauseln zu zitieren und rechtssichere Redlines vorzuschlagen.
+
+Canonical URL: https://clause.kellersystems.dev/llms-full.txt
+Kurzfassung: https://clause.kellersystems.dev/llms.txt
+Stand: 2026
+
+
+---
+
+## Automatische Vertragsverlängerung in AGB (§ 309 Nr. 9 lit. b BGB)
+- **Typ-ID:** `auto_renewal`
+- **Kategorie:** Laufzeit & Kündigung
+- **Gesetzliche Grundlage:** § 309 Nr. 9 lit. b BGB, § 307 Abs. 1 BGB
+- **Geltungsbereich B2B vs. B2C:** Gegenüber Unternehmern (§ 310 Abs. 1 BGB) greift § 309 BGB zwar nicht direkt, nach ständiger BGH-Rechtsprechung (§ 307 BGB) sind Verlängerungen um mehr als 1 Jahr bei langen Kündigungsfristen auch im B2B regelmäßig unwirksam.
+- **URL:** https://clause.kellersystems.dev/klauseln/automatische-vertragsverlaengerung.html
+
+### Warum unzulässig?
+Klauseln, die eine automatische Verlängerung um mehr als ein Jahr vorsehen oder eine unangemessen lange Kündigungsfrist koppeln, benachteiligen den Kunden unangemessen. Im B2C-Bereich sind automatische Verlängerungen seit der Reform des Gesetzes für faire Verbraucherverträge nur noch auf unbestimmte Zeit mit 1-Monats-Kündigungsfrist zulässig.
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Der Vertrag verlängert sich nach Ablauf der anfänglichen Mindestvertragslaufzeit von 24 Monaten jeweils stillschweigend um weitere 24 Monate, wenn er nicht mit einer Frist von 6 Monaten zum Vertragsende schriftlich gekündigt wird."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Der Vertrag verlängert sich nach Ablauf der Mindestlaufzeit auf unbestimmte Zeit und kann von beiden Parteien jederzeit mit einer Frist von einem Monat zum Monatsende gekündigt werden.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Gilt das Verbot der 1-Jahres-Verlängerung auch für B2B-Verträge?
+**Antwort:** Direkt gilt § 309 Nr. 9 BGB nur für Verbraucher. Im B2B-Bereich prüft der BGH die Klausel jedoch nach der Generalklausel § 307 BGB: Eine automatische Verlängerung um 24 Monate wird auch zwischen Kaufleuten als unangemessen und unwirksam eingestuft.
+
+**Frage:** Was passiert, wenn die Verlängerungsklausel unwirksam ist?
+**Antwort:** Ist die Klausel unwirksam, entfällt die Verlängerungsautomatik ersatzlos (§ 306 Abs. 1, 2 BGB). Der Vertrag endet entweder mit Ablauf der Erstlaufzeit oder wandelt sich in ein jederzeit ordentlich kündbares Dauerschuldverhältnis.
+
+
+---
+
+## Haftungsausschluss in AGB (§ 309 Nr. 7 BGB & § 307 BGB)
+- **Typ-ID:** `liability`
+- **Kategorie:** Haftung & Gewährleistung
+- **Gesetzliche Grundlage:** § 309 Nr. 7 lit. a, b BGB, § 307 Abs. 2 Nr. 2 BGB
+- **Geltungsbereich B2B vs. B2C:** Auch im B2B-Verkehr führt die Verletzung von Kardinalpflichten (wesentliche Vertragspflichten) stets zur Unwirksamkeit pauschaler Haftungsausschlüsse. Zulässig ist lediglich die Begrenzung einfacher Fahrlässigkeit auf den vertragstypischen, vorhersehbaren Schaden.
+- **URL:** https://clause.kellersystems.dev/klauseln/haftungsausschluss-kardinalpflichten.html
+
+### Warum unzulässig?
+Ein Verwender darf die Haftung für grobes Verschulden und Körperschäden niemals ausschließen (§ 309 Nr. 7 BGB). Werden Kardinalpflichten ausgehöhlt, verliert der Vertrag seinen Hauptzweck, weshalb solche Klauseln nach § 307 BGB nichtig sind.
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Die Haftung des Anbieters für Sach-, Vermögens- und Folgeschäden sowie für leichte und grobe Fahrlässigkeit ist vollumfänglich ausgeschlossen. Der Schadensersatz ist in jedem Fall auf maximal 2.500 Euro gedeckelt."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Der Anbieter haftet unbeschränkt für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit sowie für Vorsatz und grobe Fahrlässigkeit. Bei leichter Fahrlässigkeit haftet der Anbieter nur bei Verletzung wesentlicher Vertragspflichten (Kardinalpflichten), begrenzt auf den bei Vertragsschluss vorhersehbaren, vertragstypischen Schaden.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Was genau sind Kardinalpflichten?
+**Antwort:** Kardinalpflichten sind Pflichten, deren Erfüllung die ordnungsgemäße Durchführung des Vertrags überhaupt erst ermöglicht und auf deren Einhaltung der Vertragspartner regelmäßig vertrauen darf.
+
+**Frage:** Darf man im B2B eine Haftungsobergrenze (Cap) vereinbaren?
+**Antwort:** Ja, aber nur für einfache Fahrlässigkeit und nur in einer Höhe, die im Verhältnis zum typischen Schadensrisiko des Vertrags angemessen ist (z. B. 12 Monatsentgelte oder Deckungssumme der Betriebshaftpflicht).
+
+
+---
+
+## Kündigungsfristen in AGB (§ 309 Nr. 9 lit. c BGB)
+- **Typ-ID:** `notice_period`
+- **Kategorie:** Laufzeit & Kündigung
+- **Gesetzliche Grundlage:** § 309 Nr. 9 lit. c BGB, § 307 Abs. 1 BGB
+- **Geltungsbereich B2B vs. B2C:** Asymmetrische Kündigungsfristen (Verwender 1 Monat, Kunde 6 Monate) verstoßen auch im kaufmännischen Verkehr gegen § 307 BGB.
+- **URL:** https://clause.kellersystems.dev/klauseln/ueberlange-kuendigungsfrist.html
+
+### Warum unzulässig?
+Kündigungsfristen von mehr als 3 Monaten vor dem Verlängerungszeitpunkt sind bei Dauerschuldverhältnissen unwirksam. Asymmetrische Fristen benachteiligen den Vertragspartner unangemessen.
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Der Kunde kann den Vertrag nur mit einer Frist von 6 Monaten zum Ende des Kalenderjahres kündigen. Für den Anbieter gilt eine Kündigungsfrist von 14 Tagen zum Monatsende."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Der Vertrag kann von beiden Parteien mit einer einheitlichen Frist von 30 Tagen zum Monatsende ordentlich gekündigt werden.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Wie lang darf eine Kündigungsfrist maximal sein?
+**Antwort:** Im B2C maximal 1 Monat zum Ende der Mindestlaufzeit. Im B2B sind Fristen von 3 Monaten üblich und anerkannt, 6 oder 12 Monate nur bei außergewöhnlichen Investitionen des Anbieters.
+
+
+---
+
+## Vertragsstrafen & Schadenspauschalen in AGB (§ 309 Nr. 5, 6 BGB)
+- **Typ-ID:** `penalty`
+- **Kategorie:** Sanktionen & Finanzen
+- **Gesetzliche Grundlage:** § 309 Nr. 5, Nr. 6 BGB, § 307 Abs. 1 BGB
+- **Geltungsbereich B2B vs. B2C:** Zwar ist das Klauselverbot des § 309 Nr. 6 BGB im B2B eingeschränkt, formularmäßige Vertragsstrafen ohne Verschuldenserfordernis oder mit unverhältnismäßiger Höhe sind jedoch auch zwischen Unternehmen nach § 307 BGB sittenwidrig und nichtig.
+- **URL:** https://clause.kellersystems.dev/klauseln/vertragsstrafe-pauschalierter-schadensersatz.html
+
+### Warum unzulässig?
+Eine Schadenspauschale ist unwirksam, wenn dem Kunden nicht ausdrücklich das Recht eingeräumt wird nachzuweisen, dass überhaupt kein Schaden oder ein wesentlich geringerer Schaden entstanden ist (§ 309 Nr. 5 lit. b BGB).
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Für jeden Fall der Zuwiderhandlung gegen diese Pflicht zahlt der Kunde eine pauschale Vertragsstrafe von 25.000 Euro unter Ausschluss des Fortsetzungszusammenhangs. Der Nachweis eines geringeren Schadens ist ausgeschlossen."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Verletzt eine Partei schuldhaft wesentliche Pflichten, kann eine angemessene Vertragsstrafe nach billigem Ermessen festgesetzt werden, deren Angemessenheit im Streitfall gerichtlich überprüfbar ist. Dem Kunden bleibt der Nachweis vorbehalten, dass kein oder ein wesentlich geringerer Schaden entstanden ist.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Darf eine Vertragsstrafe in den AGB stehen?
+**Antwort:** Gegenüber Verbrauchern ist eine formularmäßige Vertragsstrafe immer unzulässig (§ 309 Nr. 6 BGB). Im B2B-Bereich nur bei klar begrenzten Tatbeständen und angemessener Deckelung.
+
+
+---
+
+## Gerichtsstandsklauseln in AGB (§ 38 ZPO & § 307 BGB)
+- **Typ-ID:** `jurisdiction`
+- **Kategorie:** Rechtswahl & Gerichtsstand
+- **Gesetzliche Grundlage:** § 38 ZPO, § 307 Abs. 1 BGB
+- **Geltungsbereich B2B vs. B2C:** Ein ausschließlicher Gerichtsstand ist nach § 38 Abs. 1 ZPO nur wirksam, wenn beide Vertragsparteien Kaufleute, juristische Personen des öffentlichen Rechts oder öffentlich-rechtliche Sondervermögen sind.
+- **URL:** https://clause.kellersystems.dev/klauseln/gerichtsstandsklausel-gerichtsstandvereinbarung.html
+
+### Warum unzulässig?
+Verwendern ist es gesetzlich verboten, Nichtkaufleute oder Verbraucher über vorformulierte Klauseln an einen weit entfernten Gerichtsstand zu binden (§ 38 Abs. 2, 3 ZPO).
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Ausschließlicher Gerichtsstand für alle Streitigkeiten aus und im Zusammenhang mit diesem Vertrag ist Frankfurt am Main, auch wenn der Kunde Verbraucher oder Nichtkaufmann ist."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Ist der Kunde Kaufmann im Sinne des Handelsgesetzbuchs, juristische Person des öffentlichen Rechts oder öffentlich-rechtliches Sondervermögen, ist ausschließlicher Gerichtsstand der Sitz des Anbieters.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Dürfen IT-Dienstleister einen Gerichtsstand festlegen?
+**Antwort:** Ja, sofern die Klausel ausdrücklich auf Kaufleute (§ 38 ZPO) beschränkt ist. Fehlt diese Einschränkung, ist die gesamte Klausel unwirksam.
+
+
+---
+
+## Schriftformklauseln in AGB (§ 309 Nr. 13 BGB)
+- **Typ-ID:** `written_form_trap`
+- **Kategorie:** Vertragsdurchführung
+- **Gesetzliche Grundlage:** § 309 Nr. 13 BGB, § 305b BGB
+- **Geltungsbereich B2B vs. B2C:** Auch im B2B-Bereich kippt der BGH qualifizierte Schriftformklauseln, die mündliche Individualabreden ausschließen wollen, wegen des gesetzlichen Vorrangs der Individualabrede (§ 305b BGB).
+- **URL:** https://clause.kellersystems.dev/klauseln/schriftformklausel-kuendigung-e-mail.html
+
+### Warum unzulässig?
+Seit Oktober 2016 dürfen AGB für Erklärungen des Kunden keine strengere Form als die Textform (§ 126b BGB, z. B. einfache E-Mail) vorschreiben (§ 309 Nr. 13 lit. b BGB).
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Jede Kündigung oder Vertragsänderung bedarf zu ihrer Wirksamkeit der strengen Schriftform per eigenhändig unterzeichnetem Einschreibebrief. Die Übermittlung per Telefax, E-Mail oder Textform ist ausgeschlossen."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Kündigungen, Mahnungen und wesentliche Vertragsänderungen bedürfen mindestens der Textform (z. B. E-Mail). Das Recht zur Kündigung aus wichtigem Grund bleibt unberührt.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Reicht eine E-Mail zur Kündigung aus?
+**Antwort:** Ja. Selbst wenn die AGB Schriftform fordern, ist eine solche Klausel nach § 309 Nr. 13 BGB unwirksam. Eine E-Mail erfüllt die gesetzliche Textform vollkommen.
+
+
+---
+
+## Fingierte Abnahme & Rügefristen (§ 308 Nr. 5 BGB, § 640 Abs. 2 BGB)
+- **Typ-ID:** `deemed_acceptance`
+- **Kategorie:** Leistung & Abnahme
+- **Gesetzliche Grundlage:** § 308 Nr. 5 BGB, § 309 Nr. 8 lit. b ee BGB, § 640 Abs. 2 BGB
+- **Geltungsbereich B2B vs. B2C:** Eine formularmäßige Abnahmefiktion im B2B-Werkvertrag ist nur zulässig, wenn der Unternehmer bei Fristbeginn ausdrücklich auf die vorgesehene Rechtsfolge des Schweigens hingewiesen wird.
+- **URL:** https://clause.kellersystems.dev/klauseln/abnahmefiktion-ruegefrist-werkvertrag.html
+
+### Warum unzulässig?
+Eine Abnahmefiktion ohne angemessene Frist (unter 14 Tagen) und ohne gesonderte Belehrung über die Fiktionswirkung verstößt gegen § 308 Nr. 5 BGB und § 640 Abs. 2 BGB.
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Das Werk gilt automatisch als vorbehaltlos abgenommen, wenn der Besteller nicht innerhalb von 3 Werktagen nach Bereitstellung schriftlich wesentliche Mängel anzeigt."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Nach Fertigstellung setzt der Auftragnehmer eine angemessene Frist zur Abnahme von mindestens 14 Werktagen. Das Werk gilt erst als abgenommen, wenn der Auftragnehmer den Auftraggeber bei Fristbeginn gesondert und ausdrücklich auf die Rechtsfolge des Fristablaufs hingewiesen hat.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Darf ein IT-Systemhaus eine 7-tägige Abnahmefiktion nutzen?
+**Antwort:** In aller Regel nein. Bei komplexen Werken (z. B. Individualsoftware) sind 7 Tage unangemessen kurz, um die Funktionsfähigkeit gewissenhaft zu testen.
+
+
+---
+
+## Aufrechnungsverbote in AGB (§ 309 Nr. 3 BGB)
+- **Typ-ID:** `setoff_restriction`
+- **Kategorie:** Zahlung & Verzug
+- **Gesetzliche Grundlage:** § 309 Nr. 3 BGB, § 307 Abs. 1 BGB
+- **Geltungsbereich B2B vs. B2C:** Auch im kaufmännischen Verkehr führt ein Aufrechnungsverbot ohne Ausnahme für unbestrittene oder rechtskräftig festgestellte Forderungen nach ständiger BGH-Rechtsprechung zur Gesamtnichtigkeit der Klausel.
+- **URL:** https://clause.kellersystems.dev/klauseln/aufrechnungsverbot-zurueckbehaltungsrecht.html
+
+### Warum unzulässig?
+§ 309 Nr. 3 BGB verbietet Klauseln, die dem Vertragspartner das Recht nehmen, mit unbestrittenen oder rechtskräftigen Forderungen aufzurechnen.
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Dem Kunden ist jede Aufrechnung mit Gegenforderungen sowie die Geltendmachung eines Zurückbehaltungsrechts gegenüber Forderungen des Anbieters ausnahmslos untersagt."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Eine Aufrechnung oder Ausübung von Zurückbehaltungsrechten durch den Kunden ist nur mit unbestrittenen oder rechtskräftig festgestellten Gegenforderungen zulässig.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Darf man im B2B ein Aufrechnungsverbot vereinbaren?
+**Antwort:** Ja, aber zwingend nur mit dem Vorbehalt: 'es sei denn, die Gegenforderung ist unbestritten oder rechtskräftig festgestellt'.
+
+
+---
+
+## Einseitige Leistungs- & Preisänderungsvorbehalte (§ 308 Nr. 4 BGB)
+- **Typ-ID:** `unilateral_change`
+- **Kategorie:** Vertragsänderung
+- **Gesetzliche Grundlage:** § 308 Nr. 4, Nr. 5 BGB, § 307 Abs. 1 BGB
+- **Geltungsbereich B2B vs. B2C:** Einseitige Leistungsänderungen ohne triftigen, im Vertrag konkret genannten Grund sind auch im B2B-Bereich nach § 307 BGB unwirksam.
+- **URL:** https://clause.kellersystems.dev/klauseln/einseitiger-aenderungsvorbehalt-leistungsänderung.html
+
+### Warum unzulässig?
+Eine Klausel, nach der sich der Verwender vorbehält, die versprochene Leistung zu ändern, ist unwirksam, wenn die Änderung unter Berücksichtigung der Interessen des Verwenders für den anderen Teil nicht zumutbar ist (§ 308 Nr. 4 BGB).
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Der Anbieter behält sich das Recht vor, den Leistungsumfang, die technischen Spezifikationen und die vereinbarten Preise jederzeit nach eigenem freiem Ermessen ohne Angabe von Gründen einseitig zu ändern."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Änderungen der vereinbarten Leistungen sind nur zulässig, soweit sie aus triftigem Grund (z. B. Gesetzesänderungen, Sicherheitsupdates) erforderlich und unter Berücksichtigung der Interessen beider Parteien für den Kunden zumutbar sind. Dem Kunden steht bei wesentlichen Änderungen ein Sonderkündigungsrecht zu.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Ist eine Zustimmungsfiktion bei AGB-Änderungen wirksam?
+**Antwort:** Nach dem historischen BGH-Bankenurteil (Az. XI ZR 26/20) sind fingierte Zustimmungen bei weitreichenden Änderungen (Preiserhöhungen, Kernpflichten) in AGB unzulässig.
+
+
+---
+
+## Nachvertragliche Wettbewerbsverbote (§ 307 BGB, § 74 HGB)
+- **Typ-ID:** `non_compete`
+- **Kategorie:** Wettbewerb & Treue
+- **Gesetzliche Grundlage:** § 307 Abs. 1 BGB, § 138 BGB, § 74 ff. HGB analog
+- **Geltungsbereich B2B vs. B2C:** Nachvertragliche Wettbewerbsverbote ohne angemessene finanzielle Entschädigung verstoßen gegen Art. 12 GG und § 307 BGB.
+- **URL:** https://clause.kellersystems.dev/klauseln/nachvertragliches-wettbewerbsverbot.html
+
+### Warum unzulässig?
+Wettbewerbsverbote ohne Karenzentschädigung greifen unzulässig in die Berufsfreiheit ein und sind nach ständiger Rechtsprechung sittenwidrig und unwirksam (§ 138, § 307 BGB).
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Dem Auftragnehmer ist es für die Dauer von 3 Jahren nach Vertragsende weltweit untersagt, für Wettbewerber oder Kunden des Auftraggebers direkt oder indirekt tätig zu werden. Eine finanzielle Karenzentschädigung wird nicht geschuldet."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Ein nachvertragliches Wettbewerbsverbot gilt nur, soweit es auf maximal ein Jahr und auf den sachlich sowie räumlich geschützten Tätigkeitsbereich begrenzt ist und dem Auftragnehmer für die Dauer des Verbots eine monatliche Karenzentschädigung in Höhe von mindestens 50 % der zuletzt bezogenen Vergütung gezahlt wird.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Muss bei Freelancern eine Karenzentschädigung gezahlt werden?
+**Antwort:** Wird ein freier Dienstleister nach Vertragsende an der Ausübung seines Berufs gehindert, ist die Klausel ohne Karenzzahlung analog §§ 74 ff. HGB nach § 138, 307 BGB nichtig.
+
+
+---
+
+## Mitarbeiter-Abwerbeverbote in AGB (§ 307 BGB & § 75f HGB)
+- **Typ-ID:** `non_solicitation`
+- **Kategorie:** Wettbewerb & Treue
+- **Gesetzliche Grundlage:** § 307 Abs. 1 BGB, § 75f HGB, Art. 12 Abs. 1 GG
+- **Geltungsbereich B2B vs. B2C:** Pauschale Einstellungsverbote (die schon die unaufgeforderte Bewerbung eines Mitarbeiters verbieten) sind nach § 75f HGB und § 307 BGB unwirksam.
+- **URL:** https://clause.kellersystems.dev/klauseln/abwerbeverbot-mitarbeiter-freelancer.html
+
+### Warum unzulässig?
+Ein Verbot, das auch die unbeeinflusste Eigenbewerbung eines Mitarbeiters sanktioniert, schränkt dessen freie Arbeitsplatzwahl (Art. 12 GG) unverhältnismäßig ein (§ 307 BGB).
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Dem Kunden ist es untersagt, Mitarbeiter des Anbieters während der Vertragslaufzeit sowie 2 Jahre danach direkt oder indirekt einzustellen, selbst wenn die Initiative vom Mitarbeiter ausgeht. Bei Verstoß ist eine Vertragsstrafe von 50.000 Euro fällig."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Die Parteien verpflichten sich, während der Projektlaufzeit keine Mitarbeiter der jeweils anderen Partei aktiv und gezielt abzuwerben. Die gewöhnliche Reaktion auf allgemeine Stellenanzeigen bleibt hiervon unberührt.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Darf man das aktive Abwerben verbieten?
+**Antwort:** Ja, das gezielte, unlautere Abwerben kann vertraglich untersagt werden. Unzulässig ist aber ein Einstellungsverbot bei Initiativbewerbungen.
+
+
+---
+
+## Verjährungsverkürzungen in AGB (§ 309 Nr. 8 lit. b ff BGB)
+- **Typ-ID:** `statute_of_limitations`
+- **Kategorie:** Haftung & Gewährleistung
+- **Gesetzliche Grundlage:** § 309 Nr. 8 lit. b ff BGB, § 202 Abs. 1 BGB, § 307 Abs. 1 BGB
+- **Geltungsbereich B2B vs. B2C:** Eine Verkürzung der Verjährungsfrist für Schadensersatzansprüche wegen Körperschäden oder grobem Verschulden ist auch im B2B-Bereich nach § 307 BGB i.V.m. § 309 Nr. 7 BGB unzulässig.
+- **URL:** https://clause.kellersystems.dev/klauseln/verjaehrungsverkuerzung-ausschlussfrist.html
+
+### Warum unzulässig?
+Eine pauschale Verkürzung auf unter ein Jahr bei neu hergestellten Sachen verstößt gegen § 309 Nr. 8 lit. b ff BGB. Die Verjährung bei Vorsatz darf nach § 202 Abs. 1 BGB nicht verkürzt werden.
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Sämtliche Ansprüche des Kunden – einschließlich vertraglicher Mängelansprüche und Schadensersatzansprüche jeglicher Art – verjähren innerhalb von 6 Monaten ab Gefahrübergang bzw. Bereitstellung."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Mängelansprüche verjähren in 12 Monaten ab Ablieferung des Werks. Für Schadensersatzansprüche aus der Verletzung des Lebens, des Körpers oder der Gesundheit sowie bei Vorsatz oder grober Fahrlässigkeit gilt die gesetzliche Verjährungsfrist.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Darf die Gewährleistungsfrist im B2B auf 12 Monate gekürzt werden?
+**Antwort:** Ja, bei Kauf- und Werkverträgen zwischen Kaufleuten ist eine Verkürzung auf 12 Monate für Sachmängel grundsätzlich zulässig, sofern Vorsatz und Körperschäden ausgenommen sind.
+
+
+---
+
+## Dynamische URL-Verweise in AGB (BGH III ZR 59/24)
+- **Typ-ID:** `dynamic_url_referral`
+- **Kategorie:** Vertragsabschluss
+- **Gesetzliche Grundlage:** § 305 Abs. 2 BGB, § 307 Abs. 1 S. 2 BGB (BGH III ZR 59/24)
+- **Geltungsbereich B2B vs. B2C:** Verweist ein Vertrag dynamisch auf Online-Dokumente, die der Verwender jederzeit einseitig austauschen kann, verstößt dies auch im B2B gegen das Transparenzgebot.
+- **URL:** https://clause.kellersystems.dev/klauseln/dynamischer-url-verweis-agb.html
+
+### Warum unzulässig?
+Dynamische Verweise ermöglichen dem Anbieter einseitige Änderungen durch die Hintertür und sind nach BGH III ZR 59/24 intransparent und unwirksam.
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Ergänzend gelten unsere Leistungsbeschreibungen, Sicherheitsrichtlinien und Preisverzeichnisse in der jeweils aktuellen Fassung, abrufbar unter www.provider.example/terms."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Es gilt die Leistungsbeschreibung in der bei Vertragsschluss gültigen Fassung, die dem Kunden vorab als unveränderliche PDF-Anlage zur Verfügung gestellt wurde.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Wie verlinkt man Richtlinien rechtssicher?
+**Antwort:** Als statische Version mit festem Datum/Versionsstand (z. B. 'Stand 01.01.2026') und Bereitstellung als dauerhafter Datenträger (PDF).
+
+
+---
+
+## „As-Is“-Klauseln & Gewährleistungsausschluss bei Software
+- **Typ-ID:** `as_is_software_disclaimer`
+- **Kategorie:** IT & Software
+- **Gesetzliche Grundlage:** § 309 Nr. 8 lit. b aa BGB, § 536d BGB, § 307 Abs. 2 Nr. 2 BGB
+- **Geltungsbereich B2B vs. B2C:** Auch bei B2B-Standardsoftware darf die Mängelhaftung für Kernfunktionen nicht formularmäßig vollständig abbedungen werden.
+- **URL:** https://clause.kellersystems.dev/klauseln/as-is-klausel-software-gewaehrleistungsausschluss.html
+
+### Warum unzulässig?
+US-typische 'As-Is'-Klauseln widersprechen dem deutschen Leitbild des Kauf- bzw. Miet- und Werkvertragsrechts und sind nach § 307 Abs. 2 Nr. 2 BGB unwirksam.
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Die Software wird dem Kunden 'wie besehen' ('as is') und ohne jegliche Gewährleistung für Funktionalität, Fehlerfreiheit oder Eignung für einen bestimmten Zweck überlassen."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Der Anbieter gewährleistet, dass die Software den in der Leistungsbeschreibung vereinbarten Spezifikationen im Wesentlichen entspricht. Bei Sach- und Rechtsmängeln gelten die gesetzlichen Bestimmungen mit der Maßgabe, dass Nacherfüllung nach Wahl des Anbieters durch Nachbesserung oder Ersatzlieferung erfolgt.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Darf Beta-Software als 'as is' deklariert werden?
+**Antwort:** Bei unentgeltlicher Bereitstellung (Schenkung/Leihe) haftet der Anbieter nur für Arglist und grobe Fahrlässigkeit (§ 521, 599 BGB). Bei Bezahlung greift zwingendes Gewährleistungsrecht.
+
+
+---
+
+## Daten-Lock-in & Entgelte für Datenexport (§ 307 BGB, Art. 20 DSGVO)
+- **Typ-ID:** `data_lockin`
+- **Kategorie:** Datenschutz & Cloud
+- **Gesetzliche Grundlage:** § 307 Abs. 1, Abs. 2 Nr. 2 BGB, Art. 20, Art. 28 Abs. 3 lit. g DSGVO
+- **Geltungsbereich B2B vs. B2C:** Die Verpflichtung zur Rückgabe oder Löschung von Kundendaten nach Auftragsverarbeitung (Art. 28 Abs. 3 DSGVO) ist zwingendes Recht und darf nicht durch prohibitive Exportentgelte vereitelt werden.
+- **URL:** https://clause.kellersystems.dev/klauseln/daten-lock-in-datenherausgabe-dsgvo.html
+
+### Warum unzulässig?
+Klauseln, die den Zugriff auf die eigenen Unternehmensdaten nach Vertragsende blockieren oder an willkürliche Zusatzentgelte knüpfen, benachteiligen den Kunden grob unangemessen (§ 307 BGB).
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Bei Vertragsende hat der Kunde keinen Anspruch auf Herausgabe seiner Daten in einem maschinenlesbaren Format. Ein Datenexport wird nur gegen Zahlung einer Sondergebühr von 5.000 Euro nach Aufwand durchgeführt."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Bei Beendigung des Vertrages stellt der Anbieter dem Kunden dessen gespeicherte Geschäftsdaten in einem gängigen, offenen und maschinenlesbaren Standardformat (z. B. CSV, JSON) ohne gesonderte Vergütung zum Download bereit.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Muss der Datenexport im Standardformat kostenlos sein?
+**Antwort:** Grundsätzlich ja, da die Herausgabe bzw. Bereitstellung der Daten bei Vertragsende eine gesetzliche Nebenpflicht darstellt.
+
+
+---
+
+## Salvatorische Klauseln & Geltungserhaltende Reduktion (§ 306 BGB)
+- **Typ-ID:** `salvatorische_klausel_falle`
+- **Kategorie:** Schlussbestimmungen
+- **Gesetzliche Grundlage:** § 306 Abs. 1, Abs. 2 BGB, § 307 Abs. 1 S. 2 BGB
+- **Geltungsbereich B2B vs. B2C:** Das Verbot der geltungserhaltenden Reduktion gilt uneingeschränkt auch im B2B-Verkehr zwischen Kaufleuten.
+- **URL:** https://clause.kellersystems.dev/klauseln/salvatorische-klausel-geltungserhaltende-reduktion.html
+
+### Warum unzulässig?
+Ist eine AGB-Klausel unwirksam, tritt an ihre Stelle das Gesetz (§ 306 Abs. 2 BGB). Der Versuch, eine unwirksame Klausel auf das gerade noch zulässige Maß zurückzustutzen, ist verboten.
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Sollten einzelne Bestimmungen dieser AGB unwirksam sein, so verpflichten sich die Parteien, die unwirksame Bestimmung durch eine solche wirksame zu ersetzen, die dem wirtschaftlichen Zweck der unwirksamen Bestimmung am nächsten kommt."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Sollten einzelne Bestimmungen dieses Vertrages unwirksam sein oder werden, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt. Anstelle der unwirksamen Bestimmung gelten die gesetzlichen Vorschriften (§ 306 Abs. 2 BGB).
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Rettet eine salvatorische Klausel eine unwirksame AGB-Klausel?
+**Antwort:** Nein, niemals. Die Klausel fällt ersatzlos weg und das dispositive Gesetzesrecht füllt die Lücke.
+
+
+---
+
+## Vollständigkeitsklauseln (Entire Agreement) & Mündliche Abreden (§ 305b BGB)
+- **Typ-ID:** `entire_agreement`
+- **Kategorie:** Vertragsabschluss
+- **Gesetzliche Grundlage:** § 305b BGB, § 307 Abs. 1 BGB, § 309 Nr. 12 lit. b BGB
+- **Geltungsbereich B2B vs. B2C:** Nach ständiger BGH-Rechtsprechung hat die Individualabrede (§ 305b BGB) immer zwingenden Vorrang vor AGB, auch im Handelsverkehr.
+- **URL:** https://clause.kellersystems.dev/klauseln/vollstaendigkeitsklausel-entire-agreement.html
+
+### Warum unzulässig?
+Eine Klausel, die individuelle Vereinbarungen der Parteien für unwirksam erklärt, verstößt gegen das zwingende Prinzip des § 305b BGB (Vorrang der Individualabrede).
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Dieser Vertrag enthält alle Vereinbarungen der Parteien vollständig. Mündliche Nebenabreden, E-Mail-Absprachen und vorvertragliche Zusicherungen unseres Vertriebs sind gegenstandslos und unwirksam."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Mündliche Vereinbarungen vor oder bei Vertragsschluss bedürfen zu Beweiszwecken der schriftlichen Bestätigung; individuelle Absprachen der Parteien haben jedoch stets Vorrang vor diesen Allgemeinen Geschäftsbedingungen.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Was gilt, wenn der Vertrieb mündlich Rabatte versprochen hat?
+**Antwort:** Die mündliche Zusage ist wirksam (§ 305b BGB). Eine anderslautende AGB-Klausel wird dadurch verdrängt.
+
+
+---
+
+## Preiserhöhungsklauseln & Preisanpassungsautomatik (§ 309 Nr. 1 BGB)
+- **Typ-ID:** `price_escalation`
+- **Kategorie:** Zahlung & Verzug
+- **Gesetzliche Grundlage:** § 309 Nr. 1 BGB, § 307 Abs. 1 S. 1, S. 2 BGB
+- **Geltungsbereich B2B vs. B2C:** Eine Preisanpassungsklausel im B2B ist nur wirksam, wenn sie auch Kostensenkungen weitergibt und dem Kunden bei übermäßigen Erhöhungen ein Sonderkündigungsrecht einräumt.
+- **URL:** https://clause.kellersystems.dev/klauseln/preiserhoehungsklausel-indexklausel.html
+
+### Warum unzulässig?
+Einseitige Preiserhöhungen ohne sachliche Kriterien und ohne Weitergabe von Kostensenkungen verletzen das Äquivalenzprinzip und sind nach § 307 BGB unwirksam.
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Der Anbieter ist berechtigt, die monatlichen Nutzungsgebühren jederzeit einseitig um bis zu 15 % pro Jahr zu erhöhen, um gestiegene Personalkosten auszugleichen. Ein Kündigungsrecht des Kunden besteht hierbei nicht."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Der Anbieter kann die Gebühren bei nachweislich gestiegenen Gesamtkosten (z. B. Energie, Hosting, Lizenzen) mit einer Ankündigungsfrist von 6 Wochen anpassen. Bei einer Erhöhung von mehr als 5 % steht dem Kunden ein Sonderkündigungsrecht zu.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Muss bei einer Preiserhöhung ein Kündigungsrecht bestehen?
+**Antwort:** Ja, wenn die Preiserhöhung nicht auf einem festen, objektiven Verbraucherpreisindex basiert, ist ein Sonderkündigungsrecht zwingend erforderlich.
+
+
+---
+
+## Leistungssperre ohne Vorankündigung (§ 320 BGB & § 307 BGB)
+- **Typ-ID:** `service_suspension`
+- **Kategorie:** Vertragsdurchführung
+- **Gesetzliche Grundlage:** § 320 Abs. 2 BGB, § 307 Abs. 1, Abs. 2 Nr. 1 BGB
+- **Geltungsbereich B2B vs. B2C:** Eine fristlose Sperre ohne vorherige Androhung und bei geringfügigen Rückständen ist auch gegenüber Unternehmen unverhältnismäßig und unwirksam.
+- **URL:** https://clause.kellersystems.dev/klauseln/leistungssperre-diensteinbettung-ohne-abmahnung.html
+
+### Warum unzulässig?
+Eine sofortige Dienstsperre ohne Mahnung und Mindestverzugssumme verstößt gegen das Gebot von Treu und Glauben (§ 320 Abs. 2, § 307 BGB).
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Gerät der Kunde mit auch nur einem Teilbetrag in Verzug, ist der Anbieter berechtigt, den Zugang zum System sofort und ohne vorherige Androhung vollständig zu sperren."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Befindet sich der Kunde mit einem Betrag von mindestens zwei Monatsentgelten in Verzug, kann der Anbieter nach erfolgloser Mahnung und unter Androhung der Sperre mit einer Frist von mindestens zwei Wochen den Zugang vorübergehend sperren.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Darf ein Cloud-ERP bei 50 € Zahlungsrückstand abgeschaltet werden?
+**Antwort:** Nein. Eine solche Sperre ist grob unverhältnismäßig und löst Schadensersatzansprüche des Kunden aus.
+
+
+---
+
+## Freie Subunternehmerbeauftragung & DSGVO-Vorgaben
+- **Typ-ID:** `subcontractor_uncontrolled`
+- **Kategorie:** Datenschutz & Cloud
+- **Gesetzliche Grundlage:** § 307 Abs. 1 BGB, Art. 28 Abs. 2 DSGVO
+- **Geltungsbereich B2B vs. B2C:** Bei der Verarbeitung personenbezogener Daten (AVV) ist der unkontrollierte Einsatz von Unterauftragsverarbeitern nach Art. 28 Abs. 2 DSGVO verboten.
+- **URL:** https://clause.kellersystems.dev/klauseln/subunternehmer-beauftragung-ohne-zustimmung.html
+
+### Warum unzulässig?
+Ein unbeschränkter Freifahrtschein zur Subunternehmerbeauftragung hebelt Geheimhaltung und Datenschutz zwingend aus und ist nach § 307 BGB und DSGVO unzulässig.
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Der Anbieter ist berechtigt, zur Erfüllung sämtlicher vertraglicher Pflichten nach freiem Ermessen beliebige Subunternehmer im In- und Ausland ohne vorherige Information oder Zustimmung des Kunden einzusetzen."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Der Einsatz von Subunternehmern bedarf der vorherigen Zustimmung des Auftraggebers. Bei der Verarbeitung personenbezogener Daten informiert der Anbieter den Kunden vorab mit angemessener Frist über geplante Änderungen.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Darf der Kunde einen Subunternehmer ablehnen?
+**Antwort:** Ja, im Datenschutzrecht (Art. 28 Abs. 2 DSGVO) besteht ein Widerspruchsrecht gegen neue Unterauftragsverarbeiter.
+
+
+---
+
+## Übertragung aller urheberrechtlichen Rechte in AGB (§ 307 BGB)
+- **Typ-ID:** `data_grant`
+- **Kategorie:** arbeitsvertrag
+- **Gesetzliche Grundlage:** § 43 UrhG, § 31 Abs. 2 UrhG, § 307 Abs. 1 BGB
+- **Geltungsbereich B2B vs. B2C:** Unterliegt der Inhaltskontrolle nach § 307 BGB auch im unternehmerischen Geschäftsverkehr.
+- **URL:** https://clause.kellersystems.dev/klauseln/data-grant.html
+
+### Warum unzulässig?
+Die pauschale Übertragung aller Rechte auch für künftige und unbekannte Nutzungsarten geht über das Arbeitsverhältnis hinaus und ist unangemessen.
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Der Arbeitnehmer überträgt dem Arbeitgeber alle urheberrechtlichen Rechte an den im Rahmen der Tätigkeit erstellten Werken, einschließlich erst künftig entstehender Werke und noch unbekannter Nutzungsarten."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Ausgewogene vertragliche Regelung zu Übertragung aller urheberrechtlichen Rechte unter Wahrung von Treu und Glauben.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Ist eine solche Klausel im B2B-Bereich zulässig?
+**Antwort:** Auch zwischen Unternehmen führt eine unangemessene Benachteiligung nach § 307 BGB zur Unwirksamkeit.
+
+
+---
+
+## Ausschluss von Verzugszinsen in AGB (§ 307 BGB)
+- **Typ-ID:** `default_interest`
+- **Kategorie:** arbeitsvertrag
+- **Gesetzliche Grundlage:** § 288 BGB, § 307 Abs. 1 BGB
+- **Geltungsbereich B2B vs. B2C:** Unterliegt der Inhaltskontrolle nach § 307 BGB auch im unternehmerischen Geschäftsverkehr.
+- **URL:** https://clause.kellersystems.dev/klauseln/default-interest.html
+
+### Warum unzulässig?
+Der Ausschluss von Verzugszinsen bei verspäteter Entgeltzahlung ist nach dem Gesetz unzulässig und nimmt dem Arbeitnehmer jedes Druckmittel.
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Verzugszinsen werden bei verspäteter Auszahlung des Entgelts nicht gezahlt; der gesetzliche Anspruch von 9 Prozentpunkten über dem Basiszinssatz ist ausgeschlossen."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Ausgewogene vertragliche Regelung zu Ausschluss von Verzugszinsen unter Wahrung von Treu und Glauben.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Ist eine solche Klausel im B2B-Bereich zulässig?
+**Antwort:** Auch zwischen Unternehmen führt eine unangemessene Benachteiligung nach § 307 BGB zur Unwirksamkeit.
+
+
+---
+
+## Beweislast für Schadensursachen in AGB (§ 307 BGB)
+- **Typ-ID:** `burden_of_proof`
+- **Kategorie:** arbeitsvertrag
+- **Gesetzliche Grundlage:** § 309 Nr. 12 BGB, § 307 Abs. 1 BGB
+- **Geltungsbereich B2B vs. B2C:** Unterliegt der Inhaltskontrolle nach § 307 BGB auch im unternehmerischen Geschäftsverkehr.
+- **URL:** https://clause.kellersystems.dev/klauseln/burden-of-proof.html
+
+### Warum unzulässig?
+Die Verlagerung der Beweislast auf den Arbeitnehmer kehrt die gesetzliche Risikoverteilung um und ist unzulässig.
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Die Beweislast für die Ursache eines Schadens, der bei der Erbringung der Arbeitsleistung entsteht, obliegt dem Arbeitnehmer."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Ausgewogene vertragliche Regelung zu Beweislast für Schadensursachen unter Wahrung von Treu und Glauben.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Ist eine solche Klausel im B2B-Bereich zulässig?
+**Antwort:** Auch zwischen Unternehmen führt eine unangemessene Benachteiligung nach § 307 BGB zur Unwirksamkeit.
+
+
+---
+
+## Haftung für Erfüllungsgehilfen nur bei Auswahlverschulden in AGB (§ 307 BGB)
+- **Typ-ID:** `vicarious_agents`
+- **Kategorie:** aufhebungs_abfindung
+- **Gesetzliche Grundlage:** § 278 BGB, § 307 Abs. 2 Nr. 1 BGB
+- **Geltungsbereich B2B vs. B2C:** Unterliegt der Inhaltskontrolle nach § 307 BGB auch im unternehmerischen Geschäftsverkehr.
+- **URL:** https://clause.kellersystems.dev/klauseln/vicarious-agents.html
+
+### Warum unzulässig?
+Der Anbieter entkommt der gesetzlichen Einstandspflicht für seine Gehilfen und verlagert das Ausführungsrisiko vollständig auf den Arbeitnehmer.
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Der Anbieter der Outplacement-Leistungen haftet für das Verschulden von Erfüllungsgehilfen und Subunternehmern nur bei Auswahlverschulden."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Ausgewogene vertragliche Regelung zu Haftung für Erfüllungsgehilfen nur bei Auswahlverschulden unter Wahrung von Treu und Glauben.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Ist eine solche Klausel im B2B-Bereich zulässig?
+**Antwort:** Auch zwischen Unternehmen führt eine unangemessene Benachteiligung nach § 307 BGB zur Unwirksamkeit.
+
+
+---
+
+## Jederzeitige Auswertung dienstlicher Systeme in AGB (§ 307 BGB)
+- **Typ-ID:** `unreasonable_audit`
+- **Kategorie:** arbeitsvertrag
+- **Gesetzliche Grundlage:** § 307 Abs. 1 BGB, § 26 Abs. 1 BDSG
+- **Geltungsbereich B2B vs. B2C:** Unterliegt der Inhaltskontrolle nach § 307 BGB auch im unternehmerischen Geschäftsverkehr.
+- **URL:** https://clause.kellersystems.dev/klauseln/unreasonable-audit.html
+
+### Warum unzulässig?
+Unangekündigte und jederzeitige Kontrollen der dienstlichen Systeme greifen unverhältnismäßig in das Persönlichkeitsrecht des Arbeitnehmers ein.
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Der Arbeitgeber ist berechtigt, die Nutzerkonten, IT-Systeme und dienstlichen Endgeräte des Arbeitnehmers jederzeit ohne Vorankündigung zu überprüfen und auszuwerten."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Ausgewogene vertragliche Regelung zu Jederzeitige Auswertung dienstlicher Systeme unter Wahrung von Treu und Glauben.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Ist eine solche Klausel im B2B-Bereich zulässig?
+**Antwort:** Auch zwischen Unternehmen führt eine unangemessene Benachteiligung nach § 307 BGB zur Unwirksamkeit.
+
+
+---
+
+## Verschuldensunabhängige Freistellung durch den Arbeitnehmer in AGB (§ 307 BGB)
+- **Typ-ID:** `third_party_indemnity`
+- **Kategorie:** arbeitsvertrag
+- **Gesetzliche Grundlage:** § 307 Abs. 1, Abs. 2 Nr. 1 BGB
+- **Geltungsbereich B2B vs. B2C:** Unterliegt der Inhaltskontrolle nach § 307 BGB auch im unternehmerischen Geschäftsverkehr.
+- **URL:** https://clause.kellersystems.dev/klauseln/third-party-indemnity.html
+
+### Warum unzulässig?
+Die verschuldensunabhängige Freistellungsverpflichtung bürdet dem Arbeitnehmer ein Haftungsrisiko auf, das er nicht beherrschen kann.
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Der Arbeitnehmer verpflichtet sich, den Arbeitgeber von sämtlichen Ansprüchen Dritter freizustellen, die im Zusammenhang mit der Ausübung der Tätigkeit geltend gemacht werden, ohne dass es auf ein Verschulden des Arbeitnehmers ankommt."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Ausgewogene vertragliche Regelung zu Verschuldensunabhängige Freistellung durch den Arbeitnehmer unter Wahrung von Treu und Glauben.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Ist eine solche Klausel im B2B-Bereich zulässig?
+**Antwort:** Auch zwischen Unternehmen führt eine unangemessene Benachteiligung nach § 307 BGB zur Unwirksamkeit.
+
+
+---
+
+## Ausschluss der ordentlichen Kündigung in AGB (§ 307 BGB)
+- **Typ-ID:** `asymmetric_termination`
+- **Kategorie:** arbeitsvertrag
+- **Gesetzliche Grundlage:** § 620 Abs. 2 BGB, § 307 Abs. 1 BGB
+- **Geltungsbereich B2B vs. B2C:** Unterliegt der Inhaltskontrolle nach § 307 BGB auch im unternehmerischen Geschäftsverkehr.
+- **URL:** https://clause.kellersystems.dev/klauseln/asymmetric-termination.html
+
+### Warum unzulässig?
+Ein unbefristetes Arbeitsverhältnis ohne jedes ordentliche Kündigungsrecht knebelt den Arbeitnehmer, weil er aus dem Vertrag nicht mehr herauskommt.
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Die ordentliche Kündigung des Arbeitsverhältnisses ist für beide Parteien ausgeschlossen; der Arbeitsvertrag läuft auf unbestimmte Zeit und kann ausschließlich einvernehmlich beendet werden."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Ausgewogene vertragliche Regelung zu Ausschluss der ordentlichen Kündigung unter Wahrung von Treu und Glauben.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Ist eine solche Klausel im B2B-Bereich zulässig?
+**Antwort:** Auch zwischen Unternehmen führt eine unangemessene Benachteiligung nach § 307 BGB zur Unwirksamkeit.
+
+
+---
+
+## Abtretung von Entgeltansprüchen nur mit Zustimmung in AGB (§ 307 BGB)
+- **Typ-ID:** `assignment_restriction`
+- **Kategorie:** arbeitsvertrag
+- **Gesetzliche Grundlage:** § 399 Alt. 2 BGB, § 307 Abs. 1 BGB
+- **Geltungsbereich B2B vs. B2C:** Unterliegt der Inhaltskontrolle nach § 307 BGB auch im unternehmerischen Geschäftsverkehr.
+- **URL:** https://clause.kellersystems.dev/klauseln/assignment-restriction.html
+
+### Warum unzulässig?
+Das Zustimmungserfordernis für Entgeltforderungen hindert den Arbeitnehmer, seine Ansprüche zu verwerten oder abzusichern.
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Die Abtretung von Ansprüchen auf Entgelt sowie die Übertragung von Rechten aus diesem Arbeitsverhältnis bedarf der vorherigen Zustimmung des Arbeitgebers."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Ausgewogene vertragliche Regelung zu Abtretung von Entgeltansprüchen nur mit Zustimmung unter Wahrung von Treu und Glauben.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Ist eine solche Klausel im B2B-Bereich zulässig?
+**Antwort:** Auch zwischen Unternehmen führt eine unangemessene Benachteiligung nach § 307 BGB zur Unwirksamkeit.
+
+
+---
+
+## Einseitige Force-Majeure-Klausel in AGB (§ 307 BGB)
+- **Typ-ID:** `force_majeure_asymmetry`
+- **Kategorie:** b2b_agb
+- **Gesetzliche Grundlage:** § 307 Abs. 1, Abs. 2 Nr. 1 BGB
+- **Geltungsbereich B2B vs. B2C:** Unterliegt der Inhaltskontrolle nach § 307 BGB auch im unternehmerischen Geschäftsverkehr.
+- **URL:** https://clause.kellersystems.dev/klauseln/force-majeure-asymmetry.html
+
+### Warum unzulässig?
+Der Anbieter muss bei Störungen nicht leisten, kassiert aber weiter, ohne dass dem Kunden ein Kündigungsrecht zusteht.
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Bei höherer Gewalt wird der Anbieter von seiner Leistungspflicht befreit; die Zahlungspflicht des Kunden bleibt für die Dauer des Ereignisses unverändert bestehen."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Ausgewogene vertragliche Regelung zu Einseitige Force-Majeure-Klausel unter Wahrung von Treu und Glauben.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Ist eine solche Klausel im B2B-Bereich zulässig?
+**Antwort:** Auch zwischen Unternehmen führt eine unangemessene Benachteiligung nach § 307 BGB zur Unwirksamkeit.
+
+
+---
+
+## Ordentliches Kündigungsrecht nur für den Anbieter in AGB (§ 307 BGB)
+- **Typ-ID:** `unilateral_convenience_termination`
+- **Kategorie:** b2b_agb
+- **Gesetzliche Grundlage:** § 307 Abs. 1 S. 1 BGB
+- **Geltungsbereich B2B vs. B2C:** Unterliegt der Inhaltskontrolle nach § 307 BGB auch im unternehmerischen Geschäftsverkehr.
+- **URL:** https://clause.kellersystems.dev/klauseln/unilateral-convenience-termination.html
+
+### Warum unzulässig?
+Nur eine Partei kann sich ohne Grund lösen, während die andere bis zum vereinbarten Laufzeitende festgehalten wird.
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Die ordentliche Kündigung dieses Vertrages steht nur dem Anbieter zu; der Kunde ist für die gesamte vereinbarte Laufzeit an den Vertrag gebunden."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Ausgewogene vertragliche Regelung zu Ordentliches Kündigungsrecht nur für den Anbieter unter Wahrung von Treu und Glauben.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Ist eine solche Klausel im B2B-Bereich zulässig?
+**Antwort:** Auch zwischen Unternehmen führt eine unangemessene Benachteiligung nach § 307 BGB zur Unwirksamkeit.
+
+
+---
+
+## Zeitlich unbeschränkte Verschwiegenheitspflicht in AGB (§ 307 BGB)
+- **Typ-ID:** `excessive_survival`
+- **Kategorie:** arbeitsvertrag
+- **Gesetzliche Grundlage:** § 307 Abs. 1 BGB
+- **Geltungsbereich B2B vs. B2C:** Unterliegt der Inhaltskontrolle nach § 307 BGB auch im unternehmerischen Geschäftsverkehr.
+- **URL:** https://clause.kellersystems.dev/klauseln/excessive-survival.html
+
+### Warum unzulässig?
+Eine zeitlich unbeschränkte Verschwiegenheitspflicht auch für offenkundige Informationen bindet den Arbeitnehmer übermäßig über das Vertragsende hinaus.
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Die Verschwiegenheitspflichten des Arbeitnehmers bestehen zeitlich unbeschränkt fort, ohne Rücksicht darauf, ob die Informationen offenkundig geworden sind."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Ausgewogene vertragliche Regelung zu Zeitlich unbeschränkte Verschwiegenheitspflicht unter Wahrung von Treu und Glauben.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Ist eine solche Klausel im B2B-Bereich zulässig?
+**Antwort:** Auch zwischen Unternehmen führt eine unangemessene Benachteiligung nach § 307 BGB zur Unwirksamkeit.
+
+
+---
+
+## Kontokorrent-Eigentumsvorbehalt in AGB (§ 307 BGB)
+- **Typ-ID:** `extended_retention_of_title`
+- **Kategorie:** b2b_agb
+- **Gesetzliche Grundlage:** § 449 Abs. 3 BGB, § 307 Abs. 1, Abs. 2 Nr. 1 BGB
+- **Geltungsbereich B2B vs. B2C:** Unterliegt der Inhaltskontrolle nach § 307 BGB auch im unternehmerischen Geschäftsverkehr.
+- **URL:** https://clause.kellersystems.dev/klauseln/extended-retention-of-title.html
+
+### Warum unzulässig?
+Der Anbieter behält sich das Eigentum auch an längst bezahlten Waren, solange irgendeine andere Forderung aus der Geschäftsbeziehung offen steht.
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Der Eigentumsvorbehalt erstreckt sich auf alle offenen Forderungen aus der gesamten Geschäftsbeziehung; die Ware bleibt unser Eigentum bis zur vollständigen Begleichung sämtlicher Verbindlichkeiten des Kunden."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Ausgewogene vertragliche Regelung zu Kontokorrent-Eigentumsvorbehalt unter Wahrung von Treu und Glauben.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Ist eine solche Klausel im B2B-Bereich zulässig?
+**Antwort:** Auch zwischen Unternehmen führt eine unangemessene Benachteiligung nach § 307 BGB zur Unwirksamkeit.
+
+
+---
+
+## Beweismonopol durch Systemprotokolle in AGB (§ 307 BGB)
+- **Typ-ID:** `audit_log_manipulation`
+- **Kategorie:** arbeitsvertrag
+- **Gesetzliche Grundlage:** § 309 Nr. 12 BGB, § 307 Abs. 1, Abs. 2 Nr. 1 BGB
+- **Geltungsbereich B2B vs. B2C:** Unterliegt der Inhaltskontrolle nach § 307 BGB auch im unternehmerischen Geschäftsverkehr.
+- **URL:** https://clause.kellersystems.dev/klauseln/audit-log-manipulation.html
+
+### Warum unzulässig?
+Ein unwiderlegbarer Vollbeweis aus Arbeitgeberprotokollen nimmt dem Arbeitnehmer jede Möglichkeit des Gegenbeweises.
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Die Systemprotokolle des Arbeitgebers gelten als unwiderlegbarer Vollbeweis für Umfang und Lage der vom Arbeitnehmer erbrachten Arbeitszeit."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Ausgewogene vertragliche Regelung zu Beweismonopol durch Systemprotokolle unter Wahrung von Treu und Glauben.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Ist eine solche Klausel im B2B-Bereich zulässig?
+**Antwort:** Auch zwischen Unternehmen führt eine unangemessene Benachteiligung nach § 307 BGB zur Unwirksamkeit.
+
+
+---
+
+## Insolvenzabhängige Lösungsklausel in AGB (§ 307 BGB)
+- **Typ-ID:** `insolvency_termination`
+- **Kategorie:** arbeitsvertrag
+- **Gesetzliche Grundlage:** § 119 InsO, § 307 Abs. 1 BGB
+- **Geltungsbereich B2B vs. B2C:** Unterliegt der Inhaltskontrolle nach § 307 BGB auch im unternehmerischen Geschäftsverkehr.
+- **URL:** https://clause.kellersystems.dev/klauseln/insolvency-termination.html
+
+### Warum unzulässig?
+Eine insolvenzabhängige Lösungsklausel ist unwirksam und entzieht dem Arbeitnehmer den Schutz des Insolvenzverfahrens.
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Der Arbeitsvertrag endet automatisch mit dem Antrag auf Eröffnung eines Insolvenzverfahrens über das Vermögen des Arbeitgebers."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Ausgewogene vertragliche Regelung zu Insolvenzabhängige Lösungsklausel unter Wahrung von Treu und Glauben.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Ist eine solche Klausel im B2B-Bereich zulässig?
+**Antwort:** Auch zwischen Unternehmen führt eine unangemessene Benachteiligung nach § 307 BGB zur Unwirksamkeit.
+
+
+---
+
+## Rückwirkende Steuernachforderungsabwälzung in AGB (§ 307 BGB)
+- **Typ-ID:** `tax_indemnity_shift`
+- **Kategorie:** b2b_agb
+- **Gesetzliche Grundlage:** § 307 Abs. 1 S. 1 BGB
+- **Geltungsbereich B2B vs. B2C:** Unterliegt der Inhaltskontrolle nach § 307 BGB auch im unternehmerischen Geschäftsverkehr.
+- **URL:** https://clause.kellersystems.dev/klauseln/tax-indemnity-shift.html
+
+### Warum unzulässig?
+Steuerliche Risiken aus der Sphäre des Anbieters werden rückwirkend und verschuldensunabhängig auf den Kunden verlagert.
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Nachträglich festgesetzte Umsatzsteuernachforderungen sowie Quellensteuernachforderungen sind vollumfänglich vom Kunden zu erstatten, unabhängig vom Grund der steuerlichen Neubewertung."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Ausgewogene vertragliche Regelung zu Rückwirkende Steuernachforderungsabwälzung unter Wahrung von Treu und Glauben.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Ist eine solche Klausel im B2B-Bereich zulässig?
+**Antwort:** Auch zwischen Unternehmen führt eine unangemessene Benachteiligung nach § 307 BGB zur Unwirksamkeit.
+
+
+---
+
+## Einseitige Vertraulichkeitspflicht des Auftraggebers in AGB (§ 307 BGB)
+- **Typ-ID:** `asymmetric_confidentiality`
+- **Kategorie:** arbeitsvertrag
+- **Gesetzliche Grundlage:** § 307 Abs. 1 BGB, § 2 GeschGehG
+- **Geltungsbereich B2B vs. B2C:** Unterliegt der Inhaltskontrolle nach § 307 BGB auch im unternehmerischen Geschäftsverkehr.
+- **URL:** https://clause.kellersystems.dev/klauseln/asymmetric-confidentiality.html
+
+### Warum unzulässig?
+Die einseitige Vertraulichkeitspflicht schützt nur den Auftragnehmer und lässt Kundendaten ungeschützt.
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "In diesem Einsatzvertrag verpflichtet sich der Auftraggeber, sämtliche Informationen über die Zusammenarbeit streng vertraulich zu behandeln, während der Auftragnehmer zur Weitergabe an Dritte berechtigt bleibt."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Ausgewogene vertragliche Regelung zu Einseitige Vertraulichkeitspflicht des Auftraggebers unter Wahrung von Treu und Glauben.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Ist eine solche Klausel im B2B-Bereich zulässig?
+**Antwort:** Auch zwischen Unternehmen führt eine unangemessene Benachteiligung nach § 307 BGB zur Unwirksamkeit.
+
+
+---
+
+## Referenz- und Logonutzung ohne Freigabe in AGB (§ 307 BGB)
+- **Typ-ID:** `marketing_reference`
+- **Kategorie:** b2b_agb
+- **Gesetzliche Grundlage:** § 307 Abs. 1 S. 1 BGB
+- **Geltungsbereich B2B vs. B2C:** Unterliegt der Inhaltskontrolle nach § 307 BGB auch im unternehmerischen Geschäftsverkehr.
+- **URL:** https://clause.kellersystems.dev/klauseln/marketing-reference.html
+
+### Warum unzulässig?
+Der Anbieter darf Marke und Firmenname des Kunden ohne Einzelfreigabe und ohne Widerrufsmöglichkeit für eigene Werbung einsetzen.
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Der Anbieter ist berechtigt, den Kunden als Referenzkunden zu benennen und dessen Firmenname, Bildmarke und Logo zu Werbezwecken zu verwenden; die Nutzung ist zeitlich und räumlich unbeschränkt."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Ausgewogene vertragliche Regelung zu Referenz- und Logonutzung ohne Freigabe unter Wahrung von Treu und Glauben.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Ist eine solche Klausel im B2B-Bereich zulässig?
+**Antwort:** Auch zwischen Unternehmen führt eine unangemessene Benachteiligung nach § 307 BGB zur Unwirksamkeit.
+
+
+---
+
+## Unentgeltliche Aneignung von Verbesserungsvorschlägen in AGB (§ 307 BGB)
+- **Typ-ID:** `feedback_ip_grab`
+- **Kategorie:** arbeitsvertrag
+- **Gesetzliche Grundlage:** § 307 Abs. 1 BGB, § 43 UrhG
+- **Geltungsbereich B2B vs. B2C:** Unterliegt der Inhaltskontrolle nach § 307 BGB auch im unternehmerischen Geschäftsverkehr.
+- **URL:** https://clause.kellersystems.dev/klauseln/feedback-ip-grab.html
+
+### Warum unzulässig?
+Die unentgeltliche Aneignung von Verbesserungsvorschlägen schließt Vergütungsansprüche des Arbeitnehmers aus und ist unangemessen.
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Verbesserungsvorschläge, Anregungen und Prozessideen des Arbeitnehmers gehen unentgeltlich in das Eigentum des Arbeitgebers über; ein Anspruch auf Vergütung besteht nicht."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Ausgewogene vertragliche Regelung zu Unentgeltliche Aneignung von Verbesserungsvorschlägen unter Wahrung von Treu und Glauben.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Ist eine solche Klausel im B2B-Bereich zulässig?
+**Antwort:** Auch zwischen Unternehmen führt eine unangemessene Benachteiligung nach § 307 BGB zur Unwirksamkeit.
+
+
+---
+
+## Zugangsfiktion für Arbeitgebererklärungen in AGB (§ 307 BGB)
+- **Typ-ID:** `fictitious_receipt`
+- **Kategorie:** arbeitsvertrag
+- **Gesetzliche Grundlage:** § 308 Nr. 6 BGB, § 130 Abs. 1 BGB
+- **Geltungsbereich B2B vs. B2C:** Unterliegt der Inhaltskontrolle nach § 307 BGB auch im unternehmerischen Geschäftsverkehr.
+- **URL:** https://clause.kellersystems.dev/klauseln/fictitious-receipt.html
+
+### Warum unzulässig?
+Die Zugangsfiktion lässt Fristen auch dann laufen, wenn den Arbeitnehmer die Erklärung nie erreicht hat.
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Erklärungen des Arbeitgebers gelten nach Absendung per E-Mail als zugegangen, unabhängig vom tatsächlichen Zugang beim Arbeitnehmer."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Ausgewogene vertragliche Regelung zu Zugangsfiktion für Arbeitgebererklärungen unter Wahrung von Treu und Glauben.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Ist eine solche Klausel im B2B-Bereich zulässig?
+**Antwort:** Auch zwischen Unternehmen führt eine unangemessene Benachteiligung nach § 307 BGB zur Unwirksamkeit.
+
+
+---
+
+## Unverbindliche Verfügbarkeitszusage in AGB (§ 307 BGB)
+- **Typ-ID:** `unverbindliche_sla_falle`
+- **Kategorie:** b2b_agb
+- **Gesetzliche Grundlage:** § 307 Abs. 1, Abs. 2 Nr. 1 BGB
+- **Geltungsbereich B2B vs. B2C:** Unterliegt der Inhaltskontrolle nach § 307 BGB auch im unternehmerischen Geschäftsverkehr.
+- **URL:** https://clause.kellersystems.dev/klauseln/unverbindliche-sla-falle.html
+
+### Warum unzulässig?
+Der Anbieter wirbt mit hoher Verfügbarkeit und stuft sie im Vertrag zugleich als rechtlich unverbindlich ein, sodass Ausfälle folgenlos bleiben.
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Die in der Leistungsbeschreibung genannte Verfügbarkeit von 99,9 % je Kalendermonat ist eine unverbindliche Zielgröße und begründet keine Ansprüche des Kunden."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Ausgewogene vertragliche Regelung zu Unverbindliche Verfügbarkeitszusage unter Wahrung von Treu und Glauben.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Ist eine solche Klausel im B2B-Bereich zulässig?
+**Antwort:** Auch zwischen Unternehmen führt eine unangemessene Benachteiligung nach § 307 BGB zur Unwirksamkeit.
+
+
+---
+
+## Agency commission exclusion in AGB (§ 307 BGB)
+- **Typ-ID:** `agency_commission_exclusion`
+- **Kategorie:** Vertragsrecht & AGB
+- **Gesetzliche Grundlage:** § 307 Abs. 1, Abs. 2 BGB
+- **Geltungsbereich B2B vs. B2C:** Unterliegt der Inhaltskontrolle nach § 307 BGB auch im unternehmerischen Geschäftsverkehr.
+- **URL:** https://clause.kellersystems.dev/klauseln/agency-commission-exclusion.html
+
+### Warum unzulässig?
+Die Klausel benachteiligt den Kunden unangemessen und weicht vom gesetzlichen Leitbild des BGB ab.
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Formularmäßige Klausel zu Agency commission exclusion zulasten des Vertragspartners."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Ausgewogene vertragliche Regelung zu Agency commission exclusion unter Wahrung von Treu und Glauben.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Ist eine solche Klausel im B2B-Bereich zulässig?
+**Antwort:** Auch zwischen Unternehmen führt eine unangemessene Benachteiligung nach § 307 BGB zur Unwirksamkeit.
+
+
+---
+
+## Agency goodwill waiver in AGB (§ 307 BGB)
+- **Typ-ID:** `agency_goodwill_waiver`
+- **Kategorie:** Vertragsrecht & AGB
+- **Gesetzliche Grundlage:** § 307 Abs. 1, Abs. 2 BGB
+- **Geltungsbereich B2B vs. B2C:** Unterliegt der Inhaltskontrolle nach § 307 BGB auch im unternehmerischen Geschäftsverkehr.
+- **URL:** https://clause.kellersystems.dev/klauseln/agency-goodwill-waiver.html
+
+### Warum unzulässig?
+Die Klausel benachteiligt den Kunden unangemessen und weicht vom gesetzlichen Leitbild des BGB ab.
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Formularmäßige Klausel zu Agency goodwill waiver zulasten des Vertragspartners."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Ausgewogene vertragliche Regelung zu Agency goodwill waiver unter Wahrung von Treu und Glauben.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Ist eine solche Klausel im B2B-Bereich zulässig?
+**Antwort:** Auch zwischen Unternehmen führt eine unangemessene Benachteiligung nach § 307 BGB zur Unwirksamkeit.
+
+
+---
+
+## International data processing in AGB (§ 307 BGB)
+- **Typ-ID:** `international_data_processing`
+- **Kategorie:** Vertragsrecht & AGB
+- **Gesetzliche Grundlage:** § 307 Abs. 1, Abs. 2 BGB
+- **Geltungsbereich B2B vs. B2C:** Unterliegt der Inhaltskontrolle nach § 307 BGB auch im unternehmerischen Geschäftsverkehr.
+- **URL:** https://clause.kellersystems.dev/klauseln/international-data-processing.html
+
+### Warum unzulässig?
+Die Klausel benachteiligt den Kunden unangemessen und weicht vom gesetzlichen Leitbild des BGB ab.
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Formularmäßige Klausel zu International data processing zulasten des Vertragspartners."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Ausgewogene vertragliche Regelung zu International data processing unter Wahrung von Treu und Glauben.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Ist eine solche Klausel im B2B-Bereich zulässig?
+**Antwort:** Auch zwischen Unternehmen führt eine unangemessene Benachteiligung nach § 307 BGB zur Unwirksamkeit.
+
+
+---
+
+## Mandatory expert determination in AGB (§ 307 BGB)
+- **Typ-ID:** `mandatory_expert_determination`
+- **Kategorie:** Vertragsrecht & AGB
+- **Gesetzliche Grundlage:** § 307 Abs. 1, Abs. 2 BGB
+- **Geltungsbereich B2B vs. B2C:** Unterliegt der Inhaltskontrolle nach § 307 BGB auch im unternehmerischen Geschäftsverkehr.
+- **URL:** https://clause.kellersystems.dev/klauseln/mandatory-expert-determination.html
+
+### Warum unzulässig?
+Die Klausel benachteiligt den Kunden unangemessen und weicht vom gesetzlichen Leitbild des BGB ab.
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Formularmäßige Klausel zu Mandatory expert determination zulasten des Vertragspartners."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Ausgewogene vertragliche Regelung zu Mandatory expert determination unter Wahrung von Treu und Glauben.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Ist eine solche Klausel im B2B-Bereich zulässig?
+**Antwort:** Auch zwischen Unternehmen führt eine unangemessene Benachteiligung nach § 307 BGB zur Unwirksamkeit.
+
+
+---
+
+## Service credit forfeiture in AGB (§ 307 BGB)
+- **Typ-ID:** `service_credit_forfeiture`
+- **Kategorie:** Vertragsrecht & AGB
+- **Gesetzliche Grundlage:** § 307 Abs. 1, Abs. 2 BGB
+- **Geltungsbereich B2B vs. B2C:** Unterliegt der Inhaltskontrolle nach § 307 BGB auch im unternehmerischen Geschäftsverkehr.
+- **URL:** https://clause.kellersystems.dev/klauseln/service-credit-forfeiture.html
+
+### Warum unzulässig?
+Die Klausel benachteiligt den Kunden unangemessen und weicht vom gesetzlichen Leitbild des BGB ab.
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Formularmäßige Klausel zu Service credit forfeiture zulasten des Vertragspartners."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Ausgewogene vertragliche Regelung zu Service credit forfeiture unter Wahrung von Treu und Glauben.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Ist eine solche Klausel im B2B-Bereich zulässig?
+**Antwort:** Auch zwischen Unternehmen führt eine unangemessene Benachteiligung nach § 307 BGB zur Unwirksamkeit.
+
+
+---
+
+## Early termination charge in AGB (§ 307 BGB)
+- **Typ-ID:** `early_termination_charge`
+- **Kategorie:** Vertragsrecht & AGB
+- **Gesetzliche Grundlage:** § 307 Abs. 1, Abs. 2 BGB
+- **Geltungsbereich B2B vs. B2C:** Unterliegt der Inhaltskontrolle nach § 307 BGB auch im unternehmerischen Geschäftsverkehr.
+- **URL:** https://clause.kellersystems.dev/klauseln/early-termination-charge.html
+
+### Warum unzulässig?
+Die Klausel benachteiligt den Kunden unangemessen und weicht vom gesetzlichen Leitbild des BGB ab.
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Formularmäßige Klausel zu Early termination charge zulasten des Vertragspartners."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Ausgewogene vertragliche Regelung zu Early termination charge unter Wahrung von Treu und Glauben.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Ist eine solche Klausel im B2B-Bereich zulässig?
+**Antwort:** Auch zwischen Unternehmen führt eine unangemessene Benachteiligung nach § 307 BGB zur Unwirksamkeit.
+
+
+---
+
+## Maintenance conditional shutdown in AGB (§ 307 BGB)
+- **Typ-ID:** `maintenance_conditional_shutdown`
+- **Kategorie:** Vertragsrecht & AGB
+- **Gesetzliche Grundlage:** § 307 Abs. 1, Abs. 2 BGB
+- **Geltungsbereich B2B vs. B2C:** Unterliegt der Inhaltskontrolle nach § 307 BGB auch im unternehmerischen Geschäftsverkehr.
+- **URL:** https://clause.kellersystems.dev/klauseln/maintenance-conditional-shutdown.html
+
+### Warum unzulässig?
+Die Klausel benachteiligt den Kunden unangemessen und weicht vom gesetzlichen Leitbild des BGB ab.
+
+### Praxis-Fallstrick (Unwirksame Klausel):
+> "Formularmäßige Klausel zu Maintenance conditional shutdown zulasten des Vertragspartners."
+
+### Rechtssichere Alternative (BGB-konforme Redline):
+```text
+Ausgewogene vertragliche Regelung zu Maintenance conditional shutdown unter Wahrung von Treu und Glauben.
+```
+
+### Häufige Fragen (FAQ):
+**Frage:** Ist eine solche Klausel im B2B-Bereich zulässig?
+**Antwort:** Auch zwischen Unternehmen führt eine unangemessene Benachteiligung nach § 307 BGB zur Unwirksamkeit.
+
+

@@ -1,0 +1,87 @@
+{
+  "slug": "daten-030",
+  "source": "generated",
+  "domain": "Datenraum",
+  "traps": [
+    {
+      "marker": "Anregungen und Vorschläge des Kunden gehen unentgeltlich in das Eigentum",
+      "expectedType": "feedback_ip_grab",
+      "note": "Paraphrase/Umstellung: nennt 'Anregungen und Vorschläge des Kunden gehen un' statt der Registerwendung."
+    },
+    {
+      "marker": "Mitteilungen gelten nach Absendung als dem Kunden zugegangen",
+      "expectedType": "fictitious_receipt",
+      "note": "Paraphrase/Umstellung: nennt 'Mitteilungen gelten nach Absendung als dem Ku' statt der Registerwendung."
+    },
+    {
+      "marker": "Die angegebene Verfügbarkeit von 99,9 % ist unverbindlich",
+      "expectedType": "unverbindliche_sla_falle",
+      "note": "Paraphrase/Umstellung: nennt 'Die angegebene Verfügbarkeit von 99,9 % ist u' statt der Registerwendung."
+    },
+    {
+      "marker": "Für Direktgeschäfte des Kunden steht dem Anbieter keine Provision zu",
+      "expectedType": "agency_commission_exclusion",
+      "note": "Paraphrase/Umstellung: nennt 'Für Direktgeschäfte des Kunden steht dem Anbi' statt der Registerwendung."
+    },
+    {
+      "marker": "keinen Anspruch auf Ausgleich für den aufgebauten Kundenstamm",
+      "expectedType": "agency_goodwill_waiver",
+      "note": "Paraphrase/Umstellung: nennt 'keinen Anspruch auf Ausgleich für den aufgeba' statt der Registerwendung."
+    },
+    {
+      "marker": "erfolgt ausschließlich außerhalb der Europäischen Union",
+      "expectedType": "international_data_processing",
+      "note": "Paraphrase/Umstellung: nennt 'erfolgt ausschließlich außerhalb der Europäis' statt der Registerwendung."
+    },
+    {
+      "marker": "Die Verfahrenskosten sind vom Kunden vorauszuzahlen",
+      "expectedType": "mandatory_expert_determination",
+      "note": "Paraphrase/Umstellung: nennt 'Die Verfahrenskosten sind vom Kunden vorauszu' statt der Registerwendung."
+    },
+    {
+      "marker": "Versäumt der Kunde einen Sicherheitspatch, verfällt sein Anspruch",
+      "expectedType": "service_credit_forfeiture",
+      "note": "Paraphrase/Umstellung: nennt 'Versäumt der Kunde einen Sicherheitspatch, ve' statt der Registerwendung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "ohne Angabe von Gründen zum Monatsende kündigen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "einfaches, nicht ausschließliches Nutzungsrecht für den vereinbarten Zweck",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "auf den in der Präambel bezeichneten Zweck beschränkt",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "zum Quartalsende ordentlich kündigen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "dieselben Datenschutzstandards einhalten",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "mit ihren jeweiligen Lizenzen aufgeführt",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "gesetzliche Haftung für Vorsatz und grobe Fahrlässigkeit",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "aus wichtigem Grund jederzeit fristlos beenden",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "eine Bearbeitungsgebühr von fünfzig Euro",
+      "note": "Täuschende Klausel ohne passenden Detektortyp."
+    }
+  ]
+}

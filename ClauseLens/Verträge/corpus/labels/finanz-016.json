@@ -1,0 +1,87 @@
+{
+  "slug": "finanz-016",
+  "source": "generated",
+  "domain": "Zahlungsdienst",
+  "traps": [
+    {
+      "marker": "Die Haftung ist der Höhe nach auf die Bereitstellungsprovision begrenzt",
+      "expectedType": "liability",
+      "note": "Paraphrase/Umstellung: nennt 'Die Haftung ist der Höhe nach auf die Bereits' statt der Registerwendung."
+    },
+    {
+      "marker": "bleibt unabhängig davon geschuldet, ob dem Anbieter",
+      "expectedType": "penalty",
+      "note": "Paraphrase/Umstellung: nennt 'bleibt unabhängig davon geschuldet, ob dem An' statt der Registerwendung."
+    },
+    {
+      "marker": "bei der Niederlassung der Anbieterin in Zug zur Entscheidung gebracht",
+      "expectedType": "jurisdiction",
+      "note": "Paraphrase/Umstellung: nennt 'bei der Niederlassung der Anbieterin in Zug z' statt der Registerwendung."
+    },
+    {
+      "marker": "Nach Beendigung des Vertrags ist der Kunde",
+      "expectedType": "non_compete",
+      "note": "Paraphrase/Umstellung: nennt 'Nach Beendigung des Vertrags ist der Kunde' statt der Registerwendung."
+    },
+    {
+      "marker": "ein unwiderrufliches Nutzungsrecht an den Transaktionsdaten",
+      "expectedType": "data_grant",
+      "note": "Paraphrase/Umstellung: nennt 'ein unwiderrufliches Nutzungsrecht an den Tra' statt der Registerwendung."
+    },
+    {
+      "marker": "Die Zinsmarge von 1250 Basispunkten",
+      "expectedType": "default_interest",
+      "note": "Paraphrase/Umstellung: nennt 'Die Zinsmarge von 1250 Basispunkten' statt der Registerwendung."
+    },
+    {
+      "marker": "behält sich vor, die Konditionen dieses Rahmenvertrags einseitig anzupassen",
+      "expectedType": "unilateral_change",
+      "note": "Paraphrase/Umstellung: nennt 'behält sich vor, die Konditionen dieses Rahme' statt der Registerwendung."
+    },
+    {
+      "marker": "nur nach vorheriger schriftlicher Bestätigung durch die Bank in Ansatz gebracht werden",
+      "expectedType": "setoff_restriction",
+      "note": "Paraphrase/Umstellung: nennt 'nur nach vorheriger schriftlicher Bestätigung' statt der Registerwendung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "können in Textform, insbesondere per E-Mail, vereinbart werden",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "aus wichtigem Grund jederzeit fristlos beenden",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "binnen zwei Werktagen nach Eingang auf dem Geschäftskonto",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "führen Gespräche auf Leitungsebene.",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "dieselben Datenschutzstandards einhalten",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "bleibt beiden Parteien unbenommen.",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "alle vertraulichen Informationen der jeweils anderen Seite",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "innerhalb von dreißig Tagen nach Zugang ohne Abzug",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "eine Bearbeitungsgebühr von fünfzehn Euro zu erheben",
+      "note": "Täuschende Klausel ohne passenden Detektortyp."
+    }
+  ]
+}

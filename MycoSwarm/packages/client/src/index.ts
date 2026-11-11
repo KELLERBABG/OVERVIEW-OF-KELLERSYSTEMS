@@ -1,0 +1,11 @@
+export { bootClient } from './lib/boot.js';
+export type { ClientConfig, ClientInstance } from './lib/boot.js';
+export { UIStateManager } from './lib/ui-state.js';
+export type { NodeState, MeshState, WalletState, TaskLogEntry } from './lib/ui-state.js';
+export { TaskSubmitter } from './lib/task-submitter.js';
+export type { TaskFormData } from './lib/task-submitter.js';
+export { RateLimiter } from './hardening/rate-limiter.js';
+export { SybilResistance } from './hardening/sybil-resistance.js';
+export { collectDeviceFingerprint, fingerprintToScore } from './hardening/device-fingerprint.js';
+export type { DeviceFingerprint } from './hardening/device-fingerprint.js';
+export { SymmetricMasking } from './hardening/obfuscation.js';

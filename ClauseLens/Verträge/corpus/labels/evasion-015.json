@@ -1,0 +1,79 @@
+{
+  "slug": "evasion-015",
+  "source": "generated",
+  "domain": "evasion",
+  "traps": [
+    {
+      "marker": "Säm­tliche Ste­uern und Abg­aben aus die­sem Ver­trag trägt der Kunde, auch sow­eit sie",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: tax_indemnity_shift (Technik: shy)."
+    },
+    {
+      "marker": "Der Kunde ver­pflichtet sich, alle Inf­ormationen str­eng ver­traulich zu beh­andeln, für den",
+      "expectedType": "asymmetric_confidentiality",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: asymmetric_confidentiality (Technik: shy)."
+    },
+    {
+      "marker": "Die Sof­tware wird im Zus­tand wie ges­ehen ber­eitgestellt, eine Zus­icherung zur Eig­nung für",
+      "expectedType": "as_is_software_disclaimer",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: as_is_software_disclaimer (Technik: shy)."
+    },
+    {
+      "marker": "Die­ser Ver­trag ent­hält alle Ver­einbarungen der Par­teien und ers­etzt frü­here Abs­prachen und",
+      "expectedType": "entire_agreement",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: entire_agreement (Technik: shy)."
+    },
+    {
+      "marker": "Der Anb­ieter darf den Fir­mennamen und die Bil­dmarke des Kun­den une­ntgeltlich zu",
+      "expectedType": "marketing_reference",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: marketing_reference (Technik: shy)."
+    },
+    {
+      "marker": "Alle Rüc­kmeldungen und Ver­besserungsvorschläge des Kun­den gehen une­ntgeltlich in das all­einige",
+      "expectedType": "feedback_ip_grab",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: feedback_ip_grab (Technik: shy)."
+    },
+    {
+      "marker": "Erk­lärungen des Anb­ieters gel­ten nach Abs­endung als dem Kun­den zug­egangen, una­bhängig vom",
+      "expectedType": "fictitious_receipt",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: fictitious_receipt (Technik: shy)."
+    },
+    {
+      "marker": "Der Anb­ieter str­ebt eine Ver­fügbarkeit von 99,5 Pro­zent an, die Ang­aben die­nen",
+      "expectedType": "unverbindliche_sla_falle",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: unverbindliche_sla_falle (Technik: shy)."
+    },
+    {
+      "marker": "Für Dir­ektgeschäfte des Anb­ieters steht dem Kun­den keine Pro­vision zu.",
+      "expectedType": "agency_commission_exclusion",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: agency_commission_exclusion (Technik: shy)."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Anbieter überlässt dem Kunden die Daten in einem gängigen Format.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag aus wichtigem Grund ohne Einhaltung einer Frist kündigen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien benennen jeweils einen Ansprechpartner für die operative Zusammenarbeit.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien sind berechtigt, gegen fällige Forderungen aufzurechnen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde erhält Schulungen und Zugang zum Systemhandbuch in der jeweils aktuellen Fassung.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde informiert den Anbieter unverzüglich über wesentliche Störungen im Vertrieb.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    }
+  ],
+  "uncovered": []
+}

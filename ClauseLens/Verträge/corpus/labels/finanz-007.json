@@ -1,0 +1,87 @@
+{
+  "slug": "finanz-007",
+  "source": "generated",
+  "domain": "Zahlungsdienst",
+  "traps": [
+    {
+      "marker": "überdauert die Vertragsbeendigung ohne zeitliche Beschränkung",
+      "expectedType": "excessive_survival",
+      "note": "Paraphrase/Umstellung: nennt 'überdauert die Vertragsbeendigung ohne zeitli' statt der Registerwendung."
+    },
+    {
+      "marker": "behält sich vor, die Vergütung nach billigem Ermessen anzupassen",
+      "expectedType": "price_escalation",
+      "note": "Paraphrase/Umstellung: nennt 'behält sich vor, die Vergütung nach billigem ' statt der Registerwendung."
+    },
+    {
+      "marker": "An die Stelle einer nichtigen Klausel tritt diejenige Gestaltung",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "Paraphrase/Umstellung: nennt 'An die Stelle einer nichtigen Klausel tritt d' statt der Registerwendung."
+    },
+    {
+      "marker": "bis zur vollständigen Erfüllung aller Ansprüche aus der Geschäftsverbindung",
+      "expectedType": "extended_retention_of_title",
+      "note": "Paraphrase/Umstellung: nennt 'bis zur vollständigen Erfüllung aller Ansprüc' statt der Registerwendung."
+    },
+    {
+      "marker": "Der Zustimmung des Kunden bedarf es nicht, wenn Unterauftragnehmer",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "Paraphrase/Umstellung: nennt 'Der Zustimmung des Kunden bedarf es nicht, we' statt der Registerwendung."
+    },
+    {
+      "marker": "Abweichende Nachweise des Kunden bleiben ohne Bedeutung",
+      "expectedType": "audit_log_manipulation",
+      "note": "Paraphrase/Umstellung: nennt 'Abweichende Nachweise des Kunden bleiben ohne' statt der Registerwendung."
+    },
+    {
+      "marker": "Die Bank kann den Zugang sofort ohne Vorankündigung sperren",
+      "expectedType": "service_suspension",
+      "note": "Paraphrase/Umstellung: nennt 'Die Bank kann den Zugang sofort ohne Vorankün' statt der Registerwendung."
+    },
+    {
+      "marker": "berechtigt, den Vertrag fristlos zu kündigen",
+      "expectedType": "insolvency_termination",
+      "note": "Paraphrase/Umstellung: nennt 'berechtigt, den Vertrag fristlos zu kündigen' statt der Registerwendung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "zum Quartalsende ordentlich kündigen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "spätestens zehn Werktage vor einer beabsichtigten Kontoauflösung",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "einen festen Ansprechpartner für alle Fragen der Vertragsabwicklung",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "ohne Angabe von Gründen zum Monatsende kündigen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Streitigkeiten vorrangig durch Mediation zu klären",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "gesetzliche Haftung für Vorsatz und grobe Fahrlässigkeit",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "mindestens vierzehn Tage vor dem Einsatz eines Unterauftragnehmers",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "vollständigen Export seiner Daten in einem gängigen maschinenlesbaren Format",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "eine Bearbeitungsgebühr von fünfzehn Euro zu erheben",
+      "note": "Täuschende Klausel ohne passenden Detektortyp."
+    }
+  ]
+}

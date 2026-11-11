@@ -1,0 +1,13 @@
+[package]
+name = "op-trajectory"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "3D workspace, motion paths, RCM constraints for surgical tool navigation"
+
+[dependencies]
+op-math = { workspace = true }
+op-kinematics = { workspace = true }
+serde = { workspace = true }
+thiserror = "1"

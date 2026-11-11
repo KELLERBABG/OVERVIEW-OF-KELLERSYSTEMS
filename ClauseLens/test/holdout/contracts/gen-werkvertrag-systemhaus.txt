@@ -1,0 +1,60 @@
+VERTRAG ÜBER PLANUNG, LIEFERUNG UND INBETRIEBNAHME EINER ANLAGENSTEUERUNG
+
+zwischen
+
+Meisterwerk Systemtechnik AG, Zugerstrasse 44, 6300 Zug (nachfolgend „Auftragnehmer“)
+
+und
+
+dem im Bestellschein bezeichneten Unternehmen (nachfolgend „Besteller“; gemeinsam die „Parteien“).
+
+§ 1 Gegenstand und Umfang der Leistungen
+1.1 Der Auftragnehmer errichtet für den Besteller eine Anlagensteuerung auf Basis der im Bestellschein bezeichneten Module. Dies umfasst die Programmierung der Steuerungslogik, die Lieferung der Schaltschränke, die Inbetriebnahme vor Ort sowie die Einweisung des Bedienpersonals.
+1.2 Der Auftragnehmer erbringt die Leistungen mit eigenem, qualifiziertem Personal. Ein bestimmter wirtschaftlicher, funktionaler oder technischer Erfolg wird nicht zugesagt, soweit er nicht im Bestellschein ausdrücklich als Erfolgsmerkmal bezeichnet ist.
+§ 2 Mitwirkung des Bestellers und Verfügbarkeit
+2.1 Der Besteller stellt die erforderlichen Anlagenkomponenten, Zutrittsberechtigungen und Anlagendaten rechtzeitig bereit. Solange eine Beistellung aussteht, kann der Auftragnehmer die Projektierung unterbrechen, ohne dass dies die vereinbarte Vergütung mindert.
+2.2 Im laufenden Betrieb strebt der Auftragnehmer eine Verfügbarkeit der bereitgestellten Systeme von 99,5 % an. Wartungsfenster, Störungen der Anlagenkomponenten des Bestellers und behördliche Anordnungen bleiben dabei ausgenommen. Ansprüche wegen einer Unterschreitung dieser Verfügbarkeit bestehen nicht.
+§ 3 Termine und Pauschalabzug bei Verzug
+3.1 Die Parteien legen im Bestellschein Meilensteine fest. Der Auftragnehmer zeigt absehbare Verschiebungen unverzüglich an.
+3.2 Bei Überschreitung eines Meilensteins um mehr als zehn Werktage wird ein Pauschalabzug von 1,5 % des jeweiligen Auftragswerts fällig, insgesamt begrenzt auf 9 % des Auftragswerts. Der Nachweis eines geringeren Schadens ist nicht zulässig.
+§ 4 Freigabe von Teilleistungen
+4.1 Der Besteller nimmt die Freigabeprüfung einer Teilleistung innerhalb von sechs Werktagen nach deren Bereitstellung vor. Die Frist beginnt mit dem Eingang der Bereitstellungsanzeige beim Besteller.
+4.2 Erfolgt innerhalb dieser Frist keine Rückmeldung mit konkreten Abweichungen, wird die Teilleistung als vertragsgemäß behandelt.
+§ 5 Vergütung und Anpassung der Sätze
+5.1 Die Vergütung wird zu 30 % nach Auftragsklärung, zu 40 % nach Lieferung und zu 30 % nach Inbetriebnahme fällig. Reise- und Übernachtungskosten des Personals des Auftragnehmers trägt der Besteller.
+5.2 Die im Bestellschein genannten Tagessätze werden jeweils auf den 1. Januar an die Entwicklung des Landesindexes der Konsumentenpreise angepasst; ein Widerspruchsrecht des Bestellers besteht insoweit nicht.
+§ 6 Normen und ergänzende Bedingungen
+6.1 Der Auftragnehmer hält die einschlägigen Normen und Unfallverhütungsvorschriften ein und weist die Einhaltung auf Verlangen nach.
+6.2 Ergänzend gelten die Nutzungsbedingungen des Auftragnehmers in ihrer jeweiligen Fassung, abrufbar unter www.systemhaus-beispiel.ch/bedingungen.
+§ 7 Gewährleistung und Fristen
+7.1 Der Auftragnehmer sorgt für eine fachgerechte Ausführung nach dem Stand der Technik. Im Übrigen übernimmt der Auftragnehmer keine Gewähr dafür, dass die Steuerung sämtliche Störungen erkennt oder ununterbrochen arbeitet.
+7.2 Ansprüche des Bestellers wegen Abweichungen erlöschen neun Monate nach der Inbetriebnahme, sofern sie nicht vorher schriftlich angemeldet wurden.
+§ 8 Ursachennachweis bei Störungen
+8.1 Tritt eine Störung im Betrieb auf, prüfen die Parteien gemeinsam deren Ursache. Für den Nachweis, dass eine Störung aus dem Verantwortungsbereich des Auftragnehmers stammt, ist ausschließlich der Besteller darlegungs- und beweisbelastet.
+8.2 Der Besteller stellt dem Auftragnehmer die für die Prüfung erforderlichen Protokolle und Anlagenaufzeichnungen zur Verfügung.
+§ 9 Ergebnisse und Kenntnisse
+9.1 Mit vollständiger Bezahlung gehen die im Projekt erstellten Arbeitsergebnisse in das Eigentum des Bestellers über.
+9.2 Die dabei gewonnenen Verfahrenskenntnisse und Strukturmodelle darf der Auftragnehmer zeitlich unbeschränkt und ohne Vergütung für eigene Zwecke nutzen. Vorschläge des Bestellers zur Weiterentwicklung der Steuerung darf der Auftragnehmer in seine Produkte einfließen lassen.
+§ 10 Personal des Auftragnehmers
+10.1 Dem Auftragnehmer ist es während achtzehn Monaten nach Projektabschluss untersagt, für Wettbewerber des Bestellers tätig zu werden; eine Ausgleichszahlung ist dafür nicht vorgesehen.
+10.2 Der Besteller darf während der Laufzeit keine Fachkräfte abwerben, die für den Auftragnehmer tätig sind.
+§ 11 Referenzen und Mitteilungen
+11.1 Der Auftragnehmer darf den Besteller als Kunden nennen und dessen Zeichen verwenden. Ein Widerruf ist für die Dauer der Zusammenarbeit und für zwölf Monate danach ausgeschlossen.
+11.2 Mitteilungen gelten als zugegangen, sobald sie in das für die Partei hinterlegte elektronische Postfach eingestellt wurden.
+§ 12 Drittanbieter und Freistellung
+12.1 Zur Erfüllung kann der Auftragnehmer Drittanbieter heranziehen, ohne dies dem Besteller vorher anzuzeigen.
+12.2 Der Besteller stellt den Auftragnehmer von Ansprüchen Dritter frei, die im Zusammenhang mit den vom Besteller beigestellten Komponenten entstehen, unabhängig davon, ob den Besteller ein Verschulden trifft.
+§ 13 Haftung und Einbehalte
+13.1 Der Auftragnehmer haftet für Vorsatz und grobe Fahrlässigkeit nach den gesetzlichen Bestimmungen. Für leichte Fahrlässigkeit haftet er nur bis zur Höhe desjenigen Entgelts, das dem Besteller im Kalenderjahr vor der Anspruchserhebung in Rechnung gestellt wurde.
+13.2 Einbehalte des Bestellers sind nur mit vorheriger Zustimmung des Auftragnehmers zulässig.
+§ 14 Beendigung, Nachwirkung und Streitbeilegung
+14.1 Gerät der Besteller mit einer fälligen Abschlagszahlung um mehr als zwanzig Tage in Verzug, unterbricht der Auftragnehmer die Leistungserbringung ohne vorherige Ankündigung; die Vergütungspflicht des Bestellers läuft währenddessen weiter.
+14.2 Bei einem Insolvenzverfahren über das Vermögen einer Partei endet der Vertrag ohne weiteres.
+14.3 Die Geheimhaltungspflicht nach Ziffer 11 endet nicht mit der Beendigung dieses Vertrags, sondern besteht auf Dauer.
+14.4 Für sämtliche Streitigkeiten aus diesem Vertrag sind ausschließlich die Gerichte am Geschäftssitz des Auftragnehmers berufen.
+§ 15 Schlussbestimmungen
+15.1 Zur Auswertung der Messdaten darf der Auftragnehmer verbundene Gesellschaften mit Sitz außerhalb der Schweiz und der Europäischen Union einsetzen.
+15.2 Bei vorzeitiger Beendigung durch den Besteller schuldet dieser eine pauschale Abstandszahlung in Höhe eines Viertels der noch offenen Vergütung.
+15.3 Der Auftragnehmer ist berechtigt, die Anlage nach Ablauf von zwei Jahren ab Inbetriebnahme ohne Zustimmung abzuschalten, wenn kein Wartungsvertrag abgeschlossen wurde.
+15.4 Änderungen dieses Vertrags bedürfen einer von beiden Parteien unterzeichneten und notariell beglaubigten Urkunde.
+15.5 Beide Parteien verpflichten sich, vertrauliche Informationen der anderen Partei nicht an Dritte weiterzugeben.

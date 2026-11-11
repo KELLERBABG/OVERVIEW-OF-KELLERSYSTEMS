@@ -1,0 +1,341 @@
+name: Release Build
+
+# Pushing a v* tag publishes the release. workflow_dispatch rebuilds an existing
+# tag; leaving its input empty produces artifacts without publishing.
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Existing tag to rebuild (e.g. v0.7.0). Leave empty for a dry run.'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+env:
+  SEA_FUSE: NODE_SEA_FUSE_fce680ab2cc467b6e072b8b5df1996b2
+  # The blob is built from the single-file bundle, so the executable needs no
+  # package.json, no node_modules and no node on PATH.
+  SEA_CONFIG: '{"main":"dist/baulens.cjs","output":"dist/sea-prep.blob","disableExperimentalSEAWarning":true}'
+
+jobs:
+  verify:
+    name: Verify sources and generated pages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'workflow_dispatch' && inputs.tag != '' && inputs.tag || github.ref }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+
+      - name: Test suite
+        run: node --test
+
+      - name: Regenerate the pages and check them
+        run: |
+          node scripts/build-docs.mjs
+          node scripts/build-site.mjs
+          node scripts/verify-docs.mjs
+          node scripts/check-links.mjs
+          node scripts/check-prices.mjs
+
+      - name: Fail if regenerating changed tracked files
+        run: |
+          if ! git diff --quiet; then
+            echo "::error::Generated files are stale. Run 'npm run build' and commit the result."
+            git --no-pager diff --stat
+            exit 1
+          fi
+
+  bundle:
+    name: Single-file bundle
+    needs: verify
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'workflow_dispatch' && inputs.tag != '' && inputs.tag || github.ref }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+
+      - name: Build the bundle
+        run: node scripts/bundle.js
+
+      - name: Prove the bundle matches the source CLI
+        run: node scripts/smoke-bundle.mjs
+
+      - name: Render the release notes from the changelog
+        run: node scripts/release-notes.mjs dist/RELEASE_NOTES.md
+
+      - name: Smoke-test the bundle as a plain script
+        run: |
+          node dist/baulens.cjs --help
+          node dist/baulens.cjs check test/fixtures/good_spec.json
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: baulens-bundle
+          path: |
+            dist/baulens.cjs
+            dist/RELEASE_NOTES.md
+          if-no-files-found: error
+
+  standalone:
+    name: Standalone binary (${{ matrix.artifact }})
+    needs: bundle
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            artifact: baulens-windows-x64.exe
+          - os: ubuntu-latest
+            artifact: baulens-linux-x64
+          - os: macos-latest
+            artifact: baulens-macos-arm64
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'workflow_dispatch' && inputs.tag != '' && inputs.tag || github.ref }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+
+      # The SEA blob contains the whole application, so it is built from the
+      # bundle rather than from bin/baucheck.js.
+      - name: Build the bundle
+        run: node scripts/bundle.js
+
+      - name: Generate the SEA blob
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p dist
+          printf '%s' "$SEA_CONFIG" > dist/sea-config.json
+          node --experimental-sea-config dist/sea-config.json
+          cp "$(command -v node)" "dist/${{ matrix.artifact }}"
+
+      - name: Inject the blob (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          npx --yes postject "dist/${{ matrix.artifact }}" NODE_SEA_BLOB dist/sea-prep.blob --sentinel-fuse "$env:SEA_FUSE"
+
+      - name: Inject the blob (Linux)
+        if: runner.os == 'Linux'
+        shell: bash
+        run: |
+          set -euo pipefail
+          npx --yes postject "dist/${{ matrix.artifact }}" NODE_SEA_BLOB dist/sea-prep.blob --sentinel-fuse "$SEA_FUSE"
+          chmod +x "dist/${{ matrix.artifact }}"
+
+      - name: Inject the blob (macOS)
+        if: runner.os == 'macOS'
+        shell: bash
+        run: |
+          set -euo pipefail
+          codesign --remove-signature "dist/${{ matrix.artifact }}" || true
+          npx --yes postject "dist/${{ matrix.artifact }}" NODE_SEA_BLOB dist/sea-prep.blob \
+            --sentinel-fuse "$SEA_FUSE" --macho-segment-name NODE_SEA
+          codesign --sign - "dist/${{ matrix.artifact }}"
+          chmod +x "dist/${{ matrix.artifact }}"
+
+      # Run from a temporary directory with no package.json in reach: if the
+      # version were still read from disk it would fall back to 0.0.0 here.
+      - name: The binary must work without node or package.json nearby
+        shell: bash
+        run: |
+          set -euo pipefail
+          BIN="$(pwd)/dist/${{ matrix.artifact }}"
+          mkdir -p /tmp/sea-check
+          cd /tmp/sea-check
+          "$BIN" --help
+          "$BIN" check "$GITHUB_WORKSPACE/test/fixtures/good_spec.json"
+          "$BIN" --help | head -n 1 | tee /tmp/sea-version.txt
+          grep -q "v$(node -p "require('$GITHUB_WORKSPACE/package.json').version")" /tmp/sea-version.txt || {
+            echo "::error::The binary does not report the release version."
+            exit 1
+          }
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact }}
+          path: dist/${{ matrix.artifact }}
+          if-no-files-found: error
+
+  # The downloads hub announces Windows (NSIS .exe), macOS (.dmg, Apple Silicon
+  # and Intel) and Linux (.deb, .AppImage). Those promises only hold if this job
+  # actually builds them, so it is a matrix rather than a Windows-only step.
+  desktop:
+    name: Desktop application (${{ matrix.platform }})
+    needs: bundle
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            platform: Windows
+            bundles: nsis
+            rust_targets: ''
+          - os: macos-latest
+            platform: macOS
+            # One universal .dmg covers Apple Silicon and Intel, which is what
+            # the download page promises.
+            bundles: app,dmg
+            rust_targets: aarch64-apple-darwin,x86_64-apple-darwin
+          # 22.04 rather than the newest runner: the AppImage and .deb bundlers
+          # expect webkit2gtk 4.1 and its matching build toolchain.
+          - os: ubuntu-22.04
+            platform: Linux
+            bundles: appimage,deb
+            rust_targets: ''
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'workflow_dispatch' && inputs.tag != '' && inputs.tag || github.ref }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.rust_targets }}
+
+      - name: Install Linux build prerequisites
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libwebkit2gtk-4.1-dev \
+            libayatana-appindicator3-dev \
+            librsvg2-dev \
+            patchelf \
+            build-essential \
+            curl \
+            wget \
+            file \
+            libssl-dev
+
+      - name: Build the bundle
+        run: node scripts/bundle.js
+
+      - name: Stage the desktop frontend
+        run: node scripts/build-desktop-assets.mjs
+
+      - name: Stage the desktop sidecar engine
+        run: node scripts/build-desktop-sidecar.mjs
+
+      - name: Build Tauri installers (Windows, Linux)
+        if: runner.os != 'macOS'
+        working-directory: desktop
+        run: npx --yes @tauri-apps/cli build --bundles ${{ matrix.bundles }}
+
+      - name: Build Tauri installers (universal macOS)
+        if: runner.os == 'macOS'
+        working-directory: desktop
+        run: npx --yes @tauri-apps/cli build --target universal-apple-darwin --bundles ${{ matrix.bundles }}
+
+      - name: Collect installers (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path "dist" | Out-Null
+          Get-ChildItem -Path "desktop/src-tauri/target/release/bundle" -Recurse -File -Include *.exe,*.msi -ErrorAction Stop | ForEach-Object {
+            Copy-Item $_.FullName "dist/$($_.Name)"
+            Write-Host "Found installer: $($_.Name)"
+          }
+
+      - name: Collect installers (Linux, macOS)
+        if: runner.os != 'Windows'
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p dist
+          find desktop/src-tauri/target -path '*/release/bundle/*' \
+            \( -name '*.AppImage' -o -name '*.deb' -o -name '*.dmg' \) \
+            -exec cp {} dist/ \;
+          ls -l dist
+
+      # Every platform uploads with if-no-files-found: error. A silently empty
+      # installer artifact is worse than a red job: the release would advertise
+      # a download that was never built.
+      - uses: actions/upload-artifact@v4
+        with:
+          name: baulens-desktop-${{ matrix.platform }}
+          path: dist/*
+          if-no-files-found: error
+
+  publish:
+    name: Publish GitHub Release
+    needs: [bundle, standalone, desktop]
+    if: >-
+      (github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')) ||
+      (github.event_name == 'workflow_dispatch' && inputs.tag != '')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          merge-multiple: true
+
+      # The download page names these files and links them directly, so a rename
+      # in the bundler must break the build rather than publish a hub full of
+      # 404s. The patterns mirror site.config.json -> downloads.artifacts.
+      - name: The advertised installers exist
+        run: |
+          set -euo pipefail
+          missing=0
+          for pattern in '*_x64-setup.exe' '*_universal.dmg' '*_amd64.AppImage' '*_amd64.deb'; do
+            if ls $pattern >/dev/null 2>&1; then
+              echo "ok    $pattern"
+            else
+              echo "::error::no release artifact matches $pattern, which the download hub advertises"
+              missing=1
+            fi
+          done
+          ls -la
+          exit $missing
+
+      # The hub promises a checksum beside every file, so it is generated from
+      # the files that actually ship.
+      - name: Write SHA256SUMS.txt
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          files=(*_x64-setup.exe baulens.cjs baulens-windows-x64.exe baulens-linux-x64 baulens-macos-arm64 *.dmg *.AppImage *.deb)
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "::error::no release files to checksum"
+            exit 1
+          fi
+          sha256sum "${files[@]}" | tee SHA256SUMS.txt
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref_name }}
+          name: BauLens ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref_name }}
+          body_path: RELEASE_NOTES.md
+          files: |
+            baulens.cjs
+            baulens-windows-x64.exe
+            baulens-linux-x64
+            baulens-macos-arm64
+            *.exe
+            *.msi
+            *.dmg
+            *.AppImage
+            *.deb
+            SHA256SUMS.txt
+          fail_on_unmatched_files: false
+          draft: false

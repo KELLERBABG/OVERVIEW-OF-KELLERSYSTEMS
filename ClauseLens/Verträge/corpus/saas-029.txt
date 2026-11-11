@@ -1,0 +1,71 @@
+Software-Abonnementvertrag Ticketing Helvetia
+
+zwischen Ticketing Helvetia AG, Seefeldstrasse 45, 8008 Zürich (nachfolgend "Anbieterin")
+
+und Aargauer Kantonsspital AG, Tellistrasse 67, 5001 Aarau (nachfolgend "Kunde")
+
+Präambel
+
+Die Anbieterin überlässt dem Kunden die Ticketing-Plattform Helvetia für den Betriebsdienst.
+
+§ 1 Gegenstand
+
+(1) Die Anbieterin überlässt dem Kunden die Ticketing-Plattform Helvetia.
+
+(2) Die Schnittstellen zu Drittsystemen ergeben sich aus Anlage 7.
+
+§ 2 Nachwirkung
+
+(1) Die Vertraulichkeitspflicht überdauert die Vertragsbeendigung ohne zeitliche Beschränkung.
+
+§ 3 Anregungen
+
+(1) Anregungen und Vorschläge des Kunden verwertet die Anbieterin ohne Vergütung.
+
+§ 4 Referenzen
+
+(1) Die Nennung als Referenzkunde erfolgt ohne gesonderte Zustimmung.
+
+§ 5 Servicegutschriften
+
+(1) Unterlässt der Kunde eine kritische Aktualisierung, verfällt der Anspruch auf Servicegutschriften.
+
+§ 6 Wartung
+
+(1) Der Anbieter ist berechtigt, den Betrieb abzuschalten, sofern kein gesonderter Wartungsvertrag vorliegt.
+
+§ 7 Laufzeit
+
+(1) Das Abonnement setzt sich nach Ablauf der Festlaufzeit jeweils um zwölf Monate fort, sofern es keine Partei kündigt.
+
+§ 8 Serviceziele
+
+(1) Die Verfügbarkeitsangaben in Anlage 2 sind bloße Zielgröße ohne Rechtsanspruch.
+
+§ 9 Zahlung
+
+(1) Die Rechnung ist innerhalb von 30 Tagen nach Zugang ohne Abzug fällig.
+
+§ 10 Gutschriften
+
+(1) Unterschreitet die Verfügbarkeit 99,5 Prozent, gewährt die Anbieterin eine Gutschrift von fünf Prozent des Monatsentgelts.
+
+§ 11 Datenrückgabe
+
+(1) Die Anbieterin stellt dem Kunden bei Vertragsende eine vollständige Kopie aller Kundendaten in maschinenlesbarer Form kostenfrei bereit.
+
+§ 12 Vertraulichkeit
+
+(1) Die Vertragsparteien behandeln die wechselseitig offengelegten Informationen vertraulich.
+
+§ 13 Datenschutz
+
+(1) Die Verarbeitung erfolgt ausschließlich in Rechenzentren innerhalb der Europäischen Union.
+
+(2) Der Anbieter trifft angemessene technische und organisatorische Maßnahmen zum Schutz der Daten.
+
+Zürich, den 19.01.2026
+
+Für die Anbieterin: gez. T. Ticketing
+
+Für den Kunden: gez. A. Aargauer

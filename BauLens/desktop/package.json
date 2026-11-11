@@ -1,0 +1,13 @@
+{
+  "name": "baulens-desktop",
+  "private": true,
+  "version": "0.9.0",
+  "description": "BauLens Desktop - Tauri shell around the tested compliance engine",
+  "scripts": {
+    "assets": "node ../scripts/build-desktop-assets.mjs",
+    "sidecar": "node ../scripts/build-desktop-sidecar.mjs",
+    "dev": "tauri dev",
+    "build": "tauri build",
+    "build:debug": "tauri build --debug --no-bundle"
+  }
+}

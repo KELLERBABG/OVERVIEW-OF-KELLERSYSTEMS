@@ -1,0 +1,74 @@
+{
+  "slug": "marketing-003",
+  "source": "generated",
+  "domain": "Influencer-Kooperation, deutsches Recht",
+  "traps": [
+    {
+      "marker": "enthält sich nach Beendigung der Zusammenarbeit jeder Wettbewerbstätigkeit",
+      "expectedType": "non_compete",
+      "note": "Nachvertragliches Wettbewerbsverbot ohne Karenz; vermeidet die Registerformel Wettbewerbsverbot."
+    },
+    {
+      "marker": "keine Beschäftigten der Auftraggeberin aktiv anzusprechen",
+      "expectedType": "non_solicitation",
+      "note": "Nachvertragliches Abwerbeverbot als Ansprechverbot; vermeidet 'Abwerbeverbot'."
+    },
+    {
+      "marker": "Anregungen der Auftraggeberin darf der Anbieter frei verwerten",
+      "expectedType": "feedback_ip_grab",
+      "note": "Freie Verwertung von Kundenideen; vermeidet Eigentumsübergang und Abtretung."
+    },
+    {
+      "marker": "sind ausschließlich handschriftlich unterzeichnet per Post zuzustellen",
+      "expectedType": "written_form_trap",
+      "note": "Erschwerte Beendigungsform; vermeidet Schriftform und Einschreiben mit Rückschein."
+    },
+    {
+      "marker": "aggregate liability under this agreement shall be limited to",
+      "expectedType": "liability",
+      "note": "Englischer Haftungsdeckel; vermeidet die deutsche Ausschlussformel."
+    },
+    {
+      "marker": "Nutzungsdaten darf der Anbieter dauerhaft und ohne Beteiligung",
+      "expectedType": "data_grant",
+      "note": "Dauerhafte Datenverwertung ohne Beteiligung; vermeidet Nutzungsrecht und Trainingszwecke."
+    },
+    {
+      "marker": "gelten als zugegangen, sobald sie in das Partnerportal eingestellt",
+      "expectedType": "fictitious_receipt",
+      "note": "Zugangsfiktion über das Portal; vermeidet 'nach Absendung gilt als zugegangen'."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Üblicher Zahlungstermin."
+    },
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "Symmetrische Vertraulichkeit."
+    },
+    {
+      "marker": "mindestens vierzehn Tage vorab an; der Auftraggeber kann widersprechen",
+      "note": "Ordentliche Subunternehmerankündigung."
+    },
+    {
+      "marker": "erhält der Auftraggeber die überlassenen Daten kostenfrei in einem offenen Format zurück",
+      "note": "Kostenfreier Datenexport."
+    },
+    {
+      "marker": "Beide Parteien können die Zusammenarbeit aus wichtigem Grund fristlos beenden",
+      "note": "Beidseitiges außerordentliches Kündigungsrecht."
+    },
+    {
+      "marker": "Änderungen dieses Vertrages können in Textform vereinbart werden",
+      "note": "Textform zugelassen, keine Formfalle."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Kennzeichnungspflichten nach den Vorgaben der Plattformen werden eingehalten",
+      "note": "Kein Detektor für Werbekennzeichnungspflichten."
+    }
+  ]
+}

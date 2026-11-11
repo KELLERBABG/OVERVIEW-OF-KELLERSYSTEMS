@@ -1,0 +1,22 @@
+[package]
+name = "matching-engine"
+version.workspace = true
+edition.workspace = true
+description = "Blind order matching engine using SMPC to find crossing orders without revealing the book"
+
+[dependencies]
+sss = { path = "../sss" }
+smpc-engine = { path = "../smpc-engine" }
+homomorphic-compare = { path = "../homomorphic-compare" }
+ark-bn254.workspace = true
+ark-ff.workspace = true
+sha2.workspace = true
+hex.workspace = true
+thiserror.workspace = true
+rand.workspace = true
+
+[dev-dependencies]
+rand_chacha.workspace = true
+
+[lints]
+rust.unsafe_code = "forbid"

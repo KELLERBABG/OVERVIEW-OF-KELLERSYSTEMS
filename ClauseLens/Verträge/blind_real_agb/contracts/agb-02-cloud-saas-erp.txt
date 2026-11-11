@@ -1,0 +1,57 @@
+Allgemeine Nutzungs- und Vertragsbedingungen für B2B Cloud-ERP und Software-as-a-Service (SaaS) der NexaCloud Enterprise Solutions AG
+
+§ 1 Vertragsgegenstand und Bereitstellung der Software
+
+Die NexaCloud Enterprise Solutions AG (nachfolgend „Anbieter“) stellt dem gewerblichen Kunden über das Internet die betriebswirtschaftliche Unternehmenssoftware „NexaERP Cloud Suite“ im Wege des Software-as-a-Service zur Nutzung bereit. Der Anbieter schuldet ausschließlich die Bereitstellung der Anwendung am Übergabepunkt des von ihm genutzten Rechenzentrums.
+
+Die Bereitstellung der Cloud-Software erfolgt im gegenwärtigen Zustand („wie besehen“ / „as is“) unter vollständigem Ausschluss jeglicher sach- und rechtsmängelbezogenen Gewährleistung für die Fehlerfreiheit, Funktionsfähigkeit oder Eignung für den vertraglich vorausgesetzten Gebrauch.
+
+§ 2 Verfügbarkeit und Service Level Agreement (SLA)
+
+Der Anbieter strebt im Jahresmittel eine Systemverfügbarkeit der Cloud-Plattform von 99,5 Prozent an. Sämtliche in diesem Vertrag oder in Leistungsbeschreibungen genannten Verfügbarkeitsquoten, Reaktionszeiten und Wiederherstellungszeiten verstehen sich jedoch lediglich als unverbindliche Zielwerte und Bemühenszusagen, aus deren Unterschreitung der Kunde keinerlei Rechtsansprüche, Minderungsrechte oder Schadensersatzansprüche herleiten kann.
+
+Soweit im Einzelfall im Rahmen eines gesonderten Enterprise-Tarifs Service-Gutschriften (Service Credits) für Ausfallzeiten vorgesehen sind, verfallen sämtliche Ansprüche auf derartige Gutschriften ersatzlos, wenn der Kunde diese nicht innerhalb einer Ausschlussfrist von 48 Stunden nach Ende der Störung unter Vorlage vollständiger Diagnoseprotokolle schriftlich beantragt oder wenn der Kunde ein beliebiges Browser-Update auf seinen Endgeräten versäumt hat.
+
+§ 3 Nutzungsrechte, Kundendaten und Feedback
+
+Der Kunde erhält für die Dauer des Vertrages das einfache, nicht übertragbare Recht, die Cloud-Software durch die vertraglich vereinbarte Anzahl benannter Nutzer (Named Users) für eigene interne Geschäftszwecke zu nutzen.
+
+Der Kunde räumt dem Anbieter hiermit ein unentgeltliches, zeitlich unbefristetes, unwiderrufliches, weltweites und frei unterlizenzierbares Recht ein, sämtliche vom Kunden in das ERP-System eingegebenen Geschäfts-, Finanz-, Kunden- und Betriebsdaten zu kopieren, kommerziell zu verwerten, an Dritte zu veräußern sowie für das Training eigener und fremder Künstlicher Intelligenz uneingeschränkt zu nutzen.
+
+Übermittelt der Kunde oder einer seiner Mitarbeiter dem Anbieter im Rahmen der Nutzung Verbesserungsvorschläge, Fehlermeldungen, Feature-Wünsche oder sonstiges Feedback, gehen sämtliche geistigen Eigentums- und Verwertungsrechte hieran automatisch, exklusiv, entschädigungslos und zeitlich unbegrenzt auf den Anbieter über; der Kunde verzichtet auf jegliche Vergütung oder Urheberbenennung.
+
+§ 4 Datenschutz, Unterauftragsverarbeiter und internationale Datentransfers
+
+Soweit der Anbieter im Auftrag des Kunden personenbezogene Daten verarbeitet, schließen die Parteien eine Vereinbarung zur Auftragsverarbeitung nach Art. 28 DSGVO.
+
+Der Anbieter ist berechtigt, die gespeicherten personenbezogenen Daten und Geschäftsdaten des Kunden jederzeit nach eigenem Ermessen auf Server in beliebige Drittstaaten außerhalb der Europäischen Union und des Europäischen Wirtschaftsraums zu übertragen und dort durch lokale Dienstleister verarbeiten zu lassen, auch wenn für das betreffende Drittland kein Angemessenheitsbeschluss der EU-Kommission und keine geeigneten Garantien nach Art. 46 DSGVO vorliegen.
+
+§ 5 Vergütung, Abrechnung und Steuern
+
+Die Nutzungsvergütung richtet sich nach dem gewählten Lizenzpaket und wird jährlich im Voraus in Rechnung gestellt. Rechnungen sind innerhalb von 14 Tagen nach Zugang ohne Abzug zur Zahlung fällig.
+
+Die Aufrechnung durch den Kunden ist nur mit unbestrittenen oder rechtskräftig festgestellten Forderungen zulässig.
+
+§ 6 Vertraulichkeit und Referenzkundennennung
+
+Beide Vertragsparteien verpflichten sich, alle im Rahmen der Vertragsdurchführung erlangten vertraulichen Informationen und Geschäftsgeheimnisse der jeweils anderen Partei streng vertraulich zu behandeln und nur zur Durchführung dieses Vertrages zu verwenden.
+
+Ungeachtet vorstehender Vertraulichkeit ist der Anbieter unwiderruflich und ohne gesonderte Einwilligung berechtigt, den Namen, die geschützten Marken sowie das Unternehmenslogo des Kunden unentgeltlich auf seiner Webseite, in Pressemitteilungen, auf Messen sowie in weltweiten Werbekampagnen als Referenzkunden zu veröffentlichen und werblich zu nutzen.
+
+§ 7 Haftung
+
+Der Anbieter haftet unbeschränkt bei Vorsatz und grober Fahrlässigkeit sowie nach Maßgabe des Produkthaftungsgesetzes und bei Verletzung von Leben, Körper oder Gesundheit. Bei leicht fahrlässiger Verletzung einer Pflicht, deren Erfüllung die ordnungsgemäße Durchführung des Vertrages überhaupt erst ermöglicht (Kardinalpflicht), ist die Haftung auf den vorhersehbaren, vertragstypischen Schaden begrenzt.
+
+§ 8 Vertragsdauer, Kündigung und Datenherausgabe bei Vertragsende
+
+Der Vertrag läuft auf unbestimmte Zeit und kann von beiden Parteien ordentlich mit einer Frist von 30 Tagen zum Ende eines Kalendermonats in Textform gekündigt werden. Das Recht zur außerordentlichen Kündigung aus wichtigem Grund bleibt unberührt.
+
+Bei Beendigung des Vertragsverhältnisses gleich aus welchem Rechtsgrund erfolgt eine Herausgabe oder ein Export der in der Cloud gespeicherten ERP-Bestandsdaten des Kunden ausschließlich gegen Zahlung einer pauschalen Datenexport- und Bereitstellungsgebühr in Höhe von 35.000,00 Euro zuzüglich eines Tagessatzes von 2.400,00 Euro; vor vollständiger Begleichung dieser Gebühr ist jeglicher Datenexport technisch gesperrt und nach Ablauf von sieben Tagen nach Vertragsende werden sämtliche Daten unwiederbringlich gelöscht.
+
+§ 9 Schlussbestimmungen und Lizenzüberprüfung
+
+Der Anbieter ist berechtigt, nach vorheriger Ankündigung mit einer Frist von mindestens 14 Werktagen während der üblichen Geschäftszeiten durch einen zur Berufsverschwiegenheit verpflichteten unabhängigen Prüfer überprüfen zu lassen, ob die Nutzung der Software im vertraglich vereinbarten Umfang erfolgt.
+
+Sollte eine Bestimmung dieser Bedingungen ganz oder teilweise unwirksam sein, so bleibt die Wirksamkeit der übrigen Bestimmungen unberührt; die unwirksame Klausel ist in diesem Fall im Wege der geltungserhaltenden Reduktion mit demjenigen Inhalt aufrechtzuerhalten, der das vom Anbieter beabsichtigte Maximum des gesetzlich gerade noch Zulässigen ausschöpft.
+
+Verzichtet der Anbieter im Einzelfall darauf, eine Vertragsverletzung des Kunden zu rügen oder ein vertragliches Recht sofort geltend zu machen, so gilt dies in sämtlichen künftigen Fällen als endgültiger Rechtsverzicht auch für den Kunden hinsichtlich eigener vertraglicher Gegenrechte.

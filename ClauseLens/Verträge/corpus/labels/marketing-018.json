@@ -1,0 +1,74 @@
+{
+  "slug": "marketing-018",
+  "source": "generated",
+  "domain": "Influencer Whitelisting, deutsches Recht",
+  "traps": [
+    {
+      "marker": "führt den Kunden zeitlich unbeschränkt als Referenzkunden",
+      "expectedType": "marketing_reference",
+      "note": "Unbeschränkte Referenznutzung."
+    },
+    {
+      "marker": "für das Training eigener Modelle nutzen",
+      "expectedType": "data_grant",
+      "note": "Datennutzung für Modelltraining; vermeidet Nutzungsrecht."
+    },
+    {
+      "marker": "werden teilweise außerhalb der Europäischen Union verarbeitet",
+      "expectedType": "international_data_processing",
+      "note": "Drittlandverarbeitung personenbezogener Daten."
+    },
+    {
+      "marker": "Werbeplätze nach eigenem Ermessen an Dritte weiterverkaufen",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "Unkontrollierte Weitergabe an Dritte."
+    },
+    {
+      "marker": "Entfällt der Sicherheitspatch, erlischt jede Gutschrift",
+      "expectedType": "service_credit_forfeiture",
+      "note": "Verfall der Gutschrift bei fehlendem Update."
+    },
+    {
+      "marker": "eine Abstandszahlung in Höhe von zwei Monatspauschalen",
+      "expectedType": "early_termination_charge",
+      "note": "Pauschalierte Abstandszahlung bei vorzeitiger Kündigung."
+    },
+    {
+      "marker": "unter der Adresse des Kundenportals abrufbaren Fassungen",
+      "expectedType": "dynamic_url_referral",
+      "note": "Dynamischer Verweis auf Kundenportal-Fassungen; vermeidet URL."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien wahren über die wechselseitig ausgetauschten Informationen Stillschweigen",
+      "note": "Symmetrische Verschwiegenheit."
+    },
+    {
+      "marker": "erhält der Kunde die Zielgruppendaten kostenfrei in einem offenen Format",
+      "note": "Kostenfreier Datenexport."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende beenden",
+      "note": "Symmetrische Kündigung."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform zugelassen."
+    },
+    {
+      "marker": "innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Üblicher Zahlungstermin."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhaltung."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Auftragnehmer stellt Werbeplätze und Creatornutzung für die Kampagnen des Kunden bereit",
+      "note": "Kein Detektor für Rechte an Whitelisting-Profilen."
+    }
+  ]
+}

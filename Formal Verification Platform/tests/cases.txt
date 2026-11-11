@@ -1,0 +1,54 @@
+# The fixture cases, one per line: name | expected exit | golden | label
+#
+# This file is the single owner of the case list, the exit code each case must
+# produce and which cases have a golden. Both runners read it:
+#
+#   tests/run_tests.sh  refuses to run a case with no row here, looks its exit
+#                       code and label up from the row, and compares the golden
+#                       exactly when the row names one.
+#   tests\run_tests.cmd does the same through :run_table_case.
+#
+# Two ends are checked, because a list that only one runner reads is the drift
+# this file exists to prevent:
+#
+#   * every row must be consumed by each runner (`run_table_case`, or an explicit
+#     `mark_consumed` where a case needs its own invocation - a solver budget, an
+#     undecided verdict, the precision probe). A row no runner ran is a failure,
+#     not a note.
+#   * the rows that name a golden must be exactly the files in `tests/goldens`.
+#     A golden recorded for a case with no row, or a row whose golden is missing,
+#     is a failure. This is what used to differ by three: the Windows runner
+#     compared ten goldens while the shell runner compared thirteen.
+#
+# A `-` in the golden column is a case whose report is not part of the corpus the
+# false-positive rate in docs/FALSE-POSITIVE-RATE.md is computed over - a fixture
+# with no findings, a setup failure, or a crate outside tests/ - so there is
+# nothing to compare and nothing to record.
+#
+# The labels are read by the runners' own console output, so they say what the
+# case is for rather than what it contains.
+safe_code|0|-|no FAILs on safe code
+overflow_fail|1|overflow_fail|FAIL on i32 overflow
+divzero_fail|1|divzero_fail|FAIL on division by zero
+branch_merge|1|branch_merge|FAIL on branch-merged constant overflow
+guarded|1|guarded|guarded arithmetic is proved; a weak guard is still flagged
+workspace_multi|1|workspace_multi|a workspace keeps every crate's findings
+loop_fail|1|loop_fail|a loop body is checked under its own guards: the counter increment is proved, the accumulator's overflow stays flagged
+nested_loop|1|nested_loop|a nested loop converges: its guarded increments are proved and only the real overflow is reported
+shift_amount|1|shift_amount|a shift is checked on its amount, and a truncating shift is not a panic
+stable_pin|1|stable_pin|a project pinning its own toolchain is still analysed by the verifier's compiler
+fold_fail|1|fold_fail|a constant-folded failure is a FAIL like any other
+broken_code|3|-|a crate that does not compile is a setup failure, not a verdict
+undecided|0|undecided|an undecided obligation is a WARN, and fatal under --deny-warn
+unnamed_write|0|unnamed_write|a store the analysis cannot name is not laundered into a counterexample
+statement_writes|0|statement_writes|a write spelled by a callee, a drop, an intrinsic or asm is named
+panic_sites|0|panic_sites|the panics this analysis does not read are counted and named, never left to be read as no findings
+panic_decided|1|panic_decided|a known enum variant decides an unwrap site: the safe variants are proved, the failing ones are counterexamples
+coroutine_state|0|-|the resume-state assertions of an async fn are decided, not counted as unsupported
+async_drop_state|0|-|resume-after-drop is real MIR reached through suspension states, so it stays a named unsupported assertion while its two siblings are decided
+potency_probe|0|-|safe Rust that cannot panic reports no counterexample
+precond_probe|1|-|a precondition asserted in the body is believed as a guard, a private leaf is analysed under the one its call sites prove, and the callees no call site decides are still judged without them
+helper_summary|1|-|a private leaf helper is analysed under the precondition its constant call sites prove, and the three helpers no call site decides keep their unguarded finding
+test-crates/buggy-project|1|-|one finding of each modelled class
+test-crates/safe-project|0|-|safe arithmetic on a crate that only uses it
+missing_toolchain|3|-|a missing pinned toolchain is a setup failure that names the install command

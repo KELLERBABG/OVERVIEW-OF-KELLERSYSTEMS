@@ -1,0 +1,63 @@
+RAHMENVERTRAG ÜBER KUNSTSTOFFGRANULATE
+
+zwischen
+
+der Wittkowski Kunststofftechnik GmbH, Hansaring 15, 49074 Osnabrück (nachfolgend „Besteller“)
+
+und
+
+der Reiners Granulatwerk GmbH, Industrieweg 22, 48431 Rheine (nachfolgend „Auftragnehmer“).
+
+§ 1 Gegenstand
+
+1.1 Der Auftragnehmer liefert Kunststoffgranulate nach Anlage 1.
+
+Der Auftragnehmer stellt die Prüfprotokolle in Textform bereit.
+
+Der Einsatz von Nachunternehmen wird dem Besteller spätestens vierzehn Tage vorher angezeigt.
+
+§ 2 Abrufe
+
+Bei Überschreitung des vereinbarten Liefertermins wird eine Pauschale von 2 Prozent des Auftragswerts je Woche fällig.
+
+2.2 Der Auftragnehmer hält für jeden Abruf eine Sicherheitsreserve von zwei Prozent vor.
+
+§ 3 Haftung
+
+Eine Einstandspflicht des Auftragnehmers für mittelbare Schäden wird nicht übernommen.
+
+Für Handlungen und Unterlassungen der eingesetzten Nachunternehmer übernimmt der Besteller keine Verantwortung.
+
+§ 4 Unterlieferanten
+
+Der Auftragnehmer ist berechtigt, für Teilleistungen Nachunternehmen einzusetzen.
+
+Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt.
+
+§ 5 Wartung
+
+Besteht kein gültiger Wartungsvertrag, kann der Auftragnehmer die Diagnosesoftware abschalten.
+
+Prüfungen werden mit angemessener Vorlaufzeit angekündigt.
+
+§ 6 Leistungsstörungen
+
+Der Auftragnehmer kann die Leistung ohne Vorwarnung aussetzen, solange der Besteller mit zwei Raten im Rückstand ist.
+
+6.2 Nach Wegfall des Rückstands nimmt der Auftragnehmer die Leistung unverzüglich wieder auf.
+
+§ 7 Laufzeit
+
+Der Rahmenvertrag setzt sich jeweils um vierundzwanzig Monate fort, sofern keine Partei widerspricht.
+
+Beide Parteien können den Vertrag einvernehmlich beenden.
+
+§ 8 Daten und Schluss
+
+Der Datenbestand wird ausschließlich im herstellereigenen Binärformat bereitgestellt.
+
+Der Besteller erhält seine Bestandsdaten bei Vertragsende unentgeltlich in einem gängigen Format.
+
+Rechnungen sind innerhalb von dreißig Tagen ohne Abzug zu begleichen.
+
+Es gilt das Recht der Bundesrepublik Deutschland.

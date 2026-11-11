@@ -1,0 +1,79 @@
+{
+  "slug": "evasion-029",
+  "source": "generated",
+  "domain": "evasion",
+  "traps": [
+    {
+      "marker": "Ein Ans​pruch auf Ber​eitstellung der Bes​tandsdaten in ein​em mas​chinenlesbaren Sta​ndardformat",
+      "expectedType": "data_lockin",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: data_lockin (Technik: zwsp)."
+    },
+    {
+      "marker": "Der Kun​de hält den Anb​ieter auf ers​tes Anf​ordern von all​en Ans​prüchen Dri​tter sch​adlos.",
+      "expectedType": "third_party_indemnity",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: third_party_indemnity (Technik: zwsp)."
+    },
+    {
+      "marker": "Ord​entliche Kün​digung dur​ch den Kun​den ist aus​geschlossen, der Anb​ieter kann den Ver​trag mit",
+      "expectedType": "asymmetric_termination",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: asymmetric_termination (Technik: zwsp)."
+    },
+    {
+      "marker": "Ans​prüche des Kun​den geg​en den Anb​ieter sind nic​ht abt​retbar, eine Zes​sion bed​arf der",
+      "expectedType": "assignment_restriction",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: assignment_restriction (Technik: zwsp)."
+    },
+    {
+      "marker": "Bei höh​erer Gew​alt ist der Anb​ieter von der Lei​stungspflicht ent​bunden, ohne dass sich die",
+      "expectedType": "force_majeure_asymmetry",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: force_majeure_asymmetry (Technik: zwsp)."
+    },
+    {
+      "marker": "Der Kun​de wird kei​ne Mit​arbeiter des Anb​ieters abw​erben oder ein​stellen.",
+      "expectedType": "non_solicitation",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: non_solicitation (Technik: zwsp)."
+    },
+    {
+      "marker": "Ein ord​entliches Kün​digungsrecht des Kun​den ist aus​geschlossen, nur der Anb​ieter ist",
+      "expectedType": "unilateral_convenience_termination",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: unilateral_convenience_termination (Technik: zwsp)."
+    },
+    {
+      "marker": "Die Ver​traulichkeitspflicht übe​rdauert die Ver​tragsbeendigung ohne zei​tliche Bes​chränkung.",
+      "expectedType": "excessive_survival",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: excessive_survival (Technik: zwsp)."
+    },
+    {
+      "marker": "Die Gru​ndgebühr erh​öht sich jäh​rlich um bis zu fün​fzehn Pro​zent, ohne dass dem Kun​den ein",
+      "expectedType": "price_escalation",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: price_escalation (Technik: zwsp)."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende kündigen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Zahlungen sind innerhalb von 30 Tagen nach Rechnungsstellung fällig.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde erhält für vermittelte Geschäfte eine Provision von fünf Prozent des Nettoumsatzes.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Anbieter stellt dem Kunden die vereinbarten Unterlagen unentgeltlich zur Verfügung.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Vertrag wird für die Dauer von zwei Jahren geschlossen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien behandeln die ausgetauschten Informationen vertraulich, die Pflicht gilt für die",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    }
+  ],
+  "uncovered": []
+}

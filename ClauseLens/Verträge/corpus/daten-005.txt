@@ -1,0 +1,115 @@
+OPEN-SOURCE-COMPLIANCE-VEREINBARUNG
+
+zwischen
+
+der Elbstrom AG, Bahnhofstraße 55, 76137 Karlsruhe (nachfolgend Anbieter)
+
+und
+
+der Contor GmbH, Kanzleistraße 2, 79098 Freiburg (nachfolgend Kunde)
+
+Präambel
+
+Der Anbieter liefert die in Anlage 4 bezeichnete Software, die Open-Source-Komponenten enthält. Es gelten die nachstehenden Bedingungen.
+
+§ 21 Beachtung
+
+Versäumt der Kunde einen Sicherheitspatch, verfällt sein Anspruch auf Service-Gutschriften.
+
+§ 1 Allgemeines
+
+Der Auftragnehmer meldet Datenschutzverletzungen unverzüglich an den Auftraggeber.
+
+§ 2 Bestimmung
+
+Bei vorzeitiger Beendigung wird eine pauschale Abstandszahlung fällig.
+
+§ 3 Regelung
+
+Der Auftragnehmer informiert den Auftraggeber mindestens vierzehn Tage vor dem Einsatz eines Unterauftragnehmers.
+
+§ 4 Vereinbarung
+
+Mangels eines Wartungsvertrags kann der Anbieter das System stilllegen.
+
+§ 5 Modalität
+
+Zahlungen des Kunden werden binnen zwei Werktagen nach Eingang auf dem Geschäftskonto verbucht.
+
+§ 6 Ordnung
+
+Nutzt der Kunde das Kontokorrent nach Fristende weiter, erneuert sich das Finanzierungsengagement um ein Jahr.
+
+§ 7 Ausgestaltung
+
+Der Auftragnehmer verarbeitet personenbezogene Daten ausschließlich auf dokumentierte Weisung des Auftraggebers.
+
+§ 8 Durchführung
+
+Der Kunde kann eine Beendigung erst mit sieben Jahren Vorlauf erklären.
+
+§ 9 Vorkehrung
+
+Jede Partei benennt für Datenschutzfragen eine Ansprechperson.
+
+§ 10 Zusatz
+
+Der Kunde stellt die Gesellschaft von sämtlichen Ansprüchen Dritter im Zusammenhang mit dem Verwendungszweck frei.
+
+§ 11 Klarstellung
+
+Rechnungen sind innerhalb von dreißig Tagen nach Zugang ohne Abzug fällig.
+
+§ 12 Ergänzung
+
+Der Kunde verwirkt bei Zahlungsverzug eine Buße in Höhe von zwei Prozent der offenen Vergütung.
+
+§ 13 Verfahren
+
+Der Anbieter benennt dem Kunden einen festen Ansprechpartner für alle Fragen der Vertragsabwicklung.
+
+§ 14 Ausführung
+
+The parties submit to the venue of the courts of the provider's seat in London for any dispute arising hereunder.
+
+§ 15 Hinweis
+
+Der Auftragnehmer löscht nach Beendigung der Datenverarbeitung alle personenbezogenen Daten und bestätigt die Löschung.
+
+§ 16 Maßnahme
+
+Die Parteien vereinbaren eine Mindestabnahme von fünfhundert Datensätzen je Kalendermonat.
+
+§ 17 Vorgehen
+
+Änderungen und Ergänzungen dieses Vertrages bedürfen der Textform.
+
+§ 18 Abstimmung
+
+Die Präambel beschreibt den Zweck der Zusammenarbeit.
+
+§ 19 Koordination
+
+Die Parteien benennen bei Vertragsschluss die jeweiligen Ansprechpartner und Vertretungsberechtigten.
+
+§ 20 Umsetzung
+
+Die Vertragsparteien bestätigen die Vollständigkeit der in Bezug genommenen Anlagen.
+
+§ 21 Beachtung
+
+Erfüllungsort ist der Sitz des Auftraggebers.
+
+§ 1 Allgemeines
+
+Dieser Vertrag ist in zwei gleichlautenden Ausfertigungen erstellt.
+
+§ 2 Bestimmung
+
+Jede Partei trägt ihre eigenen Kosten der Vertragsverhandlungen.
+
+Ort, Datum: ______________________
+
+Für Anbieter: ______________________
+
+Für Kunde: ______________________

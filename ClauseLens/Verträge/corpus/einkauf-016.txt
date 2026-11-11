@@ -1,0 +1,65 @@
+RAHMENVERTRAG ÜBER LIEFERANTENSOFTWARE
+
+zwischen
+
+der Nordhafen Logistik GmbH, Am Sandtorkai 30, 20457 Hamburg (nachfolgend „Kunde“)
+
+und
+
+der Vellinghausen Systemtechnik GmbH, Hansastraße 92, 24118 Kiel (nachfolgend „Auftragnehmer“).
+
+§ 1 Gegenstand
+
+1.1 Der Auftragnehmer überlässt dem Kunden Steuerungssoftware nach Anlage 1.
+
+1.2 Die Parteien benennen jeweils einen technischen Ansprechpartner.
+
+1.3 Der Lieferant stellt die Prüfprotokolle in Textform bereit.
+
+§ 2 Softwareüberlassung
+
+Die Überlassung der Steuerungssoftware erfolgt im Ist-Zustand.
+
+Der Kunde räumt dem Auftragnehmer ein unwiderrufliches, übertragbares Nutzungsrecht an allen Prüfdaten ein.
+
+§ 3 Verfügbarkeit
+
+Die angegebene Verfügbarkeit von 99,5 Prozent ist eine bloße Zielgröße.
+
+Versäumt der Auftragnehmer die Bereitstellung eines Sicherheitspatches, verfällt der Anspruch auf die vereinbarte Gutschrift.
+
+§ 4 Wartung
+
+4.1 Der Auftragnehmer stellt Sicherheitspatches nach Anlage 2 bereit.
+
+Ergänzend gelten die im Kundenportal hinterlegten Qualitätsrichtlinien in der dort jeweils abrufbaren Fassung.
+
+§ 5 Datenverarbeitung
+
+Die Verarbeitung personenbezogener Daten erfolgt außerhalb der Europäischen Union, unter anderem in Indien.
+
+5.2 Der Auftragnehmer löscht personenbezogene Daten nach Vertragsende.
+
+Der Kunde erhält seine Bestandsdaten bei Vertragsende unentgeltlich in einem gängigen Format.
+
+§ 6 Vertragsschluss
+
+Zuvor kommunizierte Leistungsbeschreibungen treten mit Unterzeichnung dieses Einkaufsrahmenvertrags außer Kraft.
+
+Änderungen dieses Vertrags bedürfen der Zustimmung beider Parteien in Textform.
+
+§ 7 Laufzeit
+
+Tritt Zahlungsunfähigkeit ein, endet das Vertragsverhältnis ohne weiteres.
+
+Beide Parteien können den Vertrag einvernehmlich beenden.
+
+§ 8 Schlussbestimmungen
+
+Rechnungen sind innerhalb von dreißig Tagen ohne Abzug zu begleichen.
+
+Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt.
+
+Beide Parteien behandeln die technischen Unterlagen der anderen Seite vertraulich.
+
+Es gilt das Recht der Bundesrepublik Deutschland.

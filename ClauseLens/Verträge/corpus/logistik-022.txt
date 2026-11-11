@@ -1,0 +1,57 @@
+Exportkontrollvertrag
+zwischen
+Export Control Services GmbH, Messeallee 8, 70565 Stuttgart (nachfolgend Anbieter)
+und
+Maschinenbau Ost GmbH, Gewerbepark 21, 04103 Leipzig (nachfolgend Kunde)
+
+§ 1 Vertragsgegenstand
+
+1.1 Der Anbieter prüft für den Kunden Exporte auf Einhaltung der Dual-Use-Verordnung.
+
+1.2 Die Parteien stimmen die Güterlisten halbjährlich ab.
+
+§ 2 Rechtswahl
+
+2.1 This Agreement shall be governed by the laws of Switzerland.
+
+2.2 Die Parteien verständigen sich bei Streitigkeiten zunächst gütlich.
+
+§ 3 Freistellung
+
+3.1 Der Kunde stellt den Anbieter von sämtlichen Ansprüchen Dritter frei, unabhängig davon, ob den Anbieter ein Verschulden trifft.
+
+3.2 Der Anbieter führt eine Sanktionslistenprüfung durch.
+
+§ 4 Steuern
+
+4.1 Nachträgliche Abgabenbelastungen trägt der Kunde.
+
+4.2 Der Anbieter erstellt die erforderlichen Zollanmeldungen.
+
+§ 5 Leistungsänderungen
+
+5.1 Der Anbieter behält sich vor, den Leistungsumfang an geänderte Marktbedingungen anzupassen.
+
+5.2 Der Anbieter informiert den Kunden über wesentliche Änderungen.
+
+§ 6 Unterauftragnehmer
+
+6.1 Der Anbieter darf Subunternehmer ohne vorherige Ankündigung einsetzen.
+
+6.2 Der Anbieter nennt die eingesetzten Unterauftragnehmer auf Anfrage.
+
+§ 7 Beweislast
+
+7.1 Der Kunde trägt die Beweislast dafür, dass die Ursache nicht auf einem Fehler des Anbieters beruht.
+
+7.2 Beide Parteien dokumentieren die Prüfergebnisse der Klassifizierung.
+
+§ 8 Vergütung und Schlussbestimmungen
+
+8.1 Rechnungen sind innerhalb von 30 Tagen ohne Abzug zahlbar.
+
+8.2 Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt.
+
+8.3 Der Kunde kann seine Klassifizierungsdaten jederzeit in einem gängigen Format exportieren.
+
+8.4 Beide Parteien behandeln die Prüfberichte vertraulich.

@@ -1,0 +1,320 @@
+[
+  {
+    "crate": "smokeshift",
+    "function": "audit::AuditLog::append_entry",
+    "block": "bb33",
+    "status": "WARN",
+    "kind": "unmodelled-panic",
+    "file": "src/audit.rs",
+    "line": 36,
+    "details": "Unmodelled panic site: the call to `std::option::Option::<&audit::AuditEntry>::unwrap` panics when it has no value to return, and its body is not read by this analysis, so whether this site can panic was not decided."
+  },
+  {
+    "crate": "smokeshift",
+    "function": "audit::_::<impl audit::_::_serde::Serialize for audit::AuditEntry>::serialize",
+    "block": "bb0",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_16` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "smokeshift",
+    "function": "audit::_::<impl audit::_::_serde::Serialize for audit::AuditEntry>::serialize",
+    "block": "bb1",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_16` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "smokeshift",
+    "function": "audit::_::<impl audit::_::_serde::Serialize for audit::AuditEntry>::serialize",
+    "block": "bb2",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_16` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "smokeshift",
+    "function": "audit::_::<impl audit::_::_serde::Serialize for audit::AuditEntry>::serialize",
+    "block": "bb3",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_16` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "smokeshift",
+    "function": "audit::_::<impl audit::_::_serde::Serialize for audit::AuditEntry>::serialize",
+    "block": "bb4",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_16` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "smokeshift",
+    "function": "audit::_::<impl audit::_::_serde::Serialize for audit::AuditEntry>::serialize",
+    "block": "bb5",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_16` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "smokeshift",
+    "function": "audit::_::<impl audit::_::_serde::Serialize for audit::AuditEntry>::serialize",
+    "block": "bb6",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_16` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "smokeshift",
+    "function": "audit::_::<impl audit::_::_serde::Serialize for audit::AuditEntry>::serialize",
+    "block": "bb7",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_16` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "smokeshift",
+    "function": "audit::_::<impl audit::_::_serde::Serialize for audit::AuditEntry>::serialize",
+    "block": "bb8",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_16` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "smokeshift",
+    "function": "compliance::_::<impl audit::_::_serde::Serialize for compliance::ShiftComplianceReport>::serialize",
+    "block": "bb0",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_16` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "smokeshift",
+    "function": "compliance::_::<impl audit::_::_serde::Serialize for compliance::ShiftComplianceReport>::serialize",
+    "block": "bb1",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_16` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "smokeshift",
+    "function": "compliance::_::<impl audit::_::_serde::Serialize for compliance::ShiftComplianceReport>::serialize",
+    "block": "bb2",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_16` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "smokeshift",
+    "function": "compliance::_::<impl audit::_::_serde::Serialize for compliance::ShiftComplianceReport>::serialize",
+    "block": "bb3",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_16` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "smokeshift",
+    "function": "compliance::_::<impl audit::_::_serde::Serialize for compliance::ShiftComplianceReport>::serialize",
+    "block": "bb4",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_16` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "smokeshift",
+    "function": "compliance::_::<impl audit::_::_serde::Serialize for compliance::ShiftComplianceReport>::serialize",
+    "block": "bb5",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_16` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "smokeshift",
+    "function": "compliance::_::<impl audit::_::_serde::Serialize for compliance::ShiftComplianceReport>::serialize",
+    "block": "bb6",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_16` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "smokeshift",
+    "function": "compliance::_::<impl audit::_::_serde::Serialize for compliance::ShiftComplianceReport>::serialize",
+    "block": "bb7",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_16` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "smokeshift",
+    "function": "compliance::_::<impl audit::_::_serde::Serialize for compliance::ShiftComplianceReport>::serialize",
+    "block": "bb8",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_16` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "smokeshift",
+    "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ExposureLimits>::serialize",
+    "block": "bb0",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_11` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "smokeshift",
+    "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ExposureLimits>::serialize",
+    "block": "bb1",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_11` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "smokeshift",
+    "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ExposureLimits>::serialize",
+    "block": "bb2",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_11` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "smokeshift",
+    "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ExposureLimits>::serialize",
+    "block": "bb3",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_11` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "smokeshift",
+    "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ShiftDoseTracker>::serialize",
+    "block": "bb0",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_13` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "smokeshift",
+    "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ShiftDoseTracker>::serialize",
+    "block": "bb1",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_13` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "smokeshift",
+    "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ShiftDoseTracker>::serialize",
+    "block": "bb2",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_13` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "smokeshift",
+    "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ShiftDoseTracker>::serialize",
+    "block": "bb3",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_13` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "smokeshift",
+    "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ShiftDoseTracker>::serialize",
+    "block": "bb4",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_13` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "smokeshift",
+    "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ShiftDoseTracker>::serialize",
+    "block": "bb5",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_13` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "smokeshift",
+    "function": "sensor::_::<impl audit::_::_serde::Serialize for sensor::Sps30Calibrator>::serialize",
+    "block": "bb0",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_10` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "smokeshift",
+    "function": "sensor::_::<impl audit::_::_serde::Serialize for sensor::Sps30Calibrator>::serialize",
+    "block": "bb1",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_10` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "smokeshift",
+    "function": "sensor::_::<impl audit::_::_serde::Serialize for sensor::Sps30Calibrator>::serialize",
+    "block": "bb2",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_10` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "smokeshift",
+    "function": "sensor::_::<impl audit::_::_serde::Serialize for sensor::Sps30Reading>::serialize",
+    "block": "bb0",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_12` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "smokeshift",
+    "function": "sensor::_::<impl audit::_::_serde::Serialize for sensor::Sps30Reading>::serialize",
+    "block": "bb1",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_12` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "smokeshift",
+    "function": "sensor::_::<impl audit::_::_serde::Serialize for sensor::Sps30Reading>::serialize",
+    "block": "bb2",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_12` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "smokeshift",
+    "function": "sensor::_::<impl audit::_::_serde::Serialize for sensor::Sps30Reading>::serialize",
+    "block": "bb3",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_12` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "smokeshift",
+    "function": "sensor::_::<impl audit::_::_serde::Serialize for sensor::Sps30Reading>::serialize",
+    "block": "bb4",
+    "status": "WARN",
+    "kind": "overflow",
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_12` is a cast of an operand this analysis does not model"
+  },
+  {
+    "crate": "smokeshift",
+    "function": "taint::TaintDetector::new",
+    "block": "bb3",
+    "status": "WARN",
+    "kind": "unmodelled-panic",
+    "file": "src/taint.rs",
+    "line": 49,
+    "details": "Unmodelled panic site: the call to `core::panicking::panic_fmt` can panic, and its body is not read by this analysis, so whether this site can panic was not decided."
+  },
+  {
+    "crate": "smokeshift_cli",
+    "function": "main",
+    "block": "bb54",
+    "status": "WARN",
+    "kind": "unmodelled-panic",
+    "file": "src/main.rs",
+    "line": 22,
+    "details": "Unmodelled panic site: the call to `std::result::Result::<std::string::String, serde_json::Error>::unwrap` panics when it has no value to return, and its body is not read by this analysis, so whether this site can panic was not decided."
+  }
+]

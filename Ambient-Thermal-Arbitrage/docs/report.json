@@ -1,0 +1,746 @@
+[
+  {
+    "function": "api::_::<impl api::_::_serde::Serialize for api::SystemStatus>::serialize",
+    "block": "bb0",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "api::_::<impl api::_::_serde::Serialize for api::SystemStatus>::serialize",
+    "block": "bb1",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "api::_::<impl api::_::_serde::Serialize for api::SystemStatus>::serialize",
+    "block": "bb2",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "api::_::<impl api::_::_serde::Serialize for api::SystemStatus>::serialize",
+    "block": "bb3",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "api::_::<impl api::_::_serde::Serialize for api::SystemStatus>::serialize",
+    "block": "bb4",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "api::_::<impl api::_::_serde::Serialize for api::SystemStatus>::serialize",
+    "block": "bb5",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "api::_::<impl api::_::_serde::Serialize for api::SystemStatus>::serialize",
+    "block": "bb6",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "api::_::<impl api::_::_serde::Serialize for api::SystemStatus>::serialize",
+    "block": "bb7",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "api::_::<impl api::_::_serde::Serialize for api::SystemStatus>::serialize",
+    "block": "bb8",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "config::_::<impl api::_::_serde::Serialize for config::Config>::serialize",
+    "block": "bb0",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "config::_::<impl api::_::_serde::Serialize for config::Config>::serialize",
+    "block": "bb1",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "config::_::<impl api::_::_serde::Serialize for config::Config>::serialize",
+    "block": "bb2",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "config::_::<impl api::_::_serde::Serialize for config::Config>::serialize",
+    "block": "bb3",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "config::_::<impl api::_::_serde::Serialize for config::Config>::serialize",
+    "block": "bb4",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "config::_::<impl api::_::_serde::Serialize for config::Config>::serialize",
+    "block": "bb5",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "config::_::<impl api::_::_serde::Serialize for config::Config>::serialize",
+    "block": "bb6",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "config::_::<impl api::_::_serde::Serialize for config::SystemConfig>::serialize",
+    "block": "bb0",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "config::_::<impl api::_::_serde::Serialize for config::SystemConfig>::serialize",
+    "block": "bb1",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "config::_::<impl api::_::_serde::Serialize for config::ThermalConfig>::serialize",
+    "block": "bb0",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "config::_::<impl api::_::_serde::Serialize for config::ThermalConfig>::serialize",
+    "block": "bb1",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "config::_::<impl api::_::_serde::Serialize for config::ThermalConfig>::serialize",
+    "block": "bb2",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "config::_::<impl api::_::_serde::Serialize for config::ThermalConfig>::serialize",
+    "block": "bb3",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "config::_::<impl api::_::_serde::Serialize for config::ThermalConfig>::serialize",
+    "block": "bb4",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "config::_::<impl api::_::_serde::Serialize for config::ThermalConfig>::serialize",
+    "block": "bb5",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "config::_::<impl api::_::_serde::Serialize for config::ThermalConfig>::serialize",
+    "block": "bb6",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "config::_::<impl api::_::_serde::Serialize for config::ControlConfig>::serialize",
+    "block": "bb0",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "config::_::<impl api::_::_serde::Serialize for config::ControlConfig>::serialize",
+    "block": "bb1",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "config::_::<impl api::_::_serde::Serialize for config::ControlConfig>::serialize",
+    "block": "bb2",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "config::_::<impl api::_::_serde::Serialize for config::ControlConfig>::serialize",
+    "block": "bb3",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "config::_::<impl api::_::_serde::Serialize for config::ControlConfig>::serialize",
+    "block": "bb4",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "config::_::<impl api::_::_serde::Serialize for config::ControlConfig>::serialize",
+    "block": "bb5",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "config::_::<impl api::_::_serde::Serialize for config::ControlConfig>::serialize",
+    "block": "bb6",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "config::_::<impl api::_::_serde::Serialize for config::ControlConfig>::serialize",
+    "block": "bb7",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "config::_::<impl api::_::_serde::Serialize for config::ControlConfig>::serialize",
+    "block": "bb8",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "config::_::<impl api::_::_serde::Serialize for config::LoggingConfig>::serialize",
+    "block": "bb0",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "config::_::<impl api::_::_serde::Serialize for config::LoggingConfig>::serialize",
+    "block": "bb1",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "config::_::<impl api::_::_serde::Serialize for config::ApiConfig>::serialize",
+    "block": "bb0",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "config::_::<impl api::_::_serde::Serialize for config::SensorConfig>::serialize",
+    "block": "bb0",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "config::_::<impl api::_::_serde::Serialize for config::SensorConfig>::serialize",
+    "block": "bb1",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "config::_::<impl api::_::_serde::Serialize for config::SensorConfig>::serialize",
+    "block": "bb2",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "config::_::<impl api::_::_serde::Serialize for config::SensorConfig>::serialize",
+    "block": "bb3",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "config::_::<impl api::_::_serde::Serialize for config::SensorConfig>::serialize",
+    "block": "bb4",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "control::_::<impl api::_::_serde::Serialize for control::ControlDecision>::serialize",
+    "block": "bb0",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "control::_::<impl api::_::_serde::Serialize for control::ControlDecision>::serialize",
+    "block": "bb1",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "control::_::<impl api::_::_serde::Serialize for control::ControlDecision>::serialize",
+    "block": "bb2",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "control::_::<impl api::_::_serde::Serialize for control::ControlDecision>::serialize",
+    "block": "bb3",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "control::_::<impl api::_::_serde::Serialize for control::ControlDecision>::serialize",
+    "block": "bb4",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "control::_::<impl api::_::_serde::Serialize for control::ControlDecision>::serialize",
+    "block": "bb5",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "control::_::<impl api::_::_serde::Serialize for control::ControlDecision>::serialize",
+    "block": "bb6",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "control::_::<impl api::_::_serde::Serialize for control::ControlDecision>::serialize",
+    "block": "bb7",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "control::_::<impl api::_::_serde::Serialize for control::ControlDecision>::serialize",
+    "block": "bb8",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "control::_::<impl api::_::_serde::Serialize for control::ControlDecision>::serialize",
+    "block": "bb9",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "data_ingestion::_::<impl api::_::_serde::Serialize for data_ingestion::RealDataset>::serialize",
+    "block": "bb0",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "data_ingestion::_::<impl api::_::_serde::Serialize for data_ingestion::RealDataset>::serialize",
+    "block": "bb1",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "data_ingestion::_::<impl api::_::_serde::Serialize for data_ingestion::RealDataset>::serialize",
+    "block": "bb2",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "data_ingestion::_::<impl api::_::_serde::Serialize for data_ingestion::RealHourRecord>::serialize",
+    "block": "bb0",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "data_ingestion::_::<impl api::_::_serde::Serialize for data_ingestion::RealHourRecord>::serialize",
+    "block": "bb1",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "data_ingestion::_::<impl api::_::_serde::Serialize for data_ingestion::RealHourRecord>::serialize",
+    "block": "bb2",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "data_ingestion::_::<impl api::_::_serde::Serialize for data_ingestion::RealHourRecord>::serialize",
+    "block": "bb3",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "data_ingestion::_::<impl api::_::_serde::Serialize for data_ingestion::RealHourRecord>::serialize",
+    "block": "bb4",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "data_ingestion::fetch_prices_smard_direct",
+    "block": "bb27",
+    "status": "FAIL",
+    "details": "Division By Zero Analysis -> Exploit path found!"
+  },
+  {
+    "function": "data_ingestion::fetch_prices_smard_direct",
+    "block": "bb28",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Div) -> Exploit path found!"
+  },
+  {
+    "function": "data_ingestion::hour_of_year",
+    "block": "bb3",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Mul) -> Exploit path found!"
+  },
+  {
+    "function": "data_ingestion::hour_of_year",
+    "block": "bb5",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "data_ingestion::hour_to_timestamp",
+    "block": "bb0",
+    "status": "FAIL",
+    "details": "Division By Zero Analysis -> Exploit path found!"
+  },
+  {
+    "function": "data_ingestion::hour_to_timestamp",
+    "block": "bb1",
+    "status": "FAIL",
+    "details": "Remainder By Zero Analysis -> Exploit path found!"
+  },
+  {
+    "function": "financial::_::<impl api::_::_serde::Serialize for financial::FinancialState>::serialize",
+    "block": "bb0",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "financial::_::<impl api::_::_serde::Serialize for financial::FinancialState>::serialize",
+    "block": "bb1",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "financial::_::<impl api::_::_serde::Serialize for financial::FinancialState>::serialize",
+    "block": "bb2",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "financial::_::<impl api::_::_serde::Serialize for financial::FinancialState>::serialize",
+    "block": "bb3",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "financial::_::<impl api::_::_serde::Serialize for financial::FinancialState>::serialize",
+    "block": "bb4",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "financial::_::<impl api::_::_serde::Serialize for financial::FinancialState>::serialize",
+    "block": "bb5",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "financial::_::<impl api::_::_serde::Serialize for financial::FinancialState>::serialize",
+    "block": "bb6",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "financial::_::<impl api::_::_serde::Serialize for financial::FinancialState>::serialize",
+    "block": "bb7",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "financial::_::<impl api::_::_serde::Serialize for financial::FinancialState>::serialize",
+    "block": "bb8",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "financial::_::<impl api::_::_serde::Serialize for financial::BuildingConfig>::serialize",
+    "block": "bb0",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "financial::_::<impl api::_::_serde::Serialize for financial::BuildingConfig>::serialize",
+    "block": "bb1",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "financial::_::<impl api::_::_serde::Serialize for financial::BuildingConfig>::serialize",
+    "block": "bb2",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "financial::_::<impl api::_::_serde::Serialize for financial::BuildingConfig>::serialize",
+    "block": "bb3",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "financial::_::<impl api::_::_serde::Serialize for financial::BuildingConfig>::serialize",
+    "block": "bb4",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "financial::_::<impl api::_::_serde::Serialize for financial::BuildingConfig>::serialize",
+    "block": "bb5",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "financial::_::<impl api::_::_serde::Serialize for financial::BuildingConfig>::serialize",
+    "block": "bb6",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "financial::_::<impl api::_::_serde::Serialize for financial::BuildingConfig>::serialize",
+    "block": "bb7",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "financial::_::<impl api::_::_serde::Serialize for financial::BuildingConfig>::serialize",
+    "block": "bb8",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "simulation_data::_::<impl api::_::_serde::Serialize for simulation_data::HourlyDataPoint>::serialize",
+    "block": "bb0",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "simulation_data::_::<impl api::_::_serde::Serialize for simulation_data::HourlyDataPoint>::serialize",
+    "block": "bb1",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "simulation_data::_::<impl api::_::_serde::Serialize for simulation_data::HourlyDataPoint>::serialize",
+    "block": "bb2",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "simulation_data::_::<impl api::_::_serde::Serialize for simulation_data::HourlyDataPoint>::serialize",
+    "block": "bb3",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "simulation_data::_::<impl api::_::_serde::Serialize for simulation_data::HourlyDataPoint>::serialize",
+    "block": "bb4",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "simulation_data::_::<impl api::_::_serde::Serialize for simulation_data::HourlyDataPoint>::serialize",
+    "block": "bb5",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "simulation_data::_::<impl api::_::_serde::Serialize for simulation_data::HourlyDataPoint>::serialize",
+    "block": "bb6",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "simulation_data::_::<impl api::_::_serde::Serialize for simulation_data::HourlyDataPoint>::serialize",
+    "block": "bb7",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "simulation_data::NrwClimate::daily_temp_base",
+    "block": "bb2",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Sub) -> Exploit path found!"
+  },
+  {
+    "function": "simulation_data::NrwClimate::daily_temp_base",
+    "block": "bb5",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "simulation_data::NrwClimate::daily_temp_base",
+    "block": "bb7",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "simulation_data::NrwClimate::daily_temp_base::{closure#0}",
+    "block": "bb1",
+    "status": "FAIL",
+    "details": "Slice Boundary Analysis -> Exploit path found!"
+  },
+  {
+    "function": "simulation_data::SimulationDataset::from_real_data",
+    "block": "bb19",
+    "status": "FAIL",
+    "details": "Division By Zero Analysis -> Exploit path found!"
+  },
+  {
+    "function": "simulation_data::SimulationDataset::from_real_data",
+    "block": "bb20",
+    "status": "FAIL",
+    "details": "Remainder By Zero Analysis -> Exploit path found!"
+  },
+  {
+    "function": "simulation_data::SimulationDataset::generate_synthetic",
+    "block": "bb9",
+    "status": "FAIL",
+    "details": "Division By Zero Analysis -> Exploit path found!"
+  },
+  {
+    "function": "simulation_data::SimulationDataset::generate_synthetic",
+    "block": "bb10",
+    "status": "FAIL",
+    "details": "Remainder By Zero Analysis -> Exploit path found!"
+  },
+  {
+    "function": "simulation_data::SimulationDataset::grid_frequency_realistic",
+    "block": "bb0",
+    "status": "FAIL",
+    "details": "Remainder By Zero Analysis -> Exploit path found!"
+  },
+  {
+    "function": "simulation_data::SimulationDataset::grid_frequency_realistic",
+    "block": "bb13",
+    "status": "FAIL",
+    "details": "Division By Zero Analysis -> Exploit path found!"
+  },
+  {
+    "function": "simulation_data::SimulationDataset::get",
+    "block": "bb0",
+    "status": "FAIL",
+    "details": "Remainder By Zero Analysis -> Exploit path found!"
+  },
+  {
+    "function": "simulation_data::synthetic_epex_price",
+    "block": "bb0",
+    "status": "FAIL",
+    "details": "Remainder By Zero Analysis -> Exploit path found!"
+  },
+  {
+    "function": "simulation_data::synthetic_epex_price",
+    "block": "bb1",
+    "status": "FAIL",
+    "details": "Division By Zero Analysis -> Exploit path found!"
+  },
+  {
+    "function": "simulator::SimulationEngine::current_data_point",
+    "block": "bb11",
+    "status": "FAIL",
+    "details": "Remainder By Zero Analysis -> Exploit path found!"
+  },
+  {
+    "function": "simulator::SimulationEngine::current_data_point",
+    "block": "bb12",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "simulator::SimulationEngine::current_data_point",
+    "block": "bb13",
+    "status": "FAIL",
+    "details": "Remainder By Zero Analysis -> Exploit path found!"
+  },
+  {
+    "function": "simulator::SimulationEngine::get_mpc_lookahead",
+    "block": "bb11",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "simulator::SimulationEngine::get_mpc_lookahead",
+    "block": "bb13",
+    "status": "FAIL",
+    "details": "Remainder By Zero Analysis -> Exploit path found!"
+  },
+  {
+    "function": "simulator::print_dashboard",
+    "block": "bb12",
+    "status": "FAIL",
+    "details": "Division By Zero Analysis -> Exploit path found!"
+  },
+  {
+    "function": "simulator::print_dashboard",
+    "block": "bb14",
+    "status": "FAIL",
+    "details": "Remainder By Zero Analysis -> Exploit path found!"
+  },
+  {
+    "function": "simulator::print_dashboard",
+    "block": "bb15",
+    "status": "FAIL",
+    "details": "Division By Zero Analysis -> Exploit path found!"
+  },
+  {
+    "function": "simulator::print_dashboard",
+    "block": "bb17",
+    "status": "FAIL",
+    "details": "Remainder By Zero Analysis -> Exploit path found!"
+  },
+  {
+    "function": "thermal::_::<impl api::_::_serde::Serialize for thermal::ThermalState>::serialize",
+    "block": "bb0",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "thermal::_::<impl api::_::_serde::Serialize for thermal::ThermalState>::serialize",
+    "block": "bb1",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "thermal::_::<impl api::_::_serde::Serialize for thermal::ThermalState>::serialize",
+    "block": "bb2",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "thermal::_::<impl api::_::_serde::Serialize for thermal::ThermalState>::serialize",
+    "block": "bb3",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "thermal::_::<impl api::_::_serde::Serialize for thermal::ThermalState>::serialize",
+    "block": "bb4",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "thermal::_::<impl api::_::_serde::Serialize for thermal::ThermalState>::serialize",
+    "block": "bb5",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "thermal::_::<impl api::_::_serde::Serialize for thermal::ThermalState>::serialize",
+    "block": "bb6",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "thermal::_::<impl api::_::_serde::Serialize for thermal::ThermalState>::serialize",
+    "block": "bb7",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "thermal::_::<impl api::_::_serde::Serialize for thermal::ThermalState>::serialize",
+    "block": "bb8",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  },
+  {
+    "function": "thermal::_::<impl api::_::_serde::Serialize for thermal::ThermalState>::serialize",
+    "block": "bb9",
+    "status": "FAIL",
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found!"
+  }
+]

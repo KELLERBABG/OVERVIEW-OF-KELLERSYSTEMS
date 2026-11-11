@@ -1,0 +1,14 @@
+[package]
+name = "zk-genome-genome-ingestion"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Secure Laboratory Attestation & Ingestion — certified lab signature verification and Sybil-attack-resistant genome import"
+
+[dependencies]
+zk-genome-genome-core = { path = "../genome-core" }
+zk-genome-entropy-auditor = { path = "../entropy-auditor" }
+sha3 = "0.10"
+
+[lints]
+workspace = true

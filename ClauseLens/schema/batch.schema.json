@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://clauselens.dev/schemas/v1/batch.json",
+  "title": "ClauseLensBatchReport",
+  "description": "Multi-document aggregated contract portfolio audit report.",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "summary",
+    "portfolioStats",
+    "documents",
+    "topRisksAcrossPortfolio"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "enum": ["1.0.0", "1.1.0"]
+    },
+    "analyzedAt": { "type": "string", "format": "date-time" },
+    "summary": { "type": "string" },
+    "portfolioStats": {
+      "type": "object",
+      "required": ["totalDocuments", "highRiskDocuments", "mediumRiskDocuments", "lowRiskDocuments", "averageScore"],
+      "properties": {
+        "totalDocuments": { "type": "integer", "minimum": 0 },
+        "highRiskDocuments": { "type": "integer", "minimum": 0 },
+        "mediumRiskDocuments": { "type": "integer", "minimum": 0 },
+        "lowRiskDocuments": { "type": "integer", "minimum": 0 },
+        "averageScore": { "type": "number", "minimum": 0, "maximum": 100 },
+        "totalFindings": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "documents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["file", "riskScore", "riskLevel", "findingsCount"],
+        "properties": {
+          "file": { "type": "string" },
+          "format": { "type": "string" },
+          "riskScore": { "type": "integer" },
+          "riskLevel": { "type": "string" },
+          "findingsCount": { "type": "integer" },
+          "counts": { "type": "object" }
+        }
+      }
+    },
+    "topRisksAcrossPortfolio": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type", "title", "occurrences", "severity"],
+        "properties": {
+          "type": { "type": "string" },
+          "title": { "type": "string" },
+          "occurrences": { "type": "integer" },
+          "severity": { "type": "string" },
+          "affectedDocuments": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+}

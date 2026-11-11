@@ -1,0 +1,13 @@
+IBM Plex is licensed under the SIL Open Font License, Version 1.1.
+
+Copyright (c) 2017 IBM Corp. All rights reserved.
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is available with a FAQ at: https://scripts.sil.org/OFL
+
+The full license text is at:
+https://github.com/IBM/plex/blob/master/LICENSE.txt
+
+Redistribution of the font files in this directory is permitted by that
+license. The files here are the Google Fonts "latin" and "latin-ext" subsets of
+IBM Plex Sans and IBM Plex Mono, served as woff2.

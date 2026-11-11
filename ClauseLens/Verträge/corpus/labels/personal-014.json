@@ -1,0 +1,74 @@
+{
+  "slug": "personal-014",
+  "source": "generated",
+  "domain": "Zeitarbeit und ANUE",
+  "traps": [
+    {
+      "marker": "mit einer Frist von sechs Monaten zum Quartalsende kündigen",
+      "expectedType": "notice_period",
+      "note": "asymmetrische Kündigungsfristen: sechs Monate für den Kunden, zwei Wochen für die Überlasserin"
+    },
+    {
+      "marker": "Die Arbeitsergebnisse gelten als abgenommen",
+      "expectedType": "deemed_acceptance",
+      "note": "Abnahmefiktion bei Schweigen innerhalb von fünf Werktagen"
+    },
+    {
+      "marker": "Eine A​ufrechnung des Kunden ist ausgeschlossen",
+      "expectedType": "setoff_restriction",
+      "note": "Aufrechnung des Kunden ausgeschlossen"
+    },
+    {
+      "marker": "Die Haftung der Überlasserin ist insoweit ausgeschlossen",
+      "expectedType": "liability",
+      "note": "Haftungsausschluss für mittelbare Schäden"
+    },
+    {
+      "marker": "verwirkt der Kunde eine Aufwandspauschale von 2.500,00 EUR",
+      "expectedType": "penalty",
+      "note": "Pauschalierte Vertragsstrafe bei Abwerbung"
+    },
+    {
+      "marker": "Gerichtsstand ist der Sitz der Überlasserin",
+      "expectedType": "jurisdiction",
+      "note": "Gerichtsstand am Sitz der Überlasserin"
+    },
+    {
+      "marker": "Frühere Absprachen verlieren mit Unterzeichnung ihre Gültigkeit",
+      "expectedType": "entire_agreement",
+      "note": "frühere Absprachen verlieren ihre Gültigkeit"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Abrechnung erfolgt monatlich auf Grundlage der freigegebenen Stundennachweise",
+      "note": "monatliche Abrechnung nach Stundennachweisen"
+    },
+    {
+      "marker": "Die Vergütung wird jeweils zum Monatsende fällig",
+      "note": "Fälligkeit der Vergütung zum Monatsende"
+    },
+    {
+      "marker": "Die Überlassung erfolgt ausschließlich im Rahmen der gesetzlichen Bestimmungen",
+      "note": "Überlassung im Rahmen der gesetzlichen Bestimmungen"
+    },
+    {
+      "marker": "Die Anlagen 1 und 2 sind Bestandteil dieses Vertrages",
+      "note": "Anlagen als Vertragsbestandteil"
+    },
+    {
+      "marker": "Der Kunde stellt die erforderliche Schutzausrüstung bereit",
+      "note": "Schutzausrüstung durch den Kunden"
+    },
+    {
+      "marker": "Die Parteien benennen je einen Ansprechpartner",
+      "note": "wechselseitige Ansprechpartner"
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Die Überlasserin kann den Einsatzort nach betrieblichem Bedarf verlegen",
+      "note": "einseitige Verlegung des Einsatzorts ohne Zustimmung, vom Detektor nicht erfasst"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+# Rust build output
+/target
+
+# OTA staging artifacts
+*.ota
+
+# Editor / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Local scratch
+*.log
+
+# Reasonix session state
+.reasonix/
+
+# Obsidian canvases
+*.canvas
+
+# Dev-meta
+REPO-MAP.md
+PROGRESS_*.md

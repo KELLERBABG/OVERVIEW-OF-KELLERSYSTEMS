@@ -1,0 +1,74 @@
+{
+  "slug": "vertrieb-024",
+  "source": "generated",
+  "domain": "vertriebsvereinbarung",
+  "traps": [
+    {
+      "marker": "Ein gutachterliches Verfahren ist vor Einleitung des gerichtlichen Rechtswegs durchzuführen. Die",
+      "expectedType": "mandatory_expert_determination",
+      "note": "Rechtsweg erst nach kostenpflichtigem Gutachterverfahren."
+    },
+    {
+      "marker": "Kritische Aktualisierungen muss der Kunde unverzüglich einspielen, andernfalls erlischt der",
+      "expectedType": "service_credit_forfeiture",
+      "note": "Gutschrift entfällt bei formalen Verstößen."
+    },
+    {
+      "marker": "Bei vorzeitiger Auflösung des Vertrags durch den Kunden wird eine pauschale Abstandszahlung in Höhe",
+      "expectedType": "early_termination_charge",
+      "note": "Pauschale Abstandszahlung bei vorzeitiger Beendigung."
+    },
+    {
+      "marker": "Ohne gültigen Wartungsvertrag kann der Anbieter die Anlage abschalten.",
+      "expectedType": "maintenance_conditional_shutdown",
+      "note": "Abschaltung ohne Wartungsvertrag."
+    },
+    {
+      "marker": "Der Vertrag verlängert sich jeweils um ein weiteres Jahr, sofern er nicht mit einer Frist von drei",
+      "expectedType": "auto_renewal",
+      "note": "Automatische Verlängerung bindet den Kunden, ohne dass er aktiv werden muss."
+    },
+    {
+      "marker": "Der Vertrag kann von beiden Parteien mit einer Frist von achtzehn Monaten zum Jahresende gekündigt",
+      "expectedType": "notice_period",
+      "note": "Lange Bindungsdauer bei kurzer Kündigungsfrist der Gegenseite."
+    },
+    {
+      "marker": "Die Haftung des Anbieters für leicht fahrlässig verursachte Schäden ist ausgeschlossen, für",
+      "expectedType": "liability",
+      "note": "Weitgehender Haftungsausschluss zulasten des Kunden."
+    },
+    {
+      "marker": "Für jeden Verstoß gegen die Vertraulichkeitspflichten verpflichtet sich der Kunde zur Zahlung einer",
+      "expectedType": "penalty",
+      "note": "Vertragsstrafe trifft nur den Kunden."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Für die Vertragsdauer gelten die vereinbarten Konditionen unverändert.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien halten die geltenden Datenschutzvorschriften ein und verarbeiten personenbezogene",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Anbieter benennt einen technischen Ansprechpartner für den Kunden.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde führt die ihm übertragenen Aufgaben mit der Sorgfalt eines ordentlichen Kaufmanns aus.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Die Parteien regeln Einzelheiten in den beigefügten Anlagen 1 bis 3.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde meldet vermittelte Geschäfte unverzüglich und vollständig an den Anbieter.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    }
+  ],
+  "uncovered": []
+}

@@ -1,0 +1,104 @@
+name: CI
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  host-workspace:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust toolchain
+        uses: actions-rust-lang/setup-rust-toolchain@v1
+
+      - name: Cache cargo dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            target
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+
+      - name: Check formatting
+        run: cargo fmt --all -- --check
+
+      - name: Clippy linting (deny warnings)
+        run: cargo clippy --workspace -- -D warnings
+
+      - name: Build all workspace crates
+        run: cargo build --workspace
+
+      - name: Run all tests (unit + integration)
+        run: cargo test --workspace
+
+  embedded-firmware:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust toolchain
+        uses: actions-rust-lang/setup-rust-toolchain@v1
+        with:
+          target: thumbv6m-none-eabi
+
+      - name: Cache cargo dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            target
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+
+      # Blocking: the firmware must build and fit its flash region. Never
+      # swallow failures here — if the node or bootloader stops linking,
+      # CI goes red.
+      - name: Build node firmware (STM32G031J6, release)
+        run: |
+          cargo build --release -p smart-matter-node \
+            --target thumbv6m-none-eabi \
+            --no-default-features --features embedded
+
+      - name: Build bootloader (STM32G031J6, release)
+        run: |
+          cargo build --release -p smart-matter-bootloader \
+            --target thumbv6m-none-eabi \
+            --no-default-features --features embedded
+
+      - name: Clippy (embedded targets)
+        run: |
+          cargo clippy -p smart-matter-node \
+            --target thumbv6m-none-eabi \
+            --no-default-features --features embedded -- -D warnings
+          cargo clippy -p smart-matter-bootloader \
+            --target thumbv6m-none-eabi \
+            --no-default-features --features embedded -- -D warnings
+
+      - name: Verify no_std core
+        run: |
+          cargo build -p smart-matter-core --no-default-features
+          cargo clippy -p smart-matter-core --no-default-features -- -D warnings
+
+  documentation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust toolchain
+        uses: actions-rust-lang/setup-rust-toolchain@v1
+
+      - name: Build documentation
+        run: cargo doc --workspace --no-deps
+
+      - name: Upload documentation
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: target/doc

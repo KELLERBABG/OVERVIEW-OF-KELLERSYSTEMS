@@ -1,0 +1,79 @@
+{
+  "slug": "evasion-008",
+  "source": "generated",
+  "domain": "evasion",
+  "traps": [
+    {
+      "marker": "Prüfungen werden unmittelbar durchgeführt, eine Terminabstimmung entfällt, und die Aufwendungen für",
+      "expectedType": "unreasonable_audit",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: unreasonable_audit (Technik: altunit)."
+    },
+    {
+      "marker": "Ein Anspruch auf Bereitstellung der Bestandsdaten in einem maschinenlesbaren Standardformat besteht",
+      "expectedType": "data_lockin",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: data_lockin (Technik: altunit)."
+    },
+    {
+      "marker": "Der Kunde hält den Anbieter auf erstes Anfordern von allen Ansprüchen Dritter schadlos.",
+      "expectedType": "third_party_indemnity",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: third_party_indemnity (Technik: altunit)."
+    },
+    {
+      "marker": "Ordentliche Kündigung durch den Kunden ist ausgeschlossen, der Anbieter kann den Vertrag mit einer",
+      "expectedType": "asymmetric_termination",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: asymmetric_termination (Technik: altunit)."
+    },
+    {
+      "marker": "Ansprüche des Kunden gegen den Anbieter sind nicht abtretbar, eine Zession bedarf der vorherigen",
+      "expectedType": "assignment_restriction",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: assignment_restriction (Technik: altunit)."
+    },
+    {
+      "marker": "Bei höherer Gewalt ist der Anbieter von der Leistungspflicht entbunden, ohne dass sich die",
+      "expectedType": "force_majeure_asymmetry",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: force_majeure_asymmetry (Technik: altunit)."
+    },
+    {
+      "marker": "Der Kunde wird keine Mitarbeiter des Anbieters abwerben oder einstellen.",
+      "expectedType": "non_solicitation",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: non_solicitation (Technik: altunit)."
+    },
+    {
+      "marker": "Ein ordentliches Kündigungsrecht des Kunden ist ausgeschlossen, nur der Anbieter ist berechtigt,",
+      "expectedType": "unilateral_convenience_termination",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: unilateral_convenience_termination (Technik: altunit)."
+    },
+    {
+      "marker": "Die Vertraulichkeitspflicht überdauert die Vertragsbeendigung ohne zeitliche Beschränkung.",
+      "expectedType": "excessive_survival",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: excessive_survival (Technik: altunit)."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Für die Vertragsdauer gelten die vereinbarten Konditionen unverändert.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien halten die geltenden Datenschutzvorschriften ein und verarbeiten personenbezogene",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Anbieter benennt einen technischen Ansprechpartner für den Kunden.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde führt die ihm übertragenen Aufgaben mit der Sorgfalt eines ordentlichen Kaufmanns aus.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Die Parteien regeln Einzelheiten in den beigefügten Anlagen 1 bis 3.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde meldet vermittelte Geschäfte unverzüglich und vollständig an den Anbieter.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    }
+  ],
+  "uncovered": []
+}

@@ -1,0 +1,82 @@
+{
+  "slug": "agb-12-performance-marketing-agentur",
+  "domain": "Online-Marketing-, SEO- & Social-Media-Agentur AGB",
+  "source": "Blind Real-AGB Benchmark 2026 (vor Engine-Lauf gelabelt)",
+  "traps": [
+    {
+      "marker": "handelt es sich hierbei ausschließlich um unverbindliche Orientierungswerte ohne",
+      "expectedType": "unverbindliche_sla_falle",
+      "statutoryBasis": "§ 307 Abs. 2 Nr. 2 BGB",
+      "note": "Vollständige Entwertung vertraglich zugesagter Liefermengen und Reaktionszeiten zu unverbindlichen Orientierungswerten selbst bei völliger Nichtleistung."
+    },
+    {
+      "marker": "gelten als unwiderlegbarer Vollbeweis für die erbrachte Kampagnenleistung, und dem",
+      "expectedType": "audit_log_manipulation",
+      "statutoryBasis": "§ 309 Nr. 12 BGB, § 307 Abs. 1 BGB",
+      "note": "Unzulässige Beweiskraftklausel zugunsten eigener Agentur-Dashboards unter vollständigem Ausschluss des Gegenbeweises."
+    },
+    {
+      "marker": "völlig unabhängig von einem eigenen Verschulden von sämtlichen wettbewerbs-,",
+      "expectedType": "third_party_indemnity",
+      "statutoryBasis": "§ 307 Abs. 1, Abs. 2 Nr. 1 BGB",
+      "note": "Extrem benachteiligende verschuldensunabhängige Freistellungsklausel selbst für Rechtsverstöße, die allein von der Agentur verursacht wurden."
+    },
+    {
+      "marker": "unwiderruflich berechtigt, den Firmennamen, sämtliche eingetragenen Marken,",
+      "expectedType": "marketing_reference",
+      "statutoryBasis": "§ 307 Abs. 1 BGB",
+      "note": "Unwiderrufliche Befugnis zur Veröffentlichung von Marken sowie vertraulichen Kampagnen- und Umsatzzahlen des Kunden zu Eigenwerbezwecken."
+    },
+    {
+      "marker": "gehen mit ihrer Äußerung automatisch, exklusiv, unentgeltlich und zur freien",
+      "expectedType": "feedback_ip_grab",
+      "statutoryBasis": "§ 307 Abs. 1 BGB",
+      "note": "Entschädigungslose Aneignung sämtlicher vom Kunden eingebrachten Marketingkonzepte und Slogans zur freien Weiterveräußerung an Dritte."
+    },
+    {
+      "marker": "Wird der Vertrag nicht spätestens neun Monate vor Ablauf der Grundlaufzeit durch den",
+      "expectedType": "auto_renewal",
+      "statutoryBasis": "§ 307 Abs. 1 BGB",
+      "note": "Übermäßige Laufzeitbindung durch automatische Verlängerung um jeweils 24 Monate gekoppelt mit einer neunmonatigen Kündigungsfrist."
+    },
+    {
+      "marker": "Während der Auftraggeber an die vorstehende neunmonatige Kündigungsfrist zum Ende",
+      "expectedType": "notice_period",
+      "statutoryBasis": "§ 307 Abs. 1 BGB",
+      "note": "Krass asymmetrische Kündigungsfristen (9 Monate zum Ende einer 24-Monats-Periode für den Kunden gegenüber 3 Werktagen jederzeit für die Agentur)."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Agentur schuldet bei der Durchführung von SEO- und Werbemaßnahmen ein",
+      "note": "Rechtsprechungskonforme Einordnung von SEO- und Marketing-Dienstleistungen als Dienstvertrag (§ 611 BGB) ohne Erfolgsgarantie für Dritt-Algorithmen."
+    },
+    {
+      "marker": "Der Auftraggeber stellt der Agentur die benötigten Text-, Bild- und Videomaterialien",
+      "note": "Sachgerechte Mitwirkungspflicht des Auftraggebers."
+    },
+    {
+      "marker": "Das an Drittplattformen (z. B. Google, Meta, LinkedIn) abzuführende Media-Budget",
+      "note": "Transparente und saubere Trennung zwischen Agenturhonorar und Dritt-Mediabudget."
+    },
+    {
+      "marker": "Eine Aufrechnung gegen das Agenturhonorar ist mit unbestrittenen oder rechtskräftig",
+      "note": "Wirksame Aufrechnungsklausel."
+    },
+    {
+      "marker": "Soweit die Agentur im Rahmen des Kampagnen-Trackings personenbezogene Daten im",
+      "note": "Rechtskonformer Datenschutzhinweis."
+    },
+    {
+      "marker": "Die Agentur haftet unbeschränkt für Schäden aus der Verletzung des Lebens, des",
+      "note": "AGB-konforme Haftungsregelung."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Sämtliche im Auftrag und auf Kosten des Auftraggebers eingerichteten",
+      "statutoryBasis": "§ 667 BGB, § 675 BGB, § 307 Abs. 2 Nr. 1 BGB",
+      "note": "Verstoß gegen die gesetzliche Herausgabepflicht des Geschäftsbesorgers (§§ 675, 667 BGB) hinsichtlich der auf Kosten des Kunden angelegten Werbekonten durch Erpressung einer 25.000-Euro-Ablösesumme."
+    }
+  ]
+}

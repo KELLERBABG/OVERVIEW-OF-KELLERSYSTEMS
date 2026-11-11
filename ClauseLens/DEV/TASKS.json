@@ -1,0 +1,35 @@
+{
+  "project": "ClauseLens",
+  "language": "JavaScript",
+  "summary": "A mature v1.0.0 zero-dependency Pure-Node B2B contract & AGB auditing engine (`src/analyze.js`, `src/clausedb.js`, `src/compare.js`, `src/pdfextract.js`, `src/docxextract.js`, `src/pdfreport.js`) with 47+ deterministic BGB §§ 305–310 detectors, SARIF 2.1.0 output, and extensive stress/red-team test corpora.",
+  "tasks": [
+    {
+      "id": "TASK-01",
+      "title": "Harden multi-paragraph BGB § 309 Nr. 7 liability carve-out resolution in analyze.js",
+      "status": "pending",
+      "target_files": [
+        "src/analyze.js",
+        "test/analyze.test.js"
+      ],
+      "context_files": [
+        "src/clausedb.js"
+      ],
+      "spec": "Verify and harden cross-sentence / cross-paragraph context window resolution in `src/analyze.js` so that liability caps that validly exempt *Vorsatz*, *grobe Fahrlässigkeit*, *Kardinalpflichten*, and *Verletzung von Leben, Körper, Gesundheit* (§ 309 Nr. 7a/b BGB) in an adjacent sentence are not false-flagged, while caps missing any mandatory carve-out are deterministically flagged.\n\n1. Add targeted regression tests in `test/analyze.test.js`.",
+      "verify_cmd": "node --test test/analyze.test.js"
+    },
+    {
+      "id": "TASK-02",
+      "title": "Verify negotiation delta risk-score regression tracking in compare.js",
+      "status": "pending",
+      "target_files": [
+        "src/compare.js",
+        "test/compare.test.js"
+      ],
+      "context_files": [
+        "src/analyze.js"
+      ],
+      "spec": "Ensure `src/compare.js` computes a deterministic `NegotiationGateVerdict` (`APPROVED`, `REQUIRES_REDLINE`, `REJECTED_NEW_HIGH_RISK`) when comparing an original contract against a counterparty redline, explicitly listing resolved findings, persistent blockers, and newly introduced risk clauses.\n\n1. Add unit tests in `test/compare.test.js`.",
+      "verify_cmd": "node --test test/compare.test.js"
+    }
+  ]
+}

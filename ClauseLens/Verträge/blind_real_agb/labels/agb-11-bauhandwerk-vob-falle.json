@@ -1,0 +1,88 @@
+{
+  "slug": "agb-11-bauhandwerk-vob-falle",
+  "domain": "Bauhandwerk & Ausbaugewerke AGB gegenüber Privat/Gewerbe",
+  "source": "Blind Real-AGB Benchmark 2026 (vor Engine-Lauf gelabelt)",
+  "traps": [
+    {
+      "marker": "der aktuelle Wortlaut sowie unsere technischen Zusatznormen sind jederzeit unter",
+      "expectedType": "dynamic_url_referral",
+      "statutoryBasis": "§ 305 Abs. 2 BGB, § 310 Abs. 1 S. 3 BGB, § 307 BGB",
+      "note": "Unwirksame Einbeziehung der VOB/B gegenüber Verbrauchern ohne Textaushändigung und unzulässiger dynamischer Online-Verweis."
+    },
+    {
+      "marker": "ausdrücklich vereinbarten Markenfabrikate, Baustoffe, Fliesen, Heizungsanlagen und",
+      "expectedType": "unilateral_change",
+      "statutoryBasis": "§ 308 Nr. 4 BGB, § 307 Abs. 1 BGB",
+      "note": "Unzulässiger einseitiger Änderungsvorbehalt zum Austausch vereinbarter Markenbaustoffe gegen minderwertigere Materialien bei vollem Werklohn."
+    },
+    {
+      "marker": "ohne Kenntnis oder Zustimmung des Auftraggebers an beliebig viele in- und",
+      "expectedType": "subcontractor_uncontrolled",
+      "statutoryBasis": "§ 307 Abs. 1 BGB, § 4 Abs. 8 VOB/B",
+      "note": "Unbeschränkte Weitergabe des gesamten Bauauftrags an beliebige Subunternehmer-Kolonnen ohne Zustimmung des Bauherrn."
+    },
+    {
+      "marker": "Für Ausführungsfehler, Pfusch am Bau, Diebstahl oder Beschädigungen des Eigentums",
+      "expectedType": "vicarious_agents",
+      "statutoryBasis": "§ 309 Nr. 7 lit. b, Nr. 8 lit. b BGB, § 278 BGB",
+      "note": "Rechtswidriger Haftungsausschluss für Erfüllungsgehilfen und Nachunternehmer am Bau."
+    },
+    {
+      "marker": "Erscheint der Auftraggeber nicht zu einem vom Auftragnehmer mit einer Frist von 24",
+      "expectedType": "deemed_acceptance",
+      "statutoryBasis": "§ 640 Abs. 2 BGB, § 308 Nr. 5 BGB",
+      "note": "Unwirksame Abnahmefiktion bei Bauleistungen ohne angemessene Frist und ohne den nach § 640 Abs. 2 S. 2 BGB gegenüber Verbrauchern zwingenden Hinweis auf die Fiktionsfolgen."
+    },
+    {
+      "marker": "trägt abweichend von den gesetzlichen Regeln stets der Auftraggeber die volle",
+      "expectedType": "burden_of_proof",
+      "statutoryBasis": "§ 309 Nr. 12 BGB, § 307 Abs. 2 Nr. 1 BGB",
+      "note": "Verbotene Beweislastumkehr zulasten des Bauherrn schon vor der Abnahme."
+    },
+    {
+      "marker": "Sämtliche Ansprüche des Auftraggebers wegen Baumängeln an Bauwerken, Dach-,",
+      "expectedType": "statute_of_limitations",
+      "statutoryBasis": "§ 309 Nr. 8 lit. b ff BGB, § 634a Abs. 1 Nr. 2 BGB",
+      "note": "Zwingend unwirksame Verkürzung der fünfjährigen Verjährungsfrist für Bauwerksmängel auf zwölf Monate."
+    },
+    {
+      "marker": "Anspruch auf eine sofort fällige Pauschalentschädigung in Höhe von 85 Prozent der",
+      "expectedType": "early_termination_charge",
+      "statutoryBasis": "§ 308 Nr. 7 BGB, § 309 Nr. 5 BGB, § 648 S. 3 BGB",
+      "note": "Nach ständiger BGH-Rechtsprechung zum Bauvertragsrecht unwirksame 85-%-Pauschalvergütung bei freier Kündigung ohne Nachweismöglichkeit höherer ersparter Aufwendungen (Leitbild in § 648 S. 3 BGB: 5 %)."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Auftraggeber stellt auf der Baustelle unentgeltlich die erforderlichen",
+      "note": "Bauvertraglich übliche und angemessene Mitwirkungsobliegenheit des Bauherrn."
+    },
+    {
+      "marker": "Der Auftragnehmer kann entsprechend dem nachgewiesenen Baufortschritt angemessene",
+      "note": "Entspricht den gesetzlichen Vorgaben der §§ 632a, 650g Abs. 4 BGB."
+    },
+    {
+      "marker": "Die Abnahme der Bauleistung hat nach Fertigstellung förmlich unter Erstellung eines",
+      "note": "Sachgerechte Vereinbarung einer förmlichen Bauabnahme."
+    },
+    {
+      "marker": "Beide Vertragsparteien sind berechtigt, den Bauvertrag aus wichtigem Grund nach §",
+      "note": "Wiedergabe der gesetzlichen Regelung der §§ 648a, 650h BGB."
+    },
+    {
+      "marker": "Gelieferte und noch nicht fest mit dem Grundstück verbundene Bauteile und",
+      "note": "Zulässiger einfacher Eigentumsvorbehalt bis zum Einbau (§ 946 BGB)."
+    },
+    {
+      "marker": "Für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit sowie für",
+      "note": "Gesetzeskonforme Haftungsklausel."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "zudem hat der Auftraggeber vor jeder Mängelrüge einen Kostenvorschuss von 1.500,00",
+      "statutoryBasis": "§ 309 Nr. 8 lit. b cc BGB, § 635 Abs. 2 BGB",
+      "note": "Rechtswidrige Erschwerung der Mängelgewährleistung durch Forderung eines pauschalen Mängelprüfungsvorschusses von 1.500 Euro vor jeder Mängelrüge."
+    }
+  ]
+}

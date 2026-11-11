@@ -1,0 +1,88 @@
+{
+  "slug": "werk-030",
+  "source": "generated",
+  "domain": "Lebensmittelhandel, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Als Gerichtsstand gilt der Sitz des Anbieters.",
+      "expectedType": "jurisdiction",
+      "note": "Verifizierte Klausel im Bereich jurisdiction."
+    },
+    {
+      "marker": "Die Teillieferung wird als vertragsgemäß behandelt, sofern keine Rüge erfolgt.",
+      "expectedType": "deemed_acceptance",
+      "note": "Verifizierte Klausel im Bereich deemed_acceptance."
+    },
+    {
+      "marker": "Die Auditkosten trägt der Kunde.",
+      "expectedType": "unreasonable_audit",
+      "note": "Verifizierte Klausel im Bereich unreasonable_audit."
+    },
+    {
+      "marker": "Ein Recht zur Kündigung wegen höherer Gewalt besteht für den Kunden nicht.",
+      "expectedType": "force_majeure_asymmetry",
+      "note": "Verifizierte Klausel im Bereich force_majeure_asymmetry."
+    },
+    {
+      "marker": "An die Stelle einer unwirksamen Bestimmung tritt diejenige Regelung, die dem wirtschaftlichen Zweck",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "Verifizierte Klausel im Bereich salvatorische_klausel_falle."
+    },
+    {
+      "marker": "Steuerliche Mehrbelastungen werden vollumfänglich dem Kunden belastet.",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Verifizierte Klausel im Bereich tax_indemnity_shift."
+    },
+    {
+      "marker": "Die Mitteilung gilt unabhängig vom tatsächlichen Zugang als bewirkt.",
+      "expectedType": "fictitious_receipt",
+      "note": "Verifizierte Klausel im Bereich fictitious_receipt."
+    },
+    {
+      "marker": "Der Anbieter ist berechtigt, das System abzuschalten, wenn der Kunde den Wartungsvertrag nicht verlä",
+      "expectedType": "maintenance_conditional_shutdown",
+      "note": "Verifizierte Klausel im Bereich maintenance_conditional_shutdown."
+    },
+    {
+      "marker": "Die Beweislast für die Mangelhaftigkeit der Werkleistung trägt der Kunde.",
+      "expectedType": "burden_of_proof",
+      "note": "Verifizierte Klausel im Bereich burden_of_proof."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Anbieter schult die Mitarbeiter des Kunden in der Anwendung.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Der Anbieter übergibt eine Dokumentation der Schnittstellen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Vergütung ist innerhalb von dreißig Tagen nach Rechnungseingang fällig.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Der Anbieter zeigt den Einsatz von Unterauftragnehmern vierzehn Tage vorher an.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Der Kunde erhält zum Vertragsende einen kostenfreien Datenexport in einem gängigen Format.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Änderungen dieses Vertrages können in Textform vereinbart werden.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Die Parteien behandeln die Vertragsverhandlung vertraulich",
+      "note": "Verschwiegenheit ohne Nachwirkung."
+    }
+  ]
+}

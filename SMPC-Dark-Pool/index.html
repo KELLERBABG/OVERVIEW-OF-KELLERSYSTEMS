@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SMPC Dark Pool &mdash; threshold order book</title>
+<meta name="description" content="An institutional dark pool where the order book is mathematically impossible to inspect before execution: Shamir secret sharing, Beaver triple MPC matching, and zk-SNARK proof of solvency.">
+<meta name="theme-color" content="#0b0b0f">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--void:#0b0b0f;--void2:#12121a;--edge:#26262f;--grey:#6d6d7c;--ink:#e6e6ef;--gold:#d8b25e;--share:#8b7dd8;--ok:#5fd48a}
+*{box-sizing:border-box} html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--void);color:#9a9aab;font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(16px,4vw,44px)}
+header{padding:clamp(28px,5vw,56px) 0 clamp(14px,2vw,20px)}
+.kick{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+h1{margin:.4rem 0 .3rem;font-weight:600;font-size:clamp(2rem,5.2vw,3.4rem);line-height:1.03;letter-spacing:-.03em;color:var(--ink)}
+.sub{margin:0;max-width:66ch;color:#8e8e9e}
+.panel{margin:clamp(18px,3vw,30px) 0;border:1px solid var(--edge);background:var(--void2)}
+.panel .hd{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;border-bottom:1px solid var(--edge);padding:.5rem .9rem;
+ font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--grey)}
+.panel .hd b{color:var(--gold);font-weight:500}
+svg{display:block;width:100%;height:auto;padding:clamp(10px,2vw,20px)}
+.ord{fill:var(--share);opacity:.5}
+.agg{fill:none;stroke:var(--gold);stroke-width:1.8}
+.mid{stroke:var(--edge);stroke-width:1} .clear{stroke:var(--ok);stroke-width:1.3;stroke-dasharray:6 4}
+.cl{font-family:'IBM Plex Mono',monospace;font-size:9px;fill:var(--ok)} .cl2{font-family:'IBM Plex Mono',monospace;font-size:9px;fill:var(--ink)}
+.ax{font-family:'IBM Plex Mono',monospace;font-size:9px;fill:var(--grey)}
+.ax2{font-family:'IBM Plex Mono',monospace;font-size:8.5px;fill:var(--grey);letter-spacing:.1em}
+.ax3{font-family:'IBM Plex Mono',monospace;font-size:9px;fill:var(--share)}
+.sh{fill:rgba(139,125,216,.16);stroke:var(--share)} .sh.off{fill:none;stroke:var(--edge);stroke-dasharray:3 3}
+.sn{font-family:'IBM Plex Mono',monospace;font-size:11px;fill:var(--ink)}
+.sh.off + .sn{fill:var(--grey)}
+.brk{fill:none;stroke:var(--ok);stroke-width:1.2} .brk2{fill:none;stroke:var(--grey);stroke-width:1;stroke-dasharray:3 3}
+.bl{font-family:'IBM Plex Mono',monospace;font-size:9px;fill:var(--ok)} .bl2{font-family:'IBM Plex Mono',monospace;font-size:9px;fill:var(--grey)}
+.readouts{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--edge);border-top:1px solid var(--edge)}
+.ro{background:var(--void2);padding:.9rem 1rem}
+.rn{display:block;font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--grey)}
+.ro b{display:block;font-family:'IBM Plex Mono',monospace;font-size:1.25rem;font-weight:500;color:var(--ink);line-height:1.2;margin-top:.25rem}
+.rs{display:block;font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--gold);margin-top:.15rem}
+section{border-top:1px solid var(--edge);padding:clamp(24px,4vw,42px) 0}
+h2{margin:0 0 1rem;font-weight:600;font-size:clamp(1.25rem,2.6vw,1.75rem);letter-spacing:-.02em;color:var(--ink)}
+h2 i{font-family:'IBM Plex Mono',monospace;font-style:normal;font-size:10px;letter-spacing:.2em;color:var(--gold);display:block;margin-bottom:.4rem;font-weight:400}
+p{margin:0 0 .9rem;max-width:76ch} b{color:var(--ink);font-weight:500}
+.log{border:1px solid var(--edge);background:#0d0d13;font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.9}
+.log .l{display:flex;gap:.7rem;padding:.15rem 1rem;white-space:pre-wrap}
+.log .l:first-child{padding-top:.8rem} .log .l:last-child{padding-bottom:.8rem}
+.tg{flex:0 0 auto;color:var(--share);font-weight:500} .txt{color:#c2c2d0}
+table{width:100%;border-collapse:collapse;margin-top:1rem;font-size:.89rem}
+th,td{text-align:left;padding:.5rem .6rem;border-bottom:1px solid var(--edge);vertical-align:top}
+th{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey);font-weight:400}
+td.sp{background:rgba(216,178,94,.1);color:var(--ink);font-weight:500}
+pre{margin:1rem 0 0;border:1px solid var(--edge);border-left:3px solid var(--gold);background:#0d0d13;padding:.9rem 1rem;
+ font-family:'IBM Plex Mono',monospace;font-size:.74rem;line-height:1.9;color:var(--ink);white-space:pre-wrap;overflow-wrap:anywhere}
+.foot{border-top:1px solid var(--edge);padding:1.5rem 0 3rem;font-family:'IBM Plex Mono',monospace;font-size:9.5px;
+ letter-spacing:.14em;text-transform:uppercase;color:var(--grey)}
+.foot .wrap{display:flex;justify-content:space-between;gap:1.4rem;flex-wrap:wrap} .foot a{color:var(--gold)}
+html{scrollbar-color:#26262f #0b0b0f;scrollbar-width:thin}
+::-webkit-scrollbar{width:12px}::-webkit-scrollbar-track{background:#0b0b0f}
+::-webkit-scrollbar-thumb{background:#26262f;border:3px solid #0b0b0f}::-webkit-scrollbar-thumb:hover{background:#d8b25e}
+/* mobile-figure */@media (max-width:900px){.panel,.chart,.die,.pfd,.cfg,.console,.figs,.seqblock,.map{overflow-x:auto;-webkit-overflow-scrolling:touch}.panel svg,.chart svg,.die svg,.pfd svg,.cfg svg,.figs svg,.map svg{min-width:660px;max-width:none}}
+/* --- Keller Systems Subtle Masthead Lockup --- */
+header { padding-top: clamp(18px, 3.2vw, 30px) !important; }
+.ks-masthead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 12px;
+  margin-bottom: clamp(18px, 3vw, 28px);
+  border-bottom: 1px solid #26262f;
+}
+.ks-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+.ks-mark {
+  width: 22px !important;
+  min-width: 22px !important;
+  max-width: 22px !important;
+  height: 22px !important;
+  min-height: 22px !important;
+  max-height: 22px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: block !important;
+  flex-shrink: 0 !important;
+}
+.ks-titles {
+  display: inline-flex;
+  flex-direction: column;
+  line-height: 1.12;
+}
+.ks-name {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #e6e6ef;
+  letter-spacing: -0.01em;
+}
+.ks-sub {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 8.5px;
+  font-weight: 500;
+  color: #7d7d8c;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.ks-brand:hover .ks-name {
+  color: #d8b25e;
+}
+.ks-links {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+.ks-link {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 10.5px;
+  color: #7d7d8c;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  letter-spacing: 0.03em;
+  transition: color 0.15s;
+}
+.ks-link:hover {
+  color: #e6e6ef;
+}
+</style></head><body><!-- noscript-fallback --><noscript><style>html *{opacity:1!important;transform:none!important;filter:none!important;animation:none!important}[data-a],[data-b],.d,.o,.fade,.draw,.chapter,.step,.panel,.hlab{opacity:1!important}</style></noscript>
+<div class="wrap"><header>
+      <div class="ks-masthead">
+        <a href="https://kellersystems.dev" class="ks-brand" title="Keller Systems">
+          <svg class="ks-mark" viewBox="0 0 100 100" width="22" height="22" aria-hidden="true">
+            <rect x="18" y="14" width="18" height="72" rx="3" fill="#e6e6ef"/>
+            <path d="M46 50 L72 16 H90 L60 54 Z" fill="#d8b25e"/>
+            <path d="M60 46 L90 84 H72 L46 50 Z" fill="#8b7dd8"/>
+          </svg>
+          <span class="ks-titles">
+            <span class="ks-name">SMPC Dark Pool</span>
+            <span class="ks-sub">KELLER SYSTEMS</span>
+          </span>
+        </a>
+        <div class="ks-links">
+          <a href="https://kellersystems.dev" class="ks-link">kellersystems.dev &rarr;</a>
+        <a href="https://github.com/KELLERBABG/SMPC-Dark-Pool" target="_blank" rel="noopener noreferrer" class="ks-link">Source &#8599;</a>
+        </div>
+      </div>
+  <span class="kick">Shamir secret sharing &middot; front-running resistant</span>
+  <h1>SMPC Dark Pool</h1>
+  <p class="sub">Institutional trading where the order book cannot be inspected before execution. Orders are split into secret shares, matched blindly by multi-party computation, and settled with a proof of solvency.</p>
+</header></div>
+
+<div class="wrap"><div class="panel">
+  <div class="hd"><span>Threshold order book &middot; sealed</span><b>order book exposure: 0 bits</b></div>
+  <svg viewBox="0 0 720 380" role="img" aria-label="Sealed order book">
+<line class="mid" x1="62" y1="200" x2="696" y2="200"/>
+<text class="ax" x="54" y="194" text-anchor="end">bids</text>
+<text class="ax" x="54" y="214" text-anchor="end">asks</text>
+<text class="ax2" x="696" y="374" text-anchor="end">price per unit</text>
+<rect class="ord" x="453.9" y="200.0" width="6" height="30.6" rx="1"/><rect class="ord" x="656.5" y="200.0" width="6" height="30.6" rx="1"/><rect class="ord" x="77.4" y="200.0" width="6" height="21.8" rx="1"/><rect class="ord" x="470.4" y="164.3" width="6" height="35.7" rx="1"/><rect class="ord" x="356.4" y="200.0" width="6" height="14.9" rx="1"/><rect class="ord" x="422.9" y="192.5" width="6" height="7.5" rx="1"/><rect class="ord" x="236.2" y="200.0" width="6" height="36.2" rx="1"/><rect class="ord" x="160.2" y="167.6" width="6" height="32.4" rx="1"/><rect class="ord" x="450.5" y="188.9" width="6" height="11.1" rx="1"/><rect class="ord" x="611.5" y="186.3" width="6" height="13.7" rx="1"/><rect class="ord" x="681.9" y="165.2" width="6" height="34.8" rx="1"/><rect class="ord" x="668.6" y="200.0" width="6" height="24.2" rx="1"/><rect class="ord" x="188.8" y="200.0" width="6" height="36.9" rx="1"/><rect class="ord" x="671.8" y="164.6" width="6" height="35.4" rx="1"/><rect class="ord" x="288.0" y="187.7" width="6" height="12.3" rx="1"/><rect class="ord" x="100.3" y="200.0" width="6" height="16.6" rx="1"/><rect class="ord" x="61.1" y="171.4" width="6" height="28.6" rx="1"/><rect class="ord" x="255.5" y="166.9" width="6" height="33.1" rx="1"/><rect class="ord" x="259.2" y="200.0" width="6" height="22.3" rx="1"/><rect class="ord" x="95.1" y="162.0" width="6" height="38.0" rx="1"/><rect class="ord" x="534.4" y="166.1" width="6" height="33.9" rx="1"/><rect class="ord" x="558.4" y="200.0" width="6" height="18.7" rx="1"/><rect class="ord" x="64.8" y="191.5" width="6" height="8.5" rx="1"/><rect class="ord" x="664.6" y="200.0" width="6" height="13.3" rx="1"/><rect class="ord" x="648.4" y="163.0" width="6" height="37.0" rx="1"/><rect class="ord" x="283.9" y="200.0" width="6" height="23.7" rx="1"/><rect class="ord" x="127.5" y="200.0" width="6" height="30.8" rx="1"/><rect class="ord" x="604.0" y="200.0" width="6" height="8.2" rx="1"/><rect class="ord" x="116.8" y="200.0" width="6" height="17.9" rx="1"/><rect class="ord" x="641.1" y="200.0" width="6" height="17.9" rx="1"/>
+<polyline class="agg" points="62.0,200.0 72.6,200.0 83.1,200.0 93.7,200.0 104.3,199.9 114.8,199.9 125.4,199.9 136.0,199.8 146.5,199.7 157.1,199.6 167.7,199.5 178.2,199.3 188.8,199.1 199.4,198.7 209.9,198.3 220.5,197.8 231.1,197.2 241.6,196.5 252.2,195.7 262.8,194.7 273.3,193.5 283.9,192.3 294.5,190.8 305.0,189.3 315.6,187.6 326.2,185.8 336.7,183.9 347.3,182.0 357.9,180.1 368.4,178.2 379.0,176.3 389.6,174.4 400.1,172.7 410.7,171.0 421.3,169.5 431.8,168.2 442.4,166.9 453.0,165.9 463.5,164.9 474.1,164.1 484.7,163.5 495.2,162.9 505.8,162.5 516.4,162.1 526.9,161.8 537.5,161.6 548.1,161.4 558.6,161.3 569.2,161.2 579.8,161.2 590.3,161.1 600.9,161.1 611.5,161.0 622.0,161.0 632.6,161.0 643.2,161.0 653.7,161.0 664.3,161.0 674.9,161.0 685.4,161.0 696.0,161.0"/>
+<polyline class="agg" points="62.0,200.0 72.6,200.0 83.1,200.0 93.7,200.0 104.3,200.0 114.8,200.0 125.4,200.0 136.0,200.0 146.5,200.0 157.1,200.0 167.7,200.0 178.2,200.0 188.8,200.0 199.4,200.0 209.9,200.0 220.5,200.0 231.1,200.1 241.6,200.1 252.2,200.1 262.8,200.2 273.3,200.3 283.9,200.4 294.5,200.5 305.0,200.7 315.6,201.0 326.2,201.3 336.7,201.7 347.3,202.2 357.9,202.8 368.4,203.5 379.0,204.3 389.6,205.3 400.1,206.5 410.7,207.7 421.3,209.2 431.8,210.7 442.4,212.4 453.0,214.2 463.5,216.1 474.1,218.0 484.7,219.9 495.2,221.9 505.8,223.8 516.4,225.6 526.9,227.3 537.5,229.0 548.1,230.5 558.6,231.8 569.2,233.1 579.8,234.1 590.3,235.1 600.9,235.9 611.5,236.5 622.0,237.1 632.6,237.5 643.2,237.9 653.7,238.2 664.3,238.4 674.9,238.6 685.4,238.7 696.0,238.8"/>
+<line class="clear" x1="424.3" y1="26" x2="424.3" y2="346"/>
+<text class="cl" x="431.3" y="40">blind match: limit buy &ge; limit sell</text>
+<text class="cl2" x="431.3" y="52">TRUE &mdash; clearing price 126.0</text>
+<text class="ax3" x="62" y="20">each block is one order, held as a secret share &mdash; no node reads its price or size</text>
+</svg>
+  <div class="readouts">
+    <div class="ro"><span class="rn">Threshold committee</span><b>5 of 7</b><span class="rs">nodes</span></div>
+    <div class="ro"><span class="rn">Book exposure</span><b>0 bits</b><span class="rs">blind</span></div>
+    <div class="ro"><span class="rn">MEV extraction</span><b>$0.00</b><span class="rs">immune</span></div>
+    <div class="ro"><span class="rn">Settlement proof</span><b>Groth16</b><span class="rs">BN254</span></div>
+  </div>
+</div></div>
+
+<section><div class="wrap"><h2><i>01 &mdash; the split</i>Zero information, not merely encrypted</h2>
+<p>A centralised dark pool still has an operator, and the operator can read the book. Encrypting it moves the problem rather than solving it, because whoever holds the key can read it too.</p>
+<p>Shamir secret sharing removes the key. An order becomes a set of linear polynomials over a prime finite field, and <b>any subset smaller than the threshold possesses zero information</b> &mdash; not impractical to read, but information-theoretically nothing. Seven shares, five required: any four reveal as much as four random numbers.</p>
+<svg viewBox="0 0 360 130" role="img" aria-label="Threshold secret sharing">
+<text class="ax" x="0" y="18">Shamir shares over F&#8346; &mdash; any 5 reconstruct, any 4 learn nothing</text>
+<rect class="sh" x="20" y="34" width="34" height="34" rx="3"/><text class="sn" x="37" y="56" text-anchor="middle">1</text><rect class="sh" x="66" y="34" width="34" height="34" rx="3"/><text class="sn" x="83" y="56" text-anchor="middle">2</text><rect class="sh" x="112" y="34" width="34" height="34" rx="3"/><text class="sn" x="129" y="56" text-anchor="middle">3</text><rect class="sh" x="158" y="34" width="34" height="34" rx="3"/><text class="sn" x="175" y="56" text-anchor="middle">4</text><rect class="sh" x="204" y="34" width="34" height="34" rx="3"/><text class="sn" x="221" y="56" text-anchor="middle">5</text><rect class="sh off" x="250" y="34" width="34" height="34" rx="3"/><text class="sn" x="267" y="56" text-anchor="middle">6</text><rect class="sh off" x="296" y="34" width="34" height="34" rx="3"/><text class="sn" x="313" y="56" text-anchor="middle">7</text>
+<path class="brk" d="M20 76 L20 86 L272 86 L272 76"/>
+<text class="bl" x="146" y="104" text-anchor="middle">5 of 7 &rarr; reconstructable</text>
+<path class="brk2" d="M292 76 L292 86 L338 86 L338 76"/>
+<text class="bl2" x="315" y="104" text-anchor="middle">4</text>
+</svg>
+</div></section>
+
+<section><div class="wrap"><h2><i>02 &mdash; the match</i>Arithmetic on values nobody sees</h2>
+<p>Matching is the hard part, because comparing two prices usually means knowing them. Beaver triples let the nodes multiply secret shares without reconstructing anything, so cross-order volume clearing happens entirely in encrypted space. A blind equality check answers the only question that matters &mdash; is the best limit buy at or above the best limit sell &mdash; and returns one bit.</p>
+<p>Solvency is proved rather than asserted: a trader demonstrates escrowed collateral sufficient to back an order without revealing a wallet balance or a portfolio size.</p>
+<div class="log">
+<div class="l"><span class="tg">[SHAMIR]</span><span class="txt">Institutional order #8492 split into 7 secret polynomials</span></div>
+<div class="l"><span class="tg">[SMPC-GATE]</span><span class="txt">Beaver triple multiplication protocol evaluated across nodes</span></div>
+<div class="l"><span class="tg">[MATCHING]</span><span class="txt">Blind equality check: limit buy &ge; limit sell = TRUE</span></div>
+<div class="l"><span class="tg">[SETTLEMENT]</span><span class="txt">Atomic state root transition committed to ledger</span></div>
+</div>
+</div></section>
+
+<section><div class="wrap"><h2><i>03 &mdash; compared</i>Against public AMMs and against Wall Street</h2>
+<table><thead><tr><th>Characteristic</th><th>Public AMM</th><th>Wall St dark pool</th><th>SMPC Dark Pool</th></tr></thead><tbody>
+<tr><td>order visibility</td><td>100% public mempool</td><td>operator and HFT insiders</td><td class="sp">zero &mdash; cryptographically blind</td></tr>
+<tr><td>MEV / sandwiching</td><td>extreme</td><td>asymmetric internal arbitrage</td><td class="sp">mathematically impossible</td></tr>
+<tr><td>auditability</td><td>on-chain and transparent</td><td>a closed proprietary database</td><td class="sp">succinct zk-SNARK</td></tr>
+<tr><td>collusion tolerance</td><td>not applicable</td><td>requires one corrupt operator</td><td class="sp">tolerates k&minus;1 Byzantine nodes</td></tr>
+</tbody></table>
+<pre>git clone https://github.com/KELLERBABG/SMPC-Dark-Pool.git
+cd SMPC-Dark-Pool &amp;&amp; cargo test
+# spawn a 3-node secret-sharing committee and match two blind orders</pre>
+</div></section>
+
+<div class="foot"><div class="wrap"><span>SMPC Dark Pool &middot; Keller Systems</span>
+<span><a href="https://github.com/KELLERBABG/SMPC-Dark-Pool">repository</a> &nbsp;/&nbsp; <a href="https://kellersystems.dev">kellersystems.dev</a></span></div></div>
+</body></html>

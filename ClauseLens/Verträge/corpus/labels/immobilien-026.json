@@ -1,0 +1,74 @@
+{
+  "slug": "immobilien-026",
+  "source": "generated",
+  "domain": "Verwaltervertrag",
+  "traps": [
+    {
+      "marker": "die Nutzungsdaten des Portals in eigener Verantwortung verwerten",
+      "expectedType": "data_grant",
+      "note": "Verwertung der Nutzungsdaten in eigener Verantwortung."
+    },
+    {
+      "marker": "in einem Rechenzentrum außerhalb der Europäischen Union verarbeitet",
+      "expectedType": "international_data_processing",
+      "note": "Verarbeitung ausserhalb der EU."
+    },
+    {
+      "marker": "Prüfungen unmittelbar durchführen, eine Terminabstimmung entfällt",
+      "expectedType": "unreasonable_audit",
+      "note": "Pruefungen ohne Terminabstimmung."
+    },
+    {
+      "marker": "die Zustimmung der Gemeinschaft bedarf es nicht",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "GAP: Verbundene Gesellschaften ohne Zustimmung."
+    },
+    {
+      "marker": "entfällt die Gutschrift ersatzlos",
+      "expectedType": "service_credit_forfeiture",
+      "note": "GAP: Gutschrift entfaellt ersatzlos."
+    },
+    {
+      "marker": "wirken über das Vertragsende hinaus, ohne Endzeitpunkt",
+      "expectedType": "excessive_survival",
+      "note": "GAP: Nachwirkung ohne Endzeitpunkt."
+    },
+    {
+      "marker": "jährlich an die Entwicklung der Lebenshaltungskosten angepasst",
+      "expectedType": "price_escalation",
+      "note": "Honoraranpassung ohne Sonderkündigungsrecht."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "Symmetrische Vertraulichkeit."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform zugelassen."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhalt."
+    },
+    {
+      "marker": "Zahlungen sind innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Zahlungsfrist."
+    },
+    {
+      "marker": "Änderungen des Leistungsumfangs bedürfen der Abstimmung beider Parteien",
+      "note": "Einvernehmliche Aenderung."
+    },
+    {
+      "marker": "Nach Vertragsende erhält der Kunde die Vertragsdaten kostenfrei in einem offenen Format",
+      "note": "Kostenfreier Datenexport."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Quartiers Rosengarten mit 88 Einheiten",
+      "note": "Kein Detektor fuer Beschlussfassung, Wirtschaftsplan oder Beiratsrechte nach WEG."
+    }
+  ]
+}

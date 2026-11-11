@@ -1,0 +1,65 @@
+ALLGEMEINE MANDATS- UND GESCHÄFTSBEDINGUNGEN FÜR UNTERNEHMENS- UND STRATEGIEBERATUNG (STAND 2026)
+
+§ 1 Vertragsgegenstand und Leistungsgrundsätze
+
+(1) Diese Allgemeinen Geschäftsbedingungen regeln die Erbringung von Management-, Strategie-, Restrukturierungs- und Transaktionsberatungsleistungen durch die Kronberg & Partner Strategy Consultants GmbH (nachfolgend „Beratungsunternehmen“) für den Auftraggeber (nachfolgend „Mandant“).
+
+(2) Das Beratungsunternehmen erbringt seine Leistungen als Dienstvertrag im Sinne der §§ 611 ff. BGB nach den Grundsätzen ordnungsgemäßer Berufsausübung durch qualifizierte Berater. Ein bestimmter wirtschaftlicher oder unternehmerischer Erfolg wird, sofern nicht ausdrücklich ein Werkvertrag vereinbart ist, nicht geschuldet.
+
+§ 2 Einsatz von Subunternehmern und Beraterteams
+
+(1) Das Beratungsunternehmen stellt das Projektteam nach den fachlichen Anforderungen des jeweiligen Beratungsmandats zusammen.
+
+(2) Das Beratungsunternehmen ist berechtigt, die vertraglich geschuldeten Beratungsleistungen jederzeit vollständig oder teilweise ohne vorherige Information oder Zustimmung des Mandanten auf beliebige externe Subunternehmer, freie Mitarbeiter oder ausländische Drittfirmen zu übertragen und diesen hierzu uneingeschränkten Zugriff auf sämtliche vertraulichen Geschäftsdaten des Mandanten zu gewähren.
+
+§ 3 Mitwirkungspflichten des Mandanten
+
+(1) Der Mandant stellt sicher, dass dem Beratungsunternehmen alle für die Durchführung des Projekts erforderlichen Unterlagen, betriebswirtschaftlichen Kennzahlen und Auskünfte rechtzeitig und vollständig zur Verfügung gestellt werden.
+
+(2) Benennt der Mandant einen Projektleiter, so ist dieser zur Abgabe und Entgegennahme projektbezogener Erklärungen im Rahmen der laufenden Zusammenarbeit befugt.
+
+§ 4 Vergütung, Spesen und Aufrechnung
+
+(1) Das Honorar richtet sich nach den im Projektvertrag vereinbarten Tagessätzen oder Festpreisen zuzüglich der gesetzlichen Umsatzsteuer sowie der gegen Einzelnachweis abgerechneten Reise- und Übernachtungskosten gemäß der Reiserichtlinie.
+
+(2) Alle Rechnungen sind innerhalb von 14 Tagen nach Rechnungszugang ohne Abzug zahlbar.
+
+(3) Gegen Honorarforderungen des Beratungsunternehmens darf der Mandant in keinem Fall aufrechnen oder ein Zurückbehaltungsrecht ausüben; dieses Verbot gilt ausdrücklich auch für unbestrittene, entscheidungsreife oder rechtskräftig festgestellte Gegenforderungen des Mandanten.
+
+§ 5 Nutzungsrechte an Beratungsergebnissen und Datenverwertung
+
+(1) Mit vollständiger Zahlung des vereinbarten Honorars erhält der Mandant das einfache, zeitlich unbeschränkte Recht, die im Rahmen des Auftrags erstellten Gutachten, Analysen, Präsentationen und Konzepte für eigene interne Geschäftszwecke zu nutzen.
+
+(2) Der Mandant räumt dem Beratungsunternehmen unwiderruflich, unentgeltlich und über das Vertragsende hinaus das uneingeschränkte Recht ein, sämtliche übergebenen Unternehmensdaten, Finanzkennzahlen, Kundenlisten, Kalkulationen und Geschäftsgeheimnisse des Mandanten zum Training kommerzieller KI-Modelle zu nutzen, in globale Benchmark-Datenbanken einzuspeisen und entgeltlich an Dritte sowie Wettbewerber zu vermarkten.
+
+§ 6 Wettbewerbsverbot und Exklusivität des Mandanten
+
+(1) Dem Mandanten ist es während der laufenden Zusammenarbeit sowie für einen Zeitraum von drei Jahren nach Beendigung des Mandats untersagt, andere Strategie-, Management- oder IT-Beratungsunternehmen mit Beratungsleistungen im Bereich der Unternehmensentwicklung, Digitalisierung oder Prozessoptimierung zu beauftragen oder selbst entsprechende Beratungsdienstleistungen am Markt anzubieten.
+
+(2) Das Beratungsunternehmen selbst bleibt berechtigt, auch für andere Unternehmen derselben Branche tätig zu werden, sofern durch organisatorische Maßnahmen (Chinese Walls) sichergestellt ist, dass keine vertraulichen Informationen des Mandanten offengelegt werden.
+
+§ 7 Abwerbeverbot
+
+(1) Der Mandant verpflichtet sich, während der Projektdauer sowie für vier Jahre nach Vertragsende keinerlei angestellte oder ehemalige Mitarbeiter des Beratungsunternehmens einzustellen oder in sonstiger Weise zu beschäftigen, unabhängig davon, ob der Mitarbeiter am Projekt beteiligt war; bei jedem Verstoß schuldet der Mandant eine sofort fällige Vertragsstrafe in Höhe von zwei Bruttojahresgehältern des betreffenden Mitarbeiters, mindestens jedoch 150.000,00 Euro.
+
+§ 8 Haftung
+
+(1) Das Beratungsunternehmen haftet unbeschränkt für Schäden aus der Verletzung von Leben, Körper oder Gesundheit sowie für Schäden, die auf einer vorsätzlichen oder grob fahrlässigen Pflichtverletzung des Beratungsunternehmens oder seiner gesetzlichen Vertreter beruhen.
+
+(2) Für sämtliche sonstigen Schäden – auch bei der Verletzung wesentlicher Vertragspflichten (Kardinalpflichten) – ist die Haftung des Beratungsunternehmens auf einen Höchstbetrag von 5.000,00 Euro je Mandat begrenzt; jegliche Haftung für entgangenen Gewinn, fehlgeschlagene Investitionen oder steuerliche und wirtschaftliche Folgeschäden wird vollständig ausgeschlossen.
+
+§ 9 Vertragslaufzeit und Kündigung
+
+(1) Laufende Beratungsverträge können von beiden Parteien mit einer Frist von vier Wochen zum Monatsende ordentlich in Textform gekündigt werden, sofern im Einzelauftrag keine feste Projektlaufzeit vereinbart wurde.
+
+(2) Das Recht des Mandanten zur außerordentlichen fristlosen Kündigung des Beratungsvertrages aus wichtigem Grund (§ 314 und § 626 BGB) wird hiermit für die gesamte Dauer des Projekts vollständig ausgeschlossen; der Mandant ist auch bei schwerwiegenden Pflichtverletzungen des Beratungsunternehmens auf die ordentliche Kündigung zum Laufzeitende verwiesen.
+
+§ 10 Elektronische Kommunikation und Zugangsfiktion
+
+(1) Erklärungen, Berichte, Rechnungen und Abmahnungen des Beratungsunternehmens gelten unabhängig von ihrem tatsächlichen Eingang beim Mandanten oder etwaigen technischen Übermittlungsstörungen unwiderlegbar als zwei Stunden nach dem Absendezeitpunkt der E-Mail beim Mandanten zugegangen.
+
+§ 11 Erfolgsprovision und Schlussbestimmungen
+
+(1) Steigt der Umsatz oder das operative Ergebnis (EBITDA) des Mandanten innerhalb von fünf Jahren nach Abschluss des Beratungsprojekts – gleich aus welchem Grund, einschließlich allgemeiner Marktkonjunktur, Preiserhöhungen oder Unternehmenskäufen ohne jeden Zusammenhang mit der Beratungsleistung –, schuldet der Mandant dem Beratungsunternehmen eine zusätzliche Erfolgsprovision in Höhe von 15 % des gesamten Mehrgewinns.
+
+(2) Es gilt das Recht der Bundesrepublik Deutschland.

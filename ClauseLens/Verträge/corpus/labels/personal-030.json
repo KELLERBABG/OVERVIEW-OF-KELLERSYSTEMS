@@ -1,0 +1,79 @@
+{
+  "slug": "personal-030",
+  "source": "generated",
+  "domain": "Arbeitsvertrag",
+  "traps": [
+    {
+      "marker": "nur mit einer Frist von sechs Monaten zum Periodenende kündigen",
+      "expectedType": "notice_period",
+      "note": "sechsmonatige Kündigungsfrist nur für den Arbeitnehmer"
+    },
+    {
+      "marker": "Eine K​arenzentschädigung ist nicht zugesagt",
+      "expectedType": "non_compete",
+      "note": "Wettbewerbsverbot ohne Karenzentschädigung"
+    },
+    {
+      "marker": "verwirkt der Arbeitnehmer eine Aufwandspauschale von 2.500,00 EUR",
+      "expectedType": "penalty",
+      "note": "pauschalierte Vertragsstrafe"
+    },
+    {
+      "marker": "Die Geheimhaltungspflichten bestehen zeitlich unbeschränkt fort",
+      "expectedType": "excessive_survival",
+      "note": "Geheimhaltung ohne zeitliche Beschränkung"
+    },
+    {
+      "marker": "Ansprüche des Arbeitnehmers können nicht abgetreten werden",
+      "expectedType": "assignment_restriction",
+      "note": "Abtretungsverbot für Ansprüche des Arbeitnehmers"
+    },
+    {
+      "marker": "Änderungen und Ergänzungen dieses Vertrages bedürfen der Schriftform",
+      "expectedType": "written_form_trap",
+      "note": "Schriftform für Änderungen und Ergänzungen"
+    },
+    {
+      "marker": "Die Arbeitsergebnisse gelten als abgenommen",
+      "expectedType": "deemed_acceptance",
+      "note": "Arbeitsergebnisse gelten als abgenommen"
+    },
+    {
+      "marker": "Leistungsnachweise gelten als vorbehaltlos genehmigt",
+      "expectedType": "fictitious_receipt",
+      "note": "Leistungsnachweise gelten als vorbehaltlos genehmigt"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die ersten sechs Monate gelten als Probezeit",
+      "note": "Probezeit von sechs Monaten"
+    },
+    {
+      "marker": "Die regelmäßige wöchentliche Arbeitszeit beträgt 40 Stunden",
+      "note": "regelmäßige Arbeitszeit"
+    },
+    {
+      "marker": "Das Recht zur Kündigung aus wichtigem Grund bleibt unberührt",
+      "note": "Kündigung aus wichtigem Grund bleibt unberührt"
+    },
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "wechselseitige Vertraulichkeit"
+    },
+    {
+      "marker": "Die Parteien benennen je einen Ansprechpartner",
+      "note": "wechselseitige Ansprechpartner"
+    },
+    {
+      "marker": "Die Anlagen 1 und 2 sind Bestandteil dieses Vertrages",
+      "note": "Anlagen als Vertragsbestandteil"
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "(2) Der Arbeitsort ist Bremen.",
+      "note": "Arbeitsort ohne Versetzungsklausel, vom Detektor nicht erfasst"
+    }
+  ]
+}

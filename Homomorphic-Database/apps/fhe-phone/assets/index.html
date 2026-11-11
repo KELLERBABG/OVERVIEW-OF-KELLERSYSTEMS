@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+<title>FHE-DB</title>
+<style>
+  /* ================= design tokens ================= */
+  :root {
+    --bg: #0f1115;
+    --surface: #171a21;
+    --surface-2: #1e222b;
+    --surface-3: #262b36;
+    --border: rgba(255,255,255,.08);
+    --border-strong: rgba(255,255,255,.15);
+    --text: #f4f6fa;
+    --text-2: #a6adbd;
+    --text-3: #6c7484;
+    --accent: #8b7bff;
+    --accent-soft: rgba(139,123,255,.16);
+    --cyan: #4cd7ff;
+    --green: #3ecf8e;
+    --green-soft: rgba(62,207,142,.16);
+    --red: #ff6b81;
+    --red-soft: rgba(255,107,129,.14);
+    --amber: #ffc24b;
+    --amber-soft: rgba(255,194,75,.14);
+    --r-lg: 22px;
+    --r-md: 16px;
+    --r-sm: 12px;
+    --ease-out: cubic-bezier(.16,1,.3,1);
+    --font: -apple-system, "Segoe UI", system-ui, Roboto, sans-serif;
+    --mono: "Cascadia Code", "SFMono-Regular", Consolas, monospace;
+    /* light theme (auto via prefers-color-scheme) */
+    --light-bg: #fafbfd;
+    --light-surface: #ffffff;
+    --light-surface-2: #f1f3f8;
+    --light-surface-3: #e9ecf3;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html, body { height:100%; overflow:hidden; background:#06070a; font-family:var(--font); color:var(--text); }
+  button { font-family:inherit; border:none; cursor:pointer; background:none; color:inherit; }
+  input, textarea, select { font-family:inherit; color:var(--text); }
+  input::placeholder, textarea::placeholder { color:var(--text-3) }
+  ::-webkit-scrollbar { width:4px; height:4px }
+  ::-webkit-scrollbar-thumb { background:rgba(255,255,255,.16); border-radius:4px }
+  ::-webkit-scrollbar-track { background:transparent }
+
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg:#eef1f7; --surface:#ffffff; --surface-2:#f6f8fc; --surface-3:#eef1f7;
+      --border:rgba(15,23,42,.08); --border-strong:rgba(15,23,42,.16);
+      --text:#0f172a; --text-2:#55627a; --text-3:#94a0b6;
+      --accent:#6d5ae6; --accent-soft:rgba(109,90,230,.12);
+      --cyan:#0ea5c9; --green:#18a470; --green-soft:rgba(24,164,112,.14);
+      --red:#de4c62; --red-soft:rgba(222,76,98,.12); --amber:#b87300; --amber-soft:rgba(184,115,0,.14);
+      --border-strong:rgba(15,23,42,.16);
+    }
+    #phone { background:var(--bg); }
+    input, textarea, select { color:var(--text) }
+    ::-webkit-scrollbar-thumb { background:rgba(15,23,42,.2) }
+  }
+
+  #phone {
+    position:absolute; inset:0; margin:auto;
+    width:100%; height:100%; max-width:520px;
+    background:var(--bg);
+    display:flex; flex-direction:column; overflow:hidden;
+    box-shadow:0 0 100px rgba(0,0,0,.8);
+    user-select:none; -webkit-user-select:none;
+  }
+  @media (min-width: 560px) {
+    #phone { height:calc(100% - 36px); max-height:920px; border-radius:40px; border:7px solid #07080c; }
+  }
+
+  /* ================= status bar ================= */
+  #statusbar {
+    flex:0 0 auto; display:flex; justify-content:space-between; align-items:center;
+    padding:13px 22px 9px; font-size:12.5px; font-weight:600; z-index:30;
+  }
+  #statusbar .icons { display:flex; align-items:center; gap:6px }
+  #statusbar .icons svg { width:14px; height:14px; opacity:.92 }
+
+  /* ================= screens ================= */
+  .screen { flex:1; display:none; flex-direction:column; overflow:hidden; }
+  .screen.active { display:flex; animation:screenIn .3s var(--ease-out); }
+  @keyframes screenIn {
+    from { opacity:0; transform:translateY(10px) scale(.99) }
+    to { opacity:1; transform:translateY(0) scale(1) }
+  }
+
+  /* ================= lock screen ================= */
+  #screen-lock {
+    align-items:center; justify-content:center; padding:36px 32px;
+    background:
+      radial-gradient(620px 420px at 50% -8%, var(--accent-soft), transparent 62%),
+      radial-gradient(480px 340px at 95% 108%, rgba(76,215,255,.08), transparent 58%),
+      var(--bg);
+  }
+  .lock-mark {
+    width:92px; height:92px; margin:0 auto 28px; border-radius:26px;
+    background:linear-gradient(135deg, #8b7bff, #55d6ff);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 22px 46px rgba(124,96,255,.35);
+  }
+  .lock-mark svg { width:46px; height:46px }
+  .lock-title { font-size:30px; font-weight:800; letter-spacing:-.4px; text-align:center }
+  .lock-sub { color:var(--text-2); margin-top:8px; font-size:14.5px; line-height:1.45; text-align:center }
+  .lock-status {
+    display:inline-flex; align-items:center; gap:7px; margin:22px auto 0;
+    background:var(--green-soft); color:var(--green); border-radius:999px;
+    padding:7px 15px; font-size:12px; font-weight:600;
+  }
+  .lock-status .dot { width:7px; height:7px; border-radius:50%; background:var(--green); animation:pulse 1.8s infinite }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+  .unlock-btn {
+    margin-top:30px; width:100%; padding:15px; border-radius:var(--r-md);
+    background:var(--accent); color:#fff; font-size:15px; font-weight:700; letter-spacing:.2px;
+    display:flex; align-items:center; justify-content:center; gap:8px;
+    box-shadow:0 14px 34px rgba(124,96,255,.32);
+    transition:transform .12s var(--ease-out), filter .15s ease;
+  }
+  .unlock-btn:active { transform:scale(.965); filter:brightness(1.1) }
+  .lock-tip { margin-top:18px; color:var(--text-3); font-size:12px; text-align:center }
+  .pin-dots { font-size:26px; letter-spacing:10px; text-align:center; color:var(--accent); margin:20px 0 6px; min-height:34px }
+  .pin-grid { display:grid; grid-template-columns:repeat(3, 64px); gap:10px; justify-content:center; margin-top:12px }
+  .pin-grid button { height:56px; border-radius:18px; border:1px solid var(--border-strong); background:var(--card); color:var(--text); font-size:21px; font-weight:600; cursor:pointer }
+  .pin-grid button:active { transform:scale(.94); background:var(--hover) }
+  .mini-btn { border:1px solid var(--border-strong); background:var(--card); color:var(--accent); font-weight:700; font-size:12.5px; padding:7px 14px; border-radius:20px; cursor:pointer }
+  .mini-btn:active { transform:scale(.96) }
+  .setting input { flex:1; min-width:0; border:1px solid var(--border-strong); background:var(--card); color:var(--text); border-radius:12px; padding:8px 12px; font-size:13px }
+
+  /* ================= home ================= */
+  #screen-home { background:var(--bg); }
+  .home-scroll { flex:1; overflow-y:auto; padding:4px 20px 22px; -webkit-overflow-scrolling:touch }
+  .balance-card {
+    background:linear-gradient(135deg, var(--accent-soft), rgba(76,215,255,.06));
+    border:1px solid var(--border-strong); border-radius:var(--r-lg); padding:20px;
+    margin-bottom:16px;
+  }
+  .balance-card .label { font-size:11.5px; font-weight:700; color:var(--text-2); letter-spacing:1.2px; text-transform:uppercase }
+  .balance-num { font-size:42px; font-weight:800; letter-spacing:-1.6px; margin-top:4px; line-height:1 }
+  .balance-num small { font-size:20px; font-weight:700; color:var(--cyan); margin-left:3px }
+  .balance-meta { font-size:12.5px; color:var(--text-2); margin-top:8px; display:flex; align-items:center; gap:8px; flex-wrap:wrap }
+  .balance-meta .strong { color:var(--green); font-weight:700 }
+
+  .entry-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin:6px 0 16px; }
+  .app {
+    display:flex; flex-direction:column; align-items:center; gap:6px; padding:10px 2px;
+    border-radius:var(--r-md); transition:transform .12s var(--ease-out), background .15s ease;
+  }
+  .app:active { transform:scale(.9); background:var(--surface-2) }
+  .app .ic {
+    width:56px; height:56px; border-radius:18px; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 6px 16px rgba(0,0,0,.28); color:#fff; position:relative;
+  }
+  .app .ic svg { width:26px; height:26px }
+  .app .lbl { font-size:11px; color:var(--text-2); font-weight:500; text-align:center }
+
+  .icon-r1 { background:linear-gradient(135deg,#8b7bff,#b9a8ff) }
+  .icon-r2 { background:linear-gradient(135deg,#0ea5c9,#5eead4) }
+  .icon-r3 { background:linear-gradient(135deg,#10b981,#6ee7b7) }
+  .icon-r4 { background:linear-gradient(135deg,#f59e0b,#fcd34d) }
+  .icon-r5 { background:linear-gradient(135deg,#c026d3,#e879f9) }
+  .icon-r6 { background:linear-gradient(135deg,#0891b2,#34d399) }
+  .icon-r7 { background:linear-gradient(135deg,#64748b,#94a3b8) }
+
+  .panel { background:var(--surface); border:1px solid var(--border); border-radius:var(--r-lg); padding:18px; margin-bottom:14px }
+  .panel h3 { font-size:11.5px; font-weight:700; color:var(--text-2); letter-spacing:1.2px; text-transform:uppercase; margin-bottom:12px }
+  .status-row { display:flex; justify-content:space-between; align-items:center; font-size:13px; padding:6px 0 }
+  .status-row .k { color:var(--text-2); display:flex; align-items:center; gap:8px }
+  .status-row .k .live { width:6px; height:6px; border-radius:50%; background:var(--green); box-shadow:0 0 8px rgba(62,207,142,.8) }
+  .status-row .v { font-family:var(--mono); font-size:11.5px; color:var(--text); opacity:.85 }
+
+  /* ================= app shell ================= */
+  .appbar { flex:0 0 auto; display:flex; align-items:center; gap:12px; padding:14px 20px 10px }
+  .appbar .back {
+    width:38px; height:38px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    background:var(--surface-2); border:1px solid var(--border); transition:transform .12s var(--ease-out), background .15s ease;
+  }
+  .appbar .back:active { transform:scale(.86); background:var(--surface-3) }
+  .appbar svg { width:18px; height:18px }
+  .appbar .title { font-size:19px; font-weight:800; letter-spacing:-.3px }
+  .appbar .sub { font-size:12px; color:var(--text-2); margin-top:1px }
+  .content { flex:1; overflow-y:auto; padding:4px 20px 24px; -webkit-overflow-scrolling:touch }
+
+  .card { background:var(--surface); border:1px solid var(--border); border-radius:var(--r-lg); padding:17px; margin-bottom:14px }
+  .card h4 { font-size:11px; font-weight:700; color:var(--text-2); letter-spacing:1.2px; text-transform:uppercase; margin-bottom:11px }
+  .mono-row { display:flex; justify-content:space-between; align-items:center; gap:12px; padding:8px 0; font-size:12.5px; border-bottom:1px solid var(--border) }
+  .mono-row:last-child { border-bottom:none }
+  .mono-row .k { color:var(--text-2) }
+  .mono-row .v { font-family:var(--mono); font-size:11.5px; text-align:right; max-width:60%; word-break:break-all }
+
+  /* pills & buttons */
+  .pill { display:inline-flex; align-items:center; gap:6px; font-size:11px; padding:5px 11px; border-radius:999px; font-weight:700 }
+  .pill.on { background:var(--green-soft); color:var(--green) }
+  .pill.off { background:var(--red-soft); color:var(--red) }
+
+  .btn {
+    width:100%; padding:14px; border-radius:var(--r-md); font-size:14.5px; font-weight:700;
+    background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; gap:8px;
+    box-shadow:0 10px 24px rgba(124,96,255,.28);
+    transition:transform .12s var(--ease-out), filter .16s ease, opacity .2s ease;
+  }
+  .btn:active { transform:scale(.97); filter:brightness(1.08) }
+  .btn.ghost { background:var(--surface-2); border:1px solid var(--border-strong); box-shadow:none; color:var(--text); font-weight:600 }
+  .btn.green { background:linear-gradient(135deg,#0fa96c,#22c988); box-shadow:0 10px 24px rgba(24,164,112,.26) }
+  .btn.red { background:linear-gradient(135deg,#e04460,#f8687e); box-shadow:0 10px 24px rgba(222,76,98,.24) }
+  .btn:disabled { opacity:.45; cursor:not-allowed }
+
+  .field {
+    width:100%; background:var(--surface-2); border:1px solid var(--border-strong); border-radius:13px;
+    padding:12px 14px; font-size:15px; outline:none; transition:border-color .18s ease, background .18s ease;
+  }
+  .field:focus { border-color:var(--accent); background:var(--surface-3) }
+  .field-row { display:flex; gap:10px; margin:12px 0 }
+  .field-row .btn { flex:1 }
+  .hint { font-size:12.5px; color:var(--text-2); line-height:1.5; margin-top:8px }
+  .hint.copy { margin-top:0 }
+
+  /* health */
+  .stats { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-bottom:14px }
+  .stat { background:var(--surface-2); border:1px solid var(--border); border-radius:var(--r-md); padding:13px; text-align:center }
+  .stat .n { font-size:22px; font-weight:800; letter-spacing:-.5px }
+  .stat .l { font-size:10px; color:var(--text-2); text-transform:uppercase; letter-spacing:.6px; margin-top:3px }
+  .graph { display:flex; align-items:flex-end; gap:4px; height:104px; padding:10px 2px 0 }
+  .graph .bar {
+    flex:1; min-width:5px; border-radius:5px 5px 2px 2px;
+    background:linear-gradient(180deg, #55d6ff, #8b7bff); opacity:.85;
+    transition:height .6s var(--ease-out);
+  }
+  .graph-label { display:flex; justify-content:space-between; color:var(--text-3); font-size:10.5px; margin-top:6px }
+
+  /* messages */
+  .msg { padding:11px 14px; border-radius:18px; margin-bottom:9px; max-width:88%; font-size:14px; line-height:1.5; word-break:break-word;
+    background:var(--surface-2); border:1px solid var(--border) }
+  .msg .meta { display:flex; align-items:center; gap:8px; font-size:10px; color:var(--text-3); margin-bottom:4px }
+  .msg .body { white-space:pre-wrap; color:var(--text) }
+
+  /* monitor */
+  .wire {
+    font-family:var(--mono); font-size:11px; line-height:1.8; padding:13px; border-radius:var(--r-md);
+    background:rgba(0,0,0,.3); border:1px solid var(--border); white-space:pre-wrap;
+    max-height:400px; overflow-y:auto;
+  }
+  .wire .req { color:#82b4ff }
+  .wire .res { color:#4fd6a0 }
+  .wire .dim { color:var(--text-3) }
+
+  /* neural */
+  .gate-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px }
+  .gate { border-radius:var(--r-md); padding:13px; text-align:center; background:var(--surface-2); border:1px solid var(--border) }
+  .gate .in { display:flex; gap:8px; justify-content:center; margin-bottom:8px }
+  .gate .bit { width:32px; height:32px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:800; background:var(--surface-3) }
+  .gate .out { font-size:20px; font-weight:800 }
+  .gate .eq { font-size:10.5px; color:var(--text-3); margin-top:4px }
+  .neural-flow { display:flex; align-items:center; gap:8px; margin:14px 0; overflow-x:auto; padding-bottom:4px }
+  .nnode { flex:0 0 auto; text-align:center; font-size:10px; color:var(--text-3) }
+  .nnode .box {
+    width:62px; height:46px; border-radius:14px; display:flex; align-items:center; justify-content:center;
+    font-size:13.5px; font-weight:800; margin-bottom:4px; background:var(--surface-2); border:1px solid var(--border);
+  }
+  .nnode.enc .box { border-color:rgba(255,194,75,.45); color:var(--amber) }
+  .nnode.src .box { background:var(--accent-soft); border-color:rgba(139,123,255,.4); color:#c9c2ff }
+  .arrow { color:var(--text-3); font-size:15px }
+
+  /* settings */
+  .setting { display:flex; align-items:center; justify-content:space-between; padding:13px 0; border-bottom:1px solid var(--border) }
+  .setting:last-child { border-bottom:none }
+  .setting .lbl { font-size:14px; font-weight:600 }
+  .setting .desc { font-size:11.5px; color:var(--text-2); margin-top:2px }
+  .switch { width:46px; height:26px; border-radius:999px; background:var(--surface-3); position:relative; transition:.25s var(--ease-out); flex:0 0 auto; cursor:pointer }
+  .switch::after { content:""; position:absolute; top:3px; left:3px; width:20px; height:20px; border-radius:50%; background:#fff; transition:.25s var(--ease-out); box-shadow:0 2px 6px rgba(0,0,0,.3) }
+  .switch.on { background:var(--accent) }
+  .switch.on::after { left:23px }
+
+  /* toast & busy */
+  #toast {
+    position:absolute; bottom:92px; left:50%; transform:translateX(-50%) translateY(16px);
+    background:var(--surface-3); border:1px solid var(--border-strong); color:var(--text);
+    padding:11px 18px; border-radius:14px; font-size:13px; font-weight:600;
+    opacity:0; pointer-events:none; transition:.3s var(--ease-out); z-index:50; max-width:86%; text-align:center;
+    box-shadow:0 12px 34px rgba(0,0,0,.45);
+  }
+  #toast.show { opacity:1; transform:translateX(-50%) translateY(0) }
+  #busy { position:absolute; inset:0; background:rgba(6,8,12,.72); backdrop-filter:blur(8px); display:none; align-items:center; justify-content:center; z-index:60 }
+  #busy.show { display:flex }
+  .busy-box { text-align:center; padding:28px 36px; border-radius:var(--r-lg); background:var(--surface-2); border:1px solid var(--border-strong); box-shadow:0 20px 60px rgba(0,0,0,.5) }
+  .spinner { width:38px; height:38px; margin:0 auto 16px; border:3px solid var(--border-strong); border-top-color:var(--accent); border-radius:50%; animation:spin .8s linear infinite }
+  @keyframes spin { to { transform:rotate(360deg) } }
+  .busy-box p { font-size:13.5px; color:var(--text-2) }
+</style>
+</head>
+<body>
+<div id="phone">
+  <div id="statusbar">
+    <span class="time" id="clock">9:41</span>
+    <span class="icons">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 17h20v2H2zM3 13h18v2H3zM5 9h14v2H5zM8 5h8v2H8z"/></svg>
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-10 10c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.58 9.58 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85V21c0 .27.16.59.67.5A10 10 0 0 0 22 12 10 10 0 0 0 12 2z"/></svg>
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c2.28 0 4.2.9 5.66 2.34l-1.42 1.42A5.98 5.98 0 0 0 12 4c-1.66 0-3.16.67-4.24 1.76L6.34 4.34A7.98 7.98 0 0 1 12 2zm-8.49.51L5.58 4.58l.95-.95C7.9 2.3 9.86 1.5 12 1.5s4.1.8 5.47 2.13l.95.95 2.07-2.07A11.9 11.9 0 0 0 12 0C8.66 0 5.74 1.4 3.51 2.51zM12 6c1.66 0 3.16.67 4.24 1.76l-1.42 1.42A5.98 5.98 0 0 0 12 8c-1.66 0-3.16.67-4.24 1.76L6.34 8.34A7.98 7.98 0 0 1 12 6zm4.2 7.8L12 17.6l-4.2-3.8A5.008 5.008 0 0 1 7 10c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.08-.35 2.08-.93 2.91L16.2 13.8c-.03-.02-.03-.01-.2.01 0 .03.01.04-.02.23l.02-.02zM12 22a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg>
+    </span>
+  </div>
+
+  <!-- ============ LOCK ============ -->
+  <div class="screen active" id="screen-lock">
+    <div class="lock-mark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2 3 7v6c0 5 3.8 8.5 9 9 5.2-.5 9-4 9-9V7l-9-5z"/><path d="M9 12l2 2 4-4"/>
+      </svg>
+    </div>
+    <div class="lock-title">FHE-DB</div>
+    <p class="lock-sub">Private by design.<br>Everything here stays encrypted.</p>
+    <div class="lock-status"><span class="dot"></span> <span id="lock-status-text">Ready</span></div>
+
+    <!-- First run: no PIN configured yet -->
+    <div id="lock-no-pin" style="display:none">
+      <button class="unlock-btn" onclick="unlockNoPin()">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        Open
+      </button>
+      <div class="lock-tip">No PIN yet — set one in Settings → Security so your keys<br>are stored encrypted at rest under your PIN.</div>
+    </div>
+
+    <!-- PIN configured: real keypad gate -->
+    <div id="lock-pin-pad" style="display:none">
+      <div class="pin-dots" id="pin-dots"></div>
+      <div class="pin-grid">
+        <button onclick="pinPress('1')">1</button><button onclick="pinPress('2')">2</button><button onclick="pinPress('3')">3</button>
+        <button onclick="pinPress('4')">4</button><button onclick="pinPress('5')">5</button><button onclick="pinPress('6')">6</button>
+        <button onclick="pinPress('7')">7</button><button onclick="pinPress('8')">8</button><button onclick="pinPress('9')">9</button>
+        <button onclick="pinPress('⌫')">⌫</button><button onclick="pinPress('0')">0</button><button onclick="pinSubmit()">✓</button>
+      </div>
+      <div class="lock-tip" id="lock-pin-msg">Enter your PIN</div>
+    </div>
+  </div>
+
+  <!-- ============ HOME ============ -->
+  <div class="screen" id="screen-home">
+    <div class="home-scroll">
+      <div class="balance-card">
+        <div class="label" id="home-cta-label">Balance</div>
+        <div class="balance-num" id="home-balance">—<small></small></div>
+        <div class="balance-meta" id="home-delta"></div>
+      </div>
+
+      <div class="panel">
+        <h3>Apps</h3>
+        <div class="entry-grid">
+          <button class="app" onclick="openApp('vault')">
+            <div class="ic icon-r1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M12 9v5M9.5 11.5h5"/></svg></div>
+            <div class="lbl">Vault</div>
+          </button>
+          <button class="app" onclick="openApp('wallet')">
+            <div class="ic icon-r2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h14"/><circle cx="16.5" cy="14" r="1.5" fill="currentColor" stroke="none"/></svg></div>
+            <div class="lbl">Wallet</div>
+          </button>
+          <button class="app" onclick="openApp('health')">
+            <div class="ic icon-r3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/><path d="M9 11h2l1-2 2 4 1-2h2"/></svg></div>
+            <div class="lbl">Health</div>
+          </button>
+          <button class="app" onclick="openApp('messages')">
+            <div class="ic icon-r4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h4"/></svg></div>
+            <div class="lbl">Messages</div>
+          </button>
+          <button class="app" onclick="openApp('neural')">
+            <div class="ic icon-r5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="12" r="2.5"/><circle cx="12" cy="5" r="2.5"/><circle cx="12" cy="19" r="2.5"/><circle cx="18" cy="12" r="2.5"/><path d="M8 11l2-4M8 13l2 4M14 7l2 3M14 17l2-3M14 7H10M14 17h-4"/></svg></div>
+            <div class="lbl">Neural</div>
+          </button>
+          <button class="app" onclick="openApp('monitor')">
+            <div class="ic icon-r6"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg></div>
+            <div class="lbl">Monitor</div>
+          </button>
+          <button class="app" onclick="openApp('settings')">
+            <div class="ic icon-r7"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.01a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h.01a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.01a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+            <div class="lbl">Settings</div>
+          </button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>Security</h3>
+        <div class="status-row"><span class="k"><span class="live"></span>Private server</span><span class="v" id="home-server">—</span></div>
+        <div class="status-row"><span class="k">Keys</span><span class="v" id="home-skey">—</span></div>
+        <div class="status-row"><span class="k">Activity</span><span class="v" id="home-wire">—</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ VAULT ============ -->
+  <div class="screen" id="screen-vault">
+    <div class="appbar">
+      <button class="back" onclick="goHome()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div><div class="title">Vault</div><div class="sub">Your keys live only here</div></div>
+    </div>
+    <div class="content">
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px">
+          <div>
+            <h4 style="margin:0">Keys</h4>
+            <div class="hint copy" style="margin-top:6px">Generated on this device.<br>Nothing leaves without encryption.</div>
+          </div>
+          <span class="pill" id="vault-key-pill">no keys</span>
+        </div>
+        <div style="height:14px"></div>
+        <button class="btn" id="vault-keygen-btn" onclick="keygen()">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 2l-2 2m-7.6 7.6a5 5 0 1 0 7 7l-7-7zM15 6l3 3M17 4l3 3"/></svg>
+          Generate Keys
+        </button>
+      </div>
+      <div class="card">
+        <h4>Read back</h4>
+        <div class="field-row">
+          <input class="field" id="vault-table" placeholder="Table" value="" />
+          <input class="field" id="vault-col" placeholder="Column" value="" />
+        </div>
+        <button class="btn ghost" onclick="vaultReveal()">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+          Decrypt on device
+        </button>
+        <div id="vault-reveal" style="margin-top:14px"></div>
+      </div>
+      <div class="card">
+        <h4>Privacy</h4>
+        <p class="hint copy" id="vault-note">Your secret key is never sent to the server. It stays on this phone, encrypted at rest; exported backups are protected by your PIN.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ WALLET ============ -->
+  <div class="screen" id="screen-wallet">
+    <div class="appbar">
+      <button class="back" onclick="goHome()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div><div class="title">Wallet</div><div class="sub">A balance only you can see</div></div>
+    </div>
+    <div class="content">
+      <div class="balance-card" style="margin-bottom:14px">
+        <div class="label">Balance</div>
+        <div class="balance-num" id="wallet-balance">—<small></small></div>
+        <div class="balance-meta" id="wallet-rows"></div>
+      </div>
+      <div class="field-row">
+        <input class="field" id="wallet-amount" type="number" min="1" placeholder="Amount" value="25" />
+      </div>
+      <div class="field-row">
+        <button class="btn green" onclick="walletAction('deposit')">+ Deposit</button>
+        <button class="btn red" onclick="walletAction('withdraw')">− Withdraw</button>
+      </div>
+      <div class="card">
+        <h4>How it works</h4>
+        <p class="hint copy">Every transaction is encrypted, then summed privately. Your balance updates without anyone ever seeing a number.</p>
+      </div>
+      <div class="card">
+        <h4>Recent</h4>
+        <div id="wallet-history"><p class="hint copy" style="text-align:center;padding:8px 0">No activity yet.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ HEALTH ============ -->
+  <div class="screen" id="screen-health">
+    <div class="appbar">
+      <button class="back" onclick="goHome()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div><div class="title">Health</div><div class="sub">Vitals, kept private</div></div>
+    </div>
+    <div class="content">
+      <div class="card">
+        <div class="stats">
+          <div class="stat"><div class="n" id="health-avg">—</div><div class="l">avg bpm</div></div>
+          <div class="stat"><div class="n" id="health-count">0</div><div class="l">reads</div></div>
+          <div class="stat"><div class="n" id="health-enc">—</div><div class="l">data size</div></div>
+        </div>
+        <div class="graph" id="health-graph"></div>
+        <div class="graph-label"><span>recent reads</span><span>encrypted</span></div>
+      </div>
+      <div class="card">
+        <h4>Log heartbeat</h4>
+        <div class="field-row">
+          <input class="field" id="health-bpm" type="number" min="40" max="180" placeholder="BPM" value="72" />
+          <button class="btn" onclick="healthAdd()">Log</button>
+        </div>
+        <button class="btn ghost" onclick="healthInit()">Reset</button>
+        <div class="hint">Vitals are encrypted the moment you log them.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ MESSAGES ============ -->
+  <div class="screen" id="screen-messages">
+    <div class="appbar">
+      <button class="back" onclick="goHome()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div><div class="title">Messages</div><div class="sub">Only you can read these</div></div>
+    </div>
+    <div class="content">
+      <div class="card">
+        <h4>New note</h4>
+        <textarea class="field" id="msg-text" rows="2" placeholder="Write something private…" style="resize:none;height:76px"></textarea>
+        <div style="height:10px"></div>
+        <button class="btn" onclick="sendMessage()">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          Encrypt & save
+        </button>
+        <div class="hint">Notes are encrypted before they leave your phone.</div>
+      </div>
+      <div id="msg-list"></div>
+    </div>
+  </div>
+
+  <!-- ============ NEURAL ============ -->
+  <div class="screen" id="screen-neural">
+    <div class="appbar">
+      <button class="back" onclick="goHome()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div><div class="title">Neural</div><div class="sub">Encrypted XNOR demo</div></div>
+    </div>
+    <div class="content">
+      <div class="card">
+        <h4>Encrypted model</h4>
+        <p class="hint copy" style="margin-bottom:14px">A tiny private network that checks two bits against the XNOR logic gate. Even the model runs on encrypted data.</p>
+        <button class="btn" id="neural-install-btn" onclick="neuralInstall()">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+          Install model
+        </button>
+      </div>
+      <div class="neural-flow">
+        <div class="nnode src"><div class="box">x₀</div>input</div>
+        <div class="arrow">→</div>
+        <div class="nnode src"><div class="box">x₁</div>input</div>
+        <div class="arrow">→</div>
+        <div class="nnode enc"><div class="box">W·x</div>encrypted</div>
+        <div class="arrow">→</div>
+        <div class="nnode"><div class="box">(x)²</div>compute</div>
+        <div class="arrow">→</div>
+        <div class="nnode enc"><div class="box">h</div>decrypt ↓</div>
+      </div>
+      <div class="field-row">
+        <select class="field" id="neural-x0" style="flex:1;appearance:none"><option value="0">x₀ = 0</option><option value="1">x₀ = 1</option></select>
+        <select class="field" id="neural-x1" style="flex:1;appearance:none"><option value="0">x₁ = 0</option><option value="1">x₁ = 1</option></select>
+        <button class="btn" style="flex:0 0 auto;padding:14px 18px" onclick="neuralInfer()">Run</button>
+      </div>
+      <div class="card" id="neural-result" style="display:none"></div>
+      <div class="card">
+        <h4>Truth table</h4>
+        <div class="gate-grid" id="neural-truth">
+          <div class="gate"><div class="in"><div class="bit">0</div><div class="bit">0</div></div><div class="out">…</div><div class="eq">XNOR = 1</div></div>
+          <div class="gate"><div class="in"><div class="bit">0</div><div class="bit">1</div></div><div class="out">…</div><div class="eq">XNOR = 0</div></div>
+          <div class="gate"><div class="in"><div class="bit">1</div><div class="bit">0</div></div><div class="out">…</div><div class="eq">XNOR = 0</div></div>
+          <div class="gate"><div class="in"><div class="bit">1</div><div class="bit">1</div></div><div class="out">…</div><div class="eq">XNOR = 1</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ MONITOR ============ -->
+  <div class="screen" id="screen-monitor">
+    <div class="appbar">
+      <button class="back" onclick="goHome()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div><div class="title">Monitor</div><div class="sub">Live secure activity</div></div>
+    </div>
+    <div class="content">
+      <div class="stats">
+        <div class="stat"><div class="n" id="mon-req">0</div><div class="l">requests</div></div>
+        <div class="stat"><div class="n" id="mon-ok">0</div><div class="l">ok</div></div>
+        <div class="stat"><div class="n" id="mon-err">0</div><div class="l">errors</div></div>
+      </div>
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px">
+          <h4 style="margin:0">Live feed</h4>
+          <button class="btn ghost" style="width:auto;padding:8px 14px;font-size:12px" onclick="refreshMonitor()">Refresh</button>
+        </div>
+        <div class="wire" id="monitor-wire">— no activity yet —</div>
+        <div class="hint" style="margin-top:10px" id="monitor-note">Live traffic between your phone and its private server. Method, path, and status are recorded; bodies are not captured.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ SETTINGS ============ -->
+  <div class="screen" id="screen-settings">
+    <div class="appbar">
+      <button class="back" onclick="goHome()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div><div class="title">Settings</div><div class="sub">Phone & privacy</div></div>
+    </div>
+    <div class="content">
+      <div class="card">
+        <h4>About</h4>
+        <div class="mono-row"><span class="k">name</span><span class="v">fhe-phone</span></div>
+        <div class="mono-row"><span class="k">server</span><span class="v" id="set-port">—</span></div>
+        <div class="mono-row"><span class="k">engine</span><span class="v">TFHE-rs 1.7</span></div>
+        <div class="mono-row"><span class="k">envelope</span><span class="v">version 1</span></div>
+      </div>
+      <div class="card">
+        <h4>Behavior</h4>
+        <div class="setting">
+          <div><div class="lbl">Auto-refresh home</div><div class="desc">Keep your balance up to date</div></div>
+          <div class="switch on" onclick="this.classList.toggle('on')"></div>
+        </div>
+        <div class="setting">
+          <div><div class="lbl">Compact activity feed</div><div class="desc">Show fewer lines in Monitor</div></div>
+          <div class="switch" onclick="compactWire=this.classList.toggle('on')"></div>
+        </div>
+      </div>
+      <div class="card">
+        <h4>Security</h4>
+        <div class="setting">
+          <div><div class="lbl" id="sec-pin-lbl">Set PIN</div><div class="desc">Locks the phone; your keys are stored encrypted at rest under it</div></div>
+          <button class="mini-btn" id="sec-pin-btn" onclick="onSecPinToggle()">Set</button>
+        </div>
+        <div class="setting" id="sec-pin-row" style="display:none">
+          <input type="password" id="sec-pin-input" inputmode="numeric" placeholder="6–12 digit PIN" />
+          <button class="mini-btn" onclick="onSecPinSet()">OK</button>
+        </div>
+        <div class="setting" id="sec-changepin-row" style="display:none">
+          <input type="password" id="sec-oldpin-input" inputmode="numeric" placeholder="current PIN" />
+          <input type="password" id="sec-newpin-input" inputmode="numeric" placeholder="new PIN (6–12 digits)" />
+          <button class="mini-btn" onclick="onSecChangePin()">OK</button>
+        </div>
+        <div class="setting">
+          <div><div class="lbl">Lock now</div><div class="desc">Drop keys from memory; the store stays encrypted on disk</div></div>
+          <button class="mini-btn" onclick="onSecLock()">Lock</button>
+        </div>
+        <div class="setting">
+          <div><div class="lbl">Backup</div><div class="desc">PIN-protected export — copyable, but a short PIN can be guessed offline</div></div>
+          <button class="mini-btn" onclick="onSecBackup()">Export</button>
+        </div>
+        <div class="setting" id="sec-import-row" style="display:none">
+          <input id="sec-import-path" placeholder="path to backup file" />
+          <button class="mini-btn" onclick="onSecImport()">Import</button>
+        </div>
+        <div class="setting">
+          <div><div class="lbl">Destroy keys</div><div class="desc">Erase the local key store. Ciphertexts become undecryptable; exported backups are not deleted</div></div>
+          <button class="mini-btn" onclick="onSecDestroy()">Destroy</button>
+        </div>
+        <div class="setting">
+          <div><div class="lbl">Key store location</div><div class="desc" id="sec-store-dir">—</div></div>
+        </div>
+      </div>
+      <div class="card">
+        <h4>Privacy</h4>
+        <p class="hint copy">The phone talks only to its own private server on this device, and everything it sends is encrypted.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- toast + busy -->
+  <div id="toast"></div>
+  <div id="busy"><div class="busy-box"><div class="spinner"></div><div id="busy-text">Working…</div></div></div>
+</div>
+
+<script>
+  // ================= IPC bridge (robust, never throws) =================
+  let nextId = 1;
+  const pending = new Map();
+  let compactWire = false;
+
+  // Resolve the host bridge. wry injects `window.ipc.postMessage`; WebView2
+  // also exposes the native `window.chrome.webview.postMessage`. Fall back
+  // gracefully so the UI never crashes if neither exists.
+  function hostBridge() {
+    if (window.ipc && typeof window.ipc.postMessage === 'function') return (msg) => window.ipc.postMessage(msg);
+    if (window.chrome && window.chrome.webview && typeof window.chrome.webview.postMessage === 'function') return (msg) => window.chrome.webview.postMessage(msg);
+    return null;
+  }
+
+  // Rust pushes completed results into this slot (defined by the host).
+  function __fhe_on_result(payload) {
+    const p = pending.get(payload.id);
+    if (p) { clearTimeout(p.t); pending.delete(payload.id); p.resolve(payload); }
+  }
+
+  function call(op, params = {}) {
+    return new Promise((resolve, reject) => {
+      const bridge = hostBridge();
+      if (!bridge) { reject(new Error("Host bridge unavailable — webview IPC is not connected.")); return; }
+      const id = nextId++;
+      const timer = setTimeout(() => { pending.delete(id); reject(new Error("Timed out — the Rust engine did not respond.")); }, 120000);
+      pending.set(id, { resolve, reject, t: timer });
+      try {
+        bridge(JSON.stringify({ id, op, ...params }));
+      } catch (e) {
+        clearTimeout(timer); pending.delete(id); reject(e);
+      }
+    });
+  }
+
+  // ================= helpers =================
+  const $ = (id) => document.getElementById(id);
+  function toast(msg, ms = 2600) {
+    const t = $('toast'); t.textContent = msg; t.classList.add('show');
+    clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove('show'), ms);
+  }
+  function busy(show, text = 'Working…') { if (text) $('busy-text').textContent = text; $('busy').classList.toggle('show', show); }
+  function esc(s) { return String(s).replace(/[&<>"']/g, c => ({'&':'&','<':'<','>':'>','"':'"',"'":'&#39;'}[c])); }
+  function clock() {
+    const d = new Date();
+    $('clock').textContent = (d.getHours()%12||12) + ':' + String(d.getMinutes()).padStart(2,'0');
+  }
+  setInterval(clock, 10000); clock();
+
+  // ================= navigation =================
+  function showScreen(id) { document.querySelectorAll('.screen').forEach(s => s.classList.remove('active')); $(id).classList.add('active'); }
+  function unlockNoPin() { showScreen('screen-home'); refreshHome(); toast('You’re in'); }
+  function goHome() { showScreen('screen-home'); refreshHome(); }
+  function openApp(name) { showScreen('screen-' + name); window['onOpen_' + name] && window['onOpen_' + name](); }
+
+  // ================= lock screen (real PIN gate) =================
+  let pinBuffer = '';
+  function renderPinDots() { $('pin-dots').textContent = '●'.repeat(pinBuffer.length) + '○'.repeat(Math.max(0, 6 - pinBuffer.length)); }
+  function pinPress(k) {
+    if (k === '⌫') pinBuffer = pinBuffer.slice(0, -1);
+    else if (pinBuffer.length < 16) pinBuffer += k;
+    $('lock-pin-msg').textContent = 'Enter your PIN';
+    renderPinDots();
+  }
+  async function initLock() {
+    try {
+      const r = await call('lock.status');
+      if (!r.ok) { $('lock-no-pin').style.display = 'block'; return; }
+      const d = r.data;
+      $('sec-pin-lbl').textContent = d.pinSet ? 'Change PIN' : 'Set PIN';
+      $('sec-pin-btn').textContent = d.pinSet ? 'Change' : 'Set';
+      $('sec-store-dir').textContent = d.storeDir || '—';
+      if (d.pinSet) {
+        $('lock-no-pin').style.display = 'none';
+        $('lock-pin-pad').style.display = 'block';
+        $('lock-status-text').textContent = d.locked ? 'Locked' : 'Ready';
+        renderPinDots();
+      } else {
+        $('lock-no-pin').style.display = 'block';
+        $('lock-pin-pad').style.display = 'none';
+      }
+    } catch (e) { $('lock-no-pin').style.display = 'block'; toast(String(e)); }
+  }
+  async function pinSubmit() {
+    // 4 is the legacy floor so an existing short PIN can still unlock; new
+    // PINs must be 6–12 digits (enforced by the keystore and the Settings UI).
+    if (pinBuffer.length < 4) { toast('Enter your PIN'); return; }
+    const pin = pinBuffer; pinBuffer = '';
+    busy(true, 'Unlocking…');
+    try {
+      const r = await call('lock.unlock', { pin });
+      if (r.ok) {
+        $('lock-pin-msg').textContent = 'Enter your PIN';
+        showScreen('screen-home');
+        toast(r.data.keysLoaded ? 'Unlocked — keys restored' : 'Unlocked');
+        refreshHome();
+      } else {
+        $('lock-pin-msg').textContent = r.error || 'Wrong PIN — try again';
+        toast(r.error);
+      }
+    } catch (e) { $('lock-pin-msg').textContent = 'Wrong PIN — try again'; toast(String(e)); }
+    finally { busy(false); renderPinDots(); }
+  }
+
+  // ================= settings security =================
+  function onSecPinToggle() {
+    if ($('sec-pin-btn').textContent === 'Set') {
+      $('sec-pin-row').style.display = $('sec-pin-row').style.display === 'none' ? 'flex' : 'none';
+      $('sec-changepin-row').style.display = 'none';
+    } else {
+      $('sec-changepin-row').style.display = $('sec-changepin-row').style.display === 'none' ? 'flex' : 'none';
+      $('sec-pin-row').style.display = 'none';
+    }
+  }
+  async function onSecPinSet() {
+    const pin = $('sec-pin-input').value;
+    if (!pin) return toast('Enter a PIN');
+    busy(true, 'Setting PIN…');
+    try {
+      const r = await call('lock.setpin', { pin });
+      if (r.ok) { toast('PIN set — now set keys in Vault'); $('sec-pin-row').style.display = 'none'; $('sec-pin-input').value = ''; await initLock(); }
+      else toast(r.error);
+    } catch (e) { toast(String(e)); }
+    finally { busy(false); }
+  }
+  async function onSecChangePin() {
+    const oldPin = $('sec-oldpin-input').value, newPin = $('sec-newpin-input').value;
+    if (!oldPin || !newPin) return toast('Enter current and new PIN');
+    busy(true, 'Changing PIN…');
+    try {
+      const r = await call('lock.changepin', { old: oldPin, new: newPin });
+      if (r.ok) { toast('PIN changed'); $('sec-changepin-row').style.display = 'none'; $('sec-oldpin-input').value = ''; $('sec-newpin-input').value = ''; }
+      else toast(r.error);
+    } catch (e) { toast(String(e)); }
+    finally { busy(false); }
+  }
+  async function onSecLock() {
+    busy(true, 'Locking…');
+    try {
+      const r = await call('lock.lock');
+      if (r.ok) { toast('Locked'); showScreen('screen-lock'); await initLock(); }
+      else toast(r.error);
+    } catch (e) { toast(String(e)); }
+    finally { busy(false); }
+  }
+  async function onSecBackup() {
+    busy(true, 'Writing PIN-protected backup…');
+    try {
+      const r = await call('backup.export');
+      if (r.ok) toast('Backup written to ' + r.data.path);
+      else toast(r.error);
+    } catch (e) { toast(String(e)); }
+    finally { busy(false); }
+  }
+  async function onSecImport() {
+    const path = $('sec-import-path').value.trim();
+    if (!path) return toast('Enter the backup file path');
+    busy(true, 'Importing backup…');
+    try {
+      const r = await call('backup.import', { path });
+      if (r.ok) { toast('Backup imported — unlock with its PIN'); $('sec-import-path').value = ''; showScreen('screen-lock'); await initLock(); }
+      else toast(r.error);
+    } catch (e) { toast(String(e)); }
+    finally { busy(false); }
+  }
+
+  // ================= home =================
+  async function onSecDestroy() {
+    const pin = prompt('Enter your PIN to destroy the local key store. This cannot be undone.');
+    if (!pin) return;
+    if (!confirm('Destroy the local key store? Existing ciphertexts will become permanently undecryptable. Exported backups are not deleted.')) return;
+    busy(true, 'Destroying key material…');
+    try {
+      const r = await call('vault.destroy', { pin });
+      if (r.ok) { toast('Key store destroyed'); showScreen('screen-lock'); await initLock(); }
+      else toast(r.error);
+    } catch (e) { toast(String(e)); }
+    finally { busy(false); }
+  }
+
+  // ================= home =================
+  async function refreshHome() {
+    try {
+      const r = await call('status');
+      if (!r.ok) { toast(r.error); return; }
+      const d = r.data;
+      $('home-key-chip') && ($('home-key-chip').textContent = d.keys ? 'KEYS READY' : 'NO KEYS');
+      $('home-tables-chip') && ($('home-tables-chip').textContent = d.tables + (d.tables === 1 ? ' table' : ' tables'));
+      $('home-model-chip') && ($('home-model-chip').textContent = 'model ' + (d.model ? '●' : '—'));
+      $('home-server').textContent = d.healthy ? 'connected' : 'offline';
+      $('home-skey').textContent = d.keys ? 'ready' : 'not set';
+      $('set-port').textContent = '127.0.0.1:' + d.port;
+      refreshHomeBalance();
+      refreshWireCount();
+    } catch (e) { toast(String(e)); }
+  }
+  async function refreshHomeBalance() {
+    try {
+      const r = await call('wallet.balance');
+      if (r.ok) { $('home-balance').textContent = fmtBal(r.data.balance) + ' '; $('home-delta').innerHTML = '<span class="strong">' + r.data.rows + '</span> encrypted transactions'; }
+    } catch (e) { $('home-balance').textContent = '—'; $('home-delta').textContent = 'generate keys first'; }
+  }
+  function fmtBal(n) { return (n >= 0 ? '' : '−') + Math.abs(n).toLocaleString(); }
+  async function refreshWireCount() { try { const r = await call('monitor.snapshot'); $('home-wire').textContent = r.ok ? r.data.count + ' records' : '—'; } catch (e) {} }
+
+  // ================= vault =================
+  async function onOpen_vault() {
+    try { const r = await call('vault.info'); if (r.ok) { $('vault-key-pill').className = 'pill ' + (r.data.keys ? 'on' : 'off'); $('vault-key-pill').textContent = r.data.keys ? 'ready' : 'no keys'; $('vault-note').textContent = r.data.note; $('vault-keygen-btn').disabled = r.data.keys; } } catch (e) {}
+  }
+  async function keygen() {
+    const btn = $('vault-keygen-btn'); btn.disabled = true;
+    busy(true, 'Generating keys…');
+    try {
+      const r = await call('keygen');
+      if (r.ok) { toast(r.data.already ? 'Keys ready' : 'Keys created'); $('vault-key-pill').className = 'pill on'; $('vault-key-pill').textContent = 'ready'; refreshHome(); }
+      else toast(r.error);
+    } catch (e) { toast(String(e)); }
+    finally { busy(false); btn.disabled = false; }
+  }
+  async function vaultReveal() {
+    const table = $('vault-table').value.trim(), col = $('vault-col').value.trim();
+    if (!table || !col) return toast('Enter a table and column');
+    busy(true, 'Reading back…');
+    try {
+      const r = await call('vault.reveal', { table, column: col });
+      if (!r.ok) { toast(r.error); $('vault-reveal').innerHTML = ''; return; }
+      const d = r.data;
+      let html = '<h4 style="font-size:11px;color:var(--text-2);margin:0 0 8px">Decrypted (' + d.count + ' values)</h4>';
+      d.values.forEach((v, i) => {
+        html += '<div class="mono-row"><span class="k">row ' + i + '</span><span class="v">' + v + '</span></div>';
+      });
+      $('vault-reveal').innerHTML = html;
+      toast('Decrypted on this phone');
+    } catch (e) { toast(String(e)); }
+    finally { busy(false); }
+  }
+
+  // ================= wallet =================
+  async function onOpen_wallet() { await ensureKeyed(); await walletInit(); walletBalance(); }
+  function ensureKeyed() { return call('keygen').then(r => { if (r.ok && r.data.already) return; if (r.ok) toast('Keys ready'); }); }
+  async function walletInit() { try { await call('wallet.init'); } catch (e) { toast('Wallet: ' + e.message || e); } }
+  async function walletBalance() {
+    try { const r = await call('wallet.balance'); if (r.ok) { $('wallet-balance').textContent = fmtBal(r.data.balance) + ' '; $('wallet-rows').textContent = r.data.rows + ' encrypted transactions'; } } catch (e) { toast(String(e)); }
+  }
+  async function walletAction(kind) {
+    const amount = parseInt($('wallet-amount').value, 10);
+    if (!amount || amount <= 0) return toast('Enter an amount');
+    busy(true, kind === 'deposit' ? 'Depositing…' : 'Withdrawing…');
+    try {
+      const r = await call('wallet.' + kind, { amount });
+      if (!r.ok) { toast(r.error); return; }
+      toast(r.data.action + ' of ' + amount + ' · balance ' + fmtBal(r.data.balance_after));
+      $('wallet-balance').textContent = fmtBal(r.data.balance_after) + ' ';
+      $('wallet-rows').textContent = r.data.rows + ' encrypted transactions';
+      refreshHomeBalance();
+      logWallet(kind, amount, r.data.balance_after);
+    } catch (e) { toast(String(e)); }
+    finally { busy(false); }
+  }
+  function logWallet(kind, amount, bal) {
+    const el = $('wallet-history');
+    if (el.querySelector('.hint')) el.innerHTML = '';
+    const row = document.createElement('div');
+    row.className = 'mono-row';
+    row.innerHTML = '<span class="k">' + (kind === 'deposit' ? '⬆ Deposit' : '⬇ Withdraw') + ' ' + amount + '</span><span class="v">' + fmtBal(bal) + '</span>';
+    el.prepend(row);
+  }
+
+  // ================= health =================
+  async function onOpen_health() { await ensureKeyed(); await healthInit(72); healthStats(); }
+  async function healthInit(bpm = 72) { try { const r = await call('health.init', { bpm }); if (r.ok) toast(r.data.inserted ? 'Ready' : 'Reset'); } catch (e) {} }
+  async function healthAdd() {
+    const bpm = parseInt($('health-bpm').value, 10) || 72;
+    busy(true, 'Logging…');
+    try { const r = await call('health.add', { bpm }); if (r.ok) { toast('Logged ' + bpm + ' bpm'); healthStats(); } else toast(r.error); } catch (e) { toast(String(e)); } finally { busy(false); }
+  }
+  async function healthStats() {
+    try {
+      const r = await call('health.stats');
+      if (!r.ok) { toast(r.error); return; }
+      const d = r.data;
+      $('health-avg').textContent = d.avg || '—';
+      $('health-count').textContent = d.count;
+      const vals = d.values || [];
+      $('health-enc').textContent = vals.length ? (vals.length * 1.2).toFixed(0) + ' KB' : '—';
+      const graph = $('health-graph'); graph.innerHTML = '';
+      const max = Math.max(40, ...vals.map(v => v)).toFixed(0);
+      vals.slice(-30).forEach(v => { const b = document.createElement('div'); b.className = 'bar'; b.style.height = (16 + (v / max) * 78) + '%'; b.title = 'bpm ' + v; graph.appendChild(b); });
+    } catch (e) {}
+  }
+
+  // ================= messages =================
+  async function sendMessage() {
+    const text = $('msg-text').value;
+    if (!text.trim()) return toast('Write something first');
+    busy(true, 'Encrypting…');
+    try {
+      const r = await call('messages.send', { text });
+      if (r.ok) { toast('Note saved privately'); $('msg-text').value = ''; listMessages(); }
+      else toast(r.error);
+    } catch (e) { toast(String(e)); }
+    finally { busy(false); }
+  }
+  async function listMessages() {
+    try {
+      const r = await call('messages.list');
+      if (!r.ok) { toast(r.error); return; }
+      const d = r.data;
+      const el = $('msg-list');
+      if (!d.messages.length) { el.innerHTML = '<p class="hint copy" style="text-align:center;padding:20px 0">No notes yet.</p>'; return; }
+      el.innerHTML = '';
+      d.messages.forEach((m, i) => {
+        const div = document.createElement('div');
+        div.className = 'msg';
+        div.innerHTML = '<div class="meta"><span>note ' + (i + 1) + '</span><span class="enc">🔒 encrypted</span></div><div class="body">' + esc(m).replace(/\n/g, '<br/>') + '</div>';
+        el.appendChild(div);
+      });
+    } catch (e) {}
+  }
+  async function onOpen_messages() { await ensureKeyed(); listMessages(); }
+
+  // ================= neural =================
+  async function onOpen_neural() {
+    try {
+      const r = await call('status');
+      if (r.ok && r.data.model) {
+        $('neural-install-btn').textContent = 'Model installed — re-check';
+      }
+    } catch (e) {}
+  }
+  async function neuralInstall() {
+    busy(true, 'Installing encrypted model…');
+    try {
+      const r = await call('neural.install');
+      if (!r.ok) { toast(r.error); return; }
+      toast('Model ready');
+      fillTruth(r.data.truth_table);
+      refreshHome();
+    } catch (e) { toast(String(e)); }
+    finally { busy(false); }
+  }
+  function fillTruth(rows) {
+    if (!rows || !rows.length) return;
+    const gates = $('neural-truth').children;
+    rows.forEach((row, i) => {
+      if (!gates[i]) return;
+      gates[i].querySelector('.out').textContent = row.predicted;
+      gates[i].querySelector('.out').style.color = row.predicted ? 'var(--green)' : 'var(--red)';
+    });
+  }
+  async function neuralInfer() {
+    const x0 = parseFloat($('neural-x0').value), x1 = parseFloat($('neural-x1').value);
+    busy(true, 'Running inference…');
+    try {
+      const r = await call('neural.infer', { x0, x1 });
+      if (!r.ok) { toast(r.error); return; }
+      const d = r.data;
+      const card = $('neural-result'); card.style.display = 'block';
+      card.innerHTML = '<h4>Result</h4>' +
+        '<div class="mono-row"><span class="k">inputs</span><span class="v">(' + d.x0 + ', ' + d.x1 + ')</span></div>' +
+        '<div class="mono-row"><span class="k">h</span><span class="v">' + d.h + '</span></div>' +
+        '<div class="mono-row"><span class="k">XNOR</span><span class="v" style="color:' + (d.predicted ? 'var(--green)' : 'var(--red)') + ';font-size:15px;font-weight:800">' + d.predicted + '</span></div>';
+    } catch (e) { toast(String(e)); }
+    finally { busy(false); }
+  }
+
+  // ================= monitor =================
+  async function refreshMonitor() {
+    try {
+      const r = await call('monitor.snapshot');
+      if (!r.ok) { toast(r.error); return; }
+      const d = r.data;
+      const recs = d.records || [];
+      let reqs = 0, ok = 0, err = 0;
+      recs.forEach(x => { if (x.direction === 'req') reqs++; else if (+x.method >= 200 && +x.method < 300) ok++; else if (+x.method >= 400) err++; });
+      $('mon-req').textContent = reqs; $('mon-ok').textContent = ok; $('mon-err').textContent = err;
+      $('home-wire').textContent = d.count + ' records';
+      $('monitor-note').textContent = d.note;
+      const wire = $('monitor-wire');
+      if (!recs.length) { wire.innerHTML = '<span class="dim">— no activity yet — use an app to see traffic</span>'; return; }
+      wire.innerHTML = recs.slice(-90).map(x => {
+        if (x.direction === 'req') return '<span class="req">→ ' + esc(x.method) + ' ' + esc(x.path) + '</span>';
+        return '<span class="res">← ' + esc(x.method) + ' ' + esc(x.path) + '</span>';
+      }).join('\n');
+      wire.scrollTop = wire.scrollHeight;
+    } catch (e) {}
+  }
+  let monitorPollStarted = false;
+  async function onOpen_monitor() {
+    refreshMonitor();
+    if (!monitorPollStarted) {
+      monitorPollStarted = true;
+      setInterval(async () => { if ($('screen-monitor').classList.contains('active')) await refreshMonitor(); }, 4000);
+    }
+  }
+
+  // ================= boot =================
+  window.addEventListener('DOMContentLoaded', () => {
+    // Guard: at least one screen must be visible. The lock screen carries the
+    // `active` class in the markup, but if that is ever lost the phone would
+    // render as an empty shell (only the status bar), so fall back to it.
+    if (!document.querySelector('.screen.active')) {
+      $('screen-lock').classList.add('active');
+    }
+    initLock();
+    refreshHome();
+  });
+</script>
+</body>
+</html>

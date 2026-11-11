@@ -1,0 +1,82 @@
+{
+  "slug": "einkauf-019",
+  "source": "generated",
+  "domain": "Einkauf und Lieferantenrahmenvertrag, deutsches Recht",
+  "traps": [
+    {
+      "marker": "kann die Leistung ohne Vorwarnung aussetzen",
+      "expectedType": "service_suspension",
+      "note": "Leistungssperre ohne Vorwarnung"
+    },
+    {
+      "marker": "stellt den Auftragnehmer von Ansprüchen Dritter frei, unabhängig von einem Verschulden",
+      "expectedType": "third_party_indemnity",
+      "note": "Verschuldensunabhaengige Drittfreistellung"
+    },
+    {
+      "marker": "Höhere Gewalt befreit den Auftragnehmer von seiner Leistungspflicht",
+      "expectedType": "force_majeure_asymmetry",
+      "note": "Einseitige Risikoverteilung bei hoeherer Gewalt"
+    },
+    {
+      "marker": "mit einer Frist von sechzig Tagen beenden, ohne Gründe zu nennen",
+      "expectedType": "unilateral_convenience_termination",
+      "note": "Einseitige Beendigung ohne Grund"
+    },
+    {
+      "marker": "eine pauschale Abstandszahlung in Höhe von drei Monatsentgelten fällig",
+      "expectedType": "early_termination_charge",
+      "note": "Strafzahlung bei vorzeitiger Beendigung"
+    },
+    {
+      "marker": "Tritt Zahlungsunfähigkeit ein, endet das Vertragsverhältnis ohne weiteres",
+      "expectedType": "insolvency_termination",
+      "note": "Automatische Beendigung bei Insolvenz"
+    },
+    {
+      "marker": "Zuvor kommunizierte Leistungsbeschreibungen treten mit Unterzeichnung",
+      "expectedType": "entire_agreement",
+      "note": "Vollstaendigkeitsklausel"
+    },
+    {
+      "marker": "Erklärungen per E-Mail sind für die Vertragsabwicklung nicht wirksam",
+      "expectedType": "written_form_trap",
+      "note": "Formzwang durch Ausschluss elektronischer Erklaerungen"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Auftragnehmer stellt die Prüfprotokolle in Textform bereit",
+      "note": "Bereitstellung in Textform"
+    },
+    {
+      "marker": "Prüfungen werden mit angemessener Vorlaufzeit angekündigt",
+      "note": "Ankuendigungspflicht fuer Pruefungen"
+    },
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Zulaessige Haftungsklausel"
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag einvernehmlich beenden",
+      "note": "Einvernehmliche Beendigung"
+    },
+    {
+      "marker": "Rechnungen sind innerhalb von dreißig Tagen ohne Abzug zu begleichen",
+      "note": "Marktueblicher Zahlungstermin"
+    },
+    {
+      "marker": "Der Besteller erhält seine Bestandsdaten bei Vertragsende unentgeltlich in einem gängigen Format",
+      "note": "Kostenfreier Datenexport"
+    },
+    {
+      "marker": "Änderungen der Anlage 1 bedürfen der Zustimmung beider Parteien in Textform",
+      "note": "Symmetrische Aenderungsklausel"
+    },
+    {
+      "marker": "Bei berechtigter Rüge bessert der Auftragnehmer innerhalb von zehn Werktagen nach",
+      "note": "Nachbesserungspflicht"
+    }
+  ],
+  "uncovered": []
+}

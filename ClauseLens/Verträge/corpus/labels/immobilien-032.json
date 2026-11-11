@@ -1,0 +1,74 @@
+{
+  "slug": "immobilien-032",
+  "source": "generated",
+  "domain": "Aussenwerbung",
+  "traps": [
+    {
+      "marker": "Preisanpassungen nach billigem Ermessen bleiben vorbehalten",
+      "expectedType": "price_escalation",
+      "note": "Preisanpassung nach billigem Ermessen."
+    },
+    {
+      "marker": "jederzeit mit einer Frist von einem Monat ohne Grund beendet werden",
+      "expectedType": "unilateral_convenience_termination",
+      "note": "GAP: Einseitige jederzeitige Beendigung ohne Grund."
+    },
+    {
+      "marker": "Ort der Streitbeilegung ist der Hauptsitz des Anbieters",
+      "expectedType": "jurisdiction",
+      "note": "Streitbeilegung am Sitz des Anbieters."
+    },
+    {
+      "marker": "interessengerechte Ersatzregelung nach billigem Ermessen",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "Ersatzregelung nach billigem Ermessen statt Gesetzesrecht."
+    },
+    {
+      "marker": "frühere Absprachen verlieren ihre Gültigkeit",
+      "expectedType": "entire_agreement",
+      "note": "Vollstaendigkeitsklausel entwertet frueherere Absprachen."
+    },
+    {
+      "marker": "auf 2.000 EUR je Schadensfall begrenzt",
+      "expectedType": "liability",
+      "note": "GAP: Haftungsdeckel je Schadensfall."
+    },
+    {
+      "marker": "stellt die Eigentümerin von Ansprüchen Dritter frei",
+      "expectedType": "third_party_indemnity",
+      "note": "GAP: Freistellung der Eigentuemerin fuer Drittansprueche."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "Symmetrische Vertraulichkeit."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform zugelassen."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhalt."
+    },
+    {
+      "marker": "Zahlungen sind innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Zahlungsfrist."
+    },
+    {
+      "marker": "Änderungen des Leistungsumfangs bedürfen der Abstimmung beider Parteien",
+      "note": "Einvernehmliche Aenderung."
+    },
+    {
+      "marker": "Nach Vertragsende erhält der Kunde die Vertragsdaten kostenfrei in einem offenen Format",
+      "note": "Kostenfreier Datenexport."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Nutzung der Fassadenflächen zur Außenwerbung",
+      "note": "Kein Detektor fuer Genehmigungspflichten nach Landesbauordnung oder Werbesatzung."
+    }
+  ]
+}

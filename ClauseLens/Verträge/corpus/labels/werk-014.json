@@ -1,0 +1,88 @@
+{
+  "slug": "werk-014",
+  "source": "generated",
+  "domain": "Öffentliche Verwaltung, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Der Anbieter darf die Leistungsbeschreibung einseitig ergänzen.",
+      "expectedType": "unilateral_change",
+      "note": "Verifizierte Klausel im Bereich unilateral_change."
+    },
+    {
+      "marker": "Die Ansprüche des Kunden verwirken mit Ablauf von vierundzwanzig Monaten.",
+      "expectedType": "statute_of_limitations",
+      "note": "Verifizierte Klausel im Bereich statute_of_limitations."
+    },
+    {
+      "marker": "Es gelten die auf der Website des Anbieters veröffentlichten Nutzungsbedingungen in ihrer jeweils gü",
+      "expectedType": "dynamic_url_referral",
+      "note": "Verifizierte Klausel im Bereich dynamic_url_referral."
+    },
+    {
+      "marker": "Der Export erfolgt ausschließlich im herstellereigenen Binärformat.",
+      "expectedType": "data_lockin",
+      "note": "Verifizierte Klausel im Bereich data_lockin."
+    },
+    {
+      "marker": "Ereignisse höherer Gewalt befreien den Anbieter; die Zahlungsverpflichtungen des Kunden sind unverän",
+      "expectedType": "force_majeure_asymmetry",
+      "note": "Verifizierte Klausel im Bereich force_majeure_asymmetry."
+    },
+    {
+      "marker": "Eine Obergrenze für Preisanpassungen besteht nicht.",
+      "expectedType": "price_escalation",
+      "note": "Verifizierte Klausel im Bereich price_escalation."
+    },
+    {
+      "marker": "Aufzeichnungen des Anbieters sind unwiderlegbar; abweichende Nachweise bleiben ohne Bedeutung.",
+      "expectedType": "audit_log_manipulation",
+      "note": "Verifizierte Klausel im Bereich audit_log_manipulation."
+    },
+    {
+      "marker": "Es gelten die Servicebedingungen in der jeweils gültigen Fassung, veröffentlicht auf der Website des",
+      "expectedType": "dynamic_url_referral",
+      "note": "Verifizierte Klausel im Bereich dynamic_url_referral."
+    },
+    {
+      "marker": "Der Anbieter behält sich vor, die Entgelte anzupassen.",
+      "expectedType": "price_escalation",
+      "note": "Verifizierte Klausel im Bereich price_escalation."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien können mit unbestrittenen Forderungen aufrechnen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Alle Fristen werden in Kalendertagen gerechnet.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Parteien arbeiten bei der Fehleranalyse eng zusammen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Für Mängel während der Gewährleistung leistet der Anbieter kostenfrei Nacherfüllung.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Parteien treffen sich monatlich zu einem Lenkungskreis.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Der Anbieter führt die Arbeiten mit der vereinbarten Sorgfalt aus.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Vertragsparteien informieren sich unverzüglich über Störungen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Anbieter stellt die Anwendung ab dem vereinbarten Bereitstellungstermin zur Verfügung",
+      "note": "Terminzusage."
+    }
+  ]
+}

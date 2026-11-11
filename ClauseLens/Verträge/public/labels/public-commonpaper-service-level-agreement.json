@@ -1,0 +1,41 @@
+{
+  "slug": "public-commonpaper-service-level-agreement",
+  "source": "https://raw.githubusercontent.com/CommonPaper/SLA/main/sla.md",
+  "license": "CC BY 4.0 (Common Paper Standard Agreement)",
+  "retrieved": "2026-10-15",
+  "domain": "Service Level Agreement (Common Paper)",
+  "traps": [
+    {
+      "marker": "1. Target Uptime. If there is a",
+      "expectedType": "unverbindliche_sla_falle",
+      "note": "Reale Klausel, Engine-Typ unverbindliche_sla_falle"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "2. Calculating Uptime. Provider",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "1. Target Response Time. If there",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "2. Calculating Response Time. Provider",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "1. Service Credit. If there is",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "2. Requesting A Service Credit.",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "a. For Uptime Credit , Customer",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

@@ -1,0 +1,74 @@
+{
+  "slug": "logistik-002",
+  "source": "generated",
+  "domain": "Spedition international / CMR (EU, DE/NL)",
+  "traps": [
+    {
+      "marker": "Haftung des Dienstleisters ist der Höhe nach auf fünfzig Prozent",
+      "expectedType": "liability",
+      "note": "Deckelung der Gesamthaftung"
+    },
+    {
+      "marker": "Abtretung von Forderungen des Kunden bedarf der vorherigen schriftlichen Zustimmung",
+      "expectedType": "assignment_restriction",
+      "note": "Zustimmungserfordernis Abtretung"
+    },
+    {
+      "marker": "haftet für Unterauftragnehmer nur bei eigenem Auswahlverschulden",
+      "expectedType": "vicarious_agents",
+      "note": "Haftung fuer Gehilfen beschraenkt"
+    },
+    {
+      "marker": "stellt den Dienstleister von sämtlichen Ansprüchen Dritter frei",
+      "expectedType": "third_party_indemnity",
+      "note": "Freistellung ohne Verschulden"
+    },
+    {
+      "marker": "ohne dass sich die Vergütungspflicht des Kunden ändert",
+      "expectedType": "force_majeure_asymmetry",
+      "note": "hoehere Gewalt einseitig"
+    },
+    {
+      "marker": "Nachträgliche Abgabenbelastungen trägt der Kunde",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Steuerlast rueckwirkend beim Kunden"
+    },
+    {
+      "marker": "Mitteilungen gelten mit Absendung als zugegangen",
+      "expectedType": "fictitious_receipt",
+      "note": "Zugangsfiktion"
+    },
+    {
+      "marker": "governed by the laws of the Netherlands",
+      "expectedType": "jurisdiction",
+      "note": "englische Rechtswahl"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Parteien arbeiten bei der Abwicklung vertrauensvoll zusammen",
+      "note": "Kooperation"
+    },
+    {
+      "marker": "Rechnungen sind innerhalb von dreißig Tagen ohne Abzug zahlbar",
+      "note": "normale Zahlungsfrist"
+    },
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "gesetzliche Haftung"
+    },
+    {
+      "marker": "Beide Parteien behandeln die vertraulichen Informationen der jeweils anderen Seite geheim",
+      "note": "beidseitige Vertraulichkeit"
+    },
+    {
+      "marker": "Der Dienstleister benennt Unterauftragnehmer mit einer Vorlaufzeit von vierzehn Tagen",
+      "note": "transparenter Subunternehmereinsatz"
+    },
+    {
+      "marker": "Der Kunde kann seine Daten jederzeit in einem gängigen Format exportieren",
+      "note": "Datenexport ohne Gebuehr"
+    }
+  ],
+  "uncovered": []
+}

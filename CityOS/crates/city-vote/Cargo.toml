@@ -1,0 +1,12 @@
+[package]
+name = "city-vote"
+description = "Anonymous P2P governance voting with ZK validity proofs and DAG-chained ballots"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+city-types = { workspace = true }
+city-crypto = { workspace = true }
+city-caps = { workspace = true }

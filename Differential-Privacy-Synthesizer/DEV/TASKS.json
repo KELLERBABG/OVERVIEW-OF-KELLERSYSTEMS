@@ -1,0 +1,51 @@
+{
+  "project": "Differential-Privacy-Synthesizer",
+  "language": "Python",
+  "summary": "A Python mathematical synthetic data engine (`dpsynth/`) with 12 test suites implementing Rényi Differential Privacy (RDP) accounting (`accountant.py`), per-sample gradient clipping (`clipping.py`), calibrated Gaussian/Laplace mechanisms (`noise.py`), Exponential mechanism (`exponential.py`), DP-SGD optimizer (`optimizer.py`), DP-CTGAN (`ctgan_dp.py`), and privacy/utility evaluation (`privacy.py`, `utility.py`).",
+  "tasks": [
+    {
+      "id": "TASK-01",
+      "title": "Enforce hard privacy budget exhaustion gate in RDP accountant and DP-CTGAN loop",
+      "status": "pending",
+      "target_files": [
+        "dpsynth/dpsynth/privacy/accountant.py",
+        "dpsynth/dpsynth/models/ctgan_dp.py"
+      ],
+      "context_files": [
+        "dpsynth/dpsynth/privacy/optimizer.py",
+        "dpsynth/tests/test_accountant.py"
+      ],
+      "spec": "Harden `accountant.py` and `ctgan_dp.py` so that before every gradient step or marginal query, the prospective Rényi divergence $\\varepsilon_{\\text{next}}(\\delta)$ is pre-computed.\n\n1. If $\\varepsilon_{\\text{next}}(\\delta) > \\varepsilon_{\\max}$, raise `PrivacyBudgetExhaustedError` and halt training immediately without applying the unbudgeted update.\n2. Emit a signed/hashed `PrivacySpendCertificate` summarizing total steps, noise multiplier $\\sigma$, clipping norm $C$, $\\delta$, and final $\\varepsilon$.\n3. Add unit tests in `dpsynth/tests/test_accountant.py` verifying that training halts at the exact step where $\\varepsilon_{\\max}$ is reached.",
+      "verify_cmd": "pytest dpsynth/tests/test_accountant.py dpsynth/tests/test_models.py -q"
+    },
+    {
+      "id": "TASK-02",
+      "title": "Implement Mironov floating-point safe snapping mechanism in noise.py",
+      "status": "pending",
+      "target_files": [
+        "dpsynth/dpsynth/privacy/noise.py",
+        "dpsynth/tests/test_noise.py"
+      ],
+      "context_files": [
+        "dpsynth/dpsynth/privacy/clipping.py"
+      ],
+      "spec": "Enhance `dpsynth/dpsynth/privacy/noise.py` with floating-point rounding protection per Mironov (2012) so IEEE-754 mantissa gaps cannot leak raw sensitivity values.\n\n1. Round noisy outputs to the nearest power-of-two grid step $\\eta$ proportional to scale $\\lambda$, and draw entropy from OS CSPRNG (`np.random.Generator(np.random.PCG64DXSM(secrets.randbits(128)))`) when no explicit test seed is passed.\n2. Add statistical and bit-level unit tests in `dpsynth/tests/test_noise.py`.",
+      "verify_cmd": "pytest dpsynth/tests/test_noise.py -q"
+    },
+    {
+      "id": "TASK-03",
+      "title": "Add singleton memorization and Distance-to-Closest-Record (DCR) release gate",
+      "status": "pending",
+      "target_files": [
+        "dpsynth/dpsynth/evaluation/privacy.py",
+        "dpsynth/tests/test_evaluation.py"
+      ],
+      "context_files": [
+        "dpsynth/dpsynth/evaluation/utility.py",
+        "dpsynth/dpsynth/evaluation/postprocess.py"
+      ],
+      "spec": "Extend `dpsynth/dpsynth/evaluation/privacy.py` with a `ReleaseGateAuditor` that compares Distance-to-Closest-Record (DCR) between `(synthetic, train)` and `(synthetic, holdout)` splits.\n\n1. Fail the release gate if the 5th-percentile DCR to training records is statistically significantly smaller than to holdout records (indicating overfitting/memorization) or if any exact singleton row collision occurs.\n2. Add unit tests in `dpsynth/tests/test_evaluation.py` verifying that leaked training rows trigger a gate rejection.",
+      "verify_cmd": "pytest dpsynth/tests/test_evaluation.py -q"
+    }
+  ]
+}

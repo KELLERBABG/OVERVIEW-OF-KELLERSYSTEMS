@@ -1,0 +1,63 @@
+RAHMENLIEFERVERTRAG FÜR ELEKTRONIKBAUGRUPPEN
+
+zwischen
+
+der Harnisch Elektronik GmbH, Göschwitzer Straße 30, 07745 Jena (nachfolgend „Besteller“)
+
+und
+
+der Kolb Leiterplattentechnik GmbH, Weimarer Straße 44, 98693 Ilmenau (nachfolgend „Auftragnehmer“).
+
+§ 1 Gegenstand
+
+1.1 Der Auftragnehmer liefert Elektronikbaugruppen nach Anlage 1.
+
+1.2 Die Parteien führen bei Bedarf einen technischen Jour fixe durch.
+
+§ 2 Qualität
+
+2.1 Die Baugruppen entsprechen den Freigabemustern.
+
+2.2 Ansprüche wegen Liefermängeln verjähren innerhalb von 12 Monaten ab Übergabe.
+
+2.3 Die gesetzlichen Mängelrechte des Bestellers bleiben im Übrigen unberührt.
+
+§ 3 Haftung
+
+3.1 Eine Einstandspflicht des Auftragnehmers für mittelbare Schäden wird nicht übernommen.
+
+3.2 Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt.
+
+§ 4 Vertraulichkeit
+
+4.1 Die Geheimhaltungspflichten bestehen auf Dauer fort.
+
+4.2 Beide Parteien behandeln die Zeichnungen der anderen Seite vertraulich.
+
+§ 5 Verfügbarkeit
+
+5.1 Die Servicezeiten sind Richtwerte ohne Rechtsanspruch.
+
+5.2 Störungen werden über die Hotline gemeldet.
+
+§ 6 Daten
+
+6.1 Der Datenbestand wird ausschließlich im herstellereigenen Binärformat bereitgestellt.
+
+6.2 Der Besteller erhält seine Bestandsdaten bei Vertragsende unentgeltlich in einem gängigen Format.
+
+§ 7 Streitbeilegung
+
+7.1 Streitigkeiten über die Qualität der Lieferungen werden zunächst einem Sachverständigenverfahren unterworfen. Die Verfahrenskosten hat der Besteller vorzustrecken. Der gerichtliche Rechtsweg ist erst nach Abschluss des Verfahrens eröffnet.
+
+§ 8 Personal
+
+8.1 Der Besteller verzichtet für vierundzwanzig Monate darauf, Beschäftigte des Auftragnehmers abzuwerben.
+
+8.2 Die Parteien arbeiten bei der Personalplanung zusammen.
+
+§ 9 Schlussbestimmungen
+
+9.1 Änderungen dieses Vertrags bedürfen der Zustimmung beider Parteien in Textform.
+
+9.2 Der Vertrag bleibt im Übrigen wirksam.

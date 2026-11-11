@@ -1,0 +1,39 @@
+[workspace]
+resolver = "2"
+members = [
+    "firmware/core",
+    "firmware/node",
+    "firmware/bootloader",
+    "mesh",
+    "storage",
+    "broadcaster",
+    "desktop-tool",
+    "tools/flasher",
+    "tools/network-simulator",
+]
+default-members = [
+    "firmware/core",
+    "firmware/node",
+    "firmware/bootloader",
+    "mesh",
+    "storage",
+    "broadcaster",
+    "desktop-tool",
+    "tools/flasher",
+    "tools/network-simulator",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Smart Matter - Infrastructure-embedded intelligent materials"
+
+# Firmware release profile: the application region is 32 KB (whitepaper §2.4),
+# so release builds prioritize code size.
+[profile.release]
+opt-level = "z"
+# LTO + codegen-units=1 shave ~1 KB more but add minutes to every build;
+# opt-level="z" alone already fits comfortably (≈20 KB of 32 KB).
+lto = "thin"
+codegen-units = 16

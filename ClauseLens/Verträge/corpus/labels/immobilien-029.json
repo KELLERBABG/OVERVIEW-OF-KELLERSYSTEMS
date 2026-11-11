@@ -1,0 +1,74 @@
+{
+  "slug": "immobilien-029",
+  "source": "generated",
+  "domain": "Bauvertrag",
+  "traps": [
+    {
+      "marker": "gelten als abgenommen, sobald der Besteller sie produktiv nutzt",
+      "expectedType": "deemed_acceptance",
+      "note": "Abnahmefiktion durch produktive Nutzung."
+    },
+    {
+      "marker": "Mehrstunden des Auftragnehmers gelten mit Ausführung als genehmigt",
+      "expectedType": "unilateral_change",
+      "note": "GAP: Fiktion der Genehmigung von Mehrstunden."
+    },
+    {
+      "marker": "ohne den Besteller zu informieren",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "GAP: Nachunternehmer ohne Information des Bestellers."
+    },
+    {
+      "marker": "bestätigt mit der Teilabnahme die Mangelfreiheit der Vorleistungen",
+      "expectedType": "burden_of_proof",
+      "note": "Bestaetigung der Mangelfreiheit durch den Besteller."
+    },
+    {
+      "marker": "wird auf die Höhe der Auftragssumme begrenzt",
+      "expectedType": "liability",
+      "note": "Haftungsdeckel auf die Auftragssumme."
+    },
+    {
+      "marker": "eine Pauschale von 0,2 Prozent der Nettoauftragssumme je Kalendertag",
+      "expectedType": "penalty",
+      "note": "Schadenspauschale je Kalendertag ohne Nachweisvorbehalt."
+    },
+    {
+      "marker": "im Kundenportal hinterlegt und werden dort fortlaufend aktualisiert",
+      "expectedType": "dynamic_url_referral",
+      "note": "GAP: Planunterlagen nur im Portal in wechselnder Fassung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "Symmetrische Vertraulichkeit."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhalt."
+    },
+    {
+      "marker": "Zahlungen sind innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Zahlungsfrist."
+    },
+    {
+      "marker": "Änderungen des Leistungsumfangs bedürfen der Abstimmung beider Parteien",
+      "note": "Einvernehmliche Aenderung."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende beenden",
+      "note": "Symmetrisches Kuendigungsrecht."
+    },
+    {
+      "marker": "Nach Vertragsende erhält der Kunde die Vertragsdaten kostenfrei in einem offenen Format",
+      "note": "Kostenfreier Datenexport."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Konferenztrakt mit 14 Räumen",
+      "note": "Kein Detektor fuer Bauzeitplan, Nachtragsverfahren oder Sicherungseinbehalt."
+    }
+  ]
+}

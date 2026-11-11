@@ -1,0 +1,25 @@
+{
+  "name": "frontal-collision-detection",
+  "thresholds": [
+    {
+      "name": "impact_g",
+      "sensor_type": "Accelerometer",
+      "parameter": {
+        "GreaterThan": 8.0
+      },
+      "duration_ms": null
+    },
+    {
+      "name": "sustained_g",
+      "sensor_type": "Accelerometer",
+      "parameter": {
+        "RateOfChange": {
+          "max_delta": 5.0,
+          "over_duration_ms": 500
+        }
+      },
+      "duration_ms": null
+    }
+  ],
+  "combination": "All"
+}

@@ -1,0 +1,13 @@
+# City OS — reproducible toolchain
+# Used by CI, developers, and the deploy pipeline.
+# Update this file to bump the pinned Rust version.
+
+[toolchain]
+channel = "stable"
+components = ["rustfmt", "clippy", "rust-src"]
+targets = [
+    "x86_64-unknown-linux-gnu",
+    "aarch64-unknown-linux-gnu",
+    "thumbv7em-none-eabihf",
+]
+profile = "minimal"

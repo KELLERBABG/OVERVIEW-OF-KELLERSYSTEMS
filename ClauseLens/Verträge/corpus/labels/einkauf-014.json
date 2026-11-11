@@ -1,0 +1,83 @@
+{
+  "slug": "einkauf-014",
+  "source": "generated",
+  "domain": "Einkauf und Lieferantenrahmenvertrag, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Der Lieferant behält sich vor, die Lieferbedingungen anzupassen",
+      "expectedType": "unilateral_change",
+      "note": "Einseitiger Aenderungsvorbehalt"
+    },
+    {
+      "marker": "Erklärungen per E-Mail sind für die Vertragsabwicklung nicht wirksam",
+      "expectedType": "written_form_trap",
+      "note": "Formzwang durch Ausschluss elektronischer Erklaerungen"
+    },
+    {
+      "marker": "wird die Lieferung als vertragsgemäß behandelt",
+      "expectedType": "deemed_acceptance",
+      "note": "Fiktionswirkung ohne die Registerformel"
+    },
+    {
+      "marker": "Die Vergütung steigt jährlich um bis zu 8 Prozent",
+      "expectedType": "price_escalation",
+      "note": "Einseitige Preisanhebung ohne Index"
+    },
+    {
+      "marker": "nur nach vorheriger schriftlicher Bestätigung durch den Lieferanten in Ansatz gebracht",
+      "expectedType": "setoff_restriction",
+      "note": "Aufrechnungsausschluss ohne das Wort Aufrechnung"
+    },
+    {
+      "marker": "ohne Zustimmung des Bestellers unwirksam",
+      "expectedType": "assignment_restriction",
+      "note": "Zessionsverbot ohne die Registerwoerter Abtretung"
+    },
+    {
+      "marker": "Unternehmenssitz der Anbieterin ausschließlich zuständig",
+      "expectedType": "jurisdiction",
+      "note": "Gerichtsstand als Unternehmenssitz der Anbieterin"
+    },
+    {
+      "marker": "die dem wirtschaftlichen Zweck am nächsten kommt",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "Ersetzungsregel ohne gesetzlichen Vorrang"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Besteller wählt unter den in Anlage 3 genannten Varianten eine aus",
+      "note": "Einseitiges Wahlrecht ohne Pflichten"
+    },
+    {
+      "marker": "Bei berechtigter Rüge bessert der Lieferant innerhalb von zehn Werktagen nach",
+      "note": "Nachbesserungspflicht"
+    },
+    {
+      "marker": "Rechnungen sind innerhalb von dreißig Tagen ohne Abzug zu begleichen",
+      "note": "Marktueblicher Zahlungstermin"
+    },
+    {
+      "marker": "Der Besteller erhält seine Bestandsdaten bei Vertragsende unentgeltlich in einem gängigen Format",
+      "note": "Kostenfreier Datenexport"
+    },
+    {
+      "marker": "Es gilt das Recht der Bundesrepublik Deutschland",
+      "note": "Neutrale Rechtswahl"
+    },
+    {
+      "marker": "Beide Parteien behandeln die technischen Unterlagen der anderen Seite vertraulich",
+      "note": "Wechselseitige Vertraulichkeit"
+    },
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Zulaessige Haftungsklausel"
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Die Parteien benennen jeweils einen technischen Ansprechpartner",
+      "note": "Benennung von Ansprechpartnern ohne Pflichten, kein Detektor"
+    }
+  ]
+}

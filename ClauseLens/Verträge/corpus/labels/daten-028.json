@@ -1,0 +1,87 @@
+{
+  "slug": "daten-028",
+  "source": "generated",
+  "domain": "IP-Uebertragung",
+  "traps": [
+    {
+      "marker": "Für Handlungen der von der Gesellschaft eingesetzten Nachunternehmer",
+      "expectedType": "vicarious_agents",
+      "note": "Paraphrase/Umstellung: nennt 'Für Handlungen der von der Gesellschaft einge' statt der Registerwendung."
+    },
+    {
+      "marker": "die Geschäftsräume des Kunden ohne vorherige Ankündigung zu prüfen",
+      "expectedType": "unreasonable_audit",
+      "note": "Paraphrase/Umstellung: nennt 'die Geschäftsräume des Kunden ohne vorherige ' statt der Registerwendung."
+    },
+    {
+      "marker": "Der Export der Bestandsdaten ist kostenpflichtig",
+      "expectedType": "data_lockin",
+      "note": "Paraphrase/Umstellung: nennt 'Der Export der Bestandsdaten ist kostenpflich' statt der Registerwendung."
+    },
+    {
+      "marker": "Die Freistellung gilt verschuldensunabhängig",
+      "expectedType": "third_party_indemnity",
+      "note": "Paraphrase/Umstellung: nennt 'Die Freistellung gilt verschuldensunabhängig' statt der Registerwendung."
+    },
+    {
+      "marker": "Der Kunde kann den Vertrag nicht aus wichtigem Grund kündigen",
+      "expectedType": "asymmetric_termination",
+      "note": "Paraphrase/Umstellung: nennt 'Der Kunde kann den Vertrag nicht aus wichtige' statt der Registerwendung."
+    },
+    {
+      "marker": "Ansprüche gegen die Gesellschaft sind nicht abtretbar",
+      "expectedType": "assignment_restriction",
+      "note": "Paraphrase/Umstellung: nennt 'Ansprüche gegen die Gesellschaft sind nicht a' statt der Registerwendung."
+    },
+    {
+      "marker": "bleiben die Zahlungsverpflichtungen des Kunden vollumfänglich bestehen",
+      "expectedType": "force_majeure_asymmetry",
+      "note": "Paraphrase/Umstellung: nennt 'bleiben die Zahlungsverpflichtungen des Kunde' statt der Registerwendung."
+    },
+    {
+      "marker": "achtzehn Monaten nach Beendigung keine Mitarbeiter der Gesellschaft abzuwerben",
+      "expectedType": "non_solicitation",
+      "note": "Paraphrase/Umstellung: nennt 'achtzehn Monaten nach Beendigung keine Mitarb' statt der Registerwendung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "mindestens vierzehn Tage vor dem Einsatz eines Unterauftragnehmers",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "binnen zwei Werktagen nach Eingang auf dem Geschäftskonto",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "ausschließlich auf dokumentierte Weisung des Auftraggebers",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "benennt für Datenschutzfragen eine Ansprechperson",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "innerhalb von dreißig Tagen nach Zugang ohne Abzug",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "einen festen Ansprechpartner für alle Fragen der Vertragsabwicklung",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "löscht nach Beendigung der Datenverarbeitung alle personenbezogenen Daten",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "in maschinenlesbarer Form ohne Zusatzkosten",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Zweitschrift der Dokumentation gegen eine Gebühr von fünfzehn Euro",
+      "note": "Täuschende Klausel ohne passenden Detektortyp."
+    }
+  ]
+}

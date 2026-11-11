@@ -1,0 +1,122 @@
+version: "3.9"
+
+x-node-common: &node-common
+  build:
+    context: .
+    dockerfile: Dockerfile
+  networks:
+    - smpc-net
+  environment:
+    RUST_LOG: info
+  healthcheck:
+    test: ["CMD", "curl", "-f", "http://localhost:8080/api/health"]
+    interval: 30s
+    timeout: 10s
+    retries: 3
+    start_period: 15s
+
+services:
+  # --------------------------------------------------------------------------
+  # MPC Nodes
+  # --------------------------------------------------------------------------
+  node0:
+    <<: *node-common
+    container_name: smpc-node0
+    ports:
+      - "8080:8080"
+      - "9000:9000"
+    environment:
+      NODE_ID: "00000000-0000-0000-0000-000000000000"
+      LISTEN_ADDR: "0.0.0.0:9000"
+      PEERS: >-
+        node1:9001,
+        node2:9002,
+        node3:9003,
+        node4:9004
+      RUST_LOG: info
+
+  node1:
+    <<: *node-common
+    container_name: smpc-node1
+    ports:
+      - "9001:9001"
+    environment:
+      NODE_ID: "00000000-0000-0000-0000-000000000001"
+      LISTEN_ADDR: "0.0.0.0:9001"
+      PEERS: >-
+        node0:9000,
+        node2:9002,
+        node3:9003,
+        node4:9004
+      RUST_LOG: info
+
+  node2:
+    <<: *node-common
+    container_name: smpc-node2
+    ports:
+      - "9002:9002"
+    environment:
+      NODE_ID: "00000000-0000-0000-0000-000000000002"
+      LISTEN_ADDR: "0.0.0.0:9002"
+      PEERS: >-
+        node0:9000,
+        node1:9001,
+        node3:9003,
+        node4:9004
+      RUST_LOG: info
+
+  node3:
+    <<: *node-common
+    container_name: smpc-node3
+    ports:
+      - "9003:9003"
+    environment:
+      NODE_ID: "00000000-0000-0000-0000-000000000003"
+      LISTEN_ADDR: "0.0.0.0:9003"
+      PEERS: >-
+        node0:9000,
+        node1:9001,
+        node2:9002,
+        node4:9004
+      RUST_LOG: info
+
+  node4:
+    <<: *node-common
+    container_name: smpc-node4
+    ports:
+      - "9004:9004"
+    environment:
+      NODE_ID: "00000000-0000-0000-0000-000000000004"
+      LISTEN_ADDR: "0.0.0.0:9004"
+      PEERS: >-
+        node0:9000,
+        node1:9001,
+        node2:9002,
+        node3:9003
+      RUST_LOG: info
+
+  # --------------------------------------------------------------------------
+  # Ethereum Testnet (Ganache)
+  # --------------------------------------------------------------------------
+  ganache:
+    image: trufflesuite/ganache:latest
+    container_name: smpc-ganache
+    ports:
+      - "8545:8545"
+    networks:
+      - smpc-net
+    command:
+      - --chain.chainId=1337
+      - --wallet.deterministic
+      - --wallet.totalAccounts=10
+      - --server.host=0.0.0.0
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8545"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 10s
+
+networks:
+  smpc-net:
+    driver: bridge

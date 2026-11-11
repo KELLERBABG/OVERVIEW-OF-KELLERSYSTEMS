@@ -1,0 +1,1844 @@
+{
+  "schema_version": 1,
+  "crate_name": "smokeshift",
+  "completed": true,
+  "coverage": {
+    "functions": 143,
+    "reachable_assertions": 39,
+    "supported_assertions": 39,
+    "unsupported_assertions": 0,
+    "unsupported_kinds": [],
+    "passed": 3,
+    "failed": 0,
+    "warnings": 36,
+    "without_verdict": 0,
+    "panic_sites": 2,
+    "panic_sites_decided": 0,
+    "obligation_solver_calls": 39,
+    "solver_elapsed_ms": 349
+  },
+  "findings": [
+    {
+      "crate": "smokeshift",
+      "function": "audit::_::<impl audit::_::_serde::Serialize for audit::AuditEntry>::serialize",
+      "block": "bb0",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_16` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "audit::_::<impl audit::_::_serde::Serialize for audit::AuditEntry>::serialize",
+      "block": "bb1",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_16` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "audit::_::<impl audit::_::_serde::Serialize for audit::AuditEntry>::serialize",
+      "block": "bb2",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_16` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "audit::_::<impl audit::_::_serde::Serialize for audit::AuditEntry>::serialize",
+      "block": "bb3",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_16` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "audit::_::<impl audit::_::_serde::Serialize for audit::AuditEntry>::serialize",
+      "block": "bb4",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_16` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "audit::_::<impl audit::_::_serde::Serialize for audit::AuditEntry>::serialize",
+      "block": "bb5",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_16` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "audit::_::<impl audit::_::_serde::Serialize for audit::AuditEntry>::serialize",
+      "block": "bb6",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_16` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "audit::_::<impl audit::_::_serde::Serialize for audit::AuditEntry>::serialize",
+      "block": "bb7",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_16` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "audit::_::<impl audit::_::_serde::Serialize for audit::AuditEntry>::serialize",
+      "block": "bb8",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_16` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "audit::AuditLog::append_entry",
+      "block": "bb33",
+      "status": "WARN",
+      "kind": "unmodelled-panic",
+      "file": "src/audit.rs",
+      "line": 36,
+      "details": "Unmodelled panic site: the call to `std::option::Option::<&audit::AuditEntry>::unwrap` panics when it has no value to return, and its body is not read by this analysis, so whether this site can panic was not decided."
+    },
+    {
+      "crate": "smokeshift",
+      "function": "compliance::_::<impl audit::_::_serde::Serialize for compliance::ShiftComplianceReport>::serialize",
+      "block": "bb0",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_16` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "compliance::_::<impl audit::_::_serde::Serialize for compliance::ShiftComplianceReport>::serialize",
+      "block": "bb1",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_16` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "compliance::_::<impl audit::_::_serde::Serialize for compliance::ShiftComplianceReport>::serialize",
+      "block": "bb2",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_16` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "compliance::_::<impl audit::_::_serde::Serialize for compliance::ShiftComplianceReport>::serialize",
+      "block": "bb3",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_16` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "compliance::_::<impl audit::_::_serde::Serialize for compliance::ShiftComplianceReport>::serialize",
+      "block": "bb4",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_16` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "compliance::_::<impl audit::_::_serde::Serialize for compliance::ShiftComplianceReport>::serialize",
+      "block": "bb5",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_16` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "compliance::_::<impl audit::_::_serde::Serialize for compliance::ShiftComplianceReport>::serialize",
+      "block": "bb6",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_16` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "compliance::_::<impl audit::_::_serde::Serialize for compliance::ShiftComplianceReport>::serialize",
+      "block": "bb7",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_16` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "compliance::_::<impl audit::_::_serde::Serialize for compliance::ShiftComplianceReport>::serialize",
+      "block": "bb8",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_16` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ExposureLimits>::serialize",
+      "block": "bb0",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_11` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ExposureLimits>::serialize",
+      "block": "bb1",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_11` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ExposureLimits>::serialize",
+      "block": "bb2",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_11` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ExposureLimits>::serialize",
+      "block": "bb3",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_11` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ShiftDoseTracker>::serialize",
+      "block": "bb0",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_13` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ShiftDoseTracker>::serialize",
+      "block": "bb1",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_13` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ShiftDoseTracker>::serialize",
+      "block": "bb2",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_13` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ShiftDoseTracker>::serialize",
+      "block": "bb3",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_13` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ShiftDoseTracker>::serialize",
+      "block": "bb4",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_13` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ShiftDoseTracker>::serialize",
+      "block": "bb5",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_13` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "sensor::_::<impl audit::_::_serde::Serialize for sensor::Sps30Reading>::serialize",
+      "block": "bb0",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_12` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "sensor::_::<impl audit::_::_serde::Serialize for sensor::Sps30Reading>::serialize",
+      "block": "bb1",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_12` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "sensor::_::<impl audit::_::_serde::Serialize for sensor::Sps30Reading>::serialize",
+      "block": "bb2",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_12` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "sensor::_::<impl audit::_::_serde::Serialize for sensor::Sps30Reading>::serialize",
+      "block": "bb3",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_12` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "sensor::_::<impl audit::_::_serde::Serialize for sensor::Sps30Reading>::serialize",
+      "block": "bb4",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_12` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "sensor::_::<impl audit::_::_serde::Serialize for sensor::Sps30Calibrator>::serialize",
+      "block": "bb0",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_10` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "sensor::_::<impl audit::_::_serde::Serialize for sensor::Sps30Calibrator>::serialize",
+      "block": "bb1",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_10` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "sensor::_::<impl audit::_::_serde::Serialize for sensor::Sps30Calibrator>::serialize",
+      "block": "bb2",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_10` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "taint::TaintDetector::new",
+      "block": "bb3",
+      "status": "WARN",
+      "kind": "unmodelled-panic",
+      "file": "src/taint.rs",
+      "line": 49,
+      "details": "Unmodelled panic site: the call to `core::panicking::panic_fmt` can panic, and its body is not read by this analysis, so whether this site can panic was not decided."
+    }
+  ],
+  "compiler": {
+    "arguments": [
+      "--crate-name",
+      "smokeshift",
+      "--edition=2024",
+      "src\\lib.rs",
+      "--error-format=json",
+      "--json=diagnostic-rendered-ansi,artifacts,future-incompat",
+      "--crate-type",
+      "lib",
+      "--emit=dep-info,metadata",
+      "-C",
+      "embed-bitcode=no",
+      "-C",
+      "debuginfo=2",
+      "--check-cfg",
+      "cfg(docsrs,test)",
+      "--check-cfg",
+      "cfg(feature, values())",
+      "-C",
+      "metadata=614ea43d298d0cd3",
+      "-C",
+      "extra-filename=-841fa910197a1ccc",
+      "--out-dir",
+      "C:\\Users\\lukas\\DOWNLO~1\\SYSTEM~2\\AeroDose\\target\\keller\\debug\\deps",
+      "-C",
+      "incremental=C:\\Users\\lukas\\DOWNLO~1\\SYSTEM~2\\AeroDose\\target\\keller\\debug\\incremental",
+      "-L",
+      "dependency=C:\\Users\\lukas\\DOWNLO~1\\SYSTEM~2\\AeroDose\\target\\keller\\debug\\deps",
+      "--extern",
+      "chrono=C:\\Users\\lukas\\DOWNLO~1\\SYSTEM~2\\AeroDose\\target\\keller\\debug\\deps\\libchrono-5f12cc994838fb6a.rmeta",
+      "--extern",
+      "clap=C:\\Users\\lukas\\DOWNLO~1\\SYSTEM~2\\AeroDose\\target\\keller\\debug\\deps\\libclap-ac31301fb389cdf2.rmeta",
+      "--extern",
+      "ed25519_dalek=C:\\Users\\lukas\\DOWNLO~1\\SYSTEM~2\\AeroDose\\target\\keller\\debug\\deps\\libed25519_dalek-0fb1b593a36a32b7.rmeta",
+      "--extern",
+      "hex=C:\\Users\\lukas\\DOWNLO~1\\SYSTEM~2\\AeroDose\\target\\keller\\debug\\deps\\libhex-833773e4cbc67c7b.rmeta",
+      "--extern",
+      "rand=C:\\Users\\lukas\\DOWNLO~1\\SYSTEM~2\\AeroDose\\target\\keller\\debug\\deps\\librand-925f5cbfffc65555.rmeta",
+      "--extern",
+      "serde=C:\\Users\\lukas\\DOWNLO~1\\SYSTEM~2\\AeroDose\\target\\keller\\debug\\deps\\libserde-f9f62e405b86ccbc.rmeta",
+      "--extern",
+      "serde_json=C:\\Users\\lukas\\DOWNLO~1\\SYSTEM~2\\AeroDose\\target\\keller\\debug\\deps\\libserde_json-5716d889003c1951.rmeta",
+      "--extern",
+      "sha2=C:\\Users\\lukas\\DOWNLO~1\\SYSTEM~2\\AeroDose\\target\\keller\\debug\\deps\\libsha2-8aa0c43af9ad0aaf.rmeta",
+      "--extern",
+      "thiserror=C:\\Users\\lukas\\DOWNLO~1\\SYSTEM~2\\AeroDose\\target\\keller\\debug\\deps\\libthiserror-910fe3682e4a3bcc.rmeta",
+      "--extern",
+      "uuid=C:\\Users\\lukas\\DOWNLO~1\\SYSTEM~2\\AeroDose\\target\\keller\\debug\\deps\\libuuid-30c5e20935755ea2.rmeta",
+      "-L",
+      "native=C:\\z3\\bin",
+      "--sysroot",
+      "C:\\Users\\lukas\\.rustup\\toolchains\\nightly-2026-07-24-x86_64-pc-windows-msvc"
+    ],
+    "rustc": "C:\\Users\\lukas\\.rustup\\toolchains\\nightly-2026-07-24-x86_64-pc-windows-msvc\\bin\\rustc.exe",
+    "version_verbose": "rustc 1.99.0-nightly (89c61a754 2026-07-23)\nbinary: rustc\ncommit-hash: 89c61a7545da48b06116675b888398d02a4064c7\ncommit-date: 2026-07-23\nhost: x86_64-pc-windows-msvc\nrelease: 1.99.0-nightly\nLLVM version: 22.1.8"
+  },
+  "evidence": [
+    {
+      "function": "<audit::AuditEntry as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<audit::AuditEntry as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "audit::_::<impl audit::_::_serde::Serialize for audit::AuditEntry>::serialize",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "audit::_::<impl audit::_::_serde::Deserialize<'de> for audit::AuditEntry>::deserialize",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<audit::_::<impl audit::_::_serde::Deserialize<'de> for audit::AuditEntry>::deserialize::__FieldVisitor as audit::_::_serde::de::Visitor<'de>>::expecting",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<audit::_::<impl audit::_::_serde::Deserialize<'de> for audit::AuditEntry>::deserialize::__FieldVisitor as audit::_::_serde::de::Visitor<'de>>::visit_u64",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<audit::_::<impl audit::_::_serde::Deserialize<'de> for audit::AuditEntry>::deserialize::__FieldVisitor as audit::_::_serde::de::Visitor<'de>>::visit_str",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<audit::_::<impl audit::_::_serde::Deserialize<'de> for audit::AuditEntry>::deserialize::__FieldVisitor as audit::_::_serde::de::Visitor<'de>>::visit_bytes",
+      "disclosures": [
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<audit::_::<impl audit::_::_serde::Deserialize<'de> for audit::AuditEntry>::deserialize::__Field as audit::_::_serde::Deserialize<'de>>::deserialize",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<audit::_::<impl audit::_::_serde::Deserialize<'de> for audit::AuditEntry>::deserialize::__Visitor<'de> as audit::_::_serde::de::Visitor<'de>>::expecting",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<audit::_::<impl audit::_::_serde::Deserialize<'de> for audit::AuditEntry>::deserialize::__Visitor<'de> as audit::_::_serde::de::Visitor<'de>>::visit_seq",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<audit::_::<impl audit::_::_serde::Deserialize<'de> for audit::AuditEntry>::deserialize::__Visitor<'de> as audit::_::_serde::de::Visitor<'de>>::visit_map",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<audit::AuditLog as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<audit::AuditLog as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "audit::AuditLog::new",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "audit::AuditLog::append_entry",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "audit::AuditLog::append_entry::{closure#0}",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "audit::AuditLog::append_entry::{closure#1}",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "audit::AuditLog::verify_chain",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "audit::AuditLog::verify_chain::{closure#0}",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "audit::AuditLog::verify_chain::{closure#1}",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "audit::AuditLog::verify_chain::{closure#2}",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "audit::AuditLog::entries",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<compliance::ShiftComplianceReport as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<compliance::ShiftComplianceReport as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "compliance::_::<impl audit::_::_serde::Serialize for compliance::ShiftComplianceReport>::serialize",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "compliance::_::<impl audit::_::_serde::Deserialize<'de> for compliance::ShiftComplianceReport>::deserialize",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<compliance::_::<impl audit::_::_serde::Deserialize<'de> for compliance::ShiftComplianceReport>::deserialize::__FieldVisitor as audit::_::_serde::de::Visitor<'de>>::expecting",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<compliance::_::<impl audit::_::_serde::Deserialize<'de> for compliance::ShiftComplianceReport>::deserialize::__FieldVisitor as audit::_::_serde::de::Visitor<'de>>::visit_u64",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<compliance::_::<impl audit::_::_serde::Deserialize<'de> for compliance::ShiftComplianceReport>::deserialize::__FieldVisitor as audit::_::_serde::de::Visitor<'de>>::visit_str",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<compliance::_::<impl audit::_::_serde::Deserialize<'de> for compliance::ShiftComplianceReport>::deserialize::__FieldVisitor as audit::_::_serde::de::Visitor<'de>>::visit_bytes",
+      "disclosures": [
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<compliance::_::<impl audit::_::_serde::Deserialize<'de> for compliance::ShiftComplianceReport>::deserialize::__Field as audit::_::_serde::Deserialize<'de>>::deserialize",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<compliance::_::<impl audit::_::_serde::Deserialize<'de> for compliance::ShiftComplianceReport>::deserialize::__Visitor<'de> as audit::_::_serde::de::Visitor<'de>>::expecting",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<compliance::_::<impl audit::_::_serde::Deserialize<'de> for compliance::ShiftComplianceReport>::deserialize::__Visitor<'de> as audit::_::_serde::de::Visitor<'de>>::visit_seq",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<compliance::_::<impl audit::_::_serde::Deserialize<'de> for compliance::ShiftComplianceReport>::deserialize::__Visitor<'de> as audit::_::_serde::de::Visitor<'de>>::visit_map",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "compliance::ComplianceEngine::generate_report",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<dose::AlertTier as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<dose::AlertTier as std::clone::Clone>::clone",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<dose::AlertTier as std::cmp::PartialEq>::eq",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<dose::AlertTier as std::cmp::Eq>::assert_fields_are_eq",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<dose::AlertTier as std::cmp::PartialOrd>::partial_cmp",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<dose::AlertTier as std::cmp::Ord>::cmp",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "dose::_::<impl audit::_::_serde::Serialize for dose::AlertTier>::serialize",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "dose::_::<impl audit::_::_serde::Deserialize<'de> for dose::AlertTier>::deserialize",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<dose::_::<impl audit::_::_serde::Deserialize<'de> for dose::AlertTier>::deserialize::__FieldVisitor as audit::_::_serde::de::Visitor<'de>>::expecting",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<dose::_::<impl audit::_::_serde::Deserialize<'de> for dose::AlertTier>::deserialize::__FieldVisitor as audit::_::_serde::de::Visitor<'de>>::visit_u64",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<dose::_::<impl audit::_::_serde::Deserialize<'de> for dose::AlertTier>::deserialize::__FieldVisitor as audit::_::_serde::de::Visitor<'de>>::visit_str",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<dose::_::<impl audit::_::_serde::Deserialize<'de> for dose::AlertTier>::deserialize::__FieldVisitor as audit::_::_serde::de::Visitor<'de>>::visit_bytes",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<dose::_::<impl audit::_::_serde::Deserialize<'de> for dose::AlertTier>::deserialize::__Field as audit::_::_serde::Deserialize<'de>>::deserialize",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<dose::_::<impl audit::_::_serde::Deserialize<'de> for dose::AlertTier>::deserialize::__Visitor<'de> as audit::_::_serde::de::Visitor<'de>>::expecting",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<dose::_::<impl audit::_::_serde::Deserialize<'de> for dose::AlertTier>::deserialize::__Visitor<'de> as audit::_::_serde::de::Visitor<'de>>::visit_enum",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<dose::ExposureLimits as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<dose::ExposureLimits as std::clone::Clone>::clone",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ExposureLimits>::serialize",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "dose::_::<impl audit::_::_serde::Deserialize<'de> for dose::ExposureLimits>::deserialize",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<dose::_::<impl audit::_::_serde::Deserialize<'de> for dose::ExposureLimits>::deserialize::__FieldVisitor as audit::_::_serde::de::Visitor<'de>>::expecting",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<dose::_::<impl audit::_::_serde::Deserialize<'de> for dose::ExposureLimits>::deserialize::__FieldVisitor as audit::_::_serde::de::Visitor<'de>>::visit_u64",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<dose::_::<impl audit::_::_serde::Deserialize<'de> for dose::ExposureLimits>::deserialize::__FieldVisitor as audit::_::_serde::de::Visitor<'de>>::visit_str",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<dose::_::<impl audit::_::_serde::Deserialize<'de> for dose::ExposureLimits>::deserialize::__FieldVisitor as audit::_::_serde::de::Visitor<'de>>::visit_bytes",
+      "disclosures": [
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<dose::_::<impl audit::_::_serde::Deserialize<'de> for dose::ExposureLimits>::deserialize::__Field as audit::_::_serde::Deserialize<'de>>::deserialize",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<dose::_::<impl audit::_::_serde::Deserialize<'de> for dose::ExposureLimits>::deserialize::__Visitor<'de> as audit::_::_serde::de::Visitor<'de>>::expecting",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<dose::_::<impl audit::_::_serde::Deserialize<'de> for dose::ExposureLimits>::deserialize::__Visitor<'de> as audit::_::_serde::de::Visitor<'de>>::visit_seq",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<dose::_::<impl audit::_::_serde::Deserialize<'de> for dose::ExposureLimits>::deserialize::__Visitor<'de> as audit::_::_serde::de::Visitor<'de>>::visit_map",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<dose::ExposureLimits as std::default::Default>::default",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<dose::ShiftDoseTracker as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<dose::ShiftDoseTracker as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ShiftDoseTracker>::serialize",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "dose::_::<impl audit::_::_serde::Deserialize<'de> for dose::ShiftDoseTracker>::deserialize",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<dose::_::<impl audit::_::_serde::Deserialize<'de> for dose::ShiftDoseTracker>::deserialize::__FieldVisitor as audit::_::_serde::de::Visitor<'de>>::expecting",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<dose::_::<impl audit::_::_serde::Deserialize<'de> for dose::ShiftDoseTracker>::deserialize::__FieldVisitor as audit::_::_serde::de::Visitor<'de>>::visit_u64",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<dose::_::<impl audit::_::_serde::Deserialize<'de> for dose::ShiftDoseTracker>::deserialize::__FieldVisitor as audit::_::_serde::de::Visitor<'de>>::visit_str",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<dose::_::<impl audit::_::_serde::Deserialize<'de> for dose::ShiftDoseTracker>::deserialize::__FieldVisitor as audit::_::_serde::de::Visitor<'de>>::visit_bytes",
+      "disclosures": [
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<dose::_::<impl audit::_::_serde::Deserialize<'de> for dose::ShiftDoseTracker>::deserialize::__Field as audit::_::_serde::Deserialize<'de>>::deserialize",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<dose::_::<impl audit::_::_serde::Deserialize<'de> for dose::ShiftDoseTracker>::deserialize::__Visitor<'de> as audit::_::_serde::de::Visitor<'de>>::expecting",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<dose::_::<impl audit::_::_serde::Deserialize<'de> for dose::ShiftDoseTracker>::deserialize::__Visitor<'de> as audit::_::_serde::de::Visitor<'de>>::visit_seq",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<dose::_::<impl audit::_::_serde::Deserialize<'de> for dose::ShiftDoseTracker>::deserialize::__Visitor<'de> as audit::_::_serde::de::Visitor<'de>>::visit_map",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "dose::ShiftDoseTracker::new",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "dose::ShiftDoseTracker::record_sample",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "dose::ShiftDoseTracker::twa_pm25_ug_m3",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<sensor::Sps30Reading as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<sensor::Sps30Reading as std::clone::Clone>::clone",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "sensor::_::<impl audit::_::_serde::Serialize for sensor::Sps30Reading>::serialize",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "sensor::_::<impl audit::_::_serde::Deserialize<'de> for sensor::Sps30Reading>::deserialize",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<sensor::_::<impl audit::_::_serde::Deserialize<'de> for sensor::Sps30Reading>::deserialize::__FieldVisitor as audit::_::_serde::de::Visitor<'de>>::expecting",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<sensor::_::<impl audit::_::_serde::Deserialize<'de> for sensor::Sps30Reading>::deserialize::__FieldVisitor as audit::_::_serde::de::Visitor<'de>>::visit_u64",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<sensor::_::<impl audit::_::_serde::Deserialize<'de> for sensor::Sps30Reading>::deserialize::__FieldVisitor as audit::_::_serde::de::Visitor<'de>>::visit_str",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<sensor::_::<impl audit::_::_serde::Deserialize<'de> for sensor::Sps30Reading>::deserialize::__FieldVisitor as audit::_::_serde::de::Visitor<'de>>::visit_bytes",
+      "disclosures": [
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<sensor::_::<impl audit::_::_serde::Deserialize<'de> for sensor::Sps30Reading>::deserialize::__Field as audit::_::_serde::Deserialize<'de>>::deserialize",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<sensor::_::<impl audit::_::_serde::Deserialize<'de> for sensor::Sps30Reading>::deserialize::__Visitor<'de> as audit::_::_serde::de::Visitor<'de>>::expecting",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<sensor::_::<impl audit::_::_serde::Deserialize<'de> for sensor::Sps30Reading>::deserialize::__Visitor<'de> as audit::_::_serde::de::Visitor<'de>>::visit_seq",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<sensor::_::<impl audit::_::_serde::Deserialize<'de> for sensor::Sps30Reading>::deserialize::__Visitor<'de> as audit::_::_serde::de::Visitor<'de>>::visit_map",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<sensor::Sps30Calibrator as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<sensor::Sps30Calibrator as std::clone::Clone>::clone",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "sensor::_::<impl audit::_::_serde::Serialize for sensor::Sps30Calibrator>::serialize",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "sensor::_::<impl audit::_::_serde::Deserialize<'de> for sensor::Sps30Calibrator>::deserialize",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<sensor::_::<impl audit::_::_serde::Deserialize<'de> for sensor::Sps30Calibrator>::deserialize::__FieldVisitor as audit::_::_serde::de::Visitor<'de>>::expecting",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<sensor::_::<impl audit::_::_serde::Deserialize<'de> for sensor::Sps30Calibrator>::deserialize::__FieldVisitor as audit::_::_serde::de::Visitor<'de>>::visit_u64",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<sensor::_::<impl audit::_::_serde::Deserialize<'de> for sensor::Sps30Calibrator>::deserialize::__FieldVisitor as audit::_::_serde::de::Visitor<'de>>::visit_str",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<sensor::_::<impl audit::_::_serde::Deserialize<'de> for sensor::Sps30Calibrator>::deserialize::__FieldVisitor as audit::_::_serde::de::Visitor<'de>>::visit_bytes",
+      "disclosures": [
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<sensor::_::<impl audit::_::_serde::Deserialize<'de> for sensor::Sps30Calibrator>::deserialize::__Field as audit::_::_serde::Deserialize<'de>>::deserialize",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<sensor::_::<impl audit::_::_serde::Deserialize<'de> for sensor::Sps30Calibrator>::deserialize::__Visitor<'de> as audit::_::_serde::de::Visitor<'de>>::expecting",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<sensor::_::<impl audit::_::_serde::Deserialize<'de> for sensor::Sps30Calibrator>::deserialize::__Visitor<'de> as audit::_::_serde::de::Visitor<'de>>::visit_seq",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<sensor::_::<impl audit::_::_serde::Deserialize<'de> for sensor::Sps30Calibrator>::deserialize::__Visitor<'de> as audit::_::_serde::de::Visitor<'de>>::visit_map",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "sensor::Sps30Calibrator::new",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "sensor::Sps30Calibrator::calibrate",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<thermo::AmbientConditions as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<thermo::AmbientConditions as std::clone::Clone>::clone",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<thermo::CorrectedReading as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<thermo::CorrectedReading as std::clone::Clone>::clone",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<thermo::ThermoError as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<thermo::ThermoError as std::fmt::Display>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<thermo::ThermoCompensator as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<thermo::ThermoCompensator as std::clone::Clone>::clone",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "thermo::ThermoCompensator::new",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "thermo::ThermoCompensator::correct",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "thermo::ThermoCompensator::validate_ambient",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<taint::TaintFlag as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<taint::TaintFlag as std::clone::Clone>::clone",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<taint::TaintFlag as std::cmp::PartialEq>::eq",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<taint::TaintFlag as std::cmp::Eq>::assert_fields_are_eq",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<taint::TaintDetector as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<taint::TaintDetector as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<taint::TaintReport as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<taint::TaintReport as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "taint::TaintDetector::new",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "taint::TaintDetector::push_sample",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "taint::TaintDetector::evaluate",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "taint::TaintDetector::evaluate::{closure#0}",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "taint::TaintDetector::reset",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<veto::VetoState as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<veto::VetoState as std::clone::Clone>::clone",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<veto::VetoState as std::cmp::PartialEq>::eq",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<veto::VetoState as std::cmp::Eq>::assert_fields_are_eq",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<veto::HapticVeto as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<veto::HapticVeto as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "veto::HapticVeto::new",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "veto::HapticVeto::update",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "veto::HapticVeto::attempt_mute",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "veto::HapticVeto::current_state",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "veto::HapticVeto::state",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "veto::HapticVeto::mute_attempt_count",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "veto::HapticVeto::haptic_intensity",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "veto::HapticVeto::twa_to_state",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    }
+  ],
+  "obligations": [
+    {
+      "crate": "smokeshift",
+      "function": "audit::_::<impl audit::_::_serde::Serialize for audit::AuditEntry>::serialize",
+      "block": "bb0",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "audit______impl_audit______serde__Serialize_for_audit__AuditEntry___serialize_bb0.smt2"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "audit::_::<impl audit::_::_serde::Serialize for audit::AuditEntry>::serialize",
+      "block": "bb1",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "audit______impl_audit______serde__Serialize_for_audit__AuditEntry___serialize_bb1.smt2"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "audit::_::<impl audit::_::_serde::Serialize for audit::AuditEntry>::serialize",
+      "block": "bb2",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "audit______impl_audit______serde__Serialize_for_audit__AuditEntry___serialize_bb2.smt2"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "audit::_::<impl audit::_::_serde::Serialize for audit::AuditEntry>::serialize",
+      "block": "bb3",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "audit______impl_audit______serde__Serialize_for_audit__AuditEntry___serialize_bb3.smt2"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "audit::_::<impl audit::_::_serde::Serialize for audit::AuditEntry>::serialize",
+      "block": "bb4",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "audit______impl_audit______serde__Serialize_for_audit__AuditEntry___serialize_bb4.smt2"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "audit::_::<impl audit::_::_serde::Serialize for audit::AuditEntry>::serialize",
+      "block": "bb5",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "audit______impl_audit______serde__Serialize_for_audit__AuditEntry___serialize_bb5.smt2"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "audit::_::<impl audit::_::_serde::Serialize for audit::AuditEntry>::serialize",
+      "block": "bb6",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "audit______impl_audit______serde__Serialize_for_audit__AuditEntry___serialize_bb6.smt2"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "audit::_::<impl audit::_::_serde::Serialize for audit::AuditEntry>::serialize",
+      "block": "bb7",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "audit______impl_audit______serde__Serialize_for_audit__AuditEntry___serialize_bb7.smt2"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "audit::_::<impl audit::_::_serde::Serialize for audit::AuditEntry>::serialize",
+      "block": "bb8",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "audit______impl_audit______serde__Serialize_for_audit__AuditEntry___serialize_bb8.smt2"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "compliance::_::<impl audit::_::_serde::Serialize for compliance::ShiftComplianceReport>::serialize",
+      "block": "bb0",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "compliance______impl_audit______serde__Serialize_for_compliance__ShiftComplianceReport___serialize_bb0.smt2"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "compliance::_::<impl audit::_::_serde::Serialize for compliance::ShiftComplianceReport>::serialize",
+      "block": "bb1",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "compliance______impl_audit______serde__Serialize_for_compliance__ShiftComplianceReport___serialize_bb1.smt2"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "compliance::_::<impl audit::_::_serde::Serialize for compliance::ShiftComplianceReport>::serialize",
+      "block": "bb2",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "compliance______impl_audit______serde__Serialize_for_compliance__ShiftComplianceReport___serialize_bb2.smt2"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "compliance::_::<impl audit::_::_serde::Serialize for compliance::ShiftComplianceReport>::serialize",
+      "block": "bb3",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "compliance______impl_audit______serde__Serialize_for_compliance__ShiftComplianceReport___serialize_bb3.smt2"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "compliance::_::<impl audit::_::_serde::Serialize for compliance::ShiftComplianceReport>::serialize",
+      "block": "bb4",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "compliance______impl_audit______serde__Serialize_for_compliance__ShiftComplianceReport___serialize_bb4.smt2"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "compliance::_::<impl audit::_::_serde::Serialize for compliance::ShiftComplianceReport>::serialize",
+      "block": "bb5",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "compliance______impl_audit______serde__Serialize_for_compliance__ShiftComplianceReport___serialize_bb5.smt2"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "compliance::_::<impl audit::_::_serde::Serialize for compliance::ShiftComplianceReport>::serialize",
+      "block": "bb6",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "compliance______impl_audit______serde__Serialize_for_compliance__ShiftComplianceReport___serialize_bb6.smt2"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "compliance::_::<impl audit::_::_serde::Serialize for compliance::ShiftComplianceReport>::serialize",
+      "block": "bb7",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "compliance______impl_audit______serde__Serialize_for_compliance__ShiftComplianceReport___serialize_bb7.smt2"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "compliance::_::<impl audit::_::_serde::Serialize for compliance::ShiftComplianceReport>::serialize",
+      "block": "bb8",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "compliance______impl_audit______serde__Serialize_for_compliance__ShiftComplianceReport___serialize_bb8.smt2"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ExposureLimits>::serialize",
+      "block": "bb0",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "dose______impl_audit______serde__Serialize_for_dose__ExposureLimits___serialize_bb0.smt2"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ExposureLimits>::serialize",
+      "block": "bb1",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "dose______impl_audit______serde__Serialize_for_dose__ExposureLimits___serialize_bb1.smt2"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ExposureLimits>::serialize",
+      "block": "bb2",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "dose______impl_audit______serde__Serialize_for_dose__ExposureLimits___serialize_bb2.smt2"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ExposureLimits>::serialize",
+      "block": "bb3",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "dose______impl_audit______serde__Serialize_for_dose__ExposureLimits___serialize_bb3.smt2"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ShiftDoseTracker>::serialize",
+      "block": "bb0",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "dose______impl_audit______serde__Serialize_for_dose__ShiftDoseTracker___serialize_bb0.smt2"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ShiftDoseTracker>::serialize",
+      "block": "bb1",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "dose______impl_audit______serde__Serialize_for_dose__ShiftDoseTracker___serialize_bb1.smt2"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ShiftDoseTracker>::serialize",
+      "block": "bb2",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "dose______impl_audit______serde__Serialize_for_dose__ShiftDoseTracker___serialize_bb2.smt2"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ShiftDoseTracker>::serialize",
+      "block": "bb3",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "dose______impl_audit______serde__Serialize_for_dose__ShiftDoseTracker___serialize_bb3.smt2"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ShiftDoseTracker>::serialize",
+      "block": "bb4",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "dose______impl_audit______serde__Serialize_for_dose__ShiftDoseTracker___serialize_bb4.smt2"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ShiftDoseTracker>::serialize",
+      "block": "bb5",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "dose______impl_audit______serde__Serialize_for_dose__ShiftDoseTracker___serialize_bb5.smt2"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "sensor::_::<impl audit::_::_serde::Serialize for sensor::Sps30Calibrator>::serialize",
+      "block": "bb0",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "sensor______impl_audit______serde__Serialize_for_sensor__Sps30Calibrator___serialize_bb0.smt2"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "sensor::_::<impl audit::_::_serde::Serialize for sensor::Sps30Calibrator>::serialize",
+      "block": "bb1",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "sensor______impl_audit______serde__Serialize_for_sensor__Sps30Calibrator___serialize_bb1.smt2"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "sensor::_::<impl audit::_::_serde::Serialize for sensor::Sps30Calibrator>::serialize",
+      "block": "bb2",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "sensor______impl_audit______serde__Serialize_for_sensor__Sps30Calibrator___serialize_bb2.smt2"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "sensor::_::<impl audit::_::_serde::Serialize for sensor::Sps30Reading>::serialize",
+      "block": "bb0",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "sensor______impl_audit______serde__Serialize_for_sensor__Sps30Reading___serialize_bb0.smt2"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "sensor::_::<impl audit::_::_serde::Serialize for sensor::Sps30Reading>::serialize",
+      "block": "bb1",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "sensor______impl_audit______serde__Serialize_for_sensor__Sps30Reading___serialize_bb1.smt2"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "sensor::_::<impl audit::_::_serde::Serialize for sensor::Sps30Reading>::serialize",
+      "block": "bb2",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "sensor______impl_audit______serde__Serialize_for_sensor__Sps30Reading___serialize_bb2.smt2"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "sensor::_::<impl audit::_::_serde::Serialize for sensor::Sps30Reading>::serialize",
+      "block": "bb3",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "sensor______impl_audit______serde__Serialize_for_sensor__Sps30Reading___serialize_bb3.smt2"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "sensor::_::<impl audit::_::_serde::Serialize for sensor::Sps30Reading>::serialize",
+      "block": "bb4",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "sensor______impl_audit______serde__Serialize_for_sensor__Sps30Reading___serialize_bb4.smt2"
+    },
+    {
+      "crate": "smokeshift",
+      "function": "taint::TaintDetector::evaluate",
+      "block": "bb23",
+      "status": "PASS",
+      "kind": "overflow",
+      "verdict": "PASS (unsat)",
+      "artifact": "taint__TaintDetector__evaluate_bb23.smt2",
+      "file": "src/taint.rs",
+      "line": 75
+    },
+    {
+      "crate": "smokeshift",
+      "function": "taint::TaintDetector::evaluate",
+      "block": "bb39",
+      "status": "PASS",
+      "kind": "overflow",
+      "verdict": "PASS (unsat)",
+      "artifact": "taint__TaintDetector__evaluate_bb39.smt2",
+      "file": "src/taint.rs",
+      "line": 75
+    },
+    {
+      "crate": "smokeshift",
+      "function": "taint::TaintDetector::evaluate",
+      "block": "bb53",
+      "status": "PASS",
+      "kind": "divzero",
+      "verdict": "PASS (unsat)",
+      "artifact": "taint__TaintDetector__evaluate_bb53.smt2",
+      "file": "src/taint.rs",
+      "line": 75
+    }
+  ]
+}

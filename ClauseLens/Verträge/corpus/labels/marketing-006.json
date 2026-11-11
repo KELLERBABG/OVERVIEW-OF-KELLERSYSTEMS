@@ -1,0 +1,74 @@
+{
+  "slug": "marketing-006",
+  "source": "generated",
+  "domain": "PR-Retainer, schweizerisches Recht",
+  "traps": [
+    {
+      "marker": "kann den Retainer jederzeit mit einer Frist von dreißig Tagen",
+      "expectedType": "unilateral_convenience_termination",
+      "note": "Einseitiges Lösungsrecht des Auftragnehmers, Bindung des Auftraggebers; vermeidet 'nur der Anbieter darf kündigen'."
+    },
+    {
+      "marker": "steigt mit jedem Kalenderjahr um fünf Prozent",
+      "expectedType": "price_escalation",
+      "note": "Automatische Erhöhung ohne Sonderkündigungsrecht, als Zahlenwort."
+    },
+    {
+      "marker": "erlöschen mit Ablauf von sechs Monaten nach Abnahme",
+      "expectedType": "statute_of_limitations",
+      "note": "Verkürzte Gewährleistungsfrist; vermeidet 'Verjährungsfrist beträgt'."
+    },
+    {
+      "marker": "Bei Ausbleiben eines Sicherheitspatches erlischt jede Gutschrift",
+      "expectedType": "service_credit_forfeiture",
+      "note": "Verfall der Gutschrift bei ausbleibendem Patch; vermeidet 'entfällt'."
+    },
+    {
+      "marker": "erfolgt gegen eine Pauschale von fünfhundert Franken",
+      "expectedType": "data_lockin",
+      "note": "Kostenpflichtige Datenherausgabe als Pauschale; vermeidet Herausgabegebühr."
+    },
+    {
+      "marker": "trägt der Auftraggeber die Beweislast",
+      "expectedType": "burden_of_proof",
+      "note": "Beweislastumkehr zulasten des Kunden."
+    },
+    {
+      "marker": "nur gültig, wenn sie in Papierform mit Originalunterschrift vorliegen",
+      "expectedType": "written_form_trap",
+      "note": "Formzwang Papier und Original; vermeidet 'Schriftform' und 'Einschreiben'."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien wahren über die wechselseitig ausgetauschten Informationen Stillschweigen",
+      "note": "Symmetrische Verschwiegenheit."
+    },
+    {
+      "marker": "zeigt den Einsatz von Partneragenturen vierzehn Tage vorher an; der Auftraggeber kann widersprechen",
+      "note": "Ordentliche Subunternehmerankündigung."
+    },
+    {
+      "marker": "überlassenen Unterlagen werden nach Vertragsende kostenfrei zurückgegeben",
+      "note": "Kostenfreie Rückgabe."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten auf das Quartalsende beenden",
+      "note": "Symmetrische Kündigung."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Haftungserhaltung."
+    },
+    {
+      "marker": "Die Unwirksamkeit einer Bestimmung berührt die übrigen Bestimmungen nicht",
+      "note": "Bereinigte Salvatorische Klausel."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Nicht abgerufene Stunden verfallen am Ende des Kalendermonats",
+      "note": "Kein Detektor für Verfall nicht abgerufener Retainer-Stunden."
+    }
+  ]
+}

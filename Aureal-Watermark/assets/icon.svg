@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="Aureal Watermark - Keller Systems">
+  <rect width="128" height="128" rx="28" fill="#08040d" stroke="#48277b" stroke-width="2"/>
+  <rect x="28" y="24" width="20" height="80" rx="4" fill="#f5f3ff"/>
+  <path d="M58 62 L88 24 H104 L70 66 Z" fill="#a855f7"/>
+  <path d="M70 62 L104 104 H88 L58 66 Z" fill="#7e22ce"/>
+</svg>

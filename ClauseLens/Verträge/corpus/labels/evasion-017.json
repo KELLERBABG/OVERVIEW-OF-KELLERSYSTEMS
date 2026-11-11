@@ -1,0 +1,79 @@
+{
+  "slug": "evasion-017",
+  "source": "generated",
+  "domain": "evasion",
+  "traps": [
+    {
+      "marker": "Bei schu‍ldhafter Über‍schreitung des Vert‍ragsgebiets wird eine Vert‍ragsstrafe in Höhe von 2500",
+      "expectedType": "penalty",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: penalty (Technik: zwj)."
+    },
+    {
+      "marker": "Für sämt‍liche Stre‍itigkeiten ist auss‍chließlich das Geri‍cht am Sitz des Anbi‍eters zust‍ändig.",
+      "expectedType": "jurisdiction",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: jurisdiction (Technik: zwj)."
+    },
+    {
+      "marker": "Eine Ausg‍leichszahlung für die Zeit der Zurü‍ckhaltung ist nicht vorg‍esehen, der Kunde erhä‍lt",
+      "expectedType": "non_compete",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: non_compete (Technik: zwj)."
+    },
+    {
+      "marker": "Der Anbi‍eter darf die im Rahm‍en der Zusa‍mmenarbeit gewo‍nnenen Ausw‍ertungen und Betr‍iebsdaten",
+      "expectedType": "data_grant",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: data_grant (Technik: zwj)."
+    },
+    {
+      "marker": "Gerät der Kunde in Verz‍ug, sind Verz‍ugszinsen von acht‍zehn Proz‍ent jähr‍lich zu zahl‍en.",
+      "expectedType": "default_interest",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: default_interest (Technik: zwj)."
+    },
+    {
+      "marker": "Wide‍rspricht der Kunde nicht inne‍rhalb von zwei Woch‍en, gilt die Anpa‍ssung der Prov‍ision als",
+      "expectedType": "unilateral_change",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: unilateral_change (Technik: zwj)."
+    },
+    {
+      "marker": "Gege‍nansprüche des Kund‍en bere‍chtigen nicht zur Aufr‍echnung, Einw‍endungen und Gege‍nrechte",
+      "expectedType": "setoff_restriction",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: setoff_restriction (Technik: zwj)."
+    },
+    {
+      "marker": "Mäng‍el sind binn‍en acht‍undvierzig Stun‍den nach Abna‍hme anzu‍zeigen, ande‍rnfalls verf‍allen",
+      "expectedType": "deemed_acceptance",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: deemed_acceptance (Technik: zwj)."
+    },
+    {
+      "marker": "Mäng‍elansprüche entf‍allen 24 Mona‍te ab Über‍gabe der Ware endg‍ültig, unab‍hängig von der",
+      "expectedType": "statute_of_limitations",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: statute_of_limitations (Technik: zwj)."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende kündigen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Zahlungen sind innerhalb von 30 Tagen nach Rechnungsstellung fällig.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde erhält für vermittelte Geschäfte eine Provision von fünf Prozent des Nettoumsatzes.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Anbieter stellt dem Kunden die vereinbarten Unterlagen unentgeltlich zur Verfügung.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Vertrag wird für die Dauer von zwei Jahren geschlossen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien behandeln die ausgetauschten Informationen vertraulich, die Pflicht gilt für die",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    }
+  ],
+  "uncovered": []
+}

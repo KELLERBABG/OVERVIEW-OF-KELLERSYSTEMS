@@ -1,0 +1,74 @@
+[
+  {
+    "crate": "helper_summary",
+    "function": "boom",
+    "block": "bb0",
+    "status": "FAIL",
+    "kind": "overflow",
+    "defect_class": "unguarded",
+    "file": "src/main.rs",
+    "line": 24,
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found! [y (_1) = 255, 1_u8 = 1]",
+    "witness": [
+      {
+        "input": "y (_1)",
+        "symbol": "overflow_l",
+        "value": "255"
+      },
+      {
+        "input": "1_u8",
+        "symbol": "overflow_r",
+        "value": "1"
+      }
+    ],
+    "witness_kind": "pinned"
+  },
+  {
+    "crate": "helper_summary",
+    "function": "exported",
+    "block": "bb0",
+    "status": "FAIL",
+    "kind": "overflow",
+    "defect_class": "unguarded",
+    "file": "src/main.rs",
+    "line": 34,
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found! [w (_1) = 255, 1_u8 = 1]",
+    "witness": [
+      {
+        "input": "w (_1)",
+        "symbol": "overflow_l",
+        "value": "255"
+      },
+      {
+        "input": "1_u8",
+        "symbol": "overflow_r",
+        "value": "1"
+      }
+    ],
+    "witness_kind": "pinned"
+  },
+  {
+    "crate": "helper_summary",
+    "function": "open",
+    "block": "bb0",
+    "status": "FAIL",
+    "kind": "overflow",
+    "defect_class": "unguarded",
+    "file": "src/main.rs",
+    "line": 29,
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found! [z (_1) = 255, 1_u8 = 1]",
+    "witness": [
+      {
+        "input": "z (_1)",
+        "symbol": "overflow_l",
+        "value": "255"
+      },
+      {
+        "input": "1_u8",
+        "symbol": "overflow_r",
+        "value": "1"
+      }
+    ],
+    "witness_kind": "pinned"
+  }
+]

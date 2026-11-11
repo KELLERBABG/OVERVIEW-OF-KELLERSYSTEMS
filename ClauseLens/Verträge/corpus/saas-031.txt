@@ -1,0 +1,71 @@
+Vertrag über Edge-Computing-Ressourcen
+
+zwischen Edge Alpen GmbH, Ossiacher Straße 7, 9500 Villach (nachfolgend "Anbieterin")
+
+und Kremser Medien GmbH, Ringstraße 31, 3500 Krems (nachfolgend "Kunde")
+
+Präambel
+
+Die Anbieterin betreibt Edge-Knoten und stellt dem Kunden Rechenleistung am Netzrand bereit.
+
+§ 1 Gegenstand
+
+(1) Die Anbieterin stellt dem Kunden Rechenleistung an zwölf Edge-Knoten bereit.
+
+(2) Die Knotenstandorte ergeben sich aus Anlage 8.
+
+§ 2 Preise
+
+(1) Die Entgelte erhöhen sich jährlich um bis zu 3 Prozent.
+
+§ 3 Sperrung
+
+(1) Ohne Mahnung darf die Anbieterin den Plattformzugang sperren.
+
+§ 4 Protokolle
+
+(1) Die Aufzeichnungen der Anbieterin gelten als maßgeblich; abweichende Belege des Kunden bleiben unberücksichtigt.
+
+§ 5 Datenrückgabe
+
+(1) Für die Rückgabe der Daten fällt ein gesondertes Entgelt an.
+
+§ 6 Gerichtsstand
+
+(1) Rechtsstreitigkeiten sind ausschließlich vor den Gerichten am Sitz des Anbieters auszutragen.
+
+§ 7 Aufrechnung
+
+(1) Gegenansprüche bleiben bei der Abrechnung außer Betracht.
+
+§ 8 Laufzeit
+
+(1) Das Abonnement setzt sich nach Ablauf der Festlaufzeit jeweils um zwölf Monate fort, sofern es keine Partei kündigt.
+
+§ 9 Zahlung
+
+(1) Die Rechnung ist innerhalb von 30 Tagen nach Zugang ohne Abzug fällig.
+
+§ 10 Verfügbarkeit
+
+(1) Die Anbieterin sichert eine Verfügbarkeit von 99,5 Prozent pro Kalendermonat zu.
+
+§ 11 Datenexport
+
+(1) Die Anbieterin stellt dem Kunden bei Vertragsende eine vollständige Kopie aller Kundendaten in maschinenlesbarer Form kostenfrei bereit.
+
+(2) Die Anbieterin übergibt die Daten in einem gängigen Format.
+
+§ 12 Vertraulichkeit
+
+(1) Die Vertragsparteien behandeln die wechselseitig offengelegten Informationen vertraulich.
+
+§ 13 Datenschutz
+
+(1) Die Verarbeitung erfolgt ausschließlich in Rechenzentren innerhalb der Europäischen Union.
+
+Villach, den 02.02.2026
+
+Für die Anbieterin: gez. E. Edge
+
+Für den Kunden: gez. K. Kremser

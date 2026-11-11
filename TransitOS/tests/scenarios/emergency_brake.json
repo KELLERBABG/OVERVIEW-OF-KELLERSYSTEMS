@@ -1,0 +1,17 @@
+{
+  "scenario": "emergency_brake",
+  "description": "Vehicle performs emergency braking to avoid obstacle",
+  "initial_state": {
+    "velocity": 20.0,
+    "acceleration": 0.0,
+    "heading": 0.0
+  },
+  "obstacle": {
+    "position": [50.0, 0.0],
+    "velocity": 0.0
+  },
+  "params": {
+    "max_brake_pressure": 1.0,
+    "reaction_time": 0.2
+  }
+}

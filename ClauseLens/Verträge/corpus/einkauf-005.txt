@@ -1,0 +1,67 @@
+WARTUNGSRAHMENVERTRAG FÜR STEUERUNGSSOFTWARE
+
+zwischen
+
+der Steinbach Automation GmbH, Durlacher Allee 61, 76131 Karlsruhe (nachfolgend „Besteller“)
+
+und
+
+der Petersen Softwaretechnik GmbH, Kaistraße 18, 24114 Kiel (nachfolgend „Auftragnehmerin“).
+
+§ 1 Gegenstand
+
+1.1 Die Auftragnehmerin wartet die Steuerungssoftware der Fertigungslinien des Bestellers.
+
+1.2 Der Leistungsumfang ergibt sich aus Anlage 1.
+
+1.3 Störungen werden über die Servicehotline gemeldet.
+
+1.4 Die Parteien benennen jeweils einen technischen Ansprechpartner.
+
+§ 2 Wartungsleistungen und Verfügbarkeit
+
+2.1 Die angegebene Verfügbarkeit von 99,5 Prozent ist eine bloße Zielgröße.
+
+2.2 Die Auftragnehmerin nimmt Störungsmeldungen werktags zwischen 8:00 und 17:00 Uhr entgegen.
+
+2.3 Wartungsarbeiten werden spätestens zehn Werktage vorher angekündigt.
+
+§ 3 Softwareüberlassung
+
+3.1 Die Überlassung der Steuerungssoftware erfolgt im Ist-Zustand.
+
+3.2 Eine Dokumentation wird in elektronischer Form bereitgestellt.
+
+§ 4 Haftung
+
+4.1 Eine Einstandspflicht der Auftragnehmerin für mittelbare Schäden wird nicht übernommen.
+
+4.2 Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt.
+
+§ 5 Zahlung und Verzug
+
+5.1 Die Wartungsvergütung wird monatlich zum Monatsersten fällig.
+
+5.2 Im Verzugsfall schuldet der Besteller Zinsen in Höhe von zwölf Prozent über dem Leitzins.
+
+5.3 Rechnungen sind innerhalb von dreißig Tagen netto zu begleichen.
+
+§ 6 Gewährleistung
+
+6.1 Sachmängelansprüche erlöschen neun Monate nach Abnahme.
+
+6.2 Die gesetzlichen Mängelrechte des Bestellers bleiben im Übrigen unberührt.
+
+§ 7 Vertraulichkeit
+
+7.1 Die Verschwiegenheitspflicht endet nicht mit der Beendigung, sondern besteht unbefristet fort.
+
+7.2 Beide Parteien behandeln die technischen Unterlagen der anderen Seite vertraulich.
+
+§ 8 Schlussbestimmungen
+
+8.1 Für sämtliche Streitigkeiten ist der Unternehmenssitz der Auftragnehmerin ausschließlich zuständig.
+
+8.2 Änderungen dieses Vertrags bedürfen der Zustimmung beider Parteien in Textform.
+
+8.3 Der Vertrag bleibt im Übrigen wirksam.

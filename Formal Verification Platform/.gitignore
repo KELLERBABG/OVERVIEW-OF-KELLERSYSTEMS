@@ -1,0 +1,43 @@
+# Project-local Z3 install (see README / build.rs auto-detection)
+.z3/
+
+# Proof obligations emitted by the verifier
+obligations/
+
+# Captured console streams from earlier fixture runs. The landing page is
+# hand-written now, but later cases in tests/run_tests.sh still grep these files.
+tests/.measured/
+
+# Per-crate verification reports, merged into report.json by `keller verify`
+.keller-reports/
+.keller/
+keller-report/
+report.html
+
+# The toolchain and Z3 a run was decided in (see `ENV_FILE` in src/report.rs).
+# Written beside the report rather than inside it, and machine-specific by
+# nature, so it is never committed - unlike report.json, whose bytes the
+# goldens pin.
+report.environment.json
+report.run.json
+
+# Generated SMT-LIB/verifier output
+*.smt2
+
+# Developer internal tracking & notes
+DEV/
+
+
+target/
+node_modules/
+.venv/
+__pycache__/
+.pytest_cache/
+*.tmp
+*.exe
+*.dll
+*.pdb
+*.rlib
+.freebuff/
+.reasonix/
+*reasonix*

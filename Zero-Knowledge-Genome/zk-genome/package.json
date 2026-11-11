@@ -1,0 +1,22 @@
+{
+  "name": "zk-genome",
+  "version": "0.1.0-alpha",
+  "private": true,
+  "description": "Zero-Knowledge Genome — Privacy-preserving genomic data marketplace",
+  "workspaces": [
+    "mobile/app"
+  ],
+  "scripts": {
+    "lint": "eslint . --ext .ts,.tsx",
+    "format": "prettier --write \"**/*.{ts,tsx,json,md}\"",
+    "clean": "rm -rf node_modules && rm -rf mobile/app/node_modules"
+  },
+  "devDependencies": {
+    "eslint": "^9.0.0",
+    "prettier": "^3.0.0",
+    "typescript": "^5.5.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

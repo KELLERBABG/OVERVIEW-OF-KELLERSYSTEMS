@@ -1,0 +1,74 @@
+{
+  "slug": "marketing-012",
+  "source": "generated",
+  "domain": "Werbemittel und Druck, deutsches Recht",
+  "traps": [
+    {
+      "marker": "bis zum Ausgleich aller Forderungen aus der Geschäftsbeziehung",
+      "expectedType": "extended_retention_of_title",
+      "note": "Erweiterter Eigentumsvorbehalt über die Geschäftsbeziehung."
+    },
+    {
+      "marker": "eine Pauschale von einem Prozent je Kalendertag",
+      "expectedType": "penalty",
+      "note": "Tagessatzpauschale als Vertragsstrafe; vermeidet das Wort Vertragsstrafe."
+    },
+    {
+      "marker": "werden Zinsen von zwölf Prozent berechnet",
+      "expectedType": "default_interest",
+      "note": "Überhöhter Zinssatz, vermeidet den Begriff Verzugszins."
+    },
+    {
+      "marker": "bleiben unberücksichtigt, solange der Lieferant nicht zustimmt",
+      "expectedType": "setoff_restriction",
+      "note": "Gegenforderungen bleiben unberücksichtigt."
+    },
+    {
+      "marker": "bestätigt mit der Abnahme die mangelfreie Lieferung",
+      "expectedType": "burden_of_proof",
+      "note": "Mangelfreiheitsbestätigung durch Abnahme."
+    },
+    {
+      "marker": "gestattet dem Besteller jederzeit Zutritt zu seinen Betriebsstätten",
+      "expectedType": "unreasonable_audit",
+      "note": "Jederzeitiger Zutritt ohne Anlass."
+    },
+    {
+      "marker": "die dem wirtschaftlichen Zweck am nächsten kommt",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "Ersatzregelung nach wirtschaftlichem Zweck."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Unterlagen vertraulich",
+      "note": "Symmetrische Vertraulichkeit."
+    },
+    {
+      "marker": "erhält der Besteller die Druckdaten kostenfrei in einem offenen Format",
+      "note": "Kostenfreier Datenexport."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende beenden",
+      "note": "Symmetrische Kündigung."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform zugelassen."
+    },
+    {
+      "marker": "prüft die Ware unverzüglich nach Erhalt und zeigt Mängel in Textform an",
+      "note": "Ordentliches Prüfungs- und Rügerecht."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhaltung."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Lieferant produziert und liefert Werbemittel und Druckerzeugnisse",
+      "note": "Kein Detektor für fehlende Mindestabnahmemengen."
+    }
+  ]
+}

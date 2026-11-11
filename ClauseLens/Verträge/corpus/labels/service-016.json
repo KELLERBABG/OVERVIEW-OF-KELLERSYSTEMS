@@ -1,0 +1,92 @@
+{
+  "slug": "service-016",
+  "source": "generated",
+  "domain": "Garantie- und Serviceverlängerung",
+  "traps": [
+    {
+      "marker": "Eine Beendigung durch den Kunden ist erst mit einer Vorlaufzeit von zwölf Monaten zum Ablauf des",
+      "expectedType": "notice_period",
+      "note": "Legally abusive (§ 309 Nr. 9 BGB); engine hit; technique: notice period in number words"
+    },
+    {
+      "marker": "Der Anbieter haftet nur bei Vorsatz und grober Fahrlässigkeit; den Kunden trifft eine unbeschränkte ",
+      "expectedType": "liability",
+      "note": "Legally abusive (§ 307 BGB); engine hit; technique: negation asymmetry: unlimited customer liability, capped provider liability"
+    },
+    {
+      "marker": "The provider shall not be liable for any loss of data or profit, however caused, and all risk of the",
+      "expectedType": "liability",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: English clause shifting all operational risk"
+    },
+    {
+      "marker": "Bei verspäteter Auskunft fallen je Fall 750,00 EUR an, unabhängig vom tatsächlichen Schaden des",
+      "expectedType": "penalty",
+      "note": "Legally abusive (§ 343 BGB); engine hit; technique: penalty disguised as flat fee independent of damage"
+    },
+    {
+      "marker": "All disputes shall be brought exclusively before the courts at the provider's registered office, to ",
+      "expectedType": "jurisdiction",
+      "note": "GAP: engine miss. Legally abusive (§ 38 ZPO); technique: English forum clause excluding every other court"
+    },
+    {
+      "marker": "Nach Beendigung ist es dem Kunden achtundvierzig Monate lang untersagt, vergleichbare",
+      "expectedType": "non_compete",
+      "note": "Legally abusive (§ 307 BGB); engine hit; technique: number words and open-ended scope"
+    },
+    {
+      "marker": "Soweit es dem Anbieter zweckmäßig erscheint, darf er Kundendaten für Produktverbesserungen",
+      "expectedType": "data_grant",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: permission phrased as the provider's discretion"
+    },
+    {
+      "marker": "Bei Zahlungsverzug sperrt der Anbieter die Leistung sofort und ohne Vorankündigung.",
+      "expectedType": "service_suspension",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: literal immediate suspension on payment default"
+    },
+    {
+      "marker": "Bei Eröffnung des Insolvenzverfahrens über das Vermögen des Kunden endet der Vertrag ohne weitere",
+      "expectedType": "insolvency_termination",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: literal automatic end upon insolvency proceedings"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Preisanpassungen erfolgen nur mit Zustimmung des Kunden oder bei Änderung gesetzlicher Abgaben.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Der Anbieter teilt beabsichtigte Preisanpassungen mindestens sechs Wochen vorher mit.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Die Parteien benennen jeweils einen Ansprechpartner und informieren unverzüglich über einen Wechsel.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich und verwenden sie",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Der Kunde kann den Vertrag mit einer Frist von vier Wochen zum Monatsende ohne Angabe von Gründen",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Kündigungen können in Textform, insbesondere per E-Mail, erklärt werden.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Der Anbieter kann Leistungen auf Nachunternehmer übertragen, wenn er dies dem Kunden vierzehn Tage",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Über die Verlängerung notwendiger Zertifizierungen entscheidet der Anbieter; die dadurch",
+      "note": "Deceptive clause without a matching detector type (coverage gap)."
+    },
+    {
+      "marker": "Der Anbieter darf eingesetzte Fachkräfte nach Anlage 5 austauschen, ohne dass der Kunde hiergegen",
+      "note": "Deceptive clause without a matching detector type (coverage gap)."
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "slug": "saas-018",
+  "source": "generated",
+  "domain": "SaaS Recruiting, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Es ist untersagt, Mitarbeiter der anderen Partei einzustellen.",
+      "expectedType": "non_solicitation",
+      "note": "Abwerbeverbot"
+    },
+    {
+      "marker": "Die Geheimhaltungspflicht trifft nur den Kunden.",
+      "expectedType": "asymmetric_confidentiality",
+      "note": "Einseitige Geheimhaltung"
+    },
+    {
+      "marker": "Die Nennung als Referenzkunde erfolgt ohne gesonderte Zustimmung.",
+      "expectedType": "marketing_reference",
+      "note": "Paraphrase. Referenznutzung ohne Zustimmung"
+    },
+    {
+      "marker": "Das Abonnement setzt sich nach Ablauf der Festlaufzeit jeweils um zwölf Monate fort, sofern es keine",
+      "expectedType": "auto_renewal",
+      "note": "Paraphrase. Stillschweigende Verlaengerung"
+    },
+    {
+      "marker": "Die feste Laufzeit beträgt sechsunddreißig Monate, eine Kündigung ist ausgeschlossen.",
+      "expectedType": "notice_period",
+      "note": "Paraphrase. Lange Mindestlaufzeit mit Kuendigungsausschluss"
+    },
+    {
+      "marker": "Der Anbieter ist berechtigt, den Leistungsumfang jederzeit einzuschränken.",
+      "expectedType": "unilateral_change",
+      "note": "Paraphrase. Einseitiger Aenderungsvorbehalt"
+    },
+    {
+      "marker": "Anregungen und Vorschläge des Kunden verwertet die Anbieterin ohne Vergütung.",
+      "expectedType": "feedback_ip_grab",
+      "note": "Paraphrase. Unentgeltlicher IP-Anfall"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Kunde kann den Vertrag jeweils zum Ende eines Kalenderjahres beenden.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Änderungen dieses Vertrags bedürfen der Textform.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Anbieterin sichert eine Verfügbarkeit von 99,5 Prozent pro Kalendermonat zu.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Verarbeitung erfolgt ausschließlich in Rechenzentren innerhalb der Europäischen Union.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Der Kunde bleibt zur Zahlung des anteiligen Entgelts für bereits erbrachte Leistungen verpflichtet.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Anbieterin übergibt die Daten in einem gängigen Format.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    }
+  ],
+  "uncovered": []
+}

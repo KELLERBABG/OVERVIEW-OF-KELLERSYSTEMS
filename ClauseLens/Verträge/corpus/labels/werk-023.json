@@ -1,0 +1,88 @@
+{
+  "slug": "werk-023",
+  "source": "generated",
+  "domain": "Bahninfrastruktur, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Ein Antrag auf Eröffnung eines Insolvenzverfahrens berechtigt den Anbieter zur fristlosen Kündigung.",
+      "expectedType": "insolvency_termination",
+      "note": "Verifizierte Klausel im Bereich insolvency_termination."
+    },
+    {
+      "marker": "Frühere Angebote und Leistungsbeschreibungen verlieren mit Unterzeichnung ihre Gültigkeit.",
+      "expectedType": "entire_agreement",
+      "note": "Verifizierte Klausel im Bereich entire_agreement."
+    },
+    {
+      "marker": "Die Service-Level sind Richtwerte ohne Rechtsanspruch.",
+      "expectedType": "unverbindliche_sla_falle",
+      "note": "Verifizierte Klausel im Bereich unverbindliche_sla_falle."
+    },
+    {
+      "marker": "Bei entfallender kritischer Aktualisierung entfällt der Anspruch auf eine Gutschrift.",
+      "expectedType": "service_credit_forfeiture",
+      "note": "Verifizierte Klausel im Bereich service_credit_forfeiture."
+    },
+    {
+      "marker": "Für die Kündigung gilt eine Vorlaufzeit von zweiundsiebzig Monaten zum Periodenende.",
+      "expectedType": "notice_period",
+      "note": "Verifizierte Klausel im Bereich notice_period."
+    },
+    {
+      "marker": "In no event shall the provider be liable for lost profits or indirect damages.",
+      "expectedType": "liability",
+      "note": "Verifizierte Klausel im Bereich liability."
+    },
+    {
+      "marker": "This Agreement is governed by the laws of the State of New York.",
+      "expectedType": "jurisdiction",
+      "note": "Verifizierte Klausel im Bereich jurisdiction."
+    },
+    {
+      "marker": "Der Anbieter darf personenbezogene Daten des Kunden auf Servern außerhalb der Europäischen Union ver",
+      "expectedType": "international_data_processing",
+      "note": "Verifizierte Klausel im Bereich international_data_processing."
+    },
+    {
+      "marker": "Alle Rechte an den Ergebnissen gehen in das Alleineigentum des Anbieters über.",
+      "expectedType": "data_grant",
+      "note": "Verifizierte Klausel im Bereich data_grant."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien können mit unbestrittenen Forderungen aufrechnen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Alle Fristen werden in Kalendertagen gerechnet.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Parteien arbeiten bei der Fehleranalyse eng zusammen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Für Mängel während der Gewährleistung leistet der Anbieter kostenfrei Nacherfüllung.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Parteien treffen sich monatlich zu einem Lenkungskreis.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Der Anbieter führt die Arbeiten mit der vereinbarten Sorgfalt aus.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Vertragsparteien informieren sich unverzüglich über Störungen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Jede Partei trägt ihre eigenen Kosten aus der Vertragsverhandlung",
+      "note": "Neutrale Kostentragung."
+    }
+  ]
+}

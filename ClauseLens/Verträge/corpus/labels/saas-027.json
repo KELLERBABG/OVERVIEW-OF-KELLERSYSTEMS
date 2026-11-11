@@ -1,0 +1,69 @@
+{
+  "slug": "saas-027",
+  "source": "generated",
+  "domain": "Cloud CDN, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Die Zahlungsverpflichtungen des Kunden bleiben unverändert bestehen.",
+      "expectedType": "force_majeure_asymmetry",
+      "note": "Einseitige Force-Majeure-Wirkung"
+    },
+    {
+      "marker": "Dem Kunden steht kein Sonderkündigungsrecht zu.",
+      "expectedType": "asymmetric_termination",
+      "note": "Einseitiger Ausschluss des Kuendigungsrechts"
+    },
+    {
+      "marker": "Der Vertrag endet automatisch mit der Eröffnung des Insolvenzverfahrens über das Vermögen des",
+      "expectedType": "insolvency_termination",
+      "note": "Automatische Beendigung bei Insolvenz"
+    },
+    {
+      "marker": "Die Entgelte erhöhen sich jährlich um bis zu 3 Prozent.",
+      "expectedType": "price_escalation",
+      "note": "Paraphrase. Einseitige Preisanpassung"
+    },
+    {
+      "marker": "Gegenansprüche bleiben bei der Abrechnung außer Betracht.",
+      "expectedType": "setoff_restriction",
+      "note": "Paraphrase. Aufrechnungsverbot"
+    },
+    {
+      "marker": "Bei Verzug schuldet der Kunde eine Aufwandspauschale von 250 EUR.",
+      "expectedType": "penalty",
+      "note": "Paraphrase. Pauschalierte Vertragsstrafe"
+    },
+    {
+      "marker": "Die Haftung für mittelbare Schäden und entgangenen Gewinn ist abbedungen.",
+      "expectedType": "liability",
+      "note": "Paraphrase. Haftungsausschluss"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Rechnung ist innerhalb von 30 Tagen nach Zugang ohne Abzug fällig.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Anbieterin sichert eine Verfügbarkeit von 99,5 Prozent pro Kalendermonat zu.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Anbieterin stellt dem Kunden bei Vertragsende eine vollständige Kopie aller Kundendaten in",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Vertragsparteien behandeln die wechselseitig offengelegten Informationen vertraulich.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Ereignisse höherer Gewalt berechtigen beide Parteien, den Vertrag nach Ablauf von sechzig Tagen zu",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Der Anbieter kann den Vertrag mit einer Frist von drei Monaten zum Quartalsende kündigen.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    }
+  ],
+  "uncovered": []
+}

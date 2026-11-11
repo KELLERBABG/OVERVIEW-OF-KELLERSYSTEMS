@@ -1,0 +1,76 @@
+{
+  "slug": "logistik-025",
+  "source": "generated",
+  "domain": "Lohnverpackung",
+  "traps": [
+    {
+      "marker": "Die Haftung des Anbieters ist der Höhe nach auf fünfzig Prozent der Jahresvergütung begrenzt.",
+      "expectedType": "liability",
+      "note": "Red-team Klausel: liability"
+    },
+    {
+      "marker": "Die Entgelte erhöhen sich automatisch um jährlich bis zu acht Prozent.",
+      "expectedType": "price_escalation",
+      "note": "Red-team Klausel: price_escalation"
+    },
+    {
+      "marker": " verlängert sich jeweils um weitere zwölf Monate, wenn er nicht",
+      "expectedType": "auto_renewal",
+      "note": "Red-team Klausel: auto_renewal"
+    },
+    {
+      "marker": "Mangels Wartungsvereinbarung erfolgt eine Stilllegung der Anlage.",
+      "expectedType": "maintenance_conditional_shutdown",
+      "note": "Red-team Klausel: maintenance_conditional_shutdown"
+    },
+    {
+      "marker": "Der Anbieter bemüht sich nach besten Kräften um eine hohe Verfügbarkeit des Systems.",
+      "expectedType": "unverbindliche_sla_falle",
+      "note": "Red-team Klausel: unverbindliche_sla_falle"
+    },
+    {
+      "marker": "Die Geheimhaltungspflichten gelten zeitlich unbefristet fort.",
+      "expectedType": "excessive_survival",
+      "note": "Red-team Klausel: excessive_survival"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Packmuster quartalsweise ab",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "innerhalb von 30 Tagen ohne Abzug zahlbar",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "zur außerordentlichen Kündigung aus wichtigem Grund bleiben unberührt",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Sicherheitsprüfungen durch",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "geplante Stillstände vier Wochen im Voraus",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "schult sein Personal regelmäßig zum Datenschutz",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "8.1 Es gilt deutsches Recht.",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Beide Parteien behandeln die Produktionsdaten vertraulich",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Unterauftragnehmer mit einer Vorlaufzeit von vierzehn Tagen",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

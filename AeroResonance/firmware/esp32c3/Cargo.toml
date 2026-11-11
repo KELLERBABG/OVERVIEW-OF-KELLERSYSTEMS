@@ -1,0 +1,21 @@
+[package]
+name = "ehar-node-esp32c3"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "EHAR Field Node MVP — ESP32-C3 binary (USB-serial telemetry, ADC sampling, duty-cycle loop)"
+license = "Proprietary"
+
+[dependencies]
+ehar-firmware-core = { path = ".." }
+esp-alloc = { version = "0.10" }
+esp-backtrace = { version = "0.19", features = ["esp32c3", "panic-handler", "println"] }
+esp-hal = { version = "~1.1", features = ["esp32c3", "unstable"] }
+esp-println = { version = "0.17", features = ["esp32c3"] }
+nb = "1"
+
+[profile.release]
+debug            = true
+debug-assertions = true
+lto              = "fat"
+codegen-units    = 1

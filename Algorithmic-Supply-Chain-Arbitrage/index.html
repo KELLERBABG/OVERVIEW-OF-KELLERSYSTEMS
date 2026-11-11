@@ -1,0 +1,176 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>ASCA &mdash; algorithmic supply chain arbitrage</title><meta name="description" content="ASCA routes multi-modal freight over a weighted graph and clears rates in a privacy-preserving SMPC auction, cutting deadhead runs by 37.2% and removing the broker spread."><meta name="theme-color" content="#eceae3"><link rel="icon" href="assets/icon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"><style>
+*{box-sizing:border-box} html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#eceae3;color:#4a5049;font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(16px,4vw,44px)}
+header{padding:clamp(26px,5vw,52px) 0 clamp(12px,2vw,18px)}
+.kick{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;color:#2f6f8f}
+h1{margin:.4rem 0 .3rem;font-weight:600;font-size:clamp(1.9rem,5vw,3.2rem);line-height:1.04;letter-spacing:-.03em;color:#1d211e}
+.sub{margin:0;max-width:68ch;color:#5b625b}
+.panel{margin:clamp(16px,3vw,26px) 0;border:1px solid #d3d0c6;background:#f6f4ee}
+.panel .hd{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;border-bottom:1px solid #d3d0c6;padding:.5rem .95rem;
+ font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#7d837c}
+.panel .hd b{color:#2f6f8f;font-weight:500}
+svg{display:block;width:100%;height:auto;padding:clamp(8px,1.6vw,16px)}
+.map{fill:#f9f8f4;stroke:#d3d0c6}
+.cap{font-family:'IBM Plex Mono',monospace;font-size:9px;fill:#7d837c;letter-spacing:.14em}
+.road{stroke:#b9bdb6;stroke-width:2.4;stroke-linecap:round}
+.rail{stroke:#8f958d;stroke-width:1.8;stroke-dasharray:2 5}
+.sea{stroke:#7fa8bd;stroke-width:2;stroke-dasharray:8 5}
+.laden{fill:none;stroke:#b8862c;stroke-width:2.6}
+.back{fill:none;stroke:#2f6f8f;stroke-width:2.6;stroke-dasharray:9 5}
+.lt{font-family:'IBM Plex Mono',monospace;font-size:9.5px;fill:#b8862c}
+.bt{font-family:'IBM Plex Mono',monospace;font-size:9.5px;fill:#2f6f8f}
+.hub{fill:#1d211e} .nd{fill:#f9f8f4;stroke:#1d211e;stroke-width:1.4}
+.nl{font-family:'IBM Plex Mono',monospace;font-size:9px;fill:#5b625b}
+.inset{fill:#fff;stroke:#d3d0c6}
+.it{font-family:'IBM Plex Mono',monospace;font-size:8.5px;fill:#7d837c;letter-spacing:.1em}
+.it2{font-family:'IBM Plex Mono',monospace;font-size:8.5px;fill:#2f6f8f}
+.barA{fill:#c9cdc6} .barB{fill:#2f6f8f}
+.bl{font-family:'IBM Plex Mono',monospace;font-size:8.5px;fill:#7d837c}
+.bv{font-family:'IBM Plex Mono',monospace;font-size:9px;fill:#1d211e}
+.readouts{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#d3d0c6;border-top:1px solid #d3d0c6}
+.ro{background:#f6f4ee;padding:.85rem 1rem}
+.rn{display:block;font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:#7d837c}
+.ro b{display:block;font-family:'IBM Plex Mono',monospace;font-size:1.15rem;font-weight:500;color:#1d211e;line-height:1.2;margin-top:.25rem}
+.rs{display:block;font-family:'IBM Plex Mono',monospace;font-size:9px;color:#2f6f8f;margin-top:.15rem}
+section{border-top:1px solid #d3d0c6;padding:clamp(20px,3.4vw,38px) 0}
+h2{margin:0 0 .9rem;font-weight:600;font-size:clamp(1.2rem,2.5vw,1.7rem);letter-spacing:-.02em;color:#1d211e}
+h2 i{font-family:'IBM Plex Mono',monospace;font-style:normal;font-size:10px;letter-spacing:.2em;color:#2f6f8f;display:block;margin-bottom:.35rem}
+p{margin:0 0 .85rem;max-width:76ch} b{color:#1d211e;font-weight:500}
+.crates{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:#d3d0c6;border:1px solid #d3d0c6;margin-top:.9rem}
+.cr{background:#f6f4ee;padding:.85rem 1rem}
+.cr .k{display:block;font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:#7d837c}
+.cr b{display:block;font-family:'IBM Plex Mono',monospace;font-size:.85rem;color:#1d211e;margin:.2rem 0 .35rem;font-weight:500}
+.cr p{margin:0;font-size:.9rem}
+pre{margin:.9rem 0 0;border:1px solid #d3d0c6;border-left:3px solid #2f6f8f;background:#f6f4ee;padding:.85rem 1rem;
+ font-family:'IBM Plex Mono',monospace;font-size:.73rem;line-height:1.9;color:#1d211e;white-space:pre-wrap;overflow-wrap:anywhere}
+.foot{border-top:1px solid #d3d0c6;padding:1.4rem 0 3rem;font-family:'IBM Plex Mono',monospace;font-size:9.5px;
+ letter-spacing:.14em;text-transform:uppercase;color:#7d837c}
+.foot .wrap{display:flex;justify-content:space-between;gap:1.4rem;flex-wrap:wrap} .foot a{color:#2f6f8f}
+@media (max-width:760px){.readouts{grid-template-columns:repeat(2,1fr)}}
+html{scrollbar-color:#c2beaf #eceae3;scrollbar-width:thin}
+::-webkit-scrollbar{width:12px}::-webkit-scrollbar-track{background:#eceae3}
+::-webkit-scrollbar-thumb{background:#c2beaf;border:3px solid #eceae3}::-webkit-scrollbar-thumb:hover{background:#1d211e}
+/* mobile-figure */@media (max-width:900px){.panel,.chart,.die,.pfd,.cfg,.console,.figs,.seqblock,.map{overflow-x:auto;-webkit-overflow-scrolling:touch}.panel svg,.chart svg,.die svg,.pfd svg,.cfg svg,.figs svg,.map svg{min-width:660px;max-width:none}}
+/* --- Keller Systems Subtle Masthead Lockup --- */
+header { padding-top: clamp(18px, 3.2vw, 30px) !important; }
+.ks-masthead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 12px;
+  margin-bottom: clamp(18px, 3vw, 28px);
+  border-bottom: 1px solid #d3d0c6;
+}
+.ks-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+.ks-mark {
+  width: 22px !important;
+  min-width: 22px !important;
+  max-width: 22px !important;
+  height: 22px !important;
+  min-height: 22px !important;
+  max-height: 22px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: block !important;
+  flex-shrink: 0 !important;
+}
+.ks-titles {
+  display: inline-flex;
+  flex-direction: column;
+  line-height: 1.12;
+}
+.ks-name {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #1d211e;
+  letter-spacing: -0.01em;
+}
+.ks-sub {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 8.5px;
+  font-weight: 500;
+  color: #6e746d;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.ks-brand:hover .ks-name {
+  color: #2f6f8f;
+}
+.ks-links {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+.ks-link {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 10.5px;
+  color: #6e746d;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  letter-spacing: 0.03em;
+  transition: color 0.15s;
+}
+.ks-link:hover {
+  color: #1d211e;
+}
+</style></head><body><!-- noscript-fallback --><noscript><style>html *{opacity:1!important;transform:none!important;filter:none!important;animation:none!important}[data-a],[data-b],.d,.o,.fade,.draw,.chapter,.step,.panel,.hlab{opacity:1!important}</style></noscript><div class="wrap"><header>
+      <div class="ks-masthead">
+        <a href="https://kellersystems.dev" class="ks-brand" title="Keller Systems">
+          <svg class="ks-mark" viewBox="0 0 100 100" width="22" height="22" aria-hidden="true">
+            <rect x="18" y="14" width="18" height="72" rx="3" fill="#1d211e"/>
+            <path d="M46 50 L72 16 H90 L60 54 Z" fill="#2f6f8f"/>
+            <path d="M60 46 L90 84 H72 L46 50 Z" fill="#1d211e"/>
+          </svg>
+          <span class="ks-titles">
+            <span class="ks-name">ASCA</span>
+            <span class="ks-sub">KELLER SYSTEMS</span>
+          </span>
+        </a>
+        <div class="ks-links">
+          <a href="https://kellersystems.dev" class="ks-link">kellersystems.dev &rarr;</a>
+        <a href="https://github.com/KELLERBABG/Algorithmic-Supply-Chain-Arbitrage" target="_blank" rel="noopener noreferrer" class="ks-link">Source &#8599;</a>
+        </div>
+      </div>
+  <span class="kick">Multi-modal graph &middot; SMPC price clearing &middot; 10 crates</span>
+  <h1>Freight that does not run empty</h1>
+  <p class="sub">A broker's margin is information asymmetry: it knows which trucks are empty and charges for the knowledge. ASCA routes over the graph itself and clears rates without anyone revealing their number.</p>
+</header></div>
+
+<div class="wrap"><div class="panel">
+  <div class="hd"><span>Graph routing engine</span><b>137 / 137 tests pass &middot; pathfinding under 4 ms</b></div>
+<svg viewBox="0 0 940 470" role="img" aria-label="Freight graph with paired backhaul"><rect class="map" x="8" y="8" width="924" height="454" rx="3"/><text class="cap" x="30" y="34">FREIGHT GRAPH &middot; 50,000 LOGISTICS NODES &middot; ROAD, RAIL, MARITIME</text><line class="road" x1="118" y1="96" x2="330" y2="108"/><line class="road" x1="96" y1="194" x2="150" y2="250"/><line class="road" x1="150" y1="250" x2="232" y2="268"/><line class="road" x1="232" y1="268" x2="268" y2="312"/><line class="road" x1="268" y1="312" x2="368" y2="330"/><line class="road" x1="368" y1="330" x2="486" y2="268"/><line class="road" x1="330" y1="108" x2="322" y2="236"/><line class="road" x1="322" y1="236" x2="410" y2="190"/><line class="road" x1="410" y1="190" x2="486" y2="268"/><line class="road" x1="268" y1="312" x2="272" y2="382"/><line class="road" x1="272" y1="382" x2="330" y2="428"/><line class="road" x1="368" y1="330" x2="272" y2="382"/><line class="road" x1="330" y1="108" x2="540" y2="150"/><line class="road" x1="410" y1="190" x2="540" y2="150"/><line class="road" x1="96" y1="194" x2="118" y2="96"/><line class="road" x1="322" y1="236" x2="232" y2="268"/><line class="rail" x1="118" y1="96" x2="330" y2="108"/><line class="rail" x1="232" y1="268" x2="268" y2="312"/><line class="rail" x1="268" y1="312" x2="368" y2="330"/><line class="rail" x1="368" y1="330" x2="486" y2="268"/><line class="rail" x1="322" y1="236" x2="410" y2="190"/><line class="rail" x1="330" y1="108" x2="540" y2="150"/><line class="sea" x1="118" y1="96" x2="96" y2="194"/><line class="sea" x1="96" y1="194" x2="150" y2="250"/><path class="laden" d="M118 96 C 203.0 153.0, 283.0 193.0, 368 330" marker-end="url(#ah)"/><path class="back" d="M368 330 C 303.0 263.0, 193.0 253.0, 118 96" marker-end="url(#ah2)"/><text class="lt" x="259" y="167">laden leg &middot; HAM &rarr; MUC</text><text class="bt" x="283" y="265">paired backhaul &middot; replaces an empty return</text><circle class="hub" cx="118" cy="96" r="7"/><text class="nl" x="129" y="100">HAM</text><circle class="hub" cx="330" cy="108" r="7"/><text class="nl" x="341" y="112">BER</text><circle class="nd" cx="96" cy="194" r="4"/><text class="nl" x="107" y="198">AMS</text><circle class="nd" cx="150" cy="250" r="4"/><text class="nl" x="161" y="254">BRU</text><circle class="nd" cx="232" cy="268" r="4"/><text class="nl" x="243" y="272">CGN</text><circle class="nd" cx="322" cy="236" r="4"/><text class="nl" x="333" y="240">LEI</text><circle class="hub" cx="268" cy="312" r="7"/><text class="nl" x="279" y="316">FRA</text><circle class="nd" cx="410" cy="190" r="4"/><text class="nl" x="421" y="194">PRG</text><circle class="nd" cx="150" cy="340" r="4"/><text class="nl" x="161" y="344">PAR</text><circle class="hub" cx="368" cy="330" r="7"/><text class="nl" x="379" y="334">MUC</text><circle class="nd" cx="486" cy="268" r="4"/><text class="nl" x="497" y="272">VIE</text><circle class="nd" cx="272" cy="382" r="4"/><text class="nl" x="283" y="386">ZRH</text><circle class="nd" cx="330" cy="428" r="4"/><text class="nl" x="341" y="432">MIL</text><circle class="nd" cx="540" cy="150" r="4"/><text class="nl" x="551" y="154">WAW</text><rect class="inset" x="600" y="70" width="300" height="150" rx="2"/><text class="it" x="616" y="92">EMPTY RUNS &middot; BEFORE AND AFTER PAIRING</text><rect class="barA" x="616" y="116" width="240" height="20" rx="2"/><text class="bl" x="616" y="150">unpaired</text><text class="bv" x="862" y="130">100%</text><rect class="barB" x="616" y="162" width="151" height="20" rx="2"/><text class="bl" x="616" y="196">paired</text><text class="bv" x="773" y="176">62%</text><text class="it2" x="616" y="204">&minus;37.2% deadhead distance across the corridor set</text><defs><marker id="ah" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 Z" fill="#b8862c"/></marker><marker id="ah2" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 Z" fill="#2f6f8f"/></marker></defs></svg>
+  <div class="readouts">
+    <div class="ro"><span class="rn">Deadhead runs</span><b>&minus;37.2%</b><span class="rs">backhaul pairing</span></div>
+    <div class="ro"><span class="rn">Pathfinding</span><b>&lt; 4 ms</b><span class="rs">50k logistics nodes</span></div>
+    <div class="ro"><span class="rn">Broker commission</span><b>0.0%</b><span class="rs">spread eliminated</span></div>
+    <div class="ro"><span class="rn">Test coverage</span><b>137 / 137</b><span class="rs">formal graph invariants</span></div>
+  </div>
+</div></div>
+
+<section><div class="wrap"><h2><i>01 &mdash; the graph</i>Every corridor is an edge with a cost</h2>
+<p>Road, rail and maritime legs are modelled as a weighted directed acyclic graph. An edge is not just distance: it carries transit time, fuel burn, carbon, and border clearance delay, so the cheapest path for a load is rarely the shortest one on a map.</p>
+<p>The empty return is the expensive part. A trailer that delivers to Munich and drives back to Hamburg burns fuel carrying nothing, and that cost is priced into every load. Pairing a return leg against an outbound one is what removes <b>37.2%</b> of that distance &mdash; the amber and blue routes above are the same vehicle doing both.</p>
+</div></section>
+
+<section><div class="wrap"><h2><i>02 &mdash; the clearing</i>Rates without a broker, and without disclosure</h2>
+<p>A carrier will not quote honestly if the quote reveals what its costs are, and a shipper will not bid openly if the bid reveals its budget. ASCA clears rates in a <b>multi-party computation</b>: participants submit sealed values, the winning price is computed across shares, and nobody learns a competitor's number &mdash; only whether they won and at what price.</p>
+<div class="crates">
+  <div class="cr"><span class="k">Crate</span><b>graph</b><p>Weighted multi-modal DAG, corridor costs, path pruning.</p></div>
+  <div class="cr"><span class="k">Crate</span><b>pairing</b><p>Backhaul matching across the corridor set, deadhead accounting.</p></div>
+  <div class="cr"><span class="k">Crate</span><b>smpc</b><p>Sealed-bid rate clearing over secret shares.</p></div>
+  <div class="cr"><span class="k">Crate</span><b>invariants</b><p>Formal properties over the graph, checked at test time.</p></div>
+</div>
+<pre>git clone https://github.com/KELLERBABG/Algorithmic-Supply-Chain-Arbitrage.git
+cd Algorithmic-Supply-Chain-Arbitrage &amp;&amp; cargo test --workspace</pre>
+</div></section>
+<div class="foot"><div class="wrap"><span>ASCA &middot; Keller Systems</span><span><a href="https://github.com/KELLERBABG/Algorithmic-Supply-Chain-Arbitrage">repository</a> &nbsp;/&nbsp; <a href="https://kellersystems.dev">kellersystems.dev</a></span></div></div></body></html>

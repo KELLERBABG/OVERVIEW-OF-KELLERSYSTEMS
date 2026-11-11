@@ -1,0 +1,11 @@
+export { WasmExecutor } from './executor.js';
+export { Sandbox } from './sandbox.js';
+export { MemoryManager } from './memory-manager.js';
+export { createTimeoutSignal, withExecutionTimeout } from './timeout.js';
+export { executeJsFallback } from './fallback.js';
+export { yieldIfNeeded, resetYieldTimer, withYielding, yieldInLoop } from './yield.js';
+export { HeartbeatAwareExecutor, heartbeatAwareDefaults } from './heartbeat-aware-executor.js';
+export type { HeartbeatAwareConfig } from './heartbeat-aware-executor.js';
+export type { ExecutionResult, ExecutionError } from './types.js';
+export type { ExecutorConfig } from './config.js';
+export { defaultConfig } from './config.js';

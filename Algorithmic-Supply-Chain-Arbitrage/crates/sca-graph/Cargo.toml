@@ -1,0 +1,12 @@
+[package]
+name = "sca-graph"
+version = "0.1.0"
+edition = "2024"
+description = "Graph-based supply chain topology engine using petgraph"
+
+[dependencies]
+sca-types = { path = "../sca-types" }
+petgraph = "0.6"
+serde = { version = "1", features = ["derive"] }
+uuid = { version = "1", features = ["v4", "serde"] }
+thiserror = "2"

@@ -1,0 +1,83 @@
+{
+  "slug": "werk-008",
+  "source": "generated",
+  "domain": "IT-Rahmenvertrag kommunaler Versorger, deutsches Recht",
+  "traps": [
+    {
+      "marker": "setzt sich die Zusammenarbeit um weitere zweiundsiebzig Monate fort",
+      "expectedType": "auto_renewal",
+      "note": "Automatische Verlaengerung um zweiundsiebzig Monate."
+    },
+    {
+      "marker": "mit einer Vorlaufzeit von achtundvierzig Monaten zulässig",
+      "expectedType": "notice_period",
+      "note": "Extrem lange Kuendigungsfrist als Zahlwort."
+    },
+    {
+      "marker": "Kostensteigerungen werden vollumfänglich an den Kunden weitergegeben",
+      "expectedType": "price_escalation",
+      "note": "Kostenweitergabe ohne Deckelung, ohne das Wort Preisanpassung."
+    },
+    {
+      "marker": "Der Datenexport ist nur gegen eine gesonderte Vergütung möglich",
+      "expectedType": "data_lockin",
+      "note": "Datenrueckgabe nur gegen Entgelt."
+    },
+    {
+      "marker": "das System abzuschalten, wenn der Kunde den Wartungsvertrag nicht verlängert",
+      "expectedType": "maintenance_conditional_shutdown",
+      "note": "Abschaltung an den Wartungsvertrag gekoppelt."
+    },
+    {
+      "marker": "The provider may immediately suspend the services for any breach",
+      "expectedType": "service_suspension",
+      "note": "Sofortsperrung englisch."
+    },
+    {
+      "marker": "Die Prüfungsrechte bestehen unabhängig von einem konkreten Anlass",
+      "expectedType": "unreasonable_audit",
+      "note": "Anlasslose Pruefungsrechte."
+    },
+    {
+      "marker": "Aufzeichnungen des Anbieters sind unwiderlegbar",
+      "expectedType": "audit_log_manipulation",
+      "note": "Unwiderlegbarkeit statt Vollbeweis."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Zulaessige Freizeichnung, muss still bleiben."
+    },
+    {
+      "marker": "Die Vergütung ist innerhalb von dreißig Tagen nach Rechnungseingang fällig",
+      "note": "Marktuebliche Zahlungsfrist."
+    },
+    {
+      "marker": "Änderungen dieses Vertrages können in Textform vereinbart werden",
+      "note": "Textform ausdruecklich erlaubt."
+    },
+    {
+      "marker": "eine Berufshaftpflichtversicherung mit einer Deckungssumme von zwei Millionen EUR",
+      "note": "Vernuenftige Absicherung, unbedenklich."
+    },
+    {
+      "marker": "Die Parteien behandeln die Vertragsverhandlung vertraulich",
+      "note": "Wechselseitige Vertraulichkeit."
+    },
+    {
+      "marker": "Die Kündigung aus wichtigem Grund bleibt beiden Parteien unbenommen",
+      "note": "Symmetrisches Sonderkündigungsrecht."
+    },
+    {
+      "marker": "Alle Fristen werden in Kalendertagen gerechnet",
+      "note": "Neutrale Fristenregelung."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Kunde kann eine gemeinsame Auswertung verlangen",
+      "note": "Abschwaechung der Aufzeichnungsklausel, kein eigener Detektor."
+    }
+  ]
+}

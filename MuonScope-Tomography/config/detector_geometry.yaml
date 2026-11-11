@@ -1,0 +1,97 @@
+# ==============================================================================
+# MuonScope Tomography - Detector Geometry Configuration
+# ==============================================================================
+
+system:
+  name: "MuonScope Dual-Panel Tomography Hodoscope"
+  version: "1.0.0"
+  units: "millimeter"
+
+panels:
+  top_panel:
+    id: "TOP_PANEL_01"
+    active_area: [500.0, 500.0]  # Width x Length in mm
+    z_offset: 300.0              # Height relative to center of target volume (mm)
+    planes:
+      - plane_id: "X1"
+        orientation: "X"
+        num_strips: 64
+        strip_width: 20.0        # Triangular base width (mm)
+        strip_height: 10.0       # Thickness (mm)
+        z_position: 375.0        # mm
+        sipm_channels: [0, 63]
+      - plane_id: "Y1"
+        orientation: "Y"
+        num_strips: 64
+        strip_width: 20.0
+        strip_height: 10.0
+        z_position: 365.0
+        sipm_channels: [64, 127]
+      - plane_id: "X2"
+        orientation: "X"
+        num_strips: 64
+        strip_width: 20.0
+        strip_height: 10.0
+        z_position: 235.0
+        sipm_channels: [128, 191]
+      - plane_id: "Y2"
+        orientation: "Y"
+        num_strips: 64
+        strip_width: 20.0
+        strip_height: 10.0
+        z_position: 225.0
+        sipm_channels: [192, 255]
+    plane_separation: 150.0      # Δz between (X1,Y1) and (X2,Y2) in mm
+
+  bottom_panel:
+    id: "BOTTOM_PANEL_01"
+    active_area: [500.0, 500.0]
+    z_offset: -300.0             # Height relative to center of target volume (mm)
+    planes:
+      - plane_id: "X3"
+        orientation: "X"
+        num_strips: 64
+        strip_width: 20.0
+        strip_height: 10.0
+        z_position: -225.0
+        sipm_channels: [0, 63]
+      - plane_id: "Y3"
+        orientation: "Y"
+        num_strips: 64
+        strip_width: 20.0
+        strip_height: 10.0
+        z_position: -235.0
+        sipm_channels: [64, 127]
+      - plane_id: "X4"
+        orientation: "X"
+        num_strips: 64
+        strip_width: 20.0
+        strip_height: 10.0
+        z_position: -365.0
+        sipm_channels: [128, 191]
+      - plane_id: "Y4"
+        orientation: "Y"
+        num_strips: 64
+        strip_width: 20.0
+        strip_height: 10.0
+        z_position: -375.0
+        sipm_channels: [192, 255]
+    plane_separation: 150.0
+
+passive_absorbers:
+  top_absorber:
+    enabled: true
+    material: "Lead"
+    thickness: 5.0               # mm
+    z_position: 300.0            # Placed between (X1,Y1) and (X2,Y2)
+  bottom_absorber:
+    enabled: true
+    material: "Lead"
+    thickness: 5.0
+    z_position: -300.0
+
+trigger_logic:
+  coincidence_window_ns: 8.0     # 4-fold coincidence temporal window
+  tof_threshold_ps: 500.0        # Expected transit time for Δz=150mm
+  tof_direction_filter: "downward_only"
+  max_chi2_ndf: 2.5              # Kalman tracking quality gate

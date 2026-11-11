@@ -1,0 +1,74 @@
+{
+  "slug": "vertrieb-005",
+  "source": "generated",
+  "domain": "distributor",
+  "traps": [
+    {
+      "marker": "Sämtliche Steuern und Abgaben aus diesem Vertrag trägt der Kunde, auch soweit sie rückwirkend",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Steuerlast wird vollständig auf den Kunden verlagert."
+    },
+    {
+      "marker": "Der Kunde verpflichtet sich, alle Informationen streng vertraulich zu behandeln, für den Anbieter",
+      "expectedType": "asymmetric_confidentiality",
+      "note": "Geheimhaltungspflicht trifft nur den Kunden."
+    },
+    {
+      "marker": "Die Software wird im Zustand wie gesehen bereitgestellt, eine Zusicherung zur Eignung für einen",
+      "expectedType": "as_is_software_disclaimer",
+      "note": "Software wird ohne Zusicherung bereitgestellt."
+    },
+    {
+      "marker": "Dieser Vertrag enthält alle Vereinbarungen der Parteien und ersetzt frühere Absprachen und Angebote.",
+      "expectedType": "entire_agreement",
+      "note": "Vollständigkeitsklausel verdrängt mündliche Zusagen."
+    },
+    {
+      "marker": "Der Anbieter darf den Firmennamen und die Bildmarke des Kunden unentgeltlich zu Referenzzwecken auf",
+      "expectedType": "marketing_reference",
+      "note": "Referenznutzung ohne Zustimmung des Kunden."
+    },
+    {
+      "marker": "Alle Rückmeldungen und Verbesserungsvorschläge des Kunden gehen unentgeltlich in das alleinige",
+      "expectedType": "feedback_ip_grab",
+      "note": "Rechte an Rückmeldungen gehen unentgeltlich über."
+    },
+    {
+      "marker": "Erklärungen des Anbieters gelten nach Absendung als dem Kunden zugegangen, unabhängig vom",
+      "expectedType": "fictitious_receipt",
+      "note": "Zugangsfiktion zulasten des Kunden."
+    },
+    {
+      "marker": "Der Anbieter strebt eine Verfügbarkeit von 99,5 Prozent an, die Angaben dienen ausschließlich der",
+      "expectedType": "unverbindliche_sla_falle",
+      "note": "Unverbindliche Servicelevel ohne Anspruch."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende kündigen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Zahlungen sind innerhalb von 30 Tagen nach Rechnungsstellung fällig.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde erhält für vermittelte Geschäfte eine Provision von fünf Prozent des Nettoumsatzes.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Anbieter stellt dem Kunden die vereinbarten Unterlagen unentgeltlich zur Verfügung.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Vertrag wird für die Dauer von zwei Jahren geschlossen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien behandeln die ausgetauschten Informationen vertraulich, die Pflicht gilt für die",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    }
+  ],
+  "uncovered": []
+}

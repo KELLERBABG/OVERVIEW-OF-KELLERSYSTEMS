@@ -1,0 +1,194 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>TradeShield &mdash; microfiber wash filter and audit ledger</title><meta name="description" content="TradeShield retrofits commercial laundries with 20-micron microfiber capture, weighs what it traps in a sealed chamber, and issues cryptographically verifiable removal credits."><meta name="theme-color" content="#101418"><link rel="icon" href="assets/icon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"><style>
+*{box-sizing:border-box} html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#101418;color:#8d99a3;font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(16px,4vw,44px)}
+header{padding:clamp(26px,5vw,52px) 0 clamp(12px,2vw,18px)}
+.kick{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;color:#4fb3c9}
+h1{margin:.4rem 0 .3rem;font-weight:600;font-size:clamp(1.9rem,5vw,3.2rem);line-height:1.04;letter-spacing:-.03em;color:#e9eff4}
+.sub{margin:0;max-width:68ch;color:#8896a2}
+.panel{margin:clamp(16px,3vw,26px) 0;border:1px solid #1f2a33;background:#141a20}
+.panel .hd{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;border-bottom:1px solid #1f2a33;padding:.5rem .95rem;
+ font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#68757f}
+.panel .hd b{color:#4fb3c9;font-weight:500}
+svg{display:block;width:100%;height:auto;padding:clamp(8px,1.6vw,16px)}
+.box{fill:#121820;stroke:#1f2a33}
+.cap{font-family:'IBM Plex Mono',monospace;font-size:9px;fill:#68757f;letter-spacing:.14em}
+.pipe{fill:#1b242c;stroke:#31404c;stroke-width:1}
+.flow{fill:rgba(79,179,201,.45)}
+.flow.out{fill:rgba(120,190,140,.42)}
+.pl{font-family:'IBM Plex Mono',monospace;font-size:8.5px;fill:#68757f}
+.housing{fill:rgba(255,255,255,.02);stroke:#31404c;stroke-width:1.2}
+.hl{font-family:'IBM Plex Mono',monospace;font-size:8.5px;fill:#68757f;letter-spacing:.12em}
+.mesh{fill:none;stroke:#3d5260;stroke-width:1.2}
+.mesh.in{stroke:#4fb3c9;stroke-width:2;stroke-dasharray:3 3}
+.ml{font-family:'IBM Plex Mono',monospace;font-size:9px;fill:#4fb3c9}
+.fa{stroke:#2f7d9c;stroke-width:1.6}
+.bwl{font-family:'IBM Plex Mono',monospace;font-size:8.5px;fill:#8a6a3a;letter-spacing:.1em}
+.bw{stroke:#8a6a3a;stroke-width:1.4}
+.sludge{fill:rgba(122,92,58,.5);stroke:#6b5334}
+.sl{font-family:'IBM Plex Mono',monospace;font-size:8.5px;fill:#cdb894}
+.cell{fill:#1b242c;stroke:#4fb3c9;stroke-width:1}
+.cl2{font-family:'IBM Plex Mono',monospace;font-size:8px;fill:#4fb3c9}
+.dp{stroke:#3d5260;stroke-width:.9;stroke-dasharray:4 3}
+.dpl{font-family:'IBM Plex Mono',monospace;font-size:8.5px;fill:#68757f}
+.inset{fill:rgba(255,255,255,.015);stroke:#1f2a33}
+.it{font-family:'IBM Plex Mono',monospace;font-size:8.5px;fill:#68757f;letter-spacing:.1em}
+.it2{font-family:'IBM Plex Mono',monospace;font-size:8.5px;fill:#4fb3c9}
+.tube{fill:#171e25;stroke:#31404c}
+.tubeA{fill:rgba(150,132,92,.85)} .tubeB{fill:rgba(79,179,201,.55)}
+.tl{font-family:'IBM Plex Mono',monospace;font-size:8.5px;fill:#68757f}
+.tv{font-family:'IBM Plex Mono',monospace;font-size:11px;fill:#e9eff4}
+.readouts{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#1f2a33;border-top:1px solid #1f2a33}
+.ro{background:#141a20;padding:.85rem 1rem}
+.rn{display:block;font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:#68757f}
+.ro b{display:block;font-family:'IBM Plex Mono',monospace;font-size:1.15rem;font-weight:500;color:#e9eff4;line-height:1.2;margin-top:.25rem}
+.rs{display:block;font-family:'IBM Plex Mono',monospace;font-size:9px;color:#4fb3c9;margin-top:.15rem}
+.log{border:1px solid #1f2a33;background:#0e1318;font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.95;margin-top:.9rem}
+.log .l{display:flex;gap:.7rem;padding:.15rem 1rem;white-space:pre-wrap}
+.log .l:first-child{padding-top:.8rem} .log .l:last-child{padding-bottom:.8rem}
+.tg{flex:0 0 auto;color:#4fb3c9;font-weight:500} .txt{color:#bcc7cf}
+section{border-top:1px solid #1f2a33;padding:clamp(20px,3.4vw,38px) 0}
+h2{margin:0 0 .9rem;font-weight:600;font-size:clamp(1.2rem,2.5vw,1.7rem);letter-spacing:-.02em;color:#e9eff4}
+h2 i{font-family:'IBM Plex Mono',monospace;font-style:normal;font-size:10px;letter-spacing:.2em;color:#4fb3c9;display:block;margin-bottom:.35rem}
+p{margin:0 0 .85rem;max-width:76ch} b{color:#e9eff4;font-weight:500}
+table{width:100%;border-collapse:collapse;margin-top:.9rem;font-size:.9rem}
+th,td{text-align:left;padding:.5rem .6rem;border-bottom:1px solid #1f2a33;vertical-align:top}
+th{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#68757f;font-weight:400}
+td.ts{background:rgba(79,179,201,.09);color:#e9eff4;font-weight:500}
+pre{margin:.9rem 0 0;border:1px solid #1f2a33;border-left:3px solid #4fb3c9;background:#0e1318;padding:.85rem 1rem;
+ font-family:'IBM Plex Mono',monospace;font-size:.73rem;line-height:1.9;color:#e9eff4;white-space:pre-wrap;overflow-wrap:anywhere}
+.foot{border-top:1px solid #1f2a33;padding:1.4rem 0 3rem;font-family:'IBM Plex Mono',monospace;font-size:9.5px;
+ letter-spacing:.14em;text-transform:uppercase;color:#68757f}
+.foot .wrap{display:flex;justify-content:space-between;gap:1.4rem;flex-wrap:wrap} .foot a{color:#4fb3c9}
+@media (max-width:760px){.readouts{grid-template-columns:repeat(2,1fr)}}
+html{scrollbar-color:#1f2a33 #101418;scrollbar-width:thin}
+::-webkit-scrollbar{width:12px}::-webkit-scrollbar-track{background:#101418}
+::-webkit-scrollbar-thumb{background:#1f2a33;border:3px solid #101418}::-webkit-scrollbar-thumb:hover{background:#4fb3c9}
+/* mobile-figure */@media (max-width:900px){.panel,.chart,.die,.pfd,.cfg,.console,.figs,.seqblock,.map{overflow-x:auto;-webkit-overflow-scrolling:touch}.panel svg,.chart svg,.die svg,.pfd svg,.cfg svg,.figs svg,.map svg{min-width:660px;max-width:none}}
+/* --- Keller Systems Subtle Masthead Lockup --- */
+header { padding-top: clamp(18px, 3.2vw, 30px) !important; }
+.ks-masthead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 12px;
+  margin-bottom: clamp(18px, 3vw, 28px);
+  border-bottom: 1px solid #1f2a33;
+}
+.ks-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+.ks-mark {
+  width: 22px !important;
+  min-width: 22px !important;
+  max-width: 22px !important;
+  height: 22px !important;
+  min-height: 22px !important;
+  max-height: 22px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: block !important;
+  flex-shrink: 0 !important;
+}
+.ks-titles {
+  display: inline-flex;
+  flex-direction: column;
+  line-height: 1.12;
+}
+.ks-name {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #e9eff4;
+  letter-spacing: -0.01em;
+}
+.ks-sub {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 8.5px;
+  font-weight: 500;
+  color: #78858f;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.ks-brand:hover .ks-name {
+  color: #4fb3c9;
+}
+.ks-links {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+.ks-link {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 10.5px;
+  color: #78858f;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  letter-spacing: 0.03em;
+  transition: color 0.15s;
+}
+.ks-link:hover {
+  color: #e9eff4;
+}
+</style></head><body><!-- noscript-fallback --><noscript><style>html *{opacity:1!important;transform:none!important;filter:none!important;animation:none!important}[data-a],[data-b],.d,.o,.fade,.draw,.chapter,.step,.panel,.hlab{opacity:1!important}</style></noscript><div class="wrap"><header>
+      <div class="ks-masthead">
+        <a href="https://kellersystems.dev" class="ks-brand" title="Keller Systems">
+          <svg class="ks-mark" viewBox="0 0 100 100" width="22" height="22" aria-hidden="true">
+            <rect x="18" y="14" width="18" height="72" rx="3" fill="#e9eff4"/>
+            <path d="M46 50 L72 16 H90 L60 54 Z" fill="#4fb3c9"/>
+            <path d="M60 46 L90 84 H72 L46 50 Z" fill="#8d99a3"/>
+          </svg>
+          <span class="ks-titles">
+            <span class="ks-name">TradeShield</span>
+            <span class="ks-sub">KELLER SYSTEMS</span>
+          </span>
+        </a>
+        <div class="ks-links">
+          <a href="https://kellersystems.dev" class="ks-link">kellersystems.dev &rarr;</a>
+        <a href="https://github.com/KELLERBABG/TradeShield" target="_blank" rel="noopener noreferrer" class="ks-link">Source &#8599;</a>
+        </div>
+      </div>
+  <span class="kick">Microfiber capture &middot; MRV &middot; signed ledger</span>
+  <h1>Stop it at the drain</h1>
+  <p class="sub">Synthetic textiles are the largest single source of primary microplastics reaching the ocean, and most of it leaves through a washing machine outlet. TradeShield catches it there and weighs it.</p>
+</header></div>
+
+<div class="wrap"><div class="panel">
+  <div class="hd"><span>Filtration sensor telemetry</span><b>capture efficiency 96.8% at &#8805; 20 &#181;m</b></div>
+<svg viewBox="0 0 940 440" role="img" aria-label="Wash filter cartridge in section"><rect class="box" x="8" y="8" width="924" height="424" rx="3"/><text class="cap" x="30" y="34">RETROFIT FILTER BODY &middot; SECTION &middot; 20 &#181;m MICRO-MESH</text><rect class="pipe" x="40" y="176" width="120" height="34" rx="4"/><rect class="flow" x="52" y="188" width="96" height="10" rx="3"/><text class="pl" x="40" y="166">INLET &middot; 12,000 L CYCLE</text><rect class="housing" x="176" y="96" width="330" height="250" rx="10"/><text class="hl" x="192" y="118">FILTER BODY</text><circle class="mesh in" cx="340" cy="220" r="58"/><circle class="mesh" cx="340" cy="220" r="74"/><circle class="mesh" cx="340" cy="220" r="90"/><text class="ml" x="340" y="224" text-anchor="middle">20 &#181;m</text><line class="fa" x1="404" y1="138" x2="378" y2="171" marker-end="url(#fa)"/><line class="fa" x1="433" y1="174" x2="396" y2="193" marker-end="url(#fa)"/><line class="fa" x1="444" y1="220" x2="402" y2="220" marker-end="url(#fa)"/><line class="fa" x1="433" y1="266" x2="396" y2="247" marker-end="url(#fa)"/><line class="fa" x1="404" y1="302" x2="378" y2="269" marker-end="url(#fa)"/><text class="bwl" x="340" y="86" text-anchor="middle">ACOUSTIC BACK-WASH</text><path class="bw" d="M280 96 L280 126" marker-end="url(#bw)"/><path class="bw" d="M320 96 L320 126" marker-end="url(#bw)"/><path class="bw" d="M360 96 L360 126" marker-end="url(#bw)"/><path class="bw" d="M400 96 L400 126" marker-end="url(#bw)"/><rect class="sludge" x="196" y="290" width="290" height="36" rx="3"/><text class="sl" x="206" y="313">SLUDGE CHAMBER &middot; 1.42 kg WET POLYESTER</text><rect class="cell" x="430" y="298" width="46" height="20" rx="2"/><text class="cl2" x="453" y="332" text-anchor="middle">load cell</text><rect class="pipe" x="520" y="176" width="120" height="34" rx="4"/><rect class="flow out" x="532" y="188" width="96" height="10" rx="3"/><text class="pl" x="520" y="166">OUTLET &middot; TO DRAIN</text><line class="dp" x1="520" y1="238" x2="640" y2="238"/><text class="dpl" x="640" y="242">&#916;P 0.34 bar nominal</text><rect class="inset" x="672" y="80" width="232" height="300" rx="2"/><text class="it" x="690" y="104">OPTICAL TURBIDITY</text><rect class="tube" x="690" y="126" width="70" height="80" rx="6"/><rect class="tubeA" x="690" y="126" width="70" height="80" rx="6"/><text class="tl" x="776" y="160">pre-filter</text><text class="tv" x="776" y="182">184 NTU</text><rect class="tube" x="690" y="238" width="70" height="80" rx="6"/><rect class="tubeB" x="690" y="311" width="70" height="7" rx="6"/><text class="tl" x="776" y="272">post-filter</text><text class="tv" x="776" y="294">3.2 NTU</text><text class="it2" x="690" y="368">96.8% capture at &#8805; 20 &#181;m</text><defs><marker id="fa" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 Z" fill="#2f7d9c"/></marker><marker id="bw" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 Z" fill="#8a6a3a"/></marker></defs></svg>
+  <div class="readouts">
+    <div class="ro"><span class="rn">Capture efficiency</span><b>96.8%</b><span class="rs">&#8805; 20 &#181;m</span></div>
+    <div class="ro"><span class="rn">Mass trapped</span><b>142.4 kg</b><span class="rs">per month</span></div>
+    <div class="ro"><span class="rn">Pressure drop</span><b>0.34 bar</b><span class="rs">nominal</span></div>
+    <div class="ro"><span class="rn">Attestation</span><b>SHA-256</b><span class="rs">valid</span></div>
+  </div>
+</div></div>
+
+<section><div class="wrap"><h2><i>01 &mdash; what it does</i>Capture, weigh, sign</h2>
+<p>A filter that nobody measures is a filter nobody can claim. The section above shows the three parts that matter: a <b>20 &#181;m micro-mesh</b> fine enough to catch fibre rather than lint, an <b>acoustic back-wash</b> that keeps the cake from choking an 80 kg machine mid-cycle, and a <b>sealed sludge chamber on load cells</b> so the trapped mass is a measurement rather than an estimate.</p>
+<div class="log">
+<div class="l"><span class="tg">[FLOW-METER]</span><span class="txt">12,000 L commercial cycle processed through 20 &#181;m mesh</span></div>
+<div class="l"><span class="tg">[OPTICAL-TURBIDITY]</span><span class="txt">Pre-filter: 184 NTU &rarr; post-filter: 3.2 NTU</span></div>
+<div class="l"><span class="tg">[WEIGHT-CELL]</span><span class="txt">1.42 kg wet polyester sludge registered in cartridge chamber</span></div>
+<div class="l"><span class="tg">[CREDIT-MINT]</span><span class="txt">Ed25519 microfiber removal certificate signed for textile brand</span></div>
+</div>
+</div></section>
+
+<section><div class="wrap"><h2><i>02 &mdash; why the ledger matters</i>A removal claim has to survive an auditor</h2>
+<p>Environmental claims collapse when the evidence is a spreadsheet the claimant controls. Here the mass reading is taken inside a microcontroller enclave, differential pressure and load-cell series are signed at source, and the resulting removal credit carries a signature a textile brand can hand to a regulator instead of a summary.</p>
+<table><thead><tr><th>Dimension</th><th>Unmeasured filtration</th><th>TradeShield</th></tr></thead><tbody>
+<tr><td>capture</td><td>unknown, changes as the cake builds</td><td class="ts">96.8% at &#8805; 20 &#181;m, back-washed continuously</td></tr>
+<tr><td>evidence</td><td>self-reported estimates</td><td class="ts">signed mass and pressure series at source</td></tr>
+<tr><td>claim</td><td>a summary nobody can verify</td><td class="ts">Ed25519 removal certificate, per brand</td></tr>
+<tr><td>disposal</td><td>sludge to drain or landfill, unquantified</td><td class="ts">weighed cartridge, 142.4 kg per month</td></tr>
+</tbody></table>
+<pre>git clone https://github.com/KELLERBABG/TradeShield.git
+cd TradeShield &amp;&amp; cargo test</pre>
+</div></section>
+<div class="foot"><div class="wrap"><span>TradeShield &middot; Keller Systems</span><span><a href="https://github.com/KELLERBABG/TradeShield">repository</a> &nbsp;/&nbsp; <a href="https://kellersystems.dev">kellersystems.dev</a></span></div></div></body></html>

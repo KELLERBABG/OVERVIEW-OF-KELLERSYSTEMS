@@ -1,0 +1,69 @@
+{
+  "slug": "saas-008",
+  "source": "generated",
+  "domain": "Payment-API Plattform, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Verzugszinsen betragen 12 Punkte über dem Basiszinssatz.",
+      "expectedType": "default_interest",
+      "note": "Paraphrase. Verzugszins ueber dem Marktzins"
+    },
+    {
+      "marker": "Der Kunde verpflichtet sich, die Anbieterin von Ansprüchen Dritter freizustellen.",
+      "expectedType": "third_party_indemnity",
+      "note": "Paraphrase. Freistellung fuer Drittansprueche"
+    },
+    {
+      "marker": "Nachträgliche Abgabenbelastungen trägt der Kunde",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Steuerlast auf den Kunden verlagert"
+    },
+    {
+      "marker": "Abtretung von Forderungen des Kunden ist ohne vorherige schriftliche Zustimmung",
+      "expectedType": "assignment_restriction",
+      "note": "Abtretungsverbot"
+    },
+    {
+      "marker": "Die Haftung für mittelbare Schäden und entgangenen Gewinn ist abbedungen.",
+      "expectedType": "liability",
+      "note": "Paraphrase. Haftungsausschluss"
+    },
+    {
+      "marker": "auf den tatsächlichen Abruf kommt es nicht an",
+      "expectedType": "fictitious_receipt",
+      "note": "Zugangsfiktion"
+    },
+    {
+      "marker": "Rechtsstreitigkeiten sind ausschließlich vor den Gerichten am Sitz des Anbieters auszutragen.",
+      "expectedType": "jurisdiction",
+      "note": "Paraphrase. Gerichtsstand beim Anbieter"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "innerhalb von 30 Tagen nach Zugang ohne Abzug fällig",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "mit unbestrittenen Forderungen aufrechnen",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "ausschließlich in Rechenzentren innerhalb der Europäischen Union",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "wechselseitig offengelegten Informationen vertraulich",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "vollständige Kopie aller Kundendaten in maschinenlesbarer Form kostenfrei",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    }
+  ],
+  "uncovered": []
+}

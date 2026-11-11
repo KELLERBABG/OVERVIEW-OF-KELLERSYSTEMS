@@ -1,0 +1,82 @@
+{
+  "slug": "agb-08-systemhaus-it-projekt",
+  "domain": "IT-Systemhaus Werk- und Implementierungs-AGB",
+  "source": "Blind Real-AGB Benchmark 2026 (vor Engine-Lauf gelabelt)",
+  "traps": [
+    {
+      "marker": "Die gesamte Werkleistung gilt auch ohne ausdrückliche Erklärung bereits nach Ablauf",
+      "expectedType": "deemed_acceptance",
+      "statutoryBasis": "§ 640 Abs. 2 BGB, § 308 Nr. 5 BGB, § 307 BGB",
+      "note": "Unwirksame Abnahmefiktion nach bereits 48 Stunden bzw. durch bloßes Einloggen in die Testumgebung unter Präklusion sämtlicher Mängel."
+    },
+    {
+      "marker": "ist der Auftragnehmer berechtigt, auch die bereits vollständig bezahlte und auf den",
+      "expectedType": "maintenance_conditional_shutdown",
+      "statutoryBasis": "§ 307 Abs. 1, Abs. 2 Nr. 1 und 2 BGB, § 858 BGB",
+      "note": "Unzulässige Deaktivierung einer bereits voll bezahlten Kauflizenz bei Nichtverlängerung des Wartungsvertrags (verbotene Eigenmacht / Kill-Switch)."
+    },
+    {
+      "marker": "sämtliche im Rahmen der Ausschreibung oder Vertragsverhandlung gemachten",
+      "expectedType": "entire_agreement",
+      "statutoryBasis": "§ 305b BGB, § 633 Abs. 2 BGB, § 307 BGB",
+      "note": "Unwirksame Vollständigkeitsklausel, die vorvertragliche Zusicherungen und den Vorrang der Individualabrede ausschließt."
+    },
+    {
+      "marker": "Der Auftragnehmer ist hinsichtlich sämtlicher vom Auftraggeber übergebenen",
+      "expectedType": "asymmetric_confidentiality",
+      "statutoryBasis": "§ 307 Abs. 1 BGB",
+      "note": "Krass asymmetrische Geheimhaltungsregelung, die nur den Kunden bindet und dem IT-Dienstleister die freie Verwendung von Kundengeheimnissen erlaubt."
+    },
+    {
+      "marker": "gelten nach Beendigung des Vertragsverhältnisses zeitlich unbegrenzt für einen",
+      "expectedType": "excessive_survival",
+      "statutoryBasis": "§ 307 Abs. 1 BGB, § 138 BGB",
+      "note": "Unverhältnismäßige 50-jährige bzw. unbefristete Fortwirkung nachvertraglicher Pflichten."
+    },
+    {
+      "marker": "während der Projektlaufzeit und für einen Zeitraum von fünf Jahren nach Vertragsende",
+      "expectedType": "non_solicitation",
+      "statutoryBasis": "§ 307 Abs. 1 BGB, § 75f HGB, Art. 12 GG",
+      "note": "Unwirksames fünfjähriges Einstellungs- und Abwerbeverbot (Sperrabrede i.S.d. § 75f HGB) einschließlich Initiativbewerbungen."
+    },
+    {
+      "marker": "verpflichtet sich der Auftraggeber zur Zahlung einer sofort fälligen, nicht",
+      "expectedType": "penalty",
+      "statutoryBasis": "§ 307 Abs. 1 BGB, § 343 BGB",
+      "note": "Sittenwidrig überhöhte Vertragsstrafe von fünf Brutto-Jahresgehältern (mindestens 300.000 Euro)."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Änderungswünsche des Auftraggebers nach Projektbeginn (Change Requests) werden vom",
+      "note": "Übliches und sachgerechtes Change-Request-Verfahren im IT-Projektgeschäft."
+    },
+    {
+      "marker": "Der Auftraggeber benennt einen fachlich qualifizierten Projektleiter, stellt die",
+      "note": "Angemessene Mitwirkungsobliegenheiten des Auftraggebers (§ 642 BGB)."
+    },
+    {
+      "marker": "Der Einsatz externer Nachunternehmer für sicherheitsrelevante Entwicklungsarbeiten",
+      "note": "Kundenfreundliche Regelung zum Einsatz von Nachunternehmern mit Zustimmungsvorbehalt."
+    },
+    {
+      "marker": "Gegen Forderungen des Auftragnehmers kann der Auftraggeber mit unbestrittenen oder",
+      "note": "Vollständig BGH-konforme Aufrechnungsklausel im Werkvertragsrecht (einschließlich entscheidungsreifer synallagmatischer Gegenansprüche)."
+    },
+    {
+      "marker": "Für Sach- und Rechtsmängel der Werkleistung leistet der Auftragnehmer zunächst nach",
+      "note": "Entspricht dem gesetzlichen Wahlrecht des Werkunternehmers bei der Nacherfüllung nach § 635 Abs. 1 BGB."
+    },
+    {
+      "marker": "Der Auftragnehmer haftet unbeschränkt für Vorsatz und grobe Fahrlässigkeit sowie bei",
+      "note": "Rechtskonforme Haftungsregelung."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Auch soweit im Einzelauftrag ausdrücklich die Erstellung und Übereignung einer",
+      "statutoryBasis": "§ 305c Abs. 1, § 307 Abs. 2 Nr. 2 BGB",
+      "note": "Überraschende und den Vertragszweck gefährdende Klausel bei Individualsoftwareerstellung, die die geschuldete Quellcode-Herausgabe von einer 150-%-Ablösezahlung abhängig macht."
+    }
+  ]
+}

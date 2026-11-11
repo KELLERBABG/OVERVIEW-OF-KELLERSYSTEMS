@@ -1,0 +1,36 @@
+Cloud-Enterprise- und Rahmenentwicklungsvereinbarung
+§ 3 Verfügbarkeit, Service Levels und Betriebsstörungen
+
+(1) Der Anbieter gewährleistet im Jahresmittel eine Systemverfügbarkeit von 99,5 % am Übergabepunkt des Rechenzentrums. Von der Berechnung ausgenommen sind Zeiten planmäßiger sowie unaufschiebbarer sicherheitsrelevanter Wartungsarbeiten.
+
+(2) Unterschreitet der Anbieter die vereinbarte Verfügbarkeit, erhält der Kunde auf gesonderten Antrag eine Service-Gutschrift (Service Credit) in Höhe von 5 % der monatlichen Grundgebühr pro angefangene 24 Stunden Ausfallzeit, maximal jedoch 15 % der monatlichen Gebühr. Diese Gutschrift stellt die abschließende und ausschließliche Kompensation für Ausfälle und Störungen dar; weitergehende Ansprüche des Kunden – einschließlich gesetzlicher Minderungsrechte, Rücktritt oder Schadensersatz wegen Nichterfüllung – sind insoweit vollumfänglich abgegolten.
+
+§ 5 Abrechnung, Zahlungsmodalitäten und Leistungsverweigerung
+
+(1) Entgelte werden monatlich nach tatsächlicher Ressourcennutzung berechnet und sind 14 Tage nach Rechnungsstellung fällig.
+
+(2) Ein Zurückbehaltungsrecht oder die Einrede des nicht erfüllten Vertrages steht dem Kunden nur zu, sofern der zugrunde liegende Gegenanspruch aus demselben konkreten Monatsrechnungsabschnitt herrührt und unbestritten ist. Die Geltendmachung eines Zurückbehaltungsrechts wegen Mängeln an vorgelagerten Softwaremodulen ist für die laufende Betriebspauschale ausgeschlossen.
+
+§ 8 Schutzrechte, Datenintegrität und Fehleranalyse
+
+(1) Der Kunde bleibt Inhaber aller Rechte an den von ihm in die Plattform eingespeisten Geschäftsdaten.
+
+(2) Zur Gewährleistung automatisierter Lastverteilung, proaktiver Fehlererkennung und kontinuierlicher Qualitätsverbesserung gestattet der Kunde dem Anbieter die automatisierte semantische Analyse der verarbeiteten Datenströme. Der Anbieter ist berechtigt, hieraus gewonnene mathematische Gewichtungen, strukturelle Muster und Systemparameter dauerhaft, unentgeltlich und über das Vertragsende hinaus für eigene Entwicklungs- und Modellierungszwecke weiterzuverwenden, sofern keine direkte Re-Identifikation einzelner Klienten des Kunden erfolgt.
+
+§ 11 Schadensabwendung und Freistellungsverpflichtung
+
+(1) Der Kunde verpflichtet sich, die Zugangsdaten gegen unbefugten Zugriff zu sichern und Schnittstellenaufrufe vorab auf Anomalien zu prüfen.
+
+(2) Verursachen über die Instanz des Kunden initiierte Datenübertragungen Störungen im Gesamtsystem des Anbieters oder machen Dritte hieraus Ansprüche wegen Rechtsverletzungen geltend, stellt der Kunde den Anbieter im Innenverhältnis von allen resultierenden Schäden und Kosten der Rechtsverteidigung frei. Diese Freistellung gilt verschuldensunabhängig, es sei denn, der Kunde weist lückenlos nach, dass die Ursache ausschließlich auf einer fehlerhaften Basiskomponente des Anbieters beruhte.
+
+§ 14 Kündigung und Formvorschriften
+
+(1) Das Vertragsverhältnis wird auf unbestimmte Zeit geschlossen und kann von beiden Parteien mit einer Frist von 3 Monaten zum Quartalsende gekündigt werden.
+
+(2) Jede Kündigung bedarf zu ihrer Wirksamkeit der eigenhändig unterzeichneten Schriftform und muss dem Anbieter per eingeschriebenem Brief mit Rückschein an die im Handelsregister eingetragene Geschäftsanschrift zugehen; die elektronische Form (§ 126a BGB) sowie Textform (§ 126b BGB) sind ausdrücklich ausgeschlossen. Maßgeblich für die Fristwahrung ist nicht die Absendung, sondern der tatsächliche Tag der Zustellung.
+
+§ 17 Schlussbestimmungen und Vertragsänderungen
+
+(1) Mündliche Nebenabreden bestehen nicht. Änderungen oder Ergänzungen dieses Vertrages bedürfen der Schriftform.
+
+(2) Das Erfordernis der Schriftform kann seinerseits nur schriftlich abbedungen werden; eine konkludente oder mündliche Abbedingung dieses Formerfordernisses ist ausgeschlossen.

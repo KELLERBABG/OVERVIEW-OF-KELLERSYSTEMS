@@ -1,0 +1,74 @@
+{
+  "slug": "marketing-019",
+  "source": "generated",
+  "domain": "Naming Rights Sponsoring, österreichisches Recht",
+  "traps": [
+    {
+      "marker": "Firmenname und Bildmarke des Kunden in allen Werbeträgern",
+      "expectedType": "marketing_reference",
+      "note": "Marken- und Namensnutzung ohne Freigabevorbehalt."
+    },
+    {
+      "marker": "erhöht sich jährlich um sechs Prozent",
+      "expectedType": "price_escalation",
+      "note": "Automatische Jahreserhöhung."
+    },
+    {
+      "marker": "verlängert sich um jeweils drei Jahre, wenn er nicht sechs Monate vorher gekündigt wird",
+      "expectedType": "auto_renewal",
+      "note": "Automatische Verlängerung mit Opt-out."
+    },
+    {
+      "marker": "erst nach fünf Jahren mit einer Frist von vierundzwanzig Monaten",
+      "expectedType": "notice_period",
+      "note": "24 Monate Vorlaufzeit als Frist; vermeidet das Wort Kündigungsfrist."
+    },
+    {
+      "marker": "endet der Vertrag ohne weiteres",
+      "expectedType": "insolvency_termination",
+      "note": "Automatisches Vertragsende bei Zahlungsunfähigkeit."
+    },
+    {
+      "marker": "An die Stelle der unwirksamen Klausel tritt diejenige",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "Ersatzklausel nach wirtschaftlichem Zweck."
+    },
+    {
+      "marker": "Gegenansprüche des Auftraggebers begründen kein Zurückbehaltungsrecht",
+      "expectedType": "setoff_restriction",
+      "note": "Ausschluss des Zurückbehaltungsrechts."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien wahren über die wechselseitig ausgetauschten Informationen Stillschweigen",
+      "note": "Symmetrische Verschwiegenheit."
+    },
+    {
+      "marker": "erhält der Auftraggeber die Vermarktungsdaten kostenfrei in einem offenen Format",
+      "note": "Kostenfreier Datenexport."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform zugelassen."
+    },
+    {
+      "marker": "innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Üblicher Zahlungstermin."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhaltung."
+    },
+    {
+      "marker": "setzt weitere Dienstleister nur nach vorheriger Anzeige ein",
+      "note": "Ordentliche Subunternehmerregelung."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Auftragnehmer räumt dem Auftraggeber Namensrechte an der Mehrzweckhalle ein",
+      "note": "Kein Detektor für Rückbau- und Entfernungsfristen bei Naming Rights."
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+Wartungsvertrag über die Betreuung der Klinik-IT
+
+zwischen MedServ Systems GmbH, Hamburg (nachfolgend Anbieter) und Klinikverbund Nord gGmbH, Lübeck (nachfolgend Kunde).
+
+Präambel
+Die Parteien beabsichtigen die in § 1 beschriebene Zusammenarbeit. Der Anbieter erbringt die Leistungen, der Kunde vergütet sie. Die Parteien vereinbaren Folgendes.
+
+§ 1 Gegenstand
+Gegenstand des Vertrages ist die Betreuung, Wartung und Störungsbehebung der Klinik-IT gemäß Anlage 1.
+
+§ 2 Leistungsumfang
+Der Anbieter erbringt die Leistungen gemäß Anlage 1 und dokumentiert die Ergebnisse.
+
+§ 3 Laufzeit und Verlängerung
+(3) Nach Ablauf der Grundlaufzeit erneuert sich die Vereinbarung stillschweigend, sofern keine Seite widerspricht.
+
+§ 4 Haftung
+(4) Der Kunde verzichtet auf Ersatzansprüche, die über die in Ziffer 12 genannten Beträge hinausgehen.
+
+§ 5 Vertragsstrafe und Pauschalen
+(5) Überschreitet der Anbieter den Meilenstein, schuldet er eine Schadenspauschale von 5.000 EUR je Woche.
+
+§ 6 Nutzungsrechte und Daten
+(6) Der Kunde räumt dem Anbieter ein unwiderrufliches, weltweites und übertragbares Nutzungsrecht an den Projektartefakten ein.
+
+§ 7 Abnahme und Genehmigungsfiktion
+(7) Erhebt der Kunde nicht binnen zehn Kalendertagen nach Bereitstellung Einwände, gilt die Leistung als abgenommen.
+
+§ 8 Form von Erklärungen
+(8) Kündigungen müssen per Einschreiben mit Rückschein erklärt werden.
+
+§ 9 Erfüllungsgehilfen
+(9) The provider shall not be liable for acts of subcontractors or agents.
+
+§ 10 Laufzeit und Verlängerung
+(10) Wird der Vertrag nicht mit einer Frist von drei Monaten zum Laufzeitende gekündigt, setzt sich die Zusammenarbeit um weitere zweiundsiebzig Monate fort.
+
+§ 11 Abnahme und Genehmigungsfiktion
+(11) Wird die Abnahme nicht binnen vierzehn Tagen erklärt, gilt die Leistung als genehmigt.
+
+§ 12 Vergütung
+(12) Die Vergütung ist innerhalb von dreißig Tagen nach Rechnungseingang fällig.
+
+§ 13 Haftung
+(13) Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt.
+
+§ 14 Vertraulichkeit
+(14) Beide Parteien verpflichten sich wechselseitig, die offengelegten Informationen vertraulich zu behandeln.
+
+§ 15 Unterauftragnehmer
+(15) Der Anbieter zeigt den Einsatz von Unterauftragnehmern vierzehn Tage vorher an.
+
+§ 16 Datenrückgabe
+(16) Der Kunde erhält zum Vertragsende einen kostenfreien Datenexport in einem gängigen Format.
+
+§ 17 Form
+(17) Änderungen dieses Vertrages können in Textform vereinbart werden.
+
+§ 18 Kündigung
+(18) Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Monatsende kündigen.
+
+§ 19 Vollständigkeit
+(19) Die Parteien benennen je einen Ansprechpartner für die Projektabwicklung.
+
+Anlage 1: Leistungsbeschreibung
+Anlage 2: Servicezeiten
+
+Hamburg, den 12. Januar 2026
+MedServ Systems GmbH
+Klinikverbund Nord gGmbH

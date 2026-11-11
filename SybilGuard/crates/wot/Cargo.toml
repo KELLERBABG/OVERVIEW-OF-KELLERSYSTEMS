@@ -1,0 +1,14 @@
+[package]
+name = "sybil-wot"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Web of Trust Anchoring: ed25519-based vouching protocol, trust chain verification, recursive vouching limits"
+
+[dependencies]
+sybil-core = { path = "../core" }
+serde.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+chrono = { version = "0.4", features = ["serde"] }
+rand.workspace = true

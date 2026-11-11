@@ -1,0 +1,13 @@
+[package]
+name = "transit-ros2-integration"
+edition = "2021"
+version = "1.0.0"
+license = "Apache-2.0"
+
+[dependencies]
+serde = { workspace = true }
+transit-deployment-gate = { path = "../deployment-gate" }
+transit-verification-invariants = { path = "../verification-invariants" }
+transit-smt-solver = { path = "../smt-solver" }
+transit-taint-analysis = { path = "../taint-analysis" }
+transit-state-machine = { path = "../state-machine" }

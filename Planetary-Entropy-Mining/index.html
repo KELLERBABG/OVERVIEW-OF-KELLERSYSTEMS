@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Planetary Entropy Mining &mdash; PEM</title>
+<meta name="description" content="Emission and offset certificates grounded in a measured window of environmental noise, with a zero-knowledge proof of honest capture that does not reveal where the sensor sits.">
+<meta name="theme-color" content="#14171a">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root{
+  --ground:#15120e; --panel:#1d1913; --panel-2:#26201a; --panel-3:#332a21;
+  --line:rgba(226,203,168,.16); --line-soft:rgba(226,203,168,.075);
+  --chalk:#f0e7d8; --steel:#b3a48d; --dim:#7f715d;
+  --flux:#8ed081; --flux-ink:#0b1a0c; --flux-dim:#3f6b3a;
+  --wrap:1180px;
+  --font:"Space Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SF Mono",Consolas,monospace;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--ground);color:var(--steel);font-family:var(--font);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{margin:0;color:var(--chalk);line-height:1.06;letter-spacing:-.02em}
+h1{font-weight:600;font-size:clamp(2.3rem,5.6vw,4.3rem);letter-spacing:-.03em}
+h2{font-weight:600;font-size:clamp(1.5rem,3.2vw,2.4rem)}
+h3{font-weight:600;font-size:1.05rem;line-height:1.35}
+p{margin:0 0 1rem}
+.wrap{width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:clamp(20px,4.4vw,44px)}
+.mono{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+.kicker{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--flux);margin-bottom:1.5rem}
+.kicker::before{content:"";width:24px;height:1px;background:var(--flux)}
+.section{padding-block:clamp(72px,9vw,140px)}
+.band{background:var(--panel);border-block:1px solid var(--line)}
+.sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:1.5rem;flex-wrap:wrap;padding-bottom:1.1rem;border-bottom:1px solid var(--line);margin-bottom:2.6rem}
+.btn{display:inline-flex;align-items:center;gap:.6em;font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:.95em 1.25em;border:1px solid var(--line);color:var(--chalk);transition:border-color .18s var(--ease),background-color .18s var(--ease),color .18s var(--ease)}
+.btn:hover{border-color:var(--flux);color:var(--flux)}
+.btn-primary{background:var(--flux);border-color:var(--flux);color:var(--flux-ink);font-weight:500}
+.btn-primary:hover{background:#8bffbb;border-color:#8bffbb;color:var(--flux-ink)}
+
+.nav{position:sticky;top:0;z-index:40;background:rgba(20,23,26,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.navrow{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;min-height:68px}
+.brand{display:flex;align-items:center;gap:.75rem}
+.brand svg{width:30px;height:30px;flex:0 0 auto}
+.brand b{font-weight:600;color:var(--chalk);font-size:.96rem;display:block;line-height:1.1}
+.brand span{font-family:var(--mono);font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);display:block}
+.navlinks{display:flex;align-items:center;gap:1.5rem}
+.navlinks a{font-family:var(--mono);font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:var(--steel)}
+.navlinks a:hover{color:var(--flux)}
+
+/* hero: the instrument */
+.hero{position:relative;overflow:hidden;padding-block:clamp(64px,8vw,118px) clamp(52px,6vw,92px);border-bottom:1px solid var(--line)}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    linear-gradient(180deg,rgba(226,203,168,.045) 0 1px,transparent 1px 78px),
+    linear-gradient(180deg,rgba(226,203,168,.028) 0 1px,transparent 1px 39px);
+  background-size:100% 78px,100% 39px;
+  mask-image:linear-gradient(180deg,#000 0%,#000 62%,transparent 100%)}
+.topo{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.topo svg{display:block;width:100%;height:100%}
+.topo path{fill:none;stroke:rgba(214,190,150,.15);stroke-width:1.1}
+.topo path.major{stroke:rgba(142,208,129,.20);stroke-width:1.5}
+.grain{position:absolute;inset:0;pointer-events:none;opacity:.42;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E")}
+.hero-inner{position:relative;z-index:1}
+.hero h1 em{font-style:normal;color:var(--flux)}
+.lede{font-size:clamp(1rem,1.45vw,1.16rem);line-height:1.6;color:var(--steel);max-width:58ch;margin:1.6rem 0 0}
+.lede b{color:var(--chalk);font-weight:500}
+.cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+.scope-panel{position:relative;margin-top:clamp(2.6rem,5vw,4rem);background:var(--panel);border:1px solid var(--line)}
+.scope-head{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:.7rem .95rem;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+.scope-head b{color:var(--flux);font-weight:500}
+.scope svg{display:block;width:100%;height:auto}
+.scope .grat line{stroke:var(--line-soft);stroke-width:1}
+.scope .trace{fill:none;stroke:var(--flux);stroke-width:1.7;stroke-linejoin:round;filter:drop-shadow(0 0 5px rgba(142,208,129,.35))}
+.scope .gate{stroke:var(--flux);stroke-width:1.4;stroke-dasharray:6 5;opacity:.85}
+.scope .glabel{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;fill:var(--flux)}
+.scope .axlabel{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;fill:var(--dim)}
+.scope-note{padding:.7rem .95rem;border-top:1px solid var(--line);font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(2rem,5vw,4.5rem)}
+.block p{max-width:62ch}
+.block h3{margin-bottom:.7rem}
+
+.stages{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.stage{background:var(--ground);padding:1.15rem 1.2rem;display:grid;grid-template-columns:2.2rem 1fr;gap:.9rem;align-items:start}
+.band .stage{background:var(--panel)}
+.stage .n{font-family:var(--mono);font-size:.68rem;color:var(--flux);padding-top:.15rem}
+.stage h3{font-size:.97rem;margin-bottom:.3rem}
+.stage p{font-size:.86rem;line-height:1.5;margin:0 0 .5rem;color:var(--steel)}
+.stage code{font-family:var(--mono);font-size:.68rem;color:var(--dim);display:block;word-break:break-word}
+
+.proof{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(2rem,4vw,3.5rem);align-items:start}
+.hist{background:var(--panel-2);border:1px solid var(--line);padding:1rem}
+.hist svg{display:block;width:100%;height:auto}
+.hist rect{fill:var(--panel-3)}
+.hist rect.peak{fill:var(--flux)}
+.hist .g{stroke:var(--flux);stroke-width:1.2;stroke-dasharray:5 4}
+.hist .l{font-family:var(--mono);font-size:9px;fill:var(--dim);letter-spacing:.08em}
+.hist .hl{font-family:var(--mono);font-size:9px;fill:var(--flux);letter-spacing:.08em}
+.hist text{font-family:var(--mono)}
+.mono-block{font-family:var(--mono);font-size:.78rem;line-height:1.85;color:var(--chalk);background:var(--panel-2);border:1px solid var(--line);border-left:2px solid var(--flux);padding:1.1rem 1.2rem;overflow-x:auto}
+.mono-block .c{color:var(--dim)}
+
+.limits{border-left:2px solid var(--flux);padding-left:1.3rem}
+.limits ul{list-style:none;margin:0;padding:0}
+.limits li{padding:.7rem 0;border-bottom:1px solid var(--line-soft);font-size:.95rem}
+.limits li:last-child{border-bottom:0}
+.limits b{color:var(--chalk);font-weight:500}
+
+pre{margin:0;background:var(--panel-2);border:1px solid var(--line);border-left:2px solid var(--flux);padding:1.25rem 1.35rem;overflow-x:auto;font-family:var(--mono);font-size:.72rem;line-height:1.95;color:var(--chalk)}
+pre .c{color:var(--dim)}
+
+.foot{border-top:1px solid var(--line);padding-block:2.4rem;background:var(--panel)}
+.footrow{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;align-items:flex-end}
+.footrow b{font-weight:600;color:var(--chalk);display:block;font-size:1.02rem}
+.footrow .meta{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;color:var(--dim);margin:.5rem 0 0}
+.footlinks{display:flex;gap:1.4rem;flex-wrap:wrap}
+.footlinks a{font-family:var(--mono);font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:var(--steel)}
+.footlinks a:hover{color:var(--flux)}
+
+.js [data-reveal]{opacity:0;transform:translateY(16px);transition:opacity .5s var(--ease) var(--d,0ms),transform .5s var(--ease) var(--d,0ms)}
+.js [data-reveal].in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js [data-reveal]{opacity:1;transform:none;transition:none}}
+@media (max-width:840px){.navlinks a:not(.btn){display:none}}
+
+/* ---- the pipeline: a console of five acts --------------------------- */
+.console{margin-top:.4rem}
+.crail{position:relative;height:2px;background:var(--line);margin-bottom:1.6rem}
+.cfill{position:absolute;left:0;top:0;height:2px;background:var(--flux);width:20%;
+  transition:width .7s var(--ease);box-shadow:0 0 12px 1px rgba(142,208,129,.5)}
+.acts{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;
+  background:var(--line);border:1px solid var(--line)}
+.act{background:var(--ground);padding:1.1rem 1rem 1.2rem;position:relative;
+  transition:background-color .45s var(--ease),opacity .45s var(--ease);opacity:.42}
+.act.on{background:var(--panel-2);opacity:1}
+.act .anum{position:absolute;top:.85rem;right:.9rem;font-family:var(--mono);font-size:.66rem;color:var(--dim);
+  transition:color .45s var(--ease)}
+.act.on .anum{color:var(--flux)}
+.act h3{font-size:.95rem;line-height:1.2;margin:0 0 .9rem;padding-right:1.6rem;color:var(--haze);
+  transition:color .45s var(--ease)}
+.act.on h3{color:var(--chalk)}
+.glyph{border:1px solid var(--line);background:rgba(0,0,0,.28);margin-bottom:.9rem}
+.glyph svg{display:block;width:100%;height:auto}
+.glyph .wave{fill:none;stroke:var(--flux);stroke-width:1.3;opacity:.85}
+.glyph .bars rect{fill:var(--dim);opacity:.55}
+.glyph .gate{stroke:var(--flux);stroke-width:1;stroke-dasharray:5 4;opacity:.7}
+.glyph .grid line{stroke:var(--line);stroke-width:.8}
+.glyph .curve{fill:none;stroke:var(--flux);stroke-width:1.6}
+.glyph .pts circle{fill:var(--flux)}
+.glyph .doc{fill:none;stroke:var(--chalk);stroke-width:1.3;opacity:.75}
+.glyph .lines line{stroke:var(--dim);stroke-width:1.2}
+.glyph .seal{fill:none;stroke:var(--flux);stroke-width:1.4}
+.glyph .hash{stroke:var(--dim);stroke-width:1.6;stroke-dasharray:4 3}
+.glyph .onion path{fill:none;stroke:var(--dim);stroke-width:1.3}
+.glyph .pt{fill:var(--flux)}
+.glyph .shards rect{fill:var(--flux);opacity:.35}
+.glyph .mesh line{stroke:var(--dim);stroke-width:1.1;stroke-dasharray:4 3}
+.glyph .nodes circle{fill:var(--ground);stroke:var(--flux);stroke-width:1.4}
+.glyph .ledger{fill:none;stroke:var(--chalk);stroke-width:1.3;opacity:.75}
+.glyph .check{fill:none;stroke:var(--flux);stroke-width:1.8}
+.act.on .glyph .bars rect{fill:var(--flux);opacity:.85}
+.act.on .glyph{background:rgba(142,208,129,.06)}
+.mods{list-style:none;margin:0;padding:0}
+.mods li{padding:.3rem 0;border-top:1px solid var(--line-soft)}
+.mods li:first-child{border-top:0}
+.mods code{display:block;font-family:var(--mono);font-size:.63rem;color:var(--dim);overflow-wrap:anywhere;line-height:1.5}
+.act.on .mods code{color:var(--flux)}
+.mods span{display:block;font-size:.76rem;color:var(--haze);line-height:1.45}
+.cread{border:1px solid var(--line);border-top:0;background:var(--panel);padding:1.1rem 1.2rem}
+.cread b{display:block;color:var(--chalk);font-size:1.06rem}
+.cread span{display:block;font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--flux);margin:.25rem 0 .7rem}
+.cread p{margin:0;font-size:.92rem;color:var(--haze);max-width:96ch}
+.flowcap{margin:1rem 0 0;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+
+.glyph .sep{stroke:var(--line);stroke-width:1}
+.glyph .shards rect.lit{opacity:.85}
+.glyph .hashline line{stroke:var(--dim);stroke-width:2.4}
+.glyph .hops circle{fill:var(--flux);opacity:.9}
+/* the glyph animates when its act is reached */
+@media (prefers-reduced-motion:no-preference){
+  .act.on .glyph .wave{stroke-dasharray:300;stroke-dashoffset:300;animation:draw 1.6s var(--ease) forwards}
+  .act.on .glyph .bars rect{transform-origin:center bottom;animation:grow .6s var(--ease) backwards}
+  .act.on .glyph .bars rect:nth-child(2){animation-delay:.06s}
+  .act.on .glyph .bars rect:nth-child(3){animation-delay:.12s}
+  .act.on .glyph .bars rect:nth-child(4){animation-delay:.18s}
+  .act.on .glyph .bars rect:nth-child(5){animation-delay:.24s}
+  .act.on .glyph .bars rect:nth-child(6){animation-delay:.3s}
+  .act.on .glyph .curve{stroke-dasharray:400;stroke-dashoffset:400;animation:draw 1.6s var(--ease) forwards}
+  .act.on .glyph .doc,.act.on .glyph .ledger{stroke-dasharray:420;stroke-dashoffset:420;animation:draw 1.2s var(--ease) forwards}
+  .act.on .glyph .seal{animation:pop .7s var(--ease) .4s backwards}
+  .act.on .glyph .shards rect{animation:split .9s var(--ease) forwards}
+  .act.on .glyph .mesh line{animation:draw 1.2s var(--ease) forwards}
+  .act.on .glyph .nodes circle{animation:pop .6s var(--ease) backwards}
+  .act.on .glyph .check{stroke-dasharray:60;stroke-dashoffset:60;animation:draw .8s var(--ease) .3s forwards}
+}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes grow{from{transform:scaleY(.15)}}
+@keyframes pop{from{transform:scale(.2);opacity:0}}
+@keyframes split{from{transform:translateX(-22px)}}
+@media (prefers-reduced-motion:reduce){.act{opacity:1}.cfill{transition:none}}
+@media (max-width:1080px){.acts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.acts{grid-template-columns:minmax(0,1fr)}}
+
+.motion-toggle{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;background:transparent;
+  color:var(--steel);border:1px solid var(--line);padding:.5em .7em;cursor:pointer;transition:background-color .18s,color .18s,border-color .18s}
+.motion-toggle:hover{border-color:var(--flux);color:var(--flux)}
+.motion-toggle[aria-pressed="true"]{background:var(--flux);border-color:var(--flux);color:var(--flux-ink)}
+
+/* ---- scrollbars, in the site's own colours --------------------------- */
+html{scrollbar-color:#3a3226 #1b1710;scrollbar-width:thin}
+::-webkit-scrollbar{width:12px;height:12px}
+::-webkit-scrollbar-track{background:#1b1710}
+::-webkit-scrollbar-thumb{background:#3a3226;border:3px solid #1b1710}
+::-webkit-scrollbar-thumb:hover{background:#8ed081}
+::-webkit-scrollbar-corner{background:#1b1710}
+/* ---- code wraps rather than scrolling sideways ---------------------- */
+pre{white-space:pre-wrap;overflow-wrap:anywhere;overflow-x:hidden}
+/* mobile-figure */@media (max-width:900px){.panel,.chart,.die,.pfd,.cfg,.console,.figs,.seqblock,.map{overflow-x:auto;-webkit-overflow-scrolling:touch}.panel svg,.chart svg,.die svg,.pfd svg,.cfg svg,.figs svg,.map svg{min-width:660px;max-width:none}}
+</style>
+</head>
+<body><!-- noscript-fallback --><noscript><style>html *{opacity:1!important;transform:none!important;filter:none!important;animation:none!important}[data-a],[data-b],.d,.o,.fade,.draw,.chapter,.step,.panel,.hlab{opacity:1!important}</style></noscript>
+
+
+
+<header class="nav">
+  <div class="wrap navrow">
+    <a class="brand" href="#top">
+      <svg viewBox="0 0 100 100" width="28" height="28" aria-hidden="true">
+        <rect x="18" y="14" width="18" height="72" rx="3" fill="#8ed081"/>
+        <path d="M46 50 L72 16 H90 L60 54 Z" fill="#a7f3d0"/>
+        <path d="M60 46 L90 84 H72 L46 50 Z" fill="#059669"/>
+      </svg>
+      <span>
+        <b>PEM</b>
+        <span style="font-family:monospace;letter-spacing:0.14em;font-size:0.65rem;">KELLER SYSTEMS</span>
+      </span></a>
+    <nav class="navlinks" aria-label="Primary"><a href="https://kellersystems.dev">kellersystems.dev &rarr;</a>
+      <a href="#idea">The idea</a>
+      <a href="#pipeline">Pipeline</a>
+      <a href="#proof">Proof</a>
+      <a href="#limits">Limits</a>
+      <button class="motion-toggle" id="motionToggle" type="button" aria-pressed="false" title="Run the pipeline animation">Motion: off</button>
+      <a class="btn" href="https://github.com/KELLERBABG/Planetary-Entropy-Mining" target="_blank" rel="noopener noreferrer">Source &#8599;</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="topo" aria-hidden="true">
+      <svg viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid slice">
+        <path class="" d="M1077,250 L1079,253 L1080,255 L1080,258 L1079,261 L1076,262 L1073,264 L1070,264 L1066,265 L1063,264 L1060,264 L1058,265 L1056,266 L1055,268 L1052,268 L1050,270 L1047,271 L1045,271 L1042,271 L1039,270 L1037,269 L1034,268 L1032,266 L1030,265 L1027,264 L1025,262 L1024,260 L1023,257 L1023,255 L1024,252 L1026,250 L1028,248 L1030,247 L1032,245 L1032,244 L1032,241 L1031,239 L1031,236 L1032,233 L1033,231 L1035,229 L1038,227 L1041,227 L1044,226 L1047,227 L1050,228 L1053,229 L1055,230 L1058,231 L1060,232 L1062,233 L1064,234 L1066,236 L1068,237 L1068,239 L1069,241 L1070,243 L1072,244 L1073,246 L1075,248 Z"/><path class="" d="M1106,250 L1107,255 L1106,260 L1105,265 L1102,269 L1097,272 L1093,275 L1085,276 L1079,276 L1073,276 L1069,276 L1066,279 L1062,280 L1059,285 L1055,288 L1050,292 L1044,295 L1038,296 L1032,297 L1026,294 L1022,290 L1017,287 L1015,282 L1012,278 L1009,275 L1006,271 L1005,266 L1002,263 L1003,258 L1003,254 L1004,250 L1007,246 L1010,243 L1012,240 L1012,236 L1012,232 L1012,227 L1011,221 L1012,216 L1015,210 L1018,205 L1025,203 L1031,203 L1038,204 L1045,208 L1050,211 L1055,213 L1059,216 L1063,218 L1067,219 L1072,219 L1077,219 L1081,222 L1087,223 L1091,226 L1093,229 L1096,233 L1097,237 L1099,241 L1103,245 Z"/><path class="major" d="M1130,250 L1127,257 L1128,264 L1125,270 L1120,276 L1115,281 L1109,285 L1100,287 L1092,288 L1086,290 L1080,293 L1075,295 L1070,299 L1065,307 L1058,312 L1050,317 L1041,322 L1031,324 L1022,322 L1013,317 L1007,311 L1003,303 L1001,295 L999,288 L996,282 L993,277 L990,272 L986,267 L983,262 L982,256 L981,250 L981,244 L979,238 L982,232 L983,225 L987,220 L987,212 L989,205 L992,197 L998,191 L1004,185 L1014,184 L1023,183 L1033,185 L1042,189 L1050,195 L1056,200 L1062,203 L1068,205 L1074,206 L1082,205 L1091,203 L1101,203 L1110,206 L1118,209 L1125,215 L1128,222 L1130,229 L1129,236 L1130,243 Z"/><path class="" d="M1150,250 L1147,258 L1146,267 L1142,275 L1139,282 L1134,290 L1130,298 L1123,304 L1114,309 L1107,314 L1097,316 L1090,323 L1080,327 L1072,336 L1062,343 L1050,348 L1037,354 L1023,354 L1010,351 L999,344 L993,332 L989,319 L986,308 L984,299 L984,289 L981,283 L972,278 L965,273 L956,266 L946,259 L942,250 L937,240 L939,231 L941,221 L945,211 L951,203 L958,195 L966,188 L973,180 L983,174 L993,169 L1004,165 L1016,163 L1028,165 L1040,170 L1050,175 L1059,182 L1067,186 L1075,186 L1085,186 L1097,184 L1111,181 L1127,180 L1141,183 L1153,189 L1163,196 L1168,207 L1166,219 L1160,231 L1155,241 Z"/><path class="" d="M1163,250 L1160,259 L1155,268 L1152,277 L1156,289 L1153,299 L1152,311 L1150,324 L1141,333 L1134,344 L1120,349 L1107,354 L1093,358 L1080,365 L1065,369 L1050,373 L1034,375 L1018,374 L1003,370 L990,360 L982,346 L976,334 L974,319 L973,307 L968,299 L960,292 L953,285 L939,279 L924,272 L907,262 L897,250 L890,236 L890,222 L898,210 L907,198 L920,189 L938,183 L948,175 L962,170 L976,166 L986,159 L998,154 L1010,149 L1024,150 L1037,150 L1050,150 L1062,154 L1075,155 L1086,158 L1101,157 L1115,157 L1135,154 L1154,155 L1171,161 L1186,169 L1193,182 L1199,196 L1196,211 L1189,226 L1176,239 Z"/><path class="major" d="M1176,250 L1173,261 L1170,271 L1169,282 L1172,295 L1180,311 L1183,329 L1182,348 L1173,362 L1158,372 L1144,384 L1123,384 L1105,388 L1085,384 L1067,383 L1050,384 L1033,379 L1017,376 L1001,374 L986,368 L973,359 L964,347 L955,336 L951,323 L942,315 L937,304 L923,296 L905,289 L889,278 L870,266 L858,250 L853,233 L853,216 L866,201 L884,190 L904,181 L923,174 L942,170 L961,169 L971,161 L982,153 L994,147 L1005,137 L1019,131 L1034,124 L1050,121 L1067,120 L1083,125 L1101,123 L1116,128 L1134,131 L1153,133 L1171,140 L1188,148 L1203,159 L1208,175 L1213,190 L1208,208 L1203,223 L1191,238 Z"/><path class="" d="M1195,250 L1188,262 L1190,274 L1197,289 L1203,306 L1207,324 L1209,345 L1206,365 L1198,385 L1183,400 L1158,403 L1135,407 L1109,398 L1087,392 L1067,385 L1050,381 L1034,375 L1018,374 L1001,374 L985,370 L966,370 L952,361 L936,354 L925,342 L914,331 L901,321 L889,309 L875,297 L860,283 L846,268 L840,250 L837,232 L839,213 L853,197 L873,185 L895,176 L920,172 L940,168 L959,167 L969,159 L979,149 L987,135 L999,122 L1013,107 L1030,91 L1050,88 L1072,81 L1093,85 L1111,96 L1129,105 L1147,113 L1160,126 L1174,137 L1192,145 L1202,160 L1213,173 L1213,190 L1214,206 L1211,222 L1199,237 Z"/><path class="" d="M1236,250 L1237,266 L1237,283 L1232,298 L1238,319 L1242,341 L1239,363 L1233,385 L1217,402 L1195,414 L1169,419 L1141,417 L1114,412 L1089,401 L1068,390 L1050,379 L1034,376 L1017,378 L996,386 L973,392 L949,394 L928,388 L906,381 L882,374 L870,357 L856,342 L851,323 L842,305 L835,287 L830,269 L825,250 L831,231 L832,212 L843,195 L867,183 L887,173 L907,165 L929,161 L946,156 L958,147 L966,131 L977,116 L987,90 L1004,71 L1025,55 L1050,44 L1076,44 L1101,52 L1124,64 L1141,82 L1157,98 L1168,117 L1176,136 L1191,146 L1202,160 L1214,172 L1225,186 L1230,202 L1238,217 L1239,234 Z"/><path class="major" d="M1299,250 L1298,271 L1291,292 L1288,313 L1276,332 L1271,355 L1262,376 L1246,394 L1230,414 L1207,428 L1179,433 L1147,429 L1120,427 L1093,415 L1070,402 L1050,398 L1031,397 L1011,401 L987,409 L956,423 L925,428 L892,429 L861,422 L835,409 L826,384 L813,362 L810,338 L817,312 L819,290 L826,269 L827,250 L827,231 L833,212 L839,194 L844,175 L862,161 L880,149 L895,135 L914,126 L926,110 L941,96 L955,75 L974,58 L994,34 L1020,16 L1050,13 L1081,7 L1108,25 L1133,42 L1149,68 L1162,91 L1171,113 L1176,135 L1193,145 L1204,158 L1223,168 L1245,179 L1263,193 L1279,210 L1293,229 Z"/><path class="" d="M278,720 L281,723 L281,725 L281,728 L280,731 L277,733 L274,734 L271,735 L267,735 L264,735 L261,736 L258,736 L257,737 L255,739 L252,739 L250,741 L247,742 L244,742 L241,742 L239,741 L236,740 L233,739 L231,738 L228,736 L226,735 L223,733 L222,730 L222,727 L222,725 L223,722 L225,720 L228,718 L229,716 L231,715 L231,713 L231,711 L231,709 L231,706 L231,703 L232,700 L234,697 L237,696 L240,695 L244,695 L247,696 L250,697 L253,699 L255,699 L258,700 L260,701 L263,702 L265,703 L267,705 L268,707 L269,709 L270,710 L271,712 L272,714 L274,716 L277,718 Z"/><path class="" d="M313,720 L313,725 L314,731 L313,737 L310,742 L305,746 L297,748 L290,750 L282,749 L276,749 L272,751 L268,752 L264,755 L260,759 L256,764 L250,768 L243,771 L236,773 L229,773 L223,769 L218,765 L213,762 L210,757 L206,752 L204,747 L201,743 L198,739 L196,735 L196,729 L196,725 L197,720 L201,716 L203,712 L205,708 L205,704 L206,699 L206,694 L206,688 L206,680 L210,675 L215,670 L221,667 L229,666 L236,668 L244,671 L250,674 L255,679 L260,682 L265,683 L269,685 L274,685 L281,685 L286,687 L291,690 L295,693 L299,697 L303,701 L304,706 L306,710 L310,715 Z"/><path class="major" d="M334,720 L334,727 L332,734 L328,741 L325,748 L318,752 L311,756 L303,759 L296,762 L288,763 L281,764 L276,767 L271,772 L265,778 L258,785 L250,792 L240,796 L230,798 L219,797 L211,792 L204,785 L200,776 L198,767 L195,761 L193,754 L192,748 L189,742 L184,738 L180,732 L177,726 L174,720 L175,714 L176,707 L180,701 L180,695 L182,688 L185,681 L187,674 L189,665 L194,657 L203,653 L212,649 L222,650 L232,652 L242,657 L250,663 L257,669 L263,671 L268,673 L276,673 L283,673 L293,672 L304,671 L313,673 L321,678 L328,683 L332,690 L334,698 L335,705 L333,713 Z"/><path class="" d="M355,720 L351,729 L347,737 L344,745 L342,754 L338,762 L332,769 L324,775 L317,781 L308,786 L299,789 L290,794 L281,799 L273,808 L262,817 L250,821 L237,825 L223,825 L209,823 L199,814 L190,806 L187,791 L185,779 L184,768 L181,761 L177,755 L173,748 L165,743 L154,737 L145,729 L136,720 L137,710 L136,700 L139,690 L144,681 L151,673 L156,664 L164,656 L172,649 L181,643 L191,637 L203,634 L215,631 L228,635 L240,639 L250,643 L259,650 L267,654 L276,653 L287,652 L298,652 L313,649 L330,647 L344,651 L355,657 L363,666 L371,676 L370,688 L364,700 L360,711 Z"/><path class="" d="M361,720 L358,729 L352,738 L349,746 L349,756 L352,768 L350,780 L348,792 L341,802 L330,811 L317,816 L305,821 L292,826 L279,830 L265,837 L250,839 L234,841 L219,841 L205,833 L193,826 L185,813 L177,802 L177,786 L172,778 L169,768 L163,761 L157,754 L143,749 L126,742 L115,732 L102,720 L96,707 L94,693 L102,681 L111,669 L127,662 L139,654 L154,649 L164,642 L178,639 L187,631 L200,628 L212,624 L225,622 L238,624 L250,624 L262,629 L273,631 L285,633 L298,631 L314,629 L332,628 L349,630 L367,633 L379,643 L389,654 L392,668 L392,682 L383,697 L373,709 Z"/><path class="major" d="M369,720 L364,730 L359,739 L363,750 L367,763 L370,777 L377,796 L375,812 L365,825 L354,837 L337,843 L319,847 L301,849 L283,847 L266,845 L250,844 L234,844 L219,839 L204,835 L190,831 L179,820 L168,812 L163,800 L156,790 L151,779 L140,772 L131,763 L116,756 L100,746 L81,735 L69,720 L66,704 L67,688 L75,673 L92,662 L114,656 L133,651 L152,647 L167,644 L177,638 L189,633 L196,621 L208,615 L221,607 L235,600 L250,597 L266,597 L281,600 L296,603 L312,605 L327,610 L346,612 L365,616 L382,622 L395,634 L402,648 L404,664 L397,681 L390,696 L379,709 Z"/><path class="" d="M396,720 L394,732 L394,745 L400,760 L407,777 L412,797 L413,817 L413,841 L404,860 L385,872 L361,878 L336,879 L311,873 L289,869 L268,863 L250,854 L233,851 L216,850 L200,845 L181,848 L164,842 L149,834 L135,824 L122,815 L108,804 L96,793 L85,780 L67,769 L56,754 L41,738 L35,720 L26,701 L37,683 L46,666 L69,654 L93,645 L117,641 L140,639 L154,632 L166,625 L177,616 L187,603 L199,590 L211,571 L230,561 L250,550 L272,551 L293,553 L314,558 L331,572 L348,580 L362,593 L377,604 L392,615 L409,625 L418,640 L421,658 L418,675 L415,691 L409,706 Z"/><path class="" d="M726,470 L728,472 L729,475 L729,478 L728,480 L725,482 L722,483 L719,484 L715,484 L712,484 L710,484 L708,485 L706,485 L704,487 L702,488 L700,489 L697,490 L695,491 L692,490 L690,489 L687,488 L685,487 L682,486 L680,485 L678,483 L676,481 L674,479 L673,477 L674,475 L675,472 L677,470 L679,468 L681,467 L682,465 L683,464 L683,462 L682,459 L682,457 L683,454 L683,451 L685,449 L688,448 L691,447 L694,447 L697,448 L700,449 L703,450 L705,451 L707,452 L710,452 L712,453 L713,455 L715,456 L717,458 L717,460 L718,461 L719,463 L720,465 L722,466 L725,468 Z"/><path class="" d="M763,470 L766,476 L765,481 L765,487 L761,492 L756,497 L749,499 L742,501 L733,500 L727,501 L721,500 L718,503 L714,506 L710,509 L706,514 L700,519 L693,522 L686,523 L679,524 L672,521 L667,516 L663,512 L659,507 L657,502 L654,498 L649,494 L648,489 L646,484 L644,480 L645,475 L648,470 L651,466 L653,462 L654,458 L655,454 L656,449 L655,443 L655,437 L656,430 L660,424 L664,418 L670,415 L679,416 L686,417 L694,421 L700,424 L705,429 L710,432 L715,433 L719,434 L725,434 L731,435 L737,437 L741,440 L746,442 L751,446 L753,451 L754,456 L757,460 L760,465 Z"/><path class="major" d="M784,470 L783,477 L782,484 L781,492 L777,498 L770,503 L763,508 L755,511 L746,512 L738,513 L732,515 L727,520 L721,524 L715,529 L709,537 L700,542 L690,549 L679,550 L669,548 L660,543 L654,535 L649,528 L647,518 L645,511 L642,505 L641,498 L637,493 L631,488 L629,482 L626,476 L624,470 L625,464 L624,457 L626,450 L630,445 L631,437 L632,429 L635,422 L637,413 L644,406 L652,402 L661,398 L671,398 L682,401 L692,405 L700,411 L707,417 L713,421 L719,422 L726,422 L734,421 L745,420 L753,421 L765,422 L772,427 L780,432 L783,440 L785,447 L787,455 L786,463 Z"/><path class="" d="M802,470 L799,479 L794,486 L793,495 L790,503 L784,510 L781,518 L775,525 L766,530 L758,536 L748,538 L740,543 L731,548 L723,557 L712,564 L700,571 L687,575 L672,577 L660,571 L648,566 L641,554 L636,542 L634,531 L634,519 L633,510 L629,504 L624,498 L614,493 L604,487 L595,479 L590,470 L585,460 L587,450 L587,440 L595,432 L601,423 L608,415 L614,406 L621,398 L630,391 L642,388 L653,383 L665,383 L678,386 L689,388 L700,397 L709,400 L717,403 L726,403 L735,405 L748,401 L763,398 L777,400 L792,402 L807,406 L813,416 L818,427 L817,439 L814,450 L807,461 Z"/><path class="" d="M810,470 L802,479 L798,487 L794,495 L795,505 L797,516 L795,527 L792,538 L787,549 L776,556 L765,562 L754,569 L741,572 L727,574 L714,580 L700,584 L685,583 L671,583 L656,580 L644,572 L636,560 L630,549 L629,535 L627,524 L622,516 L619,509 L608,504 L598,497 L583,490 L571,481 L558,470 L555,457 L555,445 L560,433 L569,422 L583,414 L595,408 L606,400 L619,396 L629,390 L641,387 L652,382 L664,380 L676,376 L688,378 L700,380 L711,384 L722,385 L733,386 L746,385 L762,382 L778,382 L794,384 L811,388 L824,396 L835,406 L836,421 L834,434 L827,448 L818,460 Z"/>
+      </svg>
+    </div>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="wrap hero-inner">
+      <p class="kicker">Entropy provenance &middot; 13 stages</p>
+      <h1>Planetary<br>Entropy<br><em>Mining</em></h1>
+      <p class="lede">
+        A certificate is grounded in a window of environmental noise that nobody could have precomputed, and a
+        proof that the measurement was taken when it says it was. <b>The proof does not reveal where the sensor
+        sits</b>, so a verifier can check the origin of a certificate without learning the location of the node
+        that produced it.
+      </p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#pipeline">How the chain works</a>
+        <a class="btn" href="https://github.com/KELLERBABG/Planetary-Entropy-Mining" target="_blank" rel="noopener noreferrer">Source</a>
+      </div>
+
+      <div class="scope-panel" data-reveal>
+        <div class="scope-head">
+          <span>Captured window &middot; 2<sup>16</sup> samples &middot; 8-bit ADC</span>
+          <span>thermal / RF / seismic &middot; <b>seeded simulator</b></span>
+        </div>
+        <div class="scope">
+          <svg viewBox="0 0 1200 300" role="img" aria-label="A captured window of environmental noise, with the min-entropy gate drawn above the trace.">
+            <g class="grat"><line x1="100" y1="0" x2="100" y2="300"/><line x1="200" y1="0" x2="200" y2="300"/><line x1="300" y1="0" x2="300" y2="300"/><line x1="400" y1="0" x2="400" y2="300"/><line x1="500" y1="0" x2="500" y2="300"/><line x1="600" y1="0" x2="600" y2="300"/><line x1="700" y1="0" x2="700" y2="300"/><line x1="800" y1="0" x2="800" y2="300"/><line x1="900" y1="0" x2="900" y2="300"/><line x1="1000" y1="0" x2="1000" y2="300"/><line x1="1100" y1="0" x2="1100" y2="300"/></g>
+            <line class="gate" x1="0" y1="85.8" x2="1200" y2="85.8"/>
+            <text class="glabel" x="12" y="78">min-entropy gate</text>
+            <polyline class="trace" points="0.0,153.7 1.9,150.0 3.9,151.4 5.8,149.7 7.8,151.7 9.7,158.6 11.6,154.3 13.6,149.4 15.5,150.3 17.4,144.3 19.4,147.6 21.3,137.9 23.3,153.4 25.2,151.4 27.1,151.1 29.1,150.8 31.0,153.2 33.0,148.9 34.9,157.4 36.8,154.6 38.8,166.5 40.7,158.8 42.6,162.6 44.6,154.3 46.5,146.7 48.5,144.9 50.4,156.2 52.3,149.4 54.3,144.9 56.2,146.5 58.2,142.0 60.1,141.3 62.0,143.3 64.0,142.1 65.9,143.0 67.9,140.2 69.8,145.1 71.7,140.8 73.7,140.8 75.6,132.9 77.5,131.8 79.5,133.4 81.4,145.0 83.4,152.6 85.3,140.5 87.2,137.9 89.2,136.3 91.1,141.6 93.1,141.6 95.0,143.2 96.9,143.7 98.9,137.6 100.8,138.2 102.7,139.4 104.7,141.8 106.6,150.0 108.6,145.1 110.5,152.9 112.4,156.6 114.4,150.8 116.3,154.5 118.3,151.9 120.2,145.9 122.1,143.9 124.1,141.9 126.0,149.8 127.9,149.0 129.9,152.1 131.8,151.6 133.8,149.0 135.7,140.2 137.6,143.5 139.6,144.8 141.5,145.9 143.5,139.1 145.4,133.6 147.3,137.7 149.3,142.8 151.2,129.5 153.2,133.6 155.1,137.9 157.0,135.8 159.0,145.8 160.9,145.1 162.8,146.3 164.8,149.6 166.7,150.1 168.7,149.8 170.6,145.7 172.5,142.9 174.5,144.6 176.4,145.8 178.4,151.5 180.3,152.4 182.2,154.4 184.2,146.8 186.1,146.3 188.0,151.0 190.0,143.6 191.9,145.1 193.9,155.5 195.8,151.8 197.7,151.5 199.7,154.1 201.6,142.8 203.6,153.9 205.5,149.3 207.4,149.0 209.4,149.0 211.3,143.2 213.2,146.4 215.2,143.0 217.1,159.2 219.1,152.6 221.0,152.9 222.9,157.4 224.9,153.0 226.8,157.4 228.8,152.8 230.7,154.6 232.6,151.1 234.6,152.6 236.5,157.2 238.4,158.3 240.4,157.2 242.3,144.1 244.3,141.6 246.2,143.7 248.1,144.5 250.1,153.0 252.0,157.4 254.0,146.8 255.9,146.5 257.8,158.8 259.8,152.5 261.7,150.9 263.7,142.9 265.6,154.4 267.5,156.3 269.5,156.8 271.4,161.7 273.3,168.0 275.3,173.3 277.2,165.7 279.2,169.7 281.1,163.8 283.0,157.1 285.0,159.8 286.9,161.0 288.9,164.5 290.8,159.4 292.7,152.2 294.7,156.6 296.6,161.9 298.5,163.4 300.5,159.7 302.4,160.7 304.4,160.1 306.3,172.5 308.2,178.1 310.2,175.8 312.1,173.6 314.1,173.3 316.0,171.1 317.9,169.1 319.9,163.6 321.8,169.3 323.7,154.8 325.7,155.6 327.6,155.2 329.6,143.0 331.5,155.2 333.4,153.8 335.4,146.3 337.3,159.3 339.3,162.5 341.2,172.1 343.1,170.8 345.1,162.3 347.0,167.2 348.9,166.8 350.9,174.0 352.8,170.7 354.8,173.4 356.7,170.8 358.6,172.0 360.6,173.2 362.5,187.4 364.5,180.8 366.4,179.4 368.3,178.2 370.3,187.7 372.2,175.6 374.2,179.3 376.1,177.9 378.0,183.4 380.0,183.4 381.9,184.7 383.8,172.8 385.8,176.5 387.7,175.8 389.7,173.8 391.6,167.0 393.5,173.4 395.5,171.8 397.4,171.5 399.4,177.7 401.3,175.3 403.2,180.3 405.2,170.2 407.1,175.8 409.0,169.9 411.0,173.6 412.9,178.3 414.9,181.5 416.8,177.1 418.7,175.5 420.7,177.5 422.6,172.8 424.6,177.3 426.5,178.0 428.4,174.5 430.4,170.5 432.3,180.3 434.2,182.6 436.2,177.9 438.1,183.7 440.1,180.2 442.0,176.1 443.9,177.8 445.9,180.1 447.8,175.1 449.8,173.1 451.7,173.5 453.6,173.8 455.6,184.3 457.5,177.0 459.5,177.4 461.4,186.5 463.3,175.8 465.3,183.0 467.2,177.5 469.1,177.3 471.1,164.8 473.0,159.2 475.0,162.9 476.9,163.4 478.8,169.3 480.8,169.2 482.7,162.2 484.7,165.5 486.6,167.5 488.5,171.4 490.5,172.7 492.4,167.4 494.3,161.1 496.3,168.0 498.2,166.4 500.2,160.8 502.1,156.3 504.0,156.2 506.0,165.1 507.9,161.5 509.9,158.1 511.8,163.2 513.7,156.5 515.7,163.1 517.6,162.9 519.5,158.7 521.5,161.8 523.4,155.3 525.4,160.5 527.3,158.0 529.2,156.6 531.2,154.9 533.1,155.0 535.1,164.7 537.0,166.3 538.9,161.0 540.9,158.8 542.8,164.3 544.7,168.4 546.7,167.1 548.6,159.2 550.6,153.5 552.5,159.8 554.4,160.5 556.4,167.0 558.3,167.1 560.3,163.2 562.2,169.2 564.1,161.5 566.1,165.3 568.0,167.3 570.0,165.2 571.9,176.6 573.8,167.9 575.8,167.8 577.7,157.6 579.6,159.4 581.6,146.6 583.5,149.4 585.5,154.3 587.4,151.1 589.3,158.4 591.3,151.6 593.2,153.5 595.2,150.3 597.1,155.2 599.0,161.7 601.0,163.9 602.9,163.1 604.8,160.7 606.8,163.0 608.7,165.8 610.7,157.6 612.6,155.5 614.5,160.4 616.5,169.1 618.4,157.3 620.4,146.2 622.3,140.8 624.2,150.7 626.2,146.5 628.1,143.4 630.0,129.7 632.0,138.0 633.9,134.2 635.9,136.7 637.8,136.8 639.7,148.2 641.7,135.9 643.6,139.8 645.6,132.3 647.5,136.7 649.4,142.6 651.4,136.2 653.3,138.9 655.3,143.3 657.2,135.6 659.1,138.6 661.1,136.6 663.0,145.4 664.9,145.8 666.9,139.8 668.8,142.6 670.8,146.4 672.7,146.7 674.6,149.6 676.6,147.5 678.5,157.2 680.5,147.4 682.4,143.9 684.3,139.9 686.3,145.8 688.2,154.5 690.1,142.3 692.1,144.6 694.0,147.1 696.0,146.5 697.9,149.2 699.8,148.6 701.8,137.0 703.7,139.9 705.7,130.5 707.6,132.0 709.5,129.1 711.5,123.1 713.4,127.1 715.3,136.9 717.3,142.0 719.2,154.0 721.2,147.7 723.1,146.6 725.0,146.4 727.0,159.3 728.9,148.6 730.9,151.3 732.8,150.6 734.7,158.6 736.7,147.5 738.6,153.9 740.5,138.4 742.5,137.6 744.4,132.2 746.4,141.7 748.3,141.7 750.2,147.3 752.2,149.9 754.1,149.0 756.1,148.8 758.0,150.8 759.9,145.5 761.9,138.0 763.8,127.9 765.8,148.9 767.7,147.3 769.6,144.8 771.6,140.8 773.5,136.8 775.4,138.8 777.4,141.1 779.3,147.1 781.3,162.4 783.2,156.6 785.1,158.1 787.1,155.0 789.0,163.8 791.0,152.1 792.9,151.8 794.8,160.1 796.8,158.6 798.7,150.6 800.6,149.3 802.6,157.5 804.5,146.5 806.5,149.4 808.4,148.2 810.3,141.8 812.3,151.8 814.2,146.1 816.2,134.7 818.1,129.6 820.0,142.4 822.0,138.3 823.9,139.7 825.8,144.2 827.8,142.2 829.7,146.6 831.7,140.9 833.6,149.5 835.5,144.1 837.5,140.8 839.4,148.6 841.4,138.6 843.3,149.2 845.2,143.9 847.2,154.3 849.1,149.4 851.1,144.6 853.0,143.1 854.9,157.0 856.9,152.7 858.8,152.2 860.7,148.3 862.7,148.0 864.6,139.8 866.6,147.4 868.5,147.7 870.4,153.2 872.4,156.9 874.3,155.1 876.3,153.3 878.2,140.5 880.1,149.4 882.1,149.3 884.0,153.8 885.9,156.9 887.9,150.4 889.8,146.8 891.8,151.9 893.7,154.3 895.6,148.6 897.6,151.1 899.5,164.1 901.5,159.6 903.4,157.5 905.3,150.2 907.3,160.2 909.2,152.2 911.1,158.7 913.1,159.2 915.0,158.2 917.0,158.8 918.9,156.9 920.8,150.0 922.8,156.6 924.7,172.0 926.7,150.1 928.6,155.7 930.5,154.7 932.5,162.6 934.4,161.2 936.3,167.5 938.3,164.0 940.2,160.7 942.2,165.9 944.1,164.7 946.0,163.5 948.0,160.2 949.9,164.4 951.9,163.7 953.8,162.4 955.7,160.2 957.7,152.6 959.6,155.3 961.6,154.7 963.5,160.7 965.4,161.0 967.4,158.3 969.3,160.5 971.2,165.3 973.2,158.5 975.1,166.4 977.1,164.7 979.0,158.1 980.9,157.6 982.9,166.2 984.8,157.4 986.8,165.5 988.7,171.2 990.6,164.4 992.6,172.5 994.5,182.0 996.4,174.7 998.4,173.3 1000.3,174.8 1002.3,171.3 1004.2,166.5 1006.1,168.9 1008.1,172.5 1010.0,180.0 1012.0,185.6 1013.9,190.1 1015.8,187.8 1017.8,185.5 1019.7,189.2 1021.6,199.8 1023.6,188.4 1025.5,191.7 1027.5,183.1 1029.4,184.4 1031.3,180.3 1033.3,175.7 1035.2,169.1 1037.2,171.7 1039.1,169.5 1041.0,162.7 1043.0,169.6 1044.9,172.5 1046.8,181.0 1048.8,175.1 1050.7,181.1 1052.7,182.8 1054.6,178.9 1056.5,177.0 1058.5,182.3 1060.4,185.8 1062.4,189.0 1064.3,189.4 1066.2,185.5 1068.2,180.3 1070.1,188.0 1072.1,194.4 1074.0,185.6 1075.9,180.1 1077.9,183.3 1079.8,177.7 1081.7,168.6 1083.7,171.4 1085.6,166.1 1087.6,176.1 1089.5,168.9 1091.4,176.0 1093.4,163.0 1095.3,168.5 1097.3,165.5 1099.2,167.0 1101.1,167.1 1103.1,176.1 1105.0,166.2 1106.9,161.5 1108.9,151.4 1110.8,152.4 1112.8,153.5 1114.7,155.0 1116.6,154.6 1118.6,155.8 1120.5,149.3 1122.5,159.5 1124.4,152.6 1126.3,158.5 1128.3,159.2 1130.2,155.2 1132.1,152.5 1134.1,152.3 1136.0,148.3 1138.0,146.2 1139.9,135.4 1141.8,138.9 1143.8,138.5 1145.7,152.3 1147.7,145.8 1149.6,148.5 1151.5,156.0 1153.5,157.9 1155.4,162.7 1157.4,160.1 1159.3,164.5 1161.2,163.0 1163.2,163.1 1165.1,170.2 1167.0,162.3 1169.0,161.0 1170.9,162.4 1172.9,165.6 1174.8,169.1 1176.7,164.3 1178.7,156.7 1180.6,163.9 1182.6,160.1 1184.5,160.4 1186.4,163.1 1188.4,156.7 1190.3,158.9 1192.2,149.4 1194.2,153.6 1196.1,147.1 1198.1,148.0 1200.0,147.4"/>
+            <text class="axlabel" x="12" y="288">sample 0</text>
+            <text class="axlabel" x="1140" y="288" text-anchor="end">sample 65535</text>
+          </svg>
+        </div>
+        <div class="scope-note">
+          <span>The trace is a seeded simulator, not a recording.</span>
+          <span>Gate: max bin count &times; 2&#8202;<sup>T</sup> &le; samples</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="idea">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>The idea</h2>
+        <span class="mono">01 &middot; Provenance</span>
+      </div>
+      <div class="two">
+        <div class="block" data-reveal>
+          <h3>The problem</h3>
+          <p>
+            Emission and offset certificates are issued by registries, so their audit trail is paperwork held by
+            the issuer. A buyer has to trust the registry instead of checking the measurement.
+          </p>
+          <p>
+            Physical measurement offers a way out. A window of environmental noise is unique, cannot be
+            precomputed and cannot be produced on demand by a party that was not there.
+          </p>
+        </div>
+        <div class="block" data-reveal>
+          <h3>How it works</h3>
+          <p>
+            A node captures that window, reduces it to a histogram and estimates its min-entropy with the NIST
+            SP&#8202;800-90B estimators. A zero-knowledge circuit proves the histogram clears a min-entropy
+            threshold and that the node holds the matching GF(256) hardening polynomial and nullifier.
+          </p>
+          <p>
+            The certificate then travels as erasure-coded shards across an intermittent mesh, matches in a blind
+            dark pool, and settles once per nullifier so the same measurement cannot be claimed twice.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band" id="pipeline">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>The pipeline</h2>
+        <span class="mono">02 &middot; Eleven modules, thirteen stages</span>
+      </div>
+      <div class="console" id="console">
+      <div class="crail"><span class="cfill" id="cfill"></span></div>
+      <ol class="acts">
+      <li class="act" data-title="Capture &amp; measure" data-sub="a window of noise becomes a number" data-body="Thermal, RF and seismic noise is captured as a window, reduced to a 256-bin histogram, and estimated with the NIST SP 800-90B estimators. The estimator ordering is checked against closed-form truth rather than assumed.">
+        <span class="anum">01</span>
+        <h3>Capture &amp; measure</h3>
+        <div class="glyph"><svg viewBox="0 0 200 110" aria-hidden="true">
+      <path class="wave" d="M8.0 26.8 L10.4 28.4 L12.8 31.3 L15.2 29.7 L17.6 26.3 L19.9 26.8 L22.3 28.6 L24.7 31.7 L27.1 28.2 L29.5 25.2 L31.9 27.9 L34.3 29.5 L36.7 33.6 L39.1 35.5 L41.5 34.3 L43.8 32.8 L46.2 39.0 L48.6 36.6 L51.0 33.4 L53.4 29.8 L55.8 30.1 L58.2 30.4 L60.6 29.5 L63.0 29.4 L65.4 30.2 L67.7 32.0 L70.1 34.5 L72.5 34.3 L74.9 28.8 L77.3 30.9 L79.7 27.0 L82.1 27.1 L84.5 23.7 L86.9 24.9 L89.2 23.7 L91.6 25.4 L94.0 34.9 L96.4 33.9 L98.8 35.4 L101.2 31.0 L103.6 30.0 L106.0 31.8 L108.4 31.2 L110.8 32.0 L113.1 31.9 L115.5 28.9 L117.9 30.6 L120.3 28.3 L122.7 33.6 L125.1 31.6 L127.5 33.1 L129.9 32.5 L132.3 34.6 L134.6 32.2 L137.0 34.4 L139.4 33.3 L141.8 36.0 L144.2 36.6 L146.6 35.8 L149.0 32.7 L151.4 34.2 L153.8 34.7 L156.2 38.1 L158.5 35.7 L160.9 36.1 L163.3 36.4 L165.7 36.0 L168.1 35.4 L170.5 34.9 L172.9 32.5 L175.3 29.4 L177.7 28.4 L180.1 30.3 L182.4 34.2 L184.8 36.0 L187.2 37.7 L189.6 38.3 L192.0 38.7"/>
+      <line class="sep" x1="8" y1="56" x2="192" y2="56"/>
+      <g class="bars"><rect x="16" y="88" width="15" height="16"/><rect x="38" y="80" width="15" height="24"/><rect x="60" y="93" width="15" height="11"/><rect x="82" y="74" width="15" height="30"/><rect x="104" y="85" width="15" height="19"/><rect x="126" y="77" width="15" height="27"/><rect x="148" y="91" width="15" height="13"/><rect x="170" y="70" width="15" height="34"/></g>
+      <line class="gate" x1="8" y1="62" x2="192" y2="62"/>
+      </svg></div>
+        <ul class="mods"><li><code>dsp/capture.py</code><span>seeded noise, known truth</span></li><li><code>dsp/nist800_90b.py</code><span>min-entropy estimate</span></li><li><code>dsp/validation.py</code><span>ordering verified</span></li></ul>
+      </li>
+      <li class="act" data-title="Harden &amp; prove" data-sub="the number becomes a proof" data-body="The window is folded into a polynomial over GF(256), and a zero-knowledge circuit proves the min-entropy gate: the most common histogram bin is bounded, and the public nullifier is bound to the commitment.">
+        <span class="anum">02</span>
+        <h3>Harden &amp; prove</h3>
+        <div class="glyph"><svg viewBox="0 0 200 110" aria-hidden="true">
+      <g class="grid">
+        <line x1="8" y1="32" x2="192" y2="32"/><line x1="8" y1="60" x2="192" y2="60"/><line x1="8" y1="88" x2="192" y2="88"/>
+        <line x1="54" y1="12" x2="54" y2="102"/><line x1="100" y1="12" x2="100" y2="102"/>
+        <line x1="146" y1="12" x2="146" y2="102"/>
+      </g>
+      <path class="curve" d="M10 94 C 46 94, 62 24, 100 24 S 152 56, 190 56"/>
+      <g class="pts">
+        <circle cx="34" cy="60" r="3.4"/><circle cx="72" cy="31" r="3.4"/>
+        <circle cx="124" cy="37" r="3.4"/><circle cx="168" cy="52" r="3.4"/>
+      </g>
+      <line class="gate" x1="8" y1="18" x2="192" y2="18"/>
+      </svg></div>
+        <ul class="mods"><li><code>hardening/polynomial.py</code><span>GF(256) commitment</span></li><li><code>circuits/entropy_audit_poly.circom</code><span>the gate, compiled</span></li></ul>
+      </li>
+      <li class="act" data-title="Certify &amp; bind" data-sub="the proof becomes a document" data-body="A deterministic nullifier is derived per node and per window so one measurement can be claimed once, and the certificate is versioned, MAC-signed and byte-deterministic: two runs serialise identically.">
+        <span class="anum">03</span>
+        <h3>Certify &amp; bind</h3>
+        <div class="glyph"><svg viewBox="0 0 200 110" aria-hidden="true">
+      <rect class="doc" x="22" y="14" width="128" height="70" rx="2"/>
+      <g class="lines">
+        <line x1="34" y1="30" x2="138" y2="30"/><line x1="34" y1="44" x2="138" y2="44"/>
+        <line x1="34" y1="58" x2="104" y2="58"/>
+      </g>
+      <circle class="seal" cx="150" cy="82" r="13"/>
+      <circle class="seal" cx="150" cy="82" r="6"/>
+      <g class="hashline">
+        <line x1="22" y1="100" x2="34" y2="100"/><line x1="40" y1="100" x2="52" y2="100"/>
+        <line x1="58" y1="100" x2="70" y2="100"/><line x1="76" y1="100" x2="88" y2="100"/>
+        <line x1="94" y1="100" x2="106" y2="100"/><line x1="112" y1="100" x2="124" y2="100"/>
+        <line x1="130" y1="100" x2="142" y2="100"/><line x1="148" y1="100" x2="160" y2="100"/>
+      </g>
+      </svg></div>
+        <ul class="mods"><li><code>identity/nullifier.py</code><span>once per window</span></li><li><code>identity/certificate.py</code><span>signed, versioned</span></li></ul>
+      </li>
+      <li class="act" data-title="Frame &amp; shard" data-sub="the document becomes pieces that travel" data-body="Onion layers over X25519 and AES-GCM mean a relay learns neither origin nor destination, and Reed-Solomon k-of-n erasure coding over the same field means any sufficient subset rebuilds the whole.">
+        <span class="anum">04</span>
+        <h3>Frame &amp; shard</h3>
+        <div class="glyph"><svg viewBox="0 0 200 110" aria-hidden="true">
+      <g class="onion">
+        <circle cx="58" cy="56" r="40" opacity=".22"/><circle cx="58" cy="56" r="30" opacity=".38"/>
+        <circle cx="58" cy="56" r="20" opacity=".62"/><circle cx="58" cy="56" r="10"/>
+      </g>
+      <circle class="pt" cx="58" cy="56" r="4.5"/>
+      <line class="sep" x1="104" y1="14" x2="104" y2="100"/>
+      <g class="shards">
+        <rect x="116" y="30" width="13" height="52" class="lit"/>
+        <rect x="133" y="38" width="13" height="36"/>
+        <rect x="150" y="44" width="13" height="24" class="lit"/>
+        <rect x="167" y="50" width="13" height="12"/>
+      </g>
+      </svg></div>
+        <ul class="mods"><li><code>net/sphinx.py</code><span>onion layers</span></li><li><code>erasure/reedsolomon.py</code><span>k-of-n shards</span></li></ul>
+      </li>
+      <li class="act" data-title="Carry &amp; settle" data-sub="the pieces arrive, and settle once" data-body="Shards cross a delay-tolerant mesh with intermittent links, duplicate suppression and TTL expiry, cross blindly in the dark pool, and settle atomically once per nullifier against the contract.">
+        <span class="anum">05</span>
+        <h3>Carry &amp; settle</h3>
+        <div class="glyph"><svg viewBox="0 0 200 110" aria-hidden="true">
+      <g class="mesh">
+        <line x1="18" y1="30" x2="56" y2="18"/><line x1="56" y1="18" x2="94" y2="36"/>
+        <line x1="18" y1="30" x2="30" y2="72"/><line x1="30" y1="72" x2="72" y2="84"/>
+        <line x1="72" y1="84" x2="104" y2="64"/><line x1="94" y1="36" x2="104" y2="64"/>
+        <line x1="56" y1="18" x2="30" y2="72"/>
+      </g>
+      <g class="nodes">
+        <circle cx="18" cy="30" r="5.4"/><circle cx="56" cy="18" r="5.4"/><circle cx="94" cy="36" r="5.4"/>
+        <circle cx="30" cy="72" r="5.4"/><circle cx="72" cy="84" r="5.4"/><circle cx="104" cy="64" r="5.4"/>
+      </g>
+      <g class="hops"><circle cx="37" cy="24" r="2.6"/><circle cx="82" cy="74" r="2.6"/></g>
+      <rect class="ledger" x="130" y="32" width="58" height="46" rx="2"/>
+      <path class="check" d="M140 55 l9 9 l20 -22"/>
+      </svg></div>
+        <ul class="mods"><li><code>net/dtn.py</code><span>intermittent mesh</span></li><li><code>net/darkpool.py</code><span>blind crossing</span></li><li><code>contracts/EntropySettlement.sol</code><span>pay once per nullifier</span></li></ul>
+      </li>
+      </ol>
+      <div class="cread">
+        <b id="actTitle">Capture &amp; measure</b>
+        <span id="actSub">a window of noise becomes a number</span>
+        <p id="actBody">Thermal, RF and seismic noise is captured as a window, reduced to a 256-bin histogram, and estimated with the NIST SP 800-90B estimators. The estimator ordering is checked against closed-form truth rather than assumed.</p>
+      </div>
+      <p class="flowcap">The run walks the five acts once every twenty seconds. Point at an act to hold it. Motion follows your system, and the switch above overrides it.</p>
+    </div>
+    </div>
+  </section>
+
+  <section class="section band" id="limits">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Limits</h2>
+        <span class="mono">04 &middot; What is simulated</span>
+      </div>
+      <div class="limits" data-reveal>
+        <ul>
+          <li><b>The physical sources are seeded simulators.</b> Real piezo and SDR capture sits outside this repository, and the estimators are validated against modelled truth rather than against hardware.</li>
+          <li><b>The settlement ledger runs in memory.</b> The Solidity contract is the specification; the chain is not exercised.</li>
+          <li><b>The Solidity verifier checks the public layout.</b> Pairing maths is not verified, and swapping in the snarkjs-exported verifier is a documented one-file change.</li>
+          <li><b>Foundry was not runnable on the build machine</b>, so the Python twin of the settlement suite is the one that is green.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="run">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Run it</h2>
+        <span class="mono">05 &middot; On a laptop</span>
+      </div>
+      <div class="two">
+        <div data-reveal>
+          <p>Python 3.11 or newer. The zero-knowledge stage needs Node for circom and snarkjs.</p>
+<pre>git clone https://github.com/KELLERBABG/Planetary-Entropy-Mining
+cd Planetary-Entropy-Mining
+py -m pip install -e ".[dev]"
+
+py -m pytest -q                 <span class="c"># fast suite</span>
+py -m pytest -m ""              <span class="c"># adds the slow 1M-bit NIST tier</span>
+py -m cli.validate              <span class="c"># entropy report into docs/</span>
+py -m cli.demo --quick          <span class="c"># end-to-end chain, Python only</span>
+
+node circuits/scripts/entropy_poly_prove.mjs --assert</pre>
+        </div>
+        <div data-reveal>
+          <p>
+            The reference implementation runs every stage as a deterministic simulation, so the protocol can be
+            specified, tested and audited without hardware. The cryptographic core &mdash; GF(256) field
+            arithmetic, X25519 and AES-GCM onion layers, Shamir secret sharing &mdash; is real.
+          </p>
+          <p>
+            <a class="btn" href="https://github.com/KELLERBABG/Planetary-Entropy-Mining/blob/main/docs/WHITEPAPER.md" target="_blank" rel="noopener noreferrer">Read the whitepaper &#8599;</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap footrow">
+    <div>
+      <b>Planetary Entropy Mining</b>
+      <p class="meta">PEM v0.1.0 &middot; Python &middot; circom &middot; Solidity</p>
+    </div>
+    <div class="footlinks">
+      <a href="https://github.com/KELLERBABG/Planetary-Entropy-Mining" target="_blank" rel="noopener noreferrer">Source</a>
+      <a href="https://kellersystems.dev">Keller Systems</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var items = document.querySelectorAll('[data-reveal]');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) { items.forEach(function(el){ el.classList.add('in'); }); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
+  items.forEach(function(el, i){ el.style.setProperty('--d', ((i % 6) * 70) + 'ms'); io.observe(el); });
+})();
+</script>
+
+<script>
+(function(){
+  var box = document.getElementById('console');
+  if (!box) return;
+  var acts = Array.prototype.slice.call(box.querySelectorAll('.act'));
+  var fill = document.getElementById('cfill');
+  var tEl = document.getElementById('actTitle');
+  var sEl = document.getElementById('actSub');
+  var bEl = document.getElementById('actBody');
+  var toggle = document.getElementById('motionToggle');
+  var sysReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var on = !sysReduce;
+  var i = 0, timer = null;
+
+  function show(n){
+    i = (n + acts.length) % acts.length;
+    acts.forEach(function(a, k){ a.classList.toggle('on', k === i); });
+    var a = acts[i];
+    if (fill) fill.style.width = (((i + 1) / acts.length) * 100).toFixed(1) + '%';
+    if (tEl) tEl.textContent = a.getAttribute('data-title');
+    if (sEl) sEl.textContent = a.getAttribute('data-sub');
+    if (bEl) bEl.textContent = a.getAttribute('data-body') || bEl.textContent;
+  }
+  function start(){ if (!on || timer) return; timer = setInterval(function(){ show(i + 1); }, 4000); }
+  function stop(){ clearInterval(timer); timer = null; }
+  function setMotion(state){
+    on = state;
+    if (toggle) { toggle.setAttribute('aria-pressed', String(on)); toggle.textContent = 'Motion: ' + (on ? 'on' : 'off'); }
+    if (!on) { stop(); acts.forEach(function(a){ a.classList.add('on'); }); if (fill) fill.style.width = '100%'; }
+    else { show(i); start(); }
+  }
+  acts.forEach(function(a, k){ a.addEventListener('mouseenter', function(){ show(k); }); });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting) { start(); } else { stop(); } });
+    }, { threshold: 0.2 }).observe(box);
+  } else { start(); }
+  if (toggle) toggle.addEventListener('click', function(){ setMotion(!on); });
+  setMotion(on);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+SLA Vertrag Rechenzentrum
+
+zwischen der Bankhaus Weiler AG (nachfolgend "Kunde") und der Rechenzentrum Nord GmbH (nachfolgend "Anbieter") wird folgender Vertrag geschlossen:
+
+Präambel
+Der Kunde benötigt Leistungen im Bereich Betrieb und Support einer Rechenzentrumsplattform.
+Der Anbieter verfügt über die hierfür erforderliche Erfahrung und Ausstattung. Die Parteien vereinbaren daher Folgendes:
+
+§ 1 Gegenstand
+Gegenstand des Vertrags ist die Erbringung der in § 2 beschriebenen Leistungen im Bereich Betrieb und Support einer Rechenzentrumsplattform.
+
+§ 2 Leistungsumfang
+Der Anbieter erbringt die Leistungen nach dem vereinbarten Leistungsbild und den anerkannten Regeln der Technik.
+Der Leistungsumfang ergibt sich aus diesem Vertrag und den zugehörigen Anlagen.
+§ 3 Datennutzung
+Die Einzelheiten der zulässigen Datenverwendung ergeben sich aus Anlage 3, die dem Anbieter eine Nutzung zu eigenen Zwecken gestattet.
+Vereinbarungen der Projektverantwortlichen werden von den Parteien schriftlich dokumentiert.
+
+§ 4 Verzugszinsen
+Verspätete Zahlungen werden mit fünfzehn Prozentpunkten über dem Basiszinssatz verzinst, ohne Nachweis eines Schadens.
+Der Kunde stellt die für die Leistung erforderlichen Informationen rechtzeitig bereit.
+
+§ 5 Änderungsvorbehalt
+Anpassungen des Leistungsverzeichnisses nach Anlage 2 nimmt der Anbieter durch Mitteilung vor; die geänderte Fassung gilt als vereinbart.
+Der Anbieter informiert den Kunden über wesentliche Änderungen im Ablauf.
+
+§ 6 Aufrechnung
+Der Kunde kann nur mit unbestrittenen Forderungen verrechnen; der Anbieter bleibt zur Verrechnung mit sämtlichen Gegenansprüchen befugt.
+Die Parteien prüfen die Leistungen gemeinsam und halten das Ergebnis fest.
+
+§ 7 Genehmigungsfiktion
+Wer auf die Mitteilung nicht innerhalb von zwei Wochen antwortet, dessen Einverständnis wird unterstellt.
+Die Parteien stimmen die Einzelheiten rechtzeitig vor Leistungsbeginn ab.
+
+§ 8 Verjährung
+Mängelansprüche erlöschen zwölf Monate nach Übergabe, unabhängig davon, wann der Kunde den Fehler bemerkt.
+Der jeweils benannte Ansprechpartner informiert die andere Partei unverzüglich.
+
+§ 9 Form von Erklärungen
+Erklärungen des Kunden müssen in Papierform zugehen, während der Anbieter Mitteilungen per Nachricht in der App wirksam übermitteln kann.
+Der Anbieter dokumentiert seine Tätigkeit und legt die Unterlagen auf Anforderung vor.
+
+§ 10 Steuerliche Freistellung
+Der Kunde stellt den Anbieter von sämtlichen steuerlichen Nachforderungen frei, auch wenn diese auf einer unzutreffenden Behandlung durch den Anbieter beruhen.
+Beide Parteien unterstützen sich bei der Aufklärung von Rückfragen angemessen.
+
+§ 11 Vertraulichkeit
+Der Kunde verpflichtet sich zur Vertraulichkeit; den Anbieter trifft keine entsprechende Pflicht.
+Die Kommunikation erfolgt über die im Kopf dieses Vertrags genannten Kontaktwege.
+
+§ 12 Bestimmungen
+Die Vergütung ist innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig.
+Der Kunde benennt für die Abstimmung eine fachlich verantwortliche Person.
+
+§ 13 Bestimmungen
+Am Ende der Laufzeit stellt der Anbieter alle Kundendaten in einem gängigen Format kostenfrei zur Verfügung.
+Der Anbieter setzt für die Leistungserbringung geeignete Fachkräfte ein.
+
+§ 14 Bestimmungen
+Jede Partei kann den Vertrag aus wichtigem Grund ohne Einhaltung einer Frist kündigen.
+Die Parteien bewahren die im Rahmen der Zusammenarbeit erstellten Unterlagen sorgfältig auf.
+
+§ 15 Bestimmungen
+Der Anbieter unterhält eine Betriebshaftpflichtversicherung mit einer Deckungssumme von fünf Millionen EUR.
+Vereinbarungen der Projektverantwortlichen werden von den Parteien schriftlich dokumentiert.
+
+§ 16 Bestimmungen
+Der Kunde erhält auf Wunsch eine Kopie der über ihn gespeicherten Daten.
+Der Kunde stellt die für die Leistung erforderlichen Informationen rechtzeitig bereit.
+
+§ 17 Bestimmungen
+Preisanpassungen erfolgen nur mit Zustimmung des Kunden oder bei Änderung gesetzlicher Abgaben.
+Der Anbieter informiert den Kunden über wesentliche Änderungen im Ablauf.
+
+§ 18 Bestimmungen
+Der Anbieter teilt beabsichtigte Preisanpassungen mindestens sechs Wochen vorher mit.
+Die Parteien prüfen die Leistungen gemeinsam und halten das Ergebnis fest.
+
+§ 19 Vollständigkeit
+Die Einhaltung terminlicher Zusagen des Anbieters steht unter dem Vorbehalt der jederzeitigen Verfügbarkeit geeigneter Fachkräfte.
+Der Kunde trägt Aufwendungen für Reisen, Unterkunft und Schulungen auch dann, wenn der Termin nicht zustande kommt.
+
+Anlage 1 zur Leistungsbeschreibung
+Die Anlage 1 wird mit Vertragsschluss ausgehändigt und ist Bestandteil dieses Vertrags.
+
+Anlage 2 zum Eskalationsweg
+Der Eskalationsweg für Störungen ist in Anlage 2 geregelt.
+
+Bankhaus und Rechenzentrum bestätigen die Vollständigkeit der vorstehenden Regelungen.
+
+Ort, Datum
+
+___________________________
+Bankhaus Weiler AG
+
+___________________________
+Rechenzentrum Nord GmbH

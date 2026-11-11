@@ -1,0 +1,74 @@
+Architektenvertrag über Planung und Bauüberwachung
+
+zwischen
+Atelier Konstrukt Architekten BDA, Leipzig
+(nachfolgend "Architekt")
+und
+Gewerbepark Taucha Entwicklungs GmbH, Taucha
+(nachfolgend "Auftraggeber")
+
+§ 1 Vertragsgegenstand
+
+Der Architekt erbringt Grundlagenermittlung, Vorplanung und Bauüberwachung für den Neubau eines Logistikzentrums.
+
+§ 2 Bedenkenhinweis
+
+Der Auftraggeber trägt die Beweislast für die rechtzeitige Anzeige eines Bedenkenhinweises.
+
+§ 3 Verjährung
+
+Ansprüche wegen Planungsfehlern verjähren ausschließlich innerhalb von zwei Jahren.
+
+§ 4 Abnahme
+
+Nach Übergabe gilt das Werk als vorbehaltlos abgenommen.
+
+§ 5 Haftung
+
+Die Haftung des Architekten ist auf die Höhe des Architektenhonorars gedeckelt.
+
+§ 6 Abtretung
+
+Der Auftraggeber kann Ansprüche aus dem Vertrag nicht abtreten.
+
+§ 7 Nebenabreden
+
+Frühere Planungsabsprachen treten mit Unterzeichnung außer Kraft.
+
+§ 8 Planunterlagen
+
+Die Planunterlagen werden abrufbar unter https://archiv.example.de in ihrer jeweils gültigen Fassung bereitgehalten.
+
+§ 9 Vertraulichkeit
+
+Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich
+
+§ 10 Haftung bei Vorsatz
+
+Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt
+
+§ 11 Zahlungsfrist
+
+Zahlungen sind innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig
+
+§ 12 Änderungen
+
+Änderungen des Leistungsumfangs bedürfen der Abstimmung beider Parteien
+
+§ 13 Beendigung
+
+Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende beenden
+
+§ 14 Datenherausgabe
+
+Nach Vertragsende erhält der Kunde die Vertragsdaten kostenfrei in einem offenen Format
+
+§ 15 Schlussbestimmungen
+
+Es gilt deutsches Recht.
+
+Leipzig, den 8. April
+
+Für den Architekten: Atelier Konstrukt Architekten BDA
+
+Für den Auftraggeber: Gewerbepark Taucha Entwicklungs GmbH

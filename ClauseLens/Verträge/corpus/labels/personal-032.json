@@ -1,0 +1,79 @@
+{
+  "slug": "personal-032",
+  "source": "generated",
+  "domain": "Zeitarbeit und ANUE",
+  "traps": [
+    {
+      "marker": "V​erzugszinsen in Höhe von 14,5 Prozentpunkten",
+      "expectedType": "default_interest",
+      "note": "erhöhte Verzugszinsen von 14,5 Prozentpunkten"
+    },
+    {
+      "marker": "Die Verjährungsfrist für Ansprüche aus diesem Vertrag beträgt sechs Monate",
+      "expectedType": "statute_of_limitations",
+      "note": "Verkürzung der Verjährungsfrist auf sechs Monate"
+    },
+    {
+      "marker": "Die Beweislast für die Richtigkeit der übermittelten Stundennachweise trägt der Kunde",
+      "expectedType": "burden_of_proof",
+      "note": "Beweislast trägt der Kunde"
+    },
+    {
+      "marker": "Die Haftung des Anbieters ist insoweit ausgeschlossen",
+      "expectedType": "liability",
+      "note": "Haftungsausschluss des Anbieters"
+    },
+    {
+      "marker": "Eine Aufrechnung des Kunden ist ausgeschlossen",
+      "expectedType": "setoff_restriction",
+      "note": "Aufrechnung des Kunden ausgeschlossen"
+    },
+    {
+      "marker": "Der Anbieter ist berechtigt, Subunternehmer ohne Zustimmung des Kunden einzusetzen",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "Subunternehmer ohne Zustimmung des Kunden"
+    },
+    {
+      "marker": "Daten der überlassenen Arbeitnehmer werden außerhalb der Europäischen Union",
+      "expectedType": "international_data_processing",
+      "note": "Verarbeitung personenbezogener Daten außerhalb der EU"
+    },
+    {
+      "marker": "Bei Insolvenz des Kunden endet der Vertrag mit sofortiger Wirkung",
+      "expectedType": "insolvency_termination",
+      "note": "automatische Beendigung bei Insolvenz des Kunden"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Abrechnung erfolgt monatlich auf Grundlage der freigegebenen Stundennachweise",
+      "note": "Abrechnung nach Stundennachweisen"
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende beenden",
+      "note": "symmetrische Beendigungsfrist"
+    },
+    {
+      "marker": "Die Vergütung wird jeweils zum Monatsende fällig",
+      "note": "Fälligkeit zum Monatsende"
+    },
+    {
+      "marker": "Die Anlagen 1 und 2 sind Bestandteil dieses Vertrages",
+      "note": "Anlagen als Vertragsbestandteil"
+    },
+    {
+      "marker": "Der Kunde stellt die erforderliche Schutzausrüstung bereit",
+      "note": "Schutzausrüstung durch den Kunden"
+    },
+    {
+      "marker": "Die Parteien benennen je einen Ansprechpartner",
+      "note": "wechselseitige Ansprechpartner"
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Anbieter überlässt dem Kunden gewerbliche Arbeitnehmer zur Arbeitsleistung",
+      "note": "Überlassung ohne Höchstüberlassungsdauer, vom Detektor nicht erfasst"
+    }
+  ]
+}

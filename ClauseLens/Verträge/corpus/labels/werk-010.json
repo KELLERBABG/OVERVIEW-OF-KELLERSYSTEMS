@@ -1,0 +1,88 @@
+{
+  "slug": "werk-010",
+  "source": "generated",
+  "domain": "Energiewirtschaft, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Die Kündigung ist mit einer Frist von vierundzwanzig Monaten zum Laufzeitende zu erklären.",
+      "expectedType": "notice_period",
+      "note": "Verifizierte Klausel im Bereich notice_period."
+    },
+    {
+      "marker": "The provider's aggregate liability shall not exceed the fees paid in the preceding six months.",
+      "expectedType": "liability",
+      "note": "Verifizierte Klausel im Bereich liability."
+    },
+    {
+      "marker": "Nach Auslaufen des Vertrages enthält sich der Kunde für achtzehn Monate jeder Wettbewerbstätigkeit;",
+      "expectedType": "non_compete",
+      "note": "Verifizierte Klausel im Bereich non_compete."
+    },
+    {
+      "marker": "Ein Zurückbehaltungsrecht des Kunden ist ausgeschlossen.",
+      "expectedType": "setoff_restriction",
+      "note": "Verifizierte Klausel im Bereich setoff_restriction."
+    },
+    {
+      "marker": "Ersatzansprüche erlöschen mit Ablauf von zwölf Monaten.",
+      "expectedType": "statute_of_limitations",
+      "note": "Verifizierte Klausel im Bereich statute_of_limitations."
+    },
+    {
+      "marker": "Ergänzend gelten die jeweils aktuellen Supportbedingungen, abrufbar unter https://kernzeit.example/s",
+      "expectedType": "dynamic_url_referral",
+      "note": "Verifizierte Klausel im Bereich dynamic_url_referral."
+    },
+    {
+      "marker": "The customer shall indemnify and hold harmless the provider against any third party claims.",
+      "expectedType": "third_party_indemnity",
+      "note": "Verifizierte Klausel im Bereich third_party_indemnity."
+    },
+    {
+      "marker": "Für den Fall der Verspätung wird eine Konventionalstrafe von 0,3 Prozent je Kalendertag fällig.",
+      "expectedType": "penalty",
+      "note": "Verifizierte Klausel im Bereich penalty."
+    },
+    {
+      "marker": "Die Beweislast für die Mangelhaftigkeit der Werkleistung trägt der Kunde.",
+      "expectedType": "burden_of_proof",
+      "note": "Verifizierte Klausel im Bereich burden_of_proof."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien verpflichten sich wechselseitig, die offengelegten Informationen vertraulich zu behan",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Der Anbieter zeigt den Einsatz von Unterauftragnehmern vierzehn Tage vorher an.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Der Kunde erhält zum Vertragsende einen kostenfreien Datenexport in einem gängigen Format.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Änderungen dieses Vertrages können in Textform vereinbart werden.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Monatsende kündigen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Kündigung aus wichtigem Grund bleibt beiden Parteien unbenommen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Prüfungen erfolgen nur bei konkretem Anlass und nach Ankündigung mit einer Frist von dreißig Tagen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Kunde erhält Zugang zu einer Testumgebung",
+      "note": "Harmlose Leistungszusage."
+    }
+  ]
+}

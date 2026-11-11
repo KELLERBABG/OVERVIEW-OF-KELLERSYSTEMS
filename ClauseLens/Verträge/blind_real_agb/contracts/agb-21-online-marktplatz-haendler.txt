@@ -1,0 +1,55 @@
+ALLGEMEINE NUTZUNGS- UND PLATTFORMBEDINGUNGEN FÜR GEWERBLICHE VERKÄUFER AUF DEM MERCADOX-MARKTPLATZ (STAND 2026)
+
+§ 1 Geltungsbereich und Plattformbetrieb
+
+(1) Diese Allgemeinen Plattformbedingungen regeln die Bereitstellung und Nutzung des Online-Marktplatzes „MercadoX“ durch die MercadoX Commerce Platform S.à r.l. & Co. KG (nachfolgend „Plattformbetreiber“) für gewerbliche Händler und Markenhersteller (nachfolgend „Verkäufer“).
+
+(2) Kaufverträge über die auf dem Marktplatz angebotenen Waren kommen ausschließlich direkt zwischen dem Verkäufer und dem jeweiligen Endkunden zustande. Der Plattformbetreiber stellt hierfür die technische Infrastruktur sowie die Bestellabwicklung bereit.
+
+§ 2 Ergänzende Richtlinien und Ranking-Parameter
+
+(1) Die Darstellung der Produktangebote und deren Reihenfolge in den Suchergebnissen richten sich nach den im Händlerportal transparent erläuterten Hauptparametern (Preis, Liefergeschwindigkeit und Kundenbewertungen).
+
+(2) Für die Zulässigkeit einzelner Produktkategorien, die Verpackungsvorgaben und die Gebührenstaffeln gelten ergänzend die „MercadoX Seller Policies“, die jederzeit in ihrer jeweils aktuellen Fassung unter https://seller-central.mercadox.eu/policies/current abrufbar sind und vom Plattformbetreiber jederzeit ohne Ankündigung online geändert werden können.
+
+§ 3 Verkaufsprovisionen, Gebühren und Preisanpassung
+
+(1) Für jeden über den Marktplatz vermittelten Verkauf zahlt der Verkäufer eine Verkaufsprovision gemäß der vereinbarten Kategorietabelle sowie eine monatliche Plattformgrundgebühr.
+
+(2) Der Plattformbetreiber behält sich vor, die monatliche Grundgebühr sowie die prozentualen Verkaufsprovisionen jederzeit nach freiem Ermessen einseitig zu erhöhen; ein Sonderkündigungsrecht des Verkäufers ist hierbei ausgeschlossen und Kostensenkungen werden nicht weitergegeben.
+
+(3) Der Plattformbetreiber zahlt die vereinnahmten Verkaufserlöse abzüglich der fälligen Provisionen im vierzehntägigen Turnus auf das verifizierte Bankkonto des Verkäufers aus.
+
+§ 4 Nutzung von Händlerdaten, Produktdaten und Preisparität
+
+(1) Der Verkäufer räumt dem Plattformbetreiber für die Dauer des Vertrages das einfache Recht ein, die eingestellten Produktfotos und Artikelbeschreibungen zur Darstellung der Angebote des Verkäufers auf dem Marktplatz zu nutzen.
+
+(2) Darüber hinaus überträgt der Verkäufer dem Plattformbetreiber unwiderruflich, unentgeltlich und zeitlich unbegrenzt sämtliche Rechte an allen Verkaufsstatistiken, Einkaufspreisen, Lieferantenquellen, Absatzmengen und Kundenanalysen des Verkäufers, wobei der Plattformbetreiber ausdrücklich berechtigt ist, diese Daten zur Entwicklung und zum Vertrieb eigener Handelsmarken (Private Labels) im direkten Wettbewerb zum Verkäufer sowie zum Verkauf an Dritte zu nutzen.
+
+(3) Dem Verkäufer ist es strengstens untersagt, seine Waren im eigenen Online-Shop, im stationären Ladengeschäft oder auf anderen Internetplattformen zu einem günstigeren Preis oder zu besseren Versandkonditionen anzubieten als auf dem MercadoX-Marktplatz (umfassende Bestpreisklausel); bei Zuwiderhandlung ist der Plattformbetreiber berechtigt, die Verkaufspreise des Verkäufers auf Kosten des Verkäufers eigenmächtig herabzusetzen.
+
+§ 5 Kontosperrung, Delisting und Datenherausgabe
+
+(1) Der Plattformbetreiber ist berechtigt, das Verkäuferkonto sowie sämtliche Produktlistungen jederzeit sofort und ohne vorherige Begründung oder Abmahnung zu sperren, sobald eine einzelne negative Kundenbewertung vorliegt oder ein Rechnungsbetrag über 10,00 Euro um mehr als einen Tag überschritten ist.
+
+(2) Bei Beendigung des Plattformvertrages – gleich aus welchem Grund – wird der Zugang zum Verkäuferkonto sofort gelöscht; eine Herausgabe oder ein Export der Buchhaltungsdaten, Steuerbelege, Bestellhistorien und Artikelstammdaten des Verkäufers erfolgt nur gegen Zahlung einer pauschalen Datenauslösungsgebühr in Höhe von 15.000,00 Euro netto.
+
+§ 6 Kundenservice, Retouren und Freistellung
+
+(1) Der Verkäufer ist für die ordnungsgemäße Erfüllung der gesetzlichen Informations- und Widerrufspflichten gegenüber Verbrauchern verantwortlich.
+
+(2) Der Verkäufer verpflichtet sich, den Plattformbetreiber von sämtlichen Ansprüchen Dritter, Abmahnkosten und behördlichen Sanktionen auf erstes Anfordern freizustellen, und zwar auch dann, wenn der Rechtsverstoß ausschließlich durch eine fehlerhafte technische Vorgabe des Plattformbetreibers im Bestellprozess verursacht wurde und den Verkäufer kein Verschulden trifft.
+
+§ 7 Haftung
+
+(1) Der Plattformbetreiber haftet unbeschränkt für Vorsatz und grobe Fahrlässigkeit sowie bei Verletzung von Leben, Körper oder Gesundheit nach den gesetzlichen Bestimmungen.
+
+(2) Im Übrigen ist jede Haftung des Plattformbetreibers für Systemausfälle, Datenverlust, fehlerhafte Suchalgorithmen oder die Verletzung wesentlicher Vertragspflichten (Kardinalpflichten) vollständig ausgeschlossen; hilfsweise ist die Gesamthaftung auf eine Monatsgrundgebühr (maximal 49,00 Euro) beschränkt.
+
+§ 8 Vertragslaufzeit, Kündigung und Streitbeilegung
+
+(1) Beide Vertragsparteien können den Plattformnutzungsvertrag jederzeit mit einer Frist von 30 Tagen in Textform ordentlich kündigen.
+
+(2) Der Verkäufer kann gegenüber Forderungen des Plattformbetreibers mit unbestrittenen oder rechtskräftig festgestellten Gegenforderungen aufrechnen.
+
+(3) Ausschließlicher Gerichtsstand für sämtliche Streitigkeiten aus oder im Zusammenhang mit diesem Vertrag ist für alle Verkäufer – unabhängig von ihrer Kaufmannseigenschaft – das Bezirksgericht in Singapur unter Ausschluss der deutschen Gerichtsbarkeit.

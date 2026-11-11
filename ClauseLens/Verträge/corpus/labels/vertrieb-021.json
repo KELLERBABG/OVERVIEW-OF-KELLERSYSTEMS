@@ -1,0 +1,74 @@
+{
+  "slug": "vertrieb-021",
+  "source": "generated",
+  "domain": "distributor",
+  "traps": [
+    {
+      "marker": "Ordentliche Kündigung durch den Kunden ist ausgeschlossen, der Anbieter kann den Vertrag mit einer",
+      "expectedType": "asymmetric_termination",
+      "note": "Kündigungsrecht nur für den Anbieter."
+    },
+    {
+      "marker": "Ansprüche des Kunden gegen den Anbieter sind nicht abtretbar, eine Zession bedarf der vorherigen",
+      "expectedType": "assignment_restriction",
+      "note": "Abtretung von Forderungen wird erschwert."
+    },
+    {
+      "marker": "Bei höherer Gewalt ist der Anbieter von der Leistungspflicht entbunden, ohne dass sich die",
+      "expectedType": "force_majeure_asymmetry",
+      "note": "Höhere Gewalt entlastet nur den Anbieter."
+    },
+    {
+      "marker": "Der Kunde wird keine Mitarbeiter des Anbieters abwerben oder einstellen.",
+      "expectedType": "non_solicitation",
+      "note": "Abwerbeverbot für Mitarbeiter des Anbieters."
+    },
+    {
+      "marker": "Ein ordentliches Kündigungsrecht des Kunden ist ausgeschlossen, nur der Anbieter ist berechtigt,",
+      "expectedType": "unilateral_convenience_termination",
+      "note": "Ordentliches Kündigungsrecht nur für den Anbieter."
+    },
+    {
+      "marker": "Die Vertraulichkeitspflicht überdauert die Vertragsbeendigung ohne zeitliche Beschränkung.",
+      "expectedType": "excessive_survival",
+      "note": "Nachwirkung ohne zeitliche Begrenzung."
+    },
+    {
+      "marker": "Die Grundgebühr erhöht sich jährlich um bis zu fünfzehn Prozent, ohne dass dem Kunden ein",
+      "expectedType": "price_escalation",
+      "note": "Preisanpassung ohne Obergrenze."
+    },
+    {
+      "marker": "An die Stelle der unwirksamen Bestimmung tritt diejenige, die den Parteien wirtschaftlich am",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "Ersetzungsklausel führt zur wirtschaftlich günstigsten Regelung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende kündigen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Zahlungen sind innerhalb von 30 Tagen nach Rechnungsstellung fällig.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde erhält für vermittelte Geschäfte eine Provision von fünf Prozent des Nettoumsatzes.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Anbieter stellt dem Kunden die vereinbarten Unterlagen unentgeltlich zur Verfügung.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Vertrag wird für die Dauer von zwei Jahren geschlossen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien behandeln die ausgetauschten Informationen vertraulich, die Pflicht gilt für die",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    }
+  ],
+  "uncovered": []
+}

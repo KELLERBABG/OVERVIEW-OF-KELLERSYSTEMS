@@ -1,0 +1,84 @@
+{
+  "slug": "agb-07-spedition-logistik-lager",
+  "domain": "Speditions-, Fracht- und Kontraktlogistik-AGB",
+  "source": "Blind Real-AGB Benchmark 2026 (vor Engine-Lauf gelabelt)",
+  "traps": [
+    {
+      "marker": "ohne vorherige Information oder Zustimmung des Auftraggebers vollständig an",
+      "expectedType": "subcontractor_uncontrolled",
+      "statutoryBasis": "§ 307 Abs. 1 BGB",
+      "note": "Unkontrollierter Subunternehmereinsatz bis in mehrstufige Unterfrachtführerketten ohne Information oder Zustimmung des Auftraggebers."
+    },
+    {
+      "marker": "Für Pflichtverletzungen, Diebstahl, Unterschlagung oder grobe Fahrlässigkeit der",
+      "expectedType": "vicarious_agents",
+      "statutoryBasis": "§ 309 Nr. 7 lit. b BGB, § 307 BGB, §§ 428, 449 HGB",
+      "note": "Unwirksamer Ausschluss der Haftung für Erfüllungsgehilfen und Leute (§ 278 BGB, § 428 HGB) selbst bei Diebstahl und grober Fahrlässigkeit."
+    },
+    {
+      "marker": "Dem Auftraggeber ist jede Aufrechnung sowie die Geltendmachung eines",
+      "expectedType": "setoff_restriction",
+      "statutoryBasis": "§ 309 Nr. 3 BGB, § 307 Abs. 1 BGB",
+      "note": "Unzulässiges Aufrechnungs- und Zurückbehaltungsverbot auch für unbestrittene und rechtskräftig festgestellte Gegenansprüche."
+    },
+    {
+      "marker": "wobei eine Freigabe von Pfandgütern selbst bei einer Übersicherung von über 300",
+      "expectedType": "extended_retention_of_title",
+      "statutoryBasis": "§ 307 Abs. 1 BGB, § 138 BGB",
+      "note": "Übersicherndes Konzernpfandrecht unter vollständigem Ausschluss des Freigabeanspruchs."
+    },
+    {
+      "marker": "auch bei leicht fahrlässiger Verletzung wesentlicher Vertragspflichten",
+      "expectedType": "liability",
+      "statutoryBasis": "§ 307 Abs. 2 Nr. 2 BGB, § 449 HGB",
+      "note": "Unwirksame pauschale Haftungsobergrenze von 50 Euro selbst bei grober Fahrlässigkeit der Geschäftsführung und Kardinalpflichtverletzungen."
+    },
+    {
+      "marker": "trägt abweichend von § 425 HGB und § 475 HGB ausschließlich der Auftraggeber die",
+      "expectedType": "burden_of_proof",
+      "statutoryBasis": "§ 309 Nr. 12 BGB, § 307 Abs. 2 Nr. 1 BGB, §§ 425, 475 HGB",
+      "note": "Unzulässige Beweislastumkehr entgegen der gesetzlichen Obhutshaftung des Frachtführers und Lagerhalters."
+    },
+    {
+      "marker": "ausdrücklich einschließlich solcher Ansprüche, die auf Vorsatz oder einem",
+      "expectedType": "statute_of_limitations",
+      "statutoryBasis": "§ 202 Abs. 1 BGB, § 439 Abs. 4 HGB, § 307 BGB",
+      "note": "Unwirksame Verkürzung der Verjährung auf vier Wochen einschließlich Ansprüchen aus Vorsatz und qualifiziertem Verschulden."
+    },
+    {
+      "marker": "der Spediteur ist hingegen berechtigt, den Vertrag jederzeit ohne Angabe von Gründen",
+      "expectedType": "unilateral_convenience_termination",
+      "statutoryBasis": "§ 307 Abs. 1 BGB",
+      "note": "Unangemessene Benachteiligung durch 36-monatige Bindung des Kunden bei gleichzeitigem einseitigem 5-Tage-Kündigungsrecht des Spediteurs."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Spediteur besorgt die Versendung und Lagerung der Güter mit der Sorgfalt eines",
+      "note": "Gesetzeskonformer Sorgfaltsmaßstab nach § 347 HGB."
+    },
+    {
+      "marker": "Der Auftraggeber hat das Transportgut verkehrssicher zu verpacken, deutlich zu",
+      "note": "Entspricht den gesetzlichen Absenderpflichten nach §§ 411, 413 HGB."
+    },
+    {
+      "marker": "Bei Gefahrgut hat der Auftraggeber vorab in Textform die genaue Gefahrgutklasse und",
+      "note": "Gesetzliche Informationspflicht bei Gefahrgut gemäß § 410 HGB."
+    },
+    {
+      "marker": "Beide Vertragsparteien behandeln sämtliche ihnen im Rahmen der Zusammenarbeit",
+      "note": "Ausgewogene beiderseitige Geheimhaltungsklausel."
+    },
+    {
+      "marker": "Für alle Rechtsstreitigkeiten aus dem Vertragsverhältnis ist, sofern der",
+      "note": "Zulässige Gerichtsstandsvereinbarung unter Kaufleuten nach § 38 ZPO."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "um mehr als zwölf Minuten überschritten, schuldet der Auftraggeber je angefangener",
+      "statutoryBasis": "§ 412 Abs. 3 HGB, § 307 Abs. 1 BGB, § 309 Nr. 5 BGB",
+      "note": "Wucherähnlich überhöhtes Standgeld (3.800 Euro/Stunde) nach minimaler Wartezeit von 12 Minuten unter Ausschluss des Gegenbeweises."
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+[package]
+name = "smart-matter-network-simulator"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Desktop network simulator for Smart Matter mesh"
+
+[dependencies]
+smart-matter-core = { path = "../../firmware/core" }
+smart-matter-mesh = { path = "../../mesh" }
+smart-matter-storage = { path = "../../storage" }
+smart-matter-broadcaster = { path = "../../broadcaster" }
+heapless = { version = "0.8", features = ["serde"] }
+rand = "0.8"
+clap = { version = "4", features = ["derive"] }

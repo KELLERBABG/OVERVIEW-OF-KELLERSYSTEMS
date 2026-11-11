@@ -1,0 +1,70 @@
+Werkvertrag über die Agrarmonitoring-Plattform einer Genossenschaft
+
+zwischen AgroSoft GmbH, Magdeburg (nachfolgend Anbieter) und Agrarunion Altmark GmbH, Stendal (nachfolgend Kunde).
+
+Präambel
+Die Parteien beabsichtigen die in § 1 beschriebene Zusammenarbeit. Der Anbieter erbringt die Leistungen, der Kunde vergütet sie. Die Parteien vereinbaren Folgendes.
+
+§ 1 Gegenstand
+Gegenstand des Vertrages ist die Erstellung der Agrarmonitoring-Plattform gemäß Anlage 1.
+
+§ 2 Leistungsumfang
+Der Anbieter erbringt die Leistungen gemäß Anlage 1 und dokumentiert die Ergebnisse.
+
+§ 3 Abschaltung des Betriebs
+(3) Der Anbieter kann den Betrieb stilllegen, falls der Wartungsvertrag ausläuft.
+
+§ 4 Haftung
+(4) Schadensersatzansprüche wegen einfacher Fahrlässigkeit sind ausgeschlossen, ausgenommen Kardinalpflichten.
+
+§ 5 Wettbewerbsverbot
+(5) Nach Auslaufen des Vertrages enthält sich der Kunde für achtzehn Monate jeder Wettbewerbstätigkeit; eine Karenzentschädigung wird nicht gezahlt.
+
+§ 6 Verjährung
+(6) Die Ansprüche des Kunden verwirken mit Ablauf von vierundzwanzig Monaten.
+
+§ 7 Datenrückgabe
+(7) Für die Herausgabe der Daten wird eine Gebühr von 2.500 EUR berechnet.
+
+§ 8 Abwerbeverbot
+(8) Es ist untersagt, Mitarbeiter der anderen Partei abzuwerben.
+
+§ 9 Eigentumsvorbehalt
+(9) Das Material bleibt Eigentum des Anbieters, bis der Kunde alle Verbindlichkeiten aus der Geschäftsbeziehung beglichen hat.
+
+§ 10 Zugang von Erklärungen
+(10) Mitteilungen gelten mit Absendung als zugegangen.
+
+§ 11 Nutzungsrechte und Daten
+(11) Alle Rechte an den Ergebnissen gehen in das Alleineigentum des Anbieters über.
+
+§ 12 Abnahme
+(12) Für Mängel während der Gewährleistung leistet der Anbieter kostenfrei Nacherfüllung.
+
+§ 13 Sicherheit
+(13) Der Anbieter meldet Sicherheitsvorfälle unverzüglich an den Kunden.
+
+§ 14 Störungen
+(14) Die Vertragsparteien informieren sich unverzüglich über Störungen.
+
+§ 15 Projektsteuerung
+(15) Die Parteien treffen sich monatlich zu einem Lenkungskreis.
+
+§ 16 Qualität
+(16) Der Anbieter führt die Arbeiten mit der vereinbarten Sorgfalt aus.
+
+§ 17 Schulung
+(17) Der Anbieter schult die Mitarbeiter des Kunden in der Anwendung.
+
+§ 18 Dokumentation
+(18) Der Anbieter übergibt eine Dokumentation der Schnittstellen.
+
+§ 19 Vollständigkeit
+(19) Jede Partei trägt ihre eigenen Kosten aus der Vertragsverhandlung.
+
+Anlage 1: Leistungsbeschreibung
+Anlage 2: Servicezeiten
+
+Magdeburg, den 29. Juni 2026
+AgroSoft GmbH
+Agrarunion Altmark GmbH

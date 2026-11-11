@@ -1,0 +1,36 @@
+{
+  "projekt": "Einfamilienhaus am Hang mit Einliegerwohnung",
+  "adresse": "Kräherwald 18, 70193 Stuttgart",
+  "bundesland": "BW",
+  "grundstueck": {
+    "flurstuecksnummer": "1894/3",
+    "gemarkung": "Stuttgart-West",
+    "flaeche_m2": 580.0,
+    "grenzabstaende": {
+      "norden": 3.8,
+      "sueden": 5.5,
+      "osten": 5.2,
+      "westen": 5.0
+    }
+  },
+  "gebaeude": {
+    "bezeichnung": "Wohnhaus Kräherwald",
+    "hoehe_m": 7.2,
+    "geschosse_ueber_grund": 2,
+    "wohnungen_anzahl": 2,
+    "grz_ist": 0.28,
+    "gfz_ist": 0.54,
+    "stellplaetze_ist": 2,
+    "fahrradstellplaetze_ist": 4,
+    "zweiter_rettungsweg_vorhanden": true,
+    "treppenraum_vorhanden": false,
+    "aufenthaltsraeume": [
+      { "name": "Wohnzimmer EG", "flaeche_m2": 45.0, "fenster_flaeche_m2": 8.0, "lichte_hoehe_m": 2.65 },
+      { "name": "Elternschlafzimmer OG", "flaeche_m2": 18.0, "fenster_flaeche_m2": 2.8, "lichte_hoehe_m": 2.50 }
+    ]
+  },
+  "einstellungen": {
+    "grz_limit": 0.30,
+    "gfz_limit": 0.70
+  }
+}

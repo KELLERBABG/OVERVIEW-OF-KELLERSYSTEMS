@@ -1,0 +1,65 @@
+{
+  "project": "AmtFlow",
+  "language": "TypeScript",
+  "summary": "A TypeScript/JavaScript offline German administrative letter assistant (`src/classifier.js`, `src/extractor.ts`, `src/reply_generator.ts`, `src/storage/db.ts`) with 30-language localization. The classifier has broad test coverage, but statutory deadline calculation (§ 70 VwGO, § 355 AO, § 87 SGG with § 193 BGB weekend/holiday shift), PII redaction, and financial table plausibility auditing need completion.",
+  "tasks": [
+    {
+      "id": "TASK-01",
+      "title": "Implement German statutory deadline calculator with Bekanntgabefiktion and § 193 BGB rollover",
+      "status": "pending",
+      "target_files": [
+        "src/extractor.ts",
+        "src/extractor.test.ts"
+      ],
+      "context_files": [
+        "src/classifier.js"
+      ],
+      "spec": "Enhance `src/extractor.ts` with a deterministic `calculateStatutoryDeadline(issueDate: Date, postalFictionDays = 3, periodMonths = 1)` function.\n\n1. Apply the 3-day *Bekanntgabefiktion* (§ 41 Abs. 2 VwVfG / § 122 Abs. 2 AO): if the 3rd day after `issueDate` falls on a Saturday, Sunday, or German federal holiday, shift the notification date (*Bekanntgabedatum*) to the next working day.\n2. Compute the 1-month objection deadline (*Widerspruchsfrist* per § 70 VwGO / § 84 SGG / § 355 AO) under §§ 187 Abs. 1, 188 Abs. 2 BGB.\n3. If the deadline end date falls on a Saturday, Sunday, or holiday, shift it to the next working day per § 193 BGB.\n4. Add unit tests in `src/extractor.test.ts` covering Friday issue dates, month-end edge cases (Jan 31 -> Feb 28/29), and holiday rollovers.",
+      "verify_cmd": "npm test"
+    },
+    {
+      "id": "TASK-02",
+      "title": "Expand DIN 5008 objection, Akteneinsicht, and Ratenzahlung generator",
+      "status": "pending",
+      "target_files": [
+        "src/reply_generator.ts",
+        "src/extractor.test.ts"
+      ],
+      "context_files": [
+        "src/extractor.ts",
+        "src/languages.ts"
+      ],
+      "spec": "Expand `src/reply_generator.ts` (currently 27 lines) to synthesize formal German legal response letters compliant with DIN 5008 structure.\n\n1. Support template types: `'widerspruch'` (fristwahrender Widerspruch nach § 70 VwGO / § 84 SGG / § 355 AO), `'akteneinsicht'` (Antrag auf Akteneinsicht nach § 25 SGB X / § 29 VwVfG), `'fristverlaengerung'`, and `'stundung'` (Stundungs-/Ratenzahlungsantrag nach § 222 AO).\n2. Automatically interpolate extracted `aktenzeichen`, `behoerde`, `bescheidDatum`, and calculated deadline.\n3. Add unit tests verifying that every generated document includes mandatory legal citations and contains zero unresolved placeholders.",
+      "verify_cmd": "npm test"
+    },
+    {
+      "id": "TASK-03",
+      "title": "Implement deterministic PII redaction and sanitization engine",
+      "status": "pending",
+      "target_files": [
+        "src/extractor.ts",
+        "src/extractor.test.ts"
+      ],
+      "context_files": [
+        "src/storage/db.ts"
+      ],
+      "spec": "Add `redactPII(text: string): { redactedText: string; redactions: Array<{ type: string; count: number }> }` to `src/extractor.ts`.\n\n1. Detect and replace German IBANs (`DE\\d{2}\\s?(?:\\d{4}\\s?){4}\\d{2}`), Steuer-IDs (11-digit pattern), Sozialversicherungsnummern (`\\d{2}\\s?\\d{6}\\s?[A-Z]\\s?\\d{3}`), email addresses, and phone numbers with `[REDACTED:IBAN]`, `[REDACTED:STEUER_ID]`, etc.\n2. Add unit tests verifying 100% redaction of synthetic administrative letters without corrupting statutory citations (e.g. `§ 355 AO` or dates).",
+      "verify_cmd": "npm test"
+    },
+    {
+      "id": "TASK-04",
+      "title": "Add Bescheid calculation table plausibility auditor and ICS calendar reminder export",
+      "status": "pending",
+      "target_files": [
+        "src/extractor.ts",
+        "src/reply_generator.ts",
+        "src/extractor.test.ts"
+      ],
+      "context_files": [
+        "src/classifier.js"
+      ],
+      "spec": "Add two high-value citizen protection utilities:\n\n1. In `src/extractor.ts`, implement `auditCalculationPlausibility(text: string)` parsing EUR currency line items (`1.234,56 €`) and checking whether the stated *Gesamtbetrag / Auszahlungsbetrag / Nachzahlung* matches the sum/difference of extracted positions, flagging arithmetic discrepancies.\n2. In `src/reply_generator.ts`, implement `generateDeadlineICS(summary: string, deadline: Date, aktenzeichen: string): string` producing a valid RFC 5545 `.ics` file with 7-day, 3-day, and 24-hour `VALARM` triggers.\n3. Add unit tests for both functions.",
+      "verify_cmd": "npm test"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "slug": "marketing-016",
+  "source": "generated",
+  "domain": "Mediaagentur und Provision, österreichisches Recht",
+  "traps": [
+    {
+      "marker": "Direktverkäufe des Kunden an Grosskunden lösen keine Provision aus",
+      "expectedType": "agency_commission_exclusion",
+      "note": "Provisionsausschluss für Direktverkäufe."
+    },
+    {
+      "marker": "Ein Ausgleichsanspruch nach Vertragsende ist ausgeschlossen",
+      "expectedType": "agency_goodwill_waiver",
+      "note": "Ausgleichsanspruch für Kundenstamm abbedungen."
+    },
+    {
+      "marker": "Verzugszinsen betragen vierzehn Prozent",
+      "expectedType": "default_interest",
+      "note": "Hochverzinslicher Verzugszins."
+    },
+    {
+      "marker": "verzichtet auf die Aufrechnung mit Gegenansprüchen",
+      "expectedType": "setoff_restriction",
+      "note": "Verzicht auf Aufrechnung."
+    },
+    {
+      "marker": "ausschließlich der Sitz des Auftragnehmers maßgeblich",
+      "expectedType": "jurisdiction",
+      "note": "Ausschließliche Zuständigkeit am Verwendersitz."
+    },
+    {
+      "marker": "Die Provision für Nachbestellungen wird auf Dauer geschuldet",
+      "expectedType": "excessive_survival",
+      "note": "Unbefristete Nachwirkung der Provisionspflicht."
+    },
+    {
+      "marker": "ohne Zustimmung auf verbundene Gesellschaften",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "Weitergabe an verbundene Unternehmen ohne Zustimmung; vermeidet das Wort Subunternehmer."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien wahren über die wechselseitig ausgetauschten Informationen Stillschweigen",
+      "note": "Symmetrische Verschwiegenheit."
+    },
+    {
+      "marker": "erhält der Kunde die Mediadaten kostenfrei in einem offenen Format",
+      "note": "Kostenfreier Datenexport."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende beenden",
+      "note": "Symmetrische Kündigung."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform zugelassen."
+    },
+    {
+      "marker": "Rechnungen sind innerhalb von dreißig Tagen ohne Abzug zu bezahlen",
+      "note": "Üblicher Zahlungstermin."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhaltung."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Auftragnehmer vermittelt dem Kunden Werbeplätze und erhält dafür eine Provision",
+      "note": "Kein Detektor für Höhe und Fälligkeit der Vermittlungsprovision."
+    }
+  ]
+}

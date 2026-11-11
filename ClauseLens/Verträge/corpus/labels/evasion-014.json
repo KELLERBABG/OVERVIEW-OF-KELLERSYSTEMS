@@ -1,0 +1,79 @@
+{
+  "slug": "evasion-014",
+  "source": "generated",
+  "domain": "evasion",
+  "traps": [
+    {
+      "marker": "Der Anbieter kann mit einer Frist von drei Monaten ohne Angabe von Gründen kündigen, der Kunde ist f",
+      "expectedType": "unilateral_convenience_termination",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: unilateral_convenience_termination (Technik: nbsp)."
+    },
+    {
+      "marker": "Die Pflichten zur Verschwiegenheit bestehen zeitlich unbeschränkt fort und enden nicht mit der Beend",
+      "expectedType": "excessive_survival",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: excessive_survival (Technik: nbsp)."
+    },
+    {
+      "marker": "Der Anbieter behält sich vor, die Entgelte nach billigem Ermessen anzupassen, eine Obergrenze besteh",
+      "expectedType": "price_escalation",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: price_escalation (Technik: nbsp)."
+    },
+    {
+      "marker": "Sollte eine Bestimmung unwirksam sein, gilt eine solche Regelung als vereinbart, die dem wirtschaftl",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: salvatorische_klausel_falle (Technik: nbsp)."
+    },
+    {
+      "marker": "Die Ware bleibt Eigentum des Anbieters bis zur vollständigen Begleichung aller Forderungen aus der g",
+      "expectedType": "extended_retention_of_title",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: extended_retention_of_title (Technik: nbsp)."
+    },
+    {
+      "marker": "Der Anbieter ist berechtigt, für die Erbringung seiner Pflichten jederzeit Subunternehmer einzusetze",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: subcontractor_uncontrolled (Technik: nbsp)."
+    },
+    {
+      "marker": "Die Systemprotokolle des Anbieters gelten als vollständiger Beweis für Umfang und Art der erbrachten",
+      "expectedType": "audit_log_manipulation",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: audit_log_manipulation (Technik: nbsp)."
+    },
+    {
+      "marker": "Der Anbieter ist berechtigt, den Zugang zum Portal ohne Vorankündigung zu sperren.",
+      "expectedType": "service_suspension",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: service_suspension (Technik: nbsp)."
+    },
+    {
+      "marker": "Im Falle der Insolvenz des Kunden endet der Vertrag automatisch ohne weiteres.",
+      "expectedType": "insolvency_termination",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: insolvency_termination (Technik: nbsp)."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Haftung beider Parteien richtet sich nach den gesetzlichen Bestimmungen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Jede Partei trägt ihre eigenen Kosten der Vertragsverhandlungen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde ist berechtigt, Rechte aus diesem Vertrag mit Zustimmung des Anbieters auf verbundene",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Für die Nutzung der bereitgestellten Software gilt die beigefügte Leistungsbeschreibung.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Ansprüche aus diesem Vertrag verjähren nach den gesetzlichen Vorschriften.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde trägt die Kosten für die von ihm gewünschten Zusatzleistungen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    }
+  ],
+  "uncovered": []
+}

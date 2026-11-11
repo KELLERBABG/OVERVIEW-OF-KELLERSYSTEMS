@@ -1,0 +1,92 @@
+{
+  "slug": "service-021",
+  "source": "generated",
+  "domain": "SLA und Support",
+  "traps": [
+    {
+      "marker": "Der Anbieter übernimmt keine Haftung dafür, dass die Software den Vorstellungen des Kunden",
+      "expectedType": "as_is_software_disclaimer",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: soft paraphrase: no liability for customer expectations or interruptions"
+    },
+    {
+      "marker": "Nebenabreden bestehen nur, wenn sie Eingang in die Vertragsurkunde gefunden haben; frühere Zusagen",
+      "expectedType": "entire_agreement",
+      "note": "GAP: engine miss. Legally abusive (§ 305b BGB); technique: paraphrase: prior assurances lapse unless in the document"
+    },
+    {
+      "marker": "Der Anbieter verweist in seiner Außendarstellung auf die Zusammenarbeit; Widerspruch des Kunden ist ",
+      "expectedType": "marketing_reference",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: consent assumed, objection only after publication"
+    },
+    {
+      "marker": "Der Kunde überträgt dem Anbieter jede Nutzung von Anregungen, die er im Rahmen der Zusammenarbeit",
+      "expectedType": "feedback_ip_grab",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: every suggestion may be used by the provider"
+    },
+    {
+      "marker": "Für den Zugang genügt die Absendung an die zuletzt vom Kunden benannte Adresse; der Kunde trägt das ",
+      "expectedType": "fictitious_receipt",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: dispatch suffices, customer bears the risk"
+    },
+    {
+      "marker": "Der Anbieter strebt die vereinbarten Reaktionszeiten an; bei Überschreitung entstehen dem Kunden",
+      "expectedType": "unverbindliche_sla_falle",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: provider merely strives, no rights for the customer"
+    },
+    {
+      "marker": "Provisionen und Stornoreserven entfallen, wenn der Vermittler den Vertragsschluss nicht innerhalb",
+      "expectedType": "agency_commission_exclusion",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: proof deadline and reserve forfeiture"
+    },
+    {
+      "marker": "Der Vermittler erhält keine Provision, wenn der Kunde den Vertrag mit dem Versicherer direkt",
+      "expectedType": "agency_commission_exclusion",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: literal commission excluded for direct renewal"
+    },
+    {
+      "marker": "Der Vermittler verzichtet auf seinen Ausgleichsanspruch nach § 89b HGB.",
+      "expectedType": "agency_goodwill_waiver",
+      "note": "Legally abusive (§ 89b HGB); engine hit; technique: literal waiver of the section 89b HGB compensation claim"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Kunde erhält auf Wunsch eine Kopie der über ihn gespeicherten Daten.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Preisanpassungen erfolgen nur mit Zustimmung des Kunden oder bei Änderung gesetzlicher Abgaben.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Der Anbieter teilt beabsichtigte Preisanpassungen mindestens sechs Wochen vorher mit.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Die Parteien benennen jeweils einen Ansprechpartner und informieren unverzüglich über einen Wechsel.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich und verwenden sie",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Der Kunde kann den Vertrag mit einer Frist von vier Wochen zum Monatsende ohne Angabe von Gründen",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Kündigungen können in Textform, insbesondere per E-Mail, erklärt werden.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Die Einhaltung terminlicher Zusagen des Anbieters steht unter dem Vorbehalt der jederzeitigen",
+      "note": "Deceptive clause without a matching detector type (coverage gap)."
+    },
+    {
+      "marker": "Der Kunde trägt Aufwendungen für Reisen, Unterkunft und Schulungen auch dann, wenn der Termin nicht ",
+      "note": "Deceptive clause without a matching detector type (coverage gap)."
+    }
+  ]
+}

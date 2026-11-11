@@ -1,0 +1,69 @@
+{
+  "slug": "saas-010",
+  "source": "generated",
+  "domain": "SaaS Marketing-Automation, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Das Abonnement setzt sich nach Ablauf der Festlaufzeit jeweils um zwölf Monate fort, sofern es keine",
+      "expectedType": "auto_renewal",
+      "note": "Paraphrase. Stillschweigende Verlaengerung"
+    },
+    {
+      "marker": "Der Kunde verzichtet darauf, Beschäftigte der Anbieterin anzusprechen.",
+      "expectedType": "non_solicitation",
+      "note": "Abwerbeverbot"
+    },
+    {
+      "marker": "Der Anbieter kann den Vertrag jederzeit mit einer Frist von vier Wochen beenden.",
+      "expectedType": "unilateral_convenience_termination",
+      "note": "Kuendigungsrecht nur fuer den Anbieter"
+    },
+    {
+      "marker": "Der Kunde verpflichtet sich, über alle Informationen Stillschweigen zu bewahren; für den Anbieter",
+      "expectedType": "asymmetric_confidentiality",
+      "note": "Einseitige Geheimhaltung"
+    },
+    {
+      "marker": "Die Anbieterin darf die Betriebsdaten zur Weiterentwicklung ihrer Modelle nutzen.",
+      "expectedType": "data_grant",
+      "note": "Paraphrase. Umfassender Rechteerwerb"
+    },
+    {
+      "marker": "Die Nennung als Referenzkunde erfolgt ohne gesonderte Zustimmung.",
+      "expectedType": "marketing_reference",
+      "note": "Paraphrase. Referenznutzung ohne Zustimmung"
+    },
+    {
+      "marker": "Anregungen und Vorschläge des Kunden verwertet die Anbieterin ohne Vergütung.",
+      "expectedType": "feedback_ip_grab",
+      "note": "Paraphrase. Unentgeltlicher IP-Anfall"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Kunde kann den Vertrag jeweils zum Ende eines Kalenderjahres beenden.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Änderungen dieses Vertrags bedürfen der Textform.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Anbieterin sichert eine Verfügbarkeit von 99,5 Prozent pro Kalendermonat zu.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Verarbeitung erfolgt ausschließlich in Rechenzentren innerhalb der Europäischen Union.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Der Kunde bleibt zur Zahlung des anteiligen Entgelts für bereits erbrachte Leistungen verpflichtet.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Anbieterin übergibt die Daten in einem gängigen Format.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    }
+  ],
+  "uncovered": []
+}

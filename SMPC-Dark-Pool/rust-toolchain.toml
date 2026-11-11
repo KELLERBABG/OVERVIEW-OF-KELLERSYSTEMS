@@ -1,0 +1,7 @@
+# Pin the Rust toolchain so `cargo`/`rustc` work identically on every machine
+# and in every checkout (this project targets edition 2024, which needs a
+# compiler >= 1.85; a pinned nightly guarantees consistency).
+[toolchain]
+channel = "nightly-2026-05-20"
+components = ["cargo", "rustfmt"]
+profile = "minimal"

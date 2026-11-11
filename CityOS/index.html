@@ -1,0 +1,185 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>CityOS &mdash; decentralised urban resource kernel</title><meta name="description" content="CityOS coordinates municipal microgrid power, emergency green-wave corridors, identity-less civic access tokens and dead-drop relay infrastructure on the KELLER-OS substrate."><meta name="theme-color" content="#0a0e15"><link rel="icon" href="assets/icon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"><style>
+*{box-sizing:border-box} html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#0a0e15;color:#8f9dad;font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(16px,4vw,44px)}
+header{padding:clamp(26px,5vw,52px) 0 clamp(12px,2vw,18px)}
+.kick{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;color:#4fd0c0}
+h1{margin:.4rem 0 .3rem;font-weight:600;font-size:clamp(2rem,5.2vw,3.4rem);line-height:1.03;letter-spacing:-.03em;color:#e9f1f6}
+.sub{margin:0;max-width:66ch;color:#8794a3}
+.panel{margin:clamp(16px,3vw,28px) 0;border:1px solid #1d2733;background:#0d131b}
+.panel .hd{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;border-bottom:1px solid #1d2733;padding:.45rem .9rem;
+ font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#66748a}
+.panel .hd b{color:#4fd0c0;font-weight:500}
+svg{display:block;width:100%;height:auto;padding:clamp(8px,1.6vw,16px)}
+.sky{fill:#0d131b;stroke:#1d2733}
+.cap{font-family:'IBM Plex Mono',monospace;font-size:9px;fill:#66748a;letter-spacing:.14em}
+.dist{stroke:#2a3746;stroke-width:1}
+.dist.pos{fill:rgba(79,208,192,.10);stroke:#2f6f68}
+.dist.neg{fill:rgba(224,164,76,.10);stroke:#7a6234}
+.dist.neu{fill:rgba(140,160,190,.08);stroke:#3a4757}
+.dn{font-family:'IBM Plex Mono',monospace;font-size:10px;fill:#e9f1f6}
+.db{font-family:'IBM Plex Mono',monospace;font-size:8.5px;fill:#8794a3}
+.win{fill:rgba(214,226,236,.5)}
+.ground{stroke:#2a3746;stroke-width:1}
+.flow{fill:none;stroke:#e0a44c;stroke-width:1.6}
+.flt{font-family:'IBM Plex Mono',monospace;font-size:8.5px;fill:#e0a44c}
+.wave{fill:none;stroke:#4fd0c0;stroke-width:2.2;stroke-dasharray:9 6}
+.itx{fill:#4fd0c0}
+.wt{font-family:'IBM Plex Mono',monospace;font-size:9.5px;fill:#4fd0c0}
+.wt2{font-family:'IBM Plex Mono',monospace;font-size:8.5px;fill:#66748a}
+.relay{fill:rgba(28,40,54,.9);stroke:#2a3746}
+.rnode{fill:#4fd0c0;opacity:.7}
+.rt{font-family:'IBM Plex Mono',monospace;font-size:8.5px;fill:#66748a}
+.ledger{fill:rgba(224,164,76,.14);stroke:#7a6234}
+.lt{font-family:'IBM Plex Mono',monospace;font-size:8.5px;fill:#e0a44c}
+.readouts{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#1d2733;border-top:1px solid #1d2733}
+.ro{background:#0d131b;padding:.85rem 1rem}
+.rn{display:block;font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:#66748a}
+.ro b{display:block;font-family:'IBM Plex Mono',monospace;font-size:1.15rem;font-weight:500;color:#e9f1f6;line-height:1.2;margin-top:.25rem}
+.rs{display:block;font-family:'IBM Plex Mono',monospace;font-size:9px;color:#4fd0c0;margin-top:.15rem}
+section{border-top:1px solid #1d2733;padding:clamp(22px,4vw,40px) 0}
+h2{margin:0 0 .9rem;font-weight:600;font-size:clamp(1.2rem,2.5vw,1.7rem);letter-spacing:-.02em;color:#e9f1f6}
+h2 i{font-family:'IBM Plex Mono',monospace;font-style:normal;font-size:10px;letter-spacing:.2em;color:#4fd0c0;display:block;margin-bottom:.35rem}
+p{margin:0 0 .85rem;max-width:76ch} b{color:#e9f1f6;font-weight:500}
+table{width:100%;border-collapse:collapse;margin-top:.9rem;font-size:.9rem}
+th,td{text-align:left;padding:.5rem .6rem;border-bottom:1px solid #1d2733;vertical-align:top}
+th{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#66748a;font-weight:400}
+td.ct{background:rgba(79,208,192,.09);color:#e9f1f6;font-weight:500}
+pre{margin:.9rem 0 0;border:1px solid #1d2733;border-left:3px solid #4fd0c0;background:#0a0f16;padding:.85rem 1rem;
+ font-family:'IBM Plex Mono',monospace;font-size:.73rem;line-height:1.9;color:#e9f1f6;white-space:pre-wrap;overflow-wrap:anywhere}
+.foot{border-top:1px solid #1d2733;padding:1.4rem 0 3rem;font-family:'IBM Plex Mono',monospace;font-size:9.5px;
+ letter-spacing:.14em;text-transform:uppercase;color:#66748a}
+.foot .wrap{display:flex;justify-content:space-between;gap:1.4rem;flex-wrap:wrap} .foot a{color:#4fd0c0}
+@media (max-width:760px){.readouts{grid-template-columns:repeat(2,1fr)}}
+html{scrollbar-color:#1d2733 #0a0e15;scrollbar-width:thin}
+::-webkit-scrollbar{width:12px}::-webkit-scrollbar-track{background:#0a0e15}
+::-webkit-scrollbar-thumb{background:#1d2733;border:3px solid #0a0e15}::-webkit-scrollbar-thumb:hover{background:#4fd0c0}
+/* mobile-figure */@media (max-width:900px){.panel,.chart,.die,.pfd,.cfg,.console,.figs,.seqblock,.map{overflow-x:auto;-webkit-overflow-scrolling:touch}.panel svg,.chart svg,.die svg,.pfd svg,.cfg svg,.figs svg,.map svg{min-width:660px;max-width:none}}
+/* --- Keller Systems Subtle Masthead Lockup --- */
+header { padding-top: clamp(18px, 3.2vw, 30px) !important; }
+.ks-masthead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 12px;
+  margin-bottom: clamp(18px, 3vw, 28px);
+  border-bottom: 1px solid #1d2733;
+}
+.ks-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+.ks-mark {
+  width: 22px !important;
+  min-width: 22px !important;
+  max-width: 22px !important;
+  height: 22px !important;
+  min-height: 22px !important;
+  max-height: 22px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: block !important;
+  flex-shrink: 0 !important;
+}
+.ks-titles {
+  display: inline-flex;
+  flex-direction: column;
+  line-height: 1.12;
+}
+.ks-name {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #e9f1f6;
+  letter-spacing: -0.01em;
+}
+.ks-sub {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 8.5px;
+  font-weight: 500;
+  color: #76849a;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.ks-brand:hover .ks-name {
+  color: #4fd0c0;
+}
+.ks-links {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+.ks-link {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 10.5px;
+  color: #76849a;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  letter-spacing: 0.03em;
+  transition: color 0.15s;
+}
+.ks-link:hover {
+  color: #e9f1f6;
+}
+</style></head><body><!-- noscript-fallback --><noscript><style>html *{opacity:1!important;transform:none!important;filter:none!important;animation:none!important}[data-a],[data-b],.d,.o,.fade,.draw,.chapter,.step,.panel,.hlab{opacity:1!important}</style></noscript><div class="wrap"><header>
+      <div class="ks-masthead">
+        <a href="https://kellersystems.dev" class="ks-brand" title="Keller Systems">
+          <svg class="ks-mark" viewBox="0 0 100 100" width="22" height="22" aria-hidden="true">
+            <rect x="18" y="14" width="18" height="72" rx="3" fill="#e9f1f6"/>
+            <path d="M46 50 L72 16 H90 L60 54 Z" fill="#4fd0c0"/>
+            <path d="M60 46 L90 84 H72 L46 50 Z" fill="#8f9dad"/>
+          </svg>
+          <span class="ks-titles">
+            <span class="ks-name">CityOS</span>
+            <span class="ks-sub">KELLER SYSTEMS</span>
+          </span>
+        </a>
+        <div class="ks-links">
+          <a href="https://kellersystems.dev" class="ks-link">kellersystems.dev &rarr;</a>
+        <a href="https://github.com/KELLERBABG/CityOS" target="_blank" rel="noopener noreferrer" class="ks-link">Source &#8599;</a>
+        </div>
+      </div>
+  <span class="kick">DAG ledger &middot; municipal edge infrastructure</span>
+  <h1>A city that keeps working when the fibre is cut</h1>
+  <p class="sub">CityOS runs on KELLER-OS kernel primitives and coordinates microgrid power, emergency corridors, anonymous service access and public records &mdash; without a hyperscaler in the path.</p>
+</header></div>
+
+<div class="wrap"><div class="panel">
+  <div class="hd"><span>Urban fabric telemetry</span><b>14,290 mesh nodes &middot; 99.98% microgrid synced</b></div>
+<svg viewBox="0 0 940 470" role="img" aria-label="City section with district flows, corridor and relay layers"><rect class="sky" x="8" y="8" width="924" height="454" rx="3"/><text class="cap" x="30" y="34">URBAN SECTION &middot; DISTRICT ENERGY, CORRIDOR AND RELAY LAYERS</text><rect class="dist pos" x="60" y="250" width="210" height="150" rx="2"/><text class="dn" x="72" y="272">DISTRICT 4</text><text class="db" x="72" y="288">solar surplus +18%</text><rect class="win" x="76" y="308" width="16" height="12"/><rect class="win" x="76" y="330" width="16" height="12"/><rect class="win" x="122" y="308" width="16" height="12"/><rect class="win" x="122" y="330" width="16" height="12"/><rect class="win" x="168" y="308" width="16" height="12"/><rect class="win" x="168" y="330" width="16" height="12"/><rect class="win" x="214" y="308" width="16" height="12"/><rect class="win" x="214" y="330" width="16" height="12"/><line class="ground" x1="60" y1="400" x2="270" y2="400"/><rect class="dist neg" x="300" y="210" width="210" height="150" rx="2"/><text class="dn" x="312" y="232">DISTRICT 7</text><text class="db" x="312" y="248">deficit &minus;22%</text><rect class="win" x="316" y="268" width="16" height="12"/><rect class="win" x="316" y="290" width="16" height="12"/><rect class="win" x="362" y="268" width="16" height="12"/><rect class="win" x="362" y="290" width="16" height="12"/><rect class="win" x="408" y="268" width="16" height="12"/><rect class="win" x="408" y="290" width="16" height="12"/><rect class="win" x="454" y="268" width="16" height="12"/><rect class="win" x="454" y="290" width="16" height="12"/><line class="ground" x1="300" y1="360" x2="510" y2="360"/><rect class="dist neu" x="540" y="270" width="190" height="150" rx="2"/><text class="dn" x="552" y="292">DISTRICT 9</text><text class="db" x="552" y="308">balanced</text><rect class="win" x="556" y="328" width="16" height="12"/><rect class="win" x="556" y="350" width="16" height="12"/><rect class="win" x="602" y="328" width="16" height="12"/><rect class="win" x="602" y="350" width="16" height="12"/><rect class="win" x="648" y="328" width="16" height="12"/><rect class="win" x="648" y="350" width="16" height="12"/><rect class="win" x="694" y="328" width="16" height="12"/><rect class="win" x="694" y="350" width="16" height="12"/><line class="ground" x1="540" y1="420" x2="730" y2="420"/><path class="flow" d="M270 300 C 288 268, 292 250, 300 240" marker-end="url(#ah)"/><text class="flt" x="252" y="256">surplus diverted</text><path class="flow" d="M510 236 C 526 246, 530 268, 540 292" marker-end="url(#ah)"/><path class="wave" d="M40 430 L300 430 L460 400 L700 400 L900 430"/><circle class="itx" cx="70" cy="430" r="5"/><circle class="itx" cx="198" cy="430" r="5"/><circle class="itx" cx="326" cy="430" r="5"/><circle class="itx" cx="454" cy="430" r="5"/><circle class="itx" cx="582" cy="430" r="5"/><circle class="itx" cx="710" cy="430" r="5"/><circle class="itx" cx="838" cy="430" r="5"/><text class="wt" x="700" y="392">GREEN WAVE &middot; 14 ms END TO END</text><text class="wt2" x="60" y="452">EV ambulance prioritised by cryptographic optical corridor, no cloud round trip</text><rect class="relay" x="40" y="360" width="864" height="26" rx="2"/><rect class="rnode" x="52" y="366" width="18" height="14" rx="2"/><rect class="rnode" x="113" y="366" width="18" height="14" rx="2"/><rect class="rnode" x="174" y="366" width="18" height="14" rx="2"/><rect class="rnode" x="235" y="366" width="18" height="14" rx="2"/><rect class="rnode" x="296" y="366" width="18" height="14" rx="2"/><rect class="rnode" x="357" y="366" width="18" height="14" rx="2"/><rect class="rnode" x="418" y="366" width="18" height="14" rx="2"/><rect class="rnode" x="479" y="366" width="18" height="14" rx="2"/><rect class="rnode" x="540" y="366" width="18" height="14" rx="2"/><rect class="rnode" x="601" y="366" width="18" height="14" rx="2"/><rect class="rnode" x="662" y="366" width="18" height="14" rx="2"/><rect class="rnode" x="723" y="366" width="18" height="14" rx="2"/><rect class="rnode" x="784" y="366" width="18" height="14" rx="2"/><rect class="rnode" x="845" y="366" width="18" height="14" rx="2"/><text class="rt" x="52" y="352">DEAD-DROP RELAY LAYER &middot; solar streetlamp micro-nodes, local sharding</text><rect class="ledger" x="40" y="398" width="864" height="18" rx="2"/><text class="lt" x="52" y="411">DAG LEDGER &middot; zero-fee utility metering and sensor heartbeats</text><defs><marker id="ah" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 Z" fill="#e0a44c"/></marker></defs></svg>
+  <div class="readouts">
+    <div class="ro"><span class="rn">Active mesh nodes</span><b>14,290</b><span class="rs">peer to peer</span></div>
+    <div class="ro"><span class="rn">Microgrid balancing</span><b>99.98%</b><span class="rs">synced</span></div>
+    <div class="ro"><span class="rn">Green wave latency</span><b>14 ms</b><span class="rs">end to end</span></div>
+    <div class="ro"><span class="rn">Civic auth</span><b>Blind Ed25519</b><span class="rs">zero knowledge</span></div>
+  </div>
+</div></div>
+
+<section><div class="wrap"><h2><i>01 &mdash; the principle</i>No single point of civic failure</h2>
+<p>A cloud smart city is a hyperscaler data centre with sensors attached. Sever the fibre and the traffic signals, the utility meters and the emergency routing go with it &mdash; and every transaction in the system is also a record of where a named citizen was.</p>
+<p>CityOS inverts both properties. Resource routing is <b>peer to peer across the mesh</b>, so a district that loses its uplink keeps operating as an island and re-merges its ledger afterwards. And identity is never required to use a public service: turnstiles, libraries and sports facilities accept <b>zero-knowledge blinding tokens</b>, which prove entitlement without leaving a persistent identifier behind.</p>
+<pre>[KELLER-KERNEL]   Hardware enclave microkernel initialised.
+[CIVIC-ROUTING]   District 4 solar surplus diverted to District 7 storage.
+[EMERGENCY]       EV ambulance prioritised via cryptographic optical corridor.
+[PRIVACY]         Identity-less access tokens issued for public transit turnstiles.</pre>
+</div></section>
+
+<section><div class="wrap"><h2><i>02 &mdash; compared</i>Centralised smart city against a peer mesh</h2>
+<table><thead><tr><th>Dimension</th><th>Cloud smart city</th><th>CityOS</th></tr></thead><tbody>
+<tr><td>backbone dependency</td><td>centralised hyperscaler data centres</td><td class="ct">fully peer-to-peer mesh and edge relays</td></tr>
+<tr><td>blackout survivability</td><td>immediate failure when fibre is severed</td><td class="ct">autonomous local islanding, DAG re-merge</td></tr>
+<tr><td>citizen surveillance</td><td>persistent facial and payment tracking</td><td class="ct">zero-knowledge verifiable credentials</td></tr>
+<tr><td>emergency latency</td><td>300 ms+ round trip via a cloud API</td><td class="ct">&le; 15 ms via hardware enclave routing</td></tr>
+</tbody></table>
+<pre>git clone https://github.com/KELLERBABG/CityOS.git
+cd CityOS &amp;&amp; cargo test        # kernel primitives and mesh routing</pre>
+</div></section>
+
+<div class="foot"><div class="wrap"><span>CityOS &middot; Keller Systems</span>
+<span><a href="https://github.com/KELLERBABG/CityOS">repository</a> &nbsp;/&nbsp; <a href="https://kellersystems.dev">kellersystems.dev</a></span></div></div>
+</body></html>

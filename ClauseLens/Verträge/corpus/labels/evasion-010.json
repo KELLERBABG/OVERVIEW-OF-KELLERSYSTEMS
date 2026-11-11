@@ -1,0 +1,79 @@
+{
+  "slug": "evasion-010",
+  "source": "generated",
+  "domain": "evasion",
+  "traps": [
+    {
+      "marker": "Die in Anlage 2 Ziffer 1 geregelte Maßnahme gilt für alle Ansprüche aus diesem Vertrag.",
+      "expectedType": "as_is_software_disclaimer",
+      "note": "GAP: Tatbestand nur über Querverweis auf Anlage 2 erreichbar. Erwartet: as_is_software_disclaimer."
+    },
+    {
+      "marker": "Die in Anlage 2 Ziffer 2 geregelte Maßnahme gilt für alle Ansprüche aus diesem Vertrag.",
+      "expectedType": "entire_agreement",
+      "note": "GAP: Tatbestand nur über Querverweis auf Anlage 2 erreichbar. Erwartet: entire_agreement."
+    },
+    {
+      "marker": "Die in Anlage 2 Ziffer 3 geregelte Maßnahme gilt für alle Ansprüche aus diesem Vertrag.",
+      "expectedType": "marketing_reference",
+      "note": "GAP: Tatbestand nur über Querverweis auf Anlage 2 erreichbar. Erwartet: marketing_reference."
+    },
+    {
+      "marker": "Die in Anlage 2 Ziffer 4 geregelte Maßnahme gilt für alle Ansprüche aus diesem Vertrag.",
+      "expectedType": "feedback_ip_grab",
+      "note": "GAP: Tatbestand nur über Querverweis auf Anlage 2 erreichbar. Erwartet: feedback_ip_grab."
+    },
+    {
+      "marker": "Die in Anlage 2 Ziffer 5 geregelte Maßnahme gilt für alle Ansprüche aus diesem Vertrag.",
+      "expectedType": "fictitious_receipt",
+      "note": "GAP: Tatbestand nur über Querverweis auf Anlage 2 erreichbar. Erwartet: fictitious_receipt."
+    },
+    {
+      "marker": "Die in Anlage 2 Ziffer 6 geregelte Maßnahme gilt für alle Ansprüche aus diesem Vertrag.",
+      "expectedType": "unverbindliche_sla_falle",
+      "note": "GAP: Tatbestand nur über Querverweis auf Anlage 2 erreichbar. Erwartet: unverbindliche_sla_falle."
+    },
+    {
+      "marker": "Die in Anlage 2 Ziffer 7 geregelte Maßnahme gilt für alle Ansprüche aus diesem Vertrag.",
+      "expectedType": "agency_commission_exclusion",
+      "note": "GAP: Tatbestand nur über Querverweis auf Anlage 2 erreichbar. Erwartet: agency_commission_exclusion."
+    },
+    {
+      "marker": "Die in Anlage 2 Ziffer 8 geregelte Maßnahme gilt für alle Ansprüche aus diesem Vertrag.",
+      "expectedType": "agency_goodwill_waiver",
+      "note": "GAP: Tatbestand nur über Querverweis auf Anlage 2 erreichbar. Erwartet: agency_goodwill_waiver."
+    },
+    {
+      "marker": "Die in Anlage 2 Ziffer 9 geregelte Maßnahme gilt für alle Ansprüche aus diesem Vertrag.",
+      "expectedType": "international_data_processing",
+      "note": "GAP: Tatbestand nur über Querverweis auf Anlage 2 erreichbar. Erwartet: international_data_processing."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Haftung beider Parteien richtet sich nach den gesetzlichen Bestimmungen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Jede Partei trägt ihre eigenen Kosten der Vertragsverhandlungen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde ist berechtigt, Rechte aus diesem Vertrag mit Zustimmung des Anbieters auf verbundene",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Für die Nutzung der bereitgestellten Software gilt die beigefügte Leistungsbeschreibung.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Ansprüche aus diesem Vertrag verjähren nach den gesetzlichen Vorschriften.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde trägt die Kosten für die von ihm gewünschten Zusatzleistungen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    }
+  ],
+  "uncovered": []
+}

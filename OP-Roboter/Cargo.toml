@@ -1,0 +1,47 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/op-math",
+    "crates/op-kinematics",
+    "crates/op-trajectory",
+    "crates/op-constraints",
+    "crates/op-verifier",
+    "crates/op-state-space",
+    "crates/op-energy",
+    "crates/op-taint",
+    "crates/op-spec",
+    "crates/op-gate",
+    "crates/op-sim",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+rust-version = "1.70"
+repository = "https://github.com/op-roboter/op-roboter"
+description = "Formally verified surgical robot control OS — research tooling only, not a deployable medical device"
+
+[workspace.dependencies]
+op-math = { path = "crates/op-math" }
+op-kinematics = { path = "crates/op-kinematics" }
+op-trajectory = { path = "crates/op-trajectory" }
+op-constraints = { path = "crates/op-constraints" }
+op-verifier = { path = "crates/op-verifier" }
+op-state-space = { path = "crates/op-state-space" }
+op-energy = { path = "crates/op-energy" }
+op-taint = { path = "crates/op-taint" }
+op-spec = { path = "crates/op-spec" }
+op-gate = { path = "crates/op-gate" }
+op-sim = { path = "crates/op-sim" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+clap = { version = "4", features = ["derive"] }
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+overflow-checks = true
+panic = "abort"
+debug = 1

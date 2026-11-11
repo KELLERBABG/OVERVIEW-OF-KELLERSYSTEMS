@@ -1,0 +1,117 @@
+{
+  "slug": "gen-saas-subscription",
+  "source": "generated",
+  "domain": "B2B SaaS/Cloud-Subscription (österreichisches Recht, deutschsprachig)",
+  "traps": [
+    {
+      "marker": "setzt sich nach Ablauf der Anfangsperiode jeweils um zwölf Monate fort",
+      "expectedType": "auto_renewal",
+      "note": "Automatische Fortsetzung um 12 Monate. Bewusst OHNE die Formeln verlängert sich / stillschweigende Verlängerung / Verlängerung um jeweils weitere formuliert, um die Registersprache zu vermeiden."
+    },
+    {
+      "marker": "unter Einhaltung einer Vorlaufzeit von neun Monaten zulässig",
+      "expectedType": "notice_period",
+      "note": "Neun Monate Vorlauf für die Beendigung. Das Wort kündig wird vollständig vermieden (Vorlaufzeit statt Kündigungsfrist), damit der numerische Collector nicht greift."
+    },
+    {
+      "marker": "an die Preissteigerung angepasst",
+      "expectedType": "price_escalation",
+      "note": "Einseitige jährliche Anpassung nach oben, Absenkung ausdrücklich ausgeschlossen, ohne Sonderkündigungsrecht. Weder um bis zu X Prozent noch nach billigem Ermessen formuliert."
+    },
+    {
+      "marker": "Erhebt der Kunde nicht binnen zehn Tagen Einspruch",
+      "expectedType": "unilateral_change",
+      "note": "Zustimmungsfiktion durch Schweigen mit kurzer Frist. Bewusst nicht als gilt als genehmigt / widerspricht der Kunde nicht formuliert, sondern als Einspruchsfrist mit Wirksamkeit kraft Fristablauf."
+    },
+    {
+      "marker": "auf den Betrag der in den letzten drei Monaten gezahlten Entgelte begrenzt",
+      "expectedType": "liability",
+      "note": "Summenbegrenzung auf drei Monatsentgelte - hier absichtlich mit der klassischen Registerformulierung (begrenzt + in den letzten drei Monaten), damit der Korpus auch Treffer enthält."
+    },
+    {
+      "marker": "sieht der Kunde wegen Störungen des Geschäftsbetriebs von Ansprüchen ab",
+      "expectedType": "liability",
+      "note": "Anspruchsverzicht des Kunden für Betriebsstörungen und Datenverlust. Formuliert als von Ansprüchen absehen statt verzichten auf Ersatzansprüche."
+    },
+    {
+      "marker": "hat der Kunde den Anbieter insoweit klaglos zu stellen",
+      "expectedType": "third_party_indemnity",
+      "note": "Freistellung von Drittansprüchen aus Kundendaten. Klaglos stellen statt freistellen oder schadlos halten."
+    },
+    {
+      "marker": "wird keine Zusage übernommen",
+      "expectedType": "as_is_software_disclaimer",
+      "note": "Ausschluss jeder Zusage für Erkennungsqualität und Vollständigkeit - verdeckter Gewährleistungsausschluss. Kein wie gesehen, keine Formulierung weder ... noch."
+    },
+    {
+      "marker": "darf der Anbieter in eigener Verantwortung verwerten",
+      "expectedType": "data_grant",
+      "note": "Der Anbieter darf aggregierte Auswertungen aus Kundennutzung eigenständig verwerten, ohne Beteiligung des Kunden. Ohne Nutzungsrecht an Mustern, Modelltraining oder mathematischen Gewichtungen."
+    },
+    {
+      "marker": "nur nach vorheriger schriftlicher Bestätigung durch den Anbieter in Ansatz gebracht",
+      "expectedType": "setoff_restriction",
+      "note": "Faktische Aufrechnungssperre: Gegenforderungen wirken nur mit vorheriger Zustimmung des Anbieters. Die Wörter Aufrechnung und Verrechnung werden vermieden, damit die Negationsmuster nicht greifen."
+    },
+    {
+      "marker": "Ein Anspruch auf Loslösung vor Ablauf der Periode besteht nur",
+      "expectedType": "asymmetric_termination",
+      "note": "Außerordentliche Lösung praktisch ausgeschlossen (Nachweisvorbehalt zugunsten des Anbieters). Loslösung und Bestätigung statt Kündigung aus wichtigem Grund."
+    },
+    {
+      "marker": "Ausschließlicher Gerichtsstand für alle Streitigkeiten ist der Sitz des Anbieters",
+      "expectedType": "jurisdiction",
+      "note": "Ausschließlicher Gerichtsstand am Anbietersitz (Wien) - klassische Registerformulierung, damit der Korpus einen weiteren Treffer enthält."
+    },
+    {
+      "marker": "die dem wirtschaftlichen Zweck am nächsten kommt",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "Geltungserhaltende Reduktion mit Ersetzung nach wirtschaftlichem Zweck statt Geltung des gesetzlichen Rechts. Klassische Formulierung."
+    },
+    {
+      "marker": "auch auf Servern außerhalb der Europäischen Union",
+      "note": "Drittlandverarbeitung personenbezogener Daten ohne benannten Übermittlungsmechanismus. Ein Transfer ist nicht automatisch rechtswidrig; Empfänger, Land und Garantien müssen geprüft werden.",
+      "expectedType": "international_data_processing"
+    },
+    {
+      "marker": "Die Kosten des Verfahrens sind vom Kunden vorzustrecken",
+      "note": "Verpflichtendes Sachverständigenverfahren mit Kundenvorfinanzierung vor dem Rechtsweg. Gestufte Verfahren sind nicht automatisch unzulässig; prüfen Sie enge Reichweite, Kosten und Verfahrensgarantien.",
+      "expectedType": "mandatory_expert_determination"
+    },
+    {
+      "marker": "entfällt der Anspruch auf die vereinbarten Gutschriften",
+      "note": "Verlust von Service-Gutschriften bei versäumtem Patch-Zeitfenster; prüfen Sie Umfang, Verantwortlichkeit und Nachfrist, bevor die wirtschaftliche Wirkung bewertet wird.",
+      "expectedType": "service_credit_forfeiture"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und die Verletzung von Kardinalpflichten bleibt unberührt",
+      "note": "Gesetzeskonforme Haftungsfreistellung - darf nicht gemeldet werden."
+    },
+    {
+      "marker": "Beide Parteien behandeln die Informationen der anderen Seite vertraulich",
+      "note": "Wechselseitige Vertraulichkeit - darf nicht als einseitige Geheimhaltungspflicht gemeldet werden."
+    },
+    {
+      "marker": "über den Einsatz neuer Unterauftragnehmer mindestens 14 Tage vorab",
+      "note": "Vorabinformation mit 14 Tagen - ordnungsgemäßer Subunternehmereinsatz, darf nicht als unkontrollierte Weitergabe gemeldet werden."
+    },
+    {
+      "marker": "innerhalb von 30 Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Marktübliche Zahlungsfrist. Verzugszinsen werden bewusst nur durch Verweis auf die gesetzlichen Bestimmungen geregelt, damit keine Zinsregel greift."
+    },
+    {
+      "marker": "jederzeit in einem gängigen maschinenlesbaren Format",
+      "note": "Kostenfreie Datenherausgabe im Standardformat - Gegenteil eines Lock-ins, darf nicht gemeldet werden."
+    },
+    {
+      "marker": "können in Textform abgegeben werden",
+      "note": "Textform genügt für Erklärungen und Kündigungen - erleichtert, nicht erschwert, darf nicht als Formfalle gemeldet werden."
+    },
+    {
+      "marker": "nur nach vorheriger Zustimmung des Kunden",
+      "note": "Referenznennung nur mit Zustimmung des Kunden - darf nicht als ungefragte Referenznutzung gemeldet werden."
+    }
+  ]
+}

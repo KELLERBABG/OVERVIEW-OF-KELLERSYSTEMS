@@ -1,0 +1,77 @@
+Vermittlungs- und Partnervertrag (API-Plattform)
+
+zwischen der Delta Stack GmbH, Ritterstraße 9, 50667 Köln (nachfolgend "Anbieter")
+
+und der Vertex Systems GmbH, Getreidegasse 14, 5020 Salzburg (nachfolgend "Partner")
+
+Präambel
+
+Der Anbieter betreibt eine API-Plattform für die automatische Dokumentenanalyse und gewinnt Partner für die Vermittlung von Abonnements.
+
+§ 1 Gegenstand
+
+(1) Der Anbieter räumt dem Partner das Recht ein, Abonnements der API-Plattform zu vermitteln.
+
+(2) Ein Anspruch auf Gebietsschutz besteht nicht.
+
+§ 2 Entgelte
+
+(1) Der Partner erhält für vermittelte Abonnements eine Provision in Höhe von 18 Prozent des Nettoentgelts.
+
+§ 3 Direktgeschäfte
+
+(1) Schließt der Anbieter einen Direktauftrag ab, wird keine Provision geschuldet.
+
+§ 4 Ausgleich
+
+(1) Der Partner verzichtet auf jeden Ausgleich für den von ihm aufgebauten Kundenstamm.
+
+§ 5 Laufzeit
+
+(1) Das Abonnement setzt sich nach Ablauf der Festlaufzeit jeweils um zwölf Monate fort, sofern es keine Partei kündigt.
+
+(2) Beiden Parteien steht das Recht zu, den Partnervertrag mit einer Frist von sechs Monaten zum Jahresende zu kündigen.
+
+§ 6 Verfügbarkeit
+
+(1) Die Verfügbarkeitsangaben in Anlage 2 sind bloße Zielgröße ohne Rechtsanspruch.
+
+§ 7 Änderungen der Plattform
+
+(1) Der Anbieter ist berechtigt, den Leistungsumfang jederzeit einzuschränken.
+
+§ 8 Haftung
+
+(1) Die Haftung für mittelbare Schäden und entgangenen Gewinn ist abbedungen.
+
+(2) Für Datenverluste übernimmt die Anbieterin keine Haftung.
+
+§ 9 Nebenleistungen
+
+(1) Der Partner darf für die Erbringung von Nebenleistungen weitere Dienstleister einsetzen; er zeigt dies dem Anbieter vorab an.
+
+§ 10 Vertraulichkeit
+
+(1) Der Anbieter und der Partner behandeln alle wechselseitig ausgetauschten Informationen vertraulich.
+
+§ 11 Marken
+
+(1) Der Partner verwendet die Marken des Anbieters nur im Rahmen der vereinbarten Richtlinien.
+
+§ 12 Dokumentation
+
+(1) Der Anbieter stellt dem Partner die technische Dokumentation der Schnittstellen kostenfrei zur Verfügung.
+
+§ 13 Streitigkeiten
+
+(1) Rechtsstreitigkeiten sind ausschließlich vor den Gerichten am Sitz des Anbieters auszutragen.
+
+§ 14 Schlussbestimmungen
+
+(1) Es gilt deutsches Recht.
+
+Ort, Datum: Köln, den 09.06.2025
+
+Für den Anbieter: gez. P. Delta
+
+Für den Partner: gez. K. Vertex

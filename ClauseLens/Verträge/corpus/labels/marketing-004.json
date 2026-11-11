@@ -1,0 +1,78 @@
+{
+  "slug": "marketing-004",
+  "source": "generated",
+  "domain": "Mediaeinkauf, schweizerisches Recht",
+  "traps": [
+    {
+      "marker": "die Mediapreise an die Entwicklung des Landesindexes",
+      "expectedType": "price_escalation",
+      "note": "Indexkopplung als 'Entwicklung ... anpassen' ohne Preisanpassungs-Register."
+    },
+    {
+      "marker": "eine Verzinsung von elf Prozent pro Monat",
+      "expectedType": "default_interest",
+      "note": "Überhöhter Monatszins als Wortzahl; vermeidet Verzugszins-Formel."
+    },
+    {
+      "marker": "läuft für den Zeitraum der Unterbrechung unverändert weiter",
+      "expectedType": "service_suspension",
+      "note": "Weiterzahlung trotz Leistungsunterbrechung; vermeidet Sperre und Abmahnung."
+    },
+    {
+      "marker": "eine Stornogebühr pauschal in Höhe von zwanzig Prozent",
+      "expectedType": "early_termination_charge",
+      "note": "Pauschale bei vorzeitiger Auflösung; vermeidet Abstandszahlung."
+    },
+    {
+      "marker": "auf der Website des Vermarkters veröffentlichten Werbebedingungen",
+      "expectedType": "dynamic_url_referral",
+      "note": "Dynamischer Verweis ohne URL und ohne Versionsstand; vermeidet 'abrufbar unter'."
+    },
+    {
+      "marker": "dienen ausschließlich der internen Kapazitätsplanung",
+      "expectedType": "unverbindliche_sla_falle",
+      "note": "Erreichbarkeitswerte als interne Kennzahlen entkräftet; vermeidet 'unverbindlich'."
+    },
+    {
+      "marker": "Abgabenbelastungen trägt der Kunde vollumfänglich, auch rückwirkend",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Rückwirkende Steuerabwälzung; vermeidet 'Steuernachforderungen'."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Änderungen des Kampagnenplans bedürfen der Abstimmung beider Parteien",
+      "note": "Nicht verwendet, aber als Muster vorbereitet."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Gesetzeskonforme Haftungserhaltung."
+    },
+    {
+      "marker": "Beide Parteien verpflichten sich zur wechselseitigen Vertraulichkeit über alle Geschäftsdaten",
+      "note": "Symmetrische Vertraulichkeit."
+    },
+    {
+      "marker": "kündigt neue Subunternehmer mindestens vierzehn Tage vorher an; der Kunde kann widersprechen",
+      "note": "Ordentliche Vorabinformation."
+    },
+    {
+      "marker": "stellt der Vermarkter die Kampagnendaten kostenfrei in einem offenen Format bereit",
+      "note": "Kostenfreie Datenherausgabe."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten auf das Quartalsende beenden",
+      "note": "Symmetrische Kündigungsfrist unter der Schwelle."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, erfolgen",
+      "note": "Textform zugelassen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Platzierungen erfolgen nach Verfügbarkeit und werden im Kampagnenplan festgehalten",
+      "note": "Kein Detektor für unverbindliche Platzierungszusage."
+    }
+  ]
+}

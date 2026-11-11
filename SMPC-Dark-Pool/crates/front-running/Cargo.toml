@@ -1,0 +1,20 @@
+[package]
+name = "front-running"
+version.workspace = true
+edition.workspace = true
+description = "Front-running protection via commit-reveal and encrypted mempool ordering"
+
+[dependencies]
+sss = { path = "../sss" }
+commitments = { path = "../commitments" }
+ark-bn254.workspace = true
+ark-ff.workspace = true
+sha2.workspace = true
+hex.workspace = true
+rand.workspace = true
+rand_chacha.workspace = true
+rand_core.workspace = true
+thiserror.workspace = true
+
+[lints]
+rust.unsafe_code = "forbid"

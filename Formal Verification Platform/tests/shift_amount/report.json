@@ -1,0 +1,26 @@
+[
+  {
+    "crate": "shift_amount",
+    "function": "shift_by",
+    "block": "bb0",
+    "status": "FAIL",
+    "kind": "overflow",
+    "defect_class": "unguarded",
+    "file": "src/main.rs",
+    "line": 25,
+    "details": "Arithmetic Overflow Detection (Shl) -> Exploit path found! [x (_1) = 0, by (_2) = 32]",
+    "witness": [
+      {
+        "input": "x (_1)",
+        "symbol": "overflow_l",
+        "value": "0"
+      },
+      {
+        "input": "by (_2)",
+        "symbol": "overflow_r",
+        "value": "32"
+      }
+    ],
+    "witness_kind": "one-of-many"
+  }
+]

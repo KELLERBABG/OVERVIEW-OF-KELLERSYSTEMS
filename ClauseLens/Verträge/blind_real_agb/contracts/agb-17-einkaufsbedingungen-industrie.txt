@@ -1,0 +1,63 @@
+ALLGEMEINE EINKAUFSBEDINGUNGEN (AEB) DER NORDSTAHL INDUSTRIEWERKE GMBH (STAND 2026)
+
+§ 1 Geltungsbereich und Abwehrklausel
+
+(1) Diese Allgemeinen Einkaufsbedingungen (nachfolgend „AEB“) gelten für sämtliche Bestellungen, Lieferabrufe und Werkleistungen, die die Nordstahl Industriewerke GmbH (nachfolgend „Auftraggeber“) bei ihren Zulieferern und Dienstleistern (nachfolgend „Lieferant“) beauftragt.
+
+(2) Entgegenstehende oder von diesen AEB abweichende Verkaufs- oder Lieferbedingungen des Lieferanten erkennt der Auftraggeber nicht an, es sei denn, der Auftraggeber hat ihrer Geltung im Einzelfall ausdrücklich in Textform zugestimmt.
+
+§ 2 Bestellungen, Abrufe und ordentliche Kündigung
+
+(1) Bestellungen und Lieferabrufe sind für den Auftraggeber nur verbindlich, wenn sie über das elektronische Einkaufsportal oder in Textform erteilt werden.
+
+(2) Der Auftraggeber ist jederzeit berechtigt, laufende Lieferverträge, Rahmenbestellungen und Einzelaufträge ohne Angabe von Gründen mit sofortiger Wirkung ordentlich zu kündigen, während dem Lieferanten ein Recht zur ordentlichen Kündigung für die gesamte Dauer der Geschäftsbeziehung vollständig untersagt ist.
+
+§ 3 Liefertermine, Gefahrübergang und Vertragsstrafe
+
+(1) Vereinbarte Liefertermine und Lieferfristen sind verbindlich. Maßgeblich für die Einhaltung des Liefertermins ist der Eingang der mangelfreien Ware an der vom Auftraggeber benannten Empfangsstelle (Incoterms 2020 DDP).
+
+(2) Die Sach- und Preisgefahr geht gemäß den gesetzlichen Vorschriften erst mit der ordnungsgemäßen Übergabe der Ware am vereinbarten Erfüllungsort auf den Auftraggeber über.
+
+(3) Überschreitet der Lieferant einen vereinbarten Liefertermin – auch ohne eigenes Verschulden, etwa infolge von Rohstoffmangel oder Betriebsstörungen bei Vorlieferanten –, schuldet er dem Auftraggeber für jeden angefangenen Kalendertag der Verspätung eine Vertragsstrafe in Höhe von 2,5 % des Gesamtauftragswertes ohne betragsmäßige Höchstgrenze.
+
+§ 4 Preise, Zahlungsbedingungen und Abtretungsverbot
+
+(1) Die in der Bestellung ausgewiesenen Preise sind Festpreise zuzüglich der gesetzlichen Umsatzsteuer und schließen Verpackung, Fracht, Zoll und Transportversicherung ein. Rechnungen sind innerhalb von 30 Tagen netto nach ordnungsgemäßer Lieferung und Rechnungseingang zur Zahlung fällig.
+
+(2) Dem Lieferanten ist es strengstens untersagt, seine bestehenden oder künftigen Geldforderungen gegen den Auftraggeber ohne dessen vorherige schriftliche Zustimmung an Dritte, insbesondere an Factoring-Gesellschaften oder Kreditinstitute, abzutreten oder durch Dritte einziehen zu lassen; eine gleichwohl vorgenommene Abtretung ist auch im kaufmännischen Verkehr unwirksam.
+
+§ 5 Mängeluntersuchung, Rügeobliegenheit und Gewährleistung
+
+(1) Dem Lieferanten stehen die gesetzlichen Mängelrechte uneingeschränkt zu; der Lieferant gewährleistet, dass sämtliche gelieferten Bauteile den vereinbarten technischen Spezifikationen und den anerkannten Regeln der Technik entsprechen.
+
+(2) Die gesetzlichen Gewährleistungsansprüche des Auftraggebers richten sich nach den Vorschriften des Bürgerlichen Gesetzbuches (BGB), soweit nachfolgend nichts Abweichendes geregelt ist.
+
+(3) Bei Auftreten eines Sachmangels an einem gelieferten Bauteil wird unwiderlegbar vermutet, dass der Mangel bereits bei Gefahrübergang vorlag und durch ein grobes Organisationsverschulden des Lieferanten verursacht wurde; dem Lieferanten obliegt die volle Beweislast dafür, dass ein Schaden im Werk des Auftraggebers nicht auf die gelieferte Ware zurückzuführen ist.
+
+§ 6 Gewerbliche Schutzrechte und Freistellung
+
+(1) Der Lieferant steht dafür ein, dass im Zusammenhang mit seiner Lieferung keine Patente, Marken oder sonstigen Schutzrechte Dritter verletzt werden.
+
+(2) Der Lieferant verpflichtet sich, den Auftraggeber und dessen verbundene Konzernunternehmen von sämtlichen Ansprüchen Dritter wegen angeblicher Schutzrechtsverletzungen oder Produkthaftungsfällen auf erstes Anfordern umfassend freizustellen, und zwar völlig unabhängig davon, ob den Lieferanten hieran ein Verschulden trifft oder ob die Verletzung auf zwingenden Konstruktionsvorgaben des Auftraggebers beruht.
+
+§ 7 Produktionsaudits und Zutrittsrechte
+
+(1) Der Auftraggeber sowie von ihm beauftragte Dritte sind berechtigt, die Produktionsstätten, Lagerhallen, Entwicklungsabteilungen und IT-Systeme des Lieferanten jederzeit zu jeder Tages- und Nachtzeit ohne vorherige Ankündigung und ohne konkreten Anlass zu betreten und vollumfänglich zu prüfen; der Lieferant hat hierfür sämtliche Prüfkosten pauschal in Höhe von 5.000,00 Euro je Audit zu erstatten.
+
+§ 8 Unterauftragnehmer und Beistellungen
+
+(1) Der Einsatz von Nach- oder Unterauftragnehmern für die Fertigung wesentlicher Baugruppen bedarf der vorherigen Zustimmung des Auftraggebers in Textform, die nicht unbillig verweigert werden darf.
+
+(2) Vom Auftraggeber beigestellte Werkzeuge, Formen und Materialien bleiben im Eigentum des Auftraggebers und sind vom Lieferanten als solche getrennt zu lagern und deutlich zu kennzeichnen.
+
+§ 9 Geheimhaltung und Exklusivität
+
+(1) Der Lieferant ist verpflichtet, sämtliche ihm vom Auftraggeber überlassenen Zeichnungen, Modelle, Rezepturen und kaufmännischen Informationen zeitlich unbegrenzt streng geheim zu halten, während der Auftraggeber berechtigt ist, alle vom Lieferanten erhaltenen technischen Unterlagen, Kalkulationen und Betriebsgeheimnisse frei an Dritte und Wettbewerber des Lieferanten weiterzugeben.
+
+(2) Sämtliche Geheimhaltungs-, Freistellungs- und Ersatzteilbereithaltungspflichten des Lieferanten aus diesem Vertrag gelten nach Beendigung der Geschäftsbeziehung zeitlich unbefristet, mindestens jedoch für einen Zeitraum von 50 Jahren, uneingeschränkt fort.
+
+§ 10 Insolvenz, Rechtswahl und Gerichtsstand
+
+(1) Sollte der Lieferant einen Antrag auf Eröffnung eines Insolvenz- oder Restrukturierungsverfahrens stellen oder sollte ein vorläufiger Insolvenzverwalter bestellt werden, enden sämtliche bestehenden Rahmen- und Einzelverträge automatisch und entschädigungslos, und alle vom Lieferanten gefertigten Werkzeuge gehen unentgeltlich in das Eigentum des Auftraggebers über.
+
+(2) Für alle Rechtsbeziehungen zwischen dem Auftraggeber und dem Lieferanten gilt das Recht der Bundesrepublik Deutschland. Gerichtsstand für Kaufleute im Sinne des Handelsgesetzbuches ist der Sitz des Auftraggebers.

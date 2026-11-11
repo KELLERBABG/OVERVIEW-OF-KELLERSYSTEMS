@@ -1,0 +1,72 @@
+{
+  "slug": "logistik-019",
+  "source": "generated",
+  "domain": "Baustellenlogistik",
+  "traps": [
+    {
+      "marker": " Gewalt wird der Anbieter von der Leistungspflicht entbunden,",
+      "expectedType": "force_majeure_asymmetry",
+      "note": "Red-team Klausel: force_majeure_asymmetry"
+    },
+    {
+      "marker": " Beendigung durch den Kunden wird eine pauschale Abstandszahlung",
+      "expectedType": "early_termination_charge",
+      "note": "Red-team Klausel: early_termination_charge"
+    },
+    {
+      "marker": "Die außerordentliche Kündigung nach § 314 BGB ist abbedungen.",
+      "expectedType": "asymmetric_termination",
+      "note": "Red-team Klausel: asymmetric_termination"
+    },
+    {
+      "marker": "Bei Überschreitung der Verladezeit wird eine Pauschale von 250 EUR je Tag fällig.",
+      "expectedType": "penalty",
+      "note": "Red-team Klausel: penalty"
+    },
+    {
+      "marker": "Zinsen werden mit zwölf Prozentpunkten über dem Basiszinssatz berechnet.",
+      "expectedType": "default_interest",
+      "note": "Red-team Klausel: default_interest"
+    },
+    {
+      "marker": " über die Beschaffenheit der Anlage gilt das Sachverständigenverfahren.",
+      "expectedType": "mandatory_expert_determination",
+      "note": "Red-team Klausel: mandatory_expert_determination"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Anlieferfenster wöchentlich ab",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "informieren sich unverzüglich über eingetretene Störungen",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Aufwände nach Anlage 2 in Rechnung",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "unterrichtet den Kunden über geplante Stilllegungen",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "innerhalb von 30 Tagen ohne Abzug zahlbar",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "7.3 Es gilt deutsches Recht.",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "seine Baudaten jederzeit in einem gängigen Format exportieren",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Beide Parteien behandeln die Projektdaten vertraulich",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

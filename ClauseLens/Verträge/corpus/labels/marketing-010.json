@@ -1,0 +1,74 @@
+{
+  "slug": "marketing-010",
+  "source": "generated",
+  "domain": "Influencer-Talentmanagement, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Direktgeschäfte des Creators sind von der Provision ausgeschlossen",
+      "expectedType": "agency_commission_exclusion",
+      "note": "Provisionsausschluss für Direktgeschäfte."
+    },
+    {
+      "marker": "Ein Anspruch auf Ausgleich für den Kundenstamm besteht nicht",
+      "expectedType": "agency_goodwill_waiver",
+      "note": "Ausgleichsanspruch für den Kundenstamm abbedungen."
+    },
+    {
+      "marker": "bleibt der Creator für neun Monate untätig",
+      "expectedType": "non_compete",
+      "note": "Nachvertragliches Tätigkeitsverbot als Untätigkeit formuliert."
+    },
+    {
+      "marker": "keine Beschäftigten des Creators abzuwerben",
+      "expectedType": "non_solicitation",
+      "note": "Abwerbeverbot mit Nachvertragswirkung."
+    },
+    {
+      "marker": "Zinsen von acht Prozent monatlich berechnet",
+      "expectedType": "default_interest",
+      "note": "Monatszins als Verzugsschaden."
+    },
+    {
+      "marker": "maximum liability shall be limited to the commission earned",
+      "expectedType": "liability",
+      "note": "Englischer Haftungsdeckel auf eine Monatsprovision."
+    },
+    {
+      "marker": "Mündliche Zusagen der Agentur entfalten keine Wirkung",
+      "expectedType": "entire_agreement",
+      "note": "Vollständigkeitsklausel über Wirkungslosigkeit mündlicher Zusagen."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "Symmetrische Vertraulichkeit."
+    },
+    {
+      "marker": "setzt weitere Vermittler nur nach vorheriger Abstimmung ein; der Creator kann widersprechen",
+      "note": "Ordentliche Subunternehmerregelung."
+    },
+    {
+      "marker": "erhält der Creator seine Kontaktdaten kostenfrei in einem offenen Format zurück",
+      "note": "Kostenfreier Datenexport."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende beenden",
+      "note": "Symmetrische Kündigung."
+    },
+    {
+      "marker": "Änderungen dieses Vertrages können in Textform vereinbart werden",
+      "note": "Textform zugelassen."
+    },
+    {
+      "marker": "erhält der Creator den vereinbarten Anteil innerhalb von dreißig Tagen nach Zahlungseingang",
+      "note": "Üblicher Zahlungstermin."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Die Agentur erhält eine Provision von fünfzehn Prozent der vermittelten Bruttoumsätze",
+      "note": "Kein Detektor für Höhe oder Transparenz von Vermittlungsprovisionen."
+    }
+  ]
+}

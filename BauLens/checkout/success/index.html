@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vielen Dank für deinen Kauf &mdash; BauLens</title>
+<meta name="description" content="Bestätigung des Lizenzkaufs bei BauLens und Hinweise zur Aktivierung in der Desktop-App.">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="index, follow">
+<link rel="icon" type="image/svg+xml" href="../../assets/icon.svg">
+<style>
+/* Self-hosted IBM Plex; see assets/fonts/OFL.txt */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./plex-mono-400-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./plex-mono-400-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./plex-mono-500-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./plex-mono-500-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("./plex-mono-600-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("./plex-mono-600-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./plex-sans-300-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./plex-sans-300-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./plex-sans-400-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./plex-sans-400-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./plex-sans-500-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./plex-sans-500-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./plex-sans-600-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./plex-sans-600-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./plex-sans-700-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./plex-sans-700-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+  :root {
+    --ink-900: #05070c; --ink-800: #080b12; --ink-700: #0b0f18; --ink-600: #101623; --ink-500: #161e2e;
+    --line: #1a2434; --line-strong: #26334a; --ink-line: #33415a;
+    --accent: #2fb6cf; --accent-hi: #57cde2;
+    --accent-wash: rgba(47, 182, 207, 0.08); --accent-edge: rgba(47, 182, 207, 0.32);
+    --on-accent: #04141a;
+    --warn: #d9a441; --warn-wash: rgba(217, 164, 65, 0.1);
+    --fg: #e9edf3; --fg-muted: #98a4b6; --fg-dim: #6b7788; --fg-faint: #4d5768;
+    --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --r-sm: 3px; --r-md: 5px; --r-lg: 8px;
+    --dur-fast: 120ms; --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+    --content: 74ch;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+  body {
+    margin: 0; min-height: 100vh;
+    background-color: var(--ink-900);
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,0.028) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.028) 1px, transparent 1px);
+    background-size: 88px 88px; background-attachment: fixed;
+    color: var(--fg); font-family: var(--font-sans); font-size: 1rem; line-height: 1.7;
+    overflow-x: clip; -webkit-font-smoothing: antialiased;
+  }
+  :focus-visible { outline: 2px solid var(--accent-hi); outline-offset: 2px; border-radius: var(--r-sm); }
+  ::selection { background: var(--accent-edge); color: var(--fg); }
+  .skip-link {
+    position: absolute; left: 1rem; top: -100px; z-index: 100;
+    padding: 0.6rem 1rem; background: var(--ink-500); border: 1px solid var(--accent);
+    border-radius: var(--r-md); font-family: var(--font-mono); font-size: 0.8125rem; text-decoration: none;
+    transition: top var(--dur-fast) var(--ease-out);
+  }
+  .skip-link:focus { top: 1rem; }
+
+  .site-header {
+    position: sticky; top: 0; z-index: 60;
+    background: rgba(5,7,12,0.88); border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(12px) saturate(140%);
+  }
+  .header-inner {
+    display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+    height: 64px; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;
+  }
+  .brand { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; color: inherit; }
+  .brand-mark {
+    display: grid; place-items: center; width: 32px; height: 32px;
+    background: var(--ink-700); border: 1px solid var(--line-strong); border-radius: var(--r-md);
+  }
+  .brand-mark img { display: block; width: 22px; height: 22px; }
+  .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+  .brand-name { font-size: 1rem; font-weight: 600; letter-spacing: -0.02em; }
+  .brand-owner {
+    font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--fg-dim);
+  }
+  .header-actions { display: flex; align-items: center; gap: 0.5rem; }
+  .header-link {
+    font-size: 0.875rem; color: var(--fg-muted); text-decoration: none;
+    padding: 0.4rem 0.6rem; border-radius: var(--r-md);
+    transition: color var(--dur-fast) var(--ease-out), background-color var(--dur-fast) var(--ease-out);
+  }
+  .header-link:hover { color: var(--fg); background: var(--ink-600); }
+  .header-cta {
+    font-size: 0.8125rem; font-weight: 550; text-decoration: none; color: var(--on-accent);
+    background: var(--accent); padding: 0.5rem 0.9rem; border-radius: var(--r-md);
+    transition: background-color var(--dur-fast) var(--ease-out);
+  }
+  .header-cta:hover { background: var(--accent-hi); }
+
+  .shell { max-width: 1200px; margin: 0 auto; padding: 3rem 1.5rem 6rem; }
+  .prose { max-width: var(--content); }
+  .prose h1 {
+    font-size: clamp(1.75rem, 1.35rem + 1.6vw, 2.4rem); font-weight: 300;
+    line-height: 1.14; letter-spacing: -0.026em; margin: 0 0 1.25rem;
+  }
+  .prose h2 {
+    font-size: clamp(1.2rem, 1.08rem + 0.6vw, 1.45rem); font-weight: 600;
+    letter-spacing: -0.018em; margin: 2.75rem 0 0.85rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+  }
+  .prose h3 { font-size: 1.05rem; font-weight: 600; margin: 1.9rem 0 0.6rem; }
+  .prose p { margin: 0 0 1.05rem; color: var(--fg-muted); }
+  .prose strong { color: var(--fg); font-weight: 600; }
+  .prose a { color: var(--accent-hi); text-decoration: none; border-bottom: 1px solid var(--accent-edge); }
+  .prose a:hover { border-bottom-color: var(--accent-hi); }
+  .prose ul, .prose ol { margin: 0 0 1.05rem; padding-left: 1.35rem; color: var(--fg-muted); }
+  .prose li { margin-bottom: 0.4rem; }
+  .prose ul li::marker { color: var(--fg-faint); }
+  .prose ol li::marker { color: var(--accent); font-family: var(--font-mono); font-size: 0.85em; }
+  .prose code {
+    font-family: var(--font-mono); font-size: 0.86em; background: var(--ink-600);
+    border: 1px solid var(--line); border-radius: var(--r-sm); padding: 0.1em 0.35em; color: var(--fg);
+  }
+  .prose hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
+  .prose .lead { font-size: 1.05rem; color: var(--fg-muted); }
+  .prose .meta { font-family: var(--font-mono); font-size: 0.75rem; color: var(--fg-dim); letter-spacing: 0.04em; }
+
+  .callout {
+    max-width: var(--content); margin: 1.25rem 0; padding: 0.95rem 1.15rem;
+    background: var(--warn-wash); border: 1px solid rgba(217,164,65,0.32);
+    border-radius: var(--r-md); color: var(--fg-muted); font-size: 0.9375rem;
+  }
+  .callout strong { color: var(--fg); }
+  .callout--accent { background: var(--accent-wash); border-color: var(--accent-edge); }
+
+  .data-block {
+    max-width: var(--content);
+    background: var(--ink-800); border: 1px solid var(--line); border-radius: var(--r-lg);
+    padding: 1.15rem 1.35rem; margin: 1.25rem 0;
+    font-size: 0.9375rem; color: var(--fg-muted);
+  }
+  .data-block p { margin: 0 0 0.35rem; }
+  .data-block p:last-child { margin-bottom: 0; }
+  .data-block strong { color: var(--fg); }
+
+  .site-footer { border-top: 1px solid var(--line); background: var(--ink-800); }
+  .footer-inner {
+    max-width: 1200px; margin: 0 auto; padding: 2.5rem 1.5rem;
+    display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: space-between;
+  }
+  .footer-links { display: flex; flex-wrap: wrap; gap: 1.25rem; list-style: none; margin: 0; padding: 0; }
+  .footer-links a { font-size: 0.875rem; color: var(--fg-muted); text-decoration: none; }
+  .footer-links a:hover { color: var(--accent-hi); }
+  .footer-note { font-size: 0.8125rem; color: var(--fg-dim); max-width: 62ch; margin: 0; }
+  .footer-meta { font-family: var(--font-mono); font-size: 0.72rem; color: var(--fg-faint); }
+
+  @media (max-width: 720px) {
+    .header-link { display: none; }
+    .shell { padding: 2rem 1.1rem 4rem; }
+    .header-inner { padding: 0 1.1rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  }
+  @media print {
+    body { background: #fff; color: #000; }
+    .site-header, .site-footer, .skip-link { display: none !important; }
+    .prose p, .prose li, .data-block, .callout { color: #000 !important; }
+    .prose h1, .prose h2, .prose h3 { color: #000 !important; border-color: #ccc !important; }
+    .prose a { color: #000 !important; border: 0 !important; }
+  }
+
+  .steps { list-style: none; margin: 1.5rem 0; padding: 0; display: flex; flex-direction: column; gap: 1rem; }
+  .steps li { display: grid; grid-template-columns: 1.75rem minmax(0,1fr); gap: 0.85rem; }
+  .step-num {
+    font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent);
+    border: 1px solid var(--accent-edge); border-radius: var(--r-sm);
+    display: grid; place-items: center; height: 1.5rem;
+  }
+  .steps strong { color: var(--fg); display: block; margin-bottom: 0.15rem; }
+  .steps p { margin: 0; font-size: 0.9rem; }
+
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../../index.html">
+      <span class="brand-mark"><img src="../../assets/icon.svg" alt="" width="22" height="22"></span>
+      <span class="brand-text">
+        <span class="brand-name">BauLens</span>
+        <span class="brand-owner">Aureal Watermark Software Development</span>
+      </span>
+    </a>
+    <div class="header-actions">
+      <a class="header-link" href="../../pricing/">Preise</a>
+      <a class="header-link" href="../../downloads/">Downloads</a>
+      <a class="header-link" href="../../docs.html">Dokumentation</a>
+      <a class="header-cta" href="../../downloads/">BauLens herunterladen</a>
+    </div>
+  </div>
+</header>
+
+<main class="shell" id="main">
+<article class="prose">
+  <h1>Vielen Dank für deinen Kauf</h1>
+  <p class="lead">Deine Lizenz ist bestellt. Die Rechnung und den Lizenzschlüssel erhältst du per
+  E-Mail von Polar &mdash; dort, wo du auch die Zahlung abgeschlossen hast.</p>
+
+  <ol class="steps">
+    <li>
+      <span class="step-num">1</span>
+      <div>
+        <strong>E-Mail von Polar prüfen</strong>
+        <p>Polar sendet dir die Rechnung und den Lizenzschlüssel. Schau zur Sicherheit im Spam-Ordner
+        nach, falls die Nachricht nicht innerhalb weniger Minuten ankommt.</p>
+      </div>
+    </li>
+    <li>
+      <span class="step-num">2</span>
+      <div>
+        <strong>Lizenzschlüssel in der Desktop-App hinterlegen</strong>
+        <p>Lade die <a href="../../downloads/">Desktop-App</a> und trage den Schlüssel im Bereich
+        <em>Lizenz</em> ein. Die Aktivierung ist freiwillig &mdash; die Prüf-Engine rechnet auch ohne
+        Schlüssel, ausschließlich lokal.</p>
+      </div>
+    </li>
+    <li>
+      <span class="step-num">3</span>
+      <div>
+        <strong>Erstes Projekt prüfen</strong>
+        <p>Parameter erfassen oder eine Datei einlesen, prüfen lassen und das DIN-A4-Dossier als PDF
+        exportieren.</p>
+      </div>
+    </li>
+  </ol>
+
+  <div class="callout">
+    <strong>Keine E-Mail erhalten?</strong> Dann prüfe zuerst den Spam-Ordner und die bei Polar
+    hinterlegte Adresse. Bleibt es dabei, schreib uns an
+    <a href="mailto:info@kellersystems.dev?subject=BauLens%20Lizenz">info@kellersystems.dev</a> mit dem
+    ungefähren Kaufzeitpunkt &mdash; wir finden die Bestellung.
+  </div>
+
+  <h2>Rechnung und Vertragspartner</h2>
+  <p>Dein Vertragspartner für den Erwerb ist Polar (Polar Software Inc.),
+  der als Merchant of Record die Rechnung ausstellt und die Umsatzsteuer abführt. Rechnungsdaten
+  kannst du im Kundenportal von Polar einsehen und ändern.</p>
+
+  <h2>Widerruf und Geld-zurück-Zusage</h2>
+  <p>Du hast ein 14-tägiges Widerrufsrecht; zusätzlich gewähren wir eine freiwillige 14-tägige
+  Geld-zurück-Zusage. Einzelheiten stehen in der
+  <a href="../../legal/widerruf/">Widerrufsbelehrung</a>.</p>
+
+  <h2>Nächste Schritte</h2>
+  <p><a href="../../downloads/">Desktop-App herunterladen</a> &middot;
+  <a href="../../docs.html">Dokumentation lesen</a> &middot;
+  <a href="../../pricing/">Preisübersicht</a></p>
+</article>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <p class="footer-note">BauLens &mdash; deterministische Bauordnungs-Vorprüfung. Vorprüfung, keine Rechtsberatung.</p>
+      <p class="footer-meta">&copy; 2026 Lukas Negenborn &bull; Keller Systems</p>
+    </div>
+    <ul class="footer-links">
+      <li><a href="../../pricing/">Preise</a></li>
+      <li><a href="../../legal/impressum/">Impressum</a></li>
+      <li><a href="../../legal/datenschutz/">Datenschutz</a></li>
+      <li><a href="../../legal/agb/">AGB</a></li>
+      <li><a href="../../legal/lizenz/">Lizenz</a></li>
+      <li><a href="../../legal/widerruf/">Widerruf</a></li>
+      <li><a href="../../docs.html">Dokumentation</a></li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,74 @@
+{
+  "slug": "immobilien-008",
+  "source": "generated",
+  "domain": "Immobilienkauf",
+  "traps": [
+    {
+      "marker": "bemüht sich um eine Vermietungsquote von 95 Prozent, ohne eine Zusage zu geben",
+      "expectedType": "unverbindliche_sla_falle",
+      "note": "GAP: Unverbindliche Zusage zur Vermietungsquote."
+    },
+    {
+      "marker": "Der Kaufpreis erhöht sich jährlich um zwei Prozent bis zur Übergabe",
+      "expectedType": "price_escalation",
+      "note": "GAP: Automatische Kaufpreiserhoehung bis zur Uebergabe."
+    },
+    {
+      "marker": "Den lückenlosen Nachweis der vertragsgemäßen Vermietung hat der Käufer zu führen",
+      "expectedType": "burden_of_proof",
+      "note": "GAP: Beweislast beim Kaeufer."
+    },
+    {
+      "marker": "bedürfen der eigenhändigen Unterzeichnung beider Parteien",
+      "expectedType": "written_form_trap",
+      "note": "GAP: Schriftformzwang mit eigenhaendiger Unterzeichnung."
+    },
+    {
+      "marker": "Die Haftung des Verkäufers ist auf zehn Prozent des Kaufpreises begrenzt",
+      "expectedType": "liability",
+      "note": "GAP: Haftungsdeckel auf zehn Prozent."
+    },
+    {
+      "marker": "Ausschließliche Zuständigkeit liegt beim Handelsgericht Wien",
+      "expectedType": "jurisdiction",
+      "note": "GAP: Ausschliessliche Zustaendigkeit am Sitz des Verkaeufers."
+    },
+    {
+      "marker": "nicht berechtigt, Gegenforderungen aufzurechnen",
+      "expectedType": "setoff_restriction",
+      "note": "Aufrechnungsverbot des Kaeufers."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "Symmetrische Vertraulichkeit."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform zugelassen."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhalt."
+    },
+    {
+      "marker": "Zahlungen sind innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Zahlungsfrist."
+    },
+    {
+      "marker": "Änderungen des Leistungsumfangs bedürfen der Abstimmung beider Parteien",
+      "note": "Einvernehmliche Aenderung."
+    },
+    {
+      "marker": "Nach Vertragsende erhält der Kunde die Vertragsdaten kostenfrei in einem offenen Format",
+      "note": "Kostenfreier Datenexport."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Verkäufer verkauft dem Käufer die Wohnanlage Donaufeld 3 mit 42 Einheiten",
+      "note": "Kein Detektor fuer Aufteilung nach WEG oder Mietpoolverwaltung."
+    }
+  ]
+}

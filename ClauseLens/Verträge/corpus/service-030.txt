@@ -1,0 +1,97 @@
+Wartungsabo Softwarepflege
+
+zwischen der Förderbank Mittelhessen (nachfolgend "Kunde") und der Softpflege Kontor GmbH (nachfolgend "Anbieter") wird folgender Vertrag geschlossen:
+
+Präambel
+Der Kunde benötigt Leistungen im Bereich Wartung und Anpassung einer Fachanwendung.
+Der Anbieter verfügt über die hierfür erforderliche Erfahrung und Ausstattung. Die Parteien vereinbaren daher Folgendes:
+
+§ 1 Gegenstand
+Gegenstand des Vertrags ist die Erbringung der in § 2 beschriebenen Leistungen im Bereich Wartung und Anpassung einer Fachanwendung.
+
+§ 2 Leistungsumfang
+Der Anbieter erbringt die Leistungen nach dem vereinbarten Leistungsbild und den anerkannten Regeln der Technik.
+Der Leistungsumfang ergibt sich aus diesem Vertrag und den zugehörigen Anlagen.
+§ 3 Wartungsleistungen
+Störungsbehebung erfolgt bei Kunden ohne erweitertes Servicepaket ausschließlich nach Verfügbarkeit freier Kapazitäten.
+Der jeweils benannte Ansprechpartner informiert die andere Partei unverzüglich.
+
+§ 4 Laufzeit und Verlängerung
+Ohne rechtzeitige Kündigung durch den Kunden läuft das Wartungsabonnement um zwölf weitere Monate weiter.
+Der Anbieter dokumentiert seine Tätigkeit und legt die Unterlagen auf Anforderung vor.
+
+§ 5 Laufzeit und Verlängerung
+Nur der Kunde muss die Beendigung aktiv erklären, andernfalls gilt die Betreuung als für ein weiteres Jahr bestellt.
+Beide Parteien unterstützen sich bei der Aufklärung von Rückfragen angemessen.
+
+§ 6 Kündigungsfristen
+Der Kunde kann die Zusammenarbeit mit einer Ankündigungsfrist von neun Monaten beenden, während der Anbieter jederzeit zum Monatsende aussteigt.
+Die Kommunikation erfolgt über die im Kopf dieses Vertrags genannten Kontaktwege.
+
+§ 7 Kündigungsfristen
+Eine Beendigung durch den Kunden ist erst mit einer Vorlaufzeit von zwölf Monaten zum Ablauf des Vertragsjahres möglich.
+Der Kunde benennt für die Abstimmung eine fachlich verantwortliche Person.
+
+§ 8 Haftung
+Der Anbieter haftet nur bei Vorsatz und grober Fahrlässigkeit; den Kunden trifft eine unbeschränkte Haftung für jede mittelbare Folge.
+Der Anbieter setzt für die Leistungserbringung geeignete Fachkräfte ein.
+
+§ 9 Haftung
+The provider shall not be liable for any loss of data or profit, however caused, and all risk of the services remains with the customer.
+Die Parteien bewahren die im Rahmen der Zusammenarbeit erstellten Unterlagen sorgfältig auf.
+
+§ 10 Verjährung
+Ansprüche des Kunden verjähren innerhalb von sechs Monaten ab Kenntnis des Mangels.
+Vereinbarungen der Projektverantwortlichen werden von den Parteien schriftlich dokumentiert.
+
+§ 11 Form von Erklärungen
+Kündigungen bedürfen der Schriftform; eine Kündigung per E-Mail ist unwirksam.
+Der Kunde stellt die für die Leistung erforderlichen Informationen rechtzeitig bereit.
+
+§ 12 Bestimmungen
+Die Parteien benennen jeweils einen Ansprechpartner und informieren unverzüglich über einen Wechsel.
+Der Anbieter informiert den Kunden über wesentliche Änderungen im Ablauf.
+
+§ 13 Bestimmungen
+Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich und verwenden sie nur für die Durchführung des Vertrags.
+Die Parteien prüfen die Leistungen gemeinsam und halten das Ergebnis fest.
+
+§ 14 Bestimmungen
+Der Kunde kann den Vertrag mit einer Frist von vier Wochen zum Monatsende ohne Angabe von Gründen beenden.
+Die Parteien stimmen die Einzelheiten rechtzeitig vor Leistungsbeginn ab.
+
+§ 15 Bestimmungen
+Kündigungen können in Textform, insbesondere per E-Mail, erklärt werden.
+Der jeweils benannte Ansprechpartner informiert die andere Partei unverzüglich.
+
+§ 16 Bestimmungen
+Der Anbieter kann Leistungen auf Nachunternehmer übertragen, wenn er dies dem Kunden vierzehn Tage vorher schriftlich mitteilt.
+Der Anbieter dokumentiert seine Tätigkeit und legt die Unterlagen auf Anforderung vor.
+
+§ 17 Bestimmungen
+Die Vergütung ist innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig.
+Beide Parteien unterstützen sich bei der Aufklärung von Rückfragen angemessen.
+
+§ 18 Bestimmungen
+Am Ende der Laufzeit stellt der Anbieter alle Kundendaten in einem gängigen Format kostenfrei zur Verfügung.
+Die Kommunikation erfolgt über die im Kopf dieses Vertrags genannten Kontaktwege.
+
+§ 19 Vollständigkeit
+Über die Verlängerung notwendiger Zertifizierungen entscheidet der Anbieter; die dadurch entstehenden Aufwendungen trägt der Kunde.
+Der Anbieter darf eingesetzte Fachkräfte nach Anlage 5 austauschen, ohne dass der Kunde hiergegen Einwände erheben kann.
+
+Anlage 1 zur Leistungsbeschreibung
+Die Anlage 1 wird mit Vertragsschluss ausgehändigt und ist Bestandteil dieses Vertrags.
+
+Anlage 2 zum Eskalationsweg
+Der Eskalationsweg für Störungen ist in Anlage 2 geregelt.
+
+Förderbank und Softpflege bestätigen die Vollständigkeit der vorstehenden Regelungen.
+
+Ort, Datum
+
+___________________________
+Förderbank Mittelhessen
+
+___________________________
+Softpflege Kontor GmbH

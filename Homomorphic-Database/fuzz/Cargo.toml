@@ -1,0 +1,39 @@
+[package]
+name = "fhe-db-fuzz"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+# cargo-fuzz convention: the fuzz crate is its own workspace so the root
+# workspace (`cargo build --workspace`) stays free of libfuzzer-sys, which
+# requires a C compiler (clang) that this repo's Windows-GNU build host does
+# not have. The `fuzz` CI job on ubuntu builds and smoke-runs these targets.
+[workspace]
+members = ["."]
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+fhe-core = { path = "../crates/fhe-core" }
+fhe-db = { path = "../crates/fhe-db" }
+libfuzzer-sys = "0.4"
+
+# Mirror the root workspace's vendored tfhe patch (crate-type = ["lib"] only)
+# so the fuzz build never tries to link tfhe's impossible PE cdylib.
+[patch.crates-io]
+tfhe = { path = "../vendor/tfhe" }
+
+[[bin]]
+name = "fuzz_envelope"
+path = "fuzz_targets/fuzz_envelope.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "fuzz_db_snapshot"
+path = "fuzz_targets/fuzz_db_snapshot.rs"
+test = false
+doc = false
+bench = false

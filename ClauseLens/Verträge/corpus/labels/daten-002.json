@@ -1,0 +1,87 @@
+{
+  "slug": "daten-002",
+  "source": "generated",
+  "domain": "Auftragsverarbeitung",
+  "traps": [
+    {
+      "marker": "Ansprüche wegen fehlerhafter Abrechnung erlöschen zwölf Monate",
+      "expectedType": "statute_of_limitations",
+      "note": "Paraphrase/Umstellung: nennt 'Ansprüche wegen fehlerhafter Abrechnung erlös' statt der Registerwendung."
+    },
+    {
+      "marker": "ausschließlich durch handschriftlich unterzeichnete Papierform wirksam",
+      "expectedType": "written_form_trap",
+      "note": "Paraphrase/Umstellung: nennt 'ausschließlich durch handschriftlich unterzei' statt der Registerwendung."
+    },
+    {
+      "marker": "Es sei denn, der Kunde weist nach, dass die Ursache aus einem anderen Umstand stammt",
+      "expectedType": "burden_of_proof",
+      "note": "Paraphrase/Umstellung: nennt 'Es sei denn, der Kunde weist nach, dass die U' statt der Registerwendung."
+    },
+    {
+      "marker": "jederzeit abrufbaren Richtlinien zur Datenverarbeitung unter",
+      "expectedType": "dynamic_url_referral",
+      "note": "Paraphrase/Umstellung: nennt 'jederzeit abrufbaren Richtlinien zur Datenver' statt der Registerwendung."
+    },
+    {
+      "marker": "Für Handlungen der von der Gesellschaft eingesetzten Nachunternehmer",
+      "expectedType": "vicarious_agents",
+      "note": "Paraphrase/Umstellung: nennt 'Für Handlungen der von der Gesellschaft einge' statt der Registerwendung."
+    },
+    {
+      "marker": "die Geschäftsräume des Kunden ohne vorherige Ankündigung zu prüfen",
+      "expectedType": "unreasonable_audit",
+      "note": "Paraphrase/Umstellung: nennt 'die Geschäftsräume des Kunden ohne vorherige ' statt der Registerwendung."
+    },
+    {
+      "marker": "Der Export der Bestandsdaten ist kostenpflichtig",
+      "expectedType": "data_lockin",
+      "note": "Paraphrase/Umstellung: nennt 'Der Export der Bestandsdaten ist kostenpflich' statt der Registerwendung."
+    },
+    {
+      "marker": "Die Freistellung gilt verschuldensunabhängig",
+      "expectedType": "third_party_indemnity",
+      "note": "Paraphrase/Umstellung: nennt 'Die Freistellung gilt verschuldensunabhängig' statt der Registerwendung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "aus wichtigem Grund jederzeit fristlos beenden",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Streitigkeiten vorrangig durch Mediation zu klären",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "nur im gegenseitigen Einvernehmen.",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "alle vertraulichen Informationen der jeweils anderen Seite",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "spätestens zehn Werktage vor einer beabsichtigten Kontoauflösung",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "bleibt beiden Parteien unbenommen.",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "meldet Datenschutzverletzungen unverzüglich an den Auftraggeber",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "mindestens vierzehn Tage vor dem Einsatz eines Unterauftragnehmers",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Mindestabnahme von fünfhundert Datensätzen je Kalendermonat",
+      "note": "Täuschende Klausel ohne passenden Detektortyp."
+    }
+  ]
+}

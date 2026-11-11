@@ -1,0 +1,72 @@
+{
+  "slug": "logistik-026",
+  "source": "generated",
+  "domain": "Verpackungsmanagement",
+  "traps": [
+    {
+      "marker": "Der Anbieter ist berechtigt, den Kunden als Referenzkunden zu führen.",
+      "expectedType": "marketing_reference",
+      "note": "Red-team Klausel: marketing_reference"
+    },
+    {
+      "marker": "Der Anbieter darf die Telemetriedaten weltweit und unwiderruflich für eigene Zwecke verwerten.",
+      "expectedType": "data_grant",
+      "note": "Red-team Klausel: data_grant"
+    },
+    {
+      "marker": "Der Anbieter behält sich vor, den Leistungsumfang an geänderte Marktbedingungen anzupassen.",
+      "expectedType": "unilateral_change",
+      "note": "Red-team Klausel: unilateral_change"
+    },
+    {
+      "marker": "Geht binnen achtundvierzig Stunden keine Mängelanzeige ein, gilt die Ware als abgenommen.",
+      "expectedType": "deemed_acceptance",
+      "note": "Red-team Klausel: deemed_acceptance"
+    },
+    {
+      "marker": " und Verbesserungsvorschläge gehen unentgeltlich in das Eigentum",
+      "expectedType": "feedback_ip_grab",
+      "note": "Red-team Klausel: feedback_ip_grab"
+    },
+    {
+      "marker": "Die personenbezogenen Daten werden außerhalb der Europäischen Union verarbeitet.",
+      "expectedType": "international_data_processing",
+      "note": "Red-team Klausel: international_data_processing"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Parteien stimmen die Kennzahlen monatlich ab.",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "nennt den Kunden nicht in Pressemitteilungen",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "informiert den Kunden über wesentliche Änderungen",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "prüft die Leistungen unverzüglich nach Erbringung",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "dokumentiert die Verbesserungsvorschläge im Portal",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "innerhalb von 30 Tagen ohne Abzug zahlbar",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "7.3 Es gilt deutsches Recht.",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Unterauftragnehmer mit einer Vorlaufzeit von vierzehn Tagen",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

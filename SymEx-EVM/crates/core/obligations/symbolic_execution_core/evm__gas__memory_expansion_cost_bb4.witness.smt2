@@ -1,0 +1,35 @@
+; keller-verify proof obligation
+; crate:    symbolic_execution_core
+; function: evm::gas::memory_expansion_cost
+; block:    bb4
+; kind:     overflow
+; file:     crates/core/src/evm/gas.rs:63
+; details:  Arithmetic Overflow Detection (Add) -> Exploit path found! [target_size (_2) = 18446744073709551585, 31_usize = 31]
+; verdict:  FAIL (sat)
+; reachable: (and (= (ite (<= mir_2 mir_1) 1 0) 0)
+; witness:  overflow_l = 18446744073709551585 (target_size (_2))
+; witness:  overflow_r = 31 (31_usize)
+; pinned: the witness above, asserted; re-checking must answer `sat`
+(declare-fun mir_2 () Int)
+(declare-fun overflow_l () Int)
+(declare-fun overflow_r () Int)
+(declare-fun mir_1 () Int)
+(assert (= overflow_l mir_2))
+(assert (= overflow_r 31))
+(assert (or (> (+ overflow_l overflow_r) 18446744073709551615)
+    (< (+ overflow_l overflow_r) 0)))
+(assert (let ((a!1 (ite (or (> (+ mir_1 31) 18446744073709551615) (< (+ mir_1 31) 0))
+                1
+                0)))
+  (and (= (ite (<= mir_2 mir_1) 1 0) 0) (= a!1 0) (= (ite (= 32 0) 1 0) 0))))
+(assert (>= mir_1 0))
+(assert (<= mir_1 18446744073709551615))
+(assert (>= mir_2 0))
+(assert (<= mir_2 18446744073709551615))
+(assert (= overflow_l 18446744073709551585))
+(assert (= overflow_r 31))
+(assert (and (= (ite (<= mir_2 mir_1) 1 0) 0)
+     (= (ite (or (> (+ mir_1 31) 18446744073709551615) (< (+ mir_1 31) 0)) 1 0)
+        0)
+     (= (ite (= 32 0) 1 0) 0)))
+(check-sat)

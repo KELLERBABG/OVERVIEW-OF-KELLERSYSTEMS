@@ -1,0 +1,109 @@
+BERATUNGSVERTRAG SOFTWAREARCHITEKTUR
+
+zwischen
+
+der Nordlicht Digital GmbH, Hafenstraße 12, 20359 Hamburg, vertreten durch die Geschäftsführung,
+- nachfolgend "Auftraggeber" -
+
+und
+
+der Kanzlei Falk & Partner PartG mbB, Ballindamm 4, 20095 Hamburg, vertreten durch Herrn Dr. Jonas Falk,
+- nachfolgend "Berater" -
+
+§ 1 Vertragsgegenstand
+
+(1) Der Berater erbringt für den Auftraggeber Beratungsleistungen zur Architektur der Plattform Klarwerk.
+
+(2) Die Leistungen umfassen Analyse, Entwurf, Dokumentation und Reviewsessions nach Anlage 1.
+
+(3) Die Leistungserbringung erfolgt an den Standorten des Auftraggebers sowie im Homeoffice des Beraters.
+
+§ 2 Laufzeit
+
+(1) Das Vertragsverhältnis beginnt am 01.03.2025 und endet am 31.12.2025.
+
+(2) Beide Parteien können das Vertragsverhältnis mit einer Frist von einem Monat zum Monatsende beenden.
+
+(3) Eine Fortsetzung über den 31.12.2025 hinaus setzt eine neue Vereinbarung der Parteien voraus.
+
+§ 3 Vergütung
+
+(1) Die Vergütung beträgt 1.200,00 EUR je Beratertag zuzüglich der gesetzlichen Umsatzsteuer.
+
+(2) Reisekosten werden nach vorheriger Abstimmung gegen Nachweis erstattet.
+
+(3) Rechnungen sind innerhalb von vierzehn Tagen ohne Abzug auf das in der Rechnung benannte Konto zu zahlen.
+
+§ 4 Verzug
+
+(1) Bei Zahlungsverzug schuldet der Auftraggeber Verzugszinsen in Höhe von 14,5 Prozentpunkten über dem Basiszinssatz.
+
+(2) Die Geltendmachung eines weitergehenden Schadens bleibt vorbehalten.
+
+§ 5 Haftung
+
+(1) Für Schäden aus einfacher Fahrlässigkeit wird der Berater nicht einstehen; seine Haftung ist insoweit ausgeschlossen.
+
+(2) Die Beschränkung gilt nicht bei Verletzung von Leben, Körper oder Gesundheit.
+
+§ 6 Fristen
+
+(1) Verletzt der Berater die in Anlage 1 vereinbarte Lieferfrist, verwirkt er eine A​ufwandspauschale von 2.500,00 EUR je angefangenem Verzugstag.
+
+(2) Die Pauschale wird auf einen weitergehenden Schadensersatzanspruch angerechnet.
+
+§ 7 Gerichtsstand
+
+(1) Gerichtsstand ist der Sitz des Beraters; die Gerichte am Sitz des Auftraggebers sind ausgeschlossen.
+
+(2) Die Regelung gilt auch für Ansprüche aus außervertraglichen Schuldverhältnissen.
+
+§ 8 Servicebedingungen
+
+(1) Ergänzend gelten die Servicebedingungen des Beraters, abrufbar unter https://falk-partner.example/agb, in ihrer jeweils gültigen Fassung.
+
+(2) Der Auftraggeber erhält auf Anforderung eine Textfassung der Servicebedingungen.
+
+§ 9 Nebenabreden
+
+(1) Mündliche Nebenabreden bestehen nicht; frühere Absprachen verlieren mit Unterzeichnung ihre Gültigkeit.
+
+(2) Die Anlagen 1 und 2 sind Bestandteil dieses Vertrages.
+
+§ 10 Software
+
+(1) Die überlassene Analysesoftware wird wie besehen bereitgestellt; eine Gewährleistung für Fehlerfreiheit wird nicht übernommen.
+
+(2) Der Auftraggeber prüft die Software vor produktivem Einsatz in eigener Verantwortung.
+
+§ 11 Vertraulichkeit
+
+(1) Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich und verwenden sie ausschließlich für die Zwecke dieses Vertrages.
+
+(2) Die Vertraulichkeitspflicht endet fünf Jahre nach Beendigung der Zusammenarbeit.
+
+§ 12 Ansprechpartner
+
+(1) Die Parteien benennen je einen Ansprechpartner und unterrichten einander über Wechsel unverzüglich.
+
+(2) Abstimmungen zu laufenden Arbeitspaketen erfolgen per E-Mail an die benannten Personen.
+
+§ 13 Fortbildung
+
+(1) Der Berater hält die für die Leistung erforderlichen Kenntnisse vor und bildet sich fachlich fort.
+
+(2) Der Auftraggeber stellt die für die Leistung notwendigen Testzugänge bereit.
+
+§ 14 Inkrafttreten
+
+(1) Dieser Vertrag tritt mit Unterzeichnung durch beide Parteien in Kraft.
+
+(2) Der Vertrag wird in zwei Ausfertigungen erstellt; jede Partei erhält eine unterschriebene Ausfertigung.
+
+Hamburg, den 24.02.2025
+
+_______________________________
+Auftraggeber
+
+_______________________________
+Berater

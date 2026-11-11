@@ -1,0 +1,74 @@
+{
+  "slug": "marketing-028",
+  "source": "generated",
+  "domain": "Referenznutzung und Case Studies, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Firmenname und Logo des Kunden zeitlich unbeschränkt in Case Studies",
+      "expectedType": "marketing_reference",
+      "note": "Unbeschraenkte Referenznutzung in Case Studies."
+    },
+    {
+      "marker": "Für den Auftragnehmer besteht keine Geheimhaltungspflicht",
+      "expectedType": "asymmetric_confidentiality",
+      "note": "Anbieter von Geheimhaltung ausgenommen."
+    },
+    {
+      "marker": "den Leistungsumfang nach billigem Ermessen angleichen",
+      "expectedType": "unilateral_change",
+      "note": "Einseitige Leistungsanpassung."
+    },
+    {
+      "marker": "nicht berechtigt, gegen Forderungen aufzurechnen",
+      "expectedType": "setoff_restriction",
+      "note": "Aufrechnungsverbot."
+    },
+    {
+      "marker": "für zwei Jahre keine Mitarbeiter des Auftragnehmers abwerben",
+      "expectedType": "non_solicitation",
+      "note": "Abwerbeverbot zulasten des Kunden."
+    },
+    {
+      "marker": "auf der Website des Auftragnehmers veröffentlichten Nutzungsbedingungen",
+      "expectedType": "dynamic_url_referral",
+      "note": "Dynamischer Verweis auf Website-Bedingungen."
+    },
+    {
+      "marker": "Mündliche Nebenabreden bestehen nicht und frühere Absprachen verlieren",
+      "expectedType": "entire_agreement",
+      "note": "Vollstaendigkeitsklausel gegen muendliche Abreden."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "erhält der Kunde die Rohdaten kostenfrei in einem offenen Format",
+      "note": "Kostenfreier Datenexport."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende beenden",
+      "note": "Symmetrische Kündigung."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform zugelassen."
+    },
+    {
+      "marker": "innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Üblicher Zahlungstermin."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhaltung."
+    },
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "Symmetrische Vertraulichkeit."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Auftragnehmer erstellt eine Fallstudie über die Zusammenarbeit mit dem Kunden",
+      "note": "Kein Detektor fuer fehlendes Widerspruchsrecht gegen Veroeffentlichungstermine."
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "slug": "agb-10-kfz-gewerbeleasing",
+  "domain": "Gewerbliches Kilometer-Leasing & Fuhrpark-AGB",
+  "source": "Blind Real-AGB Benchmark 2026 (vor Engine-Lauf gelabelt)",
+  "traps": [
+    {
+      "marker": "auch allgemeine Ertragsteuern, Refinanzierungsmargen und Verwaltungskosten des",
+      "expectedType": "tax_indemnity_shift",
+      "statutoryBasis": "§ 307 Abs. 1, Abs. 2 Nr. 1 BGB",
+      "note": "Unzulässige rückwirkende Überwälzung allgemeiner Ertragsteuern und interner Verwaltungskosten des Leasinggebers auf den Leasingnehmer."
+    },
+    {
+      "marker": "hat er dem Leasinggeber ab dem ersten Verzugstag Verzugszinsen in Höhe von 22",
+      "expectedType": "default_interest",
+      "statutoryBasis": "§ 309 Nr. 5 BGB, § 307 Abs. 1 BGB, § 288 BGB",
+      "note": "Überhöhter Verzugszinssatz von 22 % p.a. ohne Nachweismöglichkeit eines geringeren Schadens."
+    },
+    {
+      "marker": "während er die vollen Leasingraten bis zur Rechtskraft eines Urteils unvermindert",
+      "expectedType": "setoff_restriction",
+      "statutoryBasis": "§ 307 Abs. 2 Nr. 1 BGB, § 320 BGB",
+      "note": "Nach ständiger BGH-Rechtsprechung zum Leasingrecht unwirksamer Ausschluss des Zurückbehaltungsrechts an den Leasingraten trotz Klageerhebung gegen den Lieferanten bei mangelhaftem Fahrzeug."
+    },
+    {
+      "marker": "sämtliche Standortdaten, Fahrtrouten, Geschwindigkeitsprofile sowie über das",
+      "expectedType": "data_grant",
+      "statutoryBasis": "§ 307 Abs. 1 BGB, Art. 6 DSGVO",
+      "note": "Rechtswidrige umfassende Verwertungs- und Veräußerungsbefugnis an hochsensiblen Telematik-, Bewegungs- und Adressbuchdaten."
+    },
+    {
+      "marker": "Wird über das Vermögen des Leasingnehmers die Eröffnung eines Insolvenzverfahrens",
+      "expectedType": "insolvency_termination",
+      "statutoryBasis": "§§ 103, 112, 119 InsO, § 543 BGB, § 307 BGB",
+      "note": "Unwirksame insolvenzabhängige Lösungsklausel und automatische Vertragsbeendigung bei geringfügigem Verzug."
+    },
+    {
+      "marker": "sämtliche bis zum regulären Vertragsende noch ausstehenden monatlichen Leasingraten",
+      "expectedType": "early_termination_charge",
+      "statutoryBasis": "§ 307 Abs. 1, Abs. 2 Nr. 1 BGB, § 249 BGB",
+      "note": "Mit dem Bereicherungsverbot unvereinbare Schadensberechnung bei vorzeitiger Beendigung ohne Abzinsung und ohne Anrechnung des Fahrzeug-Verwertungserlöses."
+    },
+    {
+      "marker": "entscheidet ein allein vom Leasinggeber beauftragter Sachverständiger als",
+      "expectedType": "mandatory_expert_determination",
+      "statutoryBasis": "§ 307 Abs. 1 BGB",
+      "note": "Unwirksame Schiedsgutachterklausel bei Fahrzeugrückgabe durch einen allein vom Leasinggeber bestimmten Gutachter unter Ausschluss des Rechtswegs."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "holt der Leasingnehmer das Fahrzeug am Sitz des ausliefernden Vertragshändlers ab",
+      "note": "Leasingtypische Übernahme- und Prüfungsregelung."
+    },
+    {
+      "marker": "Gegen Ansprüche des Leasinggebers kann der Leasingnehmer mit unbestrittenen oder",
+      "note": "Gesetzeskonforme Aufrechnungsklausel."
+    },
+    {
+      "marker": "Fällige Wartungs- und Inspektionsarbeiten sind nach den Vorgaben des",
+      "note": "Anerkannte Obhutspflicht des Leasingnehmers zur Werterhaltung des Leasingfahrzeugs."
+    },
+    {
+      "marker": "Für Sach- und Rechtsmängel des Leasingfahrzeugs haftet der Leasinggeber nicht",
+      "note": "Im Finanzierungsleasing nach BGH-Rechtsprechung grundsätzlich wirksame leasingtypische Abtretungskonstruktion."
+    },
+    {
+      "marker": "Bei Vertragsende hat der Leasingnehmer das Fahrzeug in einem dem Alter und der",
+      "note": "Faire und rechtsprechungskonforme Rückgaberegelung beim Kilometerleasing."
+    },
+    {
+      "marker": "Ist der Leasingnehmer Kaufmann, juristische Person des öffentlichen Rechts oder",
+      "note": "Wirksame kaufmännische Gerichtsstandsvereinbarung nach § 38 ZPO."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "strikt untersagt, das Leasingfahrzeug durch Ehegatten, Lebenspartner oder",
+      "statutoryBasis": "§ 307 Abs. 1, Abs. 2 Nr. 2 BGB",
+      "note": "Unangemessenes Drittfahrerverbot gegenüber Ehegatten und Familienangehörigen selbst im Beisein des Leasingnehmers, verbunden mit einer überhöhten Strafgebühr."
+    }
+  ]
+}

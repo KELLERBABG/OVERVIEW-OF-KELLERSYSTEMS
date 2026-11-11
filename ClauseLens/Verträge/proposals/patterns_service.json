@@ -1,0 +1,397 @@
+{
+  "slice": "service",
+  "patterns": [
+    {
+      "type": "deemed_acceptance",
+      "regex": "(?:nicht|nicht\\s+fristgerecht)[^.!?;:\\n]{0,40}?(?:innerhalb|binnen)[^.!?;:\\n]{0,30}?(?:von\\s+)?(?:\\d+|zwei|drei|vier|f(?:ü|ue)nf|zehn|vierzehn|sieben)\\s*(?:kalender)?(?:tagen|werktagen|wochen|stunden)[^.!?;:\\n]{0,40}?(?:antwortet|reagiert|antworten|erkl(?:ä|ae)rt)[^.!?;:\\n]{0,60}?(?:einverst(?:ä|ae)ndnis|zustimmung|genehmigung)[^.!?;:\\n]{0,40}?(?:unterstellt|gilt\\s+als\\s+erteilt|als\\s+erteilt)",
+      "flags": "i",
+      "closes": [
+        "service-003:16",
+        "service-010:24",
+        "service-017:32",
+        "service-024:40",
+        "service-032:20"
+      ],
+      "evidence": "nicht innerhalb von ... Wochen antwortet, dessen Einverständnis wird unterstellt",
+      "risk": "low"
+    },
+    {
+      "type": "deemed_acceptance",
+      "regex": "(?:einverst(?:ä|ae)ndnis|zustimmung|genehmigung)\\s+(?:des\\s+kunden\\s+)?(?:wird|gilt\\s+als)[^.!?;:\\n]{0,30}?(?:unterstellt|erteilt|gegeben|fingiert)",
+      "flags": "i",
+      "closes": [
+        "service-003:16",
+        "service-010:24",
+        "service-017:32",
+        "service-024:40",
+        "service-032:20"
+      ],
+      "evidence": "Einverständnis wird unterstellt",
+      "risk": "medium"
+    },
+    {
+      "type": "burden_of_proof",
+      "regex": "(?:hat|haben)\\s+der\\s+(?:kunde|auftraggeber|besteller|mieter|k(?:ä|ae)ufer)[^.!?;:\\n]{0,60}?(?:nachzuweisen|zu\\s+beweisen|darzulegen)",
+      "flags": "i",
+      "closes": [
+        "service-003:28",
+        "service-010:36",
+        "service-018:16",
+        "service-025:24",
+        "service-032:32"
+      ],
+      "evidence": "hat der Kunde nachzuweisen",
+      "risk": "low"
+    },
+    {
+      "type": "asymmetric_termination",
+      "regex": "(?:beendet|k(?:ü|ue)ndigt)\\s+der\\s+(?:anbieter|auftragnehmer|dienstleister|vermieter|verk(?:ä|ae)ufer)[^.!?;:\\n]{0,80}?(?:aus\\s+wichtigem\\s+grund|fristlos|mit\\s+sofortiger\\s+wirkung|jederzeit)[^.!?;:\\n]{0,100}?(?:entfallen|erl(?:ö|oe)schen|entf(?:ä|ae)llt|endet)[^.!?;:\\n]{0,50}?anspr(?:ü|ue)che\\s+des\\s+(?:kunden|auftraggebers|bestellers)",
+      "flags": "i",
+      "closes": [
+        "service-004:24",
+        "service-011:32",
+        "service-018:40",
+        "service-026:20"
+      ],
+      "evidence": "Beendet der Anbieter ... aus wichtigem Grund, entfallen Ansprüche des Kunden",
+      "risk": "low"
+    },
+    {
+      "type": "asymmetric_termination",
+      "regex": "(?:der\\s+)?(?:kunde|auftraggeber|besteller)\\s+bleibt[^.!?;:\\n]{0,60}?bis\\s+zum\\s+ablauf[^.!?;:\\n]{0,40}?gebunden",
+      "flags": "i",
+      "closes": [
+        "service-004:24",
+        "service-011:32",
+        "service-018:40",
+        "service-026:20"
+      ],
+      "evidence": "der Kunde bleibt bis zum Ablauf gebunden",
+      "risk": "low"
+    },
+    {
+      "type": "force_majeure_asymmetry",
+      "regex": "(?:ereignisse|umst(?:ä|ae)nde|vorg(?:ä|ae)nge)\\s+au(?:ß|ss)erhalb\\s+des\\s+(?:einfluss|verantwortungs|risiko|gefahren)bereichs\\s+des\\s+(?:anbieters|auftragnehmers|dienstleisters)[^.!?;:\\n]{0,80}?verl(?:ä|ae)ngern[^.!?;:\\n]{0,40}?(?:dessen\\s+)?(?:leistungs)?fristen",
+      "flags": "i",
+      "closes": [
+        "service-004:32",
+        "service-011:40",
+        "service-019:20",
+        "service-026:28"
+      ],
+      "evidence": "Ereignisse außerhalb des Einflussbereichs des Anbieters verlängern dessen Fristen",
+      "risk": "low"
+    },
+    {
+      "type": "force_majeure_asymmetry",
+      "regex": "(?:zahlungspflichten|zahlungsverpflichtungen|verg(?:ü|ue)tungspflichten?)\\s+des\\s+(?:kunden|auftraggebers|bestellers)[^.!?;:\\n]{0,60}?(?:laufen|bleiben|bestehen)[^.!?;:\\n]{0,40}?unver(?:ä|ae)ndert",
+      "flags": "i",
+      "closes": [
+        "service-004:32",
+        "service-011:40",
+        "service-019:20",
+        "service-026:28"
+      ],
+      "evidence": "Zahlungspflichten des Kunden laufen unverändert weiter",
+      "risk": "medium"
+    },
+    {
+      "type": "excessive_survival",
+      "regex": "(?:vertraulichkeit|geheimhaltung|verschwiegenheit|wettbewerbsschutz|wettbewerbsverbot|nachvertragliche\\s+pflichten)[^.!?;:\\n]{0,80}?bestehen?\\s+noch\\s+(?:\\d+|f(?:ü|ue)nfzehn|zehn|zwanzig|drei(?:ß|ss)ig)\\s+jahre[^.!?;:\\n]{0,60}?fort",
+      "flags": "i",
+      "closes": [
+        "service-005:16",
+        "service-012:24",
+        "service-019:32",
+        "service-026:40"
+      ],
+      "evidence": "bestehen noch fünfzehn Jahre ... fort",
+      "risk": "low"
+    },
+    {
+      "type": "excessive_survival",
+      "regex": "(?:noch|über)\\s+(?:f(?:ü|ue)nfzehn|zehn|zwanzig|drei(?:ß|ss)ig|\\d+)\\s+jahre[^.!?;:\\n]{0,60}?nach\\s+(?:dem\\s+)?(?:letzten\\s+)?(?:leistungstag|vertragsende|vertragsbeendigung)[^.!?;:\\n]{0,60}?(?:fort|bestehen|gelten|wirken)",
+      "flags": "i",
+      "closes": [
+        "service-005:16",
+        "service-012:24",
+        "service-019:32",
+        "service-026:40"
+      ],
+      "evidence": "fünfzehn Jahre nach dem letzten Leistungstag",
+      "risk": "low"
+    },
+    {
+      "type": "extended_retention_of_title",
+      "regex": "eigentum[^.!?;:\\n]{0,140}?bleibt\\s+beim\\s+(?:anbieter|auftragnehmer|lieferanten|hersteller|verk(?:ä|ae)ufer)[^.!?;:\\n]{0,120}?forderungen\\s+(?:verbundener\\s+unternehmen|eines\\s+verbundenen\\s+unternehmens|aus\\s+der\\s+gesamten\\s+gesch(?:ä|ae)ftsbeziehung|s(?:ä|ae)mtlicher\\s+vertr(?:ä|ae)ge)",
+      "flags": "i",
+      "closes": [
+        "service-005:28",
+        "service-012:36",
+        "service-020:16",
+        "service-027:24"
+      ],
+      "evidence": "Eigentum bleibt beim Anbieter, bis ... Forderungen verbundener Unternehmen",
+      "risk": "low"
+    },
+    {
+      "type": "extended_retention_of_title",
+      "regex": "(?:eigentum|eigentumsvorbehalt)[^.!?;:\\n]{0,140}?bis\\s+(?:auch\\s+)?(?:alle[nr]?\\s+|s(?:ä|ae)mtliche[nr]?\\s+)?forderungen[^.!?;:\\n]{0,80}?(?:verbundener\\s+unternehmen|aus\\s+(?:der\\s+)?gesch(?:ä|ae)ftsbeziehung|aus\\s+allen\\s+vertr(?:ä|ae)gen)",
+      "flags": "i",
+      "closes": [
+        "service-005:28",
+        "service-012:36",
+        "service-020:16",
+        "service-027:24"
+      ],
+      "evidence": "bis auch Forderungen verbundener Unternehmen ausgeglichen sind",
+      "risk": "low"
+    },
+    {
+      "type": "audit_log_manipulation",
+      "regex": "(?:aufzeichnungen|protokolle|protokolldaten|logfiles|logs?)[^.!?;:\\n]{0,100}?(?:anbieter|auftragnehmer|dienstleister)[^.!?;:\\n]{0,60}?gepflegt[^.!?;:\\n]{0,80}?(?:nachtr(?:ä|ae)glich|jederzeit|r(?:ü|ue)ckwirkend)[^.!?;:\\n]{0,40}?(?:berichtigt|ge(?:ä|ae)ndert|korrigiert|angepasst|gel(?:ö|oe)scht)",
+      "flags": "i",
+      "closes": [
+        "service-005:36",
+        "service-013:16",
+        "service-020:24",
+        "service-027:32"
+      ],
+      "evidence": "Aufzeichnungen ... vom Anbieter gepflegt und können ... nachträglich berichtigt werden",
+      "risk": "low"
+    },
+    {
+      "type": "audit_log_manipulation",
+      "regex": "(?:aus\\s+technischen\\s+gr(?:ü|ue)nden|nach\\s+freiem\\s+ermessen|jederzeit)[^.!?;:\\n]{0,60}?nachtr(?:ä|ae)glich[^.!?;:\\n]{0,40}?(?:berichtigt|ver(?:ä|ae)ndert|korrigiert|angepasst|gel(?:ö|oe)scht)",
+      "flags": "i",
+      "closes": [
+        "service-005:36",
+        "service-013:16",
+        "service-020:24",
+        "service-027:32"
+      ],
+      "evidence": "aus technischen Gründen nachträglich berichtigt",
+      "risk": "low"
+    },
+    {
+      "type": "insolvency_termination",
+      "regex": "stellt\\s+der\\s+(?:kunde|auftraggeber|besteller)[^.!?;:\\n]{0,80}?antrag\\s+auf\\s+er(?:ö|oe)ffnung\\s+eines\\s+(?:verfahrens|insolvenzverfahrens)[^.!?;:\\n]{0,120}?darf\\s+der\\s+(?:anbieter|auftragnehmer|dienstleister)[^.!?;:\\n]{0,80}?(?:einstellen|beenden|k(?:ü|ue)ndigen)",
+      "flags": "i",
+      "closes": [
+        "service-006:16",
+        "service-013:24",
+        "service-020:32",
+        "service-027:40"
+      ],
+      "evidence": "Stellt der Kunde einen Antrag auf Eröffnung eines Verfahrens, darf der Anbieter ... einstellen",
+      "risk": "low"
+    },
+    {
+      "type": "insolvency_termination",
+      "regex": "antrag\\s+auf\\s+er(?:ö|oe)ffnung\\s+eines\\s+(?:verfahrens|insolvenzverfahrens)[^.!?;:\\n]{0,140}?(?:sofort|jederzeit|fristlos|ohne\\s+weiteres)[^.!?;:\\n]{0,60}?(?:einstellen|beenden|k(?:ü|ue)ndigen)",
+      "flags": "i",
+      "closes": [
+        "service-006:16",
+        "service-013:24",
+        "service-020:32",
+        "service-027:40"
+      ],
+      "evidence": "Antrag auf Eröffnung eines Verfahrens ... sofort einstellen",
+      "risk": "medium"
+    },
+    {
+      "type": "fictitious_receipt",
+      "regex": "(?:f(?:ü|ue)r\\s+den\\s+zugang|als\\s+zugang|zugang\\s+(?:einer\\s+erkl(?:ä|ae)rung|von\\s+erkl(?:ä|ae)rungen))[^.!?;:\\n]{0,60}?gen(?:ü|ue)gt\\s+die\\s+absendung",
+      "flags": "i",
+      "closes": [
+        "service-007:16",
+        "service-014:24",
+        "service-021:32",
+        "service-028:40"
+      ],
+      "evidence": "Für den Zugang genügt die Absendung",
+      "risk": "low"
+    },
+    {
+      "type": "fictitious_receipt",
+      "regex": "(?:kunde|empf(?:ä|ae)nger)[^.!?;:\\n]{0,40}?tr(?:ä|ae)gt\\s+das\\s+risiko\\s+der\\s+nichtkenntnisnahme",
+      "flags": "i",
+      "closes": [
+        "service-007:16",
+        "service-014:24",
+        "service-021:32",
+        "service-028:40"
+      ],
+      "evidence": "der Kunde trägt das Risiko der Nichtkenntnisnahme",
+      "risk": "medium"
+    },
+    {
+      "type": "agency_goodwill_waiver",
+      "regex": "anspr(?:ü|ue)che\\s+wegen[^.!?;:\\n]{0,100}?(?:kundenbeziehungen|kundenstamm|kundschaft|kundenkontakte|übernommenen\\s+kunden)[^.!?;:\\n]{0,80}?bestehen[^.!?;:\\n]{0,40}?nicht",
+      "flags": "i",
+      "closes": [
+        "service-007:28",
+        "service-014:36",
+        "service-022:16",
+        "service-029:24"
+      ],
+      "evidence": "Ansprüche wegen ... Kundenbeziehungen bestehen nach Beendigung nicht",
+      "risk": "low"
+    },
+    {
+      "type": "agency_goodwill_waiver",
+      "regex": "(?:kundenbeziehungen|kundenstamm|kundschaft|vermittelte\\s+kunden|übernommenen\\s+kunden)[^.!?;:\\n]{0,100}?(?:besteht|bestehen|entsteht|entstehen)[^.!?;:\\n]{0,60}?nach\\s+(?:der\\s+)?(?:beendigung|vertragsende|k(?:ü|ue)ndigung)[^.!?;:\\n]{0,40}?nicht",
+      "flags": "i",
+      "closes": [
+        "service-007:28",
+        "service-014:36",
+        "service-022:16",
+        "service-029:24"
+      ],
+      "evidence": "Kundenbeziehungen bestehen nach Beendigung nicht",
+      "risk": "medium"
+    },
+    {
+      "type": "mandatory_expert_determination",
+      "regex": "vom\\s+(?:anbieter|auftragnehmer|dienstleister|verk(?:ä|ae)ufer)\\s+(?:benannter|bestellter|ausgew(?:ä|ae)hlter)[^.!?;:\\n]{0,40}?(?:gutachter|sachverst(?:ä|ae)ndiger|schiedsgutachter)",
+      "flags": "i",
+      "closes": [
+        "service-007:36",
+        "service-015:16",
+        "service-022:24",
+        "service-029:32"
+      ],
+      "evidence": "vom Anbieter benannter Gutachter",
+      "risk": "low"
+    },
+    {
+      "type": "mandatory_expert_determination",
+      "regex": "(?:gutachter|sachverst(?:ä|ae)ndiger|schiedsgutachter)[^.!?;:\\n]{0,50}?abschlie(?:ß|ss)end",
+      "flags": "i",
+      "closes": [
+        "service-007:36",
+        "service-015:16",
+        "service-022:24",
+        "service-029:32"
+      ],
+      "evidence": "Gutachter ... abschließend",
+      "risk": "medium"
+    },
+    {
+      "type": "early_termination_charge",
+      "regex": "zahlt\\s+(?:er|sie|der\\s+kunde|der\\s+auftraggeber|der\\s+mieter)[^.!?;:\\n]{0,80}?(?:verg(?:ü|ue)tung|entgelt|raten|miete)[^.!?;:\\n]{0,60}?f(?:ü|ue)r\\s+die\\s+(?:verbleibenden|restlichen)\\s+(?:monate|laufzeit|mietmonate|raten)",
+      "flags": "i",
+      "closes": [
+        "service-008:16",
+        "service-015:24",
+        "service-022:32",
+        "service-029:40"
+      ],
+      "evidence": "zahlt er die Vergütung für die verbleibenden Monate",
+      "risk": "low"
+    },
+    {
+      "type": "early_termination_charge",
+      "regex": "(?:ohne\\s+anrechnung|ohne\\s+abzug)[^.!?;:\\n]{0,60}?(?:ersparter\\s+aufwendungen|ersparter\\s+kosten|ersparnisse|ersparter\\s+betriebskosten)",
+      "flags": "i",
+      "closes": [
+        "service-008:16",
+        "service-015:24",
+        "service-022:32",
+        "service-029:40"
+      ],
+      "evidence": "ohne Anrechnung ersparter Aufwendungen",
+      "risk": "medium"
+    },
+    {
+      "type": "as_is_software_disclaimer",
+      "regex": "(?:software|anwendung|leistung|dienstleistung|plattform)[^.!?;:\\n]{0,60}?wird\\s+ohne\\s+gew(?:ä|ae)hrleistung[^.!?;:\\n]{0,80}?bereitgestellt",
+      "flags": "i",
+      "closes": [
+        "service-018:44"
+      ],
+      "evidence": "Software wird ohne Gewährleistung ... bereitgestellt",
+      "risk": "low"
+    },
+    {
+      "type": "as_is_software_disclaimer",
+      "regex": "ohne\\s+gew(?:ä|ae)hrleistung\\s+f(?:ü|ue)r\\s+(?:fehlerfreiheit|eignung|funktionsf(?:ä|ae)higkeit|beschaffenheit|m(?:ä|ae)ngelfreiheit)",
+      "flags": "i",
+      "closes": [
+        "service-018:44"
+      ],
+      "evidence": "ohne Gewährleistung für Fehlerfreiheit und Eignung",
+      "risk": "low"
+    },
+    {
+      "type": "unverbindliche_sla_falle",
+      "regex": "(?:reaktions|wiederherstellungs|antwort|service|reparatur)[\\w-]*(?:\\s+und\\s+[\\w-]+)?zeiten[^.!?;:\\n]{0,60}?(?:sind|stellen)[^.!?;:\\n]{0,30}?unverbindliche",
+      "flags": "i",
+      "closes": [
+        "service-020:48"
+      ],
+      "evidence": "Reaktions- und Wiederherstellungszeiten sind unverbindliche Richtwerte",
+      "risk": "low"
+    },
+    {
+      "type": "unverbindliche_sla_falle",
+      "regex": "(?:reaktionszeit|antwortzeit|wiederherstellungszeit|verf(?:ü|ue)gbarkeit|servicelevel|kennzahlen)[^.!?;:\\n]{0,80}?(?:unverbindlich|nicht\\s+verbindlich|blo(?:ß|ss)e\\s+(?:ziel|richt)werte|ohne\\s+rechtsanspruch)",
+      "flags": "i",
+      "closes": [
+        "service-020:48"
+      ],
+      "evidence": "Reaktionszeiten ... unverbindlich",
+      "risk": "medium"
+    },
+    {
+      "type": "agency_commission_exclusion",
+      "regex": "keine\\s+provision[^.!?;:\\n]{0,100}?(?:direkt\\s+verl(?:ä|ae)ngert|direkt\\s+abschlie(?:ß|ss)t|unmittelbar\\s+mit\\s+dem\\s+(?:versicherer|anbieter|hersteller))",
+      "flags": "i",
+      "closes": [
+        "service-021:44"
+      ],
+      "evidence": "keine Provision, wenn der Kunde ... direkt verlängert",
+      "risk": "low"
+    },
+    {
+      "type": "service_credit_forfeiture",
+      "regex": "(?:gutschrift\\w*|service[\\s-]?credits?|anspr(?:ü|ue)che)[^.!?;:\\n]{0,120}?(?:innerhalb|binnen)\\s+(?:von\\s+)?(?:\\d+|ein(?:er|em)?|zwei|drei|vier|f(?:ü|ue)nf|sechs|sieben|acht|zehn|vierzehn|drei(?:ß|ss)ig)\\s*(?:werktagen|kalendertagen|tagen|wochen|monaten)[^.!?;:\\n]{0,80}?(?:geltend\\s+zu\\s+machen|geltend\\s+macht|anzumelden|mitzuteilen|zu\\s+beantragen|beansprucht)",
+      "flags": "i",
+      "closes": [
+        "service-023:44"
+      ],
+      "evidence": "Servicegutschriften ... innerhalb von sieben Tagen geltend macht",
+      "risk": "low"
+    },
+    {
+      "type": "service_credit_forfeiture",
+      "regex": "(?:gutschrift\\w*|service[\\s-]?credits?)[^.!?;:\\n]{0,60}?(?:verfallen|entfallen|erl(?:ö|oe)schen)",
+      "flags": "i",
+      "closes": [
+        "service-023:44"
+      ],
+      "evidence": "Gutschriften verfallen ohne Geltendmachung",
+      "risk": "medium"
+    },
+    {
+      "type": "maintenance_conditional_shutdown",
+      "regex": "(?:wartungsarbeiten|wartung|instandhaltung)[^.!?;:\\n]{0,80}?nur[^.!?;:\\n]{0,40}?(?:ausgef(?:ü|ue)hrt|erbracht|durchgef(?:ü|ue)hrt)[^.!?;:\\n]{0,80}?solange[^.!?;:\\n]{0,60}?(?:abo|paket|wartungsvertrag|servicepaket|mitgliedschaft)[^.!?;:\\n]{0,60}?(?:abgeschlossen|aktiv|gebucht|vorhanden|g(?:ü|ue)ltig)",
+      "flags": "i",
+      "closes": [
+        "service-024:44"
+      ],
+      "evidence": "Wartungsarbeiten werden nur ausgeführt, solange ... Abo abgeschlossen",
+      "risk": "low"
+    },
+    {
+      "type": "maintenance_conditional_shutdown",
+      "regex": "(?:wartungsarbeiten|wartung|instandhaltung|serviceleistungen)[^.!?;:\\n]{0,100}?nur\\s+(?:dann\\s+)?(?:erbracht|ausgef(?:ü|ue)hrt|durchgef(?:ü|ue)hrt|geleistet)[^.!?;:\\n]{0,60}?(?:wenn|solange|sofern)[^.!?;:\\n]{0,60}?(?:premium|business|enterprise|erweitertes?)\\s*-?\\s*(?:abo|paket|support)",
+      "flags": "i",
+      "closes": [
+        "service-024:44"
+      ],
+      "evidence": "Wartung nur solange Premium-Abo",
+      "risk": "medium"
+    }
+  ]
+}

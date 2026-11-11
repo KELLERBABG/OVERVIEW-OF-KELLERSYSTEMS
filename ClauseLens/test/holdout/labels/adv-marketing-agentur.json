@@ -1,0 +1,59 @@
+{
+  "slug": "adv-marketing-agentur",
+  "source": "generated",
+  "domain": "B2B Marketingagentur (deutsches Recht, deutschsprachig)",
+  "traps": [
+    {
+      "marker": "Ideen und Anregungen des Kunden darf der Anbieter frei verwerten; Ansprüche des Kunden auf Beteiligung oder Vergütung bestehen nicht",
+      "expectedType": "feedback_ip_grab",
+      "note": "Ideen-Grab: freie Verwertung plus ausgeschlossene Beteiligung."
+    },
+    {
+      "marker": "eine gesonderte Zustimmung des Kunden ist hierfür nicht erforderlich",
+      "expectedType": "marketing_reference",
+      "note": "Referenznennung ohne Zustimmungserfordernis."
+    },
+    {
+      "marker": "Der Kunde verzichtet darauf, während der Laufzeit und zwölf Monate darüber hinaus Mitarbeiter des Anbieters abzuwerben",
+      "expectedType": "non_solicitation",
+      "note": "Abwerbeverbot mit Ausgleichszahlung von drei Monatsgehältern."
+    },
+    {
+      "marker": "gelten zeitlich unbefristet fort, auch nach Beendigung des Vertrags",
+      "expectedType": "excessive_survival",
+      "note": "Unbefristetes Nachwirken von Geheimhaltung und Rechten an Arbeitsergebnissen."
+    },
+    {
+      "marker": "ist der Sitz des Anbieters in Zürich Gerichtsstand",
+      "expectedType": "jurisdiction",
+      "note": "Gerichtsstand am Anbietersitz (Schweiz) ohne Kundenalternative."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "nach Abstimmung mit dem Kunden",
+      "note": "Leistungserbringung nach Abstimmung."
+    },
+    {
+      "marker": "Rechnungen sind innerhalb von 14 Tagen ohne Abzug fällig",
+      "note": "Übliche Zahlungsfrist."
+    },
+    {
+      "marker": "Die Nutzungsrechte gehen mit vollständiger Zahlung der Vergütung auf den Kunden über",
+      "note": "Kundenfreundlicher Rechteübergang."
+    },
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "Wechselseitige Vertraulichkeit."
+    },
+    {
+      "marker": "Beide Parteien können ihn mit einer Frist von sechs Wochen zum Quartalsende ordentlich kündigen",
+      "note": "Symmetrisches Kündigungsrecht."
+    },
+    {
+      "marker": "Erklärungen und Kündigungen können von beiden Parteien in Textform abgegeben werden",
+      "note": "Textform beidseitig zulässig - darf das Form-Regime nicht auslösen."
+    }
+  ],
+  "uncovered": []
+}

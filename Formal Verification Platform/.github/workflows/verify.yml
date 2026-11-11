@@ -1,0 +1,510 @@
+name: verify
+
+# The build plan called for wiring the golden-report fixtures into CI so the
+# fixture crates become a real regression suite. Until this existed the reports
+# were committed artefacts nothing ever checked. The suite now also checks the
+# command-line contract, the emitted JSON/SARIF summaries and the baseline
+# rollout, and a second job runs the verifier on the verifier itself — a claim the
+# whitepaper made before any workflow implemented it.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+env:
+  Z3_VERSION: "4.16.0"
+  Z3_DIR: "z3-4.16.0-x64-glibc-2.39"
+  NIGHTLY: "nightly-2026-07-24"
+
+jobs:
+  fixtures:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # rust-toolchain.toml already pins this channel; rustc-dev is what
+      # `#![feature(rustc_private)]` needs and rustup will not add it for us.
+      - name: Install pinned nightly with rustc-dev
+        run: |
+          rustup toolchain install "$NIGHTLY" \
+            --component rustc-dev \
+            --component llvm-tools-preview \
+            --component rustfmt \
+            --component clippy
+
+      # D3: formatting is a gate, not a preference. `rustfmt` is a component of
+      # the pinned toolchain, so this is the same formatter the tree was formatted
+      # with: `cargo fmt --all --check` on every target, and the only way to pass
+      # it is to run `cargo fmt`.
+      #
+      # The lint half of D3 is the `Lint gate` step below, and it is here because
+      # `clippy` installs for the pinned toolchain and the command has been run:
+      # the two denied groups are clean and the style warnings are counted.
+      - name: Formatting gate
+        run: cargo fmt --all --check
+
+      - name: Cache Z3
+        id: z3-cache
+        uses: actions/cache@v4
+        with:
+          path: .z3
+          key: z3-${{ env.Z3_VERSION }}-linux-x64
+
+      - name: Install Z3
+        if: steps.z3-cache.outputs.cache-hit != 'true'
+        run: |
+          mkdir -p .z3
+          curl -sSL --retry 3 -o /tmp/z3.zip \
+            "https://github.com/Z3Prover/z3/releases/download/z3-${Z3_VERSION}/${Z3_DIR}.zip"
+          unzip -q /tmp/z3.zip -d .z3
+          test -f ".z3/${Z3_DIR}/bin/libz3.so"
+          test -f ".z3/${Z3_DIR}/include/z3.h"
+
+      - name: Link Z3
+        run: |
+          ln -sfn "${Z3_DIR}" .z3/current
+          test -f ".z3/current/bin/libz3.so"
+          test -f ".z3/current/include/z3.h"
+
+      - name: Build verifier
+        run: |
+          export Z3_HOME="$PWD/.z3/${Z3_DIR}"
+          export Z3_SYS_Z3_HEADER="$Z3_HOME/include/z3.h"
+          export PATH="$Z3_HOME/bin:$PATH"
+          cargo build
+
+      # D3 lint half. The script denies `clippy::correctness` and
+      # `clippy::suspicious` and holds the remaining style warnings under a
+      # ceiling, so a new bug-shaped lint fails the build and the style debt
+      # cannot grow silently. It runs after the build so the Z3 link environment
+      # exists.
+      - name: Lint gate
+        run: bash scripts/lint-gate.sh
+
+      - name: Configure runtime environment
+        run: |
+          eval "$($PWD/target/debug/keller-env --shell sh --manifest-dir "$PWD")"
+          echo "PATH=$PATH_ADD:$PATH" >> "$GITHUB_ENV"
+          echo "LD_LIBRARY_PATH=${RUSTLIB:+${RUSTLIB}:}${PATH_ADD:+${PATH_ADD}:}${LD_LIBRARY_PATH:-}" >> "$GITHUB_ENV"
+          echo "Z3_HOME=$PWD/.z3/${Z3_DIR}" >> "$GITHUB_ENV"
+          echo "Z3_SYS_Z3_HEADER=$PWD/.z3/${Z3_DIR}/include/z3.h" >> "$GITHUB_ENV"
+
+      # Inline unit tests: overflow_detected (the pure type-aware overflow
+      # logic), the IntType bound tables, the path-state merge rules, the
+      # exit-code policy, the baseline key rules, the SARIF shape and the
+      # command-line parser.
+      - name: Unit tests
+        run: |
+          export Z3_HOME="$PWD/.z3/${Z3_DIR}"
+          export Z3_SYS_Z3_HEADER="$Z3_HOME/include/z3.h"
+          export PATH="$Z3_HOME/bin:$PATH"
+          cargo test
+
+      # K7: the false-positive budget over the committed corpus, recomputed from
+      # the goldens by the same script the published rate was measured with. The
+      # rate on code nobody here wrote is in docs/FALSE-POSITIVE-RATE.md, with the
+      # command that measured it; this makes the class a change would move a
+      # red build rather than a paragraph.
+      - name: False-positive budget
+        run: |
+          python3 scripts/fp-rate.py --dir tests/goldens --budget 0.15
+
+      # The flags a CI file talks to, checked against the binary rather than only
+      # against the parser's unit tests: `--version` has to name the build a bug
+      # report came from, and a misspelled flag has to be *refused* rather than
+      # silently run the weaker gate.
+      - name: Command-line contract
+        run: |
+          set -uo pipefail
+          version_output="$(./target/debug/keller-verify --version)"
+          echo "$version_output"
+          case "$version_output" in
+            "keller-verify "*) ;;
+            *) echo "::error::--version did not print 'keller-verify <version>'"; exit 1 ;;
+          esac
+          ./target/debug/keller-verify --help > /dev/null
+          set +e
+          ./target/debug/keller-verify keller verify --nope > /dev/null 2>&1
+          code=$?
+          set -e
+          if [ "$code" -ne 2 ]; then
+            echo "::error::an unknown option exited $code, expected the usage-error code 2"
+            exit 1
+          fi
+
+      # End-to-end: each fixture crate through the real binary via RUSTC_WRAPPER,
+      # asserting exit codes, report.json contents, the pinned witnesses, the
+      # re-discharged obligations and the committed golden reports.
+      #
+      # It also re-discharges every emitted obligation with the standalone
+      # solver, checks the pinned witnesses and compares each case's whole
+      # report to its committed golden. The landing page is hand-written and
+      # deliberately not compared here.
+      - name: Fixture suite
+        run: bash tests/run_tests.sh
+
+      # The one wrong answer a verifier must never give: reporting a clean run for a
+      # crate the compiler refused. The wrapper runs rustc itself and used to
+      # discard the status rustc returned, so `tests/broken_code` came out as exit 0
+      # with an empty report.json — the analysis found no assertions in a body that
+      # was never built, and "no findings" is not "nothing to check". Exit 0 is the
+      # outcome this step exists to catch, and nothing other than the setup-failure
+      # code is accepted here.
+      - name: Setup failure is not a verdict
+        run: |
+          set -euo pipefail
+          export Z3_HOME="$PWD/.z3/${Z3_DIR}"
+          export PATH="$Z3_HOME/bin:$PATH"
+          cd tests/broken_code
+          rm -f report.json
+          set +e
+          ../../target/debug/keller-verify keller verify > /dev/null 2>&1
+          code=$?
+          set -e
+          if [ "$code" -ne 3 ]; then
+            echo "::error::a crate that does not compile exited $code, expected the setup-failure code 3"
+            exit 1
+          fi
+
+      # A failure the constant-folding pass reaches without asking Z3 is still a
+      # FAIL, and it owes the reader the same two things a solved one does: the input
+      # that triggers it, and an obligation that re-discharges. It used to give
+      # neither — the operands were prose in `details` and nothing was written under
+      # obligations/ — so the rule that every FAIL names an input held only for the
+      # obligations Z3 happened to decide.
+      - name: Folded failures carry witnesses
+        run: |
+          set -euo pipefail
+          export Z3_HOME="$PWD/.z3/${Z3_DIR}"
+          export PATH="$Z3_HOME/bin:$PATH"
+          cd tests/fold_fail
+          set +e
+          ../../target/debug/keller-verify keller verify --json > folded.json 2>/dev/null
+          code=$?
+          set -e
+          test "$code" -eq 1
+          jq -e '.counts.fail == 6' folded.json > /dev/null
+          # Every FAIL names an input, not merely a block: the witness is the bug
+          # report. A folded failure has no solver model to draw one from, so this
+          # is where the two paths are held to the same standard.
+          jq -e '[.findings[] | select(.status == "FAIL") | (.witness | length) > 0] | all' folded.json > /dev/null
+          # And the report says which path decided it, rather than leaving a reader to
+          # infer it from the wording of `details`.
+          jq -e '[.findings[] | select(.details | contains("Counterexample found by constant folding"))] | length == 6' folded.json > /dev/null
+          echo "folded counts: $(jq -c '.counts' folded.json)"
+
+      # The machine-readable summary a pipeline consumes, on the fixture that has
+      # a counterexample. That run exits 1 *because* it found one, so the exit code
+      # is inspected instead of propagated: a step that treats a real finding as its
+      # own failure would make the gate unusable.
+      - name: JSON summary
+        run: |
+          set -euo pipefail
+          export Z3_HOME="$PWD/.z3/${Z3_DIR}"
+          export PATH="$Z3_HOME/bin:$PATH"
+          cd tests/overflow_fail
+          set +e
+          ../../target/debug/keller-verify keller verify --json > summary.json 2>/dev/null
+          code=$?
+          set -e
+          test "$code" -eq 1
+          jq -e '.tool == "keller-verify"' summary.json > /dev/null
+          jq -e '.counts.fail >= 1' summary.json > /dev/null
+          echo "summary counts: $(jq -c '.counts' summary.json)"
+
+      # The rollout path, end to end. Without it a project can only switch the gate
+      # on after every pre-existing finding is fixed, which is to say never; with it
+      # the gate can be turned on first and the baseline shrunk afterwards.
+      - name: Baseline rollout
+        run: |
+          set -euo pipefail
+          export Z3_HOME="$PWD/.z3/${Z3_DIR}"
+          export PATH="$Z3_HOME/bin:$PATH"
+          cd tests/overflow_fail
+          rm -f report.json baseline.json trimmed.json
+
+          # Recording what is already there must succeed: this is the step an
+          # adopting project runs on a codebase that is not clean yet.
+          ../../target/debug/keller-verify keller verify --write-baseline baseline.json > /dev/null 2>&1
+          jq -e '.keller_baseline == 1' baseline.json > /dev/null
+          jq -e '.findings | length >= 1' baseline.json > /dev/null
+
+          # With it recorded, the same finding is no longer gated.
+          ../../target/debug/keller-verify keller verify --baseline baseline.json > /dev/null 2>&1
+
+          # Empty it and the finding is new again, so the gate must fail. A
+          # baseline that never gated anything would have passed the step above;
+          # this half is what makes the pair a measurement. Emptying is used rather
+          # than dropping the first entry because the fixture's finding count is not
+          # what this step is about.
+          jq '.findings = []' baseline.json > empty.json
+          set +e
+          ../../target/debug/keller-verify keller verify --baseline empty.json > /dev/null 2>&1
+          code=$?
+          set -e
+          if [ "$code" -ne 1 ]; then
+            echo "::error::a finding absent from the baseline exited $code, expected 1"
+            exit 1
+          fi
+
+          # A baseline that cannot be read is a usage error (2), never a silent
+          # fall back to gating nothing.
+          echo '{"nope": true}' > broken.json
+          set +e
+          ../../target/debug/keller-verify keller verify --baseline broken.json > /dev/null 2>&1
+          code=$?
+          set -e
+          if [ "$code" -ne 2 ]; then
+            echo "::error::an unreadable baseline exited $code, expected 2"
+            exit 1
+          fi
+
+      # SARIF is how a finding reaches the pull request that introduced it, so the
+      # file has to be what the format says it is, not merely present.
+      - name: SARIF log
+        run: |
+          set -euo pipefail
+          export Z3_HOME="$PWD/.z3/${Z3_DIR}"
+          export PATH="$Z3_HOME/bin:$PATH"
+          cd tests/overflow_fail
+          set +e
+          ../../target/debug/keller-verify keller verify --sarif keller.sarif > /dev/null 2>&1
+          code=$?
+          set -e
+          test "$code" -eq 1
+          jq -e '.version == "2.1.0"' keller.sarif > /dev/null
+          jq -e '.runs[0].tool.driver.name == "keller-verify"' keller.sarif > /dev/null
+          jq -e '.runs[0].results | length >= 1' keller.sarif > /dev/null
+          echo "sarif rule: $(jq -r '.runs[0].results[0].ruleId' keller.sarif)"
+
+      - name: Upload report.json artefacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: report-json
+          path: tests/**/report.json
+          if-no-files-found: warn
+
+      - name: Upload SARIF artefact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: keller-sarif
+          path: tests/overflow_fail/keller.sarif
+          if-no-files-found: warn
+
+  # The build plan and the whitepaper both claim CI runs the verifier on itself;
+  # until this job existed that claim was false. It is not a gate on this crate's
+  # own arithmetic — a compiler plugin is full of pointer, hash and index
+  # arithmetic whose assertions may legitimately be undecidable — it is a check
+  # that the whole pipeline runs on a real crate and produces a report.
+  self-verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install pinned nightly with rustc-dev
+        run: |
+          rustup toolchain install "$NIGHTLY" \
+            --component rustc-dev \
+            --component llvm-tools-preview \
+            --component rustfmt \
+            --component clippy
+
+      - name: Cache Z3
+        id: z3-cache
+        uses: actions/cache@v4
+        with:
+          path: .z3
+          key: z3-${{ env.Z3_VERSION }}-linux-x64
+
+      - name: Install Z3
+        if: steps.z3-cache.outputs.cache-hit != 'true'
+        run: |
+          mkdir -p .z3
+          curl -sSL --retry 3 -o /tmp/z3.zip \
+            "https://github.com/Z3Prover/z3/releases/download/z3-${Z3_VERSION}/${Z3_DIR}.zip"
+          unzip -q /tmp/z3.zip -d .z3
+          test -f ".z3/${Z3_DIR}/bin/libz3.so"
+          test -f ".z3/${Z3_DIR}/include/z3.h"
+
+      - name: Link Z3
+        run: |
+          ln -sfn "${Z3_DIR}" .z3/current
+          test -f ".z3/current/bin/libz3.so"
+          test -f ".z3/current/include/z3.h"
+
+      - name: Build verifier
+        run: |
+          export Z3_HOME="$PWD/.z3/${Z3_DIR}"
+          export Z3_SYS_Z3_HEADER="$Z3_HOME/include/z3.h"
+          export PATH="$Z3_HOME/bin:$PATH"
+          cargo build
+
+      - name: Configure runtime environment
+        run: |
+          eval "$($PWD/target/debug/keller-env --shell sh --manifest-dir "$PWD")"
+          echo "PATH=$PATH_ADD:$PATH" >> "$GITHUB_ENV"
+          echo "LD_LIBRARY_PATH=${RUSTLIB:+${RUSTLIB}:}${PATH_ADD:+${PATH_ADD}:}${LD_LIBRARY_PATH:-}" >> "$GITHUB_ENV"
+          echo "Z3_HOME=$PWD/.z3/${Z3_DIR}" >> "$GITHUB_ENV"
+          echo "Z3_SYS_Z3_HEADER=$PWD/.z3/${Z3_DIR}/include/z3.h" >> "$GITHUB_ENV"
+
+      # 0 and 1 both mean the pipeline ran: 1 means it found a counterexample in
+      # its own code, which is a finding rather than a broken tool. 2 and 3 mean it
+      # could not run at all — a refused command line or a build that failed — and
+      # that is the failure this job exists to catch.
+      - name: Verify the verifier
+        run: |
+          set -uo pipefail
+          export Z3_HOME="$PWD/.z3/${Z3_DIR}"
+          export PATH="$Z3_HOME/bin:$PATH"
+          set +e
+          ./target/debug/keller-verify keller verify > self-verify.log 2>&1
+          code=$?
+          set -e
+          cat self-verify.log
+          if [ "$code" -gt 1 ]; then
+            echo "::error::self-verification could not run (exit $code)"
+            exit 1
+          fi
+          if [ -f report.json ]; then
+            echo "self-verification findings: $(jq -r 'length' report.json)"
+            jq -r '.[0:20][] | "  \(.status) \(.crate)::\(.function) (\(.kind))"' report.json
+          else
+            echo "self-verification: no findings"
+          fi
+
+      - name: Upload self-verification report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: self-verify-report
+          path: report.json
+          if-no-files-found: ignore
+
+  windows-fixtures:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install pinned GNU toolchain with rustc-dev
+        run: |
+          rustup set default-host x86_64-pc-windows-gnu
+          rustup toolchain install ${{ env.NIGHTLY }}-x86_64-pc-windows-gnu --component rustc-dev --component llvm-tools-preview
+
+      - name: Install Z3 on Windows
+        shell: powershell
+        run: |
+          $z3Ver = "${{ env.Z3_VERSION }}"
+          $url = "https://github.com/Z3Prover/z3/releases/download/z3-$z3Ver/z3-$z3Ver-x64-win.zip"
+          Invoke-WebRequest -Uri $url -OutFile "z3.zip"
+          Expand-Archive "z3.zip" -DestinationPath ".z3"
+          $dir = Get-ChildItem ".z3" | Select-Object -First 1
+          echo "Z3_HOME=$($dir.FullName)" >> $env:GITHUB_ENV
+          echo "Z3_SYS_Z3_HEADER=$($dir.FullName)\include\z3.h" >> $env:GITHUB_ENV
+          echo "$($dir.FullName)\bin" >> $env:GITHUB_PATH
+
+      - name: Unit tests (Windows)
+        run: cargo test
+
+      - name: Integration fixture suite (Windows)
+        run: cmd.exe /c "tests\run_tests.cmd"
+
+  # P1.5's CI half: the fixture suite on macOS.
+  #
+  # Without this job, "macOS is development-tested" meant it was tested on the
+  # machine of whoever last looked and nowhere else, so every macOS sentence in the
+  # docs rested on that. The Z3 archive is matched by pattern, the same way
+  # release.yml matches it, because a hardcoded macOS asset name is the kind of
+  # thing that changes between Z3 releases and takes the job down with it.
+  #
+  # It does not make macOS a supported platform: no run of this job has been
+  # observed from the development checkout, docs/RELEASE.md lists what is still
+  # missing (an installer, a packaged archive, arm64, an OS floor), and a fixture
+  # run on a prepared runner is not a clean-machine install test.
+  macos-fixtures:
+    runs-on: macos-13
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install pinned nightly with rustc-dev
+        run: |
+          rustup toolchain install "$NIGHTLY" \
+            --component rustc-dev \
+            --component llvm-tools-preview \
+            --component rustfmt \
+            --component clippy
+
+      - name: Formatting gate
+        run: cargo fmt --all --check
+
+      - name: Cache Z3
+        id: z3-cache
+        uses: actions/cache@v4
+        with:
+          path: .z3
+          key: z3-${{ env.Z3_VERSION }}-macos-x64
+
+      - name: Install Z3
+        if: steps.z3-cache.outputs.cache-hit != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p .z3-dl
+          gh release download "z3-${Z3_VERSION}" --repo Z3Prover/z3 \
+            --pattern '*x64-osx*.zip' --dir .z3-dl
+          archive=$(find .z3-dl -maxdepth 1 -type f -name '*.zip' | head -n1)
+          [[ -n "$archive" ]] || { echo "no Z3 archive matched *x64-osx*.zip" >&2; exit 1; }
+          unzip -q "$archive" -d .z3-dl/unpacked
+          root=$(find .z3-dl/unpacked -maxdepth 1 -mindepth 1 -type d | head -n1)
+          [[ -n "$root" ]] || { echo "Z3 archive layout not understood" >&2; exit 1; }
+          mkdir -p .z3
+          cp -R "$root" .z3/current
+          test -f .z3/current/bin/libz3.dylib
+          test -f .z3/current/include/z3.h
+
+      - name: Build verifier
+        run: |
+          export Z3_HOME="$PWD/.z3/current"
+          export Z3_SYS_Z3_HEADER="$Z3_HOME/include/z3.h"
+          export PATH="$Z3_HOME/bin:$PATH"
+          cargo build
+
+      - name: Lint gate
+        run: bash scripts/lint-gate.sh
+
+      # macOS loads dylibs through DYLD_LIBRARY_PATH. Copying the Linux job's
+      # LD_LIBRARY_PATH line verbatim would leave every case unable to start the
+      # wrapper, which the suite would then report as a load failure rather than as
+      # the setup problem it is. The directories themselves come from keller-env,
+      # the same single lookup the runners use, so the job does not re-derive them.
+      - name: Configure runtime environment
+        run: |
+          eval "$($PWD/target/debug/keller-env --shell sh --manifest-dir "$PWD")"
+          echo "PATH=$PATH_ADD:$PATH" >> "$GITHUB_ENV"
+          echo "DYLD_LIBRARY_PATH=${RUSTLIB:+${RUSTLIB}:}${PATH_ADD:+${PATH_ADD}:}${DYLD_LIBRARY_PATH:-}" >> "$GITHUB_ENV"
+          echo "Z3_HOME=$PWD/.z3/current" >> "$GITHUB_ENV"
+          echo "Z3_SYS_Z3_HEADER=$PWD/.z3/current/include/z3.h" >> "$GITHUB_ENV"
+
+      - name: Unit tests (macOS)
+        run: |
+          export Z3_HOME="$PWD/.z3/current"
+          export PATH="$Z3_HOME/bin:$PATH"
+          cargo test
+
+      - name: False-positive budget
+        run: python3 scripts/fp-rate.py --dir tests/goldens --budget 0.15
+
+      - name: Fixture suite (macOS)
+        run: bash tests/run_tests.sh
+
+      - name: Upload report.json artefacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: macos-report-json
+          path: tests/**/report.json
+          if-no-files-found: warn

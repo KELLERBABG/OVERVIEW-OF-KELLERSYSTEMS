@@ -1,0 +1,73 @@
+Partnervertrag über das Alpen API-Programm
+
+zwischen Alpen API GmbH, Alpenstraße 19, 5020 Salzburg (nachfolgend "Anbieterin")
+
+und Tiroler Systemhaus GmbH, Anichstraße 26, 6020 Innsbruck (nachfolgend "Kunde")
+
+Präambel
+
+Die Anbieterin betreibt eine Schnittstellenplattform und gewinnt den Kunden als Vertriebspartner für deren Vermittlung.
+
+§ 1 Gegenstand
+
+(1) Der Partner vermittelt Lizenzen der Alpen API GmbH an gewerbliche Endkunden.
+
+(2) Das Vertragsgebiet umfasst Österreich und Südtirol.
+
+§ 2 Provision
+
+(1) Schließt der Anbieter einen Direktauftrag ab, wird keine Provision geschuldet.
+
+§ 3 Ausgleich
+
+(1) Der Partner verzichtet auf jeden Ausgleich für den von ihm aufgebauten Kundenstamm.
+
+§ 4 Abtretung
+
+(1) Ansprüche des Kunden gegen die Anbieterin sind nicht abtretbar.
+
+§ 5 Kündigung
+
+(1) Das ordentliche Kündigungsrecht des Kunden ist ausgeschlossen.
+
+§ 6 Gerichtsstand
+
+(1) Rechtsstreitigkeiten sind ausschließlich vor den Gerichten am Sitz des Anbieters auszutragen.
+
+§ 7 Haftung
+
+(1) Die Haftung für mittelbare Schäden und entgangenen Gewinn ist abbedungen.
+
+§ 8 Aufrechnung
+
+(1) Gegenansprüche bleiben bei der Abrechnung außer Betracht.
+
+§ 9 Zahlung
+
+(1) Die Rechnung ist innerhalb von 30 Tagen nach Zugang ohne Abzug fällig.
+
+§ 10 Vertraulichkeit
+
+(1) Die Vertragsparteien behandeln die wechselseitig offengelegten Informationen vertraulich.
+
+§ 11 Servicelevel
+
+(1) Die Anbieterin sichert eine Verfügbarkeit von 99,5 Prozent pro Kalendermonat zu.
+
+§ 12 Datenschutz
+
+(1) Die Verarbeitung erfolgt ausschließlich in Rechenzentren innerhalb der Europäischen Union.
+
+§ 13 Unterauftragnehmer
+
+(1) Der Partner darf für die Erbringung von Nebenleistungen weitere Dienstleister einsetzen; er zeigt dies dem Anbieter vorab an.
+
+§ 14 Abrechnung
+
+(1) Der Kunde bleibt zur Zahlung des anteiligen Entgelts für bereits erbrachte Leistungen verpflichtet.
+
+Salzburg, den 12.01.2026
+
+Für die Anbieterin: gez. A. Alpen
+
+Für den Kunden: gez. T. Tiroler

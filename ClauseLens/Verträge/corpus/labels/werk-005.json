@@ -1,0 +1,87 @@
+{
+  "slug": "werk-005",
+  "source": "generated",
+  "domain": "Softwareerstellung Versicherungswirtschaft, deutsches Recht",
+  "traps": [
+    {
+      "marker": "a perpetual, irrevocable license to use the deliverables to train machine learning models",
+      "expectedType": "data_grant",
+      "note": "Daten- und Trainingsrechte englisch."
+    },
+    {
+      "marker": "unentgeltliche Übertragung aller daran bestehenden Rechte",
+      "expectedType": "feedback_ip_grab",
+      "note": "Ideenabtretung als Nebenfolge der Uebermittlung."
+    },
+    {
+      "marker": "The customer shall indemnify and hold harmless the provider",
+      "expectedType": "third_party_indemnity",
+      "note": "Freistellung englisch."
+    },
+    {
+      "marker": "Die Vertraulichkeitspflicht endet nicht mit der Beendigung, sondern besteht",
+      "expectedType": "excessive_survival",
+      "note": "Unbefristete Nachwirkung, umschrieben."
+    },
+    {
+      "marker": "Unwirksame Regelungen werden durch eine Ersatzregelung nach billigem Ermessen ersetzt",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "Ersatzklausel nach billigem Ermessen."
+    },
+    {
+      "marker": "Der Zinssatz beträgt zwölf Prozent jährlich",
+      "expectedType": "default_interest",
+      "note": "Zinssatz als Zahlwort."
+    },
+    {
+      "marker": "Der Name und das Logo des Kunden dürfen zu Referenzzwecken auf der Website verwendet werden",
+      "expectedType": "marketing_reference",
+      "note": "Referenznutzung ohne Zustimmungserfordernis."
+    },
+    {
+      "marker": "Der Kunde bleibt achtzehn Monate an das Wettbewerbsverbot gebunden",
+      "expectedType": "non_compete",
+      "note": "Nachvertragliches Wettbewerbsverbot ohne Karenz."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Zulaessige Freizeichnung, muss still bleiben."
+    },
+    {
+      "marker": "Die Vergütung ist innerhalb von dreißig Tagen nach Rechnungseingang fällig",
+      "note": "Marktuebliche Zahlungsfrist."
+    },
+    {
+      "marker": "Änderungen dieses Vertrages können in Textform vereinbart werden",
+      "note": "Textform ausdruecklich erlaubt."
+    },
+    {
+      "marker": "eine Berufshaftpflichtversicherung mit einer Deckungssumme von zwei Millionen EUR",
+      "note": "Vernuenftige Absicherung, unbedenklich."
+    },
+    {
+      "marker": "Jede Partei trägt ihre eigenen Kosten aus der Vertragsverhandlung",
+      "note": "Neutrale Kostentragung."
+    },
+    {
+      "marker": "Die Parteien behandeln die Vertragsverhandlung vertraulich",
+      "note": "Wechselseitige Vertraulichkeit."
+    },
+    {
+      "marker": "Der Anbieter dokumentiert die Änderungen im Änderungsprotokoll",
+      "note": "Dokumentationspflicht, unbedenklich."
+    },
+    {
+      "marker": "Die Kündigung aus wichtigem Grund bleibt beiden Parteien unbenommen",
+      "note": "Symmetrisches Sonderkündigungsrecht."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Kunde kann der Nennung jederzeit widersprechen",
+      "note": "Widerspruchsrecht entschaerft die Referenzklausel, kein eigener Detektor."
+    }
+  ]
+}

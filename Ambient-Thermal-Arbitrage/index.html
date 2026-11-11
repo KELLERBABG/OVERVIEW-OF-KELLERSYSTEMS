@@ -1,0 +1,1481 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ATA — Ambient Thermal Arbitrage | Virtuelle Großbatterie für Industriekälte</title>
+  <meta name="description" content="ATA verwandelt gewerbliche und industrielle Kälteanlagen in netzdienliche virtuelle Speicher. Validiertes Model Predictive Control (MPC) über Modbus RTU/TCP mit zertifizierten Kälteschutzfunktionen.">
+  <meta name="theme-color" content="#080c10">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #070b0e;
+      --surface: #0d1319;
+      --surface-elevated: #121a22;
+      --border: #1a2530;
+      --border-accent: #2c3e4e;
+      --text: #e6edf3;
+      --text-muted: #8b9baa;
+      --text-dim: #546574;
+      --accent: #f59e0b;
+      --accent-dim: rgba(245, 158, 11, 0.12);
+      --teal: #38bdf8;
+      --teal-dim: rgba(56, 189, 248, 0.12);
+      --green: #34d399;
+      --green-dim: rgba(52, 211, 153, 0.12);
+      --red: #f87171;
+      --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+      --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text-muted);
+      font-family: var(--font-sans);
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 clamp(16px, 4vw, 48px);
+    }
+
+    /* Ambient background grid */
+    .bg-grid {
+      position: fixed;
+      inset: 0;
+      background-image: 
+        linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 40px 40px;
+      mask-image: radial-gradient(circle at 50% 20%, black 40%, transparent 80%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Header Nav */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(7, 11, 14, 0.90);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    nav .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 64px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-mono);
+      font-size: 13.5px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .brand-icon {
+      width: 28px;
+      height: 28px;
+      display: block;
+      flex-shrink: 0;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-cta {
+      padding: 6px 14px;
+      background: var(--accent-dim);
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      color: var(--accent) !important;
+      border-radius: 4px;
+      font-weight: 500;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .nav-cta:hover {
+      background: rgba(245, 158, 11, 0.22);
+      border-color: var(--accent);
+    }
+
+    /* Hero Section */
+    header.hero {
+      position: relative;
+      z-index: 1;
+      padding: clamp(48px, 8vw, 96px) 0 clamp(24px, 4vw, 48px);
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-pre {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-weight: 600;
+      font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+      line-height: 1.05;
+      letter-spacing: -0.035em;
+      color: var(--text);
+      max-width: 20ch;
+      margin-bottom: 1.25rem;
+    }
+    .hero-sub {
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      line-height: 1.6;
+      max-width: 68ch;
+      color: var(--text-muted);
+      font-weight: 300;
+      margin-bottom: 2rem;
+    }
+    .hero-sub b { color: var(--text); font-weight: 500; }
+
+    /* High-Level KPIs Bento Grid */
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      margin-top: 2rem;
+    }
+    .stat-card {
+      background: var(--surface);
+      padding: 1.25rem 1.4rem;
+      position: relative;
+    }
+    .stat-label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 0.4rem;
+    }
+    .stat-val {
+      font-family: var(--font-mono);
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.1;
+      display: block;
+    }
+    .stat-sub {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      color: var(--accent);
+      margin-top: 0.35rem;
+    }
+
+    /* Dispatch Canvas Panel */
+    .panel {
+      margin: clamp(32px, 5vw, 56px) 0;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      border-radius: 6px;
+      overflow: hidden;
+      position: relative;
+    }
+    .panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 1.25rem;
+      background: var(--surface-elevated);
+      border-bottom: 1px solid var(--border);
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .panel-header b { color: var(--accent); font-weight: 600; }
+    
+    svg.chart {
+      display: block;
+      width: 100%;
+      height: auto;
+      padding: 12px 16px;
+    }
+    .grid { stroke: #121c24; stroke-width: 0.8; }
+    .hgrid { stroke: #0f171e; stroke-width: 0.7; }
+    .tick { font-family: var(--font-mono); font-size: 9px; fill: var(--text-dim); }
+    .cap { font-family: var(--font-mono); font-size: 9.5px; fill: var(--text-muted); letter-spacing: 0.14em; }
+    .price-line { fill: none; stroke: var(--accent); stroke-width: 2.2; }
+    .zero-line { stroke: #263542; stroke-width: 1; stroke-dasharray: 4 4; }
+    .neg-zone { fill: rgba(56, 189, 248, 0.08); stroke: rgba(56, 189, 248, 0.3); stroke-width: 0.8; }
+    .charge-box { fill: rgba(56, 189, 248, 0.18); stroke: rgba(56, 189, 248, 0.5); }
+    .shed-box { fill: rgba(248, 113, 113, 0.16); stroke: rgba(248, 113, 113, 0.4); }
+    .idle-box { fill: rgba(255, 255, 255, 0.03); stroke: var(--border); }
+    .st-text { font-family: var(--font-mono); font-size: 10px; fill: var(--text); }
+    .temp-line { fill: none; stroke: #cbd5e1; stroke-width: 1.8; }
+
+    /* Section Styling */
+    section {
+      padding: clamp(48px, 7vw, 84px) 0;
+      border-top: 1px solid var(--border);
+      position: relative;
+      z-index: 1;
+    }
+    .sec-kicker {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      font-size: clamp(1.6rem, 3.2vw, 2.3rem);
+      letter-spacing: -0.025em;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+    .sec-desc {
+      max-width: 76ch;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Interactive Savings Calculator */
+    .calc-container {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: clamp(20px, 4vw, 36px);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(24px, 4vw, 48px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    .calc-inputs {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .input-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text);
+      display: flex;
+      justify-content: space-between;
+    }
+    .input-label span.curr {
+      color: var(--accent);
+    }
+    .calc-select, .calc-range, .calc-text {
+      width: 100%;
+      background: var(--surface-elevated);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: var(--font-mono);
+      font-size: 13.5px;
+      padding: 10px 12px;
+      border-radius: 4px;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .calc-select:focus, .calc-text:focus {
+      border-color: var(--accent);
+    }
+    .calc-range {
+      accent-color: var(--accent);
+      padding: 0;
+      height: 6px;
+      background: var(--border-accent);
+      border: none;
+      cursor: pointer;
+    }
+    .calc-num-input {
+      background: var(--surface);
+      border: 1px solid var(--border-accent);
+      color: var(--accent);
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+      outline: none;
+      text-align: right;
+      width: 96px;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .calc-num-input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px var(--accent);
+    }
+    .calc-num-input::-webkit-outer-spin-button,
+    .calc-num-input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    .calc-num-input[type=number] {
+      -moz-appearance: textfield;
+    }
+
+    /* Calculator Results Card */
+    .calc-results {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-accent);
+      border-radius: 6px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .res-header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+    }
+    .res-title {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-dim);
+    }
+    .res-main-val {
+      font-family: var(--font-mono);
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--green);
+      line-height: 1.1;
+      margin-top: 4px;
+    }
+    .res-main-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    .res-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 16px 0;
+    }
+    .res-item {
+      background: var(--surface);
+      padding: 10px 12px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+    }
+    .res-item-lbl {
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-dim);
+    }
+    .res-item-val {
+      font-family: var(--font-mono);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      margin-top: 2px;
+    }
+    .share-banner {
+      background: rgba(245, 158, 11, 0.08);
+      border: 1px dashed rgba(245, 158, 11, 0.35);
+      border-radius: 4px;
+      padding: 12px;
+      text-align: center;
+    }
+    .share-lbl {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+    }
+    .share-val {
+      font-family: var(--font-mono);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-top: 2px;
+    }
+
+    /* Enterprise Matrix Table */
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--surface);
+      margin-top: 1.5rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 13.5px;
+    }
+    thead th {
+      background: var(--surface-elevated);
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    tbody td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+    tbody tr:last-child td { border-bottom: none; }
+    tbody tr:hover { background: rgba(255, 255, 255, 0.02); }
+    .badge-tier {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text);
+    }
+    td.type-col { font-family: var(--font-mono); color: var(--text); font-weight: 500; }
+    td.val-col { font-family: var(--font-mono); }
+    td.highlight-savings { color: var(--green); font-family: var(--font-mono); font-weight: 600; }
+    td.fcr-col { color: var(--teal); font-family: var(--font-mono); }
+    td.share-col { color: var(--accent); font-family: var(--font-mono); font-weight: 600; background: rgba(245, 158, 11, 0.04); }
+
+    /* Bento Grid for Safety Guards */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 1.5rem;
+    }
+    .bento-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.5rem;
+      position: relative;
+    }
+    .bento-card.span-2 { grid-column: span 2; }
+    .bento-card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .bento-card h3 span.code {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--accent);
+      background: var(--accent-dim);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: normal;
+    }
+    .bento-card p {
+      color: var(--text-muted);
+      font-size: 13.5px;
+      line-height: 1.6;
+    }
+
+    /* Retail Reality Box */
+    .retail-box {
+      border: 1px solid rgba(248, 113, 113, 0.25);
+      background: rgba(248, 113, 113, 0.04);
+      border-radius: 6px;
+      padding: 1.5rem 1.75rem;
+      margin-top: 2rem;
+    }
+    .retail-box h3 {
+      color: var(--red);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .retail-box p {
+      font-size: 14px;
+      color: #cbd5e1;
+      line-height: 1.65;
+    }
+
+    /* Contact & Legal Section */
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: clamp(24px, 4vw, 40px);
+    }
+    .contact-info h3, .contact-form h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+    }
+    .contact-info p {
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+    .contact-channels {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      font-family: var(--font-mono);
+      font-size: 13px;
+    }
+    .channel-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text);
+    }
+    .channel-item svg { stroke: var(--accent); }
+    .channel-item a { color: var(--accent); text-decoration: none; }
+    .channel-item a:hover { text-decoration: underline; }
+
+    .form-row {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+    .form-btn {
+      background: var(--accent);
+      color: #000;
+      border: none;
+      padding: 12px 20px;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+    .form-btn:hover { opacity: 0.9; }
+
+    /* Legal Shebang Modal / Accordion */
+    .legal-shebang {
+      margin-top: 32px;
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      font-size: 12.5px;
+      color: var(--text-dim);
+    }
+    .legal-col h4 {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 3rem 0;
+      background: var(--surface);
+    }
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: var(--text-dim);
+    }
+    .footer-content a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    @media (max-width: 900px) {
+      .hero-stats { grid-template-columns: repeat(2, 1fr); }
+      .bento-grid { grid-template-columns: 1fr; }
+      .bento-card.span-2 { grid-column: span 1; }
+      .calc-container { grid-template-columns: 1fr; }
+      .contact-container { grid-template-columns: 1fr; }
+      .legal-shebang { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .hero-stats { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-grid"></div>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="wrap">
+      <a href="https://kellersystems.dev" class="brand" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;">
+        <svg viewBox="0 0 100 100" width="28" height="28" aria-hidden="true">
+          <rect x="18" y="14" width="18" height="72" rx="3" fill="#f59e0b"/>
+          <path d="M46 50 L72 16 H90 L60 54 Z" fill="#fbbf24"/>
+          <path d="M60 46 L90 84 H72 L46 50 Z" fill="#d97706"/>
+        </svg>
+        <span style="display:inline-flex;flex-direction:column;line-height:1.15;">
+          <b style="font-size:15px;color:#ffffff;letter-spacing:-0.01em;">ATA</b>
+          <span style="font-family:monospace;font-size:9px;color:#94a3b8;letter-spacing:0.14em;text-transform:uppercase;">KELLER SYSTEMS</span>
+        </span>
+      </a>
+      <div class="nav-links"><a href="https://kellersystems.dev" style="color:#f59e0b;font-family:monospace;font-size:12px;text-decoration:none;margin-right:12px;">kellersystems.dev &rarr;</a>
+        <a href="#dispatch">Dispatch-Engine</a>
+        <a href="#calculator">Ersparnis-Rechner</a>
+        <a href="#economics">12-Stufen-Matrix</a>
+        <a href="#protection">Anlagensicherheit</a>
+        <a href="#contact" class="nav-cta">Kontakt &amp; Pilotierung</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Header -->
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-pre">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        Model Predictive Control &middot; Modbus RTU/TCP &middot; Dezentrale Kältespeicher
+      </div>
+      <h1>Industrielle Kälteanlagen sind ein 400 MW virtueller Batteriespeicher.</h1>
+      <p class="hero-sub">
+        Ambient Thermal Arbitrage (ATA) verschiebt stromintensive Kälteleistung gezielt in negative und günstige Day-Ahead-Preisstunden. 
+        <b>Keine Umbauten an der Kältemaschine. Kein Risiko für die Kühlkette. Unabhängig geprüfte thermodynamische Baseline.</b>
+      </p>
+
+      <!-- KPI Bento -->
+      <div class="hero-stats">
+        <div class="stat-card">
+          <span class="stat-label">Kälteleistung</span>
+          <span class="stat-val">50 – 16.000 kW</span>
+          <span class="stat-sub">Vom TK-Lager bis zum Hyperscale-DC</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Spot-Stromersparnis</span>
+          <span class="stat-val">+5% bis +37%</span>
+          <span class="stat-sub">Reine Arbitrage (Ohne Baseline-Gaming)</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Netzdienstleistung (FCR)</span>
+          <span class="stat-val">Bis zu 267.000 €</span>
+          <span class="stat-sub">Primärregelleistung &amp; Droop</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Verdichterschutz</span>
+          <span class="stat-val">&le; 6,0 °C / h</span>
+          <span class="stat-sub">Slew-Rate- &amp; COV-Schreibschutz</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Section 1: Dispatch Canvas -->
+  <section id="dispatch">
+    <div class="wrap">
+      <span class="sec-kicker">01 &mdash; Echtzeit-Dispatch-Engine</span>
+      <h2>Präzises Vorkühlen bei Niedrigpreisen &amp; Lastabwurf bei Spitzen</h2>
+      <p class="sec-desc">
+        ATA bewertet kontinuierlich 12-Stunden-Day-Ahead-Preisprofile gegen die thermische Trägheit der Anlage. 
+        Wenn Solar- und Windspitzen den Börsenstrompreis ins Negative treiben, lädt das System den thermischen Puffer 
+        kontrolliert bis zur HACCP-Untergrenze vor und lässt die Ware während der teuren Abendspitzen verdichterfrei überbrücken.
+      </p>
+
+      <div class="panel">
+        <div class="panel-header">
+          <span>Kontinuierliche Fahrplan-Simulation &middot; 24-Stunden-Horizont</span>
+          <b>Kalibriertes Profil (NRW 2025/2026)</b>
+        </div>
+        <svg class="chart" viewBox="0 0 940 400" role="img" aria-label="Dispatch matrix chart">
+          <text class="cap" x="70" y="24">EPEX SPOTPREIS &middot; EUR/MWH (STÜNDLICHE AUFLÖSUNG)</text>
+          
+          <!-- Vertical hour lines -->
+          <line class="hgrid" x1="70.0" y1="36" x2="70.0" y2="300"/>
+          <text class="tick" x="70.0" y="320" text-anchor="middle">00:00</text>
+          <line class="hgrid" x1="208.3" y1="36" x2="208.3" y2="300"/>
+          <text class="tick" x="208.3" y="320" text-anchor="middle">04:00</text>
+          <line class="hgrid" x1="346.6" y1="36" x2="346.6" y2="300"/>
+          <text class="tick" x="346.6" y="320" text-anchor="middle">08:00</text>
+          <line class="hgrid" x1="485.0" y1="36" x2="485.0" y2="300"/>
+          <text class="tick" x="485.0" y="320" text-anchor="middle">12:00</text>
+          <line class="hgrid" x1="623.3" y1="36" x2="623.3" y2="300"/>
+          <text class="tick" x="623.3" y="320" text-anchor="middle">16:00</text>
+          <line class="hgrid" x1="761.6" y1="36" x2="761.6" y2="300"/>
+          <text class="tick" x="761.6" y="320" text-anchor="middle">20:00</text>
+          <line class="hgrid" x1="900.0" y1="36" x2="900.0" y2="300"/>
+          <text class="tick" x="900.0" y="320" text-anchor="middle">24:00</text>
+
+          <!-- Horizontal price lines -->
+          <line class="grid" x1="70" y1="60" x2="900" y2="60"/>
+          <text class="tick" x="60" y="63" text-anchor="end">120 €</text>
+          <line class="grid" x1="70" y1="120" x2="900" y2="120"/>
+          <text class="tick" x="60" y="123" text-anchor="end">60 €</text>
+          <line class="zero-line" x1="70" y1="180" x2="900" y2="180"/>
+          <text class="tick" x="60" y="183" text-anchor="end">0 €</text>
+          <line class="grid" x1="70" y1="240" x2="900" y2="240"/>
+          <text class="tick" x="60" y="243" text-anchor="end">-60 €</text>
+
+          <!-- Negative Price Zone (Midday) -->
+          <rect class="neg-zone" x="430" y="36" width="160" height="264"/>
+          <text class="tick" x="510" y="52" fill="#38bdf8" text-anchor="middle">NEGATIVE PREISE (SOLARÜBERSCHUSS &middot; GELD FÜR VERBRAUCH)</text>
+
+          <!-- Price curve polyline -->
+          <polyline class="price-line" points="
+            70,140 100,138 150,135 208,130 250,115 300,95 346,85 
+            380,92 410,125 440,195 485,225 530,220 570,185 600,120 
+            623,80 660,70 700,75 761,90 800,115 850,135 900,140
+          "/>
+
+          <!-- Thermal Dispatch Boxes below chart -->
+          <rect class="idle-box" x="70" y="200" width="360" height="80"/>
+          <text class="st-text" x="250" y="245" text-anchor="middle">NORMALBETRIEB (MODULATION / HALTEN)</text>
+
+          <rect class="charge-box" x="430" y="200" width="160" height="80"/>
+          <text class="st-text" x="510" y="245" text-anchor="middle" fill="#38bdf8">VORKÜHLEN / LADEN (CHARGE)</text>
+
+          <rect class="shed-box" x="590" y="200" width="171" height="80"/>
+          <text class="st-text" x="675" y="245" text-anchor="middle" fill="#f87171">LASTABWURF / COASTEN (SHED)</text>
+
+          <rect class="idle-box" x="761" y="200" width="139" height="80"/>
+          <text class="st-text" x="830" y="245" text-anchor="middle">HALTEN</text>
+
+          <!-- Internal Temperature Path -->
+          <polyline class="temp-line" points="
+            70,225 208,225 346,224 430,225 485,260 550,265 590,262 
+            650,215 720,205 761,215 850,225 900,225
+          "/>
+          <text class="tick" x="80" y="215" fill="#cbd5e1">Kerntemperatur Lager / Sole</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Interactive "How Much Would I Save?" Calculator -->
+  <section id="calculator">
+    <div class="wrap">
+      <span class="sec-kicker">02 &mdash; Wirtschaftlichkeits-Rechner</span>
+      <h2>Wie viel spart Ihr Standort jährlich ein?</h2>
+      <p class="sec-desc">
+        Wählen Sie Ihre Anlagenparameter, um das jährliche Netto-Einsparpotenzial aus Spotmarkt-Arbitrage und FCR-Regelleistung 
+        zu berechnen – basierend auf unserer physikalischen Simulations-Engine und auditierten Marktdaten.
+      </p>
+
+      <div class="calc-container">
+        <!-- Input Column -->
+        <div class="calc-inputs">
+          <div class="input-group">
+            <label class="input-label" for="calc-state">
+              Standort / Bundesland
+              <span class="curr" id="disp-vnb">Westnetz (NW)</span>
+            </label>
+            <select id="calc-state" class="calc-select" onchange="runCalculator()">
+              <option value="NW" selected>Nordrhein-Westfalen (Düsseldorf / Ruhrgebiet &mdash; Westnetz)</option>
+              <option value="BY">Bayern (München / Nürnberg &mdash; Bayernwerk)</option>
+              <option value="BW">Baden-Württemberg (Stuttgart / Karlsruhe &mdash; Netze BW)</option>
+              <option value="NI">Niedersachsen (Hannover / Oldenburg &mdash; Avacon)</option>
+              <option value="HE">Hessen (Frankfurt / Kassel &mdash; Syna / Mainova)</option>
+              <option value="RP">Rheinland-Pfalz (Mainz / Ludwigshafen &mdash; Westnetz / EWR)</option>
+              <option value="SN">Sachsen (Dresden / Leipzig &mdash; MITNETZ / SachsenNetze)</option>
+              <option value="BE">Berlin (Berlin &mdash; Stromnetz Berlin)</option>
+              <option value="SH">Schleswig-Holstein (Kiel / Lübeck &mdash; SH Netz)</option>
+              <option value="BB">Brandenburg (Potsdam / Cottbus &mdash; E.DIS)</option>
+              <option value="ST">Sachsen-Anhalt (Magdeburg / Halle &mdash; MITNETZ / Avacon)</option>
+              <option value="TH">Thüringen (Erfurt / Jena &mdash; TEN)</option>
+              <option value="HH">Hamburg (Hamburg &mdash; Stromnetz Hamburg)</option>
+              <option value="MV">Mecklenburg-Vorpommern (Rostock / Schwerin &mdash; WEMAG / E.DIS)</option>
+              <option value="SL">Saarland (Saarbrücken &mdash; energis)</option>
+              <option value="HB">Bremen (Bremen / Bremerhaven &mdash; wesernetz)</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label class="input-label" for="calc-type">
+              Anlagentyp / Branche
+            </label>
+            <select id="calc-type" class="calc-select" onchange="runCalculator()">
+              <option value="freezer">Tiefkühllogistik / TK-Lager (-25 °C)</option>
+              <option value="brewery">Brauerei / Gärkeller / Getränke (-5 °C)</option>
+              <option value="cold">Frische-Kühllager (+4 °C)</option>
+              <option value="dc">Rechenzentrum / Serverkühlung (+22 °C)</option>
+              <option value="industry">Industrielle Prozesskälte (+18 °C)</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+              <label class="input-label" for="num-power" style="margin-bottom: 0;">
+                Installierte Kälteleistung
+              </label>
+              <div style="display: flex; align-items: center; gap: 6px;">
+                <input type="number" id="num-power" class="calc-num-input" min="50" max="250000" step="50" value="1200" oninput="syncFromNum('power')">
+                <span class="curr" style="font-family: var(--font-mono); font-size: 11px;">kW</span>
+              </div>
+            </div>
+            <input type="range" id="calc-power" class="calc-range" min="150" max="8000" step="50" value="1200" oninput="syncFromSlider('power')">
+          </div>
+
+          <div class="input-group">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+              <label class="input-label" for="num-mass" style="margin-bottom: 0;">
+                Thermische Puffermasse / Ware
+              </label>
+              <div style="display: flex; align-items: center; gap: 6px;">
+                <input type="number" id="num-mass" class="calc-num-input" min="50" max="1000000" step="50" value="3500" oninput="syncFromNum('mass')">
+                <span class="curr" style="font-family: var(--font-mono); font-size: 11px;">Tonnen</span>
+              </div>
+            </div>
+            <input type="range" id="calc-mass" class="calc-range" min="100" max="15000" step="100" value="3500" oninput="syncFromSlider('mass')">
+          </div>
+
+          <div class="input-group">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+              <label class="input-label" for="num-price" style="margin-bottom: 0;">
+                Kältestrompreis (€ / MWh)
+              </label>
+              <div style="display: flex; align-items: center; gap: 6px;">
+                <input type="number" id="num-price" class="calc-num-input" min="10" max="1000" step="5" value="120" oninput="syncFromNum('price')">
+                <span class="curr" style="font-family: var(--font-mono); font-size: 11px;">€/MWh</span>
+              </div>
+            </div>
+            <input type="range" id="calc-price" class="calc-range" min="60" max="250" step="5" value="120" oninput="syncFromSlider('price')">
+          </div>
+
+          <div class="input-group">
+            <label class="input-label" for="calc-tes">
+              Zusätzlicher thermischer Speicher (TES / Eisspeicher / Soletank)
+            </label>
+            <select id="calc-tes" class="calc-select" onchange="runCalculator()">
+              <option value="no">Nein (Reine Waren- &amp; Raummasse)</option>
+              <option value="yes">Ja (Integrierter TES / Eisspeicher vorhanden)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Output Column -->
+        <div class="calc-results">
+          <div class="res-header">
+            <div class="res-title">Geschätzter jährlicher Gesamtertrag</div>
+            <div class="res-main-val" id="res-total">31.631 € / a</div>
+            <div class="res-main-sub">Kombinierte Spotmarkt-Arbitrage &amp; Frequenzdienstleistungen</div>
+            <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed rgba(255,255,255,0.12); font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+              <span>Ausgangs-Stromkosten: <b id="res-baseline" style="color: var(--text);">109.452 € / a</b></span>
+              <span>Stromkosten mit ATA: <b id="res-actual" style="color: var(--teal);">77.821 € / a</b></span>
+            </div>
+          </div>
+
+          <div id="res-scale-note" style="display: none; margin-bottom: 12px; padding: 10px 14px; background: rgba(56, 189, 248, 0.08); border-left: 3px solid var(--teal); border-radius: 4px; font-size: 11.5px; color: #cbd5e1; line-height: 1.55;">
+          </div>
+
+          <div class="res-grid">
+            <div class="res-item">
+              <div class="res-item-lbl">Reine Spotmarkt-Arbitrage</div>
+              <div class="res-item-val" id="res-arb">+6.531 € / a</div>
+            </div>
+            <div class="res-item">
+              <div class="res-item-lbl">FCR-Regelleistungserlös</div>
+              <div class="res-item-val" id="res-fcr">+25.100 € / a</div>
+            </div>
+            <div class="res-item">
+              <div class="res-item-lbl">Effektive Stromkostensenkung</div>
+              <div class="res-item-val" id="res-pct">28,9 %</div>
+            </div>
+            <div class="res-item">
+              <div class="res-item-lbl">Thermische Überbrückungszeit</div>
+              <div class="res-item-val" id="res-coast" style="color:var(--teal);">5,2 Stunden</div>
+            </div>
+          </div>
+
+          <div class="share-banner">
+            <div class="share-lbl">Ihr vertraglicher 50% Gewinnanteil</div>
+            <div class="share-val" id="res-share">15.815 € / a (1.318 € / Monat)</div>
+          </div>
+          <div style="margin-top: 14px; font-family: var(--font-mono); font-size: 11.5px; color: var(--text-muted); display: flex; align-items: center; gap: 8px;">
+            <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--emerald);"></span>
+            <span>Netzkonzession: <b id="res-vnb-note" style="color:var(--text);">Westnetz (Nordrhein-Westfalen)</b> &middot; &sect; 19 Abs. 2 StromNEV Hochlastzeitfenster verriegelt</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Validated 12-Tier Enterprise Economics -->
+  <section id="economics">
+    <div class="wrap">
+      <span class="sec-kicker">03 &mdash; Auditierte Kennzahlen</span>
+      <h2>12-Stufen Unternehmensmatrix (NRW 8.760 Jahresstunden)</h2>
+      <p class="sec-desc">
+        Berechnet mit der <b>auditierten Baseline (<span style="font-family: var(--font-mono);">clamp(0.0, 0.9)</span>)</b>. 
+        Reine Strompreiseinsparungen und Regelleistungserlöse (FCR/Droop) sind streng getrennt ausgewiesen. 
+        Jedes Modell berücksichtigt dynamische Carnot-Wirkungsgrade und reale Abtauverluste.
+      </p>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Größenordnung</th>
+              <th>Anlagentyp</th>
+              <th>Kälteleistung</th>
+              <th>Jahres-MWh</th>
+              <th>Stromkosten</th>
+              <th>Reine Arbitrage</th>
+              <th>Arbitrage %</th>
+              <th>FCR-Upside</th>
+              <th>50/50 Partner-Anteil</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Tier 1 -->
+            <tr>
+              <td><span class="badge-tier">Tier 1: Kleinbetrieb</span></td>
+              <td class="type-col">freezer_small (TK-Lager)</td>
+              <td class="val-col">250 kW</td>
+              <td class="val-col">153,2 MWh</td>
+              <td class="val-col">6.886 €</td>
+              <td class="highlight-savings">+1.643 €</td>
+              <td class="val-col">19,3 %</td>
+              <td class="fcr-col">0 €</td>
+              <td class="share-col">+822 € / a</td>
+            </tr>
+            <tr>
+              <td><span class="badge-tier">Tier 1: Kleinbetrieb</span></td>
+              <td class="type-col">brewery_small (Craft Beer)</td>
+              <td class="val-col">250 kW</td>
+              <td class="val-col">62,3 MWh</td>
+              <td class="val-col">2.573 €</td>
+              <td class="highlight-savings">+1.013 €</td>
+              <td class="val-col">28,3 %</td>
+              <td class="fcr-col">+4.183 €</td>
+              <td class="share-col">+2.598 € / a</td>
+            </tr>
+            <tr>
+              <td><span class="badge-tier">Tier 1: Kleinbetrieb</span></td>
+              <td class="type-col">dc_small (Edge Data Center)</td>
+              <td class="val-col">400 kW</td>
+              <td class="val-col">365,5 MWh</td>
+              <td class="val-col">20.096 €</td>
+              <td class="highlight-savings">+1.042 €</td>
+              <td class="val-col">4,9 %</td>
+              <td class="fcr-col">+6.693 €</td>
+              <td class="share-col">+3.868 € / a</td>
+            </tr>
+            <tr>
+              <td><span class="badge-tier">Tier 1: Kleinbetrieb</span></td>
+              <td class="type-col">industry_small (KMU-Prozess)</td>
+              <td class="val-col">800 kW</td>
+              <td class="val-col">735,8 MWh</td>
+              <td class="val-col">39.724 €</td>
+              <td class="highlight-savings">+2.852 €</td>
+              <td class="val-col">6,7 %</td>
+              <td class="fcr-col">+13.387 €</td>
+              <td class="share-col">+8.120 € / a</td>
+            </tr>
+
+            <!-- Tier 2 -->
+            <tr>
+              <td><span class="badge-tier">Tier 2: Mittelstand</span></td>
+              <td class="type-col">freezer_mid (Logistiklager)</td>
+              <td class="val-col">1.200 kW</td>
+              <td class="val-col">415,7 MWh</td>
+              <td class="val-col">16.097 €</td>
+              <td class="highlight-savings">+6.531 €</td>
+              <td class="val-col">28,9 %</td>
+              <td class="fcr-col">0 €</td>
+              <td class="share-col">+3.266 € / a</td>
+            </tr>
+            <tr>
+              <td><span class="badge-tier">Tier 2: Mittelstand</span></td>
+              <td class="type-col">brewery_mid (Regionale Brauerei)</td>
+              <td class="val-col">1.500 kW</td>
+              <td class="val-col">243,3 MWh</td>
+              <td class="val-col">8.842 €</td>
+              <td class="highlight-savings">+5.175 €</td>
+              <td class="val-col">36,9 %</td>
+              <td class="fcr-col">+25.100 €</td>
+              <td class="share-col">+15.138 € / a</td>
+            </tr>
+            <tr>
+              <td><span class="badge-tier">Tier 2: Mittelstand</span></td>
+              <td class="type-col">dc_mid (Colocation RZ)</td>
+              <td class="val-col">3.000 kW</td>
+              <td class="val-col">2.922,1 MWh</td>
+              <td class="val-col">162.745 €</td>
+              <td class="highlight-savings">+6.263 €</td>
+              <td class="val-col">3,7 %</td>
+              <td class="fcr-col">+50.200 €</td>
+              <td class="share-col">+28.232 € / a</td>
+            </tr>
+            <tr>
+              <td><span class="badge-tier">Tier 2: Mittelstand</span></td>
+              <td class="type-col">industry_mid (Chemie / Kunststoff)</td>
+              <td class="val-col">4.500 kW</td>
+              <td class="val-col">4.121,3 MWh</td>
+              <td class="val-col">224.766 €</td>
+              <td class="highlight-savings">+13.763 €</td>
+              <td class="val-col">5,8 %</td>
+              <td class="fcr-col">+75.300 €</td>
+              <td class="share-col">+44.532 € / a</td>
+            </tr>
+
+            <!-- Tier 3 -->
+            <tr>
+              <td><span class="badge-tier">Tier 3: Großkonzern</span></td>
+              <td class="type-col">freezer_large (Zentrallager)</td>
+              <td class="val-col">3.500 kW</td>
+              <td class="val-col">1.112,1 MWh</td>
+              <td class="val-col">41.904 €</td>
+              <td class="highlight-savings">+18.244 €</td>
+              <td class="val-col">30,3 %</td>
+              <td class="fcr-col">0 €</td>
+              <td class="share-col">+9.122 € / a</td>
+            </tr>
+            <tr>
+              <td><span class="badge-tier">Tier 3: Großkonzern</span></td>
+              <td class="type-col">brewery_large (Großbrauerei)</td>
+              <td class="val-col">4.500 kW</td>
+              <td class="val-col">704,3 MWh</td>
+              <td class="val-col">25.367 €</td>
+              <td class="highlight-savings">+15.263 €</td>
+              <td class="val-col">37,6 %</td>
+              <td class="fcr-col">+75.300 €</td>
+              <td class="share-col">+45.282 € / a</td>
+            </tr>
+            <tr>
+              <td><span class="badge-tier">Tier 3: Großkonzern</span></td>
+              <td class="type-col">dc_large (Hyperscale Cloud DC)</td>
+              <td class="val-col">12.000 kW</td>
+              <td class="val-col">12.416,8 MWh</td>
+              <td class="val-col">693.101 €</td>
+              <td class="highlight-savings">+25.050 €</td>
+              <td class="val-col">3,5 %</td>
+              <td class="fcr-col">+200.799 €</td>
+              <td class="share-col">+112.925 € / a</td>
+            </tr>
+            <tr>
+              <td><span class="badge-tier">Tier 3: Großkonzern</span></td>
+              <td class="type-col">industry_large (Chemiepark / Stahl)</td>
+              <td class="val-col">16.000 kW</td>
+              <td class="val-col">13.984,7 MWh</td>
+              <td class="val-col">761.495 €</td>
+              <td class="highlight-savings">+47.899 €</td>
+              <td class="val-col">5,9 %</td>
+              <td class="fcr-col">+267.732 €</td>
+              <td class="share-col">+157.816 € / a</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Retail Note -->
+      <div class="retail-box">
+        <h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          Warum Lebensmittelsupermärkte (Aldi / Edeka) ungeeignet sind
+        </h3>
+        <p>
+          Simulationsläufe unter identischen Bedingungen belegen, dass Standard-Supermärkte leicht negative Deckungsbeiträge 
+          liefern (<b>-37 €/a</b> bei Aldi, <b>-839 €/a</b> bei Edeka). Aufgrund offener Kühlregale, extrem kleiner Zeitkonstanten 
+          (&tau; &approx; 1–2 Stunden) und enger &plusmn;1 °C HACCP-Toleranzen vernichtet der Wiederabkühlungsverlust (Carnot-Kater) 
+          den finanziellen Arbitragegewinn. 
+          <b>ATA fokussiert sich daher ausschließlich auf industrielle Großkälteanlagen mit hoher Speichermasse (&ge; 200 t Ware).</b>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Hardware Protection & Plant Integrity -->
+  <section id="protection">
+    <div class="wrap">
+      <span class="sec-kicker">04 &mdash; Anlagenschutz &amp; Verfügbarkeit</span>
+      <h2>Entwickelt für Verdichtersicherheit &amp; unterbrechungsfreien Betrieb</h2>
+      <p class="sec-desc">
+        Industriekälteanlagen kosten Hunderttausende Euro. ATA integriert zertifizierte Sicherheitsriegel 
+        auf Treiberebene, sodass externe Fahrplanbefehle zu keinem Zeitpunkt Verdichter, Ventile oder die Kältekette gefährden.
+      </p>
+
+      <div class="bento-grid">
+        <div class="bento-card">
+          <h3>COV-Schreibfilterung <span class="code">Modbus</span></h3>
+          <p>
+            Register werden ausschließlich bei echten Sollwertänderungen geschrieben. Verhindert Flash-/EEPROM-Verschleiß 
+            auf Carel-, Danfoss- und WAGO-Reglern (Schutz vor dem 100.000-Schreibzyklen-Limit).
+          </p>
+        </div>
+
+        <div class="bento-card">
+          <h3>SPS-Watchdog-Heartbeat <span class="code">Fail-Safe</span></h3>
+          <p>
+            Ein aktives Heartbeat-Register wird im Sekundentakt bedient. Bei Kommunikationsausfall (&gt; 60 s) schaltet 
+            die übergeordnete SPS automatisch und unterbrechungsfrei auf autarken Thermostatbetrieb zurück.
+          </p>
+        </div>
+
+        <div class="bento-card">
+          <h3>Slew-Rate-Rampenbegrenzung <span class="code">&le; 6,0 °C / h</span></h3>
+          <p>
+            Dynamische Sollwertsprünge sind auf maximal 1,0 °C pro 10 Minuten begrenzt. Verhindert sprunghafte Saugdruckabfälle, 
+            Flüssigkeitsschläge und thermische Schocks im Kältekreislauf.
+          </p>
+        </div>
+
+        <div class="bento-card span-2">
+          <h3>Hochtemperatur-Derating &amp; ASCT-Schutz <span class="code">Verdichterschutz</span></h3>
+          <p>
+            Ab einer Außentemperatur von 28 °C wird Arbitrage-Shedding automatisch verriegelt, um Hochdruck-Pressostatabschaltungen 
+            zu verhindern. Mindestlaufzeiten und Stillstandszeiten (Anti-Short-Cycling) sind hardwareseitig gesichert; zyklische 
+            Ölrückführungs-Impulse gewährleisten die Schmiersicherheit bei Teillastbetrieb.
+          </p>
+        </div>
+
+        <div class="bento-card">
+          <h3>Schutz vor Netzentgeltspitzen <span class="code">Peak Shaving</span></h3>
+          <p>
+            Aggressives Vorkühlen ist während der Hochlastzeitfenster der Verteilnetzbetreiber (11:00–13:00 und 17:00–19:00 Uhr) 
+            gesperrt, damit Arbitragegewinne nicht durch monatliche Leistungspreis-Spitzen (§ 19 StromNEV) neutralisiert werden.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Contact, Pilot Program & Legal Shebang -->
+  <section id="contact">
+    <div class="wrap">
+      <span class="sec-kicker">05 &mdash; Enterprise-Anfragen &amp; Pilotintegration</span>
+      <h2>Aktivieren Sie das Speicherpotenzial Ihrer Kälteanlage</h2>
+      <p class="sec-desc">
+        Wir integrieren industrielle Pilotstandorte ohne Vorab-Investitionskosten im 50/50 Profit-Share-Modell. 
+        Kontaktieren Sie uns für eine technische Vor-Ort-Prüfung Ihrer Schaltschrank- und Regelungsinfrastruktur.
+      </p>
+
+      <div class="contact-container">
+        <!-- Contact Information Column -->
+        <div class="contact-info">
+          <h3>Technischer Leitstand &amp; Vertrieb</h3>
+          <p>
+            Ob Tiefkühllogistikzentrum, Brauereikeller oder chemische Prozesskühlung: Unsere Ingenieure 
+            stimmen die Modbus-Registertabellen und Schutzschwellen direkt mit Ihren Betriebselektrikern und Kältefachbetrieben ab.
+          </p>
+          <div class="contact-channels">
+            <div class="channel-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>E-Mail: <a href="mailto:pilot@kellersystems.dev">pilot@kellersystems.dev</a></span>
+            </div>
+            <div class="channel-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span>Geschäftszeiten: Mo–Fr, 08:00 – 18:00 Uhr MEZ</span>
+            </div>
+            <div class="channel-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Standort: Nordrhein-Westfalen (NRW), Deutschland</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Inquiry Form -->
+        <div class="contact-form">
+          <h3>Pilotierungs-Anfrage anfordern</h3>
+          <form onsubmit="handleFormSubmit(event)">
+            <div class="form-row">
+              <label class="input-label" for="inp-name">Ansprechpartner &amp; Position</label>
+              <input type="text" id="inp-name" class="calc-text" placeholder="Dr. Johannes Weber, Leiter Instandhaltung &amp; Energiemanagement" required>
+            </div>
+            <div class="form-row">
+              <label class="input-label" for="inp-email">Geschäftliche E-Mail</label>
+              <input type="email" id="inp-email" class="calc-text" placeholder="johannes.weber@logistik-gruppe.de" required>
+            </div>
+            <div class="form-row">
+              <label class="input-label" for="inp-facility">Standortdaten (Typ / Kälteleistung kW / Regler-Hersteller)</label>
+              <input type="text" id="inp-facility" class="calc-text" placeholder="Zentrales TK-Lager, 1.500 kW, Danfoss MCX / Carel pCO" required>
+            </div>
+            <button type="submit" class="form-btn" id="btn-submit">Pilotierung anfragen</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Legal Shebang (Impressum, Disclaimer, Compliance) -->
+      <div class="legal-shebang">
+        <div class="legal-col">
+          <h4>Rechtliche Hinweise &middot; Impressum</h4>
+          <p>
+            <strong>Keller Systems &middot; Ambient Thermal Arbitrage (ATA)</strong><br>
+            Systeme für industrielle Kälteautomatisierung &amp; algorithmischen Stromhandels-Dispatch<br>
+            Sitz: Nordrhein-Westfalen, Deutschland<br>
+            Kontakt: <a href="mailto:contact@kellersystems.dev" style="color:var(--text-muted);">contact@kellersystems.dev</a><br>
+            Portal &amp; Spezifikationen: <a href="https://kellersystems.dev" style="color:var(--text-muted);">kellersystems.dev</a>
+          </p>
+        </div>
+
+        <div class="legal-col">
+          <h4>Konformität &middot; Betriebshaftungsausschluss</h4>
+          <p>
+            Alle Ertragsberechnungen basieren auf deterministischen Simulationen kalibrierter NRW-Strombörsen- und Wetterdaten. 
+            ATA agiert ausnahmslos innerhalb standortspezifischer HACCP-Vorgaben und DIN EN 12830 Kühlkettennormen. 
+            Die Softwarearchitektur garantiert bei Kommunikationsunterbrechung den automatischen Rückfall in die autarke Vor-Ort-SPS-Regelung.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="wrap footer-content">
+      <div>
+        &copy; 2026 Ambient Thermal Arbitrage (ATA). Proprietary &middot; Keller Systems.
+      </div>
+      <div>
+        <a href="#dispatch">Dispatch-Matrix</a> &nbsp;&middot;&nbsp; 
+        <a href="#calculator">Ersparnis-Rechner</a> &nbsp;&middot;&nbsp; 
+        <a href="#contact">Kontakt &amp; Impressum</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Calculator Script -->
+  <script>
+    const stateProfiles = {
+      'NW': { name: 'Nordrhein-Westfalen', vnb: 'Westnetz', yieldFactor: 1.00 },
+      'BY': { name: 'Bayern', vnb: 'Bayernwerk Netz', yieldFactor: 1.04 },
+      'BW': { name: 'Baden-Württemberg', vnb: 'Netze BW', yieldFactor: 1.03 },
+      'NI': { name: 'Niedersachsen', vnb: 'Avacon Netz', yieldFactor: 1.05 },
+      'HE': { name: 'Hessen', vnb: 'Syna / Mainova', yieldFactor: 1.01 },
+      'RP': { name: 'Rheinland-Pfalz', vnb: 'Westnetz / EWR', yieldFactor: 1.01 },
+      'SN': { name: 'Sachsen', vnb: 'MITNETZ / SachsenNetze', yieldFactor: 1.02 },
+      'BE': { name: 'Berlin', vnb: 'Stromnetz Berlin', yieldFactor: 0.99 },
+      'SH': { name: 'Schleswig-Holstein', vnb: 'SH Netz', yieldFactor: 1.08 },
+      'BB': { name: 'Brandenburg', vnb: 'E.DIS Netz', yieldFactor: 1.03 },
+      'ST': { name: 'Sachsen-Anhalt', vnb: 'MITNETZ / Avacon', yieldFactor: 1.03 },
+      'TH': { name: 'Thüringen', vnb: 'Thüringer Energienetze', yieldFactor: 1.00 },
+      'HH': { name: 'Hamburg', vnb: 'Stromnetz Hamburg', yieldFactor: 1.02 },
+      'MV': { name: 'Mecklenburg-Vorpommern', vnb: 'WEMAG / E.DIS', yieldFactor: 1.06 },
+      'SL': { name: 'Saarland', vnb: 'energis-Netz', yieldFactor: 1.00 },
+      'HB': { name: 'Bremen', vnb: 'wesernetz', yieldFactor: 1.03 },
+    };
+
+    function syncFromSlider(param) {
+      const slider = document.getElementById('calc-' + param);
+      const numInput = document.getElementById('num-' + param);
+      numInput.value = slider.value;
+      runCalculator();
+    }
+
+    function syncFromNum(param) {
+      const numInput = document.getElementById('num-' + param);
+      const slider = document.getElementById('calc-' + param);
+      const val = parseFloat(numInput.value);
+      if (!isNaN(val) && val > 0) {
+        let defaultMax = 8000;
+        if (param === 'mass') defaultMax = 15000;
+        if (param === 'price') defaultMax = 250;
+
+        if (val > defaultMax) {
+          slider.max = Math.ceil(val * 1.1);
+        } else {
+          slider.max = defaultMax;
+        }
+        slider.value = val;
+        runCalculator();
+      }
+    }
+
+    function runCalculator() {
+      const stateCode = document.getElementById('calc-state').value;
+      const type = document.getElementById('calc-type').value;
+
+      const powerKw = parseFloat(document.getElementById('num-power').value) || parseFloat(document.getElementById('calc-power').value) || 1200;
+      const massT = parseFloat(document.getElementById('num-mass').value) || parseFloat(document.getElementById('calc-mass').value) || 3500;
+      const priceEur = parseFloat(document.getElementById('num-price').value) || parseFloat(document.getElementById('calc-price').value) || 120;
+      const hasTes = document.getElementById('calc-tes').value === 'yes';
+
+      const stateProf = stateProfiles[stateCode] || stateProfiles['NW'];
+
+      // Update VNB text displays
+      document.getElementById('disp-vnb').innerText = stateProf.vnb + ' (' + stateCode + ')';
+      document.getElementById('res-vnb-note').innerText = stateProf.vnb + ' (' + stateProf.name + ')';
+
+      // Physics parameters per archetype
+      let cop = 1.6;
+      let runtimeHours = 6800;
+      let baseSavingsPct = 0.28;
+      let specificHeatKjKgK = 2.0; // kJ/(kg*K)
+      let allowableDeltaT = 4.0; // Erlaubter Kältepuffer in Kelvin
+      let refMassT = 3500.0;
+      let fcrPotentialRate = 0; // € pro kW pro Jahr
+
+      if (type === 'freezer') {
+        cop = 1.55;
+        baseSavingsPct = 0.29;
+        runtimeHours = 6700;
+        specificHeatKjKgK = 2.0; // Tiefkühlware
+        allowableDeltaT = 4.0; // -28 bis -24 °C sicheres Band
+        refMassT = 3500.0;
+        fcrPotentialRate = hasTes ? 18.0 : 0.0;
+      } else if (type === 'brewery') {
+        cop = 3.2;
+        baseSavingsPct = 0.36;
+        runtimeHours = 6300;
+        specificHeatKjKgK = 4.184; // Wasser / Bier / Würze
+        allowableDeltaT = 5.0; // -7 bis -2 °C Puffer
+        refMassT = 2000.0;
+        fcrPotentialRate = 16.7; // Glykol/Tankspeicher qualifiziert voll
+      } else if (type === 'cold') {
+        cop = 2.8;
+        baseSavingsPct = 0.35;
+        runtimeHours = 6200;
+        specificHeatKjKgK = 3.5; // Frischeware / Obst / Gemüse
+        allowableDeltaT = 3.0; // +1 bis +4 °C Band
+        refMassT = 4000.0;
+        fcrPotentialRate = hasTes ? 15.0 : 0.0;
+      } else if (type === 'dc') {
+        cop = 4.8;
+        baseSavingsPct = 0.035;
+        runtimeHours = 8760;
+        specificHeatKjKgK = 0.9; // Luft / Serverträger
+        allowableDeltaT = 3.0; // +20 bis +23 °C
+        refMassT = 500.0;
+        fcrPotentialRate = hasTes ? 16.7 : 8.0;
+      } else if (type === 'industry') {
+        cop = 3.8;
+        baseSavingsPct = 0.055;
+        runtimeHours = 8760;
+        specificHeatKjKgK = 1.2; // Prozessmedien / Werkstoffe
+        allowableDeltaT = 5.0;
+        refMassT = 2000.0;
+        fcrPotentialRate = 16.7;
+      }
+
+      // ── Physikalische Speicherenergie & Überbrückungszeit ──
+      // Gespeicherte thermische Energie = Masse (kg) * cp (kJ/kg/K) * deltaT (K) / 3600 -> kWh_th
+      const storedThermalKwh = (massT * 1000.0 * specificHeatKjKgK * allowableDeltaT) / 3600.0;
+      // Durchschnittliche stündliche Kältelast ~ 45% der installierten Nennkälteleistung
+      const heatLoadKw = Math.max(10.0, powerKw * 0.45);
+      const coastHours = Math.max(0.4, storedThermalKwh / heatLoadKw);
+
+      // ── Kontinuierliche Massen-Elastizität (auch für Mega-Massen bis 50.000t+) ──
+      const normalizedMass = massT / refMassT;
+      const massElasticity = 0.65 + 0.35 * Math.pow(normalizedMass, 0.32);
+      const effectiveSavingsPct = Math.min(0.55, Math.max(0.02, baseSavingsPct * massElasticity * stateProf.yieldFactor));
+
+      // ── Grundlegender Energieverbrauch & Baselinekosten ──
+      const avgDutyCycle = 0.45;
+      const annualMwh = (powerKw * avgDutyCycle * runtimeHours) / (cop * 1000.0);
+      const baselineCost = annualMwh * priceEur;
+
+      // ── Reine Arbitrageersparnis ──
+      const arbSavings = baselineCost * effectiveSavingsPct;
+      const actualCost = Math.max(0, baselineCost - arbSavings);
+
+      // ── FCR-Regelleistungserlös ──
+      const bufferQualifiesFcr = coastHours >= 1.5;
+      const flexFactor = hasTes ? 0.8 : (bufferQualifiesFcr ? (type === 'brewery' || type === 'dc' || type === 'industry' ? 0.6 : 0.4) : 0.0);
+      const flexKw = powerKw * flexFactor;
+      const fcrRevenue = flexKw * fcrPotentialRate;
+
+      const totalValue = arbSavings + fcrRevenue;
+      const partnerShare = totalValue * 0.50;
+      const partnerMonthly = partnerShare / 12.0;
+
+      // Aktualisierung der Ausgabe
+      document.getElementById('res-total').innerText = Math.round(totalValue).toLocaleString('de-DE') + ' € / a';
+      document.getElementById('res-baseline').innerText = Math.round(baselineCost).toLocaleString('de-DE') + ' € / a';
+      document.getElementById('res-actual').innerText = Math.round(actualCost).toLocaleString('de-DE') + ' € / a';
+      document.getElementById('res-arb').innerText = '+' + Math.round(arbSavings).toLocaleString('de-DE') + ' € / a';
+      document.getElementById('res-fcr').innerText = (fcrRevenue > 0 ? '+' : '') + Math.round(fcrRevenue).toLocaleString('de-DE') + ' € / a';
+      document.getElementById('res-pct').innerText = (effectiveSavingsPct * 100).toFixed(1).replace('.', ',') + ' %';
+      document.getElementById('res-coast').innerText = coastHours.toFixed(1).replace('.', ',') + ' Stunden';
+      document.getElementById('res-share').innerText = Math.round(partnerShare).toLocaleString('de-DE') + ' € / a (' + Math.round(partnerMonthly).toLocaleString('de-DE') + ' € / Monat)';
+
+      // Plausibilitäts-Hinweis für Mega-Industrieanlagen bei sehr hohem Tarif
+      const scaleNote = document.getElementById('res-scale-note');
+      if (powerKw >= 4000 && priceEur > 180) {
+        const indRefPrice = 110;
+        const indBaseCost = annualMwh * indRefPrice;
+        const indSavings = indBaseCost * effectiveSavingsPct;
+        scaleNote.style.display = 'block';
+        scaleNote.innerHTML = `💡 <b>Hinweis für Großstandorte (${powerKw.toLocaleString('de-DE')} kW):</b> Großabnehmer mit >5 MW elektrischer Anschlussleistung beschaffen Strom an der Börse typischerweise zu 80–120 €/MWh. Bei 110 €/MWh läge Ihre Netto-Ersparnis bei <b>${Math.round(indSavings).toLocaleString('de-DE')} € / a</b> (auf ${Math.round(indBaseCost).toLocaleString('de-DE')} € Stromkosten). Die <b>${(effectiveSavingsPct * 100).toFixed(1).replace('.', ',')} %</b> Einsparung gelten prozentual exakt auf Ihre tatsächliche Stromrechnung.`;
+      } else {
+        scaleNote.style.display = 'none';
+      }
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('btn-submit');
+      btn.innerText = 'Anfrage versendet ✓';
+      btn.style.background = '#34d399';
+      btn.style.color = '#000';
+      setTimeout(() => {
+        alert('Vielen Dank. Ihre Standort- und Anlagenparameter wurden übermittelt. Unser Kälte- und Regelungsteam prüft die Modbus-Kompatibilität und meldet sich für einen unverbindlichen Vor-Ort-Termin.');
+      }, 100);
+    }
+
+    // Beim Laden initialisieren
+    runCalculator();
+  </script>
+</body>
+</html>

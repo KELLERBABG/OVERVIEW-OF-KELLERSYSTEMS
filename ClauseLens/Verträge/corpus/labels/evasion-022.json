@@ -1,0 +1,79 @@
+{
+  "slug": "evasion-022",
+  "source": "generated",
+  "domain": "evasion",
+  "traps": [
+    {
+      "marker": "Der Vertrag kann von beiden Parteien mit einer Frist von achtzehn Monaten zum Jahresende gekündigt",
+      "expectedType": "notice_period",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: notice_period (Technik: negation)."
+    },
+    {
+      "marker": "Die Haftung des Anbieters für leicht fahrlässig verursachte Schäden ist nicht eröffnet, für",
+      "expectedType": "liability",
+      "note": "GAP: Negationsasymmetrie, Trigger nur umschrieben. Erwartet: liability."
+    },
+    {
+      "marker": "Für jeden Verstoß gegen die Vertraulichkeitspflichten verpflichtet sich der Kunde zur Zahlung einer",
+      "expectedType": "penalty",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: penalty (Technik: negation)."
+    },
+    {
+      "marker": "Ausschließlicher Gerichtsstand für alle Streitigkeiten aus diesem Vertrag ist der Sitz des",
+      "expectedType": "jurisdiction",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: jurisdiction (Technik: negation)."
+    },
+    {
+      "marker": "Für die Dauer von achtzehn Monaten nach Auslaufen der Zusammenarbeit ist der Kunde im gesamten",
+      "expectedType": "non_compete",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: non_compete (Technik: negation)."
+    },
+    {
+      "marker": "Der Kunde räumt dem Anbieter ein unwiderrufliches Nutzungsrecht an allen Kundendaten und",
+      "expectedType": "data_grant",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: data_grant (Technik: negation)."
+    },
+    {
+      "marker": "Bei Zahlungsverzug schuldet der Kunde Verzugszinsen in Höhe von vierzehn Prozent über dem",
+      "expectedType": "default_interest",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: default_interest (Technik: negation)."
+    },
+    {
+      "marker": "Der Anbieter behält sich vor, die Preise sowie das Systemhandbuch jederzeit anzupassen und die",
+      "expectedType": "unilateral_change",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: unilateral_change (Technik: negation)."
+    },
+    {
+      "marker": "Der Kunde ist gehindert, gegen Forderungen des Anbieters aufzurechnen oder Zahlungen",
+      "expectedType": "setoff_restriction",
+      "note": "GAP: Negationsasymmetrie, Trigger nur umschrieben. Erwartet: setoff_restriction."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Haftung beider Parteien richtet sich nach den gesetzlichen Bestimmungen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Jede Partei trägt ihre eigenen Kosten der Vertragsverhandlungen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde ist berechtigt, Rechte aus diesem Vertrag mit Zustimmung des Anbieters auf verbundene",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Für die Nutzung der bereitgestellten Software gilt die beigefügte Leistungsbeschreibung.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Ansprüche aus diesem Vertrag verjähren nach den gesetzlichen Vorschriften.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde trägt die Kosten für die von ihm gewünschten Zusatzleistungen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    }
+  ],
+  "uncovered": []
+}

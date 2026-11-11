@@ -1,0 +1,15 @@
+[package]
+name = "mesh-tests"
+version = "0.1.0"
+license = "proprietary"
+edition = "2021"
+publish = false
+
+[dependencies]
+mesh-graph-core = { path = "../graph-core" }
+mesh-wot = { path = "../wot" }
+mesh-reputation = { path = "../reputation" }
+mesh-credit = { path = "../credit" }
+mesh-smpc = { path = "../smpc" }
+mesh-zkp = { path = "../zkp" }
+mesh-settlement = { path = "../settlement" }

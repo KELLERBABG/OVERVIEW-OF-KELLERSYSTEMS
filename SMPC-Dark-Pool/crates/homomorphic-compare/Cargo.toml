@@ -1,0 +1,18 @@
+[package]
+name = "homomorphic-compare"
+version.workspace = true
+edition.workspace = true
+description = "Price-time priority sorting on secret-shared order data"
+
+[dependencies]
+sss = { path = "../sss" }
+smpc-engine = { path = "../smpc-engine" }
+ark-bn254.workspace = true
+ark-ff.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+rand.workspace = true
+
+[lints]
+rust.unsafe_code = "forbid"

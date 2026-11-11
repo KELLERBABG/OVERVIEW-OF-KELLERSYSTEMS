@@ -1,0 +1,88 @@
+{
+  "slug": "werk-029",
+  "source": "generated",
+  "domain": "Immobilienwirtschaft, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Ordentliche Beendigungen sind mit einer Vorlaufzeit von achtundvierzig Monaten zulässig.",
+      "expectedType": "notice_period",
+      "note": "Verifizierte Klausel im Bereich notice_period."
+    },
+    {
+      "marker": "Für den Fall der Überschreitung des Abnahmetermins wird eine Vertragsstrafe von 0,5 Prozent der Nett",
+      "expectedType": "penalty",
+      "note": "Verifizierte Klausel im Bereich penalty."
+    },
+    {
+      "marker": "Eine Nachwirkung des Konkurrenzverbots gilt für sechs Monate nach Beendigung.",
+      "expectedType": "non_compete",
+      "note": "Verifizierte Klausel im Bereich non_compete."
+    },
+    {
+      "marker": "All payments shall be made free of any set-off or deduction.",
+      "expectedType": "setoff_restriction",
+      "note": "Verifizierte Klausel im Bereich setoff_restriction."
+    },
+    {
+      "marker": "Änderungen bedürfen der Schriftform; die Textform ist ausgeschlossen.",
+      "expectedType": "written_form_trap",
+      "note": "Verifizierte Klausel im Bereich written_form_trap."
+    },
+    {
+      "marker": "Eine Haftung des Anbieters für Erfüllungsgehilfen ist ausgeschlossen.",
+      "expectedType": "vicarious_agents",
+      "note": "Verifizierte Klausel im Bereich vicarious_agents."
+    },
+    {
+      "marker": "Der Kunde hält den Anbieter von Ansprüchen Dritter schadlos.",
+      "expectedType": "third_party_indemnity",
+      "note": "Verifizierte Klausel im Bereich third_party_indemnity."
+    },
+    {
+      "marker": "Die Beweislast für die Mangelhaftigkeit der Werkleistung trägt der Kunde.",
+      "expectedType": "burden_of_proof",
+      "note": "Verifizierte Klausel im Bereich burden_of_proof."
+    },
+    {
+      "marker": "Die Geheimhaltungspflicht gilt zeitlich unbeschränkt fort.",
+      "expectedType": "excessive_survival",
+      "note": "Verifizierte Klausel im Bereich excessive_survival."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Kunde erhält zum Vertragsende einen kostenfreien Datenexport in einem gängigen Format.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Änderungen dieses Vertrages können in Textform vereinbart werden.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Monatsende kündigen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Kündigung aus wichtigem Grund bleibt beiden Parteien unbenommen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Prüfungen erfolgen nur bei konkretem Anlass und nach Ankündigung mit einer Frist von dreißig Tagen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Dieser Vertrag unterliegt deutschem Recht.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Beide Parteien können mit unbestrittenen Forderungen aufrechnen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Die Datenübertragung erfolgt verschlüsselt über eine gesicherte Verbindung",
+      "note": "Technische Zusage."
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+[package]
+name = "city-incentive"
+description = "Proof-of-uptime hosting rewards with MAC-signed energy credit ledger"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+city-types = { workspace = true }
+city-crypto = { workspace = true }

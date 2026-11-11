@@ -1,0 +1,10 @@
+[package]
+name = "city-caps"
+description = "Capability table with O(1) runtime revocation, aligned with KELLER OS"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+city-types = { workspace = true }

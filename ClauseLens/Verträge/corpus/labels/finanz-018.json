@@ -1,0 +1,87 @@
+{
+  "slug": "finanz-018",
+  "source": "generated",
+  "domain": "Buergschaft",
+  "traps": [
+    {
+      "marker": "Die Freistellung gilt verschuldensunabhängig",
+      "expectedType": "third_party_indemnity",
+      "note": "Paraphrase/Umstellung: nennt 'Die Freistellung gilt verschuldensunabhängig' statt der Registerwendung."
+    },
+    {
+      "marker": "Der Kunde kann den Vertrag nicht aus wichtigem Grund kündigen",
+      "expectedType": "asymmetric_termination",
+      "note": "Paraphrase/Umstellung: nennt 'Der Kunde kann den Vertrag nicht aus wichtige' statt der Registerwendung."
+    },
+    {
+      "marker": "Ansprüche gegen die Bank sind nicht abtretbar",
+      "expectedType": "assignment_restriction",
+      "note": "Paraphrase/Umstellung: nennt 'Ansprüche gegen die Bank sind nicht abtretbar' statt der Registerwendung."
+    },
+    {
+      "marker": "bleiben die Zahlungsverpflichtungen des Kunden vollumfänglich bestehen",
+      "expectedType": "force_majeure_asymmetry",
+      "note": "Paraphrase/Umstellung: nennt 'bleiben die Zahlungsverpflichtungen des Kunde' statt der Registerwendung."
+    },
+    {
+      "marker": "Ehemalige Mitarbeiter der Bank sind zwei Jahre lang nicht zu beschäftigen",
+      "expectedType": "non_solicitation",
+      "note": "Paraphrase/Umstellung: nennt 'Ehemalige Mitarbeiter der Bank sind zwei Jahr' statt der Registerwendung."
+    },
+    {
+      "marker": "Nur der Anbieter ist berechtigt, den Vertrag mit einer Frist von vier Wochen",
+      "expectedType": "unilateral_convenience_termination",
+      "note": "Paraphrase/Umstellung: nennt 'Nur der Anbieter ist berechtigt, den Vertrag ' statt der Registerwendung."
+    },
+    {
+      "marker": "überdauert die Vertragsbeendigung ohne zeitliche Beschränkung",
+      "expectedType": "excessive_survival",
+      "note": "Paraphrase/Umstellung: nennt 'überdauert die Vertragsbeendigung ohne zeitli' statt der Registerwendung."
+    },
+    {
+      "marker": "Eine Obergrenze für Preisanpassungen wird ausdrücklich nicht vereinbart",
+      "expectedType": "price_escalation",
+      "note": "Paraphrase/Umstellung: nennt 'Eine Obergrenze für Preisanpassungen wird aus' statt der Registerwendung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "innerhalb von dreißig Tagen nach Zugang ohne Abzug",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "können in Textform, insbesondere per E-Mail, vereinbart werden",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "aus wichtigem Grund jederzeit fristlos beenden",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "binnen zwei Werktagen nach Eingang auf dem Geschäftskonto",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "führen Gespräche auf Leitungsebene.",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "dieselben Datenschutzstandards einhalten",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "bleibt beiden Parteien unbenommen.",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "alle vertraulichen Informationen der jeweils anderen Seite",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "keine Vorfälligkeitsentschädigung.",
+      "note": "Täuschende Klausel ohne passenden Detektortyp."
+    }
+  ]
+}

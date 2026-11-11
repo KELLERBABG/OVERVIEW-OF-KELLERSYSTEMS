@@ -1,0 +1,88 @@
+{
+  "slug": "werk-011",
+  "source": "generated",
+  "domain": "Prozessindustrie, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Die Vertragslaufzeit erneuert sich um jeweils zwölf Monate, sofern nicht drei Monate vorher gekündig",
+      "expectedType": "auto_renewal",
+      "note": "Verifizierte Klausel im Bereich auto_renewal."
+    },
+    {
+      "marker": "In no event shall the provider be liable for lost profits or indirect damages.",
+      "expectedType": "liability",
+      "note": "Verifizierte Klausel im Bereich liability."
+    },
+    {
+      "marker": "Der Kunde räumt dem Anbieter ein unwiderrufliches, weltweites und übertragbares Nutzungsrecht an den",
+      "expectedType": "data_grant",
+      "note": "Verifizierte Klausel im Bereich data_grant."
+    },
+    {
+      "marker": "Änderungen bedürfen der Schriftform; die Textform ist ausgeschlossen.",
+      "expectedType": "written_form_trap",
+      "note": "Verifizierte Klausel im Bereich written_form_trap."
+    },
+    {
+      "marker": "Der Export erfolgt ausschließlich im herstellereigenen Binärformat.",
+      "expectedType": "data_lockin",
+      "note": "Verifizierte Klausel im Bereich data_lockin."
+    },
+    {
+      "marker": "Der Kunde ist für die Dauer der Grundlaufzeit gebunden.",
+      "expectedType": "unilateral_convenience_termination",
+      "note": "Verifizierte Klausel im Bereich unilateral_convenience_termination."
+    },
+    {
+      "marker": "The provider may appoint subcontractors at its sole discretion.",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "Verifizierte Klausel im Bereich subcontractor_uncontrolled."
+    },
+    {
+      "marker": "Wird der Vertrag nicht mit einer Frist von drei Monaten zum Laufzeitende gekündigt, setzt sich die Z",
+      "expectedType": "auto_renewal",
+      "note": "Verifizierte Klausel im Bereich auto_renewal."
+    },
+    {
+      "marker": "Es gelten die Servicebedingungen in der jeweils gültigen Fassung, veröffentlicht auf der Website des",
+      "expectedType": "dynamic_url_referral",
+      "note": "Verifizierte Klausel im Bereich dynamic_url_referral."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Vergütung ist innerhalb von dreißig Tagen nach Rechnungseingang fällig.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Der Anbieter zeigt den Einsatz von Unterauftragnehmern vierzehn Tage vorher an.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Der Kunde erhält zum Vertragsende einen kostenfreien Datenexport in einem gängigen Format.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Änderungen dieses Vertrages können in Textform vereinbart werden.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Prüfungen erfolgen nur bei konkretem Anlass und nach Ankündigung mit einer Frist von dreißig Tagen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Dieser Vertrag unterliegt deutschem Recht.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Die Parteien benennen je einen Ansprechpartner für die Projektabwicklung",
+      "note": "Beiderseitige Benennung ohne Detektorbezug."
+    }
+  ]
+}

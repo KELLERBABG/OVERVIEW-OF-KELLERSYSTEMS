@@ -1,0 +1,16 @@
+[package]
+name = "zk-genome-storage-traits"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Platform-abstracted encrypted storage traits for mobile secure storage"
+
+[lints]
+workspace = true
+
+[features]
+default = []
+# Enables an in-memory `SecureStorage` impl used by the workspace's integration
+# tests. Keeping it gated prevents any dependency surface leaking into mobile
+# builds where std test harnesses are absent.
+test-utils = []

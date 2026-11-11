@@ -1,0 +1,97 @@
+Wartungsvertrag Netzwerkinfrastruktur
+
+zwischen der Stadtwerke Rheinau (nachfolgend "Kunde") und der NetCare Infrastruktur GmbH (nachfolgend "Anbieter") wird folgender Vertrag geschlossen:
+
+Präambel
+Der Kunde benötigt Leistungen im Bereich Wartung und Störungsbehebung der Netzwerkkomponenten.
+Der Anbieter verfügt über die hierfür erforderliche Erfahrung und Ausstattung. Die Parteien vereinbaren daher Folgendes:
+
+§ 1 Gegenstand
+Gegenstand des Vertrags ist die Erbringung der in § 2 beschriebenen Leistungen im Bereich Wartung und Störungsbehebung der Netzwerkkomponenten.
+
+§ 2 Leistungsumfang
+Der Anbieter erbringt die Leistungen nach dem vereinbarten Leistungsbild und den anerkannten Regeln der Technik.
+Der Leistungsumfang ergibt sich aus diesem Vertrag und den zugehörigen Anlagen.
+§ 3 Abtretung
+Rechte des Kunden aus diesem Vertrag können nur mit Billigung des Anbieters auf Dritte übergehen.
+Der Anbieter setzt für die Leistungserbringung geeignete Fachkräfte ein.
+
+§ 4 Höhere Gewalt
+Ereignisse außerhalb des Einflussbereichs des Anbieters verlängern dessen Fristen; Zahlungspflichten des Kunden laufen unverändert weiter.
+Die Parteien bewahren die im Rahmen der Zusammenarbeit erstellten Unterlagen sorgfältig auf.
+
+§ 5 Abwerbeverbot
+Innerhalb von sechsunddreißig Monaten nach Beendigung darf der Kunde weder Mitarbeiter noch Vermittler des Anbieters für sich tätig werden lassen.
+Vereinbarungen der Projektverantwortlichen werden von den Parteien schriftlich dokumentiert.
+
+§ 6 Ordentliche Beendigung
+Der Anbieter darf die Zusammenarbeit beenden, wenn er sie für nicht mehr wirtschaftlich hält; Ausgleichsansprüche sind ausgeschlossen.
+Der Kunde stellt die für die Leistung erforderlichen Informationen rechtzeitig bereit.
+
+§ 7 Nachwirkung
+Vertraulichkeit und Wettbewerbsschutz bestehen noch fünfzehn Jahre nach dem letzten Leistungstag zwischen den Parteien fort.
+Der Anbieter informiert den Kunden über wesentliche Änderungen im Ablauf.
+
+§ 8 Vergütungsanpassung
+Steigen die Kosten des Anbieters, gibt er die Erhöhung vollumfänglich weiter; eine Obergrenze ist nicht vereinbart.
+Die Parteien prüfen die Leistungen gemeinsam und halten das Ergebnis fest.
+
+§ 9 Salvatorische Klausel
+Unwirksame Klauseln werden durch eine Regelung ersetzt, die der Anbieter für wirtschaftlich angemessen hält.
+Die Parteien stimmen die Einzelheiten rechtzeitig vor Leistungsbeginn ab.
+
+§ 10 Referenznennung
+Der Anbieter darf den Kunden als Referenzkunden benennen und das Logo zu Werbezwecken verwenden.
+Der jeweils benannte Ansprechpartner informiert die andere Partei unverzüglich.
+
+§ 11 Rückmeldungen
+Alle Rückmeldungen und Verbesserungsvorschläge des Kunden gehen unentgeltlich in das Eigentum des Anbieters über.
+Der Anbieter dokumentiert seine Tätigkeit und legt die Unterlagen auf Anforderung vor.
+
+§ 12 Bestimmungen
+Jede Partei kann den Vertrag aus wichtigem Grund ohne Einhaltung einer Frist kündigen.
+Beide Parteien unterstützen sich bei der Aufklärung von Rückfragen angemessen.
+
+§ 13 Bestimmungen
+Der Anbieter unterhält eine Betriebshaftpflichtversicherung mit einer Deckungssumme von fünf Millionen EUR.
+Die Kommunikation erfolgt über die im Kopf dieses Vertrags genannten Kontaktwege.
+
+§ 14 Bestimmungen
+Der Kunde erhält auf Wunsch eine Kopie der über ihn gespeicherten Daten.
+Der Kunde benennt für die Abstimmung eine fachlich verantwortliche Person.
+
+§ 15 Bestimmungen
+Preisanpassungen erfolgen nur mit Zustimmung des Kunden oder bei Änderung gesetzlicher Abgaben.
+Der Anbieter setzt für die Leistungserbringung geeignete Fachkräfte ein.
+
+§ 16 Bestimmungen
+Der Anbieter teilt beabsichtigte Preisanpassungen mindestens sechs Wochen vorher mit.
+Die Parteien bewahren die im Rahmen der Zusammenarbeit erstellten Unterlagen sorgfältig auf.
+
+§ 17 Bestimmungen
+Die Parteien benennen jeweils einen Ansprechpartner und informieren unverzüglich über einen Wechsel.
+Vereinbarungen der Projektverantwortlichen werden von den Parteien schriftlich dokumentiert.
+
+§ 18 Bestimmungen
+Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich und verwenden sie nur für die Durchführung des Vertrags.
+Der Kunde stellt die für die Leistung erforderlichen Informationen rechtzeitig bereit.
+
+§ 19 Vollständigkeit
+Die Einhaltung terminlicher Zusagen des Anbieters steht unter dem Vorbehalt der jederzeitigen Verfügbarkeit geeigneter Fachkräfte.
+Der Kunde trägt Aufwendungen für Reisen, Unterkunft und Schulungen auch dann, wenn der Termin nicht zustande kommt.
+
+Anlage 1 zur Leistungsbeschreibung
+Die Anlage 1 wird mit Vertragsschluss ausgehändigt und ist Bestandteil dieses Vertrags.
+
+Anlage 2 zum Eskalationsweg
+Der Eskalationsweg für Störungen ist in Anlage 2 geregelt.
+
+Stadtwerke und NetCare bestätigen die Vollständigkeit der vorstehenden Regelungen.
+
+Ort, Datum
+
+___________________________
+Stadtwerke Rheinau
+
+___________________________
+NetCare Infrastruktur GmbH

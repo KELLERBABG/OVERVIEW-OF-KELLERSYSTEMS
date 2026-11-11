@@ -1,0 +1,69 @@
+{
+  "slug": "saas-022",
+  "source": "generated",
+  "domain": "API-Marktplatz, oesterreichisches Recht",
+  "traps": [
+    {
+      "marker": "Ergänzend gelten die jeweils aktuellen Nutzungsbedingungen, abrufbar unter",
+      "expectedType": "dynamic_url_referral",
+      "note": "Verweis auf einseitig aktualisierte Regelungen"
+    },
+    {
+      "marker": "Nebenabreden haben keine Geltung.",
+      "expectedType": "entire_agreement",
+      "note": "Paraphrase. Vollstaendigkeitsklausel"
+    },
+    {
+      "marker": "Anregungen und Vorschläge des Kunden verwertet die Anbieterin ohne Vergütung.",
+      "expectedType": "feedback_ip_grab",
+      "note": "Paraphrase. Unentgeltlicher IP-Anfall"
+    },
+    {
+      "marker": "Die Nennung als Referenzkunde erfolgt ohne gesonderte Zustimmung.",
+      "expectedType": "marketing_reference",
+      "note": "Paraphrase. Referenznutzung ohne Zustimmung"
+    },
+    {
+      "marker": "Die feste Laufzeit beträgt sechsunddreißig Monate, eine Kündigung ist ausgeschlossen.",
+      "expectedType": "notice_period",
+      "note": "Paraphrase. Lange Mindestlaufzeit mit Kuendigungsausschluss"
+    },
+    {
+      "marker": "Das Abonnement setzt sich nach Ablauf der Festlaufzeit jeweils um zwölf Monate fort, sofern es keine",
+      "expectedType": "auto_renewal",
+      "note": "Paraphrase. Stillschweigende Verlaengerung"
+    },
+    {
+      "marker": "Bei Verzug schuldet der Kunde eine Aufwandspauschale von 250 EUR.",
+      "expectedType": "penalty",
+      "note": "Paraphrase. Pauschalierte Vertragsstrafe"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Änderungen dieses Vertrags bedürfen der Textform.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Anbieterin sichert eine Verfügbarkeit von 99,5 Prozent pro Kalendermonat zu.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Anbieterin stellt dem Kunden bei Vertragsende eine vollständige Kopie aller Kundendaten in",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Vertragsparteien behandeln die wechselseitig offengelegten Informationen vertraulich.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Verarbeitung erfolgt ausschließlich in Rechenzentren innerhalb der Europäischen Union.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Der Kunde bleibt zur Zahlung des anteiligen Entgelts für bereits erbrachte Leistungen verpflichtet.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    }
+  ],
+  "uncovered": []
+}

@@ -1,0 +1,88 @@
+{
+  "slug": "agb-19-unternehmensberatung-consulting",
+  "domain": "Management- und Strategieberatungs-AGB",
+  "source": "Blind Real-AGB Benchmark 2026 (vor Engine-Lauf gelabelt)",
+  "traps": [
+    {
+      "marker": "jederzeit vollständig oder teilweise ohne vorherige Information oder Zustimmung des Mandanten auf beliebige externe Subunternehmer",
+      "expectedType": "subcontractor_uncontrolled",
+      "statutoryBasis": "§ 613 S. 1 BGB / § 307 Abs. 2 Nr. 1 BGB",
+      "note": "Kontrolllose Weitergabe höchstpersönlicher/vertrauensbasierter Managementberatung und vertraulicher Geschäftsdaten an beliebige Subunternehmer ohne Information oder Zustimmung."
+    },
+    {
+      "marker": "dieses Verbot gilt ausdrücklich auch für unbestrittene, entscheidungsreife oder rechtskräftig festgestellte",
+      "expectedType": "setoff_restriction",
+      "statutoryBasis": "§ 309 Nr. 3 BGB / § 307 BGB",
+      "note": "Ausschluss der Aufrechnung auch bei unbestrittenen, entscheidungsreifen oder rechtskräftig festgestellten Forderungen."
+    },
+    {
+      "marker": "Unternehmensdaten, Finanzkennzahlen, Kundenlisten, Kalkulationen und Geschäftsgeheimnisse des Mandanten zum Training kommerzieller KI-Modelle",
+      "expectedType": "data_grant",
+      "statutoryBasis": "§ 307 Abs. 1 und 2 BGB / GeschGehG",
+      "note": "Unwiderrufliche, unentgeltliche Rechteeinräumung an sensiblen Finanzdaten und Geschäftsgeheimnissen des Mandanten für KI-Training und Weiterverkauf an Wettbewerber."
+    },
+    {
+      "marker": "für einen Zeitraum von drei Jahren nach Beendigung des Mandats untersagt, andere Strategie-",
+      "expectedType": "non_compete",
+      "statutoryBasis": "§ 307 Abs. 1 BGB / § 138 BGB",
+      "note": "Dreijähriges nachvertragliches Verbot für den Mandanten, andere Beratungsunternehmen zu beauftragen oder selbst Beratungsleistungen anzubieten, knebelt die unternehmerische Freiheit."
+    },
+    {
+      "marker": "für vier Jahre nach Vertragsende keinerlei angestellte oder ehemalige Mitarbeiter des Beratungsunternehmens einzustellen",
+      "expectedType": "non_solicitation",
+      "statutoryBasis": "§ 307 Abs. 1 BGB / Art. 12 GG",
+      "note": "Vierjähriges Einstellungsverbot auch für ehemalige oder unbeteiligte Mitarbeiter mit einer Mindestvertragsstrafe von 150.000 Euro."
+    },
+    {
+      "marker": "auch bei der Verletzung wesentlicher Vertragspflichten (Kardinalpflichten) – ist die Haftung des Beratungsunternehmens auf einen Höchstbetrag von 5.000,00 Euro",
+      "expectedType": "liability",
+      "statutoryBasis": "§ 307 Abs. 2 Nr. 2 BGB",
+      "note": "Pauschale Haftungsbegrenzung auf 5.000 Euro bei Kardinalpflichtverletzungen in der Strategieberatung deckt den vertragstypischen vorhersehbaren Schaden nicht ab."
+    },
+    {
+      "marker": "Das Recht des Mandanten zur außerordentlichen fristlosen Kündigung des Beratungsvertrages aus wichtigem Grund (§ 314 und § 626 BGB) wird hiermit",
+      "expectedType": "asymmetric_termination",
+      "statutoryBasis": "§ 314 BGB / § 626 BGB / § 307 BGB",
+      "note": "Vollständiger Ausschluss des unabdingbaren Rechts zur außerordentlichen Kündigung aus wichtigem Grund (§§ 314, 626 BGB)."
+    },
+    {
+      "marker": "unabhängig von ihrem tatsächlichen Eingang beim Mandanten oder etwaigen technischen Übermittlungsstörungen unwiderlegbar als zwei Stunden nach dem Absendezeitpunkt",
+      "expectedType": "fictitious_receipt",
+      "statutoryBasis": "§ 308 Nr. 6 BGB / § 130 BGB / § 307 BGB",
+      "note": "Unwiderlegbare Zugangsfiktion zwei Stunden nach E-Mail-Absendung unabhängig vom tatsächlichen Eingang widerspricht § 130 BGB und § 308 Nr. 6 BGB."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Ein bestimmter wirtschaftlicher oder unternehmerischer Erfolg wird, sofern nicht ausdrücklich",
+      "note": "Zutreffende Abgrenzung des Dienstvertrags (§ 611 BGB) vom Werkvertrag."
+    },
+    {
+      "marker": "Alle Rechnungen sind innerhalb von 14 Tagen nach Rechnungszugang ohne Abzug zahlbar",
+      "note": "Übliche und angemessene Zahlungsfrist von 14 Tagen."
+    },
+    {
+      "marker": "erhält der Mandant das einfache, zeitlich unbeschränkte Recht, die im Rahmen des Auftrags erstellten",
+      "note": "Angemessene Einräumung von Nutzungsrechten an den Arbeitsergebnissen nach Honorarzahlung."
+    },
+    {
+      "marker": "sofern durch organisatorische Maßnahmen (Chinese Walls) sichergestellt ist, dass keine vertraulichen",
+      "note": "Branchenübliche und sachgerechte Regelung zur Tätigkeit für andere Unternehmen unter Wahrung von Chinese Walls."
+    },
+    {
+      "marker": "haftet unbeschränkt für Schäden aus der Verletzung von Leben, Körper oder Gesundheit sowie für Schäden",
+      "note": "Gesetzeskonforme unbeschränkte Haftung für Personenschäden sowie Vorsatz und grobe Fahrlässigkeit."
+    },
+    {
+      "marker": "können von beiden Parteien mit einer Frist von vier Wochen zum Monatsende ordentlich in Textform",
+      "note": "Symmetrische, angemessene ordentliche Kündigungsfrist in Textform."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "ohne jeden Zusammenhang mit der Beratungsleistung –, schuldet der Mandant dem Beratungsunternehmen eine zusätzliche Erfolgsprovision",
+      "statutoryBasis": "§ 307 Abs. 1 und 2 Nr. 1 BGB",
+      "note": "Kausalitätsunabhängige Erfolgsprovision auf künftige Unternehmensgewinne der nächsten fünf Jahre ohne ursächlichen Beitrag der Beratungsleistung verstößt gegen das Äquivalenzprinzip."
+    }
+  ]
+}

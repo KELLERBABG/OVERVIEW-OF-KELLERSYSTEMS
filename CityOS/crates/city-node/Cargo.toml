@@ -1,0 +1,26 @@
+[package]
+name = "city-node"
+description = "City OS host demo binary: full service stack boot with [TEST] PASS protocol"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+city-types = { workspace = true }
+city-crypto = { workspace = true }
+city-caps = { workspace = true }
+city-ipc = { workspace = true }
+city-brp = { workspace = true }
+city-dag = { workspace = true }
+city-p2p = { workspace = true }
+city-shard = { workspace = true }
+city-deaddrop = { workspace = true }
+city-alloc = { workspace = true }
+city-vote = { workspace = true }
+city-heal = { workspace = true }
+city-interop = { workspace = true }
+city-incentive = { workspace = true }
+city-entropy = { workspace = true }
+city-syscall = { workspace = true }
+city-sim = { workspace = true }

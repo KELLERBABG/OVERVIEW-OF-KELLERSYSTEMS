@@ -1,0 +1,35 @@
+{
+  "slug": "public-commonpaper-mutual-nda",
+  "source": "https://raw.githubusercontent.com/CommonPaper/Mutual-NDA/main/Mutual-NDA-coverpage.md",
+  "license": "CC BY 4.0",
+  "retrieved": "2026-10-15",
+  "domain": "Geheimhaltungsvereinbarung (Common Paper)",
+  "traps": [],
+  "benign": [
+    {
+      "marker": "USING THIS MUTUAL NON-DISCLOSURE",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "This Mutual Non-Disclosure Agreement",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "How Confidential Information may",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "[Evaluating whether to enter into",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "- [x] Expires [1 year(s)] from",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "- [ ] Continues until terminated",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

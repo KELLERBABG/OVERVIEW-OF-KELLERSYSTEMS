@@ -1,0 +1,87 @@
+{
+  "slug": "daten-022",
+  "source": "generated",
+  "domain": "Datenraum",
+  "traps": [
+    {
+      "marker": "Die Verfahrenskosten sind vom Kunden vorauszuzahlen",
+      "expectedType": "mandatory_expert_determination",
+      "note": "Paraphrase/Umstellung: nennt 'Die Verfahrenskosten sind vom Kunden vorauszu' statt der Registerwendung."
+    },
+    {
+      "marker": "Versäumt der Kunde einen Sicherheitspatch, verfällt sein Anspruch",
+      "expectedType": "service_credit_forfeiture",
+      "note": "Paraphrase/Umstellung: nennt 'Versäumt der Kunde einen Sicherheitspatch, ve' statt der Registerwendung."
+    },
+    {
+      "marker": "Bei vorzeitiger Beendigung wird eine pauschale Abstandszahlung fällig",
+      "expectedType": "early_termination_charge",
+      "note": "Paraphrase/Umstellung: nennt 'Bei vorzeitiger Beendigung wird eine pauschal' statt der Registerwendung."
+    },
+    {
+      "marker": "Mangels eines Wartungsvertrags kann der Anbieter das System stilllegen",
+      "expectedType": "maintenance_conditional_shutdown",
+      "note": "Paraphrase/Umstellung: nennt 'Mangels eines Wartungsvertrags kann der Anbie' statt der Registerwendung."
+    },
+    {
+      "marker": "erneuert sich das Finanzierungsengagement um ein Jahr",
+      "expectedType": "auto_renewal",
+      "note": "Paraphrase/Umstellung: nennt 'erneuert sich das Finanzierungsengagement um ' statt der Registerwendung."
+    },
+    {
+      "marker": "eine Beendigung erst mit sieben Jahren Vorlauf erklären",
+      "expectedType": "notice_period",
+      "note": "Paraphrase/Umstellung: nennt 'eine Beendigung erst mit sieben Jahren Vorlau' statt der Registerwendung."
+    },
+    {
+      "marker": "stellt die Gesellschaft von sämtlichen Ansprüchen Dritter",
+      "expectedType": "liability",
+      "note": "Paraphrase/Umstellung: nennt 'stellt die Gesellschaft von sämtlichen Ansprü' statt der Registerwendung."
+    },
+    {
+      "marker": "bleibt unabhängig davon geschuldet, ob dem Anbieter",
+      "expectedType": "penalty",
+      "note": "Paraphrase/Umstellung: nennt 'bleibt unabhängig davon geschuldet, ob dem An' statt der Registerwendung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "auf den in der Präambel bezeichneten Zweck beschränkt",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "zum Quartalsende ordentlich kündigen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "dieselben Datenschutzstandards einhalten",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "mit ihren jeweiligen Lizenzen aufgeführt",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "gesetzliche Haftung für Vorsatz und grobe Fahrlässigkeit",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "aus wichtigem Grund jederzeit fristlos beenden",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Streitigkeiten vorrangig durch Mediation zu klären",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "nur im gegenseitigen Einvernehmen.",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Zweitschrift der Dokumentation gegen eine Gebühr von fünfzehn Euro",
+      "note": "Täuschende Klausel ohne passenden Detektortyp."
+    }
+  ]
+}

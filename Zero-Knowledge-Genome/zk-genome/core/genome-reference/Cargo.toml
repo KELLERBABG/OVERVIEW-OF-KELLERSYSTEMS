@@ -1,0 +1,12 @@
+[package]
+name = "zk-genome-genome-reference"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Reference genome support — hg19/hg38/T2T coordinate mapping"
+
+[dependencies]
+zk-genome-genome-core = { path = "../genome-core" }
+
+[lints]
+workspace = true

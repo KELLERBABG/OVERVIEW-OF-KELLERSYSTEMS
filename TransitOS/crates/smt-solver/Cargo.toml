@@ -1,0 +1,11 @@
+[package]
+name = "transit-smt-solver"
+edition = "2021"
+version = "1.0.0"
+license = "Apache-2.0"
+
+[dependencies]
+serde = { workspace = true }
+z3 = "0.20"
+tracing = { workspace = true }
+transit-path-constraints = { path = "../path-constraints" }

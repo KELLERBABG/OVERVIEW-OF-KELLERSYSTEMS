@@ -1,0 +1,69 @@
+{
+  "slug": "saas-028",
+  "source": "generated",
+  "domain": "API-Partnerprogramm, oesterreichisches Recht",
+  "traps": [
+    {
+      "marker": "Schließt der Anbieter einen Direktauftrag ab, wird keine Provision geschuldet.",
+      "expectedType": "agency_commission_exclusion",
+      "note": "Provisionsausschluss"
+    },
+    {
+      "marker": "Der Partner verzichtet auf jeden Ausgleich für den von ihm aufgebauten Kundenstamm.",
+      "expectedType": "agency_goodwill_waiver",
+      "note": "Ausgleichsverzicht"
+    },
+    {
+      "marker": "Ansprüche des Kunden gegen die Anbieterin sind nicht abtretbar.",
+      "expectedType": "assignment_restriction",
+      "note": "Abtretungsverbot"
+    },
+    {
+      "marker": "Das ordentliche Kündigungsrecht des Kunden ist ausgeschlossen.",
+      "expectedType": "unilateral_convenience_termination",
+      "note": "Kuendigungsrecht nur fuer den Anbieter"
+    },
+    {
+      "marker": "Rechtsstreitigkeiten sind ausschließlich vor den Gerichten am Sitz des Anbieters auszutragen.",
+      "expectedType": "jurisdiction",
+      "note": "Paraphrase. Gerichtsstand beim Anbieter"
+    },
+    {
+      "marker": "Die Haftung für mittelbare Schäden und entgangenen Gewinn ist abbedungen.",
+      "expectedType": "liability",
+      "note": "Paraphrase. Haftungsausschluss"
+    },
+    {
+      "marker": "Gegenansprüche bleiben bei der Abrechnung außer Betracht.",
+      "expectedType": "setoff_restriction",
+      "note": "Paraphrase. Aufrechnungsverbot"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Rechnung ist innerhalb von 30 Tagen nach Zugang ohne Abzug fällig.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Vertragsparteien behandeln die wechselseitig offengelegten Informationen vertraulich.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Anbieterin sichert eine Verfügbarkeit von 99,5 Prozent pro Kalendermonat zu.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Verarbeitung erfolgt ausschließlich in Rechenzentren innerhalb der Europäischen Union.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Der Partner darf für die Erbringung von Nebenleistungen weitere Dienstleister einsetzen; er zeigt",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Der Kunde bleibt zur Zahlung des anteiligen Entgelts für bereits erbrachte Leistungen verpflichtet.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    }
+  ],
+  "uncovered": []
+}

@@ -1,0 +1,73 @@
+name: "ClauseLens Legal CI/CD Gate"
+description: "Audit contracts, terms, and agreements for German BGB §§ 305–310 risks with zero external network egress."
+author: "Keller Systems"
+
+branding:
+  icon: "file-text"
+  color: "red"
+
+inputs:
+  path:
+    description: "Path to contract file or directory to audit"
+    required: true
+    default: "contracts"
+  fail-on:
+    description: "Severity threshold to fail the build (high, medium, none)"
+    required: false
+    default: "high"
+  profile:
+    description: "Policy profile (default, b2b_saas, freelance_consulting, procurement_strict)"
+    required: false
+    default: "default"
+  email:
+    description: "E-mail address of the ClauseLens account (required together with license-key)"
+    required: false
+    default: ""
+  license-key:
+    description: "ClauseLens license key (CLA-/LENS-...) used to activate the seat before the audit"
+    required: false
+    default: ""
+
+outputs:
+  risk-score:
+    description: "Composite risk score (0-100)"
+  risk-level:
+    description: "Risk classification (niedrig, mittel, hoch)"
+  findings-count:
+    description: "Total number of flagged clauses"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Activate ClauseLens seat
+      if: inputs.email != '' && inputs.license-key != ''
+      shell: bash
+      env:
+        CLAUSELENS_EMAIL: ${{ inputs.email }}
+        CLAUSELENS_KEY: ${{ inputs.license-key }}
+      run: |
+        node ${{ github.action_path }}/bin/clauselens.js login --email "$CLAUSELENS_EMAIL" --key "$CLAUSELENS_KEY"
+
+    - name: Run ClauseLens Audit
+      shell: bash
+      run: |
+        node ${{ github.action_path }}/bin/clauselens.js analyze "${{ inputs.path }}" --json /tmp/clauselens-result.json --report /tmp/clauselens-report.md --profile "${{ inputs.profile }}"
+        
+        SCORE=$(node -e "const r = require('/tmp/clauselens-result.json'); console.log(r.riskScore);")
+        LEVEL=$(node -e "const r = require('/tmp/clauselens-result.json'); console.log(r.riskLevel);")
+        COUNT=$(node -e "const r = require('/tmp/clauselens-result.json'); console.log(r.findings.length);")
+        
+        echo "risk-score=$SCORE" >> $GITHUB_OUTPUT
+        echo "risk-level=$LEVEL" >> $GITHUB_OUTPUT
+        echo "findings-count=$COUNT" >> $GITHUB_OUTPUT
+        
+        cat /tmp/clauselens-report.md >> $GITHUB_STEP_SUMMARY
+        
+        if [ "${{ inputs.fail-on }}" = "high" ] && [ "$LEVEL" = "hoch" ]; then
+          echo "::error::ClauseLens audit failed: Contract contains critical high-risk clauses (Score: $SCORE/100)."
+          exit 1
+        fi
+        if [ "${{ inputs.fail-on }}" = "medium" ] && [ "$LEVEL" != "niedrig" ]; then
+          echo "::error::ClauseLens audit failed: Contract exceeds medium risk threshold (Score: $SCORE/100)."
+          exit 1
+        fi

@@ -1,0 +1,70 @@
+Dienstleistungsvertrag über die Betreuung der Verwaltungs-IT
+
+zwischen Provinz IT GmbH, Berlin (nachfolgend Anbieter) und Landratsamt Uckermark, Prenzlau (nachfolgend Kunde).
+
+Präambel
+Die Parteien beabsichtigen die in § 1 beschriebene Zusammenarbeit. Der Anbieter erbringt die Leistungen, der Kunde vergütet sie. Die Parteien vereinbaren Folgendes.
+
+§ 1 Gegenstand
+Gegenstand des Vertrages ist die Betreuung der Arbeitsplätze und Server der Verwaltung gemäß Anlage 1.
+
+§ 2 Leistungsumfang
+Der Anbieter erbringt die Leistungen gemäß Anlage 1 und dokumentiert die Ergebnisse.
+
+§ 3 Leistungsänderungen
+(3) Der Anbieter darf die Leistungsbeschreibung einseitig ergänzen.
+
+§ 4 Verjährung
+(4) Die Ansprüche des Kunden verwirken mit Ablauf von vierundzwanzig Monaten.
+
+§ 5 Einbezogene Bedingungen
+(5) Es gelten die auf der Website des Anbieters veröffentlichten Nutzungsbedingungen in ihrer jeweils gültigen Fassung.
+
+§ 6 Datenrückgabe
+(6) Der Export erfolgt ausschließlich im herstellereigenen Binärformat.
+
+§ 7 Höhere Gewalt
+(7) Ereignisse höherer Gewalt befreien den Anbieter; die Zahlungsverpflichtungen des Kunden sind unverändert zu erfüllen.
+
+§ 8 Preisanpassung
+(8) Eine Obergrenze für Preisanpassungen besteht nicht.
+
+§ 9 Aufzeichnungen und Nachweise
+(9) Aufzeichnungen des Anbieters sind unwiderlegbar; abweichende Nachweise bleiben ohne Bedeutung.
+
+§ 10 Einbezogene Bedingungen
+(10) Es gelten die Servicebedingungen in der jeweils gültigen Fassung, veröffentlicht auf der Website des Anbieters.
+
+§ 11 Preisanpassung
+(11) Der Anbieter behält sich vor, die Entgelte anzupassen.
+
+§ 12 Aufrechnung
+(12) Beide Parteien können mit unbestrittenen Forderungen aufrechnen.
+
+§ 13 Fristen
+(13) Alle Fristen werden in Kalendertagen gerechnet.
+
+§ 14 Zusammenarbeit
+(14) Die Parteien arbeiten bei der Fehleranalyse eng zusammen.
+
+§ 15 Abnahme
+(15) Für Mängel während der Gewährleistung leistet der Anbieter kostenfrei Nacherfüllung.
+
+§ 16 Projektsteuerung
+(16) Die Parteien treffen sich monatlich zu einem Lenkungskreis.
+
+§ 17 Qualität
+(17) Der Anbieter führt die Arbeiten mit der vereinbarten Sorgfalt aus.
+
+§ 18 Störungen
+(18) Die Vertragsparteien informieren sich unverzüglich über Störungen.
+
+§ 19 Vollständigkeit
+(19) Der Anbieter stellt die Anwendung ab dem vereinbarten Bereitstellungstermin zur Verfügung.
+
+Anlage 1: Leistungsbeschreibung
+Anlage 2: Servicezeiten
+
+Berlin, den 29. Juni 2026
+Provinz IT GmbH
+Landratsamt Uckermark

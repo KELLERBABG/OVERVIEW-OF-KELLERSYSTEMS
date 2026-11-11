@@ -1,0 +1,94 @@
+{
+  "slug": "agb-02-cloud-saas-erp",
+  "domain": "B2B Cloud-ERP & SaaS-Nutzungsbedingungen",
+  "source": "Blind Real-AGB Benchmark 2026 (vor Engine-Lauf gelabelt)",
+  "traps": [
+    {
+      "marker": "im gegenwärtigen Zustand („wie besehen“ / „as is“) unter vollständigem Ausschluss",
+      "expectedType": "as_is_software_disclaimer",
+      "statutoryBasis": "§ 307 Abs. 1, Abs. 2 Nr. 2 BGB, § 536d BGB",
+      "note": "Unzulässiger pauschaler Gewährleistungsausschluss ('wie besehen' / 'as is') bei entgeltlicher SaaS-Überlassung."
+    },
+    {
+      "marker": "verstehen sich jedoch lediglich als unverbindliche Zielwerte und Bemühenszusagen,",
+      "expectedType": "unverbindliche_sla_falle",
+      "statutoryBasis": "§ 307 Abs. 2 Nr. 2 BGB",
+      "note": "Aushöhlung der Hauptleistungspflicht durch Herabstufung sämtlicher SLA-Verfügbarkeiten zu unverbindlichen Zielwerten unter Ausschluss von Mängelrechten."
+    },
+    {
+      "marker": "verfallen sämtliche Ansprüche auf derartige Gutschriften ersatzlos, wenn der Kunde",
+      "expectedType": "service_credit_forfeiture",
+      "statutoryBasis": "§ 307 Abs. 1 BGB",
+      "note": "Unangemessener Verfall von SLA-Gutschriften durch extrem kurze 48-Stunden-Antragsfrist und sachfremde Obliegenheiten."
+    },
+    {
+      "marker": "sämtliche vom Kunden in das ERP-System eingegebenen Geschäfts-, Finanz-, Kunden- und",
+      "expectedType": "data_grant",
+      "statutoryBasis": "§ 307 Abs. 1, Abs. 2 Nr. 1 BGB",
+      "note": "Übermäßige, unentgeltliche und unwiderrufliche Rechteeinräumung an sensiblen ERP-Kundendaten zu kommerzieller Verwertung und KI-Training."
+    },
+    {
+      "marker": "gehen sämtliche geistigen Eigentums- und Verwertungsrechte hieran automatisch,",
+      "expectedType": "feedback_ip_grab",
+      "statutoryBasis": "§ 307 Abs. 1 BGB",
+      "note": "Entschädigungslose exklusive Zwangsabtretung sämtlicher Rechte an Kunden-Feedback und Verbesserungsvorschlägen."
+    },
+    {
+      "marker": "jederzeit nach eigenem Ermessen auf Server in beliebige Drittstaaten außerhalb der",
+      "expectedType": "international_data_processing",
+      "statutoryBasis": "§ 307 Abs. 1 BGB, Art. 44 ff. DSGVO",
+      "note": "Rechtswidriger Vorbehalt zur Datenübermittlung in beliebige Drittländer ohne Angemessenheitsbeschluss oder Garantien nach Art. 46 DSGVO."
+    },
+    {
+      "marker": "unwiderruflich und ohne gesonderte Einwilligung berechtigt, den Namen, die",
+      "expectedType": "marketing_reference",
+      "statutoryBasis": "§ 307 Abs. 1 BGB",
+      "note": "Unwiderrufliche Einräumung von Marken- und Logonutzungsrechten zu Werbezwecken ohne gesonderte Einwilligung oder Widerrufsmöglichkeit."
+    },
+    {
+      "marker": "ausschließlich gegen Zahlung einer pauschalen Datenexport- und Bereitstellungsgebühr",
+      "expectedType": "data_lockin",
+      "statutoryBasis": "§ 307 Abs. 1, Abs. 2 BGB, Art. 28 Abs. 3 lit. g DSGVO",
+      "note": "Unzulässiger Daten-Lock-in durch prohibitive Exportgebühr von 35.000 Euro für die Herausgabe eigener Bestandsdaten bei Vertragsende."
+    },
+    {
+      "marker": "im Wege der geltungserhaltenden Reduktion mit demjenigen Inhalt aufrechtzuerhalten,",
+      "expectedType": "salvatorische_klausel_falle",
+      "statutoryBasis": "§ 306 Abs. 2, § 307 Abs. 1 S. 2 BGB",
+      "note": "Unwirksame salvatorische Klausel mit Anordnung einer geltungserhaltenden Reduktion anstelle des gesetzlichen Dispositivrechts."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Kunde erhält für die Dauer des Vertrages das einfache, nicht übertragbare Recht,",
+      "note": "Übliche und sachgerechte Lizenzierung von SaaS-Diensten für eigene Geschäftszwecke."
+    },
+    {
+      "marker": "Die Aufrechnung durch den Kunden ist nur mit unbestrittenen oder rechtskräftig",
+      "note": "Gesetzeskonforme Beschränkung der Aufrechnung auf unbestrittene und rechtskräftig festgestellte Forderungen."
+    },
+    {
+      "marker": "Beide Vertragsparteien verpflichten sich, alle im Rahmen der Vertragsdurchführung",
+      "note": "Ausgewogene beiderseitige Geheimhaltungsverpflichtung."
+    },
+    {
+      "marker": "Der Anbieter haftet unbeschränkt bei Vorsatz und grober Fahrlässigkeit sowie nach",
+      "note": "Rechtskonforme Haftungsregelung unter Beachtung von § 309 Nr. 7 BGB und Kardinalpflichten."
+    },
+    {
+      "marker": "Der Vertrag läuft auf unbestimmte Zeit und kann von beiden Parteien ordentlich mit",
+      "note": "Faire, symmetrische ordentliche Kündigungsfrist von 30 Tagen in Textform unter Wahrung des Rechts zur außerordentlichen Kündigung."
+    },
+    {
+      "marker": "nach vorheriger Ankündigung mit einer Frist von mindestens 14 Werktagen während der",
+      "note": "Verhältnismäßiges Auditrecht mit angemessener Vorankündigungsfrist und Einschaltung eines zur Verschwiegenheit verpflichteten Prüfers."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "so gilt dies in sämtlichen künftigen Fällen als endgültiger Rechtsverzicht auch für",
+      "statutoryBasis": "§ 307 Abs. 1 BGB",
+      "note": "Überraschende und unangemessene Verzichtsfiktion zulasten des Kunden, gekoppelt an das Nichtgeltendmachen von Rechten durch den Anbieter."
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "slug": "evasion-019",
+  "source": "generated",
+  "domain": "evasion",
+  "traps": [
+    {
+      "marker": "Bеi höhеrеr Gеwаlt ist dеr Аnbiеtеr vоn dеr Lеistungsрfliсht еntbundеn, оhnе dаss siсh diе",
+      "expectedType": "force_majeure_asymmetry",
+      "note": "GAP: kyrillische Homoglyphen in lateinischen Wörtern. Erwartet: force_majeure_asymmetry."
+    },
+    {
+      "marker": "Dеr Kundе wird kеinе Mitаrbеitеr dеs Аnbiеtеrs аbwеrbеn оdеr еinstеllеn.",
+      "expectedType": "non_solicitation",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: non_solicitation (Technik: cyrillic)."
+    },
+    {
+      "marker": "Еin оrdеntliсhеs Kündigungsrесht dеs Kundеn ist аusgеsсhlоssеn, nur dеr Аnbiеtеr ist bеrесhtigt,",
+      "expectedType": "unilateral_convenience_termination",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: unilateral_convenience_termination (Technik: cyrillic)."
+    },
+    {
+      "marker": "The confidentiality obligations shall survive indefinitely and without any time limitation.",
+      "expectedType": "excessive_survival",
+      "note": "GAP: englischsprachiger Klauseltext ohne deutsche Registerwendung. Erwartet: excessive_survival."
+    },
+    {
+      "marker": "Diе Grundgеbühr еrhöht siсh jährliсh um bis zu fünfzеhn Рrоzеnt, оhnе dаss dеm Kundеn еin",
+      "expectedType": "price_escalation",
+      "note": "GAP: kyrillische Homoglyphen in lateinischen Wörtern. Erwartet: price_escalation."
+    },
+    {
+      "marker": "Аn diе Stеllе dеr unwirksаmеn Bеstimmung tritt diеjеnigе, diе dеn Раrtеiеn wirtsсhаftliсh аm",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: salvatorische_klausel_falle (Technik: cyrillic)."
+    },
+    {
+      "marker": "Dеr Еigеntumsvоrbеhаlt еrstrесkt siсh аuсh аuf Wаrеn, diе bеrеits vоllständig bеzаhlt sind.",
+      "expectedType": "extended_retention_of_title",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: extended_retention_of_title (Technik: cyrillic)."
+    },
+    {
+      "marker": "Dеr Еinsаtz vоn Untеrаuftrаgnеhmеrn bеdаrf kеinеr Zustimmung dеs Kundеn und ist niсht аnzuzеigеn.",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: subcontractor_uncontrolled (Technik: cyrillic)."
+    },
+    {
+      "marker": "Dеr Kundе untеrwirft siсh dеr аbsсhliеßеndеn Fеststеllung dеs Аnbiеtеrs.",
+      "expectedType": "audit_log_manipulation",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: audit_log_manipulation (Technik: cyrillic)."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Anbieter überlässt dem Kunden die Daten in einem gängigen Format.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag aus wichtigem Grund ohne Einhaltung einer Frist kündigen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien benennen jeweils einen Ansprechpartner für die operative Zusammenarbeit.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien sind berechtigt, gegen fällige Forderungen aufzurechnen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde erhält Schulungen und Zugang zum Systemhandbuch in der jeweils aktuellen Fassung.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde informiert den Anbieter unverzüglich über wesentliche Störungen im Vertrieb.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    }
+  ],
+  "uncovered": []
+}

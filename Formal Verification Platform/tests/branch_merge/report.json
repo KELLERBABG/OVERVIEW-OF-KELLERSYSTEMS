@@ -1,0 +1,31 @@
+[
+  {
+    "crate": "branch_merge",
+    "function": "bump",
+    "block": "bb3",
+    "status": "FAIL",
+    "kind": "overflow",
+    "defect_class": "guard-limited",
+    "file": "src/main.rs",
+    "line": 10,
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found! [_3 = 255, 100_u8 = 100, flag (_1) = true]",
+    "witness": [
+      {
+        "input": "_3",
+        "symbol": "overflow_l",
+        "value": "255"
+      },
+      {
+        "input": "100_u8",
+        "symbol": "overflow_r",
+        "value": "100"
+      },
+      {
+        "input": "flag (_1)",
+        "symbol": "mir_1",
+        "value": "true"
+      }
+    ],
+    "witness_kind": "pinned"
+  }
+]

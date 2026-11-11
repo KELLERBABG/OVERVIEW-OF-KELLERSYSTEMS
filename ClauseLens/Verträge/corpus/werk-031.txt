@@ -1,0 +1,70 @@
+Rahmenvertrag über die Einsatzleitsoftware
+
+zwischen Defense IT GmbH, Koblenz (nachfolgend Anbieter) und Wehrtechnik Systeme GmbH, Ulm (nachfolgend Kunde).
+
+Präambel
+Die Parteien beabsichtigen die in § 1 beschriebene Zusammenarbeit. Der Anbieter erbringt die Leistungen, der Kunde vergütet sie. Die Parteien vereinbaren Folgendes.
+
+§ 1 Gegenstand
+Gegenstand des Vertrages ist die Lieferung der Einsatzleitsoftware gemäß Anlage 1.
+
+§ 2 Leistungsumfang
+Der Anbieter erbringt die Leistungen gemäß Anlage 1 und dokumentiert die Ergebnisse.
+
+§ 3 Anwendbares Recht und Gerichtsstand
+(3) Als Ort der Streitbeilegung wird der Hauptsitz des Anbieters in Leipzig bestimmt; Klagen sind dort zu erheben.
+
+§ 4 Nutzungsrechte und Daten
+(4) The customer grants the provider a perpetual, irrevocable license to use the deliverables to train machine learning models.
+
+§ 5 Abnahme und Genehmigungsfiktion
+(5) Die Teillieferung wird als vertragsgemäß behandelt, sofern keine Rüge erfolgt.
+
+§ 6 Beweislast
+(6) Die Beweislast für die Richtigkeit der Abrechnung trägt der Kunde.
+
+§ 7 Datenrückgabe
+(7) Der Datenexport ist nur gegen eine gesonderte Vergütung erhältlich.
+
+§ 8 Abtretung und Übertragung
+(8) Die Übertragung von Rechten und Pflichten aus diesem Vertrag ist ohne Zustimmung des Anbieters unwirksam.
+
+§ 9 Nachwirkung von Pflichten
+(9) Die Vertraulichkeitspflicht endet nicht mit der Beendigung, sondern besteht bis die Information öffentlich wird.
+
+§ 10 Außerordentliche Kündigung
+(10) Das Recht zur Kündigung aus wichtigem Grund ist für den Kunden ausgeschlossen.
+
+§ 11 Insolvenz
+(11) Bei einem Insolvenzantrag endet der Vertrag automatisch, ohne dass es einer Kündigung bedarf.
+
+§ 12 Prüfungen
+(12) Prüfungen erfolgen nur bei konkretem Anlass und nach Ankündigung mit einer Frist von dreißig Tagen.
+
+§ 13 Anwendbares Recht
+(13) Dieser Vertrag unterliegt deutschem Recht.
+
+§ 14 Aufrechnung
+(14) Beide Parteien können mit unbestrittenen Forderungen aufrechnen.
+
+§ 15 Fristen
+(15) Alle Fristen werden in Kalendertagen gerechnet.
+
+§ 16 Zusammenarbeit
+(16) Die Parteien arbeiten bei der Fehleranalyse eng zusammen.
+
+§ 17 Abnahme
+(17) Für Mängel während der Gewährleistung leistet der Anbieter kostenfrei Nacherfüllung.
+
+§ 18 Projektsteuerung
+(18) Die Parteien treffen sich monatlich zu einem Lenkungskreis.
+
+§ 19 Vollständigkeit
+(19) Jede Partei trägt ihre eigenen Kosten aus der Vertragsverhandlung.
+
+Anlage 1: Leistungsbeschreibung
+Anlage 2: Servicezeiten
+
+Koblenz, den 5. November 2026
+Defense IT GmbH
+Wehrtechnik Systeme GmbH

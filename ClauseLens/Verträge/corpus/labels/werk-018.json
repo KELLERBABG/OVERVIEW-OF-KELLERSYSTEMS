@@ -1,0 +1,88 @@
+{
+  "slug": "werk-018",
+  "source": "generated",
+  "domain": "Telekommunikation, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Für die Herausgabe der Daten wird eine Gebühr von 2.500 EUR berechnet.",
+      "expectedType": "data_lockin",
+      "note": "Verifizierte Klausel im Bereich data_lockin."
+    },
+    {
+      "marker": "Ein Recht zur Kündigung wegen höherer Gewalt besteht für den Kunden nicht.",
+      "expectedType": "force_majeure_asymmetry",
+      "note": "Verifizierte Klausel im Bereich force_majeure_asymmetry."
+    },
+    {
+      "marker": "Der Anbieter passt die Preise nach billigem Ermessen an die Marktbedingungen an.",
+      "expectedType": "price_escalation",
+      "note": "Verifizierte Klausel im Bereich price_escalation."
+    },
+    {
+      "marker": "The provider may appoint subcontractors at its sole discretion.",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "Verifizierte Klausel im Bereich subcontractor_uncontrolled."
+    },
+    {
+      "marker": "Die Geheimhaltungspflicht trifft nur den Kunden.",
+      "expectedType": "asymmetric_confidentiality",
+      "note": "Verifizierte Klausel im Bereich asymmetric_confidentiality."
+    },
+    {
+      "marker": "Feedback des Kunden geht unentgeltlich in das Eigentum des Anbieters über.",
+      "expectedType": "feedback_ip_grab",
+      "note": "Verifizierte Klausel im Bereich feedback_ip_grab."
+    },
+    {
+      "marker": "Der Kunde verzichtet auf einen Ausgleich oder eine Entschädigung.",
+      "expectedType": "agency_goodwill_waiver",
+      "note": "Verifizierte Klausel im Bereich agency_goodwill_waiver."
+    },
+    {
+      "marker": "Unwirksame Regelungen werden durch eine Ersatzregelung nach billigem Ermessen ersetzt.",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "Verifizierte Klausel im Bereich salvatorische_klausel_falle."
+    },
+    {
+      "marker": "Mitteilungen gelten mit Absendung als zugegangen.",
+      "expectedType": "fictitious_receipt",
+      "note": "Verifizierte Klausel im Bereich fictitious_receipt."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Vergütung ist innerhalb von dreißig Tagen nach Rechnungseingang fällig.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Beide Parteien verpflichten sich wechselseitig, die offengelegten Informationen vertraulich zu behan",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Der Anbieter zeigt den Einsatz von Unterauftragnehmern vierzehn Tage vorher an.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Der Kunde erhält zum Vertragsende einen kostenfreien Datenexport in einem gängigen Format.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Änderungen dieses Vertrages können in Textform vereinbart werden.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Monatsende kündigen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Kunde erhält Zugang zu einer Testumgebung",
+      "note": "Harmlose Leistungszusage."
+    }
+  ]
+}

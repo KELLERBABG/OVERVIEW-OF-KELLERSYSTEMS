@@ -1,0 +1,77 @@
+target/
+node_modules/
+# Runtime-generated Ed25519 node identity (L0). Auto-created on first run;
+# never commit a private signing key.
+identity.key
+identity_*.key
+# Runtime state written into the working directory by a running node:
+# `peers.cache` every 60 s, plus revocation / topology dumps on demand.
+# Operational state, not source.
+peers.cache
+revocations.json
+ghost-topology.json
+# Consumer control-plane state written by the Web Control Center:
+# device names, egress mode and split-tunnel bypass rules.
+ghost-consumer.json
+ghost-consumer.json.tmp
+# Desktop-build log mirror (the GUI process has no console on Windows).
+ghost.log
+.venv/
+__pycache__/
+.pytest_cache/
+*.tmp
+*.exe
+*.dll
+*.pdb
+*.rlib
+.reasonix/
+*reasonix*
+.freebuff/
+*freebuff*
+.keller/
+DEV/
+*.bundle
+PROTOTYPE.md
+config.env
+abos_config.json
+
+
+# Windows installer build output (scripts/build_installer.ps1).
+# `installer/` and `scripts/build_installer.ps1` are source and stay tracked;
+# only the compiled setup.exe and its staging directory are ignored.
+dist/
+
+# Android build artifacts
+android/.gradle/
+android/app/build/
+android/app/src/main/jniLibs/
+android/local.properties
+android/.idea/
+*.apk
+*.so
+
+# Fuzzing local artifacts & corpora
+fuzz/artifacts/
+fuzz/corpus/
+
+# Local temporary test files & logs
+.tmp*
+*.out
+
+# IDE & Editor local state
+.vscode/
+.idea/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Local Wintun download packages
+wintun-pkg/
+wintun.zip
+
+# Local developer scratch & architecture workspace (never committed)
+/DEV/
+DEV/
+
+

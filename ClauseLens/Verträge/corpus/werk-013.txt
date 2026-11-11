@@ -1,0 +1,70 @@
+Werkvertrag über eine Bestandsverwaltungssoftware
+
+zwischen Kognita Softwarewerk GmbH, Frankfurt am Main (nachfolgend Anbieter) und Merkur Versicherung AG, Köln (nachfolgend Kunde).
+
+Präambel
+Die Parteien beabsichtigen die in § 1 beschriebene Zusammenarbeit. Der Anbieter erbringt die Leistungen, der Kunde vergütet sie. Die Parteien vereinbaren Folgendes.
+
+§ 1 Gegenstand
+Gegenstand des Vertrages ist die Erstellung der Bestandsverwaltungssoftware gemäß Anlage 1.
+
+§ 2 Leistungsumfang
+Der Anbieter erbringt die Leistungen gemäß Anlage 1 und dokumentiert die Ergebnisse.
+
+§ 3 Wettbewerbsverbot
+(3) Eine Nachwirkung des Konkurrenzverbots gilt für sechs Monate nach Beendigung.
+
+§ 4 Aufrechnung und Zurückbehaltung
+(4) All payments shall be made free of any set-off or deduction.
+
+§ 5 Form von Erklärungen
+(5) Änderungen bedürfen der Schriftform; die Textform ist ausgeschlossen.
+
+§ 6 Erfüllungsgehilfen
+(6) Eine Haftung des Anbieters für Erfüllungsgehilfen ist ausgeschlossen.
+
+§ 7 Freistellung
+(7) Der Kunde hält den Anbieter von Ansprüchen Dritter schadlos.
+
+§ 8 Abwerbeverbot
+(8) The customer shall not solicit or hire personnel of the provider.
+
+§ 9 Salvatorische Klausel
+(9) An die Stelle einer unwirksamen Bestimmung tritt diejenige Regelung, die dem wirtschaftlichen Zweck am nächsten kommt.
+
+§ 10 Verjährung
+(10) Ersatzansprüche des Kunden erlöschen zwölf Monate nach der Abnahme.
+
+§ 11 Abwerbeverbot
+(11) Der Kunde verpflichtet sich, keine Mitarbeiter des Anbieters abzuwerben.
+
+§ 12 Prüfungen
+(12) Prüfungen erfolgen nur bei konkretem Anlass und nach Ankündigung mit einer Frist von dreißig Tagen.
+
+§ 13 Anwendbares Recht
+(13) Dieser Vertrag unterliegt deutschem Recht.
+
+§ 14 Aufrechnung
+(14) Beide Parteien können mit unbestrittenen Forderungen aufrechnen.
+
+§ 15 Fristen
+(15) Alle Fristen werden in Kalendertagen gerechnet.
+
+§ 16 Zusammenarbeit
+(16) Die Parteien arbeiten bei der Fehleranalyse eng zusammen.
+
+§ 17 Abnahme
+(17) Für Mängel während der Gewährleistung leistet der Anbieter kostenfrei Nacherfüllung.
+
+§ 18 Projektsteuerung
+(18) Die Parteien treffen sich monatlich zu einem Lenkungskreis.
+
+§ 19 Vollständigkeit
+(19) Die Datenübertragung erfolgt verschlüsselt über eine gesicherte Verbindung.
+
+Anlage 1: Leistungsbeschreibung
+Anlage 2: Servicezeiten
+
+Frankfurt am Main, den 17. Mai 2026
+Kognita Softwarewerk GmbH
+Merkur Versicherung AG

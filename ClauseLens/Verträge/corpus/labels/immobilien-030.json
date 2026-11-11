@@ -1,0 +1,74 @@
+{
+  "slug": "immobilien-030",
+  "source": "generated",
+  "domain": "Gewerbemiete",
+  "traps": [
+    {
+      "marker": "erneuert sich jeweils um zwölf Monate",
+      "expectedType": "auto_renewal",
+      "note": "Automatische Erneuerung um zwoelf Monate."
+    },
+    {
+      "marker": "zum Jahreswechsel um fünf Prozent erhöht",
+      "expectedType": "price_escalation",
+      "note": "GAP: Entgelterhoehung in Zahlwortform."
+    },
+    {
+      "marker": "Einbehalt von Mietzahlungen ist ausgeschlossen",
+      "expectedType": "setoff_restriction",
+      "note": "Einbehalt und Aufrechnung ausgeschlossen."
+    },
+    {
+      "marker": "kann die Einfahrt ohne Vorankündigung unterbrechen",
+      "expectedType": "service_suspension",
+      "note": "GAP: Unterbrechung ohne Vorankuendigung."
+    },
+    {
+      "marker": "gelten am dritten Tag nach Absendung als zugegangen",
+      "expectedType": "fictitious_receipt",
+      "note": "Zugangsfiktion am dritten Tag."
+    },
+    {
+      "marker": "Sämtliche Steuern und Abgaben trägt der Mieter vollumfänglich",
+      "expectedType": "tax_indemnity_shift",
+      "note": "GAP: Saemtliche Steuern auf den Mieter verlagert."
+    },
+    {
+      "marker": "Vorlaufzeit von achtzehn Monaten zum Periodenende",
+      "expectedType": "notice_period",
+      "note": "Achtzehnmonatige Kuendigungsfrist ohne Sonderkündigungsrecht."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "Symmetrische Vertraulichkeit."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhalt."
+    },
+    {
+      "marker": "Zahlungen sind innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Zahlungsfrist."
+    },
+    {
+      "marker": "Änderungen des Leistungsumfangs bedürfen der Abstimmung beider Parteien",
+      "note": "Einvernehmliche Aenderung."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende beenden",
+      "note": "Symmetrisches Kuendigungsrecht."
+    },
+    {
+      "marker": "Nach Vertragsende erhält der Kunde die Vertragsdaten kostenfrei in einem offenen Format",
+      "note": "Kostenfreier Datenexport."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "320 Stellplätze im Parkhaus City Nord",
+      "note": "Kein Detektor fuer Dauerparkregelungen, Parkscheinautomaten oder Bewirtschaftungszeiten."
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "slug": "evasion-004",
+  "source": "generated",
+  "domain": "evasion",
+  "traps": [
+    {
+      "marker": "Die Ware blei‍bt Eige‍ntum des Anbi‍eters bis zur voll‍ständigen Begl‍eichung aller Ford‍erungen",
+      "expectedType": "extended_retention_of_title",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: extended_retention_of_title (Technik: zwj)."
+    },
+    {
+      "marker": "Der Anbi‍eter ist bere‍chtigt, für die Erbr‍ingung sein‍er Pfli‍chten jede‍rzeit Subu‍nternehmer",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: subcontractor_uncontrolled (Technik: zwj)."
+    },
+    {
+      "marker": "Die Syst‍emprotokolle des Anbi‍eters gelt‍en als voll‍ständiger Bewe‍is für Umfa‍ng und Art der",
+      "expectedType": "audit_log_manipulation",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: audit_log_manipulation (Technik: zwj)."
+    },
+    {
+      "marker": "Der Anbi‍eter ist bere‍chtigt, den Zuga‍ng zum Port‍al ohne Vora‍nkündigung zu sper‍ren.",
+      "expectedType": "service_suspension",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: service_suspension (Technik: zwj)."
+    },
+    {
+      "marker": "Im Falle der Inso‍lvenz des Kund‍en endet der Vert‍rag auto‍matisch ohne weit‍eres.",
+      "expectedType": "insolvency_termination",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: insolvency_termination (Technik: zwj)."
+    },
+    {
+      "marker": "Sämt‍liche Steu‍ern und Abga‍ben aus dies‍em Vert‍rag trägt der Kunde, auch sowe‍it sie",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: tax_indemnity_shift (Technik: zwj)."
+    },
+    {
+      "marker": "Der Kunde verp‍flichtet sich, alle Info‍rmationen stre‍ng vert‍raulich zu beha‍ndeln, für den",
+      "expectedType": "asymmetric_confidentiality",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: asymmetric_confidentiality (Technik: zwj)."
+    },
+    {
+      "marker": "Die Soft‍ware wird im Zust‍and wie gese‍hen bere‍itgestellt, eine Zusi‍cherung zur Eign‍ung für",
+      "expectedType": "as_is_software_disclaimer",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: as_is_software_disclaimer (Technik: zwj)."
+    },
+    {
+      "marker": "Dies‍er Vert‍rag enth‍ält alle Vere‍inbarungen der Part‍eien und erse‍tzt früh‍ere Absp‍rachen und",
+      "expectedType": "entire_agreement",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: entire_agreement (Technik: zwj)."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Für die Vertragsdauer gelten die vereinbarten Konditionen unverändert.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien halten die geltenden Datenschutzvorschriften ein und verarbeiten personenbezogene",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Anbieter benennt einen technischen Ansprechpartner für den Kunden.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde führt die ihm übertragenen Aufgaben mit der Sorgfalt eines ordentlichen Kaufmanns aus.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Die Parteien regeln Einzelheiten in den beigefügten Anlagen 1 bis 3.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde meldet vermittelte Geschäfte unverzüglich und vollständig an den Anbieter.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    }
+  ],
+  "uncovered": []
+}

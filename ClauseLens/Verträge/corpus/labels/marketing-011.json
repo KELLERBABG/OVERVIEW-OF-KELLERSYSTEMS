@@ -1,0 +1,74 @@
+{
+  "slug": "marketing-011",
+  "source": "generated",
+  "domain": "Sportsponsoring, schweizerisches Recht",
+  "traps": [
+    {
+      "marker": "das Logo des Sponsors in seiner Werbung und auf Social Media",
+      "expectedType": "marketing_reference",
+      "note": "Markennutzung ohne Freigabevorbehalt."
+    },
+    {
+      "marker": "berechtigt, den Vertrag fristlos zu kündigen, wenn eine Überschuldung",
+      "expectedType": "insolvency_termination",
+      "note": "Lösungsrecht an Überschuldung geknüpft; vermeidet Insolvenzantrag."
+    },
+    {
+      "marker": "Sämtliche Steuern und Abgaben trägt der Auftraggeber",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Vollständige Steuerabwälzung."
+    },
+    {
+      "marker": "überdauern die Beendigung auf unbestimmte Zeit",
+      "expectedType": "excessive_survival",
+      "note": "Unbefristete Nachwirkung der Werberechte."
+    },
+    {
+      "marker": "Für Einbehalte steht dem Auftraggeber kein Recht zu",
+      "expectedType": "setoff_restriction",
+      "note": "Einbehaltsverbot; vermeidet 'Aufrechnung ausgeschlossen'."
+    },
+    {
+      "marker": "Gerichte am Sitz des Auftragnehmers sind für alle Streitigkeiten zuständig",
+      "expectedType": "jurisdiction",
+      "note": "Zuständigkeit am Sitz des Verwenders; vermeidet das Wort Gerichtsstand."
+    },
+    {
+      "marker": "Übertragung von Rechten des Auftraggebers auf Dritte bedarf der Zustimmung",
+      "expectedType": "assignment_restriction",
+      "note": "Zustimmungserfordernis für Rechtsübertragung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien wahren über die wechselseitig ausgetauschten Informationen Stillschweigen",
+      "note": "Symmetrische Verschwiegenheit."
+    },
+    {
+      "marker": "erhält der Auftraggeber die Fan-Daten kostenfrei in einem offenen Format",
+      "note": "Kostenfreier Datenexport."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Saisonende beenden",
+      "note": "Symmetrische Kündigung."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform zugelassen."
+    },
+    {
+      "marker": "innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Üblicher Zahlungstermin."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhaltung."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Auftragnehmer trägt die Marke des Auftraggebers während der vereinbarten Wettkämpfe nach außen",
+      "note": "Kein Detektor für fehlende Exklusivität der Sponsoringrechte."
+    }
+  ]
+}

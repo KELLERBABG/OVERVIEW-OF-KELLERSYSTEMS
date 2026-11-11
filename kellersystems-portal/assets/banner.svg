@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400">
+  <title>Keller Systems — Engineering &amp; R&amp;D</title>
+
+  <style>
+    .display {
+      font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 700;
+    }
+    .mono {
+      font-family: 'JetBrains Mono', 'Geist Mono', Consolas, 'Courier New', monospace;
+      font-weight: 600;
+    }
+  </style>
+
+  <defs>
+    <!-- Background Grid -->
+    <pattern id="bannerGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255, 255, 255, 0.03)" stroke-width="1"/>
+    </pattern>
+
+    <!-- Radial Emerald Ambient Glow -->
+    <radialGradient id="ambientGlow" cx="18%" cy="50%" r="45%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.14"/>
+      <stop offset="60%" stop-color="#10b981" stop-opacity="0.02"/>
+      <stop offset="100%" stop-color="#06070a" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Logo Emerald Gradients -->
+    <linearGradient id="markGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+
+    <linearGradient id="badgeBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#059669" stop-opacity="0.12"/>
+    </linearGradient>
+
+    <!-- Soft Drop Shadow for Badge -->
+    <filter id="badgeShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#10b981" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <!-- Deep Obsidian Canvas -->
+  <rect width="1200" height="400" fill="#07080d"/>
+
+  <!-- Subtle Blueprint Grid -->
+  <rect width="1200" height="400" fill="url(#bannerGrid)"/>
+
+  <!-- Ambient Glow Behind Logo -->
+  <rect width="1200" height="400" fill="url(#ambientGlow)"/>
+
+  <!-- Smooth & Simple Centered Content Lockup -->
+  <g transform="translate(140, 130)">
+    
+    <!-- Modular Monolith Badge -->
+    <g filter="url(#badgeShadow)">
+      <rect width="140" height="140" rx="32" fill="#0b0d14"/>
+      <rect x="1.5" y="1.5" width="137" height="137" rx="30.5" fill="none" stroke="url(#badgeBorder)" stroke-width="2"/>
+      
+      <!-- Mark Geometry -->
+      <g transform="translate(20, 20) scale(1.0)">
+        <rect x="18" y="14" width="18" height="72" rx="3.5" fill="url(#markGrad)"/>
+        <path d="M46 50 L72 16 H90 L60 54 Z" fill="#34d399"/>
+        <path d="M60 46 L90 84 H72 L46 50 Z" fill="#059669"/>
+      </g>
+    </g>
+
+    <!-- Typography: Project Top & Brand Bottom -->
+    <!-- Primary Product / Entity -->
+    <text class="display" x="180" y="74" font-size="64" letter-spacing="-1.5" fill="#ffffff">Keller<tspan fill="#10b981">Systems</tspan></text>
+    
+    <!-- Secondary Brand Endorsement -->
+    <text class="mono" x="184" y="114" font-size="16" letter-spacing="4.8" fill="#7d859b">KELLER SYSTEMS &#8226; KELLERSYSTEMS.DEV</text>
+
+  </g>
+
+  <!-- Clean Subtle Exterior Perimeter Rule -->
+  <rect x="1" y="1" width="1198" height="398" rx="0" fill="none" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1.5"/>
+</svg>

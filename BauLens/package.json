@@ -1,0 +1,68 @@
+{
+  "name": "baulens",
+  "version": "0.10.0",
+  "description": "Deterministische DACH-Bauordnungs-Vorpruefung (MBO, 16 Landesbauordnungen, OIB, IVHB & kommunale Satzungen) mit BIM/CAD-Ingestion, B-Plan-Abgleich, XBau-Antrag, BCF-Export und DIN-A4-Pruefdossier. Vorpruefung, keine Rechtsberatung.",
+  "type": "module",
+  "bin": {
+    "baulens": "bin/baucheck.js",
+    "baucheck": "bin/baucheck.js"
+  },
+  "scripts": {
+    "test": "node --test",
+    "cli": "node bin/baucheck.js",
+    "lands": "node bin/baucheck.js --lands",
+    "demo:good": "node bin/baucheck.js check test/fixtures/good_spec.json",
+    "demo:bad": "node bin/baucheck.js check test/fixtures/bad_spec.json",
+    "serve": "node bin/baucheck.js --server 3000",
+    "fonts:setup": "node scripts/setup-fonts.mjs",
+    "offline:check": "node scripts/check-offline.mjs",
+    "print:audit": "node scripts/print-audit.mjs",
+    "bundle": "node scripts/bundle.js",
+    "bundle:verify": "node scripts/smoke-bundle.mjs",
+    "docs:build": "node scripts/build-docs.mjs",
+    "docs:verify": "node scripts/build-docs.mjs && node scripts/verify-docs.mjs",
+    "site:build": "node scripts/build-site.mjs",
+    "site:check": "node scripts/check-links.mjs",
+    "prices:check": "node scripts/check-prices.mjs && node scripts/check-offline.mjs",
+    "build": "node scripts/build-docs.mjs && node scripts/build-site.mjs && node scripts/verify-docs.mjs && node scripts/check-links.mjs && node scripts/check-prices.mjs && node scripts/check-offline.mjs",
+    "desktop:assets": "node scripts/build-desktop-assets.mjs",
+    "desktop:sidecar": "node scripts/build-desktop-sidecar.mjs",
+    "desktop:build": "node scripts/build-desktop-assets.mjs && node scripts/build-desktop-sidecar.mjs",
+    "release": "node scripts/release.mjs",
+    "release:notes": "node scripts/release-notes.mjs"
+  },
+  "keywords": [
+    "bauordnungsrecht",
+    "bauantrag",
+    "bim",
+    "ifc",
+    "dxf",
+    "xplanung",
+    "xbau",
+    "bcf",
+    "compliance",
+    "dach"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "assets/",
+    "docs/",
+    "scripts/bundle.js",
+    "index.html",
+    "studio.html",
+    "docs.html",
+    "pricing/",
+    "downloads/",
+    "legal/",
+    "checkout/",
+    "site.config.json",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE.md"
+  ],
+  "license": "MIT"
+}

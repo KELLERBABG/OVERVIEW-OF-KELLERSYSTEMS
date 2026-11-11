@@ -1,0 +1,92 @@
+{
+  "slug": "service-011",
+  "source": "generated",
+  "domain": "Reise- und Veranstaltungsvertrag",
+  "traps": [
+    {
+      "marker": "Für das Verhalten der von ihm beauftragten Dienstleister übernimmt der Anbieter Verantwortung nur",
+      "expectedType": "vicarious_agents",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: expansion phrased as responsibility only for proven faulty selection"
+    },
+    {
+      "marker": "Zur Qualitätssicherung darf der Anbieter in die Betriebsabläufe des Kunden Einblick nehmen, soweit",
+      "expectedType": "unreasonable_audit",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: audit right phrased as quality assurance discretion"
+    },
+    {
+      "marker": "Am Ende der Laufzeit überlässt der Anbieter die Kundendaten auf Anforderung gegen Erstattung des",
+      "expectedType": "data_lockin",
+      "note": "Legally abusive (§ 307 BGB); engine hit; technique: export only against reimbursement in a proprietary format"
+    },
+    {
+      "marker": "Der Kunde hält den Anbieter auch für Ansprüche schadlos, die auf einer Pflichtverletzung des",
+      "expectedType": "third_party_indemnity",
+      "note": "Legally abusive (§ 307 BGB); engine hit; technique: indemnity also covering the provider's own breach"
+    },
+    {
+      "marker": "Beendet der Anbieter die Zusammenarbeit aus wichtigem Grund, entfallen Ansprüche des Kunden; der",
+      "expectedType": "asymmetric_termination",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: exit right on one side only"
+    },
+    {
+      "marker": "Rechte des Kunden aus diesem Vertrag können nur mit Billigung des Anbieters auf Dritte übergehen.",
+      "expectedType": "assignment_restriction",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: passive paraphrase with approval instead of consent"
+    },
+    {
+      "marker": "Ereignisse außerhalb des Einflussbereichs des Anbieters verlängern dessen Fristen; Zahlungspflichten",
+      "expectedType": "force_majeure_asymmetry",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: events outside the provider's control extend its deadlines while payment duties continue"
+    },
+    {
+      "marker": "Die Abtretung von Forderungen des Kunden an Dritte bedarf der vorherigen Zustimmung des Anbieters.",
+      "expectedType": "assignment_restriction",
+      "note": "Legally abusive (§ 307 BGB); engine hit; technique: literal assignment subject to prior consent"
+    },
+    {
+      "marker": "Ereignisse höherer Gewalt befreien den Anbieter von der Leistungspflicht; den Kunden treffen sie",
+      "expectedType": "force_majeure_asymmetry",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: literal force majeure excusing the provider only"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Anbieter teilt beabsichtigte Preisanpassungen mindestens sechs Wochen vorher mit.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Die Parteien benennen jeweils einen Ansprechpartner und informieren unverzüglich über einen Wechsel.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich und verwenden sie",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Der Kunde kann den Vertrag mit einer Frist von vier Wochen zum Monatsende ohne Angabe von Gründen",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Kündigungen können in Textform, insbesondere per E-Mail, erklärt werden.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Der Anbieter kann Leistungen auf Nachunternehmer übertragen, wenn er dies dem Kunden vierzehn Tage",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Die Vergütung ist innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Die Einhaltung terminlicher Zusagen des Anbieters steht unter dem Vorbehalt der jederzeitigen",
+      "note": "Deceptive clause without a matching detector type (coverage gap)."
+    },
+    {
+      "marker": "Der Kunde trägt Aufwendungen für Reisen, Unterkunft und Schulungen auch dann, wenn der Termin nicht ",
+      "note": "Deceptive clause without a matching detector type (coverage gap)."
+    }
+  ]
+}

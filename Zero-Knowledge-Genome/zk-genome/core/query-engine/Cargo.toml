@@ -1,0 +1,13 @@
+[package]
+name = "zk-genome-query-engine"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Encrypted query matching engine — on-device variant search"
+
+[dependencies]
+zk-genome-genome-core = { path = "../genome-core" }
+heapless = "0.8"
+
+[lints]
+workspace = true

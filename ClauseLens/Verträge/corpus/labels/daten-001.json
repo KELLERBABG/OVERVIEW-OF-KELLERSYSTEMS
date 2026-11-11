@@ -1,0 +1,87 @@
+{
+  "slug": "daten-001",
+  "source": "generated",
+  "domain": "NDA",
+  "traps": [
+    {
+      "marker": "setzt sich die Lizenz jeweils um ein weiteres Kalenderjahr fort",
+      "expectedType": "auto_renewal",
+      "note": "Paraphrase/Umstellung: nennt 'setzt sich die Lizenz jeweils um ein weiteres' statt der Registerwendung."
+    },
+    {
+      "marker": "Eine Beendigung ist frühestens nach einundzwanzig Monaten zulässig",
+      "expectedType": "notice_period",
+      "note": "Paraphrase/Umstellung: nennt 'Eine Beendigung ist frühestens nach einundzwa' statt der Registerwendung."
+    },
+    {
+      "marker": "Die Haftung ist der Höhe nach auf die Bereitstellungsprovision begrenzt",
+      "expectedType": "liability",
+      "note": "Paraphrase/Umstellung: nennt 'Die Haftung ist der Höhe nach auf die Bereits' statt der Registerwendung."
+    },
+    {
+      "marker": "wird eine Pauschale von 250 EUR fällig",
+      "expectedType": "penalty",
+      "note": "Paraphrase/Umstellung: nennt 'wird eine Pauschale von 250 EUR fällig' statt der Registerwendung."
+    },
+    {
+      "marker": "bei der Niederlassung der Anbieterin in Zug zur Entscheidung gebracht",
+      "expectedType": "jurisdiction",
+      "note": "Paraphrase/Umstellung: nennt 'bei der Niederlassung der Anbieterin in Zug z' statt der Registerwendung."
+    },
+    {
+      "marker": "Nach Beendigung des Vertrags ist der Kunde",
+      "expectedType": "non_compete",
+      "note": "Paraphrase/Umstellung: nennt 'Nach Beendigung des Vertrags ist der Kunde' statt der Registerwendung."
+    },
+    {
+      "marker": "ein unwiderrufliches Nutzungsrecht an den Transaktionsdaten",
+      "expectedType": "data_grant",
+      "note": "Paraphrase/Umstellung: nennt 'ein unwiderrufliches Nutzungsrecht an den Tra' statt der Registerwendung."
+    },
+    {
+      "marker": "Die Zinsmarge von 1250 Basispunkten",
+      "expectedType": "default_interest",
+      "note": "Paraphrase/Umstellung: nennt 'Die Zinsmarge von 1250 Basispunkten' statt der Registerwendung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "mindestens vierzehn Tage vor dem Einsatz eines Unterauftragnehmers",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "binnen zwei Werktagen nach Eingang auf dem Geschäftskonto",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "ausschließlich auf dokumentierte Weisung des Auftraggebers",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "benennt für Datenschutzfragen eine Ansprechperson",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "innerhalb von dreißig Tagen nach Zugang ohne Abzug",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "einen festen Ansprechpartner für alle Fragen der Vertragsabwicklung",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "löscht nach Beendigung der Datenverarbeitung alle personenbezogenen Daten",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "in maschinenlesbarer Form ohne Zusatzkosten",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Zweitschrift der Dokumentation gegen eine Gebühr von fünfzehn Euro",
+      "note": "Täuschende Klausel ohne passenden Detektortyp."
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+[package]
+name = "keller-verify"
+version = "1.0.0"
+edition = "2021"
+description = "MIR-level formal verification pipeline using Z3 SMT solver"
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+repository = "https://github.com/KELLERBABG/Formal-Verification"
+keywords = ["formal-verification", "smt", "z3", "mir", "safety"]
+categories = ["development-tools", "development-tools::debugging"]
+# The `tests/` directory holds fixture *crates* (`tests/<case>/Cargo.toml` plus
+# `src/main.rs`) that the shell runners drive through `keller verify`, not cargo
+# integration tests. Left on, cargo would auto-discover the stray
+# `tests/<case>/main.rs` copies as integration test targets and try to compile
+# them. `cargo test` should run only the inline unit tests; declare a real
+# `[[test]]` target if integration tests are ever added.
+autotests = false
+
+[[bin]]
+name = "keller-verify"
+path = "src/main.rs"
+
+[[bin]]
+name = "cargo-keller"
+path = "src/bin/cargo-keller.rs"
+
+[[bin]]
+name = "keller-env"
+path = "src/bin/keller-env.rs"
+
+[dependencies]
+z3 = "0.12"
+z3-sys = "0.8"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+# `rustc_tools_util` used to be listed here and referenced by nothing: the version
+# comes from CARGO_PKG_VERSION through `report::version()`. A declared dependency
+# that no code uses is a claim about the build that is not true, so it is gone.
+
+# POSIX needs one syscall for the process-group kill in `terminate_process_tree`:
+# killing the tree instead of the direct child is what stops a capped run from
+# leaving wrappers behind. Windows needs nothing declared -- `taskkill /T` walks the
+# parent chain -- so this is a `cfg(unix)` dependency and not a dependency on the
+# platforms that do not use it.
+[target.'cfg(unix)'.dependencies]
+libc = "0.2"
+
+[build-dependencies]
+
+[features]
+default = []
+
+# Z3 path is now configured via the Z3_HOME environment variable at build time
+# See build.rs for details.

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="Keller Systems">
+  <defs>
+    <linearGradient id="ks-grad-main" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="ks-border-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#059669" stop-opacity="0.12"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Sleek dark base squircle -->
+  <rect width="128" height="128" rx="28" fill="#080a10"/>
+  <rect x="1" y="1" width="126" height="126" rx="27" fill="none" stroke="url(#ks-border-grad)" stroke-width="2"/>
+  
+  <!-- Modular Monolith Geometry: Solid Pillar Anchor -->
+  <rect x="28" y="24" width="20" height="80" rx="4" fill="url(#ks-grad-main)"/>
+  
+  <!-- Precision 45-degree Upper Chevron -->
+  <path d="M58 62 L88 24 H104 L70 66 Z" fill="#34d399"/>
+  
+  <!-- Precision 45-degree Lower Chevron -->
+  <path d="M70 62 L104 104 H88 L58 66 Z" fill="#059669"/>
+</svg>

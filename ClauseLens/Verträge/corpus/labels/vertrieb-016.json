@@ -1,0 +1,74 @@
+{
+  "slug": "vertrieb-016",
+  "source": "generated",
+  "domain": "vertriebsvereinbarung",
+  "traps": [
+    {
+      "marker": "Sollte eine Bestimmung unwirksam sein, gilt eine solche Regelung als vereinbart, die dem",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "Ersetzungsklausel führt zur wirtschaftlich günstigsten Regelung."
+    },
+    {
+      "marker": "Die Ware bleibt Eigentum des Anbieters bis zur vollständigen Begleichung aller Forderungen aus der",
+      "expectedType": "extended_retention_of_title",
+      "note": "Eigentumsvorbehalt erstreckt sich auf alle Forderungen."
+    },
+    {
+      "marker": "Der Anbieter ist berechtigt, für die Erbringung seiner Pflichten jederzeit Subunternehmer",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "Subunternehmereinsatz ohne Zustimmung und Information."
+    },
+    {
+      "marker": "Die Systemprotokolle des Anbieters gelten als vollständiger Beweis für Umfang und Art der",
+      "expectedType": "audit_log_manipulation",
+      "note": "Systemprotokolle des Anbieters gelten als alleiniger Beweis."
+    },
+    {
+      "marker": "Der Anbieter ist berechtigt, den Zugang zum Portal ohne Vorankündigung zu sperren.",
+      "expectedType": "service_suspension",
+      "note": "Leistungssperre ohne Vorankündigung."
+    },
+    {
+      "marker": "Im Falle der Insolvenz des Kunden endet der Vertrag automatisch ohne weiteres.",
+      "expectedType": "insolvency_termination",
+      "note": "Automatische Beendigung bei Insolvenz des Kunden."
+    },
+    {
+      "marker": "Sämtliche Steuern und Abgaben aus diesem Vertrag trägt der Kunde, auch soweit sie rückwirkend",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Steuerlast wird vollständig auf den Kunden verlagert."
+    },
+    {
+      "marker": "Der Kunde verpflichtet sich, alle Informationen streng vertraulich zu behandeln, für den Anbieter",
+      "expectedType": "asymmetric_confidentiality",
+      "note": "Geheimhaltungspflicht trifft nur den Kunden."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Für die Vertragsdauer gelten die vereinbarten Konditionen unverändert.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien halten die geltenden Datenschutzvorschriften ein und verarbeiten personenbezogene",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Anbieter benennt einen technischen Ansprechpartner für den Kunden.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde führt die ihm übertragenen Aufgaben mit der Sorgfalt eines ordentlichen Kaufmanns aus.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Die Parteien regeln Einzelheiten in den beigefügten Anlagen 1 bis 3.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde meldet vermittelte Geschäfte unverzüglich und vollständig an den Anbieter.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    }
+  ],
+  "uncovered": []
+}

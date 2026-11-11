@@ -1,0 +1,19 @@
+[package]
+name = "symbolic-execution-core"
+version = "0.1.0"
+edition = "2021"
+description = "Core symbolic execution engine for smart contract formal verification"
+license = "Apache-2.0"
+repository = "https://github.com/your-org/symbolic-execution-engine"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+hex = { workspace = true }
+itertools = { workspace = true }
+petgraph = { workspace = true }
+smallvec = { workspace = true }
+bimap = { workspace = true }
+sha3 = { workspace = true }

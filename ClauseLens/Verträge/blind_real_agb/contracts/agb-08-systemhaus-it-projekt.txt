@@ -1,0 +1,51 @@
+Allgemeine Vertragsbedingungen für IT-Werkleistungen, Softwareentwicklung und Systemintegration der Codenova Systemhaus GmbH
+
+§ 1 Vertragsgegenstand und Leistungsumfang
+
+Die Codenova Systemhaus GmbH (nachfolgend „Auftragnehmer“) erbringt für den gewerblichen Auftraggeber Leistungen zur individuellen Softwareerstellung, Systemintegration und IT-Infrastrukturmigration auf Grundlage eines gesonderten Pflichtenhefts.
+
+Änderungswünsche des Auftraggebers nach Projektbeginn (Change Requests) werden vom Auftragnehmer auf technische Machbarkeit sowie Auswirkungen auf Vergütung und Zeitplan geprüft und bedürfen vor Umsetzung einer Vereinbarung in Textform.
+
+§ 2 Mitwirkungspflichten des Auftraggebers
+
+Der Auftraggeber benennt einen fachlich qualifizierten Projektleiter, stellt die erforderlichen Testdaten sowie Systemzugänge rechtzeitig bereit und sorgt für eine tägliche Datensicherung seiner Produktivsysteme vor Beginn von Migrationsarbeiten.
+
+Der Einsatz externer Nachunternehmer für sicherheitsrelevante Entwicklungsarbeiten bedarf der vorherigen Zustimmung des Auftraggebers in Textform, die dieser nur aus sachlichem Grund verweigern darf.
+
+§ 3 Übergabe und Abnahmefiktion
+
+Nach Bereitstellung einer Programmversion oder eines Teilprojekts auf dem Testsystem hat der Auftraggeber unverzüglich mit der Abnahmeprüfung zu beginnen. Die gesamte Werkleistung gilt auch ohne ausdrückliche Erklärung bereits nach Ablauf von 48 Stunden ab Bereitstellung der Installationsdateien oder mit dem erstmaligen Einloggen eines Mitarbeiters des Auftraggebers in die Testumgebung unwiderruflich als mangelfrei abgenommen; etwaige zu diesem Zeitpunkt vorhandene Mängel sind damit präkludiert.
+
+§ 4 Nutzungsrechte, Softwarepflege und Deaktivierungsvorbehalt
+
+Mit vollständiger Zahlung der vereinbarten Werkvergütung räumt der Auftragnehmer dem Auftraggeber das einfache, dauerhafte Nutzungsrecht an der erstellten Individualsoftware für den internen Geschäftsbetrieb ein.
+
+Kündigt der Auftraggeber den parallel abgeschlossenen kostenpflichtigen Softwarepflege- und Wartungsvertrag oder verlängert er diesen nach Ablauf nicht, ist der Auftragnehmer berechtigt, auch die bereits vollständig bezahlte und auf den eigenen Servern des Auftraggebers installierte Kauflizenz der Individualsoftware per Fernzugriff (Kill-Switch) dauerhaft zu deaktivieren und unbrauchbar zu machen.
+
+§ 5 Vergütung, Vollständigkeitsklausel und Aufrechnung
+
+Die Vergütung erfolgt zu den im Angebot ausgewiesenen Festpreisen oder nach Zeitaufwand gemäß den vereinbarten Tagessätzen. Gegen Forderungen des Auftragnehmers kann der Auftraggeber mit unbestrittenen oder rechtskräftig festgestellten Forderungen sowie mit entscheidungsreifen Gegenansprüchen aus demselben Werkvertrag aufrechnen.
+
+Dieser Vertrag und das beigefügte Angebot geben sämtliche Vereinbarungen der Parteien vollständig wieder; sämtliche im Rahmen der Ausschreibung oder Vertragsverhandlung gemachten Zusicherungen, Präsentationen, E-Mail-Bestätigungen sowie mündlichen Nebenabreden sind rechtlich gegenstandslos und begründen keinerlei Soll-Beschaffenheit des Werkes.
+
+§ 6 Geheimhaltung und nachvertragliche Fortwirkung
+
+Der Auftragnehmer ist hinsichtlich sämtlicher vom Auftraggeber übergebenen Informationen, Quellcodes und Geschäftsdaten an keinerlei Geheimhaltungspflicht gebunden und darf diese frei verwenden, während der Auftraggeber zu strengster einseitiger Geheimhaltung über sämtliche Preise, Methoden und Arbeitsergebnisse des Auftragnehmers verpflichtet ist.
+
+Sämtliche den Auftraggeber treffenden Geheimhaltungs-, Duldungs-, Freistellungs- und Unterlassungspflichten aus diesem Vertrag gelten nach Beendigung des Vertragsverhältnisses zeitlich unbegrenzt für einen Zeitraum von mindestens 50 Jahren uneingeschränkt fort.
+
+§ 7 Abwerbeverbot und Vertragsstrafe
+
+Dem Auftraggeber sowie sämtlichen mit ihm verbundenen Unternehmen ist es während der Projektlaufzeit und für einen Zeitraum von fünf Jahren nach Vertragsende strikt untersagt, Mitarbeiter oder freie Berater des Auftragnehmers abzuwerben oder – selbst auf deren eigene Initiative oder eine öffentliche Stellenausschreibung hin – einzustellen oder mittelbar zu beschäftigen.
+
+Für jeden Fall der Zuwiderhandlung gegen das vorstehende Einstellungs- und Abwerbeverbot verpflichtet sich der Auftraggeber zur Zahlung einer sofort fälligen, nicht herabsetzbaren Vertragsstrafe in Höhe von fünf Brutto-Jahresgehältern des betreffenden Mitarbeiters, mindestens jedoch 300.000,00 Euro.
+
+§ 8 Gewährleistung und Haftung
+
+Für Sach- und Rechtsmängel der Werkleistung leistet der Auftragnehmer zunächst nach eigener Wahl Gewähr durch Nachbesserung (Fehlerbeseitigung) oder Neuherstellung.
+
+Der Auftragnehmer haftet unbeschränkt für Vorsatz und grobe Fahrlässigkeit sowie bei schuldhafter Verletzung von Leben, Körper oder Gesundheit. Bei leicht fahrlässiger Verletzung wesentlicher Vertragspflichten ist die Haftung auf den vertragstypischen, vorhersehbaren Schaden begrenzt.
+
+§ 9 Herausgabe des Quellcodes
+
+Auch soweit im Einzelauftrag ausdrücklich die Erstellung und Übereignung einer kundenspezifischen Individualsoftware geschuldet ist, verbleibt der Quellcode (Source Code) unter Verschluss beim Auftragnehmer; eine Herausgabe des Quellcodes an den Auftraggeber zur Vornahme eigener Fehlerbeseitigungen erfolgt nur gegen Zahlung einer zusätzlichen Ablösegebühr in Höhe von 150 Prozent der gesamten Projektvergütung.

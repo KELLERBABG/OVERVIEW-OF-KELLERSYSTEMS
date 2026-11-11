@@ -1,0 +1,38 @@
+[package]
+name = "fhe-server"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "REST/gRPC server exposing the encrypted database"
+
+[dependencies]
+fhe-core.workspace = true
+fhe-db.workspace = true
+axum.workspace = true
+# Optional: HTTPS support. The rustls `aws-lc-rs` provider requires a C
+# compiler, which the repo's Windows-GNU build host does not have, so TLS is
+# opt-in via the `tls` feature and exercised by CI (ubuntu) instead.
+axum-server = { version = "0.7", features = ["tls-rustls"], optional = true }
+tokio.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tower-http.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+clap.workspace = true
+anyhow.workspace = true
+base64 = "0.22"
+thiserror.workspace = true
+bincode.workspace = true
+
+[features]
+# Serve HTTPS via `--tls-cert/--tls-key` instead of plain HTTP. Default-off:
+# building it requires a C toolchain (aws-lc-sys), unavailable on this repo's
+# Windows-GNU host. See `.github/workflows/ci.yml` for the CI job that builds
+# and tests this feature.
+tls = ["dep:axum-server"]
+
+[dev-dependencies]
+tower = { version = "0.5", features = ["util"] }
+reqwest.workspace = true

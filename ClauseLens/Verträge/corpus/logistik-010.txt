@@ -1,0 +1,67 @@
+Vertrag über Kühllogistik und Tiefkühllagerung
+zwischen
+Polaris Kühllogistik GmbH, Froststraße 11, 28195 Bremen (nachfolgend Anbieter)
+und
+Frostwerk Feinkost GmbH, Am Kanal 3, 34117 Kassel (nachfolgend Kunde)
+
+§ 1 Vertragsgegenstand
+
+1.1 Der Anbieter lagert und transportiert Tiefkühlware für den Kunden.
+
+1.2 Die Parteien stimmen die Temperaturführung monatlich ab.
+
+1.3 Der Anbieter dokumentiert die Temperaturen in der Anlage 2.
+
+§ 2 Wartung und Stilllegung
+
+2.1 Mangels Wartungsvereinbarung erfolgt eine Stilllegung der Kühlanlage.
+
+2.2 Der Anbieter führt die Wartung nach dem Wartungsplan der Anlage 3 durch.
+
+§ 3 Laufzeit und Beendigung
+
+3.1 Die Mindestlaufzeit beträgt 36 Monate und eine vorzeitige Kündigung ist ausgeschlossen.
+
+3.2 Bei Insolvenz des Kunden endet der Vertrag ohne weiteres.
+
+3.3 Die gesetzlichen Rechte beider Parteien zur außerordentlichen Kündigung aus wichtigem Grund bleiben unberührt.
+
+§ 4 Vertragsstrafe
+
+4.1 Bei Überschreitung der Temperaturabweichung wird eine Pauschale von 250 EUR je Tag fällig.
+
+4.2 Der Nachweis eines geringeren Schadens ist ausgeschlossen.
+
+§ 5 Nachweise
+
+5.1 Die Systemprotokolle des Anbieters gelten als Vollbeweis für die Einhaltung der Kühlkette.
+
+5.2 Der Kunde kann die Temperaturprotokolle jederzeit einsehen.
+
+§ 6 Servicegutschriften
+
+6.1 Wird ein kritischer Sicherheitspatch nicht binnen sieben Tagen installiert, entfällt der Anspruch auf eine Gutschrift.
+
+6.2 Der Anbieter stellt monatlich einen Verfügbarkeitsbericht bereit.
+
+§ 7 Wettbewerbsverbot
+
+7.1 Der Kunde verpflichtet sich, für die Dauer von zwei Jahren nach Vertragsende nicht im Bereich der Kühllogistik tätig zu werden.
+
+7.2 Der Anbieter wahrt die berechtigten Interessen des Kunden.
+
+§ 8 Vergütung
+
+8.1 Rechnungen sind innerhalb von 30 Tagen ohne Abzug zahlbar.
+
+8.2 Die Vergütung richtet sich nach der Preisliste der Anlage 4.
+
+§ 9 Schlussbestimmungen
+
+9.1 Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt.
+
+9.2 Es gilt deutsches Recht.
+
+9.3 Der Anbieter benennt Unterauftragnehmer mit einer Vorlaufzeit von vierzehn Tagen.
+
+9.4 Beide Parteien behandeln die Temperaturprotokolle vertraulich.

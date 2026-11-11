@@ -1,0 +1,69 @@
+{
+  "slug": "saas-016",
+  "source": "generated",
+  "domain": "Managed WAF, oesterreichisches Recht",
+  "traps": [
+    {
+      "marker": "Mängelansprüche erlöschen sechs Monate nach der Übergabe.",
+      "expectedType": "statute_of_limitations",
+      "note": "Paraphrase. Verkuerzte Verjaehrungsfrist"
+    },
+    {
+      "marker": "Mängel sind binnen fünf Werktagen nach Erhalt anzuzeigen; danach gilt die Leistung als genehmigt.",
+      "expectedType": "deemed_acceptance",
+      "note": "Paraphrase. Abnahmefiktion"
+    },
+    {
+      "marker": "Das Kontrollrecht des Anbieters besteht jederzeit und ohne Anlass.",
+      "expectedType": "unreasonable_audit",
+      "note": "Paraphrase. Kontrollrecht ohne Anlass oder Kostenlast"
+    },
+    {
+      "marker": "Die Haftung für mittelbare Schäden und entgangenen Gewinn ist abbedungen.",
+      "expectedType": "liability",
+      "note": "Paraphrase. Haftungsausschluss"
+    },
+    {
+      "marker": "Gegenansprüche bleiben bei der Abrechnung außer Betracht.",
+      "expectedType": "setoff_restriction",
+      "note": "Paraphrase. Aufrechnungsverbot"
+    },
+    {
+      "marker": "Die feste Laufzeit beträgt sechsunddreißig Monate, eine Kündigung ist ausgeschlossen.",
+      "expectedType": "notice_period",
+      "note": "Paraphrase. Lange Mindestlaufzeit mit Kuendigungsausschluss"
+    },
+    {
+      "marker": "Mitteilungen gelten nach Versand als zugegangen; auf den tatsächlichen Abruf kommt es nicht an.",
+      "expectedType": "fictitious_receipt",
+      "note": "Zugangsfiktion"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Rechnung ist innerhalb von 30 Tagen nach Zugang ohne Abzug fällig.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Der Kunde darf die Einhaltung der Lizenzbedingungen nach vorheriger Abstimmung mit einer",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Kosten einer berechtigten Prüfung trägt die Partei, die sie veranlasst hat.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Anbieterin sichert eine Verfügbarkeit von 99,5 Prozent pro Kalendermonat zu.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Anbieterin stellt dem Kunden bei Vertragsende eine vollständige Kopie aller Kundendaten in",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Vertragsparteien behandeln die wechselseitig offengelegten Informationen vertraulich.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    }
+  ],
+  "uncovered": []
+}

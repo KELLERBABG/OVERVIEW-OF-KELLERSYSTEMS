@@ -1,0 +1,115 @@
+DATENRAUMVEREINBARUNG
+
+zwischen
+
+der Donaublick GmbH, Willi-Brandt-Platz 3, 45127 Essen (nachfolgend Betreiber)
+
+und
+
+der Birkental GmbH, Friedrichstraße 90, 10117 Berlin (nachfolgend Nutzer)
+
+Präambel
+
+Der Betreiber stellt dem Nutzer den in Anlage 5 bezeichneten Datenraum zur Verfügung. Es gelten die nachstehenden Bedingungen.
+
+§ 20 Umsetzung
+
+Anregungen und Vorschläge des Kunden gehen unentgeltlich in das Eigentum des Anbieters über.
+
+§ 21 Beachtung
+
+Der Kunde kann diesen Vertrag ohne Angabe von Gründen zum Monatsende kündigen.
+
+§ 1 Allgemeines
+
+Mitteilungen gelten nach Absendung als dem Kunden zugegangen, unabhängig vom tatsächlichen Zugang.
+
+§ 2 Bestimmung
+
+Der Lizenzgeber räumt dem Lizenznehmer ein einfaches, nicht ausschließliches Nutzungsrecht für den vereinbarten Zweck ein.
+
+§ 3 Regelung
+
+Die angegebene Verfügbarkeit von 99,9 % ist unverbindlich und begründet keine Ansprüche.
+
+§ 4 Vereinbarung
+
+Der Nutzungsumfang ist auf den in der Präambel bezeichneten Zweck beschränkt.
+
+§ 5 Modalität
+
+Für Direktgeschäfte des Kunden steht dem Anbieter keine Provision zu.
+
+§ 6 Ordnung
+
+Jede Partei kann diesen Vertrag zum Quartalsende ordentlich kündigen.
+
+§ 7 Ausgestaltung
+
+Der Anbieter hat keinen Anspruch auf Ausgleich für den aufgebauten Kundenstamm.
+
+§ 8 Durchführung
+
+Der Anbieter stellt sicher, dass die von ihm eingesetzten Nachunternehmer dieselben Datenschutzstandards einhalten.
+
+§ 9 Vorkehrung
+
+Die Verarbeitung personenbezogener Daten erfolgt ausschließlich außerhalb der Europäischen Union in den Vereinigten Staaten.
+
+§ 10 Zusatz
+
+Sämtliche Open-Source-Komponenten werden in der Anlage 2 mit ihren jeweiligen Lizenzen aufgeführt.
+
+§ 11 Klarstellung
+
+Für Streitigkeiten über die Bewertung der Sicherheiten wird ein Sachverständigenverfahren durchgeführt. Die Verfahrenskosten sind vom Kunden vorauszuzahlen. Der gerichtliche Rechtsweg ist erst nach Abschluss des Verfahrens eröffnet.
+
+§ 12 Ergänzung
+
+Die gesetzliche Haftung für Vorsatz und grobe Fahrlässigkeit sowie für Personenschäden bleibt unberührt.
+
+§ 13 Verfahren
+
+Versäumt der Kunde einen Sicherheitspatch, verfällt sein Anspruch auf Service-Gutschriften.
+
+§ 14 Ausführung
+
+Der Auftraggeber kann den Vertrag aus wichtigem Grund jederzeit fristlos beenden.
+
+§ 15 Hinweis
+
+Der Auftraggeber trägt für jedes Auskunftsersuchen eine Bearbeitungsgebühr von fünfzig Euro.
+
+§ 16 Maßnahme
+
+Die Anlagen 1 bis 3 sind Bestandteil dieses Vertrages.
+
+§ 17 Vorgehen
+
+Der Kunde erhält vierteljährlich einen schriftlichen Kontoauszug.
+
+§ 18 Abstimmung
+
+Die Anlagen sind Bestandteil dieses Vertrages.
+
+§ 19 Koordination
+
+Begriffe, die im Vertrag definiert sind, werden einheitlich verwendet.
+
+§ 20 Umsetzung
+
+Der Vertrag tritt mit Unterzeichnung durch beide Parteien in Kraft.
+
+§ 21 Beachtung
+
+Jede Partei ist berechtigt, die Vertragsdurchführung durch einen Wirtschaftsprüfer prüfen zu lassen, soweit dies gesetzlich erforderlich ist.
+
+§ 1 Allgemeines
+
+Änderungen und Ergänzungen dieses Vertrages bedürfen der Textform.
+
+Ort, Datum: ______________________
+
+Für Betreiber: ______________________
+
+Für Nutzer: ______________________

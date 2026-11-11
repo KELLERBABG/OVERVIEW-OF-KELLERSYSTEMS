@@ -1,0 +1,69 @@
+{
+  "slug": "saas-003",
+  "source": "generated",
+  "domain": "Software-Abonnement CRM, Schweizer Recht",
+  "traps": [
+    {
+      "marker": "Die Anbieterin darf die Betriebsdaten zur Weiterentwicklung ihrer Modelle nutzen.",
+      "expectedType": "data_grant",
+      "note": "Paraphrase. Datennutzung fuer internes Modelltraining."
+    },
+    {
+      "marker": "Verarbeitung der Nutzungsdaten erfolgt in einem Drittland",
+      "expectedType": "international_data_processing",
+      "note": "Verarbeitung in einem Drittland ohne Angemessenheitsbeschluss."
+    },
+    {
+      "marker": "Die Nennung als Referenzkunde erfolgt ohne gesonderte Zustimmung.",
+      "expectedType": "marketing_reference",
+      "note": "Paraphrase. Referenznutzung ohne gesonderte Zustimmung."
+    },
+    {
+      "marker": "achtzehn Monaten nach Beendigung des Vertrags keine konkurrierende Cloudlösung",
+      "expectedType": "non_compete",
+      "note": "Nachvertragliches Wettbewerbsverbot ohne Karenz."
+    },
+    {
+      "marker": "kritische Aktualisierung, verfällt der Anspruch auf Servicegutschriften",
+      "expectedType": "service_credit_forfeiture",
+      "note": "Verfall von Servicegutschriften bei fehlendem Patch."
+    },
+    {
+      "marker": "Die Verfahrenskosten trägt der Besteller und hat sie vorauszuzahlen",
+      "expectedType": "mandatory_expert_determination",
+      "note": "Zwangssachverstaendigenverfahren mit Kostenvorschuss."
+    },
+    {
+      "marker": "Rechtsstreitigkeiten sind ausschließlich vor den Gerichten am Sitz des Anbieters auszutragen.",
+      "expectedType": "jurisdiction",
+      "note": "Paraphrase. Gerichtsstand am Sitz der Anbieterin."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "haftet für Schäden, die sie oder ihre Hilfspersonen durch grobe Fahrlässigkeit",
+      "note": "Haftung fuer grobe Fahrlaessigkeit."
+    },
+    {
+      "marker": "jeweils zum Ende eines Kalenderjahres beenden",
+      "note": "Faires Beendigungsrecht ohne Fristbindung."
+    },
+    {
+      "marker": "sichert eine Verfügbarkeit von 99,5 Prozent pro Kalendermonat zu",
+      "note": "Verbindliche SLA-Zusage."
+    },
+    {
+      "marker": "nach Wahl des Kunden gelöscht oder in einem gängigen Format exportiert",
+      "note": "Freie Datenrueckgabe."
+    },
+    {
+      "marker": "Änderungen dieses Vertrags erfolgen nur einvernehmlich",
+      "note": "Einvernehmliche Aenderungen ohne Formerfordernis."
+    },
+    {
+      "marker": "bei Zahlungsverzug der anderen Partei nach Ablauf einer Nachfrist von 30 Tagen kündigen",
+      "note": "Wechselseitiges Kuendigungsrecht bei Verzug."
+    }
+  ],
+  "uncovered": []
+}

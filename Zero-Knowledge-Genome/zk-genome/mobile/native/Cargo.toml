@@ -1,0 +1,25 @@
+[package]
+name = "zk-genome-mobile"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Rust → mobile FFI bindings (uniffi) — exposes core library to Kotlin/Swift"
+
+[dependencies]
+zk-genome-genome-core = { path = "../../core/genome-core" }
+zk-genome-genome-parser = { path = "../../core/genome-parser" }
+zk-genome-genome-normalizer = { path = "../../core/genome-normalizer" }
+zk-genome-genome-reference = { path = "../../core/genome-reference" }
+zk-genome-genome-compress = { path = "../../core/genome-compress" }
+zk-genome-genome-annotate = { path = "../../core/genome-annotate" }
+zk-genome-genome-ingestion = { path = "../../core/genome-ingestion" }
+zk-genome-query-engine = { path = "../../core/query-engine" }
+zk-genome-entropy-auditor = { path = "../../core/entropy-auditor" }
+zk-genome-storage-traits = { path = "../../core/storage-traits" }
+zk-genome-zk-core = { path = "../../core/zk-core" }
+
+[lints]
+workspace = true
+
+[lib]
+crate-type = ["staticlib", "cdylib"]

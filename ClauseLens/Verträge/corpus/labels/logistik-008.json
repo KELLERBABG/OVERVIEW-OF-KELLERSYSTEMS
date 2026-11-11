@@ -1,0 +1,93 @@
+{
+  "slug": "logistik-008",
+  "source": "generated",
+  "domain": "Kontraktlogistik Chemie",
+  "traps": [
+    {
+      "marker": "Haftung des Anbieters ist der Höhe nach auf fünfzig Prozent",
+      "expectedType": "liability",
+      "note": "Red-team Klausel: liability"
+    },
+    {
+      "marker": "Nachträgliche Abgabenbelastungen trägt der Kunde",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Red-team Klausel: tax_indemnity_shift"
+    },
+    {
+      "marker": "auf Servern außerhalb der Europäischen Union verarbeitet",
+      "expectedType": "international_data_processing",
+      "note": "Red-team Klausel: international_data_processing"
+    },
+    {
+      "marker": "gehen unentgeltlich in das Eigentum des Anbieters über",
+      "expectedType": "feedback_ip_grab",
+      "note": "Red-team Klausel: feedback_ip_grab"
+    },
+    {
+      "marker": "bemüht sich nach besten Kräften um eine hohe Verfügbarkeit",
+      "expectedType": "unverbindliche_sla_falle",
+      "note": "Red-team Klausel: unverbindliche_sla_falle"
+    },
+    {
+      "marker": "Mitteilungen gelten mit Absendung als zugegangen",
+      "expectedType": "fictitious_receipt",
+      "note": "Red-team Klausel: fictitious_receipt"
+    },
+    {
+      "marker": "Audit ohne vorherige Ankündigung durchzuführen",
+      "expectedType": "unreasonable_audit",
+      "note": "Red-team Klausel: unreasonable_audit"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien behandeln die Analysedaten vertraulich",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "innerhalb von 30 Tagen ohne Abzug zahlbar",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "erforderlichen Nachweise zur Verfügung",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "informiert den Kunden über die eingesetzten Unterauftragnehmer",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "seine Analysedaten jederzeit in einem gängigen Format exportieren",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "nach technischer Machbarkeit",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "geplante Stillstände vier Wochen im Voraus",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "zustellfähige Anschrift im Portal",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Prüfunterlagen für die Gefahrstofflagerung bereit",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "zur außerordentlichen Kündigung aus wichtigem Grund bleiben unberührt",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "10.2 Es gilt deutsches Recht.",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

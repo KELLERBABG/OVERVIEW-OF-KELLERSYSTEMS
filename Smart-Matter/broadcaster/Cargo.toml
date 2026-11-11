@@ -1,0 +1,10 @@
+[package]
+name = "smart-matter-broadcaster"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Sovereign localized broadcaster with RSSI geo-fencing"
+
+[dependencies]
+smart-matter-core = { path = "../firmware/core" }
+heapless = { version = "0.8", features = ["serde"] }

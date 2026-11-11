@@ -1,0 +1,32 @@
+[package]
+name = "smpc-cli"
+version.workspace = true
+edition.workspace = true
+description = "SMPC Dark Pool CLI for testing and node operation"
+
+[dependencies]
+sss = { path = "../crates/sss" }
+smpc-engine = { path = "../crates/smpc-engine" }
+homomorphic-compare = { path = "../crates/homomorphic-compare" }
+commitments = { path = "../crates/commitments" }
+matching-engine = { path = "../crates/matching-engine" }
+price-discovery = { path = "../crates/price-discovery" }
+threshold-crypto = { path = "../crates/threshold-crypto" }
+zk-validation = { path = "../crates/zk-validation" }
+front-running = { path = "../crates/front-running" }
+settlement = { path = "../crates/settlement" }
+bft = { path = "../crates/bft" }
+node = { path = "../crates/node" }
+ark-bn254.workspace = true
+ark-ff.workspace = true
+anyhow.workspace = true
+clap.workspace = true
+tokio.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+rand.workspace = true
+hex.workspace = true
+uuid.workspace = true
+
+[lints]
+rust.unsafe_code = "forbid"

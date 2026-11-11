@@ -1,0 +1,34 @@
+[package]
+name = "smart-matter-node"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Main firmware for Smart Matter embedded compute nodes"
+
+[dependencies]
+# Core protocol logic. `std` is enabled by the `host` feature only, so the
+# embedded build stays fully `no_std`.
+smart-matter-core = { path = "../core", default-features = false }
+heapless = { version = "0.8", features = ["serde"] }
+libm = "0.2"
+
+# --- Embedded target (feature "embedded") -----------------------------------
+cortex-m = { version = "0.7", optional = true }
+cortex-m-rt = { version = "0.7", optional = true }
+panic-halt = { version = "0.2", optional = true }
+stm32g0xx-hal = { version = "0.2", features = ["stm32g031"], optional = true }
+
+[features]
+# `host` (default): the node loop runs as a normal desktop binary with
+# simulated sensors/radio — used for testing and demos (`cargo run -p
+# smart-matter-node -- --ticks 60`).
+default = ["host"]
+host = ["smart-matter-core/std"]
+# `embedded`: Cortex-M0+ firmware (`--no-default-features --features embedded
+# --target thumbv6m-none-eabi`).
+embedded = [
+    "dep:cortex-m",
+    "dep:cortex-m-rt",
+    "dep:panic-halt",
+    "dep:stm32g0xx-hal",
+]

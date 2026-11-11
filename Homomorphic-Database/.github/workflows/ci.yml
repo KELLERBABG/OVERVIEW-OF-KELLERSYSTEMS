@@ -1,0 +1,118 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  quality:
+    name: Build, test, lint, format
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          # The workspace pins a custom target dir in `.cargo/config.toml`;
+          # the cache key must stay stable across runs regardless.
+          key: fhe-db
+
+      # Release profile: FHE tests are impractical (and disk-hungry) in
+      # debug builds; the workspace documents `--release` as the standard.
+      - name: Build (release)
+        run: cargo build --release --workspace
+
+      - name: Test (release)
+        run: cargo test --release --workspace
+
+      - name: Clippy (deny warnings)
+        run: cargo clippy --workspace --all-targets -- -D warnings
+
+      - name: Format check
+        run: cargo fmt --all -- --check
+
+  fuzz:
+    name: Fuzz (envelope + snapshot deserialization)
+    # libFuzzer requires clang, which the repo's Windows-GNU build host
+    # lacks; ubuntu has it. The fuzz crate is a standalone workspace
+    # (`fuzz/`), so the main quality job above is unaffected.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dtolnay/rust-toolchain@nightly
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          key: fhe-db-fuzz
+
+      - name: Install cargo-fuzz
+        run: cargo install cargo-fuzz --locked
+
+      - name: Build fuzz targets
+        run: cargo fuzz build
+
+      - name: Smoke-fuzz envelope deserialization (50k runs)
+        run: timeout 300 cargo fuzz run fuzz_envelope -- -runs=50000 -max_len=4096
+
+      - name: Smoke-fuzz DB snapshot deserialization (20k runs)
+        run: timeout 300 cargo fuzz run fuzz_db_snapshot -- -runs=20000 -max_len=8192
+
+      - name: Format check
+        run: cargo fmt --all -- --check
+
+  bench:
+    name: Benchmarks (smoke + guards)
+    # Criterion timings are not comparable across CI runner hardware, so this
+    # job only smoke-runs the criterion suite (keeps it green) while the
+    # hardware-robust ceiling guards run inside `cargo test` (quality job).
+    # For a same-machine baseline comparison see scripts/check-bench-regression.sh.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          key: fhe-db-bench
+
+      - name: Smoke-run benchmark suite (quick)
+        run: cargo bench -p fhe-core --bench envelope -- --quick --noplot
+
+  tls:
+    name: TLS feature (HTTPS)
+    # The `fhe-server` `tls` feature pulls rustls' aws-lc-rs provider, which
+    # requires a C compiler (not available on the repo's Windows-GNU build
+    # host). Ubuntu has gcc, so this job owns the TLS build + tests.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          key: fhe-db-tls
+
+      - name: Build fhe-server with TLS
+        run: cargo build --release -p fhe-server --features tls
+
+      - name: TLS integration test (real rustls listener)
+        run: cargo test --release -p fhe-server --features tls tls_serves_https_with_auth
+
+      - name: Clippy with TLS (deny warnings)
+        run: cargo clippy -p fhe-server --features tls --all-targets -- -D warnings
+
+      - name: Format check
+        run: cargo fmt --all -- --check

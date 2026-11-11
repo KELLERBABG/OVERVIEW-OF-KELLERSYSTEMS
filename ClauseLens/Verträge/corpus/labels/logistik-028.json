@@ -1,0 +1,81 @@
+{
+  "slug": "logistik-028",
+  "source": "generated",
+  "domain": "Facility Management Technik",
+  "traps": [
+    {
+      "marker": "Mangels Wartungsvereinbarung erfolgt eine Stilllegung der Anlage.",
+      "expectedType": "maintenance_conditional_shutdown",
+      "note": "Red-team Klausel: maintenance_conditional_shutdown"
+    },
+    {
+      "marker": " Sicherheitspatch nicht binnen sieben Tagen installiert, entfällt",
+      "expectedType": "service_credit_forfeiture",
+      "note": "Red-team Klausel: service_credit_forfeiture"
+    },
+    {
+      "marker": "Der Kunde akzeptiert das Buchungssystem wie besehen.",
+      "expectedType": "as_is_software_disclaimer",
+      "note": "Red-team Klausel: as_is_software_disclaimer"
+    },
+    {
+      "marker": "Die Herausgabe der Daten erfolgt nur gegen eine gesonderte Gebühr.",
+      "expectedType": "data_lockin",
+      "note": "Red-team Klausel: data_lockin"
+    },
+    {
+      "marker": "Die Systemprotokolle des Anbieters gelten als Vollbeweis für die Einhaltung der Wartungsintervalle.",
+      "expectedType": "audit_log_manipulation",
+      "note": "Red-team Klausel: audit_log_manipulation"
+    },
+    {
+      "marker": "Zinsen werden mit zwölf Prozentpunkten über dem Basiszinssatz berechnet.",
+      "expectedType": "default_interest",
+      "note": "Red-team Klausel: default_interest"
+    },
+    {
+      "marker": "Ausschließlich zuständig sind die Gerichte am Sitz des Anbieters.",
+      "expectedType": "jurisdiction",
+      "note": "Red-team Klausel: jurisdiction"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Wartungspläne monatlich ab",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Prüfungen nach Betriebssicherheitsverordnung durch",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "monatlich einen Verfügbarkeitsbericht bereit",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "behebt Störungen des Leitsystems innerhalb von vier Stunden",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "informiert den Kunden über geplante Wartungsarbeiten",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Protokolle während der Geschäftszeiten einsehen",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "innerhalb von 30 Tagen ohne Abzug zahlbar",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Beide Parteien behandeln die Betriebsdaten vertraulich",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Unterauftragnehmer mit einer Vorlaufzeit von vierzehn Tagen",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

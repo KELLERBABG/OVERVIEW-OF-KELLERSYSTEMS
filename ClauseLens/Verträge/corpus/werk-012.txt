@@ -1,0 +1,70 @@
+Werkvertrag über die Aktenverwaltung einer Wirtschaftskanzlei
+
+zwischen JuraCloud GmbH, Heidelberg (nachfolgend Anbieter) und Legal Data Systems AG, Karlsruhe (nachfolgend Kunde).
+
+Präambel
+Die Parteien beabsichtigen die in § 1 beschriebene Zusammenarbeit. Der Anbieter erbringt die Leistungen, der Kunde vergütet sie. Die Parteien vereinbaren Folgendes.
+
+§ 1 Gegenstand
+Gegenstand des Vertrages ist die Einrichtung und Betreuung der Aktenverwaltung gemäß Anlage 1.
+
+§ 2 Leistungsumfang
+Der Anbieter erbringt die Leistungen gemäß Anlage 1 und dokumentiert die Ergebnisse.
+
+§ 3 Wettbewerbsverbot
+(3) Nach Auslaufen des Vertrages enthält sich der Kunde für achtzehn Monate jeder Wettbewerbstätigkeit; eine Karenzentschädigung wird nicht gezahlt.
+
+§ 4 Verjährung
+(4) Die Ansprüche des Kunden verwirken mit Ablauf von vierundzwanzig Monaten.
+
+§ 5 Datenrückgabe
+(5) Für die Herausgabe der Daten wird eine Gebühr von 2.500 EUR berechnet.
+
+§ 6 Abwerbeverbot
+(6) Es ist untersagt, Mitarbeiter der anderen Partei abzuwerben.
+
+§ 7 Eigentumsvorbehalt
+(7) Das Material bleibt Eigentum des Anbieters, bis der Kunde alle Verbindlichkeiten aus der Geschäftsbeziehung beglichen hat.
+
+§ 8 Vertraulichkeit
+(8) Die Geheimhaltungspflicht trifft nur den Kunden.
+
+§ 9 Zugang von Erklärungen
+(9) Auf den tatsächlichen Abruf kommt es nicht an.
+
+§ 10 Zahlungsverzug und Zinsen
+(10) Der Zinssatz beträgt zwölf Prozent jährlich.
+
+§ 11 Höhere Gewalt
+(11) Bei höherer Gewalt ist der Anbieter von der Leistungspflicht befreit, während die Zahlungspflicht des Kunden unberührt bleibt.
+
+§ 12 Prüfungen
+(12) Prüfungen erfolgen nur bei konkretem Anlass und nach Ankündigung mit einer Frist von dreißig Tagen.
+
+§ 13 Recht
+(13) Dieser Vertrag unterliegt deutschem Recht.
+
+§ 14 Aufrechnung
+(14) Beide Parteien können mit unbestrittenen Forderungen aufrechnen.
+
+§ 15 Fristen
+(15) Alle Fristen werden in Kalendertagen gerechnet.
+
+§ 16 Abnahme
+(16) Für Mängel während der Gewährleistung leistet der Anbieter kostenfrei Nacherfüllung.
+
+§ 17 Sicherheit
+(17) Der Anbieter meldet Sicherheitsvorfälle unverzüglich an den Kunden.
+
+§ 18 Störungen
+(18) Die Vertragsparteien informieren sich unverzüglich über Störungen.
+
+§ 19 Vollständigkeit
+(19) Der Kunde erhält Zugang zu einer Testumgebung.
+
+Anlage 1: Leistungsbeschreibung
+Anlage 2: Servicezeiten
+
+Heidelberg, den 3. Februar 2026
+JuraCloud GmbH
+Legal Data Systems AG

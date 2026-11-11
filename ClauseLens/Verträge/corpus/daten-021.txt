@@ -1,0 +1,115 @@
+OPEN-SOURCE-COMPLIANCE-VEREINBARUNG
+
+zwischen
+
+der Ulmenhof AG, Ballindamm 31, 20095 Hamburg (nachfolgend Anbieter)
+
+und
+
+der Sommerfeld AG, Georgstraße 11, 40474 Düsseldorf (nachfolgend Kunde)
+
+Präambel
+
+Der Anbieter liefert die in Anlage 4 bezeichnete Software, die Open-Source-Komponenten enthält. Es gelten die nachstehenden Bedingungen.
+
+§ 17 Vorgehen
+
+Nachträgliche Abgabenbelastungen trägt der Kunde.
+
+§ 18 Abstimmung
+
+Die Parteien veröffentlichen Ergebnisse der gemeinsamen Forschung nur im gegenseitigen Einvernehmen.
+
+§ 19 Koordination
+
+Die Verschwiegenheitsverpflichtung obliegt ausschließlich dem Kunden.
+
+§ 20 Umsetzung
+
+Beide Parteien verpflichten sich, alle vertraulichen Informationen der jeweils anderen Seite mit der gebotenen Sorgfalt geheim zu halten.
+
+§ 21 Beachtung
+
+Sämtliche Zusicherungen zur Funktionsfähigkeit sind nicht Bestandteil dieses Vertrages.
+
+§ 1 Allgemeines
+
+Die Bank gibt dem Kunden spätestens zehn Werktage vor einer beabsichtigten Kontoauflösung eine schriftliche Ankündigung.
+
+§ 2 Bestimmung
+
+Sämtliche zuvor kommunizierten Kostenschätzungen treten außer Kraft.
+
+§ 3 Regelung
+
+Die Kündigung aus wichtigem Grund bleibt beiden Parteien unbenommen.
+
+§ 4 Vereinbarung
+
+Der Anbieter darf den Firmennamen des Kunden zu Referenzzwecken auf der Website nennen.
+
+§ 5 Modalität
+
+Der Auftragnehmer meldet Datenschutzverletzungen unverzüglich an den Auftraggeber.
+
+§ 6 Ordnung
+
+Anregungen und Vorschläge des Kunden gehen unentgeltlich in das Eigentum des Anbieters über.
+
+§ 7 Ausgestaltung
+
+Der Auftragnehmer informiert den Auftraggeber mindestens vierzehn Tage vor dem Einsatz eines Unterauftragnehmers.
+
+§ 8 Durchführung
+
+Mitteilungen gelten nach Absendung als dem Kunden zugegangen, unabhängig vom tatsächlichen Zugang.
+
+§ 9 Vorkehrung
+
+Zahlungen des Kunden werden binnen zwei Werktagen nach Eingang auf dem Geschäftskonto verbucht.
+
+§ 10 Zusatz
+
+Die angegebene Verfügbarkeit von 99,9 % ist unverbindlich und begründet keine Ansprüche.
+
+§ 11 Klarstellung
+
+Der Auftragnehmer verarbeitet personenbezogene Daten ausschließlich auf dokumentierte Weisung des Auftraggebers.
+
+§ 12 Ergänzung
+
+Der Auftraggeber trägt für jedes Auskunftsersuchen eine Bearbeitungsgebühr von fünfzig Euro.
+
+§ 13 Verfahren
+
+Begriffe, die im Vertrag definiert sind, werden einheitlich verwendet.
+
+§ 14 Ausführung
+
+Der Vertrag tritt mit Unterzeichnung durch beide Parteien in Kraft.
+
+§ 15 Hinweis
+
+Jede Partei ist berechtigt, die Vertragsdurchführung durch einen Wirtschaftsprüfer prüfen zu lassen, soweit dies gesetzlich erforderlich ist.
+
+§ 16 Maßnahme
+
+Änderungen und Ergänzungen dieses Vertrages bedürfen der Textform.
+
+§ 17 Vorgehen
+
+Die Präambel beschreibt den Zweck der Zusammenarbeit.
+
+§ 18 Abstimmung
+
+Die Parteien benennen bei Vertragsschluss die jeweiligen Ansprechpartner und Vertretungsberechtigten.
+
+§ 19 Koordination
+
+Die Vertragsparteien bestätigen die Vollständigkeit der in Bezug genommenen Anlagen.
+
+Ort, Datum: ______________________
+
+Für Anbieter: ______________________
+
+Für Kunde: ______________________

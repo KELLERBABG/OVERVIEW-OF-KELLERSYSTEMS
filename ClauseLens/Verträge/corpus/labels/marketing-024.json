@@ -1,0 +1,74 @@
+{
+  "slug": "marketing-024",
+  "source": "generated",
+  "domain": "PR-Agentur, österreichisches Recht",
+  "traps": [
+    {
+      "marker": "verzichtet auf das Recht zur außerordentlichen Kündigung",
+      "expectedType": "asymmetric_termination",
+      "note": "Verzicht auf ausserordentliche Kuendigung."
+    },
+    {
+      "marker": "für zwölf Monate keine Beschäftigten des Auftraggebers anzusprechen",
+      "expectedType": "non_solicitation",
+      "note": "Abwerbeverbot; vermeidet Mitarbeiter abzuwerben."
+    },
+    {
+      "marker": "Die Vertraulichkeitspflicht trifft nur den Auftraggeber",
+      "expectedType": "asymmetric_confidentiality",
+      "note": "Einseitige Vertraulichkeitspflicht."
+    },
+    {
+      "marker": "Die Darlegungs- und Beweislast für die Leistungserbringung obliegt dem Auftraggeber",
+      "expectedType": "burden_of_proof",
+      "note": "Beweislast beim Kunden."
+    },
+    {
+      "marker": "verjähren innerhalb von sechs Monaten",
+      "expectedType": "statute_of_limitations",
+      "note": "Verkuerzte Verjaehrungsfrist."
+    },
+    {
+      "marker": "durch eine interessengerechte Ersatzregelung ersetzt",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "Ersetzung durch interessengerechte Regelung."
+    },
+    {
+      "marker": "Für Handlungen beauftragter Dritter wird keine Verantwortung",
+      "expectedType": "vicarious_agents",
+      "note": "Freizeichnung fuer Dritte; vermeidet Erfuellungsgehilfe."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien wahren über die wechselseitig ausgetauschten Informationen Stillschweigen",
+      "note": "Symmetrische Verschwiegenheit."
+    },
+    {
+      "marker": "erhält der Auftraggeber die Pressespiegel kostenfrei in einem offenen Format",
+      "note": "Kostenfreier Datenexport."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende beenden",
+      "note": "Symmetrische Kündigung."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform zugelassen."
+    },
+    {
+      "marker": "innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Üblicher Zahlungstermin."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhaltung."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Auftragnehmer betreut die Presse- und Öffentlichkeitsarbeit des Auftraggebers",
+      "note": "Kein Detektor fuer Embargo- und Sperrfristen."
+    }
+  ]
+}

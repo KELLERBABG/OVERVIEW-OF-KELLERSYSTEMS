@@ -1,0 +1,6 @@
+# Development and CI tooling (not required by the production image).
+-r requirements.txt
+pytest>=8.0.0
+pytest-cov>=4.1.0
+ruff>=0.5.0
+alembic>=1.13.0

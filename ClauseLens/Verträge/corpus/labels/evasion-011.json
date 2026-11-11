@@ -1,0 +1,79 @@
+{
+  "slug": "evasion-011",
+  "source": "generated",
+  "domain": "evasion",
+  "traps": [
+    {
+      "marker": "Ein gutachterliches Verfahren ist vor Einleitung des gerichtlichen Rechtswegs durchzuführen. Die",
+      "expectedType": "mandatory_expert_determination",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: mandatory_expert_determination (Technik: split)."
+    },
+    {
+      "marker": "Kritische Aktualisierungen muss der Kunde unverzüglich einspielen,,",
+      "expectedType": "service_credit_forfeiture",
+      "note": "GAP: Falle über zwei Absätze verteilt. Erwartet: service_credit_forfeiture."
+    },
+    {
+      "marker": "Bei vorzeitiger Auflösung des Vertrags durch den Kunden wird eine,",
+      "expectedType": "early_termination_charge",
+      "note": "GAP: Falle über zwei Absätze verteilt. Erwartet: early_termination_charge."
+    },
+    {
+      "marker": "Ohne gültigen Wartungsvertrag kann der,",
+      "expectedType": "maintenance_conditional_shutdown",
+      "note": "GAP: Falle über zwei Absätze verteilt. Erwartet: maintenance_conditional_shutdown."
+    },
+    {
+      "marker": "Der Vertrag verlängert sich jeweils um ein weiteres Jahr, sofern er,",
+      "expectedType": "auto_renewal",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: auto_renewal (Technik: split)."
+    },
+    {
+      "marker": "Der Vertrag kann von beiden Parteien mit einer Frist von,",
+      "expectedType": "notice_period",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: notice_period (Technik: split)."
+    },
+    {
+      "marker": "Die Haftung des Anbieters für leicht fahrlässig verursachte Schäden ist ausgeschlossen,,",
+      "expectedType": "liability",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: liability (Technik: split)."
+    },
+    {
+      "marker": "Für jeden Verstoß gegen die Vertraulichkeitspflichten verpflichtet sich,",
+      "expectedType": "penalty",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: penalty (Technik: split)."
+    },
+    {
+      "marker": "Ausschließlicher Gerichtsstand für alle Streitigkeiten,",
+      "expectedType": "jurisdiction",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: jurisdiction (Technik: split)."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Anbieter überlässt dem Kunden die Daten in einem gängigen Format.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag aus wichtigem Grund ohne Einhaltung einer Frist kündigen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien benennen jeweils einen Ansprechpartner für die operative Zusammenarbeit.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien sind berechtigt, gegen fällige Forderungen aufzurechnen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde erhält Schulungen und Zugang zum Systemhandbuch in der jeweils aktuellen Fassung.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde informiert den Anbieter unverzüglich über wesentliche Störungen im Vertrieb.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    }
+  ],
+  "uncovered": []
+}

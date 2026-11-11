@@ -1,0 +1,74 @@
+{
+  "slug": "personal-012",
+  "source": "generated",
+  "domain": "Personalberatung",
+  "traps": [
+    {
+      "marker": "Bei einem Direktgeschäft steht dem Anbieter keine Provision zu",
+      "expectedType": "agency_commission_exclusion",
+      "note": "keine Provision bei Direktgeschäft"
+    },
+    {
+      "marker": "keinen Anspruch auf Ausgleich für den Kundenstamm",
+      "expectedType": "agency_goodwill_waiver",
+      "note": "kein Ausgleich für den Kundenstamm"
+    },
+    {
+      "marker": "die Geschäftsräume des Anbieters o​hne Vorankündigung zu betreten",
+      "expectedType": "unreasonable_audit",
+      "note": "Betreten ohne Vorankündigung"
+    },
+    {
+      "marker": "Steuernachforderungen aus der Vermittlung sind vollumfänglich vom Kunden zu tragen",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Steuernachforderungen zulasten des Kunden"
+    },
+    {
+      "marker": "Die personenbezogenen Daten werden außerhalb der Europäischen Union verarbeitet",
+      "expectedType": "international_data_processing",
+      "note": "Verarbeitung außerhalb der EU"
+    },
+    {
+      "marker": "Der Anbieter ist berechtigt, den Zugang ohne Vorankündigung zu sperren",
+      "expectedType": "service_suspension",
+      "note": "Sperrung ohne Vorankündigung"
+    },
+    {
+      "marker": "verpflichtet sich, alle Informationen vertraulich zu behandeln; für den Anbieter gilt dies nicht",
+      "expectedType": "asymmetric_confidentiality",
+      "note": "Vertraulichkeit nur einseitig"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Anbieter sucht Kandidaten für die Position des Werkleiters",
+      "note": "Suchauftrag"
+    },
+    {
+      "marker": "Der Anbieter führt die Erstgespräche persönlich durch",
+      "note": "Erstgespräche"
+    },
+    {
+      "marker": "Beide Parteien benennen eine Ansprechperson für die Abstimmung",
+      "note": "Ansprechpersonen"
+    },
+    {
+      "marker": "Der Kunde übermittelt die Stellenbeschreibung vor Beginn der Suche",
+      "note": "Stellenbeschreibung"
+    },
+    {
+      "marker": "Der Anbieter dokumentiert den Stand der Suche wöchentlich",
+      "note": "Dokumentation"
+    },
+    {
+      "marker": "Dieser Vertrag wird in zwei Ausfertigungen erstellt",
+      "note": "Ausfertigungen"
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Vertrag endet mit Abschluss der Vermittlung",
+      "note": "echtes Vertragsende ohne Automatik"
+    }
+  ]
+}

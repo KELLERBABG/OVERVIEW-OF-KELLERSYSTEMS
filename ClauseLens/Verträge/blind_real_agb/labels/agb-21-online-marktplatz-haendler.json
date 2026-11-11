@@ -1,0 +1,88 @@
+{
+  "slug": "agb-21-online-marktplatz-haendler",
+  "domain": "Plattform- & Marktplatzbedingungen für gewerbliche Verkäufer",
+  "source": "Blind Real-AGB Benchmark 2026 (vor Engine-Lauf gelabelt)",
+  "traps": [
+    {
+      "marker": "jederzeit in ihrer jeweils aktuellen Fassung unter https://seller-central.mercadox.eu/policies/current abrufbar",
+      "expectedType": "dynamic_url_referral",
+      "statutoryBasis": "§ 305 Abs. 2 BGB / § 307 Abs. 1 S. 2 BGB / Art. 3 P2B-VO",
+      "note": "Dynamischer Verweis auf externe Online-Richtlinien, die jederzeit ohne Ankündigung geändert werden können, verstößt gegen das Transparenzgebot und die P2B-Verordnung."
+    },
+    {
+      "marker": "sowie die prozentualen Verkaufsprovisionen jederzeit nach freiem Ermessen einseitig zu erhöhen",
+      "expectedType": "price_escalation",
+      "statutoryBasis": "§ 307 Abs. 1 BGB",
+      "note": "Einseitige Provisionserhöhung nach freiem Ermessen unter Ausschluss eines Sonderkündigungsrechts und ohne Weitergabe von Kostensenkungen."
+    },
+    {
+      "marker": "zur Entwicklung und zum Vertrieb eigener Handelsmarken (Private Labels) im direkten Wettbewerb zum Verkäufer",
+      "expectedType": "data_grant",
+      "statutoryBasis": "§ 307 Abs. 1 und 2 BGB / Art. 9 P2B-VO",
+      "note": "Unentgeltliche, zeitlich unbegrenzte Aneignung sensibler Geschäfts-, Einkaufs- und Absatzdaten des Händlers zur Nachahmung durch eigene Handelsmarken und zum Weiterverkauf."
+    },
+    {
+      "marker": "jederzeit sofort und ohne vorherige Begründung oder Abmahnung zu sperren, sobald eine einzelne negative Kundenbewertung",
+      "expectedType": "service_suspension",
+      "statutoryBasis": "§ 307 Abs. 1 BGB / Art. 4 P2B-VO",
+      "note": "Sofortige Kontosperrung ohne Begründung und ohne Abmahnung bereits bei einer einzelnen negativen Bewertung oder geringfügigem Verzug über 10 Euro verstößt gegen § 307 BGB und Art. 4 P2B-VO."
+    },
+    {
+      "marker": "erfolgt nur gegen Zahlung einer pauschalen Datenauslösungsgebühr in Höhe von 15.000,00 Euro netto",
+      "expectedType": "data_lockin",
+      "statutoryBasis": "§ 307 Abs. 1 und 2 BGB",
+      "note": "Daten-Lock-in durch Verweigerung des Exports gesetzlich aufbewahrungspflichtiger Buchhaltungs- und Steuerbelege außer gegen Zahlung eines Lösegelds von 15.000 Euro."
+    },
+    {
+      "marker": "auch dann, wenn der Rechtsverstoß ausschließlich durch eine fehlerhafte technische Vorgabe des Plattformbetreibers",
+      "expectedType": "third_party_indemnity",
+      "statutoryBasis": "§ 307 Abs. 2 Nr. 1 BGB",
+      "note": "Verschuldensunabhängige Freistellung des Plattformbetreibers selbst für Fehler in dessen eigener technischer Bestellabwicklung."
+    },
+    {
+      "marker": "oder die Verletzung wesentlicher Vertragspflichten (Kardinalpflichten) vollständig ausgeschlossen; hilfsweise ist die Gesamthaftung auf eine Monatsgrundgebühr (maximal 49,00 Euro)",
+      "expectedType": "liability",
+      "statutoryBasis": "§ 307 Abs. 2 Nr. 2 BGB",
+      "note": "Vollständiger Ausschluss bzw. Begrenzung auf 49 Euro bei Verletzung wesentlicher Vertragspflichten höhlt den Vertrag aus."
+    },
+    {
+      "marker": "unabhängig von ihrer Kaufmannseigenschaft – das Bezirksgericht in Singapur unter Ausschluss der deutschen Gerichtsbarkeit",
+      "expectedType": "jurisdiction",
+      "statutoryBasis": "§ 38 ZPO / § 307 BGB",
+      "note": "Ausschließlicher Gerichtsstand in Singapur auch für Nichtkaufleute schneidet inländischen Händlern den effektiven Rechtsschutz ab."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "richten sich nach den im Händlerportal transparent erläuterten Hauptparametern",
+      "note": "Rechtskonforme Transparenzangabe zu den Ranking-Parametern gemäß Art. 5 P2B-VO."
+    },
+    {
+      "marker": "zahlt die vereinnahmten Verkaufserlöse abzüglich der fälligen Provisionen im vierzehntägigen Turnus",
+      "note": "Ordnungsgemäße, regelmäßige Auszahlungsregelung für vereinnahmte Verkaufserlöse."
+    },
+    {
+      "marker": "das einfache Recht ein, die eingestellten Produktfotos und Artikelbeschreibungen zur Darstellung",
+      "note": "Vertragszweckgebundene, angemessene Lizenzierung der Produktfotos für die Laufzeit des Vertrages."
+    },
+    {
+      "marker": "haftet unbeschränkt für Vorsatz und grobe Fahrlässigkeit sowie bei Verletzung von Leben, Körper",
+      "note": "Gesetzeskonforme unbeschränkte Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden."
+    },
+    {
+      "marker": "jederzeit mit einer Frist von 30 Tagen in Textform ordentlich kündigen",
+      "note": "Faire, symmetrische 30-tägige Kündigungsfrist im Einklang mit Art. 4 P2B-VO."
+    },
+    {
+      "marker": "mit unbestrittenen oder rechtskräftig festgestellten Gegenforderungen aufrechnen",
+      "note": "Gesetzeskonforme Aufrechnungsmöglichkeit."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "im eigenen Online-Shop, im stationären Ladengeschäft oder auf anderen Internetplattformen zu einem günstigeren Preis",
+      "statutoryBasis": "Art. 101 AEUV / § 1 GWB / § 307 BGB",
+      "note": "Weite Bestpreisklausel (Preisparitätsverpflichtung über sämtliche Vertriebskanäle inkl. eigenem Shop und eigenem Ladengeschäft sowie eigenmächtiger Preiseingriff) ist kartell- und AGB-rechtlich unwirksam."
+    }
+  ]
+}

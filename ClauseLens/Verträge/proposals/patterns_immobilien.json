@@ -1,0 +1,600 @@
+{
+  "slice": "immobilien",
+  "patterns": [
+    {
+      "type": "unilateral_convenience_termination",
+      "regex": "(?:nur|allein|ausschlie(?:ß|ss)lich|lediglich)\\s+(?:der|die|das)\\s+(?:vermieter\\w*|verp(?:ä|ae)chter\\w*|anbieter\\w*|auftragnehmer\\w*|dienstleister\\w*|verk(?:ä|ae)ufer\\w*|verwalter\\w*|bautr(?:ä|ae)ger\\w*|betreiber\\w*)[^.!?;:\\n]{0,60}?berechtigt[^.!?;:\\n]{0,40}?(?:zu\\s+k(?:ü|ue)ndigen|die\\s+ordentliche\\s+k(?:ü|ue)ndigung)",
+      "flags": "i",
+      "closes": [
+        "immobilien-001:L24"
+      ],
+      "evidence": "nur der Vermieter ist berechtigt, ordentlich zu kuendigen",
+      "risk": "low"
+    },
+    {
+      "type": "liability",
+      "regex": "(?:haftung|schadensersatz|ersatzpflicht)[^.!?;:\\n]{0,100}?auf\\s+(?:(?:eine?|zwei|drei|vier|fünf|sechs|sieben|acht|neun|zehn)\\w*\\s+)?monatsmieten?[^.!?;:\\n]{0,40}?(?:begrenzt|gedeckelt|beschr(?:ä|ae)nkt|limitiert)",
+      "flags": "i",
+      "closes": [
+        "immobilien-001:L40",
+        "immobilien-003:L16"
+      ],
+      "evidence": " GATED: regex matcht, aber severity(liability) liefert null (src/analyze.js:513) - nur mit severity-seitiger Erweiterung schliessbar.",
+      "risk": "medium"
+    },
+    {
+      "type": "liability",
+      "regex": "(?:haftung|schadensersatz|ersatzpflicht)[^.!?;:\\n]{0,100}?auf\\s+(?:die\\s+h(?:ö|oe)he\\s+(?:des|der)\\s+)?(?:(?:zehn|zwanzig|fünfzig|hundert|\\d{1,3})\\s*(?:%|prozent)|architektenhonorar\\w*|honorar\\w*|kaufpreis\\w*|\\d[\\d.,]*\\s*(?:EUR|Euro))[^.!?;:\\n]{0,60}?(?:begrenzt|gedeckelt|beschr(?:ä|ae)nkt|limitiert)",
+      "flags": "i",
+      "closes": [
+        "immobilien-008:L32",
+        "immobilien-014:L28",
+        "immobilien-032:L36"
+      ],
+      "evidence": "auf zehn Prozent des Kaufpreises / auf die Hoehe des Architektenhonorars / auf 2.000 EUR begrenzt; 008 and 032 remain GATED: regex matcht, aber severity(liability) liefert null (src/analyze.js:513) - nur mit severity-seitiger Erweiterung schliessbar.",
+      "risk": "medium"
+    },
+    {
+      "type": "liability",
+      "regex": "weitergehende\\s+anspr(?:ü|ue)che[^.!?;:\\n]{0,100}?(?:mit\\s+der\\s+(?:verbesserung|nachbesserung|nacherf(?:ü|ue)llung|mangelbeseitigung)|durch\\s+die\\s+(?:verbesserung|nachbesserung))[^.!?;:\\n]{0,60}?abgegolten",
+      "flags": "i",
+      "closes": [
+        "immobilien-027:L28"
+      ],
+      "evidence": "weitergehende Ansprueche ... mit der Verbesserung abgegolten GATED: regex matcht, aber severity(liability) liefert null (src/analyze.js:513) - nur mit severity-seitiger Erweiterung schliessbar.",
+      "risk": "low"
+    },
+    {
+      "type": "maintenance_conditional_shutdown",
+      "regex": "mangels[^.!?;:\\n]{0,60}?(?:abgeschlossen\\w*\\s+)?wartungs(?:vertrag|vertrags|vereinbarung)\\w*[^.!?;:\\n]{0,90}?(?:abgeschaltet|abgeschalten|stillgelegt|au(?:ß|ss)er\\s+betrieb|gesperrt|eingestellt|nicht\\s+betrieben)",
+      "flags": "i",
+      "closes": [
+        "immobilien-002:L24"
+      ],
+      "evidence": "Mangels abgeschlossenem Wartungsvertrag ... abgeschaltet",
+      "risk": "low"
+    },
+    {
+      "type": "service_suspension",
+      "regex": "(?:verp(?:ä|ae)chter|vermieter\\w*|auftragnehmer\\w*|anbieter\\w*|dienstleister\\w*|betreiber\\w*|unternehmer\\w*)[^.!?;:\\n]{0,60}?(?:darf|kann|ist\\s+berechtigt|sind\\s+berechtigt)[^.!?;:\\n]{0,60}?(?:die\\s+|den\\s+|der\\s+)?(?:nutzung|zufahrt|einfahrt|baustellenzufahrt|versorgung|belieferung|leistung\\w*)[^.!?;:\\n]{0,60}?ohne\\s+(?:vorherige\\s+|weitere\\s+)?(?:ank(?:ü|ue)ndigung|vorank(?:ü|ue)ndigung|abmahnung|vorwarnung)[^.!?;:\\n]{0,60}?(?:einstellen|sperren|unterbrechen|aussetzen|blockieren|entziehen|verweigern)",
+      "flags": "i",
+      "closes": [
+        "immobilien-002:L28",
+        "immobilien-015:L20",
+        "immobilien-030:L28"
+      ],
+      "evidence": "darf die Nutzung ohne Abmahnung fristlos einstellen / kann die Baustellenzufahrt ohne Vorankuendigung sperren",
+      "risk": "low"
+    },
+    {
+      "type": "tax_indemnity_shift",
+      "regex": "nachtr(?:ä|ae)glich\\w*[^.!?;:\\n]{0,80}?(?:steuernachforderung\\w*|abgabenbelastung\\w*|belastung\\w*|steuer\\w*|abgabe\\w*)[^.!?;:\\n]{0,80}?tr(?:ä|ae)gt\\s+(?:der|die|das)\\s+\\w+[^.!?;:\\n]{0,40}?(?:vollumf(?:ä|ae)nglich|vollst(?:ä|ae)ndig|allein|zur\\s+g(?:ä|ae)nze)",
+      "flags": "i",
+      "closes": [
+        "immobilien-002:L36",
+        "immobilien-007:L40",
+        "immobilien-025:L20"
+      ],
+      "evidence": "Nachträgliche ... trägt der Pächter vollumfänglich",
+      "risk": "low"
+    },
+    {
+      "type": "fictitious_receipt",
+      "regex": "(?:gilt|gelten)[^.!?;:\\n]{0,70}?(?:absender(?:ü|ue)bergabe|absendung|(?:ü|ue)bergabe\\s+an\\s+(?:den\\s+)?(?:versanddienstleister|boten|kurier))[^.!?;:\\n]{0,70}?als\\s+zugegangen",
+      "flags": "i",
+      "closes": [
+        "immobilien-003:L28"
+      ],
+      "evidence": "gelten nach Absenderuebergabe ... als zugegangen",
+      "risk": "low"
+    },
+    {
+      "type": "unilateral_change",
+      "regex": "(?:vermieter|verp(?:ä|ae)chter|anbieter|auftragnehmer|dienstleister|verk(?:ä|ae)ufer|verwalter|betreiber)[^.!?;:\\n]{0,70}?(?:darf|kann|ist\\s+berechtigt)[^.!?;:\\n]{0,70}?(?:entgelte?|preise?|nebenkosten|kosten|bedingungen|leistungsbeschreibung|leistungsumfang|verg(?:ü|ue)tung|miete)[^.!?;:\\n]{0,70}?(?:nach\\s+billigem\\s+ermessen|einseitig|jederzeit|ohne\\s+zustimmung)[^.!?;:\\n]{0,50}?(?:an(?:zu)?gleichen|an(?:zu)?passen|zu\\s+ändern|zu\\s+erh(?:ö|oe)hen|festzusetzen|zu\\s+bestimmen)",
+      "flags": "i",
+      "closes": [
+        "immobilien-003:L40"
+      ],
+      "evidence": "darf die Nebenkosten nach billigem Ermessen angleichen",
+      "risk": "low"
+    },
+    {
+      "type": "unilateral_change",
+      "regex": "(?:änderungen|anpassungen)[^.!?;:\\n]{0,60}?(?:leistungsbeschreibung|leistungsumfang|bedingungen|entgelte|preise|nebenkosten)[^.!?;:\\n]{0,60}?(?:werden\\s+mit\\s+der|mit\\s+der)[^.!?;:\\n]{0,60}?(?:ver(?:ö|oe)ffentlichung|einstellung|bereitstellung|bekanntgabe)[^.!?;:\\n]{0,60}?wirksam",
+      "flags": "i",
+      "closes": [
+        "immobilien-013:L24"
+      ],
+      "evidence": "Änderungen der Leistungsbeschreibung werden mit der Veröffentlichung ... wirksam",
+      "risk": "low"
+    },
+    {
+      "type": "subcontractor_uncontrolled",
+      "regex": "(?:darf|d(?:ü|ue)rfen|kann|k(?:ö|oe)nnen|setzt|setzen|beauftragt|beauftragen)[^.!?;:\\n]{0,50}?ohne\\s+(?:vorherige\\s+|weitere\\s+)?(?:ank(?:ü|ue)ndigung|information|zustimmung)[^.!?;:\\n]{0,60}?(?:nachunternehmer\\w*|unterauftragnehmer\\w*|subunternehmer\\w*|dienstleister\\w*|systempartner\\w*)",
+      "flags": "i",
+      "closes": [
+        "immobilien-004:L16",
+        "immobilien-013:L28"
+      ],
+      "evidence": "darf/setzt ohne vorherige Ankuendigung/Information Nachunternehmer oder Dienstleister ein",
+      "risk": "low"
+    },
+    {
+      "type": "subcontractor_uncontrolled",
+      "regex": "(?:nachunternehmer\\w*|unterauftragnehmer\\w*|subunternehmer\\w*|dienstleister\\w*|systempartner\\w*)[^.!?;:\\n]{0,80}?ohne\\s+(?:vorherige\\s+|weitere\\s+)?(?:ank(?:ü|ue)ndigung|zustimmung|information)|(?:nachunternehmer\\w*|dienstleister\\w*)[^.!?;:\\n]{0,60}?ohne\\s+(?:den\\s+)?(?:besteller|auftraggeber|kunden|eigent(?:ü|ue)mer)\\w*\\s+zu\\s+informieren",
+      "flags": "i",
+      "closes": [
+        "immobilien-024:L40",
+        "immobilien-029:L24"
+      ],
+      "evidence": "beauftragt Nachunternehmer ohne Ankuendigung / setzt Nachunternehmer ein, ohne den Besteller zu informieren",
+      "risk": "low"
+    },
+    {
+      "type": "subcontractor_uncontrolled",
+      "regex": "(?:beauftragung|einsatz|hinzuziehung|auswahl|(?:ü|ue)bertragung)\\s+(?:von\\s+)?(?:nachunternehmern?|unterauftragnehmern?|subunternehmern?|systempartnern?|dritten|verbundenen\\s+gesellschaften)[^.!?;:\\n]{0,90}?(?:bedarf\\s+keiner?|ist\\s+nicht\\s+erforderlich|sind\\s+nicht\\s+erforderlich|erfolgt\\s+ohne)",
+      "flags": "i",
+      "closes": [
+        "immobilien-018:L36"
+      ],
+      "evidence": "Beauftragung von Systempartnern bedarf keiner vorherigen Zustimmung",
+      "risk": "low"
+    },
+    {
+      "type": "subcontractor_uncontrolled",
+      "regex": "(?:greift|greifen|bedient\\s+sich)[^.!?;:\\n]{0,50}?(?:auf\\s+)?(?:verbundene\\w*\\s+(?:gesellschaften|unternehmen)|konzernunternehmen|konzerngesellschaften|verbundene\\s+unternehmen)",
+      "flags": "i",
+      "closes": [
+        "immobilien-026:L28"
+      ],
+      "evidence": "greift auf verbundene Gesellschaften zurück (Satzgrenze ';' beachten: der Zustimmungsverzicht steht im Folgesatz)",
+      "risk": "medium"
+    },
+    {
+      "type": "audit_log_manipulation",
+      "regex": "(?:aufzeichnungen|protokolle|systemprotokolle|b(?:ü|ue)cher)[^.!?;:\\n]{0,80}?gelten\\s+als[^.!?;:\\n]{0,50}?(?:unwiderlegbar\\w*\\s+nachweis|unwiderlegbar|vollbeweis|verbindlich|ma(?:ß|ss)geblich)",
+      "flags": "i",
+      "closes": [
+        "immobilien-004:L20"
+      ],
+      "evidence": "Aufzeichnungen ... gelten als unwiderlegbarer Nachweis",
+      "risk": "low"
+    },
+    {
+      "type": "audit_log_manipulation",
+      "regex": "(?:gegenbeweis|gegenteilige[rn]?\\s+(?:nachweis|beweis)|abweichende\\s+nachweise?)[^.!?;:\\n]{0,60}?(?:ausgeschlossen|unzul(?:ä|ae)ssig|nicht\\s+zugelassen|ohne\\s+bedeutung)",
+      "flags": "i",
+      "closes": [
+        "immobilien-031:L28"
+      ],
+      "evidence": "ein Gegenbeweis ist ausgeschlossen",
+      "risk": "low"
+    },
+    {
+      "type": "asymmetric_confidentiality",
+      "regex": "(?:verschwiegenheits|geheimhaltungs|vertraulichkeits)pflicht[^.!?;:\\n]{0,60}?(?:obliegt|trifft|besteht)[^.!?;:\\n]{0,40}?(?:ausschlie(?:ß|ss)lich|allein|nur|lediglich)[^.!?;:\\n]{0,30}?(?:dem|den|der)\\s+(?:mieter|kunde|k(?:ä|ae)ufer|auftraggeber|p(?:ä|ae)chter|besteller|erwerber|eigent(?:ü|ue)mer|k(?:ä|ae)uferin)\\w*",
+      "flags": "i",
+      "closes": [
+        "immobilien-004:L28",
+        "immobilien-016:L32"
+      ],
+      "evidence": "Verschwiegenheitspflicht obliegt ausschließlich dem Mieter",
+      "risk": "low"
+    },
+    {
+      "type": "burden_of_proof",
+      "regex": "den\\s+(?:l(?:ü|ue)ckenlosen\\s+|vollst(?:ä|ae)ndigen\\s+)?nachweis[^.!?;:\\n]{0,70}?hat\\s+(?:der|die|das)\\s+(?:kunde|k(?:ä|ae)ufer|auftraggeber|besteller|mieter|p(?:ä|ae)chter|erwerber|auftragnehmer)[^.!?;:\\n]{0,30}?zu\\s+f(?:ü|ue)hren",
+      "flags": "i",
+      "closes": [
+        "immobilien-005:L20",
+        "immobilien-008:L24",
+        "immobilien-011:L28"
+      ],
+      "evidence": "Den lückenlosen Nachweis ... hat der Käufer zu führen",
+      "risk": "low"
+    },
+    {
+      "type": "price_escalation",
+      "regex": "(?:(?:beitr(?:ä|ae)ge|zins|preis|miete|entgelt|kosten|verg(?:ü|ue)tung)\\w*[^.!?;:\\n]{0,70}?(?:erh(?:ö|oe)h(?:t|en)\\s+sich|steigt|steigen)|(?:erh(?:ö|oe)h(?:t|en)\\s+sich|steigt|steigen)[^.!?;:\\n]{0,70}?(?:miete|entgelt|preis|beitr(?:ä|ae)ge|zins|kosten|verg(?:ü|ue)tung)\\w*)[^.!?;:\\n]{0,70}?um\\s+(?:bis\\s+zu\\s+)?(?:ein|zwei|drei|vier|fünf|sechs|sieben|acht|neun|zehn|elf|zw(?:ö|oe)lf|\\d{1,2}(?:[.,]\\d+)?)\\s*(?:%|prozent)",
+      "flags": "i",
+      "closes": [
+        "immobilien-006:L20",
+        "immobilien-007:L16",
+        "immobilien-008:L20",
+        "immobilien-016:L28"
+      ],
+      "evidence": "Erschliessungsbeitraege / Erbbauzins / Kaufpreis / Grundmiete erhöhen sich um N Prozent",
+      "risk": "low"
+    },
+    {
+      "type": "price_escalation",
+      "regex": "(?:miete|entgelt|preis|beitrag|zins|kosten|verg(?:ü|ue)tung)\\w*[^!?;:\\n]{0,80}?(?:wird|werden)[^!?;:\\n]{0,80}?um\\s+(?:bis\\s+zu\\s+)?(?:\\d{1,2}(?:[.,]\\d+)?|zwei|drei|vier|fünf|sechs|sieben|acht|neun|zehn|elf|zw(?:ö|oe)lf)\\s*(?:%|prozent)[^.!?;:\\n]{0,60}?(?:angehoben|erh(?:ö|oe)ht|an(?:zu)?heben)",
+      "flags": "i",
+      "closes": [
+        "immobilien-025:L24",
+        "immobilien-030:L20"
+      ],
+      "evidence": "Grundmiete wird zum 1. Januar um 4 Prozent angehoben (gap must tolerate the ordinal dot)",
+      "risk": "medium"
+    },
+    {
+      "type": "price_escalation",
+      "regex": "beh(?:ä|ae)lt\\s+sich[^.!?;:\\n]{0,60}?vor[^.!?;:\\n]{0,90}?um\\s+bis\\s+zu\\s+(?:\\d{1,2}(?:[.,]\\d+)?|zwei|drei|vier|fünf|sechs|sieben|acht|neun|zehn|elf|zw(?:ö|oe)lf)[^.!?;:\\n]{0,60}?(?:zu\\s+erh(?:ö|oe)hen|anzuheben|anzupassen)",
+      "flags": "i",
+      "closes": [
+        "immobilien-012:L16"
+      ],
+      "evidence": "behält sich vor, den Kaufpreis um bis zu acht Prozent zu erhöhen",
+      "risk": "low"
+    },
+    {
+      "type": "price_escalation",
+      "regex": "(?:kosten|preis)steigerungen[^.!?;:\\n]{0,90}?(?:vollumf(?:ä|ae)nglich|vollst(?:ä|ae)ndig|ungek(?:ü|ue)rzt)[^.!?;:\\n]{0,90}?weitergegeben",
+      "flags": "i",
+      "closes": [
+        "immobilien-013:L40"
+      ],
+      "evidence": "Kostensteigerungen ... vollumfänglich ... weitergegeben",
+      "risk": "low"
+    },
+    {
+      "type": "unverbindliche_sla_falle",
+      "regex": "bem(?:ü|ue)ht\\s+sich[^.!?;:\\n]{0,80}?(?:verf(?:ü|ue)gbarkeit|verf(?:ü|ue)gungsquote|verf(?:ü|ue)gbarkeitsquote|quote|reaktionszeit|servicezeit|ziel(?:gr(?:ö|oe)(?:ß|ss)e)?|standards?)[^.!?;:\\n]{0,80}?ohne\\s+(?:eine\\s+)?(?:zusage|garantie|rechtsanspruch|verbindliche\\s+zusage|verbindlichkeit)",
+      "flags": "i",
+      "closes": [
+        "immobilien-008:L16"
+      ],
+      "evidence": "bemüht sich um eine Vermietungsquote ... ohne eine Zusage zu geben",
+      "risk": "low"
+    },
+    {
+      "type": "written_form_trap",
+      "regex": "änderungen\\s+(?:des\\s+vertrags|dieses\\s+vertrags|der\\s+vereinbarung|wesentlicher\\s+vertragsbestandteile)[^.!?;:\\n]{0,60}?bed(?:ü|ue)rfen[^.!?;:\\n]{0,60}?(?:der\\s+)?(?:eigenh(?:ä|ae)ndigen\\s+unterzeichnung|notariellen\\s+beurkundung|schriftform|unterzeichnung\\s+beider\\s+parteien|pers(?:ö|oe)nlichen\\s+unterzeichnung)",
+      "flags": "i",
+      "closes": [
+        "immobilien-008:L28"
+      ],
+      "evidence": "Änderungen des Vertrags bedürfen der eigenhändigen Unterzeichnung beider Parteien",
+      "risk": "low"
+    },
+    {
+      "type": "jurisdiction",
+      "regex": "ausschlie(?:ß|ss)liche\\s+(?:zust(?:ä|ae)ndigkeit|gerichtsbarkeit|gerichtsstand)[^.!?;:\\n]{0,60}?(?:liegt\\s+bei|beim|bei\\s+dem|obliegt|ist\\s+bei)[^.!?;:\\n]{0,60}?(?:handelsgericht|gericht|gerichtshof|schiedsgericht|kammer)",
+      "flags": "i",
+      "closes": [
+        "immobilien-008:L36"
+      ],
+      "evidence": "Ausschließliche Zuständigkeit liegt beim Handelsgericht Wien",
+      "risk": "low"
+    },
+    {
+      "type": "agency_goodwill_waiver",
+      "regex": "ausgleich[^.!?;:\\n]{0,80}?(?:kundenstamm|kundenkreis|geworbene\\s+kunden|aufbau\\s+des\\s+kundenstamms)[^.!?;:\\n]{0,50}?(?:ist\\s+ausgeschlossen|ausgeschlossen|entf(?:ä|ae)llt|wird\\s+nicht\\s+gew(?:ä|ae)hrt|besteht\\s+nicht)",
+      "flags": "i",
+      "closes": [
+        "immobilien-009:L20"
+      ],
+      "evidence": "Ein Ausgleich für den ... Kundenstamm ist ausgeschlossen",
+      "risk": "low"
+    },
+    {
+      "type": "agency_goodwill_waiver",
+      "regex": "(?:kundenstamm|kundenkreis)[^.!?;:\\n]{0,80}?steht[^.!?;:\\n]{0,50}?kein\\w*\\s+ausgleich\\s+zu",
+      "flags": "i",
+      "closes": [
+        "immobilien-010:L20"
+      ],
+      "evidence": "Für den Aufbau des Kundenstamms steht dem Kunden kein Ausgleich zu",
+      "risk": "low"
+    },
+    {
+      "type": "early_termination_charge",
+      "regex": "(?:r(?:ü|ue)cktritt|r(?:ü|ue)ckzug|vorzeitige\\w*\\s+(?:beendigung|k(?:ü|ue)ndigung|vertragsaufl(?:ö|oe)sung))[^.!?;:\\n]{0,80}?(?:storno(?:geb(?:ü|ue)hr)?|abstandszahlung|beendigungsgeb(?:ü|ue)hr|pauschal\\w*\\s+(?:abstandszahlung|entsch(?:ä|ae)digung|verg(?:ü|ue)tung|geb(?:ü|ue)hr))[^.!?;:\\n]{0,60}?(?:geschuldet|f(?:ä|ae)llig|zu\\s+zahlen|zu\\s+entrichten|pauschal)",
+      "flags": "i",
+      "closes": [
+        "immobilien-011:L16"
+      ],
+      "evidence": "Bei Rücktritt des Käufers wird eine Stornogebühr pauschal geschuldet",
+      "risk": "low"
+    },
+    {
+      "type": "statute_of_limitations",
+      "regex": "anspr(?:ü|ue)che[^.!?;:\\n]{0,60}?verj(?:ä|ae)hren[^.!?;:\\n]{0,60}?(?:innerhalb\\s+von|binnen|nach|in)\\s+(?:(?<!\\d)(?:[1-9]|1[0-8]|einem|einer|zwei|drei|sechs|zw(?:ö|oe)lf))\\s+(?:jahr|monat|woche)\\w*",
+      "flags": "i",
+      "closes": [
+        "immobilien-012:L24"
+      ],
+      "evidence": "Ansprüche wegen Mängeln verjähren innerhalb von einem Jahr",
+      "risk": "low"
+    },
+    {
+      "type": "entire_agreement",
+      "regex": "fr(?:ü|ue)here\\w*[^.!?;:\\n]{0,60}?(?:absprachen?|vereinbarungen?|zusagen?|regelungen?)[^.!?;:\\n]{0,60}?treten[^.!?;:\\n]{0,60}?au(?:ß|ss)er\\s+kraft",
+      "flags": "i",
+      "closes": [
+        "immobilien-014:L36"
+      ],
+      "evidence": "Frühere Planungsabsprachen treten mit Unterzeichnung außer Kraft",
+      "risk": "low"
+    },
+    {
+      "type": "entire_agreement",
+      "regex": "(?:baubeschreibung|leistungsbeschreibung|anlage|vereinbarung|absprache|planung|preisliste)[^!?;:\\n]{0,60}?tritt\\s+mit\\s+unterzeichnung[^.!?;:\\n]{0,60}?au(?:ß|ss)er\\s+kraft",
+      "flags": "i",
+      "closes": [
+        "immobilien-027:L40"
+      ],
+      "evidence": "Die Baubeschreibung ... tritt mit Unterzeichnung ... außer Kraft",
+      "risk": "low"
+    },
+    {
+      "type": "force_majeure_asymmetry",
+      "regex": "h(?:ö|oe)here[rn]?\\s+gewalt[^.!?;:\\n]{0,120}?(?:befreit|entbindet|entbunden|befreien)[^.!?;:\\n]{0,120}?(?:w(?:ä|ae)hrend|jedoch|dennoch|gleichwohl|unver(?:ä|ae)ndert|unber(?:ü|ue)hrt|ungek(?:ü|ue)rzt)[^.!?;:\\n]{0,120}?(?:zahlungspflicht|vorauszahlungspflicht|pachtzins|kaufpreisraten|verg(?:ü|ue)tungspflicht|entgelt|zahlung|zu\\s+leisten|zu\\s+entrichten)",
+      "flags": "i",
+      "closes": [
+        "immobilien-017:L16"
+      ],
+      "evidence": "Bei höherer Gewalt ist allein der Bauträger ... entbunden, während die Zahlungspflicht ... unberührt bleibt",
+      "risk": "low"
+    },
+    {
+      "type": "force_majeure_asymmetry",
+      "regex": "(?:erf(?:ü|ue)llungspflichten|leistungspflichten|pflichten|lieferpflichten)[^.!?;:\\n]{0,60}?(?:entfallen|entf(?:ä|ae)llt|ruhen|werden\\s+ausgesetzt)[^.!?;:\\n]{0,80}?(?:ereignissen?\\s+|f(?:ä|ae)llen?\\s+)?h(?:ö|oe)herer\\s+gewalt[^.!?;:\\n]{0,80}?(?:zahlungspflicht|vorauszahlungspflicht|verg(?:ü|ue)tungspflicht|zahlungen?)[^.!?;:\\n]{0,60}?(?:besteht|bleibt|sind|ist|werden)[^.!?;:\\n]{0,40}?(?:unver(?:ä|ae)ndert|unber(?:ü|ue)hrt|ungek(?:ü|ue)rzt|fort|dennoch|weiter)",
+      "flags": "i",
+      "closes": [
+        "immobilien-019:L24"
+      ],
+      "evidence": "Erfüllungspflichten ... entfallen bei Ereignissen höherer Gewalt, die Vorauszahlungspflicht ... besteht unverändert fort",
+      "risk": "low"
+    },
+    {
+      "type": "force_majeure_asymmetry",
+      "regex": "(?:überschwemmung|naturereignis|naturkatastrophe|tierseuche|epidemie|pandemie|streik|krieg)[^.!?;:\\n]{0,80}?(?:befreit|entbunden|freigestellt|entlastet)[^.!?;:\\n]{0,90}?(?:w(?:ä|ae)hrend|jedoch|dennoch|gleichwohl|unver(?:ä|ae)ndert|unber(?:ü|ue)hrt|ungek(?:ü|ue)rzt)[^.!?;:\\n]{0,120}?(?:pachtzins|miete|zahlungspflicht|verg(?:ü|ue)tung|entgelt|kaufpreis\\w*|raten?)[^.!?;:\\n]{0,60}?(?:zu\\s+entrichten|zu\\s+zahlen|zu\\s+leisten|besteht|bleibt|geschuldet)",
+      "flags": "i",
+      "closes": [
+        "immobilien-020:L16"
+      ],
+      "evidence": "Bei Überschwemmung ... ist der Verpächter ... befreit, während der Pachtzins ungekürzt weiter zu entrichten ist",
+      "risk": "low"
+    },
+    {
+      "type": "marketing_reference",
+      "regex": "(?:als\\s+referenz(?:kunden?)?|zu\\s+referenzzwecken)[^.!?;:\\n]{0,90}?ohne\\s+(?:dass\\s+es\\s+)?(?:einer|der)\\s+(?:gesonderten\\s+|vorherigen\\s+|ausdr(?:ü|ue)cklichen\\s+)?zustimmung[^.!?;:\\n]{0,40}?(?:bedarf|bed(?:ü|ue)rfe)",
+      "flags": "i",
+      "closes": [
+        "immobilien-017:L28"
+      ],
+      "evidence": "als Referenzkunden ... benennen, ohne dass es einer gesonderten Zustimmung bedarf",
+      "risk": "low"
+    },
+    {
+      "type": "marketing_reference",
+      "regex": "(?:darf|kann|d(?:ü|ue)rfen|k(?:ö|oe)nnen)[^.!?;:\\n]{0,60}?(?:den|die|das)\\s+(?:kunden|k(?:ä|ae)ufer|mieter|auftraggeber|besteller|erwerber|p(?:ä|ae)chter)\\w*[^.!?;:\\n]{0,80}?als\\s+referenzkunden?\\s+(?:f(?:ü|ue)hren|nennen|benennen)",
+      "flags": "i",
+      "closes": [
+        "immobilien-022:L40"
+      ],
+      "evidence": "Der Verkäufer darf den Käufer zeitlich unbeschränkt als Referenzkunden führen",
+      "risk": "low"
+    },
+    {
+      "type": "data_grant",
+      "regex": "r(?:ä|ae)umt[^.!?;:\\n]{0,60}?das\\s+recht\\s+ein[^.!?;:\\n]{0,100}?(?:daten|informationen)[^.!?;:\\n]{0,100}?(?:f(?:ü|ue)r\\s+(?:die\\s+)?(?:entwicklung|eigene\\s+zwecke|prognosemodelle)|zu\\s+verwenden|zu\\s+verwerten|zu\\s+nutzen)",
+      "flags": "i",
+      "closes": [
+        "immobilien-018:L16"
+      ],
+      "evidence": "räumt dem Dienstleister das Recht ein, die Betriebsdaten ... für die Entwicklung eigener Prognosemodelle zu verwenden",
+      "risk": "low"
+    },
+    {
+      "type": "data_grant",
+      "regex": "(?:verp(?:ä|ae)chter|vermieter|anbieter|auftragnehmer|dienstleister|verk(?:ä|ae)ufer|auftraggeber|betreiber)[^.!?;:\\n]{0,60}?darf[^.!?;:\\n]{0,100}?(?:daten|informationen)[^.!?;:\\n]{0,80}?f(?:ü|ue)r\\s+eigene\\s+zwecke[^.!?;:\\n]{0,60}?(?:verwerten|nutzen|verwenden|auswerten|verarbeiten)",
+      "flags": "i",
+      "closes": [
+        "immobilien-020:L20"
+      ],
+      "evidence": "Der Verpächter darf die ... Ertrags- und Bodendaten für eigene Zwecke verwerten",
+      "risk": "low"
+    },
+    {
+      "type": "mandatory_expert_determination",
+      "regex": "(?:sachverst(?:ä|ae)ndigen(?:gutachten|verfahren)|gutachterliche\\w*\\s+verfahren)[\\s\\S]{0,220}?kosten[^.!?;:\\n]{0,60}?(?:besteller|kunde|auftraggeber|mieter)[^.!?;:\\n]{0,60}?(?:vorzustrecken|vorauszuzahlen)|(?:sachverst(?:ä|ae)ndigen(?:gutachten|verfahren)|gutachterliche\\w*\\s+verfahren)[\\s\\S]{0,260}?(?:gerichtliche\\w*\\s+rechtsweg|rechtsweg)[\\s\\S]{0,80}?(?:erst\\s+nach|erst\\s+wenn|nach\\s+abschluss)",
+      "flags": "i",
+      "closes": [
+        "immobilien-019:L16"
+      ],
+      "evidence": "MERGE INTO patterns[0] (collect testet nur patterns[0]): Sachverständigengutachten + Kosten hat der Besteller vorzustrecken. Enge Gaps + kein 'zu tragen' vermeiden FPs, weil das collect Fenster von bis zu 4 Sätzen auch Absatzgrenzen überspannt.",
+      "risk": "medium"
+    },
+    {
+      "type": "non_compete",
+      "regex": "(?:wird|werden|verpflichtet\\s+sich|verpflichtet)[^.!?;:\\n]{0,80}?f(?:ü|ue)r\\s+(?:\\d{1,2}|zwei|drei|vier|fünf|sechs|zehn)\\s+(?:jahre?|monate?)[^.!?;:\\n]{0,80}?keine?\\w*\\s+[^.!?;:\\n]{0,60}?(?:betreuen|betreiben|verkaufen|anbieten|t(?:ä|ae)tig\\s+werden|zu\\s+betreiben)",
+      "flags": "i",
+      "closes": [
+        "immobilien-019:L28"
+      ],
+      "evidence": "Die Bestellerin wird für vier Jahre ... keine weiteren Projektentwicklungen ... betreuen",
+      "risk": "low"
+    },
+    {
+      "type": "non_compete",
+      "regex": "(?:betreibt|erzeugt|h(?:ä|ae)lt|unterh(?:ä|ae)lt|verkauft)[^.!?;:\\n]{0,60}?f(?:ü|ue)r\\s+die\\s+(?:laufzeit|vertragsdauer|dauer\\s+des\\s+vertrags)[^.!?;:\\n]{0,60}?keine?\\w*\\s+(?:eigene|weitere|andere)\\w*",
+      "flags": "i",
+      "closes": [
+        "immobilien-023:L32"
+      ],
+      "evidence": "Die Eigentümerin betreibt für die Laufzeit keine eigene Stromerzeugung",
+      "risk": "low"
+    },
+    {
+      "type": "non_compete",
+      "regex": "(?:verkauft|betreibt|f(?:ü|ue)hrt)[^.!?;:\\n]{0,60}?(?:ausschlie(?:ß|ss)lich|nur)\\s+(?:textilien|marken\\w*|produkte\\s+des\\s+herstellers|sortiment\\w*)",
+      "flags": "i",
+      "closes": [
+        "immobilien-025:L36"
+      ],
+      "evidence": "Der Mieter verkauft im Fachmarktzentrum ausschließlich Textilien",
+      "risk": "medium"
+    },
+    {
+      "type": "feedback_ip_grab",
+      "regex": "(?:anregungen?|ideen|vorschl(?:ä|ae)ge|feedback|hinweise)[^.!?;:\\n]{0,100}?(?:darf|kann|d(?:ü|ue)rfen|k(?:ö|oe)nnen|werden|stehen)[^.!?;:\\n]{0,80}?ohne\\s+(?:eine\\s+)?(?:verg(?:ü|ue)tung|gegenleistung|beteiligung|entgelt|zustimmung)[^.!?;:\\n]{0,60}?(?:verwerten|nutzen|verwenden|ver(?:ö|oe)ffentlichen|(?:ü|ue)bertragen)",
+      "flags": "i",
+      "closes": [
+        "immobilien-019:L32"
+      ],
+      "evidence": "Anregungen ... darf die Entwicklerin ohne Vergütung verwerten",
+      "risk": "low"
+    },
+    {
+      "type": "international_data_processing",
+      "regex": "(?:daten|informationen)[^.!?;:\\n]{0,80}?au(?:ß|ss)erhalb\\s+der\\s+europ(?:ä|ae)ischen\\s+union[^.!?;:\\n]{0,80}?(?:(?:ü|ue)bermittelt|gespeichert|verarbeitet|(?:ü|ue)bertragen|gehostet)",
+      "flags": "i",
+      "closes": [
+        "immobilien-020:L24"
+      ],
+      "evidence": "Bestandsdaten ... außerhalb der Europäischen Union übermittelt",
+      "risk": "low"
+    },
+    {
+      "type": "international_data_processing",
+      "regex": "(?:daten|informationen)[^.!?;:\\n]{0,80}?(?:auf|in)\\s+(?:servern?\\s+in\\s+einem\\s+drittland|servern?\\s+au(?:ß|ss)erhalb|einem\\s+drittland|ein\\s+drittland|drittl(?:ä|ae)ndern)[^.!?;:\\n]{0,60}?(?:gespeichert|verarbeitet|gehostet|(?:ü|ue)bermittelt)",
+      "flags": "i",
+      "closes": [
+        "immobilien-031:L20"
+      ],
+      "evidence": "Die Bewohnerdaten werden auf Servern in einem Drittland gespeichert",
+      "risk": "low"
+    },
+    {
+      "type": "setoff_restriction",
+      "regex": "(?:kann|k(?:ö|oe)nnen|darf|d(?:ü|ue)rfen)[^.!?;:\\n]{0,70}?mit\\s+(?:gegenforderungen|gegenanspr(?:ü|ue)chen|forderungen)[^.!?;:\\n]{0,70}?nur\\s+(?:nach|mit|gegen|im\\s+rahmen)\\s+[^.!?;:\\n]{0,60}?aufrechnen",
+      "flags": "i",
+      "closes": [
+        "immobilien-021:L28"
+      ],
+      "evidence": "kann mit Gegenforderungen nur nach vorheriger Bestätigung ... aufrechnen",
+      "risk": "low"
+    },
+    {
+      "type": "data_lockin",
+      "regex": "(?:daten|datenbank|datenbestand)\\w*[^.!?;:\\n]{0,90}?nur\\s+gegen\\s+(?:eine[n]?\\s+)?(?:gesonderte\\w*\\s+)?geb(?:ü|ue)hr[^!?;:\\n]{0,90}?(?:(?:ü|ue)bergeben|herausgegeben|exportiert|bereitgestellt|(?:ü|ue)berlassen)",
+      "flags": "i",
+      "closes": [
+        "immobilien-022:L16"
+      ],
+      "evidence": "Die Mieterdatenbank wird nur gegen eine gesonderte Gebühr ... übergeben",
+      "risk": "low"
+    },
+    {
+      "type": "data_lockin",
+      "regex": "(?:export|herausgabe|(?:ü|ue)bertragung|bereitstellung)[^.!?;:\\n]{0,80}?(?:ist\\s+nicht\\s+bestandteil|nicht\\s+bestandteil|nicht\\s+vorgesehen|ausgeschlossen|erlischt|entf(?:ä|ae)llt)",
+      "flags": "i",
+      "closes": [
+        "immobilien-031:L24"
+      ],
+      "evidence": "ein Export ist nicht Bestandteil des Vertrages",
+      "risk": "low"
+    },
+    {
+      "type": "assignment_restriction",
+      "regex": "(?:kann|k(?:ö|oe)nnen|darf|d(?:ü|ue)rfen)[^.!?;:\\n]{0,80}?anspr(?:ü|ue)che[^.!?;:\\n]{0,80}?nur\\s+mit\\s+(?:vorheriger\\s+|schriftlicher\\s+)?zustimmung[^.!?;:\\n]{0,80}?(?:abtreten|abzutreten|(?:ü|ue)bertragen|zu\\s+(?:ü|ue)bertragen)",
+      "flags": "i",
+      "closes": [
+        "immobilien-022:L32"
+      ],
+      "evidence": "Der Käufer kann Ansprüche ... nur mit Zustimmung des Verkäufers abtreten",
+      "risk": "low"
+    },
+    {
+      "type": "third_party_indemnity",
+      "regex": "(?:hält|halten)[^.!?;:\\n]{0,80}?von\\s+(?:sämtlichen\\s+|allen\\s+)?anspr(?:ü|ue)chen\\s+dritter[^.!?;:\\n]{0,80}?schadlos",
+      "flags": "i",
+      "closes": [
+        "immobilien-023:L36",
+        "immobilien-028:L32"
+      ],
+      "evidence": "hält <Kunde> von Ansprüchen Dritter ... schadlos",
+      "risk": "low"
+    },
+    {
+      "type": "excessive_survival",
+      "regex": "(?:verkehrssicherungspflichten|sicherungspflichten|pflichten|verpflichtungen|gew(?:ä|ae)hrleistungs\\w*|haftung\\w*)[^.!?;:\\n]{0,60}?gelten\\s+zeitlich\\s+unbeschr(?:ä|ae)nkt\\s+fort",
+      "flags": "i",
+      "closes": [
+        "immobilien-023:L40"
+      ],
+      "evidence": "Die Verkehrssicherungspflichten gelten zeitlich unbeschränkt fort",
+      "risk": "low"
+    },
+    {
+      "type": "insolvency_termination",
+      "regex": "(?:antrag\\s+auf\\s+)?insolvenz[^.!?;:\\n]{0,60}?(?:erlischt|endet|beendet|entf(?:ä|ae)llt)[^.!?;:\\n]{0,50}?(?:der\\s+vertrag|das\\s+vertragsverh(?:ä|ae)ltnis|automatisch|ohne\\s+weiteres)",
+      "flags": "i",
+      "closes": [
+        "immobilien-025:L28"
+      ],
+      "evidence": "Bei Antrag auf Insolvenz des Mieters erlischt der Vertrag automatisch",
+      "risk": "low"
+    },
+    {
+      "type": "service_credit_forfeiture",
+      "regex": "(?:vers(?:ä|ae)umte?\\w*|fehlende?\\w*|unterlassene?\\w*)[^.!?;:\\n]{0,60}?(?:sicherheitsupdates?|kritische?\\s+(?:updates?|patches?|sicherheitsupdates?))[^.!?;:\\n]{0,60}?(?:entf(?:ä|ae)llt|verf(?:ä|ae)llt)[^.!?;:\\n]{0,40}?(?:die\\s+|der\\s+)?(?:gutschrift|service\\s?credits?|verg(?:ü|ue)tung|anspruch|ersatzlos)",
+      "flags": "i",
+      "closes": [
+        "immobilien-026:L32"
+      ],
+      "evidence": "Für versäumte kritische Sicherheitsupdates entfällt die Gutschrift ersatzlos",
+      "risk": "low"
+    },
+    {
+      "type": "deemed_acceptance",
+      "regex": "(?:gilt|gelten)[^.!?;:\\n]{0,60}?mit\\s+(?:der\\s+)?(?:ü|ue)bernahme[^.!?;:\\n]{0,60}?als\\s+(?:mangelfrei|abgenommen|genehmigt|vertragsgem(?:ä|ae)(?:ß|ss))",
+      "flags": "i",
+      "closes": [
+        "immobilien-027:L36"
+      ],
+      "evidence": "Die Wohnung gilt mit Übernahme der Schlüssel als mangelfrei übernommen",
+      "risk": "low"
+    },
+    {
+      "type": "dynamic_url_referral",
+      "regex": "(?:pl(?:ä|ae)ne|dokumente|unterlagen|bedingungen|richtlinien|vorgaben|fassung)[^.!?;:\\n]{0,70}?(?:im|in\\s+dem|auf\\s+dem)\\s+[^.!?;:\\n]{0,40}?portal[^.!?;:\\n]{0,70}?(?:hinterlegt|abrufbar|bereitgestellt|eingestellt|ver(?:ö|oe)ffentlicht|gespeichert)[^.!?;:\\n]{0,90}?(?:fortlaufend|jeweils\\s+aktuell|laufend|st(?:ä|ae)ndig|regelm(?:ä|ae)(?:ß|ss)ig)[^.!?;:\\n]{0,40}?aktualisiert",
+      "flags": "i",
+      "closes": [
+        "immobilien-029:L40"
+      ],
+      "evidence": "Die Ausführungspläne sind im Kundenportal hinterlegt und werden dort fortlaufend aktualisiert",
+      "risk": "low"
+    },
+    {
+      "type": "dynamic_url_referral",
+      "regex": "(?:portal|plattform|onlinebereich)[^.!?;:\\n]{0,70}?(?:hinterlegt|bereitgestellt|abrufbar|eingestellt)[^.!?;:\\n]{0,90}?(?:fortlaufend|jeweils\\s+aktuell|laufend|st(?:ä|ae)ndig)[^.!?;:\\n]{0,40}?aktualisiert",
+      "flags": "i",
+      "closes": [
+        "immobilien-029:L40"
+      ],
+      "evidence": "im Kundenportal hinterlegt ... fortlaufend aktualisiert",
+      "risk": "low"
+    },
+    {
+      "type": "third_party_indemnity",
+      "regex": "(?:stellt|stellen)[^.!?;:\\n]{0,80}?von\\s+(?:sämtlichen\\s+|allen\\s+)?anspr(?:ü|ue)chen\\s+dritter[^.!?;:\\n]{0,60}?(?:unabh(?:ä|ae)ngig\\s+(?:davon,?\\s+ob|vom\\s+verschulden)|verschuldensunabh(?:ä|ae)ngig|vollumf(?:ä|ae)nglich)[^.!?;:\\n]{0,80}?(?:frei|freizustellen|schadlos)",
+      "flags": "i",
+      "closes": [],
+      "evidence": "stellt ... von Ansprüchen Dritter frei, aber nur mit Verschuldensunabhängigkeit/Vollumfang (blosse Anbieter-Freistellung bleibt bewusst unmarkiert)",
+      "risk": "medium"
+    },
+    {
+      "type": "statute_of_limitations",
+      "regex": "anspr(?:ü|ue)che[^.!?;:\\n]{0,60}?verj(?:ä|ae)hren[^.!?;:\\n]{0,20}?(?<!\\d)(?:[1-9]|1[0-8]|ein|eine|zwei|drei|sechs|zw(?:ö|oe)lf|achtzehn)\\s*(?:jahr|monat|woche)\\w*",
+      "flags": "i",
+      "closes": [
+        "isb-041:L41"
+      ],
+      "evidence": "Verjaehrung der Maengelansprueche zwei Jahre nach Abnahme, verkuerzt ohne Arglist-Ausnahme",
+      "risk": "medium"
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "slug": "finanz-027",
+  "source": "generated",
+  "domain": "Buergschaft",
+  "traps": [
+    {
+      "marker": "Die Verfahrenskosten sind vom Kunden vorauszuzahlen",
+      "expectedType": "mandatory_expert_determination",
+      "note": "Paraphrase/Umstellung: nennt 'Die Verfahrenskosten sind vom Kunden vorauszu' statt der Registerwendung."
+    },
+    {
+      "marker": "Versäumt der Kunde einen Sicherheitspatch, verfällt sein Anspruch",
+      "expectedType": "service_credit_forfeiture",
+      "note": "Paraphrase/Umstellung: nennt 'Versäumt der Kunde einen Sicherheitspatch, ve' statt der Registerwendung."
+    },
+    {
+      "marker": "Bei vorzeitiger Beendigung wird eine pauschale Abstandszahlung fällig",
+      "expectedType": "early_termination_charge",
+      "note": "Paraphrase/Umstellung: nennt 'Bei vorzeitiger Beendigung wird eine pauschal' statt der Registerwendung."
+    },
+    {
+      "marker": "Mangels eines Wartungsvertrags kann der Anbieter das System stilllegen",
+      "expectedType": "maintenance_conditional_shutdown",
+      "note": "Paraphrase/Umstellung: nennt 'Mangels eines Wartungsvertrags kann der Anbie' statt der Registerwendung."
+    },
+    {
+      "marker": "setzt sich die Kreditlinie jeweils um ein weiteres Kalenderjahr fort",
+      "expectedType": "auto_renewal",
+      "note": "Paraphrase/Umstellung: nennt 'setzt sich die Kreditlinie jeweils um ein wei' statt der Registerwendung."
+    },
+    {
+      "marker": "Eine Beendigung ist frühestens nach einundzwanzig Monaten zulässig",
+      "expectedType": "notice_period",
+      "note": "Paraphrase/Umstellung: nennt 'Eine Beendigung ist frühestens nach einundzwa' statt der Registerwendung."
+    },
+    {
+      "marker": "Die Haftung ist der Höhe nach auf die Bereitstellungsprovision begrenzt",
+      "expectedType": "liability",
+      "note": "Paraphrase/Umstellung: nennt 'Die Haftung ist der Höhe nach auf die Bereits' statt der Registerwendung."
+    },
+    {
+      "marker": "verwirkt bei Zahlungsverzug eine Buße in Höhe von zwei Prozent",
+      "expectedType": "penalty",
+      "note": "Paraphrase/Umstellung: nennt 'verwirkt bei Zahlungsverzug eine Buße in Höhe' statt der Registerwendung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "mindestens vierzehn Tage vor dem Einsatz eines Unterauftragnehmers",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "vollständigen Export seiner Daten in einem gängigen maschinenlesbaren Format",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "zum Quartalsende ordentlich kündigen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "spätestens zehn Werktage vor einer beabsichtigten Kontoauflösung",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "einen festen Ansprechpartner für alle Fragen der Vertragsabwicklung",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "ohne Angabe von Gründen zum Monatsende kündigen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Streitigkeiten vorrangig durch Mediation zu klären",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "gesetzliche Haftung für Vorsatz und grobe Fahrlässigkeit",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "keine Vorfälligkeitsentschädigung.",
+      "note": "Täuschende Klausel ohne passenden Detektortyp."
+    }
+  ]
+}

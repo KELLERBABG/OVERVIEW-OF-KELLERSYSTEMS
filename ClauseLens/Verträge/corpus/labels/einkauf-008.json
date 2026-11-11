@@ -1,0 +1,78 @@
+{
+  "slug": "einkauf-008",
+  "source": "generated",
+  "domain": "Einkauf und Lieferantenrahmenvertrag, deutsches und oesterreichisches Recht",
+  "traps": [
+    {
+      "marker": "Ansprüche wegen Liefermängeln verjähren innerhalb von 12 Monaten ab Übergabe",
+      "expectedType": "statute_of_limitations",
+      "note": "Verkuerzte Verjaehrung mit Ziffer statt Zahlwort"
+    },
+    {
+      "marker": "Einstandspflicht des Auftragnehmers für mittelbare Schäden wird nicht übernommen",
+      "expectedType": "liability",
+      "note": "Freizeichnung ohne das Wort Haftung"
+    },
+    {
+      "marker": "Die Geheimhaltungspflichten bestehen auf Dauer fort",
+      "expectedType": "excessive_survival",
+      "note": "Unbefristete Nachwirkung, ohne das Wort endet nicht"
+    },
+    {
+      "marker": "Die Servicezeiten sind Richtwerte ohne Rechtsanspruch",
+      "expectedType": "unverbindliche_sla_falle",
+      "note": "Weichmacher fuer Servicezeiten ohne die Woerter Zielgroesse oder unverbindlich"
+    },
+    {
+      "marker": "Datenbestand wird ausschließlich im herstellereigenen Binärformat bereitgestellt",
+      "expectedType": "data_lockin",
+      "note": "Lock-in durch Proprietaerformat"
+    },
+    {
+      "marker": "Die Verfahrenskosten hat der Besteller vorzustrecken",
+      "expectedType": "mandatory_expert_determination",
+      "note": "Vorgeschaltetes Sachverstaendigenverfahren mit Kostenvorschuss und Rechtswegsperre ueber drei Saetze"
+    },
+    {
+      "marker": "verzichtet für vierundzwanzig Monate darauf, Beschäftigte des Auftragnehmers abzuwerben",
+      "expectedType": "non_solicitation",
+      "note": "Abwerbeverbot ohne das Registerwort Abwerbeverbot"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die gesetzlichen Mängelrechte des Bestellers bleiben im Übrigen unberührt",
+      "note": "Gesetzliche Maengelrechte bleiben erhalten"
+    },
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Zulaessige Haftungsklausel"
+    },
+    {
+      "marker": "Beide Parteien behandeln die Zeichnungen der anderen Seite vertraulich",
+      "note": "Wechselseitige Vertraulichkeit"
+    },
+    {
+      "marker": "Störungen werden über die Hotline gemeldet",
+      "note": "Meldeweg ohne Sanktion"
+    },
+    {
+      "marker": "Der Besteller erhält seine Bestandsdaten bei Vertragsende unentgeltlich in einem gängigen Format",
+      "note": "Kostenfreier Datenexport"
+    },
+    {
+      "marker": "Die Parteien arbeiten bei der Personalplanung zusammen",
+      "note": "Zusammenarbeit statt Abwerbeverbot"
+    },
+    {
+      "marker": "Änderungen dieses Vertrags bedürfen der Zustimmung beider Parteien in Textform",
+      "note": "Symmetrische Aenderungsklausel"
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Die Parteien führen bei Bedarf einen technischen Jour fixe durch",
+      "note": "Jour fixe ohne Pflichten oder Fristen, kein Detektor"
+    }
+  ]
+}

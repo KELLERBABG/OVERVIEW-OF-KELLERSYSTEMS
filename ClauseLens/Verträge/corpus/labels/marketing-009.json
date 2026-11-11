@@ -1,0 +1,74 @@
+{
+  "slug": "marketing-009",
+  "source": "generated",
+  "domain": "Programmatischer Mediaeinkauf, EU-Bezug",
+  "traps": [
+    {
+      "marker": "Nutzungsdaten findet teilweise außerhalb der Europäischen Union",
+      "expectedType": "international_data_processing",
+      "note": "Drittlandverarbeitung ohne Garantien; vermeidet 'Drittland'."
+    },
+    {
+      "marker": "gelten als Vollbeweis; der Kunde unterwirft sich dieser Feststellung",
+      "expectedType": "audit_log_manipulation",
+      "note": "Unwiderlegbare Anbieterprotokolle; vermeidet 'Aufzeichnungen des Anbieters maßgeblich'."
+    },
+    {
+      "marker": "haftet nicht für Handlungen von Nachunternehmern",
+      "expectedType": "vicarious_agents",
+      "note": "Freizeichnung für Dritte; vermeidet Erfüllungsgehilfe."
+    },
+    {
+      "marker": "muss jederzeit Audits ohne Vorankündigung dulden",
+      "expectedType": "unreasonable_audit",
+      "note": "Jederzeitiges Audit ohne Ankündigung."
+    },
+    {
+      "marker": "Die Verfahrenskosten hat der Kunde vorzustrecken",
+      "expectedType": "mandatory_expert_determination",
+      "note": "Vorgeschaltetes Gutachterverfahren auf Kosten des Kunden, drei Sätze als ein Absatz."
+    },
+    {
+      "marker": "darf Telemetriedaten kommerziell verwerten",
+      "expectedType": "data_grant",
+      "note": "Kommerzielle Verwertung der Telemetrie."
+    },
+    {
+      "marker": "governed by the laws of the State of Delaware",
+      "expectedType": "jurisdiction",
+      "note": "Fremdes Recht in Englisch; vermeidet 'ausländisches Recht'."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Anbieter setzt Subunternehmer nur nach vorheriger Bestellung ein",
+      "note": "DSGVO-konforme Subunternehmerklausel mit Widerspruchsrecht, kein Finding."
+    },
+    {
+      "marker": "der Kunde kann aus wichtigem Grund widersprechen",
+      "note": "Widerspruchsrecht bei Subunternehmern."
+    },
+    {
+      "marker": "Beide Parteien wahren über die wechselseitig ausgetauschten Informationen Stillschweigen",
+      "note": "Symmetrische Verschwiegenheit."
+    },
+    {
+      "marker": "erhält der Kunde alle Kampagnendaten kostenfrei in einem offenen Format",
+      "note": "Kostenfreier Datenexport."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende beenden",
+      "note": "Symmetrische Kündigung."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform zugelassen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Anbieter betreibt für den Kunden den programmatischen Einkauf digitaler Werbeplätze",
+      "note": "Kein Detektor für fehlende Transparenzpflichten im Programmatic Einkauf."
+    }
+  ]
+}

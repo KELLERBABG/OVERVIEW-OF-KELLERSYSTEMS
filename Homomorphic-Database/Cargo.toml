@@ -1,0 +1,76 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/fhe-core",
+    "crates/fhe-db",
+    "crates/fhe-server",
+    "crates/fhe-client",
+    "examples/encrypted_sum",
+    "examples/encrypted_nn",
+    "examples/encrypted_iris",
+    "apps/fhe-phone",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+repository = "https://github.com/FHE-DB/fhe-db"
+license = "BSD-3-Clause-Clear"
+rust-version = "1.91.1"
+
+[workspace.dependencies]
+fhe-core = { path = "crates/fhe-core" }
+fhe-db = { path = "crates/fhe-db" }
+fhe-server = { path = "crates/fhe-server" }
+fhe-client = { path = "crates/fhe-client" }
+tfhe = { version = "1.7", features = ["boolean", "shortint", "integer"] }
+serde = { version = "1", features = ["derive"] }
+bincode = "1.3"
+anyhow = "1"
+thiserror = "2"
+tokio = { version = "1", features = ["full"] }
+axum = "0.8"
+tower-http = { version = "0.6", features = ["cors", "trace"] }
+reqwest = { version = "0.12", features = ["json"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+serde_json = "1"
+clap = { version = "4", features = ["derive", "env"] }
+proptest = "1"
+criterion = "0.5"
+
+# tfhe 1.7.0 declares `crate-type = ["lib", "staticlib", "cdylib"]`. Its cdylib
+# would export 165,566 symbols — more than the PE/COFF export-table cap of
+# 65,535 ordinals — which no Windows linker (GNU ld.bfd nor LLVM lld) can
+# produce. This workspace links `tfhe` as an rlib only, so we vendor the exact
+# 1.7.0 source with `crate-type = ["lib"]` and patch crates.io with it. This
+# removes the impossible cdylib artifact entirely; runtime semantics are
+# identical (same version, no feature drift).
+[patch.crates-io]
+tfhe = { path = "vendor/tfhe" }
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+# Keep the global release profile at codegen-units = 1 for maximum runtime
+# performance. The tfhe crate is overridden below so its enormous codegen
+# completes within a single build window.
+codegen-units = 1
+debug = false
+
+[profile.bench]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+debug = false
+
+# The tfhe crate is enormous: a single codegen unit takes 10+ minutes to
+# emit, which exceeds this repo's tooling build-window timeout and repeatedly
+# stalls the first build. Splitting it into 16 parallel codegen units (scoped
+# to this package only, so every other cached release artifact stays valid)
+# lets the first build complete reliably. Runtime impact is negligible.
+[profile.release.package.tfhe]
+codegen-units = 16
+
+[profile.bench.package.tfhe]
+codegen-units = 16

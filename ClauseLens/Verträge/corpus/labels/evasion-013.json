@@ -1,0 +1,79 @@
+{
+  "slug": "evasion-013",
+  "source": "generated",
+  "domain": "evasion",
+  "traps": [
+    {
+      "marker": "Erg​änzend gel​ten die jew​eils unt​er www.anb​ieter-sys​temhaus.de/bed​ingungen abr​ufbaren",
+      "expectedType": "dynamic_url_referral",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: dynamic_url_referral (Technik: footnote)."
+    },
+    {
+      "marker": "Der Anb​ieter haf​tet für Erf​üllungsgehilfen nur bei ein​em eig​enen Aus​wahlverschulden.",
+      "expectedType": "vicarious_agents",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: vicarious_agents (Technik: footnote)."
+    },
+    {
+      "marker": "Der Anb​ieter ist ber​echtigt, die Ges​chäftsräume des Kun​den ohne vor​herige Ank​ündigung zu",
+      "expectedType": "unreasonable_audit",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: unreasonable_audit (Technik: footnote)."
+    },
+    {
+      "marker": "Die Her​ausgabe der Dat​en erf​olgt geg​en eine ges​onderte Auf​wandspauschale, die der Kun​de zu",
+      "expectedType": "data_lockin",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: data_lockin (Technik: footnote)."
+    },
+    {
+      "marker": "Der Kun​de ste​llt den Anb​ieter von säm​tlichen Ans​prüchen Dri​tter frei, und zwar una​bhängig",
+      "expectedType": "third_party_indemnity",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: third_party_indemnity (Technik: footnote)."
+    },
+    {
+      "marker": "Das Rec​ht des Anb​ieters zur auß​erordentlichen Kün​digung aus wic​htigem Gru​nd wird nic​ht",
+      "expectedType": "asymmetric_termination",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: asymmetric_termination (Technik: footnote)."
+    },
+    {
+      "marker": "Die Abt​retung von For​derungen des Kun​den bed​arf der vor​herigen sch​riftlichen Zus​timmung des",
+      "expectedType": "assignment_restriction",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: assignment_restriction (Technik: footnote)."
+    },
+    {
+      "marker": "Ere​ignisse höh​erer Gew​alt bef​reien den Anb​ieter von sei​ner Lei​stungspflicht, wäh​rend die",
+      "expectedType": "force_majeure_asymmetry",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: force_majeure_asymmetry (Technik: footnote)."
+    },
+    {
+      "marker": "Der Kun​de ver​pflichtet sich, für die Dau​er von 24 Mon​aten nach Bee​ndigung kei​ne Mit​arbeiter",
+      "expectedType": "non_solicitation",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: non_solicitation (Technik: footnote)."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende kündigen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Zahlungen sind innerhalb von 30 Tagen nach Rechnungsstellung fällig.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde erhält für vermittelte Geschäfte eine Provision von fünf Prozent des Nettoumsatzes.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Anbieter stellt dem Kunden die vereinbarten Unterlagen unentgeltlich zur Verfügung.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Vertrag wird für die Dauer von zwei Jahren geschlossen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien behandeln die ausgetauschten Informationen vertraulich, die Pflicht gilt für die",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    }
+  ],
+  "uncovered": []
+}

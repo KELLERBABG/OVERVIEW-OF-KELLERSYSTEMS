@@ -1,0 +1,115 @@
+AUFTRAGSVERARBEITUNGSVERTRAG
+
+zwischen
+
+der Rosenau GmbH, Holzmarkt 4, 50676 Köln (nachfolgend Verantwortlicher)
+
+und
+
+der Petersen GmbH, Körnerstraße 40, 44137 Dortmund (nachfolgend Auftragsverarbeiter)
+
+Präambel
+
+Der Verantwortliche beauftragt den Auftragsverarbeiter mit der Verarbeitung personenbezogener Daten nach Maßgabe von Art. 28 DSGVO. Es gelten die nachstehenden Bedingungen.
+
+§ 2 Bestimmung
+
+Mangels eines Wartungsvertrags kann der Anbieter das System stilllegen.
+
+§ 3 Regelung
+
+Jede Partei kann diesen Vertrag zum Quartalsende ordentlich kündigen.
+
+§ 4 Vereinbarung
+
+Ohne fristgerechte Abbestellung setzt sich die Lizenz jeweils um ein weiteres Kalenderjahr fort.
+
+§ 5 Modalität
+
+Der Anbieter stellt sicher, dass die von ihm eingesetzten Nachunternehmer dieselben Datenschutzstandards einhalten.
+
+§ 6 Ordnung
+
+Eine Beendigung ist frühestens nach einundzwanzig Monaten zulässig.
+
+§ 7 Ausgestaltung
+
+Sämtliche Open-Source-Komponenten werden in der Anlage 2 mit ihren jeweiligen Lizenzen aufgeführt.
+
+§ 8 Durchführung
+
+Die Haftung ist der Höhe nach auf die Bereitstellungsprovision begrenzt.
+
+§ 9 Vorkehrung
+
+Die gesetzliche Haftung für Vorsatz und grobe Fahrlässigkeit sowie für Personenschäden bleibt unberührt.
+
+§ 10 Zusatz
+
+Der Kunde verwirkt bei Zahlungsverzug eine Buße in Höhe von zwei Prozent der offenen Vergütung.
+
+§ 11 Klarstellung
+
+Der Auftraggeber kann den Vertrag aus wichtigem Grund jederzeit fristlos beenden.
+
+§ 12 Ergänzung
+
+Alle Streitigkeiten werden bei der Niederlassung der Anbieterin in Zug zur Entscheidung gebracht.
+
+§ 13 Verfahren
+
+Die Parteien vereinbaren, Streitigkeiten vorrangig durch Mediation zu klären.
+
+§ 14 Ausführung
+
+Nach Beendigung des Vertrags ist der Kunde für achtzehn Monate nicht tätig im Bereich der Lizenzierung.
+
+§ 15 Hinweis
+
+Die Parteien veröffentlichen Ergebnisse der gemeinsamen Forschung nur im gegenseitigen Einvernehmen.
+
+§ 16 Maßnahme
+
+Der Kunde räumt der Gesellschaft ein unwiderrufliches Nutzungsrecht an den Transaktionsdaten ein.
+
+§ 17 Vorgehen
+
+Beide Parteien verpflichten sich, alle vertraulichen Informationen der jeweils anderen Seite mit der gebotenen Sorgfalt geheim zu halten.
+
+§ 18 Abstimmung
+
+Der Auftraggeber trägt für jedes Auskunftsersuchen eine Bearbeitungsgebühr von fünfzig Euro.
+
+§ 19 Koordination
+
+Beide Parteien halten die gesetzlichen Aufbewahrungsfristen ein.
+
+§ 20 Umsetzung
+
+Jede Partei trägt ihre eigenen Kosten.
+
+§ 21 Beachtung
+
+Die Vertragsparteien bestätigen den Erhalt der in der Anlage 1 bezeichneten Unterlagen.
+
+§ 1 Allgemeines
+
+Die Anlagen 1 bis 3 sind Bestandteil dieses Vertrages.
+
+§ 2 Bestimmung
+
+Der Kunde erhält vierteljährlich einen schriftlichen Kontoauszug.
+
+§ 3 Regelung
+
+Die Anlagen sind Bestandteil dieses Vertrages.
+
+§ 4 Vereinbarung
+
+Begriffe, die im Vertrag definiert sind, werden einheitlich verwendet.
+
+Ort, Datum: ______________________
+
+Für Verantwortlicher: ______________________
+
+Für Auftragsverarbeiter: ______________________

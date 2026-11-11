@@ -1,0 +1,26 @@
+{
+  "slug": "web-real-clauses",
+  "source": "web",
+  "domain": "Real published clause wordings from provider terms and court decisions (SaaS, cloud, energy, telecom, insurance)",
+  "note": "Der frühere uncovered-Eintrag (nachteilige Tatsachenfiktion, BGH IV ZR 437/22) wurde entfernt: Der zitierte Wortlaut steht nicht im Korpus, der Marker traf daher nichts und maß nichts. Alle verbliebenen Labels verweisen auf Textstellen, die tatsächlich im Dokument stehen — der Runner meldet unaufgelöste Marker jetzt als Korpusfehler.",
+  "traps": [
+    { "marker": "verlängern sie sich um weitere 12 Monate", "expectedType": "auto_renewal", "note": "Melissa AGB § 11.1 - Verlängerung um 12 Monate bei verpasster Dreimonatsfrist." },
+    { "marker": "die mit der Freischaltung des DGN-Anschlusses zu laufen beginnen soll", "expectedType": "notice_period", "note": "BGH III ZR 8/25 - Mindestlaufzeit beginnt erst mit Freischaltung, Bindung länger als vereinbart." },
+    { "marker": "zum Anfang einer jeden Laufzeitverlängerung, den Preis für die jeweiligen Lizenz-Pakete nach billigem Ermessen", "expectedType": "price_escalation", "note": "softgarden § 7.1.2 - Preisanpassung zu jedem Verlängerungsbeginn nach billigem Ermessen." },
+    { "marker": "Google may change the Fees at any time", "expectedType": "price_escalation", "note": "Google Cloud § 2.6 - einseitiges Gebührenänderungsrecht jederzeit (Englisch)." },
+    { "marker": "Google may immediately Suspend all or part of Customer's use of the Services", "expectedType": "service_suspension", "note": "Google Cloud § 4.2 - sofortige Sperrung ohne Vorwarnung (Englisch)." },
+    { "marker": "THE SERVICES ARE PROVIDED \"AS IS\" WITHOUT WARRANTY OF ANY KIND", "expectedType": "as_is_software_disclaimer", "note": "Check Point § 9.1 - As-is ohne jede Gewährleistung (Englisch)." },
+    { "marker": "MAXIMUM LIABILITY FOR DAMAGES SHALL BE LIMITED TO THE LICENSE FEE", "expectedType": "liability", "note": "Check Point § 9.2 - Haftungshöchstgrenze auf die Lizenzgebühr (Englisch)." },
+    { "marker": "stellt Melissa von allen Ansprüchen Dritter", "expectedType": "third_party_indemnity", "note": "Melissa AGB § 9.5 - Freistellung auf erstes Anfordern, auch für unbegründete Ansprüche." },
+    { "marker": "kann die Beklagte Ihnen die dadurch entstehenden Kosten pauschal berechnen", "expectedType": "penalty", "note": "BGH VIII ZR 337/11 - Pauschale Kostenerstattung ohne Nachweisgestattung, § 309 Nr. 5 BGB." },
+    { "marker": "Die Zustimmung des Kunden gilt als erteilt", "expectedType": "unilateral_change", "note": "BGH XI ZR 26/20 - Zustimmungsfiktion zu AGB-Änderungen." },
+    { "marker": "den Preis für den D. Service an sich verändernde Marktbedingungen", "expectedType": "price_escalation", "note": "OLG München 39 U 2482/23 e - intransparenter Preisanpassungsvorbehalt." },
+    { "marker": "verlängern sich jeweils auch die Bedingungen des Pakettarifs", "expectedType": "auto_renewal", "note": "OLG Düsseldorf 6 U 182/16 - Verlängerung zu neuem Paketpreis." },
+    { "marker": "durch einseitige Leistungsbestimmung gem. § 315 BGB nach billigem Ermessen", "expectedType": "price_escalation", "note": "OLG Düsseldorf 6 U 182/16 - einseitige Preisbestimmung nach § 315 BGB." },
+    { "marker": "Von einer Beitragsanpassung kann abgesehen werden", "expectedType": "price_escalation", "note": "BGH IV ZR 253/20 - Beitragsanpassung auch bei nur vorübergehender Veränderung." }
+  ],
+  "benign": [
+    { "marker": "Beide Parteien verpflichten sich, die Vertraulichkeit der ausgetauschten Informationen zu wahren", "note": "wechselseitige Vertraulichkeit, faire Klausel" }
+  ],
+  "uncovered": []
+}

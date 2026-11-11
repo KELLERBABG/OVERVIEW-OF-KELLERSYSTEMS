@@ -1,0 +1,11 @@
+[package]
+name = "smart-matter-flasher"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Firmware flashing tool for Smart Matter nodes"
+
+[dependencies]
+smart-matter-core = { path = "../../firmware/core" }
+sha2 = "0.10"
+clap = { version = "4", features = ["derive"] }

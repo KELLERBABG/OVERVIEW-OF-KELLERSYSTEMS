@@ -1,0 +1,69 @@
+{
+  "slug": "saas-002",
+  "source": "generated",
+  "domain": "Managed Hosting, oesterreichisches Recht",
+  "traps": [
+    {
+      "marker": "Die feste Laufzeit beträgt sechsunddreißig Monate, eine Kündigung ist ausgeschlossen.",
+      "expectedType": "notice_period",
+      "note": "Paraphrase. Mindestlaufzeit in Zahlwortform mit Ausschluss der vorzeitigen Kuendigung."
+    },
+    {
+      "marker": "Bei Verzug schuldet der Kunde eine Aufwandspauschale von 250 EUR.",
+      "expectedType": "penalty",
+      "note": "Paraphrase. Tagessatzpauschale ohne Nachweisvorbehalt."
+    },
+    {
+      "marker": "Gegenansprüche bleiben bei der Abrechnung außer Betracht.",
+      "expectedType": "setoff_restriction",
+      "note": "Paraphrase. Aufrechnungsverbot ohne Ausnahme fuer unbestrittene Forderungen."
+    },
+    {
+      "marker": "Die Anbieterin darf die Betriebsdaten zur Weiterentwicklung ihrer Modelle nutzen.",
+      "expectedType": "data_grant",
+      "note": "Paraphrase. Globaler Rechtsuebergang an Betriebsdaten."
+    },
+    {
+      "marker": "Anregungen und Vorschläge des Kunden verwertet die Anbieterin ohne Vergütung.",
+      "expectedType": "feedback_ip_grab",
+      "note": "Paraphrase. Unentgeltlicher IP-Anfall fuer Kundenfeedback."
+    },
+    {
+      "marker": "auf den tatsächlichen Abruf kommt es nicht an",
+      "expectedType": "fictitious_receipt",
+      "note": "Zugangsfiktion unabhaengig vom tatsaechlichen Abruf."
+    },
+    {
+      "marker": "vorzeitige Auflösung des Vertrags durch den Kunden löst eine pauschale Stornogebühr",
+      "expectedType": "early_termination_charge",
+      "note": "Pauschale Stornogebuehr bei vorzeitiger Aufloesung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "danach mit dreimonatiger Frist zum Quartalsende kündigen",
+      "note": "Normales Kuendigungsrecht nach Mindestlaufzeit."
+    },
+    {
+      "marker": "behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "Wechselseitige Vertraulichkeit."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Korrekte Haftungsausnahme."
+    },
+    {
+      "marker": "eine vollständige Kopie aller Kundendaten in maschinenlesbarer Form kostenfrei",
+      "note": "Kostenfreie Datenrueckgabe."
+    },
+    {
+      "marker": "mit bis zu 250 benannten Nutzern verwenden",
+      "note": "Klarer Nutzungsumfang."
+    },
+    {
+      "marker": "Beide Parteien tragen ihre eigenen Kosten für die Verhandlungen",
+      "note": "Neutrale Kostentragung."
+    }
+  ],
+  "uncovered": []
+}

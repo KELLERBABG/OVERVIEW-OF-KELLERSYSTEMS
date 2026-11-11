@@ -1,0 +1,78 @@
+{
+  "slug": "einkauf-002",
+  "source": "generated",
+  "domain": "Einkauf und Lieferantenrahmenvertrag, deutsches und oesterreichisches Recht",
+  "traps": [
+    {
+      "marker": "setzt sich jeweils um sechsunddreißig Monate fort",
+      "expectedType": "auto_renewal",
+      "note": "Automatische Verlaengerung, aber ohne die Registerfloskel verlaengert sich automatisch; Dauer als Zahlwort"
+    },
+    {
+      "marker": "Vorlaufzeit für eine Beendigung des Rahmenvertrags durch den Besteller währt",
+      "expectedType": "notice_period",
+      "note": "Kündigungsbindung umschrieben mit Vorlaufzeit und währen statt Kündigungsfrist beträgt"
+    },
+    {
+      "marker": "Gelingt dem Besteller der Gegenbeweis nicht, gilt die Lieferung als ordnungsgemäß erbracht",
+      "expectedType": "burden_of_proof",
+      "note": "Beweislastumkehr ohne das Wort Beweislast"
+    },
+    {
+      "marker": "kann der Auftragnehmer die Diagnosesoftware abschalten",
+      "expectedType": "maintenance_conditional_shutdown",
+      "note": "Abschaltung an fehlenden Wartungsvertrag gekoppelt, in umgekehrter Satzstellung zum Detektor"
+    },
+    {
+      "marker": "kann die Leistung ohne Vorwarnung aussetzen",
+      "expectedType": "service_suspension",
+      "note": "Leistungssperre ohne Vorwarnung; Registerwort Sperrung oder Zugangssperre vermieden"
+    },
+    {
+      "marker": "Höhere Gewalt befreit den Auftragnehmer von seiner Leistungspflicht",
+      "expectedType": "force_majeure_asymmetry",
+      "note": "Einseitige Risikoverteilung bei hoeherer Gewalt, waehrend die Verguetungspflicht fortbesteht"
+    },
+    {
+      "marker": "stellt den Auftragnehmer von Ansprüchen Dritter frei, unabhängig von einem Verschulden",
+      "expectedType": "third_party_indemnity",
+      "note": "Verschuldensunabhaengige Drittfreistellung, umschrieben statt Freistellungsklausel"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Abnahme erfolgt nach erfolgreichem Serienlauf durch den Besteller",
+      "note": "Echte Abnahme ohne Fiktion"
+    },
+    {
+      "marker": "Wartungsarbeiten werden spätestens zehn Werktage vorher angekündigt",
+      "note": "Ankuendigungspflicht fuer Wartung, keine Abschaltung ohne Wartungsvertrag"
+    },
+    {
+      "marker": "Beide Parteien sind von der Leistungspflicht befreit, solange höhere Gewalt andauert",
+      "note": "Symmetrische hoehere-Gewalt-Regelung ohne einseitige Zahlungspflicht"
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag einvernehmlich beenden",
+      "note": "Einvernehmliche Beendigung, kein einseitiges Anbieterkuendigungsrecht"
+    },
+    {
+      "marker": "Rechnungen sind innerhalb von dreißig Tagen netto zu begleichen",
+      "note": "Marktueblicher Zahlungstermin"
+    },
+    {
+      "marker": "Der Besteller erhält seine Bestandsdaten bei Vertragsende unentgeltlich in einem gängigen Format",
+      "note": "Kostenfreier Datenexport, kein Data-Lock-in"
+    },
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Zulaessige Haftungsklausel"
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "richten einen gemeinsamen Eskalationsweg über die jeweiligen Werkleitungen ein",
+      "note": "Eskalationsweg ohne Fristen oder Sanktionen, kein Detektor beschreibt ihn"
+    }
+  ]
+}

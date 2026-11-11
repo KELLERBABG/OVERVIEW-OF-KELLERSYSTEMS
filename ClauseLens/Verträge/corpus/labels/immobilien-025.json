@@ -1,0 +1,69 @@
+{
+  "slug": "immobilien-025",
+  "source": "generated",
+  "domain": "Gewerbemiete",
+  "traps": [
+    {
+      "marker": "die Vermieterin kann sie jederzeit ändern",
+      "expectedType": "unilateral_change",
+      "note": "GAP: Hausordnung per Anlage einseitig aenderbar."
+    },
+    {
+      "marker": "Nachträgliche Belastungen aus der Grundsteuer trägt der Mieter vollständig",
+      "expectedType": "tax_indemnity_shift",
+      "note": "GAP: Nachtraegliche Steuerbelastung auf den Mieter verlagert."
+    },
+    {
+      "marker": "der Mieter hat kein Recht, deswegen zu kündigen",
+      "expectedType": "price_escalation",
+      "note": "GAP: Mieterhoehung ohne Sonderkündigungsrecht."
+    },
+    {
+      "marker": "Bei Antrag auf Insolvenz des Mieters erlischt der Vertrag automatisch",
+      "expectedType": "insolvency_termination",
+      "note": "GAP: Automatisches Erloeschen bei Insolvenzantrag."
+    },
+    {
+      "marker": "gilt als anerkannt, wenn nicht binnen 30 Tagen widersprochen wird",
+      "expectedType": "deemed_acceptance",
+      "note": "GAP: Anerkennungsfiktion fuer die Betriebskostenabrechnung."
+    },
+    {
+      "marker": "verkauft im Fachmarktzentrum ausschließlich Textilien",
+      "expectedType": "non_compete",
+      "note": "GAP: Sortimentsbindung als wettbewerbliche Beschraenkung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "Symmetrische Vertraulichkeit."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform zugelassen."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhalt."
+    },
+    {
+      "marker": "Zahlungen sind innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Zahlungsfrist."
+    },
+    {
+      "marker": "Änderungen des Leistungsumfangs bedürfen der Abstimmung beider Parteien",
+      "note": "Einvernehmliche Aenderung."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende beenden",
+      "note": "Symmetrisches Kuendigungsrecht."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Fläche C 7 im Fachmarktzentrum Nordharz",
+      "note": "Kein Detektor fuer Konkurrenzschutz, Umsatzmiete oder Zwangsraeumung."
+    }
+  ]
+}

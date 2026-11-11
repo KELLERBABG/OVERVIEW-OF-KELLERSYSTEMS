@@ -1,0 +1,165 @@
+{
+  "slug": "gen-werkvertrag-systemhaus",
+  "source": "generated",
+  "domain": "IT-Systemhaus Werk-/Dienstvertrag (Anlagensteuerung, B2B, Sitz Schweiz)",
+  "planted_by": "worker 2 of 3 (held-out corpus for ClauseLens evaluation)",
+  "drafting_note": "Traps are expressed with deliberately non-canonical wording (synonyms, periphrasis, passive voice, definition and consequence split across two subsections) so that the clauses exercise concept detection rather than the vocabulary the rules currently key on.",
+  "traps": [
+    {
+      "marker": "Ansprüche wegen einer Unterschreitung dieser Verfügbarkeit bestehen nicht",
+      "expectedType": "unverbindliche_sla_falle",
+      "note": "Verfügbarkeitsziel von 99,5 % mit ausdrücklichem Ausschluss von Ansprüchen bei Unterschreitung - Scheingarantie ohne Minderungsrecht."
+    },
+    {
+      "marker": "Der Nachweis eines geringeren Schadens ist nicht zulässig",
+      "expectedType": "penalty",
+      "note": "Pauschalabzug von 1,5 % je Meilenstein bei ausgeschlossenem Gegenbeweis; der Nachweis eines geringeren Schadens wird gerade nicht eröffnet."
+    },
+    {
+      "marker": "wird die Teilleistung als vertragsgemäß behandelt",
+      "expectedType": "deemed_acceptance",
+      "note": "Freigabefiktion durch Schweigen; Fristbeginn und Rechtsfolge sind auf zwei Unterziffern verteilt, damit eine reine Satzfensterregel nicht greift."
+    },
+    {
+      "marker": "an die Entwicklung des Landesindexes der Konsumentenpreise angepasst",
+      "expectedType": "price_escalation",
+      "note": "Einseitige Indexierung der Tagessätze ohne Widerspruchsrecht; bewusst nicht über die Wörter Preis/Vergütung/Entgelt angeschlossen."
+    },
+    {
+      "marker": "abrufbar unter www.systemhaus-beispiel.ch/bedingungen",
+      "expectedType": "dynamic_url_referral",
+      "note": "Einbeziehung von Nutzungsbedingungen in ihrer jeweiligen Fassung über einen dynamischen Verweis ohne unveränderlichen Versionsstand."
+    },
+    {
+      "marker": "keine Gewähr dafür, dass die Steuerung sämtliche Störungen erkennt",
+      "expectedType": "as_is_software_disclaimer",
+      "note": "Pauschaler Funktions- und Erkennungsausschluss (keine Gewähr) statt des üblichen Gewährleistungsausschlusses."
+    },
+    {
+      "marker": "erlöschen neun Monate nach der Inbetriebnahme",
+      "expectedType": "statute_of_limitations",
+      "note": "Verkürzung der Haftungsfristen auf neun Monate, ausgedrückt über Erloschen statt Verjährung."
+    },
+    {
+      "marker": "ausschließlich der Besteller darlegungs- und beweisbelastet",
+      "expectedType": "burden_of_proof",
+      "note": "Beweislast für Ursachen aus dem Verantwortungsbereich des Auftragnehmers liegt vollständig beim Besteller."
+    },
+    {
+      "marker": "zeitlich unbeschränkt und ohne Vergütung für eigene Zwecke nutzen",
+      "expectedType": "data_grant",
+      "note": "Unbefristete, unentgeltliche Eigennutzung von Verfahrenskenntnissen und Strukturmodellen aus dem Kundenprojekt."
+    },
+    {
+      "marker": "in seine Produkte einfließen lassen",
+      "expectedType": "feedback_ip_grab",
+      "note": "Kundenvorschläge dürfen ohne Gegenleistung in Produkte des Anbieters einfließen (Verwertung von Kundenfeedback)."
+    },
+    {
+      "marker": "eine Ausgleichszahlung ist dafür nicht vorgesehen",
+      "expectedType": "non_compete",
+      "note": "Achtzehnmonatiges nachvertragliches Tätigkeitsverbot ohne jede Karenz- oder Ausgleichszahlung."
+    },
+    {
+      "marker": "keine Fachkräfte abwerben, die für den Auftragnehmer tätig sind",
+      "expectedType": "non_solicitation",
+      "note": "Abwerbeverbot zulasten des Bestellers, über Fachkräfte statt Mitarbeiter/Personal formuliert."
+    },
+    {
+      "marker": "den Besteller als Kunden nennen und dessen Zeichen verwenden",
+      "expectedType": "marketing_reference",
+      "note": "Referenz- und Markennutzung ohne Zustimmung, mit Ausschluss des Widerrufs für zwölf Monate nach Vertragsende."
+    },
+    {
+      "marker": "gelten als zugegangen, sobald sie in das für die Partei hinterlegte elektronische Postfach eingestellt wurden",
+      "expectedType": "fictitious_receipt",
+      "note": "Zugangsfiktion auf den Zeitpunkt der Einstellung ins elektronische Postfach, ohne Möglichkeit der Kenntnisnahme."
+    },
+    {
+      "marker": "Drittanbieter heranziehen, ohne dies dem Besteller vorher anzuzeigen",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "Freie Weitergabe von Leistungen an Dritte ohne Anzeige- oder Widerspruchsrecht."
+    },
+    {
+      "marker": "unabhängig davon, ob den Besteller ein Verschulden trifft",
+      "expectedType": "third_party_indemnity",
+      "note": "Verschuldensunabhängige Freistellung von Drittansprüchen aus beigestellten Komponenten."
+    },
+    {
+      "marker": "nur bis zur Höhe desjenigen Entgelts",
+      "expectedType": "liability",
+      "note": "Haftungsdeckel für leichte Fahrlässigkeit auf die im Vorjahr in Rechnung gestellten Entgelte (Aushöhlung der Kardinalpflichten)."
+    },
+    {
+      "marker": "Einbehalte des Bestellers sind nur mit vorheriger Zustimmung des Auftragnehmers zulässig",
+      "expectedType": "setoff_restriction",
+      "note": "Zurückbehaltungs- und Aufrechnungsmöglichkeiten werden von der Zustimmung des Verwenders abhängig gemacht."
+    },
+    {
+      "marker": "unterbricht der Auftragnehmer die Leistungserbringung ohne vorherige Ankündigung",
+      "expectedType": "service_suspension",
+      "note": "Sofortige Leistungsunterbrechung ohne Mahnung und Fristsetzung, während die Vergütungspflicht weiterläuft."
+    },
+    {
+      "marker": "endet der Vertrag ohne weiteres",
+      "expectedType": "insolvency_termination",
+      "note": "Automatisches Vertragsende bei Insolvenzverfahren über das Vermögen einer Partei."
+    },
+    {
+      "marker": "sondern besteht auf Dauer",
+      "expectedType": "excessive_survival",
+      "note": "Geheimhaltungspflicht ohne zeitliche Begrenzung nach Vertragsende."
+    },
+    {
+      "marker": "ausschließlich die Gerichte am Geschäftssitz des Auftragnehmers berufen",
+      "expectedType": "jurisdiction",
+      "note": "Ausschließliche Zuständigkeit am Sitz des Anbieters, ohne Gerichtsstand des Bestellers."
+    },
+    {
+      "marker": "bedürfen einer von beiden Parteien unterzeichneten und notariell beglaubigten Urkunde",
+      "expectedType": "written_form_trap",
+      "note": "Erhöhte Formanforderung für Vertragsänderungen (notarielle Beglaubigung), ohne das Wort Schriftform."
+    },
+    {
+      "marker": "verbundene Gesellschaften mit Sitz außerhalb der Schweiz und der Europäischen Union einsetzen",
+      "note": "Messdaten dürfen von Gesellschaften außerhalb der Schweiz und EU ausgewertet werden. Drittlandzugriff allein beweist keine Rechtswidrigkeit; prüfen Sie Datenarten, Empfänger und Übermittlungsmechanismus.",
+      "expectedType": "international_data_processing"
+    },
+    {
+      "marker": "pauschale Abstandszahlung in Höhe eines Viertels der noch offenen Vergütung",
+      "note": "Pauschale Exit-Zahlung; prüfen Sie Kündigungsgrund, ersparte Aufwendungen, tatsächlichen Schaden und mögliche Doppelkompensation.",
+      "expectedType": "early_termination_charge"
+    },
+    {
+      "marker": "die Anlage nach Ablauf von zwei Jahren ab Inbetriebnahme ohne Zustimmung abzuschalten",
+      "note": "Betriebsabschaltung wird an das Fehlen eines Wartungsvertrags gebunden. Prüfen Sie Sicherheitsgrund, Vorankündigung und Daten-/Übergangszugriff.",
+      "expectedType": "maintenance_conditional_shutdown"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Auftragnehmer errichtet für den Besteller eine Anlagensteuerung auf Basis der im Bestellschein bezeichneten Module",
+      "note": "Sachliche Leistungsbeschreibung."
+    },
+    {
+      "marker": "Die Vergütung wird zu 30 % nach Auftragsklärung, zu 40 % nach Lieferung und zu 30 % nach Inbetriebnahme fällig",
+      "note": "Übliche Abschlagszahlungen ohne Zins- oder Pönalregel."
+    },
+    {
+      "marker": "Der Auftragnehmer erbringt die Leistungen mit eigenem, qualifiziertem Personal",
+      "note": "Neutrale Personalzusage."
+    },
+    {
+      "marker": "Der Auftragnehmer hält die einschlägigen Normen und Unfallverhütungsvorschriften ein",
+      "note": "Gesetzestreue Zusage."
+    },
+    {
+      "marker": "Der Besteller stellt dem Auftragnehmer die für die Prüfung erforderlichen Protokolle und Anlagenaufzeichnungen zur Verfügung",
+      "note": "Sachdienliche Mitwirkung, keine Beweislastumkehr und kein unverhältnismäßiges Auditrecht."
+    },
+    {
+      "marker": "Beide Parteien verpflichten sich, vertrauliche Informationen der anderen Partei nicht an Dritte weiterzugeben",
+      "note": "Wechselseitige Geheimhaltung - darf nicht als einseitige Geheimhaltungspflicht gewertet werden."
+    }
+  ]
+}

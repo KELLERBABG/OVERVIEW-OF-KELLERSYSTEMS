@@ -1,0 +1,80 @@
+{
+  "slug": "logistik-015",
+  "source": "generated",
+  "domain": "Luftfracht",
+  "traps": [
+    {
+      "marker": "Haftung des Anbieters ist der Höhe nach auf fünfzig Prozent",
+      "expectedType": "liability",
+      "note": "Red-team Klausel: liability"
+    },
+    {
+      "marker": "Die Kosten des Audits trägt der Kunde",
+      "expectedType": "unreasonable_audit",
+      "note": "Red-team Klausel: unreasonable_audit"
+    },
+    {
+      "marker": "Die Kundendaten werden in ein Drittland übertragen",
+      "expectedType": "international_data_processing",
+      "note": "Red-team Klausel: international_data_processing"
+    },
+    {
+      "marker": "Der Kunde akzeptiert das Buchungssystem wie besehen.",
+      "expectedType": "as_is_software_disclaimer",
+      "note": "Red-team Klausel: as_is_software_disclaimer"
+    },
+    {
+      "marker": "bemüht sich nach besten Kräften um eine hohe Verfügbarkeit",
+      "expectedType": "unverbindliche_sla_falle",
+      "note": "Red-team Klausel: unverbindliche_sla_falle"
+    },
+    {
+      "marker": "entfällt der Anspruch auf eine Gutschrift",
+      "expectedType": "service_credit_forfeiture",
+      "note": "Red-team Klausel: service_credit_forfeiture"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "stimmen die AWB-Daten je Sendung ab",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "überwacht die Sendungen über das Buchungssystem",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "behebt Störungen des Buchungssystems innerhalb von zwei Werktagen",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "geplante Wartungsfenster vier Wochen im Voraus",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "monatlich einen Verfügbarkeitsbericht bereit",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "informiert den Kunden über die eingesetzten Unterauftragnehmer",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Prüfunterlagen für die Sicherheitskontrolle bereit",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "innerhalb von 30 Tagen ohne Abzug zahlbar",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Beide Parteien behandeln die Frachtdaten vertraulich",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "9.2 Es gilt deutsches Recht.",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

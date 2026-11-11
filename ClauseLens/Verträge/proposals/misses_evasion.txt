@@ -1,0 +1,78 @@
+# evasion engine misses (19)
+Each block: slug:line, expected type, label technique note, and the full marker paragraph.
+
+### evasion-010:L19  type=as_is_software_disclaimer
+note: GAP: Tatbestand nur über Querverweis auf Anlage 2 erreichbar. Erwartet: as_is_software_disclaimer.
+(1) Die in Anlage 2 Ziffer 1 geregelte Maßnahme gilt für alle Ansprüche aus diesem Vertrag.
+
+### evasion-010:L21  type=entire_agreement
+note: GAP: Tatbestand nur über Querverweis auf Anlage 2 erreichbar. Erwartet: entire_agreement.
+(2) Die in Anlage 2 Ziffer 2 geregelte Maßnahme gilt für alle Ansprüche aus diesem Vertrag.
+
+### evasion-010:L23  type=marketing_reference
+note: GAP: Tatbestand nur über Querverweis auf Anlage 2 erreichbar. Erwartet: marketing_reference.
+(3) Die in Anlage 2 Ziffer 3 geregelte Maßnahme gilt für alle Ansprüche aus diesem Vertrag.
+
+### evasion-010:L27  type=feedback_ip_grab
+note: GAP: Tatbestand nur über Querverweis auf Anlage 2 erreichbar. Erwartet: feedback_ip_grab.
+(1) Die in Anlage 2 Ziffer 4 geregelte Maßnahme gilt für alle Ansprüche aus diesem Vertrag.
+
+### evasion-010:L29  type=fictitious_receipt
+note: GAP: Tatbestand nur über Querverweis auf Anlage 2 erreichbar. Erwartet: fictitious_receipt.
+(2) Die in Anlage 2 Ziffer 5 geregelte Maßnahme gilt für alle Ansprüche aus diesem Vertrag.
+
+### evasion-010:L31  type=unverbindliche_sla_falle
+note: GAP: Tatbestand nur über Querverweis auf Anlage 2 erreichbar. Erwartet: unverbindliche_sla_falle.
+(3) Die in Anlage 2 Ziffer 6 geregelte Maßnahme gilt für alle Ansprüche aus diesem Vertrag.
+
+### evasion-010:L35  type=agency_commission_exclusion
+note: GAP: Tatbestand nur über Querverweis auf Anlage 2 erreichbar. Erwartet: agency_commission_exclusion.
+(1) Die in Anlage 2 Ziffer 7 geregelte Maßnahme gilt für alle Ansprüche aus diesem Vertrag.
+
+### evasion-010:L37  type=agency_goodwill_waiver
+note: GAP: Tatbestand nur über Querverweis auf Anlage 2 erreichbar. Erwartet: agency_goodwill_waiver.
+(2) Die in Anlage 2 Ziffer 8 geregelte Maßnahme gilt für alle Ansprüche aus diesem Vertrag.
+
+### evasion-010:L39  type=international_data_processing
+note: GAP: Tatbestand nur über Querverweis auf Anlage 2 erreichbar. Erwartet: international_data_processing.
+(3) Die in Anlage 2 Ziffer 9 geregelte Maßnahme gilt für alle Ansprüche aus diesem Vertrag.
+
+### evasion-011:L41  type=notice_period
+note: Verdeckte Benachteiligung, erwarteter Treffer: notice_period (Technik: split).
+(5) Der Vertrag kann von beiden Parteien mit einer Frist von,
+
+### evasion-023:L19  type=deemed_acceptance
+note: GAP: Tatbestand nur über Querverweis auf Anlage 2 erreichbar. Erwartet: deemed_acceptance.
+(1) Die in Anlage 2 Ziffer 1 geregelte Maßnahme gilt für alle Ansprüche aus diesem Vertrag.
+
+### evasion-023:L21  type=statute_of_limitations
+note: GAP: Tatbestand nur über Querverweis auf Anlage 2 erreichbar. Erwartet: statute_of_limitations.
+(2) Die in Anlage 2 Ziffer 2 geregelte Maßnahme gilt für alle Ansprüche aus diesem Vertrag.
+
+### evasion-023:L23  type=written_form_trap
+note: GAP: Tatbestand nur über Querverweis auf Anlage 2 erreichbar. Erwartet: written_form_trap.
+(3) Die in Anlage 2 Ziffer 3 geregelte Maßnahme gilt für alle Ansprüche aus diesem Vertrag.
+
+### evasion-023:L27  type=burden_of_proof
+note: GAP: Tatbestand nur über Querverweis auf Anlage 2 erreichbar. Erwartet: burden_of_proof.
+(1) Die in Anlage 2 Ziffer 4 geregelte Maßnahme gilt für alle Ansprüche aus diesem Vertrag.
+
+### evasion-023:L29  type=dynamic_url_referral
+note: GAP: Tatbestand nur über Querverweis auf Anlage 2 erreichbar. Erwartet: dynamic_url_referral.
+(2) Die in Anlage 2 Ziffer 5 geregelte Maßnahme gilt für alle Ansprüche aus diesem Vertrag.
+
+### evasion-023:L31  type=vicarious_agents
+note: GAP: Tatbestand nur über Querverweis auf Anlage 2 erreichbar. Erwartet: vicarious_agents.
+(3) Die in Anlage 2 Ziffer 6 geregelte Maßnahme gilt für alle Ansprüche aus diesem Vertrag.
+
+### evasion-023:L35  type=unreasonable_audit
+note: GAP: Tatbestand nur über Querverweis auf Anlage 2 erreichbar. Erwartet: unreasonable_audit.
+(1) Die in Anlage 2 Ziffer 7 geregelte Maßnahme gilt für alle Ansprüche aus diesem Vertrag.
+
+### evasion-023:L37  type=data_lockin
+note: GAP: Tatbestand nur über Querverweis auf Anlage 2 erreichbar. Erwartet: data_lockin.
+(2) Die in Anlage 2 Ziffer 8 geregelte Maßnahme gilt für alle Ansprüche aus diesem Vertrag.
+
+### evasion-023:L39  type=third_party_indemnity
+note: GAP: Tatbestand nur über Querverweis auf Anlage 2 erreichbar. Erwartet: third_party_indemnity.
+(3) Die in Anlage 2 Ziffer 9 geregelte Maßnahme gilt für alle Ansprüche aus diesem Vertrag.

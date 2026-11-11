@@ -1,0 +1,2884 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BauLens Workhorse &mdash; Multi-Projekt-Workspace</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+  <style>
+/* Self-hosted IBM Plex; see assets/fonts/OFL.txt.
+   The @font-face URLs resolve relative to the page. This page ships as
+   desktop/app/index.html with assets/ staged beside it by
+   scripts/build-desktop-assets.mjs, which is why the files sit one level down
+   and not next to this source file: previewing desktop/workhorse.html in place
+   renders in the fallback face instead of failing. */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./assets/fonts/plex-mono-400-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./assets/fonts/plex-mono-400-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./assets/fonts/plex-mono-500-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./assets/fonts/plex-mono-500-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("./assets/fonts/plex-mono-600-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("./assets/fonts/plex-mono-600-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./assets/fonts/plex-sans-300-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./assets/fonts/plex-sans-300-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./assets/fonts/plex-sans-400-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./assets/fonts/plex-sans-400-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./assets/fonts/plex-sans-500-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./assets/fonts/plex-sans-500-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./assets/fonts/plex-sans-600-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./assets/fonts/plex-sans-600-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./assets/fonts/plex-sans-700-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./assets/fonts/plex-sans-700-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+    /* =====================================================================
+       BauLens design tokens — shared with index.html, studio.html and
+       docs.html. One neutral surface ramp, one reserved accent.
+       ===================================================================== */
+    :root {
+      --ink-900: #141b26;
+      --ink-800: #1c2431;
+      --ink-700: #242e3c;
+      --ink-600: #2e3a4a;
+      --ink-500: #3a4757;
+      --ink-400: #455465;
+      --ink-300: #52627a;
+
+      --line: #303c4c;
+      --line-strong: #404e62;
+      --ink-line: #556780;
+
+      --accent: #2fb6cf;
+      --accent-hi: #57cde2;
+      --accent-dim: #1c7c8e;
+      --accent-wash: rgba(47, 182, 207, 0.08);
+      --accent-edge: rgba(47, 182, 207, 0.32);
+      --on-accent: #04141a;
+
+      --ok: #2fb6cf;
+      --warn: #d9a441;
+      --fail: #e0657a;
+      --warn-wash: rgba(217, 164, 65, 0.1);
+      --fail-wash: rgba(224, 101, 122, 0.1);
+
+      --fg: #eef2f8;
+      --fg-muted: #b6c1d0;
+      --fg-dim: #9aa7b8;
+      --fg-faint: #8a98ab;
+
+      --font-ui: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+      --r-sm: 3px;
+      --r-md: 5px;
+      --r-lg: 8px;
+      --shadow-2: 0 12px 32px -12px rgba(0, 0, 0, 0.7);
+      --dur-fast: 120ms;
+      --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+      /* Legacy aliases, referenced by the injected desktop script. */
+      --bg: var(--ink-900);
+      --surface: var(--ink-800);
+      --border: var(--line);
+      --border-strong: var(--line-strong);
+      --cyan: var(--accent);
+      --text: var(--fg);
+      --text-dim: var(--fg-dim);
+      --font-sans: var(--font-ui);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      background-color: var(--ink-900);
+      color: var(--fg);
+      font-family: var(--font-ui);
+      font-size: 0.875rem;
+      line-height: 1.5;
+      overflow: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    :focus-visible { outline: 2px solid var(--accent-hi); outline-offset: 1px; border-radius: var(--r-sm); }
+    ::selection { background: var(--accent-edge); color: var(--fg); }
+    .num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+    .mono { font-family: var(--font-mono); }
+    .no-print { }
+
+    /* ---------- Shell: header, three columns, status bar ---------- */
+    #workhorse {
+      display: grid;
+      grid-template-rows: 46px minmax(0, 1fr) 26px;
+      height: 100vh;
+      min-width: 0;
+    }
+
+    .wh-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0 0.75rem;
+      background: var(--ink-800);
+      border-bottom: 1px solid var(--line);
+      /* Without this the header's min-content widens the whole grid track and
+         pushes the inspector off-screen; the header clips itself instead, and
+         the media queries below drop the secondary readouts before that. */
+      overflow: hidden;
+    }
+    .wh-brand { display: flex; align-items: center; gap: 0.55rem; min-width: 0; }
+    .wh-brand img { display: block; width: 18px; height: 18px; }
+    .wh-brand-name { font-weight: 600; letter-spacing: -0.01em; }
+    .wh-brand-sub {
+      font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--fg-dim);
+    }
+    .wh-header-center {
+      display: flex; align-items: center; gap: 0.6rem;
+      flex: 1 1 auto; min-width: 0; justify-content: center;
+      overflow: hidden;
+    }
+    .wh-workspace {
+      display: flex; align-items: center; gap: 0.45rem; min-width: 0;
+      flex: 0 1 auto; overflow: hidden;
+      padding: 0.2rem 0.6rem; border: 1px solid var(--line); border-radius: var(--r-md);
+      background: var(--ink-700);
+    }
+    .wh-workspace-name {
+      font-family: var(--font-mono); font-size: 0.7rem; color: var(--fg);
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 34ch;
+    }
+    .wh-workspace-path {
+      font-family: var(--font-mono); font-size: 0.62rem; color: var(--fg-faint);
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 34ch;
+    }
+    .wh-header-actions { display: flex; align-items: center; gap: 0.4rem; flex: 0 0 auto; }
+
+    /* The header has one row and a fixed height, so the readouts give way
+       instead of being clipped: first the subtitle and the engine version,
+       then the folder path, then the mode chip and the long button label. */
+    @media (max-width: 1560px) {
+      .wh-brand-sub { display: none; }
+    }
+    @media (max-width: 1440px) {
+      #whEngineBadge { display: none; }
+    }
+    @media (max-width: 1340px) {
+      .wh-workspace-path { display: none; }
+    }
+    @media (max-width: 1260px) {
+      #whModeBadge { display: none; }
+    }
+    @media (max-width: 1120px) {
+      .wh-workspace { display: none; }
+      #whCheckProject .wh-btn-label { display: none; }
+    }
+    @media (max-width: 1020px) {
+      #whLandSelect, #whStadtSelect { max-width: 140px; }
+    }
+
+    .wh-btn {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-family: var(--font-ui); font-size: 0.75rem; font-weight: 550;
+      color: var(--fg); background: var(--ink-600);
+      border: 1px solid var(--line-strong); border-radius: var(--r-md);
+      padding: 0.32rem 0.6rem; cursor: pointer;
+      transition: background-color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+    }
+    .wh-btn:hover { background: var(--ink-500); border-color: var(--ink-line); }
+    .wh-btn--primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); font-weight: 600; }
+    .wh-btn--primary:hover { background: var(--accent-hi); border-color: var(--accent-hi); }
+    .wh-btn--tiny { font-size: 0.68rem; padding: 0.2rem 0.45rem; }
+    .wh-btn svg { flex: none; opacity: 0.85; }
+    .wh-btn[disabled] { opacity: 0.5; cursor: default; }
+
+    .wh-chip {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.04em;
+      padding: 0.16rem 0.45rem; border: 1px solid var(--line); border-radius: var(--r-sm);
+      background: var(--ink-700); color: var(--fg-dim); white-space: nowrap;
+      min-width: 0; flex: 0 1 auto; overflow: hidden;
+    }
+    .wh-chip--accent { color: var(--accent-hi); border-color: var(--accent-edge); background: var(--accent-wash); }
+    .wh-chip--warn { color: var(--warn); border-color: rgba(217,164,65,0.4); background: var(--warn-wash); }
+    .wh-chip--fail { color: var(--fail); border-color: rgba(224,101,122,0.4); background: var(--fail-wash); }
+
+    .wh-main {
+      display: grid;
+      /* The two rails give up width before the stage does, so the inspector
+         stays whole on a small or scaled screen. */
+      grid-template-columns: clamp(212px, 17vw, 282px) minmax(0, 1fr) clamp(280px, 22vw, 348px);
+      min-height: 0;
+      overflow: hidden;
+    }
+    .wh-col { display: flex; flex-direction: column; min-width: 0; min-height: 0; }
+    .wh-sidebar { background: var(--ink-800); border-right: 1px solid var(--line); }
+    /* One step above the shell surfaces: the model sits on its own ground
+       plane, and at page-dark it read as a hole in the window. */
+    .wh-stage { background: var(--ink-800); }
+    .wh-inspector { background: var(--ink-800); border-left: 1px solid var(--line); }
+
+    .wh-col-head {
+      display: flex; align-items: center; justify-content: space-between; gap: 0.5rem;
+      padding: 0.45rem 0.7rem; border-bottom: 1px solid var(--line);
+      font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--fg-dim);
+      background: var(--ink-700);
+    }
+    .wh-col-body { flex: 1 1 auto; min-height: 0; overflow: auto; padding: 0.6rem 0.7rem 1rem; }
+    .wh-col-foot { border-top: 1px solid var(--line); padding: 0.5rem 0.7rem; background: var(--ink-700); }
+
+    /* ---------- Explorer ---------- */
+    .wh-empty {
+      padding: 0.9rem; border: 1px dashed var(--line-strong); border-radius: var(--r-lg);
+      color: var(--fg-dim); font-size: 0.78rem; text-align: center;
+    }
+    .wh-project {
+      border: 1px solid var(--line); border-radius: var(--r-md);
+      background: var(--ink-700); margin-bottom: 0.4rem; overflow: hidden;
+    }
+    .wh-project-head {
+      display: flex; align-items: center; gap: 0.45rem; width: 100%;
+      padding: 0.4rem 0.5rem; background: none; border: 0; cursor: pointer;
+      color: inherit; font: inherit; text-align: left;
+    }
+    .wh-project-head:hover { background: var(--ink-600); }
+    .wh-project.is-active .wh-project-head { background: var(--ink-600); }
+    .wh-twist { color: var(--fg-faint); font-size: 0.65rem; width: 0.7rem; flex: none; }
+    .wh-project-name {
+      flex: 1 1 auto; min-width: 0; font-size: 0.8rem; font-weight: 550;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .wh-project-count {
+      font-family: var(--font-mono); font-size: 0.6rem; color: var(--fg-faint); flex: none;
+    }
+    .ampel {
+      width: 8px; height: 8px; border-radius: 50%; flex: none;
+      background: var(--fg-faint); border: 1px solid rgba(255,255,255,0.12);
+    }
+    .ampel--ok { background: var(--ok); }
+    .ampel--warn { background: var(--warn); }
+    .ampel--fail { background: var(--fail); }
+    .wh-files { list-style: none; margin: 0; padding: 0.15rem 0 0.35rem 0.9rem; }
+    .wh-file {
+      display: flex; align-items: center; gap: 0.4rem;
+      padding: 0.18rem 0.35rem; border-radius: var(--r-sm); cursor: pointer;
+      font-size: 0.75rem; color: var(--fg-muted);
+    }
+    .wh-file:hover { background: var(--ink-600); color: var(--fg); }
+    .wh-file.is-active { background: var(--accent-wash); color: var(--fg); box-shadow: inset 2px 0 0 var(--accent); }
+    .wh-file-name { flex: 1 1 auto; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .wh-kind {
+      font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.06em;
+      padding: 0.05rem 0.28rem; border: 1px solid var(--line-strong); border-radius: var(--r-sm);
+      color: var(--fg-dim); flex: none; text-transform: uppercase;
+    }
+    .wh-file-size { font-family: var(--font-mono); font-size: 0.6rem; color: var(--fg-faint); flex: none; }
+
+    /* ---------- Stage / viewer ---------- */
+    .wh-stack { display: flex; flex-direction: column; min-height: 0; height: 100%; }
+    .wh-viewbar {
+      display: flex; align-items: center; justify-content: space-between; gap: 0.5rem;
+      padding: 0.35rem 0.6rem; border-bottom: 1px solid var(--line); background: var(--ink-800);
+    }
+    .wh-seg { display: flex; gap: 0.25rem; }
+    .wh-viewlabel { font-family: var(--font-mono); font-size: 0.62rem; color: var(--fg-dim); letter-spacing: 0.06em; }
+    .wh-canvas-wrap { position: relative; flex: 1 1 auto; min-height: 0; background: var(--ink-900); }
+    .wh-canvas-wrap canvas { display: block; width: 100%; height: 100%; }
+    .wh-viewhint {
+      position: absolute; left: 10px; bottom: 8px; pointer-events: none;
+      font-family: var(--font-mono); font-size: 0.62rem; color: var(--fg-faint);
+      display: flex; gap: 0.9rem; flex-wrap: wrap;
+    }
+    .wh-scale {
+      position: absolute; right: 10px; bottom: 8px; pointer-events: none;
+      font-family: var(--font-mono); font-size: 0.62rem; color: var(--fg-faint);
+    }
+    .wh-crumb {
+      padding: 0.3rem 0.6rem; border-bottom: 1px solid var(--line);
+      font-family: var(--font-mono); font-size: 0.62rem; color: var(--fg-dim);
+      background: var(--ink-800); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+
+    /* ---------- Inspector ---------- */
+    .wh-verdict {
+      border: 1px solid var(--line-strong); border-radius: var(--r-lg);
+      padding: 0.6rem 0.7rem; margin-bottom: 0.65rem; background: var(--ink-700);
+    }
+    .wh-verdict-title {
+      display: flex; align-items: center; gap: 0.45rem;
+      font-size: 0.9rem; font-weight: 600; letter-spacing: -0.01em;
+    }
+    .wh-verdict-sub { font-size: 0.75rem; color: var(--fg-muted); margin-top: 0.2rem; }
+    .wh-verdict--ok { border-color: var(--accent-edge); background: linear-gradient(180deg, var(--accent-wash), var(--ink-700)); }
+    .wh-verdict--warn { border-color: rgba(217,164,65,0.4); background: linear-gradient(180deg, var(--warn-wash), var(--ink-700)); }
+    .wh-verdict--fail { border-color: rgba(224,101,122,0.42); background: linear-gradient(180deg, var(--fail-wash), var(--ink-700)); }
+    .wh-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--fg-faint); flex: none; }
+    .wh-verdict--ok .wh-dot { background: var(--ok); }
+    .wh-verdict--warn .wh-dot { background: var(--warn); }
+    .wh-verdict--fail .wh-dot { background: var(--fail); }
+
+    .wh-kpis { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.4rem; margin-bottom: 0.7rem; }
+    .wh-kpi { border: 1px solid var(--line); border-radius: var(--r-md); background: var(--ink-700); padding: 0.45rem 0.55rem; min-width: 0; }
+    .wh-kpi-label { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fg-dim); }
+    .wh-kpi-value { font-family: var(--font-mono); font-size: 1.05rem; color: var(--fg); margin-top: 0.15rem; }
+    .wh-kpi-hint { font-size: 0.66rem; color: var(--fg-faint); }
+
+    .wh-subhead {
+      display: flex; align-items: center; justify-content: space-between; gap: 0.5rem;
+      font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--fg-dim);
+      margin: 0.85rem 0 0.4rem; padding-bottom: 0.3rem; border-bottom: 1px solid var(--line);
+    }
+    .wh-findings { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.35rem; }
+    .finding {
+      display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0.5rem;
+      align-items: start; padding: 0.4rem 0.5rem; cursor: pointer;
+      border: 1px solid var(--line); border-left-width: 2px; border-radius: var(--r-md);
+      background: var(--ink-700);
+    }
+    .finding:hover { background: var(--ink-600); }
+    .finding.is-nok { border-left-color: var(--fail); }
+    .finding.is-warn { border-left-color: var(--warn); }
+    .finding.is-ok { border-left-color: var(--ok); }
+    .finding.is-focus { border-color: var(--accent-edge); }
+    .finding-key {
+      font-family: var(--font-mono); font-size: 0.66rem; color: var(--accent-hi);
+      white-space: nowrap; padding-top: 0.05rem;
+    }
+    .finding-body { min-width: 0; display: flex; flex-direction: column; }
+    .finding-msg { display: block; font-size: 0.76rem; color: var(--fg-muted); }
+    .finding-rule { display: block; font-family: var(--font-mono); font-size: 0.6rem; color: var(--fg-faint); margin-top: 0.15rem; }
+
+    .wh-export { display: grid; gap: 0.35rem; }
+    .wh-export .wh-btn { justify-content: center; }
+
+    /* ---------- Architect extensions: Rechtsrahmen, Filter, Repairs, Drawer, Palette ---------- */
+    .wh-select {
+      font-family: var(--font-mono); font-size: 0.66rem; color: var(--fg);
+      background: var(--ink-700); border: 1px solid var(--line-strong);
+      border-radius: var(--r-sm); padding: 0.16rem 0.4rem; cursor: pointer;
+      max-width: 190px; min-width: 0; flex: 0 1 190px; text-overflow: ellipsis;
+    }
+    .wh-select:hover { border-color: var(--ink-line); background: var(--ink-600); }
+
+    .wh-filterbar {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 0.25rem;
+      margin-bottom: 0.45rem;
+    }
+    .wh-filter-btn {
+      font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.04em;
+      padding: 0.14rem 0.42rem; border: 1px solid var(--line); border-radius: var(--r-sm);
+      background: var(--ink-700); color: var(--fg-dim); cursor: pointer;
+    }
+    .wh-filter-btn:hover { color: var(--fg); border-color: var(--line-strong); }
+    .wh-filter-btn.is-active {
+      color: var(--accent-hi); border-color: var(--accent-edge); background: var(--accent-wash);
+    }
+    .wh-filter-search {
+      flex: 1 1 90px; min-width: 80px; font-family: var(--font-mono); font-size: 0.64rem;
+      padding: 0.14rem 0.4rem; background: var(--ink-700); color: var(--fg);
+      border: 1px solid var(--line); border-radius: var(--r-sm);
+    }
+    .wh-filter-search::placeholder { color: var(--fg-faint); }
+
+    .finding-key-btn {
+      background: none; border: 1px solid transparent; padding: 0.05rem 0.2rem;
+      margin: -0.05rem -0.2rem; border-radius: var(--r-sm); cursor: pointer;
+      font-family: var(--font-mono); font-size: 0.66rem; color: var(--accent-hi);
+      white-space: nowrap; text-align: left;
+    }
+    .finding-key-btn:hover {
+      border-color: var(--accent-edge); background: var(--accent-wash);
+      text-decoration: underline;
+    }
+
+    .wh-repairs { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.4rem; }
+    .wh-repair-card {
+      border: 1px solid var(--line-strong); border-left: 2px solid var(--accent);
+      border-radius: var(--r-md); background: var(--ink-700); padding: 0.45rem 0.55rem;
+    }
+    .wh-repair-head {
+      display: flex; align-items: center; justify-content: space-between; gap: 0.4rem;
+      font-size: 0.76rem; font-weight: 600; color: var(--fg);
+    }
+    .wh-repair-delta {
+      font-family: var(--font-mono); font-size: 0.62rem; color: var(--accent-hi);
+      padding: 0.06rem 0.32rem; border: 1px solid var(--accent-edge);
+      border-radius: var(--r-sm); background: var(--accent-wash); white-space: nowrap;
+    }
+    .wh-repair-action { font-size: 0.73rem; color: var(--fg-muted); margin-top: 0.18rem; }
+    .wh-repair-meta {
+      display: flex; align-items: center; justify-content: space-between; gap: 0.4rem;
+      margin-top: 0.35rem; font-family: var(--font-mono); font-size: 0.6rem; color: var(--fg-faint);
+    }
+    .wh-sim-banner {
+      display: none; align-items: center; justify-content: space-between; gap: 0.4rem;
+      padding: 0.35rem 0.55rem; margin-bottom: 0.5rem; border: 1px solid var(--accent-edge);
+      border-radius: var(--r-md); background: var(--accent-wash);
+      font-family: var(--font-mono); font-size: 0.64rem; color: var(--accent-hi);
+    }
+    .wh-sim-banner.is-on { display: flex; }
+
+    .wh-trace {
+      border: 1px solid var(--line); border-radius: var(--r-md); background: var(--ink-700);
+      padding: 0.45rem 0.55rem; font-size: 0.72rem; color: var(--fg-muted);
+    }
+    .wh-trace-row { display: flex; justify-content: space-between; gap: 0.5rem; padding: 0.1rem 0; font-family: var(--font-mono); font-size: 0.62rem; }
+    .wh-trace-notes { margin: 0.3rem 0 0; padding-left: 1rem; font-size: 0.68rem; color: var(--fg-dim); }
+
+    /* §-Gesetzes-Drawer */
+    .wh-drawer {
+      position: fixed; top: 46px; right: 0; bottom: 26px; width: 390px; max-width: 92vw;
+      z-index: 45; background: var(--ink-800); border-left: 1px solid var(--line-strong);
+      box-shadow: var(--shadow-2); display: none; flex-direction: column;
+    }
+    .wh-drawer.is-on { display: flex; }
+    .wh-drawer-head {
+      display: flex; align-items: center; justify-content: space-between; gap: 0.5rem;
+      padding: 0.55rem 0.75rem; background: var(--ink-700); border-bottom: 1px solid var(--line);
+    }
+    .wh-drawer-cite { font-family: var(--font-mono); font-size: 0.74rem; font-weight: 600; color: var(--accent-hi); }
+    .wh-drawer-body { flex: 1 1 auto; overflow: auto; padding: 0.75rem; font-size: 0.8rem; line-height: 1.55; }
+    .wh-drawer-title { font-size: 0.92rem; font-weight: 600; color: var(--fg); margin: 0 0 0.35rem; }
+    .wh-drawer-source { font-family: var(--font-mono); font-size: 0.62rem; color: var(--fg-dim); margin-bottom: 0.65rem; }
+    .wh-drawer-quote {
+      margin: 0 0 0.75rem; padding: 0.6rem 0.7rem; background: var(--ink-700);
+      border: 1px solid var(--line); border-left: 2px solid var(--accent);
+      border-radius: var(--r-md); font-size: 0.78rem; color: var(--fg); white-space: pre-wrap;
+    }
+    .wh-drawer-note {
+      padding: 0.5rem 0.65rem; background: var(--ink-700); border: 1px solid var(--line);
+      border-radius: var(--r-md); font-size: 0.74rem; color: var(--fg-muted);
+    }
+    .wh-drawer.wh-drawer--wide { width: 760px; }
+    .wh-matrix-wrap { overflow-x: auto; }
+    .wh-matrix { width: 100%; border-collapse: collapse; font-size: 0.72rem; }
+    .wh-matrix th, .wh-matrix td {
+      padding: 0.32rem 0.45rem; border-bottom: 1px solid var(--line);
+      text-align: left; vertical-align: top; color: var(--fg);
+    }
+    .wh-matrix th { position: sticky; top: 0; background: var(--ink-700); color: var(--fg-muted); font-weight: 600; }
+    .wh-matrix .mono { font-family: var(--font-mono); font-size: 0.66rem; }
+    .wh-matrix-verdict { font-weight: 600; }
+    .wh-matrix-verdict.is-ok { color: var(--ok); }
+    .wh-matrix-verdict.is-warn { color: var(--warn); }
+    .wh-matrix-verdict.is-fail { color: var(--fail); }
+
+    /* Command Palette (Cmd/Ctrl+K) */
+    .wh-cmdk-backdrop {
+      position: fixed; inset: 0; z-index: 80; background: rgba(5, 7, 12, 0.72);
+      display: none; align-items: flex-start; justify-content: center; padding-top: 11vh;
+    }
+    .wh-cmdk-backdrop.is-on { display: flex; }
+    .wh-cmdk {
+      width: 520px; max-width: 92vw; background: var(--ink-800);
+      border: 1px solid var(--line-strong); border-radius: var(--r-lg);
+      box-shadow: var(--shadow-2); overflow: hidden;
+    }
+    .wh-cmdk-input {
+      width: 100%; padding: 0.65rem 0.8rem; background: var(--ink-700);
+      border: 0; border-bottom: 1px solid var(--line); color: var(--fg);
+      font-family: var(--font-ui); font-size: 0.84rem;
+    }
+    .wh-cmdk-input:focus { outline: none; }
+    .wh-cmdk-list { list-style: none; margin: 0; padding: 0.3rem; max-height: 310px; overflow: auto; }
+    .wh-cmdk-item {
+      display: flex; align-items: center; justify-content: space-between; gap: 0.5rem;
+      padding: 0.42rem 0.6rem; border-radius: var(--r-sm); cursor: pointer;
+      font-size: 0.78rem; color: var(--fg-muted);
+    }
+    .wh-cmdk-item:hover, .wh-cmdk-item.is-active { background: var(--accent-wash); color: var(--fg); }
+    .wh-cmdk-shortcut { font-family: var(--font-mono); font-size: 0.62rem; color: var(--fg-faint); }
+
+    /* ---------- Status bar ---------- */
+    .wh-statusbar {
+      display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;
+      padding: 0 0.6rem; background: var(--ink-700); border-top: 1px solid var(--line);
+      font-family: var(--font-mono); font-size: 0.62rem; color: var(--fg-dim);
+    }
+    .wh-status-left { display: flex; align-items: center; gap: 0.5rem; min-width: 0; }
+    #whStatusText { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    .wh-toast {
+      position: fixed; right: 12px; bottom: 40px; z-index: 20; max-width: 46ch;
+      padding: 0.5rem 0.7rem; border: 1px solid var(--accent-edge); border-radius: var(--r-md);
+      background: var(--ink-600); color: var(--fg); font-size: 0.75rem;
+      box-shadow: var(--shadow-2); display: none;
+    }
+    .wh-toast.is-on { display: block; }
+
+    .wh-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+    @media (max-width: 1180px) {
+      .wh-main { grid-template-columns: 236px minmax(0, 1fr) 300px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- The injected desktop script keys off this id and window.Workhorse. Keeping
+     the whole app inside one root element also makes the 100vh grid safe. -->
+<div id="workhorse" data-mode="demo">
+
+  <header class="wh-header">
+    <div class="wh-brand">
+      <img src="assets/icon.svg" alt="" width="18" height="18">
+      <span class="wh-brand-name">BauLens</span>
+      <span class="wh-brand-sub">Workhorse</span>
+    </div>
+
+    <div class="wh-header-center">
+      <div class="wh-workspace" title="Geöffneter Projektordner">
+        <span class="wh-workspace-name" id="whWorkspaceName">Kein Projektordner</span>
+        <span class="wh-workspace-path" id="whWorkspacePath">Ordner öffnen oder Datei hierher ziehen</span>
+      </div>
+      <select class="wh-select" id="whLandSelect" aria-label="Bauordnung / Rechtsrahmen (DACH)" title="Landesbauordnung / OIB / Kantonaler Rechtsrahmen für die Vorprüfung">
+        <option value="">Bauordnung: laut Plan (Auto)</option>
+        <optgroup label="🇩🇪 Deutschland — 16 LBO + MBO">
+          <option value="MBO">MBO · Musterbauordnung</option>
+          <option value="BW">BW · LBO Baden-Württemberg (0,4 H)</option>
+          <option value="BY">BY · BayBO Bayern (0,4 H)</option>
+          <option value="BE">BE · BauO Berlin (0,4 H)</option>
+          <option value="BB">BB · BbgBO Brandenburg (0,4 H)</option>
+          <option value="HB">HB · BremLBO Bremen (0,4 H)</option>
+          <option value="HH">HH · HBauO Hamburg (0,4 H)</option>
+          <option value="HE">HE · HBO Hessen (0,4 H)</option>
+          <option value="MV">MV · LBauO Mecklenburg-Vorpommern</option>
+          <option value="NI">NI · NBauO Niedersachsen (0,5 H)</option>
+          <option value="NW">NW · BauO NRW (0,4 H)</option>
+          <option value="RP">RP · LBauO Rheinland-Pfalz (0,4 H)</option>
+          <option value="SL">SL · LBO Saarland (0,4 H)</option>
+          <option value="SN">SN · SächsBO Sachsen (0,4 H)</option>
+          <option value="ST">ST · BauO LSA Sachsen-Anhalt</option>
+          <option value="SH">SH · LBO Schleswig-Holstein</option>
+          <option value="TH">TH · ThürBO Thüringen (0,4 H)</option>
+        </optgroup>
+        <optgroup label="🇦🇹 Österreich — OIB &amp; 9 Länder">
+          <option value="AT_OIB">AT_OIB · OIB-Richtlinien 1–6</option>
+          <option value="AT_W">AT_W · Bauordnung für Wien</option>
+          <option value="AT_NOE">AT_NOE · NÖ Bauordnung</option>
+          <option value="AT_OOE">AT_OOE · Oö. Bauordnung</option>
+          <option value="AT_SBG">AT_SBG · Salzburger Baupolizeigesetz</option>
+          <option value="AT_TIR">AT_TIR · Tiroler Bauordnung</option>
+          <option value="AT_VBG">AT_VBG · Vorarlberger Baugesetz</option>
+          <option value="AT_STMK">AT_STMK · Steiermärkisches Baugesetz</option>
+          <option value="AT_KTN">AT_KTN · Kärntner Bauordnung</option>
+          <option value="AT_BGLD">AT_BGLD · Burgenländisches Baugesetz</option>
+        </optgroup>
+        <optgroup label="🇨🇭 Schweiz — IVHB &amp; Kantone">
+          <option value="CH_IVHB">CH_IVHB · IVHB Interkantonal</option>
+          <option value="CH_ZH">CH_ZH · PBG Kanton Zürich</option>
+          <option value="CH_BE">CH_BE · BauG Kanton Bern</option>
+          <option value="CH_BS">CH_BS · BPG Kanton Basel-Stadt</option>
+          <option value="CH_LU">CH_LU · PBG Kanton Luzern</option>
+          <option value="CH_SG">CH_SG · PBG Kanton St. Gallen</option>
+          <option value="CH_AG">CH_AG · BauG Kanton Aargau</option>
+          <option value="CH_GE">CH_GE · LCI Canton de Genève</option>
+          <option value="CH_VD">CH_VD · LATC Canton de Vaud</option>
+          <option value="CH_TI">CH_TI · LE Cantone Ticino</option>
+        </optgroup>
+      </select>
+      <select class="wh-select" id="whStadtSelect" aria-label="Kommunale Satzungen (Stellplatz &amp; Gründach)" title="Kommunale Stellplatz-, Fahrrad- und Begrünungssatzung">
+        <option value="">Kommune: laut Plan (Auto)</option>
+        <option value="MUENCHEN">München (StplS &amp; FGS Gründach)</option>
+        <option value="BERLIN">Berlin (0,0 Pkw/WE &amp; BFF Gründach)</option>
+        <option value="HAMBURG">Hamburg (HmbStplVO &amp; Gründach)</option>
+        <option value="FRANKFURT">Frankfurt am Main (Stellplatz &amp; Begrünung)</option>
+        <option value="STUTTGART">Stuttgart (Stellplatz &amp; Begrünung)</option>
+        <option value="KOELN">Köln (Stellplatz &amp; Begrünung)</option>
+        <option value="DUESSELDORF">Düsseldorf (Stellplatz &amp; Begrünung)</option>
+        <option value="LEIPZIG">Leipzig (Stellplatz &amp; Begrünung)</option>
+        <option value="DRESDEN">Dresden (Stellplatz &amp; Begrünung)</option>
+        <option value="NUERNBERG">Nürnberg (StplS Nürnberg)</option>
+        <option value="HANNOVER">Hannover (Stellplatz &amp; Begrünung)</option>
+        <option value="AUGSBURG">Augsburg (Stellplatz &amp; Begrünung)</option>
+        <option value="ESSEN">Essen (Stellplatz &amp; Begrünung)</option>
+        <option value="DORTMUND">Dortmund (Stellplatz &amp; Begrünung)</option>
+        <option value="BONN">Bonn (Solargründach &amp; Stellplatz)</option>
+        <option value="MUENSTER">Münster (3,0 Rad/WE &amp; Gründach)</option>
+        <option value="MANNHEIM">Mannheim (Stellplatz &amp; Gründach)</option>
+        <option value="KARLSRUHE">Karlsruhe (Stellplatz &amp; Gründach)</option>
+        <option value="WIESBADEN">Wiesbaden (Stellplatz &amp; Begrünung)</option>
+        <option value="BREMEN">Bremen (BremStplVO &amp; Gründach)</option>
+      </select>
+      <span class="wh-chip" id="whEngineBadge">Engine: wird geprüft …</span>
+      <span class="wh-chip wh-chip--warn" id="whModeBadge">Demo-Modus</span>
+    </div>
+
+    <div class="wh-header-actions">
+      <button type="button" class="wh-btn wh-btn--tiny" id="whCmdPaletteBtn" title="Befehlspalette öffnen (Strg+K / ⌘K)">
+        <span class="mono">⌘K</span>
+      </button>
+      <button type="button" class="wh-btn" id="whCheckProject" title="Aktive Datei prüfen" disabled>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        <span class="wh-btn-label">Projekt prüfen</span>
+      </button>
+      <button type="button" class="wh-btn" id="whLandsMatrix" title="Aktives Projekt gleichzeitig gegen alle 34 Bauordnungen (DE, AT, CH) prüfen">
+        DACH-Matrix
+      </button>
+      <button type="button" class="wh-btn wh-btn--primary" id="whOpenFolder">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+        <span class="wh-btn-label">Projektordner öffnen</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="wh-main">
+    <!-- ============ Left: project explorer ============ -->
+    <aside class="wh-col wh-sidebar" aria-label="Projekt-Explorer">
+      <div class="wh-col-head">
+        <span>Projekt-Explorer</span>
+        <span class="num" id="whProjectCount">0 Projekte</span>
+      </div>
+      <div class="wh-col-body" id="whProjectList">
+        <div class="wh-empty">
+          Noch kein Ordner geöffnet.<br>
+          <span class="mono" style="font-size:0.7rem;">Datei &rarr; Ordner öffnen …</span>
+        </div>
+      </div>
+      <div class="wh-col-foot">
+        <button type="button" class="wh-btn wh-btn--tiny" id="whCheckAll" style="width:100%; justify-content:center;" disabled>
+          Alle Projekte im Stapel prüfen
+        </button>
+        <button type="button" class="wh-btn wh-btn--tiny" id="whExportPlans" style="width:100%; justify-content:center; margin-top:6px;" disabled title="Schreibt für jedes Projekt der Mappe ein Lageplan-Blatt als DXF (1 Einheit = 1 m) und SVG in einen Ordner Ihrer Wahl – die Blätter einer Einreichung in einem Durchgang.">
+          Alle Lagepläne exportieren
+        </button>
+      </div>
+    </aside>
+
+    <!-- ============ Center: interactive model stage ============ -->
+    <section class="wh-col wh-stage" aria-label="Modellansicht">
+      <div class="wh-stack">
+        <div class="wh-crumb" id="whDetailCrumb">Keine Datei ausgewählt</div>
+
+        <div class="wh-viewbar">
+          <div class="wh-seg" role="group" aria-label="Ansicht">
+            <button type="button" class="wh-btn wh-btn--tiny" id="whPreset1" title="Isometrie Süd-West (Taste 1)">1 &middot; Isometrie SW</button>
+            <button type="button" class="wh-btn wh-btn--tiny" id="whPreset2" title="Draufsicht (Taste 2)">2 &middot; Draufsicht</button>
+            <button type="button" class="wh-btn wh-btn--tiny" id="whPreset3" title="Nord-Ansicht (Taste 3)">3 &middot; Nord</button>
+            <button type="button" class="wh-btn wh-btn--tiny" id="whPresetR" title="Kamera zurücksetzen (Taste R)">R &middot; Reset</button>
+          </div>
+          <div class="wh-seg" role="group" aria-label="Modus">
+            <button type="button" class="wh-btn wh-btn--tiny" id="whBtn3d">3D-Hüllkurve</button>
+            <button type="button" class="wh-btn wh-btn--tiny" id="whBtn2d">2D-Lageplan</button>
+          </div>
+          <span class="wh-viewlabel" id="whViewLabel">ISOMETRIE SÜD-WEST</span>
+        </div>
+
+        <div class="wh-canvas-wrap" id="whCanvas3dWrap">
+          <canvas id="whCanvas3d"></canvas>
+          <div class="wh-viewhint">
+            <span>Linke Maus: Orbit</span>
+            <span>Rechte/Mittlere Maus: Pan</span>
+            <span>Mausrad: Zoom</span>
+          </div>
+          <div class="wh-scale" id="whScaleLegend">1 Rasterfeld = 5,00 m</div>
+        </div>
+
+        <div class="wh-canvas-wrap" id="whCanvas2dWrap" style="display:none;">
+          <canvas id="whCanvas2d"></canvas>
+          <div class="wh-viewhint">
+            <span>Ziehen: Pan</span>
+            <span>Mausrad: Zoom</span>
+            <span>Orthogonale Draufsicht</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Right: inspector ============ -->
+    <aside class="wh-col wh-inspector" aria-label="Befund">
+      <div class="wh-col-head">
+        <span>Befund</span>
+        <span class="num" id="whProfileChip">Profil &mdash;</span>
+      </div>
+      <div class="wh-col-body">
+        <div class="wh-verdict" id="whVerdict">
+          <div class="wh-verdict-title">
+            <span class="wh-dot" aria-hidden="true"></span>
+            <span id="whVerdictTitle">Keine Prüfung gelaufen</span>
+          </div>
+          <div class="wh-verdict-sub" id="whVerdictSub">
+            Wählen Sie eine Datei im Explorer und starten Sie die Prüfung.
+          </div>
+        </div>
+
+        <div class="wh-kpis">
+          <div class="wh-kpi">
+            <div class="wh-kpi-label">Gebäudeklasse</div>
+            <div class="wh-kpi-value" id="whKpiGk">&mdash;</div>
+            <div class="wh-kpi-hint" id="whKpiGkHint">§2 MBO</div>
+          </div>
+          <div class="wh-kpi">
+            <div class="wh-kpi-label">GRZ</div>
+            <div class="wh-kpi-value" id="whKpiGrz">&mdash;</div>
+            <div class="wh-kpi-hint" id="whKpiGrzHint">§19 BauNVO</div>
+          </div>
+          <div class="wh-kpi">
+            <div class="wh-kpi-label">GFZ</div>
+            <div class="wh-kpi-value" id="whKpiGfz">&mdash;</div>
+            <div class="wh-kpi-hint" id="whKpiGfzHint">§20 BauNVO</div>
+          </div>
+          <div class="wh-kpi">
+            <div class="wh-kpi-label">Abstandsfläche</div>
+            <div class="wh-kpi-value" id="whKpiAbstand">&mdash;</div>
+            <div class="wh-kpi-hint" id="whKpiAbstandHint">§6 MBO</div>
+          </div>
+        </div>
+
+        <div class="wh-sim-banner" id="whSimBanner">
+          <span id="whSimBannerText">Simulation aktiv (Entwurfsvariante)</span>
+          <button type="button" class="wh-btn wh-btn--tiny" id="whSimReset">Original wiederherstellen</button>
+        </div>
+
+        <div class="wh-subhead">
+          <span>Mängelliste</span>
+          <span class="num" id="whFindingsCount">0 Befunde</span>
+        </div>
+        <div class="wh-filterbar" role="toolbar" aria-label="Befundfilter">
+          <button type="button" class="wh-filter-btn is-active" data-filter="all">Alle</button>
+          <button type="button" class="wh-filter-btn" data-filter="fail">Fehler</button>
+          <button type="button" class="wh-filter-btn" data-filter="warn">Warnung</button>
+          <button type="button" class="wh-filter-btn" data-filter="ok">OK</button>
+          <input type="search" class="wh-filter-search" id="whFindingSearch" placeholder="§ / Regel filtern …" aria-label="Befunde durchsuchen">
+        </div>
+        <ul class="wh-findings" id="whFindings">
+          <li class="finding is-ok">
+            <span class="finding-key">&sect;</span>
+            <span class="finding-body">
+              <span class="finding-msg">Noch keine Prüfung. Ein Klick auf einen Mangel richtet die Kamera auf die betroffene Fassade aus; ein Klick auf den Paragraphen öffnet den Gesetzestext.</span>
+            </span>
+          </li>
+        </ul>
+
+        <div id="whRepairsSection" style="display:none;">
+          <div class="wh-subhead">
+            <span>Heilungsvorschläge (Repair Engine)</span>
+            <span class="num" id="whRepairsCount">0 Optionen</span>
+          </div>
+          <ul class="wh-repairs" id="whRepairsList"></ul>
+        </div>
+
+        <div id="whTraceSection" style="display:none;">
+          <div class="wh-subhead">
+            <span>Modell-Herkunft &amp; Annahmen</span>
+            <span class="mono" id="whTraceSource">&mdash;</span>
+          </div>
+          <div class="wh-trace" id="whTraceBox"></div>
+        </div>
+
+        <div class="wh-subhead"><span>Ausgabe</span><span class="mono" id="whExportHint">PDF &middot; Lageplan SVG/DXF &middot; Dossier &middot; XBau &middot; BCF</span></div>
+        <div class="wh-export">
+          <button type="button" class="wh-btn" id="whExportPdf" disabled title="Schreibt das DIN-A4-Dossier als PDF-Datei in einen Ordner Ihrer Wahl – ohne Druckdialog.">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+            DIN-A4-Befund als PDF speichern
+          </button>
+          <button type="button" class="wh-btn" id="whExportSvg" disabled title="Schreibt das Lageplan-Blatt maßstäblich als SVG in einen Ordner Ihrer Wahl – für Plotter und Planwerk, ohne Druckdialog.">Lageplan als SVG speichern</button>
+          <button type="button" class="wh-btn" id="whExportDxf" disabled title="Schreibt das Lageplan-Blatt als DXF mit Ebenen nach Bauteil, 1 Zeichnungseinheit = 1 m – zum Einfügen in einen bestehenden Plansatz.">Lageplan als DXF speichern</button>
+          <button type="button" class="wh-btn" id="whExportDeviations" disabled title="Erzeugt für alle Abweichungen und Befreiungen begründete Antragsentwürfe (§ 67 MBO / Art. 63 BayBO / § 31 Abs. 2 BauGB).">Abweichungsanträge (§67 MBO / §31 BauGB) speichern</button>
+          <button type="button" class="wh-btn" id="whExportDossier" disabled>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9V4h12v5"/><rect x="4" y="9" width="16" height="7" rx="1"/><path d="M7 16h10v4H7z"/></svg>
+            DIN-A4-Dossier drucken
+          </button>
+          <button type="button" class="wh-btn" id="whExportXbau" disabled>XBau 2.3 XML schreiben</button>
+          <button type="button" class="wh-btn" id="whExportBcf" disabled>BCF 2.1 Themen exportieren</button>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="wh-statusbar">
+    <div class="wh-status-left">
+      <span class="ampel" id="whStatusDot" aria-hidden="true"></span>
+      <span id="whStatusText">Bereit.</span>
+    </div>
+    <div class="wh-status-left">
+      <span id="whBatchSummary">Stapel: &mdash;</span>
+      <span>Lokal &middot; kein Byte verlässt dieses Gerät</span>
+    </div>
+  </footer>
+
+  <div class="wh-toast no-print" id="whToast" role="status" aria-live="polite"></div>
+
+  <!-- §-Gesetzes-Drawer: Wortlaut & Kommentar zum angeklickten Paragraphen -->
+  <aside class="wh-drawer no-print" id="whStatuteDrawer" aria-label="Gesetzestext und Kommentar" aria-hidden="true">
+    <div class="wh-drawer-head">
+      <span class="wh-drawer-cite" id="whStatuteCite">&sect; Normtext</span>
+      <button type="button" class="wh-btn wh-btn--tiny" id="whStatuteClose" aria-label="Gesetzes-Drawer schließen">Schließen &middot; Esc</button>
+    </div>
+    <div class="wh-drawer-body">
+      <h3 class="wh-drawer-title" id="whStatuteTitle">Paragraph auswählen</h3>
+      <div class="wh-drawer-source" id="whStatuteSource">Bauordnung / Fachrecht</div>
+      <blockquote class="wh-drawer-quote" id="whStatuteText">Klicken Sie in der Mängelliste auf einen Paragraphen, um den Wortlaut und den Prüfhinweis einzublenden.</blockquote>
+      <div class="wh-drawer-note" id="whStatuteNote"></div>
+    </div>
+  </aside>
+
+  <!-- DACH-Matrix: das aktive Projekt gegen alle Bauordnungen gleichzeitig -->
+  <aside class="wh-drawer wh-drawer--wide no-print" id="whMatrixDrawer" aria-label="DACH-Matrix" aria-hidden="true">
+    <div class="wh-drawer-head">
+      <span class="wh-drawer-cite">DACH-Matrix</span>
+      <select class="wh-select" id="whMatrixCountry" aria-label="Rechtsraum filtern" title="Nur Bauordnungen eines Landes prüfen">
+        <option value="DACH">DACH · alle</option>
+        <option value="DE">Deutschland (DE)</option>
+        <option value="AT">Österreich (AT)</option>
+        <option value="CH">Schweiz (CH)</option>
+      </select>
+      <button type="button" class="wh-btn wh-btn--tiny" id="whMatrixPdf" title="Die Matrix als PDF-Tabelle speichern">PDF speichern</button>
+      <button type="button" class="wh-btn wh-btn--tiny" id="whMatrixClose" aria-label="DACH-Matrix schließen">Schließen &middot; Esc</button>
+    </div>
+    <div class="wh-drawer-body">
+      <h3 class="wh-drawer-title">Projekt gegen alle Bauordnungen</h3>
+      <div class="wh-drawer-source" id="whMatrixSummary"></div>
+      <div class="wh-drawer-note" id="whMatrixNote" style="display:none"></div>
+      <div class="wh-matrix-wrap">
+        <table class="wh-matrix">
+          <thead><tr><th>Rechtsbereich</th><th>Code</th><th>Norm</th><th>Ergebnis</th><th>Fehler</th><th>Warn.</th><th>Min. Abstand</th></tr></thead>
+          <tbody id="whMatrixBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Befehlspalette (Cmd/Ctrl+K) -->
+  <div class="wh-cmdk-backdrop no-print" id="whCmdkBackdrop" aria-hidden="true">
+    <div class="wh-cmdk" role="dialog" aria-modal="true" aria-label="Befehlspalette">
+      <input type="text" class="wh-cmdk-input" id="whCmdkInput" placeholder="Befehl, Kamera-Preset, Bauordnung oder Export suchen …" autocomplete="off">
+      <ul class="wh-cmdk-list" id="whCmdkList"></ul>
+    </div>
+  </div>
+</div>
+
+<script>
+/**
+ * BauLens Workhorse — the desktop multi-project workspace.
+ *
+ * Two responsibilities, deliberately separated:
+ *
+ *   this page    renders the workspace, the findings and the interactive
+ *                model viewport, and exposes window.Workhorse as the only
+ *                entry point for data.
+ *   desktop.js   owns the shell: native folder dialog, filesystem scan, the
+ *                engine calls, drag & drop and printing. It is injected by
+ *                scripts/build-desktop-assets.mjs and talks back through
+ *                window.Workhorse.
+ *
+ * The page therefore runs standalone: without window.__TAURI__ it stays in
+ * "Demo-Modus" with a built-in sample workspace, which is what makes it
+ * reviewable in an ordinary browser.
+ *
+ * Requested actions leave the page as CustomEvents on `document`, because the
+ * IPC belongs to the shell and not to the view:
+ *   workhorse:open-folder            ask the shell for a folder
+ *   workhorse:check       { files }  run the engine over these paths
+ *   workhorse:export      { kind, file }  pdf | xbau | bcf | dossier
+ * In Demo-Modus this page answers its own events instead.
+ */
+(function () {
+  "use strict";
+
+  var $ = function (id) { return document.getElementById(id); };
+  var esc = function (s) {
+    return String(s == null ? "" : s)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  };
+  var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  var tauri = window.__TAURI__;
+  var demo = !(tauri && tauri.core && typeof tauri.core.invoke === "function");
+
+  var VERDICTS = {
+    "bestanden": { cls: "ok", label: "VORPRÜFUNG BESTANDEN" },
+    "mit Auflagen": { cls: "warn", label: "MIT AUFLAGEN" },
+    "mit auflagen": { cls: "warn", label: "MIT AUFLAGEN" },
+    "nicht bestanden": { cls: "fail", label: "NICHT BESTANDEN" }
+  };
+
+  /* ------------------------------------------------------------------ *
+   * State
+   * ------------------------------------------------------------------ */
+
+  var state = {
+    root: null,
+    projects: [],
+    activeProject: null,
+    activeFile: null,
+    singleFile: false,
+    expanded: {},
+    detailRequested: {},  /* file path -> detail check already asked for */
+    results: {},          /* file path -> batch_check result entry */
+    result: null,         /* the check currently displayed */
+    baseResult: null,     /* original check before What-If simulation */
+    simulating: false,
+    land: "",
+    stadt: "",
+    filterStatus: "all",
+    filterQuery: ""
+  };
+
+  var model = {
+    /* Geometry shown in the viewport. Replaced by whatever the ingested model
+       reports; the defaults keep the stage meaningful before the first check. */
+    width: 18.0,
+    depth: 12.0,
+    height: 8.5,
+    storeys: 3,
+    setbacks: { norden: 3.0, osten: 3.0, sueden: 3.0, westen: 3.0 },
+    required: 3.0,
+    violated: {},         /* "norden" -> true */
+    plan: null
+  };
+
+  /* ------------------------------------------------------------------ *
+   * Small helpers
+   * ------------------------------------------------------------------ */
+
+  function toast(message, ms) {
+    var node = $("whToast");
+    if (!node) return;
+    node.textContent = message;
+    node.classList.add("is-on");
+    window.clearTimeout(toast._t);
+    toast._t = window.setTimeout(function () { node.classList.remove("is-on"); }, ms || 3200);
+  }
+
+  function setStatus(text, kind) {
+    var node = $("whStatusText");
+    if (node) node.textContent = text;
+    var dot = $("whStatusDot");
+    if (dot) dot.className = "ampel" + (kind ? " ampel--" + kind : "");
+  }
+
+  function bytes(n) {
+    var value = Number(n) || 0;
+    if (value < 1024) return value + " B";
+    if (value < 1024 * 1024) return (value / 1024).toFixed(0) + " KB";
+    return (value / 1024 / 1024).toFixed(1) + " MB";
+  }
+
+  function baseName(path) {
+    return String(path || "").split(/[\\/]/).pop();
+  }
+
+  function worst(a, b) {
+    var rank = { fail: 3, "nicht bestanden": 3, warn: 2, "mit Auflagen": 2, ok: 1, "bestanden": 1 };
+    var ra = rank[a] || 0, rb = rank[b] || 0;
+    if (!ra) return b;
+    if (!rb) return a;
+    return ra >= rb ? a : b;
+  }
+
+  function firstNumber(text) {
+    var m = /(-?\d+(?:[.,]\d+)?)/.exec(String(text || ""));
+    return m ? parseFloat(m[1].replace(",", ".")) : null;
+  }
+
+  /* ------------------------------------------------------------------ *
+   * Explorer
+   * ------------------------------------------------------------------ */
+
+  function projectStatus(project) {
+    var status = null;
+    (project.files || []).forEach(function (file) {
+      var entry = state.results[file.path];
+      if (entry && entry.verdict) status = worst(status, entry.verdict);
+      else if (entry && entry.ok === false) status = worst(status, "fail");
+    });
+    return status;
+  }
+
+  function ampelClass(status) {
+    if (!status) return "ampel";
+    var cls = (VERDICTS[String(status).toLowerCase()] || {}).cls;
+    return "ampel ampel--" + (cls || "warn");
+  }
+
+  function renderExplorer() {
+    var list = $("whProjectList");
+    var count = $("whProjectCount");
+    if (!list) return;
+
+    var total = state.projects.length;
+    if (count) count.textContent = total === 1 ? "1 Projekt" : total + " Projekte";
+
+    if (!total) {
+      list.innerHTML = '<div class="wh-empty">Noch kein Ordner geöffnet.<br><span class="mono" style="font-size:0.7rem;">Datei &rarr; Ordner öffnen …</span></div>';
+      return;
+    }
+
+    var html = "";
+    state.projects.forEach(function (project, index) {
+      var open = state.expanded[project.path] !== false;
+      var active = state.activeProject === project.path;
+      var status = projectStatus(project);
+      html += '<div class="wh-project' + (active ? " is-active" : "") + '" data-project="' + esc(project.path) + '">';
+      html += '<button type="button" class="wh-project-head" data-toggle="' + esc(project.path) + '" aria-expanded="' + (open ? "true" : "false") + '">';
+      html += '<span class="wh-twist">' + (open ? "▾" : "▸") + "</span>";
+      html += '<span class="' + ampelClass(status) + '" title="' + esc(status || "nicht geprüft") + '"></span>';
+      html += '<span class="wh-project-name">' + esc(project.name || baseName(project.path)) + "</span>";
+      html += '<span class="wh-project-count">' + (project.files || []).length + "</span>";
+      html += "</button>";
+      if (open) {
+        html += '<ul class="wh-files">';
+        (project.files || []).forEach(function (file) {
+          var isActive = state.activeFile === file.path;
+          var entry = state.results[file.path];
+          var fileStatus = entry && entry.verdict ? entry.verdict : (entry && entry.ok === false ? "fail" : null);
+          html += '<li class="wh-file' + (isActive ? " is-active" : "") + '" data-file="' + esc(file.path) + '" title="' + esc(file.path) + '">';
+          html += '<span class="' + ampelClass(fileStatus) + '"></span>';
+          html += '<span class="wh-file-name">' + esc(file.name || baseName(file.path)) + "</span>";
+          html += '<span class="wh-kind">' + esc(file.kind || "datei") + "</span>";
+          html += '<span class="wh-file-size">' + bytes(file.size) + "</span>";
+          html += "</li>";
+        });
+        html += "</ul>";
+        if (index === state.projects.length - 1) {
+          /* keeps the list from ending flush against the column foot */
+          html += '<div style="height:0.2rem"></div>';
+        }
+      }
+      html += "</div>";
+    });
+
+    list.innerHTML = html;
+    markButtons();
+  }
+
+  function markButtons() {
+    var project = findProject(state.activeProject);
+    var check = $("whCheckProject");
+    if (check) check.disabled = !project || !(project.files || []).length;
+    var all = $("whCheckAll");
+    if (all) all.disabled = !state.projects.length;
+    var plans = $("whExportPlans");
+    if (plans) plans.disabled = !state.projects.length;
+    var any = Boolean(state.result && state.result.ok !== false);
+    ["whExportPdf", "whExportSvg", "whExportDxf", "whExportDeviations", "whExportDossier", "whExportXbau", "whExportBcf"].forEach(function (id) {
+      var node = $(id);
+      if (node) node.disabled = !any;
+    });
+  }
+
+  function findProject(path) {
+    for (var i = 0; i < state.projects.length; i++) {
+      if (state.projects[i].path === path) return state.projects[i];
+    }
+    return null;
+  }
+
+  function findFile(path) {
+    for (var i = 0; i < state.projects.length; i++) {
+      var files = state.projects[i].files || [];
+      for (var j = 0; j < files.length; j++) {
+        if (files[j].path === path) return { project: state.projects[i], file: files[j] };
+      }
+    }
+    return null;
+  }
+
+  /* ------------------------------------------------------------------ *
+   * Inspector
+   * ------------------------------------------------------------------ */
+
+  function verdictOf(result) {
+    if (!result) return null;
+    if (result.verdict) return VERDICTS[String(result.verdict).toLowerCase()] || null;
+    return null;
+  }
+
+  function renderResult() {
+    var banner = $("whVerdict");
+    var title = $("whVerdictTitle");
+    var sub = $("whVerdictSub");
+    var result = state.result;
+
+    if (banner) banner.className = "wh-verdict";
+
+    if (!result) {
+      if (title) title.textContent = "Keine Prüfung gelaufen";
+      if (sub) sub.textContent = "Wählen Sie eine Datei im Explorer und starten Sie die Prüfung.";
+      renderFindings([]);
+      renderKpis(null);
+      markButtons();
+      return;
+    }
+
+    if (result.ok === false && result.error) {
+      if (banner) banner.className = "wh-verdict wh-verdict--fail";
+      if (title) title.textContent = "Nicht prüfbar";
+      if (sub) sub.textContent = result.error;
+      renderFindings([]);
+      renderKpis(null);
+      markButtons();
+      return;
+    }
+
+    var v = verdictOf(result) || { cls: "warn", label: String(result.verdict || "unbekannt").toUpperCase() };
+    if (banner) banner.className = "wh-verdict wh-verdict--" + v.cls;
+    if (title) title.textContent = v.label;
+
+    var counts = result.counts || {};
+    if (sub) {
+      sub.textContent =
+        (counts.fail || 0) + " Fehler · " + (counts.warn || 0) + " Warnungen · " + (counts.ok || 0) + " OK" +
+        (result.profile && result.profile.code ? " · Profil " + result.profile.code : "") +
+        (result.municipality && result.municipality.name ? " · " + result.municipality.name : "");
+    }
+
+    var chip = $("whProfileChip");
+    if (chip) {
+      chip.textContent =
+        (result.profile && result.profile.code ? "Profil " + result.profile.code : "Profil —") +
+        (result.municipality && result.municipality.code ? " · " + result.municipality.code : "");
+    }
+
+    var simBanner = $("whSimBanner");
+    if (simBanner) simBanner.classList.toggle("is-on", Boolean(state.simulating));
+
+    renderFindings(result.findings || []);
+    renderRepairs(result.repairs || []);
+    renderTrace(result);
+    renderKpis(result);
+    applyGeometry(result);
+    markButtons();
+  }
+
+  function renderFindings(findings) {
+    var list = $("whFindings");
+    var count = $("whFindingsCount");
+    if (!list) return;
+
+    var q = String(state.filterQuery || "").trim().toLowerCase();
+    var filtered = (findings || []).map(function (f, idx) {
+      return { f: f, index: idx };
+    }).filter(function (item) {
+      var f = item.f;
+      var st = String(f.status || "ok").toLowerCase();
+      if (state.filterStatus !== "all" && st !== state.filterStatus) return false;
+      if (q) {
+        var hay = ((f.para || "") + " " + (f.ruleId || "") + " " + (f.title || "") + " " + (f.message || "")).toLowerCase();
+        if (hay.indexOf(q) === -1) return false;
+      }
+      return true;
+    });
+
+    if (count) {
+      var total = (findings || []).length;
+      count.textContent = filtered.length === total
+        ? (total === 1 ? "1 Befund" : total + " Befunde")
+        : (filtered.length + " / " + total + " Befunde");
+    }
+
+    if (!filtered.length) {
+      list.innerHTML =
+        '<li class="finding is-ok"><span class="finding-key">&sect;</span>' +
+        '<span class="finding-body"><span class="finding-msg">' +
+        (findings && findings.length ? "Kein Befund entspricht dem aktiven Filter." : "Kein Befund vorhanden.") +
+        "</span></span></li>";
+      return;
+    }
+
+    list.innerHTML = filtered.map(function (item) {
+      var f = item.f;
+      var index = item.index;
+      var st = String(f.status || "ok").toLowerCase();
+      var cls = st === "fail" ? "is-nok" : (st === "warn" ? "is-warn" : "is-ok");
+      var para = f.para || "§";
+      return '<li class="finding ' + cls + '" data-finding="' + index + '">' +
+        '<button type="button" class="finding-key-btn" data-statute="' + esc(para) + '" title="Gesetzestext zu ' + esc(para) + ' öffnen">' + esc(para) + "</button>" +
+        '<span class="finding-body">' +
+        '<span class="finding-msg">' + esc(f.message || "") + "</span>" +
+        '<span class="finding-rule">' + esc(f.ruleId || "") + (f.title ? " · " + esc(f.title) : "") + "</span>" +
+        "</span></li>";
+    }).join("");
+  }
+
+  function renderRepairs(repairs) {
+    var sec = $("whRepairsSection");
+    var list = $("whRepairsList");
+    var count = $("whRepairsCount");
+    if (!sec || !list) return;
+    if (!repairs || !repairs.length) {
+      sec.style.display = "none";
+      list.innerHTML = "";
+      return;
+    }
+    sec.style.display = "block";
+    if (count) count.textContent = repairs.length === 1 ? "1 Option" : repairs.length + " Optionen";
+    list.innerHTML = repairs.map(function (r, idx) {
+      return '<li class="wh-repair-card" data-repair="' + idx + '">' +
+        '<div class="wh-repair-head">' +
+          '<span>' + esc(r.title || r.ruleId || "Heilungsvorschlag") + '</span>' +
+          (r.delta ? '<span class="wh-repair-delta">' + esc(r.delta) + '</span>' : '') +
+        '</div>' +
+        '<div class="wh-repair-action">' + esc(r.action || "") + '</div>' +
+        '<div class="wh-repair-meta">' +
+          '<span>Aufwand: ' + esc(r.costImpact || "mittel") + ' · Heilungschance: ' + Math.round((r.confidence || 0.85) * 100) + '%</span>' +
+          '<button type="button" class="wh-btn wh-btn--tiny" data-simulate="' + idx + '">Variante simulieren</button>' +
+        '</div>' +
+      '</li>';
+    }).join("");
+  }
+
+  function renderTrace(result) {
+    var sec = $("whTraceSection");
+    var box = $("whTraceBox");
+    var tag = $("whTraceSource");
+    if (!sec || !box) return;
+    if (!result) {
+      sec.style.display = "none";
+      box.innerHTML = "";
+      return;
+    }
+    var srcObj = result.source && typeof result.source === "object" ? result.source : null;
+    var format = (srcObj && srcObj.format) || (typeof result.source === "string" ? result.source : result.kind);
+    var m = result.model || (srcObj && srcObj.model) || null;
+    var notes = Array.isArray(result.notes) ? result.notes : (srcObj && Array.isArray(srcObj.notes) ? srcObj.notes : []);
+    if (!format && !m && !notes.length) {
+      sec.style.display = "none";
+      box.innerHTML = "";
+      return;
+    }
+    sec.style.display = "block";
+    if (tag) tag.textContent = String(format || "SPEC").toUpperCase();
+    m = m || {};
+    var rows = [];
+    if (m.width && m.depth) rows.push('<div class="wh-trace-row"><span>Grundriss (B × T)</span><span>' + Number(m.width).toFixed(1).replace(".", ",") + ' m × ' + Number(m.depth).toFixed(1).replace(".", ",") + ' m</span></div>');
+    if (m.height) rows.push('<div class="wh-trace-row"><span>Gebäudehöhe H</span><span>' + Number(m.height).toFixed(2).replace(".", ",") + ' m (' + (m.storeys || "—") + ' VG)</span></div>');
+    if (m.flaeche_m2) rows.push('<div class="wh-trace-row"><span>Grundstücksfläche</span><span>' + Math.round(m.flaeche_m2) + ' m²</span></div>');
+    var notesHtml = notes.length
+      ? '<ul class="wh-trace-notes">' + notes.slice(0, 4).map(function (n) { return '<li>' + esc(n) + '</li>'; }).join("") + '</ul>'
+      : '';
+    box.innerHTML = rows.join("") + notesHtml;
+  }
+
+  function renderKpis(result) {
+    var findings = (result && result.findings) || [];
+    var byRule = {};
+    findings.forEach(function (f) { if (!byRule[f.ruleId]) byRule[f.ruleId] = f; });
+
+    function set(id, hintId, value, hint) {
+      var node = $(id);
+      if (node) node.textContent = value == null ? "—" : String(value);
+      var hintNode = $(hintId);
+      if (hintNode && hint) hintNode.textContent = hint;
+    }
+
+    var gk = byRule.gebaeudeklasse ? firstNumber(byRule.gebaeudeklasse.message) : null;
+    set("whKpiGk", "whKpiGkHint", gk ? "GK " + gk : null, "§2 MBO");
+
+    var grz = byRule.grz ? firstNumber(byRule.grz.message) : null;
+    set("whKpiGrz", "whKpiGrzHint", grz == null ? null : grz.toFixed(2).replace(".", ","), byRule.grz ? byRule.grz.para || "§19 BauNVO" : "§19 BauNVO");
+
+    var gfz = byRule.gfz ? firstNumber(byRule.gfz.message) : null;
+    set("whKpiGfz", "whKpiGfzHint", gfz == null ? null : gfz.toFixed(2).replace(".", ","), byRule.gfz ? byRule.gfz.para || "§20 BauNVO" : "§20 BauNVO");
+
+    var abstand = byRule.abstandsflaeche ? firstNumber(byRule.abstandsflaeche.message) : null;
+    set("whKpiAbstand", "whKpiAbstandHint", abstand == null ? null : abstand.toFixed(2).replace(".", ",") + " m", byRule.abstandsflaeche ? byRule.abstandsflaeche.para || "§6 MBO" : "§6 MBO");
+  }
+
+  /* ------------------------------------------------------------------ *
+   * Geometry: the stage shows what was actually ingested.
+   *
+   * The engine reports findings, not a mesh, so the viewport derives the
+   * massing from the spec the shell handed over (`setModel`) and marks the
+   * facades whose distance rule failed. Nothing here recomputes a rule.
+   * ------------------------------------------------------------------ */
+
+  function applyGeometry(result) {
+    var srcModel = (result && result.model) || (result && result.source && result.source.model) || null;
+    if (srcModel) {
+      ["width", "depth", "height", "storeys"].forEach(function (k) {
+        if (typeof srcModel[k] === "number" && isFinite(srcModel[k]) && srcModel[k] > 0) {
+          model[k] = srcModel[k];
+        }
+      });
+      if (srcModel.setbacks && typeof srcModel.setbacks === "object") {
+        ["norden", "osten", "sueden", "westen"].forEach(function (dir) {
+          if (typeof srcModel.setbacks[dir] === "number" && isFinite(srcModel.setbacks[dir])) {
+            model.setbacks[dir] = srcModel.setbacks[dir];
+          }
+        });
+      }
+    }
+
+    var findings = (result && result.findings) || [];
+    var violated = {};
+    var required = 3.0;
+    if (result && result.profile && typeof result.profile.setbackFactor === "number") {
+      required = Math.max(result.profile.minSetbackM || 3.0, +(model.height * result.profile.setbackFactor).toFixed(2));
+    }
+
+    findings.forEach(function (f) {
+      if (f.ruleId !== "abstandsflaeche" && f.ruleId !== "grenzbebauung") return;
+      var msg = String(f.message || "");
+      var hit = /nord/i.test(msg) ? "norden" : /s[üu]d/i.test(msg) ? "sueden" : /ost/i.test(msg) ? "osten" : /west/i.test(msg) ? "westen" : null;
+      if (f.status === "fail") {
+        if (hit) violated[hit] = true;
+        else { violated.norden = true; violated.osten = true; violated.sueden = true; violated.westen = true; }
+      }
+      var num = /\d+(?:[.,]\d+)?\s*m/.exec(msg);
+      var value = num ? parseFloat(num[0].replace(",", ".")) : null;
+      if (value && value > required) required = value;
+    });
+
+    model.violated = violated;
+    model.required = required;
+    if (!reduced) startPulse(); else drawAll(0);
+  }
+
+  function setModel(input) {
+    if (!input || typeof input !== "object") return;
+    ["width", "depth", "height", "storeys", "required"].forEach(function (key) {
+      if (typeof input[key] === "number" && isFinite(input[key]) && input[key] > 0) model[key] = input[key];
+    });
+    if (input.setbacks && typeof input.setbacks === "object") {
+      ["norden", "osten", "sueden", "westen"].forEach(function (dir) {
+        if (typeof input.setbacks[dir] === "number") model.setbacks[dir] = input.setbacks[dir];
+      });
+    }
+    if (input.violated && typeof input.violated === "object") model.violated = input.violated;
+    if (input.plan) model.plan = input.plan;
+    if (!reduced) startPulse(); else drawAll();
+  }
+
+  /* ------------------------------------------------------------------ *
+   * Interactive viewer
+   *
+   * One camera, two canvases. Orbit is a left-drag, pan the right or middle
+   * button, the wheel zooms towards the cursor. The four presets are the
+   * shortcuts from the plan: 1 isometry, 2 plan view, 3 north facade, R reset.
+   * ------------------------------------------------------------------ */
+
+  var cam3d = { az: 315 * Math.PI / 180, el: 32 * Math.PI / 180, scale: 11, panX: 0, panY: 0 };
+  /* The 2D canvas is the same projection with the camera locked straight down,
+     so it shares the camera shape and only exposes pan and zoom. */
+  var cam2d = { az: 0, el: Math.PI / 2, scale: 11, panX: 0, panY: 0 };
+  var CAM_DEFAULT = { az: 315 * Math.PI / 180, el: 32 * Math.PI / 180, scale: 11, panX: 0, panY: 0 };
+  var EL_MIN = 10 * Math.PI / 180;
+  var EL_MAX = 85 * Math.PI / 180;
+  var mode = "3d";
+
+  function fitScale(canvas) {
+    var rect = canvas.getBoundingClientRect();
+    var span = Math.max(model.width, model.depth) + 2 * Math.max(model.required, 3);
+    var usable = Math.min(rect.width || 800, rect.height || 500) * 0.62;
+    return Math.max(3, usable / Math.max(6, span));
+  }
+
+  function projectPoint(cam, x, y, z, w, h) {
+    var ca = Math.cos(cam.az), sa = Math.sin(cam.az);
+    var ce = Math.cos(cam.el), se = Math.sin(cam.el);
+    /* x = Ost, y = Nord, z = Höhe. At azimuth 0 and elevation 90° this is a
+       plan with north up; at elevation 0 the height collapses to the horizon. */
+    var u = x * ca + y * sa;
+    var v = -x * sa + y * ca;
+    var sx = w / 2 + cam.panX + u * cam.scale;
+    var sy = h / 2 + cam.panY - (v * se + z * ce) * cam.scale;
+    var depth = v * ce - z * se;
+    return { x: sx, y: sy, depth: depth };
+  }
+
+  function fillQuad(ctx, cam, pts, style, stroke, width) {
+    ctx.beginPath();
+    pts.forEach(function (p, i) {
+      var q = projectPoint(cam, p[0], p[1], p[2], ctx.__w, ctx.__h);
+      if (i === 0) ctx.moveTo(q.x, q.y); else ctx.lineTo(q.x, q.y);
+    });
+    ctx.closePath();
+    if (style) { ctx.fillStyle = style; ctx.fill(); }
+    if (stroke) { ctx.strokeStyle = stroke; ctx.lineWidth = width || 1; ctx.stroke(); }
+  }
+
+  function depthOf(cam, x, y, z) {
+    var ca = Math.cos(cam.az), sa = Math.sin(cam.az);
+    var ce = Math.cos(cam.el), se = Math.sin(cam.el);
+    return (-x * sa + y * ca) * ce - z * se;
+  }
+
+  function drawScene(canvas, cam, isPlan, pulse) {
+    if (!canvas) return;
+    if (typeof pulse !== "number" || !isFinite(pulse)) pulse = 0;
+    var dpr = window.devicePixelRatio || 1;
+    var rect = canvas.getBoundingClientRect();
+    var w = Math.max(320, Math.round(rect.width));
+    var h = Math.max(220, Math.round(rect.height));
+    if (canvas.width !== Math.round(w * dpr) || canvas.height !== Math.round(h * dpr)) {
+      canvas.width = Math.round(w * dpr);
+      canvas.height = Math.round(h * dpr);
+    }
+    var ctx = canvas.getContext("2d");
+    if (!ctx) return;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.__w = w;
+    ctx.__h = h;
+
+    var bg = ctx.createLinearGradient(0, 0, 0, h);
+    bg.addColorStop(0, "#232d3d");
+    bg.addColorStop(1, "#1b2432");
+    ctx.fillStyle = bg;
+    ctx.fillRect(0, 0, w, h);
+
+    var W = model.width, D = model.depth, H = model.height;
+    var pad = Math.max(model.required, 3) + 4;
+    var parcelW = W + 2 * (model.setbacks.osten + model.setbacks.westen) / 2 + 2 * pad * 0.35;
+    var parcelD = D + 2 * (model.setbacks.norden + model.setbacks.sueden) / 2 + 2 * pad * 0.35;
+
+    /* --- ground grid on the parcel --- */
+    var step = 5;
+    ctx.strokeStyle = "rgba(255,255,255,0.07)";
+    ctx.lineWidth = 0.75;
+    for (var gx = -parcelW / 2; gx <= parcelW / 2 + 0.001; gx += step) {
+      var a = projectPoint(cam, gx, -parcelD / 2, 0, w, h);
+      var b = projectPoint(cam, gx, parcelD / 2, 0, w, h);
+      ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+    }
+    for (var gy = -parcelD / 2; gy <= parcelD / 2 + 0.001; gy += step) {
+      var c = projectPoint(cam, -parcelW / 2, gy, 0, w, h);
+      var d = projectPoint(cam, parcelW / 2, gy, 0, w, h);
+      ctx.beginPath(); ctx.moveTo(c.x, c.y); ctx.lineTo(d.x, d.y); ctx.stroke();
+    }
+
+    /* --- parcel boundary --- */
+    fillQuad(ctx, cam, [
+      [-parcelW / 2, -parcelD / 2, 0], [parcelW / 2, -parcelD / 2, 0],
+      [parcelW / 2, parcelD / 2, 0], [-parcelW / 2, parcelD / 2, 0]
+    ], "rgba(47,182,207,0.03)", "rgba(47,182,207,0.5)", 1.2);
+
+    /* --- setbacks, drawn as envelope wedges around the footprint --- */
+    /* Each side is the two footprint corners of that edge, extruded outwards by
+       the required setback. a/b are corner factors, out is the outward normal. */
+    var dirs = [
+      { key: "norden", a: [-1, 1], b: [1, 1], out: [0, 1] },
+      { key: "osten", a: [1, -1], b: [1, 1], out: [1, 0] },
+      { key: "sueden", a: [-1, -1], b: [1, -1], out: [0, -1] },
+      { key: "westen", a: [-1, -1], b: [-1, 1], out: [-1, 0] }
+    ];
+    var halfW = W / 2, halfD = D / 2;
+
+    dirs.forEach(function (dir) {
+      var dist = Math.max(0.4, model.required);
+      var bad = Boolean(model.violated[dir.key]);
+      var outward = dir.out;
+
+      var innerA = [dir.a[0] * halfW, dir.a[1] * halfD];
+      var innerB = [dir.b[0] * halfW, dir.b[1] * halfD];
+      var outerA = [innerA[0] + outward[0] * dist, innerA[1] + outward[1] * dist];
+      var outerB = [innerB[0] + outward[0] * dist, innerB[1] + outward[1] * dist];
+
+      /* A violated side pulses; with reduced motion it stays a static red. */
+      var jitter = bad && !reduced ? 0.5 + 0.4 * Math.sin(pulse * 4) : 0;
+      var fill = bad
+        ? "rgba(224,101,122," + (reduced ? 0.3 : 0.22 + 0.16 * Math.abs(Math.sin(pulse * 4))) + ")"
+        : "rgba(47,182,207,0.10)";
+      var edge = bad ? "rgba(224,101,122,0.95)" : "rgba(47,182,207,0.42)";
+
+      fillQuad(ctx, cam, [
+        [innerA[0] + outward[0] * jitter, innerA[1] + outward[1] * jitter, 0],
+        [innerB[0] + outward[0] * jitter, innerB[1] + outward[1] * jitter, 0],
+        [outerB[0], outerB[1], 0],
+        [outerA[0], outerA[1], 0]
+      ], fill, edge, bad ? 1.8 : 1);
+    });
+
+    /* --- building volume, painter-sorted by face depth --- */
+    var faces = [
+      { pts: [[-W / 2, -D / 2, 0], [W / 2, -D / 2, 0], [W / 2, -D / 2, H], [-W / 2, -D / 2, H]], kind: "sued" },
+      { pts: [[-W / 2, D / 2, 0], [W / 2, D / 2, 0], [W / 2, D / 2, H], [-W / 2, D / 2, H]], kind: "nord" },
+      { pts: [[-W / 2, -D / 2, 0], [-W / 2, D / 2, 0], [-W / 2, D / 2, H], [-W / 2, -D / 2, H]], kind: "west" },
+      { pts: [[W / 2, -D / 2, 0], [W / 2, D / 2, 0], [W / 2, D / 2, H], [W / 2, -D / 2, H]], kind: "ost" },
+      { pts: [[-W / 2, -D / 2, H], [W / 2, -D / 2, H], [W / 2, D / 2, H], [-W / 2, D / 2, H]], kind: "dach" }
+    ];
+    faces.sort(function (a, b) {
+      return depthOf(cam, b.pts[0][0], b.pts[0][1], b.pts[0][2]) - depthOf(cam, a.pts[0][0], a.pts[0][1], a.pts[0][2]);
+    });
+    faces.forEach(function (face) {
+      var isRoof = face.kind === "dach";
+      fillQuad(ctx, cam, face.pts,
+        isRoof ? "rgba(47,182,207,0.20)" : "rgba(120,140,165,0.16)",
+        "rgba(233,237,243,0.35)", 1);
+    });
+
+    /* --- storey slabs --- */
+    var storeys = Math.max(1, Math.min(model.storeys || 1, 20));
+    ctx.strokeStyle = "rgba(233,237,243,0.18)";
+    ctx.lineWidth = 0.8;
+    for (var s = 1; s < storeys; s++) {
+      var z = (H / storeys) * s;
+      var p1 = projectPoint(cam, -W / 2, -D / 2, z, w, h);
+      var p2 = projectPoint(cam, W / 2, D / 2, z, w, h);
+      var p3 = projectPoint(cam, W / 2, -D / 2, z, w, h);
+      var p4 = projectPoint(cam, -W / 2, D / 2, z, w, h);
+      ctx.beginPath();
+      ctx.moveTo(p1.x, p1.y); ctx.lineTo(p3.x, p3.y);
+      ctx.moveTo(p4.x, p4.y); ctx.lineTo(p2.x, p2.y);
+      ctx.stroke();
+    }
+
+    /* --- dimension label per direction: the measured setback --- */
+    ctx.font = "10px 'IBM Plex Mono', ui-monospace, monospace";
+    dirs.forEach(function (dir) {
+      var dist = model.setbacks[dir.key];
+      if (typeof dist !== "number") return;
+      var bad = Boolean(model.violated[dir.key]);
+      var outward = dir.out;
+      var mid = [outward[0] * (0.5 * W + dist), outward[1] * (0.5 * D + dist)];
+      if (outward[0]) mid = [outward[0] * (0.5 * W + dist), 0];
+      if (outward[1]) mid = [0, outward[1] * (0.5 * D + dist)];
+      var tip = projectPoint(cam, mid[0], mid[1], 0.15, w, h);
+      ctx.fillStyle = bad ? "rgba(224,101,122,0.95)" : "rgba(152,164,182,0.85)";
+      ctx.fillText(dist.toFixed(1).replace(".", ",") + " m", tip.x + 4, tip.y - 3);
+    });
+
+    /* --- north arrow --- */
+    var origin = projectPoint(cam, 0, 0, 0, w, h);
+    var north = projectPoint(cam, 0, Math.max(6, D), 0, w, h);
+    var nx = origin.x + (north.x - origin.x) * 0.55;
+    var ny = origin.y + (north.y - origin.y) * 0.55;
+    ctx.strokeStyle = "rgba(47,182,207,0.6)";
+    ctx.beginPath(); ctx.moveTo(origin.x, origin.y); ctx.lineTo(nx, ny); ctx.stroke();
+    ctx.fillStyle = "rgba(87,205,226,0.9)";
+    ctx.fillText("N", nx + 3, ny - 2);
+
+    /* --- violated setback wins the colour; keep a red outline on the volume --- */
+    if (Object.keys(model.violated).length) {
+      ctx.strokeStyle = "rgba(224,101,122," + (reduced ? 0.7 : 0.45 + 0.35 * Math.abs(Math.sin(pulse * 4))) + ")";
+      ctx.lineWidth = 1.6;
+      ctx.strokeRect(2, 2, w - 4, h - 4);
+    }
+
+    if (isPlan) {
+      ctx.fillStyle = "rgba(107,119,136,0.9)";
+      ctx.fillText("ORTHOGONALE DRAUFSICHT · GRENZABSTÄNDE IN METERN", 10, h - 10);
+    }
+  }
+
+  function drawAll(pulse) {
+    var p = typeof pulse === "number" ? pulse : 0;
+    if (mode === "3d") drawScene($("whCanvas3d"), cam3d, false, p);
+    else drawScene($("whCanvas2d"), cam2d, true, p);
+  }
+
+  var pulsing = false;
+  function startPulse() {
+    if (pulsing) return;
+    pulsing = true;
+    var t0 = performance.now();
+    var step = function (now) {
+      drawAll((now - t0) / 1000);
+      if (Object.keys(model.violated).length && !reduced) {
+        window.requestAnimationFrame(step);
+      } else {
+        pulsing = false;
+        drawAll(0);
+      }
+    };
+    window.requestAnimationFrame(step);
+  }
+
+  function setMode(next) {
+    mode = next === "2d" ? "2d" : "3d";
+    var wrap3 = $("whCanvas3dWrap"), wrap2 = $("whCanvas2dWrap");
+    if (wrap3) wrap3.style.display = mode === "3d" ? "block" : "none";
+    if (wrap2) wrap2.style.display = mode === "2d" ? "block" : "none";
+    var b3 = $("whBtn3d"), b2 = $("whBtn2d");
+    if (b3) b3.className = "wh-btn wh-btn--tiny" + (mode === "3d" ? " wh-btn--primary" : "");
+    if (b2) b2.className = "wh-btn wh-btn--tiny" + (mode === "2d" ? "wh-btn--primary" : "");
+    labelCamera();
+    drawAll(0);
+  }
+
+  function labelCamera() {
+    var node = $("whViewLabel");
+    if (!node) return;
+    if (mode === "2d") { node.textContent = "DRAUFSICHT · 2D-LAGEPLAN"; return; }
+    var el = cam3d.el * 180 / Math.PI;
+    var az = ((cam3d.az * 180 / Math.PI) % 360 + 360) % 360;
+    if (el > 78) node.textContent = "DRAUFSICHT · ELEVATION " + el.toFixed(0) + "°";
+    else if (el < 16) node.textContent = "FASSADENSCHNITT · AZIMUT " + az.toFixed(0) + "°";
+    else node.textContent = "ORBIT · AZIMUT " + az.toFixed(0) + "° · ELEVATION " + el.toFixed(0) + "°";
+  }
+
+  function resetCamera() {
+    cam3d.az = CAM_DEFAULT.az;
+    cam3d.el = CAM_DEFAULT.el;
+    cam3d.panX = cam3d.panY = 0;
+    cam3d.scale = fitScale($("whCanvas3d") || document.createElement("canvas"));
+    cam2d.panX = cam2d.panY = 0;
+    cam2d.scale = fitScale($("whCanvas2d") || document.createElement("canvas"));
+    labelCamera();
+    drawAll(0);
+  }
+
+  function applyPreset(which) {
+    if (which === "iso") { cam3d.az = 315 * Math.PI / 180; cam3d.el = 32 * Math.PI / 180; cam3d.panX = cam3d.panY = 0; setMode("3d"); }
+    else if (which === "plan") { cam3d.az = 0; cam3d.el = EL_MAX; cam3d.panX = cam3d.panY = 0; cam3d.scale = fitScale($("whCanvas3d")); setMode("3d"); }
+    else if (which === "north") { cam3d.az = 0; cam3d.el = EL_MIN; cam3d.panX = cam3d.panY = 0; cam3d.scale = fitScale($("whCanvas3d")); setMode("3d"); }
+    else if (which === "reset") { resetCamera(); return; }
+    labelCamera();
+    drawAll(0);
+  }
+
+  function focusFacade(direction) {
+    var az = { norden: 0, osten: 90, sueden: 180, westen: 270 }[direction];
+    if (az == null) return;
+    cam3d.az = az * Math.PI / 180;
+    cam3d.el = 22 * Math.PI / 180;
+    cam3d.panX = cam3d.panY = 0;
+    cam3d.scale = fitScale($("whCanvas3d"));
+    setMode("3d");
+    setStatus("Kamera auf die " + direction.charAt(0).toUpperCase() + direction.slice(1) + "-Fassade ausgerichtet.");
+  }
+
+  /* ------------------------------------------------------------------ *
+   * Pointer and keyboard
+   * ------------------------------------------------------------------ */
+
+  function bindCanvas(canvas, cam, isPlan) {
+    if (!canvas) return;
+    var dragging = null;
+    var pointers = {};
+
+    canvas.addEventListener("contextmenu", function (e) { e.preventDefault(); });
+
+    canvas.addEventListener("pointerdown", function (e) {
+      pointers[e.pointerId] = { x: e.clientX, y: e.clientY };
+      canvas.setPointerCapture(e.pointerId);
+      dragging = { id: e.pointerId, x: e.clientX, y: e.clientY, button: e.button, moved: false };
+      if (e.button === 0) canvas.style.cursor = "grabbing";
+    });
+
+    canvas.addEventListener("pointermove", function (e) {
+      if (!dragging || dragging.id !== e.pointerId) return;
+      var dx = e.clientX - dragging.x;
+      var dy = e.clientY - dragging.y;
+      var ids = Object.keys(pointers);
+      dragging.moved = true;
+
+      if (ids.length > 1) {
+        /* two pointers: pinch zoom */
+        var other = pointers[ids.find(function (id) { return Number(id) !== e.pointerId; })];
+        if (!other) return;
+        var pinch = Math.hypot(e.clientX - other.x, e.clientY - other.y);
+        if (dragging.pinch) cam.scale = Math.max(2, Math.min(120, cam.scale * (pinch / dragging.pinch)));
+        dragging.pinch = pinch;
+        dragging.x = e.clientX; dragging.y = e.clientY;
+        drawAll(0);
+        return;
+      }
+
+      if (dragging.button === 0 && !isPlan) {
+        cam.az += dx * 0.008;
+        cam.el = Math.max(EL_MIN, Math.min(EL_MAX, cam.el + dy * 0.006));
+        labelCamera();
+      } else {
+        cam.panX += dx;
+        cam.panY += dy;
+      }
+      dragging.x = e.clientX; dragging.y = e.clientY;
+      pointers[e.pointerId] = { x: e.clientX, y: e.clientY };
+      drawAll(0);
+    });
+
+    function end(e) {
+      delete pointers[e.pointerId];
+      if (dragging && dragging.id === e.pointerId) dragging = null;
+      canvas.style.cursor = "default";
+    }
+    canvas.addEventListener("pointerup", end);
+    canvas.addEventListener("pointercancel", end);
+
+    canvas.addEventListener("wheel", function (e) {
+      e.preventDefault();
+      var factor = Math.exp(-e.deltaY * 0.0016);
+      cam.scale = Math.max(2, Math.min(120, cam.scale * factor));
+      labelCamera();
+      drawAll(0);
+    }, { passive: false });
+  }
+
+  function bindKeys() {
+    document.addEventListener("keydown", function (e) {
+      var key = e.key;
+      if ((e.metaKey || e.ctrlKey) && (key === "k" || key === "K")) {
+        e.preventDefault();
+        toggleCommandPalette();
+        return;
+      }
+      if (key === "Escape") {
+        var cmdk = $("whCmdkBackdrop");
+        if (cmdk && cmdk.classList.contains("is-on")) {
+          closeCommandPalette();
+          e.preventDefault();
+          return;
+        }
+        var matrix = $("whMatrixDrawer");
+        if (matrix && matrix.classList.contains("is-on")) {
+          closeLandsMatrix();
+          e.preventDefault();
+          return;
+        }
+        var drawer = $("whStatuteDrawer");
+        if (drawer && drawer.classList.contains("is-on")) {
+          closeStatuteDrawer();
+          e.preventDefault();
+          return;
+        }
+      }
+      var tag = (e.target && e.target.tagName || "").toLowerCase();
+      if (tag === "input" || tag === "textarea" || tag === "select" || (e.target && e.target.isContentEditable)) return;
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      if (key === "1") { applyPreset("iso"); e.preventDefault(); }
+      else if (key === "2") { applyPreset("plan"); e.preventDefault(); }
+      else if (key === "3") { applyPreset("north"); e.preventDefault(); }
+      else if (key === "r" || key === "R") { applyPreset("reset"); e.preventDefault(); }
+    });
+  }
+
+  /* ------------------------------------------------------------------ *
+   * Actions. In the app the shell answers them; in Demo-Modus this page
+   * answers them itself so the interface stays explorable.
+   * ------------------------------------------------------------------ */
+
+  function getJurisdiction() {
+    return {
+      land: state.land || null,
+      stadt: state.stadt || null
+    };
+  }
+
+  function requestOpenFolder() {
+    if (demo) {
+      toast("Demo-Modus: In der Desktop-App öffnet dies den nativen Ordnerdialog.");
+      return;
+    }
+    document.dispatchEvent(new CustomEvent("workhorse:open-folder"));
+  }
+
+  function requestCheck(files) {
+    if (!files || !files.length) { toast("Keine Datei ausgewählt."); return; }
+    state.simulating = false;
+    state.baseResult = null;
+    var visible = files.slice(0, 3).map(baseName).join(", ") + (files.length > 3 ? " …" : "");
+    setBusy("Prüfe " + files.length + (files.length === 1 ? " Datei" : " Dateien") + " (" + visible + ") …");
+    if (demo) {
+      window.setTimeout(function () { demoCheck(files); }, 260);
+      return;
+    }
+    document.dispatchEvent(new CustomEvent("workhorse:check", {
+      detail: { files: files, land: state.land || null, stadt: state.stadt || null }
+    }));
+  }
+
+  /*
+   * One Blatt per Vorhaben: a drawing is the better source for a Lageplan than a
+   * text description, so the first plan file that carries geometry wins; a
+   * project without a drawing exports from its first file instead of dropping
+   * out of the batch silently. The label is the project name, because that is
+   * what the folder in the submission is called - not the file name.
+   */
+  var GEOMETRY_KINDS = ["dxf", "ifc", "xplan", "bplan"];
+
+  function planExportFiles() {
+    var entries = [];
+    state.projects.forEach(function (project) {
+      var files = project.files || [];
+      if (!files.length) return;
+      var chosen = null;
+      for (var i = 0; i < files.length && !chosen; i++) {
+        var kind = String(files[i].kind || "").toLowerCase();
+        if (GEOMETRY_KINDS.indexOf(kind) !== -1) chosen = files[i];
+      }
+      entries.push({ path: (chosen || files[0]).path, label: project.name || baseName((chosen || files[0]).path) });
+    });
+    return entries;
+  }
+
+  function requestPlanExport() {
+    var files = planExportFiles();
+    if (!files.length) {
+      toast("Kein Projekt zum Exportieren geöffnet.");
+      return;
+    }
+    if (demo) {
+      /* Never silently inert: the Blätter are rendered by the engine child
+         process, which only the desktop app has. */
+      toast("Demo-Modus: Lagepläne kann nur die Desktop-App schreiben.");
+      return;
+    }
+    document.dispatchEvent(new CustomEvent("workhorse:export-plans", { detail: { files: files } }));
+  }
+
+  function requestExport(kind, file) {
+    if (demo) {
+      /* Never silently inert. Saving a file is the one export the browser
+         genuinely cannot do: the PDF is rendered by the engine child process,
+         which only the desktop app has. */
+      toast(kind === "pdf"
+        ? "Demo-Modus: Eine PDF-Datei kann nur die Desktop-App schreiben."
+        : "Demo-Modus: Export ist nur mit verbundener Engine verfügbar.");
+      return;
+    }
+    document.dispatchEvent(new CustomEvent("workhorse:export", {
+      detail: {
+        kind: kind,
+        file: file,
+        land: state.land || null,
+        stadt: state.stadt || null,
+        /* Only while a Heilungssimulation is active; the PDF then adds the
+           Vorher-/Nachher-Blatt. */
+        variant: state.simulating && state.simVariant ? state.simVariant : null
+      }
+    }));
+  }
+
+  /* ------------------------------------------------------------------ *
+   * §-Gesetzes-Drawer & What-If Simulation & Command Palette
+   * ------------------------------------------------------------------ */
+
+  var DEMO_STATUTES = {
+    "§2": {
+      cite: "§ 2 Abs. 3 MBO",
+      title: "Begriffe – Gebäudeklassen",
+      source: "Musterbauordnung (Fassung Nov. 2002, zuletzt geändert Sept. 2022)",
+      text: "Gebäude werden in folgende Gebäudeklassen eingeteilt: 1. Gebäudeklasse 1: freistehende Gebäude mit einer Höhe bis zu 7 m … 3. Gebäudeklasse 3: sonstige Gebäude mit einer Höhe bis zu 7 m (in BayBO/LBO teils abweichende Höhenkriterien) … 4. Gebäudeklasse 4: Gebäude mit einer Höhe bis zu 13 m und Nutzungseinheiten mit jeweils nicht mehr als 400 m².",
+      note: "Die Gebäudeklasse bestimmt die Anforderungen an Tragwerk, Brandwände, Rettungswege und Aufzüge."
+    },
+    "§6": {
+      cite: "§ 6 Abs. 1, 2 & 5 MBO",
+      title: "Abstandsflächen, Abstände",
+      source: "Musterbauordnung / Landesbauordnungen (Art. 6 BayBO / § 5 LBO BW / § 6 BauO NRW)",
+      text: "Vor den Außenwänden von Gebäuden sind Abstandsflächen von oberirdischen Gebäuden freizuhalten. Die Abstandsflächen müssen auf dem Grundstück selbst liegen. Die Tiefe der Abstandsfläche bemisst sich nach der Wandhöhe; sie beträgt 0,4 H (in NI/AT/CH teils 0,5 H), mindestens jedoch 3 m.",
+      note: "Bei Unterschreitung ist eine Umplanung (Gebäudehöhe reduzieren oder Baukörper abrücken) oder ein Abweichungsantrag nach § 67 MBO mit Nachbarzustimmung erforderlich."
+    },
+    "§19": {
+      cite: "§ 19 Abs. 1–4 BauNVO",
+      title: "Grundflächenzahl (GRZ), zulässige Grundfläche",
+      source: "Baunutzungsverordnung (BauNVO)",
+      text: "Die Grundflächenzahl gibt an, wieviel Quadratmeter Grundfläche je Quadratmeter Grundstücksfläche im Sinne des § 19 Abs. 3 zulässig sind. Durch Nebenanlagen, Garagen und Zufahrten darf die zulässige Grundfläche im Regelfall um bis zu 50 vom Hundert überschritten werden (§ 19 Abs. 4 Satz 2 BauNVO).",
+      note: "Prüfen Sie Entsiegelung, Tiefgaragenüberdeckung oder eine Befreiung nach § 31 Abs. 2 BauGB."
+    },
+    "§20": {
+      cite: "§ 20 Abs. 2–3 BauNVO",
+      title: "Vollgeschosse, Geschossflächenzahl (GFZ)",
+      source: "Baunutzungsverordnung (BauNVO)",
+      text: "Die Geschossflächenzahl gibt an, wieviel Quadratmeter Geschossfläche je Quadratmeter Grundstücksfläche zulässig sind. Die Geschossfläche ist nach den Außenmaßen der Gebäude in allen Vollgeschossen zu ermitteln.",
+      note: "Staffelgeschosse (Nicht-Vollgeschosse) bleiben ohne anderslautende B-Plan-Festsetzung bei der GFZ-Berechnung unberücksichtigt."
+    },
+    "§16": {
+      cite: "§ 16 Abs. 2 BauNVO",
+      title: "Bestimmung des Maßes der baulichen Nutzung",
+      source: "Baunutzungsverordnung (BauNVO)",
+      text: "Im Bebauungsplan kann das Maß der baulichen Nutzung bestimmt werden durch Festsetzung der Grundflächenzahl, der Geschossflächenzahl, der Zahl der Vollgeschosse und der Höhe baulicher Anlagen.",
+      note: "Festsetzungen des qualifizierten Bebauungsplans (§ 30 Abs. 1 BauGB) sind zwingend einzuhalten."
+    },
+    "§48": {
+      cite: "§ 48 MBO / Kommunale Stellplatzsatzung",
+      title: "Stellplätze, Garagen und Abstellplätze für Fahrräder",
+      source: "Musterbauordnung / Kommunales Satzungsrecht",
+      text: "Werden Anlagen errichtet, bei denen ein Zu- und Abgangsverkehr zu erwarten ist, sind notwendige Stellplätze und Abstellplätze für Fahrräder in ausreichender Zahl und Größe herzustellen (oder nach Maßgabe der kommunalen Satzung durch ÖPNV-Bonus zu reduzieren bzw. abzulösen).",
+      note: "Kommunale Satzungen (z.B. München, Berlin, Hamburg, Wien, Zürich) überschreiben die allgemeinen Richtwerte der Landesbauordnung."
+    },
+    "§49": {
+      cite: "§ 47 / § 49 MBO · DIN 5034",
+      title: "Aufenthaltsräume – Belichtung und Raumhöhe",
+      source: "Musterbauordnung & DIN 5034 Tageslicht in Innenräumen",
+      text: "Aufenthaltsräume müssen ausreichend belüftet und mit Tageslicht belichtet werden können. Das Rohbaumaß der Fensteröffnungen muss mindestens 1/8 (12,5 %) der Netto-Grundfläche des Aufenthaltsraumes betragen.",
+      note: "Unterschreitungen sind nur bei nicht dem Wohnen dienenden Räumen zulässig, wenn keine gesundheitlichen Belange entgegenstehen."
+    }
+  };
+
+  function lookupDemoStatute(ref) {
+    var key = String(ref || "");
+    var m = /§\s*(\d+)/.exec(key);
+    if (m && DEMO_STATUTES["§" + m[1]]) return DEMO_STATUTES["§" + m[1]];
+    return {
+      cite: key || "§ Bauordnung",
+      title: "Bauordnungsrechtliche / Planungsrechtliche Prüfnorm",
+      source: "Landesbauordnung / BauGB / BauNVO",
+      text: "Für die Vorschrift " + (key || "§") + " gilt der im gewählten Rechtsrahmen hinterlegte Volltext. In der Desktop-App wird der exakte Paragraphenwortlaut aus der lokalen Gesetzesdatenbank geladen.",
+      note: "Klicken Sie auf einen Heilungsvorschlag unter der Mängelliste, um eine Entwurfsvariante live zu simulieren."
+    };
+  }
+
+  function setStatute(entry, ref) {
+    var drawer = $("whStatuteDrawer");
+    if (!drawer) return;
+    var data = entry || lookupDemoStatute(ref);
+    var cite = $("whStatuteCite");
+    var title = $("whStatuteTitle");
+    var source = $("whStatuteSource");
+    var text = $("whStatuteText");
+    var note = $("whStatuteNote");
+    if (cite) cite.textContent = data.cite || ref || "§";
+    if (title) title.textContent = data.title || "Gesetzliche Prüfnorm";
+    if (source) source.textContent = data.source || "Bauordnung";
+    if (text) text.textContent = data.text || "";
+    if (note) {
+      note.textContent = data.note || "";
+      note.style.display = data.note ? "block" : "none";
+    }
+    drawer.classList.add("is-on");
+    drawer.setAttribute("aria-hidden", "false");
+  }
+
+  function closeStatuteDrawer() {
+    var drawer = $("whStatuteDrawer");
+    if (!drawer) return;
+    drawer.classList.remove("is-on");
+    drawer.setAttribute("aria-hidden", "true");
+  }
+
+  function requestStatute(ref) {
+    if (!ref) return;
+    if (demo) {
+      setStatute(lookupDemoStatute(ref), ref);
+      return;
+    }
+    document.dispatchEvent(new CustomEvent("workhorse:statute", {
+      detail: { ref: ref, land: state.land || (state.result && state.result.profile && state.result.profile.code) || null }
+    }));
+  }
+
+  function requestSimulate(repairIndex) {
+    var current = state.result;
+    if (!current || !current.repairs || !current.repairs[repairIndex]) return;
+    var repair = current.repairs[repairIndex];
+    if (!state.simulating) state.baseResult = current;
+    state.simulating = true;
+    /* The Vorher-/Nachher-Blatt compares the file as it is with this variant;
+       the engine computes the "vorher" side itself from the file. */
+    state.simVariant = repair.patchedSpec ? { spec: repair.patchedSpec, label: repair.title || repair.ruleId } : null;
+
+    var bannerText = $("whSimBannerText");
+    if (bannerText) bannerText.textContent = "Simulation aktiv: " + (repair.title || repair.ruleId || "Entwurfsvariante");
+
+    if (demo || !repair.patchedSpec) {
+      /* Apply a deterministic local simulation when in Demo-Modus or if no spec is attached */
+      var nextFindings = (current.findings || []).map(function (f) {
+        if (f.ruleId === repair.ruleId && (f.status === "fail" || f.status === "warn")) {
+          return Object.assign({}, f, {
+            status: "ok",
+            message: "[Simuliert: " + (repair.delta || "geheilt") + "] " + f.message
+          });
+        }
+        return f;
+      });
+      var failCount = nextFindings.filter(function (f) { return f.status === "fail"; }).length;
+      var warnCount = nextFindings.filter(function (f) { return f.status === "warn"; }).length;
+      var okCount = nextFindings.filter(function (f) { return f.status === "ok"; }).length;
+      var nextVerdict = failCount ? "nicht bestanden" : warnCount ? "mit Auflagen" : "bestanden";
+      var nextRepairs = (current.repairs || []).filter(function (_, i) { return i !== repairIndex; });
+      state.result = Object.assign({}, current, {
+        verdict: nextVerdict,
+        counts: { fail: failCount, warn: warnCount, ok: okCount, total: nextFindings.length },
+        findings: nextFindings,
+        repairs: nextRepairs
+      });
+      renderResult();
+      toast("Variante simuliert: " + (repair.title || repair.ruleId));
+      return;
+    }
+
+    setBusy("Simuliere Heilungsvorschlag (" + (repair.title || repair.ruleId) + ") …");
+    document.dispatchEvent(new CustomEvent("workhorse:simulate", {
+      detail: {
+        spec: repair.patchedSpec,
+        repair: repair,
+        land: state.land || null,
+        stadt: state.stadt || null
+      }
+    }));
+  }
+
+  function setSimulation(simResult, detail) {
+    if (!simResult) return;
+    var base = state.baseResult || state.result || {};
+    var p = simResult.patchedSpec || (detail && detail.spec) || {};
+    var b = p.gebaeude || {};
+    var g = p.grundstueck || {};
+    var a = b.abstaende_m || {};
+    var prevModel = (base.source && base.source.model) || {};
+    var nextSource = {
+      format: (base.source && base.source.format) || "sim",
+      notes: ["Entwurfsvariante (Repair-Simulation)"].concat((base.source && base.source.notes) || []),
+      spec: p,
+      model: {
+        width: prevModel.width || model.width,
+        depth: prevModel.depth || model.depth,
+        height: typeof b.hoehe_m === "number" ? b.hoehe_m : (prevModel.height || model.height),
+        storeys: typeof b.geschosse === "number" ? b.geschosse : (prevModel.storeys || model.storeys),
+        flaeche_m2: typeof g.flaeche_m2 === "number" ? g.flaeche_m2 : prevModel.flaeche_m2,
+        setbacks: {
+          norden: typeof a.norden === "number" ? a.norden : model.setbacks.norden,
+          osten: typeof a.osten === "number" ? a.osten : model.setbacks.osten,
+          sueden: typeof a.sueden === "number" ? a.sueden : model.setbacks.sueden,
+          westen: typeof a.westen === "number" ? a.westen : model.setbacks.westen
+        }
+      }
+    };
+    state.simulating = true;
+    state.result = Object.assign({}, base, simResult, { source: nextSource });
+    renderResult();
+    setStatus("Simulation berechnet: " + simResult.verdict, (simResult.counts && simResult.counts.fail) ? "fail" : "ok");
+  }
+
+  function resetSimulation() {
+    if (!state.baseResult) return;
+    state.result = state.baseResult;
+    state.baseResult = null;
+    state.simulating = false;
+    state.simVariant = null;
+    renderResult();
+    setStatus("Originalzustand vor der Simulation wiederhergestellt.", "ok");
+  }
+
+  /* ------------------------------------------------------------------ *
+   * DACH-Matrix: the active plan against every Rechtsbereich at once.
+   * The engine answers (lands_matrix); this only draws the rows it sends.
+   * ------------------------------------------------------------------ */
+  var MATRIX_VERDICT = {
+    "bestanden": { label: "Bestanden", tone: "ok" },
+    "mit Auflagen": { label: "Mit Auflagen", tone: "warn" },
+    "nicht bestanden": { label: "Nicht bestanden", tone: "fail" }
+  };
+
+  function matrixCell(text, cls) {
+    var td = document.createElement("td");
+    if (cls) td.className = cls;
+    td.textContent = text;
+    return td;
+  }
+
+  function showLandsMatrixDrawer() {
+    var drawer = $("whMatrixDrawer");
+    if (!drawer) return;
+    closeStatuteDrawer();
+    drawer.classList.add("is-on");
+    drawer.setAttribute("aria-hidden", "false");
+  }
+
+  function closeLandsMatrix() {
+    var drawer = $("whMatrixDrawer");
+    if (!drawer) return;
+    drawer.classList.remove("is-on");
+    drawer.setAttribute("aria-hidden", "true");
+  }
+
+  function requestLandsMatrix() {
+    var file = state.activeFile;
+    if (!file) {
+      toast("Keine Datei ausgewählt. Wählen Sie zuerst ein Projekt.");
+      return;
+    }
+    showLandsMatrixDrawer();
+    if (demo) {
+      setLandsMatrix(null, "Die DACH-Matrix braucht die Engine. Im Demo-Modus ist sie nicht verfügbar.");
+      return;
+    }
+    setLandsMatrix(null, null);
+    document.dispatchEvent(new CustomEvent("workhorse:lands-matrix", {
+      detail: { file: file, country: matrixCountry() }
+    }));
+  }
+
+  /* The country filter in the drawer head: DACH (all), DE, AT or CH. */
+  function matrixCountry() {
+    var select = $("whMatrixCountry");
+    return select && select.value ? select.value : "DACH";
+  }
+
+  /* The same check as the table, written to a PDF by the engine. The save
+     dialog and the file write happen in the shell; the page only asks. */
+  function requestLandsMatrixPdf() {
+    var file = state.activeFile;
+    if (!file) {
+      toast("Keine Datei ausgewählt. Wählen Sie zuerst ein Projekt.");
+      return;
+    }
+    if (demo) {
+      toast("Der PDF-Export braucht die Engine. Im Demo-Modus ist er nicht verfügbar.");
+      return;
+    }
+    document.dispatchEvent(new CustomEvent("workhorse:lands-matrix-pdf", {
+      detail: { file: file, country: matrixCountry() }
+    }));
+  }
+
+  /* result: the engine's lands_matrix answer; error: a message to show instead.
+     Both null means the check is still running. */
+  function setLandsMatrix(result, error) {
+    var drawer = $("whMatrixDrawer");
+    var summary = $("whMatrixSummary");
+    var body = $("whMatrixBody");
+    var note = $("whMatrixNote");
+    if (!drawer || !summary || !body || !note) return;
+    body.textContent = "";
+    summary.textContent = "";
+    note.textContent = "";
+    note.style.display = "none";
+    if (error) {
+      note.textContent = error;
+      note.style.display = "block";
+    } else if (!result) {
+      summary.textContent = "Prüfe alle Rechtsbereiche …";
+    } else {
+      var rows = result.rows || [];
+      var failing = rows.filter(function (row) { return row.verdict === "nicht bestanden"; }).length;
+      summary.textContent = result.passedStates + " von " + result.totalStates +
+        " Rechtsbereichen genehmigungsfähig · " + failing + " nicht bestanden";
+      rows.forEach(function (row) {
+        var tr = document.createElement("tr");
+        var verdict = MATRIX_VERDICT[row.verdict] || { label: String(row.verdict), tone: "" };
+        var setback = row.requiredSetbackM === null || row.requiredSetbackM === undefined
+          ? "–"
+          : Number(row.requiredSetbackM).toFixed(1).replace(".", ",") + " m";
+        tr.appendChild(matrixCell(row.name || row.code));
+        tr.appendChild(matrixCell(row.code, "mono"));
+        tr.appendChild(matrixCell(row.citationBase || "–"));
+        tr.appendChild(matrixCell(verdict.label, "wh-matrix-verdict is-" + verdict.tone));
+        tr.appendChild(matrixCell(String((row.counts && row.counts.fail) || 0)));
+        tr.appendChild(matrixCell(String((row.counts && row.counts.warn) || 0)));
+        tr.appendChild(matrixCell(setback));
+        body.appendChild(tr);
+      });
+    }
+  }
+
+  function commandPaletteItems() {
+    return [
+      { label: "Projektordner öffnen …", shortcut: "Ordner", run: function () { requestOpenFolder(); } },
+      { label: "Aktives Projekt prüfen", shortcut: "Prüfung", run: function () { var p = findProject(state.activeProject); if (p) requestCheck((p.files || []).map(function (f) { return f.path; })); } },
+      { label: "DACH-Matrix: aktives Projekt gegen alle 34 Bauordnungen prüfen", shortcut: "DACH", run: function () { requestLandsMatrix(); } },
+      { label: "Alle Projekte im Stapel prüfen", shortcut: "Batch", run: function () { var fs = []; state.projects.forEach(function (p) { (p.files || []).forEach(function (f) { fs.push(f.path); }); }); requestCheck(fs); } },
+      { label: "Kamera: 1 · Isometrie Süd-West", shortcut: "Taste 1", run: function () { applyPreset("iso"); } },
+      { label: "Kamera: 2 · Draufsicht / Lageplan", shortcut: "Taste 2", run: function () { applyPreset("plan"); } },
+      { label: "Kamera: 3 · Nord-Ansicht", shortcut: "Taste 3", run: function () { applyPreset("north"); } },
+      { label: "Kamera: R · Zurücksetzen", shortcut: "Taste R", run: function () { applyPreset("reset"); } },
+      { label: "Ansicht: 2D-Lageplan umschalten", shortcut: "2D/3D", run: function () { setMode(mode === "2d" ? "3d" : "2d"); } },
+      { label: "Export: DIN-A4-Befund als PDF speichern", shortcut: "PDF", run: function () { requestExport("pdf", state.activeFile); } },
+      { label: "Export: Lageplan als DXF speichern (1 Einh. = 1 m)", shortcut: "DXF", run: function () { requestExport("dxf", state.activeFile); } },
+      { label: "Export: Lageplan als SVG speichern", shortcut: "SVG", run: function () { requestExport("svg", state.activeFile); } },
+      { label: "Export: Abweichungsanträge (§67 MBO / §31 BauGB) speichern", shortcut: "Antrag", run: function () { requestExport("deviations", state.activeFile); } },
+      { label: "Export: XBau 2.3 XML schreiben", shortcut: "XBau", run: function () { requestExport("xbau", state.activeFile); } },
+      { label: "Export: BCF 2.1 Themen exportieren", shortcut: "BCF", run: function () { requestExport("bcf", state.activeFile); } },
+      { label: "Rechtsrahmen: Bayern (BayBO) wählen", shortcut: "BY", run: function () { setJurisdiction("BY", state.stadt); } },
+      { label: "Rechtsrahmen: Nordrhein-Westfalen (BauO NRW) wählen", shortcut: "NW", run: function () { setJurisdiction("NW", state.stadt); } },
+      { label: "Rechtsrahmen: Baden-Württemberg (LBO BW) wählen", shortcut: "BW", run: function () { setJurisdiction("BW", state.stadt); } },
+      { label: "Rechtsrahmen: Berlin (BauO Bln) wählen", shortcut: "BE", run: function () { setJurisdiction("BE", state.stadt); } },
+      { label: "Rechtsrahmen: Wien (BO für Wien) wählen", shortcut: "AT_W", run: function () { setJurisdiction("AT_W", "AT-VIE"); } },
+      { label: "Rechtsrahmen: Kanton Zürich (PBG ZH) wählen", shortcut: "CH_ZH", run: function () { setJurisdiction("CH_ZH", "CH-ZRH"); } }
+    ];
+  }
+
+  function renderCommandPalette(query) {
+    var list = $("whCmdkList");
+    if (!list) return;
+    var q = String(query || "").trim().toLowerCase();
+    var items = commandPaletteItems().filter(function (it) {
+      return !q || it.label.toLowerCase().indexOf(q) !== -1 || it.shortcut.toLowerCase().indexOf(q) !== -1;
+    });
+    list._items = items;
+    list.innerHTML = items.map(function (it, idx) {
+      return '<li class="wh-cmdk-item' + (idx === 0 ? " is-active" : "") + '" data-cmdk="' + idx + '">' +
+        '<span>' + esc(it.label) + '</span>' +
+        '<span class="wh-cmdk-shortcut">' + esc(it.shortcut) + '</span>' +
+      '</li>';
+    }).join("");
+  }
+
+  function toggleCommandPalette() {
+    var back = $("whCmdkBackdrop");
+    if (!back) return;
+    if (back.classList.contains("is-on")) closeCommandPalette();
+    else openCommandPalette();
+  }
+
+  function openCommandPalette() {
+    var back = $("whCmdkBackdrop");
+    var input = $("whCmdkInput");
+    if (!back) return;
+    back.classList.add("is-on");
+    back.setAttribute("aria-hidden", "false");
+    if (input) {
+      input.value = "";
+      renderCommandPalette("");
+      input.focus();
+    }
+  }
+
+  function closeCommandPalette() {
+    var back = $("whCmdkBackdrop");
+    if (!back) return;
+    back.classList.remove("is-on");
+    back.setAttribute("aria-hidden", "true");
+  }
+
+  function setJurisdiction(land, stadt) {
+    state.land = land || "";
+    state.stadt = stadt || "";
+    var ls = $("whLandSelect"); if (ls) ls.value = state.land;
+    var ss = $("whStadtSelect"); if (ss) ss.value = state.stadt;
+    state.detailRequested = {};
+    if (state.activeFile) requestCheck([state.activeFile]);
+  }
+
+  function setBusy(text) {
+    setStatus(text, "warn");
+  }
+
+  /* ------------------------------------------------------------------ *
+   * Public API for the injected shell script
+   * ------------------------------------------------------------------ */
+
+  function setWorkspace(scan) {
+    if (!scan || typeof scan !== "object") return;
+    state.root = scan.root || null;
+    state.projects = Array.isArray(scan.projects) ? scan.projects : [];
+    state.singleFile = false;
+    state.expanded = {};
+    state.activeProject = state.projects.length ? state.projects[0].path : null;
+
+    var name = $("whWorkspaceName");
+    var path = $("whWorkspacePath");
+    if (name) name.textContent = state.root ? baseName(state.root) : "Projektordner";
+    if (path) path.textContent = state.root || "";
+    var count = $("whProjectCount");
+    if (count) count.textContent = state.projects.length === 1 ? "1 Projekt" : state.projects.length + " Projekte";
+
+    renderExplorer();
+    setStatus("Workspace geladen: " + state.projects.length + " Projekt(e), " + (scan.fileCount || 0) + " Datei(en).", "ok");
+    resetCamera();
+  }
+
+  function setSingleFile(name, path) {
+    var file = { name: name || baseName(path), path: path, kind: (String(name || "").split(".").pop() || "datei").toLowerCase(), size: 0 };
+    state.singleFile = true;
+    state.projects = [{ name: name || baseName(path), path: path, files: [file] }];
+    state.expanded[path] = true;
+    state.activeProject = path;
+    state.activeFile = path;
+    var wn = $("whWorkspaceName"); if (wn) wn.textContent = "Einzeldatei";
+    var wp = $("whWorkspacePath"); if (wp) wp.textContent = path;
+    var crumb = $("whDetailCrumb");
+    if (crumb) crumb.textContent = "Einzeldatei-Modus · " + file.name;
+    renderExplorer();
+    requestCheck([path]);
+  }
+
+  function storeResult(entry) {
+    if (!entry || !entry.path) return;
+    /* Merge rather than replace: a later detail answer must not drop fields a
+       previous batch answer already established. */
+    state.results[entry.path] = Object.assign({}, state.results[entry.path] || {}, entry);
+  }
+
+  function setResult(result, context) {
+    if (result && Array.isArray(result.results)) {
+      /* A batch answer: keep every entry, then show the selected one. When the
+         answer for a single path also carries the full engine result, attach it
+         so the inspector renders the findings instead of a bare verdict. */
+      if (result.findings && result.results.length === 1) {
+        result.results[0] = Object.assign({}, result.results[0], { detail: result });
+      }
+      result.results.forEach(storeResult);
+      var summary = $("whBatchSummary");
+      if (summary) {
+        summary.textContent = "Stapel: " + result.checked + " geprüft · " + result.failed + " Fehler";
+      }
+      var selected = state.activeFile ? state.results[state.activeFile] : null;
+      renderExplorer();
+      if (selected) {
+        state.result = null;
+        showEntry(selected);
+      }
+      setStatus("Stapelprüfung abgeschlossen: " + result.passed + " ohne Fehler, " + result.failed + " mit Fehler.", result.failed ? "fail" : "ok");
+      return;
+    }
+
+    if (context && context.path) storeResult({ path: context.path, ok: true, verdict: result && result.verdict, counts: result && result.counts });
+    state.result = result || null;
+    if (result && result.counts) {
+      var counts = result.counts;
+      setStatus("Prüfung fertig: " + result.verdict + " (" + (counts.fail || 0) + " Fehler, " + (counts.warn || 0) + " Warnungen).",
+        (counts.fail || 0) ? "fail" : (counts.warn || 0) ? "warn" : "ok");
+    }
+    renderExplorer();
+    renderResult();
+  }
+
+  function showEntry(entry) {
+    if (!entry) return;
+    if (entry.ok === false) {
+      state.result = { ok: false, error: entry.error || "Die Datei konnte nicht geprüft werden." };
+      renderResult();
+      return;
+    }
+    /* A full engine result, whenever the shell passes one through. */
+    if (entry.detail) { state.result = entry.detail; renderResult(); return; }
+    if (entry._full) { state.result = entry._full; renderResult(); return; }
+    state.result = entry.verdict
+      ? { verdict: entry.verdict, counts: entry.counts || {}, findings: [] }
+      : { ok: false, error: "Kein Ergebnis für diese Datei." };
+    renderResult();
+    /* A batch summary carries only the verdict. Ask the shell once per path for
+       the detail; the guard keeps that from repeating in a loop. */
+    if (!demo && entry.verdict && !state.detailRequested[entry.path]) {
+      state.detailRequested[entry.path] = true;
+      document.dispatchEvent(new CustomEvent("workhorse:detail", {
+        detail: { path: entry.path, land: state.land || null, stadt: state.stadt || null }
+      }));
+    }
+  }
+
+  function selectFile(path) {
+    var hit = findFile(path);
+    state.activeFile = path;
+    if (hit) state.activeProject = hit.project.path;
+    var crumb = $("whDetailCrumb");
+    var file = hit ? hit.file : { path: path, name: baseName(path) };
+    if (crumb) crumb.textContent = (hit && !state.singleFile ? hit.project.name + " · " : "") + (file.name || baseName(path));
+
+    renderExplorer();
+    var entry = state.results[path];
+    if (entry) { showEntry(entry); return; }
+    state.result = null;
+    renderResult();
+    requestCheck([path]);
+  }
+
+  function setEngineInfo(info) {
+    var badge = $("whEngineBadge");
+    var mode = $("whModeBadge");
+    var engine = info && info.engine && info.engine.result ? info.engine.result : null;
+    if (badge) {
+      if (engine) {
+        badge.textContent = engine.product + " " + engine.version + " · " + (engine.counts ? engine.counts.total : "?") + " Module";
+        badge.className = "wh-chip wh-chip--accent";
+      } else if (demo) {
+        /* Honest: these are built-in samples, not a verdict from the engine. */
+        badge.textContent = "Engine: nicht verbunden";
+        badge.className = "wh-chip wh-chip--warn";
+      } else {
+        badge.textContent = "Engine nicht verfügbar";
+        badge.className = "wh-chip wh-chip--fail";
+      }
+    }
+    if (mode) {
+      mode.textContent = demo ? "Demo-Modus" : "Desktop";
+      mode.className = "wh-chip" + (demo ? " wh-chip--warn" : " wh-chip--accent");
+    }
+  }
+
+  function setModelPublic(input) { setModel(input); }
+
+  /* ------------------------------------------------------------------ *
+   * Demo workspace: three offices' worth of projects, so the page has
+   * something to show without the shell. Clearly labelled as such.
+   * ------------------------------------------------------------------ */
+
+  var DEMO = {
+    root: "C:\\Buero\\Projekte 2026",
+    fileCount: 9,
+    projects: [
+      {
+        name: "2401 Neubau MFH München",
+        path: "C:\\Buero\\Projekte 2026\\2401_MFH_Muenchen",
+        files: [
+          { name: "modell.ifc", path: "C:\\Buero\\Projekte 2026\\2401_MFH_Muenchen\\modell.ifc", kind: "ifc", size: 1488320 },
+          { name: "lageplan.dxf", path: "C:\\Buero\\Projekte 2026\\2401_MFH_Muenchen\\lageplan.dxf", kind: "dxf", size: 284160 },
+          { name: "bplan.gml", path: "C:\\Buero\\Projekte 2026\\2401_MFH_Muenchen\\bplan.gml", kind: "gml", size: 96832 },
+          { name: "spec.json", path: "C:\\Buero\\Projekte 2026\\2401_MFH_Muenchen\\spec.json", kind: "json", size: 2144 }
+        ]
+      },
+      {
+        name: "2388 Sanierung Villa Stuttgart",
+        path: "C:\\Buero\\Projekte 2026\\2388_Villa_Stuttgart",
+        files: [
+          { name: "bestand.dxf", path: "C:\\Buero\\Projekte 2026\\2388_Villa_Stuttgart\\bestand.dxf", kind: "dxf", size: 412896 },
+          { name: "baubeschreibung.txt", path: "C:\\Buero\\Projekte 2026\\2388_Villa_Stuttgart\\baubeschreibung.txt", kind: "txt", size: 6420 }
+        ]
+      },
+      {
+        name: "2412 Gewerbehalle Köln",
+        path: "C:\\Buero\\Projekte 2026\\2412_Gewerbehalle_Koeln",
+        files: [
+          { name: "halle.ifc", path: "C:\\Buero\\Projekte 2026\\2412_Gewerbehalle_Koeln\\halle.ifc", kind: "ifc", size: 2851072 },
+          { name: "antrag.json", path: "C:\\Buero\\Projekte 2026\\2412_Gewerbehalle_Koeln\\antrag.json", kind: "json", size: 3310 },
+          { name: "maengel.bcf", path: "C:\\Buero\\Projekte 2026\\2412_Gewerbehalle_Koeln\\maengel.bcf", kind: "bcf", size: 18420 }
+        ]
+      }
+    ]
+  };
+
+  var DEMO_FINDINGS = [
+    { ruleId: "gebaeudeklasse", para: "§2 MBO", title: "Gebäudeklassen", status: "ok", message: "Gebäudeklasse 3 aus Höhe 8,5 m und zwei Wohneinheiten." },
+    { ruleId: "abstandsflaeche", para: "§6 Abs. 2 MBO", title: "Abstandsflächen", status: "fail", message: "Grenzabstand Nord 2,80 m unterschreitet die erforderliche Abstandsfläche von 4,25 m." },
+    { ruleId: "abstandsflaeche", para: "§6 Abs. 2 MBO", title: "Abstandsflächen", status: "fail", message: "Grenzabstand Westen 3,10 m unterschreitet die erforderliche Abstandsfläche von 4,25 m." },
+    { ruleId: "grz", para: "§19 BauNVO", title: "Grundflächenzahl", status: "ok", message: "GRZ 0,35 liegt innerhalb der B-Plan-Obergrenze von 0,40." },
+    { ruleId: "gfz", para: "§20 BauNVO", title: "Geschossflächenzahl", status: "warn", message: "GFZ 1,28 überschreitet das zulässige Höchstmaß von 1,20; Befreiung nach §31 BauGB erforderlich." },
+    { ruleId: "vollgeschosse", para: "§16 BauNVO", title: "Vollgeschosse", status: "ok", message: "Drei Vollgeschosse sind mit der festgesetzten Obergrenze vereinbar." },
+    { ruleId: "stellplaetze", para: "§48 MBO", title: "Stellplätze", status: "warn", message: "4 Kfz-Stellplätze vorhanden, 8 nach kommunaler Satzung erforderlich." },
+    { ruleId: "tageslicht", para: "§49 MBO", title: "Tageslicht", status: "ok", message: "Fensterfläche je Aufenthaltsraum erreicht den Sollwert von 12,5 Prozent der Grundfläche." }
+  ];
+
+  function demoCheck(files) {
+    files.forEach(function (path) {
+      var name = baseName(path).toLowerCase();
+      var findings = DEMO_FINDINGS;
+      var verdict = "nicht bestanden";
+      if (name.indexOf("villa") >= 0 || name.indexOf("baubeschreibung") >= 0) {
+        findings = DEMO_FINDINGS.slice(0, 5).map(function (f) {
+          return f.status === "fail" ? Object.assign({}, f, { status: "warn", message: f.message.replace("unterschreitet", "liegt knapp an der Grenze zu") }) : f;
+        });
+        verdict = "mit Auflagen";
+      } else if (name.indexOf("gewerbe") >= 0 || name.indexOf("halle") >= 0) {
+        findings = DEMO_FINDINGS.map(function (f) {
+          return f.status === "warn" ? Object.assign({}, f, { status: "ok" }) : f;
+        });
+        verdict = "nicht bestanden";
+      }
+      state.results[path] = {
+        path: path,
+        ok: true,
+        verdict: verdict,
+        counts: {
+          fail: findings.filter(function (f) { return f.status === "fail"; }).length,
+          warn: findings.filter(function (f) { return f.status === "warn"; }).length,
+          ok: findings.filter(function (f) { return f.status === "ok"; }).length
+        },
+        _full: {
+          verdict: verdict,
+          counts: {
+            fail: findings.filter(function (f) { return f.status === "fail"; }).length,
+            warn: findings.filter(function (f) { return f.status === "warn"; }).length,
+            ok: findings.filter(function (f) { return f.status === "ok"; }).length
+          },
+          profile: { code: state.land || "BY", name: state.land ? ("Profil " + state.land) : "BayBO" },
+          municipality: state.stadt ? { code: state.stadt, name: state.stadt } : { code: "DE-MUC", name: "München" },
+          findings: findings,
+          repairs: [
+            {
+              ruleId: "abstandsflaeche",
+              title: "Grenzabstand Nord / West anpassen",
+              action: "Gebäudehöhe von 8,50 m auf 7,00 m reduzieren oder Baukörper um 1,45 m von der Nordgrenze abrücken.",
+              delta: "H -1,50 m / Abstand +1,45 m",
+              costImpact: "mittel",
+              confidence: 0.96
+            },
+            {
+              ruleId: "gfz",
+              title: "Geschossfläche (GFZ) auf B-Plan-Maß senken",
+              action: "Oberstes Geschoss als Staffelgeschoss (< 2/3 Grundfläche) ausbilden oder Befreiung nach § 31 Abs. 2 BauGB beantragen.",
+              delta: "-68 m² GF",
+              costImpact: "mittel",
+              confidence: 0.90
+            },
+            {
+              ruleId: "stellplaetze",
+              title: "Kommunale Stellplatzsatzung erfüllen",
+              action: "4 fehlende Kfz-Stellplätze über ÖPNV-Reduktionsbonus (Mobilitätskonzept) oder Stellplatzablöse nachweisen.",
+              delta: "+4 Stellplätze / Ablöse",
+              costImpact: "niedrig",
+              confidence: 0.92
+            }
+          ],
+          source: {
+            format: (String(path).split(".").pop() || "ifc").toLowerCase(),
+            notes: [
+              "Geometrie aus Modell abgeleitet (B × T = 18,0 m × 12,0 m, H = 8,50 m).",
+              "Rechtsrahmen: " + (state.land || "BY") + (state.stadt ? " · Kommune " + state.stadt : " · München (StPlS)")
+            ],
+            model: {
+              width: 18.0,
+              depth: 12.0,
+              height: 8.5,
+              storeys: 3,
+              flaeche_m2: 850,
+              setbacks: { norden: 2.8, osten: 4.5, sueden: 5.0, westen: 3.1 }
+            }
+          }
+        }
+      };
+    });
+
+    var entries = files.map(function (p) { return state.results[p]; });
+    setResult({
+      results: entries,
+      checked: entries.length,
+      passed: entries.filter(function (e) { return e.verdict === "bestanden" || e.verdict === "mit Auflagen"; }).length,
+      failed: entries.filter(function (e) { return e.verdict === "nicht bestanden"; }).length
+    }, { demo: true });
+  }
+
+  /* ------------------------------------------------------------------ *
+   * Wiring
+   * ------------------------------------------------------------------ */
+
+  function bindUi() {
+    var open = $("whOpenFolder");
+    if (open) open.addEventListener("click", requestOpenFolder);
+
+    var checkProject = $("whCheckProject");
+    if (checkProject) {
+      checkProject.addEventListener("click", function () {
+        var project = findProject(state.activeProject);
+        if (!project) return;
+        requestCheck((project.files || []).map(function (f) { return f.path; }));
+      });
+    }
+
+    var checkAll = $("whCheckAll");
+    if (checkAll) {
+      checkAll.addEventListener("click", function () {
+        var files = [];
+        state.projects.forEach(function (p) { (p.files || []).forEach(function (f) { files.push(f.path); }); });
+        requestCheck(files);
+      });
+    }
+
+    var exportPlans = $("whExportPlans");
+    if (exportPlans) exportPlans.addEventListener("click", requestPlanExport);
+
+    var list = $("whProjectList");
+    if (list) {
+      list.addEventListener("click", function (e) {
+        var toggle = e.target.closest("[data-toggle]");
+        if (toggle) {
+          var key = toggle.getAttribute("data-toggle");
+          state.expanded[key] = state.expanded[key] === false;
+          state.activeProject = key;
+          renderExplorer();
+          return;
+        }
+        var fileNode = e.target.closest("[data-file]");
+        if (fileNode) { selectFile(fileNode.getAttribute("data-file")); return; }
+        var projectNode = e.target.closest("[data-project]");
+        if (projectNode) {
+          state.activeProject = projectNode.getAttribute("data-project");
+          renderExplorer();
+        }
+      });
+    }
+
+    var findings = $("whFindings");
+    if (findings) {
+      findings.addEventListener("click", function (e) {
+        var statBtn = e.target.closest("[data-statute]");
+        if (statBtn) {
+          e.stopPropagation();
+          requestStatute(statBtn.getAttribute("data-statute"));
+          return;
+        }
+        var row = e.target.closest("[data-finding]");
+        if (!row || !state.result || !state.result.findings) return;
+        var finding = state.result.findings[Number(row.getAttribute("data-finding"))];
+        if (!finding) return;
+        var msg = String(finding.message || "");
+        var dir = /nord/i.test(msg) ? "norden" : /s[üu]d/i.test(msg) ? "sueden" : /ost/i.test(msg) ? "osten" : /west/i.test(msg) ? "westen" : null;
+        Array.prototype.forEach.call(findings.children, function (child) { child.classList.remove("is-focus"); });
+        row.classList.add("is-focus");
+        if (dir) focusFacade(dir);
+        else requestStatute(finding.para || "§");
+      });
+    }
+
+    var repairsList = $("whRepairsList");
+    if (repairsList) {
+      repairsList.addEventListener("click", function (e) {
+        var btn = e.target.closest("[data-simulate]");
+        if (!btn) return;
+        requestSimulate(Number(btn.getAttribute("data-simulate")));
+      });
+    }
+
+    var simReset = $("whSimReset");
+    if (simReset) simReset.addEventListener("click", resetSimulation);
+
+    var matrixBtn = $("whLandsMatrix");
+    if (matrixBtn) matrixBtn.addEventListener("click", requestLandsMatrix);
+    var matrixPdf = $("whMatrixPdf");
+    if (matrixPdf) matrixPdf.addEventListener("click", requestLandsMatrixPdf);
+    var matrixClose = $("whMatrixClose");
+    if (matrixClose) matrixClose.addEventListener("click", closeLandsMatrix);
+    var matrixCountrySelect = $("whMatrixCountry");
+    if (matrixCountrySelect) matrixCountrySelect.addEventListener("change", function () {
+      var drawer = $("whMatrixDrawer");
+      if (drawer && drawer.classList.contains("is-on")) requestLandsMatrix();
+    });
+
+    var statClose = $("whStatuteClose");
+    if (statClose) statClose.addEventListener("click", closeStatuteDrawer);
+
+    var landSelect = $("whLandSelect");
+    if (landSelect) {
+      landSelect.addEventListener("change", function () {
+        setJurisdiction(landSelect.value, state.stadt);
+      });
+    }
+
+    var stadtSelect = $("whStadtSelect");
+    if (stadtSelect) {
+      stadtSelect.addEventListener("change", function () {
+        setJurisdiction(state.land, stadtSelect.value);
+      });
+    }
+
+    var filterBtns = document.querySelectorAll("[data-filter]");
+    Array.prototype.forEach.call(filterBtns, function (btn) {
+      btn.addEventListener("click", function () {
+        state.filterStatus = btn.getAttribute("data-filter") || "all";
+        Array.prototype.forEach.call(filterBtns, function (b) {
+          b.classList.toggle("is-active", b === btn);
+        });
+        renderFindings((state.result && state.result.findings) || []);
+      });
+    });
+
+    var filterSearch = $("whFindingSearch");
+    if (filterSearch) {
+      filterSearch.addEventListener("input", function () {
+        state.filterQuery = filterSearch.value || "";
+        renderFindings((state.result && state.result.findings) || []);
+      });
+    }
+
+    var cmdkBtn = $("whCmdPaletteBtn");
+    if (cmdkBtn) cmdkBtn.addEventListener("click", openCommandPalette);
+
+    var cmdkBackdrop = $("whCmdkBackdrop");
+    if (cmdkBackdrop) {
+      cmdkBackdrop.addEventListener("click", function (e) {
+        if (e.target === cmdkBackdrop) closeCommandPalette();
+      });
+    }
+
+    var cmdkInput = $("whCmdkInput");
+    if (cmdkInput) {
+      cmdkInput.addEventListener("input", function () {
+        renderCommandPalette(cmdkInput.value);
+      });
+      cmdkInput.addEventListener("keydown", function (e) {
+        var listNode = $("whCmdkList");
+        var items = (listNode && listNode._items) || [];
+        if (e.key === "Enter" && items.length) {
+          e.preventDefault();
+          closeCommandPalette();
+          items[0].run();
+        }
+      });
+    }
+
+    var cmdkList = $("whCmdkList");
+    if (cmdkList) {
+      cmdkList.addEventListener("click", function (e) {
+        var row = e.target.closest("[data-cmdk]");
+        if (!row) return;
+        var idx = Number(row.getAttribute("data-cmdk"));
+        var items = cmdkList._items || [];
+        if (items[idx]) {
+          closeCommandPalette();
+          items[idx].run();
+        }
+      });
+    }
+
+    var p1 = $("whPreset1"), p2 = $("whPreset2"), p3 = $("whPreset3"), pr = $("whPresetR");
+    if (p1) p1.addEventListener("click", function () { applyPreset("iso"); });
+    if (p2) p2.addEventListener("click", function () { applyPreset("plan"); });
+    if (p3) p3.addEventListener("click", function () { applyPreset("north"); });
+    if (pr) pr.addEventListener("click", function () { applyPreset("reset"); });
+
+    var b3 = $("whBtn3d"), b2 = $("whBtn2d");
+    if (b3) b3.addEventListener("click", function () { setMode("3d"); });
+    if (b2) b2.addEventListener("click", function () { setMode("2d"); });
+
+    var pdf = $("whExportPdf");
+    if (pdf) pdf.addEventListener("click", function () { requestExport("pdf", state.activeFile); });
+    var svgPlan = $("whExportSvg");
+    if (svgPlan) svgPlan.addEventListener("click", function () { requestExport("svg", state.activeFile); });
+    var dxfPlan = $("whExportDxf");
+    if (dxfPlan) dxfPlan.addEventListener("click", function () { requestExport("dxf", state.activeFile); });
+    var devBtn = $("whExportDeviations");
+    if (devBtn) devBtn.addEventListener("click", function () { requestExport("deviations", state.activeFile); });
+    var doss = $("whExportDossier");
+    if (doss) doss.addEventListener("click", function () { requestExport("dossier", state.activeFile); });
+    var xbau = $("whExportXbau");
+    if (xbau) xbau.addEventListener("click", function () { requestExport("xbau", state.activeFile); });
+    var bcf = $("whExportBcf");
+    if (bcf) bcf.addEventListener("click", function () { requestExport("bcf", state.activeFile); });
+
+    var root = $("workhorse");
+    if (root) root.setAttribute("data-mode", demo ? "demo" : "desktop");
+  }
+
+  function init() {
+    bindUi();
+    bindKeys();
+    bindCanvas($("whCanvas3d"), cam3d, false);
+    bindCanvas($("whCanvas2d"), cam2d, true);
+    setEngineInfo(null);
+    setMode("3d");
+    resetCamera();
+
+    if (demo) {
+      setWorkspace(DEMO);
+      setTimeout(function () { selectFile(DEMO.projects[0].files[0].path); }, 60);
+      setStatus("Demo-Modus: Beispieldaten ohne Engine. Ordner öffnen oder eine Datei hierher ziehen, um eigene Projekte zu prüfen.");
+    } else {
+      setStatus("Bereit. Projektordner öffnen oder eine Datei hierher ziehen.");
+    }
+
+    window.addEventListener("resize", function () { drawAll(0); });
+  }
+
+  window.Workhorse = {
+    demo: demo,
+    setWorkspace: setWorkspace,
+    setSingleFile: setSingleFile,
+    setResult: setResult,
+    setModel: setModelPublic,
+    setEngineInfo: setEngineInfo,
+    setBusy: setBusy,
+    setStatus: setStatus,
+    selectFile: selectFile,
+    setStatute: setStatute,
+    setSimulation: setSimulation,
+    setLandsMatrix: setLandsMatrix,
+    setJurisdiction: setJurisdiction,
+    getJurisdiction: getJurisdiction,
+    toast: toast,
+    state: state
+  };
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+  else init();
+})();
+</script>
+</body>
+</html>

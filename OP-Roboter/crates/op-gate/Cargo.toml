@@ -1,0 +1,17 @@
+[package]
+name = "op-gate"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "Trustless execution gate (proof-gated actuation)"
+
+[dependencies]
+op-math = { workspace = true }
+op-trajectory = { workspace = true }
+op-constraints = { workspace = true }
+op-verifier = { workspace = true }
+op-taint = { workspace = true }
+op-energy = { workspace = true }
+serde = { workspace = true }
+thiserror = "1"

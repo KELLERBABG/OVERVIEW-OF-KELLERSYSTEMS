@@ -1,0 +1,74 @@
+{
+  "slug": "personal-015",
+  "source": "generated",
+  "domain": "Interim-Management",
+  "traps": [
+    {
+      "marker": "Nur der Anbieter ist berechtigt, den Vertrag ordentlich zu kündigen",
+      "expectedType": "unilateral_convenience_termination",
+      "note": "ordentliche Kündigung nur für den Anbieter"
+    },
+    {
+      "marker": "Die ordentliche Kündigung durch den Auftraggeber ist ausgeschlossen",
+      "expectedType": "asymmetric_termination",
+      "note": "ordentliche Kündigung des Auftraggebers ausgeschlossen"
+    },
+    {
+      "marker": "den Zugang des Auftraggebers o​hne Vorankündigung zu sperren",
+      "expectedType": "service_suspension",
+      "note": "Sperrung des Zugangs ohne Vorankündigung"
+    },
+    {
+      "marker": "Die Systemprotokolle des Anbieters gelten als Vollbeweis",
+      "expectedType": "audit_log_manipulation",
+      "note": "Systemprotokolle als Vollbeweis"
+    },
+    {
+      "marker": "Leistungsnachweise gelten als vorbehaltlos genehmigt",
+      "expectedType": "fictitious_receipt",
+      "note": "Leistungsnachweise gelten als genehmigt"
+    },
+    {
+      "marker": "keine Mitarbeiter des Anbieters abzuwerben",
+      "expectedType": "non_solicitation",
+      "note": "Abwerbeverbot zulasten des Auftraggebers"
+    },
+    {
+      "marker": "Die Geheimhaltungspflichten bestehen zeitlich unbeschränkt fort",
+      "expectedType": "excessive_survival",
+      "note": "Geheimhaltung ohne zeitliche Beschränkung"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Rechnungen sind innerhalb von vierzehn Tagen ohne Abzug zu zahlen",
+      "note": "Zahlungsziel vierzehn Tage"
+    },
+    {
+      "marker": "Die Vergütung wird jeweils zum Monatsende fällig",
+      "note": "Fälligkeit zum Monatsende"
+    },
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "wechselseitige Vertraulichkeit"
+    },
+    {
+      "marker": "Die Parteien benennen je einen Ansprechpartner",
+      "note": "wechselseitige Ansprechpartner"
+    },
+    {
+      "marker": "Die Anlagen 1 und 2 sind Bestandteil dieses Vertrages",
+      "note": "Anlagen als Vertragsbestandteil"
+    },
+    {
+      "marker": "Der Auftraggeber stellt dem Interim Manager einen Arbeitsplatz zur Verfügung",
+      "note": "Arbeitsplatz durch den Auftraggeber"
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Interim Manager berichtet an den Vorstand des Auftraggebers",
+      "note": "Berichtspflicht an den Vorstand ohne Weisungsgrenzen, vom Detektor nicht erfasst"
+    }
+  ]
+}

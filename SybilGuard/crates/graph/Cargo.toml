@@ -1,0 +1,18 @@
+[package]
+name = "sybil-graph"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Social Graph Topology engine: small-world analysis, clustering coefficient, centrality, community detection, synthetic graph generation"
+
+[dependencies]
+sybil-core = { path = "../core" }
+petgraph.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+rand.workspace = true
+rayon.workspace = true
+tracing.workspace = true
+csv.workspace = true
+chrono.workspace = true

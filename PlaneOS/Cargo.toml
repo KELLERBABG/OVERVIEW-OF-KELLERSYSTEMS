@@ -1,0 +1,24 @@
+[package]
+name = "plane-os"
+version = "0.1.0"
+edition = "2021"
+description = "Plane OS — formally verified aerospace flight control prototype (envelope protection, SMT-based safety verification, trustless execution gate)"
+license = "Apache-2.0"
+authors = ["Plane OS Contributors"]
+
+[dependencies]
+# Optional Z3 SMT solver integration. Enabled with: cargo build --features z3
+# The feature gate keeps the default build dependency-light and runnable
+# anywhere; the native StubSolver provides the same trait contract.
+z3 = { version = "0.9", optional = true }
+
+[features]
+default = []
+z3 = ["dep:z3"]
+
+[profile.release]
+lto = true
+codegen-units = 1
+
+[profile.dev]
+opt-level = 1

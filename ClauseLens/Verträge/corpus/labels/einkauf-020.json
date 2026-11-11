@@ -1,0 +1,78 @@
+{
+  "slug": "einkauf-020",
+  "source": "generated",
+  "domain": "Einkauf und Lieferantenrahmenvertrag, deutsches Recht",
+  "traps": [
+    {
+      "marker": "kann die Fertigungslinien jederzeit auditieren",
+      "expectedType": "unreasonable_audit",
+      "note": "Auditrecht ohne Anlass und Vorlaufzeit"
+    },
+    {
+      "marker": "Die Überlassung der Steuerungssoftware erfolgt im Ist-Zustand",
+      "expectedType": "as_is_software_disclaimer",
+      "note": "Gewaehrleistungsausschluss als Ist-Zustand"
+    },
+    {
+      "marker": "im Kundenportal hinterlegten Qualitätsrichtlinien in der dort jeweils abrufbaren Fassung",
+      "expectedType": "dynamic_url_referral",
+      "note": "Dynamische Bezugnahme auf Portalinhalt"
+    },
+    {
+      "marker": "verfällt der Anspruch auf die vereinbarte Gutschrift",
+      "expectedType": "service_credit_forfeiture",
+      "note": "Verfall der Gutschrift"
+    },
+    {
+      "marker": "erfolgt außerhalb der Europäischen Union, unter anderem in Indien",
+      "expectedType": "international_data_processing",
+      "note": "Drittlandverarbeitung ohne Garantien"
+    },
+    {
+      "marker": "Mit der Einstellung in das Benachrichtigungsportal sind Mitteilungen bekannt",
+      "expectedType": "fictitious_receipt",
+      "note": "Zugangsfiktion ohne tatsaechlichen Abruf"
+    },
+    {
+      "marker": "endet nicht mit der Beendigung, sondern besteht unbefristet fort",
+      "expectedType": "excessive_survival",
+      "note": "Unbefristete Nachwirkung der Verschwiegenheit"
+    },
+    {
+      "marker": "Die Verfahrenskosten hat der Besteller vorzustrecken.",
+      "expectedType": "mandatory_expert_determination",
+      "note": "Zwang zum Sachverstaendigenverfahren mit Kostenvorstreckung"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Auftragnehmer stellt die Prüfprotokolle in Textform bereit",
+      "note": "Bereitstellung in Textform"
+    },
+    {
+      "marker": "Der Besteller wählt unter den in Anlage 3 genannten Varianten eine aus",
+      "note": "Einseitiges Wahlrecht ohne Pflichten"
+    },
+    {
+      "marker": "Prüfungen werden mit angemessener Vorlaufzeit angekündigt",
+      "note": "Ankuendigungspflicht fuer Pruefungen"
+    },
+    {
+      "marker": "Rechnungen sind innerhalb von dreißig Tagen ohne Abzug zu begleichen",
+      "note": "Marktueblicher Zahlungstermin"
+    },
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Zulaessige Haftungsklausel"
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag einvernehmlich beenden",
+      "note": "Einvernehmliche Beendigung"
+    },
+    {
+      "marker": "Bei berechtigter Rüge bessert der Auftragnehmer innerhalb von zehn Werktagen nach",
+      "note": "Nachbesserungspflicht"
+    }
+  ],
+  "uncovered": []
+}

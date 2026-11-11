@@ -1,0 +1,79 @@
+{
+  "slug": "evasion-007",
+  "source": "generated",
+  "domain": "evasion",
+  "traps": [
+    {
+      "marker": "Gerät der Kunde in Verzug, sind Verzugszinsen von achtzehn Prozent jährlich zu zahlen.",
+      "expectedType": "default_interest",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: default_interest (Technik: numberword)."
+    },
+    {
+      "marker": "Widerspricht der Kunde nicht innerhalb von zwei Wochen, gilt die Anpassung der Provision als",
+      "expectedType": "unilateral_change",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: unilateral_change (Technik: numberword)."
+    },
+    {
+      "marker": "Gegenansprüche des Kunden berechtigen nicht zur Aufrechnung, Einwendungen und Gegenrechte bleiben",
+      "expectedType": "setoff_restriction",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: setoff_restriction (Technik: numberword)."
+    },
+    {
+      "marker": "Mängel sind binnen achtundvierzig Stunden nach Abnahme anzuzeigen, andernfalls verfallen die",
+      "expectedType": "deemed_acceptance",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: deemed_acceptance (Technik: numberword)."
+    },
+    {
+      "marker": "Mängelansprüche entfallen vierundzwanzig Monate ab Übergabe der Ware endgültig, unabhängig von der",
+      "expectedType": "statute_of_limitations",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: statute_of_limitations (Technik: numberword)."
+    },
+    {
+      "marker": "Änderungen und Ergänzungen dieses Vertrags bedürfen der Schriftform, die Textform ist ausdrücklich",
+      "expectedType": "written_form_trap",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: written_form_trap (Technik: numberword)."
+    },
+    {
+      "marker": "Der Kunde trägt die Beweislast dafür, dass ein Ausfall nicht auf Störungen in seinem Betrieb beruht.",
+      "expectedType": "burden_of_proof",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: burden_of_proof (Technik: numberword)."
+    },
+    {
+      "marker": "Für die Nutzung gelten die Bedingungen, die unter der Adresse",
+      "expectedType": "dynamic_url_referral",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: dynamic_url_referral (Technik: numberword)."
+    },
+    {
+      "marker": "Eine Haftung des Anbieters für das Verschulden von Erfüllungsgehilfen ist ausgeschlossen.",
+      "expectedType": "vicarious_agents",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: vicarious_agents (Technik: numberword)."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Anbieter überlässt dem Kunden die Daten in einem gängigen Format.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag aus wichtigem Grund ohne Einhaltung einer Frist kündigen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien benennen jeweils einen Ansprechpartner für die operative Zusammenarbeit.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien sind berechtigt, gegen fällige Forderungen aufzurechnen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde erhält Schulungen und Zugang zum Systemhandbuch in der jeweils aktuellen Fassung.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde informiert den Anbieter unverzüglich über wesentliche Störungen im Vertrieb.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    }
+  ],
+  "uncovered": []
+}

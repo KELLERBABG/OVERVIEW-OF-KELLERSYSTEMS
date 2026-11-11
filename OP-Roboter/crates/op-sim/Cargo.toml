@@ -1,0 +1,26 @@
+[package]
+name = "op-sim"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "3D simulator + CLI for the OP-Roboter formally verified surgical robot control stack"
+
+[[bin]]
+name = "op-sim"
+path = "src/main.rs"
+
+[dependencies]
+op-math = { workspace = true }
+op-kinematics = { workspace = true }
+op-trajectory = { workspace = true }
+op-constraints = { workspace = true }
+op-verifier = { workspace = true }
+op-taint = { workspace = true }
+op-energy = { workspace = true }
+op-state-space = { workspace = true }
+op-spec = { workspace = true }
+op-gate = { workspace = true }
+clap = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }

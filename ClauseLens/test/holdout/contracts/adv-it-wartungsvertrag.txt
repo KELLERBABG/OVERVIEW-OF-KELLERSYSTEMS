@@ -1,0 +1,69 @@
+WARTUNGSVERTRAG FÜR DIE ERP-SOFTWARE FALKE
+
+zwischen
+
+Falke Systems GmbH, Technologiepark 12, 76131 Karlsruhe (nachfolgend „Anbieter“)
+
+und
+
+der im Bestellschein genannten Betreibergesellschaft (nachfolgend „Kunde“).
+
+§ 1 Vertragsgegenstand
+
+1.1 Der Anbieter erbringt Wartungs- und Supportleistungen für die beim Kunden im Einsatz befindliche ERP-Software Falke.
+
+1.2 Art und Umfang der Leistungen ergeben sich aus der Leistungsbeschreibung in der Fassung bei Vertragsschluss.
+
+§ 2 Reaktionszeiten und Serviceziele
+
+2.1 Der Anbieter strebt eine Reaktionszeit von vier Stunden an; die Einhaltung dieses Ziels begründet keine einklagbaren Ansprüche.
+
+2.2 Der Anbieter behebt Störungen innerhalb der vereinbarten Servicezeiten.
+
+2.3 Störungen werden nach Priorität klassifiziert und dokumentiert.
+
+§ 3 Vergütung und Zahlung
+
+3.1 Die Wartungsvergütung beträgt 12.000 EUR jährlich.
+
+3.2 Die Vergütung wird jährlich einvernehmlich überprüft.
+
+3.3 Rechnungen sind innerhalb von 30 Tagen ohne Abzug fällig.
+
+§ 4 Vertragsbestandteile
+
+4.1 Zuvor kommunizierte Servicebeschreibungen treten außer Kraft; maßgeblich ist allein dieser Vertrag nebst Anlagen.
+
+4.2 Ergänzend gelten die unter der URL www.falke-systems.example/wartung abrufbaren Bedingungen in ihrer jeweils gültigen Fassung.
+
+§ 5 Softwarestand und Anpassungen
+
+5.1 Die Wartung erfolgt an der Software in der bei Vertragsbeginn vorliegenden Fassung; Ansprüche auf Anpassung an einen bestimmten Einsatzzweck bestehen nicht.
+
+5.2 Updates stellt der Anbieter bereit, soweit sie allgemein verfügbar sind.
+
+§ 6 Kündigungen und Zugang
+
+6.1 Kündigungen gelten mit Absendung als zugegangen.
+
+6.2 Betriebsbedingte Mitteilungen stellt der Anbieter im Kundenportal ein.
+
+§ 7 Kontrollen
+
+7.1 Der Anbieter kann die Lizenznutzung durch unangekündigte Kontrollen überprüfen; die Aufwendungen für Prüfungshandlungen gehen zufolge dieser Regelung zulasten des Kunden.
+
+7.2 Über das Ergebnis der Kontrolle informiert der Anbieter den Kunden in Textform.
+
+§ 8 Vertraulichkeit
+
+8.1 Beide Parteien behandeln die Informationen der anderen Seite vertraulich.
+
+8.2 Gesetzliche Offenlegungspflichten bleiben unberührt.
+
+§ 9 Laufzeit und Beendigung
+
+9.1 Die Laufzeit beträgt zwölf Monate. Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Laufzeitende kündigen.
+
+§ 10 Verfügbarkeit
+
+10.1 Der Anbieter gewährleistet eine Verfügbarkeit der Wartungsannahme von 99,0 % während der Servicezeiten.

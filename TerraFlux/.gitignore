@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+*.tmp
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local databases & logs
+*.db
+*.sqlite
+*.sqlite3
+*.db-shm
+*.db-wal
+*.log
+
+# Environment & Secrets
+.env
+!.env.example
+
+# IDE & OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Build artifacts & dependencies
+target/
+node_modules/
+*.exe
+*.dll
+*.pdb
+*.rlib
+.freebuff/
+.reasonix/
+*reasonix*

@@ -1,0 +1,56 @@
+{
+  "slug": "public-commonpaper-partnership-agreement",
+  "source": "https://raw.githubusercontent.com/CommonPaper/Partnership-Agreement/main/Partnership-Agreement.md",
+  "license": "CC BY 4.0",
+  "retrieved": "2026-10-15",
+  "domain": "Partnervertrag (Common Paper)",
+  "traps": [
+    {
+      "marker": "1. Trademark License. Licensor",
+      "expectedType": "data_grant",
+      "note": "Reale Klausel, Engine-Typ data_grant"
+    },
+    {
+      "marker": "2. Protection by Partner. Partner",
+      "expectedType": "third_party_indemnity",
+      "note": "Reale Klausel, Engine-Typ third_party_indemnity"
+    },
+    {
+      "marker": "1. Entire Agreement. This Agreement",
+      "expectedType": "entire_agreement",
+      "note": "Reale Klausel, Engine-Typ entire_agreement"
+    },
+    {
+      "marker": "3. Governing Law and Chosen Courts.",
+      "expectedType": "jurisdiction",
+      "note": "Reale Klausel, Engine-Typ jurisdiction"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "1. Obligations. Each party will",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "2. Feedback. Each party may, but",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "1. If the Obligations include payment",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "a. Fees and Billing. Unless the",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "b. Payment. The paying party will",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "c. Taxes. The paying party is responsible",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

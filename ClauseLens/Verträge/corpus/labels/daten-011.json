@@ -1,0 +1,87 @@
+{
+  "slug": "daten-011",
+  "source": "generated",
+  "domain": "Lizenzvertrag",
+  "traps": [
+    {
+      "marker": "Die Aufwendungen für Prüfungshandlungen gehen zulasten des Kunden",
+      "expectedType": "unreasonable_audit",
+      "note": "Paraphrase/Umstellung: nennt 'Die Aufwendungen für Prüfungshandlungen gehen' statt der Registerwendung."
+    },
+    {
+      "marker": "erlischt mit Beendigung des Rahmenvertrags automatisch",
+      "expectedType": "data_lockin",
+      "note": "Paraphrase/Umstellung: nennt 'erlischt mit Beendigung des Rahmenvertrags au' statt der Registerwendung."
+    },
+    {
+      "marker": "Die Freistellung gilt verschuldensunabhängig",
+      "expectedType": "third_party_indemnity",
+      "note": "Paraphrase/Umstellung: nennt 'Die Freistellung gilt verschuldensunabhängig' statt der Registerwendung."
+    },
+    {
+      "marker": "Der Kunde kann den Vertrag nicht aus wichtigem Grund kündigen",
+      "expectedType": "asymmetric_termination",
+      "note": "Paraphrase/Umstellung: nennt 'Der Kunde kann den Vertrag nicht aus wichtige' statt der Registerwendung."
+    },
+    {
+      "marker": "Ansprüche gegen die Gesellschaft sind nicht abtretbar",
+      "expectedType": "assignment_restriction",
+      "note": "Paraphrase/Umstellung: nennt 'Ansprüche gegen die Gesellschaft sind nicht a' statt der Registerwendung."
+    },
+    {
+      "marker": "bleiben die Zahlungsverpflichtungen des Kunden vollumfänglich bestehen",
+      "expectedType": "force_majeure_asymmetry",
+      "note": "Paraphrase/Umstellung: nennt 'bleiben die Zahlungsverpflichtungen des Kunde' statt der Registerwendung."
+    },
+    {
+      "marker": "Ehemalige Mitarbeiter der Gesellschaft sind zwei Jahre lang nicht zu beschäftigen",
+      "expectedType": "non_solicitation",
+      "note": "Paraphrase/Umstellung: nennt 'Ehemalige Mitarbeiter der Gesellschaft sind z' statt der Registerwendung."
+    },
+    {
+      "marker": "Nur der Anbieter ist berechtigt, den Vertrag mit einer Frist von vier Wochen",
+      "expectedType": "unilateral_convenience_termination",
+      "note": "Paraphrase/Umstellung: nennt 'Nur der Anbieter ist berechtigt, den Vertrag ' statt der Registerwendung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "nur nach vorheriger Anzeige an den Auftraggeber einsetzen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "können in Textform, insbesondere per E-Mail, vereinbart werden",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "ohne Angabe von Gründen zum Monatsende kündigen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "einfaches, nicht ausschließliches Nutzungsrecht für den vereinbarten Zweck",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "auf den in der Präambel bezeichneten Zweck beschränkt",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "zum Quartalsende ordentlich kündigen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "dieselben Datenschutzstandards einhalten",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "mit ihren jeweiligen Lizenzen aufgeführt",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Mindestabnahme von fünfhundert Datensätzen je Kalendermonat",
+      "note": "Täuschende Klausel ohne passenden Detektortyp."
+    }
+  ]
+}

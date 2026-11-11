@@ -1,0 +1,74 @@
+{
+  "slug": "personal-002",
+  "source": "generated",
+  "domain": "Arbeitsvertrag",
+  "traps": [
+    {
+      "marker": "die Arbeitnehmerin kann nur mit einer Frist von sechs Monaten zum Periodenende kündigen",
+      "expectedType": "notice_period",
+      "note": "asymmetrische Kündigungsfristen zu Lasten der Arbeitnehmerin"
+    },
+    {
+      "marker": "eine K​arenzentschädigung ist nicht zugesagt",
+      "expectedType": "non_compete",
+      "note": "Nachvertragliches Wettbewerbsverbot ohne Entschädigung"
+    },
+    {
+      "marker": "Mitarbeiter der Arbeitgeberin abzuwerben",
+      "expectedType": "non_solicitation",
+      "note": "Abwerbeverbot über das Arbeitsverhältnis hinaus"
+    },
+    {
+      "marker": "bestehen zeitlich unbeschränkt fort",
+      "expectedType": "excessive_survival",
+      "note": "Unbeschränkte Nachwirkung von Pflichten"
+    },
+    {
+      "marker": "Änderungen und Ergänzungen dieses Vertrages bedürfen der Schriftform",
+      "expectedType": "written_form_trap",
+      "note": "Schriftformzwang für Änderungen und Ergänzungen"
+    },
+    {
+      "marker": "Ansprüche der Arbeitnehmerin können nicht abgetreten werden",
+      "expectedType": "assignment_restriction",
+      "note": "Abtretungsverbot mit Zustimmungserfordernis"
+    },
+    {
+      "marker": "behält sich vor, Aufgabenbereich und Arbeitszeit nach billigem Ermessen anzupassen",
+      "expectedType": "unilateral_change",
+      "note": "Einseitiger Änderungsvorbehalt ohne Widerspruchsrecht"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die ersten sechs Monate gelten als Probezeit",
+      "note": "übliche Probezeitklausel"
+    },
+    {
+      "marker": "Die regelmäßige wöchentliche Arbeitszeit beträgt 40 Stunden",
+      "note": "Arbeitszeitangabe"
+    },
+    {
+      "marker": "Das Bruttojahresgehalt beträgt 78.000,00 EUR",
+      "note": "Gehaltsangabe"
+    },
+    {
+      "marker": "Der Urlaubsanspruch beträgt 30 Arbeitstage je Kalenderjahr",
+      "note": "Urlaubsanspruch"
+    },
+    {
+      "marker": "Die Arbeitnehmerin meldet die Arbeitsunfähigkeit unverzüglich",
+      "note": "Meldeobliegenheit"
+    },
+    {
+      "marker": "Das Recht zur Kündigung aus wichtigem Grund bleibt unberührt",
+      "note": "gesetzliches Kündigungsrecht bleibt erhalten"
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Die Arbeitgeberin weist die Arbeitnehmerin auf die Möglichkeit der Einsichtnahme",
+      "note": "harmlose Akteneinsichtsbelehrung"
+    }
+  ]
+}

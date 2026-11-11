@@ -1,0 +1,69 @@
+# Cloudflare Pages redirects.
+#
+# The Pages build output directory is the repository ROOT, so every path below
+# is a real path in this repo:
+#   /assets/*            -> the repository-root assets/ directory
+#   /site/index.html     -> the landing page
+#   /site/<page>/        -> the generated alias directories (site/studio/index.html, ...)
+#   /site/<page>.html    -> the canonical page files
+#
+# Cloudflare normalises ".html" and "/index" when it serves an asset, so a rule
+# whose destination can itself be normalised back onto the rule's source will
+# loop and is silently ignored at build time. Two rules were removed for this:
+#   "/ /site/index.html 200"  - "/" is already served as the output directory
+#                               index, and normalisation re-targets it
+#   "/site/studio /studio"    - looped against "/studio /site/studio.html 200"
+#
+# Order matters: static rules first, specific before splats, because the
+# top-most matching rule wins.
+
+# Clean public routes. Destination is the alias DIRECTORY: Cloudflare then
+# serves that directory's index.html without a second redirect hop.
+/studio    /site/studio/    200
+/docs      /site/docs/      200
+/pricing   /site/pricing/   200
+/verifier  /site/verifier/  200
+/legal/*   https://kellersystems.dev/legal/ 301
+
+# Legal routes.
+/impressum   https://kellersystems.dev/impressum/  301
+/privacy     https://kellersystems.dev/privacy/    301
+/terms       https://kellersystems.dev/legal/      301
+/datenschutz https://kellersystems.dev/privacy/    301
+
+# Root and historical root forms. "/" is served by the real index.html at the
+# output root, so only the explicit .html form needs redirecting; a "/" rewrite
+# is deliberately absent because Cloudflare re-normalises its own target.
+/site/index.html /  301
+
+# Pre-move paths from when the canonical pages lived under site/demo/.
+/demo/index.html    /         301
+/demo/studio.html   /studio   301
+/demo/docs.html     /docs     301
+/demo/pricing.html  /pricing  301
+/demo/verifier.html /verifier 301
+
+# Canonical .html paths -> clean routes.
+/studio.html   /studio    301
+/docs.html     /docs      301
+/pricing.html  /pricing   301
+/verifier.html /verifier  301
+
+# The old site/demo paths, and the .html forms of the /site directory.
+# Both the extensionless and .html forms are listed: an old tab or bookmark may
+# hold either, and the extensionless form resolves on its own via the alias
+# directory (site/studio/), so it must be redirected explicitly or it silently
+# keeps serving the studio at the stale URL.
+/site/demo/studio    /studio    301
+/site/demo/docs      /docs      301
+/site/demo/pricing   /pricing   301
+/site/demo/verifier  /verifier  301
+/site/demo/index.html    /         301
+/site/demo/studio.html   /studio   301
+/site/demo/docs.html     /docs     301
+/site/demo/pricing.html  /pricing  301
+/site/demo/verifier.html /verifier 301
+/site/studio.html   /studio    301
+/site/docs.html     /docs      301
+/site/pricing.html  /pricing   301
+/site/verifier.html /verifier  301

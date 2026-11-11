@@ -1,0 +1,11 @@
+[package]
+name = "op-taint"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "Taint-coded sensor stream audit for surgical robot data-flow integrity"
+
+[dependencies]
+serde = { workspace = true }
+thiserror = "1"

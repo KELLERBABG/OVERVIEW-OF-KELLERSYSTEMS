@@ -1,0 +1,9 @@
+[package]
+name = "transit-spec-generator"
+edition = "2021"
+version = "1.0.0"
+license = "Apache-2.0"
+
+[dependencies]
+serde = { workspace = true }
+transit-state-machine = { path = "../state-machine" }

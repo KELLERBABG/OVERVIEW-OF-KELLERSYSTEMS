@@ -1,0 +1,41 @@
+{
+  "slug": "public-commonpaper-data-processing-agreement",
+  "source": "https://raw.githubusercontent.com/CommonPaper/DPA/main/DPA.md",
+  "license": "CC BY 4.0 (Common Paper Standard Agreement)",
+  "retrieved": "2026-10-15",
+  "domain": "Datenverarbeitungsvertrag (Common Paper)",
+  "traps": [
+    {
+      "marker": "v. In Clause 17 (Option 1), the",
+      "expectedType": "jurisdiction",
+      "note": "Reale Klausel, Engine-Typ jurisdiction"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "1. Processor and Subprocessor Relationships",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "1. Provider as Processor. In situations",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "2. Provider as Subprocessor. In",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "1. Processing Details. Annex I(B)",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "2. Processing Instructions. Customer",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "3. Processing by Provider. Provider",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

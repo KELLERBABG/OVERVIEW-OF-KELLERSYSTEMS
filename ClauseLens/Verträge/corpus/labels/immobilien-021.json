@@ -1,0 +1,69 @@
+{
+  "slug": "immobilien-021",
+  "source": "generated",
+  "domain": "Gewerbemiete",
+  "traps": [
+    {
+      "marker": "verlängert sich um ein weiteres Jahr, wenn der Untermieter nicht vier Wochen vorher kündigt",
+      "expectedType": "auto_renewal",
+      "note": "Verlaengerung ohne Widerspruch des Untermieters."
+    },
+    {
+      "marker": "folgt dem Verbraucherpreisindex des Statistischen Bundesamtes",
+      "expectedType": "price_escalation",
+      "note": "Indexkopplung ohne Beruecksichtigung von Kostensenkungen."
+    },
+    {
+      "marker": "pauschale Abstandszahlung von zwei Monatsmieten fällig",
+      "expectedType": "early_termination_charge",
+      "note": "Pauschalierte Abstandszahlung bei vorzeitiger Aufloesung."
+    },
+    {
+      "marker": "nur nach vorheriger Bestätigung durch die Hauptmieterin aufrechnen",
+      "expectedType": "setoff_restriction",
+      "note": "GAP: Aufrechnung nur nach Bestaetigung."
+    },
+    {
+      "marker": "strebt eine Verfügbarkeit der Aufzüge von 95 Prozent an",
+      "expectedType": "unverbindliche_sla_falle",
+      "note": "Verfuegbarkeit nur als angestrebtes Ziel."
+    },
+    {
+      "marker": "darf die Hauptmieterin die Lüftungsanlage abschalten",
+      "expectedType": "maintenance_conditional_shutdown",
+      "note": "Abschaltung mangels Wartungsvereinbarung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "Symmetrische Vertraulichkeit."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform zugelassen."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhalt."
+    },
+    {
+      "marker": "Zahlungen sind innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Zahlungsfrist."
+    },
+    {
+      "marker": "Änderungen des Leistungsumfangs bedürfen der Abstimmung beider Parteien",
+      "note": "Einvernehmliche Aenderung."
+    },
+    {
+      "marker": "Nach Vertragsende erhält der Kunde die Vertragsdaten kostenfrei in einem offenen Format",
+      "note": "Kostenfreier Datenexport."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "vier Arbeitsplätze im Co-Working-Center Hafenkante",
+      "note": "Kein Detektor fuer Teilkündigung einzelner Arbeitsplaetze im Untermietverhaeltnis."
+    }
+  ]
+}

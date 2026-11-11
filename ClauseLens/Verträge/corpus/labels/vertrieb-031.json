@@ -1,0 +1,74 @@
+{
+  "slug": "vertrieb-031",
+  "source": "generated",
+  "domain": "kommission",
+  "traps": [
+    {
+      "marker": "Eine Ausgleichszahlung für die Zeit der Zurückhaltung ist nicht vorgesehen, der Kunde erhält für",
+      "expectedType": "non_compete",
+      "note": "Nachvertragliches Wettbewerbsverbot ohne Ausgleich."
+    },
+    {
+      "marker": "Der Anbieter darf die im Rahmen der Zusammenarbeit gewonnenen Auswertungen und Betriebsdaten für",
+      "expectedType": "data_grant",
+      "note": "Umfassende, unwiderrufliche Datennutzungsrechte für den Anbieter."
+    },
+    {
+      "marker": "Gerät der Kunde in Verzug, sind Verzugszinsen von achtzehn Prozent jährlich zu zahlen.",
+      "expectedType": "default_interest",
+      "note": "Überhöhter Verzugszinssatz."
+    },
+    {
+      "marker": "Widerspricht der Kunde nicht innerhalb von zwei Wochen, gilt die Anpassung der Provision als",
+      "expectedType": "unilateral_change",
+      "note": "Einseitiges Änderungsrecht des Anbieters."
+    },
+    {
+      "marker": "Gegenansprüche des Kunden berechtigen nicht zur Aufrechnung, Einwendungen und Gegenrechte bleiben",
+      "expectedType": "setoff_restriction",
+      "note": "Aufrechnungsverbot zulasten des Kunden."
+    },
+    {
+      "marker": "Mängel sind binnen achtundvierzig Stunden nach Abnahme anzuzeigen, andernfalls verfallen die",
+      "expectedType": "deemed_acceptance",
+      "note": "Fiktive Genehmigung nach kurzer Frist."
+    },
+    {
+      "marker": "Mängelansprüche entfallen 24 Monate ab Übergabe der Ware endgültig, unabhängig von der gesetzlichen",
+      "expectedType": "statute_of_limitations",
+      "note": "Verkürzte Verjährungsfrist."
+    },
+    {
+      "marker": "Änderungen und Ergänzungen dieses Vertrags bedürfen der Schriftform, die Textform ist ausdrücklich",
+      "expectedType": "written_form_trap",
+      "note": "Formzwang, der spätere Ansprüche erschwert."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Anbieter überlässt dem Kunden die Daten in einem gängigen Format.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag aus wichtigem Grund ohne Einhaltung einer Frist kündigen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien benennen jeweils einen Ansprechpartner für die operative Zusammenarbeit.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien sind berechtigt, gegen fällige Forderungen aufzurechnen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde erhält Schulungen und Zugang zum Systemhandbuch in der jeweils aktuellen Fassung.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde informiert den Anbieter unverzüglich über wesentliche Störungen im Vertrieb.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    }
+  ],
+  "uncovered": []
+}

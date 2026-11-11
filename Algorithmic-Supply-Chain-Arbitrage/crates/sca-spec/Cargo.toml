@@ -1,0 +1,16 @@
+[package]
+name = "sca-spec"
+version = "0.1.0"
+edition = "2024"
+description = "Automated logistics specification generator — machine-readable freight documents from graph and payload data"
+
+[dependencies]
+sca-types = { path = "../sca-types" }
+sca-graph = { path = "../sca-graph" }
+sca-payload = { path = "../sca-payload" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+uuid = { version = "1", features = ["v4", "serde"] }
+chrono = { version = "0.4", features = ["serde"] }
+hex = "0.4"
+thiserror = "2"

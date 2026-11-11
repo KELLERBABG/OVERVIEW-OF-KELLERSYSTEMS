@@ -1,0 +1,87 @@
+{
+  "slug": "daten-014",
+  "source": "generated",
+  "domain": "Datenraum",
+  "traps": [
+    {
+      "marker": "stellt die Gesellschaft von sämtlichen Ansprüchen Dritter",
+      "expectedType": "liability",
+      "note": "Paraphrase/Umstellung: nennt 'stellt die Gesellschaft von sämtlichen Ansprü' statt der Registerwendung."
+    },
+    {
+      "marker": "wird eine Pauschale von 250 EUR fällig",
+      "expectedType": "penalty",
+      "note": "Paraphrase/Umstellung: nennt 'wird eine Pauschale von 250 EUR fällig' statt der Registerwendung."
+    },
+    {
+      "marker": "submit to the venue of the courts of the provider's seat in London",
+      "expectedType": "jurisdiction",
+      "note": "Paraphrase/Umstellung: nennt 'submit to the venue of the courts of the prov' statt der Registerwendung."
+    },
+    {
+      "marker": "Nach Beendigung des Vertrags ist der Kunde",
+      "expectedType": "non_compete",
+      "note": "Paraphrase/Umstellung: nennt 'Nach Beendigung des Vertrags ist der Kunde' statt der Registerwendung."
+    },
+    {
+      "marker": "dürfen zum Training interner Modelle der Gesellschaft verwendet werden",
+      "expectedType": "data_grant",
+      "note": "Paraphrase/Umstellung: nennt 'dürfen zum Training interner Modelle der Gese' statt der Registerwendung."
+    },
+    {
+      "marker": "Im Verzugsfall erhöht sich der Entgeltzins auf 16 Prozent",
+      "expectedType": "default_interest",
+      "note": "Paraphrase/Umstellung: nennt 'Im Verzugsfall erhöht sich der Entgeltzins au' statt der Registerwendung."
+    },
+    {
+      "marker": "gelten die angepassten Konditionen als akzeptiert",
+      "expectedType": "unilateral_change",
+      "note": "Paraphrase/Umstellung: nennt 'gelten die angepassten Konditionen als akzept' statt der Registerwendung."
+    },
+    {
+      "marker": "Einbehalte sind nur mit Zustimmung des Anbieters zulässig",
+      "expectedType": "setoff_restriction",
+      "note": "Paraphrase/Umstellung: nennt 'Einbehalte sind nur mit Zustimmung des Anbiet' statt der Registerwendung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "dieselben Datenschutzstandards einhalten",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "mit ihren jeweiligen Lizenzen aufgeführt",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "gesetzliche Haftung für Vorsatz und grobe Fahrlässigkeit",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "aus wichtigem Grund jederzeit fristlos beenden",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Streitigkeiten vorrangig durch Mediation zu klären",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "nur im gegenseitigen Einvernehmen.",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "alle vertraulichen Informationen der jeweils anderen Seite",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "spätestens zehn Werktage vor einer beabsichtigten Kontoauflösung",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Mindestabnahme von fünfhundert Datensätzen je Kalendermonat",
+      "note": "Täuschende Klausel ohne passenden Detektortyp."
+    }
+  ]
+}

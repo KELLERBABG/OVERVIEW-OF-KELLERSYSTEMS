@@ -1,0 +1,85 @@
+{
+  "slug": "logistik-011",
+  "source": "generated",
+  "domain": "Ersatzteillogistik Schweiz",
+  "traps": [
+    {
+      "marker": "ausschließlich die Gerichte am Sitz des Anbieters zuständig",
+      "expectedType": "jurisdiction",
+      "note": "Red-team Klausel: jurisdiction"
+    },
+    {
+      "marker": "Die Verfahrenskosten sind vom Kunden vorauszuzahlen",
+      "expectedType": "mandatory_expert_determination",
+      "note": "Red-team Klausel: mandatory_expert_determination"
+    },
+    {
+      "marker": "Die Geheimhaltungspflichten gelten zeitlich unbefristet fort",
+      "expectedType": "excessive_survival",
+      "note": "Red-team Klausel: excessive_survival"
+    },
+    {
+      "marker": "Subunternehmer ohne vorherige Ankündigung einsetzen",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "Red-team Klausel: subcontractor_uncontrolled"
+    },
+    {
+      "marker": "behält sich vor, den Leistungsumfang an geänderte Marktbedingungen anzupassen",
+      "expectedType": "unilateral_change",
+      "note": "Red-team Klausel: unilateral_change"
+    },
+    {
+      "marker": "Die Kündigung bedarf der Schriftform",
+      "expectedType": "written_form_trap",
+      "note": "Red-team Klausel: written_form_trap"
+    },
+    {
+      "marker": "enthält alle Vereinbarungen der Parteien und ersetzt frühere Absprachen",
+      "expectedType": "entire_agreement",
+      "note": "Red-team Klausel: entire_agreement"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "stimmen die Mindestbestände monatlich ab",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "liefert Ersatzteile innerhalb der Schweiz aus",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Konstruktionsunterlagen zehn Jahre auf",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "bleibt für die Leistungen seiner Subunternehmer verantwortlich",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Anlagen sind Bestandteil des Vertrags",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "innerhalb von 30 Tagen ohne Abzug zahlbar",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "mit einer Frist von drei Monaten zum Quartalsende kündigen",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Beide Parteien behandeln die Konstruktionsunterlagen vertraulich",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "seine Bestandsdaten jederzeit in einem gängigen Format exportieren",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

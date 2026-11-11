@@ -1,0 +1,79 @@
+{
+  "slug": "personal-031",
+  "source": "generated",
+  "domain": "Freelance und Beratung",
+  "traps": [
+    {
+      "marker": "a​brufbar unter https://steinbach-legal.example/agb in ihrer jeweils gültigen Fassung",
+      "expectedType": "dynamic_url_referral",
+      "note": "Verweis auf eine jederzeit änderbare Online-Fassung"
+    },
+    {
+      "marker": "nach billigem Ermessen anpassen; eine Obergrenze besteht nicht",
+      "expectedType": "price_escalation",
+      "note": "Preisanpassung ohne Obergrenze"
+    },
+    {
+      "marker": "verwirkt der Kunde eine Aufwandspauschale von 2.500,00 EUR",
+      "expectedType": "penalty",
+      "note": "pauschalierte Vertragsstrafe zulasten des Kunden"
+    },
+    {
+      "marker": "Die Arbeitsergebnisse gelten als abgenommen",
+      "expectedType": "deemed_acceptance",
+      "note": "Arbeitsergebnisse gelten als abgenommen"
+    },
+    {
+      "marker": "die Geschäftsräume des Anbieters ohne Vorankündigung zu betreten",
+      "expectedType": "unreasonable_audit",
+      "note": "Betreten der Geschäftsräume ohne Vorankündigung"
+    },
+    {
+      "marker": "Steuernachforderungen aus diesem Vertrag sind vollumfänglich vom Kunden zu tragen",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Steuernachforderungen trägt der Kunde"
+    },
+    {
+      "marker": "den Kunden von sämtlichen Ansprüchen Dritter freizustellen",
+      "expectedType": "third_party_indemnity",
+      "note": "Freistellung von Ansprüchen Dritter"
+    },
+    {
+      "marker": "Gerichtsstand ist der Sitz des Anbieters",
+      "expectedType": "jurisdiction",
+      "note": "Gerichtsstand am Sitz des Anbieters"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Leistungen werden nach dem Stand der Technik erbracht",
+      "note": "Leistung nach dem Stand der Technik"
+    },
+    {
+      "marker": "Rechnungen sind innerhalb von vierzehn Tagen ohne Abzug zu zahlen",
+      "note": "Zahlungsziel vierzehn Tage"
+    },
+    {
+      "marker": "Die Vergütung wird jeweils zum Monatsende fällig",
+      "note": "Fälligkeit zum Monatsende"
+    },
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "wechselseitige Vertraulichkeit"
+    },
+    {
+      "marker": "Die Parteien benennen je einen Ansprechpartner",
+      "note": "wechselseitige Ansprechpartner"
+    },
+    {
+      "marker": "Die Anlagen 1 und 2 sind Bestandteil dieses Vertrages",
+      "note": "Anlagen als Vertragsbestandteil"
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Anbieter erbringt Beratungsleistungen für die Vertragsplattform des Kunden",
+      "note": "Beratungsleistung ohne Abgrenzung zum Werkvertrag, vom Detektor nicht erfasst"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "slug": "adv-spedition-kontraktlogistik",
+  "source": "generated",
+  "domain": "B2B Kontraktlogistik (deutsches Recht, deutschsprachig)",
+  "traps": [
+    {
+      "marker": "Der Anbieter kann den Vertrag mit einer Frist von vier Wochen ohne Angabe von Gründen beenden",
+      "expectedType": "unilateral_convenience_termination",
+      "note": "Einseitiges Beendigungsrecht des Anbieters ohne Grund; keine Kundengegennorm (3.3 deckt nur wichtigen Grund)."
+    },
+    {
+      "marker": "einschließlich rückwirkender Nachforderungen, trägt der Kunde",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Steuerfreistellung zugunsten des Anbieters inklusive rückwirkender Nachforderungen."
+    },
+    {
+      "marker": "nur nach vorheriger schriftlicher Bestätigung durch den Anbieter in Ansatz gebracht werden",
+      "expectedType": "setoff_restriction",
+      "note": "Faktische Aufrechnungssperre: Gegenforderungen nur mit Zustimmung des Anbieters wirksam."
+    },
+    {
+      "marker": "der Nachweis eines niedrigeren Schadens ist ausgeschlossen",
+      "expectedType": "penalty",
+      "note": "Pauschale ohne Entlastungsmöglichkeit - Vertragsstrafe/Pauschale gegen den Kunden."
+    },
+    {
+      "marker": "die Vergütung läuft während der Sperre unverändert weiter",
+      "expectedType": "service_suspension",
+      "note": "Leistungssperre bei Verzug mit weiterlaufender Vergütung."
+    },
+    {
+      "marker": "Den Nachweis, dass eine Verzögerung auf Umständen beruht, die der Anbieter nicht zu vertreten hat, trägt der Kunde",
+      "expectedType": "burden_of_proof",
+      "note": "Beweislastumkehr zulasten des Kunden."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Parteien stimmen die Logistikprozesse regelmäßig einvernehmlich ab",
+      "note": "Einvernehmliche Prozessabstimmung."
+    },
+    {
+      "marker": "Rechnungen sind innerhalb von 30 Tagen ohne Abzug zahlbar",
+      "note": "Übliche Zahlungsfrist."
+    },
+    {
+      "marker": "Bei höherer Gewalt sind beide Parteien für die Dauer der Störung von der Leistungspflicht befreit",
+      "note": "Symmetrische Force-Majeure-Klausel ohne Zahlungslast-Verschiebung."
+    },
+    {
+      "marker": "Beide Parteien behandeln Betriebs- und Geschäftsgeheimnisse der anderen Seite vertraulich",
+      "note": "Wechselseitige Vertraulichkeit."
+    },
+    {
+      "marker": "Dem Kunden bleibt der Nachweis vorbehalten, dass kein Schaden entstanden ist",
+      "note": "Entlastungsvorbehalt zugunsten des Kunden - Gegenstück zur Pauschale. Enthält die Wörter Nachweis und Schaden; darf nicht feuern."
+    },
+    {
+      "marker": "Die gesetzliche Umsatzsteuer wird gesondert ausgewiesen",
+      "note": "Neutraler Umsatzsteuerhinweis."
+    },
+    {
+      "marker": "Im Übrigen gelten die gesetzlichen Beweislastregeln",
+      "note": "Verweis auf gesetzliche Beweislast - muss die Beweislast-Regel beschwichtigen."
+    }
+  ],
+  "uncovered": []
+}

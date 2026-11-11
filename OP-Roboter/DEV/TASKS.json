@@ -1,0 +1,36 @@
+{
+  "project": "OP-Roboter",
+  "language": "Rust",
+  "summary": "A 7-crate Rust surgical robotics safety workspace (`op-math`, `op-kinematics`, `op-constraints`, `op-energy`, `op-gate`, `op-solver`, `op-telemetry`) implementing Denavit-Hartenberg forward/inverse kinematics, Jacobian velocity mapping, virtual fixture anatomical keep-out zones, and an execution safety gate.",
+  "tasks": [
+    {
+      "id": "TASK-01",
+      "title": "Wire anatomical virtual-fixture keep-out spheres and planes into op-gate",
+      "status": "pending",
+      "target_files": [
+        "crates/op-gate/src/lib.rs",
+        "crates/op-constraints/src/generate.rs"
+      ],
+      "context_files": [
+        "crates/op-kinematics/src/forward.rs",
+        "crates/op-gate/tests/stress_tests.rs"
+      ],
+      "spec": "Ensure `crates/op-gate/src/lib.rs` computes the forward-kinematics end-effector position $p(\\theta + \\Delta\\theta)$ and worst-case stopping trajectory $p_{\\text{stop}} = p + v \\cdot t_{\\text{brake}} + \\frac{1}{2} a_{\\max} t_{\\text{brake}}^2$ for every commanded joint increment.\n\n1. Block the command (`GateVerdict::VetoedAnatomicalBreach`) if any point along the stopping segment intersects a registered anatomical keep-out sphere/half-space (e.g. carotid artery or optic nerve boundary).\n2. Add unit tests in `crates/op-gate/tests/stress_tests.rs` proving that commands aimed into a keep-out zone are vetoed before reaching the boundary.",
+      "verify_cmd": "cargo test -p op-gate --quiet"
+    },
+    {
+      "id": "TASK-02",
+      "title": "Enforce Jacobian manipulability singularity guard and kinetic energy cap",
+      "status": "pending",
+      "target_files": [
+        "crates/op-kinematics/src/jacobian.rs",
+        "crates/op-energy/src/lib.rs"
+      ],
+      "context_files": [
+        "crates/op-gate/src/lib.rs"
+      ],
+      "spec": "Enhance `crates/op-kinematics/src/jacobian.rs` and `crates/op-energy/src/lib.rs`.\n\n1. Compute Yoshikawa manipulability index $w(\\theta) = \\sqrt{\\det(J(\\theta) J(\\theta)^T)}$ and trigger damped least-squares (DLS) velocity scaling or a hard gate veto when $w(\\theta) < w_{\\min}$.\n2. In `op-energy`, enforce that tissue-contact kinetic energy $\\frac{1}{2} \\dot{\\theta}^T M(\\theta) \\dot{\\theta} \\le E_{\\text{safe}}(d)$, where $E_{\\text{safe}}(d)$ scales down linearly with distance $d$ to the nearest anatomical boundary.\n3. Add unit tests for singularity damping and proximity energy clamping.",
+      "verify_cmd": "cargo test -p op-kinematics -p op-energy --quiet"
+    }
+  ]
+}

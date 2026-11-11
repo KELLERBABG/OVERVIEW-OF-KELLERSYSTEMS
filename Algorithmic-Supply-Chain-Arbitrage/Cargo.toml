@@ -1,0 +1,15 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/sca-types",
+    "crates/sca-graph",
+    "crates/sca-api",
+    "crates/sca-smt",
+    "crates/sca-payload",
+    "crates/sca-matching",
+    "crates/sca-p2p",
+    "crates/sca-spec",
+    "crates/sca-contracts",
+    "crates/sca-smpc",
+    "crates/sca-security",
+]

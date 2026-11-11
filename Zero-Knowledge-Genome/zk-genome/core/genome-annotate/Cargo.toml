@@ -1,0 +1,12 @@
+[package]
+name = "zk-genome-genome-annotate"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Variant annotation — rsID, gene symbol, ClinVar lookup"
+
+[dependencies]
+zk-genome-genome-core = { path = "../genome-core" }
+
+[lints]
+workspace = true

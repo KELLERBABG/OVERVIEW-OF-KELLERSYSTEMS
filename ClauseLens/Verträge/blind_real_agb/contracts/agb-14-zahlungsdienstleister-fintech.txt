@@ -1,0 +1,69 @@
+ALLGEMEINE GESCHÄFTSBEDINGUNGEN FÜR ZAHLUNGSDIENSTE UND HÄNDLER-ACQUIRING (STAND 2026)
+
+§ 1 Geltungsbereich und Vertragsgegenstand
+
+(1) Diese Allgemeinen Geschäftsbedingungen (nachfolgend „AGB“) regeln die Rechtsbeziehungen zwischen der PayFina Acquiring GmbH (nachfolgend „Zahlungsdienstleister“) und dem gewerblichen Vertragshändler (nachfolgend „Händler“) über die Abwicklung unbarer Zahlungsvorgänge im stationären Handel sowie im elektronischen Geschäftsverkehr (E-Commerce).
+
+(2) Für die technische Anbindung der Zahlungsterminals und der Programmierschnittstellen (API) gelten ergänzend die technischen Integrationsrichtlinien und Sicherheitsvorgaben des Zahlungsdienstleisters, die jederzeit in ihrer jeweils aktuellen Fassung unter https://www.payfina-acquiring.de/legal/integration-guidelines abrufbar sind und automatisch Bestandteil dieses Vertrages werden.
+
+§ 2 Leistungsumfang und Systemverfügbarkeit
+
+(1) Der Zahlungsdienstleister übernimmt die Autorisierung, das Clearing und das Settlement von Kartenzahlungen sowie alternativen Bezahlverfahren nach Maßgabe der jeweiligen Zahlungssystemregeln (Scheme Rules).
+
+(2) Der Zahlungsdienstleister strebt eine Verfügbarkeit der Autorisierungssysteme und der Zahlungs-API von 99,5 % im Jahresmittel an; bei dieser Verfügbarkeitsangabe handelt es sich jedoch um einen unverbindlichen Zielwert, aus dessen Unterschreitung der Händler keinerlei Rechtsansprüche, Minderungen oder Schadensersatzforderungen ableiten kann.
+
+(3) Zur Durchführung einzelner Verarbeitungsprozesse, insbesondere im Bereich des technischen Netzbetriebs und der Betrugsprävention, darf der Zahlungsdienstleister Unterauftragnehmer nur nach vorheriger schriftlicher Information des Händlers einsetzen, wobei dem Händler bei berechtigten datenschutzrechtlichen Bedenken ein Widerspruchsrecht zusteht.
+
+§ 3 Entgelte, Abrechnung und Preisanpassung
+
+(1) Der Händler schuldet für jede eingereichte Transaktion das im Preis- und Leistungsverzeichnis vereinbarte Disagio sowie die fixe Transaktionsgebühr. Die Abrechnung und Auszahlung der eingezogenen Umsätze abzüglich der fälligen Entgelte erfolgt wöchentlich auf das hinterlegte Geschäftskonto des Händlers.
+
+(2) Der Zahlungsdienstleister ist berechtigt, die vereinbarten Transaktionsentgelte, Disagiosätze und Grundgebühren jederzeit nach eigenem Ermessen durch einseitige Mitteilung in Textform mit einer Ankündigungsfrist von vierzehn Tagen zu erhöhen, ohne dass dem Händler hierwegen ein Sonderkündigungsrecht zusteht oder etwaige Kostensenkungen bei den Interbankenentgelten weitergegeben werden müssen.
+
+(3) Einwendungen gegen die periodischen Transaktionsabrechnungen und Entgeltaufstellungen muss der Händler innerhalb einer Ausschlussfrist von zehn Werktagen nach Bereitstellung im Händlerportal schriftlich erheben; nach Ablauf dieser Frist gelten die Abrechnungen und Abzüge als vorbehaltslos genehmigt.
+
+§ 4 Aufrechnung, Zurückbehaltung und Sicherheitseinbehalt (Rolling Reserve)
+
+(1) Zur Absicherung etwaiger Rückbelastungen (Chargebacks) und Strafgebühren der Kartenorganisationen behält der Zahlungsdienstleister einen Sicherheitseinbehalt in Höhe von 5 % des jeweiligen Transaktionsvolumens für die Dauer von 90 Tagen ein.
+
+(2) Die Aufrechnung durch den Händler mit Gegenforderungen sowie die Geltendmachung eines Zurückbehaltungsrechts gegenüber Ansprüchen des Zahlungsdienstleisters sind in jedem Fall vollständig ausgeschlossen, und zwar ausdrücklich auch dann, wenn die Gegenforderungen des Händlers unbestritten oder rechtskräftig festgestellt sind.
+
+§ 5 Pflichten des Händlers und Freistellung
+
+(1) Der Händler verpflichtet sich, sämtliche Vorgaben des Payment Card Industry Data Security Standard (PCI-DSS) einzuhalten und dem Zahlungsdienstleister Änderungen seiner Geschäftsstruktur oder seines Warensortiments unverzüglich anzuzeigen.
+
+(2) Der Händler stellt den Zahlungsdienstleister auf erstes Anfordern von sämtlichen Ansprüchen Dritter, Bußgeldern der Aufsichtsbehörden sowie Strafgebühren der Kreditkartenorganisationen (Card Schemes) frei, die im Zusammenhang mit dem Geschäftsbetrieb des Händlers erhoben werden, unabhängig davon, ob den Händler an dem zugrunde liegenden Verstoß ein Verschulden trifft.
+
+(3) Zusätzlich zum Basisvertrag aktiviert der Zahlungsdienstleister für jeden Händler automatisch das kostenpflichtige Zusatzpaket „FraudShield Premium Analytics“ zum Preis von monatlich 149,00 Euro netto, sofern der Händler dieser Zusatzleistung nicht innerhalb von vierzehn Tagen nach Vertragsbeginn ausdrücklich über das Online-Formular widerspricht.
+
+§ 6 Sperrung des Händlerkontos und Auszahlungsverzögerung
+
+(1) Der Zahlungsdienstleister ist berechtigt, den Zugang des Händlers zum Zahlungssystem sofort zu sperren und sämtliche laufenden Auszahlungen einzufrieren, sobald der Händler mit einer Gebührenzahlung auch nur in geringfügiger Höhe in Verzug gerät oder ein interner Verdachtsmoment vorliegt, ohne dass es hierfür einer vorherigen Abmahnung oder Androhung bedarf.
+
+(2) Im Falle einer solchen Kontosperrung hat der Zahlungsdienstleister den Händler über die Gründe der Sperrung nach Möglichkeit unverzüglich zu informieren, soweit dem nicht zwingende aufsichtsrechtliche oder strafrechtliche Verbote entgegenstehen.
+
+§ 7 Haftung und Beweislast
+
+(1) Für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit sowie für Schäden, die auf Vorsatz oder grober Fahrlässigkeit des Zahlungsdienstleisters oder seiner gesetzlichen Vertreter beruhen, haftet der Zahlungsdienstleister unbeschränkt nach den gesetzlichen Vorschriften.
+
+(2) Im Übrigen ist jegliche Haftung des Zahlungsdienstleisters – gleich aus welchem Rechtsgrund, einschließlich der Verletzung wesentlicher Vertragspflichten (Kardinalpflichten) – auf einen Höchstbetrag von insgesamt 2.500,00 Euro pro Vertragsjahr begrenzt; eine Haftung für entgangenen Gewinn, ausgebliebene Kartenumsätze oder mittelbare Folgeschäden ist generell ausgeschlossen.
+
+(3) Für die Richtigkeit, Vollständigkeit und Autorisierung sämtlicher abgerechneter Zahlungstransaktionen begründen die internen Server- und Transaktionsprotokolle des Zahlungsdienstleisters einen unwiderlegbaren Vollbeweis; der Nachweis einer fehlerhaften Systemaufzeichnung oder eines technischen Defekts durch den Händler ist ausgeschlossen.
+
+§ 8 Datenschutz und Vertraulichkeit
+
+(1) Beide Vertragsparteien verpflichten sich, alle im Rahmen der Zusammenarbeit erlangten Geschäfts- und Betriebsgeheimnisse der jeweils anderen Partei streng vertraulich zu behandeln und nur zur Durchführung dieses Vertrages zu verwenden.
+
+(2) Die Verarbeitung personenbezogener Daten von Karteninhabern erfolgt im Einklang mit den Bestimmungen der Datenschutz-Grundverordnung (DSGVO) und des Bundesdatenschutzgesetzes (BDSG).
+
+§ 9 Vertragslaufzeit und Kündigung
+
+(1) Der Vertrag wird auf unbestimmte Zeit geschlossen und kann von beiden Parteien mit einer Frist von einem Monat zum Monatsende ordentlich in Textform gekündigt werden.
+
+(2) Das Recht beider Vertragsparteien zur außerordentlichen fristlosen Kündigung aus wichtigem Grund nach § 314 BGB bleibt unberührt.
+
+§ 10 Schlussbestimmungen
+
+(1) Auf das Vertragsverhältnis findet ausschließlich das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts Anwendung.
+
+(2) Sollte eine Bestimmung dieser AGB unwirksam sein oder werden, so bleibt die Wirksamkeit der übrigen Bestimmungen hiervon unberührt.

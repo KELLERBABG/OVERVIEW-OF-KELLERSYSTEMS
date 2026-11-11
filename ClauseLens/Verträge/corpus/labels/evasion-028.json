@@ -1,0 +1,79 @@
+{
+  "slug": "evasion-028",
+  "source": "generated",
+  "domain": "evasion",
+  "traps": [
+    {
+      "marker": "Wid­erspricht der Kunde nicht inn­erhalb von zwei Woc­hen, gilt die Anp­assung der Pro­vision als",
+      "expectedType": "unilateral_change",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: unilateral_change (Technik: shy)."
+    },
+    {
+      "marker": "Geg­enansprüche des Kun­den ber­echtigen nicht zur Auf­rechnung, Ein­wendungen und Geg­enrechte",
+      "expectedType": "setoff_restriction",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: setoff_restriction (Technik: shy)."
+    },
+    {
+      "marker": "Män­gel sind bin­nen ach­tundvierzig Stu­nden nach Abn­ahme anz­uzeigen, and­ernfalls ver­fallen",
+      "expectedType": "deemed_acceptance",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: deemed_acceptance (Technik: shy)."
+    },
+    {
+      "marker": "Män­gelansprüche ent­fallen 24 Mon­ate ab Übe­rgabe der Ware end­gültig, una­bhängig von der",
+      "expectedType": "statute_of_limitations",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: statute_of_limitations (Technik: shy)."
+    },
+    {
+      "marker": "Änd­erungen und Erg­änzungen die­ses Ver­trags bed­ürfen der Sch­riftform, die Tex­tform ist",
+      "expectedType": "written_form_trap",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: written_form_trap (Technik: shy)."
+    },
+    {
+      "marker": "Der Kunde trägt die Bew­eislast dafür, dass ein Aus­fall nicht auf Stö­rungen in sei­nem Bet­rieb",
+      "expectedType": "burden_of_proof",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: burden_of_proof (Technik: shy)."
+    },
+    {
+      "marker": "Für die Nut­zung gel­ten die Bed­ingungen, die unter der Adr­esse",
+      "expectedType": "dynamic_url_referral",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: dynamic_url_referral (Technik: shy)."
+    },
+    {
+      "marker": "Eine Haf­tung des Anb­ieters für das Ver­schulden von Erf­üllungsgehilfen ist aus­geschlossen.",
+      "expectedType": "vicarious_agents",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: vicarious_agents (Technik: shy)."
+    },
+    {
+      "marker": "Prü­fungen wer­den unm­ittelbar dur­chgeführt, eine Ter­minabstimmung ent­fällt, und die",
+      "expectedType": "unreasonable_audit",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: unreasonable_audit (Technik: shy)."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Für die Vertragsdauer gelten die vereinbarten Konditionen unverändert.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien halten die geltenden Datenschutzvorschriften ein und verarbeiten personenbezogene",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Anbieter benennt einen technischen Ansprechpartner für den Kunden.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde führt die ihm übertragenen Aufgaben mit der Sorgfalt eines ordentlichen Kaufmanns aus.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Die Parteien regeln Einzelheiten in den beigefügten Anlagen 1 bis 3.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde meldet vermittelte Geschäfte unverzüglich und vollständig an den Anbieter.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    }
+  ],
+  "uncovered": []
+}

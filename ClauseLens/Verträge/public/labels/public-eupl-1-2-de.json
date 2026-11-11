@@ -1,0 +1,41 @@
+{
+  "slug": "public-eupl-1-2-de",
+  "source": "https://eupl.eu/1.2/de/",
+  "license": "EUPL v1.2 (amtlicher Lizenztext der Europaeischen Union)",
+  "retrieved": "2026-10-15",
+  "domain": "Open-Source-Lizenzvertrag (EUPL 1.2, deutsch)",
+  "traps": [
+    {
+      "marker": "- GNU General Public License (GPL)",
+      "expectedType": "data_grant",
+      "note": "Reale Klausel, Engine-Typ data_grant"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "EUPL [European Union Public Licence]",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "OPEN-SOURCE-LIZENZ FÜR DIE EUROPÄISCHE",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "EUPL © Europäische Union 2007,",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Diese Open-Source-Lizenz für die",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "oder in einer anderen Form zum",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Für diese Lizenz gelten folgende",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

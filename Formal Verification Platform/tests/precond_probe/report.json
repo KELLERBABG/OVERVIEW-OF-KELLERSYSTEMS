@@ -1,0 +1,60 @@
+[
+  {
+    "crate": "precond_probe",
+    "function": "entry_assert",
+    "block": "bb2",
+    "status": "WARN",
+    "kind": "unmodelled-panic",
+    "file": "src/main.rs",
+    "line": 6,
+    "details": "Unmodelled panic site: the call to `core::panicking::panic` can panic, and its body is not read by this analysis, so whether this site can panic was not decided."
+  },
+  {
+    "crate": "precond_probe",
+    "function": "private_unknown",
+    "block": "bb0",
+    "status": "FAIL",
+    "kind": "overflow",
+    "defect_class": "unguarded",
+    "file": "src/main.rs",
+    "line": 22,
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found! [x (_1) = 255, 1_u8 = 1]",
+    "witness": [
+      {
+        "input": "x (_1)",
+        "symbol": "overflow_l",
+        "value": "255"
+      },
+      {
+        "input": "1_u8",
+        "symbol": "overflow_r",
+        "value": "1"
+      }
+    ],
+    "witness_kind": "pinned"
+  },
+  {
+    "crate": "precond_probe",
+    "function": "public_callee",
+    "block": "bb0",
+    "status": "FAIL",
+    "kind": "overflow",
+    "defect_class": "unguarded",
+    "file": "src/main.rs",
+    "line": 17,
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found! [x (_1) = 255, 1_u8 = 1]",
+    "witness": [
+      {
+        "input": "x (_1)",
+        "symbol": "overflow_l",
+        "value": "255"
+      },
+      {
+        "input": "1_u8",
+        "symbol": "overflow_r",
+        "value": "1"
+      }
+    ],
+    "witness_kind": "pinned"
+  }
+]

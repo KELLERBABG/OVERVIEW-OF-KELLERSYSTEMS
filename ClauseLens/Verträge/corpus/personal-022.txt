@@ -1,0 +1,47 @@
+Zwischen der Lindenau Data Consulting GmbH, Lindwurmstraße 40, 80337 München (nachfolgend "Anbieter") und der Meridian Systems GmbH, Konrad-Zuse-Ring 11, 68163 Mannheim (nachfolgend "Kunde") wird der nachfolgende Beratungsvertrag geschlossen.
+
+§ 1 Gegenstand
+
+(1) Der Anbieter erbringt Beratungsleistungen für die Datenplattform des Kunden.
+
+§ 2 Verfügbarkeit
+
+(1) Der Anbieter bemüht sich, eine Verfügbarkeit von 99 Prozent zu erreichen.
+
+§ 3 Daten
+
+(1) Der Kunde räumt dem Anbieter ein unwiderrufliches Nutzungsrecht an den Daten zu Trainingszwecken ein.
+
+(2) Die personenbezogenen Daten werden außerhalb der Europäischen Union verarbeitet.
+
+(3) Ein m​aschinenlesbarer Export der Daten ist nicht Bestandteil dieses Vertrages.
+
+§ 4 Software
+
+(1) Die Software wird wie besehen bereitgestellt.
+
+§ 5 Zahlungsverzug
+
+(1) Bei Zahlungsverzug schuldet der Kunde Verzugszinsen in Höhe von 14,5 Prozentpunkten über dem Basiszinssatz.
+
+§ 6 Ergebnisse
+
+(1) Feedback und Verbesserungsvorschläge gehen unentgeltlich in das Eigentum des Anbieters über.
+
+§ 7 Schlussbestimmungen
+
+(1) Die Parteien benennen je einen Ansprechpartner.
+
+(2) Die Vergütung wird jeweils zum Monatsende fällig.
+
+(3) Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich.
+
+(4) Die Anlagen 1 und 2 sind Bestandteil dieses Vertrages.
+
+(5) Der Anbieter dokumentiert die Ergebnisse in einem Projektbericht.
+
+München, den 1. Juli 2026
+
+Lindenau Data Consulting GmbH
+
+Meridian Systems GmbH

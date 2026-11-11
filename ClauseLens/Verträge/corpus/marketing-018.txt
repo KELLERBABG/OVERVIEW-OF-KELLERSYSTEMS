@@ -1,0 +1,66 @@
+Vereinbarung Whitelisting und Paid Ads
+
+zwischen
+
+Kosmetik Nord GmbH, Bremen
+
+nachfolgend "Kunde" genannt
+
+und
+
+Creator Collective GmbH, Berlin
+
+nachfolgend "Auftragnehmer" genannt
+
+§ 1 Gegenstand
+Der Auftragnehmer stellt Werbeplätze und Creatornutzung für die Kampagnen des Kunden bereit.
+
+§ 2 Referenz
+Der Auftragnehmer führt den Kunden zeitlich unbeschränkt als Referenzkunden.
+
+§ 3 Daten
+Der Auftragnehmer darf die erhobenen Daten für das Training eigener Modelle nutzen.
+
+§ 4 Drittland
+Personenbezogene Daten der Zielgruppe werden teilweise außerhalb der Europäischen Union verarbeitet.
+
+§ 5 Weiterverkauf
+Der Auftragnehmer darf Werbeplätze nach eigenem Ermessen an Dritte weiterverkaufen.
+
+§ 6 Gutschrift
+Entfällt der Sicherheitspatch, erlischt jede Gutschrift.
+
+§ 7 Beendigung
+Bei vorzeitiger Kündigung wird eine Abstandszahlung in Höhe von zwei Monatspauschalen fällig.
+
+§ 8 Richtlinien
+Ergänzend gelten die unter der Adresse des Kundenportals abrufbaren Fassungen der Werberichtlinien.
+
+§ 9 Geheimhaltung
+Beide Parteien wahren über die wechselseitig ausgetauschten Informationen Stillschweigen.
+
+§ 10 Datenherausgabe
+Nach Vertragsende erhält der Kunde die Zielgruppendaten kostenfrei in einem offenen Format.
+
+§ 11 Kündigung
+Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende beenden.
+
+§ 12 Form
+Erklärungen können in Textform, auch per E-Mail, abgegeben werden.
+
+§ 13 Vergütung
+Die Vergütung ist innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig.
+
+§ 14 Haftung
+Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt.
+
+§ 15 Schlussbestimmungen
+Die Unwirksamkeit einzelner Bestimmungen lässt die übrigen Bestimmungen unberührt.
+
+Es gilt deutsches Recht.
+
+Ort, Datum
+
+Für den Kunden
+
+Für den Auftragnehmer

@@ -1,0 +1,34 @@
+{
+  "project": "MycoSwarm",
+  "language": "TypeScript",
+  "summary": "A TypeScript/Turborepo monorepo (`packages/core`, `packages/client`, `packages/coordinator`, `packages/wasm-runtime`, `packages/crypto`, `packages/p2p`, `packages/verification`, `packages/tokenomics`) implementing browser-based WebAssembly P2P distributed compute.",
+  "tasks": [
+    {
+      "id": "TASK-01",
+      "title": "Implement honey-pot canary task injection and Byzantine worker slashing in verification",
+      "status": "pending",
+      "target_files": [
+        "packages/verification/src/index.ts"
+      ],
+      "context_files": [
+        "packages/core/src/types/task.ts",
+        "packages/tokenomics/src/index.ts"
+      ],
+      "spec": "Enhance `packages/verification` so the coordinator can inject deterministic pre-computed canary work units into a worker's queue.\n\n1. Verify that a worker returning a mismatched digest on a canary task or diverging from a 2-of-3 redundant quorum is immediately flagged as Byzantine, its pending reward is forfeited, and its node reputation score drops below scheduling threshold.\n2. Add Vitest unit tests covering honest quorum consensus, 1-of-3 Byzantine minority, and canary trap detection.",
+      "verify_cmd": "npx vitest run"
+    },
+    {
+      "id": "TASK-02",
+      "title": "Enforce deterministic execution timeout and memory cap in wasm-runtime",
+      "status": "pending",
+      "target_files": [
+        "packages/wasm-runtime/src/index.ts"
+      ],
+      "context_files": [
+        "packages/core/src/types/task.ts"
+      ],
+      "spec": "Ensure `packages/wasm-runtime` enforces maximum WASM linear memory pages (`maxMemoryPages <= 256` / 16 MB default) and hard wall-clock execution timeout, aborting runaway tasks cleanly with a structured `WasmExecutionLimitError`.\n\n1. Add unit tests verifying resource limit enforcement.",
+      "verify_cmd": "npx vitest run"
+    }
+  ]
+}

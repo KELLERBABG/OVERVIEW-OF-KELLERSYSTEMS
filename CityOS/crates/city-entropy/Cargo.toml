@@ -1,0 +1,11 @@
+[package]
+name = "city-entropy"
+description = "Environmental signature sync for deriving shared OTP keys from noisy sensor data"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+city-types = { workspace = true }
+city-crypto = { workspace = true }

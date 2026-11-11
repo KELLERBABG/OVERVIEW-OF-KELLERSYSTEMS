@@ -1,0 +1,10 @@
+[package]
+name = "city-syscall"
+description = "SYS_CITY_* / CAP_CITY_* kernel ABI mirror for ring-3 City service dispatch"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+city-types = { workspace = true }

@@ -1,0 +1,74 @@
+{
+  "slug": "personal-007",
+  "source": "generated",
+  "domain": "Personalberatung",
+  "traps": [
+    {
+      "marker": "Bei einem Direktgeschäft steht der Beraterin keine Provision zu",
+      "expectedType": "agency_commission_exclusion",
+      "note": "keine Provision bei Direktgeschäft"
+    },
+    {
+      "marker": "Die Beraterin hat keinen Anspruch auf Ausgleich für den Kundenstamm",
+      "expectedType": "agency_goodwill_waiver",
+      "note": "kein Ausgleich für den Kundenstamm"
+    },
+    {
+      "marker": "Die Kosten des Verfahrens sind von dem Kunden vorzustrecken",
+      "expectedType": "mandatory_expert_determination",
+      "note": "Sachverständigenverfahren mit Vorschusspflicht des Kunden"
+    },
+    {
+      "marker": "Bei einer vorzeitigen Beendigung durch den Kunden wird eine pauschale Abstandszahlung",
+      "expectedType": "early_termination_charge",
+      "note": "pauschale Abstandszahlung bei vorzeitiger Beendigung"
+    },
+    {
+      "marker": "Der Dienst ist abzuschalten, wenn kein Wartungsvertrag besteht",
+      "expectedType": "maintenance_conditional_shutdown",
+      "note": "Abschaltung ohne Wartungsvertrag"
+    },
+    {
+      "marker": "Die Beraterin ist berechtigt, den Kunden als Referenz zu nennen",
+      "expectedType": "marketing_reference",
+      "note": "Referenznennung ohne Zustimmung"
+    },
+    {
+      "marker": "Frühere Absprachen verlieren mit Abschluss dieses Vertrages ihre Gültigkeit",
+      "expectedType": "entire_agreement",
+      "note": "frühere Absprachen verlieren ihre Gültigkeit"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Beraterin führt die Kandidatengespräche persönlich durch",
+      "note": "persönliche Gesprächsführung"
+    },
+    {
+      "marker": "Rechnungen sind innerhalb von 30 Tagen zu begleichen",
+      "note": "Zahlungsfrist"
+    },
+    {
+      "marker": "Beide Parteien benennen eine Ansprechperson für die Abstimmung",
+      "note": "Ansprechperson"
+    },
+    {
+      "marker": "Der Kunde stellt die Stellenbeschreibung spätestens zum Starttermin bereit",
+      "note": "Stellenbeschreibung"
+    },
+    {
+      "marker": "Die Beraterin behandelt alle Unterlagen sorgfältig und gibt sie nach Projektende zurück",
+      "note": "Unterlagenrückgabe"
+    },
+    {
+      "marker": "Dieser Vertrag wird in zwei Ausfertigungen erstellt",
+      "note": "Ausfertigungen"
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Vertrag endet mit Ablauf der vereinbarten Projektlaufzeit",
+      "note": "Vertragsende ohne Verlängerungsautomatik"
+    }
+  ]
+}

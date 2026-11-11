@@ -1,0 +1,78 @@
+{
+  "slug": "agb-05-fitnessstudio-mitgliedschaft",
+  "domain": "Fitnessstudio & Sportclub Mitgliedschaftsbedingungen",
+  "source": "Blind Real-AGB Benchmark 2026 (vor Engine-Lauf gelabelt)",
+  "traps": [
+    {
+      "marker": "jederzeit einseitig durch Aushang im Empfangsbereich zu erhöhen, um allgemeine",
+      "expectedType": "price_escalation",
+      "statutoryBasis": "§ 307 Abs. 1 BGB",
+      "note": "Unwirksame einseitige Beitragserhöhungsklausel durch bloßen Aushang ohne Weitergabe von Kostensenkungen und ohne Sonderkündigungsrecht."
+    },
+    {
+      "marker": "verlängert sich der Vertrag automatisch jeweils um weitere 18 Monate als feste",
+      "expectedType": "auto_renewal",
+      "statutoryBasis": "§ 309 Nr. 9 lit. b BGB",
+      "note": "Unzulässige automatische Vertragsverlängerung um 18 Monate bei einem Dauerschuldverhältnis gegenüber Verbrauchern."
+    },
+    {
+      "marker": "Für eine ordentliche Kündigung durch das Mitglied gilt eine Kündigungsfrist von",
+      "expectedType": "notice_period",
+      "statutoryBasis": "§ 309 Nr. 9 lit. c BGB, § 307 Abs. 1 BGB",
+      "note": "Überlange sechsmonatige Kündigungsfrist für das Mitglied bei gleichzeitig extrem asymmetrischer 7-Tage-Frist für das Studio."
+    },
+    {
+      "marker": "zwingend der eigenhändigen Unterschrift im Original und muss dem Studio per",
+      "expectedType": "written_form_trap",
+      "statutoryBasis": "§ 309 Nr. 13 BGB, § 312k BGB",
+      "note": "Unzulässiges Schriftform- und Einschreiben-Erfordernis unter Ausschluss der Textform und des gesetzlichen Kündigungsbuttons."
+    },
+    {
+      "marker": "Das Recht des Mitglieds zur außerordentlichen fristlosen Kündigung des",
+      "expectedType": "asymmetric_termination",
+      "statutoryBasis": "§ 314 BGB, § 307 Abs. 1, Abs. 2 Nr. 1 BGB",
+      "note": "Zwingend unwirksamer Ausschluss des außerordentlichen Kündigungsrechts aus wichtigem Grund (insbesondere bei dauerhafter Krankheit)."
+    },
+    {
+      "marker": "wird das Studio für diese Zeit von seiner Leistungspflicht frei, während das",
+      "expectedType": "force_majeure_asymmetry",
+      "statutoryBasis": "§ 326 Abs. 1 BGB, § 307 Abs. 2 Nr. 1 BGB",
+      "note": "Unwirksame Fortzahlungspflicht während behördlicher oder betriebsbedingter Studioschließungen entgegen der BGH-Rechtsprechung."
+    },
+    {
+      "marker": "Das Studio schließt jegliche Haftung für Sach-, Vermögens- und Körperschäden des",
+      "expectedType": "liability",
+      "statutoryBasis": "§ 309 Nr. 7 lit. a und b BGB, § 307 Abs. 2 Nr. 2 BGB",
+      "note": "Totaler Haftungsausschluss auch für Körperschäden, grobe Fahrlässigkeit und Kardinalpflichtverletzungen."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Das Mitglied verpflichtet sich, die ausgehängte Hausordnung einzuhalten,",
+      "note": "Sachgerechte Hygiene- und Sicherheitsregeln im Fitnessstudio."
+    },
+    {
+      "marker": "Bei vom Mitglied zu vertretenden Rücklastschriften berechnet das Studio die",
+      "note": "Zulässige Weiterbelastung nur der tatsächlich entstandenen Bankgebühren bei verschuldeter Rücklastschrift."
+    },
+    {
+      "marker": "Gegen Beitragsforderungen des Studios kann das Mitglied mit unbestrittenen oder",
+      "note": "Wirksame Aufrechnungsklausel gemäß § 309 Nr. 3 BGB."
+    },
+    {
+      "marker": "Für vom Mitglied mitgebrachte Wertgegenstände und Bargeld stellt das Studio",
+      "note": "Übliche Nutzungsregelung für Tagesspinde."
+    },
+    {
+      "marker": "Umkleide-, Dusch- und Saunabereiche werden selbstverständlich zu keinem Zeitpunkt",
+      "note": "Datenschutz- und persönlichkeitsrechtskonforme Regelung zur Videoüberwachung."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "strikt untersagt, selbst mitgebrachte Getränke wie Wasserflaschen zu konsumieren;",
+      "statutoryBasis": "§ 307 Abs. 1 BGB",
+      "note": "Nach ständiger Rechtsprechung unangemessenes Mitnahmeverbot für eigene Getränke beim Sport sowie rechtswidriges verdachtsloses Taschendurchsuchungsrecht."
+    }
+  ]
+}

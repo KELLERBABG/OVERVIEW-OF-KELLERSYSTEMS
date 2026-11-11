@@ -1,0 +1,88 @@
+{
+  "slug": "werk-016",
+  "source": "generated",
+  "domain": "Einzelhandel, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Kündigungen müssen per Einschreiben mit Rückschein erklärt werden.",
+      "expectedType": "written_form_trap",
+      "note": "Verifizierte Klausel im Bereich written_form_trap."
+    },
+    {
+      "marker": "The provider shall not be liable for acts of subcontractors or agents.",
+      "expectedType": "vicarious_agents",
+      "note": "Verifizierte Klausel im Bereich vicarious_agents."
+    },
+    {
+      "marker": "Der Kunde kann den Vertrag nicht aus wichtigem Grund kündigen.",
+      "expectedType": "asymmetric_termination",
+      "note": "Verifizierte Klausel im Bereich asymmetric_termination."
+    },
+    {
+      "marker": "Der Kunde ist für die Dauer der Grundlaufzeit gebunden.",
+      "expectedType": "unilateral_convenience_termination",
+      "note": "Verifizierte Klausel im Bereich unilateral_convenience_termination."
+    },
+    {
+      "marker": "Das Material bleibt Eigentum des Anbieters, bis der Kunde alle Verbindlichkeiten aus der Geschäftsbe",
+      "expectedType": "extended_retention_of_title",
+      "note": "Verifizierte Klausel im Bereich extended_retention_of_title."
+    },
+    {
+      "marker": "Ein Antrag auf Eröffnung eines Insolvenzverfahrens berechtigt den Anbieter zur fristlosen Kündigung.",
+      "expectedType": "insolvency_termination",
+      "note": "Verifizierte Klausel im Bereich insolvency_termination."
+    },
+    {
+      "marker": "Frühere Angebote und Leistungsbeschreibungen verlieren mit Unterzeichnung ihre Gültigkeit.",
+      "expectedType": "entire_agreement",
+      "note": "Verifizierte Klausel im Bereich entire_agreement."
+    },
+    {
+      "marker": "Die Abtretung von Forderungen aus diesem Vertrag ist ausgeschlossen.",
+      "expectedType": "assignment_restriction",
+      "note": "Verifizierte Klausel im Bereich assignment_restriction."
+    },
+    {
+      "marker": "Sämtliche Steuern und Abgaben aus diesem Vertrag trägt der Kunde.",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Verifizierte Klausel im Bereich tax_indemnity_shift."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Parteien treffen sich monatlich zu einem Lenkungskreis.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Der Anbieter führt die Arbeiten mit der vereinbarten Sorgfalt aus.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Vertragsparteien informieren sich unverzüglich über Störungen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Der Anbieter meldet Sicherheitsvorfälle unverzüglich an den Kunden.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Vergütung ist innerhalb von dreißig Tagen nach Rechnungseingang fällig.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Beide Parteien verpflichten sich wechselseitig, die offengelegten Informationen vertraulich zu behan",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Die Parteien behandeln die Vertragsverhandlung vertraulich",
+      "note": "Verschwiegenheit ohne Nachwirkung."
+    }
+  ]
+}

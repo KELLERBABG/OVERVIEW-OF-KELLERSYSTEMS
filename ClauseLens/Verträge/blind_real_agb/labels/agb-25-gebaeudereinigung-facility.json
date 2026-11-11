@@ -1,0 +1,94 @@
+{
+  "slug": "agb-25-gebaeudereinigung-facility",
+  "domain": "Gebäudereinigungs- und Facility-Management-AGB",
+  "source": "Blind Real-AGB Benchmark 2026 (vor Engine-Lauf gelabelt)",
+  "traps": [
+    {
+      "marker": "sämtliche bei der gemeinsamen Objektbegehung getroffenen individuellen Vereinbarungen, Protokollnotizen und mündlichen Zusagen",
+      "expectedType": "entire_agreement",
+      "statutoryBasis": "§ 305b BGB / § 307 BGB",
+      "note": "Vollständigkeitsklausel, die bei der Objektbegehung getroffene Individualabreden und Protokollnotizen pauschal für gegenstandslos erklärt, verstößt gegen § 305b BGB."
+    },
+    {
+      "marker": "jederzeit ohne Wissen oder Zustimmung des Auftraggebers vollständig an beliebige Subunternehmer und Nachunternehmerketten weitervergeben",
+      "expectedType": "subcontractor_uncontrolled",
+      "statutoryBasis": "§ 307 Abs. 1 und 2 BGB",
+      "note": "Unkontrollierte Weitergabe an Nachunternehmerketten inklusive Aushändigung sämtlicher Objektschlüssel und Alarmanlagencodes ohne Wissen des Kunden."
+    },
+    {
+      "marker": "nicht innerhalb von exakt 30 Minuten nach Beendigung der jeweiligen Reinigungsschicht (auch bei Nacht- oder Wochenendreinigung um 04:00 Uhr morgens)",
+      "expectedType": "deemed_acceptance",
+      "statutoryBasis": "§ 308 Nr. 5 BGB / § 307 BGB",
+      "note": "Abnahmefiktion und Ausschluss sämtlicher Mängelrechte 30 Minuten nach Schichtende (auch nachts um 04:00 Uhr) ist unzumutbar."
+    },
+    {
+      "marker": "sämtliche künftigen Erhöhungen der Gewerbesteuer, der Körperschaftsteuer, der Kfz-Steuer für den Fuhrpark des Auftragnehmers sowie etwaige steuerliche Nachforderungen",
+      "expectedType": "tax_indemnity_shift",
+      "statutoryBasis": "§ 307 Abs. 1 und 2 BGB",
+      "note": "Abwälzung der eigenen Gewerbe-, Körperschaft- und Kfz-Steuern sowie von Betriebsprüfungsnachforderungen des Auftragnehmers auf den Kunden."
+    },
+    {
+      "marker": "ausdrücklich auch dann, wenn die Gegenforderungen des Auftraggebers unbestritten oder rechtskräftig festgestellt sind",
+      "expectedType": "setoff_restriction",
+      "statutoryBasis": "§ 309 Nr. 3 BGB / § 307 BGB",
+      "note": "Ausschluss der Aufrechnung und des Zurückbehaltungsrechts auch bei unbestrittenen oder rechtskräftig festgestellten Gegenforderungen."
+    },
+    {
+      "marker": "Streiks beim Personal des Auftragnehmers oder epidemischer Lagen nicht erbracht werden, wird der Auftragnehmer von seiner Leistungspflicht dauerhaft befreit, während der Auftraggeber gleichwohl verpflichtet bleibt, 100 %",
+      "expectedType": "force_majeure_asymmetry",
+      "statutoryBasis": "§ 326 Abs. 1 BGB / § 307 Abs. 2 Nr. 1 BGB",
+      "note": "Fortzahlungspflicht von 100 % der Vergütung bei Leistungsausfall durch höhere Gewalt oder sogar Streik des eigenen Personals des Auftragnehmers widerspricht § 326 Abs. 1 BGB."
+    },
+    {
+      "marker": "verlängert sich der Vertrag jeweils automatisch um weitere drei Jahre, sofern er nicht vom Auftraggeber mit einer Frist von zwölf Monaten",
+      "expectedType": "auto_renewal",
+      "statutoryBasis": "§ 309 Nr. 9 BGB / § 307 BGB",
+      "note": "Automatische Verlängerung um jeweils drei Jahre bei zwölfmonatiger Kündigungsfrist bindet den Auftraggeber unangemessen lang."
+    },
+    {
+      "marker": "mit einer Frist von zwölf Monaten zum Laufzeitende gekündigt wird; der Auftragnehmer ist demgegenüber berechtigt, den Vertrag jederzeit mit einer Frist von nur drei Werktagen",
+      "expectedType": "notice_period",
+      "statutoryBasis": "§ 307 Abs. 1 BGB",
+      "note": "Krasse Asymmetrie der Kündigungsfristen (zwölf Monate zum Ende eines Dreijahreszeitraums für den Kunden gegenüber drei Werktagen jederzeit für den Verwender)."
+    },
+    {
+      "marker": "Wird über das Vermögen des Auftraggebers die Eröffnung eines Insolvenzverfahrens beantragt oder gerät der Auftraggeber in vorübergehende Zahlungsschwierigkeiten, gilt dieser Vertrag als im selben Augenblick automatisch aufgelöst",
+      "expectedType": "insolvency_termination",
+      "statutoryBasis": "§ 119 InsO / § 103 InsO / § 307 BGB",
+      "note": "Automatische Vertragsauflösung bei Insolvenzantrag samt pauschaler Jahresvergütung als Ausfallentschädigung verstößt gegen § 119 InsO."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "mit umweltverträglichen und für die jeweiligen Oberflächen geeigneten Reinigungs- und Pflegemitteln",
+      "note": "Sachgerechte Leistungsbeschreibung nach den anerkannten Regeln des Gebäudereiniger-Handwerks."
+    },
+    {
+      "marker": "stellt dem Auftragnehmer das für die Reinigung erforderliche kalte und warme Wasser sowie den elektrischen Strom unentgeltlich",
+      "note": "Branchenübliche Mitwirkungspflicht des Auftraggebers bei der Gebäudereinigung."
+    },
+    {
+      "marker": "innerhalb von 14 Tagen nach Rechnungseingang zahlbar",
+      "note": "Angemessene Zahlungsfrist von 14 Tagen nach Rechnungszugang."
+    },
+    {
+      "marker": "haftet unbeschränkt für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit",
+      "note": "Gesetzeskonforme unbeschränkte Haftung für Personenschäden sowie Vorsatz und grobe Fahrlässigkeit."
+    },
+    {
+      "marker": "im Rahmen seiner Betriebshaftpflichtversicherung bis zu einer Deckungssumme von 5.000.000,00 Euro je Schadensereignis",
+      "note": "Marktübliche und angemessen hohe Haftungsdeckung von 5 Mio. Euro für leicht fahrlässige Sach- und Schlüsselverlustschäden."
+    },
+    {
+      "marker": "Gerichtsstand für Vollkaufleute ist der Sitz des Auftragnehmers",
+      "note": "Zulässige Gerichtsstandsvereinbarung für Vollkaufleute nach § 38 Abs. 1 ZPO."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "steht dem Auftragnehmer ein vertragliches Pfand- und Verwertungsrecht an sämtlichen in den gereinigten Büroräumen des Auftraggebers befindlichen Einrichtungsgegenständen",
+      "statutoryBasis": "§ 307 Abs. 1 und 2 BGB / § 647 BGB / § 858 BGB",
+      "note": "Formularmäßiges Pfandrecht an nicht in den Besitz des Auftragnehmers eingebrachten Büroinventaren (inkl. Dritteigentum) mit Selbsthilferecht zum Abtransport ohne Titel ist unwirksam."
+    }
+  ]
+}

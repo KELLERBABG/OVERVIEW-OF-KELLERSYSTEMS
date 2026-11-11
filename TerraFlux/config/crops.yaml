@@ -1,0 +1,92 @@
+grapevine:
+  name: Grapevine (Wine Grapes / Vitis vinifera)
+  category: Viticulture
+  root_depth_m: 1.2
+  depletion_fraction_p: 0.45
+  stages:
+    initial:
+      kc: 0.3
+      duration_days: 30
+      desc: Bud break to shoot growth
+    development:
+      kc: 0.6
+      duration_days: 40
+      desc: Bloom to veraison
+    mid_season:
+      kc: 0.75
+      duration_days: 45
+      desc: Veraison to berry ripening
+    late_season:
+      kc: 0.45
+      duration_days: 30
+      desc: Harvest to dormancy
+  stress_strategy: Regulated Deficit Irrigation (RDI) post-veraison
+maize:
+  name: Maize (Corn)
+  category: Arable Crops
+  root_depth_m: 1.0
+  depletion_fraction_p: 0.55
+  stages:
+    initial:
+      kc: 0.4
+      duration_days: 25
+      desc: Emergence
+    development:
+      kc: 0.8
+      duration_days: 35
+      desc: Vegetative growth
+    mid_season:
+      kc: 1.15
+      duration_days: 45
+      desc: Silking & grain filling
+    late_season:
+      kc: 0.6
+      duration_days: 30
+      desc: Maturity / dry down
+  stress_strategy: Avoid moisture stress during silking
+apple:
+  name: Apple Orchard (Intensive/Dwarf)
+  category: Orchard
+  root_depth_m: 0.9
+  depletion_fraction_p: 0.5
+  stages:
+    initial:
+      kc: 0.5
+      duration_days: 30
+      desc: Green tip to bloom
+    development:
+      kc: 0.85
+      duration_days: 40
+      desc: Fruit set to rapid growth
+    mid_season:
+      kc: 1.05
+      duration_days: 60
+      desc: Fruit sizing
+    late_season:
+      kc: 0.7
+      duration_days: 30
+      desc: Pre-harvest to leaf fall
+  stress_strategy: Maintain RAW during cell division and sizing
+olive:
+  name: Olive Grove
+  category: Orchard
+  root_depth_m: 1.1
+  depletion_fraction_p: 0.65
+  stages:
+    initial:
+      kc: 0.5
+      duration_days: 60
+      desc: Sprouting & flowering
+    development:
+      kc: 0.65
+      duration_days: 60
+      desc: Fruit development
+    mid_season:
+      kc: 0.65
+      duration_days: 90
+      desc: Oil accumulation
+    late_season:
+      kc: 0.55
+      duration_days: 60
+      desc: Harvest
+  stress_strategy: High drought tolerance; moderate deficit tolerated

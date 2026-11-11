@@ -1,0 +1,19 @@
+[package]
+name = "fhe-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "FHE primitive wrappers over TFHE-rs: keygen, encryption, ciphertext algebra, bootstrapping"
+
+[dependencies]
+tfhe.workspace = true
+serde.workspace = true
+bincode.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+proptest.workspace = true
+criterion.workspace = true
+# Test-only: pins the golden-corpus bytes in the audit format-freeze gate.
+sha2 = "0.10"

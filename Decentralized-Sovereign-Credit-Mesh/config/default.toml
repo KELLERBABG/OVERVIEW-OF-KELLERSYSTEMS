@@ -1,0 +1,36 @@
+[node]
+name = "credit-mesh-node"
+state_file = "mesh_state.json"
+api_port = 8899
+api_host = "127.0.0.1"
+peers = []
+
+[graph]
+max_nodes = 10000
+max_edges = 100000
+pagerank_iterations = 100
+pagerank_tolerance = 1e-6
+pagerank_damping = 0.85
+
+[trust]
+vouching_max_depth = 5
+vouching_max_breadth = 50
+vouching_min_weight = 0.1
+vouching_decay_factor = 0.8
+
+[credit]
+base_interest_rate = 0.05
+min_reputation_threshold = 0.01
+max_sybil_score = 0.7
+smpc_default_parties = 5
+smpc_default_threshold = 3
+zkp_min_cluster_size = 3
+zkp_min_reputation = 0.05
+
+[pool]
+default_target_apr = 0.06
+max_utilization = 0.9
+
+[security]
+nullifier_hash_rounds = 1
+signature_scheme = "ed25519"

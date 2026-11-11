@@ -1,0 +1,234 @@
+# service engine misses (58)
+Each block: slug:line, expected type, label technique note, and the full marker paragraph.
+
+### service-003:L16  type=deemed_acceptance
+note: GAP: engine miss. Legally abusive (§ 308 Nr. 5 BGB); technique: paraphrase: consent inferred from silence, no express fiction
+§ 2 Leistungsumfang Der Anbieter erbringt die Leistungen nach dem vereinbarten Leistungsbild und den anerkannten Regeln der Technik. Der Leistungsumfang ergibt sich aus diesem Vertrag und den zugehörigen Anlagen. § 3 Genehmigungsfiktion Wer auf die Mitteilung nicht innerhalb von zwei Wochen antwortet, dessen Einverständnis wird unterstellt. Der Anbieter informiert den Kunden über wesentliche Änderungen im Ablauf.
+
+### service-003:L28  type=burden_of_proof
+note: GAP: engine miss. Legally abusive (§ 309 Nr. 12 BGB); technique: paraphrase as a duty to evidence conformity
+§ 6 Beweislast Das Vorliegen der vertragsgemäßen Leistung hat der Kunde nachzuweisen, wenn er Minderung geltend macht. Der jeweils benannte Ansprechpartner informiert die andere Partei unverzüglich.
+
+### service-004:L24  type=asymmetric_termination
+note: GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: exit right on one side only
+§ 5 Beendigungsrechte Beendet der Anbieter die Zusammenarbeit aus wichtigem Grund, entfallen Ansprüche des Kunden; der Kunde bleibt bis zum Ablauf gebunden. Der Kunde benennt für die Abstimmung eine fachlich verantwortliche Person.
+
+### service-004:L32  type=force_majeure_asymmetry
+note: GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: events outside the provider's control extend its deadlines while payment duties continue
+§ 7 Höhere Gewalt Ereignisse außerhalb des Einflussbereichs des Anbieters verlängern dessen Fristen; Zahlungspflichten des Kunden laufen unverändert weiter. Die Parteien bewahren die im Rahmen der Zusammenarbeit erstellten Unterlagen sorgfältig auf.
+
+### service-005:L16  type=excessive_survival
+note: GAP: engine miss. Legally abusive (§ 307 BGB); technique: survival in number words for two obligation groups
+§ 2 Leistungsumfang Der Anbieter erbringt die Leistungen nach dem vereinbarten Leistungsbild und den anerkannten Regeln der Technik. Der Leistungsumfang ergibt sich aus diesem Vertrag und den zugehörigen Anlagen. § 3 Nachwirkung Vertraulichkeit und Wettbewerbsschutz bestehen noch fünfzehn Jahre nach dem letzten Leistungstag zwischen den Parteien fort. Vereinbarungen der Projektverantwortlichen werden von den Parteien schriftlich dokumentiert.
+
+### service-005:L28  type=extended_retention_of_title
+note: GAP: engine miss. Legally abusive (§ 449 Abs. 3 BGB); technique: paraphrase covering group claims
+§ 6 Eigentumsvorbehalt Das Eigentum an den Geräten bleibt beim Anbieter, bis auch Forderungen verbundener Unternehmen ausgeglichen sind, und geht erst dann auf den Kunden über. Die Parteien prüfen die Leistungen gemeinsam und halten das Ergebnis fest.
+
+### service-005:L36  type=audit_log_manipulation
+note: GAP: engine miss. Legally abusive (§ 307 BGB); technique: soft paraphrase of retroactive correction of records
+§ 8 Aufzeichnungen Aufzeichnungen über Serviceeinsätze werden vom Anbieter gepflegt und können aus technischen Gründen nachträglich berichtigt werden. Der jeweils benannte Ansprechpartner informiert die andere Partei unverzüglich.
+
+### service-005:L48  type=setoff_restriction
+note: GAP: engine miss. Legally abusive (§ 309 Nr. 3 BGB); technique: literal set-off prohibition for the customer
+§ 11 Aufrechnung Dem Kunden ist die Aufrechnung mit Gegenforderungen untersagt, es sei denn, die Forderung ist unbestritten. Die Kommunikation erfolgt über die im Kopf dieses Vertrags genannten Kontaktwege.
+
+### service-006:L16  type=insolvency_termination
+note: GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: immediate stop and termination on mere filing
+§ 2 Leistungsumfang Der Anbieter erbringt die Leistungen nach dem vereinbarten Leistungsbild und den anerkannten Regeln der Technik. Der Leistungsumfang ergibt sich aus diesem Vertrag und den zugehörigen Anlagen. § 3 Insolvenz Stellt der Kunde einen Antrag auf Eröffnung eines Verfahrens, darf der Anbieter die Leistung sofort einstellen und den Vertrag beenden. Der jeweils benannte Ansprechpartner informiert die andere Partei unverzüglich.
+
+### service-007:L16  type=fictitious_receipt
+note: GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: dispatch suffices, customer bears the risk
+§ 2 Leistungsumfang Der Anbieter erbringt die Leistungen nach dem vereinbarten Leistungsbild und den anerkannten Regeln der Technik. Der Leistungsumfang ergibt sich aus diesem Vertrag und den zugehörigen Anlagen. § 3 Zugang von Erklärungen Für den Zugang genügt die Absendung an die zuletzt vom Kunden benannte Adresse; der Kunde trägt das Risiko der Nichtkenntnisnahme. Der Anbieter setzt für die Leistungserbringung geeignete Fachkräfte ein.
+
+### service-007:L28  type=agency_goodwill_waiver
+note: GAP: engine miss. Legally abusive (§ 89b HGB); technique: paraphrase: claims for the transferred customer base are excluded
+§ 6 Ausgleich nach Beendigung Ansprüche wegen der vom Anbieter übernommenen Kundenbeziehungen bestehen nach Beendigung nicht. Der Kunde stellt die für die Leistung erforderlichen Informationen rechtzeitig bereit.
+
+### service-007:L36  type=mandatory_expert_determination
+note: GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: provider-appointed expert decides valuation questions
+§ 8 Gutachterliches Verfahren Bewertungsfragen entscheidet ein vom Anbieter benannter Gutachter abschließend; der Rechtsweg bleibt daneben eröffnet. Die Parteien prüfen die Leistungen gemeinsam und halten das Ergebnis fest.
+
+### service-008:L16  type=early_termination_charge
+note: GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: remaining installments without deduction of saved costs
+§ 2 Leistungsumfang Der Anbieter erbringt die Leistungen nach dem vereinbarten Leistungsbild und den anerkannten Regeln der Technik. Der Leistungsumfang ergibt sich aus diesem Vertrag und den zugehörigen Anlagen. § 3 Vorzeitige Beendigung Beendet der Kunde vor Ablauf, zahlt er die Vergütung für die verbleibenden Monate als Entschädigung ohne Anrechnung ersparter Aufwendungen. Die Parteien prüfen die Leistungen gemeinsam und halten das Ergebnis fest.
+
+### service-010:L24  type=deemed_acceptance
+note: GAP: engine miss. Legally abusive (§ 308 Nr. 5 BGB); technique: paraphrase: consent inferred from silence, no express fiction
+§ 5 Genehmigungsfiktion Wer auf die Mitteilung nicht innerhalb von zwei Wochen antwortet, dessen Einverständnis wird unterstellt. Die Parteien prüfen die Leistungen gemeinsam und halten das Ergebnis fest.
+
+### service-010:L36  type=burden_of_proof
+note: GAP: engine miss. Legally abusive (§ 309 Nr. 12 BGB); technique: paraphrase as a duty to evidence conformity
+§ 8 Beweislast Das Vorliegen der vertragsgemäßen Leistung hat der Kunde nachzuweisen, wenn er Minderung geltend macht. Der Anbieter dokumentiert seine Tätigkeit und legt die Unterlagen auf Anforderung vor.
+
+### service-011:L32  type=asymmetric_termination
+note: GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: exit right on one side only
+§ 7 Beendigungsrechte Beendet der Anbieter die Zusammenarbeit aus wichtigem Grund, entfallen Ansprüche des Kunden; der Kunde bleibt bis zum Ablauf gebunden. Der Anbieter setzt für die Leistungserbringung geeignete Fachkräfte ein.
+
+### service-011:L40  type=force_majeure_asymmetry
+note: GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: events outside the provider's control extend its deadlines while payment duties continue
+§ 9 Höhere Gewalt Ereignisse außerhalb des Einflussbereichs des Anbieters verlängern dessen Fristen; Zahlungspflichten des Kunden laufen unverändert weiter. Vereinbarungen der Projektverantwortlichen werden von den Parteien schriftlich dokumentiert.
+
+### service-012:L24  type=excessive_survival
+note: GAP: engine miss. Legally abusive (§ 307 BGB); technique: survival in number words for two obligation groups
+§ 5 Nachwirkung Vertraulichkeit und Wettbewerbsschutz bestehen noch fünfzehn Jahre nach dem letzten Leistungstag zwischen den Parteien fort. Der Kunde stellt die für die Leistung erforderlichen Informationen rechtzeitig bereit.
+
+### service-012:L36  type=extended_retention_of_title
+note: GAP: engine miss. Legally abusive (§ 449 Abs. 3 BGB); technique: paraphrase covering group claims
+§ 8 Eigentumsvorbehalt Das Eigentum an den Geräten bleibt beim Anbieter, bis auch Forderungen verbundener Unternehmen ausgeglichen sind, und geht erst dann auf den Kunden über. Die Parteien stimmen die Einzelheiten rechtzeitig vor Leistungsbeginn ab.
+
+### service-013:L16  type=audit_log_manipulation
+note: GAP: engine miss. Legally abusive (§ 307 BGB); technique: soft paraphrase of retroactive correction of records
+§ 2 Leistungsumfang Der Anbieter erbringt die Leistungen nach dem vereinbarten Leistungsbild und den anerkannten Regeln der Technik. Der Leistungsumfang ergibt sich aus diesem Vertrag und den zugehörigen Anlagen. § 3 Aufzeichnungen Aufzeichnungen über Serviceeinsätze werden vom Anbieter gepflegt und können aus technischen Gründen nachträglich berichtigt werden. Die Parteien stimmen die Einzelheiten rechtzeitig vor Leistungsbeginn ab.
+
+### service-013:L24  type=insolvency_termination
+note: GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: immediate stop and termination on mere filing
+§ 5 Insolvenz Stellt der Kunde einen Antrag auf Eröffnung eines Verfahrens, darf der Anbieter die Leistung sofort einstellen und den Vertrag beenden. Der Anbieter dokumentiert seine Tätigkeit und legt die Unterlagen auf Anforderung vor.
+
+### service-014:L24  type=fictitious_receipt
+note: GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: dispatch suffices, customer bears the risk
+§ 5 Zugang von Erklärungen Für den Zugang genügt die Absendung an die zuletzt vom Kunden benannte Adresse; der Kunde trägt das Risiko der Nichtkenntnisnahme. Die Parteien bewahren die im Rahmen der Zusammenarbeit erstellten Unterlagen sorgfältig auf.
+
+### service-014:L36  type=agency_goodwill_waiver
+note: GAP: engine miss. Legally abusive (§ 89b HGB); technique: paraphrase: claims for the transferred customer base are excluded
+§ 8 Ausgleich nach Beendigung Ansprüche wegen der vom Anbieter übernommenen Kundenbeziehungen bestehen nach Beendigung nicht. Der Anbieter informiert den Kunden über wesentliche Änderungen im Ablauf.
+
+### service-015:L16  type=mandatory_expert_determination
+note: GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: provider-appointed expert decides valuation questions
+§ 2 Leistungsumfang Der Anbieter erbringt die Leistungen nach dem vereinbarten Leistungsbild und den anerkannten Regeln der Technik. Der Leistungsumfang ergibt sich aus diesem Vertrag und den zugehörigen Anlagen. § 3 Gutachterliches Verfahren Bewertungsfragen entscheidet ein vom Anbieter benannter Gutachter abschließend; der Rechtsweg bleibt daneben eröffnet. Der Anbieter informiert den Kunden über wesentliche Änderungen im Ablauf.
+
+### service-015:L24  type=early_termination_charge
+note: GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: remaining installments without deduction of saved costs
+§ 5 Vorzeitige Beendigung Beendet der Kunde vor Ablauf, zahlt er die Vergütung für die verbleibenden Monate als Entschädigung ohne Anrechnung ersparter Aufwendungen. Die Parteien stimmen die Einzelheiten rechtzeitig vor Leistungsbeginn ab.
+
+### service-017:L32  type=deemed_acceptance
+note: GAP: engine miss. Legally abusive (§ 308 Nr. 5 BGB); technique: paraphrase: consent inferred from silence, no express fiction
+§ 7 Genehmigungsfiktion Wer auf die Mitteilung nicht innerhalb von zwei Wochen antwortet, dessen Einverständnis wird unterstellt. Die Parteien stimmen die Einzelheiten rechtzeitig vor Leistungsbeginn ab.
+
+### service-018:L16  type=burden_of_proof
+note: GAP: engine miss. Legally abusive (§ 309 Nr. 12 BGB); technique: paraphrase as a duty to evidence conformity
+§ 2 Leistungsumfang Der Anbieter erbringt die Leistungen nach dem vereinbarten Leistungsbild und den anerkannten Regeln der Technik. Der Leistungsumfang ergibt sich aus diesem Vertrag und den zugehörigen Anlagen. § 3 Beweislast Das Vorliegen der vertragsgemäßen Leistung hat der Kunde nachzuweisen, wenn er Minderung geltend macht. Der jeweils benannte Ansprechpartner informiert die andere Partei unverzüglich.
+
+### service-018:L40  type=asymmetric_termination
+note: GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: exit right on one side only
+§ 9 Beendigungsrechte Beendet der Anbieter die Zusammenarbeit aus wichtigem Grund, entfallen Ansprüche des Kunden; der Kunde bleibt bis zum Ablauf gebunden. Die Parteien bewahren die im Rahmen der Zusammenarbeit erstellten Unterlagen sorgfältig auf.
+
+### service-018:L44  type=as_is_software_disclaimer
+note: GAP: engine miss. Legally abusive (§ 307 BGB); technique: literal provision as is without warranty
+§ 10 Softwareüberlassung Die überlassene Software wird ohne Gewährleistung für Fehlerfreiheit und Eignung bereitgestellt. Vereinbarungen der Projektverantwortlichen werden von den Parteien schriftlich dokumentiert.
+
+### service-019:L20  type=force_majeure_asymmetry
+note: GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: events outside the provider's control extend its deadlines while payment duties continue
+§ 4 Höhere Gewalt Ereignisse außerhalb des Einflussbereichs des Anbieters verlängern dessen Fristen; Zahlungspflichten des Kunden laufen unverändert weiter. Die Parteien bewahren die im Rahmen der Zusammenarbeit erstellten Unterlagen sorgfältig auf.
+
+### service-019:L32  type=excessive_survival
+note: GAP: engine miss. Legally abusive (§ 307 BGB); technique: survival in number words for two obligation groups
+§ 7 Nachwirkung Vertraulichkeit und Wettbewerbsschutz bestehen noch fünfzehn Jahre nach dem letzten Leistungstag zwischen den Parteien fort. Der Anbieter informiert den Kunden über wesentliche Änderungen im Ablauf.
+
+### service-019:L44  type=marketing_reference
+note: GAP: engine miss. Legally abusive (§ 307 BGB); technique: literal reference naming and logo use permitted
+§ 10 Referenznennung Der Anbieter darf den Kunden als Referenzkunden benennen und das Logo zu Werbezwecken verwenden. Der jeweils benannte Ansprechpartner informiert die andere Partei unverzüglich.
+
+### service-020:L16  type=extended_retention_of_title
+note: GAP: engine miss. Legally abusive (§ 449 Abs. 3 BGB); technique: paraphrase covering group claims
+§ 2 Leistungsumfang Der Anbieter erbringt die Leistungen nach dem vereinbarten Leistungsbild und den anerkannten Regeln der Technik. Der Leistungsumfang ergibt sich aus diesem Vertrag und den zugehörigen Anlagen. § 3 Eigentumsvorbehalt Das Eigentum an den Geräten bleibt beim Anbieter, bis auch Forderungen verbundener Unternehmen ausgeglichen sind, und geht erst dann auf den Kunden über. Die Parteien prüfen die Leistungen gemeinsam und halten das Ergebnis fest.
+
+### service-020:L24  type=audit_log_manipulation
+note: GAP: engine miss. Legally abusive (§ 307 BGB); technique: soft paraphrase of retroactive correction of records
+§ 5 Aufzeichnungen Aufzeichnungen über Serviceeinsätze werden vom Anbieter gepflegt und können aus technischen Gründen nachträglich berichtigt werden. Der jeweils benannte Ansprechpartner informiert die andere Partei unverzüglich.
+
+### service-020:L32  type=insolvency_termination
+note: GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: immediate stop and termination on mere filing
+§ 7 Insolvenz Stellt der Kunde einen Antrag auf Eröffnung eines Verfahrens, darf der Anbieter die Leistung sofort einstellen und den Vertrag beenden. Beide Parteien unterstützen sich bei der Aufklärung von Rückfragen angemessen.
+
+### service-020:L48  type=unverbindliche_sla_falle
+note: GAP: engine miss. Legally abusive (§ 307 BGB); technique: literal service levels as non-binding guidelines
+§ 11 Servicezeiten Die angegebenen Reaktions- und Wiederherstellungszeiten sind unverbindliche Richtwerte. Die Parteien bewahren die im Rahmen der Zusammenarbeit erstellten Unterlagen sorgfältig auf.
+
+### service-021:L32  type=fictitious_receipt
+note: GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: dispatch suffices, customer bears the risk
+§ 7 Zugang von Erklärungen Für den Zugang genügt die Absendung an die zuletzt vom Kunden benannte Adresse; der Kunde trägt das Risiko der Nichtkenntnisnahme. Vereinbarungen der Projektverantwortlichen werden von den Parteien schriftlich dokumentiert.
+
+### service-021:L44  type=agency_commission_exclusion
+note: GAP: engine miss. Legally abusive (§ 307 BGB); technique: literal commission excluded for direct renewal
+§ 10 Provisionen Der Vermittler erhält keine Provision, wenn der Kunde den Vertrag mit dem Versicherer direkt verlängert. Die Parteien prüfen die Leistungen gemeinsam und halten das Ergebnis fest.
+
+### service-022:L16  type=agency_goodwill_waiver
+note: GAP: engine miss. Legally abusive (§ 89b HGB); technique: paraphrase: claims for the transferred customer base are excluded
+§ 2 Leistungsumfang Der Anbieter erbringt die Leistungen nach dem vereinbarten Leistungsbild und den anerkannten Regeln der Technik. Der Leistungsumfang ergibt sich aus diesem Vertrag und den zugehörigen Anlagen. § 3 Ausgleich nach Beendigung Ansprüche wegen der vom Anbieter übernommenen Kundenbeziehungen bestehen nach Beendigung nicht. Der Kunde stellt die für die Leistung erforderlichen Informationen rechtzeitig bereit.
+
+### service-022:L24  type=mandatory_expert_determination
+note: GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: provider-appointed expert decides valuation questions
+§ 5 Gutachterliches Verfahren Bewertungsfragen entscheidet ein vom Anbieter benannter Gutachter abschließend; der Rechtsweg bleibt daneben eröffnet. Die Parteien prüfen die Leistungen gemeinsam und halten das Ergebnis fest.
+
+### service-022:L32  type=early_termination_charge
+note: GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: remaining installments without deduction of saved costs
+§ 7 Vorzeitige Beendigung Beendet der Kunde vor Ablauf, zahlt er die Vergütung für die verbleibenden Monate als Entschädigung ohne Anrechnung ersparter Aufwendungen. Der jeweils benannte Ansprechpartner informiert die andere Partei unverzüglich.
+
+### service-023:L44  type=service_credit_forfeiture
+note: GAP: engine miss. Legally abusive (§ 307 BGB); technique: literal service credits lapse after seven days
+§ 10 Gutschriften Servicegutschriften verfallen, wenn der Kunde sie nicht innerhalb von sieben Tagen geltend macht. Der Kunde stellt die für die Leistung erforderlichen Informationen rechtzeitig bereit.
+
+### service-024:L40  type=deemed_acceptance
+note: GAP: engine miss. Legally abusive (§ 308 Nr. 5 BGB); technique: paraphrase: consent inferred from silence, no express fiction
+§ 9 Genehmigungsfiktion Wer auf die Mitteilung nicht innerhalb von zwei Wochen antwortet, dessen Einverständnis wird unterstellt. Der jeweils benannte Ansprechpartner informiert die andere Partei unverzüglich.
+
+### service-024:L44  type=maintenance_conditional_shutdown
+note: GAP: engine miss. Legally abusive (§ 307 BGB); technique: literal maintenance only while premium subscription runs
+§ 10 Wartungsleistungen Wartungsarbeiten werden nur ausgeführt, solange der Kunde das Premium-Abo abgeschlossen hat. Der Anbieter dokumentiert seine Tätigkeit und legt die Unterlagen auf Anforderung vor.
+
+### service-025:L24  type=burden_of_proof
+note: GAP: engine miss. Legally abusive (§ 309 Nr. 12 BGB); technique: paraphrase as a duty to evidence conformity
+§ 5 Beweislast Das Vorliegen der vertragsgemäßen Leistung hat der Kunde nachzuweisen, wenn er Minderung geltend macht. Der Anbieter dokumentiert seine Tätigkeit und legt die Unterlagen auf Anforderung vor.
+
+### service-026:L20  type=asymmetric_termination
+note: GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: exit right on one side only
+§ 4 Beendigungsrechte Beendet der Anbieter die Zusammenarbeit aus wichtigem Grund, entfallen Ansprüche des Kunden; der Kunde bleibt bis zum Ablauf gebunden. Der Anbieter setzt für die Leistungserbringung geeignete Fachkräfte ein.
+
+### service-026:L28  type=force_majeure_asymmetry
+note: GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: events outside the provider's control extend its deadlines while payment duties continue
+§ 6 Höhere Gewalt Ereignisse außerhalb des Einflussbereichs des Anbieters verlängern dessen Fristen; Zahlungspflichten des Kunden laufen unverändert weiter. Vereinbarungen der Projektverantwortlichen werden von den Parteien schriftlich dokumentiert.
+
+### service-026:L40  type=excessive_survival
+note: GAP: engine miss. Legally abusive (§ 307 BGB); technique: survival in number words for two obligation groups
+§ 9 Nachwirkung Vertraulichkeit und Wettbewerbsschutz bestehen noch fünfzehn Jahre nach dem letzten Leistungstag zwischen den Parteien fort. Die Parteien prüfen die Leistungen gemeinsam und halten das Ergebnis fest.
+
+### service-027:L24  type=extended_retention_of_title
+note: GAP: engine miss. Legally abusive (§ 449 Abs. 3 BGB); technique: paraphrase covering group claims
+§ 5 Eigentumsvorbehalt Das Eigentum an den Geräten bleibt beim Anbieter, bis auch Forderungen verbundener Unternehmen ausgeglichen sind, und geht erst dann auf den Kunden über. Die Parteien stimmen die Einzelheiten rechtzeitig vor Leistungsbeginn ab.
+
+### service-027:L32  type=audit_log_manipulation
+note: GAP: engine miss. Legally abusive (§ 307 BGB); technique: soft paraphrase of retroactive correction of records
+§ 7 Aufzeichnungen Aufzeichnungen über Serviceeinsätze werden vom Anbieter gepflegt und können aus technischen Gründen nachträglich berichtigt werden. Der Anbieter dokumentiert seine Tätigkeit und legt die Unterlagen auf Anforderung vor.
+
+### service-027:L40  type=insolvency_termination
+note: GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: immediate stop and termination on mere filing
+§ 9 Insolvenz Stellt der Kunde einen Antrag auf Eröffnung eines Verfahrens, darf der Anbieter die Leistung sofort einstellen und den Vertrag beenden. Die Kommunikation erfolgt über die im Kopf dieses Vertrags genannten Kontaktwege.
+
+### service-028:L40  type=fictitious_receipt
+note: GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: dispatch suffices, customer bears the risk
+§ 9 Zugang von Erklärungen Für den Zugang genügt die Absendung an die zuletzt vom Kunden benannte Adresse; der Kunde trägt das Risiko der Nichtkenntnisnahme. Der Kunde stellt die für die Leistung erforderlichen Informationen rechtzeitig bereit.
+
+### service-029:L24  type=agency_goodwill_waiver
+note: GAP: engine miss. Legally abusive (§ 89b HGB); technique: paraphrase: claims for the transferred customer base are excluded
+§ 5 Ausgleich nach Beendigung Ansprüche wegen der vom Anbieter übernommenen Kundenbeziehungen bestehen nach Beendigung nicht. Der Anbieter informiert den Kunden über wesentliche Änderungen im Ablauf.
+
+### service-029:L32  type=mandatory_expert_determination
+note: GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: provider-appointed expert decides valuation questions
+§ 7 Gutachterliches Verfahren Bewertungsfragen entscheidet ein vom Anbieter benannter Gutachter abschließend; der Rechtsweg bleibt daneben eröffnet. Die Parteien stimmen die Einzelheiten rechtzeitig vor Leistungsbeginn ab.
+
+### service-029:L40  type=early_termination_charge
+note: GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: remaining installments without deduction of saved costs
+§ 9 Vorzeitige Beendigung Beendet der Kunde vor Ablauf, zahlt er die Vergütung für die verbleibenden Monate als Entschädigung ohne Anrechnung ersparter Aufwendungen. Der Anbieter dokumentiert seine Tätigkeit und legt die Unterlagen auf Anforderung vor.
+
+### service-029:L44  type=setoff_restriction
+note: GAP: engine miss. Legally abusive (§ 309 Nr. 3 BGB); technique: literal set-off prohibition for the customer
+§ 10 Aufrechnung Dem Kunden ist die Aufrechnung mit Gegenforderungen untersagt, es sei denn, die Forderung ist unbestritten. Beide Parteien unterstützen sich bei der Aufklärung von Rückfragen angemessen.
+
+### service-032:L20  type=deemed_acceptance
+note: GAP: engine miss. Legally abusive (§ 308 Nr. 5 BGB); technique: paraphrase: consent inferred from silence, no express fiction
+§ 4 Genehmigungsfiktion Wer auf die Mitteilung nicht innerhalb von zwei Wochen antwortet, dessen Einverständnis wird unterstellt. Die Parteien stimmen die Einzelheiten rechtzeitig vor Leistungsbeginn ab.
+
+### service-032:L32  type=burden_of_proof
+note: GAP: engine miss. Legally abusive (§ 309 Nr. 12 BGB); technique: paraphrase as a duty to evidence conformity
+§ 7 Beweislast Das Vorliegen der vertragsgemäßen Leistung hat der Kunde nachzuweisen, wenn er Minderung geltend macht. Beide Parteien unterstützen sich bei der Aufklärung von Rückfragen angemessen.

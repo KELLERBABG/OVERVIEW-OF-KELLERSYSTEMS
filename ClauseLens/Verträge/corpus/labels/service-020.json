@@ -1,0 +1,92 @@
+{
+  "slug": "service-020",
+  "source": "generated",
+  "domain": "SLA und Support",
+  "traps": [
+    {
+      "marker": "Das Eigentum an den Geräten bleibt beim Anbieter, bis auch Forderungen verbundener Unternehmen",
+      "expectedType": "extended_retention_of_title",
+      "note": "GAP: engine miss. Legally abusive (§ 449 Abs. 3 BGB); technique: paraphrase covering group claims"
+    },
+    {
+      "marker": "Der Anbieter setzt für die Betreuung eigene Dienstleister ein, ohne deren Auswahl dem Kunden",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: unnamed service providers, no information duty"
+    },
+    {
+      "marker": "Aufzeichnungen über Serviceeinsätze werden vom Anbieter gepflegt und können aus technischen Gründen ",
+      "expectedType": "audit_log_manipulation",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: soft paraphrase of retroactive correction of records"
+    },
+    {
+      "marker": "Der Anbieter kann den Zugang unterbrechen, wenn begründete Zweifel an der Zahlungsfähigkeit des",
+      "expectedType": "service_suspension",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: interruption on mere doubts about solvency"
+    },
+    {
+      "marker": "Stellt der Kunde einen Antrag auf Eröffnung eines Verfahrens, darf der Anbieter die Leistung sofort ",
+      "expectedType": "insolvency_termination",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: immediate stop and termination on mere filing"
+    },
+    {
+      "marker": "Steuerliche Pflichten aus dem Vertragsverhältnis trägt wirtschaftlich der Kunde, gleich aus welchem ",
+      "expectedType": "tax_indemnity_shift",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: tax duties economically borne by the customer"
+    },
+    {
+      "marker": "The customer shall keep all information confidential, while the provider may disclose the customer's",
+      "expectedType": "asymmetric_confidentiality",
+      "note": "Legally abusive (§ 307 BGB); engine hit; technique: English one-way NDA"
+    },
+    {
+      "marker": "Mitteilungen gelten drei Tage nach Absendung als zugegangen, auch wenn sie den Kunden nicht",
+      "expectedType": "fictitious_receipt",
+      "note": "Legally abusive (§ 307 BGB); engine hit; technique: literal fiction of receipt three days after dispatch"
+    },
+    {
+      "marker": "Die angegebenen Reaktions- und Wiederherstellungszeiten sind unverbindliche Richtwerte.",
+      "expectedType": "unverbindliche_sla_falle",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: literal service levels as non-binding guidelines"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Kunde kann den Vertrag mit einer Frist von vier Wochen zum Monatsende ohne Angabe von Gründen",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Kündigungen können in Textform, insbesondere per E-Mail, erklärt werden.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Der Anbieter kann Leistungen auf Nachunternehmer übertragen, wenn er dies dem Kunden vierzehn Tage",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Die Vergütung ist innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Am Ende der Laufzeit stellt der Anbieter alle Kundendaten in einem gängigen Format kostenfrei zur",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Jede Partei kann den Vertrag aus wichtigem Grund ohne Einhaltung einer Frist kündigen.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Der Anbieter unterhält eine Betriebshaftpflichtversicherung mit einer Deckungssumme von fünf",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Über die Verlängerung notwendiger Zertifizierungen entscheidet der Anbieter; die dadurch",
+      "note": "Deceptive clause without a matching detector type (coverage gap)."
+    },
+    {
+      "marker": "Der Anbieter darf eingesetzte Fachkräfte nach Anlage 5 austauschen, ohne dass der Kunde hiergegen",
+      "note": "Deceptive clause without a matching detector type (coverage gap)."
+    }
+  ]
+}

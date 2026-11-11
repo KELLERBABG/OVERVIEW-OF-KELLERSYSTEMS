@@ -1,0 +1,37 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# --- deliberately not published -------------------------------------------
+#
+# research/ holds working material: extracted text and LaTeX source from
+# third-party publications (Boaron, GYS, LCWX, Ma), locally written verification
+# scripts, and superseded planning documents. None of it is needed to use or
+# verify the code -- the citations in WHITEPAPER.md and the output of
+# `quantumnet validate` point at the published originals -- and redistributing
+# the third-party sources would be a copyright problem. Kept on disk only.
+research/
+
+# A single local tool identifier, not project content.
+.freebuff/
+
+# A decoder prototype workspace: a working subfolder by design, holding its own
+# copies of source files and notes. Promote from here into src/ deliberately.
+decoder_work/
+
+# Downloaded research material: papers, theses, dataset archives and any libraries
+# fetched to read proprietary formats. Never part of the package, and large enough to
+# break a push -- one such directory reached 203 MB across 4017 files before it was
+# caught. Downloaded material is not redistributed for the same reason as research/.
+snspd_data/
+
+# Scratch output and throwaway test harnesses from development. Listed by extension
+# rather than as `_*`, which would also have suppressed `__init__.py`.
+_*.js
+_*.html
+_*.txt
+_*.md

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keller Systems | Brand Sheet</title>
+  <meta name="description" content="The Keller Systems identity: the ruled monogram, the palette, the type system and the writing rules.">
+  <meta name="theme-color" content="#f6f1e6">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/fonts/fonts.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Page-local furniture for the brand sheet */
+    .bs-sheet { padding-block: clamp(40px, 5vw, 76px); }
+    .bs-sheet + .bs-sheet { border-top: 2px solid var(--ink); }
+    .bs-sheet-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-bottom: 1.6rem; }
+    .bs-sheet-head h2 { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.3rem, 2.6vw, 2rem); letter-spacing: -0.02em; text-transform: uppercase; margin: 0; }
+    .bs-sheet-head .bs-kick { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--signal-ink); }
+    .bs-sheet-grid { display: grid; gap: 2px; background: var(--ink); border: 2px solid var(--ink); grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+    .bs-cell { background: var(--plate); padding: 1.35rem 1.2rem; min-height: 150px; display: flex; flex-direction: column; justify-content: space-between; gap: 1rem; }
+    .bs-cell .bs-name { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+    .bs-cell code, .bs-spec code { font-family: var(--font-mono); font-size: 0.72rem; }
+    .bs-markrow { display: flex; flex-wrap: wrap; align-items: flex-end; gap: clamp(18px, 3vw, 40px); }
+    .bs-markrow figure { margin: 0; display: flex; flex-direction: column; gap: 0.6rem; align-items: flex-start; }
+    .bs-markrow figcaption { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+    .bs-lockup { display: flex; align-items: center; gap: 0.7rem; }
+    .bs-lockup .bs-word { font-family: var(--font-display); font-weight: 900; font-size: 1.45rem; line-height: 0.92; letter-spacing: -0.03em; text-transform: uppercase; }
+    .bs-lockup .bs-sub { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+    .bs-swatch { height: 76px; border: 2px solid var(--ink); }
+    .bs-stripe-demo { height: 18px; background: var(--stripe); border: 2px solid var(--ink); }
+    .bs-spec + .bs-spec { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--hair); }
+    .bs-spec .bs-lead-type { font-family: var(--font-display); font-weight: 900; font-size: clamp(1.6rem, 4vw, 2.6rem); letter-spacing: -0.03em; line-height: 1; margin: 0 0 0.5rem; }
+    .bs-spec .bs-ui-type { font-family: var(--font-sans); font-size: 1rem; line-height: 1.6; color: var(--ink-2); margin: 0 0 0.5rem; max-width: 60ch; }
+    .bs-spec .bs-mono-type { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 0; }
+    .bs-spec .bs-use { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; color: var(--muted); margin: 0.5rem 0 0; }
+    .bs-rules { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+    .bs-rules li { display: grid; grid-template-columns: 2.2rem 1fr; gap: 0.9rem; padding: 0.75rem 0; border-top: 1px solid var(--hair); font-size: 0.95rem; color: var(--ink-2); }
+    .bs-rules li:first-child { border-top: 0; }
+    .bs-rules b { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.1em; color: var(--signal-ink); }
+    .bs-vocab { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.4rem; }
+    .bs-vocab span { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid var(--ink); padding: 0.4em 0.6em; }
+    .bs-vocab span.no { border-style: dashed; color: var(--muted); text-decoration: line-through; }
+    .bs-sheet-note { font-size: 0.95rem; color: var(--ink-2); max-width: 62ch; }
+  </style>
+</head>
+<body>
+
+  <header class="top">
+    <div class="wrap toprow">
+      <a class="brand" href="index.html">
+        <span class="brandmark" aria-hidden="true"></span>
+        <span class="brandname">Keller Systems<em>Brand sheet</em></span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html#work">Work</a>
+        <a href="index.html#shelf">All systems</a>
+        <a class="btn btn-primary btn-sm" href="https://github.com/KELLERBABG" target="_blank" rel="noopener noreferrer">Source &#8599;</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="bs-sheet">
+      <div class="wrap">
+        <div class="bs-sheet-head">
+          <h2>Paper, ink and one signal colour</h2>
+          <span class="bs-kick">Identity sheet &middot; v2</span>
+        </div>
+        <p class="bs-sheet-note">
+          The portal is printed rather than rendered: a warm paper ground, ink for structure, and amber
+          reserved for the one thing on screen that matters. Everything below is the current system as it
+          ships with the same tokens, type and rules the site is built from.
+        </p>
+      </div>
+    </section>
+
+    <section class="bs-sheet">
+      <div class="wrap">
+        <div class="bs-sheet-head">
+          <h2>The ruled monogram</h2>
+          <span class="bs-kick">01 &middot; Mark</span>
+        </div>
+        <div class="bs-sheet-grid">
+          <div class="bs-cell">
+            <span class="bs-name">96 px</span>
+            <img src="assets/icon.svg" width="96" height="96" alt="Keller Systems monogram">
+            <code>assets/icon.svg</code>
+          </div>
+          <div class="bs-cell">
+            <span class="bs-name">56 px</span>
+            <img src="assets/icon.svg" width="56" height="56" alt="">
+            <code>header &amp; footer</code>
+          </div>
+          <div class="bs-cell">
+            <span class="bs-name">32 px</span>
+            <img src="assets/icon.svg" width="32" height="32" alt="">
+            <code>list rows</code>
+          </div>
+          <div class="bs-cell">
+            <span class="bs-name">16 px</span>
+            <img src="assets/icon.svg" width="16" height="16" alt="">
+            <code>favicon</code>
+          </div>
+        </div>
+        <p class="bs-sheet-note">
+          An ink field, an amber inner frame and a squared K. The frame keeps the mark legible at favicon
+          size; below 16&nbsp;px the K is dropped and the frame is left to carry it.
+        </p>
+      </div>
+    </section>
+
+    <section class="bs-sheet">
+      <div class="wrap">
+        <div class="bs-sheet-head">
+          <h2>Lockups</h2>
+          <span class="bs-kick">02 &middot; Wordmark</span>
+        </div>
+        <div class="bs-markrow">
+          <figure>
+            <span class="bs-lockup">
+              <img src="assets/icon.svg" width="40" height="40" alt="">
+              <span>
+                <span class="bs-word">Keller Systems</span><br>
+                <span class="bs-sub">Independent R&amp;D</span>
+              </span>
+            </span>
+            <figcaption>Horizontal &middot; default</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/icon.svg" width="52" height="52" alt="">
+            <figcaption>Mark alone &middot; app and avatar</figcaption>
+          </figure>
+        </div>
+        <p class="bs-sheet-note">
+          The descriptor reads <em>Independent R&amp;D</em>. On system pages it is replaced by the system's own
+          name, so a reader always knows which layer they are looking at.
+        </p>
+      </div>
+    </section>
+
+    <section class="bs-sheet">
+      <div class="wrap">
+        <div class="bs-sheet-head">
+          <h2>Palette</h2>
+          <span class="bs-kick">03 &middot; Colour</span>
+        </div>
+        <div class="bs-sheet-grid">
+          <div class="bs-cell">
+            <span class="bs-name">Paper &middot; ground</span>
+            <div class="bs-swatch" style="background:#f6f1e6"></div>
+            <code>--paper #f6f1e6</code>
+          </div>
+          <div class="bs-cell">
+            <span class="bs-name">Plate &middot; raised</span>
+            <div class="bs-swatch" style="background:#fffdf8"></div>
+            <code>--plate #fffdf8</code>
+          </div>
+          <div class="bs-cell">
+            <span class="bs-name">Ink &middot; structure</span>
+            <div class="bs-swatch" style="background:#141310"></div>
+            <code>--ink #141310</code>
+          </div>
+          <div class="bs-cell">
+            <span class="bs-name">Ink 2 &middot; body</span>
+            <div class="bs-swatch" style="background:#413c33"></div>
+            <code>--ink-2 #413c33</code>
+          </div>
+          <div class="bs-cell">
+            <span class="bs-name">Muted &middot; labels</span>
+            <div class="bs-swatch" style="background:#6a6155"></div>
+            <code>--muted #6a6155</code>
+          </div>
+          <div class="bs-cell">
+            <span class="bs-name">Signal &middot; one per view</span>
+            <div class="bs-swatch" style="background:#ffb000"></div>
+            <code>--signal #ffb000</code>
+          </div>
+          <div class="bs-cell">
+            <span class="bs-name">Signal ink &middot; on paper</span>
+            <div class="bs-swatch" style="background:#9a5200"></div>
+            <code>--signal-ink #9a5200</code>
+          </div>
+          <div class="bs-cell">
+            <span class="bs-name">Hazard stripe</span>
+            <div class="bs-stripe-demo"></div>
+            <code>--stripe</code>
+          </div>
+        </div>
+        <p class="bs-sheet-note">
+          Amber marks the largest value in a chart, the active chapter and the primary action, never
+          more than one of those at a time. Body text uses ink&nbsp;2 rather than ink, and the amber is
+          darkened to signal&nbsp;ink when it has to sit on paper as type.
+        </p>
+      </div>
+    </section>
+
+    <section class="bs-sheet">
+      <div class="wrap">
+        <div class="bs-sheet-head">
+          <h2>Type</h2>
+          <span class="bs-kick">04 &middot; Three faces</span>
+        </div>
+        <div class="bs-spec">
+          <p class="bs-lead-type">Machines that have to be right.</p>
+          <p class="bs-use">Archivo &middot; 800&ndash;900 &middot; display, headings, figures</p>
+        </div>
+        <div class="bs-spec">
+          <p class="bs-ui-type">
+            Geist carries everything meant to be read in sentences: descriptions, explanations and the
+            five labelled blocks inside each chapter.
+          </p>
+          <p class="bs-use">Geist &middot; 400&ndash;600 &middot; body and interface</p>
+        </div>
+        <div class="bs-spec">
+          <p class="bs-mono-type">Geist Mono &middot; labels, figures, file paths, 0.12em tracking</p>
+          <p class="bs-use">Geist Mono &middot; 400&ndash;500 &middot; annotation only, never for prose</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bs-sheet">
+      <div class="wrap">
+        <div class="bs-sheet-head">
+          <h2>Writing rules</h2>
+          <span class="bs-kick">05 &middot; Voice</span>
+        </div>
+        <p class="bs-sheet-note" style="margin-bottom:1.2rem">
+          The copy is held to these six rules. They exist because the failure mode is invisible: a page can be
+          grammatically clean and still read as though a machine wrote it to sound impressive.
+        </p>
+        <ul class="bs-rules">
+          <li><b>01</b><span>No contrast constructions. State the true thing instead of arguing it against a false one.</span></li>
+          <li><b>02</b><span>No sentence explaining why the previous sentence mattered. Cut from the dash onward and check what was lost.</span></li>
+          <li><b>03</b><span>Never call our own work honest, measured or real. Put the figure in and leave it.</span></li>
+          <li><b>04</b><span>No editorialising about which part is interesting. No "the point is", "the price of", "the real work".</span></li>
+          <li><b>05</b><span>No closing aphorism. End on the last fact.</span></li>
+          <li><b>06</b><span>Headings are nouns: Figures, Limits, Setup, rather than verdicts on their own section.</span></li>
+        </ul>
+        <p class="bs-sheet-note" style="margin-top:1.4rem">
+          A hook is still allowed, and chapter ledes use one. The test that separates a hook from a tic: a hook
+          names a thing, a number or a consequence, and a tic comments on the naming.
+        </p>
+        <div class="bs-vocab">
+          <span>Figures</span>
+          <span>Limits</span>
+          <span>The problem</span>
+          <span>How it works</span>
+          <span>What it gives you</span>
+          <span>Setup</span>
+          <span class="no">Measured, not claimed</span>
+          <span class="no">The honest catch</span>
+          <span class="no">Why people want it</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="bs-sheet">
+      <div class="wrap">
+        <div class="bs-sheet-head">
+          <h2>Assets</h2>
+          <span class="bs-kick">06 &middot; Files</span>
+        </div>
+        <div class="bs-sheet-grid">
+          <div class="bs-cell">
+            <span class="bs-name">Monogram</span>
+            <img src="assets/icon.svg" width="64" height="64" alt="">
+            <code>assets/icon.svg</code>
+          </div>
+          <div class="bs-cell">
+            <span class="bs-name">Repository banner</span>
+            <img src="assets/banner.svg" alt="" style="width:100%;border:2px solid var(--ink)">
+            <code>assets/banner.svg</code>
+          </div>
+          <div class="bs-cell">
+            <span class="bs-name">Hazard stripe</span>
+            <div class="bs-stripe-demo"></div>
+            <code>repeating-linear-gradient</code>
+          </div>
+        </div>
+        <p class="bs-sheet-note">
+          The banner carries its own light and dark variants through
+          <code>prefers-color-scheme</code>, so the repository page matches whichever theme the reader uses.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="foot">
+    <div class="wrap footrow">
+      <div>
+        <p class="footword">Keller Systems</p>
+        <p class="footmeta">Independent R&amp;D &middot; kellersystems.dev</p>
+      </div>
+      <div class="footlinks">
+        <a class="btn btn-quiet btn-sm" href="index.html#work">Work</a>
+        <a class="btn btn-quiet btn-sm" href="index.html#shelf">All systems</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,573 @@
+[
+  {
+    "crate": "symbolic_execution_core",
+    "function": "<z3_backend::SmtLibBackend as z3_backend::Z3Backend>::pop",
+    "block": "bb2",
+    "status": "FAIL",
+    "kind": "overflow",
+    "defect_class": "guard-limited",
+    "file": "crates/core/src/z3_backend/mod.rs",
+    "line": 264,
+    "details": "Arithmetic Overflow Detection (Sub) -> Exploit path found! [((*_1).1: usize) = 0, 1_usize = 1]",
+    "witness": [
+      {
+        "input": "((*_1).1: usize)",
+        "symbol": "overflow_l",
+        "value": "0"
+      },
+      {
+        "input": "1_usize",
+        "symbol": "overflow_r",
+        "value": "1"
+      }
+    ],
+    "witness_kind": "pinned"
+  },
+  {
+    "crate": "symbolic_execution_core",
+    "function": "<z3_backend::SmtLibBackend as z3_backend::Z3Backend>::push",
+    "block": "bb1",
+    "status": "FAIL",
+    "kind": "overflow",
+    "defect_class": "unguarded",
+    "file": "crates/core/src/z3_backend/mod.rs",
+    "line": 258,
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found! [((*_1).1: usize) = 18446744073709551615, 1_usize = 1]",
+    "witness": [
+      {
+        "input": "((*_1).1: usize)",
+        "symbol": "overflow_l",
+        "value": "18446744073709551615"
+      },
+      {
+        "input": "1_usize",
+        "symbol": "overflow_r",
+        "value": "1"
+      }
+    ],
+    "witness_kind": "pinned"
+  },
+  {
+    "crate": "symbolic_execution_core",
+    "function": "abstract_interpretation::AbstractInterpreter::fresh_variable",
+    "block": "bb0",
+    "status": "FAIL",
+    "kind": "overflow",
+    "defect_class": "unguarded",
+    "file": "crates/core/src/abstract_interpretation/mod.rs",
+    "line": 67,
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found! [((*_1).2: u64) = 18446744073709551615, 1_u64 = 1]",
+    "witness": [
+      {
+        "input": "((*_1).2: u64)",
+        "symbol": "overflow_l",
+        "value": "18446744073709551615"
+      },
+      {
+        "input": "1_u64",
+        "symbol": "overflow_r",
+        "value": "1"
+      }
+    ],
+    "witness_kind": "pinned"
+  },
+  {
+    "crate": "symbolic_execution_core",
+    "function": "evm::executor::SymbolicExecutor::fresh_sym",
+    "block": "bb0",
+    "status": "FAIL",
+    "kind": "overflow",
+    "defect_class": "unguarded",
+    "file": "crates/core/src/evm/executor.rs",
+    "line": 47,
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found! [((*_1).1: u64) = 18446744073709551615, 1_u64 = 1]",
+    "witness": [
+      {
+        "input": "((*_1).1: u64)",
+        "symbol": "overflow_l",
+        "value": "18446744073709551615"
+      },
+      {
+        "input": "1_u64",
+        "symbol": "overflow_r",
+        "value": "1"
+      }
+    ],
+    "witness_kind": "pinned"
+  },
+  {
+    "crate": "symbolic_execution_core",
+    "function": "evm::executor::SymbolicExecutor::step",
+    "block": "bb13",
+    "status": "WARN",
+    "kind": "overflow",
+    "file": "crates/core/src/evm/executor.rs",
+    "line": 60,
+    "details": "Arithmetic Overflow Detection (Sub) -> Undecided: `gas_cost (_21)` is read from `((*_461).4: u64)`, which this analysis does not model; the value behind it is not modelled either: `_461` is read from `((*_20).0: &evm::opcodes::Instruction)`, which this analysis does not model; the value behind it is not modelled either: `instruction (_20)` is read from `((_3 as Continue).0: &evm::parser::ParsedInstruction)`, which this analysis does not model; the value behind it is not modelled either: the result of the call to `<std::result::Result<&evm::parser::ParsedInstruction, types::error::ExecutionError> as std::ops::Try>::branch` is not modelled"
+  },
+  {
+    "crate": "symbolic_execution_core",
+    "function": "evm::executor::SymbolicExecutor::step",
+    "block": "bb19",
+    "status": "WARN",
+    "kind": "overflow",
+    "file": "crates/core/src/evm/executor.rs",
+    "line": 60,
+    "details": "Arithmetic Overflow Detection (Sub) -> Undecided: `_378` is read from `((*_468).0: u8)`, which this analysis does not model; the value behind it is not modelled either: `_468` is read from `((*_20).0: &evm::opcodes::Instruction)`, which this analysis does not model; the value behind it is not modelled either: `instruction (_20)` is read from `((_3 as Continue).0: &evm::parser::ParsedInstruction)`, which this analysis does not model; the value behind it is not modelled either: the result of the call to `<std::result::Result<&evm::parser::ParsedInstruction, types::error::ExecutionError> as std::ops::Try>::branch` is not modelled"
+  },
+  {
+    "crate": "symbolic_execution_core",
+    "function": "evm::executor::SymbolicExecutor::step",
+    "block": "bb199",
+    "status": "FAIL",
+    "kind": "overflow",
+    "defect_class": "guard-limited",
+    "file": "crates/core/src/evm/executor.rs",
+    "line": 60,
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found! [((*_2).3: usize) = 18446744073709551615, 1_usize = 1]",
+    "witness": [
+      {
+        "input": "((*_2).3: usize)",
+        "symbol": "overflow_l",
+        "value": "18446744073709551615"
+      },
+      {
+        "input": "1_usize",
+        "symbol": "overflow_r",
+        "value": "1"
+      }
+    ],
+    "witness_kind": "pinned"
+  },
+  {
+    "crate": "symbolic_execution_core",
+    "function": "evm::executor::SymbolicExecutor::step",
+    "block": "bb204",
+    "status": "FAIL",
+    "kind": "overflow",
+    "defect_class": "guard-limited",
+    "file": "crates/core/src/evm/executor.rs",
+    "line": 60,
+    "details": "Arithmetic Overflow Detection (Sub) -> Exploit path found! [32_usize = 32, _364 = 33]",
+    "witness": [
+      {
+        "input": "32_usize",
+        "symbol": "overflow_l",
+        "value": "32"
+      },
+      {
+        "input": "_364",
+        "symbol": "overflow_r",
+        "value": "33"
+      }
+    ],
+    "witness_kind": "one-of-many"
+  },
+  {
+    "crate": "symbolic_execution_core",
+    "function": "evm::executor::SymbolicExecutor::step",
+    "block": "bb21",
+    "status": "WARN",
+    "kind": "overflow",
+    "file": "crates/core/src/evm/executor.rs",
+    "line": 60,
+    "details": "Arithmetic Overflow Detection (Sub) -> Undecided: `_405` is read from `((*_470).0: u8)`, which this analysis does not model; the value behind it is not modelled either: `_470` is read from `((*_20).0: &evm::opcodes::Instruction)`, which this analysis does not model; the value behind it is not modelled either: `instruction (_20)` is read from `((_3 as Continue).0: &evm::parser::ParsedInstruction)`, which this analysis does not model; the value behind it is not modelled either: the result of the call to `<std::result::Result<&evm::parser::ParsedInstruction, types::error::ExecutionError> as std::ops::Try>::branch` is not modelled"
+  },
+  {
+    "crate": "symbolic_execution_core",
+    "function": "evm::executor::SymbolicExecutor::step",
+    "block": "bb227",
+    "status": "FAIL",
+    "kind": "overflow",
+    "defect_class": "guard-limited",
+    "file": "crates/core/src/evm/executor.rs",
+    "line": 60,
+    "details": "Arithmetic Overflow Detection (Sub) -> Exploit path found! [len (_407) = 0, 1_usize = 1]",
+    "witness": [
+      {
+        "input": "len (_407)",
+        "symbol": "overflow_l",
+        "value": "0"
+      },
+      {
+        "input": "1_usize",
+        "symbol": "overflow_r",
+        "value": "1"
+      }
+    ],
+    "witness_kind": "pinned"
+  },
+  {
+    "crate": "symbolic_execution_core",
+    "function": "evm::gas::contract_creation_cost",
+    "block": "bb0",
+    "status": "FAIL",
+    "kind": "overflow",
+    "defect_class": "unguarded",
+    "file": "crates/core/src/evm/gas.rs",
+    "line": 188,
+    "details": "Arithmetic Overflow Detection (Mul) -> Exploit path found! [_2 = 92233720368547759, 200_u64 = 200]",
+    "witness": [
+      {
+        "input": "_2",
+        "symbol": "overflow_l",
+        "value": "92233720368547759"
+      },
+      {
+        "input": "200_u64",
+        "symbol": "overflow_r",
+        "value": "200"
+      }
+    ],
+    "witness_kind": "one-of-many"
+  },
+  {
+    "crate": "symbolic_execution_core",
+    "function": "evm::gas::intrinsic_gas",
+    "block": "bb10",
+    "status": "FAIL",
+    "kind": "overflow",
+    "defect_class": "widening-limited",
+    "file": "crates/core/src/evm/gas.rs",
+    "line": 78,
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found! [gas (_3) = 18446744073709551612, 4_u64 = 4, byte (_9) = 0]",
+    "witness": [
+      {
+        "input": "gas (_3)",
+        "symbol": "overflow_l",
+        "value": "18446744073709551612"
+      },
+      {
+        "input": "4_u64",
+        "symbol": "overflow_r",
+        "value": "4"
+      },
+      {
+        "input": "byte (_9)",
+        "symbol": "mir_9",
+        "value": "0"
+      }
+    ],
+    "witness_kind": "one-of-many"
+  },
+  {
+    "crate": "symbolic_execution_core",
+    "function": "evm::gas::intrinsic_gas",
+    "block": "bb12",
+    "status": "FAIL",
+    "kind": "overflow",
+    "defect_class": "widening-limited",
+    "file": "crates/core/src/evm/gas.rs",
+    "line": 78,
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found! [gas (_3) = 18446744073709551600, 16_u64 = 16]",
+    "witness": [
+      {
+        "input": "gas (_3)",
+        "symbol": "overflow_l",
+        "value": "18446744073709551600"
+      },
+      {
+        "input": "16_u64",
+        "symbol": "overflow_r",
+        "value": "16"
+      }
+    ],
+    "witness_kind": "one-of-many"
+  },
+  {
+    "crate": "symbolic_execution_core",
+    "function": "evm::gas::keccak256_gas",
+    "block": "bb0",
+    "status": "FAIL",
+    "kind": "overflow",
+    "defect_class": "unguarded",
+    "file": "crates/core/src/evm/gas.rs",
+    "line": 181,
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found! [data_size (_1) = 18446744073709551600, 31_u64 = 31]",
+    "witness": [
+      {
+        "input": "data_size (_1)",
+        "symbol": "overflow_l",
+        "value": "18446744073709551600"
+      },
+      {
+        "input": "31_u64",
+        "symbol": "overflow_r",
+        "value": "31"
+      }
+    ],
+    "witness_kind": "one-of-many"
+  },
+  {
+    "crate": "symbolic_execution_core",
+    "function": "evm::gas::log_gas",
+    "block": "bb2",
+    "status": "FAIL",
+    "kind": "overflow",
+    "defect_class": "guard-limited",
+    "file": "crates/core/src/evm/gas.rs",
+    "line": 116,
+    "details": "Arithmetic Overflow Detection (Mul) -> Exploit path found! [data_size (_2) = 2305843009213693952, 8_u64 = 8]",
+    "witness": [
+      {
+        "input": "data_size (_2)",
+        "symbol": "overflow_l",
+        "value": "2305843009213693952"
+      },
+      {
+        "input": "8_u64",
+        "symbol": "overflow_r",
+        "value": "8"
+      }
+    ],
+    "witness_kind": "one-of-many"
+  },
+  {
+    "crate": "symbolic_execution_core",
+    "function": "evm::gas::log_gas",
+    "block": "bb3",
+    "status": "FAIL",
+    "kind": "overflow",
+    "defect_class": "guard-limited",
+    "file": "crates/core/src/evm/gas.rs",
+    "line": 116,
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found! [_3 = 3000, _8 = 18446744073709548616]",
+    "witness": [
+      {
+        "input": "_3",
+        "symbol": "overflow_l",
+        "value": "3000"
+      },
+      {
+        "input": "_8",
+        "symbol": "overflow_r",
+        "value": "18446744073709548616"
+      }
+    ],
+    "witness_kind": "one-of-many"
+  },
+  {
+    "crate": "symbolic_execution_core",
+    "function": "evm::gas::memory_expansion_cost",
+    "block": "bb11",
+    "status": "FAIL",
+    "kind": "overflow",
+    "defect_class": "guard-limited",
+    "file": "crates/core/src/evm/gas.rs",
+    "line": 63,
+    "details": "Arithmetic Overflow Detection (Mul) -> Exploit path found! [words_target (_8) = 4294967297, words_target (_8) = 4294967297]",
+    "witness": [
+      {
+        "input": "words_target (_8)",
+        "symbol": "overflow_l",
+        "value": "4294967297"
+      },
+      {
+        "input": "words_target (_8)",
+        "symbol": "overflow_r",
+        "value": "4294967297"
+      }
+    ],
+    "witness_kind": "one-of-many"
+  },
+  {
+    "crate": "symbolic_execution_core",
+    "function": "evm::gas::memory_expansion_cost",
+    "block": "bb14",
+    "status": "WARN",
+    "kind": "overflow",
+    "file": "crates/core/src/evm/gas.rs",
+    "line": 63,
+    "details": "Arithmetic Overflow Detection (Sub)"
+  },
+  {
+    "crate": "symbolic_execution_core",
+    "function": "evm::gas::memory_expansion_cost",
+    "block": "bb2",
+    "status": "FAIL",
+    "kind": "overflow",
+    "defect_class": "guard-limited",
+    "file": "crates/core/src/evm/gas.rs",
+    "line": 63,
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found! [current_size (_1) = 18446744073709551585, 31_usize = 31]",
+    "witness": [
+      {
+        "input": "current_size (_1)",
+        "symbol": "overflow_l",
+        "value": "18446744073709551585"
+      },
+      {
+        "input": "31_usize",
+        "symbol": "overflow_r",
+        "value": "31"
+      }
+    ],
+    "witness_kind": "one-of-many"
+  },
+  {
+    "crate": "symbolic_execution_core",
+    "function": "evm::gas::memory_expansion_cost",
+    "block": "bb4",
+    "status": "FAIL",
+    "kind": "overflow",
+    "defect_class": "guard-limited",
+    "file": "crates/core/src/evm/gas.rs",
+    "line": 63,
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found! [target_size (_2) = 18446744073709551585, 31_usize = 31]",
+    "witness": [
+      {
+        "input": "target_size (_2)",
+        "symbol": "overflow_l",
+        "value": "18446744073709551585"
+      },
+      {
+        "input": "31_usize",
+        "symbol": "overflow_r",
+        "value": "31"
+      }
+    ],
+    "witness_kind": "one-of-many"
+  },
+  {
+    "crate": "symbolic_execution_core",
+    "function": "evm::gas::memory_expansion_cost",
+    "block": "bb7",
+    "status": "FAIL",
+    "kind": "overflow",
+    "defect_class": "guard-limited",
+    "file": "crates/core/src/evm/gas.rs",
+    "line": 63,
+    "details": "Arithmetic Overflow Detection (Mul) -> Exploit path found! [words_current (_4) = 4294967297, words_current (_4) = 4294967297]",
+    "witness": [
+      {
+        "input": "words_current (_4)",
+        "symbol": "overflow_l",
+        "value": "4294967297"
+      },
+      {
+        "input": "words_current (_4)",
+        "symbol": "overflow_r",
+        "value": "4294967297"
+      }
+    ],
+    "witness_kind": "one-of-many"
+  },
+  {
+    "crate": "symbolic_execution_core",
+    "function": "evm::parser::ParsedBytecode::parse",
+    "block": "bb14",
+    "status": "WARN",
+    "kind": "overflow",
+    "file": "crates/core/src/evm/parser.rs",
+    "line": 31,
+    "details": "Arithmetic Overflow Detection (Sub) -> Undecided: `opcode (_8)` is read from `(*_1)[_9]`, which this analysis does not model"
+  },
+  {
+    "crate": "symbolic_execution_core",
+    "function": "evm::parser::ParsedBytecode::parse",
+    "block": "bb27",
+    "status": "WARN",
+    "kind": "overflow",
+    "file": "crates/core/src/evm/parser.rs",
+    "line": 31,
+    "details": "Arithmetic Overflow Detection (Sub) -> Undecided: `_51` is read from `((*_18).0: u8)`, which this analysis does not model; the value behind it is not modelled either: `instr (_18)` is read from `((_12 as Continue).0: &evm::opcodes::Instruction)`, which this analysis does not model; the value behind it is not modelled either: the result of the call to `<std::result::Result<&evm::opcodes::Instruction, types::error::ExecutionError> as std::ops::Try>::branch` is not modelled"
+  },
+  {
+    "crate": "symbolic_execution_core",
+    "function": "hash::SymbolicHashTable::generate_storage_slot",
+    "block": "bb14",
+    "status": "WARN",
+    "kind": "overflow",
+    "file": "crates/core/src/hash/mod.rs",
+    "line": 111,
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: the result of the call to `hash::SymbolicHashTable::hash_symbolic` is not modelled"
+  },
+  {
+    "crate": "symbolic_execution_core",
+    "function": "hash::SymbolicHashTable::generate_storage_slot",
+    "block": "bb16",
+    "status": "WARN",
+    "kind": "overflow",
+    "file": "crates/core/src/hash/mod.rs",
+    "line": 111,
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: the result of the call to `hash::SymbolicHashTable::hash_symbolic` is not modelled"
+  },
+  {
+    "crate": "symbolic_execution_core",
+    "function": "hash::SymbolicHashTable::hash_symbolic",
+    "block": "bb0",
+    "status": "FAIL",
+    "kind": "overflow",
+    "defect_class": "unguarded",
+    "file": "crates/core/src/hash/mod.rs",
+    "line": 88,
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found! [((*_1).2: u64) = 18446744073709551615, 1_u64 = 1]",
+    "witness": [
+      {
+        "input": "((*_1).2: u64)",
+        "symbol": "overflow_l",
+        "value": "18446744073709551615"
+      },
+      {
+        "input": "1_u64",
+        "symbol": "overflow_r",
+        "value": "1"
+      }
+    ],
+    "witness_kind": "pinned"
+  },
+  {
+    "crate": "symbolic_execution_core",
+    "function": "ir::ControlFlowGraph::from_jump_dests",
+    "block": "bb16",
+    "status": "FAIL",
+    "kind": "overflow",
+    "defect_class": "widening-limited",
+    "file": "crates/core/src/ir/mod.rs",
+    "line": 50,
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found! [id_counter (_12) = 18446744073709551615, 1_usize = 1]",
+    "witness": [
+      {
+        "input": "id_counter (_12)",
+        "symbol": "overflow_l",
+        "value": "18446744073709551615"
+      },
+      {
+        "input": "1_usize",
+        "symbol": "overflow_r",
+        "value": "1"
+      }
+    ],
+    "witness_kind": "pinned"
+  },
+  {
+    "crate": "symbolic_execution_core",
+    "function": "ir::build_ir",
+    "block": "bb10",
+    "status": "WARN",
+    "kind": "bounds",
+    "file": "crates/core/src/ir/mod.rs",
+    "line": 139,
+    "details": "Slice Boundary Analysis -> Undecided: `i (_17)` is read from `((_14 as Some).0: usize)`, which this analysis does not model; the value behind it is not modelled either: the result of the call to `<std::ops::RangeInclusive<usize> as std::iter::Iterator>::next` is not modelled"
+  },
+  {
+    "crate": "symbolic_execution_core",
+    "function": "types::value::U256::from_be_bytes",
+    "block": "bb12",
+    "status": "WARN",
+    "kind": "unmodelled-panic",
+    "file": "crates/core/src/types/mod.rs",
+    "line": 113,
+    "details": "Unmodelled panic site: the call to `std::result::Result::<[u8; 8], std::array::TryFromSliceError>::unwrap` panics when it has no value to return, and its body is not read by this analysis, so whether this site can panic was not decided."
+  },
+  {
+    "crate": "symbolic_execution_core",
+    "function": "z3_backend::SmtLibBackend::value_to_smt",
+    "block": "bb149",
+    "status": "WARN",
+    "kind": "overflow",
+    "file": "crates/core/src/z3_backend/mod.rs",
+    "line": 165,
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: the result of the call to `<&u8 as std::ops::Mul<u8>>::mul` is not modelled"
+  }
+]

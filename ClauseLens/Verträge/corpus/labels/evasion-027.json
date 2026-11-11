@@ -1,0 +1,79 @@
+{
+  "slug": "evasion-027",
+  "source": "generated",
+  "domain": "evasion",
+  "traps": [
+    {
+      "marker": "Der Anbieter ist berechtigt, die Anlage abzuschalten, wenn kein Wartungsvertrag für das laufende Jah",
+      "expectedType": "maintenance_conditional_shutdown",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: maintenance_conditional_shutdown (Technik: nbsp)."
+    },
+    {
+      "marker": "Die Laufzeit beträgt zwei Jahre und erneuert sich automatisch um zwölf Monate, wenn keine Partei rec",
+      "expectedType": "auto_renewal",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: auto_renewal (Technik: nbsp)."
+    },
+    {
+      "marker": "Der Anbieter kann mit einer Frist von drei Monaten kündigen, der Kunde erst mit einer Vorlaufzeit vo",
+      "expectedType": "notice_period",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: notice_period (Technik: nbsp)."
+    },
+    {
+      "marker": "Die Haftung des Anbieters für Datenverlust und entgangenen Gewinn ist ausgeschlossen, Ansprüche wege",
+      "expectedType": "liability",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: liability (Technik: nbsp)."
+    },
+    {
+      "marker": "Bei schuldhafter Überschreitung des Vertragsgebiets wird eine Vertragsstrafe in Höhe von 2500 EUR je",
+      "expectedType": "penalty",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: penalty (Technik: nbsp)."
+    },
+    {
+      "marker": "Für sämtliche Streitigkeiten ist ausschließlich das Gericht am Sitz des Anbieters zuständig.",
+      "expectedType": "jurisdiction",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: jurisdiction (Technik: nbsp)."
+    },
+    {
+      "marker": "Eine Ausgleichszahlung für die Zeit der Zurückhaltung ist nicht vorgesehen, der Kunde erhält für die",
+      "expectedType": "non_compete",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: non_compete (Technik: nbsp)."
+    },
+    {
+      "marker": "Der Anbieter darf die im Rahmen der Zusammenarbeit gewonnenen Auswertungen und Betriebsdaten für eig",
+      "expectedType": "data_grant",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: data_grant (Technik: nbsp)."
+    },
+    {
+      "marker": "Gerät der Kunde in Verzug, sind Verzugszinsen von achtzehn Prozent jährlich zu zahlen.",
+      "expectedType": "default_interest",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: default_interest (Technik: nbsp)."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Anbieter überlässt dem Kunden die Daten in einem gängigen Format.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag aus wichtigem Grund ohne Einhaltung einer Frist kündigen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien benennen jeweils einen Ansprechpartner für die operative Zusammenarbeit.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien sind berechtigt, gegen fällige Forderungen aufzurechnen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde erhält Schulungen und Zugang zum Systemhandbuch in der jeweils aktuellen Fassung.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde informiert den Anbieter unverzüglich über wesentliche Störungen im Vertrieb.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    }
+  ],
+  "uncovered": []
+}

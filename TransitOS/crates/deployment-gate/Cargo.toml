@@ -1,0 +1,15 @@
+[package]
+name = "transit-deployment-gate"
+edition = "2021"
+version = "1.0.0"
+license = "Apache-2.0"
+
+[dependencies]
+serde = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+transit-smt-solver = { path = "../smt-solver" }
+transit-verification-invariants = { path = "../verification-invariants" }
+transit-taint-analysis = { path = "../taint-analysis" }
+transit-state-machine = { path = "../state-machine" }
+transit-state-space = { path = "../state-space" }

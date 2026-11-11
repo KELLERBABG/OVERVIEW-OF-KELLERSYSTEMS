@@ -1,0 +1,74 @@
+{
+  "slug": "immobilien-023",
+  "source": "generated",
+  "domain": "Miete und Pacht",
+  "traps": [
+    {
+      "marker": "erhöht sich jährlich um 1,8 Prozent; ein Sonderkündigungsrecht besteht nicht",
+      "expectedType": "price_escalation",
+      "note": "GAP: Indexierung ohne Sonderkündigungsrecht, Zahl mit Komma."
+    },
+    {
+      "marker": "bis alle Forderungen aus der Geschäftsbeziehung ausgeglichen sind",
+      "expectedType": "extended_retention_of_title",
+      "note": "GAP: Eigentumsvorbehalt bis zum Ausgleich aller Forderungen."
+    },
+    {
+      "marker": "exclusive jurisdiction of the courts of the Provider's seat",
+      "expectedType": "jurisdiction",
+      "note": "Englische Gerichtsstandsklausel am Sitz des Anbieters."
+    },
+    {
+      "marker": "ohne Abmahnung gesperrt werden, bereits gezahlte Entgelte werden nicht erstattet",
+      "expectedType": "service_suspension",
+      "note": "Sperrung ohne Abmahnung, keine Erstattung."
+    },
+    {
+      "marker": "keine eigene Stromerzeugung auf dem Dach",
+      "expectedType": "non_compete",
+      "note": "GAP: Wettbewerbsverbot fuer die Eigentuemerin."
+    },
+    {
+      "marker": "hält die Eigentümerin von Ansprüchen Dritter wegen Dachschäden schadlos",
+      "expectedType": "third_party_indemnity",
+      "note": "GAP: Freistellung der Eigentuemerin fuer Drittansprueche."
+    },
+    {
+      "marker": "gelten zeitlich unbeschränkt fort, auch nach Rückbau",
+      "expectedType": "excessive_survival",
+      "note": "GAP: Unbefristete Nachwirkung der Verkehrssicherungspflichten."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "Symmetrische Vertraulichkeit."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform zugelassen."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhalt."
+    },
+    {
+      "marker": "Zahlungen sind innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Zahlungsfrist."
+    },
+    {
+      "marker": "Änderungen des Leistungsumfangs bedürfen der Abstimmung beider Parteien",
+      "note": "Einvernehmliche Aenderung."
+    },
+    {
+      "marker": "Nach Vertragsende erhält der Kunde die Vertragsdaten kostenfrei in einem offenen Format",
+      "note": "Kostenfreier Datenexport."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Nutzung der Dachflächen der Halle 3",
+      "note": "Kein Detektor fuer Einspeisevergütung, Netzanschluss oder Rueckbaupflicht."
+    }
+  ]
+}

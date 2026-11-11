@@ -1,0 +1,69 @@
+{
+  "slug": "saas-001",
+  "source": "generated",
+  "domain": "Cloud-Infrastruktur (IaaS), deutsches Recht",
+  "traps": [
+    {
+      "marker": "Das Abonnement setzt sich nach Ablauf der Festlaufzeit jeweils um zwölf Monate fort, sofern es keine",
+      "expectedType": "auto_renewal",
+      "note": "Paraphrase. Automatische Verlaengerung um zwoelf Monate ohne echte Kündigungshuerde."
+    },
+    {
+      "marker": "Die Haftung für mittelbare Schäden und entgangenen Gewinn ist abbedungen.",
+      "expectedType": "liability",
+      "note": "Paraphrase. Haftungsdeckel auf drei Monatsentgelte."
+    },
+    {
+      "marker": "Rechtsstreitigkeiten sind ausschließlich vor den Gerichten am Sitz des Anbieters auszutragen.",
+      "expectedType": "jurisdiction",
+      "note": "Paraphrase. Einheitlicher Ort liegt am Sitz der Anbieterin."
+    },
+    {
+      "marker": "Der Anbieter ist berechtigt, den Leistungsumfang jederzeit einzuschränken.",
+      "expectedType": "unilateral_change",
+      "note": "Paraphrase. Einseitige Leistungsreduktion ohne Begruendung."
+    },
+    {
+      "marker": "Die Verfügbarkeitsangaben in Anlage 2 sind bloße Zielgröße ohne Rechtsanspruch.",
+      "expectedType": "unverbindliche_sla_falle",
+      "note": "Paraphrase. Verfuegbarkeit nur als Bemuehen, kein Anspruch."
+    },
+    {
+      "marker": "Mängel sind binnen fünf Werktagen nach Erhalt anzuzeigen; danach gilt die Leistung als genehmigt.",
+      "expectedType": "deemed_acceptance",
+      "note": "Paraphrase. Fingierte vorbehaltlose Abnahme nach fuenf Werktagen."
+    },
+    {
+      "marker": "Betrieb der virtuellen Maschinen abzuschalten, sofern kein gesonderter Wartungsvertrag",
+      "expectedType": "maintenance_conditional_shutdown",
+      "note": "Abschaltung nur bei fehlendem Wartungsvertrag."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "vertrauliche Informationen der jeweils anderen Partei nicht an Dritte weiterzugeben",
+      "note": "Wechselseitige Vertraulichkeit."
+    },
+    {
+      "marker": "Das Recht beider Parteien, den Vertrag aus wichtigem Grund fristlos zu kündigen",
+      "note": "Wechselseitiges Kuendigungsrecht aus wichtigem Grund."
+    },
+    {
+      "marker": "erhält bei Vertragsende seine Daten in einem gängigen Format kostenfrei zurück",
+      "note": "Kostenfreier Datenexport."
+    },
+    {
+      "marker": "innerhalb von 30 Tagen nach Rechnungsstellung ohne Abzug fällig",
+      "note": "Uebliche Zahlungsfrist von 30 Tagen."
+    },
+    {
+      "marker": "Erklärungen im Rahmen dieses Vertrags können per E-Mail in Textform abgegeben werden",
+      "note": "Textform ausdruecklich erlaubt."
+    },
+    {
+      "marker": "kann Unterauftragnehmer der Anbieterin ablehnen, die nicht die Voraussetzungen",
+      "note": "Widerspruchsrecht gegen Unterauftragnehmer."
+    }
+  ],
+  "uncovered": []
+}

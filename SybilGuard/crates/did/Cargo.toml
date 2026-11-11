@@ -1,0 +1,16 @@
+[package]
+name = "sybil-did"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "W3C Decentralized Identifier (DID) integration: DID method, create/resolve/update operations, local secure storage"
+
+[dependencies]
+sybil-core = { path = "../core" }
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+chrono.workspace = true
+ed25519-dalek.workspace = true
+base64.workspace = true

@@ -1,0 +1,74 @@
+{
+  "slug": "immobilien-012",
+  "source": "generated",
+  "domain": "Bauträger",
+  "traps": [
+    {
+      "marker": "behält sich vor, den Kaufpreis um bis zu acht Prozent zu erhöhen",
+      "expectedType": "price_escalation",
+      "note": "GAP: Einseitige Kaufpreiserhoehung ohne Sonderkündigungsrecht."
+    },
+    {
+      "marker": "gilt sie als mangelfrei abgenommen",
+      "expectedType": "deemed_acceptance",
+      "note": "Abnahmefiktion durch Nutzung."
+    },
+    {
+      "marker": "verjähren innerhalb von einem Jahr nach Abnahme",
+      "expectedType": "statute_of_limitations",
+      "note": "GAP: Verkuerzung der Maengelverjaehrung auf ein Jahr."
+    },
+    {
+      "marker": "Das Sondereigentum wird wie gesehen überlassen",
+      "expectedType": "as_is_software_disclaimer",
+      "note": "GAP: Erwerb im Ist-Zustand."
+    },
+    {
+      "marker": "darf die Baubeschreibung nach billigem Ermessen anpassen",
+      "expectedType": "unilateral_change",
+      "note": "GAP: Einseitige Aenderung der Baubeschreibung."
+    },
+    {
+      "marker": "Die Haftung des Bauträgers ist auf die Höhe der Baukosten begrenzt",
+      "expectedType": "liability",
+      "note": "Haftungsdeckel auf die Baukosten."
+    },
+    {
+      "marker": "Ausschließlicher Gerichtsstand ist Düsseldorf",
+      "expectedType": "jurisdiction",
+      "note": "Ausschliesslicher Gerichtsstand am Sitz des Bautraegers."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "Symmetrische Vertraulichkeit."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform zugelassen."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhalt."
+    },
+    {
+      "marker": "Zahlungen sind innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Zahlungsfrist."
+    },
+    {
+      "marker": "Änderungen des Leistungsumfangs bedürfen der Abstimmung beider Parteien",
+      "note": "Einvernehmliche Aenderung."
+    },
+    {
+      "marker": "Nach Vertragsende erhält der Kunde die Vertragsdaten kostenfrei in einem offenen Format",
+      "note": "Kostenfreier Datenexport."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Bauträger errichtet auf dem Grundstück Rheinufer 22 ein Mehrfamilienhaus",
+      "note": "Kein Detektor fuer Ratenplan nach MaBV oder Baubeschreibung."
+    }
+  ]
+}

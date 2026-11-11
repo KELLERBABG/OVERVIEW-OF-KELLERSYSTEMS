@@ -1,0 +1,33 @@
+[package]
+name = "fhe-phone"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "Android-style phone shell that brings FHE-DB to life: real TFHE encryption, a real embedded fhe-server, and the real fhe-client SDK, inside a native webview .exe"
+publish = false
+# Deploys the vendored WebView2Loader.dll next to the produced exe; wry
+# cannot load WebView2 at runtime without it.
+build = "build.rs"
+
+[dependencies]
+fhe-core.workspace = true
+fhe-client.workspace = true
+fhe-server.workspace = true
+axum.workspace = true
+tokio.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+tower-http.workspace = true
+anyhow.workspace = true
+tao = "0.36"
+wry = "0.56"
+# Encrypted-at-rest key storage (PIN-derived AES-256-GCM via Argon2id).
+# Both are pure-Rust, so they build on the Windows-GNU toolchain.
+argon2 = "0.5"
+aes-gcm = "0.10"
+base64 = "0.22"
+# Wipes derived keys, decrypted key buffers, and the in-memory PIN on drop.
+zeroize = "1"

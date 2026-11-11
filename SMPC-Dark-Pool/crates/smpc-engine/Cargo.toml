@@ -1,0 +1,22 @@
+[package]
+name = "smpc-engine"
+version.workspace = true
+edition.workspace = true
+description = "SMPC engine providing secure addition, multiplication, comparison, and equality"
+
+[dependencies]
+sss = { path = "../sss" }
+ark-bn254.workspace = true
+ark-ff.workspace = true
+rand.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+criterion.workspace = true
+
+[[bench]]
+name = "smpc_bench"
+harness = false
+
+[lints]
+rust.unsafe_code = "forbid"

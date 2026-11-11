@@ -1,0 +1,28 @@
+name: release-install
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  clean-install:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install native build prerequisites
+        run: sudo apt-get update && sudo apt-get install -y clang libclang-dev unzip
+
+      # This job deliberately has no Cargo/Z3 cache: it validates the path a new
+      # adopter uses, not the cached development build in verify.yml.
+      - name: Install from pinned source and Z3 release
+        env:
+          KELLER_PREFIX: ${{ runner.temp }}/keller-prefix
+        run: bash scripts/install-linux.sh
+
+      - name: Exercise installed CLI and strict coverage policy
+        env:
+          KELLER_LAUNCHER: ${{ runner.temp }}/keller-prefix/bin/keller-verify
+        run: python3 tests/release_install_smoke.py

@@ -1,0 +1,86 @@
+{
+  "slug": "einkauf-025",
+  "source": "generated",
+  "domain": "Einkauf und Lieferantenrahmenvertrag, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Für Direktgeschäfte zwischen dem Lieferanten und Abnehmern steht dem Besteller keine Provision zu",
+      "expectedType": "agency_commission_exclusion",
+      "note": "Provisionsausschluss fuer Direktgeschaefte"
+    },
+    {
+      "marker": "Auf einen Ausgleich für den Kundenstamm verzichtet der Besteller ausdrücklich",
+      "expectedType": "agency_goodwill_waiver",
+      "note": "Verzicht auf Ausgleich ohne die Registerwoerter"
+    },
+    {
+      "marker": "nur nach vorheriger schriftlicher Bestätigung durch den Lieferanten in Ansatz gebracht",
+      "expectedType": "setoff_restriction",
+      "note": "Aufrechnungsausschluss ohne das Wort Aufrechnung"
+    },
+    {
+      "marker": "ohne Zustimmung des Bestellers unwirksam",
+      "expectedType": "assignment_restriction",
+      "note": "Zessionsverbot ohne die Registerwoerter Abtretung"
+    },
+    {
+      "marker": "Der Lieferant behält sich vor, die Lieferbedingungen anzupassen",
+      "expectedType": "unilateral_change",
+      "note": "Einseitiger Aenderungsvorbehalt"
+    },
+    {
+      "marker": "Verbot jedweder Tätigkeit für Wettbewerber gilt über die Beendigung",
+      "expectedType": "non_compete",
+      "note": "Nachvertragliches Wettbewerbsverbot ohne Entschaedigung"
+    },
+    {
+      "marker": "Erklärungen per E-Mail sind für die Vertragsabwicklung nicht wirksam",
+      "expectedType": "written_form_trap",
+      "note": "Formzwang durch Ausschluss elektronischer Erklaerungen"
+    },
+    {
+      "marker": "Zuvor kommunizierte Leistungsbeschreibungen treten mit Unterzeichnung",
+      "expectedType": "entire_agreement",
+      "note": "Vollstaendigkeitsklausel"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Lieferant stellt die Prüfprotokolle in Textform bereit",
+      "note": "Bereitstellung in Textform"
+    },
+    {
+      "marker": "Der Besteller wählt unter den in Anlage 3 genannten Varianten eine aus",
+      "note": "Einseitiges Wahlrecht ohne Pflichten"
+    },
+    {
+      "marker": "Rechnungen sind innerhalb von dreißig Tagen ohne Abzug zu begleichen",
+      "note": "Marktueblicher Zahlungstermin"
+    },
+    {
+      "marker": "Es gilt das Recht der Bundesrepublik Deutschland",
+      "note": "Neutrale Rechtswahl"
+    },
+    {
+      "marker": "Änderungen der Anlage 1 bedürfen der Zustimmung beider Parteien in Textform",
+      "note": "Symmetrische Aenderungsklausel"
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag einvernehmlich beenden",
+      "note": "Einvernehmliche Beendigung"
+    },
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Zulaessige Haftungsklausel"
+    },
+    {
+      "marker": "Beide Parteien behandeln die Zeichnungen der anderen Seite vertraulich",
+      "note": "Wechselseitige Vertraulichkeit"
+    },
+    {
+      "marker": "Bei berechtigter Rüge bessert der Lieferant innerhalb von zehn Werktagen nach",
+      "note": "Nachbesserungspflicht"
+    }
+  ],
+  "uncovered": []
+}

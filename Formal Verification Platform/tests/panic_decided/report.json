@@ -1,0 +1,35 @@
+[
+  {
+    "crate": "panic_decided",
+    "function": "known_err",
+    "block": "bb0",
+    "status": "FAIL",
+    "kind": "decided-panic",
+    "defect_class": "known-panic",
+    "file": "src/main.rs",
+    "line": 9,
+    "details": "Decided panic site: the call to `std::result::Result::<u8, u8>::unwrap` is reached with `Err`, the variant it cannot return, so it panics whenever this site is reached."
+  },
+  {
+    "crate": "panic_decided",
+    "function": "known_none",
+    "block": "bb0",
+    "status": "FAIL",
+    "kind": "decided-panic",
+    "defect_class": "known-panic",
+    "file": "src/main.rs",
+    "line": 4,
+    "details": "Decided panic site: the call to `std::option::Option::<u8>::unwrap` is reached with `None`, the variant it cannot return, so it panics whenever this site is reached."
+  },
+  {
+    "crate": "panic_decided",
+    "function": "known_ok_unwrap_err",
+    "block": "bb0",
+    "status": "FAIL",
+    "kind": "decided-panic",
+    "defect_class": "known-panic",
+    "file": "src/main.rs",
+    "line": 14,
+    "details": "Decided panic site: the call to `std::result::Result::<u8, u8>::unwrap_err` is reached with `Ok`, the variant it cannot return, so it panics whenever this site is reached."
+  }
+]

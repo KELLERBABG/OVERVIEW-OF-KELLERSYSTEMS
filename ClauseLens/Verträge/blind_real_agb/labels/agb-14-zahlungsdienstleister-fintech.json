@@ -1,0 +1,90 @@
+{
+  "slug": "agb-14-zahlungsdienstleister-fintech",
+  "domain": "Payment-Service-Provider & Händler-Acquiring AGB",
+  "source": "Blind Real-AGB Benchmark 2026 (vor Engine-Lauf gelabelt)",
+  "traps": [
+    {
+      "marker": "jederzeit in ihrer jeweils aktuellen Fassung unter https://www.payfina-acquiring.de",
+      "expectedType": "dynamic_url_referral",
+      "statutoryBasis": "§ 305 Abs. 2 BGB / § 307 Abs. 1 S. 2 BGB",
+      "note": "Dynamischer Verweis auf externe Online-Richtlinien in der jeweils aktuellen Fassung verstößt gegen das Transparenzgebot und wirkt als unzulässiger einseitiger Änderungsvorbehalt."
+    },
+    {
+      "marker": "handelt es sich jedoch um einen unverbindlichen Zielwert, aus dessen Unterschreitung",
+      "expectedType": "unverbindliche_sla_falle",
+      "statutoryBasis": "§ 307 Abs. 2 Nr. 2 BGB",
+      "note": "Herabstufung der Kernleistungsverfügbarkeit zu einem unverbindlichen Zielwert unter Ausschluss jeglicher Ansprüche höhlt die Hauptleistungspflicht aus."
+    },
+    {
+      "marker": "Transaktionsentgelte, Disagiosätze und Grundgebühren jederzeit nach eigenem Ermessen",
+      "expectedType": "price_escalation",
+      "statutoryBasis": "§ 307 Abs. 1 BGB",
+      "note": "Einseitige Preiserhöhung nach freiem Ermessen ohne Sonderkündigungsrecht und ohne Pflicht zur Weitergabe von Kostensenkungen benachteiligt den Vertragspartner unangemessen."
+    },
+    {
+      "marker": "innerhalb einer Ausschlussfrist von zehn Werktagen nach Bereitstellung im Händlerportal",
+      "expectedType": "deemed_acceptance",
+      "statutoryBasis": "§ 308 Nr. 5 BGB / § 307 BGB",
+      "note": "Unangemessen kurze Ausschlussfrist von zehn Werktagen mit Genehmigungsfiktion für Abrechnungen beschneidet berechtigte Einwendungen."
+    },
+    {
+      "marker": "auch dann, wenn die Gegenforderungen des Händlers unbestritten oder rechtskräftig",
+      "expectedType": "setoff_restriction",
+      "statutoryBasis": "§ 309 Nr. 3 BGB / § 307 BGB",
+      "note": "Vollständiger Ausschluss der Aufrechnung auch bei unbestrittenen oder rechtskräftig festgestellten Forderungen ist auch im unternehmerischen Verkehr nach § 307 BGB unwirksam."
+    },
+    {
+      "marker": "unabhängig davon, ob den Händler an dem zugrunde liegenden Verstoß ein Verschulden trifft",
+      "expectedType": "third_party_indemnity",
+      "statutoryBasis": "§ 307 Abs. 2 Nr. 1 BGB",
+      "note": "Verschuldensunabhängige Freistellungspflicht auf erstes Anfordern weicht vom gesetzlichen Leitbild des Verschuldensprinzips (§ 276 BGB) ab."
+    },
+    {
+      "marker": "sobald der Händler mit einer Gebührenzahlung auch nur in geringfügiger Höhe in Verzug",
+      "expectedType": "service_suspension",
+      "statutoryBasis": "§ 320 Abs. 2 BGB / § 307 BGB",
+      "note": "Sofortige Leistungssperre und Kontoeinfrierung bereits bei geringfügigem Zahlungsverzug ohne vorherige Abmahnung verstößt gegen § 320 Abs. 2 BGB."
+    },
+    {
+      "marker": "einschließlich der Verletzung wesentlicher Vertragspflichten (Kardinalpflichten)",
+      "expectedType": "liability",
+      "statutoryBasis": "§ 307 Abs. 2 Nr. 2 BGB",
+      "note": "Unangemessen niedrige pauschale Haftungsobergrenze bei Kardinalpflichtverletzungen sowie genereller Ausschluss des entgangenen Gewinns."
+    },
+    {
+      "marker": "begründen die internen Server- und Transaktionsprotokolle des Zahlungsdienstleisters einen unwiderlegbaren Vollbeweis",
+      "expectedType": "audit_log_manipulation",
+      "statutoryBasis": "§ 309 Nr. 12 BGB / § 307 BGB",
+      "note": "Zuweisung unwiderlegbarer Beweiskraft an eigene Serverprotokolle unter Ausschluss des Gegenbeweises verändert die Beweislast unzulässig."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Unterauftragnehmer nur nach vorheriger schriftlicher Information des Händlers einsetzen",
+      "note": "Transparenter Einsatz von Unterauftragnehmern mit Vorabinformation und Widerspruchsrecht bei berechtigten Bedenken."
+    },
+    {
+      "marker": "Für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit sowie für",
+      "note": "Gesetzeskonforme unbeschränkte Haftung für Personenschäden sowie Vorsatz und grobe Fahrlässigkeit nach § 309 Nr. 7 BGB."
+    },
+    {
+      "marker": "Geschäfts- und Betriebsgeheimnisse der jeweils anderen Partei streng vertraulich",
+      "note": "Ausgewogene beiderseitige Geheimhaltungsverpflichtung."
+    },
+    {
+      "marker": "von beiden Parteien mit einer Frist von einem Monat zum Monatsende ordentlich",
+      "note": "Faire, symmetrische ordentliche Kündigungsfrist von einem Monat zum Monatsende."
+    },
+    {
+      "marker": "Das Recht beider Vertragsparteien zur außerordentlichen fristlosen Kündigung aus wichtigem",
+      "note": "Ausdrückliche Wahrung des gesetzlichen Kündigungsrechts aus wichtigem Grund nach § 314 BGB."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "aktiviert der Zahlungsdienstleister für jeden Händler automatisch das kostenpflichtige Zusatzpaket",
+      "statutoryBasis": "§ 305c Abs. 1 BGB / § 307 Abs. 1 BGB",
+      "note": "Negative-Option-Klausel (automatische kostenpflichtige Zusatzleistung bei ausbleibendem Widerspruch) umgeht das Vertragsabschlussprinzip und ist als überraschende Klausel unwirksam."
+    }
+  ]
+}

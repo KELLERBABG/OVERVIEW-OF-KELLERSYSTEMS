@@ -1,0 +1,79 @@
+{
+  "slug": "einkauf-011",
+  "source": "generated",
+  "domain": "Einkauf und Lieferantenrahmenvertrag, deutsches und oesterreichisches Recht",
+  "traps": [
+    {
+      "marker": "kann die Fertigungslinien jederzeit auditieren",
+      "expectedType": "unreasonable_audit",
+      "note": "Auditrecht ohne Anlass und ohne Vorlaufzeit"
+    },
+    {
+      "marker": "Protokollierung des Auftragnehmers ist für Umfang und Güte",
+      "expectedType": "audit_log_manipulation",
+      "note": "Anbieterprotokolle als maßgeblich ohne Vollbeweis-Formel"
+    },
+    {
+      "marker": "Sachmängelansprüche erlöschen neun Monate nach Abnahme",
+      "expectedType": "statute_of_limitations",
+      "note": "Abgekuerzte Verjaehrung als Zahlwort ohne das Wort verjaehren"
+    },
+    {
+      "marker": "Die Vergütung steigt jährlich um bis zu 8 Prozent",
+      "expectedType": "price_escalation",
+      "note": "Einseitige Preisanhebung, ohne die Woerter Preisanpassungsklausel oder Index"
+    },
+    {
+      "marker": "verfällt der Anspruch auf die vereinbarte Gutschrift",
+      "expectedType": "service_credit_forfeiture",
+      "note": "Verfall der Gutschrift bei fehlendem Sicherheitspatch"
+    },
+    {
+      "marker": "unwiderrufliches, übertragbares Nutzungsrecht an allen Prüfdaten",
+      "expectedType": "data_grant",
+      "note": "Weitreichende Rechteeinraeumung ohne die Worte weltweit oder unbegrenzt"
+    },
+    {
+      "marker": "Nachträgliche Abgabenbelastungen trägt der Kunde unabhängig davon",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Steuerlastverlagerung ohne Verschulden"
+    },
+    {
+      "marker": "Firmennamen des Kunden zu Referenzzwecken verwenden",
+      "expectedType": "marketing_reference",
+      "note": "Referenznutzung ohne Zustimmungsvorbehalt"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Prüfungen werden mit angemessener Vorlaufzeit angekündigt",
+      "note": "Ankuendigungspflicht fuer Pruefungen"
+    },
+    {
+      "marker": "Die gesetzlichen Mängelrechte des Kunden bleiben im Übrigen unberührt",
+      "note": "Gesetzliche Maengelrechte bleiben erhalten"
+    },
+    {
+      "marker": "Rechnungen sind innerhalb von dreißig Tagen netto zu begleichen",
+      "note": "Marktueblicher Zahlungstermin"
+    },
+    {
+      "marker": "Veröffentlichungen stimmen die Parteien vorab ab",
+      "note": "Einvernehmliche Veroeffentlichung"
+    },
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Zulaessige Haftungsklausel"
+    },
+    {
+      "marker": "Beide Parteien behandeln die technischen Unterlagen der anderen Seite vertraulich",
+      "note": "Wechselseitige Vertraulichkeit"
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Die Parteien benennen jeweils eine verantwortliche Person",
+      "note": "Benennung ohne Haftungsfolge, kein Detektor"
+    }
+  ]
+}

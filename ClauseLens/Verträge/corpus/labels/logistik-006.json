@@ -1,0 +1,93 @@
+{
+  "slug": "logistik-006",
+  "source": "generated",
+  "domain": "Lagerlogistik",
+  "traps": [
+    {
+      "marker": "Mindestlaufzeit beträgt achtundvierzig Monate und eine vorzeitige Kündigung ist ausgeschlossen",
+      "expectedType": "notice_period",
+      "note": "Red-team Klausel: notice_period"
+    },
+    {
+      "marker": "Der Kunde verpflichtet sich, sämtliche Betriebs- und Handelsdaten streng vertraulich zu behandeln",
+      "expectedType": "asymmetric_confidentiality",
+      "note": "Red-team Klausel: asymmetric_confidentiality"
+    },
+    {
+      "marker": "Der Anbieter darf ein Audit ohne vorherige Ankündigung durchführen",
+      "expectedType": "unreasonable_audit",
+      "note": "Red-team Klausel: unreasonable_audit"
+    },
+    {
+      "marker": "nur gegen eine gesonderte Herausgabegebühr möglich",
+      "expectedType": "data_lockin",
+      "note": "Red-team Klausel: data_lockin"
+    },
+    {
+      "marker": "den Kunden als Referenzkunden zu führen",
+      "expectedType": "marketing_reference",
+      "note": "Red-team Klausel: marketing_reference"
+    },
+    {
+      "marker": "entfällt der Anspruch auf eine Gutschrift",
+      "expectedType": "service_credit_forfeiture",
+      "note": "Red-team Klausel: service_credit_forfeiture"
+    },
+    {
+      "marker": "Es gelten die jeweils aktuellen Lagerbedingungen unter",
+      "expectedType": "dynamic_url_referral",
+      "note": "Red-team Klausel: dynamic_url_referral"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "stimmen die Lagerkapazitäten monatlich ab",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Kündigung aus wichtigem Grund bleibt unberührt",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Sicherheitsmanagementsystem nach ISO 9001",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "einmal jährlich einen Prüfbericht",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "seine Bestandsdaten jederzeit in einem gängigen Format exportieren",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Nennung des Kunden in Pressemitteilungen bedarf der vorherigen Zustimmung",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "monatlich einen Verfügbarkeitsbericht bereit",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "informiert den Kunden über Änderungen der Bedingungen",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "innerhalb von 30 Tagen ohne Abzug zahlbar",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "9.3 Es gilt deutsches Recht.",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Unterauftragnehmer mit einer Vorlaufzeit von vierzehn Tagen benennen",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

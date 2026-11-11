@@ -1,0 +1,12 @@
+[
+  {
+    "crate": "undecided",
+    "function": "guarded_sum",
+    "block": "bb6",
+    "status": "WARN",
+    "kind": "overflow",
+    "file": "src/main.rs",
+    "line": 36,
+    "details": "Arithmetic Overflow Detection (Add)"
+  }
+]

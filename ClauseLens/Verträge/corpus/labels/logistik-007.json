@@ -1,0 +1,89 @@
+{
+  "slug": "logistik-007",
+  "source": "generated",
+  "domain": "Just-in-Sequence-Zulieferung",
+  "traps": [
+    {
+      "marker": "Mangels Wartungsvereinbarung erfolgt eine Stilllegung der Anlage",
+      "expectedType": "maintenance_conditional_shutdown",
+      "note": "Red-team Klausel: maintenance_conditional_shutdown"
+    },
+    {
+      "marker": "Subunternehmer ohne vorherige Ankündigung einsetzen",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "Red-team Klausel: subcontractor_uncontrolled"
+    },
+    {
+      "marker": "mit einer Frist von dreißig Tagen ohne Angabe von Gründen kündigen",
+      "expectedType": "unilateral_convenience_termination",
+      "note": "Red-team Klausel: unilateral_convenience_termination"
+    },
+    {
+      "marker": "Die ordentliche Kündigung durch den Auftraggeber ist ausgeschlossen",
+      "expectedType": "asymmetric_termination",
+      "note": "Red-team Klausel: asymmetric_termination"
+    },
+    {
+      "marker": "vorzeitigen Beendigung wird eine pauschale Abstandszahlung",
+      "expectedType": "early_termination_charge",
+      "note": "Red-team Klausel: early_termination_charge"
+    },
+    {
+      "marker": "trägt die Beweislast dafür, dass die Ursache nicht auf einem Fehler des Anbieters beruht",
+      "expectedType": "burden_of_proof",
+      "note": "Red-team Klausel: burden_of_proof"
+    },
+    {
+      "marker": "Ansprüche des Auftraggebers verjähren innerhalb von sechs Monaten",
+      "expectedType": "statute_of_limitations",
+      "note": "Red-team Klausel: statute_of_limitations"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "stimmen die Anlieferfenster wöchentlich ab",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "die Baugruppen einen Sicherheitsbestand vor.",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Qualifikation der eingesetzten Mitarbeiter auf Anfrage mit",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Schlussabrechnung über die erbrachten Lieferungen",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "dokumentieren die Prüfergebnisse der Baugruppen",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Hemmung der Verjährung bleiben unberührt",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "innerhalb von 30 Tagen ohne Abzug zahlbar",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "9.1 Es gilt deutsches Recht.",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Beide Parteien behandeln die technischen Zeichnungen vertraulich",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "zur außerordentlichen Kündigung aus wichtigem Grund bleiben unberührt",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

@@ -1,0 +1,87 @@
+{
+  "slug": "daten-004",
+  "source": "generated",
+  "domain": "IP-Uebertragung",
+  "traps": [
+    {
+      "marker": "Die Verschwiegenheitsverpflichtung obliegt ausschließlich dem Kunden",
+      "expectedType": "asymmetric_confidentiality",
+      "note": "Paraphrase/Umstellung: nennt 'Die Verschwiegenheitsverpflichtung obliegt au' statt der Registerwendung."
+    },
+    {
+      "marker": "Sämtliche Zusicherungen zur Funktionsfähigkeit sind nicht Bestandteil dieses Vertrages",
+      "expectedType": "as_is_software_disclaimer",
+      "note": "Paraphrase/Umstellung: nennt 'Sämtliche Zusicherungen zur Funktionsfähigkei' statt der Registerwendung."
+    },
+    {
+      "marker": "Sämtliche zuvor kommunizierten Kostenschätzungen treten außer Kraft",
+      "expectedType": "entire_agreement",
+      "note": "Paraphrase/Umstellung: nennt 'Sämtliche zuvor kommunizierten Kostenschätzun' statt der Registerwendung."
+    },
+    {
+      "marker": "den Firmennamen des Kunden zu Referenzzwecken auf der Website",
+      "expectedType": "marketing_reference",
+      "note": "Paraphrase/Umstellung: nennt 'den Firmennamen des Kunden zu Referenzzwecken' statt der Registerwendung."
+    },
+    {
+      "marker": "Anregungen und Vorschläge des Kunden gehen unentgeltlich in das Eigentum",
+      "expectedType": "feedback_ip_grab",
+      "note": "Paraphrase/Umstellung: nennt 'Anregungen und Vorschläge des Kunden gehen un' statt der Registerwendung."
+    },
+    {
+      "marker": "Mitteilungen gelten nach Absendung als dem Kunden zugegangen",
+      "expectedType": "fictitious_receipt",
+      "note": "Paraphrase/Umstellung: nennt 'Mitteilungen gelten nach Absendung als dem Ku' statt der Registerwendung."
+    },
+    {
+      "marker": "Die angegebene Verfügbarkeit von 99,9 % ist unverbindlich",
+      "expectedType": "unverbindliche_sla_falle",
+      "note": "Paraphrase/Umstellung: nennt 'Die angegebene Verfügbarkeit von 99,9 % ist u' statt der Registerwendung."
+    },
+    {
+      "marker": "Für Direktgeschäfte des Kunden steht dem Anbieter keine Provision zu",
+      "expectedType": "agency_commission_exclusion",
+      "note": "Paraphrase/Umstellung: nennt 'Für Direktgeschäfte des Kunden steht dem Anbi' statt der Registerwendung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "löscht nach Beendigung der Datenverarbeitung alle personenbezogenen Daten",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "in maschinenlesbarer Form ohne Zusatzkosten",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "vollständigen Export seiner Daten in einem gängigen maschinenlesbaren Format",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "führen Gespräche auf Leitungsebene.",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Protokolle stehen beiden Parteien zur Einsicht offen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "nur nach vorheriger Anzeige an den Auftraggeber einsetzen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "können in Textform, insbesondere per E-Mail, vereinbart werden",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "ohne Angabe von Gründen zum Monatsende kündigen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Zweitschrift der Dokumentation gegen eine Gebühr von fünfzehn Euro",
+      "note": "Täuschende Klausel ohne passenden Detektortyp."
+    }
+  ]
+}

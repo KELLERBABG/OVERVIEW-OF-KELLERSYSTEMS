@@ -1,0 +1,74 @@
+{
+  "slug": "personal-001",
+  "source": "generated",
+  "domain": "Freelance und Beratung",
+  "traps": [
+    {
+      "marker": "seine Haftung ist insoweit ausgeschlossen",
+      "expectedType": "liability",
+      "note": "Haftungsausschluss für einfache Fahrlässigkeit"
+    },
+    {
+      "marker": "verwirkt er eine A​ufwandspauschale von 2.500,00 EUR",
+      "expectedType": "penalty",
+      "note": "Pauschalierte Vertragsstrafe je Verzugstag"
+    },
+    {
+      "marker": "Gerichtsstand ist der Sitz des Beraters",
+      "expectedType": "jurisdiction",
+      "note": "Einseitiger Gerichtsstand am Beratersitz"
+    },
+    {
+      "marker": "abrufbar unter https://falk-partner.example/agb",
+      "expectedType": "dynamic_url_referral",
+      "note": "Verweis auf dynamisch änderbare Online-Bedingungen"
+    },
+    {
+      "marker": "Verzugszinsen in Höhe von 14,5 Prozentpunkten",
+      "expectedType": "default_interest",
+      "note": "Erhöhte Verzugszinsen weit über Basissatz"
+    },
+    {
+      "marker": "frühere Absprachen verlieren mit Unterzeichnung ihre Gültigkeit",
+      "expectedType": "entire_agreement",
+      "note": "Entire-agreement-Klausel entwertet Vorabreden"
+    },
+    {
+      "marker": "wird wie besehen bereitgestellt",
+      "expectedType": "as_is_software_disclaimer",
+      "note": "Software ohne Gewährleistung überlassen"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien können das Vertragsverhältnis mit einer Frist von einem Monat",
+      "note": "symmetrische kurze Kündigungsfrist"
+    },
+    {
+      "marker": "Rechnungen sind innerhalb von vierzehn Tagen ohne Abzug",
+      "note": "gewöhnliche Zahlungsfrist"
+    },
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "wechselseitige Vertraulichkeit"
+    },
+    {
+      "marker": "Der Berater hält die für die Leistung erforderlichen Kenntnisse vor",
+      "note": "Qualifikationszusage"
+    },
+    {
+      "marker": "Dieser Vertrag tritt mit Unterzeichnung durch beide Parteien in Kraft",
+      "note": "Inkrafttretensklausel"
+    },
+    {
+      "marker": "Die Parteien benennen je einen Ansprechpartner",
+      "note": "Kommunikationsklausel"
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Die Geltendmachung eines weitergehenden Schadens bleibt vorbehalten",
+      "note": "deceptive: scheinbar kundenfreundlich, widerspricht dem Haftungsausschluss"
+    }
+  ]
+}

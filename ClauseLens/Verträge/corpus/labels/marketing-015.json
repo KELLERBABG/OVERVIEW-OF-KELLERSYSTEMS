@@ -1,0 +1,74 @@
+{
+  "slug": "marketing-015",
+  "source": "generated",
+  "domain": "Social Media Management, deutsches Recht",
+  "traps": [
+    {
+      "marker": "hat keinen Anspruch auf Beibehaltung",
+      "expectedType": "unilateral_change",
+      "note": "Einseitige Redaktionsplanänderung ohne Bestandsschutz."
+    },
+    {
+      "marker": "im Kundenportal hinterlegten Bedingungen in ihrer neuesten Version",
+      "expectedType": "dynamic_url_referral",
+      "note": "Dynamische einbezogene Bedingungen ohne Versionsstand; vermeidet URL."
+    },
+    {
+      "marker": "in Fallstudien und Angeboten als Referenz nennen",
+      "expectedType": "marketing_reference",
+      "note": "Referenznennung ohne Zustimmung."
+    },
+    {
+      "marker": "darf der Auftragnehmer für eigene Zwecke nutzen",
+      "expectedType": "data_grant",
+      "note": "Eigennützige Datenverwertung; vermeidet Nutzungsrecht und Modellierung."
+    },
+    {
+      "marker": "an die Entwicklung des Verbraucherpreisindex angepasst",
+      "expectedType": "price_escalation",
+      "note": "Indexkopplung ohne Sonderkündigungsrecht."
+    },
+    {
+      "marker": "gelten am dritten Tag nach Absendung als zugegangen",
+      "expectedType": "fictitious_receipt",
+      "note": "Zugangsfiktion drei Tage nach Absendung."
+    },
+    {
+      "marker": "erfolgt teilweise in einem Drittland",
+      "expectedType": "international_data_processing",
+      "note": "Drittlandverarbeitung von Kundendaten."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien wahren über die wechselseitig ausgetauschten Informationen Stillschweigen",
+      "note": "Symmetrische Verschwiegenheit."
+    },
+    {
+      "marker": "erhält der Auftraggeber die Konten und Inhalte kostenfrei in einem offenen Format",
+      "note": "Kostenfreier Datenexport."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende beenden",
+      "note": "Symmetrische Kündigung."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform zugelassen."
+    },
+    {
+      "marker": "innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Üblicher Zahlungstermin."
+    },
+    {
+      "marker": "setzt freie Mitarbeiter nur nach vorheriger Anzeige ein",
+      "note": "Ordentliche Subunternehmerregelung mit Widerspruchsrecht."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Auftragnehmer betreut die Kanäle des Auftraggebers und erstellt redaktionelle Inhalte",
+      "note": "Kein Detektor für Accounteigentum und Rückgabe der Kanäle."
+    }
+  ]
+}

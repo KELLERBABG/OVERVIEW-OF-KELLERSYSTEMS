@@ -1,0 +1,53 @@
+{
+  "project": "AutoPoD",
+  "language": "Rust",
+  "summary": "An 8-crate Rust workspace (`pod-core`, `telemetry-graph`, `physics-logic`, `incident-audit`, `sensor-integrity`, `privacy`, `settlement`, `pod-cli`) for autonomous vehicle Proof-of-Damage insurance claims. Needs rigid-body momentum/impulse conservation checks in `physics-logic`, cryptographic sensor taint propagation in `sensor-integrity`, and non-malleable zk-witness commitments in `privacy` and `settlement`.",
+  "tasks": [
+    {
+      "id": "TASK-01",
+      "title": "Enforce impulse-momentum and kinetic energy consistency invariants in physics-logic",
+      "status": "pending",
+      "target_files": [
+        "crates/physics-logic/src/conditions.rs",
+        "crates/physics-logic/src/solver.rs"
+      ],
+      "context_files": [
+        "crates/pod-core/src/sensor.rs",
+        "crates/physics-logic/tests/end_to_end.rs"
+      ],
+      "spec": "Strengthen `crates/physics-logic/src/conditions.rs` and `solver.rs` with cross-modal physical conservation invariants.\n\n1. Compute integrated IMU velocity change $\\Delta v_{\\text{imu}} = \\int_{t_0}^{t_1} a(t)\\,dt$ and compare against wheel-odometry velocity delta $\\Delta v_{\\text{odom}}$ (allowing bounded tire-slip tolerance during ABS activation).\n2. Compute Specific Energy Absorption (SEA) crush consistency: verify that structural deformation depth $\\delta_{\\text{crush}}$ satisfies $\\frac{1}{2} m (\\Delta v)^2 \\approx \\int_0^{\\delta_{\\text{crush}}} k_{\\text{stiffness}}(x) x\\,dx$ within $\\pm 25\\%$ structural tolerance.\n3. Add unit tests rejecting synthetic insurance fraud traces where an attacker injects a fake $15g$ IMU spike while wheel odometry and strain gauges remain flat.",
+      "verify_cmd": "cargo test -p physics-logic --quiet"
+    },
+    {
+      "id": "TASK-02",
+      "title": "Harden cross-sensor clock-skew and replay detection in sensor-integrity",
+      "status": "pending",
+      "target_files": [
+        "crates/sensor-integrity/src/taint.rs",
+        "crates/sensor-integrity/src/verify.rs"
+      ],
+      "context_files": [
+        "crates/sensor-integrity/src/chain.rs",
+        "crates/pod-core/src/event.rs"
+      ],
+      "spec": "Enhance `crates/sensor-integrity/src/taint.rs` and `verify.rs`.\n\n1. Detect inter-domain timestamp skew $> 5\\text{ ms}$ between IMU, CAN odometry, and airbag control unit (ACU) frames.\n2. Enforce strict monotonic sequence numbers and hash-chain linkage in `verify.rs` so spliced or replayed pre-crash buffers are marked `TaintVerdict::Compromised`.\n3. Add unit tests for frame splicing, timestamp rollback, and single-channel sensor injection.",
+      "verify_cmd": "cargo test -p sensor-integrity --quiet"
+    },
+    {
+      "id": "TASK-03",
+      "title": "Bind incident nullifiers and blinded GPS geofence proofs in privacy and settlement",
+      "status": "pending",
+      "target_files": [
+        "crates/privacy/src/circuit.rs",
+        "crates/privacy/src/proof.rs",
+        "crates/settlement/src/client.rs"
+      ],
+      "context_files": [
+        "crates/privacy/src/commit.rs",
+        "crates/settlement/src/proof.rs"
+      ],
+      "spec": "Upgrade `crates/privacy` and `crates/settlement` to prevent double-claiming and location leakage.\n\n1. Compute a deterministic collision nullifier `N = BLAKE3(vehicle_vin_commitment || crash_timestamp_bucket || impulse_vector_hash)` inside `privacy/src/circuit.rs`.\n2. Prove that the incident occurred within a valid policy jurisdiction bounding box without revealing exact GPS coordinates in the public proof transcript.\n3. In `settlement/src/client.rs`, reject any payout request whose nullifier has already been settled or whose sensor-integrity taint flag is non-clean.\n4. Add integration tests verifying double-claim rejection and valid atomic payout settlement.",
+      "verify_cmd": "cargo test -p privacy -p settlement --quiet"
+    }
+  ]
+}

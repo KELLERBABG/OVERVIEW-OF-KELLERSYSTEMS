@@ -1,0 +1,13 @@
+[package]
+name = "zk-genome-genome-parser"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "VCF v4.2 parser — streaming, memory-efficient variant extraction"
+
+[dependencies]
+zk-genome-genome-core = { path = "../genome-core" }
+heapless = "0.8"
+
+[lints]
+workspace = true

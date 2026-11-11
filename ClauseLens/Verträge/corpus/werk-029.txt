@@ -1,0 +1,70 @@
+Wartungsvertrag über die Gebäudeleittechnik
+
+zwischen Hausverwaltung IT GmbH, Bochum (nachfolgend Anbieter) und Immobilien Bockholt GmbH, Essen (nachfolgend Kunde).
+
+Präambel
+Die Parteien beabsichtigen die in § 1 beschriebene Zusammenarbeit. Der Anbieter erbringt die Leistungen, der Kunde vergütet sie. Die Parteien vereinbaren Folgendes.
+
+§ 1 Gegenstand
+Gegenstand des Vertrages ist die Wartung der Gebäudeleittechnik gemäß Anlage 1.
+
+§ 2 Leistungsumfang
+Der Anbieter erbringt die Leistungen gemäß Anlage 1 und dokumentiert die Ergebnisse.
+
+§ 3 Kündigungsfristen
+(3) Ordentliche Beendigungen sind mit einer Vorlaufzeit von achtundvierzig Monaten zulässig.
+
+§ 4 Vertragsstrafe und Pauschalen
+(4) Für den Fall der Überschreitung des Abnahmetermins wird eine Vertragsstrafe von 0,5 Prozent der Nettovergütung je Werktag vereinbart.
+
+§ 5 Wettbewerbsverbot
+(5) Eine Nachwirkung des Konkurrenzverbots gilt für sechs Monate nach Beendigung.
+
+§ 6 Aufrechnung und Zurückbehaltung
+(6) All payments shall be made free of any set-off or deduction.
+
+§ 7 Form von Erklärungen
+(7) Änderungen bedürfen der Schriftform; die Textform ist ausgeschlossen.
+
+§ 8 Erfüllungsgehilfen
+(8) Eine Haftung des Anbieters für Erfüllungsgehilfen ist ausgeschlossen.
+
+§ 9 Freistellung
+(9) Der Kunde hält den Anbieter von Ansprüchen Dritter schadlos.
+
+§ 10 Beweislast
+(10) Die Beweislast für die Mangelhaftigkeit der Werkleistung trägt der Kunde.
+
+§ 11 Nachwirkung von Pflichten
+(11) Die Geheimhaltungspflicht gilt zeitlich unbeschränkt fort.
+
+§ 12 Datenrückgabe
+(12) Der Kunde erhält zum Vertragsende einen kostenfreien Datenexport in einem gängigen Format.
+
+§ 13 Form
+(13) Änderungen dieses Vertrages können in Textform vereinbart werden.
+
+§ 14 Kündigung
+(14) Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Monatsende kündigen.
+
+§ 15 Sonderkündigung
+(15) Die Kündigung aus wichtigem Grund bleibt beiden Parteien unbenommen.
+
+§ 16 Prüfungen
+(16) Prüfungen erfolgen nur bei konkretem Anlass und nach Ankündigung mit einer Frist von dreißig Tagen.
+
+§ 17 Anwendbares Recht
+(17) Dieser Vertrag unterliegt deutschem Recht.
+
+§ 18 Aufrechnung
+(18) Beide Parteien können mit unbestrittenen Forderungen aufrechnen.
+
+§ 19 Vollständigkeit
+(19) Die Datenübertragung erfolgt verschlüsselt über eine gesicherte Verbindung.
+
+Anlage 1: Leistungsbeschreibung
+Anlage 2: Servicezeiten
+
+Bochum, den 17. September 2026
+Hausverwaltung IT GmbH
+Immobilien Bockholt GmbH

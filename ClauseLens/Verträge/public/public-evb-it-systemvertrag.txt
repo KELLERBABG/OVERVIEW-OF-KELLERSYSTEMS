@@ -1,0 +1,531 @@
+Die mit * gekennzeichneten Begriffe sind am Ende der EVB-IT System-AGB definiert. Version 2.0 vom XX.XX.XXXX
+
+Vertragsnummer/Kennung Auftraggeber _______ Vertragsnummer/Kennung Auftragnehmer ______
+
+4.5.4 Sonderregelung: Lizenzrückvergütung (nur möglich bei nicht ausschließlicher Nutzungsrechtseinräumung) 15
+
+7.2.1 Während der Geschäftszeiten an Werktagen (außer an Samstagen und Feiertagen am Erfüllungsort) 24
+
+7.2.2 Außerhalb der Geschäftszeiten an Werktagen (außer an Samstagen und Feiertagen am Erfüllungsort) 25
+
+Vertragsnummer/Kennung Auftraggeber:
+
+- im Folgenden „Auftraggeber" genannt -
+
+Vertragsnummer/Kennung Auftragnehmer:
+
+- im Folgenden „Auftragnehmer" genannt -
+
+wird folgender Vertrag geschlossen:
+
+1 Gegenstand, Vergütung und Bestandteile des Vertrages
+
+Gegenstand des EVB -IT Systemvertrages ist die Erstellung des nachfolgend beschriebenen G e- samtsystems, einschließlich der Herbeiführung der Betriebsbereitschaft* durch de n Auftragnehmer, auf der Grundlage eines Werkvertrages und, soweit nachfolgend vereinbart, der Systemservice und die Weiterentwicklung des Gesamtsystems.
+
+Die Leistungen zur Erstellung des Gesamtsystems bilden eine sachliche, wirtschaftliche und rechtl i- che Einheit. Für den Auftraggeber ist von vertragswesentlicher Bedeutung, dass der Auftragnehmer die in diesem Vertrag vereinbarte Funktionalität des Gesamtsystems herstellt und alle dafür erforde r- lichen Schritte vornimmt. Der Auftragnehmer ist verantwortlicher Generalunternehmer für die Erste l- lung des Gesamtsystems und haftet für die Leistungen seiner Subunternehmer wie für seine eigenen Leistungen.
+
+Art und Umfang der Leistungen ergeben sich aus diesem Vertrag, insbesondere aus den in Nummer
+
+Der Pauschalfestpreis* beträgt . Die einzelnen Anteile am Pauschalfestpreis * werden nachfolgend nicht gesondert ausgewiesen. Ausgenommen vom Pauschalfestpreis * sind einzelne Leistungen, die gesondert vergütet werden.1 Der Pauschalfestpreis* beträgt . Die einzelnen Anteile am Pauschalfestpreis * werden nachfolgend gesondert ausgewiesen. Ausgenommen vom Pauschalfestpreis * sind einzelne Leistungen, die gesondert vergütet werden.1 Es wird kein Pauschalfestpreis * vereinbart. Die Vergütungen werden nachfolgend gesondert ausgewiesen. Einzelheiten zur Vergütung ergeben sich darüber hinaus aus der Vergütungszusammenste l- lung in Anlage Nr. .
+
+Für alle in diesem Vertrag genannten Beträge gilt einheitlich der Euro als Währung. Die vereinbarte Vergütung versteht sich zuzüglich der gesetzlichen Umsatzsteuer.
+
+1.3 Vertragsbestandteile Es gelten nacheinander als Vertragsbestandteile:
+
+1.3.1 dieser Vertragstext bestehend aus den Seiten 1 bis und den folgenden Anlagen:
+
+Anlagen zum EVB-IT Systemvertrag
+
+Anlage Nr. Bezeichnung Datum / Version Anzahl Seiten
+
+Es gelten die Anlagen in folgender Rangfolge
+
+Eine Einbeziehung von Lizenzbedingungen an Standardsoftware* erfolgt ausschließlich nach Ma ß- gabe der Nummer 4.3.3 bzw. Nummer 4.4.3, d.h. sie gelten ausschließlich hinsichtlich der Nutzung s- rechtsregelungen und insbesondere in der dort vereinbarten Rangfolge der Regelungen, unabhängig davon, ob und in welcher Rangfolge diese als Anlage in obiger Tabelle aufgelistet werden.
+
+1 Die gesonderte Vergütung ergibt sich z.B. für den Systemservice aus Nummer 5.4.1
+
+1.3.2 die Ergänzenden Vertragsbedingungen für die Erstellung eines Gesamtsystems (EVB - IT System-AGB) in der bei Versand der Vergabeunterlagen geltenden Fassung
+
+1.3.3 die Vergabe- und Vertragsordnung für Leistungen - ausgenommen Bauleistungen - Teil B (VOL/B) in der bei Versand der Vergabeunterlagen geltenden Fassung.
+
+Die EVB -IT System -AGB stehen unter http:// www.cio.bund.de und die VOL/B unter http://www.bmwi.de zur Einsichtnahme bereit. Soweit Allgemeine Geschäftsbedingungen im Sinne von § 305 BGB in den hier referenzierten D o- kumenten des Auftragnehmers bzw. den sonstigen vom Auftragnehmer beigefügten Anlagen zu diesem Vertrag Rege lungen in den EVB -IT System-AGB widersprechen, sind sie ausgeschlossen, soweit nicht eine anderweitige Vereinbarung in den EVB-IT System-AGB zugelassen ist. Weitere Geschäftsbedingungen sind ausgeschlossen, soweit in diesem Vertrag nichts anderes ve r- einbart ist.
+
+2 Übersicht über die vereinbarten Leistungen
+
+2.1 Leistungen bis zur Abnahme Verkauf von Hardware Vermietung von Hardware Verkauf von Standardsoftware* (Überlassung auf Dauer) Vermietung von Standardsoftware* (Überlassung auf Zeit) Erstellung von Individualsoftware* Übernahme von Altdaten und andere Migrationsleistungen Herbeiführung der Betriebsbereitschaft* des Gesamtsystems (z.B. durch Aufstellung, Instal- lation, Customizing* und Integration* der Systemkomponenten*) Schulung Projektmanagement Sonstige Leistungen
+
+2.2 Leistungen nach der Abnahme Systemservice (z.B. Aufrechterhaltung und/oder Wiederherstellung der Betriebsbereitsc haft*) Weiterentwicklung und Anpassung des Gesamtsystems Sonstige Leistungen
+
+2.3 Vorgehensmodell Der Auftragnehmer erbringt seine Leistungen auf der Grundlage des folgenden Vorgehensmodells: V-Modell XT* V-Modell XT* (Version/Stand) . Die Teile des Projekthandbuchs (AN), die der Auftraggeber in Umsetzung seiner Vo r- gaben in der Ausschreibung mindestens gefordert hat, ergeben sich aus Anlage Nr. . Die Teile des QS-Handbuchs (AN), die der Auftraggeber in Umsetzung seiner Vorgaben in der Ausschreibung mindestens gefordert hat, ergeben sich aus Anlage Nr. . Organisationsspezifisches V-Modell XT* gemäß Anlage Nr. . Die Teile des Projekthandbuchs (AN), die der Auftraggeber in Umsetzung seiner Vor- gaben in der Ausschreibung mindestens gefordert hat, ergeben sich aus Anlage Nr. . Die Teile des QS-Handbuchs (AN), die der Auftraggeber in Umsetzung seiner Vorgaben
+
+sonstiges Vorgehensmodell gemäß Anlage Nr.
+
+Die Systemumgebung* des Gesamtsystems beim Auftraggeber ergibt sich aus Anlage Nr. . Die beizustellenden Systemkomponenten* ergeben sich aus der nachfolgenden Tabelle:
+
+Lfd. Nr. Bezeichnung der beizustellenden Systemkomponenten* Art der beizustellen- den Systemkompo- nenten* (HW, SW, IS, S)1
+
+1 HW = Hardware, SW = Software, IS = Individualsoftware, S = Sonstige
+
+Die beizustellenden Systemkomponenten* ergeben sich aus Anlage Nr. .
+
+4 Leistungen des Auftragnehmers zur Erstellung des Gesamtsystems
+
+4.1 Verkauf von Hardware Der Auftragnehmer verkauft an den Auftraggeber die nachstehend aufgeführte Hardware:
+
+Lfd. Nr. Produktbezeichnung und -beschreibung Produkt-Nr. EXP1 Menge Bei vereinbartem Pauschalfestpreis* lediglich im Feld „Summe" den Anteil daran angeben2. Einzelpreis Gesamtpreis
+
+1 US= Hardware unterliegt US-amerikanischen Exportkontrollvorschriften EU = Hardware unterliegt EU-Exportkontrollvorschriften DT= Hardware unterliegt deutschen Exportkontrollvorschriften S = Hardware unterliegt Exportkontrollvorschriften
+
+2 Soweit in Nummer 1.2 vorgesehen, hat der Auftragnehmer hier den Anteil der Hardware an dem Pauschalfestpreis* anzugeben. Dies allein, um dem Auftraggeber die Bewertung des Pauschalfestpreises zu ermöglichen. Die Vergütung für die gesamte Hardware gemäß Nummer 4.1 ist nicht im Pauschalfestpreis* enthalten. Die Vergütung für die Hardware gemäß Nummer 4.1 lfd. Nr. bis ist nicht im Pauschalfestpreis* enthalten.
+
+4.2 Vermietung von Hardware Der Auftragnehmer vermietet an den Auftraggeber die nachstehend aufgeführte Hardware:
+
+Lfd. Nr. Produkt- bezeich- nung und - beschrei- bung Produkt- Nr. Menge Mindest- vertrags- dauer in Monaten Abw. Miet be- ginn1 Miet- dauer in Mona- ten (feste Lauf- zeit) Abw. Kündi- gungsfri st in Mona- ten2 Automa- tische Verlänge- rung um An- zahl Monate3 Monatlicher Mietpreis
+
+Monatlicher Gesamtmietpreis
+
+1 Wenn abweichend von Ziffer 16.1 EVB-IT System-AGB
+
+2 Wenn abweichend von Ziffer 16.1.1 EVB-IT System-AGB
+
+3 Das Mietverhältnis verlängert sich um die vereinbarten Monate, wenn es nicht mit einer Frist von drei Monaten zum Ende der Mietdauer gekündigt wird.
+
+Weitere Vereinbarungen zur Kündigungsfrist abweichend von Ziffer 16.1.1 EVB-IT System- AGB gemäß Anlage Nr. Die Vergütung für die gesamte Hardware gemäß Nummer 4.2 ist nicht im Pauschalfestpreis * enthalten. Die Vergütung für die Hardware gemäß Nummer 4.2 lfd. Nr. bis ist nicht im Pauschalfestpreis* enthalten.
+
+4.3 Dauerhafte Überlassung von Standardsoftware* gegen Einmalvergütung (Verkauf)
+
+4.3.1 Leistungsumfang und Vergütung Dem Auftraggeber wird vom Auftragnehmer nachstehend aufgeführte Standardsoftware* gegen Einmal ver- gütung auf Dauer überlassen:
+
+Lfd. Nr. Produktbezeichnung und -beschreibung Produkt-Nr. Menge EXP1 Anzahl erlaub- ter Siche- rungs- kopien Zu liefernde Version2 Abweichen-de Nut- zungsrechte gemäß Nut- zungsrechts- matrix Anla- ge Nr. (Muster 4)3 Bei vereinbartem Pauschalfestpreis* lediglich im Feld „Summe" den Anteil daran angeben4 Einzel- preis Gesamt- preis
+
+1 US = Standardsoftware* unterliegt US-amerikanischen Exportkontrollvorschriften EU = Standardsoftware* unterliegt EU-Exportkontrollvorschriften DT = Standardsoftware* unterliegt deutschen Exportkontrollvorschriften S = Standardsoftware* unterliegt Exportkontrollvorschriften
+
+2 A = Überlassung der bei Abnahme aktuellen Version, anderenfalls Versionsnummer eintragen
+
+3 In der hier bezeichneten Anlage erhält der Auftragnehmer im Rahmen der Vorgaben des Auftraggebers di e Möglichkeit, von Ziffer 2.3 EVB-IT System-AGB abweichende Nutzungsrechte an der Standardsoft ware* einzuräumen. Die Nutzungsrechtsre- gelungen der Lizenzbedingungen für die jeweilige Standardsoftware* gelten dann nachrangig (siehe Nummer 4.3.23).
+
+4 Soweit in Nummer 1.2 vorgesehen, hat der Auftragnehmer den Anteil der Standardsoftware* an dem Pauschalfestpreis * an- zugeben. Dies allein, um dem Auftraggeber die Bewertung des Pauschalfestpreises zu ermöglichen.
+
+Die Vergütung für die gesamte Standardsoftware* gemäß Nummer 4.3.1 ist nicht im Pauschalfest- preis* enthalten. Die Vergütung für die Standardsoftware* gemäß Nummer 4.3.1 lfd. Nr. bis ist nicht im Pauschalfestpreis* enthalten.
+
+4.3.2 Mitteilung über Anpassungen der Standardsoftware* auf Quellcodeebene Die Standardsoftware* aus Nummer 4.3.1 Lfd.Nr. wird im Sinne von Ziffer 2.3.1.3 EVB -IT System-AGB auf Quellcodeebene angepasst. Der Auftragnehmer erklärt, dass er die Anpassungen nicht in den Standard aufnehmen wird. Der Auftragnehmer erklärt, dass er sämtliche Anpassungen in die Standardsoftware* die Anpassungen gemäß Anlage Nr. in die Standardsoftware* aufnehmen wird. Der Auftragnehmer erklärt, dass dies abweichend von Ziffer 2.3.1.3 EVB -IT System- AGB nicht mit dem auf die Erklärung der Betriebsbereitschaft * folgenden Programm- stand*, sondern bis zur Abnahme des Gesamtsystems*,
+
+bis zu dem in Anlage Nr. genannten Termin erfolgen wird. Näheres zu den Anpassungen und deren Übernahme in den Standard ergibt sich aus Anl a- ge Nr. .
+
+4.3.3 Abweichende Lizenzbedingungen Sofern abweichende Nutzungsrechte gemäß der Nutzungsrechtsmatrizen vereinbart werden, gelten be - züglich der Nutzungsrechte an der jeweiligen Standardsoftware* folgende Regelungen in der folgenden Rangfolge: Nutzungsrechtsmatrizen gemäß Muster 4 (s.a. Nummer 4.3.1, Spalte 7) Ziffer 2.3 EVB-IT System-AGB die Nutzungsrechtsregelungen aus den jeweiligen Lizenzbedingungen in Anlage Nr. bzw. - im Falle der Überlassung neuer Programmstände* im Rahmen des Systemservices - aus den gemäß Nummer 5.1.3 bekanntgegebenen Nutzungsrechtsregelungen neuer Programmstände. Die jewei - ligen Nutzungsrechtsregelungen gelten aber nur, soweit sie den sonstigen vertraglichen Regelungen weder entgegenstehen noch diese beschränken.
+
+4.3.4 Bereitstellung der Standardsoftware* Der Auftragnehmer stellt dem Auftraggeber die Standardsoftware* wie folgt zur Verfügung: gemäß Nummer 4.3.1, lfd. Nr. auf Datenträger: Typ: , Kennzeichnung: gemäß Nummer 4.3.1, lfd. Nr. in folgender Form: gemäß Nummer 4.3.1, lfd. Nr. wie in Anlage Nr. beschrieben
+
+4.4 Vermietung von Standardsoftware* (Überlassung auf Zeit)
+
+4.4.1 Leistungsumfang und Vergütung Der Auftragnehmer vermietet an den Auftraggeber die nachstehend aufgeführte Standardsoftware*:
+
+Lf d. Nr. Produktbe- zeichnung und - beschrei- bung Produkt-Nr. Me nge E X P Anzahl erlaub- ter Siche- rungsko pien Zu liefern- de Versi- on2 Abwei- chende Nutzungs- rechte (Muster 4)3
+
+Anlage Nr. Mindest- vertrags- dauer in Monaten Abw. Miet- be- ginn4 Miet- dauer in Mona- ten (feste Lauf- zeit) Abw Kündi- gungsfri st 5 Automatische Verlängerung um Anzahl Monate6 Monatlicher Miet- preis Einzel- preis Gesamt- preis
+
+3 In der hier bezeichneten Anlage erhält der Auftragnehmer im Rahmen der Vorgaben des Auftraggebers die Möglichkeit, von Ziffer 2.3 EVB-IT System-AGB abweichende Nutzungsrechte an der Standardsoftware* einzuräumen. Die Nutzungsrechtsr e- gelungen der Lizenzbedingungen für die jeweilige Standardsoftware* gelten dann nachrangig (siehe Nummer 4.4.3).
+
+4 Wenn abweichend von Ziffer 16.1 EVB-IT System-AGB
+
+5 Wenn abweichend von Ziffer 16.1.1 EVB-IT System-AGB
+
+6 Das Mietverhältnis verlängert sich um die vereinbarten Monate, wenn es nicht mit einer Frist von drei Monaten zum Ende der Mietdauer gekündigt wird.
+
+Die Vergütung für die gesamte Standardsoftware* gemäß Nummer 4.4 ist nicht im Pauschalfest- preis* enthalten. Die Vergütung für die Standardsoftware* gemäß Nummer 4.4 lfd. Nr. bis ist nicht im Pauschalfestpreis* enthalten.
+
+4.4.2 Mitteilung über Anpassungen der Standardsoftware* auf Quellcodeebene Die Standardsoftware* aus Nummer 4.4.1 Lfd.Nr. wird im Sinne von Ziffe r 2.3.1.3 EVB -IT System AGB auf Quellcodeebene angepasst. Der Auftragnehmer erklärt, dass er die Anpassungen nicht in den Standard aufnehmen wird. Der Auftragnehmer erklärt, dass er sämtliche Anpassungen in die Standardsoftware* aufnehmen wird die Anpassungen gemäß Anlage Nr. in die Standardsoftware* aufnehmen wird. Der Auftragnehmer erklärt, dass dies abweichend von Ziffer 2.3.1.3 EVB -IT System-
+
+AGB nicht mit dem auf die Erklärung der Betriebsbereitschaft * folgenden Programm- stand*, sondern bis zur Abnahme des Gesamtsystems*, bis zu dem in Anlage Nr. genannten Termin erfolgen wird. Näheres zu den Anpassungen und deren Übernahme in den Standard ergibt sich aus Anl a- ge Nr. .
+
+4.4.3 Abweichende Lizenzbedingungen Sofern abweichende Nutzungsrechte gemäß der Nutzungsrechtsmatrizen vereinbart werden, gelten bezü g- lich der Nutzungsrechte an der jeweiligen Standardsoftware* folgende Regelungen in der folgenden Ran g- folge: Nutzungsrechtsmatrizen gemäß Muster 4 (s.a. Nummer 4.4.1 Spalte 6) Ziffer 2.3 EVB-IT System-AGB die Nutzungsrechtsregelungen aus den jeweiligen Lizenzbedingungen in Anlage Nr. bzw. - im Falle der Überlassung neuer Programmstände* im Rahmen des Systemservices - aus den gemäß Nummer 5.1.3 bekanntgegebenen Nutzungsrechtsregelungen neuer Programmstände. Die jeweil i- gen Nutzungsrechtsregelungen gelten aber nur, soweit sie den sonstigen vertraglichen Regelungen weder entgegenstehen noch diese beschränken.
+
+4.4.4 Bereitstellung der Standardsoftware* Der Auftragnehmer stellt dem Auftraggeber die Standardsoftware* wie folgt zur Verfügung: gemäß Nummer 4.4.1, lfd. Nr. auf Datenträger: Typ: , Kennzeichnung: gemäß Nummer 4.4.1, lfd. Nr. in folgender Form: gemäß Nummer 4.4.1, lfd. Nr. wie in Anlage Nr. beschrieben
+
+4.5 Erstellung von Individualsoftware*
+
+4.5.1 Leistungsumfang Der Auftragnehmer erstellt folgende Individualsoftware*
+
+Lfd. Nr. Individualsoftware* Vergütungsanteil am Pauschalfestpreis* für die Erstellung von Individual- software*
+
+Die Individualsoftware* enthält folgende vorbestehende Teile*:
+
+Lfd. Nr. Lfd. Nr. aus Num- mer 4.5.1, Tabelle 1, Spalte 1 Bezeichnung der vorbestehenden Teile* Übergabe nur im Objektcode*
+
+Der Auftragnehmer wird den Auftraggeber über Änderungen im Zusammenhang mit den verwendeten vor- bestehenden Teilen* im Projektverlauf rechtzeitig vorher schriftlich informieren. Sollte der Auftragnehmer nach Zuschlagserteilung zusätzliche oder andere vorbestehende Teile* in die Individualsoftware* einsetzen, so bestehen für diese vorbestehenden Teile* die Rechte gemäß Ziffer 2.3.2.1 EVB-IT System-AGB, jedoch werden keinesfalls ausschließliche Nutzungsrechte eingeräumt. Die ggf. für eine Verbreitung und Unterlizen- zierung sämtlicher vorbestehenden Teile* zu zahlende Vergütung erhöht sich hierdurch nicht. Setzt der Auf- tragnehmer hingegen keine vorbestehenden Teile* ein, entfällt die Vergütung.
+
+4.5.2 Vergütung Die gesonderte Vergütung für Erstellung der Individualsoftware* beträgt pauschal Euro. Die Vergütung für Erstellung der Individualsoftware * erfolgt gesondert nach Aufwand gemäß Nu m- mer 7. mit einer Obergrenze in Höhe von Euro. Dabei ist Personal der Kategorie(n) einzusetzen. Die Erstellung der Individualsoftware* ist mit dem Pauschalfestpreis* abgegolten. Abweichend von Ziffer 8.1 EVB-IT System-AGB wird die gemäß Ziffer 2.3.2.4 der EVB-IT System- AGB geschuldete Überlassung am Markt nicht erhältlicher, jedoch für die Bearbeitung der Individua l- software* nötiger Werkzeuge* zusätzlich gemäß Anlage vergütet.
+
+Bei Verwendung vorbestehender Teile* durch den Auftragnehmer gem. Nummer 4.5.1. gilt Folgendes:
+
+Die Vergütung für das Recht zur Verbreitung und Unterlizenzierung der vorbestehenden Teile* in s- gesamt an beliebige Dritte beträgt insgesamt Euro. Die Verbreitung und Unterlizenzierung der vorbestehenden Teile* ist mit der Vergütung für die Ind i- vidualsoftware* abgegolten.
+
+4.5.3 Abweichende Nutzungsrechte an der Individualsoftware* Folgende abweichende Nutzungsrechte werden vereinbart für:
+
+4.5.3.1 Gesamte Individualsoftware* Für die Individualsoftware* insgesamt gilt Ziffer 2.3.2.1 der EVB-IT System-AGB mit der Maßgabe, dass statt des dort aufgeführten nicht ausschließlichen Nutzungsrechts ein ausschließli ches Nut- zungsrecht gewährt wird. Für die Individualsoftware* insgesamt gilt Ziffer 2.3.2.1 der EVB-IT System-AGB mit der Maßgabe, dass die gewerbliche Verwertung, also insbesondere auch eine Unterlizenzierung, Vervielfältigung und Verbreitung zu gewerblichen Zwecken zulässig ist.
+
+4.5.3.2 Bestimmte Individualsoftware* Für folgende Individualsoftware* werden von Ziffer 2.3.2 .1 EVB-IT System-AGB abweichende Nutzungsrech- te vereinbart: Für die Individualsoftware* gemäß Nummer 4.5.1 lfd. Nr. gilt Ziffer 2.3.2.1 der EVB-IT Sys- tem-AGB mit der Maßgabe, dass statt des dort aufgeführten nicht ausschließlichen Nutzungsrechts ein ausschließliches Nutzungsrecht gewährt wird. Für die Individualsoftware* gemäß Nummer 4.5.1 lfd. Nr. gilt Ziffer 2.3.2.1 der EVB-IT Sys- tem-AGB mit der Maßgabe, dass die gewerbliche Verwertung, also insbesondere auch eine Unterli- zenzierung, Vervielfältigung und Verbreitung zu gewerblichen Zwecken zulässig ist. Bezüglich der Nutzungsrechte an der Individualsoftware* gemäß Nummer 4.5.1 lfd. Nr. gelten vorrangig vor den Regelungen in Ziffer 2.3.2.1 EVB-IT System-AGB die Regelungen zu den Nut- zungsrechten aus Anlage Nr. .
+
+4.5.3.3 Verbreitung und Unterlizenzierung von vorbestehenden Teilen* der Individualsoftware* Das Recht zur Verbreitung und Unterlizenzierung der vorbestehenden Teile* ist ausgeschlossen. Abweichend von Ziffer 2.3.2.1. EVB-IT System-AGB ist der Auftraggeber auch zur gewerblichen Verbreitung und Unterlizenzierung vorbestehender Teile* der Individualsoftware* in Verbindung mit der Individualsoftware* selbst berechtigt. Die Verbreitung und Unterlizenzierung von vorbestehenden Teilen* der Individualsoftware* ist in
+
+4.5.3.4 Werkzeuge* Abweichend von Ziffer 2.3.2.4 EVB-IT System-AGB wird dem Auftraggeber das Recht eingeräumt, statt nur eines weiteren Vervielfältigungsstücks Vervielfältigungsstücke herzustellen, diese gemeinsam mit der Individualsoftware* zu verbreiten und dem Dritten daran die Rechte aus Ziffer
+
+2.3.2.4 EVB-IT System-AGB mit Ausnahme des Verbreitungs- und Vervielfältigungsrechts einzu- räumen. Abweichend von Ziffer 2.3.2.4 EVB-IT System-AGB werden dem Auftraggeber folgende Rechte ge- mäß Anlage Nr. eingeräumt.
+
+4.5.4 Sonderregelung: Lizenzrückvergütung (nur möglich bei nicht ausschließlicher Nutzung s- rechtseinräumung) Hat der Auftraggeber sich kein ausschließliches Nutzungsrecht ausbedungen, verpflichtet sich der Auftragnehmer, an den Auftraggeber für jede Einräumung eines Nutzungsrechtes an der Individua l-
+
+software* gemäß Nummer 4.5.1 lfd. Nr. an einen Dritten eine finanzielle Gegenleistung in Höhe von % der Nummer 4.5.1 lfd. Nr. vereinbarten Vergütung in Höhe von % der erzielten, mindestens aber einer angemessenen Lizenzgebühr (netto) gem. Anlage Nr. zu zahlen.
+
+Die Lizenzrückvergütung ist insgesamt begrenzt auf die gemäß Nummer 4.5.1 lfd. Nr. zu zahlende Vergütung zuzüglich eines Aufschlages von % % der gemäß Nummer 4.5.1 zu zahlenden Vergütung
+
+4.5.5 Einräumung von Rechten an Erfindungen Für Erfindungen, die anlässlich der Vertragserfüllung gemacht werden, gelten abweichend von Ziffer
+
+2.3.2.5 EVB-IT System-AGB die Regelungen in Anlage Nr. .
+
+4.5.6 Bereitstellung der Individualsoftware* Der Auftragnehmer stellt dem Auftraggeber die Individualsoftware* wie folgt zur Verfügung: gemäß Nummer 4.5.1, lfd. Nr. auf Datenträger: Typ: Kennzeichnung: gemäß Nummer 4.5.1, lfd. Nr. in folgender Form: gemäß Nummer 4.5.1, lfd. Nr. wie in Anlage Nr. beschrieben
+
+4.6 Übernahme von Altdaten und andere Migrationsleistungen
+
+4.6.1 Leistungsumfang Die Übernahme von Altdaten und andere Migrationsleistungen erfolgen gemäß Anlage Nr.
+
+4.6.2 Vergütung Die Übernahme von Altdaten und die anderen vereinbarten Migrationsleistungen sind mit dem Pa u- schalfestpreis abgegolten. Der Vergütungsanteil am Pauschalfestpreis * für die Übernahme von Altdaten und die and e- ren vereinbarten Migrationsleistungen beträgt Euro. Die gesonderte Vergütung für die Übernahme von Altdaten und für die anderen vereinbarten Migr a- tionsleistungen beträgt pauschal Euro. Die Vergütung für die Übernahme von Altdaten und für die anderen vereinbarten Migrationsleistu n- gen erfolgt gesondert nach Aufwand gemäß Nummer 7 mit einer Obergrenze in Höhe von Euro. Dabei ist Personal der Kategorie(n) einzusetzen.
+
+4.7 Herbeiführung der Betriebsbereitschaft*
+
+4.7.1 Leistungsumfang Der Auftragnehmer schuldet die Herbeiführung der Be triebsbereitschaft* des Gesamtsystems (Ziffer 2.4 EVB-IT System-AGB). Der Auftragnehmer schuldet die Herbeiführung der Betriebsbereitschaft* wie in Anlage Nr. beschrieben.
+
+4.7.2 Abweichende Nutzungsrechtsvereinbarungen Abweichend von Ziffer 2.4 EVB-IT System-AGB werden gem. Anlage Nr. für die dort genann- ten Arbeitsergebnisse die dort aufgeführten Nutzungsrechte vereinbart.
+
+Abweichend von Ziffer 2.4 EVB-IT System-AGB werden dem Auftraggeber auch für die vorbeste- henden Materialien Bearbeitungsrechte eingeräumt.
+
+4.7.3 Vergütung Die Herbeiführung der Betriebsbereitschaft* ist mit dem Pauschalfestpreis* abgegolten. Der Vergütungsanteil am Pauschalfestpreis * für die Herbeiführung der Betriebsbereitschaft* beträgt Euro. Die gesonderte Vergütung für die Herbeiführung der Betriebsbereitschaft* beträgt pauschal Euro. Die Vergütung für die Leistungen zur Herbeiführung der Betriebsbereitschaft* erfolgt gesondert nach Aufwand gemäß Nummer 7 mit einer Obergrenze in Höhe von Euro. Dabei ist Personal der Kategorie(n) einzusetzen.
+
+4.8.1 Art und Umfang der Schulungen Es sind Schulungen gemäß nachfolgender Tabelle vereinbart:
+
+Lfd. Nr. Anzahl der Schu- lungen Art der Schulung (NZ/AD/M P/S)1 Inhalt der Schulung Schu- lungstage pro Schu- lung Ort2 Maximale Anzahl Teilneh- mer pro Schulung Sofern im Pau- schalfestpreis* enthalten, keine Angabe notwendig Betrag pro Schulung Ge- samt- preis
+
+1 NZ = Nutzerschulung AD = Administratorenschulung MP = Multiplikatorenschulung S = sonstige Schulung
+
+2 Von Ziffer 2.5 EVB-IT System-AGB abweichender Ort der Schulung
+
+Vorbereitung und Durchführung von Schulungen erfolgen gemäß Anlage Nr.
+
+4.8.2 Schulungsunterlagen Es werden folgende Schulungsunterlagen geschuldet:
+
+Lfd. Nr. Schulung (hier lfd. Nr. aus Nummer 4.8.1 eintragen) Schulungsunterlage EXP1 Menge
+
+1 US = Schulungsunterlage unterliegt US-amerikanischen Exportkontrollvorschriften EU = Schulungsunterlage unterliegt EU-Exportkontrollvorschriften DT = Schulungsunterlage unterliegt deutschen Exportkontrollvorschriften S = Schulungsunterlage unterliegt Exportkontrollvorschriften
+
+Soweit für die Individualsoftware* in Nummer 4.5.3 ausschließliche Nutzungsrechte vereinbart sind, gilt dies abweichend von Ziffer 2.5 EVB-IT System-AGB nicht für die Schulungsunterlagen gemäß Nummer 4.8.2 lfd. Nr. , die für den Auftraggeber individuell erstellt wurden. An diesen Schu- lungsunterlagen werden lediglich nicht ausschließliche Nutzungsrechte * gemäß Ziffer 2.3 .2.1 EVB- IT System-AGB eingeräumt. Für folgende Schulungsunterlagen werden von Ziffer 2.5 EVB-IT System-AGB abweichende weiter- gehende Nutzungsrechte vereinbart: Für die Schulungsunterlagen gemäß Nummer 4.8.2 lfd. Nr. wird statt des nicht aus- schließlichen Nutzungsrechts ein ausschließliches Nutzungsrecht gewährt. Für die Schulungsunterlagen gemäß Nummer 4.8.2 lfd. Nr. wird zusätzlich das Recht zur Vervielfältigung und Verbreitung gewährt. Für die Schulungsunterlagen gemäß Nummer 4.8.2 lfd. Nr. wird zusätzlich das Recht zur Bearbeitung sowie Vervielfältigung und Verbreitung der Bearbeitungen gewährt. Nutzungsrechte an den Schulungsunterlagen ergeben sich aus Anlage Nr.
+
+4.8.3 Vergütung für Schulungen inkl. Schulungsunterlagen Die in Nummer 4.8.1 vereinbarte Vergütung für die Schulu ngen inkl. der Schulungsunterlagen ist nicht im Pauschalfestpreis* enthalten. Die Vergütung für die Schulungen inkl. der Schulungsunterlagen gemäß Nummer 4.8.1 lfd. Nr. bis ist nicht im Pauschalfestpreis* enthalten.
+
+4.9 Dokumentation Ergänzend/abweichend von Ziffer 5.3 EVB-IT System-AGB ist die Dokumentation in folgender Spra- che / in folgender Form zu erstellen: . Ergänzend/abweichend von Ziffer 5.3 EVB-IT System-AGB sind folgende Teile der Dokumentation: bis zum zu liefern.
+
+Abweichend von Ziffern 4.5 und 5.5 EVB-IT System-AGB sind Anpassungen und Änderungen, die aufgrund von Maßnahmen zum Systemservice oder im Rahmen der Mängelbeseitigung an den Do- kumentationen erforderlich sind, nicht in die Dokumentation einzuarbeiten, sondern als separate Dokumente zu liefern. Abweichend von Ziffer 5.4 EVB-IT System-AGB ist der Auftragnehmer nicht über das gesetzliche Maß hinaus verpflichtet, die im Rahmen der Mängelhaftung gemäß Ziffer 13 EVB-IT System-AGB durchgeführten Maßnahmen zu dokumentieren. Abweichend von Ziffer 5.6 EVB-IT System-AGB wird an den für den Auftraggeber erstellten Doku- mentationen statt des nicht ausschließlichen Nutzungsrechts ein ausschließliches Nutzungsrecht gewährt. Die Dokumentation ist gemäß dem in Nummer 2.3 vereinbarten Vorgehensmodell zu erstellen. Die Anwenderdokumentation ist zusätzlich als kontextsensitive "Online-Hilfe‖ im Gesamtsystem ab- zulegen. Weitere Vereinbarungen zur Dokumentation gemäß Anlage Nr. .
+
+4.10 Sonstige Leistungen zur Systemerstellung
+
+4.10.1 Leistungsumfang Der Umfang der sonstigen Leistungen zur Systemerstellung ergibt sich aus Anlage Nr. .
+
+4.10.2 Vergütung Sonstige Leistungen sind mit dem Pauschalfestpreis* abgegolten. Der Vergütungsanteil am Pauschalfestpreis* für die sonstigen Leistungen beträgt Eu- ro. Die gesonderte Vergütung für sonstige Leistungen beträgt pauschal Euro. Die Vergütung erfolgt gesondert nach Aufwand gemäß Nummer 7 mit einer Obergrenze in Höhe von Euro. Dabei ist Personal der Kategorie(n) einzusetzen.
+
+5 Systemservice Der Auftragnehmer verpflichtet sich im Rahmen des Systemservices zur Wiederherstellung und/oder zur Aufrechterhaltung der Betriebsbereitschaft* des Gesamtsystems und/oder zur Lieferung neuer Program m- stände* nach folgenden Regelungen:
+
+5.1 Arten von Systemserviceleistungen
+
+5.1.1 Wiederherstellung der Betriebsbereitschaft* des Gesamtsystems (Störungsbeseitigung) Der Auftragnehmer verpflichtet sich bei Störungen die Betriebsbereitschaft* des Gesamtsystems gemäß Ziffer 4.1 EVB-IT System-AGB wiederherzustellen, des Gesamtsystems gemäß Ziffer 4.1 EVB -IT System -AGB mit Ausnahme folgender gelieferter, erstellter oder bei zustellenden Systemkomponenten* aus Nummer lfd. Nr. wiederher- zustellen.
+
+folgender Systemkomponenten* aus Nummer lfd. Nr. gemäß Ziffer 4.1 EVB -IT Sys- tem-AGB wiederherzustellen. gemäß Anlage Nr. wiederherzustellen.
+
+5.1.1.1.1 Form der Störungsmeldung Die Störungsmeldung erfolgt abweichend von Ziffer 11.3 EVB -IT System-AGB in der Regel gemäß
+
+5.1.1.1.2 Adresse für Störungsmeldungen Die Störungsmeldung erfolgt an folgende Adresse:
+
+Name/Firma: Organisationseinheit/Abteilung: Postanschrift: Telefon: Fax: E-Mail: Web-Adresse:
+
+5.1.1.2 Reaktions-* und Wiederherstellungszeiten*,Mängelklassen Es werden folgende Reaktions -* und Wiederherstellungszeiten* (Ziffer 4.1.2 EVB -IT System -AGB) vereinbart;
+
+Mängelklasse Reaktionszeit* Wiederherstellungszeit* Betriebsverhindernder Mangel Betriebsbehindernder Mangel Leichter Mangel
+
+Die Reaktions-* und Wiederherstellungszeiten* werden in Anlage Nr. für die dort abweichend von Ziffer 3 EVB-IT System-AGB definierten Mängelklassen festgelegt.
+
+Weitere Vereinbarungen (z.B. Reaktionszeiten*, Wiederherstellungszeiten* , Service Level Agre e- ment) gemäß Anlage Nr.
+
+Reaktions-* und Wiederherstellungszeiten* beginnen ausschließlich mit dem Zugang der Störungsmeldung während der vereinbarten Servicezeiten und laufen ausschließlich während der vereinbarten Servicezeiten. Ergänzend können in Nummer 16.2 für die Nichteinhaltung der o.g. Ze iten Vertragsstrafen vereinbart we r- den.
+
+5.1.1.3 Servicezeiten Es werden folgende Servicezeiten vereinbart:
+
+Tag Uhrzeit bis Von bis Uhr bis Von bis Uhr Von bis Uhr An Sonntagen Von bis Uhr An Feiertagen am Erfüllungsort Von bis Uhr
+
+5.1.1.4 Hotline Der Auftrag nehmer gewährt eine telefonische deutschsprachige Unterstützung (Hotline) zu folge n- den Zeiten:
+
+Tag Uhrzeit bis Von bis Uhr bis von bis Uhr von bis Uhr An Sonntagen von bis Uhr An Feiertagen am Erfüllungsort von bis Uhr
+
+Weitere Vereinbarungen zur Hotline (z.B. Kreis der Berechtigten, Leistungsumfang ) gemäß Anlage Nr.
+
+5.1.2 Aufrechterhaltung der Betriebsbereitschaft* (vorbeugende Maßnahmen) Der Auftragnehmer verpflichtet sich angemessene Maßnahmen mit dem Ziel zu ergreifen, das Auftreten zukünftiger Störungen des Gesamtsystems des Gesamtsystems mit Ausnahme folgender gelieferter, erstellter oder bei zustellenden Systemkomponenten* aus Nummer lfd. Nr. folgender Systemkomponenten* aus Nummer lfd. Nr. zu vermeiden.
+
+zu vorbeugenden Maßnahmen gemäß Anlage Nr. .
+
+5.1.3 Überlassung von verfügbaren Programmständen* (Standardsoftware*) Der Auftragnehmer verpflichtet sich, folgende Programmstände* für die aufgeführte Standardsof t- ware* zu überlassen, sobald sie am Markt verfügbar sind:
+
+Lfd. Nr. aus Nummer 4.3.1 Lfd. Nr. aus Nummer 4.4.1 Überlassung aller verfügbaren Programm- stände* Zeitpunkt der Leistung
+
+Patches*, Updates* Upgrades* Releases/ Versi- onen* Auf Anforderung des Auftraggebers Unverzüglich sobald ver- fügbar
+
+Besondere Vereinbarung zur Herbeiführung der Betriebsbereitschaft* durch den Auftragnehmer gemäß Anlage Nr. Besondere Vereinbarung zu Installation* und Customizing* der Programmstände* gemäß Anlage Nr.
+
+Soweit bezüglich der Nutzungsrechte der Standardsoftware* Nutzungs rechtsregelungen aus den Lizenz - bedingungen in Nummer 4.3.3 bzw. 4.4.3 einbezogen sind, werden diese bei Überlassung neuer Program m- stände* der jeweiligen Standardsoftware* d urch die für den neuen Programms tand* geltenden Nutzung s- rechtsregelungen ersetzt, wobei die in Nummer 4.3.3 bzw. 4.4.3 getroffenen Vereinbarungen auch für diese gelten. Diese neuen Nutzungsrechtsregelungen gelten aber nur, soweit die neuen Lizenzbedingungen dem Auftraggeber bei Überlassung mit Hinweis auf diese Regelung schriftlich bekannt gegeben werden.
+
+5.2 Beginn / Dauer der Systemserviceleistungen Der Auftragnehmer verpflichtet sich, die vereinbarten Systemserviceleistungen, beginnend mit dem Tag nach Ablauf der Verjährungsfrist für Sachmängelansprüche (Gewährleistungsfrist) des Gesamtsystems dem Tag nach der Abnahme folgendem Datum
+
+jeweils für die Dauer von Monaten für die Dauer von mindestens Monaten (Mindestvertragsdauer) für die in Anlage Nr. vereinbarte Dauer
+
+5.3 Kündigung von Systemserviceleistungen Abweichend zu Ziffer 16.1.1 EVB-IT System-AGB beträgt die Kündigungsfrist Monat(e) zum Ablauf eines (z.B. Kalendermonat/Kalendervierteljahr/Kalenderjahr). Ergänzend zu Ziffer 16.1.1 EVB-IT System-AGB wird bei vereinbarter fester Laufzeit ein Sonderkü n-
+
+digungsrecht des Auftraggebers gem. Anlage Nr. vereinbart.
+
+5.4 Vergütung/Zahlungsfristen für Systemserviceleistungen
+
+5.4.1 Vergütung Der Systemservice ist (bei fester Laufzeit) insgesamt mit dem Pauschalfestpreis * abgegolten. Der Vergütungsanteil für den Systemservice am Pauschalfestpreis* beträgt Euro2. Die gesonderte Vergütung für den Systemservice insgesamt (bei fester Laufzeit) be trägt pauschal Euro. Die gesonderte monatliche Vergütung für den Systemservice beträgt paus chal . Für den Zeitraum bis zum Ablauf der Verjährungsfrist der Sachmängelansprüche für das System wird eine abweichende monatliche Vergütung in Höhe von pauschal Euro vereinbart. Die Vergütung für die Systemserviceleistungen gemäß Nummer(n) (hier die relevanten Nu m- mer(n) aus Nummer 5.1 eintragen) erfolgt gesondert nach Aufwand gemäß Nummer 7 mit einer Obergrenze in Höhe von Euro. Dabei ist Personal der Kategorie(n) einzusetzen. Die Vergütung erfolgt gemäß Anlage Nr. .
+
+5.4.2 Zahlungsfristen für Systemserviceleistungen monatlich (zahlbar bis zum 15. eines jeden Monats) quartalsweise (zahlbar bis zum 15. des zweiten Quartalmonats) jährlich (zahlbar bis zum ) einmalig zum gemäß Anlage Nr.
+
+5.5 Sonstige Regelungen zu Systemserviceleistungen
+
+5.5.1 Teleservice* Der Auftragnehmer erbringt Teile der Leistung mittels Teleservice* entsprechend der Teleservic e- vereinbarung gemäß Anlage Nr. .
+
+5.5.2 Abnahme der Systemserviceleistungen Abweichend von Ziffer 4. 3 EVB-IT System-AGB vereinbaren die Parteien eine Abnahme bestimmter Systemserviceleistungen gemäß Anlage Nr. .
+
+5.5.3 Dokumentation der Systemserviceleistungen Abweichend von Ziffer 4. 5 Satz 1 EVB -IT System-AGB ist der Auftragnehmer in dem in Anlage Nr. aufgeführtem Umfang verpflichtet, die im Rahmen des Systemservice s durchgeführten Ma ß- nahmen zu dokumentieren.
+
+6 Weitere Leistungen nach der Abnahme
+
+6.1 Weiterentwicklung und Anpassung des Gesamtsystems nach der Abnahme Der Auftragnehmer verpflichtet sich, das Gesamtsystem, jeweils nach den Vereinbarungen in Anlage Nr. weiterzuentwickeln, zu optimieren und an die sich ändernden Bedürfnisse des Auftragg e- bers anzupassen. Soweit in der Anlage nichts anderes geregelt ist, erfolgt die Beauftragung entspr e-
+
+2 Der Auftragnehmer hat den Anteil des Systemservices an dem Pauschalfestpreis* anzugeben, selbst wenn in Nummer 1.2 keine gesonderte Ausweisung von Preisanteilen vorgesehen ist. Dies allein, um die Berechnung der Haftungsobergrenze gemäß Ziffer 15.2 EVB-IT System und - bei Vereinbarung einer gesonderten Ausweisung - eine Bewertung des Pauschalfestpreises zu ermöglichen.
+
+chend den Konditionen dieses Vertrages und der einbezogenen EVB-IT System-AGB.
+
+6.2 Sonstige weitere Leistungen nach der Abnahme
+
+6.2.1 Leistungsumfang Der Umfang der sonstigen Leistungen nach der Abnahme ergibt sich aus Anlage Nr. .
+
+6.2.2 Vergütung Die sonstigen Leistungen nach der Abnahme sind mit dem Pauschalfestpreis * abgegolten. Der Vergütungsanteil am Pauschalfestpreis* für sonstige Leistungen nach der Abnahme b e- trägt Euro. Die sonstigen Leistungen nach der Abnahme sind mit der pauschalen Vergütung für Systemservic e- leistungen gemäß Nummer 5.4.1 abgegolten. Die gesonderte Vergütung für sonstige Leistungen nach der Abnahme beträgt pauschal Eu- ro. Die Vergütung erfolgt gesondert nach Aufwand gemäß Nummer 7 mit einer Obergrenze in Höhe von Euro. Dabei ist Personal der Kategorie(n) einzusetzen.
+
+7 Ergänzende Vereinbarungen bei Vergütung nach Aufwand
+
+7.1 Vereinbarung der Preiskategorien bei Vergütung nach Aufwand
+
+Lfd. Nr. Bezeichnung der Personal- kategorie Preis innerhalb der Zeiten gemäß Nummer 7.2.1 Preis innerhalb der Zeiten gemäß Nummer 7.2.2 Preis innerhalb der Zeiten gemäß Nummer 7.2.3 je Stunde je Tag je Stunde je Tag je Stunde je Tag Kategorie 1 Kategorie 2 Kategorie 3 Kategorie 4 Kategorie 5
+
+7.2 Zeiten der Leistungserbringung bei Vergütung nach Aufwand Die Leistungen des Auftragnehmers werden erbracht:
+
+7.2.1 Während der Geschäftszeiten an Werktagen (außer an Samstagen und Feiertagen am Erfü l- lungsort)
+
+Wochentag Uhrzeit bis von bis Uhr bis von bis Uhr
+
+7.2.2 Außerhalb der Geschäftszeiten an Werktagen (außer an Samstagen und Feiertagen am Erfü l- lungsort)
+
+Wochentag Uhrzeit bis von bis Uhr bis von bis Uhr von bis Uhr
+
+7.2.3 Während sonstiger Zeiten
+
+Wochentag Uhrzeit Samstag von bis Uhr Sonntag von bis Uhr Feiertag am Erfüllungsort von bis Uhr
+
+Weitere Vereinbarungen gemäß Anlage Nr.
+
+7.3 Abweichende Regelungen für die Bestimmung und Vergütung von Personentagessätzen Abweichend von Ziffer 8.5 Satz 1 EVB -IT System -AGB können bei entsprechendem Nachweis für einen Personentag bis zu 10 Stunden abgerechnet werden. Abweichend von Ziffer 8.5 Satz 2 und Satz 3 EVB -IT System -AGB wird Folgendes vereinbart: Ein voller Tagessatz kann nur in Rechnung gestellt werden, wenn mindestens 10 Stunden geleistet wurden. Werden weniger als 10 Zeitstunden pro Tag geleistet, sind diese anteilig in Rechnung zu stellen. Weitere Vereinbarungen gemäß Anlage Nr.
+
+7.4 Reisekosten, Nebenkosten*, Materialkosten und Reisezeiten
+
+7.4.1 Reisekosten, Nebenkosten* und Materialkosten Reisekosten werden nicht gesondert vergütet. Reisekosten werden vergütet gemäß Anlage Nr. .
+
+Nebenkosten* werden nicht gesondert vergütet. Nebenkosten* werden vergütet gemäß Anlage Nr. .
+
+Materialkosten werden nicht gesondert vergütet. Materialkosten werden vergütet gemäß Anlage Nr. .
+
+7.4.2 Reisezeiten Reisezeiten werden nicht gesondert vergütet.
+
+Reisezeiten werden zu 50 % als Arbeitszeiten vergütet. Reisezeiten werden vergütet gemäß Anlage Nr. .
+
+7.5 Besondere Bestimmungen zur Vergütung nach Aufwand Besondere Bestimmungen zur Vergütung nach Aufwand sind in Anlage Nr. vereinbart.
+
+7.6 Preisanpassung für Systemserviceleistungen, die nicht im Pauschalfestpreis * enthalten sind Gemäß Ziffer 8.6 EVB -IT System-AGB wird eine Preisanpassung vereinbart für Systemserviceleis- tungen gemäß Nummer 5. . Abweichend von Ziffer 8.6 EVB -IT System-AGB wird eine Preisanpassung für Systemserviceleistun- gen nach Maßgabe der Anlage Nr. vereinbart.
+
+8 Termin- und Leistungsplan Der Termin- und Leistungsplan ergibt sich aus folgender Tabelle:
+
+Lfd. Nr. Bezeichnung der zu erbringenden Leistung Art des Termins MS1, BB2, BBTA3, TA4, VE5 Leistungszeit (Datum oder Zeit- punkt nach Zu- schlagserteilung) Leistungsort (einschließlich Anschrift) Bemerkungen
+
+2 BB = Termin der Betriebsbereitschaftserklärung
+
+3 BBTA = Termin der Betriebsbereitschaftserklärung zur Teilabnahme
+
+5 VE = Vertragserfüllungstermin*
+
+Gemäß dem in Nummer 2.3 vereinbarten Vorgehensmodell V-Modell XT* bzw. dem vereinbarten organisationsspezifischen V-Modell XT* ergibt sich der Termin- und Leistungsplan aus dem Lasten- heft gemäß Anlage Nr. und den Teilen des Projekthandbuchs (AN), die der Auftraggeber in Umsetzung seiner Vorgaben in der Ausschreibung mindestens gefordert hat gemäß Anlage Nr. . Der Termin- und Leistungsplan ergibt sich aus Anlage Nr. .
+
+9 Zahlungsplan Der Auftraggeber leistet zum (Datum) eine Vorauszahlung in Höhe von € Zug um Zug gegen Übergabe einer Vorauszahlungsbürgschaft in gleicher Höhe gemäß Ziffer 20.1.1 EVB-IT Sys- tem-AGB. Der Zahlungsplan ergibt sich aus folgender Tabelle:
+
+Termin gemäß Nummer 8, lfd. Nr. Art der Zahlung AZ1, TZ2, SZ3 Betrag Bemerkungen
+
+2 TZ = Teilzahlung. Diese setzt eine erfolgreiche Teilabnahme voraus, gilt anderenfalls als AZ.
+
+Der Zahlungsplan ergibt sich aus Anlage Nr. .
+
+10.1 Projektmanager/Projektleiter des Auftragnehmers (Schlüsselpositionen): Gesamtprojektverantwortlicher Projektmanager für die Erstel- lung des Gesamtsystems Gesamtprojektverantwortlicher Projektleiter als Ansprechpartner Name Position Organisationseinheit Telefonnummer: Faxnummer E-Mail: Anschrift:
+
+Projektmanager Projektleiter als Ansprechpartner Name Position Organisationseinheit Telefonnummer: Faxnummer E-Mail: Anschrift:
+
+10.2 Weitere Schlüsselpositionen des Auftragnehmers Die Parteien definieren gemäß Ziffer 7.4 EVB -IT System-AGB folgende weitere Schlüsselpositionen auf Se i- ten des Auftragnehmers und deren Besetzung:
+
+Lfd. Nr. Schlüsselposition Name Kontakt
+
+10.3 Projektsteuerung/Projektkoordinierung Die Regeln zur Projektsteuerung und Projektkoordinierung ergeben sich aus dem vereinbarten Vorgehensmodell gemäß Nummer 2.3 folgenden Vereinbarungen gemäß Anlage Nr. .
+
+10.4 Behandlung von Änderungsanträgen (Change Requests) Ergänzend/abweichend zu Ziffer 17 EVB-IT System-AGB sind die Vereinbarungen über die Behandlung von Änderungsanträgen* (Change Requests), die während der Vertragsdauer vom Auftraggeber gestellt werden, festgelegt: in dem vereinbarten Vorgehensmodell gemäß Nummer 2.3. in Anlage Nr. .
+
+11 Weitere Pflichten des Auftragnehmers Der Auftragnehmer hat folgende weitere Pflichten:
+
+11.1 Besondere Anforderungen an Mitarbeiter des Auftragnehmers Mindestanforderungen an das einzusetzende Personal des Auftragnehmers:
+
+Lfd. Nr. Position Fachliche Qualifikation Sicherheits- überprüfung SÜ 1, 2 oder 31 Sonstige Anforderungen, z.B. weitere Sicherheitsanforderungen
+
+1 Stufen der Sicherheitsüberprüfung gemäß Sicherheitsüberprüfungsgesetz
+
+Mindestanforderungen an das einzusetzende Personal des Auftragnehmers ergeben sich aus Anl a- ge Nr. .
+
+11.2 Allgemeine Sicherheitsanforderungen Der Auftragnehmer verpflichtet sich, für die Laufzeit des Vertrages: bei der Erbringung der vertraglichen Leistungen die Regelungen zur IT-Sicherheit gemäß Anlage Nr. zu beachten; sich der Geheimschutzbetreuung gemäß Anlage Nr. zu unterstellen; die Regelungen des Auftraggebers zur Sicherheit am Einsatzort ge mäß Anlage Nr. zu beach- ten; folgende weitere Regelungen einzuhalten: .
+
+11.3 Kopier- oder Nutzungssperre* Die vom Auftragnehmer gelieferten oder erstellten Systemkomponenten* weisen ke ine Kopier- oder Nutzungssperren* auf. Die vom Auftragnehmer gelieferten oder erstellten Systemkomponenten* weisen folgende Kopier - oder Nutzungssperren* auf: . Näheres siehe Anlage Nr. .
+
+11.4 Mitteilungspflicht bezüglich der zur Vertragserfüllung eingesetzten Werkzeuge* Der Auftragnehmer teilt dem Auftraggeber mit, dass er folgende Werkzeuge* für die Erstellung der Individualsoftware*, die für die Bearbeitung und Umgestaltung der Individualsoftware* notwendig sind,
+
+verwenden wird . Näheres siehe Anlage Nr. .
+
+entwickeln wird . Näheres siehe Anlage Nr. .
+
+In Ergänzung zu Ziffer 6.4 der EVB-IT System-AGB erstreckt sich die Mitteilungspflicht des Auftrag- nehmers auch auf die für die Erstellung des Gesamtsystems insgesamt eingesetzten Werkzeuge*.
+
+11.5 Entsorgung der Hardware (ergänzend zu Ziffer 2.1 EVB-IT System-AGB) Ergänzend zu Ziffer 2.1 EVB-IT System-AGB und den entsprechenden gesetzlichen Regelungen gelten die in Anlage Nr. aufgeführten zusätzlichen Vereinbarungen über die Entsorgung von in Nummer 4.1. genannter Hardware. Der Auftragnehmer übernimmt die Entsorgung auch von nicht in Nummer 4.1. genannter Hardware (Altgeräte) aufgrund gesonderter Vereinbarung gemäß Anlage Nr. .
+
+11.6 Entsorgung der Verpackung Ergänzende Vereinbarung zur Entsorgung der Verpackung durch den Auftragnehmer gemäß Anlage Nr. Die Entsorgung der Verpackung erfolgt durch den Auftraggeber (abweichend von Ziffern 2.1 und 2.2 EVB-IT System-AGB).
+
+12 Mitwirkung des Auftraggebers Dem Auftraggeber obliegt folgende Mitwirkung (z.B. Infrastruktur, Organisation, Personal, Technik, Dokumente):
+
+Lfd. Nr. Art der Mitwirkung Erläuterungen (z.B. fachli- che Qualifikation des Per- sonals, das Mitwirkungs- leistungen erbringt) max. Aufwand Termin/ Zeit- raum
+
+Gemäß dem in Nummer 2.3 vereinbarten Vorgehensmodell V-Modell XT* bzw. dem vereinbarten organisationsspezifischen V-Modell XT* ergibt sich die Mitwirkung des Auftraggebers aus dem Las- tenheft gemäß Anlage Nr. und dem Teil „Mitwirkung und Beistellungen des Auftraggebers" des Projekthandbuchs (AN) gemäß Anlage Nr. . Die Mitwirkung des Auftraggebers ergibt sich aus Anlage Nr. .
+
+13.1 Gegenstand der Abnahme Der Abnahmegegenstand ist das Gesamtsystem im Sinne dieses Ver trages und, soweit in Nummer 8 ver- einbart, die einer Teilabnahme unterliegenden, in sich abgeschlossenen und funktional nutzbaren Teile des Gesamtsystems. Ergänzende Vereinbarungen zum Gegenstand der Abnahme gemäß Anlage Nr. . Das Gesamtsystem beinhaltet jeweils die aktuellste Version der vereinbarten Software* zum Zei t- punkt des Beginns der Erklärung der Betriebsbereitschaft.
+
+13.2 Testdaten Die Testdaten erstellt der Auftraggeber. Einzelheiten gemäß Anlage Nr. . Die Testdaten erstellt der Auftragnehmer. Einzelheiten gemäß Anlage Nr. .
+
+13.3 Dauer, Ort und Systemumgebung* der Funktionsprüfung Dauer der Funktionsprüfungszeit (abweichend von der 30tägigen Frist in Ziffer 12.3 EVB -IT System- AGB): . Dauer der Funktionsprüfungszeit für teilabzunehmende Leistungen (abweichend von der 14tägigen Frist in Ziffer 12.3 EVB-IT System-AGB): . Ort der Funktionsprüfung (abweichend von Ziffer 12.4 EVB-IT System-AGB): . Ort der Funktionsprüfung für teilabzunehmende Leistungen (abweichend von Ziffer 12.4 EVB -IT System-AGB): . Ort und Dauer der Funktionsprüfung(en) ergeben sich aus Anlage Nr. (abweichend von Zif- fern 12.3 und 12.4 EVB-IT System-AGB). Abweichend von Ziffer 12.6 EVB-IT System-AGB beträgt der Zeitrahmen für erneute Funktionsprü- fungen statt 14 Tagen jeweils . Die Durchführung der Funktionsprüfung erfolgt abweichend von Ziffer 12.4 EVB-IT System-AGB nicht in der in Nummer 2 genannten, sondern in folgender Systemumgebung*: .
+
+13.4 Vereinbarungen zur Durchführung der Funktionsprüfung und zur Erklärung der Abnahme Gemäß dem in Nummer 2.3 vereinbarten Vorgehensmodell V-Modell XT* ergeben sich die Regelun- gen zur Durchführung der Funktionsprüfung und der Abnahme aus dem Lastenheft gemäß Anlage Nr. und den Teilen des Projektplans (AN), die der Auftraggeber in Umsetzu ng seiner Vorga- ben in der Ausschreibung mindestens gefordert hat gemäß Anlage Nr. . Die Regelungen zur Durchführung der Funktionsprüfung und der Abnahme ergeben sich aus Anlage Nr. (abweichend von Ziffer 12 EVB-IT System-AGB).
+
+13.5 Vereinbarungen zu Mängelklassen im Rahmen der Funktionsprüfung Abweichend von Ziffer 3 EVB-IT System-AGB werden in Anlage Nr. die dort genannten Män- gelklassen vereinbart. Abweichend von Ziffer 12 EVB-IT System-AGB werden die Auswirkungen der bei der Funktionsprü- fung gefundenen Mängel in Anlage Nr. vereinbart.
+
+14 Mängelhaftung (Gewährleistung)
+
+14.1 Verjährungsfrist (Gewährleistungsfrist) für Mängel des Gesamtsystems Es gilt Ziffer 13.3 EVB -IT System-AGB mit der Maßgabe, dass für Sachmängel und Rechtsmängel, die nicht Rechtsmängel der Individualsoftware* sind, die Verjährungsfrist statt 24 Monate Mo- nate beträgt. Es gilt Ziffer 13.3 EVB -IT System-AGB mit der Maßgabe, dass für Rechtsmängel der Individualsof t- ware* die Verjährungsfrist statt 36 Monate Monate beträgt. Anstelle der in Ziffer 13.3 EVB -IT System -AGB geregelten zwölfmonatigen Frist für de n Rücktritt bezogen auf die Standardsoftware* tritt eine monatige Frist. Es gilt Ziffer 1 3.3 EVB-IT System-AGB mit der Maßgabe, dass die für Rechtsmängel an Individua l- software* vereinbarte Verjährungsfrist für Rechtsmängel an folgenden vereinbarten Systemkomp o- nenten* gilt. Die Verjährungsfristen für Sach- und Rechtsmängel ergeben sich aus Anlage Nr. .
+
+14.2 Verjährungsfrist (Gewährleistungsfrist) für Mängel an Teilleistungen Abweichend von Ziffer 13.4 EVB -IT System-AGB endet die Verjähr ungsfrist für Mängel an Teillei s- tungen nicht zwei Jahre nach der Teilabnahme und frühestens neun Monate nach der Gesamta b- nahme, sondern gemäß Anlage Nr. .
+
+14.3.1 Form der Mängelmeldung Abweichend von Ziffer 11.3 EVB-IT System-AGB erfolgt die Mängelmeldung gemäß Anlage Nr. .
+
+14.3.2 Adresse für Mängelmeldungen Die Mängelmeldung erfolgt: an folgende Adresse:
+
+14.4 Reaktions-* und Wiederherstellungszeiten*, Servicezeiten, Hotline, Teleservice*
+
+14.4.1 Reaktions-* und Wiederherstellungszeiten*, Mängelklassen Für die Zeit bis zur Verjährung der Mängelansprüche (Gewährleistungsfrist) werden folgende Rea k- tions-* und Wiederherstellungszeiten* vereinbart:
+
+Reaktions-* und Wiederherstellungszeiten* beginnen ausschließlich mit dem Zugang der Mängelme l- dung während der Servicezeiten und laufen ausschließlich während der vereinbarten Servicezeiten. Ergänzend können in Nummer 16.2 für die Nichteinhaltung der o.g. Zeiten Vertragsstrafen verei nbart werden. Die Reaktions-* und Wiederherstellungszeiten* werden in Anlage Nr. für die dort abweichend von Ziffer 3 EVB-IT System-AGB definierten Mängelklassen festgelegt.
+
+14.4.2 Servicezeiten Es werden folgende Servicezeiten vereinbart:
+
+Tag Uhrzeit bis von Bis Uhr bis von Bis Uhr von Bis Uhr Sonntag von Bis Uhr Feiertag am Erfüllungsort von Bis Uhr
+
+14.4.3 Hotline Der Auftragnehmer gewährt eine telefonische deutschsprachige Unterstützung (Hotline) zu folge n- den Zeiten:
+
+Tag Uhrzeit bis von bis Uhr bis von bis Uhr von bis Uhr Sonntag von bis Uhr Feiertag am Erfüllungsort von bis Uhr
+
+Weitere Vereinbarungen zur Hotline (Leistungsumfang) gemäß Anlage Nr. .
+
+14.5 Teleservice* Der Auftragnehmer erbringt Teile der Leistung mittels Teleservice* entsprechend der Teleservic e- vereinbarung gemäß Anlage Nr. .
+
+14.6 Weitere Vereinbarungen zur Mängelhaftung Der Ausschluss der Rechtsmängelhaftung wegen Patentverletzungen, die Dritte gegen den Auftra g- geber wegen einer Nutzung außerhalb von EU und EFTA geltend machen (Ziffer 13.6 EVB-IT Sys- tem-AGB), gilt nicht. Weitere Vereinbarungen gemäß Anlage Nr.
+
+15.1 Haftungsobergrenze bei leicht fahrlässiger Pflichtverletzung Abweichend von Ziffer 15.1 EVB-IT System-AGB beträgt die Haftungsobergrenze für leicht fahrlässi- ge Pflichtverletzungen insgesamt für diesen Vertrag . Abweichend von Ziffer 15 .1 EVB -IT System -AGB gelten für die Haftung bei leicht fahrlässigen Pflichtverletzungen die Regelungen gemäß Anlage Nr. .
+
+15.2 Haftung bei Verzug Abweichend von Ziffer 15.1 EVB-IT System-AGB beträgt die Haftungsobergrenze für Verzug bei leichter Fahrlässigkeit insgesamt für diesen Vertrag 50 % des Auftragswertes*. Abweichend von Ziffer 15 .1 EVB-IT System-AGB gelten für die Haftung für Verzug bei leichter Fahr- lässigkeit die Regelungen gemäß Anlage Nr. .
+
+15.3 Haftung für den Systemservice Abweichend von Ziffer 15.2 EVB-IT System-AGB beträgt die Haftungsobergrenze für leicht fahrläss i- ge Pflichtverletzungen beim Systemservice insgesamt Euro pro Vertragsjahr. Abweichend von Ziffer 15.2 EVB-IT System-AGB beträgt die Haftungsobergrenze für leicht fahrläss i- ge Pflichtverletzungen beim Systemservice insgesamt für diesen Vertrag Euro. Abweichend von Ziffer 15.2 EVB-IT System-AGB beträgt die Haftungsobergrenze für leicht fahrläss i- ge Pflichtverletzungen beim Systemservice minimal das fache (statt des Doppelten) maximal das fache (statt des Vierfachen) der Vergütung, die für das erste Vertragsjahr des Systemservice zu zahlen ist. Ziffer 15.2 letzter Satz bleibt unberührt.
+
+15.4 Haftung für entgangenen Gewinn Abweichend von Ziffer 15.5 EVB-IT System -AGB haftet der Auftragnehmer auch für entgangenen Gewinn.
+
+16 Vertragsstrafen bei Verzug
+
+16.1 Verzug bei Erstellung des Gesamtsystems Abweichend von Ziffer 9.3 EVB -IT System -AGB gilt die dort aufgeführte Vertragsstrafe auch bei Überschreitung der für die einzelnen Meilensteine im Termin - und Leistungsplan gemäß Nummer 8 festgelegten Termine. Die Summe der vorstehenden Vertragsstrafen ist auf den in Ziffer 9.3 EVB-IT System-AGB festge- legten Höchstbetrag anzurechnen. Abweichend von Ziffer 9.3 EVB-IT System-AGB gilt die dort aufgeführte Vertragsstrafe nicht bei Überschreitung der für die Teilabnahmen gemäß Nummer 8 festgelegten Termine. Abweichend von Ziffer 9.3 EVB-IT System-AGB wird bei Verzug der Leistung die Vertragsstrafenregelung gemäß Anlage Nr. vereinbart.
+
+16.2 Verzug bei Reaktions-* und Wiederherstellungszeiten* Zusätzlich zur Vertragsstrafe gemäß Ziffer 9.3 EVB -IT System -AGB werden in Anlage Nr. Vertragsstrafen für die Nichteinhaltung der in Nummer 5.1.1.2 geregelten Reaktions -* und Wiederherstellungszeiten* zur Wiederherstellung der Betriebsbereitschaft* nach der Abnahme des Gesamtsystems vereinbart. Zusätzlich zur Ver tragsstrafe gemäß Ziffer 9.3 EVB -IT System -AGB werden in Anlage Nr.
+
+Vertragsstrafen für die Nichteinhaltung der in Nummer 14.4.1 geregelten Reaktions -* und Wiederherstellungszeiten* im Rahmen der Mängelhaftung (Gewährleistung) vereinbart.
+
+17.1.1 Auftragnehmergarantien Der Auftragnehmer übernimmt zusätzlich zu der in diesem Vertrag (Nummer 14 und Ziffer 13 EVB-IT System-AGB) vereinbarten Mängelhaftung eine Haltbarkeitsgarantie, deren Konkretisierung und/oder Begrenzung, z.B. des Inhalts oder der Rechtsfolgen in der Anlage Nr. erfolgt. Der Auftragnehmer übernimmt zusätzlich zu der in diesem Vertrag vereinbarten Mängelhaftung (Nummer 14 und Ziffern 13,14 EVB-IT System-AGB) eine Beschaffenheitsgarantie, deren Konkret i- sierung und/oder Begrenzung, z.B. des Inhalts oder der Rechtsfolgen in Anlage Nr. erfolgt.
+
+17.1.2 Herstellergarantien Der Auftragnehmer erklärt, dass die Hers teller der folgenden Systemkomponenten* folgende Hal t- barkeitsgarantien übernehmen:
+
+Lfd. Nr. der betroffenen Systemkomponente* gemäß Nummer 4 Garantiebeginn Dauer der Garantie in Monaten Name des Herstel- lers Umfang der Leistung im Garantiefall (z.B. VOS/BIS1)
+
+1 VOS = Vorortservice (am Erfüllungsort) BIS = Bring-In-Service (zum Auftragnehmer auf dessen Kosten)
+
+Weitere Vereinbarungen (Konkretisierung und/oder Begrenzung z.B. des Inhalts oder der Rechts fol- gen) zur Haltbarkeitsgarantie und/oder Beschaffenheitsgarantie des Herstellers gemäß Anlage Nr.
+
+17.2 Übergabe bzw. Hinterlegung des Quellcodes*
+
+17.2.1 Übergabe des Quellcodes* Abweichend von Ziffer 18.1 der EVB-IT System-AGB wird der Quellcode* der Individualsoftware* gemäß Anlage Nr. übergeben. Abweichend von Ziffer 18.1 der EVB-IT System-AGB wird die Individualsoftware* gemäß Nummer
+
+4.5.1 lfd. Nr. nur im Objektcode* und nicht im Quellcode* übergeben. ] Abweichend von Ziffer 18.1 der EVB-IT System-AGB wird der Quellcode* der Anpassungen der Standardsoftware*, die nicht in den Standard übernommen werden, gemäß Ziffer 2.3.1.3 der EVB-IT System-AGB gemäß Anlage Nr. übergeben. Abweichend von Ziffer 18.1 der EVB-IT System-AGB wird der Quellcode* der Individualsoftware* am Ende jedes Erstellungstages in dem Software-Depository des Auftraggebers gespeichert.
+
+Näheres ergibt sich aus Anlage Nr. . Abweichend von Ziffer 18.1 der EVB-IT System-AGB wird der Quellcode* der Anpassungen der Standardsoftware* gemäß Ziffer 2.3.1.3 der EVB-IT System-AGB am Ende jedes Erstellungstages in dem Software-Depository des Auftraggebers gespeichert. Näheres ergibt sich aus Anlage Nr. .
+
+17.2.2 Hinterlegung des Quellcodes Es wird gemäß Ziffer 18.2 der EVB-IT System-AGB die Hinterlegung des Quellcodes* folgender Standardsoftware* oder Individualsoftware* (abweichend von Ziffer 18.1 EVB -IT System-AGB) ver- einbart.
+
+Lfd. Nr. aus (4.3.1/4.4.1/4.5.1) Hinterlegungsstelle und Hinterlegungsvereinbarung Beitritt zu einer bestehenden Hinterlegungsvereinbarung gemäß Nr. lfd. Nr. Hinterlegungsstelle
+
+Hinterlegungsvereinbarung gemäß
+
+Anlage Nr. Nr. lfd. Nr. Hinterlegungsstelle
+
+17.3 Haftpflichtversicherung Der Nachweis einer Haftpflichtversicherung gemäß Ziffer 19.1 EVB-IT System-AGB wird vereinbart.
+
+17.4.1 Vorauszahlungsbürgschaft Übergabe einer Vorauszahlungsbürgschaft* gemäß Ziffer 20.1.1 EVB-IT System-AGB wird verein- bart. Abweichend von Ziffer 20.1.1 EVB-IT System-AGB beträgt die Höhe der Vorauszahlungssicherheit statt 100% der Vorauszahlung Euro (Hinweis: wenn niedriger als 100% der Vorauszahlung, haushaltsrechtlich i.d.R. nicht zulässig).
+
+17.4.2 Vertragserfüllungs- oder Mängelhaftungssicherheit Es werden für die Vertragserfüllung folgende Vertragserfüllungs - oder Mängelhaftungssicherheiten verei n- bart: Vertragserfüllung Es wird die Leistung einer Sicherheit für die Vertragserfüllung durch Hinterlegung von Geld auf e i- nem Sperrkonto oder Übergabe einer Vertragserfüllungsbürgschaft* gemäß Ziffer 20.1.2 EVB-IT
+
+Höhe der Sicherheit: Abweichend von Ziffer 20.1.2 EVB-IT System-AGB beträgt die Höhe der Sicherheit: % des Erstellungspreises*. Abweichend von Ziffer 20.1.2 der EVB-IT System-AGB wird die teilweise Rückgabe der Sicher- heit nach Teilabnahmen gemäß Anlage Nr. geregelt. Der Auftraggeber kann eine Anpassung der Sicherheit gemäß Ziffer 20.1.2 EVB-IT System-AGB ver- langen.
+
+Mängelhaftung (Gewährleistung) Es wird die Leistung einer Sicherheit für die Mängelhaftung durch Hinterlegung von Geld auf einem Sperrkonto oder Übergabe einer Mängelhaftungsbürgschaft* gemäß Ziffer 20.1.3 EVB-IT System- AGB vereinbart.
+
+Höhe der Sicherheit: Abweichend von Ziffer 20.1.3 EVB-IT System-AGB beträgt die Höhe der Sicherheit: % des Auftragswertes*.
+
+17.4.3 Kombinierte Vertragserfüllungs- oder Mängelhaftungssicherheit Es wird die Leistung einer Sicherheit für die Vertragserfüllungs - und Mängelhaftung durch Hinterlegung von Geld auf einem Sperrkonto oder Übergabe einer Vertragserfüllungs - und Mängelhaftungsbürgschaft* gemäß Ziffer 20.1.4 EVB-IT System-AGB vereinbart. kombinierte Vertragserfüllungs- und Mängelhaftungssicherheit
+
+Höhe der Sicherheit: Abweichend von Ziffer 20.1.4 EVB-IT System-AGB beträgt die Höhe der Sicherheit für die Ver- tragserfüllung % des Erstellungspreises* und für die Mängelhaftung % des Erstel- lungspreises*. Der Auftraggeber kann eine Anpassung der Sicherheit gemäß Ziffer 20.1.4 EVB-IT System-AGB verlangen.
+
+17.5 Datenschutz, Geheimhaltung und Sicherheit Ergänzend zu bzw. abweichend von Ziffer 21 EVB-IT System -AGB ergeben sich Regelungen zur Geheimhaltung bzw. zur Sicherheit aus Anlage Nr. . Da durch den Auftragnehmer personenbezogene Daten im Auftrag des Auftraggebe rs verarbeitet werden sollen (Auftragsdatenverarbeitung), treffen die Parteien in Anlage Nr. eine schriftliche Vereinbarung, die zumindest die gesetzlichen Mindestanforderungen beinhaltet (z.B. gemäß § 11 Absatz 2 BDSG). Die Parteien treffen sonstige Vereinbarungen zum Datenschutz gemäß Anlage Nr. .
+
+17.6 Vereinbarungen zur Korruptionsprävention Der Auftragnehmer verpflichtet sich für die Laufzeit des Vertrages: die in Anlage Nr. aufgeführten Vorschriften zur Korruptionsprävention in der öffentlichen Ve r- waltung zu beachten. folgende weitere Regelungen einzuhalten: .
+
+17.7 Kündigungsrecht des Auftraggebers Abweichend von den gesetzlichen Regelungen und Ziffer 16.2 EVB-IT System-AGB ergeben sich
+
+die Ansprüche des Auftragnehmers bei einer Kündigung des Auftraggebers gemäß § 649 B GB aus
+
+17.8 Sonstige Vereinbarungen Sonstige Vereinbarungen: Die sonstigen Vereinbarungen ergeben sich aus Anlage Nr. .
+
+, , Ort Datum Ort Datum Auftragnehmer Auftraggeber
+
+Unterschrift Auftragnehmer (Name in Druckschrift) Unterschrift Auftraggeber (Name in Druckschrift)

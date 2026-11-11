@@ -1,0 +1,74 @@
+{
+  "slug": "marketing-020",
+  "source": "generated",
+  "domain": "Stock-Content-Lizenz, fremdes Recht",
+  "traps": [
+    {
+      "marker": "ohne Einschränkung für eigene Zwecke verwerten",
+      "expectedType": "data_grant",
+      "note": "Uneingeschränkte Datenverwertung für eigene Zwecke."
+    },
+    {
+      "marker": "ist auf die Lizenzgebühr begrenzt",
+      "expectedType": "liability",
+      "note": "Haftungsdeckel auf die Lizenzgebühr."
+    },
+    {
+      "marker": "governed by the laws of the State of New York",
+      "expectedType": "jurisdiction",
+      "note": "Fremdes Recht in Englisch."
+    },
+    {
+      "marker": "supersedes all prior licences and understandings",
+      "expectedType": "entire_agreement",
+      "note": "Englische Vollständigkeitsklausel."
+    },
+    {
+      "marker": "sind innerhalb von drei Monaten geltend zu machen",
+      "expectedType": "statute_of_limitations",
+      "note": "Kurze Geltendmachungsfrist für Mängelansprüche."
+    },
+    {
+      "marker": "ohne Mängelgewähr und ohne Zusicherung der Marktgängigkeit",
+      "expectedType": "as_is_software_disclaimer",
+      "note": "Gewährleistungsausschluss für Inhalte."
+    },
+    {
+      "marker": "Für das Verhalten der Unterlizenznehmer wird keine Einstandspflicht",
+      "expectedType": "vicarious_agents",
+      "note": "Freizeichnung für Dritte; vermeidet Erfüllungsgehilfe."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "Symmetrische Vertraulichkeit."
+    },
+    {
+      "marker": "erhält der Lizenznehmer die Metadaten kostenfrei in einem offenen Format",
+      "note": "Kostenfreier Datenexport."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende beenden",
+      "note": "Symmetrische Kündigung."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform zugelassen."
+    },
+    {
+      "marker": "innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Üblicher Zahlungstermin."
+    },
+    {
+      "marker": "stellt den Lizenznehmer von Ansprüchen Dritter aus der Nutzung frei",
+      "note": "Anbieter-Freistellung zugunsten des Kunden, kein Finding."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Lizenzgeber überlässt dem Lizenznehmer Bild- und Videomaterial zur Nutzung in Kampagnen",
+      "note": "Kein Detektor für fehlende Medien- und Gebietsangaben in Lizenzen."
+    }
+  ]
+}

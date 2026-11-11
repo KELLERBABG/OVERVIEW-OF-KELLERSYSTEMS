@@ -1,0 +1,83 @@
+{
+  "slug": "finanz-001",
+  "source": "generated",
+  "domain": "Darlehen",
+  "traps": [
+    {
+      "marker": "setzt sich die Kreditlinie jeweils um ein weiteres Kalenderjahr fort",
+      "expectedType": "auto_renewal",
+      "note": "Paraphrase/Umstellung: nennt 'setzt sich die Kreditlinie jeweils um ein wei' statt der Registerwendung."
+    },
+    {
+      "marker": "eine Beendigung erst mit sieben Jahren Vorlauf erklären",
+      "expectedType": "notice_period",
+      "note": "Paraphrase/Umstellung: nennt 'eine Beendigung erst mit sieben Jahren Vorlau' statt der Registerwendung."
+    },
+    {
+      "marker": "Im Verzugsfall erhöht sich der Entgeltzins auf 16 Prozent",
+      "expectedType": "default_interest",
+      "note": "Paraphrase/Umstellung: nennt 'Im Verzugsfall erhöht sich der Entgeltzins au' statt der Registerwendung."
+    },
+    {
+      "marker": "nur nach vorheriger schriftlicher Bestätigung durch die Bank in Ansatz gebracht werden",
+      "expectedType": "setoff_restriction",
+      "note": "Paraphrase/Umstellung: nennt 'nur nach vorheriger schriftlicher Bestätigung' statt der Registerwendung."
+    },
+    {
+      "marker": "wird eine Pauschale von 250 EUR fällig",
+      "expectedType": "penalty",
+      "note": "Paraphrase/Umstellung: nennt 'wird eine Pauschale von 250 EUR fällig' statt der Registerwendung."
+    },
+    {
+      "marker": "gilt das Abnahmeprotokoll als vorbehaltlos abgenommen",
+      "expectedType": "deemed_acceptance",
+      "note": "Paraphrase/Umstellung: nennt 'gilt das Abnahmeprotokoll als vorbehaltlos ab' statt der Registerwendung."
+    },
+    {
+      "marker": "gelten die angepassten Konditionen als akzeptiert",
+      "expectedType": "unilateral_change",
+      "note": "Paraphrase/Umstellung: nennt 'gelten die angepassten Konditionen als akzept' statt der Registerwendung."
+    },
+    {
+      "marker": "Es sei denn, der Kunde weist nach, dass die Ursache aus einem anderen Umstand stammt",
+      "expectedType": "burden_of_proof",
+      "note": "Paraphrase/Umstellung: nennt 'Es sei denn, der Kunde weist nach, dass die U' statt der Registerwendung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "gesetzliche Haftung für Vorsatz und grobe Fahrlässigkeit",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "mindestens vierzehn Tage vor dem Einsatz eines Unterauftragnehmers",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "innerhalb von dreißig Tagen nach Zugang ohne Abzug",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "vollständigen Export seiner Daten in einem gängigen maschinenlesbaren Format",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "zum Quartalsende ordentlich kündigen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "einen festen Ansprechpartner für alle Fragen der Vertragsabwicklung",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "dieselben Datenschutzstandards einhalten",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "zuerst mit Nebenforderungen und Kosten",
+      "note": "Täuschende Klausel ohne passenden Detektortyp."
+    }
+  ]
+}

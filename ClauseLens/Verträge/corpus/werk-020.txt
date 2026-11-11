@@ -1,0 +1,70 @@
+Werkvertrag über die Lieferung einer Diagnosesoftware
+
+zwischen DriveLine Systems GmbH, Wolfsburg (nachfolgend Anbieter) und Auto Werke Süd GmbH, Ingolstadt (nachfolgend Kunde).
+
+Präambel
+Die Parteien beabsichtigen die in § 1 beschriebene Zusammenarbeit. Der Anbieter erbringt die Leistungen, der Kunde vergütet sie. Die Parteien vereinbaren Folgendes.
+
+§ 1 Gegenstand
+Gegenstand des Vertrages ist die Lieferung und Einweisung in die Diagnosesoftware gemäß Anlage 1.
+
+§ 2 Leistungsumfang
+Der Anbieter erbringt die Leistungen gemäß Anlage 1 und dokumentiert die Ergebnisse.
+
+§ 3 Abwerbeverbot
+(3) The customer shall not solicit or hire personnel of the provider.
+
+§ 4 Salvatorische Klausel
+(4) An die Stelle einer unwirksamen Bestimmung tritt diejenige Regelung, die dem wirtschaftlichen Zweck am nächsten kommt.
+
+§ 5 Sperrung des Zugangs
+(5) Bei Zahlungsrückstand ist der Anbieter berechtigt, die Leistung sofort einzustellen.
+
+§ 6 Beschaffenheit der Software
+(6) The software is provided as is, without warranty of any kind.
+
+§ 7 Zugang von Erklärungen
+(7) Leistungsnachweise gelten als vorbehaltlos genehmigt, wenn der Kunde nicht binnen sieben Kalendertagen widerspricht.
+
+§ 8 Service-Credits
+(8) Der Service-Credit verfällt, wenn ein Sicherheitspatch nicht rechtzeitig eingespielt wird.
+
+§ 9 Kündigungsfristen
+(9) Der Kunde kann mit einer Frist von sechsunddreißig Monaten kündigen, während dem Anbieter eine Frist von drei Monaten zusteht.
+
+§ 10 Vertraulichkeit
+(10) Der Kunde verpflichtet sich, alle Informationen streng vertraulich zu behandeln; eine Vertraulichkeitspflicht des Anbieters besteht nicht.
+
+§ 11 Vorzeitige Beendigung
+(11) Für eine vorzeitige Kündigung wird eine pauschale Stornogebühr berechnet.
+
+§ 12 Datenrückgabe
+(12) Der Kunde erhält zum Vertragsende einen kostenfreien Datenexport in einem gängigen Format.
+
+§ 13 Form
+(13) Änderungen dieses Vertrages können in Textform vereinbart werden.
+
+§ 14 Kündigung
+(14) Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Monatsende kündigen.
+
+§ 15 Sonderkündigung
+(15) Die Kündigung aus wichtigem Grund bleibt beiden Parteien unbenommen.
+
+§ 16 Prüfungen
+(16) Prüfungen erfolgen nur bei konkretem Anlass und nach Ankündigung mit einer Frist von dreißig Tagen.
+
+§ 17 Anwendbares Recht
+(17) Dieser Vertrag unterliegt deutschem Recht.
+
+§ 18 Aufrechnung
+(18) Beide Parteien können mit unbestrittenen Forderungen aufrechnen.
+
+§ 19 Vollständigkeit
+(19) Der Kunde darf die Anwendung für eigene Geschäftszwecke nutzen.
+
+Anlage 1: Leistungsbeschreibung
+Anlage 2: Servicezeiten
+
+Wolfsburg, den 8. Dezember 2026
+DriveLine Systems GmbH
+Auto Werke Süd GmbH

@@ -1,0 +1,70 @@
+Rahmenvertrag über die Betreuung der Netzkomponenten
+
+zwischen Telko Solutions GmbH, Düsseldorf (nachfolgend Anbieter) und Telefonia Ost AG, Leipzig (nachfolgend Kunde).
+
+Präambel
+Die Parteien beabsichtigen die in § 1 beschriebene Zusammenarbeit. Der Anbieter erbringt die Leistungen, der Kunde vergütet sie. Die Parteien vereinbaren Folgendes.
+
+§ 1 Gegenstand
+Gegenstand des Vertrages ist die Betreuung der aktiven Netzkomponenten gemäß Anlage 1.
+
+§ 2 Leistungsumfang
+Der Anbieter erbringt die Leistungen gemäß Anlage 1 und dokumentiert die Ergebnisse.
+
+§ 3 Datenrückgabe
+(3) Für die Herausgabe der Daten wird eine Gebühr von 2.500 EUR berechnet.
+
+§ 4 Höhere Gewalt
+(4) Ein Recht zur Kündigung wegen höherer Gewalt besteht für den Kunden nicht.
+
+§ 5 Preisanpassung
+(5) Der Anbieter passt die Preise nach billigem Ermessen an die Marktbedingungen an.
+
+§ 6 Einsatz von Unterauftragnehmern
+(6) The provider may appoint subcontractors at its sole discretion.
+
+§ 7 Vertraulichkeit
+(7) Die Geheimhaltungspflicht trifft nur den Kunden.
+
+§ 8 Anregungen und Feedback
+(8) Feedback des Kunden geht unentgeltlich in das Eigentum des Anbieters über.
+
+§ 9 Ausgleichsanspruch
+(9) Der Kunde verzichtet auf einen Ausgleich oder eine Entschädigung.
+
+§ 10 Salvatorische Klausel
+(10) Unwirksame Regelungen werden durch eine Ersatzregelung nach billigem Ermessen ersetzt.
+
+§ 11 Zugang von Erklärungen
+(11) Mitteilungen gelten mit Absendung als zugegangen.
+
+§ 12 Vergütung
+(12) Die Vergütung ist innerhalb von dreißig Tagen nach Rechnungseingang fällig.
+
+§ 13 Haftung
+(13) Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt.
+
+§ 14 Vertraulichkeit
+(14) Beide Parteien verpflichten sich wechselseitig, die offengelegten Informationen vertraulich zu behandeln.
+
+§ 15 Unterauftragnehmer
+(15) Der Anbieter zeigt den Einsatz von Unterauftragnehmern vierzehn Tage vorher an.
+
+§ 16 Datenrückgabe
+(16) Der Kunde erhält zum Vertragsende einen kostenfreien Datenexport in einem gängigen Format.
+
+§ 17 Form
+(17) Änderungen dieses Vertrages können in Textform vereinbart werden.
+
+§ 18 Kündigung
+(18) Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Monatsende kündigen.
+
+§ 19 Vollständigkeit
+(19) Der Kunde erhält Zugang zu einer Testumgebung.
+
+Anlage 1: Leistungsbeschreibung
+Anlage 2: Servicezeiten
+
+Düsseldorf, den 3. Oktober 2026
+Telko Solutions GmbH
+Telefonia Ost AG

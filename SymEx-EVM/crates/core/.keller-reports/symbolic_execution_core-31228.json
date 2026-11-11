@@ -1,0 +1,4806 @@
+{
+  "schema_version": 1,
+  "crate_name": "symbolic_execution_core",
+  "completed": true,
+  "coverage": {
+    "functions": 439,
+    "reachable_assertions": 241,
+    "supported_assertions": 241,
+    "unsupported_assertions": 0,
+    "unsupported_kinds": [],
+    "passed": 212,
+    "failed": 19,
+    "warnings": 10,
+    "without_verdict": 0,
+    "panic_sites": 1,
+    "panic_sites_decided": 0,
+    "obligation_solver_calls": 70,
+    "solver_elapsed_ms": 30324
+  },
+  "findings": [
+    {
+      "crate": "symbolic_execution_core",
+      "function": "types::value::U256::from_be_bytes",
+      "block": "bb12",
+      "status": "WARN",
+      "kind": "unmodelled-panic",
+      "file": "crates/core/src/types/mod.rs",
+      "line": 113,
+      "details": "Unmodelled panic site: the call to `std::result::Result::<[u8; 8], std::array::TryFromSliceError>::unwrap` panics when it has no value to return, and its body is not read by this analysis, so whether this site can panic was not decided."
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::parser::ParsedBytecode::parse",
+      "block": "bb14",
+      "status": "WARN",
+      "kind": "overflow",
+      "file": "crates/core/src/evm/parser.rs",
+      "line": 31,
+      "details": "Arithmetic Overflow Detection (Sub) -> Undecided: `opcode (_8)` is read from `(*_1)[_9]`, which this analysis does not model"
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::parser::ParsedBytecode::parse",
+      "block": "bb27",
+      "status": "WARN",
+      "kind": "overflow",
+      "file": "crates/core/src/evm/parser.rs",
+      "line": 31,
+      "details": "Arithmetic Overflow Detection (Sub) -> Undecided: `_51` is read from `((*_18).0: u8)`, which this analysis does not model; the value behind it is not modelled either: `instr (_18)` is read from `((_12 as Continue).0: &evm::opcodes::Instruction)`, which this analysis does not model; the value behind it is not modelled either: the result of the call to `<std::result::Result<&evm::opcodes::Instruction, types::error::ExecutionError> as std::ops::Try>::branch` is not modelled"
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::executor::SymbolicExecutor::fresh_sym",
+      "block": "bb0",
+      "status": "FAIL",
+      "kind": "overflow",
+      "defect_class": "unguarded",
+      "file": "crates/core/src/evm/executor.rs",
+      "line": 47,
+      "details": "Arithmetic Overflow Detection (Add) -> Exploit path found! [((*_1).1: u64) = 18446744073709551615, 1_u64 = 1]",
+      "witness": [
+        {
+          "input": "((*_1).1: u64)",
+          "symbol": "overflow_l",
+          "value": "18446744073709551615"
+        },
+        {
+          "input": "1_u64",
+          "symbol": "overflow_r",
+          "value": "1"
+        }
+      ],
+      "witness_kind": "pinned"
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::executor::SymbolicExecutor::step",
+      "block": "bb13",
+      "status": "WARN",
+      "kind": "overflow",
+      "file": "crates/core/src/evm/executor.rs",
+      "line": 60,
+      "details": "Arithmetic Overflow Detection (Sub) -> Undecided: `gas_cost (_21)` is read from `((*_461).4: u64)`, which this analysis does not model; the value behind it is not modelled either: `_461` is read from `((*_20).0: &evm::opcodes::Instruction)`, which this analysis does not model; the value behind it is not modelled either: `instruction (_20)` is read from `((_3 as Continue).0: &evm::parser::ParsedInstruction)`, which this analysis does not model; the value behind it is not modelled either: the result of the call to `<std::result::Result<&evm::parser::ParsedInstruction, types::error::ExecutionError> as std::ops::Try>::branch` is not modelled"
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::executor::SymbolicExecutor::step",
+      "block": "bb19",
+      "status": "WARN",
+      "kind": "overflow",
+      "file": "crates/core/src/evm/executor.rs",
+      "line": 60,
+      "details": "Arithmetic Overflow Detection (Sub) -> Undecided: `_378` is read from `((*_468).0: u8)`, which this analysis does not model; the value behind it is not modelled either: `_468` is read from `((*_20).0: &evm::opcodes::Instruction)`, which this analysis does not model; the value behind it is not modelled either: `instruction (_20)` is read from `((_3 as Continue).0: &evm::parser::ParsedInstruction)`, which this analysis does not model; the value behind it is not modelled either: the result of the call to `<std::result::Result<&evm::parser::ParsedInstruction, types::error::ExecutionError> as std::ops::Try>::branch` is not modelled"
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::executor::SymbolicExecutor::step",
+      "block": "bb21",
+      "status": "WARN",
+      "kind": "overflow",
+      "file": "crates/core/src/evm/executor.rs",
+      "line": 60,
+      "details": "Arithmetic Overflow Detection (Sub) -> Undecided: `_405` is read from `((*_470).0: u8)`, which this analysis does not model; the value behind it is not modelled either: `_470` is read from `((*_20).0: &evm::opcodes::Instruction)`, which this analysis does not model; the value behind it is not modelled either: `instruction (_20)` is read from `((_3 as Continue).0: &evm::parser::ParsedInstruction)`, which this analysis does not model; the value behind it is not modelled either: the result of the call to `<std::result::Result<&evm::parser::ParsedInstruction, types::error::ExecutionError> as std::ops::Try>::branch` is not modelled"
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::executor::SymbolicExecutor::step",
+      "block": "bb199",
+      "status": "FAIL",
+      "kind": "overflow",
+      "defect_class": "guard-limited",
+      "file": "crates/core/src/evm/executor.rs",
+      "line": 60,
+      "details": "Arithmetic Overflow Detection (Add) -> Exploit path found! [((*_2).3: usize) = 18446744073709551615, 1_usize = 1]",
+      "witness": [
+        {
+          "input": "((*_2).3: usize)",
+          "symbol": "overflow_l",
+          "value": "18446744073709551615"
+        },
+        {
+          "input": "1_usize",
+          "symbol": "overflow_r",
+          "value": "1"
+        }
+      ],
+      "witness_kind": "pinned"
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::executor::SymbolicExecutor::step",
+      "block": "bb204",
+      "status": "FAIL",
+      "kind": "overflow",
+      "defect_class": "guard-limited",
+      "file": "crates/core/src/evm/executor.rs",
+      "line": 60,
+      "details": "Arithmetic Overflow Detection (Sub) -> Exploit path found! [32_usize = 32, _364 = 33]",
+      "witness": [
+        {
+          "input": "32_usize",
+          "symbol": "overflow_l",
+          "value": "32"
+        },
+        {
+          "input": "_364",
+          "symbol": "overflow_r",
+          "value": "33"
+        }
+      ],
+      "witness_kind": "one-of-many"
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::executor::SymbolicExecutor::step",
+      "block": "bb227",
+      "status": "FAIL",
+      "kind": "overflow",
+      "defect_class": "guard-limited",
+      "file": "crates/core/src/evm/executor.rs",
+      "line": 60,
+      "details": "Arithmetic Overflow Detection (Sub) -> Exploit path found! [len (_407) = 0, 1_usize = 1]",
+      "witness": [
+        {
+          "input": "len (_407)",
+          "symbol": "overflow_l",
+          "value": "0"
+        },
+        {
+          "input": "1_usize",
+          "symbol": "overflow_r",
+          "value": "1"
+        }
+      ],
+      "witness_kind": "pinned"
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::gas::memory_expansion_cost",
+      "block": "bb2",
+      "status": "FAIL",
+      "kind": "overflow",
+      "defect_class": "guard-limited",
+      "file": "crates/core/src/evm/gas.rs",
+      "line": 63,
+      "details": "Arithmetic Overflow Detection (Add) -> Exploit path found! [current_size (_1) = 18446744073709551585, 31_usize = 31]",
+      "witness": [
+        {
+          "input": "current_size (_1)",
+          "symbol": "overflow_l",
+          "value": "18446744073709551585"
+        },
+        {
+          "input": "31_usize",
+          "symbol": "overflow_r",
+          "value": "31"
+        }
+      ],
+      "witness_kind": "one-of-many"
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::gas::memory_expansion_cost",
+      "block": "bb4",
+      "status": "FAIL",
+      "kind": "overflow",
+      "defect_class": "guard-limited",
+      "file": "crates/core/src/evm/gas.rs",
+      "line": 63,
+      "details": "Arithmetic Overflow Detection (Add) -> Exploit path found! [target_size (_2) = 18446744073709551585, 31_usize = 31]",
+      "witness": [
+        {
+          "input": "target_size (_2)",
+          "symbol": "overflow_l",
+          "value": "18446744073709551585"
+        },
+        {
+          "input": "31_usize",
+          "symbol": "overflow_r",
+          "value": "31"
+        }
+      ],
+      "witness_kind": "one-of-many"
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::gas::memory_expansion_cost",
+      "block": "bb7",
+      "status": "FAIL",
+      "kind": "overflow",
+      "defect_class": "guard-limited",
+      "file": "crates/core/src/evm/gas.rs",
+      "line": 63,
+      "details": "Arithmetic Overflow Detection (Mul) -> Exploit path found! [words_current (_4) = 4294967297, words_current (_4) = 4294967297]",
+      "witness": [
+        {
+          "input": "words_current (_4)",
+          "symbol": "overflow_l",
+          "value": "4294967297"
+        },
+        {
+          "input": "words_current (_4)",
+          "symbol": "overflow_r",
+          "value": "4294967297"
+        }
+      ],
+      "witness_kind": "one-of-many"
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::gas::memory_expansion_cost",
+      "block": "bb11",
+      "status": "FAIL",
+      "kind": "overflow",
+      "defect_class": "guard-limited",
+      "file": "crates/core/src/evm/gas.rs",
+      "line": 63,
+      "details": "Arithmetic Overflow Detection (Mul) -> Exploit path found! [words_target (_8) = 4294967297, words_target (_8) = 4294967297]",
+      "witness": [
+        {
+          "input": "words_target (_8)",
+          "symbol": "overflow_l",
+          "value": "4294967297"
+        },
+        {
+          "input": "words_target (_8)",
+          "symbol": "overflow_r",
+          "value": "4294967297"
+        }
+      ],
+      "witness_kind": "one-of-many"
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::gas::memory_expansion_cost",
+      "block": "bb14",
+      "status": "WARN",
+      "kind": "overflow",
+      "file": "crates/core/src/evm/gas.rs",
+      "line": 63,
+      "details": "Arithmetic Overflow Detection (Sub)"
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::gas::intrinsic_gas",
+      "block": "bb10",
+      "status": "FAIL",
+      "kind": "overflow",
+      "defect_class": "widening-limited",
+      "file": "crates/core/src/evm/gas.rs",
+      "line": 78,
+      "details": "Arithmetic Overflow Detection (Add) -> Exploit path found! [gas (_3) = 18446744073709551612, 4_u64 = 4, byte (_9) = 0]",
+      "witness": [
+        {
+          "input": "gas (_3)",
+          "symbol": "overflow_l",
+          "value": "18446744073709551612"
+        },
+        {
+          "input": "4_u64",
+          "symbol": "overflow_r",
+          "value": "4"
+        },
+        {
+          "input": "byte (_9)",
+          "symbol": "mir_9",
+          "value": "0"
+        }
+      ],
+      "witness_kind": "one-of-many"
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::gas::intrinsic_gas",
+      "block": "bb12",
+      "status": "FAIL",
+      "kind": "overflow",
+      "defect_class": "widening-limited",
+      "file": "crates/core/src/evm/gas.rs",
+      "line": 78,
+      "details": "Arithmetic Overflow Detection (Add) -> Exploit path found! [gas (_3) = 18446744073709551600, 16_u64 = 16]",
+      "witness": [
+        {
+          "input": "gas (_3)",
+          "symbol": "overflow_l",
+          "value": "18446744073709551600"
+        },
+        {
+          "input": "16_u64",
+          "symbol": "overflow_r",
+          "value": "16"
+        }
+      ],
+      "witness_kind": "one-of-many"
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::gas::log_gas",
+      "block": "bb2",
+      "status": "FAIL",
+      "kind": "overflow",
+      "defect_class": "guard-limited",
+      "file": "crates/core/src/evm/gas.rs",
+      "line": 116,
+      "details": "Arithmetic Overflow Detection (Mul) -> Exploit path found! [data_size (_2) = 2305843009213693952, 8_u64 = 8]",
+      "witness": [
+        {
+          "input": "data_size (_2)",
+          "symbol": "overflow_l",
+          "value": "2305843009213693952"
+        },
+        {
+          "input": "8_u64",
+          "symbol": "overflow_r",
+          "value": "8"
+        }
+      ],
+      "witness_kind": "one-of-many"
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::gas::log_gas",
+      "block": "bb3",
+      "status": "FAIL",
+      "kind": "overflow",
+      "defect_class": "guard-limited",
+      "file": "crates/core/src/evm/gas.rs",
+      "line": 116,
+      "details": "Arithmetic Overflow Detection (Add) -> Exploit path found! [_3 = 3000, _8 = 18446744073709548616]",
+      "witness": [
+        {
+          "input": "_3",
+          "symbol": "overflow_l",
+          "value": "3000"
+        },
+        {
+          "input": "_8",
+          "symbol": "overflow_r",
+          "value": "18446744073709548616"
+        }
+      ],
+      "witness_kind": "one-of-many"
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::gas::keccak256_gas",
+      "block": "bb0",
+      "status": "FAIL",
+      "kind": "overflow",
+      "defect_class": "unguarded",
+      "file": "crates/core/src/evm/gas.rs",
+      "line": 181,
+      "details": "Arithmetic Overflow Detection (Add) -> Exploit path found! [data_size (_1) = 18446744073709551600, 31_u64 = 31]",
+      "witness": [
+        {
+          "input": "data_size (_1)",
+          "symbol": "overflow_l",
+          "value": "18446744073709551600"
+        },
+        {
+          "input": "31_u64",
+          "symbol": "overflow_r",
+          "value": "31"
+        }
+      ],
+      "witness_kind": "one-of-many"
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::gas::contract_creation_cost",
+      "block": "bb0",
+      "status": "FAIL",
+      "kind": "overflow",
+      "defect_class": "unguarded",
+      "file": "crates/core/src/evm/gas.rs",
+      "line": 188,
+      "details": "Arithmetic Overflow Detection (Mul) -> Exploit path found! [_2 = 92233720368547759, 200_u64 = 200]",
+      "witness": [
+        {
+          "input": "_2",
+          "symbol": "overflow_l",
+          "value": "92233720368547759"
+        },
+        {
+          "input": "200_u64",
+          "symbol": "overflow_r",
+          "value": "200"
+        }
+      ],
+      "witness_kind": "one-of-many"
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "ir::ControlFlowGraph::from_jump_dests",
+      "block": "bb16",
+      "status": "FAIL",
+      "kind": "overflow",
+      "defect_class": "widening-limited",
+      "file": "crates/core/src/ir/mod.rs",
+      "line": 50,
+      "details": "Arithmetic Overflow Detection (Add) -> Exploit path found! [id_counter (_12) = 18446744073709551615, 1_usize = 1]",
+      "witness": [
+        {
+          "input": "id_counter (_12)",
+          "symbol": "overflow_l",
+          "value": "18446744073709551615"
+        },
+        {
+          "input": "1_usize",
+          "symbol": "overflow_r",
+          "value": "1"
+        }
+      ],
+      "witness_kind": "pinned"
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "ir::build_ir",
+      "block": "bb10",
+      "status": "WARN",
+      "kind": "bounds",
+      "file": "crates/core/src/ir/mod.rs",
+      "line": 139,
+      "details": "Slice Boundary Analysis -> Undecided: `i (_17)` is read from `((_14 as Some).0: usize)`, which this analysis does not model; the value behind it is not modelled either: the result of the call to `<std::ops::RangeInclusive<usize> as std::iter::Iterator>::next` is not modelled"
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "abstract_interpretation::AbstractInterpreter::fresh_variable",
+      "block": "bb0",
+      "status": "FAIL",
+      "kind": "overflow",
+      "defect_class": "unguarded",
+      "file": "crates/core/src/abstract_interpretation/mod.rs",
+      "line": 67,
+      "details": "Arithmetic Overflow Detection (Add) -> Exploit path found! [((*_1).2: u64) = 18446744073709551615, 1_u64 = 1]",
+      "witness": [
+        {
+          "input": "((*_1).2: u64)",
+          "symbol": "overflow_l",
+          "value": "18446744073709551615"
+        },
+        {
+          "input": "1_u64",
+          "symbol": "overflow_r",
+          "value": "1"
+        }
+      ],
+      "witness_kind": "pinned"
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "z3_backend::SmtLibBackend::value_to_smt",
+      "block": "bb149",
+      "status": "WARN",
+      "kind": "overflow",
+      "file": "crates/core/src/z3_backend/mod.rs",
+      "line": 165,
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: the result of the call to `<&u8 as std::ops::Mul<u8>>::mul` is not modelled"
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "<z3_backend::SmtLibBackend as z3_backend::Z3Backend>::push",
+      "block": "bb1",
+      "status": "FAIL",
+      "kind": "overflow",
+      "defect_class": "unguarded",
+      "file": "crates/core/src/z3_backend/mod.rs",
+      "line": 258,
+      "details": "Arithmetic Overflow Detection (Add) -> Exploit path found! [((*_1).1: usize) = 18446744073709551615, 1_usize = 1]",
+      "witness": [
+        {
+          "input": "((*_1).1: usize)",
+          "symbol": "overflow_l",
+          "value": "18446744073709551615"
+        },
+        {
+          "input": "1_usize",
+          "symbol": "overflow_r",
+          "value": "1"
+        }
+      ],
+      "witness_kind": "pinned"
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "<z3_backend::SmtLibBackend as z3_backend::Z3Backend>::pop",
+      "block": "bb2",
+      "status": "FAIL",
+      "kind": "overflow",
+      "defect_class": "guard-limited",
+      "file": "crates/core/src/z3_backend/mod.rs",
+      "line": 264,
+      "details": "Arithmetic Overflow Detection (Sub) -> Exploit path found! [((*_1).1: usize) = 0, 1_usize = 1]",
+      "witness": [
+        {
+          "input": "((*_1).1: usize)",
+          "symbol": "overflow_l",
+          "value": "0"
+        },
+        {
+          "input": "1_usize",
+          "symbol": "overflow_r",
+          "value": "1"
+        }
+      ],
+      "witness_kind": "pinned"
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "hash::SymbolicHashTable::hash_symbolic",
+      "block": "bb0",
+      "status": "FAIL",
+      "kind": "overflow",
+      "defect_class": "unguarded",
+      "file": "crates/core/src/hash/mod.rs",
+      "line": 88,
+      "details": "Arithmetic Overflow Detection (Add) -> Exploit path found! [((*_1).2: u64) = 18446744073709551615, 1_u64 = 1]",
+      "witness": [
+        {
+          "input": "((*_1).2: u64)",
+          "symbol": "overflow_l",
+          "value": "18446744073709551615"
+        },
+        {
+          "input": "1_u64",
+          "symbol": "overflow_r",
+          "value": "1"
+        }
+      ],
+      "witness_kind": "pinned"
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "hash::SymbolicHashTable::generate_storage_slot",
+      "block": "bb14",
+      "status": "WARN",
+      "kind": "overflow",
+      "file": "crates/core/src/hash/mod.rs",
+      "line": 111,
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: the result of the call to `hash::SymbolicHashTable::hash_symbolic` is not modelled"
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "hash::SymbolicHashTable::generate_storage_slot",
+      "block": "bb16",
+      "status": "WARN",
+      "kind": "overflow",
+      "file": "crates/core/src/hash/mod.rs",
+      "line": 111,
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: the result of the call to `hash::SymbolicHashTable::hash_symbolic` is not modelled"
+    }
+  ],
+  "compiler": {
+    "arguments": [
+      "--crate-name",
+      "symbolic_execution_core",
+      "--edition=2021",
+      "crates\\core\\src\\lib.rs",
+      "--error-format=json",
+      "--json=diagnostic-rendered-ansi,artifacts,future-incompat",
+      "--crate-type",
+      "lib",
+      "--emit=dep-info,metadata",
+      "-C",
+      "embed-bitcode=no",
+      "-C",
+      "debuginfo=2",
+      "--check-cfg",
+      "cfg(docsrs,test)",
+      "--check-cfg",
+      "cfg(feature, values())",
+      "-C",
+      "metadata=2498d5efa4fa24e8",
+      "-C",
+      "extra-filename=-846be874d8e30bb2",
+      "--out-dir",
+      "C:\\Users\\lukas\\Downloads\\SYSTEMS & CREATIONS\\SymEx-EVM\\crates\\core\\target\\keller\\debug\\deps",
+      "-C",
+      "incremental=C:\\Users\\lukas\\Downloads\\SYSTEMS & CREATIONS\\SymEx-EVM\\crates\\core\\target\\keller\\debug\\incremental",
+      "-L",
+      "dependency=C:\\Users\\lukas\\Downloads\\SYSTEMS & CREATIONS\\SymEx-EVM\\crates\\core\\target\\keller\\debug\\deps",
+      "--extern",
+      "bimap=C:\\Users\\lukas\\Downloads\\SYSTEMS & CREATIONS\\SymEx-EVM\\crates\\core\\target\\keller\\debug\\deps\\libbimap-107e5ce8a8d18a1a.rmeta",
+      "--extern",
+      "hex=C:\\Users\\lukas\\Downloads\\SYSTEMS & CREATIONS\\SymEx-EVM\\crates\\core\\target\\keller\\debug\\deps\\libhex-833773e4cbc67c7b.rmeta",
+      "--extern",
+      "itertools=C:\\Users\\lukas\\Downloads\\SYSTEMS & CREATIONS\\SymEx-EVM\\crates\\core\\target\\keller\\debug\\deps\\libitertools-1229441041972e08.rmeta",
+      "--extern",
+      "petgraph=C:\\Users\\lukas\\Downloads\\SYSTEMS & CREATIONS\\SymEx-EVM\\crates\\core\\target\\keller\\debug\\deps\\libpetgraph-afd15012e330c832.rmeta",
+      "--extern",
+      "serde=C:\\Users\\lukas\\Downloads\\SYSTEMS & CREATIONS\\SymEx-EVM\\crates\\core\\target\\keller\\debug\\deps\\libserde-433f8497552bb387.rmeta",
+      "--extern",
+      "serde_json=C:\\Users\\lukas\\Downloads\\SYSTEMS & CREATIONS\\SymEx-EVM\\crates\\core\\target\\keller\\debug\\deps\\libserde_json-5716d889003c1951.rmeta",
+      "--extern",
+      "sha3=C:\\Users\\lukas\\Downloads\\SYSTEMS & CREATIONS\\SymEx-EVM\\crates\\core\\target\\keller\\debug\\deps\\libsha3-e6ed5454fd7468ac.rmeta",
+      "--extern",
+      "smallvec=C:\\Users\\lukas\\Downloads\\SYSTEMS & CREATIONS\\SymEx-EVM\\crates\\core\\target\\keller\\debug\\deps\\libsmallvec-0eed55a04a9d3f94.rmeta",
+      "--extern",
+      "thiserror=C:\\Users\\lukas\\Downloads\\SYSTEMS & CREATIONS\\SymEx-EVM\\crates\\core\\target\\keller\\debug\\deps\\libthiserror-286598c35f53116c.rmeta",
+      "--extern",
+      "tracing=C:\\Users\\lukas\\Downloads\\SYSTEMS & CREATIONS\\SymEx-EVM\\crates\\core\\target\\keller\\debug\\deps\\libtracing-b2975b3b193df43f.rmeta",
+      "-L",
+      "native=C:\\z3\\bin",
+      "--sysroot",
+      "C:\\Users\\lukas\\.rustup\\toolchains\\nightly-2026-07-24-x86_64-pc-windows-msvc"
+    ],
+    "rustc": "C:\\Users\\lukas\\.rustup\\toolchains\\nightly-2026-07-24-x86_64-pc-windows-msvc\\bin\\rustc.exe",
+    "version_verbose": "rustc 1.99.0-nightly (89c61a754 2026-07-23)\nbinary: rustc\ncommit-hash: 89c61a7545da48b06116675b888398d02a4064c7\ncommit-date: 2026-07-23\nhost: x86_64-pc-windows-msvc\nrelease: 1.99.0-nightly\nLLVM version: 22.1.8"
+  },
+  "evidence": [
+    {
+      "function": "<types::address::Address as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<types::address::Address as std::clone::Clone>::clone",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<types::address::Address as std::cmp::PartialEq>::eq",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<types::address::Address as std::cmp::Eq>::assert_fields_are_eq",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<types::address::Address as std::cmp::PartialOrd>::partial_cmp",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<types::address::Address as std::cmp::Ord>::cmp",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<types::address::Address as std::hash::Hash>::hash",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "types::address::Address::new",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "types::address::Address::zero",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "types::address::Address::as_bytes",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<types::address::Address as std::convert::From<[u8; 20]>>::from",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<types::address::Address as std::fmt::LowerHex>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<types::value::U256 as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<types::value::U256 as std::clone::Clone>::clone",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<types::value::U256 as std::cmp::PartialEq>::eq",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<types::value::U256 as std::cmp::Eq>::assert_fields_are_eq",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<types::value::U256 as std::cmp::PartialOrd>::partial_cmp",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<types::value::U256 as std::cmp::Ord>::cmp",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<types::value::U256 as std::hash::Hash>::hash",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<types::value::U256 as std::default::Default>::default",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "types::value::U256::from_limbs",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "types::value::U256::limbs",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<types::value::U256 as std::convert::From<u64>>::from",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<types::value::U256 as std::fmt::LowerHex>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "types::value::U256::to_be_bytes",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "types::value::U256::from_be_bytes",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<types::value::SymVarId as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<types::value::SymVarId as std::clone::Clone>::clone",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<types::value::SymVarId as std::cmp::PartialEq>::eq",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<types::value::SymVarId as std::cmp::Eq>::assert_fields_are_eq",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<types::value::SymVarId as std::cmp::PartialOrd>::partial_cmp",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<types::value::SymVarId as std::cmp::Ord>::cmp",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<types::value::SymVarId as std::hash::Hash>::hash",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<types::value::SymVarId as std::fmt::Display>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<types::value::SymbolicValue as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<types::value::SymbolicValue as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<types::value::SymbolicValue as std::cmp::PartialEq>::eq",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<types::value::SymbolicValue as std::cmp::Eq>::assert_fields_are_eq",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<types::value::SymbolicValue as std::hash::Hash>::hash",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<types::value::SymExpr as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<types::value::SymExpr as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<types::value::SymExpr as std::cmp::PartialEq>::eq",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<types::value::SymExpr as std::cmp::Eq>::assert_fields_are_eq",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<types::value::SymExpr as std::hash::Hash>::hash",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "types::value::SymbolicValue::concrete",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "types::value::SymbolicValue::fresh",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<types::state::ExecutionState as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<types::state::ExecutionState as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<types::state::ExecutionState as std::cmp::PartialEq>::eq",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<types::state::ExecutionState as std::default::Default>::default",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<types::state::ExecutionStatus as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<types::state::ExecutionStatus as std::clone::Clone>::clone",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<types::state::ExecutionStatus as std::cmp::PartialEq>::eq",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<types::state::ExecutionStatus as std::cmp::Eq>::assert_fields_are_eq",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<types::state::ExecutionStatus as std::hash::Hash>::hash",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<types::error::ExecutionError as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<types::error::ExecutionError as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<types::error::ExecutionError as std::cmp::PartialEq>::eq",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<types::error::ExecutionError as std::cmp::Eq>::assert_fields_are_eq",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<types::error::ExecutionError as std::fmt::Display>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<evm::opcodes::Instruction as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<evm::opcodes::Instruction as std::clone::Clone>::clone",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<evm::opcodes::Instruction as std::cmp::PartialEq>::eq",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<evm::opcodes::Instruction as std::cmp::Eq>::assert_fields_are_eq",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "evm::opcodes::Instruction::from_opcode",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<evm::opcodes::Instruction as std::fmt::Display>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "evm::opcodes::make_table",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "evm::opcodes::instr",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "evm::opcodes::instr_term",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "evm::opcodes::instr_jd",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<evm::parser::ParsedInstruction as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<evm::parser::ParsedInstruction as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<evm::parser::ParsedInstruction as std::cmp::PartialEq>::eq",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<evm::parser::ParsedInstruction as std::cmp::Eq>::assert_fields_are_eq",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<evm::parser::ParsedBytecode as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<evm::parser::ParsedBytecode as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "evm::parser::ParsedBytecode::parse",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "evm::parser::ParsedBytecode::is_valid_jumpdest",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "evm::parser::ParsedBytecode::instruction_at",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "evm::parser::ParsedBytecode::instruction_at::{closure#0}",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<evm::executor::StepResult as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<evm::executor::StepResult as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<evm::executor::BranchConstraints as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<evm::executor::BranchConstraints as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "evm::executor::SymbolicExecutor::new",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "evm::executor::SymbolicExecutor::fresh_sym",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "evm::executor::SymbolicExecutor::parsed_bytecode",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "evm::executor::SymbolicExecutor::step",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "evm::executor::SymbolicExecutor::step::{closure#0}",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "evm::executor::SymbolicExecutor::step::{closure#1}",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "evm::executor::SymbolicExecutor::step::{closure#2}",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "evm::executor::SymbolicExecutor::step::{closure#3}",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "evm::executor::SymbolicExecutor::step::{closure#4}",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "evm::executor::SymbolicExecutor::step::{closure#5}",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "evm::executor::SymbolicExecutor::step::{closure#6}",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "evm::executor::SymbolicExecutor::step::{closure#7}",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "evm::executor::SymbolicExecutor::step::{closure#8}",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "evm::executor::SymbolicExecutor::step::{closure#9}",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "evm::executor::SymbolicExecutor::step::{closure#10}",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "evm::executor::SymbolicExecutor::step::{closure#11}",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "evm::executor::SymbolicExecutor::step::{closure#12}",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "evm::executor::SymbolicExecutor::step::{closure#13}",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "evm::executor::SymbolicExecutor::binary_op",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "evm::executor::SymbolicExecutor::resolve_jump_target",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "evm::executor::<impl std::convert::From<types::value::SymExpr> for types::value::SymbolicValue>::from",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<evm::gas::AccessStatus as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<evm::gas::AccessStatus as std::clone::Clone>::clone",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<evm::gas::AccessStatus as std::cmp::PartialEq>::eq",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<evm::gas::AccessStatus as std::cmp::Eq>::assert_fields_are_eq",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<evm::gas::AccessList as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<evm::gas::AccessList as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<evm::gas::AccessList as std::default::Default>::default",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "evm::gas::AccessList::is_address_warm",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "evm::gas::AccessList::warm_address",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "evm::gas::AccessList::is_storage_warm",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "evm::gas::AccessList::warm_storage",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "evm::gas::memory_expansion_cost",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "evm::gas::intrinsic_gas",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "evm::gas::sload_gas",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "evm::gas::sstore_gas",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "evm::gas::log_gas",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "evm::gas::call_gas",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "evm::gas::call_stipend",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "evm::gas::max_call_depth",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "evm::gas::selfdestruct_gas",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "evm::gas::account_access_gas",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "evm::gas::tload_gas",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "evm::gas::tstore_gas",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "evm::gas::create_gas",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "evm::gas::create2_gas",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "evm::gas::keccak256_gas",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "evm::gas::contract_creation_cost",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "evm::gas::accessible_gas",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<ir::BasicBlock as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<ir::BasicBlock as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<ir::BasicBlock as std::cmp::PartialEq>::eq",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<ir::BasicBlock as std::cmp::Eq>::assert_fields_are_eq",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<ir::ControlFlowGraph as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<ir::ControlFlowGraph as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "ir::ControlFlowGraph::from_jump_dests",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<ir::ContractIR as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<ir::ContractIR as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<ir::ContractMetadata as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<ir::ContractMetadata as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<ir::ContractMetadata as std::default::Default>::default",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "ir::build_ir",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<abstract_interpretation::AbstractDomain as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<abstract_interpretation::AbstractDomain as std::clone::Clone>::clone",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<abstract_interpretation::AbstractDomain as std::cmp::PartialEq>::eq",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<abstract_interpretation::AbstractDomain as std::cmp::Eq>::assert_fields_are_eq",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<abstract_interpretation::AbstractConfig as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<abstract_interpretation::AbstractConfig as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<abstract_interpretation::AbstractConfig as std::default::Default>::default",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<abstract_interpretation::AbstractInterpreter as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<abstract_interpretation::AbstractInterpreter as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "abstract_interpretation::AbstractInterpreter::new",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "abstract_interpretation::AbstractInterpreter::fresh_variable",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "abstract_interpretation::AbstractInterpreter::initialize_from_calldata",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "abstract_interpretation::AbstractInterpreter::get_state",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "abstract_interpretation::AbstractInterpreter::get_state_mut",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "abstract_interpretation::AbstractInterpreter::reset",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<path_constraints::PathConstraint as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<path_constraints::PathConstraint as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<path_constraints::PathConstraint as std::cmp::PartialEq>::eq",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<path_constraints::PathConstraint as std::cmp::Eq>::assert_fields_are_eq",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<path_constraints::PathConstraint as std::hash::Hash>::hash",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "path_constraints::PathConstraint::new",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "path_constraints::PathConstraint::add_condition",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "path_constraints::PathConstraint::add_negated",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "path_constraints::PathConstraint::conjoin",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "path_constraints::PathConstraint::mark_infeasible",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "path_constraints::PathConstraint::depth",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<path_constraints::PathConstraint as std::default::Default>::default",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<path_constraints::PathConstraint as std::fmt::Display>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<path_constraints::ConstraintCollector as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<path_constraints::ConstraintCollector as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "path_constraints::ConstraintCollector::new",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "path_constraints::ConstraintCollector::record_taken_branch",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "path_constraints::ConstraintCollector::fork_branch",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "path_constraints::ConstraintCollector::finalize_current_path",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "path_constraints::ConstraintCollector::explored_paths",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<path_constraints::ConstraintCollector as std::default::Default>::default",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<state_explorer::SearchStrategy as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<state_explorer::SearchStrategy as std::clone::Clone>::clone",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<state_explorer::SearchStrategy as std::cmp::PartialEq>::eq",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<state_explorer::SearchStrategy as std::cmp::Eq>::assert_fields_are_eq",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<state_explorer::ExplorerConfig as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<state_explorer::ExplorerConfig as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<state_explorer::ExplorerConfig as std::default::Default>::default",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<state_explorer::StateSnapshot as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<state_explorer::StateSnapshot as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<state_explorer::MergedState as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<state_explorer::MergedState as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<state_explorer::ExplorationResult as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<state_explorer::ExplorationResult as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<state_explorer::StateExplorer as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<state_explorer::StateExplorer as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "state_explorer::StateExplorer::new",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "state_explorer::StateExplorer::try_merge",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "state_explorer::StateExplorer::try_merge::{closure#0}",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "state_explorer::StateExplorer::try_merge::{closure#1}",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "state_explorer::StateExplorer::record_merged",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "state_explorer::StateExplorer::explore",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<smt::SmtResult as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<smt::SmtResult as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<smt::SmtResult as std::cmp::PartialEq>::eq",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<smt::SmtResult as std::cmp::Eq>::assert_fields_are_eq",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<smt::SmtModelValue as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<smt::SmtModelValue as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<smt::SmtModelValue as std::cmp::PartialEq>::eq",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<smt::SmtModelValue as std::cmp::Eq>::assert_fields_are_eq",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<smt::SmtConfig as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<smt::SmtConfig as std::clone::Clone>::clone",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<smt::SmtConfig as std::default::Default>::default",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<smt::SmtSolver as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<smt::SmtSolver as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "smt::SmtSolver::new",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "smt::SmtSolver::check_sat",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "smt::SmtSolver::is_unsat",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "smt::SmtSolver::get_model",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "smt::SmtSolver::to_smt_lib",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "smt::SmtSolver::constraint_to_smt_lib",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<verification::Invariant as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<verification::Invariant as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<verification::Invariant as std::cmp::PartialEq>::eq",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<verification::Invariant as std::cmp::Eq>::assert_fields_are_eq",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<verification::InvariantSeverity as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<verification::InvariantSeverity as std::clone::Clone>::clone",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<verification::InvariantSeverity as std::cmp::PartialEq>::eq",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<verification::InvariantSeverity as std::cmp::Eq>::assert_fields_are_eq",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<verification::VerificationResult as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<verification::VerificationResult as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<verification::VerificationResult as std::cmp::PartialEq>::eq",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<verification::VerificationResult as std::cmp::Eq>::assert_fields_are_eq",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<verification::PropertyType as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<verification::PropertyType as std::clone::Clone>::clone",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<verification::PropertyType as std::cmp::PartialEq>::eq",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<verification::PropertyType as std::cmp::Eq>::assert_fields_are_eq",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<verification::VerificationProperty as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<verification::VerificationProperty as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<verification::Verifier as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<verification::Verifier as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "verification::Verifier::new",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "verification::Verifier::add_property",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "verification::Verifier::verify_all",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "verification::Verifier::verify_all::{closure#0}",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "verification::Verifier::verify_invariant",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "verification::Verifier::generate_spec_candidates",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<counter_examples::CounterExample as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<counter_examples::CounterExample as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<counter_examples::CounterExampleGenerator as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<counter_examples::CounterExampleGenerator as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "counter_examples::CounterExampleGenerator::new",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "counter_examples::CounterExampleGenerator::generate_from_model",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "counter_examples::CounterExampleGenerator::format_report",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<vulnerabilities::Severity as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<vulnerabilities::Severity as std::clone::Clone>::clone",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<vulnerabilities::Severity as std::cmp::PartialEq>::eq",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<vulnerabilities::Severity as std::cmp::Eq>::assert_fields_are_eq",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<vulnerabilities::Severity as std::cmp::PartialOrd>::partial_cmp",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<vulnerabilities::Severity as std::cmp::Ord>::cmp",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<vulnerabilities::Severity as std::fmt::Display>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<vulnerabilities::Vulnerability as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<vulnerabilities::Vulnerability as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<vulnerabilities::ScanResult as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<vulnerabilities::ScanResult as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "vulnerabilities::ScanResult::empty",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "vulnerabilities::ScanResult::by_severity",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "vulnerabilities::ScanResult::by_severity::{closure#0}",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "vulnerabilities::ScanResult::highest_severity",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "vulnerabilities::ScanResult::highest_severity::{closure#0}",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "vulnerabilities::ScanResult::highest_severity::{closure#1}",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<vulnerabilities::ReentrancyDetector as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<vulnerabilities::ReentrancyDetector as vulnerabilities::VulnerabilityDetector>::name",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<vulnerabilities::ReentrancyDetector as vulnerabilities::VulnerabilityDetector>::detect",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<vulnerabilities::IntegerOverflowDetector as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<vulnerabilities::IntegerOverflowDetector as vulnerabilities::VulnerabilityDetector>::name",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<vulnerabilities::IntegerOverflowDetector as vulnerabilities::VulnerabilityDetector>::detect",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<vulnerabilities::TxOriginDetector as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<vulnerabilities::TxOriginDetector as vulnerabilities::VulnerabilityDetector>::name",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<vulnerabilities::TxOriginDetector as vulnerabilities::VulnerabilityDetector>::detect",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<vulnerabilities::UncheckedCallDetector as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<vulnerabilities::UncheckedCallDetector as vulnerabilities::VulnerabilityDetector>::name",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<vulnerabilities::UncheckedCallDetector as vulnerabilities::VulnerabilityDetector>::detect",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<vulnerabilities::AccessControlDetector as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<vulnerabilities::AccessControlDetector as vulnerabilities::VulnerabilityDetector>::name",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<vulnerabilities::AccessControlDetector as vulnerabilities::VulnerabilityDetector>::detect",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<vulnerabilities::TimestampDependencyDetector as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<vulnerabilities::TimestampDependencyDetector as vulnerabilities::VulnerabilityDetector>::name",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<vulnerabilities::TimestampDependencyDetector as vulnerabilities::VulnerabilityDetector>::detect",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<vulnerabilities::VulnerabilityScanner as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "vulnerabilities::VulnerabilityScanner::new",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "vulnerabilities::VulnerabilityScanner::register_detector",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "vulnerabilities::VulnerabilityScanner::scan",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<vulnerabilities::VulnerabilityScanner as std::default::Default>::default",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<gas::GasAnalysisResult as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<gas::GasAnalysisResult as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<gas::GasPath as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<gas::GasPath as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<gas::GasBreakdown as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<gas::GasBreakdown as std::clone::Clone>::clone",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<gas::GasBreakdown as std::default::Default>::default",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<gas::GasAnalyzerConfig as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<gas::GasAnalyzerConfig as std::clone::Clone>::clone",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<gas::GasAnalyzerConfig as std::default::Default>::default",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<gas::GasAnalyzer as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<gas::GasAnalyzer as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "gas::GasAnalyzer::new",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "gas::GasAnalyzer::analyze",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "gas::GasAnalyzer::check_block_gas_limit",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "gas::GasAnalyzer::check_block_gas_limit::{closure#0}",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<taint::TaintStatus as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<taint::TaintStatus as std::clone::Clone>::clone",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<taint::TaintStatus as std::cmp::PartialEq>::eq",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<taint::TaintStatus as std::cmp::Eq>::assert_fields_are_eq",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<taint::TaintStatus as std::cmp::PartialOrd>::partial_cmp",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<taint::TaintStatus as std::cmp::Ord>::cmp",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<taint::TaintStatus as std::hash::Hash>::hash",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "taint::TaintStatus::combine",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<taint::TaintSource as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<taint::TaintSource as std::clone::Clone>::clone",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<taint::TaintSource as std::cmp::PartialEq>::eq",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<taint::TaintSource as std::cmp::Eq>::assert_fields_are_eq",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<taint::TaintSource as std::hash::Hash>::hash",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<taint::TaintSource as std::cmp::PartialOrd>::partial_cmp",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<taint::TaintSource as std::cmp::Ord>::cmp",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<taint::TaintSink as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<taint::TaintSink as std::clone::Clone>::clone",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<taint::TaintSink as std::cmp::PartialEq>::eq",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<taint::TaintSink as std::cmp::Eq>::assert_fields_are_eq",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<taint::TaintSink as std::hash::Hash>::hash",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<taint::TaintFlow as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<taint::TaintFlow as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<taint::TaintAnalyzer as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<taint::TaintAnalyzer as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "taint::TaintAnalyzer::new",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "taint::TaintAnalyzer::mark_tainted",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "taint::TaintAnalyzer::is_tainted",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "taint::TaintAnalyzer::record_flow",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "taint::TaintAnalyzer::analyze",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<taint::TaintAnalyzer as std::default::Default>::default",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<spec_gen::SpecificationCandidate as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<spec_gen::SpecificationCandidate as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<spec_gen::SpecSource as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<spec_gen::SpecSource as std::clone::Clone>::clone",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<spec_gen::SpecSource as std::cmp::PartialEq>::eq",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<spec_gen::SpecSource as std::cmp::Eq>::assert_fields_are_eq",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<spec_gen::SpecGenConfig as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<spec_gen::SpecGenConfig as std::clone::Clone>::clone",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<spec_gen::SpecGenConfig as std::default::Default>::default",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<spec_gen::SpecGenerator as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<spec_gen::SpecGenerator as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "spec_gen::SpecGenerator::new",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "spec_gen::SpecGenerator::generate",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "spec_gen::SpecGenerator::high_confidence_candidates",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "spec_gen::SpecGenerator::high_confidence_candidates::{closure#0}",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<analysis::AnalysisConfig as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<analysis::AnalysisConfig as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<analysis::AnalysisConfig as std::default::Default>::default",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<analysis::AnalysisReport as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<analysis::AnalysisReport as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<analysis::AnalysisEngine as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "analysis::AnalysisEngine::new",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "analysis::AnalysisEngine::with_config",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "analysis::AnalysisEngine::analyze_bytecode",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<analysis::AnalysisEngine as std::default::Default>::default",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<concolic::ConcreteTrace as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<concolic::ConcreteTrace as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<concolic::TraceStep as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<concolic::TraceStep as std::clone::Clone>::clone",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<concolic::TraceStep as std::cmp::PartialEq>::eq",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<concolic::TraceStep as std::cmp::Eq>::assert_fields_are_eq",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<concolic::ConcolicConfig as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<concolic::ConcolicConfig as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<concolic::ConcolicConfig as std::default::Default>::default",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<concolic::ConcreteEVM as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<concolic::ConcreteEVM as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "concolic::ConcreteEVM::new",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "concolic::ConcreteEVM::execute_concrete",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "concolic::ConcreteEVM::execute_concrete::{closure#0}",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "concolic::generate_seeds",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<concolic::ConcolicEngine as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<concolic::ConcolicEngine as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "concolic::ConcolicEngine::new",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "concolic::ConcolicEngine::explore",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<z3_backend::SolverResult as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<z3_backend::SolverResult as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<z3_backend::SolverResult as std::cmp::PartialEq>::eq",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<z3_backend::SolverResult as std::cmp::Eq>::assert_fields_are_eq",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<z3_backend::Z3NativeBackend as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<z3_backend::Z3NativeBackend as std::clone::Clone>::clone",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "z3_backend::Z3NativeBackend::new",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<z3_backend::Z3NativeBackend as z3_backend::Z3Backend>::create_context",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<z3_backend::Z3NativeBackend as z3_backend::Z3Backend>::assert_constraint",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<z3_backend::Z3NativeBackend as z3_backend::Z3Backend>::check_sat",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<z3_backend::Z3NativeBackend as z3_backend::Z3Backend>::push",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<z3_backend::Z3NativeBackend as z3_backend::Z3Backend>::pop",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<z3_backend::Z3NativeBackend as z3_backend::Z3Backend>::get_model_value",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<z3_backend::Z3NativeBackend as z3_backend::Z3Backend>::reset",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<z3_backend::Z3NativeBackend as z3_backend::Z3Backend>::set_timeout",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<z3_backend::SmtLibBackend as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<z3_backend::SmtLibBackend as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "z3_backend::SmtLibBackend::new",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "z3_backend::SmtLibBackend::init_script",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "z3_backend::SmtLibBackend::value_to_smt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<z3_backend::SmtLibBackend as z3_backend::Z3Backend>::create_context",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<z3_backend::SmtLibBackend as z3_backend::Z3Backend>::assert_constraint",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<z3_backend::SmtLibBackend as z3_backend::Z3Backend>::check_sat",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<z3_backend::SmtLibBackend as z3_backend::Z3Backend>::push",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<z3_backend::SmtLibBackend as z3_backend::Z3Backend>::pop",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<z3_backend::SmtLibBackend as z3_backend::Z3Backend>::get_model_value",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<z3_backend::SmtLibBackend as z3_backend::Z3Backend>::reset",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<z3_backend::SmtLibBackend as z3_backend::Z3Backend>::set_timeout",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<z3_backend::Z3Solver as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<z3_backend::Z3Solver as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<z3_backend::SolverBackend as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<z3_backend::SolverBackend as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "z3_backend::Z3Solver::new_native",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "z3_backend::Z3Solver::new_smt_lib",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "z3_backend::Z3Solver::check",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "z3_backend::Z3Solver::push",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "z3_backend::Z3Solver::pop",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "z3_backend::Z3Solver::get_script",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<hash::HashEntry as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<hash::HashEntry as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<hash::SymbolicHashTable as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<hash::SymbolicHashTable as std::clone::Clone>::clone",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "hash::SymbolicHashTable::new",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "hash::SymbolicHashTable::hash_concrete",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "hash::SymbolicHashTable::hash_symbolic",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "hash::SymbolicHashTable::lookup_preimage",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "hash::SymbolicHashTable::get_symbolic_hash",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "hash::SymbolicHashTable::constrain_symbolic",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "hash::SymbolicHashTable::generate_storage_slot",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "hash::SymbolicHashTable::len",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "hash::SymbolicHashTable::is_empty",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<hash::SymbolicHashTable as std::default::Default>::default",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "hash::smt_declare_keccak",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "hash::smt_keccak_injectivity",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    }
+  ],
+  "obligations": [
+    {
+      "crate": "symbolic_execution_core",
+      "function": "<z3_backend::SmtLibBackend as z3_backend::Z3Backend>::pop",
+      "block": "bb2",
+      "status": "FAIL",
+      "kind": "overflow",
+      "verdict": "FAIL (sat)",
+      "artifact": "_z3_backend__SmtLibBackend_as_z3_backend__Z3Backend___pop_bb2.smt2",
+      "pinned_artifact": "_z3_backend__SmtLibBackend_as_z3_backend__Z3Backend___pop_bb2.witness.smt2",
+      "file": "crates/core/src/z3_backend/mod.rs",
+      "line": 264
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "<z3_backend::SmtLibBackend as z3_backend::Z3Backend>::push",
+      "block": "bb1",
+      "status": "FAIL",
+      "kind": "overflow",
+      "verdict": "FAIL (sat)",
+      "artifact": "_z3_backend__SmtLibBackend_as_z3_backend__Z3Backend___push_bb1.smt2",
+      "pinned_artifact": "_z3_backend__SmtLibBackend_as_z3_backend__Z3Backend___push_bb1.witness.smt2",
+      "file": "crates/core/src/z3_backend/mod.rs",
+      "line": 258
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "abstract_interpretation::AbstractInterpreter::fresh_variable",
+      "block": "bb0",
+      "status": "FAIL",
+      "kind": "overflow",
+      "verdict": "FAIL (sat)",
+      "artifact": "abstract_interpretation__AbstractInterpreter__fresh_variable_bb0.smt2",
+      "pinned_artifact": "abstract_interpretation__AbstractInterpreter__fresh_variable_bb0.witness.smt2",
+      "file": "crates/core/src/abstract_interpretation/mod.rs",
+      "line": 67
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "concolic::generate_seeds",
+      "block": "bb10",
+      "status": "PASS",
+      "kind": "overflow",
+      "verdict": "PASS (unsat)",
+      "artifact": "concolic__generate_seeds_bb10.smt2",
+      "file": "crates/core/src/concolic/mod.rs",
+      "line": 152
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "concolic::generate_seeds",
+      "block": "bb19",
+      "status": "PASS",
+      "kind": "overflow",
+      "verdict": "PASS (unsat)",
+      "artifact": "concolic__generate_seeds_bb19.smt2",
+      "file": "crates/core/src/concolic/mod.rs",
+      "line": 152
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "concolic::generate_seeds",
+      "block": "bb9",
+      "status": "PASS",
+      "kind": "remainder",
+      "verdict": "PASS (unsat)",
+      "artifact": "concolic__generate_seeds_bb9.smt2",
+      "file": "crates/core/src/concolic/mod.rs",
+      "line": 152
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "counter_examples::CounterExampleGenerator::generate_from_model",
+      "block": "bb19",
+      "status": "PASS",
+      "kind": "overflow",
+      "verdict": "PASS (unsat)",
+      "artifact": "counter_examples__CounterExampleGenerator__generate_from_model_bb19.smt2",
+      "file": "crates/core/src/counter_examples/mod.rs",
+      "line": 40
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::executor::SymbolicExecutor::fresh_sym",
+      "block": "bb0",
+      "status": "FAIL",
+      "kind": "overflow",
+      "verdict": "FAIL (sat)",
+      "artifact": "evm__executor__SymbolicExecutor__fresh_sym_bb0.smt2",
+      "pinned_artifact": "evm__executor__SymbolicExecutor__fresh_sym_bb0.witness.smt2",
+      "file": "crates/core/src/evm/executor.rs",
+      "line": 47
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::executor::SymbolicExecutor::step",
+      "block": "bb13",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "evm__executor__SymbolicExecutor__step_bb13.smt2",
+      "file": "crates/core/src/evm/executor.rs",
+      "line": 60
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::executor::SymbolicExecutor::step",
+      "block": "bb19",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "evm__executor__SymbolicExecutor__step_bb19.smt2",
+      "file": "crates/core/src/evm/executor.rs",
+      "line": 60
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::executor::SymbolicExecutor::step",
+      "block": "bb199",
+      "status": "FAIL",
+      "kind": "overflow",
+      "verdict": "FAIL (sat)",
+      "artifact": "evm__executor__SymbolicExecutor__step_bb199.smt2",
+      "pinned_artifact": "evm__executor__SymbolicExecutor__step_bb199.witness.smt2",
+      "file": "crates/core/src/evm/executor.rs",
+      "line": 60
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::executor::SymbolicExecutor::step",
+      "block": "bb204",
+      "status": "FAIL",
+      "kind": "overflow",
+      "verdict": "FAIL (sat)",
+      "artifact": "evm__executor__SymbolicExecutor__step_bb204.smt2",
+      "pinned_artifact": "evm__executor__SymbolicExecutor__step_bb204.witness.smt2",
+      "file": "crates/core/src/evm/executor.rs",
+      "line": 60
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::executor::SymbolicExecutor::step",
+      "block": "bb21",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "evm__executor__SymbolicExecutor__step_bb21.smt2",
+      "file": "crates/core/src/evm/executor.rs",
+      "line": 60
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::executor::SymbolicExecutor::step",
+      "block": "bb227",
+      "status": "FAIL",
+      "kind": "overflow",
+      "verdict": "FAIL (sat)",
+      "artifact": "evm__executor__SymbolicExecutor__step_bb227.smt2",
+      "pinned_artifact": "evm__executor__SymbolicExecutor__step_bb227.witness.smt2",
+      "file": "crates/core/src/evm/executor.rs",
+      "line": 60
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::gas::call_gas",
+      "block": "bb2",
+      "status": "PASS",
+      "kind": "overflow",
+      "verdict": "PASS (unsat)",
+      "artifact": "evm__gas__call_gas_bb2.smt2",
+      "file": "crates/core/src/evm/gas.rs",
+      "line": 124
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::gas::call_gas",
+      "block": "bb5",
+      "status": "PASS",
+      "kind": "overflow",
+      "verdict": "PASS (unsat)",
+      "artifact": "evm__gas__call_gas_bb5.smt2",
+      "file": "crates/core/src/evm/gas.rs",
+      "line": 124
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::gas::contract_creation_cost",
+      "block": "bb0",
+      "status": "FAIL",
+      "kind": "overflow",
+      "verdict": "FAIL (sat)",
+      "artifact": "evm__gas__contract_creation_cost_bb0.smt2",
+      "pinned_artifact": "evm__gas__contract_creation_cost_bb0.witness.smt2",
+      "file": "crates/core/src/evm/gas.rs",
+      "line": 188
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::gas::intrinsic_gas",
+      "block": "bb10",
+      "status": "FAIL",
+      "kind": "overflow",
+      "verdict": "FAIL (sat)",
+      "artifact": "evm__gas__intrinsic_gas_bb10.smt2",
+      "pinned_artifact": "evm__gas__intrinsic_gas_bb10.witness.smt2",
+      "file": "crates/core/src/evm/gas.rs",
+      "line": 78
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::gas::intrinsic_gas",
+      "block": "bb12",
+      "status": "FAIL",
+      "kind": "overflow",
+      "verdict": "FAIL (sat)",
+      "artifact": "evm__gas__intrinsic_gas_bb12.smt2",
+      "pinned_artifact": "evm__gas__intrinsic_gas_bb12.witness.smt2",
+      "file": "crates/core/src/evm/gas.rs",
+      "line": 78
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::gas::keccak256_gas",
+      "block": "bb0",
+      "status": "FAIL",
+      "kind": "overflow",
+      "verdict": "FAIL (sat)",
+      "artifact": "evm__gas__keccak256_gas_bb0.smt2",
+      "pinned_artifact": "evm__gas__keccak256_gas_bb0.witness.smt2",
+      "file": "crates/core/src/evm/gas.rs",
+      "line": 181
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::gas::keccak256_gas",
+      "block": "bb1",
+      "status": "PASS",
+      "kind": "divzero",
+      "verdict": "PASS (unsat)",
+      "artifact": "evm__gas__keccak256_gas_bb1.smt2",
+      "file": "crates/core/src/evm/gas.rs",
+      "line": 181
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::gas::keccak256_gas",
+      "block": "bb2",
+      "status": "PASS",
+      "kind": "overflow",
+      "verdict": "PASS (unsat)",
+      "artifact": "evm__gas__keccak256_gas_bb2.smt2",
+      "file": "crates/core/src/evm/gas.rs",
+      "line": 181
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::gas::keccak256_gas",
+      "block": "bb3",
+      "status": "PASS",
+      "kind": "overflow",
+      "verdict": "PASS (unsat)",
+      "artifact": "evm__gas__keccak256_gas_bb3.smt2",
+      "file": "crates/core/src/evm/gas.rs",
+      "line": 181
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::gas::log_gas",
+      "block": "bb0",
+      "status": "PASS",
+      "kind": "overflow",
+      "verdict": "PASS (unsat)",
+      "artifact": "evm__gas__log_gas_bb0.smt2",
+      "file": "crates/core/src/evm/gas.rs",
+      "line": 116
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::gas::log_gas",
+      "block": "bb1",
+      "status": "PASS",
+      "kind": "overflow",
+      "verdict": "PASS (unsat)",
+      "artifact": "evm__gas__log_gas_bb1.smt2",
+      "file": "crates/core/src/evm/gas.rs",
+      "line": 116
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::gas::log_gas",
+      "block": "bb2",
+      "status": "FAIL",
+      "kind": "overflow",
+      "verdict": "FAIL (sat)",
+      "artifact": "evm__gas__log_gas_bb2.smt2",
+      "pinned_artifact": "evm__gas__log_gas_bb2.witness.smt2",
+      "file": "crates/core/src/evm/gas.rs",
+      "line": 116
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::gas::log_gas",
+      "block": "bb3",
+      "status": "FAIL",
+      "kind": "overflow",
+      "verdict": "FAIL (sat)",
+      "artifact": "evm__gas__log_gas_bb3.smt2",
+      "pinned_artifact": "evm__gas__log_gas_bb3.witness.smt2",
+      "file": "crates/core/src/evm/gas.rs",
+      "line": 116
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::gas::memory_expansion_cost",
+      "block": "bb10",
+      "status": "PASS",
+      "kind": "overflow",
+      "verdict": "PASS (unsat)",
+      "artifact": "evm__gas__memory_expansion_cost_bb10.smt2",
+      "file": "crates/core/src/evm/gas.rs",
+      "line": 63
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::gas::memory_expansion_cost",
+      "block": "bb11",
+      "status": "FAIL",
+      "kind": "overflow",
+      "verdict": "FAIL (sat)",
+      "artifact": "evm__gas__memory_expansion_cost_bb11.smt2",
+      "pinned_artifact": "evm__gas__memory_expansion_cost_bb11.witness.smt2",
+      "file": "crates/core/src/evm/gas.rs",
+      "line": 63
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::gas::memory_expansion_cost",
+      "block": "bb12",
+      "status": "PASS",
+      "kind": "divzero",
+      "verdict": "PASS (unsat)",
+      "artifact": "evm__gas__memory_expansion_cost_bb12.smt2",
+      "file": "crates/core/src/evm/gas.rs",
+      "line": 63
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::gas::memory_expansion_cost",
+      "block": "bb13",
+      "status": "PASS",
+      "kind": "overflow",
+      "verdict": "PASS (unsat)",
+      "artifact": "evm__gas__memory_expansion_cost_bb13.smt2",
+      "file": "crates/core/src/evm/gas.rs",
+      "line": 63
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::gas::memory_expansion_cost",
+      "block": "bb14",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (unknown)",
+      "artifact": "evm__gas__memory_expansion_cost_bb14.smt2",
+      "file": "crates/core/src/evm/gas.rs",
+      "line": 63
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::gas::memory_expansion_cost",
+      "block": "bb2",
+      "status": "FAIL",
+      "kind": "overflow",
+      "verdict": "FAIL (sat)",
+      "artifact": "evm__gas__memory_expansion_cost_bb2.smt2",
+      "pinned_artifact": "evm__gas__memory_expansion_cost_bb2.witness.smt2",
+      "file": "crates/core/src/evm/gas.rs",
+      "line": 63
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::gas::memory_expansion_cost",
+      "block": "bb3",
+      "status": "PASS",
+      "kind": "divzero",
+      "verdict": "PASS (unsat)",
+      "artifact": "evm__gas__memory_expansion_cost_bb3.smt2",
+      "file": "crates/core/src/evm/gas.rs",
+      "line": 63
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::gas::memory_expansion_cost",
+      "block": "bb4",
+      "status": "FAIL",
+      "kind": "overflow",
+      "verdict": "FAIL (sat)",
+      "artifact": "evm__gas__memory_expansion_cost_bb4.smt2",
+      "pinned_artifact": "evm__gas__memory_expansion_cost_bb4.witness.smt2",
+      "file": "crates/core/src/evm/gas.rs",
+      "line": 63
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::gas::memory_expansion_cost",
+      "block": "bb5",
+      "status": "PASS",
+      "kind": "divzero",
+      "verdict": "PASS (unsat)",
+      "artifact": "evm__gas__memory_expansion_cost_bb5.smt2",
+      "file": "crates/core/src/evm/gas.rs",
+      "line": 63
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::gas::memory_expansion_cost",
+      "block": "bb6",
+      "status": "PASS",
+      "kind": "overflow",
+      "verdict": "PASS (unsat)",
+      "artifact": "evm__gas__memory_expansion_cost_bb6.smt2",
+      "file": "crates/core/src/evm/gas.rs",
+      "line": 63
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::gas::memory_expansion_cost",
+      "block": "bb7",
+      "status": "FAIL",
+      "kind": "overflow",
+      "verdict": "FAIL (sat)",
+      "artifact": "evm__gas__memory_expansion_cost_bb7.smt2",
+      "pinned_artifact": "evm__gas__memory_expansion_cost_bb7.witness.smt2",
+      "file": "crates/core/src/evm/gas.rs",
+      "line": 63
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::gas::memory_expansion_cost",
+      "block": "bb8",
+      "status": "PASS",
+      "kind": "divzero",
+      "verdict": "PASS (unsat)",
+      "artifact": "evm__gas__memory_expansion_cost_bb8.smt2",
+      "file": "crates/core/src/evm/gas.rs",
+      "line": 63
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::gas::memory_expansion_cost",
+      "block": "bb9",
+      "status": "PASS",
+      "kind": "overflow",
+      "verdict": "PASS (unsat)",
+      "artifact": "evm__gas__memory_expansion_cost_bb9.smt2",
+      "file": "crates/core/src/evm/gas.rs",
+      "line": 63
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::gas::selfdestruct_gas",
+      "block": "bb1",
+      "status": "PASS",
+      "kind": "overflow",
+      "verdict": "PASS (unsat)",
+      "artifact": "evm__gas__selfdestruct_gas_bb1.smt2",
+      "file": "crates/core/src/evm/gas.rs",
+      "line": 147
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::opcodes::make_table",
+      "block": "bb1",
+      "status": "PASS",
+      "kind": "bounds",
+      "verdict": "PASS (unsat)",
+      "artifact": "evm__opcodes__make_table_bb1.smt2",
+      "file": "crates/core/src/evm/opcodes.rs",
+      "line": 47
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::opcodes::make_table",
+      "block": "bb4",
+      "status": "PASS",
+      "kind": "overflow",
+      "verdict": "PASS (unsat)",
+      "artifact": "evm__opcodes__make_table_bb4.smt2",
+      "file": "crates/core/src/evm/opcodes.rs",
+      "line": 47
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::parser::ParsedBytecode::parse",
+      "block": "bb14",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "evm__parser__ParsedBytecode__parse_bb14.smt2",
+      "file": "crates/core/src/evm/parser.rs",
+      "line": 31
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::parser::ParsedBytecode::parse",
+      "block": "bb15",
+      "status": "PASS",
+      "kind": "overflow",
+      "verdict": "PASS (unsat)",
+      "artifact": "evm__parser__ParsedBytecode__parse_bb15.smt2",
+      "file": "crates/core/src/evm/parser.rs",
+      "line": 31
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::parser::ParsedBytecode::parse",
+      "block": "bb16",
+      "status": "PASS",
+      "kind": "overflow",
+      "verdict": "PASS (unsat)",
+      "artifact": "evm__parser__ParsedBytecode__parse_bb16.smt2",
+      "file": "crates/core/src/evm/parser.rs",
+      "line": 31
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::parser::ParsedBytecode::parse",
+      "block": "bb27",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "evm__parser__ParsedBytecode__parse_bb27.smt2",
+      "file": "crates/core/src/evm/parser.rs",
+      "line": 31
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::parser::ParsedBytecode::parse",
+      "block": "bb30",
+      "status": "PASS",
+      "kind": "overflow",
+      "verdict": "PASS (unsat)",
+      "artifact": "evm__parser__ParsedBytecode__parse_bb30.smt2",
+      "file": "crates/core/src/evm/parser.rs",
+      "line": 31
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::parser::ParsedBytecode::parse",
+      "block": "bb31",
+      "status": "PASS",
+      "kind": "overflow",
+      "verdict": "PASS (unsat)",
+      "artifact": "evm__parser__ParsedBytecode__parse_bb31.smt2",
+      "file": "crates/core/src/evm/parser.rs",
+      "line": 31
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "evm::parser::ParsedBytecode::parse",
+      "block": "bb4",
+      "status": "PASS",
+      "kind": "bounds",
+      "verdict": "PASS (unsat)",
+      "artifact": "evm__parser__ParsedBytecode__parse_bb4.smt2",
+      "file": "crates/core/src/evm/parser.rs",
+      "line": 31
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "hash::SymbolicHashTable::generate_storage_slot",
+      "block": "bb14",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "hash__SymbolicHashTable__generate_storage_slot_bb14.smt2",
+      "file": "crates/core/src/hash/mod.rs",
+      "line": 111
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "hash::SymbolicHashTable::generate_storage_slot",
+      "block": "bb16",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "hash__SymbolicHashTable__generate_storage_slot_bb16.smt2",
+      "file": "crates/core/src/hash/mod.rs",
+      "line": 111
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "hash::SymbolicHashTable::hash_symbolic",
+      "block": "bb0",
+      "status": "FAIL",
+      "kind": "overflow",
+      "verdict": "FAIL (sat)",
+      "artifact": "hash__SymbolicHashTable__hash_symbolic_bb0.smt2",
+      "pinned_artifact": "hash__SymbolicHashTable__hash_symbolic_bb0.witness.smt2",
+      "file": "crates/core/src/hash/mod.rs",
+      "line": 88
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "ir::ControlFlowGraph::from_jump_dests",
+      "block": "bb16",
+      "status": "FAIL",
+      "kind": "overflow",
+      "verdict": "FAIL (sat)",
+      "artifact": "ir__ControlFlowGraph__from_jump_dests_bb16.smt2",
+      "pinned_artifact": "ir__ControlFlowGraph__from_jump_dests_bb16.witness.smt2",
+      "file": "crates/core/src/ir/mod.rs",
+      "line": 50
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "ir::ControlFlowGraph::from_jump_dests",
+      "block": "bb32",
+      "status": "PASS",
+      "kind": "overflow",
+      "verdict": "PASS (unsat)",
+      "artifact": "ir__ControlFlowGraph__from_jump_dests_bb32.smt2",
+      "file": "crates/core/src/ir/mod.rs",
+      "line": 50
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "ir::build_ir",
+      "block": "bb10",
+      "status": "WARN",
+      "kind": "bounds",
+      "verdict": "WARN (undecided)",
+      "artifact": "ir__build_ir_bb10.smt2",
+      "file": "crates/core/src/ir/mod.rs",
+      "line": 139
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "ir::build_ir",
+      "block": "bb12",
+      "status": "PASS",
+      "kind": "overflow",
+      "verdict": "PASS (unsat)",
+      "artifact": "ir__build_ir_bb12.smt2",
+      "file": "crates/core/src/ir/mod.rs",
+      "line": 139
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "ir::build_ir",
+      "block": "bb13",
+      "status": "PASS",
+      "kind": "overflow",
+      "verdict": "PASS (unsat)",
+      "artifact": "ir__build_ir_bb13.smt2",
+      "file": "crates/core/src/ir/mod.rs",
+      "line": 139
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "ir::build_ir",
+      "block": "bb3",
+      "status": "PASS",
+      "kind": "overflow",
+      "verdict": "PASS (unsat)",
+      "artifact": "ir__build_ir_bb3.smt2",
+      "file": "crates/core/src/ir/mod.rs",
+      "line": 139
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "spec_gen::SpecGenerator::generate",
+      "block": "bb19",
+      "status": "PASS",
+      "kind": "pointer-provenance",
+      "verdict": "PASS (unsat)",
+      "artifact": "spec_gen__SpecGenerator__generate_bb19.smt2",
+      "file": "crates/core/src/spec_gen/mod.rs",
+      "line": 87
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "spec_gen::SpecGenerator::generate",
+      "block": "bb7",
+      "status": "PASS",
+      "kind": "pointer-provenance",
+      "verdict": "PASS (unsat)",
+      "artifact": "spec_gen__SpecGenerator__generate_bb7.smt2",
+      "file": "crates/core/src/spec_gen/mod.rs",
+      "line": 87
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "types::value::U256::from_be_bytes",
+      "block": "bb14",
+      "status": "PASS",
+      "kind": "bounds",
+      "verdict": "PASS (unsat)",
+      "artifact": "types__value__U256__from_be_bytes_bb14.smt2",
+      "file": "crates/core/src/types/mod.rs",
+      "line": 113
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "types::value::U256::from_be_bytes",
+      "block": "bb5",
+      "status": "PASS",
+      "kind": "overflow",
+      "verdict": "PASS (unsat)",
+      "artifact": "types__value__U256__from_be_bytes_bb5.smt2",
+      "file": "crates/core/src/types/mod.rs",
+      "line": 113
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "types::value::U256::from_be_bytes",
+      "block": "bb7",
+      "status": "PASS",
+      "kind": "overflow",
+      "verdict": "PASS (unsat)",
+      "artifact": "types__value__U256__from_be_bytes_bb7.smt2",
+      "file": "crates/core/src/types/mod.rs",
+      "line": 113
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "types::value::U256::from_be_bytes",
+      "block": "bb8",
+      "status": "PASS",
+      "kind": "overflow",
+      "verdict": "PASS (unsat)",
+      "artifact": "types__value__U256__from_be_bytes_bb8.smt2",
+      "file": "crates/core/src/types/mod.rs",
+      "line": 113
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "types::value::U256::from_be_bytes",
+      "block": "bb9",
+      "status": "PASS",
+      "kind": "overflow",
+      "verdict": "PASS (unsat)",
+      "artifact": "types__value__U256__from_be_bytes_bb9.smt2",
+      "file": "crates/core/src/types/mod.rs",
+      "line": 113
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "types::value::U256::to_be_bytes",
+      "block": "bb11",
+      "status": "PASS",
+      "kind": "bounds",
+      "verdict": "PASS (unsat)",
+      "artifact": "types__value__U256__to_be_bytes_bb11.smt2",
+      "file": "crates/core/src/types/mod.rs",
+      "line": 104
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "types::value::U256::to_be_bytes",
+      "block": "bb5",
+      "status": "PASS",
+      "kind": "overflow",
+      "verdict": "PASS (unsat)",
+      "artifact": "types__value__U256__to_be_bytes_bb5.smt2",
+      "file": "crates/core/src/types/mod.rs",
+      "line": 104
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "types::value::U256::to_be_bytes",
+      "block": "bb7",
+      "status": "PASS",
+      "kind": "overflow",
+      "verdict": "PASS (unsat)",
+      "artifact": "types__value__U256__to_be_bytes_bb7.smt2",
+      "file": "crates/core/src/types/mod.rs",
+      "line": 104
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "types::value::U256::to_be_bytes",
+      "block": "bb8",
+      "status": "PASS",
+      "kind": "overflow",
+      "verdict": "PASS (unsat)",
+      "artifact": "types__value__U256__to_be_bytes_bb8.smt2",
+      "file": "crates/core/src/types/mod.rs",
+      "line": 104
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "types::value::U256::to_be_bytes",
+      "block": "bb9",
+      "status": "PASS",
+      "kind": "overflow",
+      "verdict": "PASS (unsat)",
+      "artifact": "types__value__U256__to_be_bytes_bb9.smt2",
+      "file": "crates/core/src/types/mod.rs",
+      "line": 104
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "vulnerabilities::VulnerabilityScanner::new",
+      "block": "bb16",
+      "status": "PASS",
+      "kind": "pointer-provenance",
+      "verdict": "PASS (unsat)",
+      "artifact": "vulnerabilities__VulnerabilityScanner__new_bb16.smt2",
+      "file": "crates/core/src/vulnerabilities/mod.rs",
+      "line": 212
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "vulnerabilities::VulnerabilityScanner::new",
+      "block": "bb7",
+      "status": "PASS",
+      "kind": "pointer-provenance",
+      "verdict": "PASS (unsat)",
+      "artifact": "vulnerabilities__VulnerabilityScanner__new_bb7.smt2",
+      "file": "crates/core/src/vulnerabilities/mod.rs",
+      "line": 212
+    },
+    {
+      "crate": "symbolic_execution_core",
+      "function": "z3_backend::SmtLibBackend::value_to_smt",
+      "block": "bb149",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "z3_backend__SmtLibBackend__value_to_smt_bb149.smt2",
+      "file": "crates/core/src/z3_backend/mod.rs",
+      "line": 165
+    }
+  ]
+}

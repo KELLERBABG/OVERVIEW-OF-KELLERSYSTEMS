@@ -1,0 +1,79 @@
+{
+  "slug": "marketing-017",
+  "source": "generated",
+  "domain": "PR-Krisenkommunikation, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Der Kunde kann den Vertrag nicht aus wichtigem Grund kündigen",
+      "expectedType": "asymmetric_termination",
+      "note": "Ausschluss der außerordentlichen Kündigung des Kunden."
+    },
+    {
+      "marker": "eine Auflösung ist nur einvernehmlich möglich",
+      "expectedType": "asymmetric_termination",
+      "note": "Beendigung nur einvernehmlich, zweites Muster im selben Detektor."
+    },
+    {
+      "marker": "Nur der Kunde ist zur Geheimhaltung der Pressearbeit verpflichtet",
+      "expectedType": "asymmetric_confidentiality",
+      "note": "Einseitige Geheimhaltungslast."
+    },
+    {
+      "marker": "stellt für zwei Jahre keine ehemaligen Mitarbeiter des Kunden ein",
+      "expectedType": "non_solicitation",
+      "note": "Einstellungsverbot für frühere Mitarbeiter."
+    },
+    {
+      "marker": "für Wettbewerber nicht beratend tätig",
+      "expectedType": "non_compete",
+      "note": "Nachvertragliches Beratungsverbot für Wettbewerber."
+    },
+    {
+      "marker": "Prüfungen im Unternehmen des Auftragnehmers ohne Anlass durchführen",
+      "expectedType": "unreasonable_audit",
+      "note": "Anlasslose Prüfungen."
+    },
+    {
+      "marker": "auf die Monatspauschale beschränkt",
+      "expectedType": "liability",
+      "note": "Haftungsdeckel auf die Monatspauschale."
+    },
+    {
+      "marker": "dürfen ohne Zustimmung nicht abgetreten werden",
+      "expectedType": "assignment_restriction",
+      "note": "Zustimmungserfordernis für Abtretung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien wahren über die wechselseitig ausgetauschten Informationen Stillschweigen",
+      "note": "Symmetrische Verschwiegenheit."
+    },
+    {
+      "marker": "erhält der Kunde die Pressemappen kostenfrei in einem offenen Format",
+      "note": "Kostenfreier Datenexport."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform zugelassen."
+    },
+    {
+      "marker": "innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Üblicher Zahlungstermin."
+    },
+    {
+      "marker": "setzt freie Journalisten nur nach vorheriger Anzeige ein",
+      "note": "Ordentliche Subunternehmerregelung."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende beenden",
+      "note": "Symmetrische Kündigung."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Auftragnehmer betreut die Krisenkommunikation des Kunden und berät die Unternehmensleitung",
+      "note": "Kein Detektor für Genehmigungsvorbehalte bei Krisenstatements."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+[package]
+name = "op-state-space"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "Critical state space exploration for surgical robot edge-case discovery"
+
+[dependencies]
+op-math = { workspace = true }
+serde = { workspace = true }
+thiserror = "1"

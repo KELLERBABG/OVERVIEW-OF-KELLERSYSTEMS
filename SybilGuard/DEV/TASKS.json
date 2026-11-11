@@ -1,0 +1,50 @@
+{
+  "project": "SybilGuard",
+  "language": "Rust",
+  "summary": "A 5-crate Rust decentralized zero-knowledge Proof-of-Personhood workspace (`core`, `did`, `graph`, `api`, `cli`) with 80 source files implementing social graph topology mapping, betweenness centrality, community clustering, unique human nullifiers, and decentralized jury arbitration.",
+  "tasks": [
+    {
+      "id": "TASK-01",
+      "title": "Implement Cheeger conductance spectral clustering to isolate Sybil bot farms",
+      "status": "pending",
+      "target_files": [
+        "crates/graph/src/community.rs",
+        "crates/graph/src/clustering.rs"
+      ],
+      "context_files": [
+        "crates/graph/src/graph.rs",
+        "crates/graph/src/topology.rs"
+      ],
+      "spec": "Enhance `crates/graph/src/community.rs` with spectral bisection / conductance auditing $\\Phi(S) = \\frac{|\\partial S|}{\\min(\\text{vol}(S), \\text{vol}(\\bar{S}))}$.\n\n1. If a subgraph $S$ exhibits internal edge density $> 0.85$ but boundary conductance $\\Phi(S) < 0.05$ (indicating an isolated clique of bots cross-endorsing through a narrow bottleneck of compromised honest accounts), flag the entire cluster as `SybilSubnet` and damp its collective voting weight to zero.\n2. Add unit tests in `crates/graph` verifying that synthetic bot farms with 100 bots and 2 honest bridge nodes are identified and quarantined.",
+      "verify_cmd": "cargo test -p sybilguard-graph --quiet"
+    },
+    {
+      "id": "TASK-02",
+      "title": "Harden scoped nullifier generation and replay prevention in api and core",
+      "status": "pending",
+      "target_files": [
+        "crates/core/src/primitives.rs",
+        "crates/api/src/handlers/nullifier.rs"
+      ],
+      "context_files": [
+        "crates/core/src/types.rs"
+      ],
+      "spec": "Ensure `crates/core/src/primitives.rs` computes scoped action nullifiers $N = \\text{Hash}(\\text{sk}_{\\text{user}} \\parallel \\text{scope\\_id})$.\n\n1. In `api/src/handlers/nullifier.rs`, maintain an in-memory/persisted nullifier store rejecting duplicate requests with HTTP 409 Conflict (`NullifierAlreadySpent`).\n2. Add unit tests for double-voting prevention and scope isolation (the same user generates distinct, un-linkable nullifiers for two different elections/actions).",
+      "verify_cmd": "cargo test -p sybilguard-core -p sybilguard-api --quiet"
+    },
+    {
+      "id": "TASK-03",
+      "title": "Enforce quadratic stake slashing in decentralized jury arbitration",
+      "status": "pending",
+      "target_files": [
+        "crates/core/src/jury.rs",
+        "crates/core/src/economics/mod.rs"
+      ],
+      "context_files": [
+        "crates/core/src/error.rs"
+      ],
+      "spec": "Enhance `crates/core/src/jury.rs` so that when a challenge reveals a verified Sybil identity, jurors who voted to certify the bot lose their staked trust score quadratically: $\\Delta \\text{stake} \\propto (\\text{bot\\_confidence})^2$.\n\n1. Add unit tests verifying that collusive minority jurors are financially and reputationally liquidated.",
+      "verify_cmd": "cargo test -p sybilguard-core --quiet"
+    }
+  ]
+}

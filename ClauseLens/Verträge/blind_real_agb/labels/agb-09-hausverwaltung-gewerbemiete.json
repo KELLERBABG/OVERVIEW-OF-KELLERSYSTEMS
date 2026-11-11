@@ -1,0 +1,78 @@
+{
+  "slug": "agb-09-hausverwaltung-gewerbemiete",
+  "domain": "Gewerbemietvertrag & Hausverwaltungs-AGB",
+  "source": "Blind Real-AGB Benchmark 2026 (vor Engine-Lauf gelabelt)",
+  "traps": [
+    {
+      "marker": "Das Recht des Mieters zur außerordentlichen fristlosen Kündigung des",
+      "expectedType": "asymmetric_termination",
+      "statutoryBasis": "§§ 543, 569 Abs. 5 BGB, § 307 Abs. 1 BGB",
+      "note": "Unwirksamer Ausschluss des außerordentlichen Kündigungsrechts des Gewerbemieters aus wichtigem Grund und bei Gesundheitsgefährdung."
+    },
+    {
+      "marker": "bedarf zu ihrer Wirksamkeit der notariell beglaubigten Unterschrift des Mieters und",
+      "expectedType": "written_form_trap",
+      "statutoryBasis": "§ 309 Nr. 13 BGB, § 307 Abs. 1 BGB",
+      "note": "Schikanöses Formerfordernis (notarielle Beglaubigung und Zustellung durch Gerichtsvollzieher) für Kündigungserklärungen."
+    },
+    {
+      "marker": "die Aufrechnung oder Ausübung eines Zurückbehaltungsrechts gegenüber Mietforderungen",
+      "expectedType": "setoff_restriction",
+      "statutoryBasis": "§ 309 Nr. 3 BGB, § 307 Abs. 1, Abs. 2 Nr. 1 BGB",
+      "note": "Nach ständiger BGH-Rechtsprechung im Gewerbemietrecht unwirksamer Totalausschluss von Minderung, Aufrechnung (auch mit unbestrittenen/rechtskräftigen Forderungen) und Bereicherungsansprüchen."
+    },
+    {
+      "marker": "auch nicht bei Rohrbruch, Dachundichtigkeit oder Heizungsausfall infolge grober",
+      "expectedType": "liability",
+      "statutoryBasis": "§ 309 Nr. 7 lit. b BGB, § 307 Abs. 2 Nr. 2 BGB",
+      "note": "Unwirksamer Haftungsausschluss für grobe Fahrlässigkeit und Kardinalpflichtverletzungen des Vermieters."
+    },
+    {
+      "marker": "jederzeit bei Tag und Nacht ohne vorherige Ankündigung und ohne Vorliegen eines",
+      "expectedType": "unreasonable_audit",
+      "statutoryBasis": "§ 307 Abs. 1 BGB, § 858 BGB",
+      "note": "Unzulässiges anlassloses Betretungsrecht bei Tag und Nacht mittels einbehaltenen Generalschlüssels."
+    },
+    {
+      "marker": "sowie für einen Zeitraum von drei Jahren nach Beendigung des Mietverhältnisses im",
+      "expectedType": "non_compete",
+      "statutoryBasis": "§ 307 Abs. 1 BGB, § 138 BGB, Art. 12 GG",
+      "note": "Sittenwidriges und unangemessenes räumliches und nachvertragliches Wettbewerbsverbot zulasten des Mieters ohne Karenzentschädigung."
+    },
+    {
+      "marker": "entscheidet im Streitfall ein allein vom Vermieter ausgewählter Architekt als",
+      "expectedType": "mandatory_expert_determination",
+      "statutoryBasis": "§ 307 Abs. 1 BGB",
+      "note": "Unwirksame Schiedsgutachterklausel mit einseitigem Bestimmungsrecht des Vermieters und vollständigem Ausschluss des Rechtswegs."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Eine Änderung des Nutzungszwecks bedarf der vorherigen Zustimmung des Vermieters,",
+      "note": "Ausgewogene Regelung zur Änderung des Nutzungszwecks im Gewerbemietrecht."
+    },
+    {
+      "marker": "Über die Betriebskostenvorauszahlungen rechnet der Vermieter jährlich innerhalb von",
+      "note": "Sachgerechte jährliche Abrechnungsfrist für Betriebskosten."
+    },
+    {
+      "marker": "Der Mieter leistet vor Übergabe der Mietsache eine Mietsicherheit in Höhe von drei",
+      "note": "Übliche und zulässige Kautionsvereinbarung im Gewerbemietrecht."
+    },
+    {
+      "marker": "Eine Untervermietung oder sonstige Gebrauchsüberlassung an Dritte bedarf der",
+      "note": "Gesetzeskonformer Erlaubnisvorbehalt nach § 540 BGB."
+    },
+    {
+      "marker": "Ausschließlicher Gerichtsstand für alle Streitigkeiten aus diesem",
+      "note": "Wiederholung des gesetzlichen ausschließlichen Gerichtsstands der Belegenheit nach § 29a ZPO."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Unabhängig vom Grad der Abnutzung bei Mietbeginn und unabhängig vom tatsächlichen",
+      "statutoryBasis": "§ 307 Abs. 1, Abs. 2 Nr. 1 BGB",
+      "note": "Nach ständiger BGH-Rechtsprechung unwirksame bedingungslose Endrenovierungsklausel mit Fachhandwerkerzwang unabhängig vom Zustand bei Mietbeginn und Abnutzungsgrad."
+    }
+  ]
+}

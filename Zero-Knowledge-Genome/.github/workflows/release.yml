@@ -1,0 +1,72 @@
+name: Publish Release
+
+# Two triggers:
+#   1. push:tags `v*` — auto-publishes a GitHub Release whenever a tag
+#      matching `v*` (e.g. `v0.1.0`, `v1.2.3-rc1`) is pushed.
+#   2. workflow_dispatch — manually publish a Release for an existing tag.
+#      This is how the initial `v0.1.0-alpha` Release will be retroactively
+#      published (the tag was pushed before this workflow existed).
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: 'Tag to publish (must exist on origin). Example: v0.1.0-alpha'
+        required: true
+        default: 'v0.1.0-alpha'
+
+# Tightly scoped: contents:write only. No PR-write, no id-token, no packages.
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    name: Publish Release
+    runs-on: ubuntu-latest
+
+    # Concurrency: cancel any in-flight publish for the same tag so a
+    # rerun doesn't double-write the Release page.
+    concurrency:
+      group: release-${{ github.event.inputs.tag_name || github.ref_name }}
+      cancel-in-progress: true
+
+    steps:
+      - name: Resolve tag
+        id: tag
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "value=${{ github.event.inputs.tag_name }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "value=${GITHUB_REF_NAME}" >> "$GITHUB_OUTPUT"
+          fi
+          echo "Resolved tag: ${{ steps.tag.outputs.value }}"
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Verify release-notes file exists
+        env:
+          TAG: ${{ steps.tag.outputs.value }}
+        run: |
+          NOTES_PATH=".github/RELEASE_NOTES/${TAG}.md"
+          if [ ! -f "$NOTES_PATH" ]; then
+            echo "::error::Release notes file not found: $NOTES_PATH"
+            echo "::error::Add a release-notes file at that path before publishing."
+            exit 1
+          fi
+          echo "Release notes found at $NOTES_PATH ($(wc -c < "$NOTES_PATH") bytes)"
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.tag.outputs.value }}
+          name: ${{ steps.tag.outputs.value }}
+          body_path: .github/RELEASE_NOTES/${{ steps.tag.outputs.value }}.md
+          fail_on_unmatched_files: false
+          generate_release_notes: false
+          draft: false
+          prerelease: true

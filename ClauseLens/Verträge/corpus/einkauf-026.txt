@@ -1,0 +1,63 @@
+WERKZEUGRAHMENVERTRAG MIT OPTIMIERUNG
+
+zwischen
+
+der Havelberg Kunststoffwerke GmbH, Am Ziegelhof 11, 14776 Brandenburg an der Havel (nachfolgend „Kunde“)
+
+und
+
+der Teltow Formtechnik GmbH, Ruhlsdorfer Straße 8, 14513 Teltow (nachfolgend „Auftragnehmer“).
+
+§ 1 Gegenstand
+
+1.1 Der Auftragnehmer fertigt Werkzeuge nach Anlage 1.
+
+Der Auftragnehmer stellt die Prüfprotokolle in Textform bereit.
+
+Der Besteller wählt unter den in Anlage 3 genannten Varianten eine aus.
+
+§ 2 Software
+
+Die Überlassung der Steuerungssoftware erfolgt im Ist-Zustand.
+
+Die angegebene Verfügbarkeit von 99,5 Prozent ist eine bloße Zielgröße.
+
+§ 3 Daten
+
+Der Kunde räumt dem Auftragnehmer ein unwiderrufliches, übertragbares Nutzungsrecht an allen Prüfdaten ein.
+
+Die Verarbeitung personenbezogener Daten erfolgt außerhalb der Europäischen Union, unter anderem in Indien.
+
+Der Kunde erhält seine Bestandsdaten bei Vertragsende unentgeltlich in einem gängigen Format.
+
+§ 4 Optimierung
+
+Anregungen des Kunden zur Werkzeugoptimierung gehen unentgeltlich in das Eigentum des Auftragnehmers über.
+
+Der Kunde kann die Fertigungslinien jederzeit auditieren.
+
+§ 5 Steuern
+
+Nachträgliche Abgabenbelastungen trägt der Kunde unabhängig davon, ob den Kunden ein Verschulden trifft.
+
+Rechnungen sind innerhalb von dreißig Tagen ohne Abzug zu begleichen.
+
+§ 6 Laufzeit
+
+Tritt Zahlungsunfähigkeit ein, endet das Vertragsverhältnis ohne weiteres.
+
+Beide Parteien können den Vertrag einvernehmlich beenden.
+
+§ 7 Recht
+
+Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt.
+
+Es gilt das Recht der Bundesrepublik Deutschland.
+
+§ 8 Schlussbestimmungen
+
+Prüfungen werden mit angemessener Vorlaufzeit angekündigt.
+
+Bei berechtigter Rüge bessert der Auftragnehmer innerhalb von zehn Werktagen nach.
+
+Die Parteien benennen jeweils einen technischen Ansprechpartner.

@@ -1,0 +1,542 @@
+=============================================================================
+CLAIM AUDIT — SANITY_CHECK.md ("ATA – Technischer & Wirtschaftlicher
+Prüfbericht (V2.1 Validiert)", dated 12 October 2026)
+=============================================================================
+Auditor: Buffy (Codebuff)          Date of audit: 12 October 2026
+Workspace: repo root, branch `main`
+Toolchain: cargo 1.99.0 / rustc (release profile, opt-level 3, lto, overflow-checks)
+Method:    (1) source reading of every artifact the document names,
+           (2) four executed simulation runs + two test-suite runs,
+           (3) git history / git diff comparison against HEAD,
+           (4) forensic re-computation of the run inputs and of the baseline
+               formula (Node scripts in /tmp, no repo file modified).
+
+IMPORTANT SCOPE NOTE
+  SANITY_CHECK.md is NOT committed. `git status` shows 11 modified files:
+      SANITY_CHECK.md (-839/+69 lines vs HEAD), Cargo.lock,
+      crates/fleet/src/{control,financial,main,physics,store_types}.rs,
+      crates/gateway/{Cargo.toml,src/config.rs,src/control/mod.rs,src/modbus_client.rs}
+  The document describes the WORKING TREE, so every verdict below is against the
+  working tree (that is what `cargo run` builds). Where a claim is about a defect
+  that was "removed", I compare against HEAD (`git diff`), which is the only way
+  to check the removal actually happened.
+
+VERDICT VOCABULARY
+  CONFIRMED        = claim matches code and/or reproduced by execution
+  CONFIRMED/CAVEAT = core is true, but stated too strongly or has a material rider
+  PARTIAL          = partly true, partly untrue
+  REFUTED          = the code/reality says otherwise
+  NOT REPRODUCIBLE = no run of the present code produces the stated number
+  UNVERIFIABLE     = no artifact in this repository can settle it
+
+-----------------------------------------------------------------------------
+0. SUMMARY OF VERDICTS
+-----------------------------------------------------------------------------
+#  Claim (paraphrased)                                        Verdict
+--- §0 Management Summary ---------------------------------------------------
+0.1 TES works, but only in large plants (not small supermarkets)  PARTIAL
+0.2a Artificial 1.3x baseline malus existed, now removed       CONFIRMED/CAVEAT
+0.2b FCR/Droop was double-counted, now fixed                   CONFIRMED (fixed)
+0.2c Retail: aldi -19 EUR, edeka -419 EUR, marktkauf -947 EUR     NOT REPRODUCIBLE
+0.3 "Robust, provable savings 5%–25%" (+ tier ranges)          REFUTED
+--- §1 12-tier fleet matrix -------------------------------------------------
+1.1 8,760 real hours, Open-Meteo weather + EPEX day-ahead spot CONFIRMED for
+                                                                weather/REFUTED
+                                                                for prices
+1.2 Identical dynamic COP for baseline and control             CONFIRMED/CAVEAT
+1.3 All twelve table rows (MWh, EUR, %)                        CONFIRMED EXACTLY
+1.4 50/50 partner column = half of the savings column          CONFIRMED
+1.5 Monthly cashflow column                                    CONFIRMED/CAVEAT
+1.6 "Extra FCR revenue for TES sites (breweries, data centres)" CONFIRMED in code,
+                                                                ungrounded in market
+--- §2 Why retail (Aldi/Edeka) is unsuitable -------------------------------
+2.1 Retail simulations go neutral-to-negative                  PARTIAL
+2.2 Reason 1: tau ~ 1–2 hours for supermarkets                 REFUTED
+2.3 Reason 2: Carnot recovery loss eats the arbitrage gain     REFUTED as the
+                                                                visible mechanism
+2.4 Reason 3: HACCP 1–2 K vs a large store's cargo core
+    staying unchanged for 6–8 h                                CONFIRMED/CAVEAT
+--- §3 Implemented safety mechanisms ---------------------------------------
+3.1a COV write filtering                                       CONFIRMED in code,
+                                                                INACTIVE in
+                                                                shipped config
+3.1b Carel/Danfoss/WAGO + "max 100,000 write cycles"           UNVERIFIABLE
+     (WAGO does not appear anywhere in the repo)
+3.1c PLC heartbeat register + 60 s fallback                    CONFIRMED in code;
+                                                                "60 s" UNVERIFIABLE
+3.2a Slew limit 6.0 °C/h (1.0 °C per 10 min)                   CONFIRMED
+3.2b High-temperature derating at >= 28 °C                     CONFIRMED
+3.2c ASCT min-runtime / min-offtime governor                   CONFIRMED
+3.3  Peak-window blocking (11–13, 17–19) prevents a rise in
+     the monthly demand charge (EUR/kW)                        PARTIAL / rationale
+                                                                is unmodeled
+--- §4 Revisions protocol --------------------------------------------------
+4.1 Crates gateway + fleet                                     CONFIRMED
+4.2 129 tests (99 gateway + 30 fleet)                          CONFIRMED EXACTLY
+4.3 Reproduction command                                       CONFIRMED
+4.4 "Entire workspace is versioned"                            PARTIAL
+
+Headline: the *arithmetic* of the document is honest — every number in §1 can be
+reproduced to the digit, and the test count is exact. The *inputs* are not what
+the document says they are, and two of the "corrected" modelling defects are
+only half corrected. Details in §A below.
+
+=============================================================================
+A. CLAIMS THAT DO NOT SURVIVE CONTACT WITH THE CODE
+=============================================================================
+
+A1. [REFUTED] §1 header: "Simulation über 8.760 reale Jahresstunden (NRW) mit
+    stündlichen Wetterdaten (Open-Meteo) und synchronen Spotmarktpreisen
+    (EPEX Day-Ahead)."
+
+    The weather is real. The prices are NOT. The market price series in the
+    cache that drives every euro in the table is the program's own synthetic
+    fallback generator.
+
+    Evidence — I re-implemented the two generators from simulation.rs and
+    compared them value-by-value with data_cache/fleet_2025.json:
+
+        price matches synth_price()        : 8760 / 8760   (<1e-6)
+        freq  matches grid_frequency()     : 8760 / 8760   (<1e-9)
+        amb   matches synth_temp()         :    0 / 8760
+
+    simulation.rs:51 is the smoking gun:
+        let price = prices.get(&(h as u32)).copied()
+                        .unwrap_or_else(|| synth_price(h, amb));
+    i.e. whatever the API did or did not return, the cache written back contains
+    synth_price() rows (simulation.rs:158).
+
+    Cache statistics vs the real German 2025 day-ahead year:
+        cache      : mean  57.8 EUR/MWh, min  -6.6, max 268.1, 126 negative hours
+        real 2025  : mean  89.32 EUR/MWh, 573 negative hours, 40 h > 300 EUR/MWh
+        (the "real 2025" figures are the ones YOUR OWN earlier audit quotes,
+         SANITY_CHECK.md @ HEAD, section 3.4 "Rot: Preisdatensatz nicht das
+         behauptete reale EPEX-Jahr")
+
+    Corroborating: crates/gateway/data_cache/2025_dataset.json has
+    "price_eur_per_mwh": null for all 8,760 hours (the gateway seed carries no
+    prices at all), and the frequency series is synthetic by construction
+    (simulation.rs:201).
+
+    Consequence: §1's euro figures are a scenario result from a synthetic price
+    curve, not an "EPEX Day-Ahead" result. The earlier, longer version of
+    SANITY_CHECK.md already said this explicitly (section 3.4). The V2.1 rewrite
+    has reintroduced a claim that your own audit had refuted. This is the single
+    most important item in this report.
+
+A2. [REFUTED] §0.3 "generate ... robuste, beweisbare Einsparungen von 5 % bis
+    25 % der jährlichen Kältestromkosten bei Großanlagen", plus the Tier ranges
+    in §0 (Tier 1 1,000–8,000; Tier 2 15,000–55,000; Tier 3 50,000–315,000 EUR/a).
+
+    (a) §1's own table spans 3.5 % – 77.7 %, i.e. neither bound of "5–25 %" is
+        the table's range. §1 and §0 do not describe the same quantity.
+    (b) The §0 Tier ranges cannot be derived from the §1 "Gesamtersparnis"
+        column. Table values: Tier 2 = 6,263 / 13,763 / 15,375 / 29,154 EUR
+        (claimed 15,000–55,000 → two entries below the claimed floor);
+        Tier 3 = 25,050 / 47,899 / 48,331 / 88,621 EUR (claimed 50,000–315,000 →
+        two entries below the claimed floor, and the ceiling is 3.5x the table
+        maximum). 47,899 + 267,732 (industry_large savings + FCR/Droop) =
+        315,631, which is almost exactly the claimed 315,000 ceiling — so §0's
+        ranges appear to silently ADD the FCR/Droop revenue that §1's table
+        excludes. The document never states which of the two it means.
+    (c) §0's tier power bands also contradict §1: §0 says Tier 2 is
+        "1.000–3.000 kW" but §1's Tier 2 rows include industry_mid at 4,500 kW;
+        §0 says Tier 3 is "3.500–16.000 kW" while its own Tier 2 description
+        says Tier 2 tops out at 3,000 kW.
+
+A3. [NOT REPRODUCIBLE] §0.2c / §2: "aldi: -19 € / Jahr", "edeka: -419 € / Jahr",
+    "marktkauf: -947 € / Jahr".
+
+    Executed (repo root, current working tree, release):
+        cargo run --release -p thermal-fleet -- "1 aldi + 1 edeka + 1 marktkauf"
+      -> aldi -37 EUR (-0.3 %), edeka -839 EUR (-3.1 %), marktkauf -1,895 EUR (-1.8 %)
+    Same result from crates/fleet/ (i.e. with the other, committed cache file).
+    With --volatile: aldi +965, edeka -802, marktkauf -1,518 — still not the
+    quoted triple.
+
+    The quoted values are roughly half the reproducible ones (factor 1.95 / 2.00
+    / 2.00). Direction and monotonicity are right; the numbers are not. Unlike
+    §4, §2 gives no command, no date, no commit and no cache for these three
+    figures, so they cannot be traced to any state of this repository — including
+    HEAD, where the same types produced POSITIVE values (+25,122 EUR for aldi,
+    per your own audit @ HEAD line 14).
+
+A4. [REFUTED] §2 reason 1: "Offene Kühlregale und Glastüren haben eine sehr
+    kleine thermische Zeitkonstante (τ ≈ 1–2 Stunden). Die Temperatur steigt
+    beim Abschalten sofort an."
+
+    The model's own time constant is τ = r_th · c_th (physics.rs:31-34,
+    r_th from u·A + infiltration, c_th = thermal_mass_kj_k · 1000):
+
+        aldi       τ = 1,899 h        edeka   τ = 1,288 h
+        marktkauf  τ =   922 h        freezer_small τ = 1,944 h
+        brewery_mid τ = 6,765 h       dc_large τ = 308 h
+
+    These are not "1–2 hours", they are three orders of magnitude larger. In
+    simulate_hour the per-hour temperature step is governed by
+    (1 − exp(−1 h/τ)), so a shed hour moves the zone by roughly 0.03 K
+    (physics.rs:151 correction term, ±0.08 VFD, over τ ≈ 1,900 h). "Die
+    Temperatur steigt beim Abschalten sofort an" is the opposite of what this
+    code does. The stated mechanism is not the mechanism.
+
+A5. [REFUTED as the visible mechanism] §2 reason 2: the Carnot "Rückholverlust"
+    after a shed "vernichtet den finanziellen Arbitragegewinn".
+
+    There is no recovery penalty in the financial model and, per A4, no
+    meaningful rebound temperature to recover from. The retail losses are an
+    ENERGY effect: for aldi the run reports actual 208.3 MWh against a baseline
+    of 199.9 MWh (+4.2 %), and actual cost 11,448 EUR against baseline
+    11,411 EUR. The driver is the VFD "thermal battery" correction term
+    (physics.rs:151, temp_error × 0.05, ±8 %) plus the ASCT governor lock
+    (control.rs:39-58), not differential COP during recovery. Attribute the
+    negative result to the controller's own energy overhead, not to Carnot.
+
+A6. [PARTIAL] §3.3 "Hochlastzeitfenster-Vermeidung ... verhindert, dass
+    kurzfristige Arbitrage zu einer Erhöhung des monatlichen Leistungspreises
+    (€/kW) führt."
+
+    - The gate exists ONLY in the simulation, not in the product:
+        crates/fleet/src/control.rs:171  is_peak_window((11..=13) || (17..=19))
+        used at control.rs:289 (MPC pre-cool) and control.rs:316 (gorge).
+      `grep -rn "peak|high_load" crates/gateway/src` returns no time-window
+      blocking at all. If this is a "Codebase-Stand" protection (§3 opening
+      line), it is absent from the gateway — the code that actually drives
+      hardware.
+    - There is no demand-charge model anywhere in the repository:
+        grep -rn "leistungspreis|eur_per_kw|power_price|kw_price|demand_charge"
+        -> 0 hits.
+      Nothing in this codebase can prevent, or even measure, a EUR/kW effect.
+    - The clock windows are 3 h, not 2 h: hours 11,12,13 and 17,18,19 =
+      11:00–13:59 and 17:00–19:59.
+    - The gate blocks pre-cooling only; it does not cap the load peak.
+      Emergency (control.rs:232), ThermalGuard (control.rs:221 / :244),
+      GridBalancing (control.rs:257) and any morning pre-cool outside the
+      window still run at 100 % (vfd_speed: 1.0). Your own earlier audit (SANITY_CHECK.md @ HEAD,
+      line 855) found that the annual peak occurs in mode MpcPreCool for 16 of
+      21 types — i.e. the optimizer itself creates the demand peak. §3.3 asserts
+      the opposite without new evidence.
+
+A7. [REFUTED, quantified] §0.2a claims the artificial baseline inflation was
+    removed. Half of it was.
+
+    Removed (verified in `git diff -- crates/fleet/src/financial.rs`):
+      - the 1.3x "Cycling penalty" (introduced in 9b43f67 with the comment
+        "ON/OFF thermostat penalty: 1.3x for Carnot inefficiency during
+        cycling"),
+      - the COP_base-vs-dynamic-COP mismatch (baseline now calls compute_cop,
+        financial.rs:103, same function as physics.rs:134).
+    Surviving, and load-bearing:
+      financial.rs:116   (total_heat_kw / max_cooling_kw).clamp(0.05, 0.9)
+    The 0.05 LOWER bound is a floor on the reference machine while the modelled
+    machine has no equivalent floor (physics.rs:158 uses vfd_load in [0,1]).
+    That is an asymmetric, artificial baseline inflation — the same species of
+    defect the document says was eliminated.
+
+    Quantification (Node re-computation of baseline_duty_cycle from
+    store_types.rs + the cache; validation: for the six types that never touch
+    the floor the re-computation reproduces the CSV savings to the euro, so the
+    replication is exact):
+
+      type            h on floor   basel. as coded  unfloored   savings printed  savings w/o floor  % -> %
+      freezer_small    2,185/8760      155.5 MWh     149.9 MWh      +2,039           +1,643     22.9 -> 19.3
+      brewery_small    8,642/8760      109.7 MWh      62.5 MWh      +3,774           +1,013     59.5 -> 28.3
+      dc_small                 0      365.4 MWh     365.4 MWh      +1,042           +1,042      4.9 ->  4.9
+      industry_small           0      735.3 MWh     735.3 MWh      +2,852           +2,852      6.7 ->  6.7
+      freezer_mid      7,225/8760      542.1 MWh     397.7 MWh     +15,375           +6,531     48.9 -> 28.9
+      brewery_mid      8,760/8760      657.0 MWh     243.9 MWh     +29,154           +5,175     76.7 -> 36.9
+      dc_mid                   0    2,922.0 MWh   2,922.0 MWh      +6,263           +6,263      3.7 ->  3.7
+      industry_mid             0    4,119.5 MWh   4,119.5 MWh     +13,763          +13,763      5.8 ->  5.8
+      freezer_large    7,859/8760    1,556.7 MWh   1,057.0 MWh     +48,331          +18,244     53.6 -> 30.3
+      brewery_large    8,760/8760    1,971.0 MWh     705.8 MWh     +88,621          +15,263     77.8 -> 37.6
+      dc_large                 0   12,416.7 MWh  12,416.7 MWh     +25,050          +25,050      3.5 ->  3.5
+      industry_large           0   13,978.4 MWh  13,978.4 MWh     +47,899          +47,899      5.9 ->  5.9
+
+    Meaning: for the six freezer/brewery rows, 30–75 % of the headline saving is
+    the floor, not the controller. brewery_mid/brewery_large are the extreme
+    case — the reference machine never reaches even 5 % duty, the baseline is
+    inflated by +169 %, and the modelled energy (243.3 / 704.3 MWh) equals the
+    UNFLOORED baseline (243.9 / 705.8 MWh) almost exactly. Those two "77 %"
+    headlines are essentially pure baseline construction. After the floor is
+    removed the honest range across the twelve rows is 3.5 % – 37.6 %.
+
+=============================================================================
+B. CLAIMS THAT ARE CONFIRMED, WITH THE CAVEATS THAT MATTER
+=============================================================================
+
+B1. [CONFIRMED EXACTLY] §1 table, all twelve rows.
+    Executed: cargo run --release -p thermal-fleet --
+      "1 freezer_small + 1 brewery_small + 1 dc_small + 1 industry_small
+       + 1 freezer_mid + 1 brewery_mid + 1 dc_mid + 1 industry_mid
+       + 1 freezer_large + 1 brewery_large + 1 dc_large + 1 industry_large"
+    Every power rating, MWh, EUR and % in the table reproduces to the digit
+    (see appendix). The run is deterministic (synthetic price/frequency are pure
+    functions of the hour index).
+    Caveats: the "Strombedarf (Jahr)" column is COMPRESSOR-ONLY and is not the
+    site's electricity demand (B4); and the savings rest on the synthetic price
+    series (A1) and, for 6 of 12 rows, on the baseline floor (A7).
+
+B2. [CONFIRMED/CAVEAT] §1 "identischem dynamischem COP für Baseline und
+    Steuerung".
+    Both sides now call the same function: financial.rs:103
+    compute_cop(t, t_setpoint, amb) vs physics.rs:134
+    compute_cop(t, zone.temp_c, amb). "Identical COP model": yes. "Identical COP
+    value": no — the reference is evaluated at the setpoint, the machine at its
+    actual temperature. That is defensible as a fair baseline; the wording
+    should say "same COP model", not "identical COP".
+
+B3. [CONFIRMED] §0.2b FCR double-counting has been fixed.
+    At HEAD, every controller branch returned droop_revenue_eur: fcr_revenue AND
+    fc_earnings_eur: fcr_revenue, and main.rs added both. In the working tree
+    every branch returns droop_revenue_eur: 0.0 (git diff crates/fleet/src/
+    control.rs, 10 hunks) and main.rs sums only fcr_revenue_eur. Verified by
+    diff, not by assertion. Good catch, correctly repaired.
+
+B4. [CONFIRMED/CAVEAT] §1 note "Bei Anlagen mit thermischen Speichern [TES]
+    ... kommen zusätzliche FCR-Regelleistungserlöse hinzu."
+    Code: compute_fcr_revenue returns 0 unless t.has_tes, and exactly the
+    brewery_* and dc_* types have has_tes = true (store_types.rs) — so the note
+    is code-accurate. Its MAGNITUDE is the problem: in my run the twelve-type
+    fleet earned 718,693 EUR FCR+Droop against 284,163 EUR of energy savings,
+    i.e. the "additional" income is 2.5x the business case. It is computed from
+    the synthetic frequency series (8760/8760 match, A1) as
+    capacity_MW × 15 EUR/MW × response_fraction(0.3/0.8) × 0.5 event factor,
+    per hour with |Δf| > 0.01 Hz (control.rs compute_fcr_revenue). Real FCR is a
+    capacity product with tendered prices and metered delivery; this model pays
+    an hourly event fee on nameplate cooling power and never checks whether the
+    machine actually responded. Also, for TES types the tool's own headline box
+    uses (savings + FCR)/2 — it prints 82K EUR/yr for brewery_large while §1's
+    50/50 column says 44,310 EUR for the same machine. The document must pick
+    one definition.
+
+B5. [CONFIRMED EXACTLY] §4 "129 Tests erfolgreich (99 passed Gateway, 30 passed
+    Fleet)".
+    cargo test -p thermal-arbitrage-mvp -> "99 passed; 0 failed";
+    cargo test -p thermal-fleet          -> "30 passed; 0 failed".
+    Cross-check: `grep -c "#\[test\]\|#\[tokio::test\]"` over both crates = 129.
+    No tests/ integration directories exist, so 129 is the whole suite.
+
+B6. [CONFIRMED] §4 reproduction command.
+    Ran verbatim: "1 freezer_small + 1 freezer_mid + 1 freezer_large" ->
+    +2,039 EUR / +15,375 EUR / +48,331 EUR, identical to the twelve-type run.
+    `crates/fleet/Cargo.toml` name = thermal-fleet, so -p thermal-fleet is right.
+
+B7. [CONFIRMED] §3.2a/b/c.
+    - Slew: crates/gateway/src/config.rs:332 default max_setpoint_slew_c_per_hour
+      = 6.0 (so 1.0 °C per 600 s); enforced at control/mod.rs:500-512 as
+      max_delta = slew/3600 × dt,
+      Emergency exempt — matches "6.0 °C pro Stunde (1,0 °C pro 10 Minuten)".
+    - Derating: config.rs:333 default derate_ambient_c_threshold = 28.0;
+      control/mod.rs:552-557 forces the economic baseline back to the normal
+      thermostat above it. The fleet uses the same 28 °C (control.rs:209).
+    - Short-cycling: gateway min_runtime_sec 900 / min_off_time_sec 600
+      (config.toml:25-26) enforced by the governor (control/mod.rs:309); each
+      fleet type carries min_runtime_sec / min_offtime_sec and AsctGovernor::apply
+      locks the state (control.rs:46-58). Note: the fleet governor locks in whole
+      hours (ceil), so a 3,600 s minimum becomes a 1-hour lock in the simulation.
+
+B8. [CONFIRMED/CAVEAT] §3.1 COV filtering + heartbeat exist in code.
+    modbus_client.rs:403-437 compares last_written_speed / _coil / _alarm before
+    writing; modbus_client.rs:441-445 writes heartbeat_counter.wrapping_add(1)
+    each successful poll. Both are real and correct.
+    Caveats that the document should state:
+    - ModbusRegisters::default (config.rs:349) leaves compressor_speed_addr and
+      heartbeat_addr as None, and the shipped config.toml declares
+      [modbus] enabled = false with only internal_temp_addr, compressor_cmd_addr,
+      ambient_temp_addr, alarm_addr. So in the delivered configuration the speed
+      COV filter and the heartbeat are INACTIVE; only coil + alarm COV would run
+      once an operator wires Modbus up.
+    - "Per-connection write cache": on every reconnect the cache is empty and all
+      three values are rewritten once.
+    - config.toml sets vfd_enabled = true, so the commanded speed is a
+      proportional-integral function of temperature and changes on most polls;
+      the register COV therefore saves far fewer writes than the EEPROM argument
+      implies. The COV claim is strongest for the coil (that part is exact).
+    - The hardware watchdog ([watchdog] enabled = false in config.toml) is also
+      off in the shipped configuration.
+
+B9. [CONFIRMED/CAVEAT] §2 reason 3 (cargo core temperature).
+    The cargo lag model exists (physics.rs, cargo_r_th = r_th × 0.1,
+    cargo_tau = cargo_r_th × m·c). For freezer_large (12,000 t, cp 2,000 J/kgK)
+    that is ~69 h, i.e. the model is even more sluggish than the "6–8 hours"
+    quoted. BUT: cargo_temp_c is never used as a constraint or a decision input
+    in the fleet controller — only air temperature is clamped to [t_min, t_max]
+    — so this physical advantage is decorative with respect to the table. In the
+    gateway it does feed the safety logic (cargo_lag_enabled, cargo_t_max).
+
+B10. [CONFIRMED] §4 crates, and "automatisiert testbar".
+     crates/gateway = thermal-arbitrage-mvp 0.2.0, crates/fleet = thermal-fleet
+     2.0.0, workspace resolver 2 with overflow-checks = true in release.
+
+=============================================================================
+C. RUNNING FROM THE WORKING TREE — WHAT THE DOCUMENT DOES NOT SAY
+=============================================================================
+
+C1. §4 "Der gesamte Software-Workspace ist versioniert".
+    PARTIAL. All 11 files that implement the "correction" (the harmonised
+    baseline, the 12 new tier types, the peak-window gate, the gateway slew /
+    derate / heartbeat / COV additions) and SANITY_CHECK.md itself are
+    UNCOMMITTED working-tree changes. The cache the tool actually consumes when
+    run from the repo root is /data_cache/, which .gitignore line 19 excludes;
+    only crates/fleet/data_cache/fleet_2025.json is tracked (the two files differ
+    in bytes though they agree on the values I checked). benchmark CSVs are also
+    ignored (**/fleet_results_v2_*.csv). So the exact state that produced §1 is
+    in no commit.
+
+C2. The "Strombedarf (Jahr)" column is compressor electricity only.
+    financial.rs:69 costs only actual_energy_mwh; the defrost heater energy is
+    accumulated but never priced (financial.rs:75) and fan energy is never costed
+    (physics.rs:159). The run itself prints the excluded defrost energy: aldi
+    43.8 MWh (+21 % on top of the 208 MWh shown), freezer_small 21.9 MWh (+14 %),
+    freezer_large 292 MWh (+26 %). Additionally a 0.5 h defrost is charged a full
+    hour of heater energy (physics.rs:122 executes per whole-hour step), which is
+    why aldi reports 43.8 MWh/yr instead of ~21.9 MWh/yr. If the column is meant
+    to be "Jahresstrombedarf", it is understated by 14–26 %.
+
+C3. Cost basis is spot-only.
+    Both baseline and actual are priced at the hourly spot price
+    (financial.rs:66-69) with no grid fees, levies, taxes or supplier margin.
+    That is internally consistent, but it means "5–25 % of annual refrigeration
+    electricity COST" cannot be read off this table — all-in industrial cost is
+    typically 2–4x the spot component, and the saving fraction of an all-in
+    invoice would be correspondingly smaller.
+
+C4. §1's monthly column.
+    11 of 12 rows are the savings column / 24 to within rounding, but
+    brewery_small is stated as "~155 €/Mo." while its own row gives 1,887/12 =
+    157.25 (and the table rounds 1,887 from 1,887.17). Minor, but an auditor will
+    find it.
+
+C5. §0.2c and §2.1 contradict each other and the code.
+    §2.1 needs a tiny τ so that the temperature "rises immediately"; §0.2c needs
+    a large rebound so that the "Carnot-Kater" eats the profit. The code has
+    τ ≈ 1,000–6,800 h, which rules out both stories (A4/A5). One physical
+    narrative has to go.
+
+=============================================================================
+D. THE THREE CHANGES THAT MUST PRECEDE EXTERNAL CIRCULATION
+=============================================================================
+ 1. Remove "EPEX Day-Ahead" / "reale Spotmarktpreise" from §1, or replace the
+    cache with a provenance-stamped real price year and re-run. As written, the
+    document contradicts the finding in your own earlier audit (§3.4 @ HEAD)
+    that the price dataset is not the real EPEX year. Cheapest honest fix: label
+    §1 as a synthetic-scenario result and state the price-curve parameters.
+ 2. Remove the 0.05 floor in financial.rs:116 (or apply the identical floor to
+    the modelled machine), then re-run and publish the recomputed table. Six of
+    twelve rows lose 30–75 % of their headline saving; the brewery rows collapse
+    from ~77 % to ~37 %. Until then, §0.2a's "removed artificial baseline
+    inflation" is not true of the code.
+ 3. Unify the definition of "Ersparnis": savings only, or savings + FCR/Droop.
+    §1 shows one, §0's Tier ranges appear to use the other (315,631 ≈ 315,000),
+    and the tool's own 50/50 box prints a third number (82K for brewery_large vs
+    the table's 44,310). Then either ground compute_fcr_revenue in a real
+    capacity-market rule (tendered price, metered response, availability, PQ)
+    or mark it as an unmodelled upside and exclude it.
+
+=============================================================================
+E. NOT VERIFIABLE FROM THIS REPOSITORY (state them as assumptions)
+=============================================================================
+ - "Carel, Danfoss oder WAGO": Carel and Danfoss appear only in the mock PLC
+   banner (src/bin/modbus_mock.rs:38) and the operator field guides as example
+   vendor names; "WAGO" appears nowhere in the repo. Wire them up or drop the
+   names.
+ - "Begrenzung auf max. 100.000 Schreibzyklen": no write-cycle figure, vendor
+   datasheet or citation exists in this repository.
+ - "bei Ausfall des Gateways (z. B. nach 60 Sekunden ohne Inkrement)": the 60 s
+   timeout lives in the customer PLC, not here (poll_interval_sec = 2.0). It is
+   an external precondition; say so.
+ - "funktioniert in der Praxis" (§0.1) and the segment list "Tiefkühllogistik,
+   Brauereien, Rechenzentren und Prozesskälte": no field data, pilot or customer
+   measurement exists in this repo. The 12 tier rows are parameter labels, not
+   commissioned installations.
+
+=============================================================================
+F. APPENDIX — COMMANDS AND RAW OUTPUT (all run 12 Oct 2026, working tree)
+=============================================================================
+[T1] Test counts
+  $ cargo test -p thermal-arbitrage-mvp | grep -E "^(test result|running)"
+    test result: ok. 99 passed; 0 failed; 0 ignored; 0 measured (lib)
+    (modbus_mock 0, main 0, doc-tests 0)
+  $ cargo test -p thermal-fleet | grep -E "^(test result|running)"
+    running 30 tests
+    test result: ok. 30 passed; 0 failed
+  $ grep -c '#\[test\]\|#\[tokio::test\]' over crates/*/src -> 129
+
+[T2] Reproduction command (§4)
+  $ cargo run --release -p thermal-fleet -- --out-dir benchmarks \
+      "1 freezer_small + 1 freezer_mid + 1 freezer_large"
+    freezer_small ×1   153 MWh  +2039 EUR  22.8%
+    freezer_mid   ×1   416 MWh +15375 EUR  48.9%
+    freezer_large ×1  1112 MWh +48331 EUR  53.6%
+
+[T3] Twelve-tier matrix (§1)  -> benchmarks/fleet_results_v2_20261012_081358.csv
+  type,count,energy_mwh,cost_eur,baseline_energy,baseline_cost,savings_eur,savings_pct,fcr_revenue
+  freezer_small,1,153.227,6885.92,155.489,8925.31,2039.39,22.85,0.00
+  brewery_small,1,62.294,2572.80,109.703,6347.13,3774.33,59.47,4183.31
+  dc_small,1,365.451,20095.75,365.437,21138.20,1042.45,4.93,6693.30
+  industry_small,1,735.790,39724.03,735.347,42575.54,2851.50,6.70,13386.60
+  freezer_mid,1,415.652,16096.94,542.074,31471.76,15374.82,48.85,0.00
+  brewery_mid,1,243.300,8842.11,657.000,37996.09,29153.98,76.73,25099.88
+  dc_mid,1,2922.081,162744.59,2922.031,169007.34,6262.75,3.71,50199.75
+  industry_mid,1,4121.275,224766.31,4119.533,238529.42,13763.11,5.77,75299.62
+  freezer_large,1,1112.074,41904.39,1556.652,90235.88,48331.48,53.56,0.00
+  brewery_large,1,704.275,25367.09,1971.000,113988.26,88621.17,77.75,75299.62
+  dc_large,1,12416.845,693100.88,12416.677,718150.53,25049.64,3.49,200799.00
+  industry_large,1,13984.682,761494.84,13978.441,809393.43,47898.59,5.92,267732.00
+  TOTAL,12,37236.947,2003595.65,39529.387,2287758.89,284163.24,12.42,718693.09
+  (savings + FCR box printed by the tool: 1.0M EUR/yr total, 501K EUR "your 50%")
+
+[T4] Retail (§2)  -> benchmarks/fleet_results_v2_20261012_081434.csv
+  $ cargo run --release -p thermal-fleet -- "1 aldi + 1 edeka + 1 marktkauf"
+    aldi      -37 EUR (-0.3%)   edeka -839 EUR (-3.1%)   marktkauf -1895 EUR (-1.8%)
+  $ ... --volatile "1 aldi + 1 edeka + 1 marktkauf"
+    aldi +965 EUR (8.5%)        edeka -802 EUR (-2.9%)   marktkauf -1518 EUR (-1.4%)
+
+[T5] Input forensics (Node, re-implementing simulation.rs generators)
+    price matches synth_price(): 8760/8760   freq matches grid_frequency(): 8760/8760
+    amb matches synth_temp(): 0/8760
+    cache price  mean 57.8  min -6.6  max 268.1  negative hours 126
+    cache amb    mean 11.63 min -5.1  max  37.2  hours >= 28 °C 140
+    crates/gateway/data_cache/2025_dataset.json: price_eur_per_mwh = null for all 8760 h
+
+[T6] Baseline-floor analysis (Node, re-implementing financial.rs:116)
+    Validation: for the six types with zero floor hits (dc_small, industry_small,
+    dc_mid, industry_mid, dc_large, industry_large) the re-computed savings equal
+    the CSV savings exactly (1042 / 2852 / 6263 / 13763 / 25050 / 47899), and for
+    aldi/edeka/marktkauf they equal the CSV exactly (-37 / -839 / -1895). Only the
+    six floored types differ -> the difference is attributable to the floor alone.
+    See table in A7.
+
+[T7] History checks
+  $ git show 9b43f67 -- crates/fleet/src/financial.rs
+      + "Cycling penalty: 1.3x for ON/OFF vs VFD due to Carnot penalty during recovery"
+      + (total_heat_kw / max_cooling_kw * 1.3).clamp(0.05, 0.9)
+  $ git diff -- crates/fleet/src/financial.rs
+      - ... * 1.3).clamp(0.05, 0.9)   ->   + (total_heat_kw / max_cooling_kw).clamp(0.05, 0.9)
+      - let max_cooling_kw = t.cooling_power_kw * t.cop_base;
+      + let cop_baseline = crate::physics::compute_cop(t, t.t_setpoint, amb_c);
+  $ git diff -- crates/fleet/src/control.rs | grep droop
+      - droop_revenue_eur: fcr_revenue, ...      (x10 branches, HEAD)
+      + droop_revenue_eur: 0.0, ...             (working tree)
+  $ git show HEAD:SANITY_CHECK.md | grep -n "3.4 Rot: Preisdatensatz"
+      -> the earlier, longer audit already states the price dataset is not the
+         claimed real EPEX year.
+
+=============================================================================
+G. WHAT IS GENUINELY SOLID
+=============================================================================
+In fairness to the document, these parts are real and I could not break them:
+ - the twelve-row table is exactly reproducible and deterministic (T3);
+ - 129 tests really pass, and the count in the document is exact (T1);
+ - the reproduction command works as written (T2);
+ - the 1.3x malus is really gone, the COP models really were harmonised, and the
+   FCR double-count really was fixed — all three verified in git diff, not just
+   asserted (T7);
+ - the slew limiter, the 28 °C derating, the ASCT governor and the COV/heartbeat
+   Modbus logic are real, well-commented code with tests (B7, B8);
+ - the retail conclusion (neutral-to-negative) is directionally reproduced, even
+   though the published figures and the published reasons are not (A3–A5).
+The problem is not the engineering. It is that §1's inputs are synthetic, §0's
+ranges use a definition §1's table does not show, and the "removed" baseline
+inflation survives at the lower clamp — where it now carries most of the
+freezer/brewery headline.
+=============================================================================

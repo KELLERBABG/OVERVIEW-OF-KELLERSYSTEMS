@@ -1,0 +1,106 @@
+{
+  "slug": "gen-franchise-handelsvertreter",
+  "source": "generated",
+  "domain": "Franchise- und Handelsvertretervertrag (Systemvertrieb, deutsche Systemzentrale, Systempartner als Unternehmer)",
+  "language": "de",
+  "jurisdiction": "DE",
+  "note": "Held-out contract. All traps are worded to avoid the trigger vocabulary in src/analyze.js and docs/DETECTORS.md; markers label the intended trap regardless of whether the engine matches it. Markers are verbatim substrings of the contract text and unique in the file.",
+  "traps": [
+    {
+      "marker": "Ein Anspruch auf Beibehaltung der bisherigen Abgrenzung besteht nicht",
+      "expectedType": "unilateral_change",
+      "note": "Einseitige Neuzuschneidung des Vertragsgebiets durch die Systemzentrale ohne Widerspruchs- oder Minderungsrecht (§ 307 BGB, § 308 Nr. 4 BGB). Vermeidet 'einseitig', 'nach billigem Ermessen' und 'Änderungsvorbehalt'."
+    },
+    {
+      "marker": "hält es laufend aktuell und teilt Änderungen in Textform mit",
+      "expectedType": "unilateral_change",
+      "note": "Einseitiges Änderungsrecht am Systemhandbuch, das Inhalt und Umfang der Leistungspflicht des Systempartners steuert (§ 308 Nr. 4 BGB). Umschreibt 'anpassen' durch 'aktuell halten' und 'mitteilen'."
+    },
+    {
+      "marker": "Der Systempartner nimmt die Festsetzung mit Aufnahme der Tätigkeit im Folgejahr hin",
+      "expectedType": "unilateral_change",
+      "note": "Zustimmungsfiktion durch konkludentes Verhalten: jährliche Festsetzung von Systemgebühr und Provision gelten bei Fortsetzung als hingenommen (§ 308 Nr. 5 BGB, BGH XI ZR 26/20). Vermeidet 'gilt als genehmigt' und 'Schweigen'."
+    },
+    {
+      "marker": "betreibt für die Dauer von zwei Jahren nach dem Ende der Zusammenarbeit im Umkreis von fünfzig Kilometern kein System",
+      "expectedType": "non_compete",
+      "note": "Nachvertragliches Wettbewerbsverbot von zwei Jahren ohne Karenzentschädigung (§ 74 Abs. 2 HGB analog, § 138 BGB). Vermeidet 'Wettbewerbsverbot', 'nach Beendigung des Vertrags' und 'Karenzentschädigung'."
+    },
+    {
+      "marker": "Sie bleibt unabhängig davon geschuldet, ob der Systemzentrale ein Schaden entstanden ist",
+      "expectedType": "penalty",
+      "note": "Vertragsstrafe in Höhe von 5.000 EUR ohne Schadensnachweis und ohne Gegenbeweis (§ 309 Nr. 5 lit. b, Nr. 6 BGB). Vermeidet 'Vertragsstrafe', 'Pönale', 'Schadenspauschale'."
+    },
+    {
+      "marker": "stellt die Systemzentrale den Fehlbetrag in Höhe von sechs Prozent als Systembeitrag in Rechnung",
+      "expectedType": "penalty",
+      "note": "Pauschalierte Mindestumsatz-Differenz, die das Absatzrisiko vollständig auf den Systempartner verlagert; die Marktlage bleibt ausdrücklich außer Betracht (§ 307 BGB, § 309 Nr. 5 BGB)."
+    },
+    {
+      "marker": "verlangt die Systemzentrale eine Bearbeitungspauschale von 1.500 EUR je Standort",
+      "expectedType": "data_lockin",
+      "note": "Entgelt für die Herausgabe des eigenen Datenbestands bei Vertragsende (Art. 20 DSGVO, § 307 BGB). Vermeidet 'Herausgabegebühr' und 'kostenpflichtiger Datenexport'."
+    },
+    {
+      "marker": "setzt sich nach Ablauf der Festlaufzeit jeweils um ein weiteres Jahr fort",
+      "expectedType": "auto_renewal",
+      "note": "Stille Selbstverlängerung um jeweils ein Jahr (§ 307 BGB). Vermeidet 'verlängert sich', 'stillschweigende Verlängerung', 'automatische Verlängerung'."
+    },
+    {
+      "marker": "achtzehn Monate vor dem jeweiligen Periodenende in Textform beendet wird",
+      "expectedType": "notice_period",
+      "note": "18 Monate Beendigungsfrist bei fünfjähriger Bindung, zulasten des Systempartners; die Klausel vermeidet bewusst das Wort 'Kündigung' und spricht von 'beenden'."
+    },
+    {
+      "marker": "Die Haftung für mittelbare Schäden und entgangenen Gewinn ist ausgeschlossen",
+      "expectedType": "liability",
+      "note": "Kontrollklausel: kanonische Formulierung eines Haftungsausschlusses; muss erkannt werden, sonst misst der Lauf nicht."
+    },
+    {
+      "marker": "Für leicht fahrlässig verursachte Vermögensschäden wird nicht eingestanden",
+      "expectedType": "liability",
+      "note": "Freizeichnung für leichte Fahrlässigkeit in § 14.2, formuliert ohne 'Haftung ist ausgeschlossen'; zusätzlich Höhenbegrenzung auf die im letzten Vertragsjahr gezahlten Systemgebühren."
+    },
+    {
+      "marker": "Personen, die für die jeweils andere Seite tätig waren, mit dem Ziel eines Wechsels anzusprechen",
+      "expectedType": "non_solicitation",
+      "note": "Zwei Jahre nachwirkendes Anspracheverbot ohne die Wörter 'Mitarbeiter', 'Angestellte' oder 'abwerben'."
+    },
+    {
+      "marker": "steht ihm hierfür keine Provision zu",
+      "expectedType": "agency_commission_exclusion",
+      "note": "Ausschluss der Provision für einen Direktauftrag aus dem Kernsortiment. HGB § 87 Abs. 2 kann bei zugewiesenem Gebiet oder Kundenkreis auch nicht selbst vermittelte Geschäfte erfassen; die konkrete Anwendbarkeit hängt von der Gebietszuteilung und Vertragsrolle ab."
+    },
+    {
+      "marker": "besteht kein Anspruch auf Ausgleich für Werte des aufgebauten Kundenstamms",
+      "expectedType": "agency_goodwill_waiver",
+      "note": "Vorab-Ausschluss eines möglichen Ausgleichsanspruchs nach HGB § 89b. Die Anspruchsvoraussetzungen und gesetzlichen Ausnahmen bleiben einzelfallabhängig."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Systemzentrale stellt dem Systempartner die Warenwirtschaftssoftware gegen eine monatliche Nutzungsgebühr von 89 EUR bereit",
+      "note": "Normale, transparente Preisabrede für eine Zusatzleistung; darf nicht als Preiserhöhung oder Lock-in gewertet werden."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit sowie für Schäden aus der Verletzung von Leben, Körper oder Gesundheit bleibt unberührt",
+      "note": "Gesetzeskonforme Haftungsklausel; steht direkt neben den Haftungsfallen und darf nicht mitgezählt werden."
+    },
+    {
+      "marker": "Die Aufrechnung mit unbestrittenen oder rechtskräftig festgestellten Gegenforderungen bleibt beiden Parteien unbenommen",
+      "note": "Zulässige Aufrechnungsregelung (§ 309 Nr. 3 BGB bleibt gewahrt)."
+    },
+    {
+      "marker": "Die Verjährung von Ansprüchen richtet sich nach den gesetzlichen Vorschriften",
+      "note": "Keine Verkürzung; reiner Gesetzesverweis."
+    },
+    {
+      "marker": "Personenbezogene Daten werden ausschließlich nach den Vorgaben der Datenschutz-Grundverordnung und auf Grundlage eines Auftragsverarbeitungsvertrags verarbeitet",
+      "note": "DSGVO-konforme Datenverarbeitung ohne Weitergabe- oder Verwertungsvorbehalt."
+    },
+    {
+      "marker": "Ist eine Bestimmung unwirksam, gelten die gesetzlichen Vorschriften",
+      "note": "Salvatorische Klausel, die gerade keine geltungserhaltende Reduktion vorsieht (§ 306 Abs. 2 BGB)."
+    }
+  ]
+}

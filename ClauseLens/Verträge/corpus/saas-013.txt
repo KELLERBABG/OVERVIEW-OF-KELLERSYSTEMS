@@ -1,0 +1,67 @@
+Vertrag über Cloud-Backup-Dienste
+
+zwischen Donau Backup GmbH, Industriezeile 36, 4020 Linz (nachfolgend "Anbieterin")
+
+und Steirische Logistik GmbH, Lagergasse 12, 8020 Graz (nachfolgend "Kunde")
+
+Präambel
+
+Die Anbieterin sichert die Systeme des Kunden täglich in einer Cloud-Umgebung und stellt die Wiederherstellung bereit.
+
+§ 1 Gegenstand
+
+(1) Die Anbieterin sichert die Produktivsysteme des Kunden täglich in der Region Linz.
+
+(2) Wiederherstellungen führt die Anbieterin auf Anforderung durch.
+
+§ 2 Protokolle
+
+(1) Die Aufzeichnungen der Anbieterin gelten als maßgeblich; abweichende Belege des Kunden bleiben unberücksichtigt.
+
+(2) Die Systemprotokolle des Anbieters gelten als unwiderlegbarer Vollbeweis.
+
+§ 3 Sperrung
+
+(1) Ohne Mahnung darf die Anbieterin den Plattformzugang sperren.
+
+(2) Der Anbieter darf den Zugang zur Plattform ohne Mahnung sperren.
+
+§ 4 Beweislast
+
+(1) Führt der Kunde den Gegenbeweis nicht, gilt die Leistung als erfüllt.
+
+§ 5 Laufzeit
+
+(1) Die feste Laufzeit beträgt sechsunddreißig Monate, eine Kündigung ist ausgeschlossen.
+
+§ 6 Pauschalen
+
+(1) Bei Verzug schuldet der Kunde eine Aufwandspauschale von 250 EUR.
+
+§ 7 Zahlung
+
+(1) Die Rechnung ist innerhalb von 30 Tagen nach Zugang ohne Abzug fällig.
+
+§ 8 Datenrückgabe
+
+(1) Die Anbieterin stellt dem Kunden bei Vertragsende eine vollständige Kopie aller Kundendaten in maschinenlesbarer Form kostenfrei bereit.
+
+§ 9 Verfügbarkeit
+
+(1) Die Anbieterin sichert eine Verfügbarkeit von 99,5 Prozent pro Kalendermonat zu.
+
+§ 10 Datenschutz
+
+(1) Der Anbieter trifft angemessene technische und organisatorische Maßnahmen zum Schutz der Daten.
+
+(2) Die Verarbeitung erfolgt ausschließlich in Rechenzentren innerhalb der Europäischen Union.
+
+§ 11 Nachwirkung
+
+(1) Die Geheimhaltungspflicht gilt für fünf Jahre nach Beendigung des Vertrags.
+
+Linz, den 15.09.2025
+
+Für die Anbieterin: gez. M. Donau
+
+Für den Kunden: gez. S. Steirische

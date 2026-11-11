@@ -1,0 +1,70 @@
+{
+  "slug": "immobilien-002",
+  "source": "generated",
+  "domain": "Miete und Pacht",
+  "traps": [
+    {
+      "marker": "verwirkt der Pächter eine Pauschale von 250 EUR",
+      "expectedType": "penalty",
+      "note": "Pauschalierte Vertragsstrafe ohne Nachweisvorbehalt."
+    },
+    {
+      "marker": "Bei Zahlungsverzug werden Zinsen in Höhe von 12 Prozent berechnet",
+      "expectedType": "default_interest",
+      "note": "Verzugszins von 12 Prozent ohne Differenzierung."
+    },
+    {
+      "marker": "Mangels abgeschlossenem Wartungsvertrag wird die Küchenanlage abgeschaltet",
+      "expectedType": "maintenance_conditional_shutdown",
+      "note": "GAP: Abschaltung an den Abschluss eines Wartungsvertrags gekoppelt."
+    },
+    {
+      "marker": "darf die Nutzung ohne Abmahnung fristlos einstellen",
+      "expectedType": "service_suspension",
+      "note": "GAP: Fristlose Sperre ohne Abmahnung."
+    },
+    {
+      "marker": "Bei Zahlungsunfähigkeit des Pächters endet der Vertrag ohne weiteres",
+      "expectedType": "insolvency_termination",
+      "note": "Automatisches Vertragsende bei Zahlungsunfaehigkeit."
+    },
+    {
+      "marker": "Nachträgliche Grundsteuernachforderungen trägt der Pächter vollumfänglich",
+      "expectedType": "tax_indemnity_shift",
+      "note": "GAP: Steuernachforderungen vollstaendig auf den Paecher verlagert."
+    },
+    {
+      "marker": "hält den Verpächter für Bußgelder der Aufsichtsbehörde schadlos",
+      "expectedType": "third_party_indemnity",
+      "note": "GAP: Freistellung des Verpaechers von Bussgeldern Dritter."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "Symmetrische Vertraulichkeit."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform zugelassen."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhalt."
+    },
+    {
+      "marker": "Zahlungen sind innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Zahlungsfrist ohne Verzugszins."
+    },
+    {
+      "marker": "Nach Vertragsende erhält der Kunde die Vertragsdaten kostenfrei in einem offenen Format",
+      "note": "Kostenfreier Datenexport."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Verpächter überlässt dem Pächter die Gaststätte mit Küche und Biergarten",
+      "note": "Kein Detektor fuer Zweckbindung der Pachtsache oder Inventaruebergang."
+    }
+  ]
+}

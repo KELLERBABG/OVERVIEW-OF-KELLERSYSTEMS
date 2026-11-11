@@ -1,0 +1,76 @@
+{
+  "slug": "logistik-020",
+  "source": "generated",
+  "domain": "Zollagentur",
+  "traps": [
+    {
+      "marker": "Die Haftung des Anbieters ist der Höhe nach auf fünfzig Prozent der Jahresvergütung begrenzt.",
+      "expectedType": "liability",
+      "note": "Red-team Klausel: liability"
+    },
+    {
+      "marker": "Ausschließlich zuständig sind die Gerichte am Sitz des Anbieters.",
+      "expectedType": "jurisdiction",
+      "note": "Red-team Klausel: jurisdiction"
+    },
+    {
+      "marker": "Nachträgliche Abgabenbelastungen trägt der Kunde.",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Red-team Klausel: tax_indemnity_shift"
+    },
+    {
+      "marker": " den Anbieter von sämtlichen Ansprüchen Dritter frei, unabhängig",
+      "expectedType": "third_party_indemnity",
+      "note": "Red-team Klausel: third_party_indemnity"
+    },
+    {
+      "marker": " grants the Provider a perpetual, irrevocable, worldwide, royalty-free",
+      "expectedType": "data_grant",
+      "note": "Red-team Klausel: data_grant"
+    },
+    {
+      "marker": "Die personenbezogenen Daten werden außerhalb der Europäischen Union verarbeitet.",
+      "expectedType": "international_data_processing",
+      "note": "Red-team Klausel: international_data_processing"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Warennummern je Sendung ab",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "verständigen sich bei Streitigkeiten zunächst gütlich",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "unterstützt den Kunden bei Betriebsprüfungen",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Vermögensschadenhaftpflichtversicherung",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "innerhalb von 30 Tagen ohne Abzug zahlbar",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "zur außerordentlichen Kündigung aus wichtigem Grund bleiben unberührt",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "7.3 Es gilt deutsches Recht.",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "seine Zolldaten jederzeit in einem gängigen Format exportieren",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Beide Parteien behandeln die Zolldaten vertraulich",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

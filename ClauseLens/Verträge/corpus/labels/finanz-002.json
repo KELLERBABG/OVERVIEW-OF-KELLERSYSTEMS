@@ -1,0 +1,87 @@
+{
+  "slug": "finanz-002",
+  "source": "generated",
+  "domain": "Leasing",
+  "traps": [
+    {
+      "marker": "erneuert sich das Finanzierungsengagement um ein Jahr",
+      "expectedType": "auto_renewal",
+      "note": "Paraphrase/Umstellung: nennt 'erneuert sich das Finanzierungsengagement um ' statt der Registerwendung."
+    },
+    {
+      "marker": "Nach Beendigung des Vertrags ist der Kunde",
+      "expectedType": "non_compete",
+      "note": "Paraphrase/Umstellung: nennt 'Nach Beendigung des Vertrags ist der Kunde' statt der Registerwendung."
+    },
+    {
+      "marker": "behält sich vor, die Vergütung nach billigem Ermessen anzupassen",
+      "expectedType": "price_escalation",
+      "note": "Paraphrase/Umstellung: nennt 'behält sich vor, die Vergütung nach billigem ' statt der Registerwendung."
+    },
+    {
+      "marker": "Die Übereignung steht unter der aufschiebenden Bedingung der Erfüllung",
+      "expectedType": "extended_retention_of_title",
+      "note": "Paraphrase/Umstellung: nennt 'Die Übereignung steht unter der aufschiebende' statt der Registerwendung."
+    },
+    {
+      "marker": "Die Haftung ist der Höhe nach auf die Bereitstellungsprovision begrenzt",
+      "expectedType": "liability",
+      "note": "Paraphrase/Umstellung: nennt 'Die Haftung ist der Höhe nach auf die Bereits' statt der Registerwendung."
+    },
+    {
+      "marker": "ausschließlich durch handschriftlich unterzeichnete Papierform wirksam",
+      "expectedType": "written_form_trap",
+      "note": "Paraphrase/Umstellung: nennt 'ausschließlich durch handschriftlich unterzei' statt der Registerwendung."
+    },
+    {
+      "marker": "überdauert die Vertragsbeendigung ohne zeitliche Beschränkung",
+      "expectedType": "excessive_survival",
+      "note": "Paraphrase/Umstellung: nennt 'überdauert die Vertragsbeendigung ohne zeitli' statt der Registerwendung."
+    },
+    {
+      "marker": "läuft während der Sperre unverändert weiter",
+      "expectedType": "service_suspension",
+      "note": "Paraphrase/Umstellung: nennt 'läuft während der Sperre unverändert weiter' statt der Registerwendung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "alle vertraulichen Informationen der jeweils anderen Seite",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "mindestens vierzehn Tage vor dem Einsatz eines Unterauftragnehmers",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "innerhalb von dreißig Tagen nach Zugang ohne Abzug",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "können in Textform, insbesondere per E-Mail, vereinbart werden",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "aus wichtigem Grund jederzeit fristlos beenden",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "spätestens zehn Werktage vor einer beabsichtigten Kontoauflösung",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "führen Gespräche auf Leitungsebene.",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "bleibt beiden Parteien unbenommen.",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "keine Vorfälligkeitsentschädigung.",
+      "note": "Täuschende Klausel ohne passenden Detektortyp."
+    }
+  ]
+}

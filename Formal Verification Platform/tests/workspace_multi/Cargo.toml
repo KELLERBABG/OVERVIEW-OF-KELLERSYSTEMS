@@ -1,0 +1,8 @@
+[workspace]
+resolver = "2"
+# Five members, not two: the merge is a parallel write and the bug it replaced was
+# a parallel-ordering clobber, so the property to test is that N racing members
+# cannot change what any one of them reported. Three of the five are clean, which is
+# what makes an empty report able to erase another member's findings if the merge
+# ever goes back to "the last worker writes report.json" (D9).
+members = ["alpha", "beta", "gamma", "delta", "epsilon"]

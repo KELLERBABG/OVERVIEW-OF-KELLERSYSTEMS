@@ -1,0 +1,25 @@
+[package]
+name = "sss"
+version.workspace = true
+edition.workspace = true
+description = "Shamir's Secret Sharing over BN254 scalar field"
+
+[dependencies]
+ark-bn254.workspace = true
+ark-ff.workspace = true
+ark-serialize.workspace = true
+rand.workspace = true
+rand_chacha.workspace = true
+rand_core.workspace = true
+thiserror.workspace = true
+hex.workspace = true
+
+[dev-dependencies]
+criterion.workspace = true
+
+[[bench]]
+name = "sss_bench"
+harness = false
+
+[lints]
+rust.unsafe_code = "forbid"

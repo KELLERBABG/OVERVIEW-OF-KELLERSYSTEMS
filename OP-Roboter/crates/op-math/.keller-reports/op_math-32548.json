@@ -1,0 +1,1096 @@
+{
+  "schema_version": 1,
+  "crate_name": "op_math",
+  "completed": true,
+  "coverage": {
+    "functions": 108,
+    "reachable_assertions": 14,
+    "supported_assertions": 14,
+    "unsupported_assertions": 0,
+    "unsupported_kinds": [],
+    "passed": 2,
+    "failed": 0,
+    "warnings": 12,
+    "without_verdict": 0,
+    "panic_sites": 1,
+    "panic_sites_decided": 0,
+    "obligation_solver_calls": 14,
+    "solver_elapsed_ms": 274
+  },
+  "findings": [
+    {
+      "crate": "op_math",
+      "function": "matrix::_::<impl matrix::_::_serde::Serialize for matrix::Matrix3>::serialize",
+      "block": "bb0",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_10` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "op_math",
+      "function": "matrix::_::<impl matrix::_::_serde::Serialize for matrix::Matrix3>::serialize",
+      "block": "bb1",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_10` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "op_math",
+      "function": "matrix::_::<impl matrix::_::_serde::Serialize for matrix::Matrix3>::serialize",
+      "block": "bb2",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_10` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "op_math",
+      "function": "matrix::Matrix3::at",
+      "block": "bb2",
+      "status": "WARN",
+      "kind": "unmodelled-panic",
+      "file": "crates/op-math/src/matrix.rs",
+      "line": 75,
+      "details": "Unmodelled panic site: the call to `core::panicking::panic` can panic, and its body is not read by this analysis, so whether this site can panic was not decided."
+    },
+    {
+      "crate": "op_math",
+      "function": "quaternion::_::<impl matrix::_::_serde::Serialize for quaternion::Quaternion>::serialize",
+      "block": "bb0",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_11` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "op_math",
+      "function": "quaternion::_::<impl matrix::_::_serde::Serialize for quaternion::Quaternion>::serialize",
+      "block": "bb1",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_11` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "op_math",
+      "function": "quaternion::_::<impl matrix::_::_serde::Serialize for quaternion::Quaternion>::serialize",
+      "block": "bb2",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_11` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "op_math",
+      "function": "quaternion::_::<impl matrix::_::_serde::Serialize for quaternion::Quaternion>::serialize",
+      "block": "bb3",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_11` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "op_math",
+      "function": "transform::_::<impl matrix::_::_serde::Serialize for transform::Isometry3>::serialize",
+      "block": "bb0",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_9` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "op_math",
+      "function": "transform::_::<impl matrix::_::_serde::Serialize for transform::Isometry3>::serialize",
+      "block": "bb1",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_9` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "op_math",
+      "function": "vector::_::<impl matrix::_::_serde::Serialize for vector::Vector3>::serialize",
+      "block": "bb0",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_10` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "op_math",
+      "function": "vector::_::<impl matrix::_::_serde::Serialize for vector::Vector3>::serialize",
+      "block": "bb1",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_10` is a cast of an operand this analysis does not model"
+    },
+    {
+      "crate": "op_math",
+      "function": "vector::_::<impl matrix::_::_serde::Serialize for vector::Vector3>::serialize",
+      "block": "bb2",
+      "status": "WARN",
+      "kind": "overflow",
+      "details": "Arithmetic Overflow Detection (Add) -> Undecided: `_10` is a cast of an operand this analysis does not model"
+    }
+  ],
+  "compiler": {
+    "arguments": [
+      "--crate-name",
+      "op_math",
+      "--edition=2021",
+      "crates\\op-math\\src\\lib.rs",
+      "--error-format=json",
+      "--json=diagnostic-rendered-ansi,artifacts,future-incompat",
+      "--crate-type",
+      "lib",
+      "--emit=dep-info,metadata",
+      "-C",
+      "embed-bitcode=no",
+      "-C",
+      "debuginfo=2",
+      "--check-cfg",
+      "cfg(docsrs,test)",
+      "--check-cfg",
+      "cfg(feature, values())",
+      "-C",
+      "metadata=5134d40c8b24ae71",
+      "-C",
+      "extra-filename=-33e7d32e61c8ce70",
+      "--out-dir",
+      "c:\\Users\\lukas\\Downloads\\SYSTEMS & CREATIONS\\OP-Roboter\\crates\\op-math\\target\\keller\\debug\\deps",
+      "-C",
+      "incremental=c:\\Users\\lukas\\Downloads\\SYSTEMS & CREATIONS\\OP-Roboter\\crates\\op-math\\target\\keller\\debug\\incremental",
+      "-L",
+      "dependency=c:\\Users\\lukas\\Downloads\\SYSTEMS & CREATIONS\\OP-Roboter\\crates\\op-math\\target\\keller\\debug\\deps",
+      "--extern",
+      "serde=c:\\Users\\lukas\\Downloads\\SYSTEMS & CREATIONS\\OP-Roboter\\crates\\op-math\\target\\keller\\debug\\deps\\libserde-e67d03887265f41f.rmeta",
+      "-L",
+      "native=C:\\z3\\bin",
+      "--sysroot",
+      "C:\\Users\\lukas\\.rustup\\toolchains\\nightly-2026-07-24-x86_64-pc-windows-msvc"
+    ],
+    "rustc": "C:\\Users\\lukas\\.rustup\\toolchains\\nightly-2026-07-24-x86_64-pc-windows-msvc\\bin\\rustc.exe",
+    "version_verbose": "rustc 1.99.0-nightly (89c61a754 2026-07-23)\nbinary: rustc\ncommit-hash: 89c61a7545da48b06116675b888398d02a4064c7\ncommit-date: 2026-07-23\nhost: x86_64-pc-windows-msvc\nrelease: 1.99.0-nightly\nLLVM version: 22.1.8"
+  },
+  "evidence": [
+    {
+      "function": "<matrix::Matrix3 as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<matrix::Matrix3 as std::clone::Clone>::clone",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<matrix::Matrix3 as std::cmp::PartialEq>::eq",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<matrix::Matrix3 as std::default::Default>::default",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "matrix::_::<impl matrix::_::_serde::Serialize for matrix::Matrix3>::serialize",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "matrix::_::<impl matrix::_::_serde::Deserialize<'de> for matrix::Matrix3>::deserialize",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<matrix::_::<impl matrix::_::_serde::Deserialize<'de> for matrix::Matrix3>::deserialize::__FieldVisitor as matrix::_::_serde::de::Visitor<'de>>::expecting",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<matrix::_::<impl matrix::_::_serde::Deserialize<'de> for matrix::Matrix3>::deserialize::__FieldVisitor as matrix::_::_serde::de::Visitor<'de>>::visit_u64",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<matrix::_::<impl matrix::_::_serde::Deserialize<'de> for matrix::Matrix3>::deserialize::__FieldVisitor as matrix::_::_serde::de::Visitor<'de>>::visit_str",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<matrix::_::<impl matrix::_::_serde::Deserialize<'de> for matrix::Matrix3>::deserialize::__FieldVisitor as matrix::_::_serde::de::Visitor<'de>>::visit_bytes",
+      "disclosures": [
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<matrix::_::<impl matrix::_::_serde::Deserialize<'de> for matrix::Matrix3>::deserialize::__Field as matrix::_::_serde::Deserialize<'de>>::deserialize",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<matrix::_::<impl matrix::_::_serde::Deserialize<'de> for matrix::Matrix3>::deserialize::__Visitor<'de> as matrix::_::_serde::de::Visitor<'de>>::expecting",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<matrix::_::<impl matrix::_::_serde::Deserialize<'de> for matrix::Matrix3>::deserialize::__Visitor<'de> as matrix::_::_serde::de::Visitor<'de>>::visit_seq",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<matrix::_::<impl matrix::_::_serde::Deserialize<'de> for matrix::Matrix3>::deserialize::__Visitor<'de> as matrix::_::_serde::de::Visitor<'de>>::visit_map",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "matrix::Matrix3::from_rows",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "matrix::Matrix3::from_columns",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "matrix::Matrix3::mul_matrix",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "matrix::Matrix3::transpose",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "matrix::Matrix3::determinant",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "matrix::Matrix3::is_rotation",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "matrix::Matrix3::at",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<matrix::Matrix3 as std::ops::Mul<vector::Vector3>>::mul",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<matrix::Matrix3 as std::ops::Mul<f64>>::mul",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<quaternion::Quaternion as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<quaternion::Quaternion as std::clone::Clone>::clone",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<quaternion::Quaternion as std::cmp::PartialEq>::eq",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<quaternion::Quaternion as std::default::Default>::default",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "quaternion::_::<impl matrix::_::_serde::Serialize for quaternion::Quaternion>::serialize",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "quaternion::_::<impl matrix::_::_serde::Deserialize<'de> for quaternion::Quaternion>::deserialize",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<quaternion::_::<impl matrix::_::_serde::Deserialize<'de> for quaternion::Quaternion>::deserialize::__FieldVisitor as matrix::_::_serde::de::Visitor<'de>>::expecting",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<quaternion::_::<impl matrix::_::_serde::Deserialize<'de> for quaternion::Quaternion>::deserialize::__FieldVisitor as matrix::_::_serde::de::Visitor<'de>>::visit_u64",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<quaternion::_::<impl matrix::_::_serde::Deserialize<'de> for quaternion::Quaternion>::deserialize::__FieldVisitor as matrix::_::_serde::de::Visitor<'de>>::visit_str",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<quaternion::_::<impl matrix::_::_serde::Deserialize<'de> for quaternion::Quaternion>::deserialize::__FieldVisitor as matrix::_::_serde::de::Visitor<'de>>::visit_bytes",
+      "disclosures": [
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<quaternion::_::<impl matrix::_::_serde::Deserialize<'de> for quaternion::Quaternion>::deserialize::__Field as matrix::_::_serde::Deserialize<'de>>::deserialize",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<quaternion::_::<impl matrix::_::_serde::Deserialize<'de> for quaternion::Quaternion>::deserialize::__Visitor<'de> as matrix::_::_serde::de::Visitor<'de>>::expecting",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<quaternion::_::<impl matrix::_::_serde::Deserialize<'de> for quaternion::Quaternion>::deserialize::__Visitor<'de> as matrix::_::_serde::de::Visitor<'de>>::visit_seq",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<quaternion::_::<impl matrix::_::_serde::Deserialize<'de> for quaternion::Quaternion>::deserialize::__Visitor<'de> as matrix::_::_serde::de::Visitor<'de>>::visit_map",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "quaternion::Quaternion::new",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "quaternion::Quaternion::from_axis_angle",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "quaternion::Quaternion::from_matrix",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "quaternion::Quaternion::norm",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "quaternion::Quaternion::normalized",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "quaternion::Quaternion::conjugate",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "quaternion::Quaternion::mul_quaternion",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "quaternion::Quaternion::rotate",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "quaternion::Quaternion::to_matrix",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<quaternion::Quaternion as std::ops::Mul>::mul",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<transform::Isometry3 as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<transform::Isometry3 as std::clone::Clone>::clone",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<transform::Isometry3 as std::cmp::PartialEq>::eq",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "transform::_::<impl matrix::_::_serde::Serialize for transform::Isometry3>::serialize",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "transform::_::<impl matrix::_::_serde::Deserialize<'de> for transform::Isometry3>::deserialize",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<transform::_::<impl matrix::_::_serde::Deserialize<'de> for transform::Isometry3>::deserialize::__FieldVisitor as matrix::_::_serde::de::Visitor<'de>>::expecting",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<transform::_::<impl matrix::_::_serde::Deserialize<'de> for transform::Isometry3>::deserialize::__FieldVisitor as matrix::_::_serde::de::Visitor<'de>>::visit_u64",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<transform::_::<impl matrix::_::_serde::Deserialize<'de> for transform::Isometry3>::deserialize::__FieldVisitor as matrix::_::_serde::de::Visitor<'de>>::visit_str",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<transform::_::<impl matrix::_::_serde::Deserialize<'de> for transform::Isometry3>::deserialize::__FieldVisitor as matrix::_::_serde::de::Visitor<'de>>::visit_bytes",
+      "disclosures": [
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<transform::_::<impl matrix::_::_serde::Deserialize<'de> for transform::Isometry3>::deserialize::__Field as matrix::_::_serde::Deserialize<'de>>::deserialize",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<transform::_::<impl matrix::_::_serde::Deserialize<'de> for transform::Isometry3>::deserialize::__Visitor<'de> as matrix::_::_serde::de::Visitor<'de>>::expecting",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<transform::_::<impl matrix::_::_serde::Deserialize<'de> for transform::Isometry3>::deserialize::__Visitor<'de> as matrix::_::_serde::de::Visitor<'de>>::visit_seq",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<transform::_::<impl matrix::_::_serde::Deserialize<'de> for transform::Isometry3>::deserialize::__Visitor<'de> as matrix::_::_serde::de::Visitor<'de>>::visit_map",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "transform::Isometry3::new",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "transform::Isometry3::from_translation",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "transform::Isometry3::from_rotation",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "transform::Isometry3::from_rotation_quaternion",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "transform::Isometry3::transform_point",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "transform::Isometry3::transform_vector",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "transform::Isometry3::then",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "transform::Isometry3::inverse",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "transform::Isometry3::quaternion",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<vector::Vector3 as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<vector::Vector3 as std::clone::Clone>::clone",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<vector::Vector3 as std::cmp::PartialEq>::eq",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<vector::Vector3 as std::default::Default>::default",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "vector::_::<impl matrix::_::_serde::Serialize for vector::Vector3>::serialize",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "vector::_::<impl matrix::_::_serde::Deserialize<'de> for vector::Vector3>::deserialize",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<vector::_::<impl matrix::_::_serde::Deserialize<'de> for vector::Vector3>::deserialize::__FieldVisitor as matrix::_::_serde::de::Visitor<'de>>::expecting",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<vector::_::<impl matrix::_::_serde::Deserialize<'de> for vector::Vector3>::deserialize::__FieldVisitor as matrix::_::_serde::de::Visitor<'de>>::visit_u64",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<vector::_::<impl matrix::_::_serde::Deserialize<'de> for vector::Vector3>::deserialize::__FieldVisitor as matrix::_::_serde::de::Visitor<'de>>::visit_str",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<vector::_::<impl matrix::_::_serde::Deserialize<'de> for vector::Vector3>::deserialize::__FieldVisitor as matrix::_::_serde::de::Visitor<'de>>::visit_bytes",
+      "disclosures": [
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<vector::_::<impl matrix::_::_serde::Deserialize<'de> for vector::Vector3>::deserialize::__Field as matrix::_::_serde::Deserialize<'de>>::deserialize",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<vector::_::<impl matrix::_::_serde::Deserialize<'de> for vector::Vector3>::deserialize::__Visitor<'de> as matrix::_::_serde::de::Visitor<'de>>::expecting",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<vector::_::<impl matrix::_::_serde::Deserialize<'de> for vector::Vector3>::deserialize::__Visitor<'de> as matrix::_::_serde::de::Visitor<'de>>::visit_seq",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<vector::_::<impl matrix::_::_serde::Deserialize<'de> for vector::Vector3>::deserialize::__Visitor<'de> as matrix::_::_serde::de::Visitor<'de>>::visit_map",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "vector::Vector3::new",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "vector::Vector3::norm_squared",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "vector::Vector3::norm",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "vector::Vector3::normalized",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "vector::Vector3::dot",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "vector::Vector3::cross",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "vector::Vector3::abs",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "vector::Vector3::min",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "vector::Vector3::max",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "vector::Vector3::clamp",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "vector::Vector3::distance",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "vector::Vector3::distance_squared",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "vector::Vector3::approx_eq",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<vector::Vector3 as std::ops::Add>::add",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<vector::Vector3 as std::ops::AddAssign>::add_assign",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<vector::Vector3 as std::ops::Sub>::sub",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<vector::Vector3 as std::ops::SubAssign>::sub_assign",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<vector::Vector3 as std::ops::Mul<f64>>::mul",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "vector::<impl std::ops::Mul<vector::Vector3> for f64>::mul",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<vector::Vector3 as std::ops::MulAssign<f64>>::mul_assign",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<vector::Vector3 as std::ops::Div<f64>>::div",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<vector::Vector3 as std::ops::DivAssign<f64>>::div_assign",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<vector::Vector3 as std::ops::Neg>::neg",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "deg_to_rad",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "rad_to_deg",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    }
+  ],
+  "obligations": [
+    {
+      "crate": "op_math",
+      "function": "matrix::Matrix3::at",
+      "block": "bb3",
+      "status": "PASS",
+      "kind": "bounds",
+      "verdict": "PASS (unsat)",
+      "artifact": "matrix__Matrix3__at_bb3.smt2",
+      "file": "crates/op-math/src/matrix.rs",
+      "line": 75
+    },
+    {
+      "crate": "op_math",
+      "function": "matrix::Matrix3::at",
+      "block": "bb4",
+      "status": "PASS",
+      "kind": "bounds",
+      "verdict": "PASS (unsat)",
+      "artifact": "matrix__Matrix3__at_bb4.smt2",
+      "file": "crates/op-math/src/matrix.rs",
+      "line": 75
+    },
+    {
+      "crate": "op_math",
+      "function": "matrix::_::<impl matrix::_::_serde::Serialize for matrix::Matrix3>::serialize",
+      "block": "bb0",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "matrix______impl_matrix______serde__Serialize_for_matrix__Matrix3___serialize_bb0.smt2"
+    },
+    {
+      "crate": "op_math",
+      "function": "matrix::_::<impl matrix::_::_serde::Serialize for matrix::Matrix3>::serialize",
+      "block": "bb1",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "matrix______impl_matrix______serde__Serialize_for_matrix__Matrix3___serialize_bb1.smt2"
+    },
+    {
+      "crate": "op_math",
+      "function": "matrix::_::<impl matrix::_::_serde::Serialize for matrix::Matrix3>::serialize",
+      "block": "bb2",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "matrix______impl_matrix______serde__Serialize_for_matrix__Matrix3___serialize_bb2.smt2"
+    },
+    {
+      "crate": "op_math",
+      "function": "quaternion::_::<impl matrix::_::_serde::Serialize for quaternion::Quaternion>::serialize",
+      "block": "bb0",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "quaternion______impl_matrix______serde__Serialize_for_quaternion__Quaternion___serialize_bb0.smt2"
+    },
+    {
+      "crate": "op_math",
+      "function": "quaternion::_::<impl matrix::_::_serde::Serialize for quaternion::Quaternion>::serialize",
+      "block": "bb1",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "quaternion______impl_matrix______serde__Serialize_for_quaternion__Quaternion___serialize_bb1.smt2"
+    },
+    {
+      "crate": "op_math",
+      "function": "quaternion::_::<impl matrix::_::_serde::Serialize for quaternion::Quaternion>::serialize",
+      "block": "bb2",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "quaternion______impl_matrix______serde__Serialize_for_quaternion__Quaternion___serialize_bb2.smt2"
+    },
+    {
+      "crate": "op_math",
+      "function": "quaternion::_::<impl matrix::_::_serde::Serialize for quaternion::Quaternion>::serialize",
+      "block": "bb3",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "quaternion______impl_matrix______serde__Serialize_for_quaternion__Quaternion___serialize_bb3.smt2"
+    },
+    {
+      "crate": "op_math",
+      "function": "transform::_::<impl matrix::_::_serde::Serialize for transform::Isometry3>::serialize",
+      "block": "bb0",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "transform______impl_matrix______serde__Serialize_for_transform__Isometry3___serialize_bb0.smt2"
+    },
+    {
+      "crate": "op_math",
+      "function": "transform::_::<impl matrix::_::_serde::Serialize for transform::Isometry3>::serialize",
+      "block": "bb1",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "transform______impl_matrix______serde__Serialize_for_transform__Isometry3___serialize_bb1.smt2"
+    },
+    {
+      "crate": "op_math",
+      "function": "vector::_::<impl matrix::_::_serde::Serialize for vector::Vector3>::serialize",
+      "block": "bb0",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "vector______impl_matrix______serde__Serialize_for_vector__Vector3___serialize_bb0.smt2"
+    },
+    {
+      "crate": "op_math",
+      "function": "vector::_::<impl matrix::_::_serde::Serialize for vector::Vector3>::serialize",
+      "block": "bb1",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "vector______impl_matrix______serde__Serialize_for_vector__Vector3___serialize_bb1.smt2"
+    },
+    {
+      "crate": "op_math",
+      "function": "vector::_::<impl matrix::_::_serde::Serialize for vector::Vector3>::serialize",
+      "block": "bb2",
+      "status": "WARN",
+      "kind": "overflow",
+      "verdict": "WARN (undecided)",
+      "artifact": "vector______impl_matrix______serde__Serialize_for_vector__Vector3___serialize_bb2.smt2"
+    }
+  ]
+}

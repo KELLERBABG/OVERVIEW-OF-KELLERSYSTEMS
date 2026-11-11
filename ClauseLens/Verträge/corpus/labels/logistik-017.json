@@ -1,0 +1,89 @@
+{
+  "slug": "logistik-017",
+  "source": "generated",
+  "domain": "Pharmalogistik",
+  "traps": [
+    {
+      "marker": "Der Anbieter darf ein Audit ohne vorherige Ankündigung durchführen.",
+      "expectedType": "unreasonable_audit",
+      "note": "Red-team Klausel: unreasonable_audit"
+    },
+    {
+      "marker": "Die personenbezogenen Daten werden außerhalb der Europäischen Union verarbeitet.",
+      "expectedType": "international_data_processing",
+      "note": "Red-team Klausel: international_data_processing"
+    },
+    {
+      "marker": "Nachträgliche Abgabenbelastungen trägt der Kunde.",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Red-team Klausel: tax_indemnity_shift"
+    },
+    {
+      "marker": "Ansprüche des Kunden verjähren innerhalb von sechs Monaten nach Ablieferung.",
+      "expectedType": "statute_of_limitations",
+      "note": "Red-team Klausel: statute_of_limitations"
+    },
+    {
+      "marker": "Der Anbieter ist berechtigt, die Leistung ohne Vorankündigung einzustellen.",
+      "expectedType": "service_suspension",
+      "note": "Red-team Klausel: service_suspension"
+    },
+    {
+      "marker": " den Anbieter von sämtlichen Ansprüchen Dritter frei, unabhängig",
+      "expectedType": "third_party_indemnity",
+      "note": "Red-team Klausel: third_party_indemnity"
+    },
+    {
+      "marker": "Der Kunde verpflichtet sich, sämtliche Informationen des Anbieters streng vertraulich zu behandeln.",
+      "expectedType": "asymmetric_confidentiality",
+      "note": "Red-team Klausel: asymmetric_confidentiality"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Temperaturprofile je Produkt ab",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Prüfprotokolle über das Kundenportal bereit",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "informiert den Kunden über die eingesetzten Unterauftragnehmer",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Export erforderlichen Nachweise",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "prüft die Lieferungen unverzüglich nach Erhalt",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "informiert den Kunden unverzüglich über den Grund der Sperre",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Betriebshaftpflichtversicherung",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "schult sein Personal regelmäßig zum Datenschutz",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "innerhalb von 30 Tagen ohne Abzug zahlbar",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "9.4 Es gilt deutsches Recht.",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "seine Daten jederzeit in einem gängigen Format exportieren",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

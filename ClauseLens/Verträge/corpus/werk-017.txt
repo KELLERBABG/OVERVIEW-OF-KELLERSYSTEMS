@@ -1,0 +1,70 @@
+Werkvertrag über die Produktionsplanungssoftware
+
+zwischen Studio Cloud GmbH, München (nachfolgend Anbieter) und Medienhaus Albdruck GmbH, Stuttgart (nachfolgend Kunde).
+
+Präambel
+Die Parteien beabsichtigen die in § 1 beschriebene Zusammenarbeit. Der Anbieter erbringt die Leistungen, der Kunde vergütet sie. Die Parteien vereinbaren Folgendes.
+
+§ 1 Gegenstand
+Gegenstand des Vertrages ist die Erstellung der Produktionsplanungssoftware gemäß Anlage 1.
+
+§ 2 Leistungsumfang
+Der Anbieter erbringt die Leistungen gemäß Anlage 1 und dokumentiert die Ergebnisse.
+
+§ 3 Einbezogene Bedingungen
+(3) Ergänzend gelten die jeweils aktuellen Supportbedingungen, abrufbar unter https://kernzeit.example/support.
+
+§ 4 Freistellung
+(4) The customer shall indemnify and hold harmless the provider against any third party claims.
+
+§ 5 Abwerbeverbot
+(5) Es ist untersagt, Mitarbeiter der anderen Partei abzuwerben.
+
+§ 6 Preisanpassung
+(6) Kostensteigerungen werden vollumfänglich an den Kunden weitergegeben; eine Deckelung besteht nicht.
+
+§ 7 Sperrung des Zugangs
+(7) Der Anbieter kann ohne vorherige Abmahnung den Zugang sperren.
+
+§ 8 Beschaffenheit der Software
+(8) Zusicherungen zur Eignung für einen bestimmten Zweck sind nicht Bestandteil dieses Vertrages.
+
+§ 9 Zugang von Erklärungen
+(9) Auf den tatsächlichen Abruf kommt es nicht an.
+
+§ 10 Ordentliche Kündigung
+(10) Ein ordentliches Kündigungsrecht des Kunden ist ausgeschlossen.
+
+§ 11 Vollständigkeit der Vereinbarung
+(11) Ungeachtet etwaiger Nebenabreden enthält dieser Vertrag alle Vereinbarungen der Parteien.
+
+§ 12 Störungen
+(12) Die Vertragsparteien informieren sich unverzüglich über Störungen.
+
+§ 13 Sicherheit
+(13) Der Anbieter meldet Sicherheitsvorfälle unverzüglich an den Kunden.
+
+§ 14 Vergütung
+(14) Die Vergütung ist innerhalb von dreißig Tagen nach Rechnungseingang fällig.
+
+§ 15 Haftung
+(15) Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt.
+
+§ 16 Vertraulichkeit
+(16) Beide Parteien verpflichten sich wechselseitig, die offengelegten Informationen vertraulich zu behandeln.
+
+§ 17 Unterauftragnehmer
+(17) Der Anbieter zeigt den Einsatz von Unterauftragnehmern vierzehn Tage vorher an.
+
+§ 18 Datenrückgabe
+(18) Der Kunde erhält zum Vertragsende einen kostenfreien Datenexport in einem gängigen Format.
+
+§ 19 Vollständigkeit
+(19) Die Parteien benennen je einen Ansprechpartner für die Projektabwicklung.
+
+Anlage 1: Leistungsbeschreibung
+Anlage 2: Servicezeiten
+
+München, den 12. September 2026
+Studio Cloud GmbH
+Medienhaus Albdruck GmbH

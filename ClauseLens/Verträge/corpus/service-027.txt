@@ -1,0 +1,97 @@
+Callcenter-Vertrag Rückgewinnung
+
+zwischen der Telecom Nord GmbH (nachfolgend "Kunde") und der Retention Partner GmbH (nachfolgend "Anbieter") wird folgender Vertrag geschlossen:
+
+Präambel
+Der Kunde benötigt Leistungen im Bereich Rückgewinnung gekündigter Kunden.
+Der Anbieter verfügt über die hierfür erforderliche Erfahrung und Ausstattung. Die Parteien vereinbaren daher Folgendes:
+
+§ 1 Gegenstand
+Gegenstand des Vertrags ist die Erbringung der in § 2 beschriebenen Leistungen im Bereich Rückgewinnung gekündigter Kunden.
+
+§ 2 Leistungsumfang
+Der Anbieter erbringt die Leistungen nach dem vereinbarten Leistungsbild und den anerkannten Regeln der Technik.
+Der Leistungsumfang ergibt sich aus diesem Vertrag und den zugehörigen Anlagen.
+§ 3 Vergütungsanpassung
+Steigen die Kosten des Anbieters, gibt er die Erhöhung vollumfänglich weiter; eine Obergrenze ist nicht vereinbart.
+Der Anbieter informiert den Kunden über wesentliche Änderungen im Ablauf.
+
+§ 4 Salvatorische Klausel
+Unwirksame Klauseln werden durch eine Regelung ersetzt, die der Anbieter für wirtschaftlich angemessen hält.
+Die Parteien prüfen die Leistungen gemeinsam und halten das Ergebnis fest.
+
+§ 5 Eigentumsvorbehalt
+Das Eigentum an den Geräten bleibt beim Anbieter, bis auch Forderungen verbundener Unternehmen ausgeglichen sind, und geht erst dann auf den Kunden über.
+Die Parteien stimmen die Einzelheiten rechtzeitig vor Leistungsbeginn ab.
+
+§ 6 Nachunternehmer
+Der Anbieter setzt für die Betreuung eigene Dienstleister ein, ohne deren Auswahl dem Kunden mitzuteilen.
+Der jeweils benannte Ansprechpartner informiert die andere Partei unverzüglich.
+
+§ 7 Aufzeichnungen
+Aufzeichnungen über Serviceeinsätze werden vom Anbieter gepflegt und können aus technischen Gründen nachträglich berichtigt werden.
+Der Anbieter dokumentiert seine Tätigkeit und legt die Unterlagen auf Anforderung vor.
+
+§ 8 Leistungssperre
+Der Anbieter kann den Zugang unterbrechen, wenn begründete Zweifel an der Zahlungsfähigkeit des Kunden bestehen.
+Beide Parteien unterstützen sich bei der Aufklärung von Rückfragen angemessen.
+
+§ 9 Insolvenz
+Stellt der Kunde einen Antrag auf Eröffnung eines Verfahrens, darf der Anbieter die Leistung sofort einstellen und den Vertrag beenden.
+Die Kommunikation erfolgt über die im Kopf dieses Vertrags genannten Kontaktwege.
+
+§ 10 Wettbewerbsverbot
+Der Kunde verpflichtet sich, für zwei Jahre nach Vertragsende keine konkurrierenden Wartungsdienstleistungen bei Dritten zu beziehen.
+Der Kunde benennt für die Abstimmung eine fachlich verantwortliche Person.
+
+§ 11 Datennutzung
+Der Kunde räumt dem Anbieter das Recht ein, alle im Rahmen der Betreuung entstehenden Daten uneingeschränkt zu nutzen.
+Der Anbieter setzt für die Leistungserbringung geeignete Fachkräfte ein.
+
+§ 12 Bestimmungen
+Kündigungen können in Textform, insbesondere per E-Mail, erklärt werden.
+Die Parteien bewahren die im Rahmen der Zusammenarbeit erstellten Unterlagen sorgfältig auf.
+
+§ 13 Bestimmungen
+Der Anbieter kann Leistungen auf Nachunternehmer übertragen, wenn er dies dem Kunden vierzehn Tage vorher schriftlich mitteilt.
+Vereinbarungen der Projektverantwortlichen werden von den Parteien schriftlich dokumentiert.
+
+§ 14 Bestimmungen
+Die Vergütung ist innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig.
+Der Kunde stellt die für die Leistung erforderlichen Informationen rechtzeitig bereit.
+
+§ 15 Bestimmungen
+Am Ende der Laufzeit stellt der Anbieter alle Kundendaten in einem gängigen Format kostenfrei zur Verfügung.
+Der Anbieter informiert den Kunden über wesentliche Änderungen im Ablauf.
+
+§ 16 Bestimmungen
+Jede Partei kann den Vertrag aus wichtigem Grund ohne Einhaltung einer Frist kündigen.
+Die Parteien prüfen die Leistungen gemeinsam und halten das Ergebnis fest.
+
+§ 17 Bestimmungen
+Der Anbieter unterhält eine Betriebshaftpflichtversicherung mit einer Deckungssumme von fünf Millionen EUR.
+Die Parteien stimmen die Einzelheiten rechtzeitig vor Leistungsbeginn ab.
+
+§ 18 Bestimmungen
+Der Kunde erhält auf Wunsch eine Kopie der über ihn gespeicherten Daten.
+Der jeweils benannte Ansprechpartner informiert die andere Partei unverzüglich.
+
+§ 19 Vollständigkeit
+Die Einhaltung terminlicher Zusagen des Anbieters steht unter dem Vorbehalt der jederzeitigen Verfügbarkeit geeigneter Fachkräfte.
+Der Kunde trägt Aufwendungen für Reisen, Unterkunft und Schulungen auch dann, wenn der Termin nicht zustande kommt.
+
+Anlage 1 zur Leistungsbeschreibung
+Die Anlage 1 wird mit Vertragsschluss ausgehändigt und ist Bestandteil dieses Vertrags.
+
+Anlage 2 zum Eskalationsweg
+Der Eskalationsweg für Störungen ist in Anlage 2 geregelt.
+
+Telecom und Retention bestätigen die Vollständigkeit der vorstehenden Regelungen.
+
+Ort, Datum
+
+___________________________
+Telecom Nord GmbH
+
+___________________________
+Retention Partner GmbH

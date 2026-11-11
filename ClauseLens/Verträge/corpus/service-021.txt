@@ -1,0 +1,97 @@
+Managed-Service-Vertrag Cloudtelefonie
+
+zwischen der Handelshaus Krüger GmbH (nachfolgend "Kunde") und der VoiceCloud Managed Services GmbH (nachfolgend "Anbieter") wird folgender Vertrag geschlossen:
+
+Präambel
+Der Kunde benötigt Leistungen im Bereich Betrieb einer cloudbasierten Telefonanlage.
+Der Anbieter verfügt über die hierfür erforderliche Erfahrung und Ausstattung. Die Parteien vereinbaren daher Folgendes:
+
+§ 1 Gegenstand
+Gegenstand des Vertrags ist die Erbringung der in § 2 beschriebenen Leistungen im Bereich Betrieb einer cloudbasierten Telefonanlage.
+
+§ 2 Leistungsumfang
+Der Anbieter erbringt die Leistungen nach dem vereinbarten Leistungsbild und den anerkannten Regeln der Technik.
+Der Leistungsumfang ergibt sich aus diesem Vertrag und den zugehörigen Anlagen.
+§ 3 Softwareüberlassung
+Der Anbieter übernimmt keine Haftung dafür, dass die Software den Vorstellungen des Kunden entspricht oder unterbrechungsfrei arbeitet.
+Die Kommunikation erfolgt über die im Kopf dieses Vertrags genannten Kontaktwege.
+
+§ 4 Vollständigkeit
+Nebenabreden bestehen nur, wenn sie Eingang in die Vertragsurkunde gefunden haben; frühere Zusagen werden gegenstandslos.
+Der Kunde benennt für die Abstimmung eine fachlich verantwortliche Person.
+
+§ 5 Referenznennung
+Der Anbieter verweist in seiner Außendarstellung auf die Zusammenarbeit; Widerspruch des Kunden ist erst nach Veröffentlichung möglich.
+Der Anbieter setzt für die Leistungserbringung geeignete Fachkräfte ein.
+
+§ 6 Rückmeldungen
+Der Kunde überträgt dem Anbieter jede Nutzung von Anregungen, die er im Rahmen der Zusammenarbeit äußert.
+Die Parteien bewahren die im Rahmen der Zusammenarbeit erstellten Unterlagen sorgfältig auf.
+
+§ 7 Zugang von Erklärungen
+Für den Zugang genügt die Absendung an die zuletzt vom Kunden benannte Adresse; der Kunde trägt das Risiko der Nichtkenntnisnahme.
+Vereinbarungen der Projektverantwortlichen werden von den Parteien schriftlich dokumentiert.
+
+§ 8 Servicezeiten
+Der Anbieter strebt die vereinbarten Reaktionszeiten an; bei Überschreitung entstehen dem Kunden keine Rechte.
+Der Kunde stellt die für die Leistung erforderlichen Informationen rechtzeitig bereit.
+
+§ 9 Provisionen
+Provisionen und Stornoreserven entfallen, wenn der Vermittler den Vertragsschluss nicht innerhalb von drei Monaten nachweist.
+Der Anbieter informiert den Kunden über wesentliche Änderungen im Ablauf.
+
+§ 10 Provisionen
+Der Vermittler erhält keine Provision, wenn der Kunde den Vertrag mit dem Versicherer direkt verlängert.
+Die Parteien prüfen die Leistungen gemeinsam und halten das Ergebnis fest.
+
+§ 11 Ausgleich nach Beendigung
+Der Vermittler verzichtet auf seinen Ausgleichsanspruch nach § 89b HGB.
+Die Parteien stimmen die Einzelheiten rechtzeitig vor Leistungsbeginn ab.
+
+§ 12 Bestimmungen
+Der Kunde erhält auf Wunsch eine Kopie der über ihn gespeicherten Daten.
+Der jeweils benannte Ansprechpartner informiert die andere Partei unverzüglich.
+
+§ 13 Bestimmungen
+Preisanpassungen erfolgen nur mit Zustimmung des Kunden oder bei Änderung gesetzlicher Abgaben.
+Der Anbieter dokumentiert seine Tätigkeit und legt die Unterlagen auf Anforderung vor.
+
+§ 14 Bestimmungen
+Der Anbieter teilt beabsichtigte Preisanpassungen mindestens sechs Wochen vorher mit.
+Beide Parteien unterstützen sich bei der Aufklärung von Rückfragen angemessen.
+
+§ 15 Bestimmungen
+Die Parteien benennen jeweils einen Ansprechpartner und informieren unverzüglich über einen Wechsel.
+Die Kommunikation erfolgt über die im Kopf dieses Vertrags genannten Kontaktwege.
+
+§ 16 Bestimmungen
+Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich und verwenden sie nur für die Durchführung des Vertrags.
+Der Kunde benennt für die Abstimmung eine fachlich verantwortliche Person.
+
+§ 17 Bestimmungen
+Der Kunde kann den Vertrag mit einer Frist von vier Wochen zum Monatsende ohne Angabe von Gründen beenden.
+Der Anbieter setzt für die Leistungserbringung geeignete Fachkräfte ein.
+
+§ 18 Bestimmungen
+Kündigungen können in Textform, insbesondere per E-Mail, erklärt werden.
+Die Parteien bewahren die im Rahmen der Zusammenarbeit erstellten Unterlagen sorgfältig auf.
+
+§ 19 Vollständigkeit
+Die Einhaltung terminlicher Zusagen des Anbieters steht unter dem Vorbehalt der jederzeitigen Verfügbarkeit geeigneter Fachkräfte.
+Der Kunde trägt Aufwendungen für Reisen, Unterkunft und Schulungen auch dann, wenn der Termin nicht zustande kommt.
+
+Anlage 1 zur Leistungsbeschreibung
+Die Anlage 1 wird mit Vertragsschluss ausgehändigt und ist Bestandteil dieses Vertrags.
+
+Anlage 2 zum Eskalationsweg
+Der Eskalationsweg für Störungen ist in Anlage 2 geregelt.
+
+Handelshaus und VoiceCloud bestätigen die Vollständigkeit der vorstehenden Regelungen.
+
+Ort, Datum
+
+___________________________
+Handelshaus Krüger GmbH
+
+___________________________
+VoiceCloud Managed Services GmbH

@@ -1,0 +1,72 @@
+{
+  "name": "clauselens",
+  "version": "1.0.0",
+  "description": "ClauseLens - Autonome Vertragsanalyse & AGB-Auditierung fuer KMU und B2B. Zero dependencies, 100% offline-faehig, BGB §§ 305-310 konform.",
+  "type": "module",
+  "main": "src/analyze.js",
+  "exports": {
+    ".": "./src/analyze.js",
+    "./config": "./src/config.js",
+    "./pdfreport": "./src/pdfreport.js",
+    "./pdfextract": "./src/pdfextract.js",
+    "./htmlreport": "./src/htmlreport.js",
+    "./batch": "./src/batch.js",
+    "./compare": "./src/compare.js",
+    "./licensing": "./src/licensing.js",
+    "./account": "./src/account.js",
+    "./sarif": "./src/sarif.js",
+    "./openapi": "./src/openapi.js",
+    "./server": "./src/server.js",
+    "./mcp": "./src/mcp.js",
+    "./archil": "./src/archil.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "bin",
+    "src",
+    "index.html",
+    "studio.html",
+    "pricing.html",
+    "impressum.html",
+    "privacy.html",
+    "terms.html",
+    "klauseln",
+    "sitemap.xml",
+    "robots.txt",
+    "llms.txt",
+    "llms-full.txt",
+    "README.md",
+    "LICENSE",
+    "clauselens.config.json"
+  ],
+  "bin": {
+    "clauselens": "bin/clauselens.js",
+    "clauselens-mcp": "bin/mcp.js"
+  },
+  "scripts": {
+    "test": "node --test",
+    "start": "node bin/server.js",
+    "serve": "node bin/server.js",
+    "license:deploy": "npx --yes wrangler@4 deploy --config worker/wrangler.toml",
+    "archil:check": "node --env-file-if-exists=.env bin/archil-persist-check.js",
+    "build:seo": "node tools/build_programmatic_seo.mjs",
+    "outreach": "node tools/outreach.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "legal-tech",
+    "agb",
+    "vertraege",
+    "bgb",
+    "regelmaschine",
+    "contract-review",
+    "zero-dependency",
+    "privacy-first"
+  ],
+  "license": "SEE LICENSE IN LICENSE",
+  "dependencies": {
+    "disk": "1.8.0"
+  }
+}

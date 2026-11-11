@@ -1,0 +1,14 @@
+[package]
+name = "eh-sim-core"
+version = "0.1.0"
+edition = "2021"
+description = "no_std core for Atmospheric Resonance Simulation — physics, PMIC, crypto, entropy"
+
+[lib]
+name = "esim_core"
+crate-type = ["rlib"]
+
+[dependencies]
+libm = "0.2"
+chacha20poly1305 = { version = "0.10", default-features = false, features = ["alloc"] }
+blake3 = { version = "1", default-features = false }

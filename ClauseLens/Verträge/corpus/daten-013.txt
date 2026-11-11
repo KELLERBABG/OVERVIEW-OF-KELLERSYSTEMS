@@ -1,0 +1,115 @@
+OPEN-SOURCE-COMPLIANCE-VEREINBARUNG
+
+zwischen
+
+der Moorweide GmbH, Marktstraße 3, 49074 Osnabrück (nachfolgend Anbieter)
+
+und
+
+der Kleinod GmbH, Hauptstraße 88, 66111 Saarbrücken (nachfolgend Kunde)
+
+Präambel
+
+Der Anbieter liefert die in Anlage 4 bezeichnete Software, die Open-Source-Komponenten enthält. Es gelten die nachstehenden Bedingungen.
+
+§ 19 Koordination
+
+Mitteilungen gelten nach Absendung als dem Kunden zugegangen, unabhängig vom tatsächlichen Zugang.
+
+§ 20 Umsetzung
+
+Die Bank gibt dem Kunden spätestens zehn Werktage vor einer beabsichtigten Kontoauflösung eine schriftliche Ankündigung.
+
+§ 21 Beachtung
+
+Die angegebene Verfügbarkeit von 99,9 % ist unverbindlich und begründet keine Ansprüche.
+
+§ 1 Allgemeines
+
+Die Kündigung aus wichtigem Grund bleibt beiden Parteien unbenommen.
+
+§ 2 Bestimmung
+
+Für Direktgeschäfte des Kunden steht dem Anbieter keine Provision zu.
+
+§ 3 Regelung
+
+Der Auftragnehmer meldet Datenschutzverletzungen unverzüglich an den Auftraggeber.
+
+§ 4 Vereinbarung
+
+Der Anbieter hat keinen Anspruch auf Ausgleich für den aufgebauten Kundenstamm.
+
+§ 5 Modalität
+
+Der Auftragnehmer informiert den Auftraggeber mindestens vierzehn Tage vor dem Einsatz eines Unterauftragnehmers.
+
+§ 6 Ordnung
+
+Kundendaten können in Rechenzentren eines Drittlands gespiegelt werden.
+
+§ 7 Ausgestaltung
+
+Zahlungen des Kunden werden binnen zwei Werktagen nach Eingang auf dem Geschäftskonto verbucht.
+
+§ 8 Durchführung
+
+Für Streitigkeiten über die Bewertung der Sicherheiten wird ein Sachverständigenverfahren durchgeführt. Die Verfahrenskosten sind vom Kunden vorauszuzahlen. Der gerichtliche Rechtsweg ist erst nach Abschluss des Verfahrens eröffnet.
+
+§ 9 Vorkehrung
+
+Der Auftragnehmer verarbeitet personenbezogene Daten ausschließlich auf dokumentierte Weisung des Auftraggebers.
+
+§ 10 Zusatz
+
+Versäumt der Kunde einen Sicherheitspatch, verfällt sein Anspruch auf Service-Gutschriften.
+
+§ 11 Klarstellung
+
+Jede Partei benennt für Datenschutzfragen eine Ansprechperson.
+
+§ 12 Ergänzung
+
+Bei vorzeitiger Beendigung wird eine pauschale Abstandszahlung fällig.
+
+§ 13 Verfahren
+
+Rechnungen sind innerhalb von dreißig Tagen nach Zugang ohne Abzug fällig.
+
+§ 14 Ausführung
+
+Der Auftragnehmer stellt eine Zweitschrift der Dokumentation gegen eine Gebühr von fünfzehn Euro bereit.
+
+§ 15 Hinweis
+
+Die Parteien arbeiten bei der Durchführung vertrauensvoll zusammen.
+
+§ 16 Maßnahme
+
+Dieser Vertrag unterliegt deutschem Recht.
+
+§ 17 Vorgehen
+
+Die Unwirksamkeit einzelner Bestimmungen lässt die Wirksamkeit des Vertrages im Übrigen unberührt.
+
+§ 18 Abstimmung
+
+Beide Parteien halten die gesetzlichen Aufbewahrungsfristen ein.
+
+§ 19 Koordination
+
+Jede Partei trägt ihre eigenen Kosten.
+
+§ 20 Umsetzung
+
+Die Vertragsparteien bestätigen den Erhalt der in der Anlage 1 bezeichneten Unterlagen.
+
+§ 21 Beachtung
+
+Die Anlagen 1 bis 3 sind Bestandteil dieses Vertrages.
+
+Ort, Datum: ______________________
+
+Für Anbieter: ______________________
+
+Für Kunde: ______________________

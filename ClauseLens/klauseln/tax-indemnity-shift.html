@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rückwirkende Steuernachforderungsabwälzung in AGB (§ 307 BGB) &middot; ClauseLens Lexikon</title>
+  <meta name="description" content="Rechtliche Analyse und Prüfung von Rückwirkende Steuernachforderungsabwälzung in Allgemeinen Geschäftsbedingungen nach deutschem Recht (§§ 305–310 BGB).">
+  <meta name="keywords" content="Rückwirkende Steuernachforderungsabwälzung AGB, tax_indemnity_shift BGB, unwirksame Klausel, Klauselprüfung">
+  <link rel="canonical" href="https://clause.kellersystems.dev/klauseln/tax-indemnity-shift.html">
+  <link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+  <meta property="og:title" content="Rückwirkende Steuernachforderungsabwälzung in AGB (§ 307 BGB)">
+  <meta property="og:description" content="Rechtliche Analyse und Prüfung von Rückwirkende Steuernachforderungsabwälzung in Allgemeinen Geschäftsbedingungen nach deutschem Recht (§§ 305–310 BGB).">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://clause.kellersystems.dev/klauseln/tax-indemnity-shift.html">
+  <meta property="og:site_name" content="ClauseLens">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Ist eine solche Klausel im B2B-Bereich zulässig?","acceptedAnswer":{"@type":"Answer","text":"Auch zwischen Unternehmen führt eine unangemessene Benachteiligung nach § 307 BGB zur Unwirksamkeit."}}]}
+  </script>
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ClauseLens","item":"https://clause.kellersystems.dev/"},{"@type":"ListItem","position":2,"name":"Klausel-Lexikon","item":"https://clause.kellersystems.dev/klauseln/"},{"@type":"ListItem","position":3,"name":"Rückwirkende Steuernachforderungsabwälzung","item":"https://clause.kellersystems.dev/klauseln/tax-indemnity-shift.html"}]}
+  </script>
+  <style>
+    :root {
+      --paper: #f6f3ec;
+      --card: #ffffff;
+      --ink: #22201c;
+      --body: #4b463d;
+      --dim: #8b8375;
+      --red: #b8442c;
+      --red-bg: rgba(184, 68, 44, 0.08);
+      --green: #3f7a4a;
+      --green-bg: rgba(63, 122, 74, 0.08);
+      --amber: #b8862c;
+      --amber-bg: rgba(184, 134, 44, 0.08);
+      --rule: #d8d1c0;
+      --accent: #2c5282;
+      --accent-bg: rgba(44, 82, 130, 0.08);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--paper);
+      color: var(--body);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 15.5px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 920px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 32px); }
+    
+    /* Header */
+    header.site-nav {
+      background: var(--card);
+      border-bottom: 1px solid var(--rule);
+      padding: 14px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-inner { max-width: 920px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .brand-badge {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-weight: 600;
+      font-size: 1.25rem;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .brand-badge .tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      background: var(--accent-bg);
+      color: var(--accent);
+      padding: 2px 7px;
+      border-radius: 4px;
+      margin-left: 6px;
+    }
+    .nav-links { display: flex; gap: 12px; align-items: center; }
+    .nav-link {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12.5px;
+      color: var(--body);
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+    }
+    .nav-link:hover { color: var(--ink); background: var(--paper); }
+    .btn-cta {
+      background: var(--ink);
+      color: #fff !important;
+      font-weight: 500;
+    }
+
+    /* Breadcrumbs */
+    .breadcrumb {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11.5px;
+      color: var(--dim);
+      padding: 24px 0 12px;
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--dim); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    /* Article Header */
+    .article-header { margin-bottom: 28px; }
+    .category-badge {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+    h1 {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      line-height: 1.18;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+    .norm-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #e8e3d6;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      color: var(--ink);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    /* Content Cards */
+    .content-card {
+      background: var(--card);
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      padding: clamp(20px, 3.5vw, 32px);
+      margin-bottom: 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.02);
+    }
+    h2 {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 1.45rem;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+    h3 {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 1.2rem;
+      color: var(--ink);
+      margin: 18px 0 8px;
+    }
+    p { margin-bottom: 14px; }
+    
+    /* Comparison Box (Red vs Green) */
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin: 20px 0;
+    }
+    .code-box {
+      border-radius: 6px;
+      padding: 16px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12.5px;
+      line-height: 1.6;
+    }
+    .box-trap {
+      background: var(--red-bg);
+      border: 1px solid rgba(184, 68, 44, 0.25);
+      color: #7a2818;
+    }
+    .box-redline {
+      background: var(--green-bg);
+      border: 1px solid rgba(63, 122, 74, 0.25);
+      color: #24522c;
+    }
+    .box-title {
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Interactive Live Audit Callout */
+    .live-audit-banner {
+      background: linear-gradient(135deg, #22201c 0%, #2c5282 100%);
+      color: #fff;
+      border-radius: 8px;
+      padding: 28px 24px;
+      margin: 32px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    .live-audit-banner h3 {
+      color: #fff;
+      font-size: 1.5rem;
+      margin: 0;
+    }
+    .live-audit-banner p { color: #d0d7de; margin: 0; font-size: 14.5px; }
+    .banner-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 6px; }
+    .btn-audit {
+      background: #fff;
+      color: var(--ink);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 4px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-audit:hover { background: #f6f3ec; }
+
+    /* FAQ Accordion */
+    .faq-item {
+      border-top: 1px solid var(--rule);
+      padding: 16px 0;
+    }
+    .faq-item:first-of-type { border-top: none; }
+    .faq-q {
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+    .faq-a { font-size: 14px; color: var(--body); }
+
+    /* Footer */
+    footer.site-foot {
+      background: var(--card);
+      border-top: 1px solid var(--rule);
+      padding: 32px 0;
+      margin-top: 60px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      color: var(--dim);
+    }
+    footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    footer a { color: var(--ink); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="brand-badge">
+        ClauseLens <span class="tag">Lexikon</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Alle Klauseln</a>
+        <a href="../pricing.html" class="nav-link">Preise</a>
+        <a href="../studio.html" class="nav-link btn-cta">Studio öffnen &rarr;</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <a href="../index.html">ClauseLens</a>
+      <span>&rsaquo;</span>
+      <a href="index.html">Klausel-Lexikon</a>
+      <span>&rsaquo;</span>
+      <span>Rückwirkende Steuernachforderungsabwälzung</span>
+    </div>
+
+    <!-- Article Header -->
+    <div class="article-header">
+      <span class="category-badge">b2b_agb</span>
+      <h1>Rückwirkende Steuernachforderungsabwälzung in AGB (§ 307 BGB)</h1>
+      <div class="norm-pill">
+        <span>Gesetzliche Grundlage:</span>
+        <strong>§ 307 Abs. 1 S. 1 BGB</strong>
+      </div>
+    </div>
+
+    <!-- Content Section 1: Rechtliche Einordnung -->
+    <div class="content-card">
+      <h2>1. Rechtliche Einordnung & Gesetzliche Grenzen</h2>
+      <p>
+        Steuerliche Risiken aus der Sphäre des Anbieters werden rückwirkend und verschuldensunabhängig auf den Kunden verlagert.
+      </p>
+      <h3>Geltung im B2B-Bereich (Handelsverkehr)</h3>
+      <p>
+        Unterliegt der Inhaltskontrolle nach § 307 BGB auch im unternehmerischen Geschäftsverkehr.
+      </p>
+    </div>
+
+    <!-- Content Section 2: Vergleich Praxisbeispiel vs Redline -->
+    <div class="content-card">
+      <h2>2. Typisches Praxisbeispiel &amp; Verhandlungsvorschlag</h2>
+      <p>
+        Vergleichen Sie hier eine typische, riskante Klauselformulierung mit einem fairen, BGB-konformen Gegenentwurf:
+      </p>
+      
+      <div class="comparison-grid">
+        <div class="code-box box-trap">
+          <div class="box-title">
+            <span>&#9888;&#65039; Riskante Klausel aus der Praxis (Warnung)</span>
+          </div>
+          Nachträglich festgesetzte Umsatzsteuernachforderungen sowie Quellensteuernachforderungen sind vollumfänglich vom Kunden zu erstatten, unabhängig vom Grund der steuerlichen Neubewertung.
+        </div>
+
+        <div class="code-box box-redline">
+          <div class="box-title">
+            <span>&#10003; BGB-konformer Gegenvorschlag (Verhandlungsfertig)</span>
+          </div>
+          Ausgewogene vertragliche Regelung zu Rückwirkende Steuernachforderungsabwälzung unter Wahrung von Treu und Glauben.
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive Live Audit CTA -->
+    <div class="live-audit-banner">
+      <div>
+        <h3>Prüfen Sie diese Klausel in Ihrem eigenen Vertrag</h3>
+        <p>
+          Ziehen Sie Ihren Vertrag einfach per Drag &amp; Drop in unser lokales Studio. 
+          ClauseLens prüft den Text in unter einer Sekunde auf diesen und 46 weitere BGB-Fallstricke – zu 100% lokal im Browser ohne Datenübertragung an Cloud-Server.
+        </p>
+      </div>
+      <div class="banner-actions">
+        <a href="../studio.html" class="btn-audit">
+          🚀 Kostenlos im Studio prüfen (3 Verträge gratis) &rarr;
+        </a>
+      </div>
+    </div>
+
+    <!-- Content Section 3: Häufige Fragen (FAQ) -->
+    <div class="content-card">
+      <h2>3. Häufig gestellte Fragen (FAQ)</h2>
+      
+        <div class="faq-item">
+          <div class="faq-q">Ist eine solche Klausel im B2B-Bereich zulässig?</div>
+          <div class="faq-a">Auch zwischen Unternehmen führt eine unangemessene Benachteiligung nach § 307 BGB zur Unwirksamkeit.</div>
+        </div>
+      
+    </div>
+
+    <!-- Weiterführende Links -->
+    <div style="margin-top: 24px; text-align: center;">
+      <a href="index.html" style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--accent); text-decoration:none;">
+        &larr; Zurück zur Übersicht aller 47 BGB-Klauseltypen
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-foot">
+    <div class="wrap">
+      <span>ClauseLens &middot; Keller Systems &copy; 2026</span>
+      <span>
+        <a href="index.html">Klausel-Lexikon</a> &nbsp;/&nbsp;
+        <a href="../studio.html">Studio</a> &nbsp;/&nbsp;
+        <a href="../pricing.html">Preise</a> &nbsp;/&nbsp;
+        <a href="../impressum.html">Impressum</a> &nbsp;/&nbsp;
+        <a href="../privacy.html">Datenschutz</a>
+      </span>
+    </div>
+  </footer>
+
+</body>
+</html>

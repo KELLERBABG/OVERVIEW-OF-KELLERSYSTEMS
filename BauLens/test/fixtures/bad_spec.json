@@ -1,0 +1,20 @@
+{
+  "projekt": "Am Hang 3, 70173 Stuttgart",
+  "grundstueck": {
+    "flaeche_m2": 600,
+    "grenzabstaende": { "norden": 3.0, "sueden": 2.5 }
+  },
+  "gebaeude": {
+    "hoehe_m": 15.0,
+    "geschosse_ueber_grund": 4,
+    "geschosse_unter_ground": 0,
+    "wohnungen_anzahl": 8,
+    "grz_ist": 0.52,
+    "aufenthaltsraeume": [
+      { "name": "Wohnraum EG", "flaeche_m2": 40, "fensterflaeche_m2": 3.0, "raumhoehe_m": 2.10, "etage": 0 },
+      { "name": "Schlafzimmer OG", "flaeche_m2": 20, "fensterflaeche_m2": 2.0, "raumhoehe_m": 2.30, "etage": 1 }
+    ],
+    "zweiter_rettungsweg_vorhanden": false,
+    "treppenraum_vorhanden": false
+  }
+}

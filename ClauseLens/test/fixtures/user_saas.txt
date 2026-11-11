@@ -1,0 +1,34 @@
+SaaS-Rahmen- und Lizenzvereinbarung
+§ 1 Vertragsgegenstand und Leistungsumfang
+(1) Der Anbieter stellt dem Kunden die Softwarelösung als webbasierte Software-as-a-Service (SaaS) bereit.
+
+(2) Der genaue Leistungsumfang ergibt sich aus der Leistungsbeschreibung zum Zeitpunkt des Vertragsschlusses. Der Anbieter ist berechtigt, Schnittstellen, Programmarchitektur und funktionale Bestandteile im Rahmen fortlaufender Produktoptimierungen anzupassen oder ganz zu entfernen, sofern der wirtschaftliche Kernzweck der Software im Wesentlichen gewahrt bleibt; hieraus entstehen für den Kunden keine Ansprüche auf Minderung oder Rückabwicklung.
+
+§ 2 Entgelte, Preisanpassung und Aufrechnung
+(1) Die Vergütung richtet sich nach dem gewählten Lizenzmodell und ist jeweils zum Ersten eines Abrechnungsmonats im Voraus fällig.
+
+(2) Zur Deckung allgemeiner Infrastruktur- und Betriebskostenanpassungen behält sich der Anbieter vor, die monatlichen Nutzungsentgelte einmal jährlich um bis zu 8 % anzuheben. Ein außerordentliches Sonderkündigungsrecht entsteht dem Kunden erst dann, wenn die Preiserhöhung im laufenden Kalenderjahr 15 % übersteigt.
+
+(3) Die Aufrechnung mit Gegenansprüchen des Kunden ist vollumfänglich ausgeschlossen, es sei denn, der Anbieter hat der Verrechnung im Einzelfall vorab ausdrücklich in Textform zugestimmt.
+
+§ 3 Mängelrüge und Gewährleistung
+(1) Der Anbieter gewährleistet die Funktionsfähigkeit der Software gemäß der jeweils aktuellen Dokumentation.
+
+(2) Der Kunde ist verpflichtet, jede Funktionsbeeinträchtigung unverzüglich, spätestens jedoch innerhalb von 3 Kalendertagen ab erstmaligem Auftreten, detailliert und reproduzierbar schriftlich anzuzeigen. Erfolgt innerhalb dieser Frist keine formgerechte Mängelanzeige, gilt die erbrachte Leistung auch hinsichtlich etwaiger Folgemängel als vollständig mangelfrei genehmigt.
+
+§ 4 Nutzungsrechte, Feedback und Telemetriedaten
+(1) Der Kunde erhält das einfache, auf die Vertragslaufzeit beschränkte Recht zur vertragsgemäßen Nutzung der Software.
+
+(2) Der Anbieter erfasst zur Gewährleistung der Betriebsstabilität systembezogene Telemetriedaten. Übermittelt der Kunde Verbesserungsvorschläge, Workflows, Vorlagen oder Konfigurationsschemata („Feedback“), räumt er dem Anbieter hieran ein zeitlich und räumlich unbeschränktes, ausschließliches und unentgeltliches Recht zur wirtschaftlichen Verwertung und Weiterentwicklung ein.
+
+§ 5 Haftung und Verjährung
+(1) Der Anbieter haftet unbeschränkt für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit.
+
+(2) Für sonstige Schäden haftet der Anbieter bei einfacher Fahrlässigkeit nur bei Verletzung wesentlicher Vertragspflichten (Kardinalpflichten), begrenzt auf den typischerweise vorhersehbaren Schaden.
+
+(3) Sämtliche Ansprüche des Kunden gegen den Anbieter – gleich aus welchem Rechtsgrund – verjähren innerhalb von 6 Monaten ab dem Zeitpunkt der Bereitstellung der jeweiligen Softwarefunktion.
+
+§ 6 Änderungen dieser Vereinbarung
+(1) Der Anbieter ist berechtigt, diese Geschäftsbedingungen mit einer Ankündigungsfrist von 14 Tagen zu ändern.
+
+(2) Die Änderungen werden dem Kunden per E-Mail mitgeteilt. Widerspricht der Kunde den Änderungen nicht innerhalb von 14 Tagen nach Zugang in Textform, gilt die fortgesetzte Nutzung der Software nach Ablauf dieser Frist als unwiderrufliche Genehmigung der geänderten Bedingungen.

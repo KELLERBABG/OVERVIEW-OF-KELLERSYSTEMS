@@ -1,0 +1,88 @@
+{
+  "slug": "werk-031",
+  "source": "generated",
+  "domain": "Wehrtechnik, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Als Ort der Streitbeilegung wird der Hauptsitz des Anbieters in Leipzig bestimmt; Klagen sind dort z",
+      "expectedType": "jurisdiction",
+      "note": "Verifizierte Klausel im Bereich jurisdiction."
+    },
+    {
+      "marker": "The customer grants the provider a perpetual, irrevocable license to use the deliverables to train m",
+      "expectedType": "data_grant",
+      "note": "Verifizierte Klausel im Bereich data_grant."
+    },
+    {
+      "marker": "Die Teillieferung wird als vertragsgemäß behandelt, sofern keine Rüge erfolgt.",
+      "expectedType": "deemed_acceptance",
+      "note": "Verifizierte Klausel im Bereich deemed_acceptance."
+    },
+    {
+      "marker": "Die Beweislast für die Richtigkeit der Abrechnung trägt der Kunde.",
+      "expectedType": "burden_of_proof",
+      "note": "Verifizierte Klausel im Bereich burden_of_proof."
+    },
+    {
+      "marker": "Der Datenexport ist nur gegen eine gesonderte Vergütung erhältlich.",
+      "expectedType": "data_lockin",
+      "note": "Verifizierte Klausel im Bereich data_lockin."
+    },
+    {
+      "marker": "Die Übertragung von Rechten und Pflichten aus diesem Vertrag ist ohne Zustimmung des Anbieters unwir",
+      "expectedType": "assignment_restriction",
+      "note": "Verifizierte Klausel im Bereich assignment_restriction."
+    },
+    {
+      "marker": "Die Vertraulichkeitspflicht endet nicht mit der Beendigung, sondern besteht bis die Information öffe",
+      "expectedType": "excessive_survival",
+      "note": "Verifizierte Klausel im Bereich excessive_survival."
+    },
+    {
+      "marker": "Das Recht zur Kündigung aus wichtigem Grund ist für den Kunden ausgeschlossen.",
+      "expectedType": "asymmetric_termination",
+      "note": "Verifizierte Klausel im Bereich asymmetric_termination."
+    },
+    {
+      "marker": "Bei einem Insolvenzantrag endet der Vertrag automatisch, ohne dass es einer Kündigung bedarf.",
+      "expectedType": "insolvency_termination",
+      "note": "Verifizierte Klausel im Bereich insolvency_termination."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Prüfungen erfolgen nur bei konkretem Anlass und nach Ankündigung mit einer Frist von dreißig Tagen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Dieser Vertrag unterliegt deutschem Recht.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Beide Parteien können mit unbestrittenen Forderungen aufrechnen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Alle Fristen werden in Kalendertagen gerechnet.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Parteien arbeiten bei der Fehleranalyse eng zusammen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Für Mängel während der Gewährleistung leistet der Anbieter kostenfrei Nacherfüllung.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Parteien treffen sich monatlich zu einem Lenkungskreis.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Jede Partei trägt ihre eigenen Kosten aus der Vertragsverhandlung",
+      "note": "Neutrale Kostentragung."
+    }
+  ]
+}

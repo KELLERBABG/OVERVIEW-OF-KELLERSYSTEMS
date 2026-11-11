@@ -1,0 +1,61 @@
+{
+  "slug": "public-bonterms-cloud-terms",
+  "source": "https://raw.githubusercontent.com/Bonterms/Cloud-Terms/main/Cloud-Terms.md",
+  "license": "CC BY 4.0",
+  "retrieved": "2026-10-15",
+  "domain": "Cloud-Services-Vertrag (Bonterms Standard)",
+  "traps": [
+    {
+      "marker": "17.1. Indemnification by Provider.",
+      "expectedType": "third_party_indemnity",
+      "note": "Reale Klausel, Engine-Typ third_party_indemnity"
+    },
+    {
+      "marker": "17.2. Indemnification by Customer.",
+      "expectedType": "third_party_indemnity",
+      "note": "Reale Klausel, Engine-Typ third_party_indemnity"
+    },
+    {
+      "marker": "17.7. Exclusive Remedy. This Section",
+      "expectedType": "third_party_indemnity",
+      "note": "Reale Klausel, Engine-Typ third_party_indemnity"
+    },
+    {
+      "marker": "22.2. Governing Law and Courts.",
+      "expectedType": "jurisdiction",
+      "note": "Reale Klausel, Engine-Typ jurisdiction"
+    },
+    {
+      "marker": "22.4. Entire Agreement. This Agreement",
+      "expectedType": "entire_agreement",
+      "note": "Reale Klausel, Engine-Typ entire_agreement"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "1. The Agreement. The Bonterms",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "2. Cloud Service. Subject to this",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "3. Users. Customer may permit Users",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "4. Affiliates. Customer’s Affiliates",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "5.1. Use of Customer Data. Subject",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "5.2. Security. Provider will implement",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

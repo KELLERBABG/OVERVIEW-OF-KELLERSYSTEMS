@@ -1,0 +1,87 @@
+{
+  "slug": "einkauf-003",
+  "source": "generated",
+  "domain": "Einkauf und Lieferantenrahmenvertrag, deutsches und oesterreichisches Recht",
+  "traps": [
+    {
+      "marker": "Zuvor kommunizierte Leistungsbeschreibungen treten mit Unterzeichnung",
+      "expectedType": "entire_agreement",
+      "note": "Vollstaendigkeitsklausel ohne die Woerter gesamte Vereinbarung oder Nebenabreden"
+    },
+    {
+      "marker": "Erklärungen per E-Mail sind für die Vertragsabwicklung nicht wirksam",
+      "expectedType": "written_form_trap",
+      "note": "Formzwang durch Ausschluss elektronischer Erklaerungen, ohne das Wort Schriftform"
+    },
+    {
+      "marker": "Die Vergütung steigt jährlich um bis zu 9 Prozent",
+      "expectedType": "price_escalation",
+      "note": "Einseitige Preisanhebung ohne Anpassungsmechanismus"
+    },
+    {
+      "marker": "Die Protokollierung des Auftragnehmers ist für Umfang und Güte",
+      "expectedType": "audit_log_manipulation",
+      "note": "Anbieterprotokolle als maßgeblich, ohne Woerter Vollbeweis oder unwiderlegbar"
+    },
+    {
+      "marker": "Das Verbot jedweder Tätigkeit für Wettbewerber gilt über die Beendigung",
+      "expectedType": "non_compete",
+      "note": "Nachvertragliches Taetigkeitsverbot ohne die Registerwoerter Wettbewerbsverbot oder Karenz"
+    },
+    {
+      "marker": "ist ohne Zustimmung des Bestellers unwirksam",
+      "expectedType": "assignment_restriction",
+      "note": "Zessionsbeschraenkung ohne das Wort Abtretungsverbot"
+    },
+    {
+      "marker": "übernimmt der Besteller keine Verantwortung",
+      "expectedType": "vicarious_agents",
+      "note": "Haftungsfreizeichnung fuer Nachunternehmer, umschrieben mit keine Verantwortung"
+    },
+    {
+      "marker": "die dem wirtschaftlichen Zweck am nächsten kommt",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "Ersetzung durch wirtschaftlich naechstliegende Regelung statt gesetzlicher Regelung"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Anzeigen nach Abschnitt 4 können in Textform erfolgen",
+      "note": "Textform ausdruecklich erlaubt, kein Formzwang"
+    },
+    {
+      "marker": "Mündliche Nebenabreden sind nur wirksam, wenn beide Parteien sie schriftlich bestätigen",
+      "note": "Symmetrische Bestaetigung muendlicher Abreden, keine einseitige Unwirksamkeitsfiktion"
+    },
+    {
+      "marker": "Rechnungen sind innerhalb von dreißig Tagen ohne Abzug zu bezahlen",
+      "note": "Marktueblicher Zahlungstermin"
+    },
+    {
+      "marker": "Der Auftragnehmer zeigt den Einsatz von Unterauftragnehmern spätestens vierzehn Tage vorher an",
+      "note": "Anzeigepflicht statt Zustimmungsvorbehalt"
+    },
+    {
+      "marker": "Beide Parteien behandeln die kaufmännischen Unterlagen der anderen Seite vertraulich",
+      "note": "Wechselseitige Vertraulichkeit"
+    },
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Zulaessige Haftungsklausel"
+    },
+    {
+      "marker": "gilt das Zustimmungserfordernis nach Anlage 2",
+      "note": "Kontrollierter Unterauftragnehmereinsatz mit Zustimmungserfordernis"
+    },
+    {
+      "marker": "Der Vertrag bleibt im Übrigen wirksam",
+      "note": "Korrekte salvatorische Restklausel"
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "wird ein gesondertes Nutzungsprotokoll geführt",
+      "note": "Beistellungspflicht ohne Ersatzpflicht fuer Werkzeugverschleiss"
+    }
+  ]
+}

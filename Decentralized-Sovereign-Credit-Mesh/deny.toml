@@ -1,0 +1,44 @@
+# cargo-deny configuration (v0.20.x schema)
+[advisories]
+# Advisory database is fetched on each run; nothing is auto-ignored.
+ignore = []
+
+[licenses]
+allow = [
+    "MIT",
+    "Apache-2.0",
+    "Apache-2.0 WITH LLVM-exception",
+    "BSD-2-Clause",
+    "BSD-3-Clause",
+    "ISC",
+    "CC0-1.0",
+    "Zlib",
+    "Unicode-3.0",
+    "Unlicense",
+]
+confidence-threshold = 0.8
+
+[licenses.private]
+# Workspace crates are proprietary; only third-party dependencies are license-checked.
+ignore = true
+
+[bans]
+multiple-versions = "deny"
+wildcards = "allow"
+highlight = "all"
+allow = []
+deny = []
+# syn 2.x and 3.x legitimately coexist in the ecosystem (async-trait pulls 3.x).
+skip = ["syn"]
+skip-tree = []
+
+[sources]
+unknown-registry = "deny"
+unknown-git = "deny"
+allow-registry = ["https://github.com/rust-lang/crates.io-index"]
+allow-git = []
+
+[sources.allow-org]
+github = []
+gitlab = []
+bitbucket = []

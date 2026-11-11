@@ -1,0 +1,74 @@
+{
+  "slug": "marketing-008",
+  "source": "generated",
+  "domain": "Referenznutzung, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Firmenname und Bildmarke des Kunden in Werbung und Marketingunterlagen",
+      "expectedType": "marketing_reference",
+      "note": "Marken- und Namensnutzung ohne Rücksprache; vermeidet das Wort Referenz."
+    },
+    {
+      "marker": "den Anbieter trifft keine entsprechende Pflicht",
+      "expectedType": "asymmetric_confidentiality",
+      "note": "Einseitige Verschwiegenheit, Anbieter befreit; vermeidet 'Geheimhaltung trifft nur den Kunden'."
+    },
+    {
+      "marker": "enden nicht mit der Beendigung",
+      "expectedType": "excessive_survival",
+      "note": "Unbefristete Nachwirkung ohne Endzeitpunkt."
+    },
+    {
+      "marker": "nur mit dessen Einverständnis an Dritte weiterreichen",
+      "expectedType": "assignment_restriction",
+      "note": "Zessionsbeschränkung zulasten des Kunden."
+    },
+    {
+      "marker": "jederzeit einseitig ändern",
+      "expectedType": "unilateral_change",
+      "note": "Einseitige Änderung des Nutzungsumfangs."
+    },
+    {
+      "marker": "mit Einstellung in das Kundenportal als zugegangen",
+      "expectedType": "fictitious_receipt",
+      "note": "Zugangsfiktion über Portal."
+    },
+    {
+      "marker": "Aufzeichnungen des Anbieters sind für die Nutzung maßgeblich",
+      "expectedType": "burden_of_proof",
+      "note": "Beweisvorteil für den Anbieter."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende beenden",
+      "note": "Symmetrische Kündigung."
+    },
+    {
+      "marker": "zeigt den Einsatz von Dienstleistern vierzehn Tage vorher an; der Kunde kann widersprechen",
+      "note": "Ordentliche Subunternehmerankündigung."
+    },
+    {
+      "marker": "stellt der Anbieter die Auswertungen kostenfrei in einem offenen Format bereit",
+      "note": "Kostenfreier Datenexport."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform zugelassen."
+    },
+    {
+      "marker": "innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Üblicher Zahlungstermin."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Haftungserhaltung."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Anbieter betreibt für den Kunden Auswertungen zu Absatz- und Sortimentsdaten",
+      "note": "Kein Detektor für Zweckbindung von Auswertungsdaten."
+    }
+  ]
+}

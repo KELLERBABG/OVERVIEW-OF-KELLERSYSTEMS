@@ -1,0 +1,26 @@
+[
+  {
+    "crate": "zk_genome_genome_core",
+    "function": "add",
+    "block": "bb0",
+    "status": "FAIL",
+    "kind": "overflow",
+    "defect_class": "unguarded",
+    "file": "src/lib.rs",
+    "line": 1,
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found! [left (_1) = 18446744073709551615, right (_2) = 1]",
+    "witness": [
+      {
+        "input": "left (_1)",
+        "symbol": "overflow_l",
+        "value": "18446744073709551615"
+      },
+      {
+        "input": "right (_2)",
+        "symbol": "overflow_r",
+        "value": "1"
+      }
+    ],
+    "witness_kind": "one-of-many"
+  }
+]

@@ -1,0 +1,82 @@
+{
+  "slug": "einkauf-004",
+  "source": "generated",
+  "domain": "Einkauf und Lieferantenrahmenvertrag, deutsches und oesterreichisches Recht",
+  "traps": [
+    {
+      "marker": "ein unwiderrufliches, übertragbares Nutzungsrecht an allen Werkzeugdaten",
+      "expectedType": "data_grant",
+      "note": "Weitreichende Rechteeinraeumung, aber ohne die Worte weltweit oder unbegrenzt"
+    },
+    {
+      "marker": "gehen unentgeltlich in das Eigentum des Auftragnehmers über",
+      "expectedType": "feedback_ip_grab",
+      "note": "Abtretung von Ideen ohne Verguetung, Registerwort Feedback vermieden"
+    },
+    {
+      "marker": "Die Verschwiegenheitspflicht obliegt ausschließlich dem Kunden",
+      "expectedType": "asymmetric_confidentiality",
+      "note": "Einseitige Geheimhaltung, ohne die Formel der Kunde verpflichtet sich"
+    },
+    {
+      "marker": "Aufwendungen für Prüfungshandlungen gehen zulasten des Kunden",
+      "expectedType": "unreasonable_audit",
+      "note": "Kostenverlagerung fuer Audits, ohne die Formel Kosten der Massnahme"
+    },
+    {
+      "marker": "verfällt der Anspruch auf die vereinbarte Gutschrift",
+      "expectedType": "service_credit_forfeiture",
+      "note": "Verfall der Gutschrift bei fehlendem Sicherheitspatch"
+    },
+    {
+      "marker": "eine pauschale Abstandszahlung in Höhe von drei Monatsentgelten fällig",
+      "expectedType": "early_termination_charge",
+      "note": "Strafzahlung bei vorzeitiger Beendigung, ohne die Woerter Beendigungsentgelt oder Stornogebuehr"
+    },
+    {
+      "marker": "Firmennamen des Kunden zu Referenzzwecken verwenden",
+      "expectedType": "marketing_reference",
+      "note": "Referenznutzung ohne Zustimmungsvorbehalt, Registerwort Referenzkunde vermieden"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien behandeln die Werkzeugdaten der anderen Seite vertraulich",
+      "note": "Wechselseitige Vertraulichkeit"
+    },
+    {
+      "marker": "Prüfungen werden mit angemessener Vorlaufzeit angekündigt",
+      "note": "Ankuendigungspflicht fuer Pruefungen"
+    },
+    {
+      "marker": "Bei berechtigter Rüge bessert der Auftragnehmer innerhalb von zehn Werktagen nach",
+      "note": "Nachbesserungspflicht ohne Abnahmefiktion"
+    },
+    {
+      "marker": "Der Kunde erhält die Messprotokolle bei Vertragsende unentgeltlich in einem gängigen Format",
+      "note": "Kostenfreier Datenexport"
+    },
+    {
+      "marker": "Veröffentlichungen stimmen die Parteien vorab ab",
+      "note": "Einvernehmliche Veroeffentlichung, kein einseitiges Referenzrecht"
+    },
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Zulaessige Haftungsklausel"
+    },
+    {
+      "marker": "Änderungen der Prüfmerkmale bedürfen der Zustimmung beider Parteien in Textform",
+      "note": "Symmetrische Aenderungsklausel"
+    },
+    {
+      "marker": "Rechnungen sind innerhalb von dreißig Tagen netto zu begleichen",
+      "note": "Marktueblicher Zahlungstermin"
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "wird ein gesondertes Nutzungsprotokoll geführt",
+      "note": "Beistellungspflicht ohne Ersatzpflicht fuer Werkzeugverschleiss"
+    }
+  ]
+}

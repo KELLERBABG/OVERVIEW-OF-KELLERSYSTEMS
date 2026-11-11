@@ -1,0 +1,74 @@
+{
+  "slug": "marketing-029",
+  "source": "generated",
+  "domain": "Trikotsponsoring, deutsches Recht",
+  "traps": [
+    {
+      "marker": "verlängert sich jeweils um ein weiteres Jahr, wenn er nicht drei Monate vor Ende gekündigt wird",
+      "expectedType": "auto_renewal",
+      "note": "Automatische Verlaengerung mit Opt-out."
+    },
+    {
+      "marker": "frühestens nach zwei Jahren mit einer Vorlaufzeit von achtzehn Monaten",
+      "expectedType": "notice_period",
+      "note": "18 Monate Vorlaufzeit; vermeidet Kuendigungsfrist."
+    },
+    {
+      "marker": "endet der Vertrag ohne weiteres",
+      "expectedType": "insolvency_termination",
+      "note": "Automatisches Ende bei Zahlungsunfähigkeit."
+    },
+    {
+      "marker": "trägt der Kunde vollumfänglich",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Abgabenbelastung einseitig beim Kunden."
+    },
+    {
+      "marker": "bis zum Ausgleich aller Forderungen aus der Geschäftsbeziehung",
+      "expectedType": "extended_retention_of_title",
+      "note": "Erweiterter Eigentumsvorbehalt ueber alle Forderungen."
+    },
+    {
+      "marker": "verwirkt der Kunde eine Pauschale von 400 EUR",
+      "expectedType": "penalty",
+      "note": "Verwirkte Pauschale."
+    },
+    {
+      "marker": "hält den Anbieter für Bußgelder der Aufsichtsbehörde schadlos",
+      "expectedType": "third_party_indemnity",
+      "note": "Schadloshaltung des Anbieters fuer Behoerdenbussen."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien wahren über die wechselseitig ausgetauschten Informationen Stillschweigen",
+      "note": "Symmetrische Verschwiegenheit."
+    },
+    {
+      "marker": "erhält der Kunde die Zuschauerdaten kostenfrei in einem offenen Format",
+      "note": "Kostenfreier Datenexport."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Saisonende beenden",
+      "note": "Symmetrische Kündigung."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform zugelassen."
+    },
+    {
+      "marker": "innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Üblicher Zahlungstermin."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhaltung."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Anbieter trägt das Logo des Kunden auf den Trikots der ersten Mannschaft",
+      "note": "Kein Detektor fuer fehlende Ausfallklauseln bei Abstieg."
+    }
+  ]
+}

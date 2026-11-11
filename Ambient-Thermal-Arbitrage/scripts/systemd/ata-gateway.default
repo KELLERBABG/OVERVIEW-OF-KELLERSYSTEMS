@@ -1,0 +1,13 @@
+# Ambient Thermal Arbitrage - Edge Gateway Environment Configuration
+# Location: /etc/default/ata-gateway (chmod 600)
+
+# Secret key for HMAC-SHA256 authenticated API endpoints (PUT /config, POST /price, etc.)
+# Generate using: openssl rand -base64 32
+ATA_SECRET=YOUR_RANDOM_SECRET_KEY_HERE
+
+# Free ENTSO-E API Key for official European day-ahead electricity prices
+# Register free at https://transparency.entsoe.eu
+ENTSOE_API_KEY=
+
+# Rust Logging Level (error, warn, info, debug, trace)
+RUST_LOG=info

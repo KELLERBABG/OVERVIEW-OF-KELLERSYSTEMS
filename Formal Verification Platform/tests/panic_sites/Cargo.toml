@@ -1,0 +1,9 @@
+[package]
+name = "panic_sites"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+
+[workspace]

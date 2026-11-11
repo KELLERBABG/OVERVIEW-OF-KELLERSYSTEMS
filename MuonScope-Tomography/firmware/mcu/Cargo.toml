@@ -1,0 +1,13 @@
+[package]
+name = "muonscope-firmware-mcu"
+version = "0.1.0"
+edition = "2021"
+authors = ["MuonScope Team"]
+description = "Embedded Microcontroller Firmware for SiPM Bias Control & Sensor Fusion"
+
+[dependencies]
+cortex-m = "0.7"
+cortex-m-rt = "0.7"
+panic-halt = "0.2"
+embedded-hal = "1.0"
+nb = "1.1"

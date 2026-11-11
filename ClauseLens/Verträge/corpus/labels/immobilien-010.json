@@ -1,0 +1,74 @@
+{
+  "slug": "immobilien-010",
+  "source": "generated",
+  "domain": "Immobilienmakler",
+  "traps": [
+    {
+      "marker": "Ein Direktverkauf des Eigentümers an den Kunden begründet keine Provision",
+      "expectedType": "agency_commission_exclusion",
+      "note": "Provision fuer Direktverkaeufe ausgeschlossen."
+    },
+    {
+      "marker": "Für den Aufbau des Kundenstamms steht dem Kunden kein Ausgleich zu",
+      "expectedType": "agency_goodwill_waiver",
+      "note": "GAP: Kein Ausgleich fuer den Kundenstamm."
+    },
+    {
+      "marker": "Mündliche Abreden ohne Originaldokument sind unverbindlich",
+      "expectedType": "written_form_trap",
+      "note": "GAP: Schriftformzwang mit Originaldokument."
+    },
+    {
+      "marker": "gelten am dritten Tag nach Absendung als zugegangen",
+      "expectedType": "fictitious_receipt",
+      "note": "Zugangsfiktion drei Tage nach Absendung."
+    },
+    {
+      "marker": "Die Haftung der Maklerin ist auf die Höhe der Provision begrenzt",
+      "expectedType": "liability",
+      "note": "Haftungsdeckel auf die Provision."
+    },
+    {
+      "marker": "Ansprüche des Kunden sind nicht abtretbar",
+      "expectedType": "assignment_restriction",
+      "note": "Abtretungsverbot fuer Ansprueche des Kunden."
+    },
+    {
+      "marker": "darf die Geschäftsräume des Kunden jederzeit ohne Anlass betreten",
+      "expectedType": "unreasonable_audit",
+      "note": "GAP: Betretungsrecht ohne Anlass."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "Symmetrische Vertraulichkeit."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform zugelassen."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhalt."
+    },
+    {
+      "marker": "Zahlungen sind innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Zahlungsfrist."
+    },
+    {
+      "marker": "Änderungen des Leistungsumfangs bedürfen der Abstimmung beider Parteien",
+      "note": "Einvernehmliche Aenderung."
+    },
+    {
+      "marker": "Nach Vertragsende erhält der Kunde die Vertragsdaten kostenfrei in einem offenen Format",
+      "note": "Kostenfreier Datenexport."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Die Maklerin übernimmt die Vermittlung von Renditeliegenschaften",
+      "note": "Kein Detektor fuer Alleinvermittlungsauftrag oder Reservationsgebuehr."
+    }
+  ]
+}

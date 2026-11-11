@@ -1,0 +1,11 @@
+﻿[package]
+name = "sca-types"
+version = "0.1.0"
+edition = "2024"
+description = "Core domain types for the Algorithmic Supply Chain Arbitrage platform"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+uuid = { version = "1", features = ["v4", "serde"] }
+chrono = { version = "0.4", features = ["serde"] }
+thiserror = "2"

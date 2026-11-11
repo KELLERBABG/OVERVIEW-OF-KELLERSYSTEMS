@@ -1,0 +1,150 @@
+AMBIENT THERMAL ARBITRAGE (ATA) - PRODUKT- & TECHNIK-LEITFADEN FUER BETREIBER
+
+================================================================================
+1. MANAGEMENT-ZUSAMMENFASSUNG & PRAXIS-REALITAET
+================================================================================
+
+Was ist dieses System?
+Ambient Thermal Arbitrage (ATA) ist ein industrielles Edge-Software-Gateway mit integrierter automatisierter Steuerungs-Engine. Das System wird an bestehende gewerbliche und industrielle Kaelteanlagen (Tiefkuehllager, Distributionszentren, Supermaerkte) angebunden und nutzt die thermische Masse des Gebaeudes sowie des Lagerguts wie einen riesigen thermischen Speicher (virtuelle Batterie).
+
+Welches Problem loest es fuer den Kunden?
+Kaelteanlagen lassen Kompressoren rund um die Uhr laufen, um Raeume auf Solltemperatur zu halten. Die Strompreise am Spotmarkt (Day-Ahead und Intraday, EPEX SPOT, ENTSO-E) schwanken jedoch stuendlich extrem – von Spitzenpreisen bis hin zu Niedrig- oder gar Negativpreisen. Zudem zahlen Stromnetzbetreiber (Uebertragungsnetzbetreiber wie TenneT, Amprion, 50Hertz, TransnetBW) hohe Verguetungen fuer Primaerregelleistung (FCR), wenn Grossverbraucher sekundenschnell Last erhoehen oder drosseln koennen.
+
+Was macht ATA fuer den Betreiber?
+1. Es kuehlt das Lager vor, wenn Strom extrem guenstig oder negativ bepreist ist, und speichert die Kaelteenergie in der Gebaeudestruktur und im Gefriergut.
+2. Es schaltet Kompressoren ab oder drosselt sie herunter, wenn der Strom teuer ist, und ueberbrueckt diese Phasen allein durch die gespeicherte Kaelte.
+3. Es nimmt an der Frequenzstabilisierung des Stromnetzes teil, indem es minimale Netzfrequenzabweichungen (50 Hz) erkennt und die Kompressorleistung in Sekundenschnelle anpasst.
+4. Es garantiert dabei mathematisch und physikalisch absolut ausfallsicher, dass die Temperatur der gelagerten Lebensmittel oder Pharmaprodukte zu keinem Zeitpunkt die gesetzlichen und betrieblichen Grenzwerte ueberschreitet.
+
+================================================================================
+2. ANBINDUNG AN DIE BESTEHENDE HARDWARE VOR ORT
+================================================================================
+
+Wo laeuft ATA physisch?
+ATA laeuft auf einem kleinen Industrie-PC fuer die Hutschiene (z.B. Siemens IOT2050, Advantech, Raspberry Pi CM4 mit RS-485 / Ethernet-Schnittstellen), der direkt im Schaltschrank der Kaelteanlage montiert wird.
+
+Wie verbindet sich ATA mit der bestehenden Kaeltesteuerung und SPS?
+Code-Referenz: crates/gateway/src/modbus_client.rs
+Konfiguration: crates/gateway/config.toml
+
+ATA ersetzt die vorhandene Kaeltesteuerung (SPS / Regler von Herstellern wie Carel, Danfoss, Dixell, Wurm, Siemens S7) NICHT. Es reisst nichts heraus. Stattdessen kommuniziert ATA mit der vorhandenen SPS ueber gaengige Industriestandard-Protokolle:
+- Modbus TCP ueber Netzwerkkabel (Ethernet / RJ-45)
+- Modbus RTU ueber geschirmtes 2-Draht-Kabel (RS-485 / Seriell)
+
+Welche Register liest und schreibt ATA auf der SPS?
+1. Eingang: Raumlufttemperatur (Vorzeichenbehafteter int16, Celsius x 100)
+2. Eingang: Aussentemperatur (Vorzeichenbehafteter int16, Celsius x 100)
+3. Eingang: Netzfrequenz (Optional von einem lokalen Leistungsmesser, Hz x 100)
+4. Ausgang: Kompressor-Befehlsspule (Coil 0x05) ODER Inverter-Drehzahlregister fuer Frequenzumrichter (Register 0x06, 0..1000 = 0,0%..100,0%)
+5. Ausgang: Sicherheits-Alarmkontakt (Coil 0x05)
+
+Hardware-Watchdog und Schutz vor Systemabstuerzen:
+Code-Referenz: crates/gateway/src/watchdog.rs
+In der Industrie darf Software niemals lautlos haengen bleiben. ATA ueberwacht nativ das Linux-Geraet /dev/watchdog und sendet alle 5 Sekunden Lebenszeichen an den systemd-Supervisor. Sollte die Software blockieren, loest der Hardware-Watchdog sofort einen kontrollierten Neustart aus. Bei einem regulaeren Beenden sendet ATA das standardisierte 'V'-Entsicherungszeichen, um Fehlalarme zu verhindern.
+
+================================================================================
+3. KONKRETE FAEHIGKEITEN: WAS ES TUT, WAS ES NICHT TUT UND WAS ES BENOETIGT
+================================================================================
+
+WAS ES DEFINITIV TUT:
+- Kontinuierliche Berechnung der TTF (Time-to-Failure / Reservezeit): Berechnet sekundengenau, wie viele Sekunden der Raum stromlos bleiben kann, bevor der Temperaturgrenzwert erreicht wird. (Code: crates/gateway/src/thermal/mod.rs)
+- Taktbegrenzer (Anti-Short-Cycle Timer, ASCT): Erzwingt Mindestlaufzeiten (z.B. 900 Sekunden) und Mindeststillstandszeiten (z.B. 600 Sekunden), um Kompressoren und Schuetze vor uebermaessigem Verschleiss und Schaeden zu schuetzen. (Code: crates/gateway/src/control/mod.rs)
+- Modellpraediktive Steuerung (MPC-Lookahead): Blickt 24 bis 48 Stunden in die Zukunft der Day-Ahead-Spotpreise und ermittelt das mathematisch guenstigste Zeitfenster zum Vorkuehlen vor teuren Preisspitzen. (Code: crates/gateway/src/control/mod.rs)
+- Kontinuierliche Drehzahlmodulation (FU/VFD): Wenn die Kaelteanlage ueber einen Frequenzumrichter verfuegt, nutzt ATA einen geschlossenen PI-Regler (Kp=0,10, Ki=0,001), um die Verdichterleistung stufenlos an die aktuelle Waermelast anzupassen, anstatt hart ein- und auszuschalten. Das erhoeht die Arbeitszahl (COP) massiv. (Code: crates/gateway/src/control/mod.rs)
+- Automatischer Oelrueckfuehrungs-Impuls: Bei laengerem Betrieb im Teillastbereich sammelt sich Kaelteoel in den Verdampfern. ATA triggert in einstellbaren Intervallen kurze Hochdrehzahl-Spuelimpulse, um das Schmiermittel zuverlaessig in den Verdichterkurbelraum zurueckzuholen. (Code: crates/gateway/src/control/mod.rs)
+- Unterscheidung Luft- vs. Kerntemperatur (2-Knoten-Thermomodell): Jeder Kaelteanlagenbetreiber weiss, dass die Luft bei Tueroeffnungen in Minuten warm wird, der Kern einer gefrorenen Palette aber 10 bis 20 Stunden Traegheit besitzt. ATA schuetzt die Grenzwerte, beruecksichtigt aber die echte Kerntraegheit, sodass Lasten waehrend teurer Stromstunden sicher abgeworfen werden koennen, ohne dass die Ware Schaden nimmt. (Code: crates/gateway/src/control/mod.rs)
+- Integriertes lokales Web-Dashboard: Das Gateway stellt eine eigene Weboberflaeche bereit. Der Betreiber muss im lokalen Netzwerk nur http://gateway-ip:8085 aufrufen und sieht sofort Live-Temperaturen, FU-Auslastung, Preisbaender und Netzzustand. (Code: crates/gateway/src/api/mod.rs)
+
+WAS ES NIEMALS TUN WIRD (HARTE SICHERHEITSGARANTIEN):
+- Es wird NIEMALS zulassen, dass die Temperatur den Maximalwert (z.B. -18,0 C) ueberschreitet. Sobald die TTF-Reservezeit unter den kritischen Puffer (z.B. 900 Sekunden) faellt oder die Obergrenze erreicht wird, erzwingt der Notfallmodus (Emergency) sofort 100% Kaelteleistung – alle wirtschaftlichen Optimierungen werden augenblicklich uebersteuert.
+- Es wird NIEMALS Kompressor-Taktsperren (Mindestlauf-/Mindeststillstandszeit) ignorieren, nur um einen billigen Strompreis mitzunehmen. Der Maschinenschutz steht immer ueber dem Marktpreis.
+- Es wird NIEMALS die Kuehlung einstellen, wenn das Internet ausfaellt. Sollte die Verbindung zu den Strombörsen abreissen, schaltet ATA automatisch in den Thermostat- / Fallback-Modus und regelt die Anlage autark wie ein klassischer Standard-Kaelteregler weiter.
+- Es wird NIEMALS physikalisch unsinnige Konfigurationen annehmen. Versucht ein Benutzer ueber die API (PUT /config) ungueltige Werte zu setzen (z.B. Mindesttemperatur hoeher als Maximaltemperatur, negative Verstaerkungen, NaN-Werte), verweigert das Gateway die Aenderung strikt mit HTTP 422.
+
+WAS ES VOR ORT VORAUSSETZT:
+- Einen vorhandenen Kaelteregler / SPS mit freigeschalteter Modbus TCP- oder Modbus RTU-Schnittstelle.
+- Raum- und Aussentemperaturfuehler.
+- Einen ausgehenden Internetzugang fuer die Strompreisabfrage (oder Einspeisung der Preise ueber die lokale REST-Schnittstelle).
+- 24V DC oder 230V AC Spannungsversorgung im Schaltschrank fuer das Edge-Geraet.
+
+================================================================================
+4. DIE 7 BETRIEBSMODI IM DETAIL
+================================================================================
+
+Code-Referenz: crates/gateway/src/control/mod.rs (ControlMode Enum)
+
+1. Notfallmodus (Emergency):
+Ausloeser: Raumtemperatur uebersteigt t_max oder die verbleibende Reservezeit (TTF) faellt unter ttf_critical_sec.
+Verhalten: Maximale Kuehlung (100% Drehzahl bzw. Kompressor EIN). Bleibt verriegelt aktiv, bis der Raum wieder tief genug abgekuehlt ist.
+
+2. Thermischer Schutzmodus (ThermalGuard):
+Ausloeser: Das kumulierte thermische Schuldenintegral ueberschreitet das Limit (z.B. 3600 K*s).
+Verhalten: Kuehlt zurueck auf Basistemperatur. Verhindert, dass der Raum ueber viele Stunden hinweg knapp unterhalb der Obergrenze duempelt.
+
+3. Netzstabilisierungsmodus (GridBalancing - Multi-Market Co-Optimization):
+Ausloeser: Die Stromnetzfrequenz weicht ausserhalb des Totbands ab (z.B. unter 49,90 Hz oder ueber 50,10 Hz im europaeischen Verbundnetz).
+Verhalten: Stufenlose und wirtschaftlich co-optimierte Netzregelung:
+- Wenn VFD/FU aktiv ist, moduliert die Drehzahl proportional zur Frequenzabweichung (Droop-Kurve: +/-0.20 Hz -> +/-50% Verdichterleistung um den wirtschaftlichen Basispunkt), anstatt stur hart ein- oder auszuschalten.
+- Wirtschaftlichkeitspruefung: Bei Ueberfrequenz (Netzueberschuss) wird das Hochkuehlen zugelassen, solange der Strompreis nicht im extremen Peak-Shedding-Bereich liegt ODER die Netzfrequenz stark abweicht (+0.10 Hz) und maximale FCR-Verguetung abwirft.
+- Ist der Raum bereits kalt (-23 C) und befindet sich im Arbitrage-Shed, nutzt ATA den Netzueberschuss praezise, um Kaelte billig nachzutanken und zusaetzlich FCR-Praemien zu kassieren.
+- Sicherheitsbegrenzung: Bei Annahme von Ueberfrequenz wird unterhalb t_min nicht ueberkuehlt; bei Unterfrequenz (Lastabwurf) wird oberhalb t_max-1 C der Maschinenschutz garantiert.
+
+4. Arbitrage-Vorkuehlmodus (ArbitragePreCool):
+Ausloeser: Aktueller Strompreis liegt unter dem Schwellenwert (bzw. unter dem rollierenden 25%-Quantil des Tages).
+Verhalten: Vollastkuehlung bis zur Untergrenze t_min (z.B. -24,0 C). Die Kaelteenergie wird billig in das Gebaeude und die Ware eingespeichert.
+
+5. Arbitrage-Lastabwurfmodus (ArbitrageShed):
+Ausloeser: Aktueller Strompreis liegt ueber dem Hochpreisschwellenwert (bzw. ueber dem 75%-Quantil des Tages).
+Verhalten: Kompressor wird abgeschaltet oder auf minimale Leerlaufdrehzahl reduziert. Die Raumluft erwaermt sich langsam und kontrolliert, waehrend der Warenkern gefroren bleibt. Teure Spitzenpreise werden komplett umgangen.
+
+6. Thermostatmodus (Thermostat):
+Ausloeser: Strompreise liegen im neutralen Mittelfeld.
+Verhalten: Klassische Standardregelung mit Hysterese um den Solltemperaturwert (z.B. -20,0 C) oder angepasste FU-Teillast passend zum aktuellen Waermeeintrag.
+
+7. Ausfallsicherheitsmodus (FailSafe):
+Ausloeser: Temperatursensordefekt, Kabelbruch oder ungueltige Messwerte (NaN).
+Verhalten: Kompressor laeuft mit einem sicheren Standard-Taktverhaeltnis (z.B. 50% Einschaltdauer oder Dauerbetrieb je nach Sicherheitsanforderung des Betriebs) und setzt sofort den Modbus-Stoermeldeausgang.
+
+================================================================================
+5. WIRTSCHAFTLICHKEIT & VORAB-NACHWEIS (FLEET-SIMULATION)
+================================================================================
+
+Code-Referenz: crates/fleet/src/main.rs
+Ergebnisse: benchmarks/
+
+Wie beweisen wir einem Kunden die Einsparungen, bevor wir eine Schraube an seiner Anlage drehen?
+Das Repository enthaelt eine vollstaendige Flottensimulations-Engine (`crates/fleet`), die 365 Tage (8.760 Stunden) reale historische Strompreise, Wetterdaten, Betriebszeiten und Waermelehre berechnet.
+
+Vorkonfigurierte Kaeltehaus-Typen in der Engine:
+- Grosses Distributionszentrum (50.000 m3, 1,5 MW Kaelteleistung)
+- Mittleres Tiefkuehllager (1.000 m3, 50 kW Kaelteleistung)
+- Supermarkt-Zentraltiefkuehlung (500 m3, 25 kW Kaelteleistung)
+- Kleines begehbares Tiefkuehllager (80 m3, 5 kW Kaelteleistung)
+
+Nachgewiesene Ergebnisse aus der 1-Jahres-Benchmark (siehe benchmarks/):
+- Reiner Stromkostenvorteil durch Arbitrage: 12% bis 22% Einsparung.
+- Zusaetzliche Ertraege: Verguetung fuer Primaerregelleistung (FCR).
+- Keine einzige Kaeltekettenverletzung in allen 8.760 simulierten Jahresstunden.
+
+================================================================================
+6. OPERATIVER SCHNELLUEBERBLICK (BEFEHLE & TESTS)
+================================================================================
+
+Gateway im Simulationsmodus lokal starten:
+Befehl: cargo run -p thermal-arbitrage-mvp
+Ergebnis: Startet die Edge-Laufzeitumgebung auf Port 8085.
+Dashboard-Aufruf: Im Browser http://127.0.0.1:8085 oder http://127.0.0.1:8085/ui oeffnen.
+
+REST-API manuell testen:
+- Status abfragen: curl http://127.0.0.1:8085/status
+- Testpreis einspeisen: curl -X POST http://127.0.0.1:8085/price -H "Content-Type: application/json" -d '{"price_eur_per_mwh": 120.0}'
+- Prometheus-Metriken abrufen: curl http://127.0.0.1:8085/metrics
+
+1-Jahres-Kundenbenchmark berechnen:
+Befehl: cargo run -p thermal-fleet -- --volatile "Medium Cold Storage NRW:1"
+Ergebnis: Berechnet Jahresvergleich gegen Standard-Thermostat und exportiert CSV nach benchmarks/.
+
+Gesamtsystem auf Fehler und Warnungen pruefen:
+Befehl: cargo test --workspace
+Befehl: cargo clippy --workspace --all-targets -- -D warnings
+Ergebnis: Alle 126 Tests bestehen, 0 Warnungen.

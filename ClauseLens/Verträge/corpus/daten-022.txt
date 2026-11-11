@@ -1,0 +1,115 @@
+DATENRAUMVEREINBARUNG
+
+zwischen
+
+der Veilchenberg GmbH, Kaiserstraße 19, 60311 Frankfurt am Main (nachfolgend Betreiber)
+
+und
+
+der Trautmann GmbH, Theaterstraße 16, 01067 Dresden (nachfolgend Nutzer)
+
+Präambel
+
+Der Betreiber stellt dem Nutzer den in Anlage 5 bezeichneten Datenraum zur Verfügung. Es gelten die nachstehenden Bedingungen.
+
+§ 1 Allgemeines
+
+Für Streitigkeiten über die Bewertung der Sicherheiten wird ein Sachverständigenverfahren durchgeführt. Die Verfahrenskosten sind vom Kunden vorauszuzahlen. Der gerichtliche Rechtsweg ist erst nach Abschluss des Verfahrens eröffnet.
+
+§ 2 Bestimmung
+
+Der Nutzungsumfang ist auf den in der Präambel bezeichneten Zweck beschränkt.
+
+§ 3 Regelung
+
+Versäumt der Kunde einen Sicherheitspatch, verfällt sein Anspruch auf Service-Gutschriften.
+
+§ 4 Vereinbarung
+
+Jede Partei kann diesen Vertrag zum Quartalsende ordentlich kündigen.
+
+§ 5 Modalität
+
+Bei vorzeitiger Beendigung wird eine pauschale Abstandszahlung fällig.
+
+§ 6 Ordnung
+
+Der Anbieter stellt sicher, dass die von ihm eingesetzten Nachunternehmer dieselben Datenschutzstandards einhalten.
+
+§ 7 Ausgestaltung
+
+Mangels eines Wartungsvertrags kann der Anbieter das System stilllegen.
+
+§ 8 Durchführung
+
+Sämtliche Open-Source-Komponenten werden in der Anlage 2 mit ihren jeweiligen Lizenzen aufgeführt.
+
+§ 9 Vorkehrung
+
+Nutzt der Kunde das Kontokorrent nach Fristende weiter, erneuert sich das Finanzierungsengagement um ein Jahr.
+
+§ 10 Zusatz
+
+Die gesetzliche Haftung für Vorsatz und grobe Fahrlässigkeit sowie für Personenschäden bleibt unberührt.
+
+§ 11 Klarstellung
+
+Der Kunde kann eine Beendigung erst mit sieben Jahren Vorlauf erklären.
+
+§ 12 Ergänzung
+
+Der Auftraggeber kann den Vertrag aus wichtigem Grund jederzeit fristlos beenden.
+
+§ 13 Verfahren
+
+Der Kunde stellt die Gesellschaft von sämtlichen Ansprüchen Dritter im Zusammenhang mit dem Verwendungszweck frei.
+
+§ 14 Ausführung
+
+Die Parteien vereinbaren, Streitigkeiten vorrangig durch Mediation zu klären.
+
+§ 15 Hinweis
+
+Der Pauschalbetrag bleibt unabhängig davon geschuldet, ob dem Anbieter überhaupt ein Aufwand entstanden ist.
+
+§ 16 Maßnahme
+
+Die Parteien veröffentlichen Ergebnisse der gemeinsamen Forschung nur im gegenseitigen Einvernehmen.
+
+§ 17 Vorgehen
+
+Der Auftragnehmer stellt eine Zweitschrift der Dokumentation gegen eine Gebühr von fünfzehn Euro bereit.
+
+§ 18 Abstimmung
+
+Jede Partei trägt ihre eigenen Kosten der Vertragsverhandlungen.
+
+§ 19 Koordination
+
+Datenschutzrechtliche Hinweise ergeben sich aus der Anlage 4.
+
+§ 20 Umsetzung
+
+Ansprechpartner für operative Fragen ist die in der Anlage 2 genannte Stelle.
+
+§ 21 Beachtung
+
+Die Parteien arbeiten bei der Durchführung vertrauensvoll zusammen.
+
+§ 1 Allgemeines
+
+Dieser Vertrag unterliegt deutschem Recht.
+
+§ 2 Bestimmung
+
+Die Unwirksamkeit einzelner Bestimmungen lässt die Wirksamkeit des Vertrages im Übrigen unberührt.
+
+§ 3 Regelung
+
+Beide Parteien halten die gesetzlichen Aufbewahrungsfristen ein.
+
+Ort, Datum: ______________________
+
+Für Betreiber: ______________________
+
+Für Nutzer: ______________________

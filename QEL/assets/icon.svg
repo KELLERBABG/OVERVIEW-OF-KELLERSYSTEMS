@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="QEL - Keller Systems">
+  <!-- Subtle warm squircle base -->
+  <rect width="128" height="128" rx="28" fill="#fbfaf7" stroke="#d9d5ca" stroke-width="2"/>
+  
+  <!-- Modular Monolith Geometry: Solid Pillar Anchor -->
+  <rect x="28" y="24" width="20" height="80" rx="4" fill="#1a1a18"/>
+  
+  <!-- Precision 45-degree Upper Chevron -->
+  <path d="M58 62 L88 24 H104 L70 66 Z" fill="#7a2e2e"/>
+  
+  <!-- Precision 45-degree Lower Chevron -->
+  <path d="M70 62 L104 104 H88 L58 66 Z" fill="#1a1a18"/>
+</svg>

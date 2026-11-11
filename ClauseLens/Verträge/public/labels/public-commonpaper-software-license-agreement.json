@@ -1,0 +1,56 @@
+{
+  "slug": "public-commonpaper-software-license-agreement",
+  "source": "https://raw.githubusercontent.com/CommonPaper/Software-License-Agreement/main/Software-License-Agreement.md",
+  "license": "CC BY 4.0",
+  "retrieved": "2026-10-15",
+  "domain": "Softwarelizenzvertrag (Common Paper)",
+  "traps": [
+    {
+      "marker": "1. Order Form and Agreement. For",
+      "expectedType": "auto_renewal",
+      "note": "Reale Klausel, Engine-Typ auto_renewal"
+    },
+    {
+      "marker": "1. Protection by Provider. Provider",
+      "expectedType": "third_party_indemnity",
+      "note": "Reale Klausel, Engine-Typ third_party_indemnity"
+    },
+    {
+      "marker": "1. Entire Agreement. This Agreement",
+      "expectedType": "entire_agreement",
+      "note": "Reale Klausel, Engine-Typ entire_agreement"
+    },
+    {
+      "marker": "3. Governing Law and Chosen Courts.",
+      "expectedType": "jurisdiction",
+      "note": "Reale Klausel, Engine-Typ jurisdiction"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "1. License. During the Subscription",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "2. User Accounts. If Customer's",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "3. Feedback and Usage Data. Customer",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "4. Machine Learning. Usage Data",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "5. Open Source Software. If the",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "6. Updates. During the Subscription",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

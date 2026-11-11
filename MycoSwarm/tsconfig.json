@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "exactOptionalPropertyTypes": false,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "outDir": "${configDir}/dist",
+    "baseUrl": "${configDir}",
+    "paths": {
+      "@fungal/core": ["./packages/core/src"],
+      "@fungal/signaling-server": ["./packages/signaling-server/src"],
+      "@fungal/mycelial-mesh": ["./packages/mycelial-mesh/src"],
+      "@fungal/wasm-executor": ["./packages/wasm-executor/src"],
+      "@fungal/task-distribution": ["./packages/task-distribution/src"],
+      "@fungal/redundancy": ["./packages/redundancy/src"],
+      "@fungal/resource-scoring": ["./packages/resource-scoring/src"],
+      "@fungal/zk-integrity": ["./packages/zk-integrity/src"],
+      "@fungal/homomorphic": ["./packages/homomorphic/src"],
+      "@fungal/signal-transduction": ["./packages/signal-transduction/src"],
+      "@fungal/consensus": ["./packages/consensus/src"],
+      "@fungal/incentive-token": ["./packages/incentive-token/src"],
+      "@fungal/substrate-layer": ["./packages/substrate-layer/src"],
+      "@fungal/client": ["./packages/client/src"]
+    }
+  },
+  "exclude": ["node_modules", "dist", "**/*.test.ts"]
+}

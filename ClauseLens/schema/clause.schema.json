@@ -1,0 +1,224 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://clauselens.dev/schemas/v1/clause.json",
+  "title": "ClauseLensClauseRecord",
+  "description": "One German contract clause that a reviewer must flag, as stored in the ClauseLens clause database. Records live as JSONL, one record per line, in data/clauses/*.jsonl; data/manifest.json is the authoritative registry of those files. The detector enum mirrors the rule types of src/analyze.js and is cross-checked against the engine by test/clause_db.test.js.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "docFamily",
+    "clauseType",
+    "clauseText",
+    "why",
+    "legalBasis",
+    "caseLaw",
+    "otherStatutes",
+    "jurisdiction",
+    "language",
+    "severity",
+    "detector",
+    "detectorStatus",
+    "evasion"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "minLength": 3,
+      "maxLength": 80,
+      "description": "Stable, globally unique record id. The leading segment encodes the owning slice so ids can never collide across files."
+    },
+    "docFamily": {
+      "type": "string",
+      "enum": [
+        "arbeitsvertrag",
+        "mietvertrag",
+        "werkvertrag_kaufvertrag",
+        "b2b_agb",
+        "b2c_agb",
+        "gesellschaftsvertrag",
+        "lizenz_saas_nda",
+        "aufhebungs_abfindung",
+        "dach_varianten",
+        "en_law_msa_sow_dpa",
+        "handelsvertretervertrag",
+        "franchisevertrag",
+        "leasingvertrag",
+        "darlehen_verbraucherkredit",
+        "versicherungsvertrag",
+        "anteilskauf_spa",
+        "reisevertrag",
+        "telekommunikationsvertrag",
+        "energieliefervertrag",
+        "pflege_behandlungsvertrag",
+        "arbeitnehmerueberlassung",
+        "bausparvertrag",
+        "kommission",
+        "spedition_lager",
+        "insolvenzplan_starug",
+        "bautraegervertrag"
+      ],
+      "description": "Document family the clause belongs to. dach_varianten is used for clauses specific to Austrian or Swiss law; en_law_msa_sow_dpa for English-law or bilingual instruments."
+    },
+    "clauseType": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 80,
+      "description": "German label of the clause type, e.g. \"Haftungsausschluss\", \"Schönheitsreparaturen-Klausel\", \"Kettenbefristung\"."
+    },
+    "clauseText": {
+      "type": "string",
+      "minLength": 60,
+      "maxLength": 1200,
+      "description": "The original clause wording as it would appear in the document, in the document's language. One clause, not a whole contract."
+    },
+    "why": {
+      "type": "string",
+      "minLength": 25,
+      "maxLength": 400,
+      "description": "One plain German sentence stating why a reviewer must flag this clause."
+    },
+    "legalBasis": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 3 },
+      "description": "The load-bearing norm citations, e.g. \"§ 307 Abs. 1, Abs. 2 Nr. 1 BGB\", \"Art. 100 Abs. 1 OR\", \"Art. 28 Abs. 2 DSGVO\"."
+    },
+    "caseLaw": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 5 },
+      "description": "BGH or EuGH citation, only where the decision itself carries the clause. Empty array when there is none; an invented Aktenzeichen is worse than an empty array."
+    },
+    "otherStatutes": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 3 },
+      "description": "Further statutes outside the BGB/AGB core, e.g. \"Art. 82 DSGVO\", \"§ 74 Abs. 2 HGB\", \"§ 14 Abs. 2 TzBfG\", \"Art. 269a OR\"."
+    },
+    "jurisdiction": {
+      "type": "string",
+      "enum": ["DE", "AT", "CH", "DACH", "EU", "UK", "US"],
+      "description": "Legal system the clause is assessed under."
+    },
+    "language": {
+      "type": "string",
+      "enum": ["de", "en", "bilingual"],
+      "description": "Language of clauseText."
+    },
+    "severity": {
+      "type": "string",
+      "enum": ["niedrig", "mittel", "hoch"],
+      "description": "hoch = unwirksam oder existenzgefährdend, mittel = benachteiligend aber heilbar, niedrig = Grenzfall."
+    },
+    "detector": {
+      "type": ["string", "null"],
+      "enum": [
+        "auto_renewal",
+        "notice_period",
+        "liability",
+        "penalty",
+        "jurisdiction",
+        "non_compete",
+        "data_grant",
+        "default_interest",
+        "unilateral_change",
+        "setoff_restriction",
+        "deemed_acceptance",
+        "statute_of_limitations",
+        "written_form_trap",
+        "burden_of_proof",
+        "dynamic_url_referral",
+        "vicarious_agents",
+        "unreasonable_audit",
+        "data_lockin",
+        "third_party_indemnity",
+        "asymmetric_termination",
+        "assignment_restriction",
+        "force_majeure_asymmetry",
+        "non_solicitation",
+        "unilateral_convenience_termination",
+        "excessive_survival",
+        "price_escalation",
+        "salvatorische_klausel_falle",
+        "extended_retention_of_title",
+        "subcontractor_uncontrolled",
+        "audit_log_manipulation",
+        "service_suspension",
+        "insolvency_termination",
+        "tax_indemnity_shift",
+        "asymmetric_confidentiality",
+        "as_is_software_disclaimer",
+        "entire_agreement",
+        "marketing_reference",
+        "feedback_ip_grab",
+        "fictitious_receipt",
+        "unverbindliche_sla_falle",
+        "agency_commission_exclusion",
+        "agency_goodwill_waiver",
+        "international_data_processing",
+        "mandatory_expert_determination",
+        "service_credit_forfeiture",
+        "early_termination_charge",
+        "maintenance_conditional_shutdown",
+        null
+      ],
+      "description": "The rule in src/analyze.js that covers this clause type, or null when no rule covers the clause type at all. Whether that rule also fires on this particular wording is a separate, measurable property of the engine and is what `detectorStatus` records: `node bin/clause-db.js mapping` reports both the blind records and any record whose claim is not backed by a firing rule."
+    },
+    "detectorStatus": {
+      "type": "string",
+      "enum": ["mapped", "mapped_blind", "no_detector"],
+      "description": "Three states, because two collapsed a real difference. `mapped`: a rule covers this clause type AND fires on this very wording — a measurement, asserted per record against the engine, never a rate. `mapped_blind`: a rule covers the clause type but does not react to this wording (the rule exists, the wording is invisible to it; `detector` names the covering rule). `no_detector`: no rule covers the clause type at all — a counted coverage gap, and a wanted outcome of this database. `mapped_blind` is a named weakness of the rule set, not coverage: never fold it into `mapped`, and never absorb it by lowering a threshold."
+    },
+    "evasion": {
+      "type": ["string", "null"],
+      "enum": [
+        "direct",
+        "euphemism",
+        "synonym",
+        "english",
+        "word-number",
+        "split-sentence",
+        "list-buried",
+        "nominal-style",
+        "cross-reference",
+        "dach",
+        "typo-evasion",
+        "compound-multi",
+        null
+      ],
+      "description": "The wording technique that hides the trap, using the same vocabulary as the stress corpus, or null when the clause is plainly drafted."
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "detectorStatus": { "const": "mapped" } },
+        "required": ["detectorStatus"]
+      },
+      "then": {
+        "properties": { "detector": { "type": "string" } },
+        "required": ["detector"]
+      }
+    },
+    {
+      "if": {
+        "properties": { "detectorStatus": { "const": "mapped_blind" } },
+        "required": ["detectorStatus"]
+      },
+      "then": {
+        "properties": { "detector": { "type": "string" } },
+        "required": ["detector"]
+      }
+    },
+    {
+      "if": {
+        "properties": { "detectorStatus": { "const": "no_detector" } },
+        "required": ["detectorStatus"]
+      },
+      "then": {
+        "properties": { "detector": { "type": "null" } },
+        "required": ["detector"]
+      }
+    }
+  ]
+}

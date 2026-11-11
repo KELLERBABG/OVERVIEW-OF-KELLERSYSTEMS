@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MuonScope &mdash; why a backpack muon tomograph does not compose</title>
+<meta name="description" content="A research archive, not a product. A backpack-portable cosmic-ray muon scattering tomograph was specified in detail, then evaluated by simulation built to measure it. The specification does not compose: angular resolution is 15.15 mrad rather than 2.1, survey times are off by 30 to 85 times, and the timing architecture does not fit the chosen device. The software works and is tested; the instrument was never built.">
+<meta name="theme-color" content="#05070f">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* the page descends: sky at the top, ground at the bottom */
+  --sky:#05070f; --sky-2:#0a1020; --dusk:#20232c; --earth:#3a3a2a;
+  --ground:#ded8c4; --paper:#eee9da; --field:#cfc7ac;
+  --chalk:#eef1ea; --chalk-dim:#a8b0a4; --ink:#1e2318; --ink-2:#424733; --muted:#6f7358;
+  --flux:#e4511c; --flux-lit:#ff7a3d;
+  --cond:"Barlow Condensed","Barlow",system-ui,sans-serif;
+  --sans:"Barlow",system-ui,-apple-system,sans-serif;
+  --mono:"Space Mono",ui-monospace,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--ground);color:var(--ink-2);font-family:var(--sans);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+h1,h2,h3{margin:0;font-family:var(--cond);text-transform:uppercase;line-height:.98;font-weight:700}
+p{margin:0 0 .9rem}
+
+/* depth rail: where you are in the descent */
+.rail{position:fixed;left:0;top:0;bottom:0;width:104px;z-index:50;display:flex;align-items:center;
+  pointer-events:none;mix-blend-mode:difference}
+.rail .track{position:absolute;left:26px;top:0;bottom:0;width:1px;background:rgba(255,255,255,.22)}
+.rail .fill{position:absolute;left:26px;top:0;width:1px;background:var(--flux-lit);height:0}
+.rail .read{position:relative;font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;color:#fff;
+  padding-left:44px;transform:translateY(-50%);position:absolute;top:50%}
+.rail .read b{display:block;font-size:1.05rem;letter-spacing:.02em}
+.rail .read span{opacity:.6;font-size:.58rem}
+@media (max-width:900px){.rail{display:none}}
+
+.stage{position:relative;padding:clamp(64px,9vw,132px) clamp(20px,7vw,120px);overflow:hidden}
+.stage .inner{max-width:1080px;margin:0 auto;position:relative;z-index:2}
+.depth{font-family:var(--cond);font-weight:700;font-size:clamp(3.4rem,11vw,9rem);line-height:.86;letter-spacing:-.02em;display:block;margin-bottom:.28em}
+.eyebrow{font-family:var(--mono);font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;opacity:.72;display:block;margin-bottom:.7rem}
+.lead{font-size:clamp(1.1rem,2.1vw,1.6rem);line-height:1.42;max-width:40ch;font-family:var(--cond);font-weight:500;text-transform:none;letter-spacing:0}
+.stage p{max-width:56ch}
+.stage p b{font-weight:500}
+
+/* dark stages: the sky and the rock */
+.dark{background:var(--sky);color:var(--chalk-dim)}
+.dark h1,.dark h2,.dark h3,.dark .depth{color:var(--chalk)}
+.dark .lead{color:#dfe4dc}
+.dark p b{color:#fff}
+.dusk{background:var(--sky-2);color:var(--chalk-dim)}
+.dusk .depth,.dusk h2,.dusk h3{color:var(--chalk)}
+.dusk .lead{color:#e2e6de}
+.earth{background:var(--earth);color:#cfd0c2}
+.earth .depth,.earth h2,.earth h3{color:#f2f3ea}
+.earth .lead{color:#e8e9de}
+.lit{background:var(--ground);color:var(--ink-2)}
+.lit .depth{color:var(--ink)}
+.lit h2,.lit h3{color:var(--ink)}
+.lit .lead{color:var(--ink)}
+.lit .eyebrow{color:var(--muted)}
+.pale{background:var(--paper);color:var(--ink-2)}
+.pale .depth{color:var(--ink)}
+.pale h2,.pale h3{color:var(--ink)}
+.pale .lead{color:var(--ink)}
+.pale .eyebrow{color:var(--muted)}
+
+/* hero */
+.hero{min-height:100svh;display:flex;align-items:center;background:
+  radial-gradient(120% 80% at 50% 120%, rgba(228,81,28,.30), transparent 62%),
+  linear-gradient(180deg,#03050b 0%,#070c18 55%,#0d1424 100%)}
+.hero .glow{position:absolute;left:0;right:0;bottom:0;height:38vh;pointer-events:none;
+  background:radial-gradient(70% 100% at 50% 100%, rgba(228,81,28,.34), transparent 70%)}
+.hero h1{font-size:clamp(2.9rem,9vw,6.6rem);color:#fff;letter-spacing:-.015em}
+.hero h1 em{font-style:normal;color:var(--flux-lit)}
+.hero .strip{display:flex;gap:1.6rem;flex-wrap:wrap;font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;
+  text-transform:uppercase;color:#8f978d;margin-top:1.6rem}
+.hero .strip b{color:var(--flux-lit);font-weight:400}
+.cue{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);font-family:var(--mono);font-size:.6rem;
+  letter-spacing:.24em;text-transform:uppercase;color:#7c8478}
+@media (prefers-reduced-motion:no-preference){.cue{animation:bob 2.6s ease-in-out infinite}}
+@keyframes bob{50%{transform:translate(-50%,7px)}}
+
+/* figures sit as one unit with their caption */
+.fig{margin:2rem 0 0;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.03)}
+.lit .fig,.pale .fig{border-color:rgba(30,35,24,.28);background:rgba(30,35,24,.03)}
+.fig svg{display:block;width:100%;height:auto}
+.fig figcaption{border-top:1px solid rgba(255,255,255,.16);padding:.5rem .8rem;font-family:var(--mono);font-size:.6rem;
+  letter-spacing:.08em;text-transform:uppercase;opacity:.75}
+.lit .fig figcaption,.pale .fig figcaption{border-color:rgba(30,35,24,.2)}
+.trk{stroke:#ffb98f;stroke-width:1.3;fill:none;opacity:.75}
+.trk-hot{stroke:var(--flux-lit);stroke-width:2.4;fill:none}
+.pnl{fill:rgba(255,255,255,.06);stroke:#cfd4cc;stroke-width:1.4}
+.pnl-d{fill:rgba(30,35,24,.08);stroke:var(--ink);stroke-width:1.4}
+.stripes{stroke:rgba(255,255,255,.22);stroke-width:.8}
+.stripes-d{stroke:rgba(30,35,24,.3);stroke-width:.8}
+.void{fill:var(--flux);opacity:.55}
+.dim{stroke:#cfd4cc;stroke-width:.9}
+.dim-d{stroke:var(--ink);stroke-width:.9}
+.lab{font-family:var(--mono);font-size:9.4px;letter-spacing:.08em;fill:currentColor;opacity:.85}
+.lab-hi{font-family:var(--mono);font-size:9.4px;letter-spacing:.08em;fill:var(--flux-lit)}
+.lab-c{font-family:var(--cond);font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;fill:currentColor}
+@media (prefers-reduced-motion:no-preference){.trk-hot{stroke-dasharray:9 12;animation:fall 4.5s linear infinite}}
+@keyframes fall{to{stroke-dashoffset:-42}}
+
+/* scale comparison (why muons) */
+.scale{display:grid;gap:.55rem;margin-top:1.4rem;max-width:640px}
+.bar{display:grid;grid-template-columns:104px 1fr 84px;align-items:center;gap:.7rem;font-family:var(--mono);font-size:.62rem;letter-spacing:.06em}
+.bar .t{text-transform:uppercase;opacity:.8}
+.bar .b{height:12px;background:rgba(255,255,255,.12)}
+.bar .b i{display:block;height:12px;background:#7d8478}
+.bar.you .b i{background:var(--flux-lit)}
+.bar .v{text-align:right;opacity:.85}
+
+/* key figures, inline and large */
+.figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:rgba(255,255,255,.16);margin-top:1.6rem}
+.lit .figs,.pale .figs{background:rgba(30,35,24,.2)}
+.figs div{background:rgba(0,0,0,.25);padding:.85rem 1rem}
+.lit .figs div,.pale .figs div{background:var(--paper)}
+.figs b{display:block;font-family:var(--mono);font-size:1.3rem;color:var(--flux-lit);font-weight:400;line-height:1}
+.lit .figs b,.pale .figs b{color:var(--flux)}
+.figs span{display:block;font-family:var(--mono);font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;opacity:.66;margin-top:.4rem}
+
+table{width:100%;border-collapse:collapse;font-size:.9rem;margin-top:1.2rem}
+th,td{text-align:left;padding:.5rem .7rem;border-bottom:1px solid rgba(30,35,24,.22)}
+th{font-family:var(--mono);font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:400}
+td:first-child{font-family:var(--cond);font-size:1rem;font-weight:600;text-transform:uppercase;color:var(--ink);white-space:nowrap}
+td.v{font-family:var(--mono);font-size:.76rem;color:var(--ink)}
+.notes{margin-top:1.4rem;border-left:3px solid var(--flux);padding-left:1.1rem}
+.notes li{font-size:.9rem;margin-bottom:.45rem}
+.notes b{color:var(--ink);font-weight:500}
+
+.links{display:flex;gap:1.4rem;flex-wrap:wrap;margin-top:1.6rem;font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase}
+.links a{border-bottom:1px solid currentColor;padding-bottom:2px;text-decoration:none}
+.foot{background:var(--ink);color:#8d9184;padding:2rem clamp(20px,7vw,120px);font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase}
+.foot .row{max-width:1080px;margin:0 auto;display:flex;justify-content:space-between;gap:1.4rem;flex-wrap:wrap}
+.foot a{color:#cfd4cc}
+
+/* ---- scrollbars, in the site's own colours --------------------------- */
+html{scrollbar-color:#a89e82 #d6cfb8;scrollbar-width:thin}
+::-webkit-scrollbar{width:12px;height:12px}
+::-webkit-scrollbar-track{background:#d6cfb8}
+::-webkit-scrollbar-thumb{background:#a89e82;border:3px solid #d6cfb8}
+::-webkit-scrollbar-thumb:hover{background:#1e2318}
+::-webkit-scrollbar-corner{background:#d6cfb8}
+/* ---- code wraps rather than scrolling sideways ---------------------- */
+pre{white-space:pre-wrap;overflow-wrap:anywhere;overflow-x:hidden}
+/* mobile-figure */@media (max-width:900px){.panel,.chart,.die,.pfd,.cfg,.console,.figs,.seqblock,.map{overflow-x:auto;-webkit-overflow-scrolling:touch}.panel svg,.chart svg,.die svg,.pfd svg,.cfg svg,.figs svg,.map svg{min-width:660px;max-width:none}}
+/* --- Keller Systems Upper-Atmosphere Masthead --- */
+.ks-masthead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 14px;
+  margin-bottom: clamp(22px, 4vw, 36px);
+  border-bottom: 1px solid rgba(238, 241, 234, 0.14);
+}
+.ks-brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none !important; border-bottom: none !important; }
+.ks-mark { width: 22px !important; min-width: 22px !important; max-width: 22px !important; height: 22px !important; min-height: 22px !important; max-height: 22px !important; padding: 0 !important; margin: 0 !important; display: block !important; flex-shrink: 0 !important; }
+.ks-titles { display: inline-flex; flex-direction: column; line-height: 1.12; }
+.ks-name { font-family: var(--sans, 'Barlow', sans-serif); font-size: 14px; font-weight: 600; color: var(--chalk); letter-spacing: 0.01em; }
+.ks-sub { font-family: var(--mono, 'Space Mono', monospace); font-size: 8.5px; font-weight: 400; color: var(--chalk-dim); letter-spacing: 0.14em; text-transform: uppercase; margin-top: 2px; }
+.ks-brand:hover .ks-name { color: var(--flux-lit); }
+.ks-links { display: inline-flex; align-items: center; gap: 14px; }
+.ks-link { font-family: var(--mono, 'Space Mono', monospace); font-size: 10.5px; color: var(--chalk-dim); text-decoration: none !important; border-bottom: none !important; }
+.ks-link:hover { color: var(--chalk); }
+</style>
+</head>
+<body><!-- noscript-fallback --><noscript><style>html *{opacity:1!important;transform:none!important;filter:none!important;animation:none!important}[data-a],[data-b],.d,.o,.fade,.draw,.chapter,.step,.panel,.hlab{opacity:1!important}</style></noscript>
+
+<div class="rail" aria-hidden="true">
+  <div class="track"></div>
+  <div class="fill" id="railFill"></div>
+  <div class="read"><b id="railDepth">&nbsp;</b><span id="railName">descending</span></div>
+</div>
+
+<main>
+
+  <!-- â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ sky â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+  <section class="stage hero" data-depth="15 km" data-name="upper atmosphere" id="top">
+    <div class="glow"></div>
+    <svg viewBox="0 0 1200 600" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;opacity:.55">
+      <path class="trk" d="M180 0 L300 600"/>
+      <path class="trk" d="M420 0 L470 600"/>
+      <path class="trk" d="M700 0 L640 600"/>
+      <path class="trk" d="M980 0 L900 600"/>
+      <path class="trk" d="M1120 0 L1180 600"/>
+      <path class="trk" d="M60 0 L140 600"/>
+      <path class="trk-hot" d="M820 0 L770 300 L700 600"/>
+    </svg>
+    <div class="inner">
+      <div class="ks-masthead">
+        <a href="https://kellersystems.dev" class="ks-brand">
+          <svg class="ks-mark" viewBox="0 0 100 100" width="22" height="22" aria-hidden="true">
+            <rect x="18" y="14" width="18" height="72" rx="3" fill="#eef1ea"/>
+            <path d="M46 50 L72 16 H90 L60 54 Z" fill="#ff7a3d"/>
+            <path d="M60 46 L90 84 H72 L46 50 Z" fill="#a8b0a4"/>
+          </svg>
+          <span class="ks-titles">
+            <span class="ks-name">MuonScope</span>
+            <span class="ks-sub">KELLER SYSTEMS</span>
+          </span>
+        </a>
+        <div class="ks-links">
+          <a href="https://kellersystems.dev" class="ks-link">kellersystems.dev &rarr;</a>
+          <a href="https://github.com/KELLERBABG/MuonScope-Tomography" target="_blank" rel="noopener noreferrer" class="ks-link">Source &#8599;</a>
+        </div>
+      </div>
+      <span class="eyebrow">Cosmic-ray muon tomography &middot; research archive</span>
+      <h1>Ten thousand muons<br>cross every square<br>metre of this ground<br><em>every minute.</em></h1>
+      <p class="lead" style="margin-top:1.2rem">
+        They come from the top of the atmosphere, they pass through rock, and they scatter. The plan was to
+        measure that scattering and turn it into a picture of what the muons went through.
+      </p>
+      <p style="margin-top:1rem;max-width:52ch;color:#9aa294">
+        The software got built. The instrument did not. What follows descends through how muon tomography is
+        meant to work, and ends with what the simulation found &mdash; that this specification, at this scale,
+        does not close.
+      </p>
+      <div class="strip">
+        <span>&lang;E&rang; <b>4 GeV</b></span>
+        <span>&beta; <b>0.9997</b></span>
+        <span>flux <b>10,000 m&#8315;&sup2; min&#8315;&sup1;</b></span>
+        <span>source <b>none required</b></span>
+        <span>status <b>research, not a product</b></span>
+      </div>
+    </div>
+    <div class="cue">Descend &darr;</div>
+  </section>
+
+  <!-- â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ 15 km â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+  <section class="stage dark" data-depth="15 km" data-name="muons are born">
+    <div class="inner">
+      <span class="eyebrow">Stage one &middot; the shower</span>
+      <span class="depth">15 km</span>
+      <p class="lead">A cosmic ray hits the upper atmosphere and shatters into a shower of particles. The muons in that shower are the only ones that reach the ground.</p>
+      <p style="margin-top:1.2rem">
+        A proton arriving from outside the solar system strikes an air nucleus. The collision produces pions and
+        kaons, which decay in flight into muons. Each muon carries gigaelectronvolts of energy, travels at
+        99.97% of the speed of light, and lives long enough &mdash; through time dilation &mdash; to cross the
+        atmosphere before it decays.
+      </p>
+      <figure class="fig">
+        <svg viewBox="0 0 1080 300" role="img" aria-label="A cosmic ray striking the upper atmosphere and producing a shower of particles, with muons continuing downward.">
+          <path class="trk-hot" d="M60 40 L240 92"/>
+          <g class="trk">
+            <path d="M240 92 L200 190"/><path d="M240 92 L260 200"/><path d="M240 92 L300 180"/>
+            <path d="M240 92 L160 150"/><path d="M240 92 L330 130"/><path d="M240 92 L210 250"/>
+            <path d="M240 92 L290 250"/><path d="M240 92 L350 210"/>
+          </g>
+          <text class="lab" x="60" y="28">PRIMARY COSMIC RAY</text>
+          <text class="lab" x="250" y="108">HADRONIC SHOWER &middot; PIONS AND KAONS</text>
+          <text class="lab" x="366" y="214">&mu; &mu; &mu; &mdash; CONTINUE DOWNWARD</text>
+          <line class="dim" x1="40" y1="270" x2="1040" y2="270"/>
+          <text class="lab" x="40" y="288">MUONS SURVIVE THE TRIP BECAUSE TIME DILATION EXTENDS THEIR LIFETIME IN OUR FRAME</text>
+        </svg>
+        <figcaption>Fig. 1 &mdash; muon production, schematic</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ 1 km â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+  <section class="stage dusk" data-depth="1 km" data-name="through anything">
+    <div class="inner">
+      <span class="eyebrow">Stage two &middot; the passage</span>
+      <span class="depth">1 km</span>
+      <p class="lead">Nothing built stops them. A muon crosses concrete, granite, steel and lead, losing a little energy and picking up a small deflection on the way.</p>
+      <p style="margin-top:1.2rem">
+        At sea level the flux is steady and comes mostly from overhead: the intensity follows a cosine-squared
+        falloff with zenith angle. That steadiness is what makes the measurement possible &mdash; the signal is
+        free, constant, and impossible for a subject to switch off.
+      </p>
+      <div class="figs">
+        <div><b>4 GeV</b><span>mean energy</span></div>
+        <div><b>0.9997 c</b><span>speed</span></div>
+        <div><b>2.1 mrad</b><span>resolution as specified</span></div>
+        <div><b>15.15 mrad</b><span>resolution as measured</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ 20 m â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+  <section class="stage earth" data-depth="20 m" data-name="where the others stop">
+    <div class="inner">
+      <span class="eyebrow">Stage three &middot; the gap</span>
+      <span class="depth">20 m</span>
+      <p class="lead">This is the depth where every other method has already given up.</p>
+      <p style="margin-top:1.2rem">
+        Industrial X-ray and gamma radiography manage a few centimetres of dense matter, and they need a source and
+        an exclusion zone. Ground-penetrating radar attenuates in wet or conductive soil beyond two to five metres.
+        Core drilling is destructive, localised, and runs to tens of thousands of euros per borehole &mdash; and it
+        only tells you about the hole.
+      </p>
+      <div class="scale">
+        <div class="bar"><span class="t">X-ray</span><span class="b"><i style="width:1.5%"></i></span><span class="v">~5 cm</span></div>
+        <div class="bar"><span class="t">Radar</span><span class="b"><i style="width:5%"></i></span><span class="v">2&ndash;5 m</span></div>
+        <div class="bar"><span class="t">Core drill</span><span class="b"><i style="width:2%"></i></span><span class="v">a hole</span></div>
+        <div class="bar you"><span class="t">Muons</span><span class="b"><i style="width:100%"></i></span><span class="v">0.1&ndash;500 m</span></div>
+      </div>
+      <p style="margin-top:1rem;font-size:.9rem">
+        Bar lengths are penetration depth on a shared scale. The muon bar is the whole width because nothing else on
+        this chart comes close. The penetration is real &mdash; muons do cross all of it. Turning that into a
+        <em>useful image</em> is the part this design did not manage: at distance the coincidence rate falls as the
+        inverse square, and the contrast goes with it.
+      </p>
+    </div>
+  </section>
+
+  <!-- â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ 0 m â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+  <section class="stage lit" data-depth="0 m" data-name="the specified station">
+    <div class="inner">
+      <span class="eyebrow">Stage four &middot; the instrument that was specified</span>
+      <span class="depth">0 m</span>
+      <p class="lead">Two panels, 9.5 kilograms each, to be carried to the structure and set either side of it.</p>
+      <p style="margin-top:1.2rem">
+        Each panel was specified to carry four tracking planes of 64 X and 64 Y scintillator strips, read out by
+        silicon photomultipliers, with an FPGA time-to-digital converter resolving each hit to 75&nbsp;picoseconds.
+        Three things in that sentence do not survive arithmetic. The station draws 12.5&nbsp;watts, which on a
+        150&nbsp;Wh pack is <b>twelve hours</b> &mdash; not the day the documents claimed. The timing architecture
+        needs <b>4,096 carry primitives</b> against roughly 200 available in the chosen device. And the mass budget
+        omits the <b>28&nbsp;kg of lead</b> the same design requires for its momentum measurement.
+      </p>
+      <figure class="fig">
+        <svg viewBox="0 0 1080 340" role="img" aria-label="Two detector panels either side of a target, with a muon track scattering inside the target.">
+          <rect class="pnl-d" x="120" y="60" width="420" height="34"/>
+          <g class="stripes-d">
+            <line x1="150" y1="60" x2="150" y2="94"/><line x1="190" y1="60" x2="190" y2="94"/>
+            <line x1="230" y1="60" x2="230" y2="94"/><line x1="270" y1="60" x2="270" y2="94"/>
+            <line x1="310" y1="60" x2="310" y2="94"/><line x1="350" y1="60" x2="350" y2="94"/>
+            <line x1="390" y1="60" x2="390" y2="94"/><line x1="430" y1="60" x2="430" y2="94"/>
+            <line x1="470" y1="60" x2="470" y2="94"/><line x1="510" y1="60" x2="510" y2="94"/>
+          </g>
+          <rect class="pnl-d" x="120" y="246" width="420" height="34"/>
+          <g class="stripes-d">
+            <line x1="150" y1="246" x2="150" y2="280"/><line x1="190" y1="246" x2="190" y2="280"/>
+            <line x1="230" y1="246" x2="230" y2="280"/><line x1="270" y1="246" x2="270" y2="280"/>
+            <line x1="310" y1="246" x2="310" y2="280"/><line x1="350" y1="246" x2="350" y2="280"/>
+            <line x1="390" y1="246" x2="390" y2="280"/><line x1="430" y1="246" x2="430" y2="280"/>
+            <line x1="470" y1="246" x2="470" y2="280"/><line x1="510" y1="246" x2="510" y2="280"/>
+          </g>
+          <rect x="230" y="130" width="200" height="80" fill="rgba(30,35,24,.06)" stroke="#1e2318" stroke-width="1.2" stroke-dasharray="5 4"/>
+          <circle class="void" cx="300" cy="166" r="14"/>
+          <circle class="void" cx="372" cy="184" r="9"/>
+          <path class="trk-hot" d="M180 8 L250 60 L318 170 L392 246 L440 330" style="stroke:#c8401a"/>
+          <path class="trk" d="M300 8 L332 60" style="stroke:rgba(30,35,24,.5)"/>
+          <path class="trk" d="M420 8 L446 60" style="stroke:rgba(30,35,24,.5)"/>
+          <line class="dim-d" x1="600" y1="77" x2="600" y2="263"/>
+          <line class="dim-d" x1="590" y1="77" x2="610" y2="77"/>
+          <line class="dim-d" x1="590" y1="263" x2="610" y2="263"/>
+          <text class="lab" x="618" y="166" style="fill:#1e2318">150 mm</text>
+          <text class="lab" x="618" y="182" style="fill:#6f7358">between planes</text>
+          <text class="lab-c" x="120" y="46" style="fill:#1e2318">Panel A &mdash; 64 X + 64 Y strips</text>
+          <text class="lab-c" x="120" y="306" style="fill:#1e2318">Panel B &mdash; 9.5 kg, 12.5 W</text>
+          <text class="lab-c" x="230" y="124" style="fill:#1e2318">Target</text>
+          <text class="lab" x="452" y="176" style="fill:#c8401a">&Delta;&theta;</text>
+          <text class="lab" x="700" y="60" style="fill:#1e2318">FPGA TDC 75 ps &middot; needs 4096 CARRY4</text>
+          <text class="lab" x="700" y="78" style="fill:#6f7358">4-fold coincidence &le; 8 ns</text>
+          <text class="lab" x="700" y="104" style="fill:#1e2318">RTK-GNSS &lt; 1 cm</text>
+          <text class="lab" x="700" y="122" style="fill:#6f7358">9-DoF IMU &lt; 0.05&deg;</text>
+          <text class="lab" x="700" y="148" style="fill:#1e2318">LoRaWAN / 4G to other stations</text>
+        </svg>
+        <figcaption>Fig. 2 &mdash; the specified station, section through the target</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -5 m â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+  <section class="stage pale" data-depth="&minus;5 m" data-name="inside the target">
+    <div class="inner">
+      <span class="eyebrow">Stage five &middot; the scattering</span>
+      <span class="depth">&minus;5 m</span>
+      <p class="lead">Inside dense material a muon is deflected. How far it bends depends on what it hit.</p>
+      <p style="margin-top:1.2rem">
+        Coulomb scattering scales with density and atomic number, so a void barely bends a track while a steel
+        reinforcing bar bends it sharply. That single number &mdash; the deflection angle &mdash; is the
+        measurement, and the contrast it offers is real: lead scatters <b>20.6 times</b> more strongly than
+        concrete. What defeats the design is how many deflections can be collected. At close range they accumulate
+        in hours. At the standoffs the survey-time table assumed, in days.
+      </p>
+      <div class="figs">
+        <div><b>20.6&times;</b><span>lead vs concrete contrast</span></div>
+        <div><b>1.41</b><span>lead cnr achieved</span></div>
+        <div><b>15.15 mrad</b><span>angular resolution</span></div>
+        <div><b>~15 mm</b><span>voxel at 1 m</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ output â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+  <section class="stage lit" data-depth="output" data-name="the density map">
+    <div class="inner">
+      <span class="eyebrow">Stage six &middot; the picture</span>
+      <span class="depth">Output</span>
+      <p class="lead">Thousands of fitted deflections become one volume: a density map of what the muons crossed, with nothing drilled and nothing irradiated.</p>
+      <figure class="fig">
+        <svg viewBox="0 0 1080 300" role="img" aria-label="Reconstruction chain from track fitting to a density volume, and a voxel grid showing voids inside a solid.">
+          <rect class="pnl-d" x="30" y="60" width="200" height="72"/>
+          <text class="lab-c" x="46" y="92" style="fill:#1e2318">Line fit</text>
+          <text class="lab" x="46" y="112" style="fill:#6f7358">2 planes per coordinate</text>
+          <path d="M230 96 H286" class="dim-d"/>
+          <rect class="pnl-d" x="286" y="60" width="200" height="72"/>
+          <text class="lab-c" x="302" y="92" style="fill:#1e2318">Scattering angle</text>
+          <text class="lab" x="302" y="112" style="fill:#6f7358">&Delta;&theta; per muon</text>
+          <path d="M486 96 H542" class="dim-d"/>
+          <rect class="pnl-d" x="542" y="60" width="200" height="72"/>
+          <text class="lab-c" x="558" y="92" style="fill:#1e2318">Closest approach</text>
+          <text class="lab" x="558" y="112" style="fill:#6f7358">event localised</text>
+          <path d="M742 96 H798" class="dim-d"/>
+          <rect class="pnl-d" x="798" y="60" width="200" height="72"/>
+          <text class="lab-c" x="814" y="92" style="fill:#1e2318">Prior-marginalised</text>
+          <text class="lab" x="814" y="112" style="fill:#6f7358">MLEM / MAP-EM over voxels</text>
+          <g class="stripes-d">
+            <line x1="30" y1="200" x2="1010" y2="200"/><line x1="30" y1="230" x2="1010" y2="230"/>
+            <line x1="30" y1="260" x2="1010" y2="260"/>
+            <line x1="150" y1="180" x2="150" y2="280"/><line x1="270" y1="180" x2="270" y2="280"/>
+            <line x1="390" y1="180" x2="390" y2="280"/><line x1="510" y1="180" x2="510" y2="280"/>
+            <line x1="630" y1="180" x2="630" y2="280"/><line x1="750" y1="180" x2="750" y2="280"/>
+            <line x1="870" y1="180" x2="870" y2="280"/>
+          </g>
+          <circle class="void" cx="300" cy="228" r="26"/>
+          <circle class="void" cx="640" cy="246" r="16"/>
+          <circle class="void" cx="820" cy="204" r="10"/>
+          <line class="dim-d" x1="1010" y1="180" x2="1010" y2="280"/>
+          <text class="lab" x="30" y="172" style="fill:#6f7358">RECONSTRUCTED DENSITY &mdash; VOIDS AND REINFORCEMENT IN PLACE</text>
+        </svg>
+        <figcaption>Fig. 3 &mdash; reconstruction chain and the resulting volume</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ the paperwork, kept out of the way â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
+  <section class="stage lit" data-depth="finding" data-name="what the simulation found">
+    <div class="inner">
+      <span class="eyebrow">Specified first, then measured</span>
+      <h2 style="font-size:clamp(1.6rem,3.4vw,2.4rem);margin-bottom:.7rem">Every requirement was plausible.<br>None of them compose.</h2>
+      <p style="max-width:62ch;margin-bottom:.4rem">
+        The left column was written first. The instrument software was then built to test it, and the right column
+        is what it measured. No number on the left is unreasonable by itself &mdash; 75&nbsp;ps TDCs exist, 10&nbsp;kg
+        instruments exist, 12&nbsp;h of battery life is ordinary. The failure is that they were specified
+        independently and never multiplied together.
+      </p>
+      <table>
+        <thead><tr><th>Parameter</th><th>Specified</th><th>Measured</th></tr></thead>
+        <tbody>
+          <tr><td>Resolution</td><td class="v">2.1 mrad</td><td class="v">15.15 mrad</td></tr>
+          <tr><td>Lever arm</td><td class="v">600 mm station separation</td><td class="v">140 mm plane spacing</td></tr>
+          <tr><td>Acceptance</td><td class="v">23.8&ndash;28.8 %</td><td class="v">18.0 %</td></tr>
+          <tr><td>Lead CNR</td><td class="v">5.92 &middot; 27.60</td><td class="v">1.41</td></tr>
+          <tr><td>Voxel at 1 m</td><td class="v">10 mm</td><td class="v">~15 mm</td></tr>
+          <tr><td>Endurance</td><td class="v">&gt; 24 h on 150 Wh</td><td class="v">12.0 h at 12.5 W</td></tr>
+          <tr><td>Mass</td><td class="v">&lt; 9.5 kg per station</td><td class="v">omits 28.4 kg of lead</td></tr>
+          <tr><td>Timing fabric</td><td class="v">128 ch &middot; 75 ps</td><td class="v">4,096 CARRY4 needed, ~200 available</td></tr>
+          <tr><td>Pier survey at 3 m</td><td class="v">6&ndash;8 h</td><td class="v">~29 days</td></tr>
+        </tbody>
+      </table>
+      <ol class="notes">
+        <li><b>The lever arm is the root cause.</b> A direction is fitted within a station, from the two planes measuring one coordinate &mdash; 140&nbsp;mm apart, not the 600&nbsp;mm between stations. That substitution alone is worth 7.2&times;, and every quantity derived from angle inherits it.</li>
+        <li><b>The rate law was extrapolated rather than re-derived.</b> The survey-time table was built at benchtop scale and applied at metres, where the governing variable is standoff squared. Reaching 6&ndash;8&nbsp;h at 3&nbsp;m would need roughly 100&nbsp;m&sup2; of active area.</li>
+        <li><b>The budgets were never added up.</b> Twenty-four hours of endurance, 9.5&nbsp;kg of mass and a passive lead momentum spectrometer are pairwise incompatible. Any two can hold. Not all three.</li>
+        <li><b>What is not in question.</b> Muon tomography works and is sold commercially &mdash; nuclear waste characterisation, mineral exploration, volcanology, cargo screening. The finding is about <em>this</em> specification at <em>this</em> scale.</li>
+      </ol>
+      <div class="figs">
+        <div><b>Yes</b><span>reconstruction software, 56 tests</span></div>
+        <div><b>Stub</b><span>fpga firmware</span></div>
+        <div><b>None</b><span>detectors, optics, pcb</span></div>
+        <div><b>Zero</b><span>muons detected</span></div>
+      </div>
+      <p style="margin-top:1.6rem;max-width:62ch">
+        What the physics does allow is smaller: sub-metre targets at 0.3&ndash;0.7&nbsp;m standoff, where the rate is
+        high and 15&nbsp;mrad is enough to resolve 8&ndash;10&nbsp;mm. That is a real instrument, and the direction a
+        continuation should take. The first step is not another document &mdash; it is one SiPM on a bench, which is
+        the only thing that fixes the largest unmeasured input in every number above.
+      </p>
+      <div class="links">
+        <a href="https://github.com/KELLERBABG/MuonScope-Tomography">Repository</a>
+        <a href="https://github.com/KELLERBABG/MuonScope-Tomography/blob/main/docs/WHITEPAPER.md">Why it does not compose</a>
+        <a href="https://github.com/KELLERBABG/MuonScope-Tomography/blob/main/docs/ACCURACY_MEASURED.md">Measured accuracy</a>
+        <a href="https://github.com/KELLERBABG/MuonScope-Tomography/blob/main/docs/HARDWARE_READINESS_ASSESSMENT.md">Readiness assessment</a>
+        <a href="https://github.com/KELLERBABG/MuonScope-Tomography/blob/main/docs/archive">Original design documents</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="row">
+    <span>MuonScope Tomography &middot; research archive &middot; no instrument was built</span>
+    <span><a href="https://kellersystems.dev">kellersystems.dev</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var stages = Array.prototype.slice.call(document.querySelectorAll('.stage[data-depth]'));
+  var fill = document.getElementById('railFill');
+  var dep = document.getElementById('railDepth');
+  var nam = document.getElementById('railName');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function frame(){
+    var y = window.scrollY || document.documentElement.scrollTop;
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    var p = h > 0 ? Math.max(0, Math.min(1, y / h)) : 0;
+    fill.style.height = (p * 100).toFixed(2) + '%';
+    var current = stages[0], mid = y + window.innerHeight * 0.35;
+    for (var i = 0; i < stages.length; i++) {
+      if (stages[i].offsetTop <= mid) current = stages[i];
+    }
+    if (current) {
+      var d = current.getAttribute('data-depth');
+      if (dep.textContent !== d) {
+        dep.textContent = d;
+        nam.textContent = current.getAttribute('data-name') || '';
+      }
+    }
+  }
+  window.addEventListener('scroll', frame, { passive: true });
+  window.addEventListener('resize', frame);
+  if (!reduce) { requestAnimationFrame(frame); } else { frame(); }
+  frame();
+})();
+</script>
+</body>
+</html>

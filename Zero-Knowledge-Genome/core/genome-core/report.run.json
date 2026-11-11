@@ -1,0 +1,196 @@
+{
+  "$schema": "https://kellersystems.dev/schemas/run-v1.json",
+  "analysis_profile": "debug (dev profile, rustc overflow/bounds assertions enabled)",
+  "analysis_profile_note": "A release build wraps instead of panicking, so a PASS here is not a guarantee about a shipped release artifact.",
+  "compiler": {
+    "commit": "89c61a754",
+    "host": "x86_64-pc-windows-msvc",
+    "release": "1.99.0-nightly",
+    "toolchain": "nightly-2026-07-24-x86_64-pc-windows-msvc"
+  },
+  "completed": true,
+  "completed_at_unix_ns": 1794057495349837100,
+  "coverage": {
+    "compilers": [
+      {
+        "arguments": [
+          "--crate-name",
+          "zk_genome_genome_core",
+          "--edition=2024",
+          "src\\lib.rs",
+          "--error-format=json",
+          "--json=diagnostic-rendered-ansi,artifacts,future-incompat",
+          "--crate-type",
+          "lib",
+          "--emit=dep-info,metadata",
+          "-C",
+          "embed-bitcode=no",
+          "-C",
+          "debuginfo=2",
+          "--check-cfg",
+          "cfg(docsrs,test)",
+          "--check-cfg",
+          "cfg(feature, values())",
+          "-C",
+          "metadata=153ae11187adca80",
+          "-C",
+          "extra-filename=-d161f88dd6503ef6",
+          "--out-dir",
+          "C:\\Users\\lukas\\Downloads\\SYSTEMS & CREATIONS\\Zero-Knowledge-Genome\\core\\genome-core\\target\\keller\\debug\\deps",
+          "-C",
+          "incremental=C:\\Users\\lukas\\Downloads\\SYSTEMS & CREATIONS\\Zero-Knowledge-Genome\\core\\genome-core\\target\\keller\\debug\\incremental",
+          "-L",
+          "dependency=C:\\Users\\lukas\\Downloads\\SYSTEMS & CREATIONS\\Zero-Knowledge-Genome\\core\\genome-core\\target\\keller\\debug\\deps",
+          "-L",
+          "native=C:\\z3\\bin",
+          "--sysroot",
+          "C:\\Users\\lukas\\.rustup\\toolchains\\nightly-2026-07-24-x86_64-pc-windows-msvc"
+        ],
+        "rustc": "C:\\Users\\lukas\\.rustup\\toolchains\\nightly-2026-07-24-x86_64-pc-windows-msvc\\bin\\rustc.exe",
+        "version_verbose": "rustc 1.99.0-nightly (89c61a754 2026-07-23)\nbinary: rustc\ncommit-hash: 89c61a7545da48b06116675b888398d02a4064c7\ncommit-date: 2026-07-23\nhost: x86_64-pc-windows-msvc\nrelease: 1.99.0-nightly\nLLVM version: 22.1.8"
+      }
+    ],
+    "failed": 1,
+    "function_evidence": [
+      {
+        "classification": "model-relative",
+        "crate": "zk_genome_genome_core",
+        "disclosures": [
+          "concrete execution not checked"
+        ],
+        "function": "add",
+        "native_reproduction": "not-attempted",
+        "provenance_precision": "conservative function-level inventory"
+      }
+    ],
+    "functions": 1,
+    "obligation_solver_calls": 1,
+    "panic_sites": 0,
+    "panic_sites_decided": 0,
+    "passed": 0,
+    "reachable_assertions": 1,
+    "solver_elapsed_ms": 24,
+    "supported_assertions": 1,
+    "unsupported_assertions": 0,
+    "unsupported_kinds": [],
+    "warnings": 0,
+    "without_verdict": 0,
+    "workers": 1
+  },
+  "coverage_summary": {
+    "counterexamples": 1,
+    "decided": 1,
+    "decided_ratio": 1.0,
+    "encountered": 1,
+    "panic_sites": 0,
+    "panic_sites_decided": 0,
+    "proved": 0,
+    "undecided": 0,
+    "unsupported": 0,
+    "unsupported_kinds": []
+  },
+  "env": {
+    "analysis_profile": "debug (dev profile, rustc overflow/bounds assertions enabled)",
+    "compiler_identity_source": "actual worker rustc path and -vV; full arguments in report.run.json coverage.compilers",
+    "env_source": "src/host_env.rs (discovered paths, not worker compiler identity)",
+    "host": "x86_64-pc-windows-msvc",
+    "identity_note": "rustc, host, rustlib and its PATH entry come from actual worker receipts. z3_bin is the discovered replay executable; the solver this process loaded is recorded under provenance.solver, its version asked of the loaded library itself, and provenance.config_hash digests the settings the verdict was produced under.",
+    "path_add": "C:\\Users\\lukas\\.rustup\\toolchains\\nightly-2026-07-24-x86_64-pc-windows-msvc\\bin\\..\\lib\\rustlib\\x86_64-pc-windows-msvc\\lib;C:\\Users\\lukas\\.rustup\\toolchains\\nightly-2026-07-24-x86_64-pc-windows-msvc\\bin",
+    "pointer_width": 64,
+    "rustc": "C:\\Users\\lukas\\.rustup\\toolchains\\nightly-2026-07-24-x86_64-pc-windows-msvc\\bin\\rustc.exe",
+    "rustc_version_verbose": "rustc 1.99.0-nightly (89c61a754 2026-07-23)\nbinary: rustc\ncommit-hash: 89c61a7545da48b06116675b888398d02a4064c7\ncommit-date: 2026-07-23\nhost: x86_64-pc-windows-msvc\nrelease: 1.99.0-nightly\nLLVM version: 22.1.8",
+    "rustlib": "C:\\Users\\lukas\\.rustup\\toolchains\\nightly-2026-07-24-x86_64-pc-windows-msvc\\bin\\..\\lib\\rustlib\\x86_64-pc-windows-msvc\\lib",
+    "schema_version": 1,
+    "tool_version": "1.0.0",
+    "z3_bin": "C:\\Users\\lukas\\Downloads\\SYSTEMS & CREATIONS\\Formal Verification Platform\\.z3/current\\bin\\z3.exe",
+    "z3_source": "PATH",
+    "z3_version": "Z3 version 4.16.0 - 64 bit"
+  },
+  "evidence": "SAT witnesses satisfy the encoded model; abstractions can produce non-executable counterexamples.",
+  "finding_evidence": [
+    {
+      "block": "bb0",
+      "classification": "model-satisfiable-candidate",
+      "crate": "zk_genome_genome_core",
+      "disclosures": [
+        {
+          "classification": "model-relative",
+          "crate": "zk_genome_genome_core",
+          "disclosures": [
+            "concrete execution not checked"
+          ],
+          "function": "add",
+          "native_reproduction": "not-attempted",
+          "provenance_precision": "conservative function-level inventory"
+        }
+      ],
+      "function": "add",
+      "native_reproduction": "not-attempted",
+      "native_reproduction_note": "`keller reproduce` pins this site's identity, flags and obligation and re-discharges the encoded formula; no concrete execution is reconstructed",
+      "status": "FAIL"
+    }
+  ],
+  "gate": {
+    "advisory_excluded": 0,
+    "baseline_suppressed": 0,
+    "breach": "report.json contains 1 FAIL event(s)",
+    "deny_warn": false,
+    "gated_findings": 1,
+    "status": "gate-failed",
+    "strict_coverage": false
+  },
+  "limitations": [
+    "debug-build-only verdicts",
+    "loop widening",
+    "unmodelled calls/memory/unchecked validity",
+    "no concrete reproduction or general soundness certification"
+  ],
+  "provenance": {
+    "build": {
+      "debug_assertions": true,
+      "profile": "debug",
+      "rustc_commit": "89c61a754",
+      "rustc_host": "x86_64-pc-windows-msvc",
+      "rustc_release": "1.99.0-nightly",
+      "target": "x86_64-pc-windows-msvc"
+    },
+    "config_canonical": "strict_coverage=false;deny_warn=false;solver_timeout_ms=30000;run_timeout_seconds=0;gate_profile=None;only=None;max_findings=None;keep_runs=10;max_rounds=6;emit_smt2=true;dependency_cache=true;release=false;rustflags=Some(\"-L native=C:\\\\z3\\\\bin\");encoded_rustflags=None;baseline_fnv1a=None",
+    "config_hash": "a1267a28f6c5c9b4",
+    "config_hash_algorithm": "fnv1a-64 over config_canonical",
+    "solver": {
+      "built_against": "C:\\Users\\lukas\\Downloads\\SYSTEMS & CREATIONS\\Formal Verification Platform\\.z3/current\\bin",
+      "identity_source": "Z3_get_full_version() called on the library this process loaded; the path is the module the loader resolved, where the platform exposes it",
+      "loaded_library": "C:\\Users\\lukas\\.cargo\\bin\\libz3.dll",
+      "loaded_version": "Z3 4.16.0.0"
+    }
+  },
+  "run_directory": "C:\\Users\\lukas\\Downloads\\SYSTEMS & CREATIONS\\Zero-Knowledge-Genome\\core\\genome-core\\.keller\\runs\\18816-1794057494326897400",
+  "run_id": "18816-1794057494326897400",
+  "sarif": null,
+  "schema_version": 1,
+  "scope": "Reachable supported MIR assertions in compiled targets; not a no-panic guarantee.",
+  "settings": {
+    "build_elapsed_ms": 605,
+    "deny_warn": false,
+    "dependency_cache": true,
+    "emit_smt2": true,
+    "encoded_rustflags": null,
+    "fresh_workspace_analysis": true,
+    "gate_profile": null,
+    "keep_runs": 10,
+    "max_findings": null,
+    "max_rounds": 6,
+    "only": null,
+    "profile": "cargo check (development; effective flags may override defaults)",
+    "requested_action": "gate",
+    "run_timeout_seconds": 0,
+    "run_timeout_source": "default",
+    "rustflags": "-L native=C:\\z3\\bin",
+    "solver_timeout_ms": 30000,
+    "solver_timeout_source": "default",
+    "strict_coverage": false,
+    "workspace_only": true
+  },
+  "tool": "keller-verify",
+  "version": "1.0.0"
+}

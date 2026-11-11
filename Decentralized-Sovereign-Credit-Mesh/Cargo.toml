@@ -1,0 +1,15 @@
+[workspace]
+members = [
+    "crates/graph-core",
+    "crates/wot",
+    "crates/reputation",
+    "crates/credit",
+    "crates/smpc",
+    "crates/zkp",
+    "crates/settlement",
+    "crates/api-server",
+    "crates/cli",
+    "crates/perf",
+    "crates/tests",
+]
+resolver = "2"

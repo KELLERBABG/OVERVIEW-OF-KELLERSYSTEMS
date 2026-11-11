@@ -1,0 +1,50 @@
+{
+  "project": "AquaMOF",
+  "language": "Rust",
+  "summary": "A Rust simulation and sizing engine (`src/isotherm.rs`, `src/kinetics.rs`, `src/condenser.rs`, `src/economics.rs`, `src/telemetry.rs`) modeling passive desert atmospheric water harvesting using MOF-303 (Al-3,5-pyrazoledicarboxylate). Needs full diurnal 24-hour thermodynamic state-machine coupling, dust-storm cut-off gate logic, and WHO potability mineralization modeling.",
+  "tasks": [
+    {
+      "id": "TASK-01",
+      "title": "Implement Clausius-Clapeyron temperature-dependent MOF-303 step isotherm",
+      "status": "pending",
+      "target_files": [
+        "src/isotherm.rs"
+      ],
+      "context_files": [
+        "src/lib.rs",
+        "src/kinetics.rs"
+      ],
+      "spec": "Enhance `src/isotherm.rs` to model the cooperative S-shaped water uptake $q(RH, T)$ (in $\\text{g H}_2\\text{O / g MOF}$) of MOF-303 across both adsorption ($15\\text{--}35\\,^\\circ\\text{C}$) and solar desorption ($75\\text{--}95\\,^\\circ\\text{C}$).\n\n1. Model the step inflection relative humidity $RH_{\\text{step}}(T)$ shifting upward with temperature according to $\\Delta H_{\\text{ads}} = -52.0\\text{ kJ/mol}$.\n2. Provide `working_capacity(rh_night: f64, t_night_c: f64, rh_chamber_day: f64, t_desorb_c: f64) -> f64` returning net cyclic water release per kg of MOF-303.\n3. Add unit tests verifying that at $20\\%\\text{ RH}, 25\\,^\\circ\\text{C}$ night and $85\\,^\\circ\\text{C}$ day desorption, net working capacity exceeds $0.32\\text{ L/kg/cycle}$.",
+      "verify_cmd": "cargo test --quiet"
+    },
+    {
+      "id": "TASK-02",
+      "title": "Implement 24-hour diurnal adsorption-desorption-condensation state machine",
+      "status": "pending",
+      "target_files": [
+        "src/kinetics.rs",
+        "src/condenser.rs",
+        "src/lib.rs"
+      ],
+      "context_files": [
+        "src/isotherm.rs"
+      ],
+      "spec": "Couple `isotherm.rs`, `kinetics.rs`, and `condenser.rs` into a deterministic 24-hour diurnal simulator in `src/lib.rs`.\n\n1. Define `DiurnalState { NightAdsorption, MorningPreHeat, SolarDesorption, EveningCooldown, DustStormSealed }`.\n2. In `condenser.rs`, calculate the exact dew point $T_{\\text{dew}}$ of the hot desorbed vapor stream using the Magnus-Tetens equation and compute liquid condensate yield based on ambient heat-sink rejection capacity.\n3. Add unit tests verifying mass conservation (adsorbed mass == desorbed vapor + residual loading) across a 24-hour desert weather profile.",
+      "verify_cmd": "cargo test --quiet"
+    },
+    {
+      "id": "TASK-03",
+      "title": "Implement dust-storm shutter protection gate and WHO potability audit in telemetry",
+      "status": "pending",
+      "target_files": [
+        "src/telemetry.rs",
+        "src/economics.rs"
+      ],
+      "context_files": [
+        "src/lib.rs"
+      ],
+      "spec": "Expand `src/telemetry.rs` (32 lines) and `src/economics.rs` (55 lines).\n\n1. In `telemetry.rs`, implement `EnvironmentalGate` that triggers `ShutterState::Sealed` when ambient particulate concentration exceeds $500\\,\\mu\\text{g/m}^3$ (haboob/dust storm) or night RH $< 8\\%$, protecting MOF nanopores from fouling.\n2. Implement `PotabilityAudit` checking condensate TDS ($10\\text{--}250\\text{ mg/L}$ post-mineralization cartridge) and thermal pasteurization invariance ($T_{\\text{desorb}} \\ge 75\\,^\\circ\\text{C}$ for $\\ge 30\\text{ min}$).\n3. Add unit tests for dust-storm sealing and pasteurization verification.",
+      "verify_cmd": "cargo test --quiet"
+    }
+  ]
+}

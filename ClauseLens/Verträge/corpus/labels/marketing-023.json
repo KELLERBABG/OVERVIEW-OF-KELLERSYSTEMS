@@ -1,0 +1,74 @@
+{
+  "slug": "marketing-023",
+  "source": "generated",
+  "domain": "Mediaeinkauf mit Agenturprovision, deutsches Recht",
+  "traps": [
+    {
+      "marker": "lösen keinen Provisionsanspruch aus",
+      "expectedType": "agency_commission_exclusion",
+      "note": "Provisionsausschluss bei Direktauftrag."
+    },
+    {
+      "marker": "Ein Ausgleich für den vom Kunden geworbenen Kundenstamm ist ausgeschlossen",
+      "expectedType": "agency_goodwill_waiver",
+      "note": "Verzicht auf Kundenschutzausgleich."
+    },
+    {
+      "marker": "Zinsen in Höhe von 12 Prozent",
+      "expectedType": "default_interest",
+      "note": "Hoher Verzugszins, vermeidet Verzugszins als Wort."
+    },
+    {
+      "marker": "Ein Sonderkündigungsrecht besteht nicht",
+      "expectedType": "price_escalation",
+      "note": "Preisindexanpassung ohne Sonderkündigungsrecht."
+    },
+    {
+      "marker": "Pflichten aus diesem Vertrag bestehen auf Dauer fort",
+      "expectedType": "excessive_survival",
+      "note": "Unbefristete Nachwirkung."
+    },
+    {
+      "marker": "setzt Medienpartner ohne Ankündigung ein",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "Subunternehmer ohne vorherige Ankündigung."
+    },
+    {
+      "marker": "im Kundenportal hinterlegten Einkaufsbedingungen",
+      "expectedType": "dynamic_url_referral",
+      "note": "Einbezug dynamischer Portal-Fassungen."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "Symmetrische Vertraulichkeit."
+    },
+    {
+      "marker": "erhält der Auftraggeber die Auswertungen kostenfrei in einem offenen Format",
+      "note": "Kostenfreier Datenexport."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende beenden",
+      "note": "Symmetrische Kündigung."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform zugelassen."
+    },
+    {
+      "marker": "innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Üblicher Zahlungstermin."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhaltung."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Auftragnehmer plant und kauft Werbeplätze für die Kampagnen des Auftraggebers ein",
+      "note": "Kein Detektor fuer fehlende Offenlegung von Agenturrabatten."
+    }
+  ]
+}

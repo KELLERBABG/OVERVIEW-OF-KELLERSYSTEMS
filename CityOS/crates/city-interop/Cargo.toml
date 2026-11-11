@@ -1,0 +1,11 @@
+[package]
+name = "city-interop"
+description = "V2V/drone/logistics interop with FIFO intersection right-of-way scheduling"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+city-types = { workspace = true }
+city-crypto = { workspace = true }

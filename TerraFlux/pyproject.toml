@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "terraflux"
+version = "1.0.0"
+description = "Autonomous soil moisture and precision micro-irrigation platform powered by the FieldSense engine"
+authors = [{ name = "Keller Systems" }]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.110.0",
+    "uvicorn>=0.28.0",
+    "sqlmodel>=0.0.16",
+    "pydantic>=2.6.0",
+    "pydantic-settings>=2.0.0",
+    "python-dotenv>=1.0.0",
+    "httpx>=0.27.0",
+    "jinja2>=3.1.3",
+    "pyyaml>=6.0.1",
+    "requests>=2.31.0",
+    "python-multipart>=0.0.9",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-cov>=4.1.0",
+    "ruff>=0.5.0",
+    "alembic>=1.13.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+exclude = [".pytest_cache", "__pycache__", "migrations/versions"]
+
+[tool.ruff.lint]
+# E = pycodestyle errors, F = pyflakes (unused imports/variables, undefined names).
+# The FastAPI `Depends()`-in-default pattern and the broad excepts used for transport
+# error handling are intentional in this codebase, so no further rules are enabled.
+select = ["E", "F"]
+# E501 is not enforced: the messaging layer uses long, human-readable advisory strings
+# that are deliberately kept on one line.
+ignore = ["E501"]

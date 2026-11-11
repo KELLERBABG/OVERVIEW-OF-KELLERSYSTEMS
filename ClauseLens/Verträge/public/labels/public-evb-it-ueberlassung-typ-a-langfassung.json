@@ -1,0 +1,46 @@
+{
+  "slug": "public-evb-it-ueberlassung-typ-a-langfassung",
+  "source": "https://www.it-planungsrat.de/fileadmin/beschluesse/2015/Beschluss2015-24_5_EBV-IT_Vertrag_ohne_Pflege_lang.pdf",
+  "license": "Amtliches Werk (Bundesrepublik Deutschland, EVB-IT, IT-Planungsrat)",
+  "retrieved": "2026-10-15",
+  "domain": "Standardsoftware-Überlassungsvertrag (öffentliche Verwaltung)",
+  "traps": [
+    {
+      "marker": "Anlage Nr. . Die Leistungen des",
+      "expectedType": "statute_of_limitations",
+      "note": "Reale Klausel, Engine-Typ statute_of_limitations"
+    },
+    {
+      "marker": "11 Vertragsstrafen bei Überlassung",
+      "expectedType": "penalty",
+      "note": "Reale Klausel, Engine-Typ penalty"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Vertragsnummer/Kennung Auftraggeber _______",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Begriffe sind am Ende der EVB-IT Überlassung-AGB (Typ A) definiert. Version XX vom XX auf",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Vertragsnummer/Kennung Auftraggeber:",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "- im Folgenden „Auftraggeber“ genannt",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Vertragsnummer/Kennung Auftragnehmer:",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "- im Folgenden „Auftragnehmer“",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

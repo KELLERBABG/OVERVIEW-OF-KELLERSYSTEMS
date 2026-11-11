@@ -1,0 +1,115 @@
+LIZENZVERTRAG
+
+zwischen
+
+der Kalkgrund GmbH, Rathausplatz 1, 90403 Nürnberg (nachfolgend Lizenzgeber)
+
+und
+
+der Immenhof GmbH, Kaiserstraße 19, 60311 Frankfurt am Main (nachfolgend Lizenznehmer)
+
+Präambel
+
+Der Lizenzgeber räumt dem Lizenznehmer die in Anlage 2 bezeichneten Nutzungsrechte an der Software ein. Es gelten die nachstehenden Bedingungen.
+
+§ 9 Vorkehrung
+
+Die Aufwendungen für Prüfungshandlungen gehen zulasten des Kunden.
+
+§ 10 Zusatz
+
+Der Auftragnehmer darf Unterauftragnehmer nur nach vorheriger Anzeige an den Auftraggeber einsetzen.
+
+§ 11 Klarstellung
+
+Die Nutzungslizenz an der Schnittstelle erlischt mit Beendigung des Rahmenvertrags automatisch.
+
+§ 12 Ergänzung
+
+Änderungen und Ergänzungen dieses Vertrages können in Textform, insbesondere per E-Mail, vereinbart werden.
+
+§ 13 Verfahren
+
+Die Freistellung gilt verschuldensunabhängig.
+
+§ 14 Ausführung
+
+Der Kunde kann diesen Vertrag ohne Angabe von Gründen zum Monatsende kündigen.
+
+§ 15 Hinweis
+
+Der Kunde kann den Vertrag nicht aus wichtigem Grund kündigen; die Gesellschaft bleibt dazu jederzeit berechtigt.
+
+§ 16 Maßnahme
+
+Der Lizenzgeber räumt dem Lizenznehmer ein einfaches, nicht ausschließliches Nutzungsrecht für den vereinbarten Zweck ein.
+
+§ 17 Vorgehen
+
+Ansprüche gegen die Gesellschaft sind nicht abtretbar.
+
+§ 18 Abstimmung
+
+Der Nutzungsumfang ist auf den in der Präambel bezeichneten Zweck beschränkt.
+
+§ 19 Koordination
+
+Während die Leistung ruht, bleiben die Zahlungsverpflichtungen des Kunden vollumfänglich bestehen.
+
+§ 20 Umsetzung
+
+Jede Partei kann diesen Vertrag zum Quartalsende ordentlich kündigen.
+
+§ 21 Beachtung
+
+Ehemalige Mitarbeiter der Gesellschaft sind zwei Jahre lang nicht zu beschäftigen.
+
+§ 1 Allgemeines
+
+Der Anbieter stellt sicher, dass die von ihm eingesetzten Nachunternehmer dieselben Datenschutzstandards einhalten.
+
+§ 2 Bestimmung
+
+Nur der Anbieter ist berechtigt, den Vertrag mit einer Frist von vier Wochen ohne Angabe von Gründen zu kündigen.
+
+§ 3 Regelung
+
+Sämtliche Open-Source-Komponenten werden in der Anlage 2 mit ihren jeweiligen Lizenzen aufgeführt.
+
+§ 4 Vereinbarung
+
+Die Parteien vereinbaren eine Mindestabnahme von fünfhundert Datensätzen je Kalendermonat.
+
+§ 5 Modalität
+
+Beide Parteien halten die gesetzlichen Aufbewahrungsfristen ein.
+
+§ 6 Ordnung
+
+Jede Partei trägt ihre eigenen Kosten.
+
+§ 7 Ausgestaltung
+
+Die Vertragsparteien bestätigen den Erhalt der in der Anlage 1 bezeichneten Unterlagen.
+
+§ 8 Durchführung
+
+Die Anlagen 1 bis 3 sind Bestandteil dieses Vertrages.
+
+§ 9 Vorkehrung
+
+Der Kunde erhält vierteljährlich einen schriftlichen Kontoauszug.
+
+§ 10 Zusatz
+
+Die Anlagen sind Bestandteil dieses Vertrages.
+
+§ 11 Klarstellung
+
+Begriffe, die im Vertrag definiert sind, werden einheitlich verwendet.
+
+Ort, Datum: ______________________
+
+Für Lizenzgeber: ______________________
+
+Für Lizenznehmer: ______________________

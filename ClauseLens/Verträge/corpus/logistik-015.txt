@@ -1,0 +1,65 @@
+Luftfrachtvertrag
+zwischen
+AeroFreight Germany GmbH, Flughafenallee 6, 60549 Frankfurt (nachfolgend Anbieter)
+und
+Nordlicht Elektronik GmbH, Innovationspark 14, 22761 Hamburg (nachfolgend Kunde)
+
+§ 1 Vertragsgegenstand
+
+1.1 Der Anbieter organisiert für den Kunden Luftfrachtsendungen weltweit.
+
+1.2 Die Parteien stimmen die AWB-Daten je Sendung ab.
+
+1.3 Der Anbieter überwacht die Sendungen über das Buchungssystem.
+
+§ 2 Haftung
+
+2.1 Die Haftung des Anbieters ist der Höhe nach auf fünfzig Prozent der Jahresvergütung begrenzt.
+
+2.2 Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt.
+
+§ 3 Prüfungen
+
+3.1 Die Kosten des Audits trägt der Kunde.
+
+3.2 Der Anbieter stellt die Prüfunterlagen für die Sicherheitskontrolle bereit.
+
+§ 4 Datenverarbeitung
+
+4.1 Die Kundendaten werden in ein Drittland übertragen.
+
+4.2 Der Anbieter informiert den Kunden über die eingesetzten Unterauftragnehmer.
+
+§ 5 Software
+
+5.1 Der Kunde akzeptiert das Buchungssystem wie besehen.
+
+5.2 Der Kunde akzeptiert das Buchungssystem im Ist-Zustand.
+
+5.3 Der Anbieter behebt Störungen des Buchungssystems innerhalb von zwei Werktagen.
+
+§ 6 Leistungsniveau
+
+6.1 Der Anbieter bemüht sich nach besten Kräften um eine hohe Verfügbarkeit des Buchungssystems.
+
+6.2 Der Anbieter meldet geplante Wartungsfenster vier Wochen im Voraus an.
+
+§ 7 Servicegutschriften
+
+7.1 Wird ein kritischer Sicherheitspatch nicht binnen sieben Tagen installiert, entfällt der Anspruch auf eine Gutschrift.
+
+7.2 Der Anbieter stellt monatlich einen Verfügbarkeitsbericht bereit.
+
+§ 8 Vergütung
+
+8.1 Rechnungen sind innerhalb von 30 Tagen ohne Abzug zahlbar.
+
+8.2 Die Vergütung richtet sich nach der Anlage 1.
+
+§ 9 Schlussbestimmungen
+
+9.1 Beide Parteien behandeln die Frachtdaten vertraulich.
+
+9.2 Es gilt deutsches Recht.
+
+9.3 Der Kunde kann seine Sendungsdaten jederzeit in einem gängigen Format exportieren.

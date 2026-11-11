@@ -1,0 +1,95 @@
+================================================================================
+                      MUONSCOPE VERSION 02 — WIE FUNKTIONIERT DAS?
+                    (Einfache Erklärung in verständlicher Sprache)
+================================================================================
+
+  WICHTIGER HINWEIS ZUM STATUS
+  ----------------------------
+  MuonScope ist bisher ein KONZEPT und eine SIMULATION. Es wurde noch kein
+  Gerät gebaut: keine Detektoren, keine Saintillatorplatten, keine Photodetek-
+  toren, keine Elektronik. Es wurde noch kein einziges Myon gemessen.
+
+  Was tatsächlich existiert und funktioniert, ist die Software: Simulation,
+  Detektor-Modell, Datenprotokoll, Kalibrierung, Spurverfolgung, Rekonstruktion
+  und Export. Ihre gemessene Genauigkeit ist im Repository veröffentlicht
+  (docs/ACCURACY_MEASURED.md) und liegt unter den hier genannten Zielwerten.
+
+  Die folgenden Zahlen sind ENTWICKLUNGSZIELE, keine Messergebnisse.
+
+================================================================================
+
+Stellen Sie sich vor, man könnte ein ganzes 5-stöckiges Gebäude, eine 40-Meter-
+Autobahnbrücke oder einen Bergtunnel wie in einem "medizinischen CT-Scan" oder
+"MRT" Schicht für Schicht durchleuchten — aber völlig OHNE gefährliche
+Röntgenstrahlung, ohne Starkstrom und OHNE Löcher in den Beton zu bohren.
+
+Genau das soll MuonScope eines Tages leisten. Bisher ist es eine Idee, die in
+Software durchgerechnet wurde.
+
+--------------------------------------------------------------------------------
+1. WO KOMMEN DIE STRAHLEN HER? (Die Quelle)
+--------------------------------------------------------------------------------
+MuonScope erzeugt selbst KEINE eigene Strahlung. Es nutzt ein natürliches Phänomen
+aus dem Weltall: Kosmische Myonen.
+
+- Weit oben in der Erdatmosphäre treffen hochenergetische Teilchen aus dem Weltall
+  auf Luftmoleküle. Dabei entsteht ein ununterbrochener, natürlicher Teilchenregen
+  aus sogenannten "Myonen".
+- Myonen sind völlig harmlos und überall um uns herum: Jede Minute fliegen etwa
+  10.000 Myonen durch jeden einzelnen Quadratmeter Boden.
+- Das Besondere: Myonen fliegen mit 99,97% der Lichtgeschwindigkeit und haben
+  eine enorme Durchdringungskraft. Während normale Röntgenstrahlen schon nach
+  wenigen Zentimetern Knochen oder Blei stoppen, fliegen Myonen mühelos durch
+  zehn bis hunderte Meter dicken massiven Stahlbeton, Fels und Erde!
+
+--------------------------------------------------------------------------------
+2. WIE "SIEHT" DAS SYSTEM INS INNERE DES BETONS? (Das Prinzip)
+--------------------------------------------------------------------------------
+Wenn Millionen dieser natürlichen Teilchen durch ein Gebäude oder eine Brücke
+fliegen, passiert je nach Material im Inneren folgendes:
+
+A) MASSIVER BETON & STAHLBEWEHRUNG:
+   Die dichten Atome im Beton und Stahl stoßen die Myonen an und lenken sie
+   um winzige Bruchteile eines Grades ab ("Coulomb-Streuung").
+   -> Im 3D-Scan erscheinen diese Stellen als feste Struktur (Cyan für Beton,
+      Rot/Orange für Stahlträger und Bewehrungsstäbe).
+
+B) HOHLRÄUME, RISSE, KIESNESTER & WASSEREINSCHLÜSSE:
+   Wo kein Beton ist (z. B. ein Hohlraum, ein Riss oder fehlender Mörtel),
+   fliegen die Myonen völlig ungehindert und kerzengerade hindurch.
+   -> Im 3D-Scan erkennt der Computer sofort das "Loch" als dunklen Hohlraum.
+
+--------------------------------------------------------------------------------
+3. WELCHE GERÄTE WERDEN VOR ORT VERWENDET? (Die Hardware)
+--------------------------------------------------------------------------------
+1. Zwei mobile Detektor-Stationen (Hodoskope):
+   Flache Sensor-Panels, die auf Anhängern oder Gestellen montiert sind. Im
+   Inneren befinden sich spezielle Kunststoff-Streifen (Szintillatoren) und
+   lichtempfindliche Silizium-Sensoren (SiPMs).
+
+2. Aufbau am Objekt:
+   - Bei einem Gebäude: Eine Station steht auf der linken Straßenseite, die
+     zweite auf der rechten Straßenseite (seitlicher Durchstrahlungs-Scan).
+   - Bei einer Brücke: Eine Station steht oben auf der Fahrbahn, eine flache
+     Sensorplatte liegt unten auf der Straße unter der Brücke.
+
+3. Die Messung:
+   - Fliegt ein Myon durch Station A, werden Eintrittspunkt und Richtung
+     gemessen. Die angestrebte Zeitauflösung liegt bei etwa 75 bis 100
+     Pikosekunden; die Winkelauflösung hängt am Abstand der Messlagen und
+     beträgt bei der derzeit konfigurierten Geometrie rund 15 Milliardstel
+     Radiant (15 mrad) — nicht die an anderer Stelle genannten 2,1 mrad.
+   - Tritt dasselbe Myon bei Station B wieder aus, wird der Austrittswinkel erfasst.
+
+4. 3D-Berechnung am Computer:
+   Der Computer vergleicht die Winkeländerungen vieler Myonen und setzt
+   wie bei einem Puzzle ein 3D-Modell des Bauwerks zusammen. Der Ingenieur
+   kann das Gebäude am Bildschirm Schicht für Schicht aufschneiden und
+   verborgene Bereiche auffinden. Die erreichbare Auflösung ist deutlich
+   gröber als "millimetergenau": bei der derzeitigen Software liegt sie im
+   Zentimeterbereich, und die Statistik — nicht das Gerät — bestimmt, wie
+   lange eine Messung dauern muss. Bei mehreren Metern Abstand zwischen den
+   Stationen sinkt die Rate mit dem Quadrat des Abstands, sodass Messungen
+   Stunden bis Tage dauern können. Das Ziel ist, Schäden zu erkennen, lange
+   bevor Risse an der Außenfassade sichtbar werden — erreicht ist das noch nicht.
+================================================================================

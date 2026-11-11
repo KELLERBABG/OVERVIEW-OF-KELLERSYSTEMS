@@ -1,0 +1,61 @@
+{
+  "slug": "public-bonterms-marketplace-transactions",
+  "source": "https://raw.githubusercontent.com/Bonterms/Standard-Agreement-for-Marketplace-Transactions/main/Version-1.0.md",
+  "license": "CC BY 4.0",
+  "retrieved": "2026-10-15",
+  "domain": "Marktplatzvereinbarung (Bonterms)",
+  "traps": [
+    {
+      "marker": "15.1. Indemnification by Provider.",
+      "expectedType": "third_party_indemnity",
+      "note": "Reale Klausel, Engine-Typ third_party_indemnity"
+    },
+    {
+      "marker": "15.2. Indemnification by Customer.",
+      "expectedType": "third_party_indemnity",
+      "note": "Reale Klausel, Engine-Typ third_party_indemnity"
+    },
+    {
+      "marker": "15.7. Exclusive Remedy. This Section",
+      "expectedType": "third_party_indemnity",
+      "note": "Reale Klausel, Engine-Typ third_party_indemnity"
+    },
+    {
+      "marker": "(a) The Governing Law governs this",
+      "expectedType": "jurisdiction",
+      "note": "Reale Klausel, Engine-Typ jurisdiction"
+    },
+    {
+      "marker": "(a) This Agreement is the parties’",
+      "expectedType": "entire_agreement",
+      "note": "Reale Klausel, Engine-Typ entire_agreement"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Role of Bonterms. Bonterms publishes",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "1. Using this Standard Agreement.",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "1.1. Standard Agreement. This Bonterms",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "1.2. Entering the Agreement. Customer",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "1.3. Orders. As specified in the",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "1.4. Order of Precedence. In the",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

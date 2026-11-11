@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kellersystems.dev/schemas/run-v1.json",
+  "title": "KellerRunRecord",
+  "description": "Output schema for Keller-Verify report.run.json execution and evidence record.",
+  "type": "object",
+  "required": ["schema_version", "completed", "tool", "version", "coverage", "settings"],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Format version of the run evidence record."
+    },
+    "completed": {
+      "type": "boolean",
+      "description": "Whether analysis and gating completed to termination."
+    },
+    "run_id": {
+      "type": ["string", "null"]
+    },
+    "run_directory": {
+      "type": ["string", "null"]
+    },
+    "tool": {
+      "type": "string",
+      "description": "The name of the verification driver tool (keller-verify)."
+    },
+    "version": {
+      "type": "string",
+      "description": "Version string of keller-verify."
+    },
+    "compiler": {
+      "type": "object",
+      "description": "The exact rustc this binary was built against (release, commit, host, rustup toolchain). A run refuses a different commit, so this is the MIR dialect the evidence belongs to."
+    },
+    "coverage": {
+      "type": "object",
+      "description": "Aggregated verification obligation coverage statistics."
+    },
+    "coverage_summary": {
+      "type": "object",
+      "description": "The run's coverage headline: encountered, decided, unsupported, undecided and panic-site counts. Present so a retained run states what it did not check without needing the console log."
+    },
+    "env": {
+      "type": ["object", "null"],
+      "description": "Recorded compiler, host, and Z3 solver environment attributes."
+    },
+    "settings": {
+      "type": "object",
+      "description": "Effective analysis and gating parameters used for the run."
+    },
+    "analysis_profile": {
+      "type": "string",
+      "description": "Compilation profile evaluated: debug vs release mode."
+    },
+    "provenance": {
+      "type": "object",
+      "description": "What actually ran: the compiler this binary was built with (release, commit, host, target, profile), the solver library loaded into this process with the version its own API reports and the module path the loader resolved where the platform exposes it, and a stable FNV-1a digest of the effective settings with the canonical string it was computed over."
+    },
+    "gate": {
+      "type": "object",
+      "description": "Final gate verdict and evaluation outcome."
+    }
+  }
+}

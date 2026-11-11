@@ -1,0 +1,30 @@
+[system]
+unit_id = "e2e-plc-test"
+loop_interval_sec = 0.5
+
+[sensor]
+simulate = false
+initial_temp_c = -20.0
+ambient_temp_c = 20.0
+
+[modbus]
+enabled = true
+host = "127.0.0.1"
+port = 1502
+poll_interval_sec = 1.0
+
+[modbus.registers]
+internal_temp_addr = 0
+compressor_cmd_addr = 1
+ambient_temp_addr = 2
+alarm_addr = 3
+grid_frequency_addr = 4
+
+[api]
+bind_address = "127.0.0.1:18086"
+
+[security]
+auth_enabled = true
+
+[logging]
+csv_path = "e2e_test_log.csv"

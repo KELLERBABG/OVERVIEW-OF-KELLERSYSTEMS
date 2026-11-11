@@ -1,0 +1,70 @@
+Wartungsvertrag über die Leitsysteme der Bahninfrastruktur
+
+zwischen RailSystems GmbH, Braunschweig (nachfolgend Anbieter) und Bahn Infrastruktur AG, Frankfurt am Main (nachfolgend Kunde).
+
+Präambel
+Die Parteien beabsichtigen die in § 1 beschriebene Zusammenarbeit. Der Anbieter erbringt die Leistungen, der Kunde vergütet sie. Die Parteien vereinbaren Folgendes.
+
+§ 1 Gegenstand
+Gegenstand des Vertrages ist die Wartung und Entstörung der Leitsysteme gemäß Anlage 1.
+
+§ 2 Leistungsumfang
+Der Anbieter erbringt die Leistungen gemäß Anlage 1 und dokumentiert die Ergebnisse.
+
+§ 3 Insolvenz
+(3) Ein Antrag auf Eröffnung eines Insolvenzverfahrens berechtigt den Anbieter zur fristlosen Kündigung.
+
+§ 4 Vollständigkeit der Vereinbarung
+(4) Frühere Angebote und Leistungsbeschreibungen verlieren mit Unterzeichnung ihre Gültigkeit.
+
+§ 5 Service-Level
+(5) Die Service-Level sind Richtwerte ohne Rechtsanspruch.
+
+§ 6 Service-Credits
+(6) Bei entfallender kritischer Aktualisierung entfällt der Anspruch auf eine Gutschrift.
+
+§ 7 Kündigungsfristen
+(7) Für die Kündigung gilt eine Vorlaufzeit von zweiundsiebzig Monaten zum Periodenende.
+
+§ 8 Haftung
+(8) In no event shall the provider be liable for lost profits or indirect damages.
+
+§ 9 Anwendbares Recht und Gerichtsstand
+(9) This Agreement is governed by the laws of the State of New York.
+
+§ 10 Datenverarbeitung außerhalb der EU
+(10) Der Anbieter darf personenbezogene Daten des Kunden auf Servern außerhalb der Europäischen Union verarbeiten.
+
+§ 11 Nutzungsrechte und Daten
+(11) Alle Rechte an den Ergebnissen gehen in das Alleineigentum des Anbieters über.
+
+§ 12 Aufrechnung
+(12) Beide Parteien können mit unbestrittenen Forderungen aufrechnen.
+
+§ 13 Fristen
+(13) Alle Fristen werden in Kalendertagen gerechnet.
+
+§ 14 Zusammenarbeit
+(14) Die Parteien arbeiten bei der Fehleranalyse eng zusammen.
+
+§ 15 Abnahme
+(15) Für Mängel während der Gewährleistung leistet der Anbieter kostenfrei Nacherfüllung.
+
+§ 16 Projektsteuerung
+(16) Die Parteien treffen sich monatlich zu einem Lenkungskreis.
+
+§ 17 Qualität
+(17) Der Anbieter führt die Arbeiten mit der vereinbarten Sorgfalt aus.
+
+§ 18 Störungen
+(18) Die Vertragsparteien informieren sich unverzüglich über Störungen.
+
+§ 19 Vollständigkeit
+(19) Jede Partei trägt ihre eigenen Kosten aus der Vertragsverhandlung.
+
+Anlage 1: Leistungsbeschreibung
+Anlage 2: Servicezeiten
+
+Braunschweig, den 5. März 2026
+RailSystems GmbH
+Bahn Infrastruktur AG

@@ -1,0 +1,69 @@
+{
+  "slug": "saas-031",
+  "source": "generated",
+  "domain": "Cloud Edge, oesterreichisches Recht",
+  "traps": [
+    {
+      "marker": "Die Entgelte erhöhen sich jährlich um bis zu 3 Prozent.",
+      "expectedType": "price_escalation",
+      "note": "Paraphrase. Einseitige Preisanpassung"
+    },
+    {
+      "marker": "Ohne Mahnung darf die Anbieterin den Plattformzugang sperren.",
+      "expectedType": "service_suspension",
+      "note": "Paraphrase. Sperrung ohne Mahnung"
+    },
+    {
+      "marker": "Die Aufzeichnungen der Anbieterin gelten als maßgeblich; abweichende Belege des Kunden bleiben",
+      "expectedType": "audit_log_manipulation",
+      "note": "Paraphrase. Protokolle als Vollbeweis"
+    },
+    {
+      "marker": "Für die Rückgabe der Daten fällt ein gesondertes Entgelt an.",
+      "expectedType": "data_lockin",
+      "note": "Paraphrase. Datenrueckgabe kostenpflichtig oder ausgeschlossen"
+    },
+    {
+      "marker": "Rechtsstreitigkeiten sind ausschließlich vor den Gerichten am Sitz des Anbieters auszutragen.",
+      "expectedType": "jurisdiction",
+      "note": "Paraphrase. Gerichtsstand beim Anbieter"
+    },
+    {
+      "marker": "Gegenansprüche bleiben bei der Abrechnung außer Betracht.",
+      "expectedType": "setoff_restriction",
+      "note": "Paraphrase. Aufrechnungsverbot"
+    },
+    {
+      "marker": "Das Abonnement setzt sich nach Ablauf der Festlaufzeit jeweils um zwölf Monate fort, sofern es keine",
+      "expectedType": "auto_renewal",
+      "note": "Paraphrase. Stillschweigende Verlaengerung"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Rechnung ist innerhalb von 30 Tagen nach Zugang ohne Abzug fällig.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Anbieterin sichert eine Verfügbarkeit von 99,5 Prozent pro Kalendermonat zu.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Anbieterin stellt dem Kunden bei Vertragsende eine vollständige Kopie aller Kundendaten in",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Anbieterin übergibt die Daten in einem gängigen Format.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Vertragsparteien behandeln die wechselseitig offengelegten Informationen vertraulich.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Verarbeitung erfolgt ausschließlich in Rechenzentren innerhalb der Europäischen Union.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    }
+  ],
+  "uncovered": []
+}

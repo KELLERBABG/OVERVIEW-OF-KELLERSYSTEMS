@@ -1,0 +1,294 @@
+# immobilien engine misses (73)
+Each block: slug:line, expected type, label technique note, and the full marker paragraph.
+
+### immobilien-001:L24  type=unilateral_convenience_termination
+note: GAP: Ordentliches Kuendigungsrecht nur fuer den Vermieter.
+Nur der Vermieter ist berechtigt, ordentlich zu kündigen.
+
+### immobilien-001:L40  type=liability
+note: GAP: Haftungsdeckel auf eine Monatsmiete.
+Die Haftung des Vermieters für einfache Fahrlässigkeit ist auf eine Monatsmiete begrenzt.
+
+### immobilien-002:L24  type=maintenance_conditional_shutdown
+note: GAP: Abschaltung an den Abschluss eines Wartungsvertrags gekoppelt.
+Mangels abgeschlossenem Wartungsvertrag wird die Küchenanlage abgeschaltet.
+
+### immobilien-002:L28  type=service_suspension
+note: GAP: Fristlose Sperre ohne Abmahnung.
+Der Verpächter darf die Nutzung ohne Abmahnung fristlos einstellen.
+
+### immobilien-002:L36  type=tax_indemnity_shift
+note: GAP: Steuernachforderungen vollstaendig auf den Paecher verlagert.
+Nachträgliche Grundsteuernachforderungen trägt der Pächter vollumfänglich.
+
+### immobilien-003:L16  type=liability
+note: GAP: Haftungsbegrenzung auch bei leichter Fahrlaessigkeit.
+Die Haftung des Vermieters für leichte Fahrlässigkeit ist auf zwei Monatsmieten begrenzt.
+
+### immobilien-003:L28  type=fictitious_receipt
+note: GAP: Zugangsfiktion bereits bei Absendung.
+Mitteilungen gelten nach Absenderübergabe an den Versanddienstleister als zugegangen.
+
+### immobilien-003:L40  type=unilateral_change
+note: GAP: Einseitige Anpassung der Nebenkosten.
+Der Vermieter darf die Nebenkosten nach billigem Ermessen angleichen.
+
+### immobilien-004:L16  type=subcontractor_uncontrolled
+note: GAP: Nachunternehmereinsatz ohne Ankuendigung oder Zustimmung.
+Der Vermieter darf ohne vorherige Ankündigung Nachunternehmer einsetzen.
+
+### immobilien-004:L20  type=audit_log_manipulation
+note: GAP: Protokolle des Anbieters als unwiderlegbarer Beweis.
+Die Aufzeichnungen des Vermieters gelten als unwiderlegbarer Nachweis.
+
+### immobilien-004:L28  type=asymmetric_confidentiality
+note: GAP: Vertraulichkeit nur einseitig zulasten des Mieters.
+Die Verschwiegenheitspflicht obliegt ausschließlich dem Mieter.
+
+### immobilien-005:L20  type=burden_of_proof
+note: GAP: Beweislast fuer Mangelfreiheit beim Kaeufer.
+Den lückenlosen Nachweis der Mangelfreiheit hat der Käufer zu führen.
+
+### immobilien-006:L20  type=price_escalation
+note: GAP: Automatische Erhoehung ohne Sonderkündigungsrecht.
+Die Erschließungsbeiträge erhöhen sich jährlich um vier Prozent.
+
+### immobilien-007:L16  type=price_escalation
+note: GAP: Automatische Erhoehung des Erbbauzinses.
+Der Erbbauzins erhöht sich jährlich um drei Prozent.
+
+### immobilien-007:L40  type=tax_indemnity_shift
+note: GAP: Nachtraegliche Abgaben vollstaendig beim Erbbauberechtigten.
+Nachträgliche Abgabenbelastungen trägt der Erbbauberechtigte vollumfänglich.
+
+### immobilien-008:L16  type=unverbindliche_sla_falle
+note: GAP: Unverbindliche Zusage zur Vermietungsquote.
+Der Verkäufer bemüht sich um eine Vermietungsquote von 95 Prozent, ohne eine Zusage zu geben.
+
+### immobilien-008:L20  type=price_escalation
+note: GAP: Automatische Kaufpreiserhoehung bis zur Uebergabe.
+Der Kaufpreis erhöht sich jährlich um zwei Prozent bis zur Übergabe.
+
+### immobilien-008:L24  type=burden_of_proof
+note: GAP: Beweislast beim Kaeufer.
+Den lückenlosen Nachweis der vertragsgemäßen Vermietung hat der Käufer zu führen.
+
+### immobilien-008:L28  type=written_form_trap
+note: GAP: Schriftformzwang mit eigenhaendiger Unterzeichnung.
+Änderungen des Vertrags bedürfen der eigenhändigen Unterzeichnung beider Parteien.
+
+### immobilien-008:L32  type=liability
+note: GAP: Haftungsdeckel auf zehn Prozent.
+Die Haftung des Verkäufers ist auf zehn Prozent des Kaufpreises begrenzt.
+
+### immobilien-008:L36  type=jurisdiction
+note: GAP: Ausschliessliche Zustaendigkeit am Sitz des Verkaeufers.
+Ausschließliche Zuständigkeit liegt beim Handelsgericht Wien.
+
+### immobilien-009:L20  type=agency_goodwill_waiver
+note: GAP: Ausgleich fuer den Kundenstamm ausgeschlossen.
+Ein Ausgleich für den vom Kunden geworbenen Kundenstamm ist ausgeschlossen.
+
+### immobilien-010:L20  type=agency_goodwill_waiver
+note: GAP: Kein Ausgleich fuer den Kundenstamm.
+Für den Aufbau des Kundenstamms steht dem Kunden kein Ausgleich zu.
+
+### immobilien-011:L16  type=early_termination_charge
+note: GAP: Pauschale Stornogebuehr bei Ruecktritt.
+Bei Rücktritt des Käufers wird eine Stornogebühr pauschal geschuldet.
+
+### immobilien-011:L28  type=burden_of_proof
+note: GAP: Beweislast beim Kaeufer.
+Den Nachweis der vollständigen Zahlung hat der Käufer zu führen.
+
+### immobilien-012:L16  type=price_escalation
+note: GAP: Einseitige Kaufpreiserhoehung ohne Sonderkündigungsrecht.
+Der Bauträger behält sich vor, den Kaufpreis um bis zu acht Prozent zu erhöhen.
+
+### immobilien-012:L24  type=statute_of_limitations
+note: GAP: Verkuerzung der Maengelverjaehrung auf ein Jahr.
+Ansprüche wegen Mängeln verjähren innerhalb von einem Jahr nach Abnahme.
+
+### immobilien-013:L24  type=unilateral_change
+note: GAP: Aenderung durch Veroeffentlichung ohne Zustimmung.
+Änderungen der Leistungsbeschreibung werden mit der Veröffentlichung im Eigentümerportal wirksam.
+
+### immobilien-013:L28  type=subcontractor_uncontrolled
+note: GAP: Subunternehmer ohne Ankuendigung oder Zustimmung.
+Der Verwalter setzt ohne vorherige Ankündigung Dienstleister für Hausmeisterservice ein.
+
+### immobilien-013:L40  type=price_escalation
+note: GAP: Kostensteigerungen ohne Sonderkündigungsrecht weitergegeben.
+Kostensteigerungen bei Dienstleistern werden vollumfänglich an die Eigentümergemeinschaft weitergegeben.
+
+### immobilien-014:L28  type=liability
+note: GAP: Haftungsdeckel auf das Honorar.
+Die Haftung des Architekten ist auf die Höhe des Architektenhonorars gedeckelt.
+
+### immobilien-014:L36  type=entire_agreement
+note: GAP: Vorvertragliche Absprachen entwertet.
+Frühere Planungsabsprachen treten mit Unterzeichnung außer Kraft.
+
+### immobilien-015:L20  type=service_suspension
+note: GAP: Sperrung ohne Vorankuendigung.
+Der Auftragnehmer kann die Baustellenzufahrt ohne Vorankündigung sperren.
+
+### immobilien-016:L28  type=price_escalation
+note: GAP: Indexierung der Grundmiete ohne Opt-out.
+Bei steigendem Umsatz erhöht sich die monatliche Grundmiete jährlich um zwei Prozent.
+
+### immobilien-016:L32  type=asymmetric_confidentiality
+note: GAP: Vertraulichkeit nur einseitig.
+Die Geheimhaltungspflicht trifft allein den Mieter.
+
+### immobilien-017:L16  type=force_majeure_asymmetry
+note: GAP: Force majeure befreit nur den Bautraeger, Zahlungspflicht bleibt.
+Bei höherer Gewalt ist allein der Bauträger von seinen Pflichten entbunden, während die Zahlungspflicht der Erwerber unberührt bleibt.
+
+### immobilien-017:L28  type=marketing_reference
+note: GAP: Referenznutzung ohne Einzelfallzustimmung.
+Der Bauträger darf die Erwerber als Referenzkunden in Verkaufsprospekten benennen, ohne dass es einer gesonderten Zustimmung bedarf.
+
+### immobilien-018:L16  type=data_grant
+note: GAP: Nutzungsrecht an Betriebsdaten fuer eigene Modelle.
+Der Auftraggeber räumt dem Dienstleister das Recht ein, die Betriebsdaten der Anlagentechnik für die Entwicklung eigener Prognosemodelle zu verwenden.
+
+### immobilien-018:L36  type=subcontractor_uncontrolled
+note: GAP: Systempartner ohne Zustimmung oder Ankuendigung.
+Die Beauftragung von Systempartnern bedarf keiner vorherigen Zustimmung des Auftraggebers.
+
+### immobilien-019:L16  type=mandatory_expert_determination
+note: GAP: Sachverstaendigenverfahren mit Vorschusspflicht vor dem Rechtsweg.
+Streitigkeiten über die Bauqualität entscheidet ein Sachverständigengutachten. Die Kosten des Verfahrens hat der Besteller vorzustrecken. Der gerichtliche Rechtsweg ist erst nach Abschluss des Verfahrens zulässig.
+
+### immobilien-019:L24  type=force_majeure_asymmetry
+note: GAP: Zahlungspflicht bleibt trotz Befreiung der Entwicklerin.
+Erfüllungspflichten der Entwicklerin entfallen bei Ereignissen höherer Gewalt, die Vorauszahlungspflicht der Bestellerin besteht unverändert fort.
+
+### immobilien-019:L28  type=non_compete
+note: GAP: Exklusivitaetsbindung der Bestellerin.
+Die Bestellerin wird für vier Jahre im Stadtgebiet keine weiteren Projektentwicklungen anderer Entwickler betreuen.
+
+### immobilien-019:L32  type=feedback_ip_grab
+note: GAP: Anregungen ohne Verguetung verwertbar.
+Anregungen der Anwohner, die die Planung verbessern, darf die Entwicklerin ohne Vergütung verwerten.
+
+### immobilien-020:L16  type=force_majeure_asymmetry
+note: GAP: Naturereignis befreit nur den Verpaechter, Zins bleibt geschuldet.
+Bei Überschwemmung oder Tierseuche ist der Verpächter von der Überlassungspflicht befreit, während der Pachtzins ungekürzt weiter zu entrichten ist.
+
+### immobilien-020:L20  type=data_grant
+note: GAP: Datenverwertung fuer eigene Zwecke.
+Der Verpächter darf die aus dem Betrieb gewonnenen Ertrags- und Bodendaten für eigene Zwecke verwerten.
+
+### immobilien-020:L24  type=international_data_processing
+note: GAP: Datenuebermittlung ausserhalb der EU.
+Die Bestandsdaten der Pächter werden an einen Dienstleister außerhalb der Europäischen Union übermittelt.
+
+### immobilien-021:L28  type=setoff_restriction
+note: GAP: Aufrechnung nur nach Bestaetigung.
+Der Untermieter kann mit Gegenforderungen nur nach vorheriger Bestätigung durch die Hauptmieterin aufrechnen.
+
+### immobilien-022:L16  type=data_lockin
+note: GAP: Mieterdaten nur gegen Gebuehr im herstellereigenen Format.
+Die Mieterdatenbank wird nur gegen eine gesonderte Gebühr von 3.000 EUR in einem herstellereigenen Format übergeben.
+
+### immobilien-022:L32  type=assignment_restriction
+note: GAP: Abtretung nur mit Zustimmung des Verkaeufers.
+Der Käufer kann Ansprüche aus diesem Vertrag nur mit Zustimmung des Verkäufers abtreten.
+
+### immobilien-022:L40  type=marketing_reference
+note: GAP: Referenznutzung ohne zeitliche oder raeumliche Grenze.
+Der Verkäufer darf den Käufer zeitlich unbeschränkt als Referenzkunden führen.
+
+### immobilien-023:L32  type=non_compete
+note: GAP: Wettbewerbsverbot fuer die Eigentuemerin.
+Die Eigentümerin betreibt für die Laufzeit keine eigene Stromerzeugung auf dem Dach.
+
+### immobilien-023:L36  type=third_party_indemnity
+note: GAP: Freistellung der Eigentuemerin fuer Drittansprueche.
+Die Erzeugerin hält die Eigentümerin von Ansprüchen Dritter wegen Dachschäden schadlos.
+
+### immobilien-023:L40  type=excessive_survival
+note: GAP: Unbefristete Nachwirkung der Verkehrssicherungspflichten.
+Die Verkehrssicherungspflichten gelten zeitlich unbeschränkt fort, auch nach Rückbau der Anlage.
+
+### immobilien-024:L40  type=subcontractor_uncontrolled
+note: GAP: Nachunternehmer ohne Ankuendigung.
+Der Generalunternehmer beauftragt Nachunternehmer ohne Ankündigung an den Besteller.
+
+### immobilien-025:L20  type=tax_indemnity_shift
+note: GAP: Nachtraegliche Steuerbelastung auf den Mieter verlagert.
+Nachträgliche Belastungen aus der Grundsteuer trägt der Mieter vollständig.
+
+### immobilien-025:L24  type=price_escalation
+note: GAP: Mieterhoehung ohne Sonderkündigungsrecht.
+Die Grundmiete wird zum 1. Januar um 4 Prozent angehoben und der Mieter hat kein Recht, deswegen zu kündigen.
+
+### immobilien-025:L28  type=insolvency_termination
+note: GAP: Automatisches Erloeschen bei Insolvenzantrag.
+Bei Antrag auf Insolvenz des Mieters erlischt der Vertrag automatisch.
+
+### immobilien-025:L36  type=non_compete
+note: GAP: Sortimentsbindung als wettbewerbliche Beschraenkung.
+Der Mieter verkauft im Fachmarktzentrum ausschließlich Textilien.
+
+### immobilien-026:L28  type=subcontractor_uncontrolled
+note: GAP: Verbundene Gesellschaften ohne Zustimmung.
+Der Verwalter greift auf verbundene Gesellschaften zurück; die Zustimmung der Gemeinschaft bedarf es nicht.
+
+### immobilien-026:L32  type=service_credit_forfeiture
+note: GAP: Gutschrift entfaellt ersatzlos.
+Für versäumte kritische Sicherheitsupdates entfällt die Gutschrift ersatzlos.
+
+### immobilien-027:L20  type=force_majeure_asymmetry
+note: GAP: Zahlungspflicht trotz vollstaendiger Befreiung der Bautraegerin.
+Ereignisse höherer Gewalt befreien die Bauträgerin zur Gänze, die Kaufpreisraten sind dennoch zu leisten.
+
+### immobilien-027:L28  type=liability
+note: GAP: Nachbesserung als ausschliessliche Kompensation.
+Weitergehende Ansprüche der Erwerber sind mit der Verbesserung abgegolten.
+
+### immobilien-027:L36  type=deemed_acceptance
+note: GAP: Mangelfreiheitsfiktion bei Schluesseluebernahme.
+Die Wohnung gilt mit Übernahme der Schlüssel als mangelfrei übernommen.
+
+### immobilien-027:L40  type=entire_agreement
+note: GAP: Baubeschreibung verliert mit Unterzeichnung ihre Gueltigkeit.
+Die Baubeschreibung vom 3. Februar tritt mit Unterzeichnung dieses Vertrages außer Kraft.
+
+### immobilien-028:L32  type=third_party_indemnity
+note: GAP: Freistellung fuer Drittansprueche aus Altlasten.
+Die Käuferin hält die Verkäuferin von Ansprüchen Dritter aus Altlasten schadlos.
+
+### immobilien-029:L24  type=subcontractor_uncontrolled
+note: GAP: Nachunternehmer ohne Information des Bestellers.
+Der Auftragnehmer setzt Nachunternehmer ein, ohne den Besteller zu informieren.
+
+### immobilien-029:L40  type=dynamic_url_referral
+note: GAP: Planunterlagen nur im Portal in wechselnder Fassung.
+Die Ausführungspläne sind im Kundenportal hinterlegt und werden dort fortlaufend aktualisiert.
+
+### immobilien-030:L20  type=price_escalation
+note: GAP: Entgelterhoehung in Zahlwortform.
+Das Nutzungsentgelt wird zum Jahreswechsel um fünf Prozent erhöht.
+
+### immobilien-030:L28  type=service_suspension
+note: GAP: Unterbrechung ohne Vorankuendigung.
+Die Vermieterin kann die Einfahrt ohne Vorankündigung unterbrechen.
+
+### immobilien-031:L20  type=international_data_processing
+note: GAP: Speicherung in einem Drittland.
+Die Bewohnerdaten werden auf Servern in einem Drittland gespeichert.
+
+### immobilien-031:L24  type=data_lockin
+note: GAP: Lizenz erlischt, Export nicht geschuldet.
+Bei Beendigung erlischt die Nutzungslizenz und ein Export ist nicht Bestandteil des Vertrages.
+
+### immobilien-031:L28  type=audit_log_manipulation
+note: GAP: Aufzeichnungen des Betreibers massgeblich, Gegenbeweis ausgeschlossen.
+Über die erbrachten Leistungen entscheiden die Aufzeichnungen des Betreibers; ein Gegenbeweis ist ausgeschlossen.
+
+### immobilien-032:L36  type=liability
+note: GAP: Haftungsdeckel je Schadensfall.
+Die Haftung für Schäden an der Fassade ist auf 2.000 EUR je Schadensfall begrenzt.

@@ -1,0 +1,13 @@
+[package]
+name = "transit-can-bus"
+edition = "2021"
+version = "1.0.0"
+license = "Apache-2.0"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+transit-state-machine = { path = "../state-machine" }
+transit-taint-analysis = { path = "../taint-analysis" }

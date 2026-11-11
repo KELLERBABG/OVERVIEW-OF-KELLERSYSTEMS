@@ -1,0 +1,74 @@
+{
+  "slug": "personal-010",
+  "source": "generated",
+  "domain": "Interim-Management",
+  "traps": [
+    {
+      "marker": "Eine A​ufrechnung des Auftraggebers gegen Ansprüche des Interim Managers ist ausgeschlossen",
+      "expectedType": "setoff_restriction",
+      "note": "Aufrechnungsverbot gegen Ansprüche des Interim Managers"
+    },
+    {
+      "marker": "Ansprüche aus diesem Vertrag verjähren innerhalb von sechs Monaten",
+      "expectedType": "statute_of_limitations",
+      "note": "Verkürzte Verjährungsfrist"
+    },
+    {
+      "marker": "Die Beweislast für die Richtigkeit der Abrechnung trägt der Auftraggeber",
+      "expectedType": "burden_of_proof",
+      "note": "Beweislast zulasten des Auftraggebers"
+    },
+    {
+      "marker": "Änderungen und Ergänzungen dieses Vertrages bedürfen der Schriftform",
+      "expectedType": "written_form_trap",
+      "note": "Schriftformzwang für Änderungen"
+    },
+    {
+      "marker": "keine Mitarbeiter des Interim Managers abzuwerben",
+      "expectedType": "non_solicitation",
+      "note": "Abwerbeverbot zulasten des Auftraggebers"
+    },
+    {
+      "marker": "Die Pflichten aus diesem Vertrag bestehen zeitlich unbeschränkt fort",
+      "expectedType": "excessive_survival",
+      "note": "unbeschränkte Fortwirkung der Pflichten"
+    },
+    {
+      "marker": "An die Stelle der unwirksamen Bestimmung tritt diejenige",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "Ersatzbestimmung nach wirtschaftlichem Zweck statt Gesetz"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Interim Manager leitet befristet den Bereich Produktion des Auftraggebers",
+      "note": "Befristete Leitung"
+    },
+    {
+      "marker": "Die Vergütung wird monatlich auf Grundlage der geleisteten Einsatztage abgerechnet",
+      "note": "Abrechnung nach Einsatztagen"
+    },
+    {
+      "marker": "Reisekosten werden nach vorheriger Zustimmung erstattet",
+      "note": "Reisekostenerstattung"
+    },
+    {
+      "marker": "Der Interim Manager stimmt seine Einsätze mit dem Projektleiter ab",
+      "note": "Abstimmung mit dem Projektleiter"
+    },
+    {
+      "marker": "Der Auftraggeber stellt die erforderlichen Unterlagen vor Einsatzbeginn bereit",
+      "note": "Bereitstellung der Unterlagen"
+    },
+    {
+      "marker": "Dieser Vertrag wird in zwei Ausfertigungen erstellt",
+      "note": "Ausfertigungen"
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Vertrag endet mit Ablauf der vereinbarten Einsatzdauer",
+      "note": "echtes Vertragsende ohne Verlängerungsautomatik"
+    }
+  ]
+}

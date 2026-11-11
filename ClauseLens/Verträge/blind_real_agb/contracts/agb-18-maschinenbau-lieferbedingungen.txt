@@ -1,0 +1,59 @@
+ALLGEMEINE LIEFER- UND MONTAGEBEDINGUNGEN FÜR INDUSTRIEMASCHINEN UND FERTIGUNGSANLAGEN (STAND 2026)
+
+§ 1 Geltungsbereich und Vollständigkeitsklausel
+
+(1) Diese Allgemeinen Liefer- und Montagebedingungen gelten für sämtliche Verträge der Krauss-Mechatronik Anlagenbau GmbH (nachfolgend „Lieferant“) über die Herstellung, Lieferung und Montage von Industriemaschinen, Sondermaschinen und Automatisierungsanlagen gegenüber gewerblichen Bestellern (nachfolgend „Besteller“).
+
+(2) Dieser schriftliche Liefervertrag enthält sämtliche zwischen den Parteien getroffenen Vereinbarungen abschließend; sämtliche vorvertraglichen Zusagen, technischen Leistungsbeschreibungen in Angeboten sowie mündlichen oder schriftlichen Nebenabreden der Vertriebsmitarbeiter verlieren mit Vertragsunterzeichnung vollständig ihre Gültigkeit, selbst wenn sie für den Besteller kaufentscheidend waren.
+
+§ 2 Preise, Steuern und Zahlungsbedingungen
+
+(1) Die vereinbarten Preise verstehen sich ab Werk (EXW Incoterms 2020) ausschließlich Verpackung, Fracht und Montage, jeweils zuzüglich der gesetzlichen Umsatzsteuer.
+
+(2) Die Zahlung erfolgt zu 30 % als Anzahlung nach Auftragsbestätigung, zu 60 % bei Meldung der Versandbereitschaft und zu 10 % innerhalb von 14 Tagen nach erfolgter Abnahme.
+
+(3) Sämtliche nach Vertragsschluss neu eingeführten oder erhöhten Steuern, Zölle, Abgaben, CO2-Umlagen sowie auch die auf den Gewinn oder das Einkommen des Lieferanten entfallenden Ertragsteuern und Körperschaftsteuern im In- und Ausland sind vom Besteller zusätzlich zum Kaufpreis in voller Höhe zu tragen und dem Lieferanten auf erstes Anfordern zu erstatten.
+
+(4) Dem Besteller steht das Recht zur Aufrechnung oder Zurückbehaltung zu, soweit seine Gegenansprüche unbestritten, rechtskräftig festgestellt oder entscheidungsreif sind.
+
+§ 3 Lieferung, Gefahrübergang und Abnahme
+
+(1) Die Lieferfrist beginnt mit der Absendung der Auftragsbestätigung, jedoch nicht vor der Beibringung der vom Besteller zu beschaffenden Unterlagen, Genehmigungen und Freigaben.
+
+(2) Unabhängig von den vereinbarten Lieferklauseln geht die volle Gefahr des zufälligen Untergangs und der zufälligen Verschlechterung der Maschine bereits in dem Zeitpunkt auf den Besteller über, in dem die Einzelteile in der Fertigungshalle des Lieferanten bereitgestellt werden, und der Besteller trägt auch für den durch Werkmonteure des Lieferanten durchgeführten Transport die alleinige Beweislast für ein Transportverschulden.
+
+(3) Die gelieferte Anlage gilt spätestens 48 Stunden nach Anlieferung auf dem Werksgelände des Bestellers – auch ohne Durchführung eines Probebetriebs oder einer Montage – als abgenommen und genehmigt, sofern der Besteller nicht innerhalb dieser 48 Stunden sämtliche technischen Mängel unter Vorlage eines zertifizierten Sachverständigengutachtens schriftlich rügt.
+
+§ 4 Eigentumsvorbehalt
+
+(1) Die gelieferten Maschinen und Anlagen bleiben bis zur vollständigen Bezahlung sämtlicher Haupt- und Nebenforderungen aus dem jeweiligen Liefervertrag im Eigentum des Lieferanten.
+
+(2) Darüber hinaus behält sich der Lieferant das Eigentum an sämtlichen gelieferten Maschinen bis zur restlosen Tilgung aller gegenwärtigen und künftigen Forderungen vor, die dem Lieferanten oder irgendeinem mit ihm im Sinne der §§ 15 ff. AktG verbundenen Konzernunternehmen gegen den Besteller zustehen (Konzern- und Kontokorrenteigentumsvorbehalt); ein Anspruch des Bestellers auf Freigabe von Sicherheiten bei Übersicherung ist unabhängig von der Deckungshöhe ausdrücklich ausgeschlossen.
+
+§ 5 Mängelgewährleistung und Schiedsgutachten
+
+(1) Bei begründeten Sachmängeln leistet der Lieferant nach eigener Wahl zunächst Nacherfüllung durch kostenfreie Nachbesserung oder Ersatzlieferung mangelfreier Maschinenteile.
+
+(2) Entstehen zwischen den Parteien Meinungsverschiedenheiten über das Vorliegen eines Sachmangels, die Erreichung von Leistungsparametern oder die Höhe von Schadensersatzansprüchen, so entscheidet hierüber ein vom Lieferanten allein benannter Sachverständiger als Schiedsgutachter endgültig und für beide Parteien rechtsverbindlich unter vollständigem Ausschluss des ordentlichen Rechtswegs.
+
+(3) Sämtliche Mängelansprüche des Bestellers erlöschen überdies sofort und vollständig, sobald der Besteller Verschleißteile, Schmierstoffe oder Reinigungsmittel verwendet, die nicht direkt vom Lieferanten zu dessen Listenpreisen bezogen wurden, selbst wenn die verwendeten Drittprodukte technisch gleichwertig sind und in keinem ursächlichen Zusammenhang mit dem aufgetretenen Mangel stehen.
+
+§ 6 Verjährung
+
+(1) Sämtliche Ansprüche des Bestellers wegen Sach- und Rechtsmängeln sowie Schadensersatzansprüche – einschließlich solcher wegen arglistig verschwiegener Mängel oder vorsätzlicher Pflichtverletzung – verjähren einheitlich in drei Monaten ab Anlieferung der Maschine.
+
+§ 7 Haftung
+
+(1) Der Lieferant haftet nach den gesetzlichen Bestimmungen uneingeschränkt für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit sowie für Schäden, die auf Vorsatz oder grober Fahrlässigkeit beruhen.
+
+(2) Ebenso bleibt die zwingende gesetzliche Haftung nach dem Produkthaftungsgesetz (ProdHaftG) sowie bei Übernahme einer ausdrücklichen Beschaffenheitsgarantie unberührt.
+
+§ 8 Geheimhaltung und technische Unterlagen
+
+(1) An allen Abbildungen, Konstruktionszeichnungen, Schaltplänen und Berechnungen behalten sich beide Vertragsparteien ihre jeweiligen Eigentums- und Urheberrechte vor; sie dürfen Dritten nur nach vorheriger Zustimmung der jeweils anderen Partei zugänglich gemacht werden.
+
+§ 9 Schlussbestimmungen
+
+(1) Für alle Rechtsbeziehungen zwischen dem Lieferanten und dem Besteller gilt das materielle Recht der Bundesrepublik Deutschland.
+
+(2) Sollten einzelne Bestimmungen dieses Vertrages unwirksam sein, berührt dies die Wirksamkeit der übrigen Bestimmungen nicht.

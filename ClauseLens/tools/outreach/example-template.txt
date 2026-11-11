@@ -1,0 +1,6 @@
+Guten Tag {{vorname}},
+
+ich habe gesehen, dass {{firma}} mit Verbrauchern arbeitet. ClauseLens prüft AGB und Vertragstexte
+in unter einer Sekunde auf typische Risikoklauseln, lokal und ohne Cloud.
+
+Falls das Thema für Sie relevant ist, antworten Sie einfach kurz auf diese Mail.

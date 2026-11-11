@@ -1,0 +1,31 @@
+[package]
+name = "smart-matter-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Core types, traits, and protocol definitions for Smart Matter"
+
+[dependencies]
+# no_std for embedded targets
+cortex-m = { version = "0.7", optional = true }
+cortex-m-rt = { version = "0.7", optional = true }
+# Serde for message serialization (no_std compatible; all collections are
+# heapless, so no `alloc` feature — keeps the embedded binary allocator-free)
+serde = { version = "1", default-features = false, features = ["derive"] }
+heapless = { version = "0.8", features = ["serde"] }
+bitflags = { version = "2", features = ["serde"] }
+# Cryptographic primitives (lightweight, no_std)
+# RFC 8439 ChaCha20-Poly1305 AEAD (RustCrypto, audited implementation)
+chacha20poly1305 = { version = "0.10", default-features = false }
+# Key derivation (HMAC-SHA256) for deployment-scoped node keys
+sha2 = { version = "0.10", default-features = false }
+hmac = { version = "0.12", default-features = false }
+# Compact no_std serde wire format for protocol payloads
+postcard = { version = "1", default-features = false }
+# Float math for no_std (f32::sqrt/exp/powf are std-only on recent Rust)
+libm = "0.2"
+
+[features]
+default = ["std"]
+std = ["chacha20poly1305/std", "sha2/std", "hmac/std"]
+embedded = ["cortex-m", "cortex-m-rt"]

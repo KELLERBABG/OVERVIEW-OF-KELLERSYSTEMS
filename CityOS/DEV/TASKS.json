@@ -1,0 +1,50 @@
+{
+  "project": "CityOS",
+  "language": "Rust",
+  "summary": "An 18-crate `#![no_std]` Rust urban operating system workspace (`city-dag`, `city-crypto`, `city-caps`, `city-brp`, `city-shard`, `city-deaddrop`, `city-alloc`, `city-heal`, `city-zkp`, `city-ata`, `city-ehar`, `city-smartmatter`, `city-node`, etc.) built to run as sovereign municipal infrastructure atop KELLER-OS.",
+  "tasks": [
+    {
+      "id": "TASK-01",
+      "title": "Implement equivocation detection and causal topological ordering in city-dag",
+      "status": "pending",
+      "target_files": [
+        "crates/city-dag/src/lib.rs"
+      ],
+      "context_files": [
+        "crates/city-crypto/src/lib.rs"
+      ],
+      "spec": "Enhance `crates/city-dag/src/lib.rs` with Byzantine equivocation detection and deterministic topological finality.\n\n1. Detect when the same `author_id` submits two distinct vertices with identical sequence numbers or non-ancestral parent references, returning `DagError::EquivocationDetected { author, seq }`.\n2. Implement deterministic causal sorting (Kahn's algorithm with hash tie-breaking) so all honest city nodes derive identical state transition sequences.\n3. Add unit tests verifying fork detection and deterministic ordering across 3 simulated districts.",
+      "verify_cmd": "cargo test -p city-dag --quiet"
+    },
+    {
+      "id": "TASK-02",
+      "title": "Enforce anonymous credential nullifier uniqueness and epoch bounds in city-zkp and city-caps",
+      "status": "pending",
+      "target_files": [
+        "crates/city-zkp/src/lib.rs",
+        "crates/city-caps/src/lib.rs"
+      ],
+      "context_files": [
+        "crates/city-crypto/src/mac.rs"
+      ],
+      "spec": "Harden `city-zkp` and `city-caps` to guarantee identity-less municipal service access without replay or privilege escalation.\n\n1. In `city-zkp/src/lib.rs`, maintain a bounded epoch nullifier set rejecting any repeated service-access nullifier within the same municipal billing epoch.\n2. In `city-caps/src/lib.rs`, enforce monotonic capability attenuation (a delegated token can only restrict permissions/TTL, never widen them).\n3. Add unit tests for double-spend nullifier rejection and capability attenuation.",
+      "verify_cmd": "cargo test -p city-zkp -p city-caps --quiet"
+    },
+    {
+      "id": "TASK-03",
+      "title": "Implement automated utility load-shedding and self-healing failover across city-alloc and city-heal",
+      "status": "pending",
+      "target_files": [
+        "crates/city-alloc/src/lib.rs",
+        "crates/city-heal/src/lib.rs"
+      ],
+      "context_files": [
+        "crates/city-ata/src/lib.rs",
+        "crates/city-ehar/src/lib.rs",
+        "crates/city-smartmatter/src/lib.rs"
+      ],
+      "spec": "Wire `city-alloc` and `city-heal` to enforce strict priority-tier resource allocation (Tier 0: Emergency/Hospital/Water > Tier 1: Transit/Streetlight > Tier 2: Commercial/ATA).\n\n1. Prove via unit tests that during simulated grid degradation, Tier 0 municipal services receive 100% of requested power/bandwidth before any Tier 2 allocation occurs, and dead edge nodes are isolated within 2 heartbeat ticks.",
+      "verify_cmd": "cargo test -p city-alloc -p city-heal --quiet"
+    }
+  ]
+}

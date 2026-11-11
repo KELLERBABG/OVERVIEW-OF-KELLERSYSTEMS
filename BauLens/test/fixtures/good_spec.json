@@ -1,0 +1,26 @@
+{
+  "projekt": "Musterweg 12, 80331 München",
+  "grundstueck": {
+    "flaeche_m2": 800,
+    "grenzabstaende": { "norden": 5.0, "osten": 4.0, "sueden": 4.0, "westen": 4.0 }
+  },
+  "gebaeude": {
+    "hoehe_m": 7.0,
+    "geschosse_ueber_grund": 2,
+    "geschosse_unter_ground": 1,
+    "wohnungen_anzahl": 2,
+    "nutzflaeche_m2": 210,
+    "grz_ist": 0.35,
+    "gfz_ist": 0.70,
+    "stellplaetze_ist": 2,
+    "fahrradstellplaetze_ist": 4,
+    "aufenthaltsraeume": [
+      { "name": "Wohnen/Essen EG", "flaeche_m2": 32, "fensterflaeche_m2": 4.6, "raumhoehe_m": 2.60, "etage": 0 },
+      { "name": "Schlafen OG", "flaeche_m2": 18, "fensterflaeche_m2": 2.5, "raumhoehe_m": 2.55, "etage": 1 },
+      { "name": "Kind OG", "flaeche_m2": 14, "fensterflaeche_m2": 1.8, "raumhoehe_m": 2.50, "etage": 1 }
+    ],
+    "zweiter_rettungsweg_vorhanden": true,
+    "treppenraum_vorhanden": true
+  },
+  "einstellungen": { "grz_limit": 0.4, "gfz_limit": 1.2 }
+}

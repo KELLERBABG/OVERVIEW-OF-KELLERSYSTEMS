@@ -1,0 +1,50 @@
+{
+  "project": "TradeShield",
+  "language": "TypeScript",
+  "summary": "A TypeScript IoT microfiber capture and ledger monorepo (`packages/api`, `packages/shared`, `packages/web`) with 63 passing integration tests, ESP32 telemetry ingestion, tamper-evident hash-chained SQLite credit ledger, and a React dashboard.",
+  "tasks": [
+    {
+      "id": "TASK-01",
+      "title": "Harden cryptographic hash chain linkage in wash-cycle event ingestion",
+      "status": "pending",
+      "target_files": [
+        "packages/api/src/routes/events.ts",
+        "packages/api/tests/events.test.ts"
+      ],
+      "context_files": [
+        "packages/api/src/db/connection.ts",
+        "packages/shared/src/types.ts"
+      ],
+      "spec": "Strengthen `packages/api/src/routes/events.ts` so that every ingested wash event links directly to the device's previous block hash.\n\n1. Verify hash continuity: reject with HTTP 400 any event whose `prev_hash` does not match the current tip of that device's chain.\n2. Add unit tests in `packages/api/tests/events.test.ts` verifying that out-of-order, duplicate, or modified telemetry events break the chain and are rejected.",
+      "verify_cmd": "npm test --prefix packages/api"
+    },
+    {
+      "id": "TASK-02",
+      "title": "Implement filter bypass valve manipulation and sensor fraud detection",
+      "status": "pending",
+      "target_files": [
+        "packages/api/src/routes/events.ts",
+        "packages/api/tests/events.test.ts"
+      ],
+      "context_files": [
+        "packages/shared/src/validation.ts"
+      ],
+      "spec": "Add physical plausibility validation in `packages/api/src/routes/events.ts`.\n\n1. If flow volume $V_{\\text{water}} > 50\\text{ L}$ is recorded but differential pressure $\\Delta P < 0.05\\text{ bar}$ after 50 wash cycles, flag `DeviceAnomaly::BypassValveOpenOrFilterRemoved` and flag all resulting credits as `SUSPENDED_PENDING_AUDIT`.\n2. Add tests covering nominal filter loading curves vs. sudden pressure drops indicative of filter bypass.",
+      "verify_cmd": "npm test --prefix packages/api"
+    },
+    {
+      "id": "TASK-03",
+      "title": "Implement EU Ecodesign ESPR 2027 CSRD compliance certificate generator",
+      "status": "pending",
+      "target_files": [
+        "packages/api/src/routes/credits.ts",
+        "packages/api/tests/credits.test.ts"
+      ],
+      "context_files": [
+        "packages/shared/src/types.ts"
+      ],
+      "spec": "Enhance `packages/api/src/routes/credits.ts` to generate verifiable PDF/JSON CSRD audit certificates when textile brands retire microplastic offset credits.\n\n1. Certificate must include list of participating laundry machine IDs, total water volume treated, certified captured mass ($1\\text{ EUR / g}$), and cryptographic hash-chain root.\n2. Add integration tests verifying certificate generation and credit retirement state transitions.",
+      "verify_cmd": "npm test --prefix packages/api"
+    }
+  ]
+}

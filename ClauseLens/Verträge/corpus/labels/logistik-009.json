@@ -1,0 +1,85 @@
+{
+  "slug": "logistik-009",
+  "source": "generated",
+  "domain": "Fulfillment und E-Commerce-Logistik",
+  "traps": [
+    {
+      "marker": "die Telemetriedaten weltweit und unbegrenzt für eigene Zwecke verwerten",
+      "expectedType": "data_grant",
+      "note": "Red-team Klausel: data_grant"
+    },
+    {
+      "marker": "gilt die Ware als abgenommen",
+      "expectedType": "deemed_acceptance",
+      "note": "Red-team Klausel: deemed_acceptance"
+    },
+    {
+      "marker": "den Zugang ohne Vorankündigung zu sperren",
+      "expectedType": "service_suspension",
+      "note": "Red-team Klausel: service_suspension"
+    },
+    {
+      "marker": "nur gegen eine gesonderte Herausgabegebühr möglich",
+      "expectedType": "data_lockin",
+      "note": "Red-team Klausel: data_lockin"
+    },
+    {
+      "marker": "erhöhen sich automatisch um jährlich bis zu acht Prozent",
+      "expectedType": "price_escalation",
+      "note": "Red-team Klausel: price_escalation"
+    },
+    {
+      "marker": "den Firmennamen des Kunden zu Referenzzwecken",
+      "expectedType": "marketing_reference",
+      "note": "Red-team Klausel: marketing_reference"
+    },
+    {
+      "marker": "keine Mitarbeiter des Anbieters abzuwerben",
+      "expectedType": "non_solicitation",
+      "note": "Red-team Klausel: non_solicitation"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "stimmen die Versandprofile monatlich ab",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Beide Parteien behandeln die Betriebsdaten vertraulich",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "prüft die Retouren nach Eingang im Lager",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "informiert den Kunden über den Grund der Sperre",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "seine Bestandsdaten jederzeit in einem gängigen Format exportieren",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "innerhalb von 30 Tagen ohne Abzug zahlbar",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "nennt den Kunden nicht in Pressemitteilungen",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "schult das eingesetzte Personal regelmäßig",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "9.2 Es gilt deutsches Recht.",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

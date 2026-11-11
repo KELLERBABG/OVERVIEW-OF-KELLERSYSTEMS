@@ -1,0 +1,79 @@
+{
+  "slug": "evasion-026",
+  "source": "generated",
+  "domain": "evasion",
+  "traps": [
+    {
+      "marker": "Alle Rüc​kmeldungen und Ver​besserungsvorschläge des Kun​den geh​en une​ntgeltlich in das",
+      "expectedType": "feedback_ip_grab",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: feedback_ip_grab (Technik: footnote)."
+    },
+    {
+      "marker": "Erk​lärungen des Anb​ieters gel​ten nach Abs​endung als dem Kun​den zug​egangen, una​bhängig vom",
+      "expectedType": "fictitious_receipt",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: fictitious_receipt (Technik: footnote)."
+    },
+    {
+      "marker": "Der Anb​ieter str​ebt eine Ver​fügbarkeit von 99,5 Pro​zent an, die Ang​aben die​nen",
+      "expectedType": "unverbindliche_sla_falle",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: unverbindliche_sla_falle (Technik: footnote)."
+    },
+    {
+      "marker": "Für Dir​ektgeschäfte des Anb​ieters ste​ht dem Kun​den kei​ne Pro​vision zu.",
+      "expectedType": "agency_commission_exclusion",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: agency_commission_exclusion (Technik: footnote)."
+    },
+    {
+      "marker": "Ein Aus​gleichsanspruch nach § 89b HGB bes​teht nic​ht, der Kun​de ver​zichtet auf Ans​prüche",
+      "expectedType": "agency_goodwill_waiver",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: agency_goodwill_waiver (Technik: footnote)."
+    },
+    {
+      "marker": "Der Kun​de darf die erh​obenen Dat​en der End​kunden auch auß​erhalb der Eur​opäischen Uni​on",
+      "expectedType": "international_data_processing",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: international_data_processing (Technik: footnote)."
+    },
+    {
+      "marker": "Vor Ein​leitung des ger​ichtlichen Rec​htswegs ist ein Sac​hverständigenverfahren dur​chzuführen.",
+      "expectedType": "mandatory_expert_determination",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: mandatory_expert_determination (Technik: footnote)."
+    },
+    {
+      "marker": "Der Ans​pruch auf Gut​schrift ent​fällt, wenn der Kun​de ein​en kri​tischen Sic​herheitspatch",
+      "expectedType": "service_credit_forfeiture",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: service_credit_forfeiture (Technik: footnote)."
+    },
+    {
+      "marker": "Bei vor​zeitiger Bee​ndigung des Ver​trags dur​ch den Kun​den wird eine pau​schale Abs​tandszahlung",
+      "expectedType": "early_termination_charge",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: early_termination_charge (Technik: footnote)."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Haftung beider Parteien richtet sich nach den gesetzlichen Bestimmungen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Jede Partei trägt ihre eigenen Kosten der Vertragsverhandlungen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde ist berechtigt, Rechte aus diesem Vertrag mit Zustimmung des Anbieters auf verbundene",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Für die Nutzung der bereitgestellten Software gilt die beigefügte Leistungsbeschreibung.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Ansprüche aus diesem Vertrag verjähren nach den gesetzlichen Vorschriften.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde trägt die Kosten für die von ihm gewünschten Zusatzleistungen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    }
+  ],
+  "uncovered": []
+}

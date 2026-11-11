@@ -1,0 +1,11 @@
+[package]
+name = "city-heal"
+description = "Self-healing failover with heartbeat monitoring and standby promotion"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+city-types = { workspace = true }
+city-crypto = { workspace = true }

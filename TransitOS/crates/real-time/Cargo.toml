@@ -1,0 +1,9 @@
+[package]
+name = "transit-real-time"
+edition = "2021"
+version = "1.0.0"
+license = "Apache-2.0"
+
+[dependencies]
+serde = { workspace = true }
+tracing = { workspace = true }

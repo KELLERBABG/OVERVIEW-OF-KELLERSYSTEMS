@@ -1,0 +1,74 @@
+{
+  "slug": "personal-006",
+  "source": "generated",
+  "domain": "Freelance und Beratung",
+  "traps": [
+    {
+      "marker": "Der Kunde verpflichtet sich, alle überlassenen Informationen vertraulich zu behandeln",
+      "expectedType": "asymmetric_confidentiality",
+      "note": "Vertraulichkeitspflicht nur für den Kunden"
+    },
+    {
+      "marker": "Personenbezogene Daten werden ausschließlich außerhalb der Europäischen Union verarbeitet",
+      "expectedType": "international_data_processing",
+      "note": "Verarbeitung außerhalb der EU"
+    },
+    {
+      "marker": "Der Kunde räumt dem Anbieter ein unwiderrufliches Nutzungsrecht zum Training eigener Modelle",
+      "expectedType": "data_grant",
+      "note": "Nutzungsrecht zum Modelltraining"
+    },
+    {
+      "marker": "Der Anbieter bemüht sich, eine Verfügbarkeit von 99 Prozent zu erreichen",
+      "expectedType": "unverbindliche_sla_falle",
+      "note": "Verfügbarkeit nur als Bemühen"
+    },
+    {
+      "marker": "Feedback und Verbesserungsvorschläge gehen unentgeltlich in das Eigentum des Anbieters über",
+      "expectedType": "feedback_ip_grab",
+      "note": "Feedback geht unentgeltlich über"
+    },
+    {
+      "marker": "Die Systemprotokolle des Anbieters gelten als Vollbeweis",
+      "expectedType": "audit_log_manipulation",
+      "note": "Systemprotokolle als Vollbeweis"
+    },
+    {
+      "marker": "An die Stelle der unwirksamen Regelung tritt diejenige",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "Ersatzregelung nach wirtschaftlichem Zweck"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Anbieter erbringt seine Leistungen weisungsfrei und eigenverantwortlich",
+      "note": "weisungsfreie Leistung"
+    },
+    {
+      "marker": "Ort der Leistungserbringung ist der Sitz des Kunden",
+      "note": "Leistungsort"
+    },
+    {
+      "marker": "Der Kunde stellt die benötigten Unterlagen spätestens zehn Tage vor Projektbeginn bereit",
+      "note": "Unterlagen vor Projektbeginn"
+    },
+    {
+      "marker": "Die Parteien treffen sich monatlich zu einem Statusgespräch",
+      "note": "Statusgespräch"
+    },
+    {
+      "marker": "Dieser Vertrag wird in deutscher Sprache geführt",
+      "note": "Vertragssprache"
+    },
+    {
+      "marker": "Der Anbieter berät den Kunden bei der Optimierung der Produktionsprozesse",
+      "note": "Beratungsgegenstand"
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Anbieter darf die gewonnenen Erkenntnisse nach Projektende für eigene Zwecke verwenden",
+      "note": "eigennützige Verwertung der Erkenntnisse ohne Detektor"
+    }
+  ]
+}

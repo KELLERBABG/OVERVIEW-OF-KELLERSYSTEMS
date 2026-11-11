@@ -1,0 +1,90 @@
+{
+  "slug": "agb-24-wach-und-sicherheitsdienst",
+  "domain": "Bewachungs-, Objektschutz- und Sicherheitsdienst-AGB",
+  "source": "Blind Real-AGB Benchmark 2026 (vor Engine-Lauf gelabelt)",
+  "traps": [
+    {
+      "marker": "ohne vorherige Information oder Zustimmung des Auftraggebers an beliebige unüberprüfte Subunternehmer",
+      "expectedType": "subcontractor_uncontrolled",
+      "statutoryBasis": "§ 307 Abs. 2 Nr. 1 BGB / § 34a GewO",
+      "note": "Weitergabe sicherheitskritischer Objektbewachung und Generalschlüssel an beliebige unüberprüfte Subunternehmer ohne Information oder Zustimmung des Auftraggebers."
+    },
+    {
+      "marker": "kommt hinsichtlich der ordnungsgemäßen, pünktlichen und vollständigen Durchführung sämtlicher Kontrollgänge sowie des Verschlusses aller Fenster und Türen unwiderlegbare Beweiskraft zu",
+      "expectedType": "audit_log_manipulation",
+      "statutoryBasis": "§ 309 Nr. 12 BGB / § 307 BGB",
+      "note": "Unwiderlegbare Beweiskraft der eigenen Wächterkontroll-Logs unter Ausschluss des Gegenbeweises durch Überwachungskameras oder Einbruchsspuren."
+    },
+    {
+      "marker": "trägt ausschließlich der Auftraggeber die volle Beweislast dafür, dass das Wachpersonal vorsätzlich im Dienst geschlafen",
+      "expectedType": "burden_of_proof",
+      "statutoryBasis": "§ 280 Abs. 1 S. 2 BGB / § 309 Nr. 12 BGB",
+      "note": "Beweislastumkehr entgegen § 280 Abs. 1 S. 2 BGB, wonach der Geschädigte vorsätzliches Schlafen oder Kollusion des Wachpersonals voll beweisen muss."
+    },
+    {
+      "marker": "jederzeit ohne Anlass und ohne Bindung an Tarifverträge einseitig durch einfache Mitteilung um bis zu 25 % pro Halbjahr zu erhöhen",
+      "expectedType": "price_escalation",
+      "statutoryBasis": "§ 307 Abs. 1 BGB",
+      "note": "Anlasslose einseitige Preiserhöhung um bis zu 25 % pro Halbjahr ohne Tarifbezug, ohne Sonderkündigungsrecht und ohne Weitergabe von Kostensenkungen."
+    },
+    {
+      "marker": "das gesamte Wachpersonal sofort und ohne jede Vorankündigung mitten in der Nachtschicht vom Objekt abzuziehen",
+      "expectedType": "service_suspension",
+      "statutoryBasis": "§ 320 Abs. 2 BGB / § 242 BGB / § 307 BGB",
+      "note": "Sofortiger Abzug des Wachpersonals mitten in der Nachtschicht ohne Vorankündigung nach nur 24 Stunden Verzug bei unverschlossenem Zurücklassen des Werksgeländes."
+    },
+    {
+      "marker": "die Haftung für Erfüllungsgehilfen nach § 278 BGB wird auch für Vorsatz und grobe Fahrlässigkeit vollständig ausgeschlossen",
+      "expectedType": "vicarious_agents",
+      "statutoryBasis": "§ 309 Nr. 7b BGB / § 278 BGB / § 307 BGB",
+      "note": "Vollständiger Haftungsausschluss für Vorsatz (z.B. Diebstahl durch Wachleute) und grobe Fahrlässigkeit von Erfüllungsgehilfen verstößt gegen § 278 S. 2 BGB i.V.m. § 307 BGB."
+    },
+    {
+      "marker": "ist die Haftung für sämtliche Sach-, Einbruchs- und Vermögensschäden pauschal auf einen Höchstbetrag von 500,00 Euro je Schadensereignis",
+      "expectedType": "liability",
+      "statutoryBasis": "§ 307 Abs. 2 Nr. 2 BGB / § 14 BewachV",
+      "note": "Haftungsobergrenze von 500 Euro bei Kardinalpflichtverletzungen im Objektschutz unterschreitet selbst die gesetzliche Mindestversicherungssumme nach § 14 BewachV drastisch."
+    },
+    {
+      "marker": "wenn sie nicht innerhalb von zwölf Stunden nach Eintritt des Schadensereignisses per eingeschriebenem Brief geltend gemacht werden, und verjähren im Übrigen spätestens vier Wochen",
+      "expectedType": "statute_of_limitations",
+      "statutoryBasis": "§ 307 Abs. 1 BGB / § 202 BGB",
+      "note": "Zwölfstündige Ausschlussfrist per Einschreiben und vierwöchige Verjährungsfrist vereiteln die Durchsetzung von Schadensersatzansprüchen praktisch vollständig."
+    },
+    {
+      "marker": "für einen Zeitraum von vier Jahren nach Vertragsende untersagt, Wachpersonal oder Einsatzleiter des Sicherheitsunternehmens direkt oder über ein anderes Bewachungsunternehmen",
+      "expectedType": "non_solicitation",
+      "statutoryBasis": "§ 307 Abs. 1 BGB / Art. 12 GG",
+      "note": "Vierjähriges Weiterbeschäftigungsverbot auch über ein nachfolgendes Bewachungsunternehmen mit 45.000 Euro Vertragsstrafe je Wachmann."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "besitzt die erforderliche behördliche Erlaubnis nach § 34a der Gewerbeordnung (GewO)",
+      "note": "Gesetzeskonforme Zusicherung der gewerberechtlichen Erlaubnis nach § 34a GewO und der Meldung im Bewacherregister."
+    },
+    {
+      "marker": "richtet sich nach der gemeinsam zwischen dem Auftraggeber und dem Sicherheitsunternehmen vor Dienstbeginn abgestimmten schriftlichen Dienstanweisung",
+      "note": "Sachgerechte Konkretisierung der Wachleistung durch gemeinsame Dienstanweisung (§ 17 BewachV)."
+    },
+    {
+      "marker": "Für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit haftet das Sicherheitsunternehmen",
+      "note": "Gesetzeskonforme unbeschränkte Haftung für Personenschäden."
+    },
+    {
+      "marker": "von beiden Vertragsparteien mit einer Frist von drei Monaten zum Ende eines Kalendervierteljahres in Textform ordentlich gekündigt",
+      "note": "Ausgewogene, beiderseitige ordentliche Kündigungsfrist unter Wahrung des außerordentlichen Kündigungsrechts."
+    },
+    {
+      "marker": "verpflichtet seine Mitarbeiter schriftlich zur Wahrung des Datengeheimnisses sowie zur strengen Verschwiegenheit",
+      "note": "Rechtskonforme Vertraulichkeits- und Datenschutzverpflichtung des Wachpersonals."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "sämtliche künftigen Betriebsstätten, Lagerhallen und Tochtergesellschaften, die er oder seine Gesellschafter innerhalb der nächsten zehn Jahre",
+      "statutoryBasis": "§ 138 BGB / § 307 Abs. 1 BGB",
+      "note": "Zehnjährige Alleinbezugs- und Andienungspflicht für sämtliche künftigen Standorte in ganz Europa zu einseitigen Standardlistenpreisen stellt eine sittenwidrige Knebelung dar."
+    }
+  ]
+}

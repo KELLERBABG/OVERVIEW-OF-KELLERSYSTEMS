@@ -1,0 +1,99 @@
+Werkvertrag über die Entwicklung und Einführung der Vertriebsplattform NordwindSales
+
+zwischen der Alpenlicht Systemhaus GmbH, Landsberger Straße 12, 80339 München (nachfolgend Anbieter), und der Nordwind Energie AG, Bahnhofplatz 4, 8001 Zürich (nachfolgend Kunde).
+
+Präambel
+Der Kunde betreibt ein Energieversorgungsunternehmen und beabsichtigt, seine Vertriebsprozesse zu digitalisieren. Der Anbieter ist auf die Entwicklung und Einführung von Vertriebsplattformen spezialisiert. Die Parteien schließen daher den nachfolgenden Werkvertrag.
+
+§ 1 Gegenstand
+Gegenstand dieses Vertrags ist die Entwicklung, Lieferung und Inbetriebnahme der Vertriebsplattform NordwindSales gemäß Anlage 1.
+
+§ 2 Leistungsumfang
+(1) Der Anbieter schuldet die Herstellung der vereinbarten Funktionalität.
+
+(2) Nicht zum Leistungsumfang gehören Anpassungen an Drittsysteme, die nicht in Anlage 1 benannt sind.
+
+(3) Der Anbieter führt die Arbeiten mit der vereinbarten Sorgfalt aus.
+
+§ 3 Vertragslaufzeit
+(1) Der Vertrag beginnt am 1. März 2026 und läuft bis zum 28. Februar 2027.
+
+(2) Nach Ablauf der Grundlaufzeit erneuert sich die Vereinbarung stillschweigend, sofern keine Seite widerspricht.
+
+§ 4 Vergütung
+(1) Die Vergütung wird in monatlichen Raten von 12.000 EUR gezahlt.
+
+(2) Die Vergütung ist innerhalb von dreißig Tagen nach Rechnungseingang fällig.
+
+(3) Der Anbieter passt die Preise nach billigem Ermessen an die Marktbedingungen an.
+
+§ 5 Abnahme
+(1) Der Anbieter zeigt die Fertigstellung der Teilleistungen schriftlich an.
+
+(2) Wird die Abnahme nicht binnen vierzehn Tagen erklärt, gilt die Leistung als genehmigt.
+
+(3) Für Mängel während der Gewährleistung leistet der Anbieter kostenfrei Nacherfüllung.
+
+§ 6 Termine
+(1) Der Anbieter beginnt die Arbeiten am 1. März 2026 und übergibt die Plattform am 30. September 2026.
+
+(2) Überschreitet der Anbieter den Meilenstein, schuldet er eine Schadenspauschale von 5.000 EUR je Woche.
+
+§ 7 Mitwirkung des Kunden
+(1) Der Kunde benennt einen Projektleiter als Ansprechpartner.
+
+(2) Der Kunde übermittelt dem Anbieter die erforderlichen Testdaten in einem gängigen Format.
+
+(3) Die Parteien treffen sich monatlich zu einem Lenkungskreis.
+
+§ 8 Haftung
+(1) Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt.
+
+(2) Der Kunde verzichtet auf Ersatzansprüche, die über die in Ziffer 12 genannten Beträge hinausgehen.
+
+(3) Der Anbieter unterhält eine Berufshaftpflichtversicherung mit einer Deckungssumme von zwei Millionen EUR.
+
+§ 9 Vertraulichkeit
+(1) Beide Parteien verpflichten sich wechselseitig, die offengelegten Informationen vertraulich zu behandeln.
+
+(2) Die Parteien behandeln die Vertragsverhandlung vertraulich.
+
+§ 10 Änderungen
+(1) Änderungen dieses Vertrages bedürfen der Schriftform.
+
+(2) Änderungen dieses Vertrages können in Textform vereinbart werden.
+
+§ 11 Kündigung
+(1) Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Monatsende kündigen.
+
+(2) Die Kündigung aus wichtigem Grund bleibt beiden Parteien unbenommen.
+
+§ 12 Haftungsgrenze
+Die Haftung des Anbieters ist auf die in Anlage 2 genannten Beträge begrenzt.
+
+§ 13 Datenschutz
+(1) Der Anbieter verarbeitet personenbezogene Daten ausschließlich innerhalb der Europäischen Union.
+
+(2) Der Kunde erhält zum Vertragsende einen kostenfreien Datenexport in einem gängigen Format.
+
+§ 14 Anwendbares Recht und Gerichtsstand
+(1) Ausschließlicher Gerichtsstand für alle Streitigkeiten aus diesem Vertrag ist München.
+
+(2) Dieser Vertrag unterliegt deutschem Recht.
+
+§ 15 Schlussbestimmungen
+(1) Nebenabreden bestehen nicht.
+
+(2) Die Parteien benennen je einen Ansprechpartner für die Projektabwicklung.
+
+(3) Alle Fristen werden in Kalendertagen gerechnet.
+
+Anlagen
+Anlage 1: Leistungsbeschreibung
+Anlage 2: Haftungsgrenzen
+
+München, den 12. Februar 2026
+
+Alpenlicht Systemhaus GmbH
+
+Nordwind Energie AG

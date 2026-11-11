@@ -1,0 +1,81 @@
+### Phase 0: Foundation & Tooling Setup
+- [ ] Monorepo structure (core, crypto, contracts, api, cli, tests)
+- [ ] Core dependencies: graph engine, SMT solver bindings (Z3), HE library (TFHE/OpenFHE)
+- [ ] Canonical data models (protobuf/serde): PatentNode, Edge, SymbolicExpression, Constraint, RoyaltyInvariant, TaintLabel
+
+### Phase 1: Evolutionary Graph Mapping (DAG)
+- [ ] `Dag<PatentNode>` with CRDT-friendly CRUD, versioned branching, topological ordering
+- [ ] Append-only Merkle-ized lifecycle event log
+- [ ] Traversal: ancestor/descendant, LCA, path finding
+
+### Phase 2: Symbolic Patent-Logic Matching
+- [ ] Intermediate representation (IR) for patent logic: SSA-based traces, molecular graph constraints, geometric constraints
+- [ ] Compiler frontends: source code → IR, chemical formula → IR, CAD → IR
+- [ ] Invariant extraction: pre/post conditions, resource bounds, behavioral equivalence
+
+### Phase 3: Path Constraint Modification Audit
+- [ ] Delta Constraint Builder: Δ = ¬Original ∧ Derivative, output SMT-LIB 2.0
+- [ ] Audit trail: chain of delta formulas, BDD compaction, Merkle commitments
+
+### Phase 4: Real-Time SMT-Solver Patent Verification
+- [ ] SMT abstraction layer (Z3/Bitwuzla/CVC5) with timeout budgets
+- [ ] SAT/UNSAT decision engine + model extraction / unsat core
+- [ ] Severity scoring: graph distance × constraint overlap
+
+### Phase 5: Decoupled Royalty Invariants
+- [ ] Linear equation invariants: sum(contribution_i) = 1.0
+- [ ] Invariant verification across full DAG, cycle detection
+- [ ] Incremental DP recomputation: O(V+E) per new node
+
+### Phase 6: Taint-Coded Derivative Tracking
+- [ ] Taint lattice: {Unlicensed, Licensed(A), ...} with meet/join operators
+- [ ] Static taint analyzer: data-flow for code, composition rules for chemical/mechanical
+- [ ] Dynamic taint verification with Trustless Execution Gate integration
+
+### Phase 7: Automated IP Specification
+- [ ] Formal spec schema (`.ipspec`): pre/post, invariants, bounds
+- [ ] Spec synthesizer: abstract interpretation → candidate invariants
+- [ ] Spec verifier: weakest precondition calculus + SMT backend
+
+### Phase 8: Homomorphic Contribution Discovery
+- [ ] HE scheme integration (TFHE/BFV): encrypted contribution valuations
+- [ ] Encrypted contribution protocol: submit E(share), compute E(total), decrypt via contract
+- [ ] ZK proof of valid contribution (Bulletproofs/Groth16)
+
+### Phase 9: IP State Space Exploration
+- [ ] Query engine: reachability, similarity (Δ satisfiability), equivalence clustering
+- [ ] Plagiarism detection: parallel Δ evaluation + LSH pre-filtering
+- [ ] Novelty scoring: min(unsat_core_size) / |original_constraints|
+
+### Phase 10: Trustless Execution Gate (Smart Contracts)
+- [ ] Contract architecture: PatentRegistry, RoyaltySplitter, VerificationOracle, ExecutionGate
+- [ ] VerificationOracle: SMT result + ZK proof → on-chain verification
+- [ ] ExecutionGate: atomic blueprint release on CLEAN + PAID
+
+### Phase 11: Decentralized Network Layer
+- [ ] P2P networking (libp2p/gossipsub): graph propagation, verification distribution
+- [ ] Storage: IPFS for blueprints, OrbitDB/Ceramic for graph state, on-chain commitments
+- [ ] Incentives: verifier fees, storage rewards, slashing
+
+### Phase 12: API, CLI & Developer Experience
+- [ ] REST/gRPC: POST /patents, GET /derivatives, POST /verify, GET /royalties
+- [ ] CLI tool (`dfip`): init, submit, verify, audit
+- [ ] Web visualizer: DAG explorer, constraint diff, royalty flow
+
+### Phase 13: Testing & Formal Verification
+- [ ] Property-based tests: DAG invariants, solver consistency, royalty sums, taint soundness
+- [ ] Integration tests: full pipeline end-to-end
+- [ ] Smart contract formal verification (Certora/Foundry)
+- [ ] Benchmarks: SMT performance, graph scaling (100→1M), HE latency
+
+### Phase 14: Documentation & Examples
+- [ ] Whitepaper / technical specification
+- [ ] API reference (OpenAPI)
+- [ ] Example patents: software (algorithm), chemical (molecular), mechanical (CAD)
+- [ ] Tutorial: "From Idea to Trustless IP in 10 Minutes"
+
+---
+
+**Build order dependency:** 0 → 1 → 2 → 3 → 4 → 7 → 5 → 6 → 8 → 9 → 10 → 11 → 12 → 13 → 14
+
+The first concrete step would be Phase 0: initializing the monorepo, selecting dependencies, and defining canonical data models. Shall I proceed with implementation?

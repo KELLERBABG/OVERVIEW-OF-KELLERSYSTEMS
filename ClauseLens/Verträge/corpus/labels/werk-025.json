@@ -1,0 +1,88 @@
+{
+  "slug": "werk-025",
+  "source": "generated",
+  "domain": "Lebensmittelhandel, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Feedback des Kunden geht unentgeltlich in das Eigentum des Anbieters über.",
+      "expectedType": "feedback_ip_grab",
+      "note": "Verifizierte Klausel im Bereich feedback_ip_grab."
+    },
+    {
+      "marker": "Der Kunde verzichtet auf einen Ausgleich oder eine Entschädigung.",
+      "expectedType": "agency_goodwill_waiver",
+      "note": "Verifizierte Klausel im Bereich agency_goodwill_waiver."
+    },
+    {
+      "marker": "Nach Ablauf der Grundlaufzeit erneuert sich die Vereinbarung stillschweigend, sofern keine Seite wid",
+      "expectedType": "auto_renewal",
+      "note": "Verifizierte Klausel im Bereich auto_renewal."
+    },
+    {
+      "marker": "Der Kunde verzichtet auf Ersatzansprüche, die über die in Ziffer 12 genannten Beträge hinausgehen.",
+      "expectedType": "liability",
+      "note": "Verifizierte Klausel im Bereich liability."
+    },
+    {
+      "marker": "Überschreitet der Anbieter den Meilenstein, schuldet er eine Schadenspauschale von 5.000 EUR je Woch",
+      "expectedType": "penalty",
+      "note": "Verifizierte Klausel im Bereich penalty."
+    },
+    {
+      "marker": "Der Kunde räumt dem Anbieter ein unwiderrufliches, weltweites und übertragbares Nutzungsrecht an den",
+      "expectedType": "data_grant",
+      "note": "Verifizierte Klausel im Bereich data_grant."
+    },
+    {
+      "marker": "Erhebt der Kunde nicht binnen zehn Kalendertagen nach Bereitstellung Einwände, gilt die Leistung als",
+      "expectedType": "deemed_acceptance",
+      "note": "Verifizierte Klausel im Bereich deemed_acceptance."
+    },
+    {
+      "marker": "Rücktritt und Minderung sind für den Kunden ausgeschlossen.",
+      "expectedType": "liability",
+      "note": "Verifizierte Klausel im Bereich liability."
+    },
+    {
+      "marker": "Mündliche Nebenabreden sind unwirksam.",
+      "expectedType": "written_form_trap",
+      "note": "Verifizierte Klausel im Bereich written_form_trap."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Parteien treffen sich monatlich zu einem Lenkungskreis.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Der Anbieter führt die Arbeiten mit der vereinbarten Sorgfalt aus.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Vertragsparteien informieren sich unverzüglich über Störungen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Der Anbieter meldet Sicherheitsvorfälle unverzüglich an den Kunden.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Vergütung ist innerhalb von dreißig Tagen nach Rechnungseingang fällig.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Beide Parteien verpflichten sich wechselseitig, die offengelegten Informationen vertraulich zu behan",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Die Parteien benennen je einen Ansprechpartner für die Projektabwicklung",
+      "note": "Beiderseitige Benennung ohne Detektorbezug."
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "slug": "saas-006",
+  "source": "generated",
+  "domain": "HR-Suite Software-Abonnement, oesterreichisches Recht",
+  "traps": [
+    {
+      "marker": "Das Abonnement setzt sich nach Ablauf der Festlaufzeit jeweils um zwölf Monate fort, sofern es keine",
+      "expectedType": "auto_renewal",
+      "note": "Paraphrase. Stillschweigende Verlaengerung"
+    },
+    {
+      "marker": "Ergänzend gelten die Regelungen, die der Anbieter jeweils aktualisiert",
+      "expectedType": "dynamic_url_referral",
+      "note": "Verweis auf einseitig aktualisierte Regelungen"
+    },
+    {
+      "marker": "Der Anbieter ist berechtigt, den Leistungsumfang jederzeit einzuschränken.",
+      "expectedType": "unilateral_change",
+      "note": "Paraphrase. Einseitiger Aenderungsvorbehalt"
+    },
+    {
+      "marker": "Die Verfügbarkeitsangaben in Anlage 2 sind bloße Zielgröße ohne Rechtsanspruch.",
+      "expectedType": "unverbindliche_sla_falle",
+      "note": "Paraphrase. Unverbindliche SLA"
+    },
+    {
+      "marker": "Gegenansprüche bleiben bei der Abrechnung außer Betracht.",
+      "expectedType": "setoff_restriction",
+      "note": "Paraphrase. Aufrechnungsverbot"
+    },
+    {
+      "marker": "Für die Rückgabe der Daten fällt ein gesondertes Entgelt an.",
+      "expectedType": "data_lockin",
+      "note": "Paraphrase. Datenrueckgabe kostenpflichtig oder ausgeschlossen"
+    },
+    {
+      "marker": "Nebenabreden haben keine Geltung.",
+      "expectedType": "entire_agreement",
+      "note": "Paraphrase. Vollstaendigkeitsklausel"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "jeweils zum Ende eines Kalenderjahres beenden",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "sichert eine Verfügbarkeit von 99,5 Prozent pro Kalendermonat zu",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "gelten für die gesamte Vertragslaufzeit unverändert",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "vollständige Kopie aller Kundendaten in maschinenlesbarer Form kostenfrei",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "angemessene technische und organisatorische Maßnahmen zum Schutz der Daten",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "wechselseitig offengelegten Informationen vertraulich",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    }
+  ],
+  "uncovered": []
+}

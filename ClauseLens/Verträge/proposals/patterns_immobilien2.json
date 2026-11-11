@@ -1,0 +1,77 @@
+{
+  "slice": "immobilien",
+  "patterns": [
+    {
+      "type": "third_party_indemnity",
+      "regex": "hält[^.!?;:\\n]{0,60}?(?:für|von|wegen)[^.!?;:\\n]{0,60}?(?:bußgeld\\w*|ansprüche\\w*|forderungen\\w*|schäden\\w*|belastungen\\w*|verbindlichkeiten\\w*|abgaben\\w*)[^.!?;:\\n]{0,60}?schadlos",
+      "flags": "i",
+      "closes": [
+        "immobilien-002:L40"
+      ],
+      "evidence": "hält <Gegenseite> für Bußgelder/Ansprüche ... schadlos (Parteien jenseits der Anbieter/Kunde-Achse: Pächter/Verpächter)",
+      "risk": "low"
+    },
+    {
+      "type": "third_party_indemnity",
+      "regex": "(?:^|\\s)(?:k(?:ä|ae)ufer|mieter|p(?:ä|ae)chter|kunde|auftraggeber|besteller|erwerber|werbegesellschaft|nutzer|betreiber)[^.!?;:\\n]{0,40}?stellt[^.!?;:\\n]{0,80}?von\\s+(?:sämtlichen\\s+|allen\\s+)?ansprüchen\\s+dritter[^.!?;:\\n]{0,60}?frei",
+      "flags": "i",
+      "closes": [
+        "immobilien-006:L24",
+        "immobilien-016:L40",
+        "immobilien-032:L40"
+      ],
+      "evidence": "Kundenseite stellt die Gegenseite von Ansprüchen Dritter frei (Subjekt auf der Abwälzungsseite, dadurch keine Freistellung zugunsten des Kunden)",
+      "risk": "low"
+    },
+    {
+      "type": "excessive_survival",
+      "regex": "(?:haftungsfreistellungen?|freistellungen?|regelungen?|pflichten|verpflichtungen|vereinbarungen|bestimmungen)[^.!?;:\\n]{0,80}?wirken?[^.!?;:\\n]{0,60}?(?:über\\s+das\\s+vertragsende|über\\s+die\\s+vertragsbeendigung)\\s+hinaus[^.!?;:\\n]{0,60}?(?:ohne\\s+endzeitpunkt|ohne\\s+zeitliche\\s+beschr\\w*|zeitlich\\s+unbegrenzt|unbefristet|auf\\s+unbestimmte\\s+zeit)",
+      "flags": "i",
+      "closes": [
+        "immobilien-026:L36"
+      ],
+      "evidence": "Fortwirkung 'über das Vertragsende hinaus' gekoppelt mit dem Fehlen eines Endes (ohne Endzeitpunkt/ohne zeitliche Beschränkung)",
+      "risk": "low"
+    },
+    {
+      "type": "tax_indemnity_shift",
+      "regex": "stellt[^.!?;:\\n]{0,80}?von\\s+(?:sämtlichen\\s+|allen\\s+)?(?:steuernachforderungen|steuerforderungen|abgabennachforderungen|steuerschulden|steuern\\s+und\\s+abgaben)[^.!?;:\\n]{0,40}?frei",
+      "flags": "i",
+      "closes": [
+        "immobilien-028:L28"
+      ],
+      "evidence": "Freistellung von Steuernachforderungen, Freigestellter ist nicht der Anbieter (hier Verkäuferin)",
+      "risk": "low"
+    },
+    {
+      "type": "tax_indemnity_shift",
+      "regex": "(?:k(?:ä|ae)ufer|mieter|p(?:ä|ae)chter|kunde|auftraggeber|besteller|erwerber)\\w*[^.!?;:\\n]{0,60}?stellt[^.!?;:\\n]{0,60}?(?:verk(?:ä|ae)ufer|vermiet|verp(?:ä|ae)chter|anbieter|auftragnehmer|dienstleister)\\w*[^.!?;:\\n]{0,80}?von[^.!?;:\\n]{0,40}?(?:steuern|abgaben)[^.!?;:\\n]{0,40}?frei",
+      "flags": "i",
+      "closes": [
+        "immobilien-028:L28"
+      ],
+      "evidence": "Rollentausch-Variante: Abwälzende Partei und Steuerbegriff in einem Satz, ohne das Wort Nachforderung",
+      "risk": "medium"
+    },
+    {
+      "type": "unilateral_change",
+      "regex": "(?:mehrstunden|mehraufw(?:ä|ae)nde|sonderstunden|zusatzstunden|mehrarbeit|mehrleistungen)[^.!?;:\\n]{0,80}?(?:gelten|gilt|sind)[^.!?;:\\n]{0,60}?als\\s+(?:genehmigt|freigegeben|akzeptiert|einverstanden|abgenommen|beauftragt|verbindlich\\s+vereinbart)",
+      "flags": "i",
+      "closes": [
+        "immobilien-029:L20"
+      ],
+      "evidence": "Zustimmungsfiktion bei vorangestelltem Subjekt (Mehrstunden ... gelten ... als genehmigt); bestehende Muster verlangen die Fiktion vor dem Substantiv",
+      "risk": "medium"
+    },
+    {
+      "type": "unilateral_convenience_termination",
+      "regex": "(?:ordentliche\\w*\\s+)?k(?:ü|ue)ndig(?:ung|ungsrecht)[^.!?;:\\n]{0,80}?steht\\s+(?:ausschlie(?:ß|ss)lich|allein|nur|lediglich)[^.!?;:\\n]{0,20}?(?:der|dem|die)\\s+(?:anbieter|auftragnehmer|dienstleister|vermiet|verp(?:ä|ae)cht|verk(?:ä|ae)uf|unternehmer|verwalter|bautr(?:ä|ae)ger|lizenzgeber|generalunternehmer|werbegesellschaft)\\w*",
+      "flags": "i",
+      "closes": [
+        "immobilien-016:L24"
+      ],
+      "evidence": "'Kündigung steht ausschließlich/allein/nur <Anbieterseite> zu' (bisher nur die Anbieter-als-Subjekt-Form bekannt)",
+      "risk": "low"
+    }
+  ]
+}

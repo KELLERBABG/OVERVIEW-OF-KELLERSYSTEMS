@@ -1,0 +1,37 @@
+{
+  "project": "HoloForge",
+  "language": "Python",
+  "summary": "A Python Volumetric Additive Manufacturing suite (`holoforge/optics.py`, `optimize.py`, `kinetics.py`, `metrology.py`, `dose_compensate.py`, `volume.py`, `hardware/stage.py`, `laser.py`, `display.py`, `runner.py`, `web/server.py`) achieving 92.3% simulated Cure IoU and <0.02% overcure via Multi-Plane Gerchberg-Saxton and coupled free-radical O2-inhibition kinetics.",
+  "tasks": [
+    {
+      "id": "TASK-01",
+      "title": "Enforce pre-flight volumetric dose invariant gate in hardware print runner",
+      "status": "pending",
+      "target_files": [
+        "holoforge/hardware/runner.py",
+        "tests/test_safety.py"
+      ],
+      "context_files": [
+        "holoforge/optimize.py",
+        "holoforge/hardware/laser.py"
+      ],
+      "spec": "Enhance `holoforge/hardware/runner.py` so `PrintRunner.execute()` runs a mandatory pre-flight dose invariant check before opening the 405 nm laser shutter.\n\n1. Reject execution with `DoseInvariantError` if the hologram set's predicted `overcure_fraction > max_overcure` (default `0.0005`), if any angular frame contains NaN/Inf phase values, or if rotary stage angular step synchronization mismatches the hologram count.\n2. Add unit tests in `tests/test_safety.py` verifying that out-of-spec hologram stacks never open the laser shutter.",
+      "verify_cmd": "pytest tests/test_safety.py tests/test_hardware.py -q"
+    },
+    {
+      "id": "TASK-02",
+      "title": "Implement Lorentz-Lorenz refractive index Δn endpoint trigger in Schlieren metrology",
+      "status": "pending",
+      "target_files": [
+        "holoforge/metrology.py",
+        "holoforge/hardware/camera.py",
+        "tests/test_optics.py"
+      ],
+      "context_files": [
+        "holoforge/kinetics.py"
+      ],
+      "spec": "Extend `holoforge/metrology.py` and `holoforge/hardware/camera.py` to compute the Lorentz-Lorenz refractive index change $\\Delta n(r)$ as monomer conversion $\\alpha(r)$ crosses the gelation point $\\alpha_{\\text{gel}}$.\n\n1. Provide `detect_gelation_endpoint(schlieren_frames) -> EndpointVerdict` that triggers an automatic shutter close signal within 1 angular frame of reaching target conversion.\n2. Add unit tests in `tests/test_optics.py`.",
+      "verify_cmd": "pytest tests/test_optics.py -q"
+    }
+  ]
+}

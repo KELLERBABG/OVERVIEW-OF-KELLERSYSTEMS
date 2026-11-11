@@ -1,0 +1,74 @@
+{
+  "slug": "saas-007",
+  "source": "generated",
+  "domain": "Managed Security Service, Schweizer Recht",
+  "traps": [
+    {
+      "marker": "haftet für die von ihr eingesetzten Unterauftragnehmer nur im Rahmen der sorgfältigen Auswahl",
+      "expectedType": "vicarious_agents",
+      "note": "Haftung fuer Gehilfen beschraenkt"
+    },
+    {
+      "marker": "Das Kontrollrecht des Anbieters besteht jederzeit und ohne Anlass.",
+      "expectedType": "unreasonable_audit",
+      "note": "Paraphrase. Kontrollrecht ohne Anlass oder Kostenlast"
+    },
+    {
+      "marker": "Prüfungsrechte bestehen unabhängig von einem konkreten Anlass.",
+      "expectedType": "unreasonable_audit",
+      "note": "Paraphrase. Kontrollrecht ohne Anlass oder Kostenlast"
+    },
+    {
+      "marker": "Für die Rückgabe der Daten fällt ein gesondertes Entgelt an.",
+      "expectedType": "data_lockin",
+      "note": "Paraphrase. Datenrueckgabe kostenpflichtig oder ausgeschlossen"
+    },
+    {
+      "marker": "Bei Verzug schuldet der Kunde eine Aufwandspauschale von 250 EUR.",
+      "expectedType": "penalty",
+      "note": "Paraphrase. Pauschalierte Vertragsstrafe"
+    },
+    {
+      "marker": "Die Haftung für mittelbare Schäden und entgangenen Gewinn ist abbedungen.",
+      "expectedType": "liability",
+      "note": "Paraphrase. Haftungsausschluss"
+    },
+    {
+      "marker": "Die Beendigung ist nur durch ein handschriftlich unterzeichnetes Schreiben in Papierform möglich.",
+      "expectedType": "written_form_trap",
+      "note": "Paraphrase. Schriftformerfordernis ohne Ausnahme"
+    },
+    {
+      "marker": "Rechtsstreitigkeiten sind ausschließlich vor den Gerichten am Sitz des Anbieters auszutragen.",
+      "expectedType": "jurisdiction",
+      "note": "Paraphrase. Gerichtsstand beim Anbieter"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "nach vorheriger Abstimmung mit einer Ankündigungsfrist von zehn Werktagen",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Kosten einer berechtigten Prüfung trägt die Partei, die sie veranlasst hat",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "vollständige Kopie aller Kundendaten in maschinenlesbarer Form kostenfrei",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "ausschließlich in Rechenzentren innerhalb der Europäischen Union",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "wechselseitig offengelegten Informationen vertraulich",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    }
+  ],
+  "uncovered": []
+}

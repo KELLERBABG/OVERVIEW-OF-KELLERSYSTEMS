@@ -1,0 +1,1 @@
+﻿# SmokeShift Tracker — whitepaper stub

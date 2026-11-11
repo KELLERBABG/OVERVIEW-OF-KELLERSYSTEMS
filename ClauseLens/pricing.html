@@ -1,0 +1,737 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Preise &amp; Lizenzen &mdash; ClauseLens</title>
+  <meta name="description" content="Transparente Preismodelle für ClauseLens. 100% DSGVO-konform, unbegrenzte lokale Vertragsprüfungen, keine Datenübertragung an Cloud-LLMs.">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f6f3ec;
+      --card: #ffffff;
+      --ink: #22201c;
+      --body: #4b463d;
+      --dim: #8b8375;
+      --red: #b8442c;
+      --red-bg: rgba(184, 68, 44, 0.08);
+      --green: #3f7a4a;
+      --green-bg: rgba(63, 122, 74, 0.08);
+      --amber: #b8862c;
+      --amber-bg: rgba(184, 134, 44, 0.08);
+      --rule: #d8d1c0;
+      --accent: #2c5282;
+      --accent-bg: rgba(44, 82, 130, 0.08);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; scrollbar-color: #c4bcab #f6f3ec; scrollbar-width: thin; }
+    body {
+      background: var(--paper);
+      color: var(--body);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 44px); width: 100%; }
+
+    /* Header */
+    header.site-nav {
+      background: var(--card);
+      border-bottom: 1px solid var(--rule);
+      padding: 14px clamp(16px, 3vw, 32px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .brand-badge {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-weight: 600;
+      font-size: 1.3rem;
+      color: var(--ink);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .brand-badge span.tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      background: var(--accent);
+      color: #fff;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-weight: 600;
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .btn-nav {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      padding: 7px 14px;
+      border-radius: 4px;
+      text-decoration: none;
+      border: 1px solid var(--rule);
+      color: var(--ink);
+      background: transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all .15s ease;
+    }
+    .btn-nav:hover {
+      background: var(--paper);
+      border-color: var(--dim);
+    }
+    .btn-nav-primary {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+    .btn-nav-primary:hover {
+      background: #1e3a5f;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: clamp(40px, 6vw, 70px) 0 clamp(24px, 3vw, 36px);
+    }
+    .kick {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+    h1 {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-weight: 600;
+      font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+    .sub {
+      max-width: 65ch;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      color: #5a5449;
+    }
+
+    /* Billing Toggle */
+    .billing-switch {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .toggle-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 13px;
+      color: var(--body);
+      cursor: pointer;
+    }
+    .toggle-label.active {
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .switch-btn {
+      position: relative;
+      width: 48px;
+      height: 26px;
+      background: var(--rule);
+      border-radius: 14px;
+      cursor: pointer;
+      border: none;
+      transition: background .2s ease;
+    }
+    .switch-btn.active {
+      background: var(--accent);
+    }
+    .switch-btn::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 20px;
+      height: 20px;
+      background: #fff;
+      border-radius: 50%;
+      transition: transform .2s ease;
+    }
+    .switch-btn.active::after {
+      transform: translateX(22px);
+    }
+    .discount-badge {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      background: var(--green-bg);
+      color: var(--green);
+      border: 1px solid rgba(63, 122, 74, 0.3);
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    /* Pricing Cards Grid */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 24px;
+      margin: 36px 0 60px;
+    }
+    .plan-card {
+      background: var(--card);
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.02);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .plan-card:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+    }
+    .plan-card.highlight {
+      border: 2px solid var(--accent);
+      box-shadow: 0 8px 30px rgba(44, 82, 130, 0.12);
+    }
+    .popular-tag {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent);
+      color: #fff;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10.5px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 3px 12px;
+      border-radius: 12px;
+      font-weight: 600;
+    }
+    .plan-name {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+    .plan-tagline {
+      font-size: 13px;
+      color: var(--dim);
+      margin-bottom: 20px;
+      min-height: 38px;
+    }
+    .price-wrap {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .price-num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .price-cur {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    .price-period {
+      font-size: 12.5px;
+      color: var(--dim);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .price-custom {
+      font-size: 1.5rem;
+      letter-spacing: 0.02em;
+    }
+    .plan-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 28px;
+      flex: 1;
+      font-size: 13.5px;
+    }
+    .plan-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.45;
+    }
+    .plan-features svg {
+      width: 16px;
+      height: 16px;
+      color: var(--green);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .btn-plan {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 12px;
+      border-radius: 4px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid var(--ink);
+      background: var(--ink);
+      color: #fff;
+      transition: all .15s ease;
+    }
+    .btn-plan:hover {
+      background: #3c3833;
+    }
+    .btn-plan.btn-plan-accent {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+    .btn-plan.btn-plan-accent:hover {
+      background: #1e3a5f;
+    }
+    .btn-plan.btn-plan-outline {
+      background: transparent;
+      color: var(--ink);
+      border-color: var(--rule);
+    }
+    .btn-plan.btn-plan-outline:hover {
+      background: var(--paper);
+      border-color: var(--ink);
+    }
+
+    /* Interactive Activation Section */
+    .activation-card {
+      background: var(--card);
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      padding: 32px;
+      margin-bottom: 60px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.02);
+    }
+    .activation-card h2 {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 1.6rem;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+    .activation-card p {
+      font-size: 14px;
+      color: #5a5449;
+      margin-bottom: 20px;
+    }
+    .activation-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    @media (max-width: 720px) {
+      .activation-form {
+        grid-template-columns: 1fr;
+      }
+    }
+    .checkout-hint {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      color: var(--dim);
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      padding: 40px 0 60px;
+      border-top: 1px solid var(--rule);
+    }
+    .faq-section h2 {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 1.8rem;
+      color: var(--ink);
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+    }
+    .faq-item {
+      background: var(--card);
+      border: 1px solid var(--rule);
+      border-radius: 6px;
+      padding: 20px;
+    }
+    .faq-item h3 {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 1.15rem;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+    .faq-item p {
+      font-size: 13.5px;
+      color: #5a5449;
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    footer.site-foot {
+      background: var(--card);
+      border-top: 1px solid var(--rule);
+      padding: 28px 0;
+      margin-top: auto;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      color: var(--dim);
+    }
+    footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    footer a {
+      color: var(--ink);
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-nav">
+    <a href="index.html" class="brand-badge">
+      ClauseLens <span class="tag">Preise</span>
+    </a>
+    <div class="nav-actions">
+      <a href="studio.html" class="btn-nav btn-nav-primary">
+        &larr; Zum Studio
+      </a>
+      <a href="klauseln/index.html" class="btn-nav">
+        Klausel-Lexikon
+      </a>
+      <a href="index.html" class="btn-nav">
+        Startseite
+      </a>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <!-- Hero -->
+    <div class="hero">
+      <span class="kick">Faire &amp; transparente Lizenzierung</span>
+      <h1>Keine Knebelverträge. Volle Kostenkontrolle.</h1>
+      <p class="sub">
+        Wählen Sie das passende Modell für Ihre Kanzlei, Rechtsabteilung oder Ihr Unternehmen. Alle Vertragsprüfungen erfolgen zu 100% lokal auf Ihrem Rechner &mdash; ohne Cloud-Übertragung.
+      </p>
+
+      <!-- Billing Toggle -->
+      <div class="billing-switch">
+        <span class="toggle-label active" id="labelMonthly" onclick="setBilling('monthly')">Monatlich</span>
+        <button class="switch-btn" id="switchBtn" onclick="toggleBilling()"></button>
+        <span class="toggle-label" id="labelAnnual" onclick="setBilling('annual')">
+          Jährlich <span class="discount-badge">Jährliches Abo spart 2 Monate</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- Polar.sh Merchant of Record Banner -->
+    <div style="background:#fff;border:1px solid var(--rule);border-radius:6px;padding:12px 18px;margin:24px 0 12px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;background:#000;color:#fff;padding:3px 8px;border-radius:4px;font-weight:600;">polar.sh</span>
+        <span>Zahlungsabwicklung &amp; Rechnungsstellung erfolgen sicher über unseren autorisierten Merchant of Record <strong>Polar.sh</strong> (inkl. EU-Umsatzsteuerausweis &amp; Rechnungsstellung).</span>
+      </div>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--green);font-weight:600;">✓ 14 Tage Geld-zurück-Garantie</span>
+    </div>
+
+    <!-- Pricing Cards Grid -->
+    <div class="pricing-grid">
+      <!-- Plan 1: Professional (Solo) -->
+      <div class="plan-card">
+        <div class="plan-name">Professional</div>
+        <div class="plan-tagline">Ideal für Freelancer, Gründer, Rechtsberater und Einzelanwälte.</div>
+        <div class="price-wrap">
+          <span class="price-cur">&euro;</span>
+          <span class="price-num" id="pricePro">49</span>
+          <span class="price-period" id="periodPro">/ Monat</span>
+        </div>
+        <ul class="plan-features">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>1 Arbeitsplatz (Seat)</strong> mit Offline-Aktivierung</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Unbegrenzte Vertragsanalysen</strong> (PDF, DOCX, TXT)</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Alle <strong>47 BGB-Klauseldetektoren</strong> (§§ 305–310 BGB)</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Verhandlungsfertige Redlines</strong> mit 1-Klick-Kopieren</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>DIN-A4 Vektor-PDF-Export &amp; JSON-Export</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>100% lokal &amp; DSGVO Art. 28 konform</span>
+          </li>
+        </ul>
+        <a href="https://buy.polar.sh/polar_cl_WiUMAsp8jbeRfoHkdwaVXHQh1erPMFGuagk8h4VBWfS" target="_blank" rel="noopener" class="btn-plan btn-plan-outline" id="btnCheckoutPro" style="display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;text-align:center;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+          <span id="btnTextPro">Professional auf Polar kaufen &rarr;</span>
+        </a>
+        <div class="checkout-hint">14 Tage Geld-zurück-Garantie &bull; Sofortiger Lizenzschlüssel</div>
+      </div>
+
+      <!-- Plan 2: Team & Kanzlei (Popular) -->
+      <div class="plan-card highlight">
+        <span class="popular-tag">Beliebt für Kanzleien</span>
+        <div class="plan-name">Team &amp; Kanzlei</div>
+        <div class="plan-tagline">Für Anwaltskanzleien, Legal Ops, Einkaufs- &amp; Vertriebsteams.</div>
+        <div class="price-wrap">
+          <span class="price-cur">&euro;</span>
+          <span class="price-num" id="priceTeam">149</span>
+          <span class="price-period" id="periodTeam">/ Monat</span>
+        </div>
+        <ul class="plan-features">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>5 Arbeitsplätze (Seats)</strong> für Kanzlei-Teams</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Batch-Verarbeitung</strong> (bis zu 250 Verträge im Durchlauf)</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Vertrags-Versionsvergleich</strong> (Diff &amp; Delta-Analyse)</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Spezialisierte Prüfprofile (SaaS, Freelance, Einkauf)</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Branded Reports mit eigenem Kanzlei-Logo</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Prioritäts-Support mit 24h-Reaktionszeit</span>
+          </li>
+        </ul>
+        <a href="https://buy.polar.sh/polar_cl_VLID5QIYwkHpaf8tsSxbu3vsCPlcBmLkNw92f32pyaj" target="_blank" rel="noopener" class="btn-plan btn-plan-accent" id="btnCheckoutTeam" style="display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;text-align:center;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+          <span id="btnTextTeam">Team &amp; Kanzlei auf Polar kaufen &rarr;</span>
+        </a>
+        <div class="checkout-hint">14 Tage Geld-zurück-Garantie &bull; Sofortiger Lizenzschlüssel</div>
+      </div>
+
+      <!-- Plan 3: Enterprise -->
+      <div class="plan-card">
+        <div class="plan-name">Enterprise</div>
+        <div class="plan-tagline">Für Konzerne, Großkanzleien und automatisierte CI/CD-Pipelines.</div>
+        <div class="price-wrap">
+          <span class="price-num price-custom">Auf Anfrage</span>
+        </div>
+        <ul class="plan-features">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Unbegrenzte Arbeitsplätze</strong> (Unternehmenslizenz)</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Unbegrenzte Batch-Verarbeitung</strong></span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>OASIS SARIF 2.1.0 Export</strong> &amp; REST-API</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Headless <strong>Docker-Container</strong> (&lt; 60 MB Alpine)</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Eigene Custom-Regeln &amp; Klausel-Veto-Listen</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Dedizierter Onboarding-Architekt &amp; 12h-SLA</span>
+          </li>
+        </ul>
+        <a href="mailto:info@kellersystems.dev?subject=ClauseLens%20Enterprise%20Lizenzanfrage" class="btn-plan btn-plan-outline" style="display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;text-align:center;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          <span>Enterprise anfragen &rarr;</span>
+        </a>
+        <div class="checkout-hint">Individuelle Vereinbarung &bull; Custom SLA</div>
+      </div>
+    </div>
+
+    <!-- Activation Guide Section -->
+    <div class="activation-card" id="activationArea">
+      <h2>So funktioniert die Lizenzaktivierung über Polar.sh</h2>
+      <p style="max-width:680px;margin:0 auto 24px;font-size:14px;color:var(--body);">
+        Der Erwerb und die Freischaltung Ihrer kommerziellen ClauseLens Lizenz erfolgen in 3 einfachen Schritten:
+      </p>
+      
+      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:20px;text-align:left;">
+        <div style="background:#fff;border:1px solid var(--rule);border-radius:6px;padding:20px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent);font-weight:700;margin-bottom:8px;">SCHRITT 1 &bull; CHECKOUT</div>
+          <div style="font-weight:600;font-size:15px;color:var(--ink);margin-bottom:6px;">Kauf über Polar.sh</div>
+          <div style="font-size:13px;color:var(--body);line-height:1.5;">
+            Klicken Sie auf Ihren gewünschten Tarif. Polar.sh (Merchant of Record) wickelt die Zahlung sicher per Kreditkarte, SEPA, PayPal oder Apple Pay ab.
+          </div>
+        </div>
+        <div style="background:#fff;border:1px solid var(--rule);border-radius:6px;padding:20px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent);font-weight:700;margin-bottom:8px;">SCHRITT 2 &bull; ZUSTELLUNG</div>
+          <div style="font-weight:600;font-size:15px;color:var(--ink);margin-bottom:6px;">Lizenzschlüssel per E-Mail</div>
+          <div style="font-size:13px;color:var(--body);line-height:1.5;">
+            Direkt nach erfolgreicher Zahlung sendet Polar Ihnen Ihre offizielle Rechnung mit ausgewiesener USt sowie Ihren persönlichen Lizenzschlüssel zu.
+          </div>
+        </div>
+        <div style="background:#fff;border:1px solid var(--rule);border-radius:6px;padding:20px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent);font-weight:700;margin-bottom:8px;">SCHRITT 3 &bull; FREISCHALTUNG</div>
+          <div style="font-weight:600;font-size:15px;color:var(--ink);margin-bottom:6px;">Im Studio eintragen</div>
+          <div style="font-size:13px;color:var(--body);line-height:1.5;">
+            Fügen Sie den Schlüssel im Studio unter „Lizenz / Account“ ein. Das Studio ist sofort ohne Cloud-Abhängigkeit dauerhaft für unbegrenzte Prüfungen aktiv.
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:28px;padding-top:20px;border-top:1px solid var(--rule);display:flex;justify-content:center;gap:14px;flex-wrap:wrap;align-items:center;">
+        <span style="font-size:13.5px;color:var(--ink);font-weight:500;">Schlüssel bereits erhalten?</span>
+        <a href="studio.html" class="btn-nav btn-nav-primary" style="display:inline-flex;padding:10px 22px;font-size:13px;text-decoration:none;">
+          🚀 Direkt im Studio öffnen &amp; Lizenzschlüssel eingeben &rarr;
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq-section">
+      <h2>Häufig gestellte Fragen (FAQ)</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3>Verlassen meine Dokumente mein Gerät?</h3>
+          <p>
+            <strong>Nein, niemals.</strong> Die gesamte Analyse-Engine läuft direkt lokal in Ihrem Browser bzw. in Ihrem Node-Server. Es werden zu keinem Zeitpunkt Vertragstexte an Drittanbieter oder Cloud-LLMs übermittelt (DSGVO Art. 28 &amp; § 203 StGB konform).
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3>Gibt es eine automatische Vertragsverlängerung?</h3>
+          <p>
+            <strong>Nein.</strong> Wir lehnen Knebelverträge aus Prinzip ab. Alle Monatslizenzen sind jederzeit zum Monatsende kündbar. Jahreslizenzen verlängern sich nicht automatisch um 24 Monate.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3>Was passiert nach den 3 Testprüfungen?</h3>
+          <p>
+            Sie können 3 Verträge kostenfrei evaluieren. Danach öffnet sich das Aktivierungsfenster. Mit Eingabe eines Lizenzschlüssels schalten Sie das Studio sofort für unbegrenzte Prüfungen frei.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3>Stellt das Tool eine Rechtsberatung dar?</h3>
+          <p>
+            ClauseLens prüft 47 Klauseltypen und typische Risikomuster im Rahmen der automatisierten kaufmännischen Vorprüfung nach dem Rechtsdienstleistungsgesetz (§§ 1, 2 RDG). Es ersetzt keine anwaltliche Einzelfallberatung und erhebt keinen Anspruch auf Vollständigkeit, liefert aber verhandlungsfertige Gegenvorschläge.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-foot">
+    <div class="wrap">
+      <span>ClauseLens &middot; Keller Systems &copy; 2026</span>
+      <span>
+        <a href="studio.html">Studio</a> &nbsp;/&nbsp;
+        <a href="klauseln/index.html">Klausel-Lexikon</a> &nbsp;/&nbsp;
+        <a href="index.html">Startseite</a> &nbsp;/&nbsp;
+        <a href="docs.html">Handbuch &amp; API</a> &nbsp;/&nbsp;
+        <a href="https://kellersystems.dev/impressum/" target="_blank" rel="noopener noreferrer">Impressum</a> &nbsp;/&nbsp;
+        <a href="https://kellersystems.dev/privacy/" target="_blank" rel="noopener noreferrer">Datenschutz</a> &nbsp;/&nbsp;
+        <a href="https://kellersystems.dev/legal/" target="_blank" rel="noopener noreferrer">EULA &amp; AGB</a>
+      </span>
+    </div>
+  </footer>
+
+  <script>
+    let isAnnual = false;
+
+
+    function toggleBilling() {
+      setBilling(!isAnnual ? 'annual' : 'monthly');
+    }
+
+    function setBilling(mode) {
+      isAnnual = (mode === 'annual');
+      const switchBtn = document.getElementById('switchBtn');
+      const lblM = document.getElementById('labelMonthly');
+      const lblA = document.getElementById('labelAnnual');
+      const btnPro = document.getElementById('btnTextPro');
+      const btnTeam = document.getElementById('btnTextTeam');
+
+      if (isAnnual) {
+        switchBtn.classList.add('active');
+        lblA.classList.add('active');
+        lblM.classList.remove('active');
+        document.getElementById('pricePro').textContent = '490';
+        document.getElementById('periodPro').textContent = '/ Jahr';
+        document.getElementById('priceTeam').textContent = '1.490';
+        document.getElementById('periodTeam').textContent = '/ Jahr';
+        if (btnPro) btnPro.textContent = 'Professional jährlich kaufen (490 €) \u2192';
+        if (btnTeam) btnTeam.textContent = 'Team & Kanzlei jährlich kaufen (1.490 €) \u2192';
+      } else {
+        switchBtn.classList.remove('active');
+        lblM.classList.add('active');
+        lblA.classList.remove('active');
+        document.getElementById('pricePro').textContent = '49';
+        document.getElementById('periodPro').textContent = '/ Monat';
+        document.getElementById('priceTeam').textContent = '149';
+        document.getElementById('periodTeam').textContent = '/ Monat';
+        if (btnPro) btnPro.textContent = 'Professional auf Polar kaufen (49 €/M) \u2192';
+        if (btnTeam) btnTeam.textContent = 'Team & Kanzlei auf Polar kaufen (149 €/M) \u2192';
+      }
+    }
+  </script>
+</body>
+</html>

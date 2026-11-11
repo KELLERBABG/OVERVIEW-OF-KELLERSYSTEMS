@@ -1,0 +1,15 @@
+[package]
+name = "price-discovery"
+version.workspace = true
+edition.workspace = true
+description = "MPC-based price discovery computing equilibrium price from aggregate encrypted volume"
+
+[dependencies]
+sss = { path = "../sss" }
+smpc-engine = { path = "../smpc-engine" }
+ark-bn254.workspace = true
+ark-ff.workspace = true
+thiserror.workspace = true
+
+[lints]
+rust.unsafe_code = "forbid"

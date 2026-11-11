@@ -1,0 +1,76 @@
+Rahmenvertrag über den Betrieb der IT-Infrastruktur der Stadtwerke Lahnau
+
+zwischen der Helios IT GmbH, Mainzer Landstraße 200, 60326 Frankfurt am Main (nachfolgend Anbieter), und den Stadtwerken Lahnau, Anstalt des öffentlichen Rechts, Rathausplatz 1, 35633 Lahnau (nachfolgend Kunde).
+
+Präambel
+Der Kunde betreibt die kommunale Versorgung und benötigt einen stabilen Betrieb seiner IT-Infrastruktur. Der Anbieter übernimmt Betrieb und Wartung. Die Parteien vereinbaren Folgendes.
+
+§ 1 Gegenstand
+Gegenstand ist der Betrieb und die Wartung der IT-Infrastruktur gemäß Anlage 1.
+
+§ 2 Betrieb
+(1) Der Anbieter betreibt die Systeme gemäß Anlage 1.
+
+(2) Die Vertragsparteien informieren sich unverzüglich über Störungen.
+
+§ 3 Laufzeit
+(1) Der Vertrag beginnt am 1. Juli 2026 und hat eine Mindestlaufzeit von sechsunddreißig Monaten.
+
+(2) Wird der Vertrag nicht mit einer Frist von drei Monaten zum Laufzeitende gekündigt, setzt sich die Zusammenarbeit um weitere zweiundsiebzig Monate fort.
+
+(3) Ordentliche Beendigungen sind mit einer Vorlaufzeit von achtundvierzig Monaten zulässig.
+
+§ 4 Vergütung
+(1) Die Vergütung ist innerhalb von dreißig Tagen nach Rechnungseingang fällig.
+
+(2) Kostensteigerungen werden vollumfänglich an den Kunden weitergegeben; eine Deckelung besteht nicht.
+
+§ 5 Daten und Export
+(1) Der Datenexport ist nur gegen eine gesonderte Vergütung möglich.
+
+(2) Der Anbieter dokumentiert die Änderungen im Änderungsprotokoll.
+
+§ 6 Betriebsunterbrechung
+(1) Der Anbieter ist berechtigt, das System abzuschalten, wenn der Kunde den Wartungsvertrag nicht verlängert.
+
+(2) Vor einer Abschaltung informiert der Anbieter den Kunden mit einer Frist von dreißig Tagen.
+
+§ 7 Sperrung
+(1) The provider may immediately suspend the services for any breach.
+
+(2) Der Kunde erhält nach Behebung des Grundes unverzüglich wieder Zugang.
+
+§ 8 Prüfungen
+(1) Die Prüfungsrechte bestehen unabhängig von einem konkreten Anlass.
+
+(2) Der Anbieter stellt die erforderlichen Unterlagen bereit.
+
+§ 9 Aufzeichnungen
+(1) Aufzeichnungen des Anbieters sind unwiderlegbar; abweichende Nachweise bleiben ohne Bedeutung.
+
+(2) Der Kunde kann eine gemeinsame Auswertung verlangen.
+
+§ 10 Haftung
+(1) Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt.
+
+(2) Der Anbieter unterhält eine Berufshaftpflichtversicherung mit einer Deckungssumme von zwei Millionen EUR.
+
+§ 11 Beendigung
+(1) Die Kündigung aus wichtigem Grund bleibt beiden Parteien unbenommen.
+
+(2) Alle Fristen werden in Kalendertagen gerechnet.
+
+§ 12 Schlussbestimmungen
+(1) Änderungen dieses Vertrages können in Textform vereinbart werden.
+
+(2) Die Parteien behandeln die Vertragsverhandlung vertraulich.
+
+(3) Dieser Vertrag unterliegt deutschem Recht.
+
+Anlage 1: Leistungsbeschreibung
+
+Frankfurt am Main, den 15. Mai 2026
+
+Helios IT GmbH
+
+Stadtwerke Lahnau

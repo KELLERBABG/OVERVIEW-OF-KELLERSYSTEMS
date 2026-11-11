@@ -1,0 +1,78 @@
+{
+  "slug": "einkauf-009",
+  "source": "generated",
+  "domain": "Einkauf und Lieferantenrahmenvertrag, deutsches und oesterreichisches Recht",
+  "traps": [
+    {
+      "marker": "Bei Überschreitung des vereinbarten Liefertermins wird eine Pauschale von 2 Prozent",
+      "expectedType": "penalty",
+      "note": "Pauschale bei Terminueberschreitung ohne das Registerwort Vertragsstrafe, Prozentsatz statt Betrag"
+    },
+    {
+      "marker": "wird die Lieferung als vertragsgemäß behandelt",
+      "expectedType": "deemed_acceptance",
+      "note": "Fiktionswirkung ohne die Registerformel gilt als genehmigt"
+    },
+    {
+      "marker": "Vorlaufzeit für eine Beendigung des Rahmenvertrags durch den Besteller währt",
+      "expectedType": "notice_period",
+      "note": "Kündigungsbindung umschrieben mit Vorlaufzeit und währen statt Kündigungsfrist beträgt"
+    },
+    {
+      "marker": "Die Vergütung steigt jährlich um bis zu 8 Prozent",
+      "expectedType": "price_escalation",
+      "note": "Einseitige Preisanhebung, ohne die Woerter Preisanpassungsklausel oder Index"
+    },
+    {
+      "marker": "Der Lieferant behält sich vor, die Lieferbedingungen anzupassen",
+      "expectedType": "unilateral_change",
+      "note": "Einseitiger Aenderungsvorbehalt ohne Zustimmungserfordernis"
+    },
+    {
+      "marker": "bis alle Ansprüche aus der gesamten Geschäftsbeziehung ausgeglichen sind",
+      "expectedType": "extended_retention_of_title",
+      "note": "Kontokorrentvorbehalt ueber die gesamte Geschaeftsbeziehung"
+    },
+    {
+      "marker": "nur nach vorheriger schriftlicher Bestätigung durch den Lieferanten in Ansatz gebracht",
+      "expectedType": "setoff_restriction",
+      "note": "Faktischer Aufrechnungsausschluss ohne das Wort Aufrechnung"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Besteller stellt dem Lieferanten die Abrufsoftware unentgeltlich zur Verfügung",
+      "note": "Unentgeltliche Bereitstellung der Abrufsoftware"
+    },
+    {
+      "marker": "Bei berechtigter Rüge bessert der Lieferant innerhalb von zehn Werktagen nach",
+      "note": "Nachbesserungspflicht ohne Abnahmefiktion"
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag einvernehmlich beenden",
+      "note": "Einvernehmliche Beendigung"
+    },
+    {
+      "marker": "Rechnungen sind innerhalb von dreißig Tagen ohne Abzug zu begleichen",
+      "note": "Marktueblicher Zahlungstermin"
+    },
+    {
+      "marker": "Der Besteller verwahrt die Vorbehaltsware getrennt und versichert sie zum Wiederbeschaffungswert",
+      "note": "Ordentliche Verwahrung ohne erweiterten Vorbehalt"
+    },
+    {
+      "marker": "Beide Parteien behandeln die technischen Unterlagen der anderen Seite vertraulich",
+      "note": "Wechselseitige Vertraulichkeit"
+    },
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Zulaessige Haftungsklausel"
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Die Parteien benennen jeweils einen technischen Ansprechpartner",
+      "note": "Benennung von Ansprechpartnern ohne Pflichten, kein Detektor"
+    }
+  ]
+}

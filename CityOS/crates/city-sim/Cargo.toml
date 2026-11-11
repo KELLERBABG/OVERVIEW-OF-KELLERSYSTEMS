@@ -1,0 +1,13 @@
+[package]
+name = "city-sim"
+description = "Multi-node district simulation proving gossip convergence and replay rejection"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+city-types = { workspace = true }
+city-crypto = { workspace = true }
+city-dag = { workspace = true }
+city-p2p = { workspace = true }

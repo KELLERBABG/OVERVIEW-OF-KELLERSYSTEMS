@@ -1,0 +1,73 @@
+{
+  "slug": "logistik-003",
+  "source": "generated",
+  "domain": "Spedition und Kontraktlogistik (AT)",
+  "traps": [
+    {
+      "marker": "Die Entgelte erhöhen sich automatisch um jährlich bis zu acht Prozent",
+      "expectedType": "price_escalation",
+      "note": "automatische Preiserhoehung"
+    },
+    {
+      "marker": "behält sich vor, den Leistungsumfang an geänderte Marktbedingungen anzupassen",
+      "expectedType": "unilateral_change",
+      "note": "einseitige Leistungsanpassung"
+    },
+    {
+      "marker": "Ausgleich sämtlicher Forderungen aus der gesamten Geschäftsbeziehung",
+      "expectedType": "extended_retention_of_title",
+      "note": "erweiterter Eigentumsvorbehalt"
+    },
+    {
+      "marker": "Die Geheimhaltungspflichten gelten zeitlich unbefristet fort",
+      "expectedType": "excessive_survival",
+      "note": "unbefristete Nachwirkung"
+    },
+    {
+      "marker": "Bei Insolvenz des Auftraggebers endet der Vertrag ohne weiteres",
+      "expectedType": "insolvency_termination",
+      "note": "automatisches Ende bei Insolvenz"
+    },
+    {
+      "marker": "Ansprüche des Auftraggebers verjähren innerhalb von sechs Monaten nach Ablieferung",
+      "expectedType": "statute_of_limitations",
+      "note": "verkuerzte Verjaehrung"
+    },
+    {
+      "marker": "Dieser Vertrag enthält alle Vereinbarungen der Parteien und ersetzt frühere Absprachen",
+      "expectedType": "entire_agreement",
+      "note": "Vollstaendigkeitsklausel"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "informieren einander unverzüglich über absehbare Betriebsstörungen",
+      "note": "Informationspflicht"
+    },
+    {
+      "marker": "Rechnungen sind innerhalb von 30 Tagen ohne Abzug zahlbar",
+      "note": "normale Zahlungsfrist"
+    },
+    {
+      "marker": "Beide Parteien wahren die berechtigten Interessen der anderen Seite",
+      "note": "Interessenwahrung"
+    },
+    {
+      "marker": "Die gesetzlichen Gewährleistungsrechte des Auftraggebers bleiben unberührt",
+      "note": "gesetzliche Gewaehrleistung"
+    },
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "gesetzliche Haftung"
+    },
+    {
+      "marker": "Für Streitigkeiten gilt der gesetzliche Gerichtsstand",
+      "note": "gesetzlicher Gerichtsstand"
+    },
+    {
+      "marker": "Der Anbieter kann Unterauftragnehmer mit einer Vorlaufzeit von vierzehn Tagen benennen",
+      "note": "transparenter Subunternehmereinsatz"
+    }
+  ],
+  "uncovered": []
+}

@@ -1,0 +1,87 @@
+{
+  "slug": "daten-026",
+  "source": "generated",
+  "domain": "Auftragsverarbeitung",
+  "traps": [
+    {
+      "marker": "Bei einem Direktauftrag des Kunden steht dem Anbieter keine Provision zu",
+      "expectedType": "agency_commission_exclusion",
+      "note": "Paraphrase/Umstellung: nennt 'Bei einem Direktauftrag des Kunden steht dem ' statt der Registerwendung."
+    },
+    {
+      "marker": "Der Anbieter verzichtet auf jeden Ausgleich für den aufgebauten Kundenstamm",
+      "expectedType": "agency_goodwill_waiver",
+      "note": "Paraphrase/Umstellung: nennt 'Der Anbieter verzichtet auf jeden Ausgleich f' statt der Registerwendung."
+    },
+    {
+      "marker": "Kundendaten können in Rechenzentren eines Drittlands gespiegelt werden",
+      "expectedType": "international_data_processing",
+      "note": "Paraphrase/Umstellung: nennt 'Kundendaten können in Rechenzentren eines Dri' statt der Registerwendung."
+    },
+    {
+      "marker": "Die Verfahrenskosten sind vom Kunden vorauszuzahlen",
+      "expectedType": "mandatory_expert_determination",
+      "note": "Paraphrase/Umstellung: nennt 'Die Verfahrenskosten sind vom Kunden vorauszu' statt der Registerwendung."
+    },
+    {
+      "marker": "Versäumt der Kunde einen Sicherheitspatch, verfällt sein Anspruch",
+      "expectedType": "service_credit_forfeiture",
+      "note": "Paraphrase/Umstellung: nennt 'Versäumt der Kunde einen Sicherheitspatch, ve' statt der Registerwendung."
+    },
+    {
+      "marker": "Bei vorzeitiger Beendigung wird eine pauschale Abstandszahlung fällig",
+      "expectedType": "early_termination_charge",
+      "note": "Paraphrase/Umstellung: nennt 'Bei vorzeitiger Beendigung wird eine pauschal' statt der Registerwendung."
+    },
+    {
+      "marker": "Mangels eines Wartungsvertrags kann der Anbieter das System stilllegen",
+      "expectedType": "maintenance_conditional_shutdown",
+      "note": "Paraphrase/Umstellung: nennt 'Mangels eines Wartungsvertrags kann der Anbie' statt der Registerwendung."
+    },
+    {
+      "marker": "setzt sich die Lizenz jeweils um ein weiteres Kalenderjahr fort",
+      "expectedType": "auto_renewal",
+      "note": "Paraphrase/Umstellung: nennt 'setzt sich die Lizenz jeweils um ein weiteres' statt der Registerwendung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "einfaches, nicht ausschließliches Nutzungsrecht für den vereinbarten Zweck",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "auf den in der Präambel bezeichneten Zweck beschränkt",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "zum Quartalsende ordentlich kündigen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "dieselben Datenschutzstandards einhalten",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "mit ihren jeweiligen Lizenzen aufgeführt",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "gesetzliche Haftung für Vorsatz und grobe Fahrlässigkeit",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "aus wichtigem Grund jederzeit fristlos beenden",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Streitigkeiten vorrangig durch Mediation zu klären",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Mindestabnahme von fünfhundert Datensätzen je Kalendermonat",
+      "note": "Täuschende Klausel ohne passenden Detektortyp."
+    }
+  ]
+}

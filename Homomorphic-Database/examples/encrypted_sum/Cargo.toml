@@ -1,0 +1,18 @@
+[package]
+name = "encrypted_sum"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "End-to-end demo: encrypted SUM query"
+
+[dependencies]
+fhe-core.workspace = true
+fhe-db.workspace = true
+fhe-server.workspace = true
+fhe-client.workspace = true
+tokio.workspace = true
+axum.workspace = true
+anyhow.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true

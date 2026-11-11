@@ -1,0 +1,92 @@
+{
+  "slug": "service-017",
+  "source": "generated",
+  "domain": "SLA und Support",
+  "traps": [
+    {
+      "marker": "Die Einzelheiten der zulässigen Datenverwendung ergeben sich aus Anlage 3, die dem Anbieter eine",
+      "expectedType": "data_grant",
+      "note": "GAP: engine miss. Legally abusive (§ 305c BGB); technique: grant hidden in an annex reference"
+    },
+    {
+      "marker": "Verspätete Zahlungen werden mit fünfzehn Prozentpunkten über dem Basiszinssatz verzinst, ohne",
+      "expectedType": "default_interest",
+      "note": "Legally abusive (§ 288 Abs. 2 BGB); engine hit; technique: number word and damage-independent markup"
+    },
+    {
+      "marker": "Anpassungen des Leistungsverzeichnisses nach Anlage 2 nimmt der Anbieter durch Mitteilung vor; die",
+      "expectedType": "unilateral_change",
+      "note": "Legally abusive (§ 308 Nr. 4 BGB); engine hit; technique: change via annex that is deemed accepted"
+    },
+    {
+      "marker": "Der Kunde kann nur mit unbestrittenen Forderungen verrechnen; der Anbieter bleibt zur Verrechnung",
+      "expectedType": "setoff_restriction",
+      "note": "GAP: engine miss. Legally abusive (§ 309 Nr. 3 BGB); technique: negation asymmetry: provider keeps full set-off right"
+    },
+    {
+      "marker": "Wer auf die Mitteilung nicht innerhalb von zwei Wochen antwortet, dessen Einverständnis wird",
+      "expectedType": "deemed_acceptance",
+      "note": "GAP: engine miss. Legally abusive (§ 308 Nr. 5 BGB); technique: paraphrase: consent inferred from silence, no express fiction"
+    },
+    {
+      "marker": "Mängelansprüche erlöschen zwölf Monate nach Übergabe, unabhängig davon, wann der Kunde den Fehler",
+      "expectedType": "statute_of_limitations",
+      "note": "Legally abusive (§ 309 Nr. 8 BGB); engine hit; technique: limitation period measured from handover, in number words"
+    },
+    {
+      "marker": "Erklärungen des Kunden müssen in Papierform zugehen, während der Anbieter Mitteilungen per Nachricht",
+      "expectedType": "written_form_trap",
+      "note": "GAP: engine miss. Legally abusive (§ 309 Nr. 13 BGB); technique: asymmetry: paper form for the customer, app message for the provider"
+    },
+    {
+      "marker": "Der Kunde stellt den Anbieter von sämtlichen steuerlichen Nachforderungen frei, auch wenn diese auf ",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Legally abusive (§ 307 BGB); engine hit; technique: literal indemnity against all tax assessments"
+    },
+    {
+      "marker": "Der Kunde verpflichtet sich zur Vertraulichkeit; den Anbieter trifft keine entsprechende Pflicht.",
+      "expectedType": "asymmetric_confidentiality",
+      "note": "Legally abusive (§ 307 BGB); engine hit; technique: literal one-sided confidentiality for the customer"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Vergütung ist innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Am Ende der Laufzeit stellt der Anbieter alle Kundendaten in einem gängigen Format kostenfrei zur",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Jede Partei kann den Vertrag aus wichtigem Grund ohne Einhaltung einer Frist kündigen.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Der Anbieter unterhält eine Betriebshaftpflichtversicherung mit einer Deckungssumme von fünf",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Der Kunde erhält auf Wunsch eine Kopie der über ihn gespeicherten Daten.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Preisanpassungen erfolgen nur mit Zustimmung des Kunden oder bei Änderung gesetzlicher Abgaben.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Der Anbieter teilt beabsichtigte Preisanpassungen mindestens sechs Wochen vorher mit.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Die Einhaltung terminlicher Zusagen des Anbieters steht unter dem Vorbehalt der jederzeitigen",
+      "note": "Deceptive clause without a matching detector type (coverage gap)."
+    },
+    {
+      "marker": "Der Kunde trägt Aufwendungen für Reisen, Unterkunft und Schulungen auch dann, wenn der Termin nicht ",
+      "note": "Deceptive clause without a matching detector type (coverage gap)."
+    }
+  ]
+}

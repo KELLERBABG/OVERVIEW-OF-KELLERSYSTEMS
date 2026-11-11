@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BauLens &mdash; Dokumentation</title>
+<meta name="description" content="BauLens-Dokumentation im Browser: Regelkatalog mit allen 15 Prüfmodulen, technisches Whitepaper, README und Änderungsverlauf.">
+<meta name="color-scheme" content="dark">
+<link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+<style>
+/* Self-hosted IBM Plex; see assets/fonts/OFL.txt */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./plex-mono-400-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./plex-mono-400-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./plex-mono-500-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./plex-mono-500-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("./plex-mono-600-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("./plex-mono-600-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./plex-sans-300-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./plex-sans-300-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./plex-sans-400-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./plex-sans-400-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./plex-sans-500-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./plex-sans-500-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./plex-sans-600-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./plex-sans-600-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./plex-sans-700-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./plex-sans-700-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+  /* ==========================================================================
+     BauLens documentation viewer — same token system as index.html.
+     ========================================================================== */
+  :root {
+    --ink-900: #05070c;
+    --ink-800: #080b12;
+    --ink-700: #0b0f18;
+    --ink-600: #101623;
+    --ink-500: #161e2e;
+    --line: #1a2434;
+    --line-strong: #26334a;
+    --ink-line: #33415a;
+
+    --accent: #2fb6cf;
+    --accent-hi: #57cde2;
+    --accent-wash: rgba(47, 182, 207, 0.08);
+    --accent-edge: rgba(47, 182, 207, 0.32);
+    --on-accent: #04141a;
+
+    --ok: #2fb6cf;
+    --warn: #d9a441;
+    --warn-wash: rgba(217, 164, 65, 0.1);
+
+    --fg: #e9edf3;
+    --fg-muted: #98a4b6;
+    --fg-dim: #6b7788;
+    --fg-faint: #4d5768;
+
+    --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+    --r-sm: 3px;
+    --r-md: 5px;
+    --r-lg: 8px;
+    --dur-fast: 120ms;
+    --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+    --rail: 288px;
+    --content: 78ch;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--ink-900);
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
+    background-size: 88px 88px;
+    background-attachment: fixed;
+    color: var(--fg);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.7;
+    overflow-x: clip;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :focus-visible { outline: 2px solid var(--accent-hi); outline-offset: 2px; border-radius: var(--r-sm); }
+  ::selection { background: var(--accent-edge); color: var(--fg); }
+
+  .skip-link {
+    position: absolute; left: 1rem; top: -100px; z-index: 100;
+    padding: 0.6rem 1rem; background: var(--ink-500);
+    border: 1px solid var(--accent); border-radius: var(--r-md);
+    font-family: var(--font-mono); font-size: 0.8125rem; text-decoration: none;
+    transition: top var(--dur-fast) var(--ease-out);
+  }
+  .skip-link:focus { top: 1rem; }
+
+  /* ---------- Header ---------- */
+  .site-header {
+    position: sticky; top: 0; z-index: 60;
+    background: rgba(5, 7, 12, 0.88);
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(12px) saturate(140%);
+  }
+  .header-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 1.5rem; height: 64px;
+    max-width: 1420px; margin: 0 auto; padding: 0 1.5rem;
+  }
+  .brand { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; color: inherit; }
+  .brand-mark {
+    display: grid; place-items: center; width: 32px; height: 32px;
+    background: var(--ink-700); border: 1px solid var(--line-strong); border-radius: var(--r-md);
+  }
+  .brand-mark img { display: block; width: 22px; height: 22px; }
+  .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+  .brand-name { font-size: 1rem; font-weight: 600; letter-spacing: -0.02em; }
+  .brand-owner {
+    font-family: var(--font-mono); font-size: 0.62rem;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-dim);
+  }
+  .header-actions { display: flex; align-items: center; gap: 0.5rem; }
+  .header-link {
+    font-size: 0.875rem; color: var(--fg-muted); text-decoration: none;
+    padding: 0.4rem 0.6rem; border-radius: var(--r-md);
+    transition: color var(--dur-fast) var(--ease-out), background-color var(--dur-fast) var(--ease-out);
+  }
+  .header-link:hover { color: var(--fg); background: var(--ink-600); }
+  .header-cta {
+    font-size: 0.8125rem; font-weight: 550; text-decoration: none;
+    color: var(--on-accent); background: var(--accent);
+    padding: 0.5rem 0.9rem; border-radius: var(--r-md);
+    transition: background-color var(--dur-fast) var(--ease-out);
+  }
+  .header-cta:hover { background: var(--accent-hi); }
+  .mobile-doc-picker { display: none; min-width: 0; }
+  .mobile-doc-picker select {
+    background: var(--ink-700); color: var(--fg); border: 1px solid var(--line-strong);
+    border-radius: var(--r-md); padding: 0.45rem 0.6rem;
+    font-family: var(--font-mono); font-size: 0.8rem;
+    max-width: 42vw;
+  }
+  .visually-hidden {
+    position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+    overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+  }
+
+  /* ---------- Shell ---------- */
+  .shell {
+    display: grid;
+    grid-template-columns: var(--rail) minmax(0, 1fr);
+    gap: 3.5rem;
+    max-width: 1420px;
+    margin: 0 auto;
+    padding: 0 1.5rem 6rem;
+    align-items: start;
+  }
+
+  /* ---------- Rail ---------- */
+  .rail { position: sticky; top: 88px; padding: 2.5rem 0 2rem; max-height: calc(100vh - 88px); overflow-y: auto; }
+  .rail-label {
+    font-family: var(--font-mono); font-size: 0.68rem; font-weight: 500;
+    letter-spacing: 0.13em; text-transform: uppercase; color: var(--fg-dim);
+    margin: 0 0 1rem;
+  }
+  .rail-list { list-style: none; margin: 0 0 2rem; padding: 0; }
+  .rail-list li + li { margin-top: 1px; }
+  .rail-link {
+    display: block; padding: 0.7rem 0.85rem; text-decoration: none;
+    border-left: 2px solid transparent; border-radius: 0 var(--r-md) var(--r-md) 0;
+    transition: background-color var(--dur-fast) var(--ease-out),
+                border-color var(--dur-fast) var(--ease-out);
+  }
+  .rail-link:hover { background: var(--ink-700); }
+  .rail-link[aria-current="true"] { background: var(--accent-wash); border-left-color: var(--accent); }
+  .rail-title { display: block; font-size: 0.9375rem; font-weight: 500; color: var(--fg); }
+  .rail-link[aria-current="true"] .rail-title { color: var(--accent-hi); }
+  .rail-blurb { display: block; font-size: 0.78rem; color: var(--fg-dim); line-height: 1.45; margin-top: 0.15rem; }
+
+  .rail-toc { border-top: 1px solid var(--line); padding-top: 1.25rem; }
+  .rail-toc ol { list-style: none; margin: 0; padding: 0; }
+  .rail-toc li { margin: 0; }
+  .rail-toc a {
+    display: block; padding: 0.28rem 0.85rem; font-size: 0.8125rem;
+    color: var(--fg-muted); text-decoration: none;
+    border-left: 2px solid transparent;
+    transition: color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+  }
+  .rail-toc a:hover { color: var(--fg); border-left-color: var(--ink-line); }
+  .rail-toc a.lvl-3 { padding-left: 1.6rem; font-size: 0.78rem; color: var(--fg-dim); }
+
+  /* ---------- Article ---------- */
+  .doc { padding: 2.5rem 0 0; min-width: 0; }
+  .doc-status {
+    display: inline-flex; align-items: center; gap: 0.45rem;
+    font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--fg-dim); margin: 0 0 1.5rem;
+  }
+  .doc-status .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ok); }
+
+  .prose { max-width: var(--content); }
+  .prose > *:first-child { margin-top: 0; }
+
+  .prose h1 {
+    font-size: clamp(1.85rem, 1.4rem + 1.7vw, 2.5rem);
+    font-weight: 300; line-height: 1.12; letter-spacing: -0.028em;
+    margin: 0 0 1.25rem; padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--line-strong);
+  }
+  .prose h2 {
+    font-size: clamp(1.3rem, 1.15rem + 0.7vw, 1.6rem);
+    font-weight: 600; line-height: 1.2; letter-spacing: -0.02em;
+    margin: 3.25rem 0 1rem; padding-top: 1.75rem;
+    border-top: 1px solid var(--line);
+  }
+  .prose h3 { font-size: 1.1rem; font-weight: 600; letter-spacing: -0.012em; margin: 2.25rem 0 0.75rem; }
+  .prose h4 {
+    font-family: var(--font-mono); font-size: 0.82rem; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg-dim);
+    margin: 1.75rem 0 0.6rem;
+  }
+  .prose h2, .prose h3, .prose h4 { scroll-margin-top: 92px; }
+
+  .prose p { margin: 0 0 1.1rem; color: var(--fg-muted); }
+  .prose strong { color: var(--fg); font-weight: 600; }
+  .prose a { color: var(--accent-hi); text-decoration: none; border-bottom: 1px solid var(--accent-edge); }
+  .prose a:hover { border-bottom-color: var(--accent-hi); }
+
+  .prose ul, .prose ol { margin: 0 0 1.1rem; padding-left: 1.35rem; color: var(--fg-muted); }
+  .prose li { margin-bottom: 0.4rem; }
+  .prose li > ul, .prose li > ol { margin: 0.4rem 0 0.2rem; }
+  .prose ul li::marker { color: var(--fg-faint); }
+  .prose ol li::marker { color: var(--accent); font-family: var(--font-mono); font-size: 0.85em; }
+
+  .prose blockquote {
+    margin: 1.4rem 0; padding: 0.9rem 1.15rem;
+    background: var(--ink-800); border-left: 2px solid var(--accent);
+    border-radius: 0 var(--r-md) var(--r-md) 0;
+    color: var(--fg-muted); font-size: 0.9375rem;
+  }
+  .prose blockquote p:last-child { margin-bottom: 0; }
+
+  .prose hr { border: 0; border-top: 1px solid var(--line); margin: 2.75rem 0; }
+
+  .prose code {
+    font-family: var(--font-mono); font-size: 0.855em;
+    background: var(--ink-600); border: 1px solid var(--line);
+    border-radius: var(--r-sm); padding: 0.1em 0.35em; color: var(--fg);
+  }
+  .prose pre {
+    margin: 1.4rem 0; padding: 1.1rem 1.25rem;
+    background: var(--ink-800); border: 1px solid var(--line);
+    border-radius: var(--r-lg); overflow-x: auto;
+  }
+  .prose pre code {
+    background: none; border: 0; padding: 0;
+    font-size: 0.83rem; line-height: 1.65; color: var(--fg-muted);
+  }
+
+  .prose .table-scroll { overflow-x: auto; margin: 1.4rem 0; border: 1px solid var(--line); border-radius: var(--r-lg); }
+  .prose table { width: 100%; border-collapse: collapse; font-size: 0.875rem; min-width: 460px; }
+  .prose thead th {
+    background: var(--ink-700); text-align: left;
+    padding: 0.65rem 0.9rem;
+    font-family: var(--font-mono); font-size: 0.7rem; font-weight: 500;
+    letter-spacing: 0.09em; text-transform: uppercase; color: var(--fg-dim);
+    border-bottom: 1px solid var(--line);
+  }
+  .prose tbody td {
+    padding: 0.7rem 0.9rem; color: var(--fg-muted);
+    border-bottom: 1px solid var(--line); vertical-align: top;
+  }
+  .prose tbody tr:last-child td { border-bottom: 0; }
+  .prose tbody td:first-child { color: var(--fg); }
+
+  .doc-footer {
+    max-width: var(--content); margin-top: 4rem; padding-top: 1.75rem;
+    border-top: 1px solid var(--line);
+    display: flex; flex-wrap: wrap; gap: 1rem;
+    align-items: center; justify-content: space-between;
+    font-size: 0.8125rem; color: var(--fg-dim);
+  }
+  .doc-footer a { color: var(--fg-muted); text-decoration: none; }
+  .doc-footer a:hover { color: var(--accent-hi); }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 1080px) {
+    .shell { grid-template-columns: minmax(0, 1fr); gap: 0; }
+    .rail { display: none; }
+    .mobile-doc-picker { display: block; }
+    .header-link { display: none; }
+    .prose { max-width: 100%; }
+  }
+  @media (max-width: 620px) {
+    .header-inner { padding: 0 1rem; gap: 0.6rem; }
+    .shell { padding: 0 1rem 4rem; }
+    .brand-owner { display: none; }
+    .mobile-doc-picker select { max-width: 100%; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+
+  @media print {
+    body { background: #fff; color: #000; }
+    .site-header, .rail, .doc-footer, .doc-status, .skip-link { display: none !important; }
+    .shell { display: block; padding: 0; max-width: 100%; }
+    .prose { max-width: 100%; }
+    .prose p, .prose li, .prose td { color: #000 !important; }
+    .prose h1, .prose h2, .prose h3, .prose h4 { color: #000 !important; border-color: #ccc !important; }
+    .prose pre, .prose code, .prose blockquote, .prose thead th { background: #f5f5f5 !important; border-color: #ccc !important; }
+    .prose a { color: #000 !important; border: 0 !important; }
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#doc">Zum Dokument springen</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark"><img src="assets/icon.svg" alt="" width="22" height="22"></span>
+      <span class="brand-text">
+        <span class="brand-name">BauLens</span>
+        <span class="brand-owner">Dokumentation</span>
+      </span>
+    </a>
+
+    <nav class="mobile-doc-picker" aria-label="Dokument wählen">
+      <label for="docPicker" class="visually-hidden">Dokument</label>
+      <select id="docPicker">
+        <option value="readme">README</option>
+        <option value="rules">Regelkatalog</option>
+        <option value="whitepaper">Whitepaper</option>
+        <option value="changelog">Änderungsverlauf</option>
+      </select>
+    </nav>
+
+    <div class="header-actions">
+      <a class="header-link" href="index.html">Produktseite</a>
+      <a class="header-link" href="downloads/">Downloads</a>
+      <a class="header-link" href="pricing/">Preise</a>
+      <a class="header-link" href="legal/impressum/">Impressum</a>
+      <a class="header-cta" href="downloads/">BauLens herunterladen</a>
+    </div>
+  </div>
+</header>
+
+<div class="shell">
+  <aside class="rail">
+    <p class="rail-label">Dokumente</p>
+    <ul class="rail-list">
+        <li>
+          <a class="rail-link" data-doc="readme" href="#readme">
+            <span class="rail-title">README</span>
+            <span class="rail-blurb">Zweck, Prüfumfang, CLI und Profilwahl</span>
+          </a>
+        </li>
+        <li>
+          <a class="rail-link" data-doc="rules" href="#rules">
+            <span class="rail-title">Regelkatalog</span>
+            <span class="rail-blurb">Alle 15 Prüfmodule mit Formel und Fundstelle</span>
+          </a>
+        </li>
+        <li>
+          <a class="rail-link" data-doc="whitepaper" href="#whitepaper">
+            <span class="rail-title">Whitepaper</span>
+            <span class="rail-blurb">Architektur, Betriebsmodell, Kommerzialisierung</span>
+          </a>
+        </li>
+        <li>
+          <a class="rail-link" data-doc="changelog" href="#changelog">
+            <span class="rail-title">Änderungsverlauf</span>
+            <span class="rail-blurb">Versionshistorie und Releases</span>
+          </a>
+        </li>
+    </ul>
+
+    <nav class="rail-toc" aria-label="Inhalt dieses Dokuments">
+      <p class="rail-label">Inhalt</p>
+      <ol id="tocList"></ol>
+    </nav>
+  </aside>
+
+  <main class="doc" id="doc" tabindex="-1">
+    <p class="doc-status"><span class="dot" aria-hidden="true"></span><span id="docSource">Eingebettete Fassung</span></p>
+    <article class="prose" id="prose"></article>
+    <div class="doc-footer">
+      <p>Quelle: <span id="docPath">README.md</span> im Repository</p>
+      <p><a href="index.html">Produktseite</a> &middot; <a href="downloads/">Downloads</a> &middot; <a href="https://kellersystems.dev">Keller Systems</a></p>
+    </div>
+  </main>
+</div>
+
+<script type="application/json" id="docSources">
+{"readme":"# BauLens\n\n**Deterministische Bauordnungs-Vorprüfung für Deutschland, Österreich und die Schweiz.**\n\nBauLens prüft ein Bauvorhaben gegen die tatsächlich geltenden Regelwerke — Musterbauordnung,\nLandesbauordnungen, OIB-Richtlinien, IVHB-Kantonsrecht, BauNVO und kommunale Satzungen — und\nliefert einen Befund mit Paragraphennachweis, bevor der Antrag beim Bauamt liegt.\n\nDie Engine ist ein Regelwerk, kein Sprachmodell. Jede Aussage folgt einer dokumentierten Formel mit\nFundstelle und benennt, wo vereinfacht wurde. Derselbe Input ergibt immer denselben Befund.\n\n> **Einordnung:** Vorprüfung, keine Rechtsberatung. Der Befund ersetzt weder die Prüfung durch eine\n> bauvorlageberechtigte Person noch den Genehmigungsbescheid der Bauaufsichtsbehörde. Verbindlich ist\n> immer der aktuelle Gesetzestext.\n\n---\n\n## Das Problem\n\nEin formal fehlerhafter Bauantrag wird nicht abgelehnt, sondern zurückgestellt. Jede Nachforderung\ndes Bauamts — eine übersehene Abstandsfläche, ein falsch gezähltes Vollgeschoss, eine\nGRZ-Überschreitung — kostet Wochen Stillstand und Nacharbeit im Planungsbüro. Gefunden wird der\nFehler heute meist erst nach Einreichung, aus dem Bescheid.\n\nBauLens zieht diese Prüfung in das Büro vor: Entwurfsdaten hinein, Befund mit Paragraphennachweis\nheraus, in Sekunden statt Wochen.\n\n## Was das Werkzeug prüft\n\n**Prüfmodule.** 15 module, gruppiert in neun Kernregeln und sechs Zusatzmodule. Ein Modul ist aktiv,\nwenn das gewählte Profil es vorsieht.\n\n| Modul | Prüfinhalt | Fundstelle |\n|---|---|---|\n| `gebaeudeklasse` | Einordnung in Gebäudeklassen 1–5 aus Höhe, Geschossen und Einheiten | §2 MBO |\n| `abstandsflaeche` | Erforderlicher Grenzabstand je Himmelsrichtung | §6 Abs. 2 MBO bzw. LBO |\n| `grz` | Grundflächenzahl gegen den B-Plan-Richtwert | §19 BauNVO |\n| `gfz` | Geschossflächenzahl gegen das zulässige Höchstmaß | §20 BauNVO |\n| `stellplaetze` | Kfz- und Fahrradstellplätze inkl. kommunaler Freistellungen | Landesbauordnung, Satzung |\n| `tageslicht` | Fensterfläche je Aufenthaltsraum | §49 MBO |\n| `raumhoehen` | Lichte Raumhöhe (2,50 m Soll, 2,20 m Untergrenze) | §46 MBO |\n| `rettungswege` | Zweiter Rettungsweg und notwendiger Treppenraum | §11, §35 MBO |\n| `vollgeschosse` | Plausibilität von Höhe und Geschosszahl | §16 BauNVO |\n| `grenzbebauung` | Zulässigkeit von Bauen bis zur Grenze (nur BY, BE) | §22 BayBO, BauO Bln |\n| `gruendach` | Gründachpflicht bei Flachdächern bis 15° | Kommunale Satzung |\n| `brandwand` | Grenzständige Wände unter 2,50 m Abstand, REI 90-M | §30 MBO, OIB RL 2 |\n| `barrierefreiheit` | Aufzugspflicht, stufenloser Zugang, Rampenneigung | §50 MBO, OIB RL 4, SIA 500 |\n| `schallschutz` | Grenzabstand für Wärmepumpen, Lärmpegelbereiche I–VII | TA Lärm, DIN 4109 |\n| `bplan_festsetzungen` | First-/Traufhöhe, Vollgeschoss-Obergrenze, Dachneigungskorridor | §9 BauGB, §16/§18 BauNVO |\n\nZusätzlich prüft `bplan_festsetzungen` geometrisch, ob der Gebäudeumriss vollständig innerhalb der\nfestgesetzten Baugrenze liegt (2D-Ray-Casting und Segment-Intersection).\n\n**Verdikte und Exit-Codes.**\n\n| Verdikt | Bedeutung | Exit-Code |\n|---|---|---|\n| `bestanden` | Keine Abweichung | 0 |\n| `mit Auflagen` | Warnungen, im Verfahren regelbar | 0 |\n| `nicht bestanden` | Mindestens ein Fehler | 1 |\n| — | Bedienungs- oder Eingabefehler | 2 |\n\n## Regelprofile\n\n34 Profile in drei Ebenen:\n\n- **Deutschland — 17 Profile.** Musterbauordnung als Referenz plus alle 16 Landesbauordnungen.\n  Bayern (`BayBO`), Baden-Württemberg (`LBO BW`) und Berlin (`BauO Bln`) haben hinterlegte\n  Strukturabweichungen; alle übrigen Länder laufen auf gekennzeichneten MBO-Defaults.\n- **Österreich — 11 Profile.** Die harmonisierten OIB-Richtlinien 1–6 (Ausgabe 2023) plus neun\n  Bundesländer, darunter Wien (`BO für Wien`, Bauwich und Bauklassen I–VI), Niederösterreich,\n  Salzburg, Tirol und die Steiermark.\n- **Schweiz — 6 Profile.** IVHB-Konkordat plus Leitkantone Zürich (`PBG ZH`), Bern, Basel-Stadt,\n  Luzern, St. Gallen und Genf, ergänzt um SIA 416 und SIA 500.\n\n**Kommunen.** Zehn Städte mit hinterlegten Satzungen: München, Nürnberg, Berlin, Hamburg, Köln,\nDüsseldorf, Frankfurt, Stuttgart, Leipzig, Dresden — Stellplatz-, Gründach- und Milieuschutzvorgaben.\n\nEin Profil kann Parameter setzen, Paragraphenzitate umstellen, Module abschalten oder Zusatzmodule\naktivieren. Jeder Wert, der aus Sekundärliteratur stammt oder vereinfacht wurde, ist mit\n`[prüfen]` gekennzeichnet. Details im [Regelkatalog](docs/RULES.md).\n\n## Datenübernahme\n\nBauLens liest vorhandene Planungsunterlagen, statt Parameter manuell abzufragen:\n\n- **IFC (2x3 / IFC4)** — Raumbuch, Geschossigkeit, Brutto-Grundfläche, Wandstärken\n- **DXF** — Layer, Grenzkoordinaten und Gebäudeumriss aus 2D-Lageplänen\n- **XPlanung GML (5.x / 6.0)** — amtliche Bebauungspläne: Baugebiete, GRZ, GFZ, Vollgeschosse,\n  First- und Traufhöhen, Baugrenzen\n- **B-Plan GeoJSON** und **Textteil** — Vektorgrenzen bzw. amtliche Textfestsetzungen\n- **Baubeschreibung** — deutsche Exposés und DIN-277-Flächenberechnungen als Text\n\n## Oberfläche: Web und Desktop\n\nBauLens hat zwei Säulen, und sie tun unterschiedliche Dinge.\n\n**Die Website** ([lens.kellersystems.dev](https://lens.kellersystems.dev/)) erklärt das Verfahren, zeigt eine\ninteraktive Showcase-Simulation im Hero-Bereich und führt auf den **Download-Hub**\n([`downloads/`](downloads/)): Betriebssystem-Erkennung, direkte Verweise auf die signierten Dateien\nfür Windows, macOS und Linux, Prüfsummen- und Signaturhinweise. Ein unlimitiertes Prüfstudio im\nBrowser gibt es dort **nicht** mehr — Plandaten gehören nicht in ein fremdes Rechenzentrum, und die\nvolle Prüfung ist keine Browser-Anwendung.\n\n**Die Desktop-Anwendung** ist als Workhorse gebaut, nicht als Einzelformular:\n\n- **Multi-Projekt-Workspace.** *Projektordner öffnen* indiziert den Büroordner rekursiv nach `.ifc`,\n  `.dxf`, `.gml`, `.json` und `.bcf`; jedes Unterverzeichnis wird als eigenes Vorhaben mit\n  Status-Ampel geführt, und ein Stapellauf prüft alle auf einmal.\n- **Ad-hoc-Einzelprüfung.** Eine per Drag & Drop eingeworfene Datei startet direkt in der\n  Detailansicht — ohne Projektordner, ohne Anlegen.\n- **Interaktives 3D/2D-Modell.** Orbit per linker Maustaste, Pan per rechter oder mittlerer\n  Maustaste, Zoom per Mausrad; `1` Isometrie Süd-West, `2` Draufsicht, `3` Nord-Ansicht,\n  `R` zurücksetzen. Ein Klick auf einen Mangel dreht die Kamera auf die betroffene Fassade.\n- **14 Tage ohne Schlüssel, dann Lizenz.** Der volle Umfang läuft ab dem ersten Start 14 Tage\n  lang; der Startzeitpunkt liegt im eigenen Konfigurationsverzeichnis der Anwendung. Danach\n  verlangt ein Bildschirmschirm einen Polar-Lizenzschlüssel — Aktivieren oder Kaufen. Ist die\n  Testphase abgelaufen und kein brauchbarer Schlüssel hinterlegt, bleibt die Arbeitsfläche\n  gesperrt; Projekte und Plandaten bleiben erhalten.\n\nDie Desktop-Anwendung bindet dieselbe geprüfte Engine als Kindprozess an (`--rpc`, siehe\n`src/ipc.js`); die Regeln existieren genau einmal.\n\n### Dateien einlesen\n\n`src/ingest.js` bildet Plandateien auf ein Spec ab: IFC, DXF, XPlanung-GML, B-Plan-GeoJSON,\nB-Plan-Textteil, deutsche Baubeschreibungen und JSON-Specs. Jede Schätzung wird im Befund\nausgewiesen — ein Wert aus dem Grundstücksumriss ist kein gemessener Wert. Über die IPC-Methode\n`check_file` prüft die Desktop-Anwendung damit ganze Ordner.\n\n## Ausgabe\n\n- **DIN-A4-Prüfdossier als PDF-Datei** — echte PDF-Datei, im Desktop-Workhorse per Schaltfläche\n  „PDF“ über den nativen Speichern-Dialog abzulegen, ohne Druckdialog; auf der Kommandozeile mit\n  `--pdf befund.pdf`. Kopf und Anschrift adaptieren die nationale Behördenstruktur (Untere\n  Bauaufsichtsbehörde, MA 37 Baupolizei, Amt für Baubewilligungen), dazu ein eigenes\n  **Lageplan-Blatt im Querformat** — Blattrahmen mit Schriftfeld, Maßketten in Metern an allen vier\n  Seiten, Maßstabsbalken, Legende, Nordpfeil und angegebener Maßstab (1:100 bis 1:1000). Das\n  Dossier ist nach Blättern geordnet wie eine Plansammlung: eine **Blattübersicht** auf der ersten\n  Seite nennt jedes Blatt, jede Fußzeile liest sich `Blatt 2/3 · Lageplan · Seite 3 von 4`, sodass\n  ein einzelnes Blatt sich selbst zuordnet. Der **Hauskörper** des Lageplans kommt aus den Angaben\n  des Vorhabens — `GRZ × Grundstücksfläche` bzw. `Nutzfläche / Geschosse`, in der Legende\n  nachgewiesen — und nicht aus einem erfundenen Rechteck. Dazu ein deterministisches\n  SHA-256-Prüfsiegel über Spec und Befund; dieselbe Prüfziffer trägt die HTML-Fassung. Der Renderer ist Teil der Engine (`src/dossierpdf.js`, eigener PDF-Schreiber in\n  `src/pdf.js`, keine Fremdbibliothek); die HTML-Fassung bleibt zum Drucken erhalten\n- **Lageplan-Blatt als DXF und SVG** — dasselbe Blatt, das im Dossier liegt, verlässt die Mappe auch\n  als eigene Datei: `--svg lageplan.svg` für Plotter und Planwerk, `--dxf lageplan.dxf` für CAD, in\n  der Shell die Schaltflächen „Lageplan als SVG/DXF speichern“ (IPC: `plan_svg`, `plan_dxf`). Beide\n  werden aus **derselben Aufzeichnung** geschrieben, die die PDF-Seite abspielt — ein zweiter\n  Zeichenweg wäre eine zweite Zeichnung. Das **DXF** ist ein konservatives ASCII-DXF im\n  AutoCAD-2000-Dialekt: eine Zeichnungseinheit ist ein Meter (`$INSUNITS 6`), Rechtecke sind\n  geschlossene `LWPOLYLINE`, Beschriftungen bleiben `TEXT`, und jeder Bauteil liegt auf einer eigenen\n  Ebene (`GRENZE`, `GEBAEUDE`, `ABSTANDSFLAECHE`, `MASZKETTE`, `MASSZAHL`, `NORDEN`) — Blattrahmen,\n  Blattkopf, Legende, Maßstabsbalken und Schriftfeld auf `BLATTRAHMEN`, `BLATTKOPF`, `LEGENDE`,\n  `MASSSTAB`, `SCHRIFTFELD`, damit ein Büro sie einfrieren und das Blatt in einen eigenen Plansatz\n  einfügen kann. Das **SVG** ist DIN A4 quer in Punkten (`width=\"841.89pt\"`, gleiche viewBox), mit\n  einer Gruppe je Ebene, ohne eingebettete Schrift und ohne externe Verweise. Beide nennen Maßstab\n  und Prüfziffer, damit sich die Zeichnung dem geprüften Befund zuordnen lässt.\n- **Lagepläne eines ganzen Projektordners in einem Durchgang.** Im Desktop-Workhorse schreibt\n  „Alle Lagepläne exportieren“ je Vorhaben des geöffneten Ordners ein Blatt als DXF **und** SVG in\n  einen gewählten Zielordner, benannt nach dem Vorhaben (`Wohnanlage-Musterweg_Lageplan.dxf`); die\n  Engine-Methode heißt `plan_export`, und die Kommandozeile exportiert einzelne Blätter über\n  `--dxf`/`--svg`. Ein unlesbarer Plan nimmt die übrigen nicht mit (er wird mit seinem Namen\n  gemeldet, der Rest wird geschrieben), ein fehlendes Zielverzeichnis wird nie erfunden, und zwei\n  Vorhaben mit gleichem Namen bekommen getrennte Blätter — umbenannt und im Bericht genannt, statt\n  einander stillschweigend zu überschreiben. Der Name kommt aus einem Verzeichnisnamen, also aus\n  einer fremden Festplatte: Trennzeichen, Laufwerksbuchstaben und `..` werden entschärft, damit kein\n  Blatt den gewählten Ordner verlässt.\n- **XBau 2.3 XML** — amtlicher Bauantragsdatensatz nach Onlinezugangsgesetz\n  (`baugenehmigung.antrag.0200`), inkl. Formularen für Abweichung und Befreiung nach §67 MBO,\n  Art. 63 BayBO bzw. §31 Abs. 2 BauGB\n- **BCF 2.1** — Mängel als BIM-Themen mit 3D-Koordinaten für Revit, ArchiCAD und Vectorworks\n- **Markdown-Bericht** — Befund mit Ist-Wert, Soll-Wert und Normzitat je Zeile\n- **DACH-Quervergleich** — derselbe Entwurf über alle 34 Profile, filterbar nach Land\n\n## Compliance Repair Engine\n\nBei festgestellten Abweichungen berechnet `--repair` drei Lösungswege:\n\n- **Geometrisch** — erforderliche Baukörperverschiebung innerhalb zulässiger Pufferzonen\n- **Baulich** — maximal zulässige Trauf- und Wandhöhe zur Einhaltung der Abstandsfläche\n- **Rechtlich** — vollständig formulierte Begründung für einen Befreiungsantrag\n\n## Erste Schritte\n\nVoraussetzung: Node.js ≥ 18. Keine externen Abhängigkeiten — ausschließlich Node-Standardbibliothek,\nkein Installationsschritt, keine Telemetrie.\n\n```powershell\nnode bin/baucheck.js --help                 # Befehlsübersicht\nnode bin/baucheck.js --example              # gültiges Beispiel-Spec ausgeben\nnode bin/baucheck.js check spec.json        # prüfen (Exit 0 / 1 / 2)\nnode bin/baucheck.js check spec.json --report bericht.md\nnode bin/baucheck.js check spec.json --pdf befund.pdf   # DIN-A4-Befund als PDF\nnode bin/baucheck.js check spec.json --dxf lageplan.dxf # Lageplan-Blatt für CAD (1 Einheit = 1 m)\nnode bin/baucheck.js check spec.json --svg lageplan.svg # Lageplan-Blatt für Plotter und Planwerk\n```\n\n**Profil wählen und grenzüberschreitend prüfen:**\n\n```powershell\nnode bin/baucheck.js --lands                # alle 34 Profile als Tabelle\nnode bin/baucheck.js check spec.json --land BY          # BayBO erzwingen\nnode bin/baucheck.js check spec.json --land AT_W        # Wiener Bauordnung\nnode bin/baucheck.js check spec.json --land CH_ZH       # Zürcher PBG\nnode bin/baucheck.js check spec.json --dach             # Quervergleich DE/AT/CH\nnode bin/baucheck.js check spec.json --all-lands        # Quervergleich über alle Profile\nnode bin/baucheck.js --staedte              # unterstützte Kommunen\nnode bin/baucheck.js check spec.json --stadt muenchen\n```\n\n**Regeln einschränken und Planungsunterlagen einlesen:**\n\n```powershell\nnode bin/baucheck.js check spec.json --rules tageslicht,raumhoehen\nnode bin/baucheck.js check spec.json --bplan bplan.gml\nnode bin/baucheck.js check spec.json --repair\nnode bin/baucheck.js check spec.json --xbau antrag.xml\nnode bin/baucheck.js check spec.json --bcf issues.bcfjson\nnode bin/baucheck.js check spec.json --server 3000\n```\n\n## Eingabeformat\n\nAlle Felder sind optional, sofern sie für eine Regel nicht gebraucht werden. Fehlende Angaben\nerzeugen eine Warnung, falsche Typen einen Fehler.\n\n```jsonc\n{\n  \"bundesland\": \"BY\",                     // Profil, falls --land fehlt\n  \"grundstueck\": {\n    \"flaeche_m2\": 800,\n    \"grenzabstaende\": { \"norden\": 5.0, \"sueden\": 4.0, \"osten\": 6.0, \"westen\": 3.5 }\n  },\n  \"gebaeude\": {\n    \"hoehe_m\": 7.0,\n    \"geschosse_ueber_grund\": 2,\n    \"geschosse_unter_grund\": 1,\n    \"wohnungen_anzahl\": 1,\n    \"nutzflaeche_m2\": 180,\n    \"grz_ist\": 0.35,\n    \"gfz_ist\": 0.70\n  },\n  \"aufenthaltsraeume\": [\n    { \"name\": \"Wohnen\", \"flaeche_m2\": 32, \"fensterflaeche_m2\": 6.5, \"raumhoehe_m\": 2.6, \"etage\": 0 }\n  ],\n  \"zweiter_rettungsweg_vorhanden\": true,\n  \"treppenraum_vorhanden\": true,\n  \"einstellungen\": { \"grz_limit\": 0.4, \"gfz_limit\": 1.2 }\n}\n```\n\nDie Profilwahl folgt der Reihenfolge `--land` → `spec.bundesland` → `MBO`.\n\n## Projektstruktur\n\n```\nbin/baucheck.js          CLI: Argumente, Berichtsausgabe, RPC-Modus\nsrc/engine.js            Ablaufsteuerung der Prüfung\nsrc/schema.js            Validierung und Normalisierung des Specs\nsrc/ingest.js            Plandateien (IFC, DXF, GML, GeoJSON, Text, JSON) -> Spec\nsrc/ipc.js               JSON-Zeilenprotokoll für die Desktop-Anwendung\nsrc/rules/               15 Prüfmodule, je Datei eine Regel\nsrc/profiles.js          34 DACH-Profile mit Overrides\nsrc/municipalities.js    Kommunale Satzungen\nsrc/statutes.js          Verbatimte Gesetzestexte für den §-Drawer\nsrc/dach.js              Profile für Deutschland, Österreich, Schweiz\nsrc/bplanparser.js       XPlanung GML, GeoJSON, Textteil\nsrc/cadparser.js         DXF-Einlesen\nsrc/textparser.js        Baubeschreibung als Text\nsrc/dossier.js           DIN-A4-Dossier\nsrc/xbau.js              XBau-2.3-XML\nsrc/bcf.js               BCF-2.1-Export\nsrc/repair.js            Compliance Repair Engine\nsrc/matrix.js            DACH-Quervergleich\nsrc/report.js            Markdown-Bericht\nsrc/version.js           Produkt- und Versionsangabe aus package.json\nscripts/build-docs.mjs   erzeugt docs.html aus den Markdown-Dateien\nscripts/verify-docs.mjs  verifiziert die eingebettete Dokumentation\nindex.html               Produktseite mit Showcase-Simulation\ndownloads/index.html     Download-Hub mit OS-Erkennung (generiert)\nstudio.html              Engine-Ansicht (im Repo, vom Desktop-Build eingebunden)\ndocs.html                Dokumentationsbrowser\ndesktop/workhorse.html   Desktop-Workhorse: Multi-Projekt-Workspace\ndesktop/inject/desktop.js  Desktop-Verhalten, in die ausgelieferten Seiten injiziert\ndesktop/src-tauri/       Tauri-Shell: Ordnerdialog, Workspace-Scan, Batch-Prüfung\ntest/                    Testsuite und Fixtures\n```\n\n## Tests\n\n```powershell\nnode --test\n```\n\nDie Suite umfasst 256 Testfälle und deckt Regelformeln, Schemavalidierung, Profil-Overrides,\nkommunale Satzungen, den DACH-Quervergleich, CAD-/BIM-Ingestion, XBau-, BCF- und Dossier-Ausgabe,\ndas IPC-Line-Protokoll, die Datei-Ingestion (`check_file`) sowie reale Projektfälle ab.\n\n`cli.test.js`, `matrix.test.js` und `profiles.test.js` starten das CLI als Kindprozess. In einer\nUmgebung, die Kindprozesse mit Pipes blockiert, scheitern diese Dateien mit `EPERM`; das ist eine\nEinschränkung der Laufzeitumgebung, kein Testfehler.\n\n## Preise und Lizenzen\n\nStarter 49 € einmalig (ein Vorhaben, 30 Tage), Pro Architekt 89 € pro Monat (890 € / Jahr),\nBüro / Kanzlei 199 € pro Monat für drei Arbeitsplätze (1.990 € / Jahr), Enterprise ab 1.490 € pro\nMonat. Alle Preise in Euro; die Desktop-Anwendung läuft 14 Tage ohne Schlüssel.\n\nDie Preisübersicht liegt unter [pricing/](pricing/) und ist im Browser erreichbar. Die Zahlen stehen\nin [`site.config.json`](site.config.json) — daraus werden die Produktseite, die Preisseite, die\nKaufbestätigung und die Rechtstexte erzeugt, damit keine Oberfläche eine andere Zahl zeigt.\n\nDer Verkauf läuft über **Polar** als Merchant of Record. Polar ist Vertragspartner des Erwerbs,\nstellt die Rechnung aus und führt die Umsatzsteuer ab; Kartendaten erreichen diese Anwendung nicht.\nEin eigener Server ist dafür nicht nötig — der Kauf ist ein Checkout-Link.\n\nDie Desktop-Anwendung validiert den Lizenzschlüssel gegen die öffentliche, authentifizierungsfreie\nPrüfschnittstelle von Polar (`POST /v1/customer-portal/license-keys/validate`). Gesendet wird nur\nder Schlüssel — niemals Plandaten. Ein erfolgreich geprüfter Schlüssel gilt offline weiter\n(30 Tage Grace-Fenster, danach eine erneute Prüfung), ein unbekannter Schlüssel wird abgewiesen,\nein erreichbarer Netzwerkfehler wird nicht mit einem ungültigen Schlüssel verwechselt. Die\nEntscheidung tritt `src/licensing.js` (getestet, 22 Fällen in `test/licensing.test.js`); die\nAnwendung speichert Startzeitpunkt und letzte Prüfung im eigenen Konfigurationsverzeichnis. Die\nPrüf-Engine rechnet unabhängig davon vollständig lokal — die Regeln kennen keine Lizenz.\n\nWie Preise, Checkout und Rechtstexte zusammenhängen, beschreibt\n[Zahlungen, Lizenzen und Rechtstexte](docs/PAYMENTS_AND_LEGAL.md).\n\n```powershell\nnode scripts/build-site.mjs      # Rechts- und Preisseiten neu erzeugen\nnode scripts/check-links.mjs     # interne Verweise prüfen\nnode scripts/check-prices.mjs    # Preise gegen site.config.json prüfen\n```\n\n## Dokumentation\n\nDie Dokumentation liegt als Markdown im Repository und ist zusätzlich als browsbare Oberfläche\nverfügbar:\n\n- **[docs.html](docs.html)** — Dokumentationsbrowser mit Navigationsleiste und Inhaltsverzeichnis\n- [UPDATE_PLAN.md](UPDATE_PLAN.md) — der Transformationsplan, gegen den dieser Meilenstein gebaut wurde\n- [Regelkatalog](docs/RULES.md) — jede Regel mit Formel, Fundstelle, Vereinfachung und\n  Vertrauensstufe der hinterlegten Parameter\n- [Whitepaper](docs/WHITEPAPER.md) — technischer Aufbau, Marktbild und Kommerzialisierung\n- [Zahlungen und Rechtstexte](docs/PAYMENTS_AND_LEGAL.md) — Checkout, Lizenzaktivierung, Hosting\n- [Änderungsverlauf](CHANGELOG.md) — Versionshistorie\n\nWird `docs.html` über `http(s)` ausgeliefert, holt der Browser die jeweils aktuelle Markdown-Fassung\nnach. Beim Öffnen von der Festplatte greift eine eingebettete Kopie, weil `fetch()` auf `file://`\nblockiert ist. Nach Änderungen an den Markdown-Dateien:\n\n```powershell\nnode scripts/build-docs.mjs      # docs.html neu erzeugen\nnode scripts/verify-docs.mjs     # eingebettete Kopie gegen die Quelle prüfen\n```\n\n## Rechtliches\n\n| Seite | Inhalt |\n|---|---|\n| [Impressum](legal/impressum/) | Anbieterkennzeichnung nach § 5 DDG |\n| [Datenschutz](legal/datenschutz/) | Verarbeitung personenbezogener Daten, Hosting, Polar, Lizenzaktivierung |\n| [AGB](legal/agb/) | Vertragsgegenstand, Preise, Haftung, Kündigung |\n| [Lizenzvereinbarung](legal/lizenz/) | Nutzungsumfang der Software |\n| [Widerrufsbelehrung](legal/widerruf/) | Widerrufsrecht und Erlöschen bei digitalen Inhalten |\n\n> **Hinweis:** Die Regel-Engine erbringt eine technische Vorprüfung und keine Rechtsberatung im\n> Sinne des RDG. Sie ersetzt weder die Prüfung durch eine bauvorlageberechtigte Person noch den\n> Genehmigungsbescheid der Bauaufsichtsbehörde.\n\n## Lizenz\n\nMIT.\n","rules":"# BauLens — Regelkatalog\n\nDieses Dokument beschreibt jedes implementierte Prüfmodul: Prüfgröße, Formel, Fundstelle,\nVereinfachungen und die Vertrauensstufe der hinterlegten Parameter. Es ist die verbindliche\nBeschreibung dessen, was die Engine tatsächlich rechnet — nicht dessen, was sie rechnen sollte.\n\n> **Einordnung:** Die Musterbauordnung ist ein *Muster*gesetz. Rechtlich verbindlich ist im\n> Einzelfall ausschließlich die Landesbauordnung des jeweiligen Landes bzw. das kantonale Recht.\n> BauLens bildet **bekannte Abweichungen über Profile** ab (Abschnitt 16). Jede Prüfung bleibt eine\n> **Vorprüfung, keine Rechtsberatung**.\n\n---\n\n## Aufbau der Engine\n\nEin Prüflauf besteht aus vier Schritten:\n\n1. **Validierung** (`src/schema.js`) — das Spec wird normalisiert. Fehlende Angaben werden zu\n   Warnungen, falsche Typen zu Fehlern (Exit-Code 2).\n2. **Regelauswahl** — neun Kernmodule (`ALL_RULES`) laufen immer; sechs Zusatzmodule\n   (`EXTRA_RULES`) werden nur aktiviert, wenn das gewählte Profil sie vorsieht. `--rules id1,id2`\n   schränkt den Lauf weiter ein.\n3. **Bewertung** (`src/engine.js`) — jedes Modul gibt eine Liste von Befunden mit dem Status\n   `ok`, `warn` oder `fail` zurück. Über Kontext (`ctx`) erhält es Profilparameter (`params`),\n   den Ländercode (`land`) und die aktive Kommunalsatzung (`municipality`).\n4. **Aggregation** (`src/report.js`) — das Gesamtverdikt ist das schlechteste Einzelergebnis:\n   mindestens ein `fail` ergibt `nicht bestanden`, nur Warnungen ergeben `mit Auflagen`.\n\n**Statuswerte.**\n\n| Status | Bedeutung |\n|---|---|\n| `ok` | Prüfung bestanden oder Klassifizierung ohne Verstoß |\n| `warn` | Abweichung, die im Verfahren regelbar ist; Nachweis oder Befreiung offen |\n| `fail` | Verstoß gegen eine harte Anforderung; Antrag so nicht einreichungsfähig |\n\n---\n\n## Kernmodule\n\n### 1. `gebaeudeklasse` — Gebäudeklassen\n\n**Fundstelle:** §2 MBO · **Datei:** `src/rules/gebaeudeklasse.js`\n\n**Entscheidungstabelle, in dieser Reihenfolge geprüft:**\n\n| Bedingung | Klasse |\n|---|---|\n| Höhe > 22 m | GK 5 (Hochhaus) |\n| Höhe > 13 m **oder** Vollgeschosse ≥ 5 | GK 4 |\n| Höhe > 11 m **oder** Wohnungen ≥ 3 **oder** Vollgeschosse ≥ 4 | GK 3 |\n| Höhe > 7 m **oder** Wohnungen = 2 | GK 2 |\n| sonst (Höhe ≤ 7 m, ≤ 1 Wohnung) | GK 1 |\n\nOhne Höhenangabe erfolgt keine Klassifizierung (`warn`); die Folgemodule arbeiten dann\neingeschränkt. Das Ergebnis ist immer `ok` — eine Klassifizierung ist kein Verstoß.\n\n**Vereinfachungen.** Die MBO-Tabelle kombiniert Höhe, Nutzungseinheiten und Grundflächen\ndifferenzierter (GK 2 real: ≤ 7 m mit mehreren Nutzungseinheiten; GK 4: Fußboden des obersten\nGeschosses über 13 m). Hier läuft eine dokumentierte, **monotone Höhenleiter mit 11-m-Stufe** als\nProduktentscheid, um konservativ zu klassifizieren. „Höhe\" ist `gebaeude.hoehe_m` (Gesamthöhe),\nnicht die mittlere Wandhöhe.\n\n### 2. `abstandsflaeche` — Abstandsflächen\n\n**Fundstelle:** §6 Abs. 2 MBO · **Datei:** `src/rules/abstandsflaeche.js`\n\n**Formel:** `erforderlich = max(minM, hoehe_m × factor)` mit den Profilparametern\n`factor` (Standard 0,5) und `minM` (Standard 3 m).\n\nGeprüft wird jede angegebene Himmelsrichtung in `grundstueck.grenzabstaende`.\n`ist + 1e-9 \u003c erforderlich` → `fail` je Seite. Sind alle Seiten konform, fasst ein einzelner\n`ok`-Befund sie zusammen.\n\n**Vereinfachungen.** Real ist H die Höhe der dem Nachbargrundstück zugewandten Wand zzgl.\ndefinierter Dachanteile; hier wird die Gesamthöhe angesetzt. Grenzanbau (Abstand 0) ist in vielen\nLandesordnungen zulässig, wird aber schlicht als Verstoß gewertet — konservativ. Fehlen Höhe oder\nAbstände, entsteht eine `warn`-Meldung, kein Fehler.\n\n**Profilwirkung.** Bayern schaltet die Regel ab (dort gilt das Abstandsflächenregime des §6 MBO\nnicht) und aktiviert stattdessen `grenzbebauung`. Baden-Württemberg setzt `minM` auf 5 m.\n\n### 3. `grz` — Grundflächenzahl\n\n**Fundstelle:** §19 BauNVO · **Datei:** `src/rules/grz.js`\n\n**Formel:** Vergleich `gebaeude.grz_ist` gegen `einstellungen.grz_limit`\n(Standard **0,40**, typisch allgemeines Wohngebiet). Überschreitung → `warn`.\n\n**Begründung der Einstufung.** Die GRZ ist kein festes Gesetzessoll, sondern wird bauleitplanlich\nfestgesetzt; Ausnahmen sind im Verfahren regelbar. Es wird ausschließlich der angegebene Ist-Wert\ngeprüft, nicht aus Flächendaten berechnet.\n\n### 4. `gfz` — Geschossflächenzahl\n\n**Fundstelle:** §20 BauNVO · **Datei:** `src/rules/gfz.js`\n\n**Formel:** Vergleich `gebaeude.gfz_ist` gegen `einstellungen.gfz_limit` (Standard **1,20**).\nÜberschreitung → **`fail`** mit dem Hinweis, dass eine Befreiung nach §31 BauGB vor Einreichung\nerforderlich ist.\n\n**Unterschied zur GRZ.** Die Geschossflächenzahl begrenzt das Maß der baulichen Nutzung härter;\neine Überschreitung ohne dokumentierte Befreiung ist ein Einreichungshindernis, kein\nNachweisdefizit. Sind weder Ist-Wert noch Grenzwert angegeben, entfällt die Prüfung\n(§34 BauGB ohne Bebauungsplan).\n\n### 5. `stellplaetze` — Kfz- und Fahrradstellplätze\n\n**Fundstelle:** §48 MBO bzw. Landesbauordnung, kommunale Satzung ·\n**Datei:** `src/rules/stellplaetze.js`\n\n**Formel:**\n\n```\npkwSoll = ceil(wohnungen_anzahl × pkwFaktor)\nradSoll = ceil(wohnungen_anzahl × radFaktor)\n```\n\n**Faktor-Priorität:** Kommunalsatzung → `einstellungen.pkw_stellplatz_faktor` /\n`einstellungen.rad_stellplatz_faktor` → Standard 1,0 (Kfz) bzw. 2,0 (Fahrrad).\n\n| Situation | Status |\n|---|---|\n| `pkwFaktor = 0` (z. B. Berlin, keine Kfz-Pflicht für Wohnen) | `ok` |\n| Kfz nicht deklariert | `warn` mit Soll-Wert |\n| `stellplaetze_ist \u003c pkwSoll` | `fail` — Ablösung oder Nachweis erforderlich |\n| `fahrradstellplaetze_ist \u003c radSoll` | `warn` |\n| Fahrradplätze nicht deklariert | keine Meldung |\n\nDie Prüfung läuft nur, wenn eine Wohnungszahl angegeben ist **und** entweder Stellplätze deklariert\nsind, `einstellungen.stellplatznachweis_erforderlich` gesetzt ist oder eine Kommunalsatzung greift.\nOhne Wohnungszahl, aber mit Stellplatzangabe, entsteht eine `warn`-Meldung zur fehlenden\nVerifikationsbasis.\n\n### 6. `tageslicht` — Belichtung von Aufenthaltsräumen\n\n**Fundstelle:** §49 MBO · **Datei:** `src/rules/tageslicht.js`\n\n**Formel:** je Aufenthaltsraum `erforderlich = flaeche_m2 × ratio` mit dem Profilparameter\n`ratio` (Standard **1/8**). `fensterflaeche_m2 + 1e-9 \u003c erforderlich` → `fail`.\nAlternativ wird `fenster_flaeche_m2` akzeptiert.\n\n**Vereinfachungen.** §49 Abs. 2 lässt in Sonderfällen 1/10 zu; Dachflächenfenster und Lichtbänder\nwerden wie Fensterflächen behandelt. Räume ohne vollständige Angaben werden gesammelt als `warn`\ngemeldet und nicht geprüft.\n\n### 7. `raumhoehen` — Raumhöhen\n\n**Fundstelle:** §46 MBO · **Datei:** `src/rules/raumhoehen.js`\n\n**Schwellen** (Profilparameter `minHoehe` = 2,50 m, `reduzierteMindesthoehe` = 2,20 m):\n\n| Mittlere Raumhöhe | Status |\n|---|---|\n| ≥ 2,50 m | `ok` |\n| 2,20 m bis unter 2,50 m | `warn` — Reduzierung nur im Rahmen landesrechtlicher Ausnahmen |\n| \u003c 2,20 m | `fail` |\n\n**Vereinfachungen.** Die angegebene Höhe wird als **mittlere Raumhöhe** interpretiert.\nDifferenzierungen nach §46 Abs. 2/3 (Nebenräume, kleine Räume) sind nicht modelliert.\n\n### 8. `rettungswege` — Zweiter Rettungsweg und Treppenraum\n\n**Fundstellen:** §11 MBO (Rettungswege), §35 Abs. 4–5 MBO (Treppenraum ab GK 4) ·\n**Datei:** `src/rules/rettungswege.js`\n\n**Formel:**\n\n- Kritisch, wenn Gebäudeklasse ≥ 4 **oder** Vollgeschosse ≥ 5.\n- Nicht kritisch → `ok`.\n- Kritisch **und** Treppenraum **und** zweiter Rettungsweg vorhanden → `ok`.\n- Treppenraum fehlt → `fail` (die notwendige Treppe muss ein Treppenraum sein).\n- Nur Treppenraum vorhanden → `warn` (Nachweis des zweiten Rettungswegs offen).\n\n**Vereinfachungen.** Stark reduziert. Die realen Anforderungen unterscheiden nach\nGebäudeklasse und Nutzung (Sicherheitsleitern, Wandhydranten, freiliegende Treppenlauftüren,\nRettungsweglängen). Geprüft werden ausschließlich die deklarativen Spec-Werte.\n\n### 9. `vollgeschosse` — Konsistenz von Höhe und Geschosszahl\n\n**Fundstelle:** §16 BauNVO · **Datei:** `src/rules/vollgeschosse.js`\n\n**Formel:** `mittel = hoehe_m / geschosse_ueber_grund`. `mittel > 3,5 m` → `warn`\n(Widerspruch: vermutlich Keller- oder Staffelgeschosse falsch erfasst oder die Höhenangabe ist\nunplausibel). Fehlen Höhe oder eine ganzzahlige Geschosszahl, entsteht kein Befund.\n\n---\n\n## Zusatzmodule\n\nDiese Module laufen nur, wenn das aktive Profil sie aktiviert oder die nötigen Daten vorliegen.\n\n### 10. `grenzbebauung` — Bauen an der Grundstücksgrenze\n\n**Fundstelle:** §22 BayBO, Grenzbebauungsvorschriften der BauO Bln ·\n**Datei:** `src/rules/grenzbebauung.js`\n\nAktiv in den Profilen **Bayern** und **Berlin**. Das Modul gibt ausschließlich `warn`-Befunde aus:\nOb eine Grenzwand oder ein Anbau an die Grenze zulässig ist, hängt von Bebauungsplan bzw.\nInnenbereichslage (§34 BauGB) und den Grenzwand-Anforderungen ab. BauLens weist darauf hin, statt\neine Zulässigkeit zu behaupten.\n\n### 11. `gruendach` — Dachbegrünung\n\n**Fundstelle:** kommunale Gründachsatzung · **Datei:** `src/rules/gruendach.js`\n\nLäuft nur, wenn eine Kommunalsatzung mit `satzungen.gruendach` aktiv ist oder\n`einstellungen.gruendach_pflicht` gesetzt wurde.\n\nAls Flachdach gilt: `dachneigung_grad ≤ satzung.maxGrad` (Standard 15°) oder Dachform enthält\n„flach\" bzw. „pult\".\n\n| Situation | Status |\n|---|---|\n| Steildach über dem Grenzwinkel | `ok` — von der Pflicht befreit |\n| Flachdach, `gruendach_vorhanden = false` | `fail` — Begrünungsnachweis fehlt |\n| Flachdach begrünt, Substrat unter `minSubstratStaerkeCm` | `warn` |\n| Flachdach begrünt, Substrat ausreichend | `ok` |\n| Flachdach ohne Deklaration | `warn` |\n| Dachform und Neigung unbekannt | `warn` — Angaben nachreichen |\n\n### 12. `brandwand` — Brandwände bei Grenznähe\n\n**Fundstelle:** §30 Abs. 2 MBO, OIB RL 2 · **Datei:** `src/rules/brandwand.js`\n\n**Formel:** Jede Grenzseite mit Abstand `\u003c thresholdM` (Standard **2,50 m**) löst eine\n`warn`-Meldung aus: Die Abschlusswand ist als feuerbeständige Brandwand (F90-A bzw. REI 90-M) ohne\nungeschützte Öffnungen auszuführen. Sind alle Abstände ≥ 2,50 m, entsteht eine `ok`-Meldung, dass\nkeine gebäudeabschlussseitige Brandwand erforderlich ist.\n\n### 13. `barrierefreiheit` — Aufzug und stufenlose Erschließung\n\n**Fundstellen:** §50 MBO, DIN 18040-2, OIB RL 4, SIA 500 ·\n**Datei:** `src/rules/barrierefreiheit.js`\n\n**Aufzugspflicht:** `geschosse_ueber_grund ≥ 4` **oder** `hoehe_m > 13,0 m`.\n\n| `aufzug_vorhanden` | Status |\n|---|---|\n| `true` | `ok` |\n| `false` | `fail` — Personenaufzug zwingend erforderlich |\n| nicht angegeben | `warn` — Nachweis deklarieren |\n\n**Stufenlose Erschließung:** ab **3 Wohnungen**. `eingang_stufenlos = true` und\n`rampen_neigung_prozent > 6,0 %` → `warn` (Grenzwert nach DIN 18040-2 / SIA 500).\n`eingang_stufenlos = false` → `warn`. Unterhalb beider Schwellen meldet das Modul `ok`.\n\n### 14. `schallschutz` — Außenbauteile und Haustechnik\n\n**Fundstellen:** TA Lärm, DIN 4109 · **Datei:** `src/rules/schallschutz.js`\n\n| Prüfung | Bedingung | Status |\n|---|---|---|\n| Außen-Wärmepumpe | `abstand_waermepumpe_grenze_m \u003c 3,0 m` | `warn` — Schallschutzhaube oder Standortanpassung |\n| Außen-Wärmepumpe | Abstand ≥ 3,0 m | `ok` |\n| Außen-Wärmepumpe ohne Abstandsangabe | — | `warn` |\n| Lärmpegelbereich | `schallschutz_laermpegelbereich ≥ 4` | `warn` — erhöhter Schalldämm-Nachweis R'w,res |\n| Lärmpegelbereich | \u003c 4 | `ok` |\n\nOhne deklarierte Außenaggregate und ohne Lärmpegelbereich meldet das Modul `ok`.\n\n### 15. `bplan_festsetzungen` — Bebauungsplan-Festsetzungen\n\n**Fundstellen:** §9 und §30 BauGB, §22/§23 BauNVO, §16/§18 BauNVO ·\n**Datei:** `src/rules/bplan_festsetzungen.js`\n\nLäuft nur, wenn `spec.bplan` vorhanden ist. Geprüft werden fünf Gruppen:\n\n| Festsetzung | Vergleich | Status bei Überschreitung |\n|---|---|---|\n| Firsthöhe | `gebaeude.firsthoehe_m` (oder `hoehe_m`) vs. `bplan.firsthoehe_max_m` | `fail` — Befreiung nach §31 Abs. 2 BauGB |\n| Traufhöhe | `gebaeude.traufhoehe_m` vs. `bplan.traufhoehe_max_m` | `fail` |\n| Zahl der Vollgeschosse | `geschosse_ueber_grund` vs. `bplan.vollgeschosse_max` | `fail` |\n| Dachform | `gebaeude.dachform` gegen `bplan.zulaessige_dachformen` | `fail` |\n| Dachneigung | `dachneigung_grad` gegen `dachneigung_min_grad` / `_max_grad` | `fail` |\n\n**Geometrische Baugrenzenprüfung.** Liegt `bplan.baugrenze_polygon` mit mindestens drei Punkten\nvor und ist ein Gebäudeumriss angegeben (`gebaeude.umriss_polygon` oder\n`grundstueck.gebaeude_polygon`), prüft `checkBuildingWithinBaugrenze` aus `src/bplanparser.js`, ob\nder Umriss vollständig innerhalb des Baufensters liegt. Das Verfahren ist 2D-Ray-Casting\n(Punkt-in-Polygon) plus Segment-Intersection (Kantenkreuzung). Ausgetretene Eckpunkte werden\ngezählt und als Verstoß gegen §23 Abs. 3 BauNVO gemeldet. Alternativ wird die deklarative Angabe\n`bplan.baugrenze_eingehalten` ausgewertet.\n\n---\n\n## Exit-Codes des CLI\n\n| Code | Bedeutung |\n|---|---|\n| 0 | bestanden **oder** mit Auflagen (nur Warnungen) |\n| 1 | nicht bestanden (mindestens ein `fail`) |\n| 2 | Bedienungs- oder Eingabefehler (Usage, Datei/JSON/Schema ungültig) |\n\n## Konfigurierbarkeit\n\nÜber `spec.einstellungen`:\n\n| Schlüssel | Wirkung | Standard |\n|---|---|---|\n| `grz_limit` | GRZ-Richtwert überschreiben (0 \u003c x ≤ 1) | 0,40 |\n| `gfz_limit` | GFZ-Höchstmaß überschreiben | 1,20 |\n| `pkw_stellplatz_faktor` | Kfz-Stellplätze je Wohnung | 1,0 |\n| `rad_stellplatz_faktor` | Fahrradstellplätze je Wohnung | 2,0 |\n| `stellplatznachweis_erforderlich` | Stellplatzprüfung erzwingen | aus |\n| `gruendach_pflicht` | Gründachprüfung erzwingen | aus |\n\nÜber die Kommandozeile: `--rules id1,id2` schränkt den Lauf auf einzelne Module ein,\n`--land` und `--stadt` erzwingen ein Profil bzw. eine Satzung.\n\n---\n\n## Regelprofile\n\n### Vertrauensstufen\n\n| Stufe | Bedeutung |\n|---|---|\n| `reference` | MBO als reine Referenzbasis |\n| `hoch` | Strukturabweichung gut dokumentiert (Modul an/aus, Parameter gesichert) |\n| `pruefen` | Parameterwert vereinfacht oder aus Sekundärliteratur — gegen den Gesetzestext prüfen |\n| `default` | Keine gesicherte Abweichung hinterlegt; MBO-Defaults laufen weiter |\n\nEin Profil kann vier Dinge tun: Parameter setzen (`params`), Paragraphenzitate umstellen (`para`),\nModule deaktivieren (`enabled: false`) oder Zusatzmodule aktivieren (`extraRules`).\n\n### Deutschland — 17 Profile\n\n`MBO` (Referenz), `BW`, `BY`, `BE`, `BB`, `HB`, `HH`, `HE`, `MV`, `NI`, `NW`, `RP`, `SL`, `SN`,\n`ST`, `SH`, `TH`.\n\n| Code | Zitatbasis | `abstandsflaeche` | `grenzbebauung` | Status |\n|---|---|---|---|---|\n| MBO | MBO | 0,5 H, mind. 3 m (Referenz) | aus | `reference` |\n| BW | LBO BW | 0,5 H, **mind. 5 m**, §6 LBO BW | aus | `pruefen` |\n| BY | BayBO | **deaktiviert** — §6-MBO-Regime gilt in Bayern nicht | **an** (Warnstufe), §22 BayBO | `hoch` |\n| BE | BauO Bln | 0,5 H, mind. 3 m | **an** (Warnstufe) | `hoch` |\n| NW | BauO NRW | **0,4 H**, mind. 3 m, §6 BauO NRW | Grenzgaragenprivileg | `hoch` |\n| HE | HBO | **0,4 H**, mind. 3 m, §6 HBO | aus | `hoch` |\n| SN | SächsBO | **0,4 H**, mind. 3 m, §6 SächsBO | aus | `hoch` |\n| TH | ThürBO | **0,4 H**, mind. 3 m, §6 ThürBO | aus | `hoch` |\n| HH | HBauO | **0,4 H**, mind. 3 m, §6 HBauO | aus | `hoch` |\n| NI | NBauO | 0,5 H, mind. 3 m, §5 NBauO | aus | `hoch` |\n| übrige 7 | jeweilige LBO | MBO-Default (0,5 H, mind. 3 m) | aus | `default` |\n\n### Österreich — 11 Profile\n\n`AT_OIB` (harmonisierte OIB-Richtlinien 1–6, Ausgabe 2023) sowie die neun Bundesländer `AT_W`\n(BO für Wien), `AT_NOE`, `AT_OOE`, `AT_SBG`, `AT_T`, `AT_STMK`, `AT_KTN`, `AT_VBG`, `AT_BGLD`.\nWien führt Bauwich und Bauklassen I–VI; die übrigen Länder setzen landesspezifische\nAbstandsflächenfaktoren.\n\n### Schweiz — 6 Profile\n\n`CH_IVHB` (Interkantonale Vereinbarung über die Harmonisierung der Baubegriffe) sowie die\nLeitkantone `CH_ZH` (PBG ZH), `CH_BE`, `CH_BS`, `CH_LU`, `CH_SG`, `CH_GE`. Ergänzend werden\nSIA 416 (Flächen und Volumen) und SIA 500 (Hindernisfreie Bauten) referenziert.\n\n### Kommunale Satzungen — 20 Städte\n\n`MUENCHEN`, `NUERNBERG`, `AUGSBURG`, `BERLIN`, `HAMBURG`, `KOELN`, `DUESSELDORF`, `ESSEN`,\n`DORTMUND`, `BONN`, `MUENSTER`, `FRANKFURT`, `WIESBADEN`, `STUTTGART`, `MANNHEIM`, `KARLSRUHE`,\n`LEIPZIG`, `DRESDEN`, `HANNOVER`, `BREMEN` (`src/municipalities.js`).\nHinterlegt sind Stellplatz-, Gründach- und Freiflächenvorgaben; Berlin setzt den Kfz-Faktor für Wohnungen auf 0, Münster den Fahrradfaktor auf 3,0 je WE.\n\n### Ehrliche Einschränkungen\n\n1. Der 5-m-Wert für Baden-Württemberg ist die häufig zitierte Auslegung, aber nicht gegen den\n   aktuellen Wortlaut verifiziert → `[prüfen]`.\n2. Für die 7 übrigen deutschen Länder (BB, HB, MV, RP, SL, ST, SH) liegen noch keine spezifischen Abweichungen im Tool; dort laufen\n   MBO-Defaults weiter.\n3. Österreichische und schweizerische Profile bilden die jeweils zitierten Normen mit den\n   hinterlegten Faktoren ab; eine kantons- oder landesspezifische Sonderprüfung ersetzt das nicht.\n\n---\n\n## Geometrie und Parser\n\n| Funktion | Datei | Verfahren |\n|---|---|---|\n| `isPointInPolygon` | `src/bplanparser.js` | Ray-Casting |\n| `checkBuildingWithinBaugrenze` | `src/bplanparser.js` | Ray-Casting plus Segment-Intersection |\n| `calculatePolygonArea` | `src/cadparser.js` | Gauß'sche Trapezformel |\n| `parseXPlanGml` | `src/bplanparser.js` | XPlanung GML 5.x / 6.0 |\n| `parseBPlanGeoJson` | `src/bplanparser.js` | GeoJSON-Baugrenzen und Attribute |\n| `parseBPlanText` | `src/bplanparser.js` | Heuristik auf amtlichen Textfestsetzungen |\n| `parseDxf` | `src/cadparser.js` | Layer- und Entitätsauswertung |\n| `parseIfc` | `src/cadparser.js` | IFC 2x3 / IFC4, LOD 200 |\n| `parseBaubeschreibung` | `src/textparser.js` | Regex-Extraktion deutscher Exposés, DIN 277 |\n","whitepaper":"# BauLens — Technisches Whitepaper\n\n**Deterministische DACH-Bauordnungs-Vorprüfung**\n\n| | |\n|---|---|\n| **Version** | 0.8.0 |\n| **Regelprofil** | 34 Profile in DE, AT und CH |\n| **Prüfmodule** | 15 (9 Kernmodule, 6 Zusatzmodule) |\n| **Testsuite** | 157 Testfälle, Node-Test-Runner |\n| **Laufzeit** | Node.js ≥ 18, keine externen Abhängigkeiten |\n| **Zielgruppe** | Architektur- und Planungsbüros, Bauvorlageberechtigte, Fertighaushersteller, Bauaufsichtsbehörden im Pilotbetrieb |\n\n---\n\n## 1. Ausgangslage\n\nIn Deutschland, Österreich und der Schweiz ist das Baugenehmigungsverfahren der formal\nfehleranfälligste Abschnitt eines Bauvorhabens. Ein Antrag wird selten abgelehnt — er wird\nzurückgestellt. Jede Nachforderung des Bauamts kostet den Entwurfsverfasser Wochen Stillstand und\nNacharbeit an Unterlagen, die längst hätten geprüft sein können.\n\nTypische Auslöser sind rechnerisch eindeutig: eine unterschrittene Abstandsfläche, ein zu hoch\ngezähltes Vollgeschoss, eine GRZ- oder GFZ-Überschreitung, ein fehlender zweiter Rettungsweg,\neine Traufhöhe über der Festsetzung des Bebauungsplans.\n\nGefunden wird der Fehler heute meist erst nach Einreichung, aus dem Bescheid. Genau diese\nReihenfolge dreht BauLens um.\n\n**Zwei Fehlerarten, zwei Antworten.**\n\n| Fehlerart | Beispiel | Werkzeug |\n|---|---|---|\n| Rechenfehler | H/2 unterschritten, GRZ überschritten, Fensterfläche unter 1/8 | Regel-Engine mit dokumentierter Formel |\n| Verfahrensfehler | Grenzbebauung ohne Planrecht, Befreiung nicht begründet | Hinweisbefund mit Fundstelle und Befreiungsweg |\n\nFür die erste Kategorie ist ein Sprachmodell die falsche Technik: Es liefert bei gleicher Eingabe\nunterschiedliche Ergebnisse und kann keine Fundstelle garantieren. Für die zweite Kategorie ist eine\ndeterministische Engine die falsche Technik: Sie kann keine Zulässigkeit behaupten, die vom\nPlanrecht abhängt. BauLens trennt beides — harte Befunde mit Zahl, Hinweise ohne.\n\n---\n\n## 2. Technische Architektur\n\n### 2.1 Schichten\n\n```\nEingabe          JSON-Spec · DXF · IFC · XPlanung GML · GeoJSON · Text-Baubeschreibung\n                        │\nNormalisierung   src/schema.js         Validierung, Typprüfung, Defaults\n                        │\nProfilauflösung  src/profiles.js       --land → spec.bundesland → MBO\n                 src/municipalities.js kommunale Satzungen\n                 src/dach.js           DE / AT / CH\n                        │\nBewertung        src/engine.js         9 Kernmodule + 6 Zusatzmodule\n                 src/rules/*.js        ein Modul je Regel, reine Funktion\n                        │\nAggregation      src/report.js         Verdikt, Markdown-Bericht\n                        │\nAusgabe          src/dossier.js        DIN-A4-Dossier, SHA-256-Siegel\n                 src/xbau.js           XBau 2.3 XML nach OZG\n                 src/bcf.js            BCF 2.1 Issues\n                 src/repair.js         Lösungsvorschläge\n                 src/matrix.js         DACH-Quervergleich\n```\n\nJedes Regelmodul ist eine reine Funktion `evaluate(spec, ctx) → Finding[]`. Es gibt keinen\ngemeinsamen Zustand, keine Reihenfolgeabhängigkeit und keine Seiteneffekte. Das macht Module\neinzeln testbar und den Gesamtlauf reproduzierbar.\n\n### 2.2 Garantien\n\n- **Determinismus.** Gleicher Input, gleicher Befund. Keine Zufallskomponente, kein Modellaufruf.\n- **Nullabhängigkeit.** Ausschließlich Node-Standardbibliothek. Kein `npm install`, keine\n  Telemetrie, keine Netzwerkverbindung im Prüfpfad.\n- **Nachvollziehbarkeit.** Jeder Befund nennt Ist-Wert, Soll-Wert und Fundstelle. Jeder\n  vereinfachte Parameter ist als `[prüfen]` gekennzeichnet.\n- **Lokale Verarbeitung.** Die Prüfung läuft in der Desktop-Anwendung auf dem Arbeitsplatz; es gibt\n  keine Cloud-Komponente. Die Engine lässt sich über das JSON-Zeilenprotokoll (`--rpc`) auch hinter\n  eine eigene Oberfläche oder in eine Pipeline hängen.\n\n### 2.3 Regelumfang\n\n**Kernmodule** laufen in jedem Profil:\n`gebaeudeklasse`, `abstandsflaeche`, `grz`, `gfz`, `stellplaetze`, `tageslicht`, `raumhoehen`,\n`rettungswege`, `vollgeschosse`.\n\n**Zusatzmodule** werden profil- oder datenabhängig aktiviert:\n`grenzbebauung` (BY, BE), `gruendach`, `brandwand`, `barrierefreiheit`, `schallschutz`,\n`bplan_festsetzungen`.\n\nFormeln, Schwellen, Vereinfachungen und Vertrauensstufen sind im\n[Regelkatalog](RULES.md) dokumentiert — vollständig, inklusive der Stellen, an denen bewusst\nvereinfacht wurde.\n\n### 2.4 Profilmodell\n\n34 Profile in drei Ebenen:\n\n| Ebene | Umfang | Inhalt |\n|---|---|---|\n| Deutschland | 17 | MBO als Referenz plus 16 Landesbauordnungen; BY, BW, BE mit gesicherten Strukturabweichungen |\n| Österreich | 11 | OIB-Richtlinien 1–6 (2023) plus neun Bundesländer |\n| Schweiz | 6 | IVHB-Konkordat plus Leitkantone ZH, BE, BS, LU, SG, GE |\n| Kommunen | 10 | Stellplatz-, Gründach- und Milieuschutzsatzungen |\n\nEin Profil kann vier Dinge verändern: Parameter setzen, Paragraphenzitate umstellen, Module\nabschalten, Zusatzmodule aktivieren. Diese Struktur ist die Grundlage dafür, dass ein neues\nBundesland oder eine neue Satzung ohne Eingriff in die Engine ergänzt werden kann.\n\n### 2.5 Datenübernahme\n\nDer manuelle Parameterbogen ist die eigentliche Hürde im Alltag eines Planungsbüros. BauLens liest\ndeshalb vorhandene Unterlagen:\n\n| Format | Quelle | Extrahiert |\n|---|---|---|\n| IFC 2x3 / IFC4 | BIM-Modell, LOD 200 | Raumbuch, Geschossigkeit, BGF, Wandstärken |\n| DXF | 2D-Lageplan | Layer, Grenzkoordinaten, Gebäudeumriss |\n| XPlanung GML 5.x/6.0 | amtlicher Bebauungsplan | Baugebiete, GRZ, GFZ, Z, First-/Traufhöhe, Baugrenze |\n| GeoJSON | Vektor-Bebauungsplan | Baugrenzen und Attribute |\n| Textteil | amtliche Textfestsetzungen | Festsetzungen per Heuristik |\n| Baubeschreibung | Exposé, DIN-277-Flächenberechnung | Flächen, Höhen, Raumdaten |\n\n### 2.6 Geometrische Prüfung\n\nDie Baugrenzenprüfung ist der einzige Teil der Engine, der nicht auf skalierten Zahlen, sondern auf\nGeometrie arbeitet. `checkBuildingWithinBaugrenze` kombiniert zwei Verfahren:\n\n- **Ray-Casting** — liegt jeder Eckpunkt des Gebäudeumrisses innerhalb des Baugrenzenpolygons?\n- **Segment-Intersection** — kreuzt eine Gebäudekante eine Grenzkante, ohne dass ein Eckpunkt\n  außerhalb liegt? Dieser Fall ist bei konkaven Polygonen entscheidend und wird von reinem\n  Punkt-in-Polygon nicht erfasst.\n\nDas Ergebnis wird als Verstoß gegen §23 Abs. 3 BauNVO gemeldet, mit der Anzahl der ausgetretenen\nEckpunkte.\n\n### 2.7 Ausgabe\n\n| Artefakt | Format | Verwendung |\n|---|---|---|\n| Prüfdossier | A4-Dokument, Druckdialog → PDF | Nachweis gegenüber Bauherr, Gutachter, Bauamt |\n| Prüfsiegel | SHA-256 über Spec und Befund | Nachweis, dass der Befund zu diesen Daten gehört |\n| Beschlussvorlage | XBau 2.3 XML (OZG) | Einreichung bei der Bauaufsichtsbehörde |\n| Mängelliste | BCF 2.1 | Übernahme in Revit, ArchiCAD, Vectorworks |\n| Befund | Markdown | Ablage im Projektordner, Diff-fähig |\n| Quervergleich | Tabelle über 34 Profile | Standortentscheidung, Serienprüfung |\n\nDie Anschrift des Dossiers wird an die nationale Behördenstruktur angepasst — *Untere\nBauaufsichtsbehörde*, *Magistrat der Stadt Wien – MA 37 Baupolizei*, *Amt für Baubewilligungen\nStadt Zürich*.\n\n### 2.8 Compliance Repair Engine\n\nEin Befund allein verlagert die Arbeit zum Planer zurück. `--repair` liefert zu jeder Abweichung\ndrei Wege:\n\n- **Geometrisch** — erforderliche Verschiebung des Baukörpers innerhalb zulässiger Pufferzonen\n  gegenüber der Grundstücksgrenze\n- **Baulich** — maximal zulässige Trauf- und Wandhöhe zur Einhaltung der Abstandsfläche\n- **Rechtlich** — formulierte Begründung für den Befreiungsantrag nach §31 Abs. 2 BauGB,\n  §67 MBO bzw. Art. 63 BayBO\n\n---\n\n## 3. Betriebsmodell und Grenzen\n\n### 3.1 Was BauLens nicht ist\n\n- **Kein Sprachmodell über Gesetzestexten.** Es gibt keine generative Komponente im Prüfpfad.\n- **Keine Rechtsberatung.** Der Befund ist eine technische Vorprüfung und erbringt keine\n  Rechtsdienstleistung im Sinne des RDG.\n- **Kein Ersatz für die bauvorlageberechtigte Person.** Das Dossier unterstützt die\n  Qualitätssicherung; der Genehmigungsbescheid bleibt bei der Behörde.\n- **Kein vollständiges Normabbild.** Was vereinfacht oder nicht modelliert ist, steht im\n  Regelkatalog — sichtbar im Tool, nicht im Kleingedruckten.\n- **Kein Cloud-Dienst.** Es gibt keinen Server, auf dem Plandaten liegen.\n\n### 3.2 Haftung und Kennzeichnung\n\nJeder Bericht trägt auf jeder Seite den Hinweis:\n\n> *„Dieser Prüfbericht dient ausschließlich der technischen und planerischen Vorprüfung auf Basis\n> der bereitgestellten Daten. Er ersetzt weder die Prüfung durch eine bauvorlageberechtigte Person\n> noch den formellen Genehmigungsbescheid der zuständigen Bauaufsichtsbehörde.\"*\n\n### 3.3 Datenhaltung\n\nDie Berechnung läuft clientseitig im Browser oder auf einem Server des Büros. Zeichnungen,\nRaumdaten und Bauherrenangaben werden nicht an Dritte übertragen. Für Büros mit eigenen\nIT-Vorgaben ist der Kern als lokaler REST-Dienst betreibbar (`--server`), der von\nBIM-Plugin-Schnittstellen angesprochen wird.\n\n---\n\n## 4. Kommerzielles Modell\n\n### 4.1 Pakete\n\nDie Preise sind in `site.config.json` hinterlegt und werden aus dieser Quelle auf die Produktseite,\ndie Preisseite und in die Rechtstexte gerendert. Maßgeblich ist die\n[Preisübersicht](../pricing/).\n\n| Paket | Preis | Zielgruppe | Umfang |\n|---|---|---|---|\n| Testlizenz | kostenlos | Erstbewertung | Drei Projektprüfungen, alle 34 Profile, Befund mit Paragraphenzitat |\n| Pro Architekt | 1.499 $ / Jahr | Einzelbüros | 180 Projektprüfungen pro Jahr, ein Arbeitsplatz, Dossier, CAD-/BIM-Ingestion, Reparaturvorschläge |\n| Büro / Kanzlei | 2.750 $ / Jahr je Arbeitsplatz | Planungsbüros, Generalübernehmer | Unbegrenzte Prüfungen, eigenes Briefpapier, DACH-Quervergleich |\n| Enterprise / Serien | 1.490 $ / Monat | Fertighaus- und Serienhersteller | Katalogprüfung über alle 34 Profile, API-Zugang, BCF-Anbindung |\n\nDie Preise werden in US-Dollar geführt, weil die Produkte im Zahlungssystem in USD angelegt sind.\nDie Umsatzsteuer ist enthalten; die Berechnung erfolgt im Checkout anhand der Rechnungsadresse.\n\n**Abwicklung.** Der Verkauf läuft über Polar als **Merchant of Record**. Polar ist damit\nVertragspartner des Erwerbs, stellt die Rechnung aus und führt die Umsatzsteuer ab. Das erspart dem\nAnbieter die Registrierung in jedem Kundenland und hält Kartendaten aus der eigenen Infrastruktur\nheraus: Es gibt kein Backend, das Zahlungsdaten verarbeitet.\n\n**Rechnung hinter dem Einstiegspreis.** Eine vermiedene Nachforderung entspricht zwei bis sechs\nWochen Projektverzug. Bereits eine einzelne vermiedene Verzögerung trägt die Jahresgebühr der\nPro-Lizenz. Der Vergleich auf der Produktseite stellt diesen Zusammenhang her, ohne eine\nEinsparung zu behaupten, die sich nicht belegen lässt.\n\n**Lizenzschlüssel.** Polar stellt für jeden Kauf einen Lizenzschlüssel aus und versendet ihn per\nE-Mail. Die Desktop-Anwendung kann ihn optional gegen die öffentliche Prüfschnittstelle von Polar\nvalidieren und das Ergebnis lokal speichern. Die Prüf-Engine funktioniert unabhängig davon; die Aktivierung ist\nein Komfortmerkmal, keine Zugangssperre. Details in\n[Zahlungen, Lizenzen und Rechtstexte](PAYMENTS_AND_LEGAL.md).\n\n### 4.2 Wirkung des Ausgabeformats\n\nDas Dossier ist das Verkaufsargument, nicht der Befund. Ein Befund ist eine interne Notiz; ein\nDIN-A4-Dokument mit Prüfsiegel und Behördenanschrift ist ein Arbeitsergebnis, das der Planer an\nden Bauherrn weitergeben kann. Deshalb ist die Dossier-Ausgabe Teil jeder kostenpflichtigen Lizenz.\n\n### 4.3 Akquise\n\nDer Einstieg läuft über die Prüfung eines laufenden Vorhabens, nicht über eine Produktpräsentation.\nDie Desktop-Anwendung läuft dafür 14 Tage ohne Schlüssel, und der Projekt-Pass für 49 € deckt ein\nkonkretes Vorhaben über 30 Tage ab — mit bis zu zehn Nachprüfungen bei Entwurfsänderungen.\n\n**Betreff:** 90-Sekunden-Vorprüfung gegen die [Landesbauordnung] für Ihr nächstes Projekt\n\n> jede Korrekturschleife beim Bauamt wegen übersehener Abstandsflächen, unklarer\n> Vollgeschosszählung oder einer GRZ-Überschreitung kostet Ihr Büro Wochen Verzögerung und\n> Nacharbeit.\n>\n> BauLens prüft Ihre Entwurfsparameter deterministisch gegen die aktuelle Landesbauordnung und die\n> BauNVO und erzeugt einen Prüfbericht mit Paragraphennachweis — regelbasiert, nicht geschätzt.\n> Gerne schalten wir Ihrem Büro drei kostenlose Vorprüfungen frei, ohne Installation.\n\n---\n\n## 5. Roadmap\n\n### Umgesetzt (bis v0.9.0)\n\n- Desktop-Workhorse: Multi-Projekt-Workspace, Ordner-Scan, Stapelprüfung und interaktives 3D/2D-Modell\n- Download-Hub mit OS-Erkennung, Direktverweisen und Prüfsummenauslieferung über die Release-Pipeline\n- Interaktive Showcase-Simulation auf der Produktseite (Abstandsflächen über drei Regelprofile)\n- Preismodell in Euro: 49 € Projekt-Pass, 89 € Pro, 199 € Büro, Enterprise ab 1.490 €\n\n### Umgesetzt (bis v0.8.1)\n\n- Deterministischer Regelkern mit 15 Modulen und dokumentierten Formeln\n- 34 DACH-Profile mit geschärften LBO-Faktoren (0,4 H in NRW, Hessen, Sachsen, Thüringen, Hamburg)\n- 20 kommunale Satzungen (u. a. Hannover, Augsburg, Essen, Dortmund, Münster, Bonn, Mannheim, Karlsruhe)\n- Reale Freistellungen: Grenzgaragen- und Nebengebäudeprivileg sowie Dachgeschoss-Vollgeschossprüfung\n- Desktop-Shell-Support & JSON-Line IPC-Protokoll (`--rpc`) für native Apps (Tauri, Rust, Electron)\n- Lokale Offline-Fonts (IBM Plex Sans / Mono) für vollständigen Offline-Betrieb\n- Ingestion aus DXF, IFC, XPlanung, GeoJSON, Textteil und Baubeschreibung\n- Geometrische Baugrenzenprüfung\n- DIN-A4-Dossier mit SHA-256-Siegel und Vektor-Lageplan\n- XBau-2.3-Antrags-XML nach OZG\n- BCF-2.1-Export und lokaler REST-Dienst\n- Compliance Repair Engine\n- Engine-Ansicht mit 2D-Lageplan, 3D-Abstandsflächen-Hüllkurve und Paragraphen-Drawer\n\n### Offen\n\n| Vorhaben | Nutzen | Abhängigkeit |\n|---|---|---|\n| Automatisierte PDF-Textextraktion | Baubeschreibungen ohne Umweg über Textkopie einlesen | keine |\n| Volltextprüfung gegen amtliche Fassungen | Zitate gegen das aktuelle Verkündungsblatt verifizieren | Zugang zu konsolidierten Fassungen |\n| Schmalseitenprivileg-Modul (16 m) | 0,2 H vor maximal zwei Wänden bis 16 m Länge | Normrecherche je Land |\n| Katalogprüfung im Batchbetrieb | Haustypenlisten über alle Profile in einem Lauf | keine |\n| Ablöse- und Stellplatzrechner | Stellplatzdefizite bewerten statt nur melden | kommunale Satzungswerte |\n\nBewusst **nicht** geplant: eine generative Komponente im Prüfpfad. Der Wert des Werkzeugs liegt in\nder Nachvollziehbarkeit; ein Modell, das Regelauslegung formuliert, würde genau diese Eigenschaft\naufgeben.\n","changelog":"# Änderungsverlauf\n\nAlle wesentlichen Änderungen an BauLens. Die Versionsnummer in `package.json` und im CLI-Kopf\nfolgt diesem Verlauf; die Fußzeile des Studios nennt zusätzlich die Engine-Version.\n\nFormat nach [Keep a Changelog](https://keepachangelog.com/de/1.1.0/),\nVersionierung nach [Semantic Versioning](https://semver.org/lang/de/).\n\n---\n\n## [Unveröffentlicht]\n\n### Hinzugefügt\n\n- **Lizenzierung und 14-Tage-Testphase in der Desktop-Anwendung.** Der monetäre Kern des Produkts\n  ist jetzt real: `src/licensing.js` entscheidet getrennt von der Anwendung, ob sie frei läuft —\n  Testphase (Startzeitpunkt im Konfigurationsverzeichnis der App, sofort persistiert), aktivierte\n  Lizenz oder Sperre. Die Aktivierung prüft den Schlüssel gegen die öffentliche, authentifizierungs-\n  freie Polar-Schnittstelle `POST /v1/customer-portal/license-keys/validate`; gesendet wird nur der\n  Schlüssel, nie Plandaten. Ein ungültiger Schlüssel wird abgewiesen, ein nicht erreichbares Polar\n  wird nicht mit einem ungültigen Schlüssel verwechselt (`valid: null` statt `valid: false`), und\n  eine zuvor geprüfte Lizenz bleibt offline 30 Tage gültig, bevor eine erneute Prüfung fällig ist.\n  Ist die Testphase abgelaufen und kein brauchbarer Schlüssel hinterlegt, sperrt ein Zahlenschirm\n  die Arbeitsfläche („Testphase abgelaufen“) mit Eingabe, Kauf-Link und ehrlicher Fehlermeldung;\n  Projekte und Plandaten bleiben erhalten. Die Sperre ist nicht nur die Oberfläche: eine einzige\n  Schranke (`assertUnlocked()`) verweigert im gesperrten Zustand die Arbeitsbefehle (Ordner öffnen,\n  Stapelprüfung, Exporte, Drop-Routing, Druck) ebenso wie die im Studio-Seitencode verdrahteten\n  Aktionen (Auswertung, Datei-Importe, Downloads, Druck) und schluckt die Kameratasten 1/2/3/R,\n  bevor die Seite sie sieht — statt unter dem Zahlenschirm weiterzuarbeiten. Ein gesperrter\n  Zahlenschirm lässt sich nicht schließen, auch der Offline-Aktivierungsversuch nicht; darauf\n  verlässt sich die Schranke als reines Prädikat. Neuer Shell-Befehl `license_state_read` /\n  `license_state_write` schreibt den Zustand nach `\u003capp-config>/license-state.json` — absichtlich\n  außerhalb des Webview-Speichers. Die CSP der Desktop-Hülle lässt nur `https://api.polar.sh`\n  zusätzlich zu. Die Kommandozeile bleibt unbetroffen: die Regeln kennen weiterhin keine Lizenz.\n- **Tests: `test/licensing.test.js`.** 22 Fälle — Testphasenbeginn, Ablauf auf den Tag, zurück-\n  gesetzte Uhr, Sperrgründe, Polar-Sukzess (200), Ablehnung (404), `revoked` bei 200, offline-\n  Grace, Ablaufdatum gegen Grace-Fenster und die Konsistenz von `site.config.json` mit dem Modul.\n- **Tests: `test/desktop_licensing.test.js`.** 18 Fälle, die das ausgelieferte Inject-Skript in\n  einer VM mit minimalem DOM fahren: Erststart, gesperrter Zahlenschirm (nicht schließbar — auch\n  offline nicht), Aktivierung (Erfolg, Ablehnung, Doppel-Enter, offline mit Cache), Flucht-Taste,\n  lesbarer Speicher — und die Schranke selbst auf beiden Hosts: im gesperrten Zustand erreichen\n  Ordner- öffnen, Prüfung, Export, Drop, die Kameratasten und die Studio-Aktionen der Seite die\n  Shell nicht, in der Testphase laufen sie durch.\n\n### Geändert\n\n- **Interne Struktur des Inject-Skripts, Verhalten unverändert.** Die Lizenz-Sektion gliedert sich\n  in Daten, Schranke, Darstellung und Abläufe: `setLicenseState()` ist der einzige Schreiber von\n  Zustand und Entscheidung, `gated()` der einzige Ort, an dem die Schranke auf eine Funktion\n  angewandt wird (Stapelbefehle und Studio-Aktionen registrieren durch ihn), und beide Drop-Pfade\n  teilen sich `feedPageInput()`. Der Aufbau steht im Kopf der Sektion.\n\n### Behoben\n\n- **Die Desktop-Injektion landete im Studio im Seitenquelltext statt am Dokumentende.**\n  `build-desktop-assets.mjs` ersetzte die erste `\u003c/body>` der Datei — im Studio steht die erste\n  in einem Template-Literal (der Dossier-Export), sodass das injizierte Skript mitten im\n  Skript-String der Seite landete: dessen `\u003c/script>` schnitt das Seitenskript mitten im\n  Template ab, und weder Seitencode noch Schranke liefen je in der Auslieferung (im Gegenunterschied\n  zum Workhorse, der genau eine `\u003c/body>` hat). Eingefügt wird jetzt an der letzten `\u003c/body>`,\n  `test/staging.test.js` pinnt die Skript-Reihenfolge der gestapelten Seiten.\n\n## [0.10.0] — 2026-10-06\n\n### Hinzugefügt\n\n- **DIN-A4-Befund als echte PDF-Datei.** Die Engine schreibt den Vorprüfungsbefund jetzt selbst als\n  PDF: `check spec.json --pdf befund.pdf` auf der Kommandozeile, die IPC-Methode `dossier_pdf` für\n  die Shell, im Desktop-Workhorse die Schaltfläche „PDF“ mit nativem Speichern-Dialog — kein\n  Druckdialog mehr nötig. Geschrieben von `src/dossierpdf.js` über einen eigenen, abhängigkeitsfreien\n  PDF-Schreiber (`src/pdf.js`); die Glyphenbreiten stammen aus den Adobe-AFM-Dateien der Core-14-\n  Schriften (`src/pdfmetrics.js`), nicht aus Schätzungen. Die Prüfziffer des Siegels ist mit der\n  HTML-Fassung identisch, sodass beide Ausgaben vergleichbar sind. Fußzeile mit Seitenzahl auf jeder\n  Seite, Kopfzeile und Tabellenkopf werden bei Seitenumbruch wiederholt.\n- **Hauskörper aus den Plandaten statt aus einem erfundenen Rechteck.** Das Lageplan-Blatt zeichnet\n  die überbaute Fläche aus den Angaben des Vorhabens: `GRZ × Grundstücksfläche` (`grz_ist` ist per\n  Definition der überbaute Anteil, und so bleibt die gezeichnete Bebauung mit dem Grundstück stimmig,\n  das dasselbe Blatt daneben zeigt), sonst `Nutzfläche / Geschosse`; ohne Geschossangabe gilt die\n  Nutzfläche als Grundfläche, genau so trägt der DXF-Import die gemessene überbaute Fläche ein. Das\n  Grundstücksrechteck ist dann Hauskörper plus die vier geprüften Grenzabstände, und die Legende nennt\n  die Rechnung, aus der die Maßzahlen stammen (`Grundfläche 280 m² · GRZ 0,35 × 800 m²`). Nur ohne\n  verwertbare Angabe bleibt das schematische Bezugsrechteck — dann steht das auch so auf dem Blatt.\n  Weil der Plan aus diesen Werten zeichnet, deckt die Prüfziffer sie jetzt mit ab: Kommandozeile und\n  Desktop-Schicht übergeben `gebaeude` an den Renderer, sonst trügen zwei Vorhaben, die sich nur in\n  der GRZ unterscheiden, dasselbe Siegel. Ein Test vergleicht beide Wege bis aufs Byte.\n- **Blattübersicht und Blattnummern.** Das Dossier ist jetzt eine Mappe: mit dem Lageplan-Blatt\n  zerfällt es in Blätter (Blatt 1 Befund, Blatt 2 Lageplan, Blatt 3 Unterschriften und Prüfsiegel),\n  und eine Registertafel auf der ersten Seite nennt jedes Blatt mit Inhalt und den Seiten, auf denen\n  es liegt. Jede Fußzeile trägt `Blatt 2/3 · Lageplan · Seite 3 von 4`, sodass ein einzelnes Blatt\n  sich selbst zuordnet; das Schriftfeld des Lageplans wiederholt seine Blattnummer. Das Blatt ist\n  die Ablageeinheit, die Seite die Zählung — ein Befund über zwei Seiten bleibt Blatt 1. Die\n  Seitenbereiche der Tafel sind erst nach dem Umbruch bekannt und werden im selben späten Durchgang\n  gesetzt wie die Fußzeilen. Die Übersicht gibt es nur im PDF: die HTML-Fassung ist ein einziger\n  Druckfluss ohne Blätter, und erfundene Blattnummern wären dort eine Struktur, die das Dokument\n  nicht hat.\n- **Lageplan als eigenes Zeichnungsblatt.** Der Plan verlässt den Textfluss und bekommt ein\n  DIN-A4-Querblatt mit Blattrahmen und Schriftfeld: Maßketten in Metern an allen vier Seiten,\n  Maßstabsbalken, Legende und Nordpfeil, dazu ein angegebener Maßstab (1:100 bis 1:1000), der aus\n  dem Platzbedarf der Abstandsflächen gewählt wird. Die Maßzahlen sind die geprüften Grenzabstände,\n  das Bezugsrechteck ist als schematisch gekennzeichnet; die Fußzeile mit Seitenzahl sitzt auch auf\n  dem Querblatt, und der Blattwechsel ist im Layoutaudit als eigenes Blatt überprüfbar.\n- **Prüfsumme des Bündels über die RPC-Schnittstelle** (`scripts/smoke-bundle.mjs`). Die Suite prüft\n  nun auch `ping`, `describe`, `check_file` und `dossier_pdf` durch das gebaute Einzeldatei-Artefakt\n  und vergleicht die Antworten mit der Quelle.\n- **Lagepläne eines ganzen Projektordners in einem Durchgang.** Im Desktop-Workhorse schreibt die\n  Schaltfläche „Alle Lagepläne exportieren“ für jedes Vorhaben des geöffneten Ordners ein Blatt als\n  DXF und SVG in einen im Dialog gewählten Zielordner. Die Engine-Methode ist `plan_export`\n  (`{ files: [{ path, label }], outDir, formats }`), die die Schleife selbst fährt, weil der\n  Dateiname, der Maßstab und die Prüfziffer je Blatt Engine-Tatsachen sind — die Shell liefert nur\n  das Suchergebnis und den Ordner. Je Projekt wird die erste Plandatei mit Geometrie gewählt (DXF,\n  IFC, XPlanung, B-Plan), sonst die erste Datei; benannt wird nach dem Vorhaben\n  (`Wohnanlage-Musterweg_Lageplan.dxf`). Ein unlesbarer Plan wird mit Namen gemeldet und nimmt die\n  übrigen nicht mit, ein fehlendes Zielverzeichnis wird nie erfunden, und zwei Vorhaben mit gleichem\n  Namen bekommen `-2`-Blätter statt einander zu überschreiben — die Umbenennung steht im Bericht.\n  Die Namen werden aus Verzeichnisnamen gebildet und deshalb entschärft: Trennzeichen,\n  Laufwerksbuchstaben, Steuerzeichen und `..` können den gewählten Ordner nicht verlassen\n  (`src/planexport.js`). Der Ordnerdialog kann jetzt eine Beschriftung tragen, damit „Zielordner für\n  die Lagepläne wählen“ nicht wie „Projektordner öffnen“ aussieht.\n- **Das Lageplan-Blatt als DXF und SVG.** Das Zeichnungsblatt verlässt die Mappe auch als eigene\n  Datei: `--svg lageplan.svg` und `--dxf lageplan.dxf` auf der Kommandozeile, die IPC-Methoden\n  `plan_svg` und `plan_dxf` für die Shell, im Desktop-Workhorse die Schaltflächen „Lageplan als SVG\n  speichern“ und „Lageplan als DXF speichern“. Beide Formate entstehen aus **einer** Aufzeichnung\n  (`recordPlanSheet` in `src/dossierpdf.js`): die PDF-Seite spielt genau dieselben Primitive ab, die\n  `src/plansvg.js` und `src/plandxf.js` als Datei schreiben — zwei Zeichenwege wären zwei\n  Zeichnungen, und die erste Korrektur landete nur in einer. Das DXF ist ein konservatives ASCII-DXF\n  im AutoCAD-2000-Dialekt (AC1015): eine Zeichnungseinheit = ein Meter (`$INSUNITS 6`), Rechtecke als\n  geschlossene `LWPOLYLINE` (der eigene CAD-Import liest sie als Grundstücksgrenze und Hauskörper\n  zurück, Test in `test/planio.test.js`), Beschriftung als `TEXT`, ein Bauteil je Ebene, dazu ein\n  eigener `DASHED`-Linientyp für die Abstandsflächen; Blattrahmen, Blattkopf, Legende,\n  Maßstabsbalken und Schriftfeld liegen auf eigenen Ebenen und lassen sich einfrieren. Das SVG ist\n  DIN A4 quer in Punkten (gleiche viewBox, keine Umrechnung nötig), mit einer Gruppe je Ebene und\n  ohne eingebettete Schrift oder externe Verweise. Beide nennen Maßstab und Prüfziffer, und beide\n  sind byteweise reproduzierbar.\n\n### Behoben\n\n- **`check_file` war im Bündel funktionsunfähig.** Der Bundler band Node-Builtins über eine von Hand\n  gepflegte Namensliste; `extname` fehlte darauf, und `import { basename, extname } from \"node:path\"`\n  wurde still verworfen. Das gebaute Artefakt warf beim Öffnen einer Plandatei „extname is not\n  defined“, während alle CLI-Fälle weiter bestanden — die Desktop-Anwendung hätte keine einzige Datei\n  einlesen können. Die Bindungen werden jetzt aus den Importen abgeleitet, und die Prüfsumme testet\n  die RPC-Schnittstelle, über die der Fehler erreichbar war.\n- **Metadaten des PDFs in der richtigen Kodierung.** Strings im Info-Dictionary sind PDF-Textstrings\n  (PDFDocEncoding), nicht WinAnsi wie der Seiteninhalt; ein Halbgeviertstrich im Titel wurde dadurch\n  in jedem Betrachter als „Œ“ angezeigt. Sie werden nun als UTF-16BE mit Byte-Order-Mark geschrieben.\n- **Gemessene statt geschätzter Breiten.** Der Schreiber maß Courier-Text mit Helvetica-Breiten und\n  benutzte für alle Zeichen außerhalb ASCII pauschal 600 Einheiten — für Geviertstrich und Auslassung\n  (je 1000) zu schmal, sodass rechtsbündige Zeilen den Satzspiegel um bis zu 15 pt überschritten\n  und umbrochene Zeilen zu spät umbrachen. Gemessen wird jetzt der tatsächlich gezeichnete Byte-Strom\n  mit den echten Breiten je Schriftschnitt.\n- **Ein Vorhaben, eine Prüfziffer.** Das Siegel deckte die Projektfelder ab, und die wurden an den\n  beiden Aufrufstellen unterschiedlich gefüllt: fehlende Angaben waren in der Kommandozeile `null`\n  und in der Desktop-Schicht `undefined`, und `JSON.stringify` behält das eine und verwirft das\n  andere. Dieselbe Plandatei trug dadurch je nach Weg zwei verschiedene Prüfziffern. Der Hash\n  entfernt jetzt nicht gefüllte Felder und sortiert Schlüssel, sodass er nur von den Tatsachen\n  abhängt; Kommandozeile und Desktop erzeugen für dasselbe Vorhaben dasselbe Dokument.\n- **Der Projektname aus dem Plan gewinnt gegen den Dateinamen.** Die Ingestion beschriftet ein\n  Vorhaben mit seinem Dateinamen, und dieser Name stand bisher im Kopf des Befunds: das Dossier zu\n  „Am Hang 3“ hieß „haus.dxf“. Der im Plan angegebene Name wird nun übernommen, der Dateiname dient\n  nur als Rückfall für Pläne ohne eigene Bezeichnung.\n- **Gewahrte Grenzabstände wurden rot gezeichnet.** Das Lageplan-Blatt verglich jeden Abstand mit dem\n  Vergleichswert 3,5 m, aber mit umgekehrter Richtung: 4,0 m Abstand — also gewahrt, wie es die\n  Befundtabelle prüft (`ist \u003c erforderlich` ist der Mangel) — wurden rot gezeichnet, ein\n  unterschrittener Abstand von 2,5 m grün. In einem Einreichungsordner ist ein Blatt, das geprüfte\n  Abstände rot malt, während der Befund „ok“ sagt, schlimmer als keine Farbe. Die Richtung ist\n  gedreht, das Maß auf dem Vergleichswert gilt wie in der Regel als gewahrt, und ein Test hält beides\n  fest.\n- **Das Bündel verwarf mehrzeilige Import-Listen.** Muster im Bundler lasen die Namen zwischen den\n  geschweiften Klammern mit `.`, das keinen Zeilenumbruch trifft; ein über mehrere Zeilen geschriebener\n  Import — gültiges ESM — scheiterte als „unlesbar“. Die Muster erfassen jetzt auch Zeilenumbrüche.\n- **`desktop/README.md`** beschreibt den PDF-Export statt der früheren Annahme, ein PDF sei\n  ausschließlich über den Druckdialog möglich.## [0.9.0] — 2026-10-05\n\nDer Meilenstein trennt die beiden Säulen: Die Website verkauft und erklärt, die Desktop-Anwendung\narbeitet. Das offene Web-Studio ist aus der Navigation verschwunden, an seine Stelle treten ein\nDownload-Hub und eine Showcase-Animation.\n\n### Hinzugefügt\n\n- **Desktop-Workhorse statt Einzelvorhaben-Studio** (`desktop/workhorse.html`). Drei-Spalten-Layout\n  nach VS-Code-Vorbild: Projekt-Explorer mit Status-Ampel je Vorhaben, Center-Stage mit Modell,\n  Inspector mit Verdikt, Kennzahlen, Mängelliste und Export. Szenario A (eine per Drag & Drop\n  eingeworfene Datei startet direkt in der Detailansicht) und Szenario B (Ordner öffnen indiziert\n  den Buchordner rekursiv) sind beide umgesetzt. Ohne verbundene Engine läuft die Seite in einem\n  ausgewiesenen Demo-Modus weiter.\n- **Interaktives 3D/2D-Modell** (`studio.html`, `desktop/workhorse.html`). Die feste 30-Grad-Isometrie\n  ist durch eine echte Kamera ersetzt: Orbit per linker Maustaste, Pan per rechter oder mittlerer\n  Maustaste, stufenloser Zoom per Mausrad, Presets auf `1` (Isometrie Süd-West), `2` (Draufsicht),\n  `3` (Nord-Ansicht) und `R` (zurück). Ein Mangel in der Liste dreht die Kamera auf die betroffene\n  Fassade, die verletzte Abstandsfläche pulsiert rot, unkritische bleiben transparent.\n- **Download-Hub** (`downloads/index.html`, erzeugt aus `site.config.json`). Automatische\n  Betriebssystem-Erkennung, direkte Verweise auf die signierten Dateien für Windows, macOS (universell\n  für Apple Silicon und Intel), Linux (AppImage und Debian-Paket) sowie die eigenständigen CLI-Binaries\n  und die Engine als Skript. Dazu Signaturhinweis, Prüfsummen-Anleitung und Systemvoraussetzungen.\n- **Interaktive Showcase-Animation** im Hero-Bereich von `index.html`. Ein Baukörper wird vermessen,\n  ein Laser tastet die vier Fassaden ab, die verletzte Abstandsfläche blinkt rot, der\n  Heilungsvorschlag verschiebt den Baukörper um 45 cm und die Ampel springt auf Grün; der\n  Prüfbericht-Stempel trägt eine deterministische Prüfziffer. Ein Schieberegler wechselt zwischen\n  Bayern, Nordrhein-Westfalen und Wien und ändert damit die Abstandsflächenformel unmittelbar.\n- **Batch-Prüfungen über Ordner.** `src/ingest.js` bildet Plandateien auf ein Spec ab (IFC, DXF,\n  XPlanung-GML, B-Plan-GeoJSON, Textteil, Baubeschreibung, JSON-Spec) und meldet ausdrücklich, welche\n  Werte geschätzt statt gemessen sind. Die neue IPC-Methode `check_file` prüft eine Datei, die\n  Shell-Methoden `scan_workspace`, `pick_workspace_folder`, `read_workspace_file`,\n  `write_workspace_file`, `batch_check` und `export_file` bedienen den Rest.\n\n### Geändert\n\n- **Neues Preismodell in Euro** (`site.config.json`): Starter 49 € einmalig als Projekt-Pass über\n  30 Tage, Pro Architekt 89 € / Monat (890 € / Jahr), Büro / Kanzlei 199 € / Monat für drei\n  Arbeitsplätze (1.990 € / Jahr), Enterprise ab 1.490 € / Monat. Preise werden an einer Stelle\n  formatiert (`scripts/pricing-format.mjs`), damit Seite und Prüfung nie auseinanderlaufen.\n- **Kein offenes Web-Studio mehr.** Alle Studio-Verweise in Navigation, Hero, Abschlussbereich,\n  Footer und den erzeugten Rechts- und Preisseiten sind entfernt; `_redirects` leitet\n  `/studio.html`, `/studio` und `/studio/` auf `/downloads/` um. `studio.html` bleibt im Repository,\n  weil der Desktop-Build es als Engine-Ansicht einbindet.\n- **Release-Pipeline für alle drei Plattformen** (`.github/workflows/release.yml`): eigener Build je\n  Betriebssystem (NSIS, universelles DMG, AppImage und Deb), Prüfung, dass die auf der\n  Download-Seite beworbenen Dateinamen tatsächlich entstehen, und eine aus den Artefakten erzeugte\n  `SHA256SUMS.txt`.\n- `scripts/build-desktop-assets.mjs` legt `desktop/workhorse.html` als `index.html` der Anwendung ab\n  und bindet `desktop/inject/desktop.js` in beide Seiten ein.\n\n### Entfernt\n\n- USD-Preise, die Jahreslizenz-Bindung und die kostenlose Vollversion im Browser.\n\n## [0.8.1] — 2026-10-05\n\n### Hinzugefügt\n\n- **Desktop-Integration & JSON-Line IPC-Protokoll** (`src/ipc.js`, `test/ipc.test.js`). Die Engine stellt ein robustes JSON-Line IPC-Protokoll (`ping`, `describe`, `check`) über `stdin` und `stdout` bereit (`baucheck --rpc`). Ermöglicht nativen Desktop-Shells (Tauri, Rust, Electron), die geprüfte JavaScript-Engine im Hintergrund als Subprozess anzusteuern, ohne eine Zweitimplementierung der Regeln zu benötigen.\n- **Lokale Offline-Schriften.** IBM Plex Sans und IBM Plex Mono wurden direkt unter `assets/fonts/` lokal im Repository hinterlegt und per CSS eingebunden, sodass alle Seiten und das Desktop-Fenster 100 % offline ohne Internetverbindung funktionieren.\n- **Top-Level-Await-Unterstützung im Bundler.** `scripts/bundle.js` wickelt asynchrone Initialisierungen und Top-Level-Await-Aufrufe nun sauber für den CommonJS-Build (`dist/baulens.cjs`) ab.\n- 11 neue IPC-Tests integriert; die Testsuite umfasst nun 157 Testfälle (`node --test`).\n\n## [0.8.0] — 2026-10-05\n\n### Hinzugefügt\n\n- **Geschärfte Landesbauordnungs-Profile.** Nordrhein-Westfalen (`NW`, § 6 BauO NRW), Hessen (`HE`, § 6 HBO), Sachsen (`SN`, § 6 SächsBO), Thüringen (`TH`, § 6 ThürBO) und Hamburg (`HH`, § 6 HBauO) wenden nun realitätsgetreu den Abstandsflächenfaktor **0,4 H** (mind. 3,0 m) sowie verifizierte Paragraphenketten an (Vertrauensstufe `hoch`). Niedersachsen (`NI`, § 5 NBauO) wendet 0,5 H an.\n- **Kommunale Satzungen von 10 auf 20 Städte erweitert.** Neu aufgenommen: Hannover, Augsburg, Essen, Dortmund, Bonn, Münster (mit erhöhtem Fahrradstellplatzfaktor 3,0 je WE), Mannheim, Karlsruhe, Wiesbaden und Bremen in `src/municipalities.js`.\n- **Grenzgaragen- und Nebengebäude-Freistellungsprivileg** (§ 6 Abs. 8 MBO / Art. 6 Abs. 7 BayBO / § 6 Abs. 8 BauO NRW). Garagen und Carports an der Grundstücksgrenze bis 3,0 m Wandhöhe und 9,0 m Grenzlänge (max. 15 m insgesamt) sind nun von regulären Abstandsflächen freigestellt.\n- **Dachgeschoss-Vollgeschossprüfung** nach 2/3- und 3/4-LBO-Regelung: Erreicht die lichte Fläche über 2,30 m mindestens 67 % des darunterliegenden Geschosses, erfolgt ein Warnhinweis bezüglich B-Plan-Vollgeschosshöchstgrenzen.\n- Gesetzestexte für BauO NRW, HBO, NBauO und HBauO in die Wissensdatenbank und den Paragraphen-Drawer (`src/statutes.js`) integriert.\n\n## [0.7.0] — 2026-10-02\n\n### Hinzugefügt\n\n- **Rechtsseiten.** Impressum (§ 5 DDG), Datenschutzerklärung (Art. 13/14 DSGVO), AGB,\n  Lizenzvereinbarung und Widerrufsbelehrung inklusive der Besonderheiten bei digitalen Inhalten\n  (§ 356 Abs. 5 BGB). Alle Seiten lesen die Anbieterangaben aus `site.config.json`, sodass eine\n  Adressänderung überall zugleich wirkt.\n- **Preisseite und Checkout über Polar** (`pricing/index.html`). Polar tritt als Merchant of Record\n  auf und übernimmt Zahlung, Rechnung und Umsatzsteuer; es gibt kein Backend und keinen geheimen\n  Schlüssel im Repository. Die Umstellung auf Jahreslizenzen (Pro Architekt 1.499 $ pro Jahr,\n  Büro/Kanzlei 2.750 $ pro Jahr und Arbeitsplatz) ist auf allen Oberflächen vollzogen.\n- **Kaufbestätigung** (`checkout/success/index.html`) mit den nächsten Schritten und einer\n  Anlaufstelle, falls die Lizenz-E-Mail ausbleibt.\n- **Optionale Lizenzaktivierung im Studio.** Ein hinterlegter Schlüssel wird einmalig gegen die\n  öffentliche Prüfschnittstelle von Polar validiert (`api.polar.sh/v1/customer-portal/license-keys/validate`,\n  laut Polar-Dokumentation ohne Authentifizierung für öffentliche Clients vorgesehen) und lokal\n  gespeichert. Ist Polar nicht erreichbar, bleibt eine frühere Lizenz gültig und die Prüf-Engine\n  läuft unverändert weiter.\n- `site.config.json` als einzige Quelle für Preise, Checkout-Links und Anbieterangaben, mit\n  `scripts/build-site.mjs` als Generator, `scripts/check-links.mjs` und `scripts/check-prices.mjs`\n  als Prüfungen (`npm run build`).\n- `_redirects` für Cloudflare Pages mit den kanonischen Routen `/impressum`, `/datenschutz`,\n  `/agb`, `/lizenz`, `/widerruf` und `/pricing`.\n- **Dokumentationsbrowser `docs.html`.** Alle Markdown-Dokumente des Repositories lassen sich im\n  Browser lesen, mit Navigationsleiste und automatisch erzeugtem Inhaltsverzeichnis. Über `http(s)`\n  holt die Seite die jeweils aktuelle Fassung nach; beim Öffnen von der Festplatte greift eine\n  eingebettete Kopie, weil `fetch()` auf `file://` blockiert ist. Erzeugt und geprüft über\n  `scripts/build-docs.mjs` und `scripts/verify-docs.mjs` (`npm run docs:verify`).\n- **Einheitliches Erscheinungsbild.** `studio.html` nutzt dieselben Design-Tokens wie die\n  Produktseite: eine neutrale Flächenrampe, ein reservierter Akzent, IBM Plex Sans und Mono in zwei\n  Rollen. Die Klassennamen und die Druckansicht des Dossiers blieben unverändert.\n\n### Geändert\n\n- Preise von Monats- auf Jahreslizenzen umgestellt und die widersprüchlichen Prüfungskontingente\n  vereinheitlicht (die Produktseite nannte 20 Prüfungen im Monat, das Whitepaper 15).\n- Produktseite, Whitepaper und README nennen dieselben Preise; der Preisblock der Startseite wird\n  aus `site.config.json` erzeugt.\n- `assets/banner.svg` auf dieselbe Palette umgestellt (vorher Amber, außerhalb des Farbsystems).\n\n### Behoben\n\n- **Studio-CSS referenzierte eine nie definierte Variable.** `.drawer-title` nutzte\n  `var(--font-sans)`, das im Studio nicht existierte; der Titel fiel auf die Browser-Vorgabe\n  zurück. Die Variable ist jetzt Teil des Token-Blocks.\n- `src/version.js` als einzige Quelle für Produktname und Version. CLI-Kopf, Dossier, BCF-Export\n  und XBau-XML lesen die Version aus `package.json`, statt drei verschiedene Werte zu führen.## [0.6.0] — 2026-10-02\n\n### Hinzugefügt\n\n- **Digitaler Bauantrags-Assistent (XBau).** Amtliche XML-Antragsdatei nach XBau 2.3 und\n  Onlinezugangsgesetz (`baugenehmigung.antrag.0200`) in `src/xbau.js`, inklusive Bauantragsformular,\n  Baubeschreibung und Antrag auf Abweichung oder Befreiung nach §67 MBO, Art. 63 BayBO bzw.\n  §31 Abs. 2 BauGB. Ausgabe über `--xbau antrag.xml` oder im Studio-Tab.\n- **Compliance Repair Engine** (`src/repair.js`, `--repair`). Drei Lösungswege bei festgestellten\n  Abweichungen: geometrische Verschiebung des Baukörpers innerhalb zulässiger Pufferzonen, bauliche\n  Anpassung der Trauf- und Wandhöhe, sowie eine formulierte rechtliche Begründung für den\n  Befreiungsantrag.\n- **BIM-Schnittstelle (BCF 2.1)** in `src/bcf.js`. Mängel und Auflagen werden als BCF-Themen mit\n  3D-Kollisionskoordinaten exportiert (`--bcf issues.bcfjson`) und im Studio visualisiert.\n  Vorgesehen für Revit, ArchiCAD und Vectorworks.\n\n## [0.5.0] — 2026-10-02\n\n### Hinzugefügt\n\n- **Bebauungsplan-Parser** (`src/bplanparser.js`) für drei Eingabeformate:\n  - **XPlanung GML** (Standard 5.x / 6.0) mit Baugebieten (`WA`, `WR`, `MI`, `GE`), Festsetzungen zu\n    GRZ, GFZ, Vollgeschossen, First- und Traufhöhe, Bauweise und Baugrenze (`BP_Baugrenze`)\n  - **GeoJSON** für Vektor-Baugrenzen und Attribute\n  - **Textteil-Heuristik** für amtliche Textfestsetzungen\n- **Geometrische Baugrenzenprüfung** (`checkBuildingWithinBaugrenze`) per 2D-Ray-Casting und\n  Segment-Intersection: liegt der Gebäudeumriss vollständig innerhalb der festgesetzten Baugrenze\n  (§23 Abs. 3 BauNVO)?\n- **Festsetzungs-Prüfmodul** `bplan_festsetzungen` für First- und Traufhöhenüberschreitung\n  (§9 Abs. 1 Nr. 1 BauGB, §16/§18 BauNVO), Vollgeschoss-Obergrenze und Dachneigungs-Korridor.\n- **Katastermodell** mit Gemarkung, Flur, Flurstücksnummer, Katasterfläche und Grenzpunkten.\n- **CLI:** `--bplan bplan.gml` gleicht den Entwurf automatisch gegen den Bebauungsplan ab.\n- **Studio:** neuer B-Plan-Tab mit Drag-and-Drop für XPlanung und Festsetzungs-Ampel.\n\n## [0.4.1] — 2026-10-02\n\n### Hinzugefügt\n\n- **`brandwand`** — grenzständige Wände unter 2,50 m Abstand zur Grundstücksgrenze, Anforderung\n  feuerbeständiger Gebäudeabschlusswände (REI 90-M / EI 90). §30 MBO, OIB RL 2, VKF.\n- **`barrierefreiheit`** — Aufzugspflicht ab vier Vollgeschossen oder über 13,0 m Gebäudehöhe,\n  stufenloser Zugang, maximale Rampenneigung von 6,0 %. §50 MBO, OIB RL 4, SIA 500, DIN 18040-2.\n- **`schallschutz`** — Grenzabstand für Luft-/Wasser-Wärmepumpen im Außenbereich, Lärmpegelbereiche\n  I–VII zur Bemessung der Schalldämmung von Außenbauteilen. TA Lärm, DIN 4109.\n\n## [0.4.0] — 2026-10-02\n\n### Hinzugefügt\n\n- **Vollständige DACH-Expansion** (`src/dach.js`):\n  - **Deutschland** — MBO plus 16 Landesbauordnungen und Kommunalsatzungen\n  - **Österreich** — harmonisierte OIB-Richtlinien 1–6 (Ausgabe 2023) und neun Bundesländer, darunter\n    Wien (Bauwich und Bauklassen I–VI), Niederösterreich, Salzburg, Tirol und die Steiermark\n  - **Schweiz** — IVHB-Konkordat mit den Leitkantonen Zürich, Bern, Basel-Stadt, Luzern, St. Gallen\n    und Genf, ergänzt um SIA 416 und SIA 500\n- **DACH-Radar** über 34 Profile gleichzeitig, filterbar nach Land (`--country DE|AT|CH`, `--dach`).\n- **Behördenkonformes DIN-A4-Dossier** (`src/dossier.js`) mit national angepasster Anschrift,\n  Vektor-CAD-Lageplan als SVG und deterministischem SHA-256-Prüfsiegel.\n- **Interaktiver Paragraphen-Drawer** mit verbatimten Gesetzestexten, Bauamt-Kommentierung und\n  Abweichungswegen für OIB-RL 2/3, Wiener BO §79, IVHB Art. 6, PBG ZH §293 und SIA 500\n  (`src/statutes.js`).\n\n## [0.3.2] — 2026-10-02\n\n### Hinzugefügt\n\n- Interaktiver Rechts-Explorer mit verbatimten Statustexten und Handlungsleitfaden für das Bauamt.\n\n## [0.3.1] — 2026-10-02\n\n### Hinzugefügt\n\n- Quervergleichs-Matrix über alle Bundeslandprofile (`src/matrix.js`).\n\n## [0.3.0] — 2026-10-02\n\n### Hinzugefügt\n\n- **Kommunale Satzungen** für zehn Städte (München, Nürnberg, Berlin, Hamburg, Köln, Düsseldorf,\n  Frankfurt, Stuttgart, Leipzig, Dresden) inklusive Stellplatz-, Gründach- und Milieuschutzvorgaben\n  (`src/municipalities.js`, `--stadt`).\n- **3D-Abstandsflächen-Viewer** im Studio mit isometrischer Baumassen-Darstellung, dynamischer\n  Hüllkurve und Dachform.\n- **`gruendach`** — Gründachpflicht bei Flachdächern bis 15° aus Kommunalsatzungen.\n- **`stellplaetze`** — Kfz- und Fahrradstellplätze mit kommunalen Freistellungen.\n- **`gfz`** — Geschossflächenzahl gegen das zulässige Höchstmaß (§20 BauNVO).\n- **Baubeschreibungs-Parser** (`src/textparser.js`) für deutsche Exposés und DIN-277-Flächen.\n- **BIM- und CAD-Ingestion** (`src/cadparser.js`) für IFC 2x3/IFC4 und DXF.\n\n## [0.2.0]\n\n### Hinzugefügt\n\n- **Landesprofile** (`src/profiles.js`) für alle 16 Bundesländer plus MBO-Referenz, mit\n  hinterlegten Strukturabweichungen für Bayern, Baden-Württemberg und Berlin. Alle übrigen Länder\n  laufen auf als „MBO-ähnlich (default)\" gekennzeichneten Werten.\n- **`grenzbebauung`** — Zulässigkeit von Bauen bis zur Grundstücksgrenze, aktiv in Bayern und Berlin.\n- Regelwahl über `--rules`, Markdown-Bericht über `--report`.\n\n## [0.1.0]\n\n### Hinzugefügt\n\n- Deterministischer Regelkern über strukturierte JSON-Eingabe: `gebaeudeklasse`, `abstandsflaeche`,\n  `grz`, `tageslicht`, `raumhoehen`, `rettungswege`, `vollgeschosse`.\n- CLI mit den Exit-Codes 0 (bestanden), 1 (nicht bestanden) und 2 (Bedienungsfehler).\n- Markdown-Bericht mit Ist-Wert, Soll-Wert und Normzitat je Regel.\n- Testsuite auf Basis des Node-Test-Runners, keine externen Abhängigkeiten.\n\n---\n\n[0.6.0]: https://github.com/KELLERBABG/BauLens/compare/v0.5.0...v0.6.0\n[0.5.0]: https://github.com/KELLERBABG/BauLens/compare/v0.4.1...v0.5.0\n[0.4.1]: https://github.com/KELLERBABG/BauLens/compare/v0.4.0...v0.4.1\n[0.4.0]: https://github.com/KELLERBABG/BauLens/compare/v0.3.2...v0.4.0\n[0.3.2]: https://github.com/KELLERBABG/BauLens/compare/v0.3.1...v0.3.2\n[0.3.1]: https://github.com/KELLERBABG/BauLens/compare/v0.3.0...v0.3.1\n[0.3.0]: https://github.com/KELLERBABG/BauLens/compare/v0.2.0...v0.3.0\n[0.7.0]: https://github.com/KELLERBABG/BauLens/releases/tag/v0.7.0\n[0.8.0]: https://github.com/KELLERBABG/BauLens/releases/tag/v0.8.0\n[0.8.1]: https://github.com/KELLERBABG/BauLens/releases/tag/v0.8.1\n[0.9.0]: https://github.com/KELLERBABG/BauLens/releases/tag/v0.9.0\n[Unveröffentlicht]: https://github.com/KELLERBABG/BauLens/compare/v0.10.0...HEAD\n[0.10.0]: https://github.com/KELLERBABG/BauLens/releases/tag/v0.10.0\n"}
+</script>
+
+<script>
+(function () {
+  "use strict";
+
+  var DOCS = [{"slug":"readme","title":"README","file":"README.md","blurb":"Zweck, Prüfumfang, CLI und Profilwahl"},{"slug":"rules","title":"Regelkatalog","file":"docs/RULES.md","blurb":"Alle 15 Prüfmodule mit Formel und Fundstelle"},{"slug":"whitepaper","title":"Whitepaper","file":"docs/WHITEPAPER.md","blurb":"Architektur, Betriebsmodell, Kommerzialisierung"},{"slug":"changelog","title":"Änderungsverlauf","file":"CHANGELOG.md","blurb":"Versionshistorie und Releases"}];
+  var embedded = JSON.parse(document.getElementById("docSources").textContent);
+
+  var prose = document.getElementById("prose");
+  var tocList = document.getElementById("tocList");
+  var docSource = document.getElementById("docSource");
+  var docPath = document.getElementById("docPath");
+  var picker = document.getElementById("docPicker");
+
+  /* ------------------------------------------------------------------ *
+   * Minimal, dependency-free Markdown renderer.
+   * It builds DOM nodes directly rather than assigning innerHTML, so a
+   * malformed table or a stray angle bracket cannot inject markup.
+   * ------------------------------------------------------------------ */
+
+  function slugify(text, used) {
+    var base = text.toLowerCase()
+      .replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue").replace(/ß/g, "ss")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "") || "abschnitt";
+    var id = base, n = 2;
+    while (used[id]) { id = base + "-" + n; n += 1; }
+    used[id] = true;
+    return id;
+  }
+
+  function textNode(value) { return document.createTextNode(value); }
+
+  /**
+   * Inline spans: code, links, bold, italic.
+   * Written as a scanner rather than one dense regex — the pattern needed to
+   * express all four forms plus their delimiters was unreadable and brittle.
+   */
+  function inline(text, parent) {
+    var s = String(text == null ? "" : text);
+    var buf = "";
+    var i = 0;
+
+    function flush() {
+      if (buf) { parent.appendChild(textNode(buf)); buf = ""; }
+    }
+
+    while (i < s.length) {
+      var ch = s.charAt(i);
+
+      /* `code` */
+      if (ch === "`") {
+        var codeEnd = s.indexOf("`", i + 1);
+        if (codeEnd > i + 1) {
+          flush();
+          var code = document.createElement("code");
+          code.textContent = s.slice(i + 1, codeEnd);
+          parent.appendChild(code);
+          i = codeEnd + 1;
+          continue;
+        }
+      }
+
+      /* [label](href) */
+      if (ch === "[") {
+        var labelEnd = s.indexOf("]", i + 1);
+        if (labelEnd > i + 1 && s.charAt(labelEnd + 1) === "(") {
+          var hrefEnd = s.indexOf(")", labelEnd + 2);
+          var label = s.slice(i + 1, labelEnd);
+          var href = hrefEnd > labelEnd ? s.slice(labelEnd + 2, hrefEnd) : "";
+          if (href && !/\s/.test(href)) {
+            flush();
+            var a = document.createElement("a");
+            a.textContent = label;
+            a.href = href;
+            if (/^https?:/i.test(href)) { a.target = "_blank"; a.rel = "noopener noreferrer"; }
+            parent.appendChild(a);
+            i = hrefEnd + 1;
+            continue;
+          }
+        }
+      }
+
+      /* **strong** and __strong__ */
+      if ((ch === "*" || ch === "_") && s.charAt(i + 1) === ch) {
+        var strongEnd = s.indexOf(ch + ch, i + 2);
+        if (strongEnd > i + 2) {
+          flush();
+          var strong = document.createElement("strong");
+          strong.textContent = s.slice(i + 2, strongEnd);
+          parent.appendChild(strong);
+          i = strongEnd + 2;
+          continue;
+        }
+      }
+
+      /* *em* and _em_ */
+      if (ch === "*" || ch === "_") {
+        var emEnd = s.indexOf(ch, i + 1);
+        var emText = emEnd > i + 1 ? s.slice(i + 1, emEnd) : "";
+        if (emText && emText.indexOf("\n") === -1) {
+          flush();
+          var em = document.createElement("em");
+          em.textContent = emText;
+          parent.appendChild(em);
+          i = emEnd + 1;
+          continue;
+        }
+      }
+
+      buf += ch;
+      i += 1;
+    }
+
+    flush();
+  }
+
+  function isTableSeparator(line) {
+    return /^\s*\|?[\s:|-]+\|\s*$/.test(line) && line.indexOf("-") !== -1;
+  }
+
+  /** Split a table row on unescaped pipes. */
+  function splitRow(line) {
+    var s = line.trim().replace(/^\|/, "").replace(/\|$/, "");
+    var cells = [], current = "", i = 0;
+    while (i < s.length) {
+      if (s.charAt(i) === "\\" && s.charAt(i + 1) === "|") { current += "|"; i += 2; continue; }
+      if (s.charAt(i) === "|") { cells.push(current); current = ""; i += 1; continue; }
+      current += s.charAt(i);
+      i += 1;
+    }
+    cells.push(current);
+    return cells.map(function (c) { return c.trim(); });
+  }
+
+  function alignments(separator) {
+    return splitRow(separator).map(function (c) {
+      if (/^:-+:$/.test(c)) return "center";
+      if (/^-+:$/.test(c)) return "right";
+      return "left";
+    });
+  }
+
+  function render(markdown) {
+    var lines = String(markdown || "").replace(/\r\n/g, "\n").split("\n");
+    var frag = document.createDocumentFragment();
+    var used = {};
+    var headings = [];
+    var i = 0;
+    var para = [];
+
+    function flushParagraph() {
+      if (!para.length) return;
+      var p = document.createElement("p");
+      inline(para.join(" "), p);
+      frag.appendChild(p);
+      para.length = 0;
+    }
+
+    function makeHeading(level, text) {
+      var el = document.createElement("h" + level);
+      var clean = text.replace(/\*|`|_/g, "");
+      el.id = slugify(clean, used);
+      inline(text, el);
+      frag.appendChild(el);
+      if (level <= 3) headings.push({ id: el.id, text: clean, level: level });
+    }
+
+    while (i < lines.length) {
+      var line = lines[i];
+
+      /* Fenced code block */
+      if (/^\s*```/.test(line)) {
+        flushParagraph();
+        var body = [];
+        i += 1;
+        while (i < lines.length && !/^\s*```/.test(lines[i])) { body.push(lines[i]); i += 1; }
+        i += 1;
+        var pre = document.createElement("pre");
+        var code = document.createElement("code");
+        code.textContent = body.join("\n");
+        pre.appendChild(code);
+        frag.appendChild(pre);
+        continue;
+      }
+
+      /* ATX heading */
+      var h = /^(#{1,4})\s+(.*)$/.exec(line);
+      if (h) {
+        flushParagraph();
+        makeHeading(h[1].length, h[2].replace(/\s+#+\s*$/, ""));
+        i += 1;
+        continue;
+      }
+
+      /* Horizontal rule */
+      if (/^\s*([-*_])\s*(\1\s*){2,}$/.test(line)) {
+        flushParagraph();
+        frag.appendChild(document.createElement("hr"));
+        i += 1;
+        continue;
+      }
+
+      /* Blockquote */
+      if (/^\s*>/.test(line)) {
+        flushParagraph();
+        var quote = [];
+        while (i < lines.length && /^\s*>/.test(lines[i])) {
+          quote.push(lines[i].replace(/^\s*>\s?/, ""));
+          i += 1;
+        }
+        var bq = document.createElement("blockquote");
+        var bqPara = document.createElement("p");
+        inline(quote.join(" "), bqPara);
+        bq.appendChild(bqPara);
+        frag.appendChild(bq);
+        continue;
+      }
+
+      /* Table */
+      if (line.indexOf("|") !== -1 && i + 1 < lines.length && isTableSeparator(lines[i + 1])) {
+        flushParagraph();
+        var head = splitRow(line);
+        var align = alignments(lines[i + 1]);
+        i += 2;
+        var rows = [];
+        while (i < lines.length && lines[i].indexOf("|") !== -1 && lines[i].trim() !== "") {
+          rows.push(splitRow(lines[i]));
+          i += 1;
+        }
+        var wrap = document.createElement("div");
+        wrap.className = "table-scroll";
+        var table = document.createElement("table");
+        var thead = document.createElement("thead");
+        var htr = document.createElement("tr");
+        head.forEach(function (cell, ci) {
+          var th = document.createElement("th");
+          th.style.textAlign = align[ci] || "left";
+          inline(cell, th);
+          htr.appendChild(th);
+        });
+        thead.appendChild(htr);
+        table.appendChild(thead);
+        var tbody = document.createElement("tbody");
+        rows.forEach(function (r) {
+          var tr = document.createElement("tr");
+          for (var ci = 0; ci < head.length; ci += 1) {
+            var td = document.createElement("td");
+            td.style.textAlign = align[ci] || "left";
+            inline(r[ci] === undefined ? "" : r[ci], td);
+            tr.appendChild(td);
+          }
+          tbody.appendChild(tr);
+        });
+        table.appendChild(tbody);
+        wrap.appendChild(table);
+        frag.appendChild(wrap);
+        continue;
+      }
+
+      /* List */
+      var li = /^(\s*)([-*+]|\d+\.)\s+(.*)$/.exec(line);
+      if (li) {
+        flushParagraph();
+        var ordered = /\d/.test(li[2]);
+        var list = document.createElement(ordered ? "ol" : "ul");
+        while (i < lines.length) {
+          var item = /^(\s*)([-*+]|\d+\.)\s+(.*)$/.exec(lines[i]);
+          if (!item) {
+            var continuation = lines[i];
+            if (continuation.trim() !== "" && list.lastChild &&
+                !/^\s*(#{1,4}\s|\||>|```)/.test(continuation)) {
+              list.lastChild.appendChild(document.createTextNode(" " + continuation.trim()));
+              i += 1;
+              continue;
+            }
+            break;
+          }
+          var entry = document.createElement("li");
+          inline(item[3], entry);
+          list.appendChild(entry);
+          i += 1;
+        }
+        frag.appendChild(list);
+        continue;
+      }
+
+      /* Blank line closes the paragraph */
+      if (line.trim() === "") { flushParagraph(); i += 1; continue; }
+
+      para.push(line.trim());
+      i += 1;
+    }
+
+    flushParagraph();
+    return { fragment: frag, headings: headings };
+  }
+
+  /* ------------------------------------------------------------------ *
+   * Rendering and routing
+   * ------------------------------------------------------------------ */
+
+  function findDoc(slug) {
+    for (var i = 0; i < DOCS.length; i += 1) { if (DOCS[i].slug === slug) return DOCS[i]; }
+    return null;
+  }
+
+  function paint(slug, markdown) {
+    var doc = findDoc(slug);
+    var result = render(markdown);
+
+    prose.textContent = "";
+    prose.appendChild(result.fragment);
+
+    tocList.textContent = "";
+    result.headings.forEach(function (heading) {
+      var li = document.createElement("li");
+      var a = document.createElement("a");
+      a.href = "#" + heading.id;
+      a.textContent = heading.text;
+      if (heading.level === 3) a.className = "lvl-3";
+      a.addEventListener("click", function (e) {
+        e.preventDefault();
+        var target = document.getElementById(heading.id);
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth" });
+          history.replaceState(null, "", location.pathname + location.search + "#" + heading.id);
+        }
+      });
+      li.appendChild(a);
+      tocList.appendChild(li);
+    });
+
+    Array.prototype.forEach.call(document.querySelectorAll(".rail-link"), function (link) {
+      if (link.getAttribute("data-doc") === slug) link.setAttribute("aria-current", "true");
+      else link.removeAttribute("aria-current");
+    });
+
+    if (doc) {
+      docPath.textContent = doc.file;
+      document.title = doc.title + " — BauLens Dokumentation";
+      if (picker) picker.value = slug;
+    }
+  }
+
+  var activeDocSlug = "";
+
+  /**
+   * Prefer the live .md file when served over http(s) so a deploy is never
+   * stale. Opening from disk blocks fetch(), so the embedded copy is the base
+   * case rather than a failure mode.
+   */
+  function load(slug, push, targetAnchor) {
+    var doc = findDoc(slug) || DOCS[0];
+    activeDocSlug = doc.slug;
+    paint(doc.slug, embedded[doc.slug]);
+    docSource.textContent = "Eingebettete Fassung";
+
+    if (push !== false) {
+      var suffix = location.pathname + location.search + "#" + doc.slug;
+      history.replaceState(null, "", suffix);
+    }
+
+    if (targetAnchor) {
+      setTimeout(function () {
+        var el = document.getElementById(targetAnchor);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 0);
+    }
+
+    if (location.protocol !== "http:" && location.protocol !== "https:") return;
+
+    fetch(doc.file, { cache: "no-cache" })
+      .then(function (response) {
+        if (!response.ok) throw new Error("HTTP " + response.status);
+        var type = (response.headers.get("content-type") || "").toLowerCase();
+        if (type.indexOf("html") !== -1) throw new Error("vom Server als HTML ausgeliefert");
+        return response.text();
+      })
+      .then(function (text) {
+        /* A host that runs a static-site generator converts .md to HTML. Keep
+           the embedded copy then, rather than rendering a page of tags as prose. */
+        if (text.indexOf("<!DOCTYPE") === 0 || text.indexOf("<!doctype") === 0 ||
+            /^\s*</.test(text)) {
+          throw new Error("keine Markdown-Antwort");
+        }
+        if (activeDocSlug !== doc.slug) return;   /* the user moved on */
+        paint(doc.slug, text);
+        docSource.textContent = "Aktuelle Fassung aus dem Repository";
+        if (targetAnchor) {
+          setTimeout(function () {
+            var el2 = document.getElementById(targetAnchor);
+            if (el2) el2.scrollIntoView({ behavior: "smooth" });
+          }, 0);
+        }
+      })
+      .catch(function () {
+        /* The embedded copy is already on screen; just say so instead of
+           raising a warning for what is a supported state. */
+        docSource.textContent = "Eingebettete Fassung";
+      });
+  }
+
+  function handleHashChange() {
+    var hash = location.hash.replace(/^#/, "");
+    if (!hash) {
+      if (activeDocSlug !== DOCS[0].slug) load(DOCS[0].slug, false);
+      return;
+    }
+    var doc = findDoc(hash);
+    if (doc) {
+      if (activeDocSlug !== doc.slug) load(doc.slug, false);
+    } else {
+      var target = document.getElementById(hash);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }
+
+  if (picker) picker.addEventListener("change", function () { load(picker.value, true); });
+
+  Array.prototype.forEach.call(document.querySelectorAll(".rail-link"), function (link) {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+      var targetDoc = link.getAttribute("data-doc");
+      if (activeDocSlug !== targetDoc) {
+        load(targetDoc, true);
+        window.scrollTo({ top: 0, behavior: "instant" });
+      }
+    });
+  });
+
+  window.addEventListener("hashchange", handleHashChange);
+
+  var initialHash = location.hash.replace(/^#/, "");
+  var initialDoc = findDoc(initialHash);
+  if (initialDoc) {
+    load(initialDoc.slug, false);
+  } else if (initialHash) {
+    load(DOCS[0].slug, false, initialHash);
+  } else {
+    load(DOCS[0].slug, false);
+  }
+})();
+</script>
+</body>
+</html>

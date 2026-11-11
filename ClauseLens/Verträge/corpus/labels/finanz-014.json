@@ -1,0 +1,87 @@
+{
+  "slug": "finanz-014",
+  "source": "generated",
+  "domain": "Leasing",
+  "traps": [
+    {
+      "marker": "The provider assumes no confidentiality obligation with respect to benchmarking data",
+      "expectedType": "asymmetric_confidentiality",
+      "note": "Paraphrase/Umstellung: nennt 'The provider assumes no confidentiality oblig' statt der Registerwendung."
+    },
+    {
+      "marker": "Es wird keine Zusage hinsichtlich der Eignung für einen bestimmten Einsatzzweck",
+      "expectedType": "as_is_software_disclaimer",
+      "note": "Paraphrase/Umstellung: nennt 'Es wird keine Zusage hinsichtlich der Eignung' statt der Registerwendung."
+    },
+    {
+      "marker": "Zusagen von Vertriebsmitarbeitern entfalten keine rechtliche Wirkung",
+      "expectedType": "entire_agreement",
+      "note": "Paraphrase/Umstellung: nennt 'Zusagen von Vertriebsmitarbeitern entfalten k' statt der Registerwendung."
+    },
+    {
+      "marker": "nennt den Namen des Kunden in Pressemitteilungen und auf Messeständen",
+      "expectedType": "marketing_reference",
+      "note": "Paraphrase/Umstellung: nennt 'nennt den Namen des Kunden in Pressemitteilun' statt der Registerwendung."
+    },
+    {
+      "marker": "überträgt alle Rechte an Verbesserungsvorschlägen unentgeltlich auf die Bank",
+      "expectedType": "feedback_ip_grab",
+      "note": "Paraphrase/Umstellung: nennt 'überträgt alle Rechte an Verbesserungsvorschl' statt der Registerwendung."
+    },
+    {
+      "marker": "gelten am dritten Tag nach Aufgabe zur Post als zugegangen",
+      "expectedType": "fictitious_receipt",
+      "note": "Paraphrase/Umstellung: nennt 'gelten am dritten Tag nach Aufgabe zur Post a' statt der Registerwendung."
+    },
+    {
+      "marker": "Die Kennzahlen zur Erreichbarkeit des Dienstes sind unverbindlich",
+      "expectedType": "unverbindliche_sla_falle",
+      "note": "Paraphrase/Umstellung: nennt 'Die Kennzahlen zur Erreichbarkeit des Dienste' statt der Registerwendung."
+    },
+    {
+      "marker": "Bei einem Direktauftrag des Kunden steht dem Anbieter keine Provision zu",
+      "expectedType": "agency_commission_exclusion",
+      "note": "Paraphrase/Umstellung: nennt 'Bei einem Direktauftrag des Kunden steht dem ' statt der Registerwendung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "aus wichtigem Grund jederzeit fristlos beenden",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "binnen zwei Werktagen nach Eingang auf dem Geschäftskonto",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "führen Gespräche auf Leitungsebene.",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "dieselben Datenschutzstandards einhalten",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "bleibt beiden Parteien unbenommen.",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "alle vertraulichen Informationen der jeweils anderen Seite",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "innerhalb von dreißig Tagen nach Zugang ohne Abzug",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "können in Textform, insbesondere per E-Mail, vereinbart werden",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "zuerst mit Nebenforderungen und Kosten",
+      "note": "Täuschende Klausel ohne passenden Detektortyp."
+    }
+  ]
+}

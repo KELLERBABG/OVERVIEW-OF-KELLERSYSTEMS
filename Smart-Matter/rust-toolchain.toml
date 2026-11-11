@@ -1,0 +1,5 @@
+# Pin the toolchain and pre-install the embedded target so any developer
+# (and CI) gets a reproducible build without extra rustup steps.
+[toolchain]
+channel = "stable"
+targets = ["thumbv6m-none-eabi"]

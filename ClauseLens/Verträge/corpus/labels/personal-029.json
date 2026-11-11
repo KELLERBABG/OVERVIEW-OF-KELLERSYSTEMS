@@ -1,0 +1,79 @@
+{
+  "slug": "personal-029",
+  "source": "generated",
+  "domain": "Geschaeftsfuehrer",
+  "traps": [
+    {
+      "marker": "nur mit einer Frist von sechs Monaten zum Periodenende niederlegen",
+      "expectedType": "notice_period",
+      "note": "sechsmonatige Niederlegungsfrist zum Periodenende"
+    },
+    {
+      "marker": "verwirkt der Geschäftsführer eine A​ufwandspauschale von 2.500,00 EUR",
+      "expectedType": "penalty",
+      "note": "pauschalierte Vertragsstrafe"
+    },
+    {
+      "marker": "Die Haftung des Geschäftsführers ist insoweit ausgeschlossen",
+      "expectedType": "liability",
+      "note": "Haftungsausschluss des Geschäftsführers"
+    },
+    {
+      "marker": "Die Geheimhaltungspflichten bestehen zeitlich unbeschränkt fort",
+      "expectedType": "excessive_survival",
+      "note": "Geheimhaltung ohne zeitliche Beschränkung"
+    },
+    {
+      "marker": "Änderungen und Ergänzungen dieses Vertrages bedürfen der Schriftform",
+      "expectedType": "written_form_trap",
+      "note": "Schriftform für Änderungen und Ergänzungen"
+    },
+    {
+      "marker": "An die Stelle der unwirksamen Regelung tritt diejenige, die wirtschaftlich am nächsten kommt",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "Ersatzklausel nach wirtschaftlicher Nähe"
+    },
+    {
+      "marker": "Frühere Absprachen verlieren mit Unterzeichnung ihre Gültigkeit",
+      "expectedType": "entire_agreement",
+      "note": "frühere Absprachen verlieren ihre Gültigkeit"
+    },
+    {
+      "marker": "Gerichtsstand ist der Sitz der Gesellschaft",
+      "expectedType": "jurisdiction",
+      "note": "Gerichtsstand am Sitz der Gesellschaft"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Das Bruttogehalt beträgt 210.000,00 EUR je Kalenderjahr",
+      "note": "Bruttogehalt je Kalenderjahr"
+    },
+    {
+      "marker": "Der Urlaubsanspruch beträgt 30 Arbeitstage je Kalenderjahr",
+      "note": "Urlaubsanspruch je Kalenderjahr"
+    },
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "wechselseitige Vertraulichkeit"
+    },
+    {
+      "marker": "Die Parteien benennen je einen Ansprechpartner",
+      "note": "wechselseitige Ansprechpartner"
+    },
+    {
+      "marker": "Die Anlagen 1 und 2 sind Bestandteil dieses Vertrages",
+      "note": "Anlagen als Vertragsbestandteil"
+    },
+    {
+      "marker": "Das Recht zur Kündigung aus wichtigem Grund bleibt unberührt",
+      "note": "Kündigung aus wichtigem Grund bleibt unberührt"
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Geschäftsführer vertritt die Gesellschaft allein",
+      "note": "Alleinvollmacht ohne Zustimmungsvorbehalt, vom Detektor nicht erfasst"
+    }
+  ]
+}

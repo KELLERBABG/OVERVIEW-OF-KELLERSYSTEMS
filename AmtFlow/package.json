@@ -1,0 +1,42 @@
+{
+  "name": "amtflow",
+  "version": "1.0.0",
+  "description": "Civic Behördenbrief OCR, plain-language simplification, translation, and deadline extractor",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "cap:sync": "cap sync",
+    "cap:open:android": "cap open android",
+    "cap:open:ios": "cap open ios",
+    "test": "node src/classifier.test.js && python test_catalog_all.py",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "behoerdenbrief",
+    "civic-tech",
+    "ocr",
+    "plain-german"
+  ],
+  "author": "KELLERBABG",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.19.43",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.5.0",
+    "@capacitor/camera": "^8.2.3",
+    "@capacitor/cli": "^8.5.0",
+    "@capacitor/core": "^8.5.0",
+    "@capacitor/filesystem": "^8.1.3",
+    "@capacitor/haptics": "^8.0.2",
+    "@capacitor/ios": "^8.5.0",
+    "@capacitor/preferences": "^8.0.1",
+    "@capacitor/splash-screen": "^8.0.2",
+    "@capacitor/status-bar": "^8.0.3",
+    "vite": "^8.2.2",
+    "vite-plugin-static-copy": "^4.1.1"
+  }
+}

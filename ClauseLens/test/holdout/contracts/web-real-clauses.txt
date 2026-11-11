@@ -1,0 +1,62 @@
+ECHTE, ÖFFENTLICH PUBLIZIERTE KLAUSELFORMULIERUNGEN (WEB-KORPUS)
+Jede Klausel ist ein kurzer Auszug aus einer veröffentlichten Quelle; die Quelle steht jeweils darunter.
+Diese Klauseln dienen als Prüfkorpus: sie stammen nicht aus diesem Projekt.
+
+--- 1. SaaS-Abo, automatische Verlängerung (Melissa Data GmbH, AGB § 11.1)
+Bei dem Vergütungsmodell PAYG verlängern sie sich um weitere 12 Monate, wenn nicht eine Partei das Vertragsverhältnis spätestens drei Monate vor Ablauf der Vertragslaufzeit kündigt.
+Quelle: https://www.melissa.com/de-de/agb
+
+--- 2. SaaS-Abo, Preisanpassung bei Laufzeitverlängerung (softgarden, Nutzungsbedingungen § 7.1.2)
+softgarden ist jedoch berechtigt, zum Anfang einer jeden Laufzeitverlängerung, den Preis für die jeweiligen Lizenz-Pakete nach billigem Ermessen (§315 BGB) nach oben oder unten anzupassen.
+Quelle: https://softgarden.com/de/nutzungsbedingungen/
+
+--- 3. Cloud, einseitige Gebührenänderung (Google Cloud Terms of Service § 2.6)
+Google may change the Fees at any time unless otherwise expressly agreed in an addendum or Order Form.
+Quelle: https://cloud.google.com/terms
+
+--- 4. Cloud, sofortige Sperrung (Google Cloud Terms of Service § 4.2)
+Google may immediately Suspend all or part of Customer's use of the Services if Google reasonably believes Suspension is needed to protect the Services, Google's infrastructure supporting the Services, or any other customer of the Services.
+Quelle: https://cloud.google.com/terms
+
+--- 5. Cloud, Gewährleistungsausschluss (Check Point Cloud Terms § 9.1)
+TO THE FULLEST EXTENT ALLOWED UNDER APPLICABLE LAW, THE SERVICES ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED. CHECK POINT DOES NOT WARRANT THAT THE SERVICES WILL MEET YOUR REQUIREMENTS OR THAT THEIR OPERATION OR USE WILL BE UNINTERRUPTED OR ERROR FREE.
+Quelle: https://www.checkpoint.com/about-us/cloud-terms/
+
+--- 6. Cloud, Haftungshöchstgrenze (Check Point Cloud Terms § 9.2)
+CHECK POINT'S MAXIMUM LIABILITY FOR DAMAGES SHALL BE LIMITED TO THE LICENSE FEE RECEIVED BY CHECK POINT FOR THE PARTICULAR SERVICE SUBSCRIPTION LICENSE WHICH CAUSED THE DAMAGES.
+Quelle: https://www.checkpoint.com/about-us/cloud-terms/
+
+--- 7. SaaS, Kundenfreistellung (Melissa Data GmbH, AGB § 9.5)
+Der Kunde stellt Melissa von allen Ansprüchen Dritter wegen Datenschutz- und Persönlichkeitsrechtsverletzungen, die gegen Melissa in Zusammenhang mit der Verarbeitung der durch den Kunden an Melissa übermittelten personenbezogenen Daten erhoben werden sollten, auf erstes Anfordern hin frei.
+Quelle: https://www.melissa.com/de-de/agb
+
+--- 8. Mahnkostenpauschale ohne Gegenbeweis (BGH, 18.07.2012, VIII ZR 337/11)
+Fordert die Beklagte Sie bei Zahlungsverzug erneut zur Zahlung auf oder lässt den Betrag durch einen Beauftragten einziehen, kann die Beklagte Ihnen die dadurch entstehenden Kosten pauschal berechnen.
+Quelle: https://www.bundesgerichtshof.de/SharedDocs/Pressemitteilungen/DE/2012/2012117.html
+
+--- 9. Zustimmungsfiktion zu AGB-Änderungen (BGH, 27.04.2021, XI ZR 26/20)
+Die Zustimmung des Kunden gilt als erteilt, wenn er seine Ablehnung nicht vor dem vorgeschlagenen Zeitpunkt des Wirksamwerdens der Änderungen angezeigt hat.
+Quelle: https://www.bundesgerichtshof.de/SharedDocs/Pressemitteilungen/DE/2021/2021088.html
+
+--- 10. Streamingservice, Preisanpassungsvorbehalt (OLG München, 11.10.2024, 39 U 2482/23 e)
+Wir behalten uns das Recht vor, den Preis für den D. Service an sich verändernde Marktbedingungen, bei erheblichen Veränderungen in den Beschaffungs- oder Bereitstellungskosten oder bei Änderungen der Umsatzsteuer oder vergleichbaren Steuern anzupassen.
+Quelle: https://www.otto-schmidt.de/news/zivil-und-zivilverfahrensrecht/erfolgreiche-klage-gegen-dazn-preisanpassungsklausel-unwirksam-2025-02-10.html
+
+--- 11. Energie, Verlängerung zu neuem Paketpreis (OLG Düsseldorf, 6 U 182/16)
+Verlängert sich der Vertrag nach Ziff. 1.7, verlängern sich jeweils auch die Bedingungen des Pakettarifs. Ab dem Zeitpunkt der Vertragsverlängerung gilt ein neues Paket, die ursprünglich vereinbarte Energiemenge gilt für den Zeitraum der Vertragsverlängerung zu dem dann gültigen Paketpreis als vereinbart.
+Quelle: https://nrwe.justiz.nrw.de/olgs/duesseldorf/j2018/6_U_182_16_Urteil_20180419.html
+
+--- 12. Energie, einseitige Preisbestimmung nach § 315 BGB (OLG Düsseldorf, 6 U 182/16)
+Der Lieferant ist verpflichtet, den nach Ziff. 6.1 zu zahlenden Gesamtpreis durch einseitige Leistungsbestimmung gem. § 315 BGB nach billigem Ermessen der Entwicklung der Kosten anzupassen, die für die Preisberechnung maßgeblich sind.
+Quelle: https://nrwe.justiz.nrw.de/olgs/duesseldorf/j2018/6_U_182_16_Urteil_20180419.html
+
+--- 13. Telekommunikation, Mindestlaufzeit ab Freischaltung (BGH, 08.01.2026, III ZR 8/25)
+eine anfängliche Mindestlaufzeit von 12 oder 24 Monaten vorsieht, die mit der Freischaltung des DGN-Anschlusses zu laufen beginnen soll.
+Quelle: https://www.bundesgerichtshof.de/SharedDocs/Pressemitteilungen/DE/2026/2026004.html
+
+--- 14. Krankenversicherung, Beitragsanpassung nach Ermessen (BGH, 22.06.2022, IV ZR 253/20)
+Von einer Beitragsanpassung kann abgesehen werden, wenn nach übereinstimmender Beurteilung durch den Versicherer und den Treuhänder die Veränderung der Versicherungsleistungen als vorübergehend anzusehen ist.
+Quelle: https://www.bundesgerichtshof.de/SharedDocs/Pressemitteilungen/DE/2022/2022095.html
+
+--- 15. Kontrollklausel (fair formuliert, darf nicht anschlagen)
+Beide Parteien verpflichten sich, die Vertraulichkeit der ausgetauschten Informationen zu wahren und einander vor einer Weitergabe an Dritte zu informieren.

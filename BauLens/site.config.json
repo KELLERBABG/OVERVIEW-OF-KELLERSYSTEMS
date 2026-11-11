@@ -1,0 +1,202 @@
+{
+  "product": {
+    "name": "BauLens",
+    "vendor": "Keller Systems",
+    "version": "0.10.0",
+    "siteUrl": "https://lens.kellersystems.dev/",
+    "repoUrl": "https://github.com/KELLERBABG/BauLens"
+  },
+
+  "billing": {
+    "provider": "Polar",
+    "providerLegalName": "Polar Software Inc.",
+    "providerUrl": "https://polar.sh",
+    "checkoutHost": "buy.polar.sh",
+    "organizationId": "6898f4c5-7bc8-4ec5-bc97-a16b69b0498c",
+    "currency": "EUR",
+    "currencySymbol": "€",
+    "locale": "de-DE",
+    "interval": "month",
+    "taxBehavior": "inclusive",
+    "pricesNote": "Alle Preise in Euro. Die Umsatzsteuer ist im Preis enthalten; die Berechnung erfolgt im Checkout anhand deiner Rechnungsadresse. Polar tritt als Merchant of Record als Verkäufer auf. Die Checkout-Verweise werden hier eingetragen, sobald die Produkte in Polar angelegt sind — bis dahin führt jeder Kauf-Button in den Download-Hub, wo die Desktop-App 14 Tage lang kostenlos getestet werden kann.",
+    "trialDays": 14
+  },
+
+  "legal": {
+    "providerName": "Lukas Negenborn",
+    "providerTradingAs": "Aureal Watermark Software Development",
+    "providerCareOf": "c/o Block Services",
+    "providerStreet": "Stuttgarter Str. 106",
+    "providerPostalCode": "70736",
+    "providerCity": "Fellbach",
+    "providerCountry": "Deutschland",
+    "email": "info@kellersystems.dev",
+    "vatNote": "Gemäß § 19 UStG wird keine Umsatzsteuer berechnet (Kleinunternehmerregelung). Beim Vertrieb über Polar als Merchant of Record tritt Polar als Wiederverkäufer und Steuerschuldner auf.",
+    "hosting": {
+      "name": "Cloudflare Pages",
+      "operator": "Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, USA",
+      "transferSafeguard": "EU-Standardvertragsklauseln (Art. 46 Abs. 2 lit. c DSGVO)",
+      "region": "EU-Rechenzentren (Cloudflare-Netzwerk, Auslieferung über den nächstgelegenen Edge-Standort)"
+    },
+    "withdrawalGuaranteeDays": 14
+  },
+
+  "downloads": {
+    "releaseBaseUrl": "https://github.com/KELLERBABG/BauLens/releases/download/v{version}",
+    "releasesUrl": "https://github.com/KELLERBABG/BauLens/releases/latest",
+    "checksumFile": "SHA256SUMS.txt",
+    "intro": "BauLens ist eine lokale Anwendung. Der Installer prüft nichts im Netz nach, ruft keine Telemetrie ab und braucht keine Anmeldung.",
+    "privateNote": "100 Prozent lokale Datenverarbeitung — kein Byte verlässt Ihr Büro. Plandaten, IFC-Modelle und Dossiers bleiben auf dem Arbeitsplatz.",
+    "signatureNote": "Die Windows- und macOS-Pakete sind mit einem Entwicklerzertifikat signiert. Beim ersten Start kann SmartScreen oder Gatekeeper warnen, solange das Zertifikat noch kein Reputationsprofil aufgebaut hat; die Prüfsumme unten ist der Beleg, dass die Datei unverändert angekommen ist.",
+    "checksumNote": "Zu jeder Veröffentlichung liegt eine SHA256SUMS.txt neben den Installationsdateien. Prüfen unter Windows: certutil -hashfile <Datei> SHA256; unter macOS und Linux: shasum -a 256 <Datei>.",
+    "artifacts": [
+      {
+        "id": "windows-installer",
+        "platform": "windows",
+        "kind": "installer",
+        "label": "Windows 10/11 — Installer",
+        "file": "BauLens_{version}_x64-setup.exe",
+        "detail": "NSIS-Installer, 64-Bit, Installation für alle Benutzer, Deutsch und Englisch.",
+        "primary": true
+      },
+      {
+        "id": "macos-dmg",
+        "platform": "macos",
+        "kind": "installer",
+        "label": "macOS — Apple Silicon & Intel",
+        "file": "BauLens_{version}_universal.dmg",
+        "detail": "Universelles Datenträgerabbild für Apple Silicon (M-Serie) und Intel-Macs.",
+        "primary": true
+      },
+      {
+        "id": "linux-appimage",
+        "platform": "linux",
+        "kind": "installer",
+        "label": "Linux — AppImage",
+        "file": "BauLens_{version}_amd64.AppImage",
+        "detail": "Ohne Installation startbar (chmod +x und ausführen), 64-Bit x86-64.",
+        "primary": true
+      },
+      {
+        "id": "linux-deb",
+        "platform": "linux",
+        "kind": "installer",
+        "label": "Linux — Debian/Ubuntu",
+        "file": "BauLens_{version}_amd64.deb",
+        "detail": "Debian-Paket für Debian, Ubuntu und Derivate; benötigt WebKitGTK.",
+        "primary": false
+      },
+      {
+        "id": "cli-windows",
+        "platform": "windows",
+        "kind": "cli",
+        "label": "CLI — Windows x64",
+        "file": "baulens-windows-x64.exe",
+        "detail": "Eigenständige Kommandozeilen-Engine ohne Node-Installation, für Server und CI/CD.",
+        "primary": false
+      },
+      {
+        "id": "cli-linux",
+        "platform": "linux",
+        "kind": "cli",
+        "label": "CLI — Linux x64",
+        "file": "baulens-linux-x64",
+        "detail": "Eigenständige Kommandozeilen-Engine ohne Node-Installation, für Server und CI/CD.",
+        "primary": false
+      },
+      {
+        "id": "cli-macos",
+        "platform": "macos",
+        "kind": "cli",
+        "label": "CLI — macOS arm64",
+        "file": "baulens-macos-arm64",
+        "detail": "Eigenständige Kommandozeilen-Engine für Apple Silicon, für Server und CI/CD.",
+        "primary": false
+      },
+      {
+        "id": "cli-bundle",
+        "platform": "any",
+        "kind": "cli",
+        "label": "Engine als Skript",
+        "file": "baulens.cjs",
+        "detail": "Die geprüfte Regel-Engine als einzelne Datei, läuft mit Node.js ab 18 auch ohne Installation.",
+        "primary": false
+      }
+    ]
+  },
+
+  "tiers": [
+    {
+      "id": "starter",
+      "name": "Starter",
+      "flag": "Projekt-Pass",
+      "price": 49,
+      "priceUnit": "einmalig",
+      "annualPrice": null,
+      "perSeat": false,
+      "audience": "Der risikolose Einstieg für Skeptiker: ein konkretes Bauvorhaben 30 Tage lang prüfen.",
+      "checkoutUrl": null,
+      "cta": "Desktop-App laden",
+      "ctaHref": "downloads/",
+      "ctaStyle": "ghost",
+      "features": [
+        "Ein konkretes Bauvorhaben, 30 Tage lang",
+        "Bis zu <strong>10 Re-Runs</strong> für Entwurfsänderungen",
+        "<strong>DIN-A4-Dossier</strong> mit Prüfsiegel",
+        "XBau 2.3 XML für den Antrag"
+      ],
+      "note": "Einmalzahlung, kein Abonnement. Ab dem zweiten Vorhaben rechnet sich Pro."
+    },
+    {
+      "id": "pro",
+      "name": "Pro Architekt",
+      "flag": "Für Einzelbüros",
+      "price": 89,
+      "priceUnit": "Monat",
+      "annualPrice": 890,
+      "perSeat": true,
+      "audience": "Für freie Architektinnen und Architekten und Einzelplaner. Ein Arbeitsplatz.",
+      "checkoutUrl": null,
+      "cta": "Desktop-App laden",
+      "ctaHref": "downloads/",
+      "ctaStyle": "primary",
+      "features": [
+        "<strong>Unbegrenzte</strong> Projektprüfungen",
+        "Unbegrenzte Dossier-Exporte",
+        "Compliance-Repair-Engine mit Heilungsvorschlägen",
+        "Alle 34 DACH-Regelprofile, 1 Arbeitsplatz"
+      ],
+      "note": "Monatlich kündbar. Jahreszahlung 890 € — zwei Monate geschenkt."
+    },
+    {
+      "id": "buero",
+      "name": "Büro / Kanzlei",
+      "flag": "Für Planungsbüros",
+      "price": 199,
+      "priceUnit": "Monat",
+      "annualPrice": 1990,
+      "perSeat": true,
+      "audience": "Für Planungsbüros und Teams. Drei Arbeitsplätze inklusive, weitere zubuchbar.",
+      "checkoutUrl": null,
+      "cta": "Desktop-App laden",
+      "ctaHref": "downloads/",
+      "ctaStyle": "ghost",
+      "features": [
+        "<strong>3 Arbeitsplätze</strong> inklusive (~66 € je Platz)",
+        "Jeder weitere Arbeitsplatz +49 € / Monat",
+        "Firmenlogo und Kopfzeile im Dossier",
+        "DACH-Quervergleich über alle 34 Profile"
+      ],
+      "note": "Monatlich kündbar, Jahreszahlung 1.990 €. Weiterer Arbeitsplatz 49 € / Monat."
+    }
+  ],
+
+  "enterprise": {
+    "name": "Serien- und Fertighaushersteller",
+    "price": 1490,
+    "priceUnit": "Monat",
+    "audience": "Massenprüfung von Typen- und Kataloglisten, API-Zugang und BCF-Pipeline in die eigene BIM-Umgebung.",
+    "cta": "Enterprise anfragen",
+    "ctaHref": "mailto:info@kellersystems.dev?subject=BauLens%20Enterprise-Anfrage"
+  }
+}

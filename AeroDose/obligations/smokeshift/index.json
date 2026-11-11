@@ -1,0 +1,364 @@
+{
+  "crate": "smokeshift",
+  "obligations": [
+    {
+      "artifact": "audit______impl_audit______serde__Serialize_for_audit__AuditEntry___serialize_bb0.smt2",
+      "block": "bb0",
+      "crate": "smokeshift",
+      "function": "audit::_::<impl audit::_::_serde::Serialize for audit::AuditEntry>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "audit______impl_audit______serde__Serialize_for_audit__AuditEntry___serialize_bb1.smt2",
+      "block": "bb1",
+      "crate": "smokeshift",
+      "function": "audit::_::<impl audit::_::_serde::Serialize for audit::AuditEntry>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "audit______impl_audit______serde__Serialize_for_audit__AuditEntry___serialize_bb2.smt2",
+      "block": "bb2",
+      "crate": "smokeshift",
+      "function": "audit::_::<impl audit::_::_serde::Serialize for audit::AuditEntry>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "audit______impl_audit______serde__Serialize_for_audit__AuditEntry___serialize_bb3.smt2",
+      "block": "bb3",
+      "crate": "smokeshift",
+      "function": "audit::_::<impl audit::_::_serde::Serialize for audit::AuditEntry>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "audit______impl_audit______serde__Serialize_for_audit__AuditEntry___serialize_bb4.smt2",
+      "block": "bb4",
+      "crate": "smokeshift",
+      "function": "audit::_::<impl audit::_::_serde::Serialize for audit::AuditEntry>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "audit______impl_audit______serde__Serialize_for_audit__AuditEntry___serialize_bb5.smt2",
+      "block": "bb5",
+      "crate": "smokeshift",
+      "function": "audit::_::<impl audit::_::_serde::Serialize for audit::AuditEntry>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "audit______impl_audit______serde__Serialize_for_audit__AuditEntry___serialize_bb6.smt2",
+      "block": "bb6",
+      "crate": "smokeshift",
+      "function": "audit::_::<impl audit::_::_serde::Serialize for audit::AuditEntry>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "audit______impl_audit______serde__Serialize_for_audit__AuditEntry___serialize_bb7.smt2",
+      "block": "bb7",
+      "crate": "smokeshift",
+      "function": "audit::_::<impl audit::_::_serde::Serialize for audit::AuditEntry>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "audit______impl_audit______serde__Serialize_for_audit__AuditEntry___serialize_bb8.smt2",
+      "block": "bb8",
+      "crate": "smokeshift",
+      "function": "audit::_::<impl audit::_::_serde::Serialize for audit::AuditEntry>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "compliance______impl_audit______serde__Serialize_for_compliance__ShiftComplianceReport___serialize_bb0.smt2",
+      "block": "bb0",
+      "crate": "smokeshift",
+      "function": "compliance::_::<impl audit::_::_serde::Serialize for compliance::ShiftComplianceReport>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "compliance______impl_audit______serde__Serialize_for_compliance__ShiftComplianceReport___serialize_bb1.smt2",
+      "block": "bb1",
+      "crate": "smokeshift",
+      "function": "compliance::_::<impl audit::_::_serde::Serialize for compliance::ShiftComplianceReport>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "compliance______impl_audit______serde__Serialize_for_compliance__ShiftComplianceReport___serialize_bb2.smt2",
+      "block": "bb2",
+      "crate": "smokeshift",
+      "function": "compliance::_::<impl audit::_::_serde::Serialize for compliance::ShiftComplianceReport>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "compliance______impl_audit______serde__Serialize_for_compliance__ShiftComplianceReport___serialize_bb3.smt2",
+      "block": "bb3",
+      "crate": "smokeshift",
+      "function": "compliance::_::<impl audit::_::_serde::Serialize for compliance::ShiftComplianceReport>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "compliance______impl_audit______serde__Serialize_for_compliance__ShiftComplianceReport___serialize_bb4.smt2",
+      "block": "bb4",
+      "crate": "smokeshift",
+      "function": "compliance::_::<impl audit::_::_serde::Serialize for compliance::ShiftComplianceReport>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "compliance______impl_audit______serde__Serialize_for_compliance__ShiftComplianceReport___serialize_bb5.smt2",
+      "block": "bb5",
+      "crate": "smokeshift",
+      "function": "compliance::_::<impl audit::_::_serde::Serialize for compliance::ShiftComplianceReport>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "compliance______impl_audit______serde__Serialize_for_compliance__ShiftComplianceReport___serialize_bb6.smt2",
+      "block": "bb6",
+      "crate": "smokeshift",
+      "function": "compliance::_::<impl audit::_::_serde::Serialize for compliance::ShiftComplianceReport>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "compliance______impl_audit______serde__Serialize_for_compliance__ShiftComplianceReport___serialize_bb7.smt2",
+      "block": "bb7",
+      "crate": "smokeshift",
+      "function": "compliance::_::<impl audit::_::_serde::Serialize for compliance::ShiftComplianceReport>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "compliance______impl_audit______serde__Serialize_for_compliance__ShiftComplianceReport___serialize_bb8.smt2",
+      "block": "bb8",
+      "crate": "smokeshift",
+      "function": "compliance::_::<impl audit::_::_serde::Serialize for compliance::ShiftComplianceReport>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "dose______impl_audit______serde__Serialize_for_dose__ExposureLimits___serialize_bb0.smt2",
+      "block": "bb0",
+      "crate": "smokeshift",
+      "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ExposureLimits>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "dose______impl_audit______serde__Serialize_for_dose__ExposureLimits___serialize_bb1.smt2",
+      "block": "bb1",
+      "crate": "smokeshift",
+      "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ExposureLimits>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "dose______impl_audit______serde__Serialize_for_dose__ExposureLimits___serialize_bb2.smt2",
+      "block": "bb2",
+      "crate": "smokeshift",
+      "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ExposureLimits>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "dose______impl_audit______serde__Serialize_for_dose__ExposureLimits___serialize_bb3.smt2",
+      "block": "bb3",
+      "crate": "smokeshift",
+      "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ExposureLimits>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "dose______impl_audit______serde__Serialize_for_dose__ShiftDoseTracker___serialize_bb0.smt2",
+      "block": "bb0",
+      "crate": "smokeshift",
+      "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ShiftDoseTracker>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "dose______impl_audit______serde__Serialize_for_dose__ShiftDoseTracker___serialize_bb1.smt2",
+      "block": "bb1",
+      "crate": "smokeshift",
+      "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ShiftDoseTracker>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "dose______impl_audit______serde__Serialize_for_dose__ShiftDoseTracker___serialize_bb2.smt2",
+      "block": "bb2",
+      "crate": "smokeshift",
+      "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ShiftDoseTracker>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "dose______impl_audit______serde__Serialize_for_dose__ShiftDoseTracker___serialize_bb3.smt2",
+      "block": "bb3",
+      "crate": "smokeshift",
+      "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ShiftDoseTracker>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "dose______impl_audit______serde__Serialize_for_dose__ShiftDoseTracker___serialize_bb4.smt2",
+      "block": "bb4",
+      "crate": "smokeshift",
+      "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ShiftDoseTracker>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "dose______impl_audit______serde__Serialize_for_dose__ShiftDoseTracker___serialize_bb5.smt2",
+      "block": "bb5",
+      "crate": "smokeshift",
+      "function": "dose::_::<impl audit::_::_serde::Serialize for dose::ShiftDoseTracker>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "sensor______impl_audit______serde__Serialize_for_sensor__Sps30Calibrator___serialize_bb0.smt2",
+      "block": "bb0",
+      "crate": "smokeshift",
+      "function": "sensor::_::<impl audit::_::_serde::Serialize for sensor::Sps30Calibrator>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "sensor______impl_audit______serde__Serialize_for_sensor__Sps30Calibrator___serialize_bb1.smt2",
+      "block": "bb1",
+      "crate": "smokeshift",
+      "function": "sensor::_::<impl audit::_::_serde::Serialize for sensor::Sps30Calibrator>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "sensor______impl_audit______serde__Serialize_for_sensor__Sps30Calibrator___serialize_bb2.smt2",
+      "block": "bb2",
+      "crate": "smokeshift",
+      "function": "sensor::_::<impl audit::_::_serde::Serialize for sensor::Sps30Calibrator>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "sensor______impl_audit______serde__Serialize_for_sensor__Sps30Reading___serialize_bb0.smt2",
+      "block": "bb0",
+      "crate": "smokeshift",
+      "function": "sensor::_::<impl audit::_::_serde::Serialize for sensor::Sps30Reading>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "sensor______impl_audit______serde__Serialize_for_sensor__Sps30Reading___serialize_bb1.smt2",
+      "block": "bb1",
+      "crate": "smokeshift",
+      "function": "sensor::_::<impl audit::_::_serde::Serialize for sensor::Sps30Reading>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "sensor______impl_audit______serde__Serialize_for_sensor__Sps30Reading___serialize_bb2.smt2",
+      "block": "bb2",
+      "crate": "smokeshift",
+      "function": "sensor::_::<impl audit::_::_serde::Serialize for sensor::Sps30Reading>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "sensor______impl_audit______serde__Serialize_for_sensor__Sps30Reading___serialize_bb3.smt2",
+      "block": "bb3",
+      "crate": "smokeshift",
+      "function": "sensor::_::<impl audit::_::_serde::Serialize for sensor::Sps30Reading>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "sensor______impl_audit______serde__Serialize_for_sensor__Sps30Reading___serialize_bb4.smt2",
+      "block": "bb4",
+      "crate": "smokeshift",
+      "function": "sensor::_::<impl audit::_::_serde::Serialize for sensor::Sps30Reading>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "taint__TaintDetector__evaluate_bb23.smt2",
+      "block": "bb23",
+      "crate": "smokeshift",
+      "file": "src/taint.rs",
+      "function": "taint::TaintDetector::evaluate",
+      "kind": "overflow",
+      "line": 75,
+      "status": "PASS",
+      "verdict": "PASS (unsat)"
+    },
+    {
+      "artifact": "taint__TaintDetector__evaluate_bb39.smt2",
+      "block": "bb39",
+      "crate": "smokeshift",
+      "file": "src/taint.rs",
+      "function": "taint::TaintDetector::evaluate",
+      "kind": "overflow",
+      "line": 75,
+      "status": "PASS",
+      "verdict": "PASS (unsat)"
+    },
+    {
+      "artifact": "taint__TaintDetector__evaluate_bb53.smt2",
+      "block": "bb53",
+      "crate": "smokeshift",
+      "file": "src/taint.rs",
+      "function": "taint::TaintDetector::evaluate",
+      "kind": "divzero",
+      "line": 75,
+      "status": "PASS",
+      "verdict": "PASS (unsat)"
+    }
+  ],
+  "re_discharge": "z3 -smt2 obligations/smokeshift/<artifact>",
+  "schema_version": 1
+}

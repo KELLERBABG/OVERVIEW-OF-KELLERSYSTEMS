@@ -1,0 +1,73 @@
+Vertrag über ein Content Delivery Network
+
+zwischen Nordseekante CDN GmbH, Große Elbstraße 145, 22767 Hamburg (nachfolgend "Anbieterin")
+
+und Deutsche Mode GmbH, Königsallee 60, 40212 Düsseldorf (nachfolgend "Kunde")
+
+Präambel
+
+Die Anbieterin betreibt ein Content Delivery Network und liefert die Inhalte des Kunden über ihre Knoten aus.
+
+§ 1 Gegenstand
+
+(1) Die Anbieterin liefert die Inhalte des Kunden über ihre Knoten in Europa aus.
+
+(2) Die Knotenstandorte ergeben sich aus Anlage 6.
+
+§ 2 Höhere Gewalt
+
+(1) Die Zahlungsverpflichtungen des Kunden bleiben unverändert bestehen.
+
+§ 3 Kündigungsrechte
+
+(1) Dem Kunden steht kein Sonderkündigungsrecht zu.
+
+§ 4 Insolvenz
+
+(1) Der Vertrag endet automatisch mit der Eröffnung des Insolvenzverfahrens über das Vermögen des Kunden.
+
+§ 5 Preise
+
+(1) Die Entgelte erhöhen sich jährlich um bis zu 3 Prozent.
+
+§ 6 Aufrechnung
+
+(1) Gegenansprüche bleiben bei der Abrechnung außer Betracht.
+
+§ 7 Pauschalen
+
+(1) Bei Verzug schuldet der Kunde eine Aufwandspauschale von 250 EUR.
+
+§ 8 Haftung
+
+(1) Die Haftung für mittelbare Schäden und entgangenen Gewinn ist abbedungen.
+
+§ 9 Zahlung
+
+(1) Die Rechnung ist innerhalb von 30 Tagen nach Zugang ohne Abzug fällig.
+
+§ 10 Verfügbarkeit
+
+(1) Die Anbieterin sichert eine Verfügbarkeit von 99,5 Prozent pro Kalendermonat zu.
+
+§ 11 Datenrückgabe
+
+(1) Die Anbieterin stellt dem Kunden bei Vertragsende eine vollständige Kopie aller Kundendaten in maschinenlesbarer Form kostenfrei bereit.
+
+§ 12 Vertraulichkeit
+
+(1) Die Vertragsparteien behandeln die wechselseitig offengelegten Informationen vertraulich.
+
+§ 13 Höhere Gewalt beider Parteien
+
+(1) Ereignisse höherer Gewalt berechtigen beide Parteien, den Vertrag nach Ablauf von sechzig Tagen zu beenden.
+
+§ 14 Kündigung des Anbieters
+
+(1) Der Anbieter kann den Vertrag mit einer Frist von drei Monaten zum Quartalsende kündigen.
+
+Hamburg, den 05.01.2026
+
+Für die Anbieterin: gez. N. Nordseekante
+
+Für den Kunden: gez. D. Deutsche

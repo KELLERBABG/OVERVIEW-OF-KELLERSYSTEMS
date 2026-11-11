@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Handbuch &middot; API &middot; CLI &mdash; ClauseLens</title>
+  <meta name="description" content="Bedienungsanleitung für ClauseLens: Web-Studio, CLI-Befehle, REST-API und Lizenzaktivierung. Alle Analysen laufen lokal, ohne Datenübertragung.">
+  <meta name="theme-color" content="#f6f3ec">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f6f3ec;
+      --card: #ffffff;
+      --ink: #22201c;
+      --body: #4b463d;
+      --dim: #8b8375;
+      --red: #b8442c;
+      --green: #3f7a4a;
+      --rule: #d8d1c0;
+      --accent: #2c5282;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; scrollbar-color: #c4bcab #f6f3ec; scrollbar-width: thin; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--body);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 44px); }
+    header { padding: clamp(32px, 6vw, 64px) 0 clamp(8px, 1.5vw, 16px); }
+    .badge-bar { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 12px; }
+    .kick {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--red);
+      font-weight: 600;
+    }
+    .pill {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      padding: 3px 8px;
+      background: var(--rule);
+      border-radius: 4px;
+      color: var(--ink);
+    }
+    h1 {
+      margin: .3rem 0 .5rem;
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-weight: 600;
+      font-size: clamp(2rem, 4.6vw, 3rem);
+      line-height: 1.08;
+      letter-spacing: -.02em;
+      color: var(--ink);
+    }
+    .sub { margin: 0; max-width: 68ch; color: #5a5449; font-size: 1.08rem; line-height: 1.55; }
+    .nav-actions { display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 9px 18px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; font-weight: 500; text-decoration: none;
+      border-radius: 4px; transition: all .15s ease; cursor: pointer;
+    }
+    .btn-primary { background: var(--accent); color: #fff; border: 1px solid var(--accent); }
+    .btn-primary:hover { background: #24446b; }
+    .btn-outline { background: transparent; color: var(--ink); border: 1px solid var(--rule); }
+    .btn-outline:hover { background: var(--card); border-color: var(--ink); }
+
+    .doc { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: clamp(24px, 4vw, 56px); padding: 28px 0 64px; }
+    @media (max-width: 860px) { .doc { grid-template-columns: 1fr; } .toc { position: static !important; } }
+    .toc { position: sticky; top: 24px; align-self: start; font-size: .86rem; }
+    .toc-title { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--dim); margin-bottom: 10px; }
+    .toc a { display: block; padding: 4px 0 4px 10px; border-left: 2px solid var(--rule); color: var(--body); text-decoration: none; }
+    .toc a:hover { color: var(--red); border-left-color: var(--red); }
+
+    section { margin-bottom: 44px; scroll-margin-top: 20px; }
+    h2 {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-weight: 600; font-size: 1.5rem; color: var(--ink);
+      margin: 0 0 .4rem; letter-spacing: -.01em;
+    }
+    h2 .num { font-family: 'IBM Plex Mono', monospace; font-size: .8rem; color: var(--red); margin-right: 8px; vertical-align: 2px; }
+    h3 { font-family: 'IBM Plex Mono', monospace; font-size: .82rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); margin: 1.6rem 0 .5rem; }
+    p { margin: 0 0 .9rem; }
+    ul { margin: 0 0 .9rem; padding-left: 20px; }
+    li { margin-bottom: .35rem; }
+    a { color: var(--accent); }
+    strong { color: var(--ink); }
+    code {
+      font-family: 'IBM Plex Mono', monospace; font-size: .86em;
+      background: #efeae0; border: 1px solid var(--rule); border-radius: 3px;
+      padding: 1px 5px; color: var(--ink);
+    }
+    pre {
+      font-family: 'IBM Plex Mono', monospace; font-size: .82rem; line-height: 1.55;
+      background: #2a2723; color: #efeae0; border-radius: 6px;
+      padding: 16px 18px; overflow-x: auto; margin: 0 0 1rem;
+    }
+    pre code { background: none; border: 0; padding: 0; color: inherit; font-size: inherit; }
+    table { width: 100%; border-collapse: collapse; font-size: .9rem; margin: 0 0 1rem; }
+    th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    th { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--dim); border-bottom-color: var(--ink); }
+    td code { white-space: nowrap; }
+    .note {
+      background: var(--card); border: 1px solid var(--rule); border-left: 3px solid var(--accent);
+      border-radius: 4px; padding: 12px 16px; font-size: .92rem; margin: 0 0 1rem;
+    }
+    .note.warn { border-left-color: var(--red); }
+
+    .foot { border-top: 1px solid var(--rule); padding: 26px 0 40px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--dim); }
+    .foot .wrap { display: flex; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+    .foot a { color: var(--ink); text-decoration: none; }
+    .foot a:hover { color: var(--red); text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="badge-bar">
+        <span class="kick">Handbuch &middot; API &middot; CLI</span>
+        <span class="pill">v1.0.0</span>
+        <span class="pill">Zero Dependencies</span>
+        <span class="pill">47 BGB-Detektoren</span>
+      </div>
+      <h1>Bedienung, CLI und REST-API</h1>
+      <p class="sub">Wie Sie ClauseLens im Browser prüfen, lokal per Kommandozeile betreiben und die REST-API anbinden. Jede Analyse läuft auf Ihrem Gerät, es werden keine Vertragsdaten übertragen.</p>
+      <div class="nav-actions">
+        <a href="index.html" class="btn btn-outline">&larr; Zurück zur Startseite</a>
+        <a href="studio.html" class="btn btn-primary">ClauseLens Studio öffnen</a>
+        <a href="pricing.html" class="btn btn-outline">Preise &amp; Lizenzen</a>
+      </div>
+    </header>
+  </div>
+
+  <div class="wrap">
+    <div class="doc">
+      <nav class="toc" aria-label="Inhalt">
+        <div class="toc-title">Inhalt</div>
+        <a href="#web">Web-Anwendung</a>
+        <a href="#trial">Testkontingent</a>
+        <a href="#cli">CLI</a>
+        <a href="#cli-analyze">analyze</a>
+        <a href="#cli-batch">batch &amp; compare</a>
+        <a href="#cli-seat">Seat-Verwaltung</a>
+        <a href="#serve">Lokaler Server</a>
+        <a href="#api">REST-API</a>
+        <a href="#license">Lizenz &amp; Aktivierung</a>
+        <a href="#engine">Prüfumfang</a>
+      </nav>
+
+      <main>
+        <section id="web">
+          <h2><span class="num">01</span>Web-Anwendung</h2>
+          <p>Die Web-Anwendung läuft vollständig im Browser. PDF-, DOCX- und TXT-Dateien werden lokal geparst; die Regelmaschine (47 Detektoren) arbeitet client-seitig. Es gibt keinen Upload an einen Server und kein Konto, das Inhalte speichert.</p>
+          <table>
+            <tr><th>Oberfläche</th><th>Funktion</th></tr>
+            <tr><td><a href="index.html">Startseite</a></td><td>Schnellprüfung einzelner Verträge, Risiko-Score, JSON- und PDF-Export</td></tr>
+            <tr><td><a href="studio.html">ClauseLens Studio</a></td><td>Mehrseitiges Dokumentenaudit, Redline-Vorschläge, Vergleich von Vertragsversionen</td></tr>
+          </table>
+          <p>Laden Sie eine Datei über das Feld <em>Datei auswählen</em> oder ziehen Sie sie in den Editor. Ohne Datei können Sie Text einfügen. Die Vorlagen <em>SaaS-AGB</em>, <em>Softwarevertrag</em>, <em>Konformer Vertrag</em> und <em>Freelancer-Vertrag</em> sind Beispiele und laufen ohne Verbrauch des Testkontingents.</p>
+        </section>
+
+        <section id="trial">
+          <h2><span class="num">02</span>Testkontingent</h2>
+          <p>Auf der Startseite sind <strong>3 Prüfungen</strong> eigener Verträge kostenlos, danach ist eine Lizenz erforderlich. Der Zähler steht neben der Zeichenanzahl („3 von 3 Test-Prüfungen verbleibend“) und wird im Browser gespeichert, nicht auf einem Server.</p>
+          <ul>
+            <li>Ein Klick auf einen Vorlagen-Button oder ein Seitenaufruf mit Vorlage verbraucht keine Prüfung.</li>
+            <li>Hochgeladene Dateien und selbst eingefügter Text verbrauchen eine Prüfung.</li>
+            <li>Eine Lizenz schaltet unbegrenzte Prüfungen auf dem Gerät frei.</li>
+          </ul>
+          <div class="note warn">Das Kontingent ist ein Testangebot, keine technische Sperre. Für Kanzleien und Teams empfiehlt sich die aktivierte Lizenz mit Rechnung.</div>
+        </section>
+
+        <section id="cli">
+          <h2><span class="num">03</span>Kommandozeile (CLI)</h2>
+          <p>Die CLI ist die On-Premise-Variante für Skripte, Batch-Prüfungen und die Anbindung an eigene Prozesse. Sie benötigt Node.js ≥ 18 und keine externen Pakete. Die Distribution erhalten Sie mit dem Lizenzpaket (Pro/Team) als Archiv; entpackt liegen <code>bin/clauselens.js</code> und <code>src/</code> im selben Verzeichnis.</p>
+          <pre><code># Installation im entpackten Verzeichnis prüfen
+node -v                      # Node.js >= 18
+node bin/clauselens.js -h    # Befehlsübersicht
+
+# Einzelvertrag prüfen und PDF-Bericht schreiben
+node bin/clauselens.js analyze vertrag.pdf --pdf befund.pdf</code></pre>
+          <div class="note">Auf Wunsch startet <code>npm start</code> zusätzlich den lokalen Webserver mit Studio und REST-API (siehe <a href="#serve">Lokaler Server</a>).</div>
+        </section>
+
+        <section id="cli-analyze">
+          <h2><span class="num">04</span>Einzelvertrag: <code>analyze</code></h2>
+          <pre><code>node bin/clauselens.js analyze vertrag.pdf                 # Terminübersicht
+node bin/clauselens.js analyze vertrag.pdf --pdf audit.pdf  # DIN-A4 Vektor-PDF, versiegelt
+node bin/clauselens.js analyze vertrag.docx --json r.json --report r.md
+node bin/clauselens.js analyze agb.txt --html bericht.html  # interaktiver HTML-Bericht
+node bin/clauselens.js analyze vertrag.pdf --sarif results.sarif  # SARIF 2.1.0 für CI</code></pre>
+          <table>
+            <tr><th>Option</th><th>Wirkung</th></tr>
+            <tr><td><code>--pdf &lt;pfad&gt;</code></td><td>Mehrseitiger DIN-A4-Bericht mit SHA-256-Siegel</td></tr>
+            <tr><td><code>--html &lt;pfad&gt;</code></td><td>Interaktiver Bericht mit SVG-Gauges, Filtern, Redline-Kopierfunktion</td></tr>
+            <tr><td><code>--json &lt;pfad&gt;</code></td><td>Schema-konformes JSON</td></tr>
+            <tr><td><code>--report &lt;pfad&gt;</code></td><td>Markdown-Risikobericht</td></tr>
+            <tr><td><code>--sarif &lt;pfad&gt;</code></td><td>OASIS SARIF 2.1.0 für GitHub Code Scanning</td></tr>
+            <tr><td><code>--format &lt;fmt&gt;</code></td><td><code>auto</code> (Standard), <code>txt</code>, <code>pdf</code>, <code>docx</code> erzwingen</td></tr>
+            <tr><td><code>--profile &lt;name&gt;</code></td><td><code>default</code>, <code>b2b_saas</code>, <code>freelance_consulting</code>, <code>procurement_strict</code></td></tr>
+            <tr><td><code>--config &lt;pfad&gt;</code></td><td>Schwellenwerte, Gewichte und Regelauswahl aus <code>clauselens.config.json</code></td></tr>
+          </table>
+        </section>
+
+        <section id="cli-batch">
+          <h2><span class="num">05</span>Portfolio: <code>batch</code> und <code>compare</code></h2>
+          <pre><code># Alle Verträge eines Ordners prüfen
+node bin/clauselens.js batch ./vertraege --html portfolio.html --json portfolio.json
+
+# Original gegen Gegenentwurf vergleichen (Risikodelta)
+node bin/clauselens.js compare entwurf_v1.docx gegenentwurf_v2.docx --report delta.md</code></pre>
+          <p><code>batch</code> liefert einen aggregierten Portfolio-Score, die Verteilung hoher und mittlerer Risiken sowie die häufigsten Risikoklauseln. <code>compare</code> beziffert die Punkteveränderung, zeigt behobene Risiken und markiert neu eingeschleuste Klauseln.</p>
+        </section>
+
+        <section id="cli-seat">
+          <h2><span class="num">06</span>Seat-Verwaltung: <code>login</code>, <code>whoami</code>, <code>logout</code></h2>
+          <pre><code>node bin/clauselens.js login --email kanzlei@beispiel.de --key CLA-PRO-...
+node bin/clauselens.js whoami     # Account, Gerät, Sitzung
+node bin/clauselens.js logout     # Seat auf diesem Gerät freigeben</code></pre>
+          <p>Der Lizenzserver prüft den Schlüssel, bindet den Seat an den Geräte-Fingerprint und stellt ein Sitzungstoken aus, das 7 Tage gilt. Innerhalb dieser Zeit arbeitet die CLI auch ohne Verbindung; danach genügt ein erneutes <code>login</code>.</p>
+          <p>Der Seat wird an einen Geräte-Fingerprint gebunden, damit eine Lizenz nicht beliebig oft installiert werden kann. Pro-Lizenzen umfassen einen Arbeitsplatz, Team-Lizenzen mehrere. Wenn Sie den Rechner wechseln, geben Sie den Seat zuerst mit <code>logout</code> frei und aktivieren ihn auf dem neuen Gerät.</p>
+          <div class="note">Die Web-Anwendung braucht keine Seat-Aktivierung: Dort genügt das Eintragen des Lizenzschlüssels im Lizenzfenster.</div>
+        </section>
+
+        <section id="serve">
+          <h2><span class="num">07</span>Lokaler Server und Studio</h2>
+          <pre><code>node bin/clauselens.js serve --port 3000
+# oder
+npm start</code></pre>
+          <table>
+            <tr><th>Adresse</th><th>Inhalt</th></tr>
+            <tr><td><code>/</code></td><td>Startseite mit interaktiver Prüfung</td></tr>
+            <tr><td><code>/app</code></td><td>ClauseLens Studio (Dokumentenaudit, Redlines)</td></tr>
+            <tr><td><code>/docs</code></td><td>OpenAPI-Explorer der REST-API</td></tr>
+            <tr><td><code>/api/v1/...</code></td><td>REST-Endpunkte</td></tr>
+          </table>
+          <p>Der Server bindet standardmäßig nur lokal. Für den Betrieb im Netz setzen Sie hinter einem Reverse-Proxy und schützen Sie den Zugang; die Engine selbst benötigt keinen Internetzugang.</p>
+        </section>
+
+        <section id="api">
+          <h2><span class="num">08</span>REST-API</h2>
+          <p>Die API läuft auf Ihrem eigenen Server, gestartet mit <code>serve</code>. Auf dieser Website ist sie nicht aktiv. Basis-URL: <code>http://localhost:3000/api/v1</code>.</p>
+          <table>
+            <tr><th>Methode</th><th>Pfad</th><th>Zweck</th></tr>
+            <tr><td>GET</td><td><code>/api/v1/health</code></td><td>Status, Engine-Version, Uptime</td></tr>
+            <tr><td>GET</td><td><code>/api/v1/rules</code></td><td>Katalog aller Detektoren und Profile</td></tr>
+            <tr><td>GET</td><td><code>/api/v1/openapi.json</code></td><td>OpenAPI-3.0-Spezifikation</td></tr>
+            <tr><td>POST</td><td><code>/api/v1/extract</code></td><td>Text aus PDF/DOCX extrahieren (Binärkörper)</td></tr>
+            <tr><td>POST</td><td><code>/api/v1/analyze</code></td><td>Vertragstext analysieren, optional <code>?format=pdf</code></td></tr>
+            <tr><td>POST</td><td><code>/api/v1/compare</code></td><td>Zwei Versionen vergleichen, Risikodelta</td></tr>
+          </table>
+          <pre><code>curl http://localhost:3000/api/v1/health
+
+curl -X POST http://localhost:3000/api/v1/analyze \
+  -H "Content-Type: application/json" \
+  -d '{"text":"Die Haftung ist für sämtliche Schäden ausgeschlossen.","profile":"default"}'
+
+curl -X POST http://localhost:3000/api/v1/extract \
+  -H "Content-Type: application/octet-stream" \
+  --data-binary @vertrag.pdf</code></pre>
+          <p>Die Antwort enthält Score, Risikostufe, die Befunde mit Zeilenbereich, Begründung und Gegenvorschlag sowie die Zählung nach Schweregrad. Fehler kommen als JSON mit <code>error</code> und <code>message</code>.</p>
+        </section>
+
+        <section id="license">
+          <h2><span class="num">09</span>Lizenz und Aktivierung</h2>
+          <p>Lizenzen werden über Polar.sh als Merchant of Record verkauft. Nach dem Kauf erhalten Sie einen Schlüssel, der mit <code>CL-</code> beginnt oder ein Polar-Präfix trägt (<code>CLA-</code>, <code>LENS-</code>) und online geprüft wird.</p>
+          <ul>
+            <li><strong>Web:</strong> im Lizenzfenster (Symbol oben rechts) Schlüssel eintragen und „Aktivieren“ wählen.</li>
+            <li><strong>CLI:</strong> einmalig <code>login --email ... --key ...</code>; die Sitzung gilt 7 Tage.</li>
+            <li><strong>Team:</strong> jeder Arbeitsplatz bekommt einen eigenen Seat; die Anzahl richtet sich nach dem gebuchten Paket.</li>
+          </ul>
+          <p>Die Aktivierung erfolgt online, die Analyse danach offline. Lizenzschlüssel stellt allein der Lizenzserver aus; die CLI kann keine eigenen erzeugen. Der Lizenzserver signiert die Sitzung (RS256), und CLI wie Browser prüfen diese Signatur lokal – ein allein manipulierter lokaler Eintrag schaltet nichts frei. Es gilt die gesetzliche Widerrufsfrist; Zahlung und Rechnung laufen über Polar. Details stehen in <a href="pricing.html">Preise &amp; Lizenzen</a>.</p>
+        </section>
+
+        <section id="engine">
+          <h2><span class="num">10</span>Prüfumfang und Grenzen</h2>
+          <p>ClauseLens prüft 47 Klauseltypen aus dem AGB-Recht (§§ 305–310 BGB) und erkennt typische Risikomuster, etwa automatische Verlängerungen, Haftungsausschlüsse, einseitige Änderungsrechte, Gerichtsstands- und Rechtswahlklauseln. Jeder Befund hat einen Schweregrad (hoch, mittel, niedrig), eine Begründung in Alltagssprache und einen Gegenvorschlag.</p>
+          <p>Die Prüfung ist eine kaufmännische Vorprüfung (Audit Aid gemäß §§ 1, 2 RDG) und <strong>keine Rechtsberatung</strong>. Sie ersetzt keine anwaltliche Bewertung und ist keine Vollständigkeitsgarantie. Die Engine arbeitet deterministisch: gleicher Text, gleiches Ergebnis, ohne Modellaufruf und ohne Datenabfluss.</p>
+          <div class="note warn">Zeigen Sie Befunde stets im Kontext des Gesamtvertrags. Einzelne Klauseln können durch Individualabrede oder ergänzende Verträge abweichen.</div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <footer class="foot">
+    <div class="wrap">
+      <span>ClauseLens &middot; Keller Systems &copy; 2026</span>
+      <span>
+        <a href="index.html">Startseite</a> &nbsp;/&nbsp;
+        <a href="studio.html">ClauseLens Studio</a> &nbsp;/&nbsp;
+        <a href="pricing.html">Preise &amp; Lizenzen</a> &nbsp;/&nbsp;
+        <a href="https://kellersystems.dev/impressum/" target="_blank" rel="noopener noreferrer">Impressum</a> &nbsp;/&nbsp;
+        <a href="https://kellersystems.dev/privacy/" target="_blank" rel="noopener noreferrer">Datenschutz</a> &nbsp;/&nbsp;
+        <a href="https://kellersystems.dev/legal/" target="_blank" rel="noopener noreferrer">EULA &amp; AGB</a>
+      </span>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,42 @@
+[
+  {
+    "crate": "statement_writes",
+    "function": "asm_writes",
+    "block": "bb4",
+    "status": "WARN",
+    "kind": "overflow",
+    "file": "src/main.rs",
+    "line": 93,
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: `v (_5)` is written by an inline asm block, whose body this analysis does not read"
+  },
+  {
+    "crate": "statement_writes",
+    "function": "call_writes",
+    "block": "bb4",
+    "status": "WARN",
+    "kind": "overflow",
+    "file": "src/main.rs",
+    "line": 43,
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: the call to `bump` is given a pointer into this body's own storage (`_8`), and a callee this analysis does not read may write through it"
+  },
+  {
+    "crate": "statement_writes",
+    "function": "drop_writes",
+    "block": "bb4",
+    "status": "WARN",
+    "kind": "overflow",
+    "file": "src/main.rs",
+    "line": 64,
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: a drop here runs glue this analysis does not read, and the value being dropped may hold a reference into this body's own storage"
+  },
+  {
+    "crate": "statement_writes",
+    "function": "intrinsic_writes",
+    "block": "bb4",
+    "status": "WARN",
+    "kind": "overflow",
+    "file": "src/main.rs",
+    "line": 77,
+    "details": "Arithmetic Overflow Detection (Add) -> Undecided: the call to `std::ptr::copy_nonoverlapping::<u8>` is given a pointer into this body's own storage (`_11`), and a callee this analysis does not read may write through it"
+  }
+]

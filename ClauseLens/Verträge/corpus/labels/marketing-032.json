@@ -1,0 +1,74 @@
+{
+  "slug": "marketing-032",
+  "source": "generated",
+  "domain": "Contentlizenz Musik und Bild, schweizerisches Recht",
+  "traps": [
+    {
+      "marker": "enthält alle Vereinbarungen und ersetzt frühere Absprachen",
+      "expectedType": "entire_agreement",
+      "note": "Vollstaendigkeitsklausel."
+    },
+    {
+      "marker": "Die Inhalte werden wie gesehen überlassen",
+      "expectedType": "as_is_software_disclaimer",
+      "note": "Ueberlassung wie gesehen."
+    },
+    {
+      "marker": "Für Handlungen von Erfüllungsgehilfen wird nur bei Auswahlverschulden gehaftet",
+      "expectedType": "vicarious_agents",
+      "note": "Haftung fuer Gehilfen auf Auswahlverschulden begrenzt."
+    },
+    {
+      "marker": "Ausschließlicher Gerichtsstand ist Zürich",
+      "expectedType": "jurisdiction",
+      "note": "Ausschliesslicher Gerichtsstand am Anbietersitz."
+    },
+    {
+      "marker": "verjähren innerhalb von sechs Monaten nach Lieferung",
+      "expectedType": "statute_of_limitations",
+      "note": "Verkuerzte Verjaehrungsfrist."
+    },
+    {
+      "marker": "darf den Lizenznehmer als Referenzkunden nennen",
+      "expectedType": "marketing_reference",
+      "note": "Referenznutzung ohne Zustandsvorbehalt."
+    },
+    {
+      "marker": "Die Geheimhaltungspflicht gilt unbegrenzt fort",
+      "expectedType": "excessive_survival",
+      "note": "Unbegrenzte Nachwirkung der Geheimhaltung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "Symmetrische Vertraulichkeit."
+    },
+    {
+      "marker": "erhält der Lizenznehmer die Projektdateien kostenfrei in einem offenen Format",
+      "note": "Kostenfreier Datenexport."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende beenden",
+      "note": "Symmetrische Kündigung."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform zugelassen."
+    },
+    {
+      "marker": "innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Üblicher Zahlungstermin."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhaltung."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Lizenzgeber überlässt dem Lizenznehmer Musikstücke und Bildmaterial für Werbefilme",
+      "note": "Kein Detektor fuer fehlende Medien- und Laufzeitangaben."
+    }
+  ]
+}

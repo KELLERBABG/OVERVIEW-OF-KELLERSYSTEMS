@@ -1,0 +1,78 @@
+{
+  "slug": "marketing-022",
+  "source": "generated",
+  "domain": "Eventaktivierung Sponsoring, schweizerisches Recht",
+  "traps": [
+    {
+      "marker": "entfällt nur die Leistungspflicht des Auftragnehmers",
+      "expectedType": "force_majeure_asymmetry",
+      "note": "Einseitige Befreiung, Gegenleistung bleibt geschuldet."
+    },
+    {
+      "marker": "darf die Betreuung ohne Vorankündigung unterbrechen",
+      "expectedType": "service_suspension",
+      "note": "Leistungsunterbrechung ohne Ankündigung."
+    },
+    {
+      "marker": "Prüfungen finden ohne Terminabstimmung statt",
+      "expectedType": "unreasonable_audit",
+      "note": "Keine Terminabstimmung fuer Pruefungen."
+    },
+    {
+      "marker": "verwirkt eine Pauschale von 500 EUR",
+      "expectedType": "penalty",
+      "note": "Verwirkte Pauschale ohne Schadensnachweis."
+    },
+    {
+      "marker": "das Bühnenprogramm nach billigem Ermessen anpassen",
+      "expectedType": "unilateral_change",
+      "note": "Einseitige Anpassung nach billigem Ermessen."
+    },
+    {
+      "marker": "Gegenforderungen des Kunden bleiben bei der Abrechnung außer Betracht",
+      "expectedType": "setoff_restriction",
+      "note": "Gegenforderungen bleiben ausser Betracht."
+    },
+    {
+      "marker": "gelten als unwiderlegbarer Nachweis",
+      "expectedType": "audit_log_manipulation",
+      "note": "Aufzeichnungen des Anbieters als unwiderlegbarer Beweis."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien wahren über die wechselseitig ausgetauschten Informationen Stillschweigen",
+      "note": "Symmetrische Verschwiegenheit."
+    },
+    {
+      "marker": "erhält der Kunde die Besucherdaten kostenfrei in einem offenen Format",
+      "note": "Kostenfreier Datenexport."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende beenden",
+      "note": "Symmetrische Kündigung."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform zugelassen."
+    },
+    {
+      "marker": "innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Üblicher Zahlungstermin."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhaltung."
+    },
+    {
+      "marker": "Sind beide Parteien durch höhere Gewalt an der Leistung gehindert",
+      "note": "Beidseitige Befreiung, kein Finding."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Auftragnehmer konzipiert und betreut die Sponsoringaktivierung des Kunden am Seefest",
+      "note": "Kein Detektor fuer fehlende Abmeldung bei GEMA/SUISA."
+    }
+  ]
+}

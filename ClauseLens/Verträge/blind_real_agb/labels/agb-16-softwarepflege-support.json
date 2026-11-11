@@ -1,0 +1,90 @@
+{
+  "slug": "agb-16-softwarepflege-support",
+  "domain": "B2B Softwarepflege-, Wartungs- und Supportvertrag AGB",
+  "source": "Blind Real-AGB Benchmark 2026 (vor Engine-Lauf gelabelt)",
+  "traps": [
+    {
+      "marker": "ausschließlich „wie besehen“ (as is) im jeweiligen Entwicklungszustand überlassen",
+      "expectedType": "as_is_software_disclaimer",
+      "statutoryBasis": "§ 309 Nr. 8b BGB / § 307 Abs. 2 Nr. 1 BGB",
+      "note": "Vollständiger Ausschluss jeglicher Mängelgewährleistung durch Überlassung 'wie besehen' (as is) für entgeltliche Softwarepflege-Updates ist unwirksam."
+    },
+    {
+      "marker": "verfällt jedoch ersatzlos, wenn der Kunde den Antrag nicht innerhalb einer Ausschlussfrist von 48 Stunden",
+      "expectedType": "service_credit_forfeiture",
+      "statutoryBasis": "§ 307 Abs. 1 und 2 BGB",
+      "note": "Extrem kurze Ausschlussfrist von 48 Stunden und Verfall bei nicht binnen 3 Tagen installierten optionalen Updates entwerten den SLA-Anspruch vollständig."
+    },
+    {
+      "marker": "jederzeit ohne Vorankündigung und ohne konkreten Verdachtsgrund die Geschäftsräume",
+      "expectedType": "unreasonable_audit",
+      "statutoryBasis": "§ 307 Abs. 1 BGB / Art. 13 GG",
+      "note": "Anlassloses Zutritts- und Serverzugriffsrecht ohne Vorankündigung bei pauschaler Kostenabwälzung auf den Kunden benachteiligt diesen unangemessen."
+    },
+    {
+      "marker": "gehen sämtliche ausschließlichen, zeitlich und räumlich unbeschränkten Verwertungs- und Urheberrechte",
+      "expectedType": "feedback_ip_grab",
+      "statutoryBasis": "§ 307 Abs. 1 und 2 Nr. 1 BGB",
+      "note": "Unentgeltliche, exklusive Zwangsabtretung sämtlicher Rechte an Kunden-Feedback und Konzepten inklusive Patentanmeldungsrecht ist unangemessen."
+    },
+    {
+      "marker": "bereits dauerhaft gekaufte und vollständig bezahlte Hauptsoftware (Perpetual License) zum Ablauf",
+      "expectedType": "maintenance_conditional_shutdown",
+      "statutoryBasis": "§ 307 Abs. 2 Nr. 1 und 2 BGB",
+      "note": "Technische Deaktivierung und Sperrung einer bereits dauerhaft erworbenen Kauflizenz bei Beendigung des Pflegevertrages verletzt das Eigentums- und Nutzungsrecht des Kunden."
+    },
+    {
+      "marker": "verlängert sich nach Ablauf der Mindestlaufzeit jeweils automatisch um weitere 36 Monate",
+      "expectedType": "auto_renewal",
+      "statutoryBasis": "§ 309 Nr. 9 BGB / § 307 BGB",
+      "note": "Automatische Vertragsverlängerung um jeweils 36 Monate mit neunmonatiger Kündigungsfrist führt auch im B2B-Verkehr zu einer unangemessenen Knebelung."
+    },
+    {
+      "marker": "per eingeschriebenem Brief mit Rückschein (Einschreiben/Rückschein) zugestellt werden",
+      "expectedType": "written_form_trap",
+      "statutoryBasis": "§ 309 Nr. 13 BGB / § 307 BGB",
+      "note": "Qualifizierte Schriftformklausel mit Zwang zu eigenhändiger Unterschrift und Einschreiben mit Rückschein erschwert die Kündigung unzulässig."
+    },
+    {
+      "marker": "für einen Zeitraum von fünf Jahren nach dessen Beendigung keine Mitarbeiter",
+      "expectedType": "non_solicitation",
+      "statutoryBasis": "§ 307 Abs. 1 BGB / § 74a HGB Rechtsgedanke",
+      "note": "Fünfjähriges nachvertragliches Abwerbe- und Einstellungsverbot (auch bei Eigenbewerbung des Mitarbeiters) mit hoher Vertragsstrafe ist unwirksam."
+    },
+    {
+      "marker": "die dem wirtschaftlichen Interesse des Anbieters am nächsten kommt (geltungserhaltende Reduktion)",
+      "expectedType": "salvatorische_klausel_falle",
+      "statutoryBasis": "§ 306 Abs. 2 BGB / § 307 Abs. 1 S. 2 BGB",
+      "note": "Geltungserhaltende Reduktion zugunsten der einseitigen wirtschaftlichen Interessen des Verwenders verstößt gegen § 306 Abs. 2 BGB."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Servicezeiten von Montag bis Freitag zwischen 08:00 Uhr und 18:00 Uhr",
+      "note": "Klare und transparente Definition des Leistungsumfangs und der Servicezeiten."
+    },
+    {
+      "marker": "kann der Kunde mit unbestrittenen oder rechtskräftig festgestellten Gegenforderungen aufrechnen",
+      "note": "Gesetzeskonforme Aufrechnungsklausel für unbestrittene und rechtskräftig festgestellte Forderungen."
+    },
+    {
+      "marker": "haftet unbeschränkt bei Vorsatz und grober Fahrlässigkeit sowie bei schuldhafter Verletzung",
+      "note": "Gesetzeskonforme Haftungsregelung für Vorsatz, grobe Fahrlässigkeit und Personenschäden."
+    },
+    {
+      "marker": "Bei leicht fahrlässiger Verletzung wesentlicher Vertragspflichten (Kardinalpflichten) ist die Haftung",
+      "note": "Zulässige Begrenzung auf den vertragstypischen, vorhersehbaren Schaden bei leichter Fahrlässigkeit."
+    },
+    {
+      "marker": "schließen die Parteien eine Vereinbarung zur Auftragsverarbeitung gemäß Art. 28 DSGVO",
+      "note": "Rechtskonforme Regelung zur datenschutzrechtlichen Auftragsverarbeitung."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Unabhängig vom Ausgang eines Rechtsstreits oder eines gerichtlichen Vergleichs verpflichtet sich der Kunde",
+      "statutoryBasis": "§ 91 ZPO / § 307 Abs. 2 Nr. 1 BGB",
+      "note": "Einseitige Prozess- und Anwaltskostenabwälzung unabhängig vom Obsiegen oder Unterliegen verstößt gegen das gesetzliche Leitbild des § 91 ZPO und erschwert den Rechtszugang unzulässig."
+    }
+  ]
+}

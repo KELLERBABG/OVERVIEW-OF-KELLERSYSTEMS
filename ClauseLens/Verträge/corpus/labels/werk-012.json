@@ -1,0 +1,88 @@
+{
+  "slug": "werk-012",
+  "source": "generated",
+  "domain": "Legal Tech, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Nach Auslaufen des Vertrages enthält sich der Kunde für achtzehn Monate jeder Wettbewerbstätigkeit;",
+      "expectedType": "non_compete",
+      "note": "Verifizierte Klausel im Bereich non_compete."
+    },
+    {
+      "marker": "Die Ansprüche des Kunden verwirken mit Ablauf von vierundzwanzig Monaten.",
+      "expectedType": "statute_of_limitations",
+      "note": "Verifizierte Klausel im Bereich statute_of_limitations."
+    },
+    {
+      "marker": "Für die Herausgabe der Daten wird eine Gebühr von 2.500 EUR berechnet.",
+      "expectedType": "data_lockin",
+      "note": "Verifizierte Klausel im Bereich data_lockin."
+    },
+    {
+      "marker": "Es ist untersagt, Mitarbeiter der anderen Partei abzuwerben.",
+      "expectedType": "non_solicitation",
+      "note": "Verifizierte Klausel im Bereich non_solicitation."
+    },
+    {
+      "marker": "Das Material bleibt Eigentum des Anbieters, bis der Kunde alle Verbindlichkeiten aus der Geschäftsbe",
+      "expectedType": "extended_retention_of_title",
+      "note": "Verifizierte Klausel im Bereich extended_retention_of_title."
+    },
+    {
+      "marker": "Die Geheimhaltungspflicht trifft nur den Kunden.",
+      "expectedType": "asymmetric_confidentiality",
+      "note": "Verifizierte Klausel im Bereich asymmetric_confidentiality."
+    },
+    {
+      "marker": "Auf den tatsächlichen Abruf kommt es nicht an.",
+      "expectedType": "fictitious_receipt",
+      "note": "Verifizierte Klausel im Bereich fictitious_receipt."
+    },
+    {
+      "marker": "Der Zinssatz beträgt zwölf Prozent jährlich.",
+      "expectedType": "default_interest",
+      "note": "Verifizierte Klausel im Bereich default_interest."
+    },
+    {
+      "marker": "Bei höherer Gewalt ist der Anbieter von der Leistungspflicht befreit, während die Zahlungspflicht de",
+      "expectedType": "force_majeure_asymmetry",
+      "note": "Verifizierte Klausel im Bereich force_majeure_asymmetry."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Prüfungen erfolgen nur bei konkretem Anlass und nach Ankündigung mit einer Frist von dreißig Tagen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Dieser Vertrag unterliegt deutschem Recht.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Beide Parteien können mit unbestrittenen Forderungen aufrechnen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Alle Fristen werden in Kalendertagen gerechnet.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Für Mängel während der Gewährleistung leistet der Anbieter kostenfrei Nacherfüllung.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Der Anbieter meldet Sicherheitsvorfälle unverzüglich an den Kunden.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Vertragsparteien informieren sich unverzüglich über Störungen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Kunde erhält Zugang zu einer Testumgebung",
+      "note": "Harmlose Leistungszusage."
+    }
+  ]
+}

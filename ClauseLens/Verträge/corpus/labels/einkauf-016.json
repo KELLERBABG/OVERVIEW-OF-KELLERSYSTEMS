@@ -1,0 +1,87 @@
+{
+  "slug": "einkauf-016",
+  "source": "generated",
+  "domain": "Einkauf und Lieferantenrahmenvertrag, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Die Überlassung der Steuerungssoftware erfolgt im Ist-Zustand",
+      "expectedType": "as_is_software_disclaimer",
+      "note": "Gewaehrleistungsausschluss als Ist-Zustand"
+    },
+    {
+      "marker": "unwiderrufliches, übertragbares Nutzungsrecht an allen Prüfdaten",
+      "expectedType": "data_grant",
+      "note": "Weitreichende Rechteeinraeumung"
+    },
+    {
+      "marker": "Die angegebene Verfügbarkeit von 99,5 Prozent ist eine bloße Zielgröße",
+      "expectedType": "unverbindliche_sla_falle",
+      "note": "Weichmacher fuer SLA"
+    },
+    {
+      "marker": "verfällt der Anspruch auf die vereinbarte Gutschrift",
+      "expectedType": "service_credit_forfeiture",
+      "note": "Verfall der Gutschrift"
+    },
+    {
+      "marker": "im Kundenportal hinterlegten Qualitätsrichtlinien in der dort jeweils abrufbaren Fassung",
+      "expectedType": "dynamic_url_referral",
+      "note": "Dynamische Bezugnahme auf Portalinhalt"
+    },
+    {
+      "marker": "erfolgt außerhalb der Europäischen Union, unter anderem in Indien",
+      "expectedType": "international_data_processing",
+      "note": "Drittlandverarbeitung ohne Garantien"
+    },
+    {
+      "marker": "Zuvor kommunizierte Leistungsbeschreibungen treten mit Unterzeichnung",
+      "expectedType": "entire_agreement",
+      "note": "Vollstaendigkeitsklausel"
+    },
+    {
+      "marker": "Tritt Zahlungsunfähigkeit ein, endet das Vertragsverhältnis ohne weiteres",
+      "expectedType": "insolvency_termination",
+      "note": "Automatische Beendigung bei Insolvenz"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Lieferant stellt die Prüfprotokolle in Textform bereit",
+      "note": "Bereitstellung in Textform"
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag einvernehmlich beenden",
+      "note": "Einvernehmliche Beendigung"
+    },
+    {
+      "marker": "Rechnungen sind innerhalb von dreißig Tagen ohne Abzug zu begleichen",
+      "note": "Marktueblicher Zahlungstermin"
+    },
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Zulaessige Haftungsklausel"
+    },
+    {
+      "marker": "Beide Parteien behandeln die technischen Unterlagen der anderen Seite vertraulich",
+      "note": "Wechselseitige Vertraulichkeit"
+    },
+    {
+      "marker": "Es gilt das Recht der Bundesrepublik Deutschland",
+      "note": "Neutrale Rechtswahl"
+    },
+    {
+      "marker": "Änderungen dieses Vertrags bedürfen der Zustimmung beider Parteien in Textform",
+      "note": "Symmetrische Aenderungsklausel"
+    },
+    {
+      "marker": "Der Kunde erhält seine Bestandsdaten bei Vertragsende unentgeltlich in einem gängigen Format",
+      "note": "Kostenfreier Datenexport"
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Die Parteien benennen jeweils einen technischen Ansprechpartner",
+      "note": "Benennung von Ansprechpartnern ohne Pflichten, kein Detektor"
+    }
+  ]
+}

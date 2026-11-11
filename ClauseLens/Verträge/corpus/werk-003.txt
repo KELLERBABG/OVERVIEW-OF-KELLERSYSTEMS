@@ -1,0 +1,89 @@
+Projektvertrag über die Migration der Kernsysteme der Baltea Handels AG
+
+zwischen der Vektor Migrationsdienste GmbH, Seefeldstraße 21, 8008 Zürich (nachfolgend Anbieter), und der Baltea Handels AG, Freilagerplatz 3, 4142 Münchenstein (nachfolgend Kunde).
+
+Präambel
+Der Kunde migriert seine Kernsysteme in eine neue Betriebsumgebung. Der Anbieter übernimmt Planung, Migration und Abnahme der Zielsysteme. Die Parteien vereinbaren Folgendes.
+
+§ 1 Gegenstand
+Gegenstand ist die Migration der Kernsysteme gemäß Anlage 1 einschließlich Datenübernahme und Schnittstellendokumentation.
+
+§ 2 Vorgehen
+(1) Die Migration erfolgt in drei Wellen, die in Anlage 2 beschrieben sind.
+
+(2) Der Kunde benennt einen Projektleiter als Ansprechpartner.
+
+(3) Die Parteien arbeiten bei der Fehleranalyse eng zusammen.
+
+§ 3 Daten
+(1) Kundendaten dürfen in ein Drittland übermittelt werden, sofern der Anbieter dies für den Betrieb für erforderlich hält.
+
+(2) Die Datenübertragung erfolgt verschlüsselt über eine gesicherte Verbindung.
+
+§ 4 Drittleistungen
+(1) Der Anbieter ist berechtigt, zur Erfüllung Subunternehmer einzusetzen, ohne dies vorher anzuzeigen.
+
+(2) Der Anbieter zeigt den Einsatz von Unterauftragnehmern vierzehn Tage vorher an.
+
+§ 5 Vertragsübernahme
+(1) Die Übertragung von Rechten und Pflichten aus diesem Vertrag ist ohne Zustimmung des Anbieters unwirksam.
+
+(2) Die Parteien behandeln die Vertragsverhandlung vertraulich.
+
+§ 6 Abgaben
+(1) Sämtliche Steuern und Abgaben aus diesem Vertrag trägt der Kunde.
+
+(2) Der Anbieter erteilt dem Kunden die zur Abgabe erforderlichen Unterlagen.
+
+§ 7 Abnahme und Fristen
+(1) Die Abnahme erfolgt je Welle durch ein Abnahmeprotokoll.
+
+(2) Ersatzansprüche des Kunden erlöschen zwölf Monate nach der Abnahme.
+
+(3) Für Mängel während der Gewährleistung leistet der Anbieter kostenfrei Nacherfüllung.
+
+§ 8 Abrechnung
+(1) Gelingt dem Kunden der Gegenbeweis nicht, gilt die Abrechnung als richtig.
+
+(2) Die Vergütung ist innerhalb von dreißig Tagen nach Rechnungseingang fällig.
+
+§ 9 Mitteilungen
+(1) Die Mitteilung gilt unabhängig vom tatsächlichen Zugang als bewirkt.
+
+(2) Die Parteien informieren sich unverzüglich über Störungen.
+
+§ 10 Bedingungen
+(1) Es gelten die auf der Website des Anbieters veröffentlichten Nutzungsbedingungen in ihrer jeweils gültigen Fassung.
+
+(2) Ergänzend gelten die jeweils aktuellen Supportbedingungen, abrufbar unter https://kernzeit.example/support.
+
+§ 11 Freistellung
+(1) The customer shall indemnify and hold harmless the provider against any third party claims.
+
+(2) Der Anbieter unterhält eine Berufshaftpflichtversicherung mit einer Deckungssumme von zwei Millionen EUR.
+
+§ 12 Haftung
+(1) Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt.
+
+(2) Der Anbieter führt die Arbeiten mit der vereinbarten Sorgfalt aus.
+
+§ 13 Beendigung
+(1) Beide Parteien können den Vertrag mit einer Frist von drei Monaten kündigen.
+
+(2) Die Kündigung aus wichtigem Grund bleibt beiden Parteien unbenommen.
+
+§ 14 Dokumentation
+(1) Der Kunde erhält eine Dokumentation der Schnittstellen.
+
+(2) Der Anbieter übergibt den Quellcode nach vollständiger Zahlung der Vergütung.
+
+§ 15 Schlussbestimmungen
+(1) Nebenabreden bestehen nicht.
+
+(2) Änderungen dieses Vertrages können in Textform vereinbart werden.
+
+Zürich, den 8. Mai 2026
+
+Vektor Migrationsdienste GmbH
+
+Baltea Handels AG

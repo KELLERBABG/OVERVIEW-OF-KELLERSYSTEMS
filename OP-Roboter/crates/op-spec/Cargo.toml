@@ -1,0 +1,12 @@
+[package]
+name = "op-spec"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "Automated medical specification generation for certification reference"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = "1"

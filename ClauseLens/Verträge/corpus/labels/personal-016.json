@@ -1,0 +1,79 @@
+{
+  "slug": "personal-016",
+  "source": "generated",
+  "domain": "Freelance und Beratung",
+  "traps": [
+    {
+      "marker": "Der Anbieter ist berechtigt, S​ubunternehmer ohne Zustimmung des Kunden einzusetzen",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "Subunternehmer ohne Zustimmung des Kunden"
+    },
+    {
+      "marker": "Der Anbieter bemüht sich, eine Verfügbarkeit von 99 Prozent zu erreichen",
+      "expectedType": "unverbindliche_sla_falle",
+      "note": "Verfügbarkeit nur als Bemühen ohne Rechtsanspruch"
+    },
+    {
+      "marker": "Der Kunde räumt dem Anbieter ein unwiderrufliches Nutzungsrecht",
+      "expectedType": "data_grant",
+      "note": "unwiderrufliches Nutzungsrecht zu Trainingszwecken"
+    },
+    {
+      "marker": "Die personenbezogenen Daten werden außerhalb der Europäischen Union verarbeitet",
+      "expectedType": "international_data_processing",
+      "note": "Verarbeitung personenbezogener Daten außerhalb der EU"
+    },
+    {
+      "marker": "Ein maschinenlesbarer Export der Daten ist nicht Bestandteil",
+      "expectedType": "data_lockin",
+      "note": "kein maschinenlesbarer Export"
+    },
+    {
+      "marker": "Die Software wird wie besehen bereitgestellt",
+      "expectedType": "as_is_software_disclaimer",
+      "note": "Software wie besehen ohne Gewährleistung"
+    },
+    {
+      "marker": "Eine Gutschrift entfällt, wenn der Kunde kritische Aktualisierungen",
+      "expectedType": "service_credit_forfeiture",
+      "note": "Gutschrift entfällt bei versäumten Aktualisierungen"
+    },
+    {
+      "marker": "Feedback und Verbesserungsvorschläge gehen unentgeltlich in das Eigentum des Anbieters über",
+      "expectedType": "feedback_ip_grab",
+      "note": "Feedback geht unentgeltlich in das Eigentum des Anbieters über"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Leistungen werden nach dem Stand der Technik erbracht",
+      "note": "Leistung nach dem Stand der Technik"
+    },
+    {
+      "marker": "Die Parteien benennen je einen Ansprechpartner",
+      "note": "wechselseitige Ansprechpartner"
+    },
+    {
+      "marker": "Die Vergütung wird jeweils zum Monatsende fällig",
+      "note": "Fälligkeit zum Monatsende"
+    },
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "wechselseitige Vertraulichkeit"
+    },
+    {
+      "marker": "Die Anlagen 1 und 2 sind Bestandteil dieses Vertrages",
+      "note": "Anlagen als Vertragsbestandteil"
+    },
+    {
+      "marker": "Der Anbieter dokumentiert die Ergebnisse in einem Projektbericht",
+      "note": "Dokumentation in einem Projektbericht"
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Rechnungen sind innerhalb von vierzehn Tagen ohne Abzug zu zahlen",
+      "note": "Zahlungsziel ohne Verzugszinsregelung, vom Detektor nicht erfasst"
+    }
+  ]
+}

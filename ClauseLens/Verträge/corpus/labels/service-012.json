@@ -1,0 +1,92 @@
+{
+  "slug": "service-012",
+  "source": "generated",
+  "domain": "Reise- und Veranstaltungsvertrag",
+  "traps": [
+    {
+      "marker": "Innerhalb von sechsunddreißig Monaten nach Beendigung darf der Kunde weder Mitarbeiter noch",
+      "expectedType": "non_solicitation",
+      "note": "Legally abusive (§ 307 BGB); engine hit; technique: number words and scope extended to intermediaries"
+    },
+    {
+      "marker": "Der Anbieter darf die Zusammenarbeit beenden, wenn er sie für nicht mehr wirtschaftlich hält;",
+      "expectedType": "unilateral_convenience_termination",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: soft paraphrase: economic discretion and no compensation"
+    },
+    {
+      "marker": "Vertraulichkeit und Wettbewerbsschutz bestehen noch fünfzehn Jahre nach dem letzten Leistungstag",
+      "expectedType": "excessive_survival",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: survival in number words for two obligation groups"
+    },
+    {
+      "marker": "Steigen die Kosten des Anbieters, gibt er die Erhöhung vollumfänglich weiter; eine Obergrenze ist",
+      "expectedType": "price_escalation",
+      "note": "GAP: engine miss. Legally abusive (§ 309 Nr. 1 BGB); technique: paraphrase: full pass-through without any cap"
+    },
+    {
+      "marker": "Unwirksame Klauseln werden durch eine Regelung ersetzt, die der Anbieter für wirtschaftlich",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "GAP: engine miss. Legally abusive (§ 306 BGB); technique: soft paraphrase of the replacement rule"
+    },
+    {
+      "marker": "Das Eigentum an den Geräten bleibt beim Anbieter, bis auch Forderungen verbundener Unternehmen",
+      "expectedType": "extended_retention_of_title",
+      "note": "GAP: engine miss. Legally abusive (§ 449 Abs. 3 BGB); technique: paraphrase covering group claims"
+    },
+    {
+      "marker": "Der Anbieter setzt für die Betreuung eigene Dienstleister ein, ohne deren Auswahl dem Kunden",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "GAP: engine miss. Legally abusive (§ 307 BGB); technique: paraphrase: unnamed service providers, no information duty"
+    },
+    {
+      "marker": "Der Kunde verpflichtet sich, für 24 Monate keine Mitarbeiter des Anbieters abzuwerben.",
+      "expectedType": "non_solicitation",
+      "note": "Legally abusive (§ 307 BGB); engine hit; technique: literal twenty-four month non-poach"
+    },
+    {
+      "marker": "Der Anbieter kann den Vertrag jederzeit ohne Angabe von Gründen mit einer Frist von zwei Wochen",
+      "expectedType": "unilateral_convenience_termination",
+      "note": "Legally abusive (§ 307 BGB); engine hit; technique: literal termination at any time without reason"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Am Ende der Laufzeit stellt der Anbieter alle Kundendaten in einem gängigen Format kostenfrei zur",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Jede Partei kann den Vertrag aus wichtigem Grund ohne Einhaltung einer Frist kündigen.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Der Anbieter unterhält eine Betriebshaftpflichtversicherung mit einer Deckungssumme von fünf",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Der Kunde erhält auf Wunsch eine Kopie der über ihn gespeicherten Daten.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Preisanpassungen erfolgen nur mit Zustimmung des Kunden oder bei Änderung gesetzlicher Abgaben.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Der Anbieter teilt beabsichtigte Preisanpassungen mindestens sechs Wochen vorher mit.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    },
+    {
+      "marker": "Die Parteien benennen jeweils einen Ansprechpartner und informieren unverzüglich über einen Wechsel.",
+      "note": "Hard false-positive control: legally correct clause that must produce no finding."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Über die Verlängerung notwendiger Zertifizierungen entscheidet der Anbieter; die dadurch",
+      "note": "Deceptive clause without a matching detector type (coverage gap)."
+    },
+    {
+      "marker": "Der Anbieter darf eingesetzte Fachkräfte nach Anlage 5 austauschen, ohne dass der Kunde hiergegen",
+      "note": "Deceptive clause without a matching detector type (coverage gap)."
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "slug": "immobilien-027",
+  "source": "generated",
+  "domain": "Bautraeger",
+  "traps": [
+    {
+      "marker": "Konventionalstrafe von 200 EUR je Werktag",
+      "expectedType": "penalty",
+      "note": "Konventionalstrafe ohne Nachweisvorbehalt."
+    },
+    {
+      "marker": "die Kaufpreisraten sind dennoch zu leisten",
+      "expectedType": "force_majeure_asymmetry",
+      "note": "GAP: Zahlungspflicht trotz vollstaendiger Befreiung der Bautraegerin."
+    },
+    {
+      "marker": "verwirken, wenn sie nicht innerhalb von sechs Monaten geltend gemacht werden",
+      "expectedType": "statute_of_limitations",
+      "note": "Verwirkung ohne Geltendmachung binnen sechs Monaten."
+    },
+    {
+      "marker": "Weitergehende Ansprüche der Erwerber sind mit der Verbesserung abgegolten",
+      "expectedType": "liability",
+      "note": "GAP: Nachbesserung als ausschliessliche Kompensation."
+    },
+    {
+      "marker": "nennt die Erwerber in Verkaufsunterlagen als Referenzkunden",
+      "expectedType": "marketing_reference",
+      "note": "Referenznennung ohne gesonderte Zustimmung."
+    },
+    {
+      "marker": "mit Übernahme der Schlüssel als mangelfrei übernommen",
+      "expectedType": "deemed_acceptance",
+      "note": "GAP: Mangelfreiheitsfiktion bei Schluesseluebernahme."
+    },
+    {
+      "marker": "tritt mit Unterzeichnung dieses Vertrages außer Kraft",
+      "expectedType": "entire_agreement",
+      "note": "GAP: Baubeschreibung verliert mit Unterzeichnung ihre Gueltigkeit."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "Symmetrische Vertraulichkeit."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhalt."
+    },
+    {
+      "marker": "Zahlungen sind innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Zahlungsfrist."
+    },
+    {
+      "marker": "Änderungen des Leistungsumfangs bedürfen der Abstimmung beider Parteien",
+      "note": "Einvernehmliche Aenderung."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende beenden",
+      "note": "Symmetrisches Kuendigungsrecht."
+    },
+    {
+      "marker": "Nach Vertragsende erhält der Kunde die Vertragsdaten kostenfrei in einem offenen Format",
+      "note": "Kostenfreier Datenexport."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Wohnanlage Seeblick mit 18 Eigentumswohnungen",
+      "note": "Kein Detektor fuer Ratenplan nach Bautraegervertragsgesetz oder Fertigstellungsgarantie."
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+[package]
+name = "smart-matter-bootloader"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Bootloader for Smart Matter firmware updates over the mesh network"
+
+[dependencies]
+# Memory-map constants (APP_START / APP_SIZE / META_START) come from core.
+smart-matter-core = { path = "../core", default-features = false }
+# SHA-256 for staged-image validation (no_std)
+sha2 = { version = "0.10", default-features = false }
+heapless = { version = "0.8" }
+
+# --- Embedded target (feature "embedded") -----------------------------------
+cortex-m = { version = "0.7", optional = true }
+cortex-m-rt = { version = "0.7", optional = true }
+panic-halt = { version = "0.2", optional = true }
+stm32g0xx-hal = { version = "0.2", features = ["stm32g031"], optional = true }
+
+[features]
+# `host` (default): boot logic runs on the desktop against a simulated
+# flash/staged image — used for tests and demos.
+default = ["host"]
+host = ["smart-matter-core/std"]
+# `embedded`: Cortex-M0+ firmware (`--no-default-features --features embedded
+# --target thumbv6m-none-eabi`).
+embedded = [
+    "dep:cortex-m",
+    "dep:cortex-m-rt",
+    "dep:panic-halt",
+    "dep:stm32g0xx-hal",
+]

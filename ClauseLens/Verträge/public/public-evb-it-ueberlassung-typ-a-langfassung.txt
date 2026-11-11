@@ -1,0 +1,81 @@
+Vertragsnummer/Kennung Auftraggeber _______ Vertragsnummer/Kennung Auftragnehmer _______
+
+Die mit * gekennzeichneten Begriffe sind am Ende der EVB-IT Überlassung-AGB (Typ A) definiert. Version XX vom XX
+
+Die mit * gekennzeichneten Begriffe sind am Ende der EVB-IT Überlassung-AGB (Typ A) definiert. Version XX vom XX auf Dauer
+
+Vertragsnummer/Kennung Auftraggeber:
+
+- im Folgenden „Auftraggeber“ genannt -
+
+Vertragsnummer/Kennung Auftragnehmer:
+
+- im Folgenden „Auftragnehmer“ genannt - wird folgender Vertrag geschlossen:
+
+1 Gegenstand, Vergütung und Bestandteile des Vertrages
+
+1.1 Vertragsgegenstand Gegenstand des EVB-IT Überlassungsvertrages ist die Überlassung von Standardsoftware* auf Dauer (Verkauf).
+
+1.2 Vertragsbestandteile Es gelten als Vertragsbestandteile:
+
+1.2.1 dieser Vertragstext bestehend aus den Seiten 1 bis und den folgenden Anlagen: Anlagen
+
+Anlage Nr. Bezeichnung Datum/ Version Anzahl Seiten
+
+Es gelten die Anlagen in folgender Rangfolge .
+
+1.2.2 die Ergänzenden Vertragsbedingungen für die Überlassung von Standardsoftware* auf Dauer (EVB-IT Überlassung-AGB (Typ A)) in der bei Versand der Vergabeunterlagen geltenden Fassung, einschließlich der Muster 1 und 2
+
+1.2.3 sowie nachrangig die Allgemeinen Vertragsbedingungen für die Ausführung von Leistungen (VOL/B) in der bei Versand der Vergabeunterlagen geltenden Fassung. Die EVB-IT Überlassung-AGB (Typ A) stehen unter http://www.cio.bund.de und die VOL/B unter http://www.bmwi.de zur Einsichtnahme bereit. Soweit Allgemeine Geschäftsbedingungen im Sinne von § 305 BGB in den hier referenzierten Doku menten des Auftrag- nehmers bzw. den sonstigen vom Auftragne hmer beigefügten Anlagen zu diesem Vertrag Rege lungen in den EVB -IT Überlassung-AGB (Typ A) widersprechen, sind sie ausgeschlossen, soweit nicht eine anderweitige Vereinbarung in den EVB-IT Überlassung -AGB (Typ A) zugelassen ist. Eine Einbeziehung von Liz enzbedingungen an Standardsoftware* erfolgt ausschließlich nach Maßgabe der Nummer 2.1, d.h. sie gelten ausschließlich hinsichtlich der Nutzungsrech tsre- gelungen und ins besondere in der dort vereinbarten Rangfolge der Regelungen, unabhängig davon, ob und in welcher Rangfolge diese als Anlage in der Tabelle aus Nr. 1.2.1 aufgelistet werden. Weitere Geschäftsbedingungen sind ausgeschlossen, soweit in diesem Vertrag nichts anderes vereinbart ist. Für alle in diesem Vertrag genannten Beträge gilt einheitlich der Euro als Währung. Die vereinbarten Vergütungen ve r- stehen sich zuzüglich der gesetzlichen Umsatzsteuer, soweit Umsatzsteuerpflicht besteht.
+
+2 Dauerhafte Überlassung von Standardsoftware* (Verkauf) Dem Auftraggeber wird vom Auftragnehmer nachstehend aufgeführte Standardsoftware* überlassen:
+
+Lfd. Nr. Produktbezeichnung und -beschreibung, Produkt-Nr.(inklusive Lizenzart) Men- ge EXP1 Anzahl Siche- rungs- kopien Ver- sion2 Lieferter- min Abweichende Nut- zungsrechte3 gemäß
+
+Einzel- preis Gesamt- preis
+
+1 US = Standardsoftware* unterliegt US-amerikanischen Exportkontrollvorschriften EU = Standardsoftware* unterliegt EU-Exportkontrollvorschriften DT = Standardsoftware* unterliegt deutschen Exportkontrollvorschriften S = Standardsoftware* unterliegt Exportkontrollvorschriften
+
+2 A = Überlassung der im Lieferzeitpunkt aktuellen Version, anderenfalls Versionsnummer eintragen
+
+3 Zu den abweichenden Nutzungsrechten in Spalte 8. Die hier bezeichnete Anlage ist entweder eine Nutzung s- rechtsmatrix gemäß Muster 2 oder eine vom Auftraggeber selbst erstellte Rechteregelung , keinesfalls bezieht sie sich aber auf Lizenzbedingungen des Herstellers der Standardsoftware*. In der Nutzungsrechtsmatrix erhält der Auftragnehmer im Rahmen der Vorgaben des Auftraggebers die Möglichkeit, von Ziffer 3.1 EVB-IT Überlas- sung-AGB (Typ A) abweichende Nutzungsrechte an der Standardsoft ware* einzuräumen. In der vom Auftra g- geber selbst erstellten Rechteregelung (in der Regel die Leistungsbeschreibung) legt der Auftraggeber den Mindestumfang an Rechten fest, den er an der Standardsoftware * erwerben will (z.B. Volumenlizenz, keine OEM-Lizenz etc. ), wenn er die Nutzungsrechtsmatrix nicht nutzt. Die Nutzungsrechtsregelungen aus den Li- zenzbedingungen für die jeweilige Standardsoftware* gelten jeweils nachrangig (siehe Nummer 2.1). Bei abwei- chenden Nutzungsrechten sind weitere Einträge in Nummer 2.1 erforderlich.
+
+2.1 Abweichende Nutzungsrechte Es gelten bezüglich der Nutzungsrechte an der jeweiligen Standardsoftware* Nummer 2 lfd. Nr. in der folgenden Rangfolge:  Nutzungsrechtsmatrizen oder sonstige Rechteregelungen des Auftraggebers (gemäß Nummer 2, Spalte 8),  Ziffer 3.1 EVB-IT Überlassung-AGB (Typ A),  die Nutzungsrechtsregelungen aus den jeweiligen Lizenzbedingungen in Anlage Nr. . Die jeweiligen Nutzungsrechtsregelungen gelten aber nur, soweit sie den sonstigen vertraglichen Regelungen weder entgegenstehen noch diese beschränken.
+
+2.2 Art der Lieferung der Standardsoftware* Der Auftragnehmer liefert dem Auftraggeber die Standardsoftware* wie folgt: gemäß Tabelle in Nummer 2 lfd. Nr. auf Datenträger: Typ: , Kennzeichnung: . gemäß Tabelle in Nummer 2 lfd. Nr. in folgender Form: (z.B. durch Bereitstellung zum Down- load*). gemäß Tabelle in Nummer 2 lfd. Nr. , wie in Anlage Nr. beschrieben.
+
+3 Fälligkeit und Zahlung Die Überlassungsvergütung ist abweichend von Ziffer 4.1 EVB-IT Überlassung-AGB (Typ A) fällig Tage nach . und ist abweichend von Ziffer4.2 EVB-IT Überlassung-AGB (Typ A) nicht 30 Tage sondern Tage nach Fälligkeit und Zugang einer Rechnung zu zahlen.
+
+4 Rechnungsadresse Rechnungen sind an folgende Anschrift zu richten:
+
+5 Ansprechpartner Ansprechpartner des Auftraggebers (Name, Adresse, Abteilung, Telefon, Fax, E-Mail):
+
+Ansprechpartner des Auftragnehmers (Name, Adresse, Abteilung, Telefon, Fax, E-Mail):
+
+6 Kopier- oder Nutzungssperre*/besondere technische Merkmale Die Leistungen des Auftragnehmers weisen keine Kopier- oder Nutzungssperren* auf. Die Leistungen des Auftragnehmers weisen folgende Kopier- oder Nutzungssperren* auf: . Näheres siehe
+
+Anlage Nr. . Die Leistungen des Auftragnehmers weisen folgende technische Merkmale nicht auf: . Näheres siehe
+
+7 Mängelhaftung bei Überlassung der Standardsoftware* (Gewährleistung)
+
+7.1 Verjährungsfrist für Mängelansprüche (Gewährleistungsfrist) Anstelle der in Ziffer 7.2 EVB-IT Überlassung-AGB (Typ A) geregelten zwölfmonatigen Verjährungsfrist für Mängelansprüche tritt die gesetzliche Frist von 24 Monaten. Anstelle der in Ziffer 7.2 EVB-IT Überlassung-AGB (Typ A) geregelten zwölfmonatigen Verjährungsfrist für Mängelansprüche tritt die eine Frist von Monaten. Anstelle der in Ziffer 7.2 EVB-IT Überlassung-AGB (Typ A) geregelten zwölfmonatigen Frist für den Rücktritt bezogen auf die Standardsoftware* tritt eine monatige Frist. Die Verjährungsfristen für Sach- und Rechtsmängel ergeben sich aus Anlage Nr. .
+
+7.2 Mängelmeldung Die Mängelmeldung erfolgt abweichend von Ziffer 7.5 EVB-IT Überlassung-AGB (Typ A) gemäß Anlage Nr. . Die Mängelmeldung erfolgt an (z.B. Postanschrift, Telefon, Fax, E-Mail oder Anlage Nr.):
+
+8 Hotline Der Auftragnehmer gewährt eine telefonische Unterstützung (Hotline) bis zum Ablauf der Verjährungsfrist für Mängelansprüche (Gewährleistungsfrist) zu den Zeiten und gemäß den Bedingungen aus Anlage Nr. in deutscher Sprache. zu den in Anlage Nr. festgelegten Zeiten in englischer Sprache.
+
+9 Abweichende Haftungsregelungen / Haftung für entgangenen Gewinn
+
+10 Abweichende Haftungsregelungen / Haftung für entgangenen Gewinn Abweichend von Ziffer 9.2 EVB-IT Überlassung-AGB (Typ A) haftet der Auftragnehmer bei leicht fahrlässig verursachtem Verzug in Höhe von maximal 100 % der Haftungsobergrenze gemäß Ziffer 9.1 EVB-IT Überlas- sung-AGB (Typ A). Abweichend von Ziffer 9.4 EVB-IT Überlassung-AGB (Typ A) haftet der Auftragnehmer auch für entgangenen Gewinn. Abweichend von Ziffer 9.1 - 9.5 EVB-IT Überlassung-AGB (Typ A) gelten für die Haftung die Regelungen ge- mäß Anlage Nr. .
+
+11 Vertragsstrafen bei Überlassung der Standardsoftware* Ergänzend zu bzw. abweichend von Ziffer 5.3 EVB-IT Überlassung-AGB (Typ A) wird die Vertragsstrafenrege- lung gemäß Anlage Nr. vereinbart. Für jeden Verstoß gegen Ziffer 2.3 der EVB-IT Überlassung-AGB (Typ A) wird eine Vertragsstrafe in Höhe von Euro vereinbart. Dies gilt nicht, wenn der Auftragnehmer den Verstoß nicht zu vertreten hat.
+
+12 Datenschutz, Geheimhaltung und Sicherheit Ergänzend zu bzw. abweichend von Ziffer 10 EVB-IT Überlassung-AGB (Typ A) ergeben sich Regelungen zur Geheimhaltung bzw. zur Sicherheit aus Anlage Nr. . Die Parteien treffen Vereinbarungen zum Datenschutz gemäß Anlage Nr. .
+
+13 Erfüllungs- und Lieferort Erfüllungsort ist . Lieferort (falls abweichend vom Erfüllungsort) ist .
+
+14 Sonstige Vereinbarungen Sonstige Vereinbarungen: Die sonstigen Vereinbarungen ergeben sich aus Anlage Nr. .
+
+, , Ort Datum Ort Datum Auftragnehmer Auftraggeber
+
+Unterschrift Auftragnehmer (Name in Druckschrift) Unterschrift Auftraggeber (Name in Druckschrift)

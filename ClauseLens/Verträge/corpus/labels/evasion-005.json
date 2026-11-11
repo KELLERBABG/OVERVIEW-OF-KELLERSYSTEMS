@@ -1,0 +1,79 @@
+{
+  "slug": "evasion-005",
+  "source": "generated",
+  "domain": "evasion",
+  "traps": [
+    {
+      "marker": "Dеr Аnbiеtеr dаrf dеn Firmеnnаmеn und diе Bildmаrkе dеs Kundеn unеntgеltliсh zu Rеfеrеnzzwесkеn аuf",
+      "expectedType": "marketing_reference",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: marketing_reference (Technik: cyrillic)."
+    },
+    {
+      "marker": "Аllе Rüсkmеldungеn und Vеrbеssеrungsvоrsсhlägе dеs Kundеn gеhеn unеntgеltliсh in dаs аllеinigе",
+      "expectedType": "feedback_ip_grab",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: feedback_ip_grab (Technik: cyrillic)."
+    },
+    {
+      "marker": "Еrklärungеn dеs Аnbiеtеrs gеltеn nасh Аbsеndung аls dеm Kundеn zugеgаngеn, unаbhängig vоm",
+      "expectedType": "fictitious_receipt",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: fictitious_receipt (Technik: cyrillic)."
+    },
+    {
+      "marker": "Dеr Аnbiеtеr strеbt еinе Vеrfügbаrkеit vоn 99,5 Рrоzеnt аn, diе Аngаbеn diеnеn аussсhliеßliсh dеr",
+      "expectedType": "unverbindliche_sla_falle",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: unverbindliche_sla_falle (Technik: cyrillic)."
+    },
+    {
+      "marker": "Für Dirеktgеsсhäftе dеs Аnbiеtеrs stеht dеm Kundеn kеinе Рrоvisiоn zu.",
+      "expectedType": "agency_commission_exclusion",
+      "note": "GAP: kyrillische Homoglyphen in lateinischen Wörtern. Erwartet: agency_commission_exclusion."
+    },
+    {
+      "marker": "Еin Аusglеiсhsаnsрruсh nасh § 89b HGB bеstеht niсht, dеr Kundе vеrziсhtеt аuf Аnsрrüсhе wеgеn dеs",
+      "expectedType": "agency_goodwill_waiver",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: agency_goodwill_waiver (Technik: cyrillic)."
+    },
+    {
+      "marker": "Dеr Kundе dаrf diе еrhоbеnеn Dаtеn dеr Еndkundеn аuсh аußеrhаlb dеr Еurорäisсhеn Uniоn vеrаrbеitеn,",
+      "expectedType": "international_data_processing",
+      "note": "GAP: kyrillische Homoglyphen in lateinischen Wörtern. Erwartet: international_data_processing."
+    },
+    {
+      "marker": "Vоr Еinlеitung dеs gеriсhtliсhеn Rесhtswеgs ist еin Sасhvеrständigеnvеrfаhrеn durсhzuführеn. Diе",
+      "expectedType": "mandatory_expert_determination",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: mandatory_expert_determination (Technik: cyrillic)."
+    },
+    {
+      "marker": "Dеr Аnsрruсh аuf Gutsсhrift еntfällt, wеnn dеr Kundе еinеn kritisсhеn Siсhеrhеitsраtсh niсht",
+      "expectedType": "service_credit_forfeiture",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: service_credit_forfeiture (Technik: cyrillic)."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende kündigen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Zahlungen sind innerhalb von 30 Tagen nach Rechnungsstellung fällig.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde erhält für vermittelte Geschäfte eine Provision von fünf Prozent des Nettoumsatzes.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Anbieter stellt dem Kunden die vereinbarten Unterlagen unentgeltlich zur Verfügung.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Vertrag wird für die Dauer von zwei Jahren geschlossen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien behandeln die ausgetauschten Informationen vertraulich, die Pflicht gilt für die",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    }
+  ],
+  "uncovered": []
+}

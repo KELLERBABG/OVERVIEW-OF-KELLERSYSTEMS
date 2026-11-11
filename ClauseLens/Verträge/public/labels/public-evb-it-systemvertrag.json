@@ -1,0 +1,71 @@
+{
+  "slug": "public-evb-it-systemvertrag",
+  "source": "https://www.it-planungsrat.de/fileadmin/beschluesse/2012/Beschluss2012-31_TOP_22_Anlage_1_EVB-IT_Systemvertrag.pdf",
+  "license": "Amtliches Werk (Bundesrepublik Deutschland, EVB-IT, IT-Planungsrat)",
+  "retrieved": "2026-10-15",
+  "domain": "IT-Systemvertrag (öffentliche Verwaltung)",
+  "traps": [
+    {
+      "marker": "Lfd. Nr. Produkt- bezeich- nung",
+      "expectedType": "auto_renewal",
+      "note": "Reale Klausel, Engine-Typ auto_renewal"
+    },
+    {
+      "marker": "Anlage Nr. Mindest- vertrags- dauer",
+      "expectedType": "auto_renewal",
+      "note": "Reale Klausel, Engine-Typ auto_renewal"
+    },
+    {
+      "marker": "4 Wenn abweichend von Ziffer 16.1",
+      "expectedType": "auto_renewal",
+      "note": "Reale Klausel, Engine-Typ auto_renewal"
+    },
+    {
+      "marker": "Soweit für die Individualsoftware*",
+      "expectedType": "data_grant",
+      "note": "Reale Klausel, Engine-Typ data_grant"
+    },
+    {
+      "marker": "und Wiederherstellungszeiten* beginnen ausschließlich mit dem Zugang der Störungsmeldung",
+      "expectedType": "penalty",
+      "note": "Reale Klausel, Engine-Typ penalty"
+    },
+    {
+      "marker": "Reaktions-* und Wiederherstellungszeiten* beginnen ausschließlich mit dem Zugang der Mängelme",
+      "expectedType": "penalty",
+      "note": "Reale Klausel, Engine-Typ penalty"
+    },
+    {
+      "marker": "16.2 Verzug bei Reaktions-* und",
+      "expectedType": "penalty",
+      "note": "Reale Klausel, Engine-Typ penalty"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die mit * gekennzeichneten Begriffe",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Vertragsnummer/Kennung Auftraggeber _______",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Lizenzrückvergütung (nur möglich bei nicht ausschließlicher Nutzungsrechtseinräumung)",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Während der Geschäftszeiten an Werktagen (außer an Samstagen und Feiertagen am Erfüllungsort)",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Außerhalb der Geschäftszeiten an Werktagen (außer an Samstagen und Feiertagen am Erfüllungsort)",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Vertragsnummer/Kennung Auftraggeber:",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

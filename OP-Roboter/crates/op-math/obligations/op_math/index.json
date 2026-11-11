@@ -1,0 +1,137 @@
+{
+  "crate": "op_math",
+  "obligations": [
+    {
+      "artifact": "matrix__Matrix3__at_bb3.smt2",
+      "block": "bb3",
+      "crate": "op_math",
+      "file": "crates/op-math/src/matrix.rs",
+      "function": "matrix::Matrix3::at",
+      "kind": "bounds",
+      "line": 75,
+      "status": "PASS",
+      "verdict": "PASS (unsat)"
+    },
+    {
+      "artifact": "matrix__Matrix3__at_bb4.smt2",
+      "block": "bb4",
+      "crate": "op_math",
+      "file": "crates/op-math/src/matrix.rs",
+      "function": "matrix::Matrix3::at",
+      "kind": "bounds",
+      "line": 75,
+      "status": "PASS",
+      "verdict": "PASS (unsat)"
+    },
+    {
+      "artifact": "matrix______impl_matrix______serde__Serialize_for_matrix__Matrix3___serialize_bb0.smt2",
+      "block": "bb0",
+      "crate": "op_math",
+      "function": "matrix::_::<impl matrix::_::_serde::Serialize for matrix::Matrix3>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "matrix______impl_matrix______serde__Serialize_for_matrix__Matrix3___serialize_bb1.smt2",
+      "block": "bb1",
+      "crate": "op_math",
+      "function": "matrix::_::<impl matrix::_::_serde::Serialize for matrix::Matrix3>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "matrix______impl_matrix______serde__Serialize_for_matrix__Matrix3___serialize_bb2.smt2",
+      "block": "bb2",
+      "crate": "op_math",
+      "function": "matrix::_::<impl matrix::_::_serde::Serialize for matrix::Matrix3>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "quaternion______impl_matrix______serde__Serialize_for_quaternion__Quaternion___serialize_bb0.smt2",
+      "block": "bb0",
+      "crate": "op_math",
+      "function": "quaternion::_::<impl matrix::_::_serde::Serialize for quaternion::Quaternion>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "quaternion______impl_matrix______serde__Serialize_for_quaternion__Quaternion___serialize_bb1.smt2",
+      "block": "bb1",
+      "crate": "op_math",
+      "function": "quaternion::_::<impl matrix::_::_serde::Serialize for quaternion::Quaternion>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "quaternion______impl_matrix______serde__Serialize_for_quaternion__Quaternion___serialize_bb2.smt2",
+      "block": "bb2",
+      "crate": "op_math",
+      "function": "quaternion::_::<impl matrix::_::_serde::Serialize for quaternion::Quaternion>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "quaternion______impl_matrix______serde__Serialize_for_quaternion__Quaternion___serialize_bb3.smt2",
+      "block": "bb3",
+      "crate": "op_math",
+      "function": "quaternion::_::<impl matrix::_::_serde::Serialize for quaternion::Quaternion>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "transform______impl_matrix______serde__Serialize_for_transform__Isometry3___serialize_bb0.smt2",
+      "block": "bb0",
+      "crate": "op_math",
+      "function": "transform::_::<impl matrix::_::_serde::Serialize for transform::Isometry3>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "transform______impl_matrix______serde__Serialize_for_transform__Isometry3___serialize_bb1.smt2",
+      "block": "bb1",
+      "crate": "op_math",
+      "function": "transform::_::<impl matrix::_::_serde::Serialize for transform::Isometry3>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "vector______impl_matrix______serde__Serialize_for_vector__Vector3___serialize_bb0.smt2",
+      "block": "bb0",
+      "crate": "op_math",
+      "function": "vector::_::<impl matrix::_::_serde::Serialize for vector::Vector3>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "vector______impl_matrix______serde__Serialize_for_vector__Vector3___serialize_bb1.smt2",
+      "block": "bb1",
+      "crate": "op_math",
+      "function": "vector::_::<impl matrix::_::_serde::Serialize for vector::Vector3>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    },
+    {
+      "artifact": "vector______impl_matrix______serde__Serialize_for_vector__Vector3___serialize_bb2.smt2",
+      "block": "bb2",
+      "crate": "op_math",
+      "function": "vector::_::<impl matrix::_::_serde::Serialize for vector::Vector3>::serialize",
+      "kind": "overflow",
+      "status": "WARN",
+      "verdict": "WARN (undecided)"
+    }
+  ],
+  "re_discharge": "z3 -smt2 obligations/op_math/<artifact>",
+  "schema_version": 1
+}

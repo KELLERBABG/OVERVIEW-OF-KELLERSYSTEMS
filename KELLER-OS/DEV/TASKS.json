@@ -1,0 +1,50 @@
+{
+  "project": "KELLER-OS",
+  "language": "Rust",
+  "summary": "A bare-metal `#![no_std]` sovereign x86_64/i686 microkernel (`src/main.rs`, `src/proc.rs`, `src/mm.rs`, `src/ipc.rs`, `src/crypto.rs`, `src/net.rs`, `src/storage.rs`, `src/vault.rs`, `src/zk.rs`, `src/panic.rs`) with Python QEMU verification harnesses (`dev-tools/qemu_check.py`, `wire_check.py`, `smp_check.py`, `disk_check.py`).",
+  "tasks": [
+    {
+      "id": "TASK-01",
+      "title": "Enforce OCap capability attenuation and monotonic revocation counters in ipc.rs and proc.rs",
+      "status": "pending",
+      "target_files": [
+        "src/ipc.rs",
+        "src/proc.rs"
+      ],
+      "context_files": [
+        "src/main.rs",
+        "SPECIFICATION.md"
+      ],
+      "spec": "Ensure `src/ipc.rs` and `src/proc.rs` enforce the Take-Grant capability invariant from `KELLER OS.canvas`.\n\n1. A process $A$ transferring capability $c$ to process $B$ via IPC can only attenuate rights (`new_rights = c.rights & mask`), never amplify them.\n2. Validate capability generation counters against the resource table on every IPC send/recv so revoked capabilities are rejected immediately.\n3. Verify clean compilation with `cargo check --quiet` and `python dev-tools/wire_check.py`.",
+      "verify_cmd": "python dev-tools/wire_check.py"
+    },
+    {
+      "id": "TASK-02",
+      "title": "Verify Base-Offset-Shifting anti-replay sliding window in session.rs",
+      "status": "pending",
+      "target_files": [
+        "src/session.rs",
+        "src/net.rs"
+      ],
+      "context_files": [
+        "src/crypto.rs"
+      ],
+      "spec": "Ensure `src/session.rs` implements the 64-packet sliding-window replay filter (`Base Offset Shifting` from `Life Work.canvas`): packets older than `max_seq - 64` are dropped, packets within `[max_seq - 63, max_seq]` check/set their bit in a `u64` bitmask, and packets with `seq > max_seq` shift the window forward.",
+      "verify_cmd": "python dev-tools/wire_check.py"
+    },
+    {
+      "id": "TASK-03",
+      "title": "Enforce volatile RAM key scrubbing in panic.rs and vault.rs on tamper NMI",
+      "status": "pending",
+      "target_files": [
+        "src/panic.rs",
+        "src/vault.rs"
+      ],
+      "context_files": [
+        "src/crypto.rs"
+      ],
+      "spec": "Ensure `src/panic.rs` invokes a volatile zeroization routine in `src/vault.rs` using `core::ptr::write_volatile` + `core::sync::atomic::compiler_fence(Ordering::SeqCst)` so the compiler cannot dead-store-eliminate key wiping prior to CPU halt.",
+      "verify_cmd": "python dev-tools/wire_check.py"
+    }
+  ]
+}

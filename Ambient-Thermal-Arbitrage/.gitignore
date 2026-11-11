@@ -1,0 +1,42 @@
+# Rust build artifacts
+/target/
+**/target/
+**/ata-target/
+
+# Release bundles
+/dist/
+
+# Runtime data artifacts (regenerated on each run)
+/thermal_arbitrage_log.csv
+**/thermal_arbitrage_log.csv
+**/fleet_results_v2_*.csv
+*.log
+
+# OTA staging (downloaded bundles)
+**/ota_staging/
+
+# Runtime API cache (seed datasets are committed; last-known-good state is not)
+/data_cache/
+**/data_cache/last_*.json
+
+# Local AI tooling state
+/.reasonix/
+reasonix.toml
+
+# AI-Brain persistence staging (user copies into Obsidian vault)
+/brain-persist-*/
+
+# OS junk
+Thumbs.db
+.DS_Store
+
+# Common dev artifacts
+node_modules/
+.venv/
+__pycache__/
+.pytest_cache/
+*.tmp
+*.exe
+*.dll
+*.pdb
+*.rlib

@@ -1,0 +1,74 @@
+{
+  "slug": "immobilien-024",
+  "source": "generated",
+  "domain": "Bauvertrag",
+  "traps": [
+    {
+      "marker": "wenn der Besteller nicht binnen 48 Stunden Mängel anzeigt",
+      "expectedType": "deemed_acceptance",
+      "note": "GAP: Abnahmefiktion bei unterlassener Maengelruege binnen 48 Stunden."
+    },
+    {
+      "marker": "Vertragsstrafe von 0,5 Prozent der Auftragssumme verwirkt",
+      "expectedType": "penalty",
+      "note": "Vertragsstrafe ohne Nachweisvorbehalt."
+    },
+    {
+      "marker": "verjähren innerhalb von achtzehn Monaten nach Abnahme",
+      "expectedType": "statute_of_limitations",
+      "note": "GAP: Verkuerzte Verjaehrung in Zahlwortform."
+    },
+    {
+      "marker": "handschriftlich unterzeichnet und per Einschreiben bestätigt werden",
+      "expectedType": "written_form_trap",
+      "note": "Erhoehte Schriftform mit Einschreiben."
+    },
+    {
+      "marker": "auf 5 Prozent der Auftragssumme begrenzt",
+      "expectedType": "liability",
+      "note": "Haftungsdeckel auf 5 Prozent der Auftragssumme."
+    },
+    {
+      "marker": "kann den Vertrag nicht aus wichtigem Grund kündigen",
+      "expectedType": "asymmetric_termination",
+      "note": "Ausschluss der Kuendigung aus wichtigem Grund."
+    },
+    {
+      "marker": "beauftragt Nachunternehmer ohne Ankündigung an den Besteller",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "GAP: Nachunternehmer ohne Ankuendigung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "Symmetrische Vertraulichkeit."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhalt."
+    },
+    {
+      "marker": "Zahlungen sind innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Zahlungsfrist."
+    },
+    {
+      "marker": "Änderungen des Leistungsumfangs bedürfen der Abstimmung beider Parteien",
+      "note": "Einvernehmliche Aenderung."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende beenden",
+      "note": "Symmetrisches Kuendigungsrecht."
+    },
+    {
+      "marker": "Nach Vertragsende erhält der Kunde die Vertragsdaten kostenfrei in einem offenen Format",
+      "note": "Kostenfreier Datenexport."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Innenausbau der Stationen 2 und 3 des Klinikparks",
+      "note": "Kein Detektor fuer Nachtragsmanagement, Behinderungsanzeige oder Stundenlohnarbeiten."
+    }
+  ]
+}

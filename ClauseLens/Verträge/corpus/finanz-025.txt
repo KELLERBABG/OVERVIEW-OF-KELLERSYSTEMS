@@ -1,0 +1,103 @@
+ZAHLUNGSDIENSTVERTRAG
+
+zwischen
+
+der Bernstein GmbH, Rathausplatz 1, 90403 Nürnberg (nachfolgend Zahlungsdienstleister)
+
+und
+
+der Uckermark GmbH, Zeppelinstraße 12, 90471 Nürnberg (nachfolgend Zahlungsnutzer)
+
+Präambel
+
+Der Zahlungsdienstleister erbringt für den Zahlungsnutzer die in Anlage 3 bezeichneten Zahlungsdienste. Es gelten die nachstehenden Bedingungen.
+
+§ 1 Allgemeines
+
+Die Übereignung steht unter der aufschiebenden Bedingung der Erfüllung aller Verbindlichkeiten aus der Geschäftsverbindung.
+
+§ 2 Bestimmung
+
+Der Kunde erhält bei Vertragsende einen vollständigen Export seiner Daten in einem gängigen maschinenlesbaren Format.
+
+§ 3 Regelung
+
+Der Anbieter darf Unterauftragnehmer heranziehen, ohne dies dem Kunden vorher anzuzeigen.
+
+§ 4 Vereinbarung
+
+Jede Partei kann diesen Vertrag zum Quartalsende ordentlich kündigen.
+
+§ 5 Modalität
+
+The provider's server logs shall constitute conclusive evidence of any service failure.
+
+§ 6 Ordnung
+
+Die Bank gibt dem Kunden spätestens zehn Werktage vor einer beabsichtigten Kontoauflösung eine schriftliche Ankündigung.
+
+§ 7 Ausgestaltung
+
+Die Bank kann den Zugang sofort ohne Vorankündigung sperren.
+
+§ 8 Durchführung
+
+Der Anbieter benennt dem Kunden einen festen Ansprechpartner für alle Fragen der Vertragsabwicklung.
+
+§ 9 Vorkehrung
+
+Die Bank ist bei einem Insolvenzantrag des Kunden berechtigt, den Vertrag fristlos zu kündigen.
+
+§ 10 Zusatz
+
+Der Kunde kann diesen Vertrag ohne Angabe von Gründen zum Monatsende kündigen.
+
+§ 11 Klarstellung
+
+The customer shall bear any taxes, interest or penalties retrospectively assessed.
+
+§ 12 Ergänzung
+
+Die Parteien vereinbaren, Streitigkeiten vorrangig durch Mediation zu klären.
+
+§ 13 Verfahren
+
+The provider assumes no confidentiality obligation with respect to benchmarking data.
+
+§ 14 Ausführung
+
+Die gesetzliche Haftung für Vorsatz und grobe Fahrlässigkeit sowie für Personenschäden bleibt unberührt.
+
+§ 15 Hinweis
+
+Es wird keine Zusage hinsichtlich der Eignung für einen bestimmten Einsatzzweck übernommen.
+
+§ 16 Maßnahme
+
+Der Auftragnehmer informiert den Auftraggeber mindestens vierzehn Tage vor dem Einsatz eines Unterauftragnehmers.
+
+§ 17 Vorgehen
+
+Die Bank ist berechtigt, für die Ausstellung einer Zweitschrift eine Bearbeitungsgebühr von fünfzehn Euro zu erheben.
+
+§ 18 Abstimmung
+
+Ansprechpartner für operative Fragen ist die in der Anlage 2 genannte Stelle.
+
+§ 19 Koordination
+
+Die Parteien benennen bei Vertragsschluss die jeweiligen Ansprechpartner und Vertretungsberechtigten.
+
+§ 20 Umsetzung
+
+Die Unwirksamkeit einzelner Bestimmungen lässt die Wirksamkeit des Vertrages im Übrigen unberührt.
+
+§ 21 Beachtung
+
+Jede Partei ist berechtigt, die Vertragsdurchführung durch einen Wirtschaftsprüfer prüfen zu lassen, soweit dies gesetzlich erforderlich ist.
+
+Ort, Datum: ______________________
+
+Für Zahlungsdienstleister: ______________________
+
+Für Zahlungsnutzer: ______________________

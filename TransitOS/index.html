@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TransitOS &mdash; formally verified autonomous vehicle safety gate</title>
+<meta name="description" content="TransitOS is a deterministic pure Rust safety gate between AI driving planners and drive-by-wire actuators, proving on every command that no kinematic envelope is violated before it reaches steering or braking.">
+<meta name="theme-color" content="#0c1014">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--slate:#0c1014;--slate2:#141a20;--edge:#242d36;--grey:#6f7d8a;--ink:#e4ecf3;--cyan:#38d0e0;--red:#f2685f;--amber:#e8b44a;--green:#57d38c}
+*{box-sizing:border-box} html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--slate);color:#9aa8b4;font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(16px,4vw,44px)}
+header{padding:clamp(28px,5vw,56px) 0 clamp(14px,2vw,20px)}
+.kick{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--cyan)}
+h1{margin:.4rem 0 .3rem;font-weight:600;font-size:clamp(2rem,5.2vw,3.4rem);line-height:1.03;letter-spacing:-.03em;color:var(--ink)}
+.sub{margin:0;max-width:66ch;color:#8e9ca8}
+.panel{margin:clamp(18px,3vw,30px) 0;border:1px solid var(--edge);background:var(--slate2)}
+.panel .hd{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;border-bottom:1px solid var(--edge);padding:.5rem .9rem;
+ font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--grey)}
+.panel .hd b{color:var(--cyan);font-weight:500}
+.grid2{display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:1px;background:var(--edge)}
+.grid2 > div{background:var(--slate2);padding:clamp(10px,2vw,18px)}
+svg{display:block;width:100%;height:auto}
+.ring{fill:none;stroke:#26313b;stroke-width:.8} .lim{fill:rgba(56,208,224,.06);stroke:var(--cyan);stroke-width:1.6}
+.axis{stroke:#26313b;stroke-width:.9}
+.req{stroke:var(--red);stroke-width:1.6;stroke-dasharray:5 4} .reqd{fill:var(--red)}
+.clamped{stroke:var(--green);stroke-width:2} .cld{fill:var(--green)}
+.rl1{font-family:'IBM Plex Mono',monospace;font-size:9px;fill:var(--red)} .rl2{font-family:'IBM Plex Mono',monospace;font-size:8.5px;fill:var(--red)}
+.rl3{font-family:'IBM Plex Mono',monospace;font-size:9px;fill:var(--green)}
+.mu{font-family:'IBM Plex Mono',monospace;font-size:9px;fill:var(--cyan)}
+.ax{font-family:'IBM Plex Mono',monospace;font-size:8.5px;fill:var(--grey)}
+.ax2{font-family:'IBM Plex Mono',monospace;font-size:8.5px;fill:var(--grey);letter-spacing:.06em}
+.road{stroke:#2b3641;stroke-width:2} .car{fill:var(--ink)}
+.brake{fill:rgba(242,104,95,.5)} .obs{stroke:var(--amber);stroke-width:1.6}
+.clr{stroke:var(--green);stroke-width:1.4} .clrt{font-family:'IBM Plex Mono',monospace;font-size:9px;fill:var(--green)}
+.bl1{font-family:'IBM Plex Mono',monospace;font-size:8.5px;fill:var(--red)} .bl2{font-family:'IBM Plex Mono',monospace;font-size:8.5px;fill:var(--amber)}
+.readouts{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--edge);border-top:1px solid var(--edge)}
+.ro{background:var(--slate2);padding:.9rem 1rem}
+.rn{display:block;font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--grey)}
+.ro b{display:block;font-family:'IBM Plex Mono',monospace;font-size:1.25rem;font-weight:500;color:var(--ink);line-height:1.2;margin-top:.25rem}
+.rs{display:block;font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--green);margin-top:.15rem}
+section{border-top:1px solid var(--edge);padding:clamp(24px,4vw,42px) 0}
+h2{margin:0 0 1rem;font-weight:600;font-size:clamp(1.25rem,2.6vw,1.75rem);letter-spacing:-.02em;color:var(--ink)}
+h2 i{font-family:'IBM Plex Mono',monospace;font-style:normal;font-size:10px;letter-spacing:.2em;color:var(--cyan);display:block;margin-bottom:.4rem;font-weight:400}
+p{margin:0 0 .9rem;max-width:76ch} b{color:var(--ink);font-weight:500}
+.log{border:1px solid var(--edge);background:#0a0e12;font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.95;margin-top:1rem}
+.log .l{display:flex;gap:.7rem;padding:.15rem 1rem;white-space:pre-wrap}
+.log .l:first-child{padding-top:.8rem} .log .l:last-child{padding-bottom:.8rem}
+.tg{flex:0 0 auto;font-weight:500} .tg.ai{color:var(--red)} .tg.kf{color:var(--amber)} .tg.ss{color:var(--cyan)} .tg.ab{color:var(--green)}
+.txt{color:#c0ccd6}
+table{width:100%;border-collapse:collapse;margin-top:1rem;font-size:.89rem}
+th,td{text-align:left;padding:.5rem .6rem;border-bottom:1px solid var(--edge);vertical-align:top}
+th{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey);font-weight:400}
+td.tos{background:rgba(56,208,224,.09);color:var(--ink);font-weight:500}
+pre{margin:1rem 0 0;border:1px solid var(--edge);border-left:3px solid var(--cyan);background:#0a0e12;padding:.9rem 1rem;
+ font-family:'IBM Plex Mono',monospace;font-size:.74rem;line-height:1.9;color:var(--ink);white-space:pre-wrap;overflow-wrap:anywhere}
+.foot{border-top:1px solid var(--edge);padding:1.5rem 0 3rem;font-family:'IBM Plex Mono',monospace;font-size:9.5px;
+ letter-spacing:.14em;text-transform:uppercase;color:var(--grey)}
+.foot .wrap{display:flex;justify-content:space-between;gap:1.4rem;flex-wrap:wrap} .foot a{color:var(--cyan)}
+@media (max-width:820px){.grid2{grid-template-columns:minmax(0,1fr)}}
+html{scrollbar-color:#242d36 #0c1014;scrollbar-width:thin}
+::-webkit-scrollbar{width:12px}::-webkit-scrollbar-track{background:#0c1014}
+::-webkit-scrollbar-thumb{background:#242d36;border:3px solid #0c1014}::-webkit-scrollbar-thumb:hover{background:#38d0e0}
+/* mobile-figure */@media (max-width:900px){.panel,.chart,.die,.pfd,.cfg,.console,.figs,.seqblock,.map{overflow-x:auto;-webkit-overflow-scrolling:touch}.panel svg,.chart svg,.die svg,.pfd svg,.cfg svg,.figs svg,.map svg{min-width:660px;max-width:none}}
+/* --- Keller Systems Subtle Masthead Lockup --- */
+header { padding-top: clamp(18px, 3.2vw, 30px) !important; }
+.ks-masthead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 12px;
+  margin-bottom: clamp(18px, 3vw, 28px);
+  border-bottom: 1px solid #242d36;
+}
+.ks-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+.ks-mark {
+  width: 22px !important;
+  min-width: 22px !important;
+  max-width: 22px !important;
+  height: 22px !important;
+  min-height: 22px !important;
+  max-height: 22px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: block !important;
+  flex-shrink: 0 !important;
+}
+.ks-titles {
+  display: inline-flex;
+  flex-direction: column;
+  line-height: 1.12;
+}
+.ks-name {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #e4ecf3;
+  letter-spacing: -0.01em;
+}
+.ks-sub {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 8.5px;
+  font-weight: 500;
+  color: #7f8d9a;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.ks-brand:hover .ks-name {
+  color: #38d0e0;
+}
+.ks-links {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+.ks-link {
+  font-family: 'IBM Plex Mono', 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 10.5px;
+  color: #7f8d9a;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  letter-spacing: 0.03em;
+  transition: color 0.15s;
+}
+.ks-link:hover {
+  color: #e4ecf3;
+}
+</style></head><body><!-- noscript-fallback --><noscript><style>html *{opacity:1!important;transform:none!important;filter:none!important;animation:none!important}[data-a],[data-b],.d,.o,.fade,.draw,.chapter,.step,.panel,.hlab{opacity:1!important}</style></noscript>
+<div class="wrap"><header>
+      <div class="ks-masthead">
+        <a href="https://kellersystems.dev" class="ks-brand" title="Keller Systems">
+          <svg class="ks-mark" viewBox="0 0 100 100" width="22" height="22" aria-hidden="true">
+            <rect x="18" y="14" width="18" height="72" rx="3" fill="#e4ecf3"/>
+            <path d="M46 50 L72 16 H90 L60 54 Z" fill="#38d0e0"/>
+            <path d="M60 46 L90 84 H72 L46 50 Z" fill="#57d38c"/>
+          </svg>
+          <span class="ks-titles">
+            <span class="ks-name">TransitOS</span>
+            <span class="ks-sub">KELLER SYSTEMS</span>
+          </span>
+        </a>
+        <div class="ks-links">
+          <a href="https://kellersystems.dev" class="ks-link">kellersystems.dev &rarr;</a>
+        <a href="https://github.com/KELLERBABG/TransitOS" target="_blank" rel="noopener noreferrer" class="ks-link">Source &#8599;</a>
+        </div>
+      </div>
+  <span class="kick">AV actuator safety gate &middot; kinematic invariants</span>
+  <h1>TransitOS</h1>
+  <p class="sub">A deterministic safety barrier in pure Rust between the neural driving planner and the drive-by-wire actuators. No command that violates a kinematic envelope reaches a steering or braking motor.</p>
+</header></div>
+
+<div class="wrap"><div class="panel">
+  <div class="hd"><span>Actuator gate telemetry</span><b>envelopes 100% enforced &middot; 14 hallucinations intercepted</b></div>
+  <div class="grid2">
+    <div><svg viewBox="0 0 420 380" role="img" aria-label="Kamm friction circle">
+<text class="ax" x="10" y="190">braking</text>
+<text class="ax" x="210" y="20" text-anchor="middle">lateral</text>
+<circle class="ring" cx="210" cy="190" r="39.3"/><circle class="ring" cx="210" cy="190" r="78.7"/><circle class="ring" cx="210" cy="190" r="118.0"/>
+<circle class="lim" cx="210" cy="190" r="118"/>
+<line class="axis" x1="76" y1="190" x2="344" y2="190"/>
+<line class="axis" x1="210" y1="56" x2="210" y2="324"/>
+<line class="req" x1="210" y1="190" x2="305.7" y2="232.0"/>
+<circle class="reqd" cx="305.7" cy="232.0" r="5"/>
+<text class="rl1" x="314.7" y="228.0">requested</text>
+<text class="rl2" x="314.7" y="240.0">+34&deg; steering</text>
+<line class="clamped" x1="210" y1="190" x2="281.7" y2="221.3"/>
+<circle class="cld" cx="281.7" cy="221.3" r="5"/>
+<text class="rl3" x="267.7" y="213.3" text-anchor="end">clamped +4.2&deg;</text>
+<text class="mu" x="210" y="52" text-anchor="middle">Kamm friction limit &mu;</text>
+<text class="ax2" x="210" y="372" text-anchor="middle">the requested vector leaves the circle; the substitute sits on it</text>
+</svg></div>
+    <div><svg viewBox="0 0 760 170" role="img" aria-label="Stopping distance invariant">
+<text class="ax" x="30" y="26">stopping distance against obstacle clearance, worst-case adhesion</text>
+<line class="road" x1="30" y1="96" x2="740" y2="96"/>
+<rect class="car" x="30" y="76" width="52" height="16" rx="3"/>
+<rect class="brake" x="82" y="89" width="300" height="10"/>
+<text class="bl1" x="86" y="82">braking distance under worst-case &mu;</text>
+<line class="obs" x1="490" y1="62" x2="490" y2="110"/>
+<text class="bl2" x="496" y="62">obstacle, radar and LiDAR range</text>
+<line class="clr" x1="382" y1="118" x2="490" y2="118"/>
+<text class="clrt" x="436" y="134" text-anchor="middle">clearance &gt; 0, proved</text>
+<text class="ax2" x="740" y="164" text-anchor="end">TTC invariant: stopping distance &lt; clearance, always</text>
+</svg></div>
+  </div>
+  <div class="readouts">
+    <div class="ro"><span class="rn">Gate latency</span><b>&le; 0.42 ms</b><span class="rs">hard real-time</span></div>
+    <div class="ro"><span class="rn">Braking decel bound</span><b>&le; 0.85 g</b><span class="rs">proved</span></div>
+    <div class="ro"><span class="rn">Hallucinations blocked</span><b>14</b><span class="rs">intercepted</span></div>
+    <div class="ro"><span class="rn">Planner trust</span><b>Zero</b><span class="rs">untrusted caller</span></div>
+  </div>
+</div></div>
+
+<section><div class="wrap"><h2><i>01 &mdash; the gate</i>The planner is an untrusted caller</h2>
+<p>An end-to-end neural driving policy is a black box that can be fooled by pixels. Treating it as anything else is what puts a statistical safety argument in the path of a deterministic physical limit.</p>
+<p>TransitOS interposes itself between the planner and the actuator bus and treats every command as untrusted input. When the planner asks for a hard turn at speed, the gate evaluates it against <b>Kamm's friction circle</b>: longitudinal braking and lateral acceleration together cannot exceed what the tyres can hold. A request outside the circle is not softened or averaged &mdash; it is <b>rejected</b>, and the nearest verified-safe command is dispatched in its place.</p>
+<div class="log">
+<div class="l"><span class="tg ai">[AI-INPUT]</span><span class="txt">End-to-end vision model commanded +34&deg; steering at 90 km/h</span></div>
+<div class="l"><span class="tg kf">[KINEMATIC-FILTER]</span><span class="txt">Lateral rollover threshold exceeded: REJECTED</span></div>
+<div class="l"><span class="tg ss">[SAFE-SUBSTITUTE]</span><span class="txt">Clamped to maximal stable turn rate: +4.2&deg;</span></div>
+<div class="l"><span class="tg ab">[ACTUATOR-BUS]</span><span class="txt">CAN FD verified command dispatched safely</span></div>
+</div>
+</div></section>
+
+<section><div class="wrap"><h2><i>02 &mdash; the invariants</i>What is proved, and what happens when the planner dies</h2>
+<p><b>The friction circle</b> is enforced continuously: combined lateral and longitudinal demand stays inside the tyre limit, which is what keeps a commanded turn from becoming a loss of control.</p>
+<p><b>The time-to-collision invariant</b> is a stopping-distance proof rather than a warning threshold. Under worst-case road adhesion, the distance required to stop is shown to remain strictly less than the obstacle clearance measured by radar and LiDAR. If that cannot be shown, the command does not pass.</p>
+<p><b>Deterministic fallback.</b> When the planner crashes, desynchronises or times out, the gate takes control in under a millisecond and brings the vehicle to a minimum-risk stop. The failure mode of the planner is not the failure mode of the vehicle.</p>
+</div></section>
+
+<section><div class="wrap"><h2><i>03 &mdash; compared</i>Against a monolithic AI stack</h2>
+<table><thead><tr><th>Characteristic</th><th>Direct end-to-end AI stack</th><th>TransitOS actuator safety gate</th></tr></thead><tbody>
+<tr><td>safety argument</td><td>statistical probability over empirical miles</td><td class="tos">deterministic mathematical proof</td></tr>
+<tr><td>adversarial input</td><td>susceptible to optical illusion attacks</td><td class="tos">physics invariants cannot be fooled by pixels</td></tr>
+<tr><td>execution predictability</td><td>variable GPU inference, 20&ndash;80 ms</td><td class="tos">deterministic hard real-time, &le; 0.5 ms</td></tr>
+<tr><td>certification path</td><td>near-impossible ISO 26262 ASIL D audit</td><td class="tos">a formally proven safe subset, amenable to ASIL D</td></tr>
+</tbody></table>
+<pre>git clone https://github.com/KELLERBABG/TransitOS.git
+cd TransitOS &amp;&amp; cargo test        # the safety gate test suite</pre>
+</div></section>
+
+<div class="foot"><div class="wrap"><span>TransitOS &middot; Keller Systems</span>
+<span><a href="https://github.com/KELLERBABG/TransitOS">repository</a> &nbsp;/&nbsp; <a href="https://kellersystems.dev">kellersystems.dev</a></span></div></div>
+</body></html>

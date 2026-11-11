@@ -1,0 +1,2732 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BauLens &mdash; Deterministische Bauantrags-Vorprüfung für Architekten</title>
+<meta name="description" content="BauLens prüft Bauanträge deterministisch gegen 34 DACH-Profile (MBO, alle 16 Landesbauordnungen, OIB, IVHB-Kantone) und die BauNVO. Regelkonforme Ergebnisse mit Paragraphennachweis, B-Plan-Abgleich, XBau-Antrag, BCF-Export und DIN-A4-Prüfdossier &mdash; vollständig lokal.">
+<meta name="color-scheme" content="dark">
+<link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+<style>
+/* Self-hosted IBM Plex; see assets/fonts/OFL.txt */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./plex-mono-400-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./plex-mono-400-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./plex-mono-500-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./plex-mono-500-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("./plex-mono-600-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("./plex-mono-600-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./plex-sans-300-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./plex-sans-300-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./plex-sans-400-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./plex-sans-400-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./plex-sans-500-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./plex-sans-500-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./plex-sans-600-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./plex-sans-600-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./plex-sans-700-normal-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("./plex-sans-700-normal-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+  /* ==========================================================================
+     BauLens — design tokens
+     One neutral surface ramp, one reserved accent, one type family.
+     ========================================================================== */
+  :root {
+    /* Surfaces: ink base → raised plane. oklch with sRGB fallback below. */
+    --ink-900: #05070c;
+    --ink-800: #080b12;
+    --ink-700: #0b0f18;
+    --ink-600: #101623;
+    --ink-500: #161e2e;
+    --ink-400: #1e2839;
+    --ink-300: #2a374b;
+
+    --line: #1a2434;
+    --line-strong: #26334a;
+    --ink-line: #33415a;
+
+    /* One reserved accent. Everything saturated on this page is this hue. */
+    --accent: #2fb6cf;
+    --accent-hi: #57cde2;
+    --accent-dim: #1c7c8e;
+    --accent-wash: rgba(47, 182, 207, 0.08);
+    --accent-edge: rgba(47, 182, 207, 0.32);
+    --on-accent: #04141a;
+
+    /* Status — the only other hues permitted, and never as the sole signal. */
+    --ok: #2fb6cf;
+    --warn: #d9a441;
+    --fail: #e0657a;
+    --warn-wash: rgba(217, 164, 65, 0.1);
+    --fail-wash: rgba(224, 101, 122, 0.1);
+
+    --fg: #e9edf3;
+    --fg-muted: #98a4b6;
+    --fg-dim: #6b7788;
+    --fg-faint: #4d5768;
+
+    --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+    --step--1: 0.8125rem;
+    --step-0: 1rem;
+    --step-1: 1.125rem;
+    --step-2: clamp(1.35rem, 1.15rem + 0.9vw, 1.65rem);
+    --step-3: clamp(1.75rem, 1.4rem + 1.6vw, 2.4rem);
+    --step-4: clamp(2.25rem, 1.5rem + 3.1vw, 3.6rem);
+
+    --s-1: 0.25rem;  --s-2: 0.5rem;   --s-3: 0.75rem;  --s-4: 1rem;
+    --s-5: 1.5rem;   --s-6: 2rem;     --s-7: 2.5rem;   --s-8: 3.5rem;
+    --s-9: 5rem;     --s-10: 7rem;    --s-11: 9rem;
+
+    --r-sm: 3px;  --r-md: 5px;  --r-lg: 8px;  --r-pill: 999px;
+
+    --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-2: 0 12px 32px -12px rgba(0, 0, 0, 0.7);
+    --shadow-3: 0 32px 72px -28px rgba(0, 0, 0, 0.85);
+
+    --dur-fast: 120ms;
+    --dur-base: 200ms;
+    --dur-reveal: 560ms;
+    --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+    --ease-swift: cubic-bezier(0.16, 1, 0.3, 1);
+
+    --measure: 68ch;
+    --shell: 1140px;
+    --rule: 1px solid var(--line);
+  }
+
+  @supports (color: oklch(0.5 0.1 200)) {
+    :root {
+      --ink-900: oklch(0.166 0.014 254);
+      --ink-800: oklch(0.194 0.016 254);
+      --ink-700: oklch(0.224 0.019 254);
+      --ink-600: oklch(0.266 0.023 254);
+      --ink-500: oklch(0.316 0.027 254);
+      --ink-400: oklch(0.372 0.030 254);
+      --ink-300: oklch(0.452 0.032 254);
+
+      --line: oklch(0.286 0.024 254);
+      --line-strong: oklch(0.356 0.030 254);
+      --ink-line: oklch(0.432 0.034 254);
+
+      --accent: oklch(0.72 0.114 208);
+      --accent-hi: oklch(0.80 0.104 208);
+      --accent-dim: oklch(0.54 0.098 208);
+      --accent-wash: oklch(0.72 0.114 208 / 0.09);
+      --accent-edge: oklch(0.72 0.114 208 / 0.34);
+      --on-accent: oklch(0.17 0.030 208);
+
+      --warn: oklch(0.78 0.128 82);
+      --fail: oklch(0.70 0.152 12);
+
+      --fg: oklch(0.945 0.007 254);
+      --fg-muted: oklch(0.716 0.022 254);
+      --fg-dim: oklch(0.578 0.024 254);
+      --fg-faint: oklch(0.470 0.024 254);
+    }
+  }
+
+  /* ==========================================================================
+     Base
+     ========================================================================== */
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 84px;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--ink-900);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    font-size: var(--step-0);
+    font-weight: 400;
+    line-height: 1.65;
+    overflow-x: clip;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4 { margin: 0; font-weight: 600; line-height: 1.1; letter-spacing: -0.022em; }
+  p { margin: 0; }
+  ul { margin: 0; padding: 0; list-style: none; }
+
+  a { color: inherit; }
+
+  :focus-visible {
+    outline: 2px solid var(--accent-hi);
+    outline-offset: 2px;
+    border-radius: var(--r-sm);
+  }
+
+  ::selection { background: var(--accent-edge); color: var(--fg); }
+
+  .skip-link {
+    position: absolute;
+    left: var(--s-4);
+    top: -100px;
+    z-index: 100;
+    padding: 0.6rem 1rem;
+    background: var(--ink-500);
+    border: 1px solid var(--accent);
+    border-radius: var(--r-md);
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    text-decoration: none;
+    transition: top var(--dur-fast) var(--ease-out);
+  }
+  .skip-link:focus { top: var(--s-4); }
+
+  .shell {
+    width: 100%;
+    max-width: var(--shell);
+    margin: 0 auto;
+    padding: 0 var(--s-5);
+  }
+
+  .num { font-variant-numeric: tabular-nums; }
+
+  /* Grid and flex children default to min-width:auto, so a long unbreakable string
+     (spec values, select options, the plan canvas) can push a track past the viewport.
+     Every track that holds text gets an explicit floor of zero. */
+  .hero-grid > *, .panel-grid > *, .pillars > *, .steps > *, .plans > *,
+  .footer-top > *, .metric-row > *, .field-row > *, .spec-row > * { min-width: 0; }
+  .panel-col > *, .plan > *, .pillar > *, .step > * { min-width: 0; }
+  .field input, .field select, .panel-body input, .panel-body select { min-width: 0; }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .eyebrow-quiet { color: var(--fg-dim); }
+
+  .section-head { max-width: 46rem; margin-bottom: var(--s-7); }
+  .section-head h2 { font-size: var(--step-3); margin-bottom: var(--s-3); }
+  .section-head p { color: var(--fg-muted); font-size: var(--step-1); max-width: 60ch; }
+  .section-head .eyebrow { display: block; margin-bottom: var(--s-3); }
+
+  .rule-section {
+    padding: var(--s-10) 0;
+    border-top: var(--rule);
+  }
+
+  /* ==========================================================================
+     Header
+     ========================================================================== */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 60;
+    background: rgba(5, 7, 12, 0.86);
+    border-bottom: var(--rule);
+    backdrop-filter: blur(12px) saturate(140%);
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--s-5);
+    height: 64px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    text-decoration: none;
+  }
+  .brand-mark {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    background: var(--ink-700);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--r-md);
+  }
+  .brand-mark img { display: block; width: 22px; height: 22px; }
+  .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+  .brand-name { font-size: 1rem; font-weight: 600; letter-spacing: -0.02em; }
+  .brand-owner {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--fg-dim);
+  }
+
+  .nav-links { display: flex; align-items: center; gap: var(--s-5); }
+  .nav-link {
+    font-size: 0.875rem;
+    font-weight: 450;
+    color: var(--fg-muted);
+    text-decoration: none;
+    padding: 0.35rem 0;
+    border-bottom: 1px solid transparent;
+    transition: color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+  }
+  .nav-link:hover { color: var(--fg); border-bottom-color: var(--ink-line); }
+
+  .nav-actions { display: flex; align-items: center; gap: var(--s-3); }
+  .icon-link {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    color: var(--fg-dim);
+    border: 1px solid var(--line);
+    border-radius: var(--r-md);
+    transition: color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+  }
+  .icon-link:hover { color: var(--fg); border-color: var(--line-strong); }
+
+  /* ==========================================================================
+     Buttons
+     ========================================================================== */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    font-weight: 550;
+    line-height: 1;
+    padding: 0.78rem 1.35rem;
+    border: 1px solid transparent;
+    border-radius: var(--r-md);
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color var(--dur-fast) var(--ease-out),
+                border-color var(--dur-fast) var(--ease-out),
+                color var(--dur-fast) var(--ease-out),
+                transform var(--dur-fast) var(--ease-out);
+  }
+  .btn:active { transform: translateY(1px); }
+  .btn svg { flex: none; }
+
+  .btn--primary { background: var(--accent); color: var(--on-accent); font-weight: 600; }
+  .btn--primary:hover { background: var(--accent-hi); }
+
+  .btn--ghost { background: transparent; border-color: var(--line-strong); color: var(--fg); }
+  .btn--ghost:hover { background: var(--ink-600); border-color: var(--ink-line); }
+
+  .btn--quiet { background: transparent; color: var(--fg-muted); padding-inline: 0.5rem; }
+  .btn--quiet:hover { color: var(--fg); }
+
+  .btn--sm { padding: 0.55rem 0.9rem; font-size: 0.8125rem; }
+  .btn--block { width: 100%; }
+
+  /* ==========================================================================
+     Blueprint ground — the page's one signature layer
+     ========================================================================== */
+  .grid-ground {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.042) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.042) 1px, transparent 1px);
+    background-size: 88px 88px;
+    -webkit-mask-image: radial-gradient(140% 96% at 50% 0%, #000 0%, rgba(0, 0, 0, 0.35) 62%, transparent 88%);
+    mask-image: radial-gradient(140% 96% at 50% 0%, #000 0%, rgba(0, 0, 0, 0.35) 62%, transparent 88%);
+  }
+  .page { position: relative; z-index: 1; overflow-x: clip; }
+
+  /* ==========================================================================
+     Hero
+     ========================================================================== */
+  .hero { padding: var(--s-10) 0 var(--s-9); }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+    gap: var(--s-9);
+    align-items: start;
+  }
+  .hero h1 {
+    font-size: var(--step-4);
+    font-weight: 300;
+    line-height: 1.06;
+    letter-spacing: -0.032em;
+    margin: var(--s-5) 0 var(--s-5);
+    text-wrap: balance;
+  }
+  .hero h1 strong { font-weight: 600; }
+  .hero-lede {
+    font-size: var(--step-1);
+    color: var(--fg-muted);
+    max-width: 44ch;
+    line-height: 1.6;
+  }
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--s-3);
+    margin-top: var(--s-6);
+  }
+
+  .spec-list { border-top: var(--rule); }
+  .spec-row {
+    display: grid;
+    grid-template-columns: 8.5rem minmax(0, 1fr);
+    gap: var(--s-4);
+    padding: 0.85rem 0;
+    border-bottom: var(--rule);
+  }
+  .spec-key {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--fg-dim);
+    padding-top: 0.2rem;
+  }
+  .spec-val { font-size: 0.9375rem; color: var(--fg); overflow-wrap: anywhere; }
+  .spec-val span { color: var(--fg-muted); }
+
+  /* ==========================================================================
+     Live demo panel (compliance sandbox, reduced rule set)
+     ========================================================================== */
+  .studio-panel {
+    background: var(--ink-800);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--r-lg);
+    box-shadow: var(--shadow-3);
+    overflow: hidden;
+  }
+  .panel-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--s-3);
+    padding: 0.7rem var(--s-4);
+    background: var(--ink-700);
+    border-bottom: var(--rule);
+  }
+  .panel-bar + .panel-bar { border-top: 0; }
+  .panel-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--fg-dim);
+  }
+  .live-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-wash);
+  }
+  .chip-row { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .chip {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.03em;
+    color: var(--fg-muted);
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: var(--r-sm);
+    padding: 0.32rem 0.6rem;
+    cursor: pointer;
+    transition: color var(--dur-fast) var(--ease-out),
+                border-color var(--dur-fast) var(--ease-out),
+                background-color var(--dur-fast) var(--ease-out);
+  }
+  .chip:hover { color: var(--fg); border-color: var(--line-strong); background: var(--ink-600); }
+  .chip[aria-pressed="true"] {
+    color: var(--accent-hi);
+    border-color: var(--accent-edge);
+    background: var(--accent-wash);
+  }
+  .chip--file { display: inline-flex; align-items: center; gap: 0.35rem; }
+  .chip--file input { display: none; }
+
+  .panel-body { padding: var(--s-5); }
+  .panel-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+    gap: var(--s-5);
+  }
+  .panel-col { display: flex; flex-direction: column; }
+  .panel-col-title {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--fg-dim);
+    padding-bottom: 0.6rem;
+    margin-bottom: var(--s-4);
+    border-bottom: var(--rule);
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--s-3);
+  }
+  .panel-col-title em { font-style: normal; color: var(--accent); text-transform: none; letter-spacing: 0.02em; }
+
+  .field { margin-bottom: 0.85rem; }
+  .field label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    color: var(--fg-dim);
+    margin-bottom: 0.35rem;
+  }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-3); }
+
+  .panel-body input[type="number"],
+  .panel-body select {
+    width: 100%;
+    background: var(--ink-900);
+    border: 1px solid var(--line);
+    border-radius: var(--r-md);
+    color: var(--fg);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-variant-numeric: tabular-nums;
+    padding: 0.55rem 0.7rem;
+    appearance: none;
+    transition: border-color var(--dur-fast) var(--ease-out);
+  }
+  .panel-body select {
+    background-image: linear-gradient(45deg, transparent 50%, var(--fg-dim) 50%), linear-gradient(135deg, var(--fg-dim) 50%, transparent 50%);
+    background-position: calc(100% - 15px) 55%, calc(100% - 10px) 55%;
+    background-size: 5px 5px, 5px 5px;
+    background-repeat: no-repeat;
+    padding-right: 1.75rem;
+  }
+  .panel-body input[type="number"]:hover,
+  .panel-body select:hover { border-color: var(--line-strong); }
+  .panel-body input[type="number"]:focus,
+  .panel-body select:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 3px var(--accent-wash); }
+
+  .plan-frame {
+    position: relative;
+    background: var(--ink-900);
+    border: 1px solid var(--line);
+    border-radius: var(--r-md);
+    margin-bottom: var(--s-4);
+    overflow: hidden;
+  }
+  .plan-frame canvas { display: block; width: 100%; height: 168px; }
+  .plan-caption {
+    position: absolute;
+    inset: auto 0 0 0;
+    display: flex;
+    justify-content: space-between;
+    gap: var(--s-3);
+    padding: 0.35rem 0.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--fg-faint);
+    background: linear-gradient(to top, rgba(5, 7, 12, 0.9), transparent);
+    pointer-events: none;
+  }
+
+  .verdict {
+    border: 1px solid var(--line-strong);
+    border-left: 2px solid var(--accent);
+    border-radius: var(--r-md);
+    background: var(--ink-700);
+    padding: var(--s-4);
+    transition: border-color var(--dur-base) var(--ease-out);
+  }
+  .verdict.is-fail { border-left-color: var(--fail); }
+  .verdict-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--s-3);
+    margin-bottom: var(--s-4);
+  }
+  .verdict-line {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--accent-hi);
+  }
+  .verdict.is-fail .verdict-line { color: var(--fail); }
+  .verdict-glyph {
+    display: grid;
+    place-items: center;
+    width: 18px; height: 18px;
+    border: 1px solid currentColor;
+    border-radius: var(--r-sm);
+    font-size: 0.7rem;
+    line-height: 1;
+  }
+  .class-tag {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--fg-muted);
+    border: 1px solid var(--line);
+    border-radius: var(--r-sm);
+    padding: 0.15rem 0.45rem;
+  }
+
+  .metric-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border: 1px solid var(--line);
+    border-radius: var(--r-md);
+    overflow: hidden;
+    margin-bottom: var(--s-4);
+  }
+  .metric {
+    padding: 0.65rem 0.7rem;
+    background: var(--ink-800);
+    border-left: 1px solid var(--line);
+  }
+  .metric:first-child { border-left: 0; }
+  .metric dt {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--fg-dim);
+    margin-bottom: 0.2rem;
+  }
+  .metric dd {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    font-variant-numeric: tabular-nums;
+    color: var(--fg);
+  }
+
+  .findings { display: flex; flex-direction: column; gap: 0.55rem; margin-bottom: var(--s-4); }
+  .finding {
+    display: grid;
+    grid-template-columns: 2.9rem minmax(0, 1fr);
+    gap: 0.6rem;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: var(--fg-muted);
+  }
+  .finding-key {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    font-weight: 500;
+    color: var(--accent);
+    padding-top: 0.1rem;
+  }
+  .finding.is-fail .finding-key { color: var(--fail); }
+
+  .panel-foot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--s-3);
+    margin-top: var(--s-4);
+    padding-top: var(--s-4);
+    border-top: var(--rule);
+  }
+  .panel-foot p { font-size: 0.78rem; color: var(--fg-dim); }
+
+  /* ==========================================================================
+     Pillars
+     ========================================================================== */
+  .pillars { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--line); border: var(--rule); border-radius: var(--r-lg); overflow: hidden; }
+  .pillar {
+    background: var(--ink-800);
+    padding: var(--s-6);
+    transition: background-color var(--dur-base) var(--ease-out);
+  }
+  .pillar:hover { background: var(--ink-700); }
+  .pillar-head { display: flex; align-items: baseline; gap: 0.7rem; margin-bottom: 0.7rem; }
+  .pillar-num {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--fg-faint);
+  }
+  .pillar h3 { font-size: var(--step-1); font-weight: 600; }
+  .pillar p { color: var(--fg-muted); font-size: 0.9125rem; max-width: 46ch; }
+
+  /* ==========================================================================
+     Lifecycle
+     ========================================================================== */
+  .steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-6); counter-reset: step; }
+  .step { padding-top: var(--s-4); border-top: 2px solid var(--line-strong); position: relative; }
+  .step::before {
+    content: "";
+    position: absolute;
+    top: -2px; left: 0;
+    width: 2.5rem; height: 2px;
+    background: var(--accent);
+  }
+  .step-num {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .step h3 { font-size: var(--step-1); margin-bottom: 0.5rem; }
+  .step p { font-size: 0.9rem; color: var(--fg-muted); }
+
+  /* ==========================================================================
+     Comparison table
+     ========================================================================== */
+  .table-wrap { border: var(--rule); border-radius: var(--r-lg); overflow: hidden; background: var(--ink-800); }
+  .table-scroll { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; text-align: left; min-width: 660px; }
+  caption { caption-side: top; text-align: left; padding: var(--s-4) var(--s-5); color: var(--fg-dim); font-size: 0.82rem; border-bottom: var(--rule); }
+  thead th {
+    background: var(--ink-700);
+    padding: 0.8rem var(--s-5);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--fg-dim);
+    border-bottom: var(--rule);
+    white-space: nowrap;
+  }
+  thead th:last-child { color: var(--accent); }
+  tbody th, tbody td {
+    padding: 1.05rem var(--s-5);
+    font-size: 0.9rem;
+    font-weight: 400;
+    border-bottom: var(--rule);
+    vertical-align: top;
+  }
+  tbody th { color: var(--fg); font-weight: 550; white-space: nowrap; }
+  tbody td { color: var(--fg-muted); }
+  tbody td:last-child { color: var(--fg); background: rgba(47, 182, 207, 0.035); }
+  tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
+  .tag {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-variant-numeric: tabular-nums;
+    padding: 0.12rem 0.4rem;
+    border-radius: var(--r-sm);
+    border: 1px solid var(--line-strong);
+    color: var(--fg-muted);
+  }
+  .tag--accent { border-color: var(--accent-edge); color: var(--accent-hi); background: var(--accent-wash); }
+
+  /* ==========================================================================
+     Pricing
+     ========================================================================== */
+  .plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-4); align-items: stretch; }
+  .plan {
+    display: flex;
+    flex-direction: column;
+    background: var(--ink-800);
+    border: 1px solid var(--line);
+    border-radius: var(--r-lg);
+    padding: var(--s-6);
+  }
+  .plan--featured { border-color: var(--accent-edge); background: linear-gradient(180deg, var(--accent-wash), var(--ink-800) 42%); }
+  .plan-tier {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--s-3);
+    margin-bottom: var(--s-4);
+  }
+  .plan-tier h3 { font-size: 1rem; font-weight: 600; }
+  .plan-flag {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-hi);
+    border: 1px solid var(--accent-edge);
+    border-radius: var(--r-sm);
+    padding: 0.15rem 0.45rem;
+  }
+  .plan-price {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    margin: 0 0 0.35rem;
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+  .plan-amount {
+    font-size: 1.9rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--fg);
+  }
+  .plan-price small { font-size: 0.78rem; font-weight: 400; color: var(--fg-dim); letter-spacing: 0; }
+  .plan-for { font-size: 0.85rem; color: var(--fg-muted); margin: 0.45rem 0 var(--s-5); min-height: 3.6em; }
+  .plan ul { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: var(--s-6); flex: 1; }
+  .billing-note { font-size: 0.8rem; color: var(--fg-dim); max-width: 74ch; margin-top: var(--s-5); }
+  .plan li {
+    display: grid;
+    grid-template-columns: 1rem minmax(0, 1fr);
+    gap: 0.55rem;
+    font-size: 0.86rem;
+    color: var(--fg-muted);
+  }
+  .plan li svg { color: var(--accent); margin-top: 0.28rem; }
+  .plan li strong { color: var(--fg); font-weight: 550; }
+  .plan-note { font-size: 0.78rem; color: var(--fg-dim); margin-top: var(--s-4); text-align: center; }
+  .enterprise {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--s-4);
+    margin-top: var(--s-4);
+    padding: var(--s-5) var(--s-6);
+    border: var(--rule);
+    border-radius: var(--r-lg);
+    background: var(--ink-800);
+  }
+  .enterprise p { font-size: 0.9rem; color: var(--fg-muted); max-width: 62ch; }
+  .enterprise p strong { color: var(--fg); font-weight: 550; }
+  .enterprise .num { font-family: var(--font-mono); color: var(--accent-hi); }
+
+  /* ==========================================================================
+     FAQ
+     ========================================================================== */
+  .faq { border-top: var(--rule); max-width: 56rem; }
+  .faq details { border-bottom: var(--rule); }
+  .faq summary {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--s-4);
+    padding: 1.15rem 0;
+    font-size: var(--step-1);
+    font-weight: 500;
+    cursor: pointer;
+    list-style: none;
+    transition: color var(--dur-fast) var(--ease-out);
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary:hover { color: var(--accent-hi); }
+  .faq summary::after {
+    content: "+";
+    flex: none;
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    color: var(--fg-dim);
+    transition: transform var(--dur-base) var(--ease-out), color var(--dur-base) var(--ease-out);
+  }
+  .faq details[open] summary::after { content: "\2212"; color: var(--accent); }
+  .faq .answer { padding: 0 0 1.35rem; max-width: var(--measure); color: var(--fg-muted); font-size: 0.9375rem; }
+
+  /* ==========================================================================
+     Closing band
+     ========================================================================== */
+  .closing {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--s-6);
+    padding: var(--s-8) 0;
+  }
+  .closing h2 { font-size: var(--step-2); font-weight: 400; max-width: 28ch; }
+  .closing p { color: var(--fg-muted); margin-top: var(--s-3); max-width: 46ch; font-size: 0.9375rem; }
+  .closing-actions { display: flex; flex-wrap: wrap; gap: var(--s-3); }
+
+  /* ==========================================================================
+     Footer
+     ========================================================================== */
+  .site-footer { border-top: var(--rule); background: var(--ink-800); }
+  .footer-top {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) repeat(3, minmax(0, 1fr));
+    gap: var(--s-7);
+    padding: var(--s-8) 0 var(--s-7);
+  }
+  .footer-brand p { margin-top: var(--s-4); font-size: 0.875rem; color: var(--fg-muted); max-width: 36ch; }
+  .footer-col h3 {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--fg-dim);
+    margin-bottom: var(--s-4);
+  }
+  .footer-col ul { display: flex; flex-direction: column; gap: 0.6rem; }
+  .footer-col a {
+    font-size: 0.875rem;
+    color: var(--fg-muted);
+    text-decoration: none;
+    transition: color var(--dur-fast) var(--ease-out);
+  }
+  .footer-col a:hover { color: var(--accent-hi); }
+  .footer-legal {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--s-4);
+    padding: var(--s-5) 0 var(--s-7);
+    border-top: var(--rule);
+    font-size: 0.78rem;
+    color: var(--fg-dim);
+  }
+  .footer-legal p { max-width: 82ch; }
+  .footer-meta { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.04em; }
+
+  /* ==========================================================================
+     Entrance reveal — motion last, always gated
+     ========================================================================== */
+  .reveal { opacity: 1; }
+  @media (prefers-reduced-motion: no-preference) {
+    .js .reveal { opacity: 0; transform: translateY(18px); }
+    .js .reveal.is-in {
+      opacity: 1;
+      transform: none;
+      transition: opacity var(--dur-reveal) var(--ease-out), transform var(--dur-reveal) var(--ease-out);
+      transition-delay: var(--reveal-delay, 0ms);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+
+  /* ==========================================================================
+     Responsive
+     ========================================================================== */
+  @media (max-width: 1040px) {
+    .hero-grid { grid-template-columns: minmax(0, 1fr); gap: var(--s-8); }
+    .hero { padding-top: var(--s-9); }
+    .hero-lede { max-width: 56ch; }
+    .panel-grid { grid-template-columns: minmax(0, 1fr); }
+    .plans { grid-template-columns: minmax(0, 1fr); }
+    .plan-for { min-height: 0; }
+    .footer-top { grid-template-columns: minmax(0, 1fr) repeat(2, minmax(0, 1fr)); gap: var(--s-6); }
+  }
+
+  @media (max-width: 860px) {
+    .nav-links { display: none; }
+    .pillars { grid-template-columns: minmax(0, 1fr); }
+    .steps { grid-template-columns: minmax(0, 1fr); gap: var(--s-5); }
+    .footer-top { grid-template-columns: minmax(0, 1fr); }
+    .rule-section { padding: var(--s-9) 0; }
+    .closing { padding: var(--s-7) 0; }
+    .btn-label-long { display: none; }
+  }
+
+  @media (min-width: 861px) {
+    .btn-label-short { display: none; }
+  }
+
+  @media (max-width: 560px) {
+    :root { --s-10: 4.5rem; --s-11: 5rem; }
+    .shell { padding: 0 var(--s-4); }
+    .field-row { grid-template-columns: minmax(0, 1fr); }
+    .metric-row { grid-template-columns: minmax(0, 1fr); }
+    .metric { border-left: 0; border-top: 1px solid var(--line); }
+    .metric:first-child { border-top: 0; }
+    .spec-row { grid-template-columns: minmax(0, 1fr); gap: 0.25rem; }
+    .panel-body { padding: var(--s-4); }
+    .panel-bar { padding: 0.6rem var(--s-3); }
+    .hero-actions .btn { width: 100%; }
+  }
+  /* ==========================================================================
+     Hero showcase — interactive pre-check animation
+     ========================================================================== */
+  .showcase {
+    max-width: calc(var(--shell) - 2 * var(--s-5));
+    margin: var(--s-9) auto 0;
+    background: var(--ink-800);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--r-lg);
+    box-shadow: var(--shadow-3);
+    overflow: hidden;
+  }
+  .showcase-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--s-3);
+    padding: 0.7rem var(--s-4);
+    background: var(--ink-700);
+    border-bottom: var(--rule);
+  }
+  .showcase-grid { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); }
+  .showcase-stage {
+    position: relative;
+    background: var(--ink-900);
+    border-right: var(--rule);
+  }
+  #heroDemoCanvas { display: block; width: 100%; height: 310px; }
+  .showcase-legend {
+    position: absolute;
+    left: 12px;
+    bottom: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    font-family: var(--font-mono);
+    font-size: 0.64rem;
+    color: var(--fg-dim);
+    pointer-events: none;
+  }
+  .showcase-legend i { font-style: normal; }
+  .showcase-side {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-4);
+    padding: var(--s-5);
+  }
+  .showcase-lead { font-size: 0.875rem; color: var(--fg-muted); }
+  .showcase-field { display: flex; flex-direction: column; gap: 0.35rem; }
+  .showcase-field label {
+    font-family: var(--font-mono);
+    font-size: 0.64rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--fg-dim);
+  }
+  .showcase-select {
+    appearance: none;
+    width: 100%;
+    padding: 0.45rem 0.6rem;
+    background: var(--ink-700);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--r-sm);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+  }
+  .showcase-verdict {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 0;
+    padding: 0.6rem 0.75rem;
+    background: var(--ink-700);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--r-md);
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    color: var(--fg-muted);
+  }
+  .showcase-dot { flex: none; width: 9px; height: 9px; border-radius: 50%; background: var(--fg-faint); }
+  .showcase-verdict.is-pass { border-color: var(--accent-edge); background: var(--accent-wash); color: var(--fg); }
+  .showcase-verdict.is-pass .showcase-dot { background: var(--accent); box-shadow: 0 0 0 3px var(--accent-wash); }
+  .showcase-verdict.is-fail { border-color: rgba(224, 101, 122, 0.42); background: rgba(224, 101, 122, 0.1); color: var(--fg); }
+  .showcase-verdict.is-fail .showcase-dot { background: #e0657a; box-shadow: 0 0 0 3px rgba(224, 101, 122, 0.16); }
+  .showcase-metrics {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--fg-dim);
+  }
+  .showcase-metrics li { display: flex; justify-content: space-between; gap: var(--s-3); }
+  .showcase-metrics span { color: var(--fg); }
+  .showcase-metrics span.is-fail { color: #e0657a; }
+  .showcase-metrics span.is-pass { color: var(--accent-hi); }
+  .showcase-stamp {
+    margin: 0;
+    padding: 0.65rem 0.75rem;
+    border: 1px dashed var(--line-strong);
+    border-radius: var(--r-md);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    line-height: 1.5;
+    color: var(--fg-dim);
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 240ms var(--ease-out), transform 240ms var(--ease-out);
+  }
+  .showcase-stamp.is-in { opacity: 1; transform: none; border-color: var(--accent-edge); color: var(--fg-muted); }
+  .showcase-stamp strong { color: var(--accent-hi); font-weight: 600; }
+  .showcase-note { margin: 0; font-size: 0.72rem; color: var(--fg-faint); }
+  @media (max-width: 1040px) {
+    .showcase-grid { grid-template-columns: minmax(0, 1fr); }
+    .showcase-stage { border-right: 0; border-bottom: var(--rule); }
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<div class="grid-ground" aria-hidden="true"></div>
+
+<div class="page">
+  <header class="site-header">
+    <div class="shell nav">
+      <a class="brand" href="index.html" aria-label="BauLens Startseite">
+        <span class="brand-mark"><img src="assets/icon.svg" alt="" width="22" height="22"></span>
+        <span class="brand-text">
+          <span class="brand-name">BauLens</span>
+          <span class="brand-owner">Keller Systems</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Hauptnavigation">
+        <a class="nav-link" href="#pruefung">Live-Prüfung</a>
+        <a class="nav-link" href="#funktionen">Funktionen</a>
+        <a class="nav-link" href="#ablauf">Ablauf</a>
+        <a class="nav-link" href="pricing/">Preise</a>
+        <a class="nav-link" href="#fragen">Fragen</a>
+        <a class="nav-link" href="docs.html">Dokumentation</a>
+        <a class="nav-link" href="downloads/">Downloads</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="nav-link" href="https://kellersystems.dev" style="white-space:nowrap;font-family:var(--mono,'IBM Plex Mono',monospace);font-size:11.5px;opacity:0.85;">kellersystems.dev &rarr;</a>
+        <a class="btn btn--primary btn--sm" href="downloads/"><span class="btn-label-long">BauLens herunterladen</span><span class="btn-label-short">Download</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ================= Hero ================= -->
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div>
+          <p class="eyebrow">Deterministische Vorprüfung &bull; DACH</p>
+          <h1>Bauanträge prüfen, <strong>bevor</strong> das Bauamt sie prüft.</h1>
+          <p class="hero-lede">
+            BauLens rechnet Entwürfe gegen 34 DACH-Regelprofile und die BauNVO durch — Abstandsflächen,
+            GRZ/GFZ, Vollgeschosse, Rettungswege, Brandschutz, Barrierefreiheit. Ergebnis: ein Befund
+            mit Paragraphennachweis, kein Schätzwert.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn--primary" href="downloads/">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+              BauLens herunterladen
+            </a>
+            <a class="btn btn--ghost" href="pricing/">Preise &amp; Lizenzen</a>
+          </div>
+        </div>
+
+        <div class="spec-list">
+          <div class="spec-row">
+            <span class="spec-key">Regelprofile</span>
+            <span class="spec-val num">34 <span>&mdash; MBO, 16 Landesbauordnungen, OIB &amp; 9 Bundesländer (AT), IVHB &amp; 6 Kantone (CH)</span></span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-key">Kommunen</span>
+            <span class="spec-val num">10 <span>&mdash; München, Nürnberg, Berlin, Hamburg, Köln, Düsseldorf, Frankfurt, Stuttgart, Leipzig, Dresden</span></span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-key">Prüfmodule</span>
+            <span class="spec-val num">15 <span>&mdash; inkl. B-Plan-Festsetzungen, Gründach, Brandwand, Schallschutz</span></span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-key">Schnittstellen</span>
+            <span class="spec-val">IFC &bull; DXF &bull; XPlanung &bull; Baubeschreibung &bull; XBau 2.3 &bull; BCF 2.1</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-key">Verarbeitung</span>
+            <span class="spec-val">Lokal &mdash; keine Plandaten verlassen Ihr Gerät</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Hero showcase (interactive pre-check demo) ================= -->
+    <section class="showcase reveal" aria-label="Interaktive Produkt-Demo">
+      <div class="showcase-bar">
+        <span class="panel-label"><span class="live-dot" aria-hidden="true"></span> Showcase &bull; simulierte Vorprüfung</span>
+        <span class="panel-label" id="heroDemoScanLabel">Laser-Scan: Fassade Nord</span>
+      </div>
+
+      <div class="showcase-grid">
+        <div class="showcase-stage">
+          <canvas id="heroDemoCanvas" width="620" height="310" role="img" aria-label="Simulierte Prüfung eines Baukörpers: ein Laser scannt die vier Abstandsflächen und markiert eine Grenzkollision."></canvas>
+          <div class="showcase-legend">
+            <span><i style="color:var(--accent);">&#9632;</i> Baukörper (LOD200)</span>
+            <span><i style="color:var(--accent-hi);">&#9632;</i> Abstandsfläche geprüft</span>
+            <span><i style="color:#e0657a;">&#9632;</i> Grenzkollision</span>
+          </div>
+        </div>
+
+        <div class="showcase-side">
+          <p class="showcase-lead">
+            Der Baukörper wird vermessen und die vier Abstandsflächen werden gegen das gewählte Regelprofil
+            gerechnet. Ein Wechsel des Bundeslands ändert die Formel &mdash; und damit das Ergebnis.
+          </p>
+
+          <div class="showcase-field">
+            <label for="heroDemoLand">Regelprofil</label>
+            <select id="heroDemoLand" class="showcase-select">
+              <option value="NW" selected>Nordrhein-Westfalen &mdash; 0,5 H, mind. 3,0 m</option>
+              <option value="BY">Bayern &mdash; 0,4 H, mind. 3,0 m</option>
+              <option value="WIEN">Wien &mdash; Bauwich 4,0 m</option>
+            </select>
+          </div>
+
+          <p class="showcase-verdict is-fail" id="heroDemoVerdict">
+            <span class="showcase-dot" aria-hidden="true"></span>
+            <span id="heroDemoVerdictText">Laser-Scan läuft &hellip;</span>
+          </p>
+
+          <ul class="showcase-metrics" id="heroDemoMetrics"></ul>
+
+          <button type="button" class="btn btn--ghost btn--sm" id="heroDemoHeal">Heilungsvorschlag anwenden (+0,45 m)</button>
+
+          <p class="showcase-stamp" id="heroDemoStamp"></p>
+
+          <p class="showcase-note">
+            Showcase-Simulation mit vereinfachten Parametern &mdash; kein Prüfergebnis und keine Rechtsberatung.
+            Verbindlich ist ausschließlich der Gesetzestext der jeweiligen Landesbauordnung.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Live demo ================= -->
+    <section class="rule-section" id="pruefung">
+      <div class="shell">
+        <div class="section-head reveal">
+          <span class="eyebrow">Live im Browser</span>
+          <h2>Prüfschleife statt Warteschleife</h2>
+          <p>
+            Verändern Sie die Entwurfsparameter und beobachten Sie den Befund in Echtzeit: Abstandsflächen
+            im Lageplan, Auslastung von GRZ und GFZ, Klassifizierung nach Gebäudeklasse. Es läuft hier
+            dieselbe deterministische Regel-Engine wie im CLI und in der Desktop-Anwendung. Die kostenlose
+            Browser-Demo prüft vier Kernkriterien mit reduziertem Parametersatz; den vollständigen Befund
+            samt Dossier liefert die Desktop-Anwendung, ohne dass Plandaten das Gerät verlassen.
+          </p>
+        </div>
+
+        <div class="studio-panel reveal">
+          <div class="panel-bar">
+            <span class="panel-label"><span class="live-dot" aria-hidden="true"></span> Compliance-Core &bull; lokale Ausführung</span>
+            <div class="chip-row" role="group" aria-label="Beispielprojekte">
+              <button type="button" class="chip" id="btnPresetGood" aria-pressed="true" onclick="loadDemoPreset('good')">Muster EFH München</button>
+              <button type="button" class="chip" id="btnPresetBad" aria-pressed="false" onclick="loadDemoPreset('bad')">Muster MFH Stuttgart</button>
+            </div>
+          </div>
+
+          <div class="panel-bar">
+            <span class="panel-label">Datenübernahme</span>
+            <div class="chip-row">
+              <button type="button" class="chip" onclick="loadCadPreset('ifc')">IFC&nbsp;BIM <span style="color:var(--fg-faint)">LOD200</span></button>
+              <button type="button" class="chip" onclick="loadCadPreset('dxf')">DXF&nbsp;2D-Lageplan</button>
+              <button type="button" class="chip" onclick="loadCadPreset('text')">Baubeschreibung</button>
+              <label class="chip chip--file">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <span>Datei laden</span>
+                <input type="file" id="demoCadFile" accept=".dxf,.ifc,.json,.txt" onchange="handleDemoUpload(event)">
+              </label>
+            </div>
+          </div>
+
+          <div class="panel-body">
+            <div class="panel-grid">
+              <!-- Inputs -->
+              <form class="panel-col" onsubmit="return false;">
+                <p class="panel-col-title"><span>1 &mdash; Entwurfsparameter</span><em id="cadStatusBadge">Quelle: Parameter</em></p>
+
+                <div class="field">
+                  <label for="demoLand">Regelprofil</label>
+                  <select id="demoLand" onchange="runLiveScan()">
+                    <option value="BY">Bayern &mdash; BayBO</option>
+                    <option value="BW">Baden-Württemberg &mdash; LBO BW</option>
+                    <option value="BE">Berlin &mdash; BauO Bln</option>
+                    <option value="NW">Nordrhein-Westfalen &mdash; BauO NRW</option>
+                    <option value="MBO">Musterbauordnung &mdash; MBO</option>
+                  </select>
+                </div>
+
+                <div class="field field-row">
+                  <div>
+                    <label for="demoHoehe">Gebäudehöhe (m)</label>
+                    <input type="number" id="demoHoehe" value="7.0" step="0.1" min="0" oninput="runLiveScan()">
+                  </div>
+                  <div>
+                    <label for="demoGrundstueck">Grundstück (m²)</label>
+                    <input type="number" id="demoGrundstueck" value="800" step="1" min="0" oninput="runLiveScan()">
+                  </div>
+                </div>
+
+                <div class="field field-row">
+                  <div>
+                    <label for="demoNord">Grenzabstand Nord (m)</label>
+                    <input type="number" id="demoNord" value="5.0" step="0.1" min="0" oninput="runLiveScan()">
+                  </div>
+                  <div>
+                    <label for="demoSued">Grenzabstand Süd (m)</label>
+                    <input type="number" id="demoSued" value="4.0" step="0.1" min="0" oninput="runLiveScan()">
+                  </div>
+                </div>
+
+                <div class="field field-row">
+                  <div>
+                    <label for="demoGrz">GRZ Ist (Grenze 0.40)</label>
+                    <input type="number" id="demoGrz" value="0.35" step="0.01" min="0" oninput="runLiveScan()">
+                  </div>
+                  <div>
+                    <label for="demoGfz">GFZ Ist (Grenze 1.20)</label>
+                    <input type="number" id="demoGfz" value="0.70" step="0.01" min="0" oninput="runLiveScan()">
+                  </div>
+                </div>
+
+                <button type="button" class="btn btn--primary btn--block" onclick="runLiveScan()" style="margin-top:0.5rem;">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+                  Prüfung ausführen
+                </button>
+              </form>
+
+              <!-- Result -->
+              <div class="panel-col">
+                <p class="panel-col-title"><span>2 &mdash; Vorprüfungsbefund</span><em id="scanTimestamp">deterministisch</em></p>
+
+                <div class="plan-frame">
+                  <canvas id="planCanvas" width="920" height="336" role="img" aria-label="Schematischer Lageplan mit Gebäudekörper, Grundstücksgrenze und Abstandsflächen"></canvas>
+                  <p class="plan-caption"><span>Lageplan &bull; Abstandsflächen</span><span>Nord ↑</span></p>
+                </div>
+
+                <div class="verdict" id="demoResultBox">
+                  <div class="verdict-head">
+                    <p class="verdict-line" id="demoVerdict">
+                      <span class="verdict-glyph" aria-hidden="true">✓</span>
+                      <span id="demoVerdictText">Bestanden &bull; vollständig konform</span>
+                    </p>
+                    <span class="class-tag" id="demoGkTag">Gebäudeklasse 1</span>
+                  </div>
+
+                  <dl class="metric-row">
+                    <div class="metric">
+                      <dt>GRZ-Auslastung</dt>
+                      <dd id="pillGrz">0.35 / 0.40</dd>
+                    </div>
+                    <div class="metric">
+                      <dt>GFZ-Auslastung</dt>
+                      <dd id="pillGfz">0.70 / 1.20</dd>
+                    </div>
+                    <div class="metric">
+                      <dt>Mindestabstand</dt>
+                      <dd id="pillAbstand">3.00 m</dd>
+                    </div>
+                  </dl>
+
+                  <div class="findings" id="demoFindings">
+                    <div class="finding">
+                      <span class="finding-key">&sect;6</span>
+                      <span>Grenzabstände Nord (5,0 m) und Süd (4,0 m) halten den Mindestabstand von 3,0 m ein.</span>
+                    </div>
+                    <div class="finding">
+                      <span class="finding-key">&sect;19</span>
+                      <span>GRZ 0,35 liegt innerhalb der B-Plan-Obergrenze von 0,40.</span>
+                    </div>
+                    <div class="finding">
+                      <span class="finding-key">&sect;20</span>
+                      <span>GFZ 0,70 hält das zulässige Höchstmaß von 1,20 ein.</span>
+                    </div>
+                  </div>
+
+                  <a class="btn btn--ghost btn--block btn--sm" href="downloads/">
+                    Desktop-App herunterladen
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel-foot">
+              <p>Diese Browser-Demo prüft vier Kernkriterien mit reduziertem Parametersatz und ohne PDF-Export. Die Desktop-Anwendung führt alle 34 DACH-Profile, B-Plan-Import, BIM-/CAD-Ingestion und den vollständigen Befund mit Dossier.</p>
+              <p class="num" id="demoFindingsCount">3 Befunde</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Pillars ================= -->
+    <section class="rule-section" id="funktionen">
+      <div class="shell">
+        <div class="section-head reveal">
+          <span class="eyebrow">Funktionen</span>
+          <h2>Vier Gründe, warum der Befund belastbar ist</h2>
+          <p>
+            BauLens ist kein Sprachmodell, das Gesetzestexte zusammenfasst. Es ist eine Regel-Engine mit
+            festen Formeln, Paragraphenzuordnung und nachvollziehbarer Herleitung — inklusive der Stellen,
+            an denen bewusst vereinfacht wurde.
+          </p>
+        </div>
+
+        <div class="pillars reveal">
+          <article class="pillar">
+            <div class="pillar-head"><span class="pillar-num">01</span><h3>Deterministisch, nicht generativ</h3></div>
+            <p>
+              Jedes Ergebnis folgt einer dokumentierten Formel und trägt die Fundstelle mit: &sect;6 MBO,
+              &sect;6 LBO BW, &sect;22 BayBO, &sect;19/&sect;20 BauNVO. Derselbe Input liefert immer denselben Befund.
+            </p>
+          </article>
+          <article class="pillar">
+            <div class="pillar-head"><span class="pillar-num">02</span><h3>Drei Ebenen: Bund, Land, Kommune</h3></div>
+            <p>
+              Bundesrecht (BauGB, BauNVO), 16 Landesbauordnungen mit echten Strukturabweichungen und
+              kommunale Satzungen &mdash; Stellplatz-, Gründach- und Milieuschutzvorgaben für zehn Städte.
+            </p>
+          </article>
+          <article class="pillar">
+            <div class="pillar-head"><span class="pillar-num">03</span><h3>Entwurfsdaten statt Handeingabe</h3></div>
+            <p>
+              IFC 2x3/IFC4, DXF-Layer, XPlanung-GML, GeoJSON- oder Text-Bebauungsplan und deutsche
+              Baubeschreibungen werden eingelesen und auf Prüfparameter abgebildet.
+            </p>
+          </article>
+          <article class="pillar">
+            <div class="pillar-head"><span class="pillar-num">04</span><h3>Ausgabe, die ins Verfahren geht</h3></div>
+            <p>
+              Formeller DIN-A4-Prüfbericht mit SHA-256-Prüfsiegel, XBau-2.3-Antrags-XML nach OZG und
+              BCF-2.1-Issues für Revit, ArchiCAD und Vectorworks.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Lifecycle ================= -->
+    <section class="rule-section" id="ablauf">
+      <div class="shell">
+        <div class="section-head reveal">
+          <span class="eyebrow">Ablauf</span>
+          <h2>Drei Schritte von der Zeichnung zum prüfbaren Nachweis</h2>
+        </div>
+
+        <ol class="steps reveal">
+          <li class="step">
+            <span class="step-num">01</span>
+            <h3>Erfassen</h3>
+            <p>Parameter im Formular, Baubeschreibung als Text, CAD-Layer aus DXF oder Raumbuch aus dem IFC-Modell &mdash; wahlweise mit B-Plan-Abgleich.</p>
+          </li>
+          <li class="step">
+            <span class="step-num">02</span>
+            <h3>Prüfen</h3>
+            <p>Regelwerk der gewählten Landesbauordnung und BauNVO, optional über alle 34 DACH-Profile im Quervergleich. Fehlermeldungen enthalten den Befreiungsweg.</p>
+          </li>
+          <li class="step">
+            <span class="step-num">03</span>
+            <h3>Belegen</h3>
+            <p>Vorprüfungsbericht als DIN-A4-PDF, Befund als Markdown, Mängel als BCF-Themen mit 3D-Koordinaten, Antrag als XBau-XML.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= Comparison ================= -->
+    <section class="rule-section">
+      <div class="shell">
+        <div class="section-head reveal">
+          <span class="eyebrow">Direkter Vergleich</span>
+          <h2>Was eine vermiedene Nachforderung kostet</h2>
+        </div>
+
+        <div class="table-wrap reveal">
+          <div class="table-scroll">
+            <table>
+              <caption>Gegenüberstellung des konventionellen Ablaufs und der Vorprüfung mit BauLens.</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Prüfschritt</th>
+                  <th scope="col">Konventionell</th>
+                  <th scope="col">Mit BauLens</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Zeitpunkt des Befunds</th>
+                  <td>Nach Einreichung, mit dem Bescheid des Bauamts</td>
+                  <td><span class="tag tag--accent">vor Einreichung</span> im eigenen Büro</td>
+                </tr>
+                <tr>
+                  <th scope="row">Kosten einer Nachforderung</th>
+                  <td>2 bis 6 Wochen Stillstand, Nacharbeit im fünfstelligen Bereich</td>
+                  <td><span class="tag">vermieden</span> Mangel wird vorab geschlossen</td>
+                </tr>
+                <tr>
+                  <th scope="row">Rechtsgrundlage</th>
+                  <td>Manuelle Suche im novellierten Gesetzestext</td>
+                  <td>16 Landesbauordnungen, OIB, IVHB hinterlegt</td>
+                </tr>
+                <tr>
+                  <th scope="row">Nachweisdokument</th>
+                  <td>Notizen, Tabellen, E-Mail-Verlauf</td>
+                  <td>DIN-A4-Bericht mit Prüfsiegel und Datenblatt</td>
+                </tr>
+                <tr>
+                  <th scope="row">Datenhaltung</th>
+                  <td>Plandateien in Cloud-Diensten und Postfächern</td>
+                  <td>Lokale Ausführung, keine Übertragung von Plandaten</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Pricing ================= -->
+    <section class="rule-section" id="preise">
+      <div class="shell">
+        <div class="section-head reveal">
+          <span class="eyebrow">Konditionen</span>
+          <h2>Lizenzen für Büros, Kanzleien und Serienhersteller</h2>
+          <p>
+            Alle Lizenzen arbeiten mit demselben Regelkern. Unterschiedlich sind Umfang, Ausgabeformate
+            und Anzahl der Arbeitsplätze.
+          </p>
+        </div>
+
+        <!-- PRICING:START — generated from site.config.json by scripts/build-site.mjs, do not edit by hand -->
+
+        <div class="plans">
+          <article class="plan">
+            <div class="plan-tier">
+              <h3>Starter</h3>
+              <span class="plan-flag">Projekt-Pass</span>
+            </div>
+            <p class="plan-price"><span class="plan-amount">49 €</span> <small>&middot; einmalig</small></p>
+            <p class="plan-for">Der risikolose Einstieg für Skeptiker: ein konkretes Bauvorhaben 30 Tage lang prüfen.</p>
+            <ul>
+              <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Ein konkretes Bauvorhaben, 30 Tage lang</span></li>
+              <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Bis zu <strong>10 Re-Runs</strong> für Entwurfsänderungen</span></li>
+              <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span><strong>DIN-A4-Dossier</strong> mit Prüfsiegel</span></li>
+              <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>XBau 2.3 XML für den Antrag</span></li>
+            </ul>
+            <a class="btn btn--ghost btn--block" href="downloads/">Desktop-App laden</a>
+            <p class="plan-note">Einmalzahlung, kein Abonnement. Ab dem zweiten Vorhaben rechnet sich Pro.</p>
+          </article>
+          <article class="plan plan--featured">
+            <div class="plan-tier">
+              <h3>Pro Architekt</h3>
+              <span class="plan-flag">Für Einzelbüros</span>
+            </div>
+            <p class="plan-price"><span class="plan-amount">89 €</span> <small>/ Monat &middot; Arbeitsplatz</small><small class="plan-annual">oder 890 € / Jahr</small></p>
+            <p class="plan-for">Für freie Architektinnen und Architekten und Einzelplaner. Ein Arbeitsplatz.</p>
+            <ul>
+              <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Unbegrenzte</strong> Projektprüfungen</span></li>
+              <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Unbegrenzte Dossier-Exporte</span></li>
+              <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Compliance-Repair-Engine mit Heilungsvorschlägen</span></li>
+              <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Alle 34 DACH-Regelprofile, 1 Arbeitsplatz</span></li>
+            </ul>
+            <a class="btn btn--primary btn--block" href="downloads/">Desktop-App laden</a>
+            <p class="plan-note">Monatlich kündbar. Jahreszahlung 890 € — zwei Monate geschenkt.</p>
+          </article>
+          <article class="plan">
+            <div class="plan-tier">
+              <h3>Büro / Kanzlei</h3>
+              <span class="plan-flag">Für Planungsbüros</span>
+            </div>
+            <p class="plan-price"><span class="plan-amount">199 €</span> <small>/ Monat &middot; Arbeitsplatz</small><small class="plan-annual">oder 1.990 € / Jahr</small></p>
+            <p class="plan-for">Für Planungsbüros und Teams. Drei Arbeitsplätze inklusive, weitere zubuchbar.</p>
+            <ul>
+              <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span><strong>3 Arbeitsplätze</strong> inklusive (~66 € je Platz)</span></li>
+              <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Jeder weitere Arbeitsplatz +49 € / Monat</span></li>
+              <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>Firmenlogo und Kopfzeile im Dossier</span></li>
+              <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span>DACH-Quervergleich über alle 34 Profile</span></li>
+            </ul>
+            <a class="btn btn--ghost btn--block" href="downloads/">Desktop-App laden</a>
+            <p class="plan-note">Monatlich kündbar, Jahreszahlung 1.990 €. Weiterer Arbeitsplatz 49 € / Monat.</p>
+          </article>
+        </div>
+
+        <div class="enterprise">
+          <p>
+            <strong>Serien- und Fertighaushersteller:</strong> Massenprüfung von Typen- und Kataloglisten, API-Zugang und BCF-Pipeline in die eigene BIM-Umgebung.
+            <span class="num">1.490 € / Monat</span>
+          </p>
+          <a class="btn btn--ghost btn--sm" href="mailto:info@kellersystems.dev?subject=BauLens%20Enterprise-Anfrage">Enterprise anfragen</a>
+        </div>
+
+        <p class="billing-note">Alle Preise in Euro. Die Umsatzsteuer ist im Preis enthalten; die Berechnung erfolgt im Checkout anhand deiner Rechnungsadresse. Polar tritt als Merchant of Record als Verkäufer auf. Die Checkout-Verweise werden hier eingetragen, sobald die Produkte in Polar angelegt sind — bis dahin führt jeder Kauf-Button in den Download-Hub, wo die Desktop-App 14 Tage lang kostenlos getestet werden kann.</p>
+        <!-- PRICING:END -->
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section class="rule-section" id="fragen">
+      <div class="shell">
+        <div class="section-head reveal">
+          <span class="eyebrow">Häufige Fragen</span>
+          <h2>Einordnung und Grenzen</h2>
+        </div>
+
+        <div class="faq reveal">
+          <details open>
+            <summary>Ersetzt BauLens die Prüfung durch eine bauvorlageberechtigte Person?</summary>
+            <div class="answer">
+              Nein. BauLens ist eine softwaregestützte Vorprüfung und erbringt keine Rechtsberatung im
+              Sinne des Rechtsdienstleistungsgesetzes. Der Bericht dient der technischen und planerischen
+              Qualitätssicherung und ersetzt weder die Prüfung durch eine bauvorlageberechtigte Person
+              noch den Genehmigungsbescheid der Bauaufsichtsbehörde.
+            </div>
+          </details>
+          <details>
+            <summary>Wo liegen meine Plandaten?</summary>
+            <div class="answer">
+              Die Berechnung läuft clientseitig im Browser oder auf Ihrem eigenen Server. Zeichnungen,
+              Raumdaten und Bauherrenangaben werden nicht an fremde Systeme übertragen; es gibt keine
+              Cloud-Komponente im Prüfpfad.
+            </div>
+          </details>
+          <details>
+            <summary>Welche Regelwerke sind abgedeckt?</summary>
+            <div class="answer">
+              Die Musterbauordnung als Referenzbasis, 16 deutsche Landesbauordnungen mit hinterlegten
+              Strukturabweichungen (Bayern, Baden-Württemberg und Berlin gesondert, übrige Länder auf
+              MBO-Default gekennzeichnet), die harmonisierten OIB-Richtlinien mit neun österreichischen
+              Landesordnungen sowie das IVHB-Konkordat mit sechs Kantonsprofilen. Dazu BauNVO
+              (&sect;19 GRZ, &sect;20 GFZ), &sect;16 BauNVO sowie kommunale Satzungen für zehn Städte.
+            </div>
+          </details>
+          <details>
+            <summary>Wie genau sind die hinterlegten Werte?</summary>
+            <div class="answer">
+              Parameter, die aus Sekundärliteratur stammen oder vereinfacht wurden, sind im Tool und im
+              Regelkatalog mit <code>[prüfen]</code> gekennzeichnet. Jedes Prüfergebnis nennt die
+              verwendete Formel und die Annahmen &mdash; verbindlich bleibt der aktuelle Gesetzestext.
+            </div>
+          </details>
+          <details>
+            <summary>Was passiert bei festgestellten Mängeln?</summary>
+            <div class="answer">
+              Die Repair-Engine schlägt drei Wege vor: eine geometrische Lösung (Baukörperverschiebung
+              innerhalb zulässiger Puffer), eine bauliche Lösung (zulässige Trauf- und Wandhöhen) und eine
+              rechtliche Lösung mit formulierter Begründung für eine Befreiung nach &sect;31 Abs. 2 BauGB
+              bzw. &sect;67 MBO.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Closing ================= -->
+    <section class="rule-section">
+      <div class="shell closing reveal">
+        <div>
+          <h2>Nächster Entwurf, nächste Prüfung: in unter zwei Minuten.</h2>
+          <p>BauLens herunterladen, Projektordner öffnen, Befund und Dossier erhalten &mdash; vollständig lokal, ohne Cloud.</p>
+        </div>
+        <div class="closing-actions">
+          <a class="btn btn--primary" href="downloads/">BauLens herunterladen</a>
+          <a class="btn btn--ghost" href="docs/WHITEPAPER.md">Whitepaper lesen</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="brand" href="index.html">
+            <span class="brand-mark"><img src="assets/icon.svg" alt="" width="22" height="22"></span>
+            <span class="brand-text">
+              <span class="brand-name">BauLens</span>
+              <span class="brand-owner">Keller Systems</span>
+            </span>
+          </a>
+          <p>Deterministische Bauordnungs-Vorprüfung für Deutschland, Österreich und die Schweiz. Vorprüfung, keine Rechtsberatung.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Produkt</h3>
+          <ul>
+            <li><a href="downloads/">BauLens herunterladen</a></li>
+            <li><a href="pricing/">Preise &amp; Lizenzen</a></li>
+            <li><a href="#pruefung">Live-Prüfung</a></li>
+            <li><a href="docs.html">Dokumentation</a></li>
+            <li><a href="https://kellersystems.dev">Keller Systems</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Rechtliches</h3>
+          <ul>
+            <li><a href="legal/impressum/">Impressum</a></li>
+            <li><a href="legal/datenschutz/">Datenschutz</a></li>
+            <li><a href="legal/agb/">AGB</a></li>
+            <li><a href="legal/lizenz/">Lizenzvereinbarung</a></li>
+            <li><a href="legal/widerruf/">Widerrufsbelehrung</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <p>Diese Vorprüfung dient der technischen Qualitätssicherung und ersetzt weder die Prüfung durch eine bauvorlageberechtigte Person noch den Genehmigungsbescheid der zuständigen Bauaufsichtsbehörde.</p>
+        <p class="footer-meta">&copy; 2026 Lukas Negenborn &bull; Keller Systems &bull; BauLens DACH</p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+(function () {
+  document.documentElement.classList.add('js');
+
+  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  /* ---------- Entrance reveal ---------- */
+  var revealNodes = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+
+  function showAll() {
+    revealNodes.forEach(function (node) { node.classList.add('is-in'); });
+  }
+
+  if (prefersReduced.matches || !('IntersectionObserver' in window)) {
+    showAll();
+  } else {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.06 });
+
+    revealNodes.forEach(function (node, index) {
+      node.style.setProperty('--reveal-delay', (index % 4) * 70 + 'ms');
+      observer.observe(node);
+    });
+  }
+
+  prefersReduced.addEventListener('change', function (event) {
+    if (event.matches) showAll();
+  });
+
+  /* ---------- Blueprint plan ---------- */
+  var PLAN = {
+    grid: 'rgba(255, 255, 255, 0.05)',
+    boundary: '#4d5768',
+    boundaryFill: 'rgba(230, 237, 245, 0.035)',
+    body: 'rgba(230, 237, 245, 0.07)',
+    bodyEdge: '#8b97a8',
+    pass: '#2fb6cf',
+    passWash: 'rgba(47, 182, 207, 0.16)',
+    fail: '#e0657a',
+    failWash: 'rgba(224, 101, 122, 0.16)',
+    label: '#6b7788'
+  };
+
+  function drawPlanCanvas(nord, sued, minAbstand, isPass) {
+    var canvas = document.getElementById('planCanvas');
+    if (!canvas || !canvas.getContext) return;
+
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var cssW = canvas.clientWidth || 460;
+    var cssH = canvas.clientHeight || 168;
+    var w = Math.round(cssW * dpr);
+    var h = Math.round(cssH * dpr);
+
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width = w;
+      canvas.height = h;
+    }
+
+    var ctx = canvas.getContext('2d');
+    var mono = getComputedStyle(document.documentElement).getPropertyValue('--font-mono').trim();
+    var font = function (size, weight) {
+      return (weight ? weight + ' ' : '') + Math.round(size * dpr) + 'px ' + (mono || 'monospace');
+    };
+
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.clearRect(0, 0, w, h);
+
+    /* Drafting grid, offset from the frame so it reads as a plan sheet. */
+    var cell = 12 * dpr;
+    ctx.strokeStyle = PLAN.grid;
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    for (var x = cell; x < w; x += cell) { ctx.moveTo(x, 0); ctx.lineTo(x, h); }
+    for (var y = cell; y < h; y += cell) { ctx.moveTo(0, y); ctx.lineTo(w, y); }
+    ctx.stroke();
+
+    /* Parcel boundary */
+    var padX = 30 * dpr;
+    var padY = 18 * dpr;
+    var plotW = w - padX * 2;
+    var plotH = h - padY * 2;
+
+    ctx.fillStyle = PLAN.boundaryFill;
+    ctx.fillRect(padX, padY, plotW, plotH);
+    ctx.strokeStyle = PLAN.boundary;
+    ctx.lineWidth = 1 * dpr;
+    ctx.setLineDash([5 * dpr, 4 * dpr]);
+    ctx.strokeRect(padX, padY, plotW, plotH);
+    ctx.setLineDash([]);
+
+    /* Building body */
+    var scale = 7.5 * dpr;
+    var offN = Math.max(12 * dpr, Math.min(plotH / 2 - 8 * dpr, nord * scale));
+    var offS = Math.max(12 * dpr, Math.min(plotH / 2 - 8 * dpr, sued * scale));
+    var inset = 34 * dpr;
+    var bldgX = padX + inset;
+    var bldgY = padY + offN;
+    var bldgW = Math.max(30 * dpr, plotW - inset * 2);
+    var bldgH = Math.max(24 * dpr, plotH - offN - offS);
+
+    ctx.fillStyle = isPass ? PLAN.passWash : PLAN.failWash;
+    ctx.fillRect(bldgX, bldgY, bldgW, bldgH);
+    ctx.strokeStyle = isPass ? PLAN.pass : PLAN.fail;
+    ctx.lineWidth = 1.5 * dpr;
+    ctx.strokeRect(bldgX, bldgY, bldgW, bldgH);
+    ctx.strokeStyle = PLAN.bodyEdge;
+    ctx.lineWidth = 1 * dpr;
+    ctx.strokeRect(bldgX + 6 * dpr, bldgY + 6 * dpr, Math.max(0, bldgW - 12 * dpr), Math.max(0, bldgH - 12 * dpr));
+
+    /* Setback dimensions */
+    var midX = bldgX + bldgW / 2;
+    var tick = 3.5 * dpr;
+
+    function dimension(yFrom, yTo, value, ok, labelAbove) {
+      var colour = ok ? PLAN.pass : PLAN.fail;
+      ctx.strokeStyle = colour;
+      ctx.fillStyle = colour;
+      ctx.lineWidth = 1 * dpr;
+
+      ctx.beginPath();
+      ctx.moveTo(midX, yFrom);
+      ctx.lineTo(midX, yTo);
+      ctx.stroke();
+
+      var tipY = labelAbove ? yFrom : yTo;
+      var dir = labelAbove ? 1 : -1;
+      ctx.beginPath();
+      ctx.moveTo(midX - tick, tipY + dir * tick * 1.4);
+      ctx.lineTo(midX, tipY);
+      ctx.lineTo(midX + tick, tipY + dir * tick * 1.4);
+      ctx.fill();
+
+      ctx.font = font(9.5, '500');
+      ctx.textAlign = 'left';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(value, midX + 8 * dpr, (yFrom + yTo) / 2);
+    }
+
+    dimension(padY, bldgY, 'Nord ' + nord.toFixed(1) + ' m', nord >= minAbstand - 1e-4, false);
+    dimension(bldgY + bldgH, padY + plotH, 'Süd ' + sued.toFixed(1) + ' m', sued >= minAbstand - 1e-4, true);
+
+    /* Labels */
+    ctx.font = font(8.5, '500');
+    ctx.fillStyle = PLAN.label;
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'alphabetic';
+    ctx.fillText('FLURSTÜCKSGRENZE', padX + 6 * dpr, padY + 11 * dpr);
+
+    ctx.textAlign = 'center';
+    ctx.fillStyle = PLAN.bodyEdge;
+    ctx.font = font(9.5, '500');
+    if (bldgH > 18 * dpr) {
+      ctx.fillText('BAUKÖRPER', bldgX + bldgW / 2, bldgY + bldgH / 2 + 3 * dpr);
+    }
+
+    /* Required-setback reference rule */
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.14)';
+    ctx.lineWidth = 1 * dpr;
+    ctx.setLineDash([2 * dpr, 3 * dpr]);
+    var reqY = padY + Math.min(plotH / 2 - 8 * dpr, minAbstand * scale);
+    ctx.beginPath();
+    ctx.moveTo(padX, reqY);
+    ctx.lineTo(padX + plotW, reqY);
+    ctx.stroke();
+    ctx.setLineDash([]);
+  }
+
+  /* ---------- Rule engine (browser mirror of the CLI core) ---------- */
+  var GRZ_LIMIT = 0.4;
+  var GFZ_LIMIT = 1.2;
+
+  function num(id, fallback) {
+    var el = document.getElementById(id);
+    if (!el) return fallback;
+    var v = parseFloat(el.value);
+    return Number.isFinite(v) ? v : fallback;
+  }
+
+  function classify(height) {
+    if (height > 22) return { id: 'GK 5', label: 'Gebäudeklasse 5' };
+    if (height > 13) return { id: 'GK 4', label: 'Gebäudeklasse 4' };
+    if (height > 11) return { id: 'GK 3', label: 'Gebäudeklasse 3' };
+    if (height > 7) return { id: 'GK 2', label: 'Gebäudeklasse 2' };
+    return { id: 'GK 1', label: 'Gebäudeklasse 1' };
+  }
+
+  /* Factors mirror the published profile parameters; [prüfen] values stay visible here. */
+  function requiredSetback(land, height) {
+    if (land === 'BW') {
+      return { value: Math.max(5.0, height * 0.5), note: '§6 LBO BW – erhöhtes Mindestmaß' };
+    }
+    if (land === 'BY') {
+      return { value: Math.max(3.0, height * 0.4), note: '§6 Abs. 2 MBO – Abstandsflächenregime in Bayern eingeschränkt' };
+    }
+    if (land === 'BE') {
+      return { value: Math.max(3.0, height * 0.4), note: '§6 Abs. 2 MBO – Profil Berlin [prüfen]' };
+    }
+    return { value: Math.max(3.0, height * 0.5), note: '§6 Abs. 2 MBO – H/2, mindestens 3,0 m' };
+  }
+
+  function fmt(value, digits) {
+    var d = digits === undefined ? 2 : digits;
+    return value.toFixed(d).replace('.', ',');
+  }
+
+  function esc(value) {
+    return String(value).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  }
+
+  function runLiveScan() {
+    var landEl = document.getElementById('demoLand');
+    var land = landEl ? landEl.value : 'MBO';
+    var height = num('demoHoehe', 7.0);
+    var nord = num('demoNord', 5.0);
+    var sued = num('demoSued', 4.0);
+    var grz = num('demoGrz', 0.35);
+    var gfz = num('demoGfz', 0.7);
+
+    var setback = requiredSetback(land, height);
+    var minAbstand = setback.value;
+    var verticalGap = height * 0.4;
+
+    var passNord = nord >= minAbstand - 1e-4;
+    var passSued = sued >= minAbstand - 1e-4;
+    var passGrz = grz <= GRZ_LIMIT;
+    var passGfz = gfz <= GFZ_LIMIT;
+    var passAll = passNord && passSued && passGrz && passGfz;
+
+    var box = document.getElementById('demoResultBox');
+    var verdictText = document.getElementById('demoVerdictText');
+    var verdictGlyph = box ? box.querySelector('.verdict-glyph') : null;
+    var gk = classify(height);
+
+    var gkTag = document.getElementById('demoGkTag');
+    if (gkTag) gkTag.textContent = gk.label;
+
+    var pillGrz = document.getElementById('pillGrz');
+    if (pillGrz) pillGrz.textContent = fmt(grz) + ' / 0.40';
+    var pillGfz = document.getElementById('pillGfz');
+    if (pillGfz) pillGfz.textContent = fmt(gfz) + ' / 1.20';
+    var pillAbstand = document.getElementById('pillAbstand');
+    if (pillAbstand) pillAbstand.textContent = fmt(minAbstand) + ' m';
+
+    var findings = [];
+
+    if (passSetbackPair(passNord, passSued)) {
+      findings.push({
+        key: '§6',
+        text: 'Grenzabstände Nord (' + fmt(nord, 1) + ' m) und Süd (' + fmt(sued, 1) + ' m) halten den erforderlichen Abstand von ' + fmt(minAbstand, 1) + ' m ein. Grundlage: ' + setback.note + '.'
+      });
+    } else {
+      var failing = [];
+      if (!passNord) failing.push('Nord ' + fmt(nord, 1) + ' m');
+      if (!passSued) failing.push('Süd ' + fmt(sued, 1) + ' m');
+      findings.push({
+        key: '§6',
+        text: 'Abstandsfläche unterschritten (' + esc(failing.join(', ')) + '). Erforderlich sind ' + fmt(minAbstand, 1) + ' m. Grundlage: ' + setback.note + '. Abhilfe: Baukörper verschieben oder Abweichung nach §67 MBO / Art. 63 BayBO beantragen.'
+      });
+    }
+
+    findings.push(passGrz
+      ? { key: '§19', text: 'GRZ ' + fmt(grz) + ' liegt innerhalb der festgesetzten Obergrenze von 0,40.' }
+      : { key: '§19', text: 'GRZ ' + fmt(grz) + ' überschreitet die Obergrenze von 0,40 um ' + fmt(grz - GRZ_LIMIT) + '. Befreiung nach §31 Abs. 2 BauGB prüfen.' });
+
+    findings.push(passGfz
+      ? { key: '§20', text: 'GFZ ' + fmt(gfz) + ' hält das zulässige Höchstmaß von 1,20 ein.' }
+      : { key: '§20', text: 'GFZ ' + fmt(gfz) + ' überschreitet das Höchstmaß von 1,20. Geschossfläche reduzieren oder Befreiung nach §31 Abs. 2 BauGB begründen.' });
+
+    findings.push({
+      key: '§2',
+      text: 'Einordnung als ' + gk.label + ' bei ' + fmt(height, 1) + ' m Höhe. ' + (verticalGap > 3.5
+        ? 'Hinweis: mittlere Geschosshöhe prüfen (Höhe/Geschosse über 3,5 m).'
+        : 'Konsistenz von Höhe und Geschosszahl plausibel.')
+    });
+
+    if (box) box.classList.toggle('is-fail', !passAll);
+    if (verdictGlyph) verdictGlyph.textContent = passAll ? '✓' : '!';
+    if (verdictText) {
+      verdictText.textContent = passAll
+        ? 'Bestanden · vollständig konform'
+        : 'Mängel festgestellt · Antrag revidieren';
+    }
+
+    var findingsBox = document.getElementById('demoFindings');
+    if (findingsBox) {
+      findingsBox.innerHTML = findings.map(function (f) {
+        var isFail = f.key === '§6' && !passSetbackPair(passNord, passSued);
+        if (f.key === '§19') isFail = !passGrz;
+        if (f.key === '§20') isFail = !passGfz;
+        return '<div class="finding' + (isFail ? ' is-fail' : '') + '">' +
+          '<span class="finding-key">' + f.key + '</span>' +
+          '<span>' + f.text + '</span></div>';
+      }).join('');
+    }
+
+    var count = document.getElementById('demoFindingsCount');
+    if (count) {
+      var issues = [passNord, passSued, passGrz, passGfz].filter(function (p) { return !p; }).length;
+      count.textContent = issues === 0
+        ? findings.length + ' Befunde · keine Abweichung'
+        : findings.length + ' Befunde · ' + issues + ' Abweichung' + (issues === 1 ? '' : 'en');
+    }
+
+    drawPlanCanvas(nord, sued, minAbstand, passAll);
+  }
+
+  function passSetbackPair(a, b) { return a && b; }
+
+  /* ---------- Presets ---------- */
+  function setPresetButtons(active) {
+    [['btnPresetGood', 'good'], ['btnPresetBad', 'bad']].forEach(function (pair) {
+      var el = document.getElementById(pair[0]);
+      if (el) el.setAttribute('aria-pressed', String(pair[1] === active));
+    });
+  }
+
+  function badge(text, colour) {
+    var el = document.getElementById('cadStatusBadge');
+    if (!el) return;
+    el.textContent = text;
+    el.style.color = colour || '';
+  }
+
+  function fill(values) {
+    Object.keys(values).forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) el.value = values[id];
+    });
+  }
+
+  window.loadDemoPreset = function (type) {
+    if (type === 'good') {
+      setPresetButtons('good');
+      badge('Muster: EFH München');
+      fill({ demoLand: 'BY', demoHoehe: 7.0, demoGrundstueck: 800, demoNord: 5.0, demoSued: 4.0, demoGrz: 0.35, demoGfz: 0.70 });
+    } else {
+      setPresetButtons('bad');
+      badge('Muster: MFH Stuttgart');
+      fill({ demoLand: 'BW', demoHoehe: 14.5, demoGrundstueck: 600, demoNord: 3.2, demoSued: 3.0, demoGrz: 0.52, demoGfz: 1.65 });
+    }
+    runLiveScan();
+  };
+
+  window.loadCadPreset = function (format) {
+    if (format === 'ifc') {
+      badge('IFC 4 · LOD200', 'var(--accent)');
+      fill({ demoLand: 'BY', demoHoehe: 11.4, demoGrundstueck: 920, demoNord: 5.8, demoSued: 5.2, demoGrz: 0.31, demoGfz: 0.95 });
+    } else if (format === 'dxf') {
+      badge('DXF · 2D-Layer', 'var(--fg)');
+      fill({ demoLand: 'BW', demoHoehe: 12.0, demoGrundstueck: 750, demoNord: 4.2, demoSued: 3.8, demoGrz: 0.42, demoGfz: 1.15 });
+    } else {
+      badge('Baubeschreibung · Text', 'var(--fg)');
+      fill({ demoLand: 'BY', demoHoehe: 7.5, demoGrundstueck: 850, demoNord: 5.2, demoSued: 4.5, demoGrz: 0.32, demoGfz: 0.85 });
+    }
+    runLiveScan();
+  };
+
+  window.handleDemoUpload = function (event) {
+    var file = event.target.files && event.target.files[0];
+    if (!file) return;
+
+    var name = file.name.toLowerCase();
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+      var text = String(e.target.result || '');
+      if (name.endsWith('.dxf')) {
+        badge('DXF: ' + file.name, 'var(--fg)');
+        var layers = text.match(/^LAYER$/gim);
+        fill({ demoGrundstueck: 850, demoGrz: 0.32 });
+        if (layers) badge('DXF · ' + layers.length + ' Layer', 'var(--fg)');
+      } else if (name.endsWith('.ifc')) {
+        var storeys = (text.match(/IFCBUILDINGSTOREY/gi) || []).length || 3;
+        badge('IFC: ' + file.name, 'var(--accent)');
+        fill({ demoHoehe: (storeys * 2.85).toFixed(1) });
+      } else {
+        badge('Datei: ' + file.name);
+      }
+      runLiveScan();
+    };
+
+    reader.readAsText(file);
+  };
+
+  window.runLiveScan = runLiveScan;
+
+  /* ---------- Hero showcase: simulated pre-check (plan §2.3) ---------- */
+
+  /* The showcase runs its own illustrative parameters; it is deliberately not the
+     engine. It exists to show that the required setback follows the state rule,
+     so the three profiles below differ visibly for the same building. */
+  /* The opening state is Nordrhein-Westfalen, not Bayern: there the north setback
+     of this massing is short, so the visitor sees the collision, the healing move
+     and the green verdict in one pass. Bayern is the passing comparison, Wien the
+     stricter one. */
+  var SHOWCASE = {
+    land: 'NW',
+    height: 7.5,
+    north: 3.35,
+    east: 4.0,
+    south: 5.0,
+    west: 4.6,
+    shift: 0,
+    shiftTarget: 0,
+    scan: 0,
+    holdUntil: 0,
+    frame: 0,
+    last: 0,
+    raf: 0
+  };
+
+  var SHOWCASE_LANDS = {
+    BY: { label: 'Bayern', factor: 0.4, min: 3.0, rule: '0,4 H, mind. 3,0 m' },
+    NW: { label: 'Nordrhein-Westfalen', factor: 0.5, min: 3.0, rule: '0,5 H, mind. 3,0 m [prüfen]' },
+    WIEN: { label: 'Wien', factor: 0.4, min: 4.0, rule: 'Bauwich 4,0 m [prüfen]' }
+  };
+
+  var SHOWCASE_ORDER = ['norden', 'osten', 'sueden', 'westen'];
+
+  function showcaseLand() { return SHOWCASE_LANDS[SHOWCASE.land] || SHOWCASE_LANDS.BY; }
+
+  function showcaseRequired() {
+    var land = showcaseLand();
+    return Math.max(land.min, SHOWCASE.height * land.factor);
+  }
+
+  function showcaseSides() {
+    var required = showcaseRequired();
+    var shift = SHOWCASE.shift;
+    var actual = {
+      norden: SHOWCASE.north + shift,
+      osten: SHOWCASE.east,
+      sueden: SHOWCASE.south,
+      westen: SHOWCASE.west
+    };
+    var names = { norden: 'Nord', osten: 'Ost', sueden: 'Süd', westen: 'West' };
+    return SHOWCASE_ORDER.map(function (key) {
+      return {
+        key: key,
+        label: names[key],
+        actual: actual[key],
+        required: required,
+        ok: actual[key] >= required - 1e-9
+      };
+    });
+  }
+
+  /* A short, deterministic check number derived from the inputs — the same
+     inputs must always produce the same figure, which is the product's claim. */
+  function showcaseHash() {
+    var input = 'BauLens|' + SHOWCASE.land + '|' + SHOWCASE.height.toFixed(2) + '|' +
+      SHOWCASE.north.toFixed(2) + '|' + SHOWCASE.shift.toFixed(2);
+    var h = 2166136261;
+    for (var i = 0; i < input.length; i++) {
+      h ^= input.charCodeAt(i);
+      h = Math.imul(h, 16777619) >>> 0;
+    }
+    return ('00000000' + h.toString(16)).slice(-8).toUpperCase();
+  }
+
+  function scNum(value, digits) {
+    return value.toFixed(digits === undefined ? 2 : digits).replace('.', ',');
+  }
+
+  var SC = {
+    grid: 'rgba(255, 255, 255, 0.045)',
+    parcel: '#4d5768',
+    pass: '#2fb6cf',
+    passWash: 'rgba(47, 182, 207, 0.22)',
+    fail: '#e0657a',
+    top: '#1c2637',
+    side: '#131b28',
+    edge: '#7f8b9c',
+    label: '#6b7788',
+    laser: '#57cde2'
+  };
+
+  function drawShowcase() {
+    var canvas = document.getElementById('heroDemoCanvas');
+    if (!canvas || !canvas.getContext) return;
+
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var cssW = canvas.clientWidth || 620;
+    var cssH = canvas.clientHeight || 310;
+    if (canvas.width !== Math.round(cssW * dpr) || canvas.height !== Math.round(cssH * dpr)) {
+      canvas.width = Math.round(cssW * dpr);
+      canvas.height = Math.round(cssH * dpr);
+    }
+
+    var ctx = canvas.getContext('2d');
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.scale(dpr, dpr);
+
+    var w = cssW;
+    var h = cssH;
+    var mono = getComputedStyle(document.documentElement).getPropertyValue('--font-mono').trim() || 'monospace';
+    function font(size, weight) {
+      return (weight ? weight + ' ' : '') + size + 'px ' + mono;
+    }
+
+    var bg = ctx.createLinearGradient(0, 0, 0, h);
+    bg.addColorStop(0, '#070a12');
+    bg.addColorStop(1, '#05070c');
+    ctx.fillStyle = bg;
+    ctx.fillRect(0, 0, w, h);
+
+    var sides = showcaseSides();
+    var sidesByKey = {};
+    sides.forEach(function (s) { sidesByKey[s.key] = s; });
+
+    var scan = SHOWCASE.scan;
+    var activeIndex = scan >= 1 ? -1 : Math.min(3, Math.floor(scan * 4));
+    var activeKey = activeIndex === -1 ? null : SHOWCASE_ORDER[activeIndex];
+    var withinSide = scan >= 1 ? 1 : (scan * 4) % 1;
+    var pulse = prefersReduced.matches ? 0.55 : 0.42 + 0.58 * Math.abs(Math.sin((SHOWCASE.frame || 0) / 240));
+
+    /* Plan geometry: x = Ost, y = Nord, z = Höhe. The parcel is exactly the
+       building plus the four setbacks, so each band is the real dimension. */
+    var buildW = 12;
+    var buildD = 10;
+    var height = SHOWCASE.height;
+    var shift = SHOWCASE.shift;
+    var north = SHOWCASE.north + shift;
+    var parcelW = SHOWCASE.west + buildW + SHOWCASE.east;
+    var parcelD = north + buildD + SHOWCASE.south;
+    var cos30 = 0.8660254;
+    var sin30 = 0.5;
+
+    var stageH = Math.round(h * 0.6);
+    var scale = Math.min(
+      (w * 0.78) / ((parcelW + parcelD) * cos30),
+      (stageH - 22) / ((parcelW + parcelD) * sin30 + height)
+    );
+    var projW = (parcelW + parcelD) * cos30 * scale;
+    var projH = (parcelW + parcelD) * sin30 * scale + height * scale;
+    var ox = (w - projW) / 2 + parcelD * cos30 * scale;
+    var oy = Math.max(14, (stageH - projH) / 2) + height * scale;
+
+    function project(x, y, z) {
+      return [ox + (x - y) * cos30 * scale, oy + (x + y) * sin30 * scale - (z || 0) * scale];
+    }
+
+    /* Ground grid, clipped to the parcel. */
+    ctx.strokeStyle = SC.grid;
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    for (var gx = 0; gx <= parcelW + 1e-6; gx += 5) {
+      var ga = project(Math.min(gx, parcelW), 0, 0);
+      var gb = project(Math.min(gx, parcelW), parcelD, 0);
+      ctx.moveTo(ga[0], ga[1]);
+      ctx.lineTo(gb[0], gb[1]);
+    }
+    for (var gy = 0; gy <= parcelD + 1e-6; gy += 5) {
+      var gc = project(0, Math.min(gy, parcelD), 0);
+      var gd = project(parcelW, Math.min(gy, parcelD), 0);
+      ctx.moveTo(gc[0], gc[1]);
+      ctx.lineTo(gd[0], gd[1]);
+    }
+    ctx.stroke();
+
+    var bands = {
+      norden: [[SHOWCASE.west, north + buildD], [SHOWCASE.west + buildW, north + buildD], [SHOWCASE.west + buildW, parcelD], [SHOWCASE.west, parcelD]],
+      osten: [[SHOWCASE.west + buildW, north], [parcelW, north], [parcelW, north + buildD], [SHOWCASE.west + buildW, north + buildD]],
+      sueden: [[SHOWCASE.west, 0], [SHOWCASE.west + buildW, 0], [SHOWCASE.west + buildW, north], [SHOWCASE.west, north]],
+      westen: [[0, north], [SHOWCASE.west, north], [SHOWCASE.west, north + buildD], [0, north + buildD]]
+    };
+
+    function quad(points) {
+      ctx.beginPath();
+      points.forEach(function (p, i) {
+        var s = project(p[0], p[1], 0);
+        if (i === 0) ctx.moveTo(s[0], s[1]);
+        else ctx.lineTo(s[0], s[1]);
+      });
+      ctx.closePath();
+    }
+
+    SHOWCASE_ORDER.forEach(function (key, index) {
+      var side = sidesByKey[key];
+      var done = scan >= 1 || index < activeIndex;
+      var live = key === activeKey;
+      quad(bands[key]);
+      if (!done && !live) {
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.015)';
+      } else if (side.ok) {
+        ctx.fillStyle = SC.passWash;
+      } else {
+        ctx.fillStyle = 'rgba(224, 101, 122, ' + (0.1 + 0.16 * (done ? 0.75 : pulse)).toFixed(3) + ')';
+      }
+      ctx.fill();
+      ctx.strokeStyle = done || live ? (side.ok ? 'rgba(255, 255, 255, 0.08)' : SC.fail) : 'rgba(255, 255, 255, 0.08)';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    });
+
+    /* Parcel boundary */
+    ctx.strokeStyle = SC.parcel;
+    ctx.lineWidth = 1;
+    ctx.setLineDash([5, 4]);
+    quad([[0, 0], [parcelW, 0], [parcelW, parcelD], [0, parcelD]]);
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    /* The laser: a sweep along the outer edge plus a measuring beam inward. */
+    if (activeKey) {
+      var laserEdge = {
+        norden: [[SHOWCASE.west, parcelD], [SHOWCASE.west + buildW, parcelD]],
+        osten: [[parcelW, north], [parcelW, north + buildD]],
+        sueden: [[SHOWCASE.west, 0], [SHOWCASE.west + buildW, 0]],
+        westen: [[0, north], [0, north + buildD]]
+      }[activeKey];
+      var facade = {
+        norden: [SHOWCASE.west + buildW / 2, north + buildD],
+        osten: [SHOWCASE.west + buildW, north + buildD / 2],
+        sueden: [SHOWCASE.west + buildW / 2, north],
+        westen: [SHOWCASE.west, north + buildD / 2]
+      }[activeKey];
+      var liveSide = sidesByKey[activeKey];
+      var from = project(laserEdge[0][0], laserEdge[0][1], 0);
+      var to = project(laserEdge[1][0], laserEdge[1][1], 0);
+      var head = [from[0] + (to[0] - from[0]) * withinSide, from[1] + (to[1] - from[1]) * withinSide];
+      var inner = project(facade[0], facade[1], 0);
+
+      ctx.strokeStyle = SC.laser;
+      ctx.lineWidth = 1.6;
+      ctx.beginPath();
+      ctx.moveTo(from[0], from[1]);
+      ctx.lineTo(head[0], head[1]);
+      ctx.stroke();
+      ctx.fillStyle = SC.laser;
+      ctx.beginPath();
+      ctx.arc(head[0], head[1], 2.4, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.strokeStyle = liveSide.ok ? SC.pass : SC.fail;
+      ctx.lineWidth = 1;
+      ctx.setLineDash([3, 3]);
+      ctx.beginPath();
+      ctx.moveTo(from[0], from[1]);
+      ctx.lineTo(inner[0], inner[1]);
+      ctx.stroke();
+      ctx.setLineDash([]);
+    }
+
+    /* Building massing */
+    var x0 = SHOWCASE.west;
+    var x1 = SHOWCASE.west + buildW;
+    var y0 = north;
+    var y1 = north + buildD;
+    var base = [project(x0, y0, 0), project(x1, y0, 0), project(x1, y1, 0), project(x0, y1, 0)];
+    var top = [project(x0, y0, height), project(x1, y0, height), project(x1, y1, height), project(x0, y1, height)];
+
+    ctx.fillStyle = SC.side;
+    ctx.beginPath();
+    ctx.moveTo(base[0][0], base[0][1]);
+    ctx.lineTo(base[3][0], base[3][1]);
+    ctx.lineTo(top[3][0], top[3][1]);
+    ctx.lineTo(top[0][0], top[0][1]);
+    ctx.closePath();
+    ctx.fill();
+    ctx.beginPath();
+    ctx.moveTo(base[0][0], base[0][1]);
+    ctx.lineTo(base[1][0], base[1][1]);
+    ctx.lineTo(top[1][0], top[1][1]);
+    ctx.lineTo(top[0][0], top[0][1]);
+    ctx.closePath();
+    ctx.fill();
+
+    var storeys = Math.max(1, Math.round(height / 2.85));
+    for (var s = 1; s <= storeys; s++) {
+      var z = Math.min(height - 0.4, s * (height / storeys) - 0.9);
+      var ribbon = [project(x1, y0, z), project(x1, y0, z + 0.9), project(x0, y0, z + 0.9), project(x0, y0, z)];
+      ctx.fillStyle = 'rgba(87, 205, 226, 0.14)';
+      ctx.beginPath();
+      ribbon.forEach(function (p, i) {
+        if (i === 0) ctx.moveTo(p[0], p[1]);
+        else ctx.lineTo(p[0], p[1]);
+      });
+      ctx.closePath();
+      ctx.fill();
+    }
+
+    ctx.fillStyle = SC.top;
+    ctx.beginPath();
+    top.forEach(function (p, i) {
+      if (i === 0) ctx.moveTo(p[0], p[1]);
+      else ctx.lineTo(p[0], p[1]);
+    });
+    ctx.closePath();
+    ctx.fill();
+    ctx.strokeStyle = SC.edge;
+    ctx.lineWidth = 1.1;
+    ctx.stroke();
+
+    ctx.beginPath();
+    base.forEach(function (p, i) {
+      if (i === 0) ctx.moveTo(p[0], p[1]);
+      else ctx.lineTo(p[0], p[1]);
+    });
+    ctx.closePath();
+    ctx.stroke();
+
+    /* Labels */
+    ctx.font = font(9, '500');
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'alphabetic';
+    ctx.fillStyle = SC.label;
+    ctx.fillText('MASSING LOD200 · H ' + scNum(height) + ' m', 12, 16);
+    ctx.textAlign = 'right';
+    ctx.fillText('REGELPROFIL ' + showcaseLand().label.toUpperCase() + ' · ' + showcaseLand().rule, w - 12, 16);
+    if (shift > 0.01) {
+      ctx.textAlign = 'left';
+      ctx.fillStyle = SC.pass;
+      ctx.fillText('HEILUNG +' + scNum(shift) + ' m', 12, 30);
+    }
+
+    /* Read-out bars */
+    var barTop = stageH + 8;
+    var rowH = (h - barTop - 8) / 4;
+    SHOWCASE_ORDER.forEach(function (key, index) {
+      var side = sidesByKey[key];
+      var done = scan >= 1 || index <= activeIndex;
+      var y = barTop + index * rowH + rowH / 2;
+      var colour = !done ? '#4d5768' : (side.ok ? SC.pass : SC.fail);
+
+      ctx.fillStyle = done && !side.ok
+        ? 'rgba(224, 101, 122, ' + (0.1 + 0.14 * pulse).toFixed(3) + ')'
+        : 'rgba(255, 255, 255, 0.03)';
+      ctx.fillRect(12, y - rowH / 2 + 2, w - 24, rowH - 4);
+
+      ctx.textAlign = 'left';
+      ctx.font = font(9.5, '600');
+      ctx.fillStyle = '#98a4b6';
+      ctx.fillText(side.label.toUpperCase(), 20, y + 3);
+
+      ctx.font = font(9.5, '500');
+      ctx.fillStyle = colour;
+      ctx.fillText(scNum(side.actual) + ' m', 80, y + 3);
+
+      ctx.fillStyle = '#4d5768';
+      ctx.fillText('erforderlich ' + scNum(side.required) + ' m', 142, y + 3);
+
+      ctx.textAlign = 'right';
+      ctx.fillStyle = colour;
+      ctx.fillText(!done ? 'offen' : (side.ok ? 'OK' : 'MANGEL'), w - 20, y + 3);
+      ctx.textAlign = 'left';
+    });
+  }
+
+  function showcaseReadout() {
+    var sides = showcaseSides();
+    var worst = null;
+    sides.forEach(function (side) { if (!side.ok && !worst) worst = side; });
+    var scan = SHOWCASE.scan;
+    var passed = !worst;
+
+    var label = document.getElementById('heroDemoScanLabel');
+    if (label) {
+      label.textContent = scan < 1
+        ? 'Laser-Scan: Fassade ' + sides[Math.min(3, Math.floor(scan * 4))].label
+        : 'Scan abgeschlossen · ' + showcaseLand().rule;
+    }
+
+    var box = document.getElementById('heroDemoVerdict');
+    if (box) box.className = 'showcase-verdict ' + (passed ? 'is-pass' : 'is-fail');
+    var text = document.getElementById('heroDemoVerdictText');
+    if (text) {
+      text.textContent = scan < 1
+        ? 'Laser-Scan läuft …'
+        : (passed
+          ? 'OK · genehmigungsfähig nach überschlägiger Prüfung'
+          : 'Mangel: ' + worst.label + '-Abstand ' + scNum(worst.actual) + ' m < ' + scNum(worst.required) + ' m');
+    }
+
+    var metrics = document.getElementById('heroDemoMetrics');
+    if (metrics) {
+      var rows = sides.map(function (side) {
+        return '<li>' + side.label + '-Abstand <span class="' + (side.ok ? 'is-pass' : 'is-fail') + '">' +
+          scNum(side.actual) + ' m</span></li>';
+      });
+      rows.push('<li>Erforderlich <span>' + scNum(showcaseRequired()) + ' m</span></li>');
+      rows.push('<li>Verschiebung <span>' + (SHOWCASE.shift > 0.005 ? '+' + scNum(SHOWCASE.shift) + ' m' : '0,00 m') + '</span></li>');
+      metrics.innerHTML = rows.join('');
+    }
+
+    var heal = document.getElementById('heroDemoHeal');
+    if (heal) {
+      heal.textContent = SHOWCASE.shiftTarget > 0
+        ? 'Heilungsvorschlag zurücknehmen'
+        : 'Heilungsvorschlag anwenden (+0,45 m)';
+    }
+
+    var stamp = document.getElementById('heroDemoStamp');
+    if (stamp) {
+      if (passed && scan >= 1) {
+        stamp.className = 'showcase-stamp is-in';
+        stamp.innerHTML = 'AMTLICHER PRÜFBERICHT-STEMPEL<br>Prüfziffer <strong>' + showcaseHash() +
+          '</strong><br>deterministisch aus Eingaben und Befund';
+      } else {
+        stamp.className = 'showcase-stamp';
+        stamp.innerHTML = '';
+      }
+    }
+  }
+
+  function showcaseNeedsFrames() {
+    return SHOWCASE.scan < 1 ||
+      Math.abs(SHOWCASE.shiftTarget - SHOWCASE.shift) > 0.0005 ||
+      SHOWCASE.frame < SHOWCASE.holdUntil;
+  }
+
+  function showcaseTick(now) {
+    var dt = SHOWCASE.last ? Math.min(64, now - SHOWCASE.last) : 16;
+    SHOWCASE.last = now;
+    SHOWCASE.frame = now;
+
+    if (SHOWCASE.scan < 1) {
+      SHOWCASE.scan = Math.min(1, SHOWCASE.scan + dt / 1800);
+      if (SHOWCASE.scan >= 1) SHOWCASE.holdUntil = now + 1400;
+    }
+    if (Math.abs(SHOWCASE.shiftTarget - SHOWCASE.shift) > 0.0005) {
+      SHOWCASE.shift += (SHOWCASE.shiftTarget - SHOWCASE.shift) * Math.min(1, dt / 240);
+      if (Math.abs(SHOWCASE.shiftTarget - SHOWCASE.shift) <= 0.0005) SHOWCASE.shift = SHOWCASE.shiftTarget;
+    }
+
+    drawShowcase();
+    showcaseReadout();
+
+    if (showcaseNeedsFrames()) {
+      SHOWCASE.raf = window.requestAnimationFrame(showcaseTick);
+    } else {
+      SHOWCASE.raf = 0;
+      SHOWCASE.last = 0;
+    }
+  }
+
+  function showcaseRun() {
+    drawShowcase();
+    showcaseReadout();
+    if (!prefersReduced.matches && !SHOWCASE.raf) {
+      SHOWCASE.last = 0;
+      SHOWCASE.raf = window.requestAnimationFrame(showcaseTick);
+    }
+  }
+
+  var showcaseResize;
+
+  function showcaseInit() {
+    var landSelect = document.getElementById('heroDemoLand');
+    if (landSelect) {
+      landSelect.addEventListener('change', function () {
+        SHOWCASE.land = landSelect.value;
+        SHOWCASE.shift = 0;
+        SHOWCASE.shiftTarget = 0;
+        SHOWCASE.scan = prefersReduced.matches ? 1 : 0;
+        SHOWCASE.holdUntil = 0;
+        showcaseRun();
+      });
+    }
+
+    var heal = document.getElementById('heroDemoHeal');
+    if (heal) {
+      heal.addEventListener('click', function () {
+        SHOWCASE.shiftTarget = SHOWCASE.shiftTarget > 0 ? 0 : 0.45;
+        /* Without motion there is no tick to animate the shift, so the proposal
+           is applied at once. The button has to do what it says in both modes. */
+        if (prefersReduced.matches) SHOWCASE.shift = SHOWCASE.shiftTarget;
+        showcaseRun();
+      });
+    }
+
+    prefersReduced.addEventListener('change', function (event) {
+      if (!event.matches) return;
+      if (SHOWCASE.raf) {
+        window.cancelAnimationFrame(SHOWCASE.raf);
+        SHOWCASE.raf = 0;
+      }
+      SHOWCASE.scan = 1;
+      SHOWCASE.shift = SHOWCASE.shiftTarget;
+      drawShowcase();
+      showcaseReadout();
+    });
+
+    window.addEventListener('resize', function () {
+      clearTimeout(showcaseResize);
+      showcaseResize = setTimeout(function () {
+        drawShowcase();
+        showcaseReadout();
+      }, 140);
+    });
+
+    if (prefersReduced.matches) {
+      /* No motion: show the finished scan instead of animating into it. */
+      SHOWCASE.scan = 1;
+      drawShowcase();
+      showcaseReadout();
+      return;
+    }
+    showcaseRun();
+  }
+
+  /* ---------- Init ---------- */
+  runLiveScan();
+
+  showcaseInit();
+
+  var onResize;
+  window.addEventListener('resize', function () {
+    clearTimeout(onResize);
+    onResize = setTimeout(runLiveScan, 120);
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1115 @@
+{
+  "event_id": "e3ff8779-bda9-4a3a-9985-465a6f9d6801",
+  "incident_window": {
+    "start_timestamp": 1785310585550,
+    "end_timestamp": 1785310595550
+  },
+  "readings": [
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310585550,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310585650,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310585750,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310585850,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310585950,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310586050,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310586150,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310586250,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310586350,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310586450,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310586550,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310586650,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310586750,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310586850,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310586950,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310587050,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310587150,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310587250,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310587350,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310587450,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310587550,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310587650,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310587750,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310587850,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310587950,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310588050,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310588150,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310588250,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310588350,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310588450,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310588550,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310588650,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310588750,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310588850,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310588950,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310589050,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310589150,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310589250,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310589350,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310589450,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310589550,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310589650,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310589750,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310589850,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310589950,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310590050,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310590150,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310590250,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310590350,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310590450,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310590550,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310590650,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310590750,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310590850,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310590950,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310591050,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310591150,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310591250,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310591350,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310591450,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310591550,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310591650,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310591750,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310591850,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310591950,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310592050,
+        "value": -5.0,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310592150,
+        "value": -6.5,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310592250,
+        "value": -8.0,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310592350,
+        "value": -9.5,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310592450,
+        "value": -11.0,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310592550,
+        "value": -12.5,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310592650,
+        "value": -14.0,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310592750,
+        "value": -15.5,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310592850,
+        "value": -17.0,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310592950,
+        "value": -18.5,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310593050,
+        "value": -8.0,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310593150,
+        "value": -7.0,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310593250,
+        "value": -6.0,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310593350,
+        "value": -5.0,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310593450,
+        "value": -4.0,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310593550,
+        "value": -3.0,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310593650,
+        "value": -2.0,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310593750,
+        "value": -1.0,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310593850,
+        "value": 0.0,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310593950,
+        "value": 1.0,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310594050,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310594150,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310594250,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310594350,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310594450,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310594550,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310594650,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310594750,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310594850,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310594950,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310595050,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310595150,
+        "value": 0.3,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310595250,
+        "value": 0.5999999999999996,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310595350,
+        "value": 0.8999999999999999,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    },
+    {
+      "reading": {
+        "sensor_id": "00000000-0000-0000-0000-000000000000",
+        "sensor_type": "Accelerometer",
+        "timestamp": 1785310595450,
+        "value": 1.2000000000000002,
+        "unit": "g"
+      },
+      "signature": [],
+      "signer_public_key": []
+    }
+  ],
+  "metadata": {
+    "source": "simulation",
+    "vehicle_id": "SIM-001",
+    "location": null,
+    "description": "rear-end-collision"
+  }
+}

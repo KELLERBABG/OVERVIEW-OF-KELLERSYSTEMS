@@ -1,0 +1,41 @@
+{
+  "slug": "public-far-52-212-4",
+  "source": "https://www.acquisition.gov/far/52.212-4",
+  "license": "Public domain (US Federal Acquisition Regulation)",
+  "retrieved": "2026-10-15",
+  "domain": "US-Bundesbeschaffung: Commercial Products and Commercial Services",
+  "traps": [
+    {
+      "marker": "(A) The Contractor shall include",
+      "expectedType": "third_party_indemnity",
+      "note": "Reale Klausel, Engine-Typ third_party_indemnity"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "An official website of the United",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Acquisition Regulation Comparator",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Part Part 1 Part 2 Part 3 Part",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Section 52.200 52.201 52.202 52.203",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "<?xml encoding=\"UTF-8\" ?>52.212-4",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "As prescribed in 12.301 (b)(3)",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

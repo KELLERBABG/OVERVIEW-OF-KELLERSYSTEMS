@@ -1,0 +1,89 @@
+Rahmenvertrag über Wartung und Betrieb der Logistikplattform Hansaport
+
+zwischen der Kernzeit IT-Systemhaus GmbH, Hafencity 9, 20457 Hamburg (nachfolgend Anbieter), und der Hansaport Logistik AG, Hafenstraße 55, 20359 Hamburg (nachfolgend Kunde).
+
+Präambel
+Der Kunde betreibt einen Containerterminal und benötigt einen durchgängigen Betrieb der Logistikplattform. Der Anbieter betreibt Rechenzentren und übernimmt Wartung und Service. Die Parteien vereinbaren Folgendes.
+
+§ 1 Gegenstand
+Gegenstand ist die Wartung, Überwachung und der Betrieb der Logistikplattform Hansaport einschließlich der zugehörigen Schnittstellen.
+
+§ 2 Servicezeiten
+(1) Der Anbieter ist zur Einhaltung der vereinbarten Reaktionszeiten verpflichtet.
+
+(2) Die Vertragsparteien informieren sich unverzüglich über Störungen.
+
+§ 3 Service-Level
+(1) Die Service-Level sind Richtwerte ohne Rechtsanspruch.
+
+(2) Der Anbieter bemüht sich nach besten Kräften um eine Verfügbarkeit von 99,5 Prozent.
+
+§ 4 Laufzeit
+(1) Der Vertrag beginnt am 1. April 2026 und hat eine Mindestlaufzeit von sechsunddreißig Monaten.
+
+(2) Die Vertragslaufzeit erneuert sich um jeweils zwölf Monate, sofern nicht drei Monate vorher gekündigt wird.
+
+(3) Für die Kündigung gilt eine Vorlaufzeit von zweiundsiebzig Monaten zum Periodenende.
+
+§ 5 Vergütung
+(1) Die Vergütung wird in monatlichen Raten von 12.000 EUR gezahlt.
+
+(2) Die Vergütung ist innerhalb von dreißig Tagen nach Rechnungseingang fällig.
+
+§ 6 Sperrung
+(1) Der Anbieter kann ohne vorherige Abmahnung den Zugang sperren.
+
+(2) Die Sperrung lässt die Zahlungspflicht des Kunden unberührt.
+
+§ 7 Service-Credits
+(1) Der Service-Credit verfällt, wenn ein Sicherheitspatch nicht rechtzeitig eingespielt wird.
+
+(2) Entfällt eine kritische Aktualisierung, erlischt der Anspruch auf eine Gutschrift.
+
+§ 8 Wartungsvertrag und Abschaltung
+(1) Der Anbieter kann den Betrieb stilllegen, falls der Wartungsvertrag ausläuft.
+
+(2) Vor einer Stilllegung informiert der Anbieter den Kunden mit einer Frist von dreißig Tagen.
+
+§ 9 Daten und Herausgabe
+(1) Für die Herausgabe der Daten wird eine Gebühr von 2.500 EUR berechnet.
+
+(2) Der Kunde erhält zum Vertragsende einen kostenfreien Datenexport in einem gängigen Format.
+
+§ 10 Prüfungen und Audits
+(1) Die Auditkosten trägt der Kunde.
+
+(2) Prüfungen erfolgen nur bei konkretem Anlass und nach Ankündigung mit einer Frist von dreißig Tagen.
+
+§ 11 Unterauftragnehmer
+(1) Der Anbieter zeigt den Einsatz von Unterauftragnehmern vierzehn Tage vorher an.
+
+(2) Der Kunde kann dem Einsatz aus wichtigem Grund widersprechen.
+
+§ 12 Haftung
+(1) Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt.
+
+(2) Der Anbieter unterhält eine Berufshaftpflichtversicherung mit einer Deckungssumme von zwei Millionen EUR.
+
+§ 13 Sicherheit
+(1) Der Anbieter meldet Sicherheitsvorfälle unverzüglich an den Kunden.
+
+(2) Die Datenübertragung erfolgt verschlüsselt über eine gesicherte Verbindung.
+
+§ 14 Beendigung
+(1) Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Monatsende kündigen.
+
+(2) Die Kündigung aus wichtigem Grund bleibt beiden Parteien unbenommen.
+
+§ 15 Schlussbestimmungen
+(1) Änderungen dieses Vertrages können in Textform vereinbart werden.
+
+(2) Nebenabreden bestehen nicht.
+
+(3) Dieser Vertrag unterliegt deutschem Recht.
+
+Hamburg, den 3. März 2026
+
+Kernzeit IT-Systemhaus GmbH
+
+Hansaport Logistik AG

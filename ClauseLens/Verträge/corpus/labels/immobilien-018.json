@@ -1,0 +1,74 @@
+{
+  "slug": "immobilien-018",
+  "source": "generated",
+  "domain": "Facility Management",
+  "traps": [
+    {
+      "marker": "die Betriebsdaten der Anlagentechnik für die Entwicklung eigener Prognosemodelle zu verwenden",
+      "expectedType": "data_grant",
+      "note": "GAP: Nutzungsrecht an Betriebsdaten fuer eigene Modelle."
+    },
+    {
+      "marker": "teilweise in einem Drittland, namentlich in Singapur, verarbeitet",
+      "expectedType": "international_data_processing",
+      "note": "Verarbeitung ausserhalb der EU im Drittland."
+    },
+    {
+      "marker": "ein Datenexport nur gegen Erstattung des Aufwands",
+      "expectedType": "data_lockin",
+      "note": "Kostenpflichtiger Datenexport mit Verzoegerung."
+    },
+    {
+      "marker": "gelten als unwiderlegbarer Nachweis für die Erbringung der Wartungsleistungen",
+      "expectedType": "audit_log_manipulation",
+      "note": "Serverprotokolle als unwiderlegbarer Nachweis."
+    },
+    {
+      "marker": "übernimmt der Dienstleister keine Einstandspflicht",
+      "expectedType": "vicarious_agents",
+      "note": "Keine Haftung fuer Nachunternehmer."
+    },
+    {
+      "marker": "bedarf keiner vorherigen Zustimmung des Auftraggebers",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "GAP: Systempartner ohne Zustimmung oder Ankuendigung."
+    },
+    {
+      "marker": "so verfällt der Anspruch des Auftraggebers auf eine Gutschrift",
+      "expectedType": "service_credit_forfeiture",
+      "note": "Service-Credit verfaellt ohne Ersatz."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "Symmetrische Vertraulichkeit."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform zugelassen."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhalt."
+    },
+    {
+      "marker": "Zahlungen sind innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Zahlungsfrist."
+    },
+    {
+      "marker": "Änderungen des Leistungsumfangs bedürfen der Abstimmung beider Parteien",
+      "note": "Einvernehmliche Aenderung."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende beenden",
+      "note": "Symmetrisches Kuendigungsrecht."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "technische Anlagentechnik der Gebäude A bis D",
+      "note": "Kein Detektor fuer Betreiberpflichten nach DIN oder Instandhaltungsrueckstau."
+    }
+  ]
+}

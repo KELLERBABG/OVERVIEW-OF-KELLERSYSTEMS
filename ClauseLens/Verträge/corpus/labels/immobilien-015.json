@@ -1,0 +1,74 @@
+{
+  "slug": "immobilien-015",
+  "source": "generated",
+  "domain": "Bauvertrag",
+  "traps": [
+    {
+      "marker": "darf der Auftragnehmer die Anlage stilllegen",
+      "expectedType": "maintenance_conditional_shutdown",
+      "note": "Stilllegung mangels Wartungsvereinbarung."
+    },
+    {
+      "marker": "kann die Baustellenzufahrt ohne Vorankündigung sperren",
+      "expectedType": "service_suspension",
+      "note": "GAP: Sperrung ohne Vorankuendigung."
+    },
+    {
+      "marker": "verwirkt der Auftragnehmer eine Pauschale von 500 EUR je Tag",
+      "expectedType": "penalty",
+      "note": "Vertragsstrafe ohne Nachweisvorbehalt."
+    },
+    {
+      "marker": "Bei Zahlungsverzug schuldet der Besteller Verzugszinsen von 12 Prozent",
+      "expectedType": "default_interest",
+      "note": "Verzugszins von 12 Prozent."
+    },
+    {
+      "marker": "unter der aufschiebenden Bedingung der vollständigen Bezahlung",
+      "expectedType": "extended_retention_of_title",
+      "note": "Eigentumsvorbehalt bis zur vollen Bezahlung."
+    },
+    {
+      "marker": "Grunderwerbsteuernachforderungen trägt der Besteller vollumfänglich",
+      "expectedType": "tax_indemnity_shift",
+      "note": "GAP: Steuernachforderungen auf den Besteller verlagert."
+    },
+    {
+      "marker": "Ausschließlicher Gerichtsstand ist München",
+      "expectedType": "jurisdiction",
+      "note": "Ausschliesslicher Gerichtsstand am Sitz des Auftragnehmers."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "Symmetrische Vertraulichkeit."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform zugelassen."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhalt."
+    },
+    {
+      "marker": "Zahlungen sind innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Zahlungsfrist."
+    },
+    {
+      "marker": "Änderungen des Leistungsumfangs bedürfen der Abstimmung beider Parteien",
+      "note": "Einvernehmliche Aenderung."
+    },
+    {
+      "marker": "Nach Vertragsende erhält der Kunde die Vertragsdaten kostenfrei in einem offenen Format",
+      "note": "Kostenfreier Datenexport."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Ingenieurbauwerke der Losabschnitte 3 und 4",
+      "note": "Kein Detektor fuer Bedenkenanzeige nach VOB/B oder Baugrundrisiko."
+    }
+  ]
+}

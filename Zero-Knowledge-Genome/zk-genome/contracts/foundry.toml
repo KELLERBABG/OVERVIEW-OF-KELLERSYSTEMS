@@ -1,0 +1,16 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+solc = "0.8.28"
+
+[profile.ci]
+solc = "0.8.28"
+via_ir = true
+
+[fmt]
+bracket_spacing = true
+int_alignment = true
+line_length = 120
+number_underscore = "preserve"
+quote_style = "double"

@@ -1,0 +1,12 @@
+[package]
+name = "city-dag"
+description = "DAG-based distributed ledger with MAC-verified transactions and depth-based finality"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+city-types = { workspace = true }
+city-crypto = { workspace = true }
+city-caps = { workspace = true }

@@ -1,0 +1,29 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/core",
+    "crates/cli",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+repository = "https://github.com/your-org/symbolic-execution-engine"
+description = "A formal verification engine for smart contracts using abstract interpretation, symbolic execution, SMT solving, and vulnerability detection."
+
+[workspace.dependencies]
+z3 = "0.9"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+clap = { version = "4", features = ["derive"] }
+thiserror = "2"
+tracing = "0.1"
+tracing-subscriber = "0.3"
+hex = "0.4"
+itertools = "0.13"
+petgraph = "0.6"
+smallvec = "1"
+bimap = "0.6"
+sha3 = "0.10"
+keccak = "0.1"

@@ -1,0 +1,69 @@
+{
+  "slug": "immobilien-005",
+  "source": "generated",
+  "domain": "Immobilienkauf",
+  "traps": [
+    {
+      "marker": "Das Objekt wird wie gesehen überlassen",
+      "expectedType": "as_is_software_disclaimer",
+      "note": "GAP: Kauf im Ist-Zustand ohne Maengelgewaehr."
+    },
+    {
+      "marker": "Den lückenlosen Nachweis der Mangelfreiheit hat der Käufer zu führen",
+      "expectedType": "burden_of_proof",
+      "note": "GAP: Beweislast fuer Mangelfreiheit beim Kaeufer."
+    },
+    {
+      "marker": "Mängelansprüche verjähren innerhalb von sechs Monaten",
+      "expectedType": "statute_of_limitations",
+      "note": "Verkuerzung der Maengelverjaehrung auf sechs Monate."
+    },
+    {
+      "marker": "Die Haftung des Verkäufers ist auf den Kaufpreis begrenzt",
+      "expectedType": "liability",
+      "note": "Haftungsdeckel auf den Kaufpreis."
+    },
+    {
+      "marker": "Grunderwerbsteuernachforderungen trägt der Käufer vollumfänglich",
+      "expectedType": "tax_indemnity_shift",
+      "note": "GAP: Steuernachforderungen vollstaendig auf den Kaeufer verlagert."
+    },
+    {
+      "marker": "Ausschließlicher Gerichtsstand ist München",
+      "expectedType": "jurisdiction",
+      "note": "Ausschliesslicher Gerichtsstand am Sitz des Verkaeufers."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "Symmetrische Vertraulichkeit."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform zugelassen."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhalt."
+    },
+    {
+      "marker": "Zahlungen sind innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Zahlungsfrist."
+    },
+    {
+      "marker": "Änderungen des Leistungsumfangs bedürfen der Abstimmung beider Parteien",
+      "note": "Einvernehmliche Aenderung."
+    },
+    {
+      "marker": "Der Käufer kann nur mit unbestrittenen Gegenforderungen aufrechnen",
+      "note": "Aufrechnung mit unbestrittenen Forderungen bleibt moeglich."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Verkäufer verkauft dem Käufer das Bürogebäude Ludwigstraße 44",
+      "note": "Kein Detektor fuer Auflassung oder Auflassungsvormerkung."
+    }
+  ]
+}

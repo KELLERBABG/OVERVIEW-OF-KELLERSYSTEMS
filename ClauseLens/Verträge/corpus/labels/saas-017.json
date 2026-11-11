@@ -1,0 +1,69 @@
+{
+  "slug": "saas-017",
+  "source": "generated",
+  "domain": "Cloud Identity, Schweizer Recht",
+  "traps": [
+    {
+      "marker": "Der Kunde verpflichtet sich, die Anbieterin von Ansprüchen Dritter freizustellen.",
+      "expectedType": "third_party_indemnity",
+      "note": "Paraphrase. Freistellung fuer Drittansprueche"
+    },
+    {
+      "marker": "Die Anbieterin haftet für die von ihr eingesetzten Unterauftragnehmer nur im Rahmen der",
+      "expectedType": "vicarious_agents",
+      "note": "Haftung fuer Gehilfen beschraenkt"
+    },
+    {
+      "marker": "Die Verarbeitung der Nutzungsdaten erfolgt in einem Drittland; ein Angemessenheitsbeschluss liegt",
+      "expectedType": "international_data_processing",
+      "note": "Drittlandverarbeitung"
+    },
+    {
+      "marker": "Die Haftung für mittelbare Schäden und entgangenen Gewinn ist abbedungen.",
+      "expectedType": "liability",
+      "note": "Paraphrase. Haftungsausschluss"
+    },
+    {
+      "marker": "Nachträgliche Abgabenbelastungen trägt der Kunde.",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Steuerlast auf den Kunden verlagert"
+    },
+    {
+      "marker": "Rechtsstreitigkeiten sind ausschließlich vor den Gerichten am Sitz des Anbieters auszutragen.",
+      "expectedType": "jurisdiction",
+      "note": "Paraphrase. Gerichtsstand beim Anbieter"
+    },
+    {
+      "marker": "Die Anbieterin darf die Betriebsdaten zur Weiterentwicklung ihrer Modelle nutzen.",
+      "expectedType": "data_grant",
+      "note": "Paraphrase. Umfassender Rechteerwerb"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Rechnung ist innerhalb von 30 Tagen nach Zugang ohne Abzug fällig.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Vertragsparteien behandeln die wechselseitig offengelegten Informationen vertraulich.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Der Anbieter trifft angemessene technische und organisatorische Maßnahmen zum Schutz der Daten.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Anbieterin stellt dem Kunden bei Vertragsende eine vollständige Kopie aller Kundendaten in",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Anbieterin sichert eine Verfügbarkeit von 99,5 Prozent pro Kalendermonat zu.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Der Kunde bleibt zur Zahlung des anteiligen Entgelts für bereits erbrachte Leistungen verpflichtet.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    }
+  ],
+  "uncovered": []
+}

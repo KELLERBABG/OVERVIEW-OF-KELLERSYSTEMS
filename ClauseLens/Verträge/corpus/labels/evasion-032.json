@@ -1,0 +1,79 @@
+{
+  "slug": "evasion-032",
+  "source": "generated",
+  "domain": "evasion",
+  "traps": [
+    {
+      "marker": "Kritisсhе Аktuаlisiеrungеn muss dеr Kundе unvеrzügliсh еinsрiеlеn, аndеrnfаlls еrlisсht dеr",
+      "expectedType": "service_credit_forfeiture",
+      "note": "GAP: kyrillische Homoglyphen in lateinischen Wörtern. Erwartet: service_credit_forfeiture."
+    },
+    {
+      "marker": "Bеi vоrzеitigеr Аuflösung dеs Vеrtrаgs durсh dеn Kundеn wird еinе раusсhаlе Аbstаndszаhlung in Höhе",
+      "expectedType": "early_termination_charge",
+      "note": "GAP: kyrillische Homoglyphen in lateinischen Wörtern. Erwartet: early_termination_charge."
+    },
+    {
+      "marker": "Оhnе gültigеn Wаrtungsvеrtrаg kаnn dеr Аnbiеtеr diе Аnlаgе аbsсhаltеn.",
+      "expectedType": "maintenance_conditional_shutdown",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: maintenance_conditional_shutdown (Technik: cyrillic)."
+    },
+    {
+      "marker": "The term shall automatically renew for successive periods of twelve months unless terminated.",
+      "expectedType": "auto_renewal",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: auto_renewal (Technik: english)."
+    },
+    {
+      "marker": "Dеr Vеrtrаg kаnn vоn bеidеn Раrtеiеn mit еinеr Frist vоn асhtzеhn Mоnаtеn zum Jаhrеsеndе gеkündigt",
+      "expectedType": "notice_period",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: notice_period (Technik: cyrillic)."
+    },
+    {
+      "marker": "The provider shall not be liable for any indirect loss, and all liability for data loss is excluded.",
+      "expectedType": "liability",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: liability (Technik: english)."
+    },
+    {
+      "marker": "For each breach the customer shall pay a contractual penalty of 5000 EUR.",
+      "expectedType": "penalty",
+      "note": "GAP: englischsprachiger Klauseltext ohne deutsche Registerwendung. Erwartet: penalty."
+    },
+    {
+      "marker": "The courts at the provider place of business shall have exclusive jurisdiction.",
+      "expectedType": "jurisdiction",
+      "note": "GAP: englischsprachiger Klauseltext ohne deutsche Registerwendung. Erwartet: jurisdiction."
+    },
+    {
+      "marker": "The customer shall not engage in any competing business for eighteen months after termination.",
+      "expectedType": "non_compete",
+      "note": "GAP: englischsprachiger Klauseltext ohne deutsche Registerwendung. Erwartet: non_compete."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Für die Vertragsdauer gelten die vereinbarten Konditionen unverändert.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien halten die geltenden Datenschutzvorschriften ein und verarbeiten personenbezogene",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Anbieter benennt einen technischen Ansprechpartner für den Kunden.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde führt die ihm übertragenen Aufgaben mit der Sorgfalt eines ordentlichen Kaufmanns aus.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Die Parteien regeln Einzelheiten in den beigefügten Anlagen 1 bis 3.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde meldet vermittelte Geschäfte unverzüglich und vollständig an den Anbieter.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    }
+  ],
+  "uncovered": []
+}

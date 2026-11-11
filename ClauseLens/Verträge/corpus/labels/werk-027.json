@@ -1,0 +1,88 @@
+{
+  "slug": "werk-027",
+  "source": "generated",
+  "domain": "Legal Tech, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Der Service-Credit verfällt, wenn ein Sicherheitspatch nicht rechtzeitig eingespielt wird.",
+      "expectedType": "service_credit_forfeiture",
+      "note": "Verifizierte Klausel im Bereich service_credit_forfeiture."
+    },
+    {
+      "marker": "Der Kunde kann mit einer Frist von sechsunddreißig Monaten kündigen, während dem Anbieter eine Frist",
+      "expectedType": "notice_period",
+      "note": "Verifizierte Klausel im Bereich notice_period."
+    },
+    {
+      "marker": "Eine Freistellung für Folgeschäden wird nicht gewährt.",
+      "expectedType": "liability",
+      "note": "Verifizierte Klausel im Bereich liability."
+    },
+    {
+      "marker": "Als Gerichtsstand gilt der Sitz des Anbieters.",
+      "expectedType": "jurisdiction",
+      "note": "Verifizierte Klausel im Bereich jurisdiction."
+    },
+    {
+      "marker": "Der Anbieter behält sich vor, die Servicebeschreibung jederzeit zu ändern.",
+      "expectedType": "unilateral_change",
+      "note": "Verifizierte Klausel im Bereich unilateral_change."
+    },
+    {
+      "marker": "Mängel sind binnen achtundvierzig Stunden nach Lieferung anzuzeigen, andernfalls verfallen sie ersat",
+      "expectedType": "deemed_acceptance",
+      "note": "Verifizierte Klausel im Bereich deemed_acceptance."
+    },
+    {
+      "marker": "Gelingt dem Kunden der Gegenbeweis nicht, gilt die Abrechnung als richtig.",
+      "expectedType": "burden_of_proof",
+      "note": "Verifizierte Klausel im Bereich burden_of_proof."
+    },
+    {
+      "marker": "Bei Rückstand von mehr als dreißig Tagen werden Zinsen in Höhe von zwölf Prozent berechnet.",
+      "expectedType": "default_interest",
+      "note": "Verifizierte Klausel im Bereich default_interest."
+    },
+    {
+      "marker": "Der Kunde stellt den Anbieter von Ansprüchen Dritter frei.",
+      "expectedType": "third_party_indemnity",
+      "note": "Verifizierte Klausel im Bereich third_party_indemnity."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Vergütung ist innerhalb von dreißig Tagen nach Rechnungseingang fällig.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Beide Parteien verpflichten sich wechselseitig, die offengelegten Informationen vertraulich zu behan",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Der Anbieter zeigt den Einsatz von Unterauftragnehmern vierzehn Tage vorher an.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Der Kunde erhält zum Vertragsende einen kostenfreien Datenexport in einem gängigen Format.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Änderungen dieses Vertrages können in Textform vereinbart werden.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Monatsende kündigen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Anbieter übergibt den Quellcode nach vollständiger Zahlung der Vergütung",
+      "note": "Rechtefolge ohne eigenen Detektor."
+    }
+  ]
+}

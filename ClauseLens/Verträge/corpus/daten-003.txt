@@ -1,0 +1,115 @@
+LIZENZVERTRAG
+
+zwischen
+
+der Cereswerk GmbH, Schlossplatz 2, 70173 Stuttgart (nachfolgend Lizenzgeber)
+
+und
+
+der Aurelia GmbH, Willi-Brandt-Platz 3, 45127 Essen (nachfolgend Lizenznehmer)
+
+Präambel
+
+Der Lizenzgeber räumt dem Lizenznehmer die in Anlage 2 bezeichneten Nutzungsrechte an der Software ein. Es gelten die nachstehenden Bedingungen.
+
+§ 11 Klarstellung
+
+Der Kunde verpflichtet sich, für die Dauer von achtzehn Monaten nach Beendigung keine Mitarbeiter der Gesellschaft abzuwerben.
+
+§ 12 Ergänzung
+
+Der Kunde kann diesen Vertrag ohne Angabe von Gründen zum Monatsende kündigen.
+
+§ 13 Verfahren
+
+Nur der Anbieter ist berechtigt, den Vertrag mit einer Frist von vier Wochen ohne Angabe von Gründen zu kündigen.
+
+§ 14 Ausführung
+
+Der Lizenzgeber räumt dem Lizenznehmer ein einfaches, nicht ausschließliches Nutzungsrecht für den vereinbarten Zweck ein.
+
+§ 15 Hinweis
+
+Die Vertraulichkeitspflicht überdauert die Vertragsbeendigung ohne zeitliche Beschränkung.
+
+§ 16 Maßnahme
+
+Der Nutzungsumfang ist auf den in der Präambel bezeichneten Zweck beschränkt.
+
+§ 17 Vorgehen
+
+Die Gesellschaft behält sich vor, die Vergütung nach billigem Ermessen anzupassen.
+
+§ 18 Abstimmung
+
+Jede Partei kann diesen Vertrag zum Quartalsende ordentlich kündigen.
+
+§ 19 Koordination
+
+An die Stelle einer nichtigen Klausel tritt diejenige Gestaltung, die den Parteien wirtschaftlich am nächsten steht.
+
+§ 20 Umsetzung
+
+Der Anbieter stellt sicher, dass die von ihm eingesetzten Nachunternehmer dieselben Datenschutzstandards einhalten.
+
+§ 21 Beachtung
+
+Der Verkäufer behält sich das Eigentum vor bis zur vollständigen Erfüllung aller Ansprüche aus der Geschäftsverbindung.
+
+§ 1 Allgemeines
+
+Sämtliche Open-Source-Komponenten werden in der Anlage 2 mit ihren jeweiligen Lizenzen aufgeführt.
+
+§ 2 Bestimmung
+
+Der Zustimmung des Kunden bedarf es nicht, wenn Unterauftragnehmer eingesetzt werden.
+
+§ 3 Regelung
+
+Die gesetzliche Haftung für Vorsatz und grobe Fahrlässigkeit sowie für Personenschäden bleibt unberührt.
+
+§ 4 Vereinbarung
+
+Abweichende Nachweise des Kunden bleiben ohne Bedeutung.
+
+§ 5 Modalität
+
+Der Auftraggeber kann den Vertrag aus wichtigem Grund jederzeit fristlos beenden.
+
+§ 6 Ordnung
+
+Der Auftraggeber trägt für jedes Auskunftsersuchen eine Bearbeitungsgebühr von fünfzig Euro.
+
+§ 7 Ausgestaltung
+
+Die Vertragsparteien bestätigen die Vollständigkeit der in Bezug genommenen Anlagen.
+
+§ 8 Durchführung
+
+Erfüllungsort ist der Sitz des Auftraggebers.
+
+§ 9 Vorkehrung
+
+Dieser Vertrag ist in zwei gleichlautenden Ausfertigungen erstellt.
+
+§ 10 Zusatz
+
+Jede Partei trägt ihre eigenen Kosten der Vertragsverhandlungen.
+
+§ 11 Klarstellung
+
+Datenschutzrechtliche Hinweise ergeben sich aus der Anlage 4.
+
+§ 12 Ergänzung
+
+Ansprechpartner für operative Fragen ist die in der Anlage 2 genannte Stelle.
+
+§ 13 Verfahren
+
+Die Parteien arbeiten bei der Durchführung vertrauensvoll zusammen.
+
+Ort, Datum: ______________________
+
+Für Lizenzgeber: ______________________
+
+Für Lizenznehmer: ______________________

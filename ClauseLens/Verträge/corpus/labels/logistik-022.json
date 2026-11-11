@@ -1,0 +1,80 @@
+{
+  "slug": "logistik-022",
+  "source": "generated",
+  "domain": "Exportkontrolle",
+  "traps": [
+    {
+      "marker": "This Agreement shall be governed by the laws of Switzerland.",
+      "expectedType": "jurisdiction",
+      "note": "Red-team Klausel: jurisdiction"
+    },
+    {
+      "marker": " den Anbieter von sämtlichen Ansprüchen Dritter frei, unabhängig",
+      "expectedType": "third_party_indemnity",
+      "note": "Red-team Klausel: third_party_indemnity"
+    },
+    {
+      "marker": "Nachträgliche Abgabenbelastungen trägt der Kunde.",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Red-team Klausel: tax_indemnity_shift"
+    },
+    {
+      "marker": "Der Anbieter behält sich vor, den Leistungsumfang an geänderte Marktbedingungen anzupassen.",
+      "expectedType": "unilateral_change",
+      "note": "Red-team Klausel: unilateral_change"
+    },
+    {
+      "marker": "Der Anbieter darf Subunternehmer ohne vorherige Ankündigung einsetzen.",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "Red-team Klausel: subcontractor_uncontrolled"
+    },
+    {
+      "marker": "Der Kunde trägt die Beweislast dafür, dass die Ursache nicht auf einem Fehler des Anbieters beruht.",
+      "expectedType": "burden_of_proof",
+      "note": "Red-team Klausel: burden_of_proof"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Güterlisten halbjährlich ab",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "verständigen sich bei Streitigkeiten zunächst gütlich",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Sanktionslistenprüfung durch",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "erstellt die erforderlichen Zollanmeldungen",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "informiert den Kunden über wesentliche Änderungen",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Unterauftragnehmer auf Anfrage",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "dokumentieren die Prüfergebnisse der Klassifizierung",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "innerhalb von 30 Tagen ohne Abzug zahlbar",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "seine Klassifizierungsdaten jederzeit in einem gängigen Format exportieren",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Beide Parteien behandeln die Prüfberichte vertraulich",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

@@ -1,0 +1,74 @@
+Facility-Management-Vertrag für ein Gewerbequartier
+
+zwischen
+Kontorhaus Betriebsführung GmbH, Hamburg
+(nachfolgend "Dienstleister")
+und
+Quartier Nord Grundstücks GmbH, Hamburg
+(nachfolgend "Auftraggeber")
+
+§ 1 Vertragsgegenstand
+
+Der Dienstleister betreibt die technische Anlagentechnik der Gebäude A bis D des Quartiers Nord.
+
+§ 2 Betriebsdaten
+
+Der Auftraggeber räumt dem Dienstleister das Recht ein, die Betriebsdaten der Anlagentechnik für die Entwicklung eigener Prognosemodelle zu verwenden.
+
+§ 3 Verarbeitungsort
+
+Die Nutzungsdaten der Zähler werden teilweise in einem Drittland, namentlich in Singapur, verarbeitet.
+
+§ 4 Datenherausgabe
+
+Nach Beendigung des Vertrages ist ein Datenexport nur gegen Erstattung des Aufwands und frühestens 90 Kalendertage nach Abruf möglich.
+
+§ 5 Nachweise
+
+Die Aufzeichnungen des Dienstleisters gelten als unwiderlegbarer Nachweis für die Erbringung der Wartungsleistungen.
+
+§ 6 Nachunternehmer
+
+Für das Verhalten der eingesetzten Nachunternehmer übernimmt der Dienstleister keine Einstandspflicht, sofern er bei der Auswahl die übliche Sorgfalt beachtet hat.
+
+§ 7 Systempartner
+
+Die Beauftragung von Systempartnern bedarf keiner vorherigen Zustimmung des Auftraggebers.
+
+§ 8 Aktualisierungen
+
+Entfällt eine kritische Aktualisierung, so verfällt der Anspruch des Auftraggebers auf eine Gutschrift ohne Ersatz.
+
+§ 9 Vertraulichkeit
+
+Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich
+
+§ 10 Form von Erklärungen
+
+Erklärungen können in Textform, auch per E-Mail, abgegeben werden
+
+§ 11 Haftung bei Vorsatz
+
+Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt
+
+§ 12 Zahlungsfrist
+
+Zahlungen sind innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig
+
+§ 13 Änderungen
+
+Änderungen des Leistungsumfangs bedürfen der Abstimmung beider Parteien
+
+§ 14 Beendigung
+
+Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende beenden
+
+§ 15 Schlussbestimmungen
+
+Es gilt deutsches Recht.
+
+Hamburg, den 2. Februar
+
+Für den Dienstleister: Kontorhaus Betriebsführung GmbH
+
+Für den Auftraggeber: Quartier Nord Grundstücks GmbH

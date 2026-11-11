@@ -1,0 +1,79 @@
+{
+  "slug": "evasion-001",
+  "source": "generated",
+  "domain": "evasion",
+  "traps": [
+    {
+      "marker": "Der Vertrag verlängert sich jeweils um ein weiteres Jahr, sofern er nicht mit einer Frist von drei M",
+      "expectedType": "auto_renewal",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: auto_renewal (Technik: nbsp)."
+    },
+    {
+      "marker": "Der Vertrag kann von beiden Parteien mit einer Frist von achtzehn Monaten zum Jahresende gekündigt w",
+      "expectedType": "notice_period",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: notice_period (Technik: nbsp)."
+    },
+    {
+      "marker": "Die Haftung des Anbieters für leicht fahrlässig verursachte Schäden ist ausgeschlossen, für mittelba",
+      "expectedType": "liability",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: liability (Technik: nbsp)."
+    },
+    {
+      "marker": "Für jeden Verstoß gegen die Vertraulichkeitspflichten verpflichtet sich der Kunde zur Zahlung einer",
+      "expectedType": "penalty",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: penalty (Technik: nbsp)."
+    },
+    {
+      "marker": "Ausschließlicher Gerichtsstand für alle Streitigkeiten aus diesem Vertrag ist der Sitz des Anbieters",
+      "expectedType": "jurisdiction",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: jurisdiction (Technik: nbsp)."
+    },
+    {
+      "marker": "Für die Dauer von achtzehn Monaten nach Auslaufen der Zusammenarbeit ist der Kunde im gesamten Vertr",
+      "expectedType": "non_compete",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: non_compete (Technik: nbsp)."
+    },
+    {
+      "marker": "Der Kunde räumt dem Anbieter ein unwiderrufliches Nutzungsrecht an allen Kundendaten und Betriebsaus",
+      "expectedType": "data_grant",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: data_grant (Technik: nbsp)."
+    },
+    {
+      "marker": "Bei Zahlungsverzug schuldet der Kunde Verzugszinsen in Höhe von vierzehn Prozent über dem Basiszinss",
+      "expectedType": "default_interest",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: default_interest (Technik: nbsp)."
+    },
+    {
+      "marker": "Der Anbieter behält sich vor, die Preise sowie das Systemhandbuch jederzeit anzupassen und die Leist",
+      "expectedType": "unilateral_change",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: unilateral_change (Technik: nbsp)."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende kündigen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Zahlungen sind innerhalb von 30 Tagen nach Rechnungsstellung fällig.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde erhält für vermittelte Geschäfte eine Provision von fünf Prozent des Nettoumsatzes.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Anbieter stellt dem Kunden die vereinbarten Unterlagen unentgeltlich zur Verfügung.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Vertrag wird für die Dauer von zwei Jahren geschlossen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien behandeln die ausgetauschten Informationen vertraulich, die Pflicht gilt für die",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    }
+  ],
+  "uncovered": []
+}

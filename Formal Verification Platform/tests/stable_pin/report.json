@@ -1,0 +1,26 @@
+[
+  {
+    "crate": "stable_pin",
+    "function": "unguarded_increment",
+    "block": "bb0",
+    "status": "FAIL",
+    "kind": "overflow",
+    "defect_class": "unguarded",
+    "file": "src/main.rs",
+    "line": 21,
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found! [x (_1) = 255, 1_u8 = 1]",
+    "witness": [
+      {
+        "input": "x (_1)",
+        "symbol": "overflow_l",
+        "value": "255"
+      },
+      {
+        "input": "1_u8",
+        "symbol": "overflow_r",
+        "value": "1"
+      }
+    ],
+    "witness_kind": "pinned"
+  }
+]

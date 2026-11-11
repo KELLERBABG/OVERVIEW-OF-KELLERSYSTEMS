@@ -1,0 +1,88 @@
+{
+  "slug": "agb-22-coworking-flexible-office",
+  "domain": "Coworking-Space & Serviced-Office Nutzungsbedingungen",
+  "source": "Blind Real-AGB Benchmark 2026 (vor Engine-Lauf gelabelt)",
+  "traps": [
+    {
+      "marker": "jederzeit nach freiem Ermessen ohne Ankündigung gegen einen beliebigen Steharbeitsplatz in der offenen Gemeinschaftslounge",
+      "expectedType": "unilateral_change",
+      "statutoryBasis": "§ 308 Nr. 4 BGB / § 307 BGB",
+      "note": "Einseitiger Austausch eines abgeschlossenen Einzelbüros gegen einen Steharbeitsplatz an einem anderen Standort bei Reduzierung der Öffnungszeiten auf vier Stunden ohne Mietminderung."
+    },
+    {
+      "marker": "verlängert sich nach Ablauf der Erstlaufzeit jeweils automatisch um weitere 24 Monate",
+      "expectedType": "auto_renewal",
+      "statutoryBasis": "§ 309 Nr. 9 BGB / § 307 BGB",
+      "note": "Automatische Vertragsverlängerung um jeweils 24 Monate übersteigt die zulässige Bindungsdauer erheblich."
+    },
+    {
+      "marker": "Kündigungsfrist von neun Monaten vor Ablauf der jeweiligen Vertragslaufzeit gekündigt wird; für den Betreiber gilt hingegen jederzeit eine Kündigungsfrist von lediglich fünf Kalendertagen",
+      "expectedType": "notice_period",
+      "statutoryBasis": "§ 309 Nr. 9c BGB / § 307 BGB",
+      "note": "Überlange neunmonatige Kündigungsfrist für den Mieter bei extrem asymmetrischer fünftägiger Kündigungsfrist für den Betreiber."
+    },
+    {
+      "marker": "zwingend in Papierform mit beglaubigter Unterschrift durch persönlichen Boten in der Hauptverwaltung",
+      "expectedType": "written_form_trap",
+      "statutoryBasis": "§ 309 Nr. 13 BGB / § 307 BGB",
+      "note": "Formzwang zur beglaubigten Unterschrift und Übergabe durch persönlichen Boten verstößt gegen § 309 Nr. 13 BGB."
+    },
+    {
+      "marker": "sämtliche elektronischen Zutrittskarten sofort und ohne vorherige Mahnung zu deaktivieren, das Büro zu versiegeln",
+      "expectedType": "service_suspension",
+      "statutoryBasis": "§ 320 Abs. 2 BGB / § 858 BGB / § 307 BGB",
+      "note": "Sofortige Aussperrung und Büro-Versiegelung ohne Abmahnung wegen eines Kleinstbetrags von 15 Euro stellt verbotene Eigenmacht (§ 858 BGB) und einen Verstoß gegen § 320 Abs. 2 BGB dar."
+    },
+    {
+      "marker": "selbst wenn die Gegenforderungen oder Mängelansprüche des Mitglieds vom Betreiber schriftlich anerkannt, unbestritten oder durch ein rechtskräftiges",
+      "expectedType": "setoff_restriction",
+      "statutoryBasis": "§ 309 Nr. 3 BGB / § 536 Abs. 4 BGB / § 307 BGB",
+      "note": "Vollständiger Ausschluss der Aufrechnung selbst bei anerkannten, unbestrittenen oder rechtskräftigen Forderungen sowie unzulässiger Ausschluss der Mietminderung."
+    },
+    {
+      "marker": "auch die fest abgeschlossenen privaten Einzelbüros des Mitglieds jederzeit ohne Vorankündigung, ohne klopfendes Anmelden und ohne Vorliegen eines Notfalls bei Tag und Nacht",
+      "expectedType": "unreasonable_audit",
+      "statutoryBasis": "§ 307 Abs. 1 BGB / Art. 13 GG",
+      "note": "Anlassloses Tag-und-Nacht-Zutrittsrecht zu vermieteten Einzelbüros einschließlich Öffnen von Schränken verletzt das Besitzrecht des Mieters und Art. 13 GG."
+    },
+    {
+      "marker": "an Drittunternehmen in beliebigen Staaten außerhalb der Europäischen Union und des Europäischen Wirtschaftsraums, in denen kein angemessenes Datenschutzniveau besteht",
+      "expectedType": "international_data_processing",
+      "statutoryBasis": "Art. 44 ff. DSGVO / § 307 BGB",
+      "note": "Aufzeichnung von Raumgesprächen und WLAN-Daten sowie Transfer in unsichere Drittländer ohne Garantien nach Art. 46 DSGVO ist rechtswidrig."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Bereitstellung von Strom, Heizung, Klimatisierung, Reinigung der Gemeinschaftsflächen",
+      "note": "Klare und transparente Aufzählung der vertraglichen Inklusivleistungen."
+    },
+    {
+      "marker": "unverzinsliche Mietkaution in Höhe von zwei Monatsnettoentgelten, die nach Vertragsbeendigung",
+      "note": "Marktübliche Kautionsregelung von zwei Monatsmieten mit klarer Rückzahlungsfrist von vier Wochen."
+    },
+    {
+      "marker": "rücksichtsvollen Umgang mit den Gemeinschaftseinrichtungen und den anderen Nutzern",
+      "note": "Angemessene Verhaltensregel für Gemeinschaftsflächen."
+    },
+    {
+      "marker": "haftet unbeschränkt für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit",
+      "note": "Gesetzeskonforme Haftungsklausel für Personenschäden sowie Vorsatz und grobe Fahrlässigkeit."
+    },
+    {
+      "marker": "bei der leicht fahrlässigen Verletzung wesentlicher Vertragspflichten (Kardinalpflichten) ist die Haftung auf den vertragstypischen",
+      "note": "Wirksame Haftungsbegrenzung bei leicht fahrlässiger Kardinalpflichtverletzung."
+    },
+    {
+      "marker": "Die verschuldensunabhängige Garantiehaftung des Vermieters für anfängliche Sachmängel gemäß § 536a Abs. 1",
+      "note": "Nach BGH-Rechtsprechung zulässiger Ausschluss der verschuldensunabhängigen Garantiehaftung des § 536a Abs. 1 Alt. 1 BGB bei Arglistvorbehalt."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "so gehen diese Gegenstände sofort und entschädigungslos in das alleinige Eigentum des Betreibers über",
+      "statutoryBasis": "§ 138 BGB / § 307 Abs. 1 BGB / § 903 BGB",
+      "note": "Sofortiger entschädigungsloser Eigentumsverlust an zurückgelassenen Laptops und Aktenordnern (insb. bereits am Freitagabend nach 20 Uhr) ist als Verfallklausel sittenwidrig und unwirksam."
+    }
+  ]
+}

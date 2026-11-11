@@ -1,0 +1,93 @@
+{
+  "slug": "werk-006",
+  "source": "generated",
+  "domain": "Migrationsprojekt und Betriebsuebernahme Logistik, deutsches Recht",
+  "traps": [
+    {
+      "marker": "behält sich vor, die Leistungsbeschreibung mit Wirkung für laufende Projekte einseitig anzupassen",
+      "expectedType": "unilateral_change",
+      "note": "Aenderungsvorbehalt mit Wirkung fuer laufende Projekte."
+    },
+    {
+      "marker": "Ein ordentliches Kündigungsrecht des Kunden ist ausgeschlossen",
+      "expectedType": "unilateral_convenience_termination",
+      "note": "Ordentliche Kuendigung nur einseitig ausgeschlossen."
+    },
+    {
+      "marker": "Das Recht zur Kündigung aus wichtigem Grund ist für den Kunden ausgeschlossen",
+      "expectedType": "asymmetric_termination",
+      "note": "Sonderkündigungsrecht einseitig entzogen."
+    },
+    {
+      "marker": "Für eine vorzeitige Kündigung wird eine pauschale Stornogebühr berechnet",
+      "expectedType": "early_termination_charge",
+      "note": "Stornogebuehr bei vorzeitiger Kuendigung."
+    },
+    {
+      "marker": "betreibt für die Dauer von zwölf Monaten nach Beendigung des Vertrages kein vergleichbares System",
+      "expectedType": "non_compete",
+      "note": "Wettbewerbsverbot als Beschreibung des Untaetigbleibens."
+    },
+    {
+      "marker": "Für Handlungen von Erfüllungsgehilfen haftet der Anbieter nur bei Auswahlverschulden",
+      "expectedType": "vicarious_agents",
+      "note": "Haftungsreduktion fuer Gehilfen ohne das Wort ausgeschlossen."
+    },
+    {
+      "marker": "the provider assumes no confidentiality obligation",
+      "expectedType": "asymmetric_confidentiality",
+      "note": "Einseitige Vertraulichkeit englisch."
+    },
+    {
+      "marker": "Die Geheimhaltungspflicht gilt zeitlich unbeschränkt fort",
+      "expectedType": "excessive_survival",
+      "note": "Unbeschraenkte Nachwirkung."
+    },
+    {
+      "marker": "Der Anbieter darf Anregungen und Vorschläge ohne Vergütung verwerten",
+      "expectedType": "feedback_ip_grab",
+      "note": "Unentgeltliche Verwertung von Anregungen."
+    },
+    {
+      "marker": "Telemetriedaten der Anwendung darf der Anbieter kommerziell verwerten",
+      "expectedType": "data_grant",
+      "note": "Kommerzielle Verwertung der Telemetrie."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Vergütung ist innerhalb von dreißig Tagen nach Rechnungseingang fällig",
+      "note": "Marktuebliche Zahlungsfrist."
+    },
+    {
+      "marker": "Änderungen dieses Vertrages können in Textform vereinbart werden",
+      "note": "Textform ausdruecklich erlaubt."
+    },
+    {
+      "marker": "eine Berufshaftpflichtversicherung mit einer Deckungssumme von zwei Millionen EUR",
+      "note": "Vernuenftige Absicherung, unbedenklich."
+    },
+    {
+      "marker": "Der Anbieter dokumentiert die Änderungen im Änderungsprotokoll",
+      "note": "Dokumentationspflicht, unbedenklich."
+    },
+    {
+      "marker": "Die Parteien behandeln die Vertragsverhandlung vertraulich",
+      "note": "Wechselseitige Vertraulichkeit."
+    },
+    {
+      "marker": "Alle Fristen werden in Kalendertagen gerechnet",
+      "note": "Neutrale Fristenregelung."
+    },
+    {
+      "marker": "Die Kündigung aus wichtigem Grund bleibt beiden Parteien unbenommen",
+      "note": "Symmetrisches Sonderkündigungsrecht."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Eine Karenzentschädigung wird nicht gezahlt",
+      "note": "Wirtschaftlich belastend, aber nicht als eigener Detektortyp gefuehrt."
+    }
+  ]
+}

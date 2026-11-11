@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Background noise · Aureal Watermark Lexicon</title>
+  <meta name="description" content="Noise fixtures passed down to −30 dBFS. In-band SNR decides, broadband noise is a weak host, and near-silence is muted rather than marked.">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#08040d">
+  <link rel="canonical" href="https://aureal.kellersystems.dev/lexicon/background-noise">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Background noise · Aureal Watermark Lexicon">
+  <meta property="og:description" content="Noise fixtures passed down to −30 dBFS. In-band SNR decides, broadband noise is a weak host, and near-silence is muted rather than marked.">
+  <meta property="og:url" content="https://aureal.kellersystems.dev/lexicon/background-noise">
+  <meta property="og:image" content="https://aureal.kellersystems.dev/assets/icon.png">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <style>
+:root {
+  --bg: #08040d;
+  --surface: #12091f;
+  --surface-raised: #1a0f2b;
+  --border: #301a52;
+  --border-bright: #4b2a78;
+  --text: #f0f6fc;
+  --soft: #d8d2e6;
+  --muted: #a8a2b8;
+  --dim: #7c7490;
+  --purple: #8b5cf6;
+  --cyan: #38bdf8;
+  --emerald: #10b981;
+  --rose: #f43f5e;
+  --amber: #f59e0b;
+  --font: "Space Grotesk", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 50% -10%, rgba(139, 92, 246, 0.22), transparent 55%),
+    var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--cyan); text-underline-offset: 3px; }
+a:hover { color: #fff; }
+.wrap { width: min(980px, calc(100% - 40px)); margin: 0 auto; }
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid var(--border);
+  background: rgba(8, 4, 13, 0.9);
+  backdrop-filter: blur(14px);
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  min-height: 68px;
+  padding: 10px 0;
+}
+.brand { display: flex; flex-direction: column; line-height: 1.15; text-decoration: none; color: var(--text); flex-shrink: 0; }
+.brand strong { font-size: 1rem; letter-spacing: -0.02em; }
+.brand span { margin-top: 3px; color: var(--muted); font-size: 0.64rem; letter-spacing: 0.14em; text-transform: uppercase; }
+.nav-links { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 16px; }
+.nav-links a { color: var(--muted); font-size: 0.83rem; text-decoration: none; }
+.nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--text); }
+.nav-links .nav-cta {
+  padding: 8px 14px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, var(--purple), #6366f1);
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 8px 24px -10px rgba(139, 92, 246, 0.8);
+}
+main { padding: 44px 0 84px; }
+.crumbs { display: flex; flex-wrap: wrap; gap: 8px; color: var(--dim); font-family: var(--mono); font-size: 0.76rem; margin-bottom: 28px; }
+.crumbs a { color: var(--muted); text-decoration: none; }
+.crumbs a:hover { color: var(--text); }
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  border-radius: 999px;
+  background: rgba(56, 189, 248, 0.08);
+  color: var(--cyan);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+h1 { margin: 18px 0 14px; font-size: clamp(2rem, 4.4vw, 3rem); line-height: 1.12; letter-spacing: -0.035em; }
+h2 { margin: 40px 0 12px; font-size: 1.25rem; line-height: 1.3; letter-spacing: -0.015em; }
+h3 { margin: 26px 0 8px; font-size: 1.05rem; }
+p { margin: 0 0 14px; }
+.lead {
+  margin: 0 0 18px;
+  padding: 18px 20px;
+  border-left: 3px solid var(--cyan);
+  border-radius: 0 10px 10px 0;
+  background: rgba(56, 189, 248, 0.06);
+  color: var(--soft);
+  font-size: 1.06rem;
+}
+.meta { display: flex; flex-wrap: wrap; gap: 6px 20px; margin: 0 0 34px; color: var(--muted); font-family: var(--mono); font-size: 0.76rem; }
+.meta strong { color: var(--dim); font-weight: 500; }
+.card { padding: 20px 22px; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
+.card.trap { border-left: 3px solid var(--rose); background: rgba(244, 63, 94, 0.055); }
+.card.solution { border-left: 3px solid var(--emerald); background: rgba(16, 185, 129, 0.055); }
+.card.limits { border-left: 3px solid var(--amber); background: rgba(245, 158, 11, 0.055); }
+blockquote { margin: 0 0 12px; color: #fff; font-family: var(--mono); font-size: 0.88rem; }
+.card.trap p { margin-bottom: 0; color: var(--soft); }
+pre {
+  margin: 0;
+  padding: 16px;
+  overflow-x: auto;
+  border: 1px solid #24123a;
+  border-radius: 8px;
+  background: #050209;
+  color: #c4b5fd;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  line-height: 1.65;
+  white-space: pre-wrap;
+}
+code { font-family: var(--mono); }
+.copy {
+  margin-top: 12px;
+  padding: 7px 13px;
+  border: 1px solid var(--border-bright);
+  border-radius: 6px;
+  background: var(--surface-raised);
+  color: var(--soft);
+  font: inherit;
+  font-size: 0.76rem;
+  cursor: pointer;
+}
+.copy:hover { border-color: var(--purple); color: #fff; }
+.hint { margin: 10px 0 0; color: var(--dim); font-size: 0.78rem; }
+ul.limits { margin: 0; padding-left: 1.2rem; color: #e8dcc8; }
+ul.limits li { margin: 4px 0; }
+details { margin: 8px 0; padding: 13px 16px; border: 1px solid var(--border); border-radius: 9px; background: var(--surface); }
+summary { cursor: pointer; color: #fff; font-weight: 600; }
+summary::marker { color: var(--purple); }
+details p { margin: 10px 0 0; color: var(--muted); }
+.related { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; margin-top: 14px; }
+.related a { display: block; padding: 14px 16px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); color: var(--text); text-decoration: none; }
+.related a:hover { border-color: var(--purple); }
+.related span { display: block; margin-top: 4px; color: var(--muted); font-size: 0.78rem; }
+.cta-box {
+  margin-top: 48px;
+  padding: 26px;
+  border: 1px solid var(--border-bright);
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.16), rgba(56, 189, 248, 0.07));
+  text-align: center;
+}
+.cta-box p { color: var(--soft); }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 7px;
+  background: linear-gradient(135deg, var(--purple), #6366f1);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 10px 28px -12px rgba(139, 92, 246, 0.9);
+}
+.btn:hover { color: #fff; transform: translateY(-1px); }
+.btn.secondary { background: var(--surface-raised); box-shadow: none; color: var(--soft); }
+footer.site { border-top: 1px solid var(--border); padding: 28px 0 40px; color: var(--dim); font-size: 0.8rem; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-bottom: 8px; }
+.footer-links a { color: var(--muted); text-decoration: none; }
+.footer-links a:hover { color: var(--text); }
+.disclaimer { margin: 12px 0 0; padding-top: 12px; border-top: 1px solid rgba(48, 26, 82, 0.7); color: var(--dim); font-size: 0.76rem; }
+.search-label { display: block; margin: 28px 0 8px; color: var(--soft); font-weight: 600; }
+.search {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #0d0717;
+  color: var(--text);
+  font: inherit;
+}
+.search::placeholder { color: var(--dim); }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 24px; }
+.filters button { padding: 7px 13px; border: 1px solid var(--border); border-radius: 999px; background: var(--surface); color: var(--muted); font: inherit; font-size: 0.78rem; cursor: pointer; }
+.filters button:hover { color: var(--text); border-color: var(--border-bright); }
+.filters button[aria-pressed="true"] { background: var(--purple); border-color: var(--purple); color: #fff; }
+.entries { display: grid; gap: 12px; list-style: none; margin: 0; padding: 0; }
+.entry { padding: 18px 20px; border: 1px solid var(--border); border-radius: 11px; background: var(--surface); }
+.entry[hidden] { display: none; }
+.entry h2 { margin: 0 0 6px; font-size: 1.05rem; }
+.entry h2 a { color: var(--text); text-decoration: none; }
+.entry h2 a:hover { color: var(--cyan); }
+.entry p { margin: 8px 0 0; color: var(--muted); font-size: 0.9rem; }
+.badge { display: inline-block; margin-left: 8px; padding: 2px 8px; border-radius: 999px; background: rgba(139, 92, 246, 0.14); color: #c4b5fd; font-family: var(--mono); font-size: 0.66rem; vertical-align: middle; text-transform: uppercase; letter-spacing: 0.06em; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+:focus-visible { outline: 3px solid var(--cyan); outline-offset: 3px; }
+@media (max-width: 720px) {
+  .wrap { width: min(100% - 28px, 980px); }
+  .nav { align-items: flex-start; flex-direction: column; }
+  .nav-links { gap: 7px 13px; }
+  main { padding-top: 30px; }
+  .card { padding: 17px; }
+  .cta-box { padding: 22px 18px; }
+}
+</style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Does the watermark survive background noise?","description":"Noise fixtures passed down to −30 dBFS. In-band SNR decides, broadband noise is a weak host, and near-silence is muted rather than marked.","dateModified":"2026-11-02","author":{"@type":"Organization","name":"Keller Systems"},"publisher":{"@type":"Organization","name":"Keller Systems"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://aureal.kellersystems.dev/lexicon/background-noise"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What SNR do I need?","acceptedAnswer":{"@type":"Answer","text":"There is no single number that holds across content. Detection integrates repeated frames, and the useful margin is the in-band SNR at the carrier. Test the actual noise spectrum and codec, and record confidence and BER."}},{"@type":"Question","name":"Does noise erase the ID?","acceptedAnswer":{"@type":"Answer","text":"It raises the bit error rate and can push a marginal file below the detection threshold. With enough frames and a strong enough mark it may still decode; the fixture results show the direction, not a guarantee."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://aureal.kellersystems.dev/"},{"@type":"ListItem","position":2,"name":"Audio Watermarking Lexicon","item":"https://aureal.kellersystems.dev/lexicon/"},{"@type":"ListItem","position":3,"name":"Background noise","item":"https://aureal.kellersystems.dev/lexicon/background-noise"}]}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="/">
+      <strong>Aureal Watermark</strong>
+      <span>Keller Systems · Lexicon</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="/studio">Studio</a>
+      <a href="/docs">Docs</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/verifier">Verifier</a>
+      <a href="/lexicon/">Lexicon</a>
+      <a class="nav-cta" href="/studio">Open Studio →</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a> <span aria-hidden="true">/</span>
+    <a href="/lexicon/">Audio Watermarking Lexicon</a> <span aria-hidden="true">/</span>
+    <span>Background noise</span>
+  </nav>
+
+  <article>
+    <span class="eyebrow">Robustness</span>
+    <h1>Does the watermark survive background noise?</h1>
+    <p class="lead">The local fixture matrix records additive noise at −30 dBFS for all three bands, and the README&#39;s adversarial table names a −20 dB pink-noise fixture. Both are local results. Recovery depends on the signal-to-noise ratio inside the carrier band, not only on the file&#39;s overall loudness; broadband noise and 8 kHz paths are weak hosts.</p>
+    <div class="meta">
+      <span><strong>Technical basis:</strong> Additive noise fixtures: −30 dBFS matrix, −20 dB pink noise</span>
+      <span><strong>Reviewed:</strong> 2026-11-02</span>
+    </div>
+
+    <h2>How Aureal handles it</h2>
+    <p>Spread-spectrum detection integrates repeated frames, so noise that looks severe on a waveform can still leave a decodable mark when enough frames are available. The relevant quantity is the in-band SNR at the carrier, which is why a quiet recording with low self-noise can outperform a loud one with broadband hiss. The embedder also mutes the watermark in near-silence (at or below about −54 dBFS) to keep pauses clean, so a clip made only of room tone may carry no mark at all, regardless of its duration.</p>
+
+    <h2>Common failure mode</h2>
+    <div class="card trap">
+      <blockquote>“A −20 dB noise floor is fine because the fixture passed at −30 dBFS.”</blockquote>
+      <p><strong>Why it fails:</strong> Overall dBFS and in-band SNR are different measurements. Pink noise concentrates energy at low frequencies, while the carrier sits in the mid or high band; the result also depends on how many frames the file provides and on any codec that follows. A level that passed on one fixture says little about a different noise spectrum.</p>
+    </div>
+
+    <h2>Verified example</h2>
+    <div class="card solution">
+      <pre><code id="example-background-noise">Measure the result at two noise levels on the actual master, and keep the carrier band in the record:
+ffmpeg -i marked.wav -f lavfi -i &quot;anoisesrc=color=pink:amplitude=0.01&quot; -filter_complex &quot;[0:a][1:a]amix=inputs=2:duration=first&quot; noisy.wav
+node aureal-watermark.cjs detect noisy.wav --id 883921
+Repeat at a higher amplitude and compare confidence and BER rather than a single pass/fail.</code></pre>
+      <button class="copy" type="button" data-copy="example-background-noise">Copy</button>
+      <p class="hint">Example only. Validate against your own audio, codec and processing chain.</p>
+    </div>
+
+    <h2>Scope and limits</h2>
+    <div class="card limits">
+      <ul class="limits">
+        <li>The noise results are local fixtures, not platform guarantees.</li>
+        <li>Broadband noise is a known weak host.</li>
+        <li>The embedder mutes the watermark in near-silence (≤ about −54 dBFS).</li>
+        <li>Codec damage after the noise compounds the loss.</li>
+      </ul>
+    </div>
+
+    <h2>Frequently asked questions</h2>
+    <details><summary>What SNR do I need?</summary><p>There is no single number that holds across content. Detection integrates repeated frames, and the useful margin is the in-band SNR at the carrier. Test the actual noise spectrum and codec, and record confidence and BER.</p></details>
+    <details><summary>Does noise erase the ID?</summary><p>It raises the bit error rate and can push a marginal file below the detection threshold. With enough frames and a strong enough mark it may still decode; the fixture results show the direction, not a guarantee.</p></details>
+
+    <section aria-labelledby="related">
+      <h2 id="related">Related topics</h2>
+      <div class="related">
+        <a href="/lexicon/8khz-telephony"><strong>8 kHz telephony</strong><span>Robustness</span></a>
+        <a href="/lexicon/clipping-and-limiting"><strong>Clipping and limiting</strong><span>Robustness</span></a>
+        <a href="/lexicon/mp3-128kbps"><strong>MP3 128 kbps</strong><span>Robustness</span></a>
+      </div>
+    </section>
+
+    <div class="cta-box">
+      <p><strong>Test the actual delivery chain.</strong> A fixture result is a starting point, not a guarantee for your material.</p>
+      <a class="btn" href="/studio">Open the Studio →</a>
+    </div>
+  </article>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/studio">Studio</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/docs">Docs</a>
+      <a href="/verifier">Verifier</a>
+      <a href="/lexicon/">Lexicon</a>
+      <a href="https://kellersystems.dev/legal/" target="_blank" rel="noopener noreferrer">Terms</a>
+      <a href="https://kellersystems.dev/privacy/" target="_blank" rel="noopener noreferrer">Privacy</a>
+      <a href="https://kellersystems.dev/impressum/" target="_blank" rel="noopener noreferrer">Imprint</a>
+    </div>
+    <p class="disclaimer">A watermark match is not proof of authorship or ownership. Detection depends on source audio, codec and processing. © 2026 Keller Systems.</p>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll("[data-copy]").forEach(function (button) {
+    button.addEventListener("click", function () {
+      var code = document.getElementById(button.getAttribute("data-copy"));
+      if (!code) return;
+      var text = code.innerText;
+      function done() {
+        button.textContent = "Copied";
+        setTimeout(function () { button.textContent = "Copy"; }, 1500);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done).catch(function () { selectCode(code); });
+      } else {
+        selectCode(code);
+      }
+    });
+  });
+  function selectCode(node) {
+    var range = document.createRange();
+    range.selectNodeContents(node);
+    var selection = window.getSelection();
+    selection.removeAllRanges();
+    selection.addRange(range);
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+{
+  "slug": "daten-019",
+  "source": "generated",
+  "domain": "Lizenzvertrag",
+  "traps": [
+    {
+      "marker": "gilt das Abnahmeprotokoll als vorbehaltlos abgenommen",
+      "expectedType": "deemed_acceptance",
+      "note": "Paraphrase/Umstellung: nennt 'gilt das Abnahmeprotokoll als vorbehaltlos ab' statt der Registerwendung."
+    },
+    {
+      "marker": "Ansprüche wegen fehlerhafter Abrechnung erlöschen zwölf Monate",
+      "expectedType": "statute_of_limitations",
+      "note": "Paraphrase/Umstellung: nennt 'Ansprüche wegen fehlerhafter Abrechnung erlös' statt der Registerwendung."
+    },
+    {
+      "marker": "ausschließlich durch handschriftlich unterzeichnete Papierform wirksam",
+      "expectedType": "written_form_trap",
+      "note": "Paraphrase/Umstellung: nennt 'ausschließlich durch handschriftlich unterzei' statt der Registerwendung."
+    },
+    {
+      "marker": "Es sei denn, der Kunde weist nach, dass die Ursache aus einem anderen Umstand stammt",
+      "expectedType": "burden_of_proof",
+      "note": "Paraphrase/Umstellung: nennt 'Es sei denn, der Kunde weist nach, dass die U' statt der Registerwendung."
+    },
+    {
+      "marker": "jederzeit abrufbaren Richtlinien zur Datenverarbeitung unter",
+      "expectedType": "dynamic_url_referral",
+      "note": "Paraphrase/Umstellung: nennt 'jederzeit abrufbaren Richtlinien zur Datenver' statt der Registerwendung."
+    },
+    {
+      "marker": "Für Handlungen der von der Gesellschaft eingesetzten Nachunternehmer",
+      "expectedType": "vicarious_agents",
+      "note": "Paraphrase/Umstellung: nennt 'Für Handlungen der von der Gesellschaft einge' statt der Registerwendung."
+    },
+    {
+      "marker": "Kontrollrechte der Gesellschaft bestehen unabhängig von einem konkreten Anlass",
+      "expectedType": "unreasonable_audit",
+      "note": "Paraphrase/Umstellung: nennt 'Kontrollrechte der Gesellschaft bestehen unab' statt der Registerwendung."
+    },
+    {
+      "marker": "Ein maschinenlesbarer Export ist nicht Bestandteil dieses Vertrages",
+      "expectedType": "data_lockin",
+      "note": "Paraphrase/Umstellung: nennt 'Ein maschinenlesbarer Export ist nicht Bestan' statt der Registerwendung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "führen Gespräche auf Leitungsebene.",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Protokolle stehen beiden Parteien zur Einsicht offen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "nur nach vorheriger Anzeige an den Auftraggeber einsetzen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "können in Textform, insbesondere per E-Mail, vereinbart werden",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "ohne Angabe von Gründen zum Monatsende kündigen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "einfaches, nicht ausschließliches Nutzungsrecht für den vereinbarten Zweck",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "auf den in der Präambel bezeichneten Zweck beschränkt",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "zum Quartalsende ordentlich kündigen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Zweitschrift der Dokumentation gegen eine Gebühr von fünfzehn Euro",
+      "note": "Täuschende Klausel ohne passenden Detektortyp."
+    }
+  ]
+}

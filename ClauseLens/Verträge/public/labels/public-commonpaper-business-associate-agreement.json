@@ -1,0 +1,41 @@
+{
+  "slug": "public-commonpaper-business-associate-agreement",
+  "source": "https://raw.githubusercontent.com/CommonPaper/BAA/main/BAA.md",
+  "license": "CC BY 4.0",
+  "retrieved": "2026-10-15",
+  "domain": "Auftragsverarbeitung Healthcare (Common Paper)",
+  "traps": [
+    {
+      "marker": "10. \"HIPAA\" means the Health Insurance",
+      "expectedType": "dynamic_url_referral",
+      "note": "Reale Klausel, Engine-Typ dynamic_url_referral"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "1. Business Associate Obligations",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "1. Obligations and Restrictions.",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "2. Permitted Uses and Disclosures.",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "3. Privacy and Information Security",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "4. Safeguards. Provider will implement",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "5. Assessments. Provider agrees",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

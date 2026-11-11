@@ -1,0 +1,79 @@
+{
+  "slug": "personal-011",
+  "source": "generated",
+  "domain": "Freelance und Beratung",
+  "traps": [
+    {
+      "marker": "Der Kunde räumt dem Anbieter ein unwiderrufliches Nutzungsrecht",
+      "expectedType": "data_grant",
+      "note": "Trainingsnutzungsrecht an Kundendaten"
+    },
+    {
+      "marker": "Feedback des Kunden geht unentgeltlich in das Eigentum des Anbieters über",
+      "expectedType": "feedback_ip_grab",
+      "note": "unentgeltlicher IP-Übergang für Feedback"
+    },
+    {
+      "marker": "Der Anbieter ist berechtigt, den Kunden als Referenz zu nennen",
+      "expectedType": "marketing_reference",
+      "note": "Referenznennung ohne Zustimmung"
+    },
+    {
+      "marker": "Mündliche N​ebenabreden bestehen nicht",
+      "expectedType": "entire_agreement",
+      "note": "Ausschluss mündlicher Nebenabreden"
+    },
+    {
+      "marker": "Eine Abtretung von Ansprüchen des Kunden bedarf der vorherigen Zustimmung des Anbieters",
+      "expectedType": "assignment_restriction",
+      "note": "Abtretung nur mit Zustimmung des Anbieters"
+    },
+    {
+      "marker": "Die Haftung des Anbieters für Erfüllungsgehilfen ist ausgeschlossen",
+      "expectedType": "vicarious_agents",
+      "note": "Haftungsausschluss für Erfüllungsgehilfen"
+    },
+    {
+      "marker": "Ein maschinenlesbarer Export der Daten ist nicht Bestandteil",
+      "expectedType": "data_lockin",
+      "note": "kein maschinenlesbarer Export nach Vertragsende"
+    },
+    {
+      "marker": "Höhere Gewalt befreit den Anbieter von der Leistungspflicht",
+      "expectedType": "force_majeure_asymmetry",
+      "note": "Befreiung nur des Anbieters bei höherer Gewalt"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Anbieter erstellt ein Datenmodell für die Absatzplanung des Kunden",
+      "note": "Leistungsbeschreibung"
+    },
+    {
+      "marker": "Der Anbieter stimmt den Projektplan mit dem Kunden ab",
+      "note": "Projektplanabstimmung"
+    },
+    {
+      "marker": "Die Vergütung wird nach abgenommenen Arbeitspaketen abgerechnet",
+      "note": "Abrechnung nach Arbeitspaketen"
+    },
+    {
+      "marker": "Zahlungen sind innerhalb von 14 Tagen zu leisten",
+      "note": "Zahlungsfrist"
+    },
+    {
+      "marker": "Der Anbieter stellt den Projektfortschritt wöchentlich dar",
+      "note": "Fortschrittsbericht"
+    },
+    {
+      "marker": "Dieser Vertrag wird in zwei Ausfertigungen erstellt",
+      "note": "Ausfertigungen"
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Vertrag läuft bis zur Abnahme des letzten Arbeitspakets",
+      "note": "Laufzeitende ohne Automatik"
+    }
+  ]
+}

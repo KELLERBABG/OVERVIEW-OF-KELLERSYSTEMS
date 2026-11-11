@@ -1,0 +1,74 @@
+{
+  "slug": "personal-005",
+  "source": "generated",
+  "domain": "Zeitarbeit und ANUE",
+  "traps": [
+    {
+      "marker": "Leistungsnachweise gelten als vorbehaltlos genehmigt",
+      "expectedType": "fictitious_receipt",
+      "note": "Genehmigungsfiktion für Leistungsnachweise"
+    },
+    {
+      "marker": "Der Export der Daten ist kostenpflichtig und wird mit einer gesonderten Gebühr abgerechnet",
+      "expectedType": "data_lockin",
+      "note": "kostenpflichtiger Datenexport"
+    },
+    {
+      "marker": "Eine G​utschrift entfällt, wenn der Auftraggeber kritische Aktualisierungen",
+      "expectedType": "service_credit_forfeiture",
+      "note": "Gutschriftverfall bei fehlenden Aktualisierungen"
+    },
+    {
+      "marker": "Ein Audit in den Geschäftsräumen des Anbieters ist jederzeit ohne Ankündigung zulässig",
+      "expectedType": "unreasonable_audit",
+      "note": "Audit jederzeit ohne Ankündigung"
+    },
+    {
+      "marker": "Die ordentliche Kündigung durch den Auftraggeber ist ausgeschlossen",
+      "expectedType": "asymmetric_termination",
+      "note": "ordentliche Kündigung des Auftraggebers ausgeschlossen"
+    },
+    {
+      "marker": "Höhere Gewalt befreit den Anbieter von der Leistungspflicht",
+      "expectedType": "force_majeure_asymmetry",
+      "note": "höhere Gewalt befreit nur den Anbieter"
+    },
+    {
+      "marker": "Der Eigentumsvorbehalt erstreckt sich auch auf bereits vollständig bezahlte Leistungen",
+      "expectedType": "extended_retention_of_title",
+      "note": "Eigentumsvorbehalt auch für bezahlte Leistungen"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Überlassung erfolgt ausschließlich an Personen mit gültiger Arbeitserlaubnis",
+      "note": "Arbeitserlaubnis"
+    },
+    {
+      "marker": "Der Anbieter meldet Ausfälle unverzüglich an den Auftraggeber",
+      "note": "Ausfallmeldung"
+    },
+    {
+      "marker": "Die Vergütung wird monatlich nach tatsächlich geleisteten Stunden abgerechnet",
+      "note": "Abrechnung nach Stunden"
+    },
+    {
+      "marker": "Beide Parteien halten regelmäßig Abstimmungsgespräche ab",
+      "note": "Abstimmungsgespräche"
+    },
+    {
+      "marker": "Beide Parteien tauschen die erforderlichen Nachweise zum Monatsende aus",
+      "note": "Nachweise zum Monatsende"
+    },
+    {
+      "marker": "Der Auftraggeber stellt Arbeitsmittel und Zugänge bereit",
+      "note": "Arbeitsmittel"
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Nebenabreden werden nur mit Zustimmung beider Parteien wirksam",
+      "note": "Nebenabreden nur einvernehmlich"
+    }
+  ]
+}

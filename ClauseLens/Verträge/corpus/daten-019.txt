@@ -1,0 +1,115 @@
+LIZENZVERTRAG
+
+zwischen
+
+der Silbertal GmbH & Co. KG, Körnerstraße 40, 44137 Dortmund (nachfolgend Lizenzgeber)
+
+und
+
+der Quandt GmbH, Hafenstraße 7, 28217 Bremen (nachfolgend Lizenznehmer)
+
+Präambel
+
+Der Lizenzgeber räumt dem Lizenznehmer die in Anlage 2 bezeichneten Nutzungsrechte an der Software ein. Es gelten die nachstehenden Bedingungen.
+
+§ 7 Ausgestaltung
+
+Unterbleibt eine Meldung der Abweichungen binnen zehn Werktagen, gilt das Abnahmeprotokoll als vorbehaltlos abgenommen.
+
+§ 8 Durchführung
+
+Die Parteien verhandeln über Streitigkeiten zunächst gütlich und führen Gespräche auf Leitungsebene.
+
+§ 9 Vorkehrung
+
+Ansprüche wegen fehlerhafter Abrechnung erlöschen zwölf Monate nach ihrer Entstehung.
+
+§ 10 Zusatz
+
+Der Zugriff auf den Datenraum wird protokolliert und die Protokolle stehen beiden Parteien zur Einsicht offen.
+
+§ 11 Klarstellung
+
+Die Beendigung ist ausschließlich durch handschriftlich unterzeichnete Papierform wirksam.
+
+§ 12 Ergänzung
+
+Der Auftragnehmer darf Unterauftragnehmer nur nach vorheriger Anzeige an den Auftraggeber einsetzen.
+
+§ 13 Verfahren
+
+Es sei denn, der Kunde weist nach, dass die Ursache aus einem anderen Umstand stammt, gilt die Fehlfunktion als vom Kunden verursacht.
+
+§ 14 Ausführung
+
+Änderungen und Ergänzungen dieses Vertrages können in Textform, insbesondere per E-Mail, vereinbart werden.
+
+§ 15 Hinweis
+
+Es gelten die jederzeit abrufbaren Richtlinien zur Datenverarbeitung unter https://anbieter.example.de/richtlinien.
+
+§ 16 Maßnahme
+
+Der Kunde kann diesen Vertrag ohne Angabe von Gründen zum Monatsende kündigen.
+
+§ 17 Vorgehen
+
+Für Handlungen der von der Gesellschaft eingesetzten Nachunternehmer übernimmt die Gesellschaft keine Verantwortung.
+
+§ 18 Abstimmung
+
+Der Lizenzgeber räumt dem Lizenznehmer ein einfaches, nicht ausschließliches Nutzungsrecht für den vereinbarten Zweck ein.
+
+§ 19 Koordination
+
+Kontrollrechte der Gesellschaft bestehen unabhängig von einem konkreten Anlass.
+
+§ 20 Umsetzung
+
+Der Nutzungsumfang ist auf den in der Präambel bezeichneten Zweck beschränkt.
+
+§ 21 Beachtung
+
+Ein maschinenlesbarer Export ist nicht Bestandteil dieses Vertrages.
+
+§ 1 Allgemeines
+
+Jede Partei kann diesen Vertrag zum Quartalsende ordentlich kündigen.
+
+§ 2 Bestimmung
+
+Der Auftragnehmer stellt eine Zweitschrift der Dokumentation gegen eine Gebühr von fünfzehn Euro bereit.
+
+§ 3 Regelung
+
+Änderungen und Ergänzungen dieses Vertrages bedürfen der Textform.
+
+§ 4 Vereinbarung
+
+Die Präambel beschreibt den Zweck der Zusammenarbeit.
+
+§ 5 Modalität
+
+Die Parteien benennen bei Vertragsschluss die jeweiligen Ansprechpartner und Vertretungsberechtigten.
+
+§ 6 Ordnung
+
+Die Vertragsparteien bestätigen die Vollständigkeit der in Bezug genommenen Anlagen.
+
+§ 7 Ausgestaltung
+
+Erfüllungsort ist der Sitz des Auftraggebers.
+
+§ 8 Durchführung
+
+Dieser Vertrag ist in zwei gleichlautenden Ausfertigungen erstellt.
+
+§ 9 Vorkehrung
+
+Jede Partei trägt ihre eigenen Kosten der Vertragsverhandlungen.
+
+Ort, Datum: ______________________
+
+Für Lizenzgeber: ______________________
+
+Für Lizenznehmer: ______________________

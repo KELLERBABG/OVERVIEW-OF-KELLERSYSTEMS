@@ -1,0 +1,21 @@
+[package]
+name = "zk-genome-zk-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "zk-SNARK circuits, prover, and verifier for genomic zero-knowledge proofs"
+
+[dependencies]
+zk-genome-genome-core = { path = "../genome-core" }
+zk-genome-entropy-auditor = { path = "../entropy-auditor" }
+sha3 = "0.10"
+# arkworks for Groth16/PLONK proving system
+ark-serialize = "0.5"
+ark-ff = "0.5"
+ark-ec = "0.5"
+ark-std = "0.5"
+# Poseidon hash for zk-friendly hashing
+ark-poly = "0.5"
+
+[lints]
+workspace = true

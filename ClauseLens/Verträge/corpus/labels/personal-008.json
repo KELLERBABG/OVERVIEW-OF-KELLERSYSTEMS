@@ -1,0 +1,74 @@
+{
+  "slug": "personal-008",
+  "source": "generated",
+  "domain": "Arbeitsvertrag",
+  "traps": [
+    {
+      "marker": "Die Stundensätze können jährlich angepasst werden; eine Obergrenze besteht nicht",
+      "expectedType": "price_escalation",
+      "note": "Preisanpassung ohne Obergrenze"
+    },
+    {
+      "marker": "mit einer Frist von 6 Monaten zum Periodenende kündigen",
+      "expectedType": "notice_period",
+      "note": "asymmetrische Kündigungsfristen"
+    },
+    {
+      "marker": "Änderungen und Ergänzungen dieses Vertrages bedürfen der S​chriftform",
+      "expectedType": "written_form_trap",
+      "note": "Schriftformzwang für Änderungen"
+    },
+    {
+      "marker": "Die Haftung des Anbieters für mittelbare Schäden ist ausgeschlossen",
+      "expectedType": "liability",
+      "note": "Haftungsausschluss für mittelbare Schäden"
+    },
+    {
+      "marker": "Gerichtsstand ist ausschließlich der Sitz des Anbieters in Hamburg",
+      "expectedType": "jurisdiction",
+      "note": "Gerichtsstand am Sitz des Anbieters"
+    },
+    {
+      "marker": "Eine Aufrechnung des Auftraggebers ist ausgeschlossen",
+      "expectedType": "setoff_restriction",
+      "note": "Aufrechnungsverbot zulasten des Auftraggebers"
+    },
+    {
+      "marker": "Eine Karenzentschädigung für das Wettbewerbsverbot ist nicht vorgesehen",
+      "expectedType": "non_compete",
+      "note": "Wettbewerbsverbot ohne Karenzentschädigung"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Anbieterin erbringt Beratungsleistungen im Bereich Einkauf und Lieferantensteuerung",
+      "note": "Leistungsbeschreibung"
+    },
+    {
+      "marker": "Die Parteien stimmen sich zu jedem Einsatz gesondert ab",
+      "note": "Abstimmung je Einsatz"
+    },
+    {
+      "marker": "Die Vergütung wird nach tatsächlichem Aufwand abgerechnet",
+      "note": "Abrechnung nach Aufwand"
+    },
+    {
+      "marker": "Die Parteien benennen je eine Ansprechperson für die operative Abstimmung",
+      "note": "Ansprechpersonen"
+    },
+    {
+      "marker": "Dieser Vertrag wird in zwei Ausfertigungen erstellt",
+      "note": "Ausfertigungen"
+    },
+    {
+      "marker": "Die Parteien unterrichten sich unverzüglich über wesentliche Entwicklungen",
+      "note": "Informationspflicht"
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Auftraggeber kann den Vertrag nur mit einer Frist von 6 Monaten zum Periodenende kündigen",
+      "note": "ausschliessliche Kündigungsfrist des Auftraggebers"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "slice": "lead",
+  "patterns": [
+    {
+      "type": "liability",
+      "regex": "(?:haftung|einstandspflicht|ersatzpflicht)[^.!?;:\\n]{0,90}?(?:ist|wird|bleibt)[^.!?;:\\n]{0,40}?(?:auf|bis\\s+(?:zur|zu))[^.!?;:\\n]{0,40}?(?:eine?[mn]?\\s+monatsmiete\\w*|(?:zwei|drei|vier|f(?:ü|ue)nf|sechs|zehn|zwanzig|\\d{1,3})\\s+monatsmieten|monatspauschale\\w*|monatsverg(?:ü|ue)tung\\w*|monatsentgelt\\w*|jahresverg(?:ü|ue)tung\\w*|h(?:ö|oe)he\\s+des\\s+\\w*honorars?|(?:zehn|zwanzig|\\d{1,3})\\s*(?:%|prozent)\\s+des\\s+kaufpreises)[^.!?;:\\n]{0,40}?(?:begrenzt|beschr(?:ä|ae)nkt|gedeckelt|limitiert)",
+      "flags": "i",
+      "closes": [
+        "marketing-017:L34",
+        "immobilien-001:L40",
+        "immobilien-003:L16",
+        "immobilien-008:L32",
+        "immobilien-014:L28"
+      ],
+      "evidence": "Haftungsdeckel auf Monatspauschale/Monatsmiete/Prozent des Kaufpreises/Honorar",
+      "risk": "medium"
+    },
+    {
+      "type": "excessive_survival",
+      "regex": "(?:verschwiegenheits|vertraulichkeits|geheimhaltungs)pflicht\\w*[^.!?;:\\n]{0,80}?(?:bestehen|gelten|wirken)[^.!?;:\\n]{0,60}?über[^.!?;:\\n]{0,40}?(?:vertragsende|vertragsbeendigung|beendigung|ende)[^.!?;:\\n]{0,40}?hinaus[^.!?;:\\n]{0,40}?(?:unver(?:ä|ae)ndert|ohne\\s+(?:zeitliche\\s+)?(?:begrenzung|befristung)|fort)",
+      "flags": "i",
+      "closes": [
+        "marketing-002:L33"
+      ],
+      "evidence": "Verschwiegenheitspflicht besteht unveraendert ueber das Vertragsende hinaus fort",
+      "risk": "medium"
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "slug": "werk-013",
+  "source": "generated",
+  "domain": "Versicherungswirtschaft, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Eine Nachwirkung des Konkurrenzverbots gilt für sechs Monate nach Beendigung.",
+      "expectedType": "non_compete",
+      "note": "Verifizierte Klausel im Bereich non_compete."
+    },
+    {
+      "marker": "All payments shall be made free of any set-off or deduction.",
+      "expectedType": "setoff_restriction",
+      "note": "Verifizierte Klausel im Bereich setoff_restriction."
+    },
+    {
+      "marker": "Änderungen bedürfen der Schriftform; die Textform ist ausgeschlossen.",
+      "expectedType": "written_form_trap",
+      "note": "Verifizierte Klausel im Bereich written_form_trap."
+    },
+    {
+      "marker": "Eine Haftung des Anbieters für Erfüllungsgehilfen ist ausgeschlossen.",
+      "expectedType": "vicarious_agents",
+      "note": "Verifizierte Klausel im Bereich vicarious_agents."
+    },
+    {
+      "marker": "Der Kunde hält den Anbieter von Ansprüchen Dritter schadlos.",
+      "expectedType": "third_party_indemnity",
+      "note": "Verifizierte Klausel im Bereich third_party_indemnity."
+    },
+    {
+      "marker": "The customer shall not solicit or hire personnel of the provider.",
+      "expectedType": "non_solicitation",
+      "note": "Verifizierte Klausel im Bereich non_solicitation."
+    },
+    {
+      "marker": "An die Stelle einer unwirksamen Bestimmung tritt diejenige Regelung, die dem wirtschaftlichen Zweck",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "Verifizierte Klausel im Bereich salvatorische_klausel_falle."
+    },
+    {
+      "marker": "Ersatzansprüche des Kunden erlöschen zwölf Monate nach der Abnahme.",
+      "expectedType": "statute_of_limitations",
+      "note": "Verifizierte Klausel im Bereich statute_of_limitations."
+    },
+    {
+      "marker": "Der Kunde verpflichtet sich, keine Mitarbeiter des Anbieters abzuwerben.",
+      "expectedType": "non_solicitation",
+      "note": "Verifizierte Klausel im Bereich non_solicitation."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Prüfungen erfolgen nur bei konkretem Anlass und nach Ankündigung mit einer Frist von dreißig Tagen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Dieser Vertrag unterliegt deutschem Recht.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Beide Parteien können mit unbestrittenen Forderungen aufrechnen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Alle Fristen werden in Kalendertagen gerechnet.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Parteien arbeiten bei der Fehleranalyse eng zusammen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Für Mängel während der Gewährleistung leistet der Anbieter kostenfrei Nacherfüllung.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Parteien treffen sich monatlich zu einem Lenkungskreis.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Die Datenübertragung erfolgt verschlüsselt über eine gesicherte Verbindung",
+      "note": "Technische Zusage."
+    }
+  ]
+}

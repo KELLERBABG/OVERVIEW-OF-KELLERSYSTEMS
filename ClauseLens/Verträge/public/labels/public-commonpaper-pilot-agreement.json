@@ -1,0 +1,46 @@
+{
+  "slug": "public-commonpaper-pilot-agreement",
+  "source": "https://raw.githubusercontent.com/CommonPaper/Pilot-Agreement/main/Pilot-Agreement.md",
+  "license": "CC BY 4.0 (Common Paper Standard Agreement)",
+  "retrieved": "2026-10-15",
+  "domain": "Pilotvereinbarung (Common Paper)",
+  "traps": [
+    {
+      "marker": "1. Entire Agreement. This Agreement",
+      "expectedType": "entire_agreement",
+      "note": "Reale Klausel, Engine-Typ entire_agreement"
+    },
+    {
+      "marker": "3. Governing Law and Chosen Courts.",
+      "expectedType": "jurisdiction",
+      "note": "Reale Klausel, Engine-Typ jurisdiction"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "1. Access and Use. During the Pilot",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "2. License. If the Product contains",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "3. User Accounts. Customer is responsible",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "4. Customer Content. Provider may",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "5. Feedback and Usage Data. Customer",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "6. Restrictions. Except as expressly",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

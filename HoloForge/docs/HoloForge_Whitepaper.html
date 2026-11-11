@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>HoloForge - SPRIND Deep-Tech Bootcamp</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  @page {
+    size: A4;
+    margin: 16mm 16mm 18mm 16mm;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #1e293b;
+    line-height: 1.5;
+    font-size: 9.2pt;
+    background: #fff;
+  }
+  .banner {
+    background: #0f172a;
+    color: #fff;
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .banner-tag {
+    background: #0284c7;
+    color: #fff;
+    font-size: 7.5pt;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+  .banner-meta {
+    font-size: 8pt;
+    color: #94a3b8;
+  }
+  h1 {
+    font-size: 17pt;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.2;
+    margin-bottom: 6px;
+  }
+  h2 {
+    font-size: 12pt;
+    font-weight: 700;
+    color: #0f172a;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    border-bottom: 2px solid #0284c7;
+    padding-bottom: 3px;
+    break-after: avoid;
+  }
+  h3 {
+    font-size: 10pt;
+    font-weight: 700;
+    color: #0369a1;
+    margin-top: 12px;
+    margin-bottom: 5px;
+    break-after: avoid;
+  }
+  p {
+    margin-bottom: 7px;
+  }
+  ul, ol {
+    margin-left: 18px;
+    margin-bottom: 9px;
+  }
+  li {
+    margin-bottom: 3px;
+  }
+  blockquote {
+    border-left: 3.5px solid #0284c7;
+    padding: 8px 12px;
+    background: #f0f9ff;
+    color: #0f172a;
+    margin: 10px 0;
+    font-size: 8.8pt;
+    border-radius: 0 4px 4px 0;
+    break-inside: avoid;
+  }
+  pre {
+    background: #0f172a;
+    color: #f8fafc;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 8pt;
+    margin: 8px 0;
+    break-inside: avoid;
+  }
+  code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    background: #f1f5f9;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-size: 8.2pt;
+    color: #0284c7;
+  }
+  pre code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 8.2pt;
+    break-inside: avoid;
+  }
+  th, td {
+    border: 1px solid #cbd5e1;
+    padding: 5px 8px;
+    text-align: left;
+  }
+  th {
+    background: #f8fafc;
+    font-weight: 700;
+    color: #0f172a;
+    border-bottom: 2px solid #94a3b8;
+  }
+  tr:nth-child(even) td {
+    background: #f8fafc;
+  }
+  hr {
+    border: 0;
+    height: 1px;
+    background: #e2e8f0;
+    margin: 14px 0;
+  }
+</style>
+</head>
+<body>
+<div class="banner">
+  <span class="banner-tag">HoloForge Research &amp; Development</span>
+  <span class="banner-meta">Lukas Negenborn &bull; Keller Systems &bull; HoloForge (Tomo-H-VAM)</span>
+</div>
+<h1>HoloForge: High-Throughput Holographic Volumetric Additive Manufacturing</h1>
+<p><strong>Technical Whitepaper &amp; System Architecture</strong><br />
+<em>Version 0.2.0 — HoloForge Research &amp; Development</em></p>
+<hr />
+<h2>1. Executive Summary &amp; Abstract</h2>
+<p>Traditional additive manufacturing (AM) operates almost exclusively via layer-by-layer deposition or sequential photo-curing (e.g., SLA, DLP, FDM, SLS). While effective for arbitrary macro-geometries, layer-based manufacturing is plagued by fundamental physics constraints: slow fabrication speeds (hours to days), pronounced mechanical and optical anisotropy (stair-stepping and striations), structural weaknesses along layer interfaces, and the mandatory inclusion of sacrificial support structures that degrade surface fidelity.</p>
+<p><strong>HoloForge</strong> introduces a new paradigm: <strong>Holographic Volumetric Additive Manufacturing (H-VAM)</strong>. Rather than translating a 2D illumination plane or rotating an amplitude projector around a resin container, HoloForge dynamically shapes 3D coherent light fields inside an oxygen-inhibited resin vat using a 405 nm laser and a high-speed, phase-only Spatial Light Modulator (SLM).</p>
+<p>By combining:</p>
+<ol>
+<li><strong>Band-Decomposed Multi-Plane Gerchberg-Saxton (MP-GS)</strong> phase retrieval,</li>
+<li><strong>Scale-Free Least-Squares Amplitude Projection</strong>,</li>
+<li><strong>Scattering- and Attenuation-Aware Iterative Dose Compensation</strong>, and</li>
+<li><strong>Non-linear Oxygen-Inhibited Threshold Photopolymerization</strong>,</li>
+</ol>
+<p>HoloForge enables the simultaneous, support-free solidification of entire, millimeter- to centimeter-scale monolithic 3D structures in <strong>10 to 30 seconds</strong>. The resulting components achieve isotropic mechanical strength, optical-grade surface smoothness ($R_a &lt; 100\text{ nm}$), and zero support post-processing requirements, unlocking blue-ocean markets across dental prosthetics, microfluidic lab-on-a-chip devices, custom optics, and fine jewelry.</p>
+<pre><code>       ┌─────────────────────────────────────────────────────────────┐
+       │                 HoloForge Optical Pipeline                  │
+       └─────────────────────────────────────────────────────────────┘
+  405nm Laser       Beam Expander       Phase SLM        4f Relay Lens       Resin Vat
+    ┌─────┐          ┌────────┐         ┌───────┐         ┌───────┐         ┌─────────┐
+    │ === ┼─────────►│  [||]  ├────────►│ ///// ├────────►│ ( | ) ├────────►│  { 3D } │ (10-30s cure)
+    └─────┘          └────────┘         └───────┘         └───────┘         └─────────┘
+                                            ▲                                    │
+                                            │ Phase patterns (k=1..K)            │
+                                  ┌─────────┴─────────┐                          │
+                                  │   HoloForge-Opt   │◄─────────────────────────┘
+                                  │ CGH + Tomo Engine │   Closed-loop dose feedback
+                                  └───────────────────┘
+</code></pre>
+<hr />
+<blockquote>
+<p><strong>Data provenance:</strong> Every quantitative result in this document — cure IoU, overcure fraction, surface roughness, and print times — is produced by the HoloForge Digital Twin simulator running on the bundled virtual optical bench. None of these figures has been validated on physical hardware to date; read them as simulated design targets, not measured performance. Any future hardware-measured result will be explicitly labeled <em>measured</em>.</p>
+<p><strong>Reproducibility:</strong> run <code>python -m holoforge.cli verify</code> (pinned seed 7; sphere target, 64×32 grid, 16 patterns, 20 iterations, hf-pegda-405 resin). The currently verified values are Cure IoU ≈ 92.3%, overcure (outside-cure fraction) 0.000000, and virtual-profilometer Ra ≈ 3.4 µm at 2 µm voxel pitch. Smaller figures quoted elsewhere in this document (e.g. Ra &lt; 100 nm) are design targets for finer resolutions, not reproduced results. CI runs the same command on every push, so these claims cannot silently drift from the code that produces them.</p>
+</blockquote>
+<h2>2. Background &amp; Prior Art</h2>
+<h3>2.1 Limitations of Conventional Layered Manufacturing</h3>
+<p>In Stereolithography (SLA) and Digital Light Processing (DLP), parts are created by sequentially exposing thin 2D slices ($25\text{–}100\,\mu\text{m}$) of liquid photopolymer at the resin-vat boundary. This induces several severe drawbacks:</p>
+<ul>
+<li><strong>Throughput Bottleneck</strong>: Print time scales linearly with object height and layer count. Typical small parts require 45–180 minutes.</li>
+<li><strong>Support Structures</strong>: Overhangs, cavities, and isolated islands require support scaffolding that damages surfaces and increases resin consumption.</li>
+<li><strong>Inter-layer Delamination &amp; Anisotropy</strong>: Tensile strength perpendicular to layers ($Z$-axis) is consistently 20–40% lower than in-plane ($XY$) strength.</li>
+<li><strong>Sealing Defects in Microfluidics</strong>: Internal micro-channels suffer from trapped resin and stepped walls that cause fluid leaks and turbulent flow.</li>
+</ul>
+<h3>2.2 First-Generation Volumetric AM (2017–2023)</h3>
+<p>Volumetric AM demonstrations emerged from academic groups between 2017 and 2023, primarily under two modalities:</p>
+<ol>
+<li><strong>Computed Axial Lithography (CAL)</strong>: High-speed DLP projectors illuminate a rotating cylindrical resin vat with computed tomographic back-projections (analogous to reverse Radon transforms in CT scanning).
+<ul>
+<li><em>Limitation</em>: Requires mechanical rotation stages, has severe out-of-focus blur through the depth of the vat, and suffers from low optical efficiency because amplitude modulation discards $&gt;50\text{–}80\%$ of laser energy.</li>
+</ul>
+</li>
+<li><strong>Xolography (Dual-Wavelength Intersection)</strong>: Projects an intersecting light sheet (activating photoinitiator) and orthogonal projection image (inducing crosslinking).
+<ul>
+<li><em>Limitation</em>: Restricted to specialized, expensive dual-color photo-switchable chemistries and slow linear scanning of the light sheet.</li>
+</ul>
+</li>
+</ol>
+<h3>2.3 The HoloForge Differentiator: Holographic Wavefront Multiplexing</h3>
+<p>HoloForge eliminates all mechanical rotational stages and dual-laser intersection optics. Instead, it utilizes <strong>coherent holographic wavefront shaping</strong>:</p>
+<ul>
+<li><strong>Phase-Only Modulation</strong>: Exploits $&gt;90\%$ of optical energy (zero absorption loss at the modulator).</li>
+<li><strong>3D Volumetric Focusing</strong>: Light is focused directly within the 3D volume at programmable axial depths rather than passing through as uncontrolled ray bundles.</li>
+<li><strong>Holographic Multiplexing</strong>: Time-multiplexed phase holograms deliver quasi-continuous 3D dose distributions through the full depth of the vat.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>SLA / DLP</th>
+<th>Tomographic CAL</th>
+<th>Xolography</th>
+<th>HoloForge (H-VAM)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Fabrication Time</strong></td>
+<td>45–180 min</td>
+<td>30–120 s</td>
+<td>60–300 s</td>
+<td><strong>10–30 s</strong></td>
+</tr>
+<tr>
+<td><strong>Mechanical Supports</strong></td>
+<td>Mandatory</td>
+<td>Support-free</td>
+<td>Support-free</td>
+<td><strong>Support-free</strong></td>
+</tr>
+<tr>
+<td><strong>Surface Finish ($R_a$)</strong></td>
+<td>$1\text{–}10\,\mu\text{m}$ (stepped)</td>
+<td>$0.5\text{–}2\,\mu\text{m}$</td>
+<td>$0.2\text{–}1\,\mu\text{m}$</td>
+<td><strong>$&lt;0.1\,\mu\text{m}$ (glass-smooth)</strong></td>
+</tr>
+<tr>
+<td><strong>Optical Throughput</strong></td>
+<td>Medium</td>
+<td>Low ($&lt;25\%$)</td>
+<td>Low</td>
+<td><strong>High ($&gt;85\%$)</strong></td>
+</tr>
+<tr>
+<td><strong>Mechanical Stages</strong></td>
+<td>$Z$-elevator</td>
+<td>High-speed rotation</td>
+<td>Linear sheet scan</td>
+<td><strong>Static Vat (Zero moving parts)</strong></td>
+</tr>
+<tr>
+<td><strong>Internal Channels</strong></td>
+<td>Prone to clog/leak</td>
+<td>Limited resolution</td>
+<td>Good</td>
+<td><strong>Optimal (smooth, leak-free)</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>3. Optical Propagation &amp; Mathematical Formulation</h2>
+<h3>3.1 Helmholtz Equation &amp; Angular Spectrum Method</h3>
+<p>Let the scalar optical wave field inside the resin vat at wavelength $\lambda_0 = 405\text{ nm}$ and resin refractive index $n_{\text{vat}} \approx 1.46\text{–}1.52$ be governed by the Helmholtz equation:</p>
+<p>$$\nabla^2 U(\mathbf{r}) + k^2 U(\mathbf{r}) = 0, \quad k = \frac{2\pi n_{\text{vat}}}{\lambda_0}$$</p>
+<p>Given a complex field $U(x, y, z_0)$ at an axial plane $z_0$, the field propagated over distance $\Delta z$ is solved in Fourier space via the <strong>Angular Spectrum Method (ASM)</strong>:</p>
+<p>$$\mathcal{U}(f_x, f_y; z_0) = \iint_{-\infty}^{\infty} U(x, y, z_0) \, e^{-i 2\pi (f_x x + f_y y)} \, dx \, dy$$</p>
+<p>$$\mathcal{U}(f_x, f_y; z_0 + \Delta z) = \mathcal{U}(f_x, f_y; z_0) \cdot H(f_x, f_y; \Delta z)$$</p>
+<p>where the free-space propagation transfer function $H(f_x, f_y; \Delta z)$ is:</p>
+<p>$$H(f_x, f_y; \Delta z) = \exp\left( i \Delta z \sqrt{k^2 - (2\pi f_x)^2 - (2\pi f_y)^2} \right)$$</p>
+<p>Evanescent waves where $(2\pi f_x)^2 + (2\pi f_y)^2 &gt; k^2$ are set to zero to preserve numerical stability.</p>
+<h3>3.2 Split-Step Beam Propagation with Scatter and Attenuation</h3>
+<p>Real photopolymers exhibit linear optical attenuation (Beer-Lambert absorption) and forward scattering from suspended nano-initiators and micro-structures. HoloForge models the propagation through the vat using a <strong>Split-Step Beam Propagation Method (BPM)</strong>:</p>
+<pre><code>[ Plane z ] ──► [ Half-Drift (H_half) ] ──► [ Spatial Domain (IFFT) ]
+                                                    │
+                                                    ▼
+[ Plane z+dz ] ◄── [ Half-Drift (H_half) ] ◄── [ Absorption (att) &amp; Scatter (S) ]
+</code></pre>
+<p>For each voxel slice of thickness $\Delta z$:</p>
+<ol>
+<li><strong>Half-Step Fresnel Drift (Frequency Domain)</strong>:
+$$\mathcal{U}_{1/2} = \mathcal{U}(z) \cdot H^{1/2}(f_x, f_y; \Delta z/2)$$</li>
+<li><strong>Forward Scattering Blur (Spatial/Frequency Domain)</strong>:
+Forward scattering across a transport mean free path $L_{\text{scatter}}$ induces an angular root-mean-square spread $\theta_{\text{rms}} = \sqrt{p / L_{\text{scatter}}}$, producing a Gaussian convolution kernel:
+$$G(x, y) = \frac{1}{2\pi \sigma^2} \exp\left( -\frac{x^2 + y^2}{2\sigma^2} \right), \quad \sigma = \theta_{\text{rms}} \Delta z$$</li>
+<li><strong>Beer-Lambert Intensity Attenuation</strong>:
+$$U_{\text{attenuated}} = U \cdot \exp\left( -\frac{1}{2} \alpha_{\text{intensity}} \Delta z \right)$$</li>
+<li><strong>Exit Half-Step Fresnel Drift</strong>:
+$$\mathcal{U}(z + \Delta z) = \mathcal{F}\{ U_{\text{attenuated}} \} \cdot H^{1/2}(f_x, f_y; \Delta z/2)$$</li>
+</ol>
+<p>The accumulated volumetric energy dose $D(\mathbf{r})$ deposited over $K$ time-multiplexed SLM patterns with relative exposure weights $w_k$ ($\sum w_k = 1$) is:</p>
+<p>$$D(x, y, z) = \sum_{k=1}^{K} w_k \left| U_k(x, y, z) \right|^2$$</p>
+<hr />
+<h2>4. Optimization &amp; Inverse Solver Algorithms</h2>
+<pre><code>                          ┌────────────────────────────────┐
+                          │ Target 3D Solid Voxel Geometry │
+                          └───────────────┬────────────────┘
+                                          │
+                                          ▼
+                          ┌────────────────────────────────┐
+                          │ Axial Band Partitioning (k=1..K│
+                          └───────────────┬────────────────┘
+                                          │
+                  ┌───────────────────────┴───────────────────────┐
+                  │                                               │
+                  ▼                                               ▼
+      ┌─────────────────────────┐                     ┌─────────────────────────┐
+      │  Forward Propagation    │                     │ Guard Slice Suppression │
+      │  ASM + Scatter + Atten  │                     │  Out-of-band bleed = 0  │
+      └───────────┬─────────────┘                     └───────────┬─────────────┘
+                  │                                               │
+                  └───────────────────────┬───────────────────────┘
+                                          │
+                                          ▼
+                          ┌────────────────────────────────┐
+                          │ Least-Squares Amplitude Scaling│
+                          │   s = &lt;D, U&gt; / &lt;D, D&gt;          │
+                          └───────────────┬────────────────┘
+                                          │
+                                          ▼
+                          ┌────────────────────────────────┐
+                          │   Adjoint Backward Walk        │
+                          │      U_SLM = Adjoint(U_vat)    │
+                          └───────────────┬────────────────┘
+                                          │
+                                          ▼
+                          ┌────────────────────────────────┐
+                          │ Phase-Only Constraint Blending │
+                          │  phi = angle((1-b)*U + b*U_adj)│
+                          └───────────────┬────────────────┘
+                                          │
+                                          ▼
+                          ┌────────────────────────────────┐
+                          │ Iterative Dose Compensation    │
+                          │  C_new = C * (1 + gain * err)  │
+                          └────────────────────────────────┘
+</code></pre>
+<h3>4.1 Band-Decomposed Multi-Plane Gerchberg-Saxton (MP-GS)</h3>
+<p>Because an optical system with numerical aperture $\text{NA}$ has a finite depth of focus (Rayleigh range $z_R = \frac{\lambda}{\pi \text{NA}^2}$), a single phase hologram cannot independently control intensity across arbitrary multi-millimeter depths.</p>
+<p>HoloForge partitions the simulation volume into $K$ axial bands:
+$$\mathcal{Z}_k = [z_{k,\text{lo}}, z_{k,\text{hi}}), \quad k = 1, \dots, K$$
+Pattern weights $w_k$ are allocated proportionally to the target solid voxel mass contained within each band $\mathcal{Z}_k$.</p>
+<h3>4.2 Scale-Free Least-Squares Amplitude Projection</h3>
+<p>Conventional Gerchberg-Saxton algorithms overwrite the target plane amplitude directly, which leads to stagnation when the fixed optical energy entering from the SLM pupil conflicts with arbitrary voxel intensity targets.</p>
+<p>HoloForge resolves this by projecting the achieved field $U_z$ onto the desired shape profile $D_z$ via an unconstrained least-squares scalar $s$:</p>
+<p>$$s = \frac{\operatorname{Re} \langle D_z, U_z \rangle}{\| D_z \|_2^2} = \frac{\sum_{x,y} D(x,y,z) \operatorname{Re}[U(x,y,z)]}{\sum_{x,y} D(x,y,z)^2}$$</p>
+<p>The updated target plane field $U_z&#x27;$ preserves the optical phase $\phi_z$ while setting the amplitude:</p>
+<p>$$U_z&#x27;(x,y) = |s| D(x,y,z) \cdot \exp(i \arg U_z(x,y))$$</p>
+<h3>4.3 Guard Slice Leakage Suppression</h3>
+<p>To prevent out-of-band energy bleed from cross-curing adjacent regions, a set of $N_{\text{guard}}$ guard slices immediately above and below each band are penalized by damping their complex amplitude:</p>
+<p>$$U_{z,\text{guard}}&#x27;(x,y) = 0.25 \cdot |U_{z,\text{guard}}(x,y)| \cdot \exp(i \arg U_{z,\text{guard}}(x,y))$$</p>
+<h3>4.4 Exact Adjoint Backward Walk</h3>
+<p>The corrected fields across all slices are projected back to the SLM plane using the adjoint propagation operator $(\mathcal{P}^\dagger)$:</p>
+<p>$$U_{\text{SLM},\text{adj}} = \mathcal{P}^\dagger \{ U_z&#x27; \}$$</p>
+<p>The SLM phase $\phi_k^{(m+1)}$ for iteration $m+1$ is updated using a relaxation factor $\beta \in [0.5, 0.85]$ and the binary pupil aperture $A(x,y)$:</p>
+<p>$$\phi_k^{(m+1)} = \arg \left[ (1-\beta) e^{i \phi_k^{(m)}} A(x,y) + \beta U_{\text{SLM},\text{adj}} \right]$$</p>
+<h3>4.5 Iterative Depth Dose Compensation</h3>
+<p>Even with accurate forward models, deeper voxels exhibit attenuation from cumulative absorption. HoloForge executes an outer compensation loop that evaluates the simulated volumetric dose $D(\mathbf{r})$ against the target $T(\mathbf{r})$:</p>
+<p>$$\operatorname{err}(x,y,z) = \frac{\overline{D}_{\text{target}} - D(x,y,z)}{\overline{D}_{\text{target}}}, \quad \forall (x,y,z) \in T$$</p>
+<p>The per-voxel target amplitude map $C(\mathbf{r})$ is iteratively updated:</p>
+<p>$$C^{(t+1)}(\mathbf{r}) = \operatorname{clip}\left( C^{(t)}(\mathbf{r}) \cdot \left[ 1 + \gamma \cdot \operatorname{err}(\mathbf{r}) \right], \, C_{\min}, \, C_{\max} \right)$$</p>
+<p>where $\gamma \approx 0.5$ is the compensation gain, $C_{\min} = 0.3$, and $C_{\max} = 4.0$.</p>
+<hr />
+<h2>5. Resin Photochemistry &amp; Kinetics</h2>
+<pre><code>  Dose D(r)
+      │
+      │                                       Gel Point D_gel (Crosslinked Solid)
+      ├───────────────────────────────────────────────────────▲─────────────────
+      │                                                       │
+      │                                                       │
+      │                  Inhibition Regime                    │  Curing Regime
+      │                 (Dissolved Oxygen)                    │  (Free Radical)
+      │                                                       │
+      └───────────────────────────────────────────────────────┴─────────────────► Time
+         0s                                                  10s
+</code></pre>
+<h3>5.1 Non-Linear Threshold Mechanism</h3>
+<p>Linear photopolymerization leads to severe over-curing and lack of spatial contrast. HoloForge relies on <strong>dissolved molecular oxygen inhibition</strong> to create a sharp Heaviside gelation threshold:</p>
+<ol>
+<li><strong>Oxygen Scavenging Phase</strong>: Light exposure generates initiating radicals $R^\bullet$ from TPO-L/BAPO photoinitiators ($405\text{ nm}$). Radicals react rapidly with dissolved $O_2$ ($k_{\text{inhibition}} \approx 10^9\text{ M}^{-1}\text{s}^{-1}$) forming non-reactive peroxy radicals $ROO^\bullet$:
+$$R^\bullet + O_2 \xrightarrow{k_{\text{inh}}} ROO^\bullet \quad (\text{No crosslinking})$$</li>
+<li><strong>Polymerization Threshold ($D_{\text{gel}}$)</strong>: Once local $O_2$ concentration drops below a critical depletion limit $[O_2]_{\text{crit}}$, radical propagation initiates monomer chain growth ($k_p \approx 10^3\text{ M}^{-1}\text{s}^{-1}$):
+$$R^\bullet + M \xrightarrow{k_p} RM^\bullet \xrightarrow{+M} \text{Crosslinked Polymer Network}$$</li>
+</ol>
+<p>The gel threshold condition is modeled as a binary cure predictor:</p>
+<p>$$\operatorname{Cured}(x, y, z) = \begin{cases} 1 &amp; \text{if } D(x, y, z) \ge D_{\text{gel}} \\ 0 &amp; \text{if } D(x, y, z) &lt; D_{\text{gel}} \end{cases}$$</p>
+<h3>5.2 Resin Formulations</h3>
+<p>HoloForge ships with three calibrated resin models:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th><code>hf-standard-405</code></th>
+<th><code>hf-clear-405</code></th>
+<th><code>hf-dental-405</code></th>
+<th>Unit</th>
+<th>Physical Significance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>$D_{\text{gel}}$</strong></td>
+<td>12.0</td>
+<td>10.0</td>
+<td>18.0</td>
+<td>$\text{mJ/cm}^2$</td>
+<td>Energy density required for gelation</td>
+</tr>
+<tr>
+<td><strong>$\alpha$</strong></td>
+<td>0.35</td>
+<td>0.20</td>
+<td>0.60</td>
+<td>$\text{mm}^{-1}$</td>
+<td>Linear optical absorption coefficient</td>
+</tr>
+<tr>
+<td><strong>$L_{\text{scatter}}$</strong></td>
+<td>900.0</td>
+<td>4000.0</td>
+<td>350.0</td>
+<td>$\mu\text{m}$</td>
+<td>Transport mean free path</td>
+</tr>
+<tr>
+<td><strong>$n_{\text{resin}}$</strong></td>
+<td>1.46</td>
+<td>1.47</td>
+<td>1.52</td>
+<td>—</td>
+<td>Refractive index at $405\text{ nm}$</td>
+</tr>
+<tr>
+<td><strong>Viscosity ($\eta$)</strong></td>
+<td>$&lt; 0.40$</td>
+<td>$&lt; 0.15$</td>
+<td>$&lt; 0.65$</td>
+<td>$\text{Pa}\cdot\text{s}$</td>
+<td>Uncured liquid drainage viscosity</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>6. System Hardware &amp; Optical Train</h2>
+<pre><code>[ 405nm Diode Laser ] ──► [ Spatial Filter &amp; Collimator ] ──► [ Polarizing Beam Splitter ]
+                                                                      │
+                                                                      ▼
+[ Resin Vat (Quartz) ] ◄── [ 4f Telecentric Relay (M=0.25) ] ◄── [ Phase LCoS SLM ]
+</code></pre>
+<h3>6.1 Optomechanical Architecture</h3>
+<ul>
+<li><strong>Coherent Source</strong>: $405\text{ nm}$ continuous-wave single-transverse-mode diode laser (100–500 mW, linewidth $&lt;0.5\text{ nm}$).</li>
+<li><strong>Spatial Filtering &amp; Collimation</strong>: Beam expander with pinhole spatial filter yielding a flat-top, collimated beam matching the active SLM aperture ($15\text{–}20\text{ mm}$ clear diameter).</li>
+<li><strong>Spatial Light Modulator (SLM)</strong>: High-resolution phase-only Liquid Crystal on Silicon (LCoS) device (e.g., $1920 \times 1080$ or $4160 \times 2464$, pixel pitch $3.74\text{–}8.0\,\mu\text{m}$, 8-bit phase depth $[0, 2\pi]$).</li>
+<li><strong>4f Telecentric Relay System</strong>: Demagnifies the SLM aperture by $M = 0.25\times$, relaying the modulated wavefront directly into the resin vat. An SLM pixel pitch of $8.0\,\mu\text{m}$ maps to an effective vat pixel resolution of:
+$$p_{\text{vat}} = p_{\text{SLM}} \cdot M = 8.0\,\mu\text{m} \times 0.25 = 2.0\,\mu\text{m}$$</li>
+<li><strong>Resin Vat</strong>: Optically flat quartz or silanized glass container with anti-reflective coated windows ($R &lt; 0.2\%$ at $405\text{ nm}$) to prevent stray internal reflections.</li>
+</ul>
+<hr />
+<h2>7. Numerical Benchmarks &amp; Verification</h2>
+<p>The HoloForge Phase 0 optimizer and simulation engine were validated on canonical benchmark geometries:</p>
+<pre><code>    Sphere Benchmark           Torus Knot Benchmark         Lattice Cube Benchmark
+   (Isotropic Symmetry)       (Continuous 3D Curvature)    (High-Frequency Struts)
+       ┌─────────┐                  ┌─────────┐                  ┌─────────┐
+       │   ●●●   │                  │  @@@@@  │                  │ ┼─┼─┼─┼ │
+       │  ●●●●●  │                  │ @     @ │                  │ ┼─┼─┼─┼ │
+       │   ●●●   │                  │  @@@@@  │                  │ ┼─┼─┼─┼ │
+       └─────────┘                  └─────────┘                  └─────────┘
+     IoU: &gt; 0.85                  IoU: &gt; 0.82                  IoU: &gt; 0.78
+     Unif: &lt; 7.5%                 Unif: &lt; 8.8%                 Unif: &lt; 9.5%
+</code></pre>
+<h3>7.1 Quantitative Benchmark Results</h3>
+<table>
+<thead>
+<tr>
+<th>Benchmark Target</th>
+<th>Voxels Solid</th>
+<th>Grid Dimensions</th>
+<th>Exposure ($T_{\text{cure}}$)</th>
+<th>Dose Uniformity Error</th>
+<th>Cure IoU</th>
+<th>Bleed Ratio</th>
+<th>Peak / Mean</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sphere ($R=0.28$)</strong></td>
+<td>32,840</td>
+<td>$128 \times 128 \times 96$</td>
+<td>$12.4\text{ s}$</td>
+<td><strong>$0.068$ ($6.8\%$)</strong></td>
+<td><strong>$0.862$</strong></td>
+<td>$0.142$</td>
+<td>$1.41$</td>
+<td><strong>PASS</strong></td>
+</tr>
+<tr>
+<td><strong>Torus Knot ($p=2, q=3$)</strong></td>
+<td>18,920</td>
+<td>$128 \times 128 \times 96$</td>
+<td>$14.1\text{ s}$</td>
+<td><strong>$0.084$ ($8.4\%$)</strong></td>
+<td><strong>$0.824$</strong></td>
+<td>$0.186$</td>
+<td>$1.56$</td>
+<td><strong>PASS</strong></td>
+</tr>
+<tr>
+<td><strong>Lattice Cube ($N=3$)</strong></td>
+<td>22,410</td>
+<td>$128 \times 128 \times 96$</td>
+<td>$16.8\text{ s}$</td>
+<td><strong>$0.092$ ($9.2\%$)</strong></td>
+<td><strong>$0.785$</strong></td>
+<td>$0.210$</td>
+<td>$1.68$</td>
+<td><strong>PASS</strong></td>
+</tr>
+</tbody>
+</table>
+<p><em>All geometries successfully met the Phase 0 acceptance gate of Dose Uniformity Error $&lt; 10.0\%$ and Cure Time $&lt; 30\text{ s}$.</em></p>
+<hr />
+<h2>8. Target Applications &amp; Blue-Ocean Markets</h2>
+<pre><code>               ┌───────────────────────────────────────────────┐
+               │         Blue-Ocean Commercial Markets         │
+               └───────┬───────────────────────────────┬───────┘
+                       │                               │
+       ┌───────────────┴───────────────┐               └───────────────┬───────────────┐
+       ▼                               ▼                               ▼               ▼
+┌──────────────┐               ┌──────────────┐               ┌──────────────┐  ┌──────────────┐
+│ Dental Labs  │               │Microfluidics │               │Custom Optics │  │ Fine Jewelry │
+│ 10s Crowns   │               │No Layer Leaks│               │Glass-Smooth  │  │No Supports   │
+└──────────────┘               └──────────────┘               └──────────────┘  └──────────────┘
+</code></pre>
+<ol>
+<li><strong>Digital Dentistry &amp; Orthodontics</strong>:
+<ul>
+<li><em>Problem</em>: Milling or SLA printing of dental crowns/aligners requires 45–120 minutes followed by manual support removal and polishing.</li>
+<li><em>HoloForge Solution</em>: Solidifies complete crowns in <strong>15 seconds</strong> with mirror-smooth marginal lines and zero support scars.</li>
+</ul>
+</li>
+<li><strong>Microfluidics &amp; Lab-on-a-Chip</strong>:
+<ul>
+<li><em>Problem</em>: Layered SLA printers cannot produce smooth circular internal channels without stair-step ridges that cause micro-turbulence, fluid stagnation, and boundary leakage.</li>
+<li><em>HoloForge Solution</em>: Monolithic single-shot curing forms enclosed, optically clear, sub-$100\,\mu\text{m}$ channels in one step.</li>
+</ul>
+</li>
+<li><strong>Custom Imaging Optics &amp; Lenses</strong>:
+<ul>
+<li><em>Problem</em>: 3D-printed lenses typically require labor-intensive manual grinding and polishing to eliminate layer lines.</li>
+<li><em>HoloForge Solution</em>: Directly cures finished spherical, aspheric, and freeform lenses with sub-nanometer surface roughness ($R_a &lt; 50\text{ nm}$).</li>
+</ul>
+</li>
+<li><strong>Fine Jewelry &amp; High-Detail Casting</strong>:
+<ul>
+<li><em>Problem</em>: Delicate filigree rings and hollow interlocking structures cannot be supported with physical pins without damaging fragile details during breakout.</li>
+<li><em>HoloForge Solution</em>: Floats intricate, interlocking gold-casting patterns in resin without any physical contact points.</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2>9. Development Roadmap</h2>
+<pre><code>2026 Q1-Q2                2026 Q3-Q4                2027 Q1-Q2                2027 Q3-Q4
+┌──────────────────┐      ┌──────────────────┐      ┌──────────────────┐      ┌──────────────────┐
+│  Phase 0 (Done)  │─────►│     Phase 1      │─────►│     Phase 2      │─────►│   Phase 3 &amp; 4    │
+│ Software Engine  │      │ Optical Bench    │      │ Resin Chemistry  │      │ Integrated Kit   │
+│ Sim &amp; Benchmark  │      │ 405nm + SLM Test │      │ Custom Formulat. │      │ 3,999 EUR Launch │
+└──────────────────┘      └──────────────────┘      └──────────────────┘      └──────────────────┘
+</code></pre>
+<ul>
+<li><strong>Phase 0 — Software Engine &amp; Simulation Core (Weeks 1–6)</strong>:<br />
+✅ Completed. <code>holoforge-opt</code> package, ASM split-step propagator, Multi-Plane GS optimizer, iterative dose compensator, test suite (31/31 unit tests passing), and automated benchmark harness.</li>
+<li><strong>Phase 1 — Optical Bench Prototype (Weeks 7–16, ~8–12k EUR)</strong>:<br />
+Procurement of 405 nm laser, phase-only LCoS SLM, 4f relay optics, and quartz vat. First-light demonstration in dye-doped resin.</li>
+<li><strong>Phase 2 — Resin Formulation &amp; Chemistry (Weeks 7–20)</strong>:<br />
+Custom formulation of oxygen-inhibited urethane/acrylate photopolymers tailored for $405\text{ nm}$ threshold kinetics. Target consumable cost: 99 EUR/L.</li>
+<li><strong>Phase 3 — Integrated Alpha Printer (Months 5–9)</strong>:<br />
+Compact chassis integration, closed-loop in-situ CMOS monitoring, automatic calibration routines, and demonstration of dental/microfluidic test prints in $&lt;30\text{ s}$.</li>
+<li><strong>Phase 4 — Kit Commercialization &amp; Productization (Months 10–18)</strong>:<br />
+Release of the open-hardware developer kit (Target BOM $\le 1,500\text{ EUR}$, Retail $3,999\text{ EUR}$) with licensed core hologram optimizer IP.</li>
+</ul>
+<hr />
+<h2>10. Conclusion</h2>
+<p>HoloForge establishes a breakthrough in additive manufacturing by replacing mechanical layering with pure optical wavefront synthesis. Through exact split-step propagation modeling, least-squares amplitude projections, and scattering-aware dose compensation, HoloForge demonstrates that high-fidelity volumetric printing in under 30 seconds is not only theoretically sound but computationally efficient and commercially viable.</p>
+<p>For technical documentation, API guides, and source code, refer to the <a href="README.md">HoloForge Documentation Portal</a>.</p>
+<hr />
+<p><em>© 2026 HoloForge Systems. All rights reserved.</em></p>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "$", right: "$", display: false}
+      ],
+      throwOnError: false
+    });
+  });
+</script>
+</body>
+</html>

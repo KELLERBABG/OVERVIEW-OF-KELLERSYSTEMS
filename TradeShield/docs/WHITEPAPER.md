@@ -1,0 +1,1 @@
+﻿# WashTrap Ledger — whitepaper stub

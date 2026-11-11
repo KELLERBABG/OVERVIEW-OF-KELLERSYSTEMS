@@ -1,0 +1,116 @@
+VERTRAG ÜBER DIE BEREITSTELLUNG DER CLOUD-PLATTFORM ORBITAL DESK
+(Subscription-Vereinbarung für Geschäftskunden)
+
+zwischen
+
+Helios Software Systems GmbH, Maria-Theresien-Straße 21, 1010 Wien, eingetragen im Firmenbuch des Handelsgerichts Wien unter FN 348551a (nachfolgend „Anbieter“)
+
+und
+
+dem im Bestellschein bezeichneten Unternehmen (nachfolgend „Kunde“; gemeinsam die „Parteien“).
+
+§ 1 Vertragsgegenstand und Vertragsbestandteile
+
+1.1 Der Anbieter stellt dem Kunden die webbasierte Plattform Orbital Desk zur Projekt-, Dokumenten- und Ressourcenverwaltung als gehosteten Dienst bereit (nachfolgend „Dienst“).
+
+1.2 Art und Umfang des Dienstes ergeben sich aus der zum Bestellzeitpunkt veröffentlichten Funktionsbeschreibung (Anhang 1) sowie aus dem Bestellschein. Der Kunde erhält für die Laufzeit ein einfaches, nicht übertragbares Recht, den Dienst im Rahmen seiner Geschäftstätigkeit zu nutzen.
+
+1.3 Inhalte, die der Kunde in die Plattform einbringt, bleiben dessen Eigentum. Der Anbieter darf sie ausschließlich zum Betrieb, zur Fehlerbehebung und zur Datensicherung verarbeiten.
+
+§ 2 Bereitstellung, Teststellung und Mitwirkung
+
+2.1 Der Anbieter stellt den Dienst innerhalb von fünf Werktagen nach Freigabe des Bestellscheins bereit. Teststellungen sind auf vierzehn Tage befristet.
+
+2.2 Der Kunde benennt einen fachlichen und einen technischen Ansprechpartner, stellt die nach Anhang 1 erforderlichen Zugänge bereit und hält seine Systemumgebung aktuell.
+
+2.3 Werden vom Anbieter als kritisch eingestufte Aktualisierungen nicht innerhalb von 24 Stunden eingespielt, entfällt der Anspruch auf die vereinbarten Gutschriften.
+
+§ 3 Vergütung und Zahlung
+
+3.1 Die Grundgebühr beträgt 18 EUR je Nutzer und Monat zuzüglich der gesetzlichen Umsatzsteuer. Einmalige Einrichtungskosten werden gesondert ausgewiesen.
+
+3.2 Zahlungen sind innerhalb von 30 Tagen nach Rechnungszugang ohne Abzug fällig; bei Verzug gelten die gesetzlichen Bestimmungen.
+
+3.3 Rechnungen werden monatlich im Voraus gestellt. Bei Nutzungsänderungen während eines Abrechnungsmonats erfolgt die Abrechnung anteilig.
+
+§ 4 Anpassung der Nutzungsgebühr und Änderungen des Dienstes
+
+4.1 Die Nutzungsgebühr wird zum 1. Januar eines Kalenderjahres an die Preissteigerung angepasst; eine Absenkung findet nicht statt.
+
+4.2 Der Anbieter unterrichtet den Kunden über die neue Höhe spätestens sechs Wochen vorher in Textform. Erhebt der Kunde nicht binnen zehn Tagen Einspruch, wird die Änderung wirksam.
+
+4.3 Anpassungen der Benutzeroberfläche werden in den Release Notes dokumentiert.
+
+§ 5 Laufzeit und Beendigung
+
+5.1 Die Anfangsperiode beträgt vierundzwanzig Monate ab Bereitstellung des Dienstes.
+
+5.2 Der Vertrag setzt sich nach Ablauf der Anfangsperiode jeweils um zwölf Monate fort, sofern er nicht nach Ziffer 5.3 beendet wird.
+
+5.3 Die Beendigung ist nur zum Ende der jeweiligen Periode und unter Einhaltung einer Vorlaufzeit von neun Monaten zulässig.
+
+5.4 Ein Anspruch auf Loslösung vor Ablauf der Periode besteht nur, wenn der Anbieter eine wesentliche Störung schriftlich bestätigt hat.
+
+§ 6 Verfügbarkeit und Leistungsmaßstab
+
+6.1 Der Anbieter gewährleistet eine monatliche Verfügbarkeit des Dienstes von mindestens 99,0 %; wird dieser Wert unterschritten, erhält der Kunde Gutschriften und kann den Vertrag zum Monatsende beenden.
+
+6.2 Für die Trefferquote der Erkennungslogik und die Vollständigkeit von Auswertungen wird keine Zusage übernommen.
+
+6.3 Ausfallzeiten infolge planmäßiger Wartung bleiben bei der Ermittlung nach Ziffer 6.1 außer Betracht.
+
+§ 7 Haftung
+
+7.1 Die Haftung für Vorsatz, grobe Fahrlässigkeit und die Verletzung von Kardinalpflichten bleibt unberührt.
+
+7.2 Die Haftung des Anbieters ist je Schadensfall auf den Betrag der in den letzten drei Monaten gezahlten Entgelte begrenzt; Sonderleistungen bleiben dabei außer Betracht.
+
+7.3 Bei Verlust von Auswertungen und Berichten sieht der Kunde wegen Störungen des Geschäftsbetriebs von Ansprüchen ab.
+
+7.4 Gegenforderungen des Kunden können nur nach vorheriger schriftlicher Bestätigung durch den Anbieter in Ansatz gebracht werden.
+
+§ 8 Drittansprüche
+
+8.1 Macht ein Dritter Ansprüche wegen der vom Kunden eingebrachten Inhalte geltend, hat der Kunde den Anbieter insoweit klaglos zu stellen.
+
+8.2 Der Kunde stellt dem Anbieter die für die Fehlersuche erforderlichen Protokolle und Ansprechpartner zur Verfügung.
+
+§ 9 Auswertungen und Referenznennung
+
+9.1 Die aus der Nutzung des Dienstes gewonnenen aggregierten Auswertungen darf der Anbieter in eigener Verantwortung verwerten.
+
+9.2 Eine Beteiligung des Kunden an Erlösen aus diesen Auswertungen besteht nicht.
+
+9.3 Eine Nennung des Kunden als Referenzkunde erfolgt nur nach vorheriger Zustimmung des Kunden.
+
+§ 10 Vertraulichkeit
+
+10.1 Beide Parteien behandeln die Informationen der anderen Seite vertraulich.
+
+10.2 Die Weitergabe an verbundene Unternehmen und an Berater steht beiden Parteien frei, soweit diese zur Verschwiegenheit verpflichtet werden.
+
+10.3 Gesetzliche Offenlegungspflichten bleiben unberührt; über eine behördliche Anordnung informiert die betroffene Partei die andere, soweit rechtlich zulässig.
+
+§ 11 Daten und Unterauftragnehmer
+
+11.1 Der Kunde erhält seine Daten jederzeit in einem gängigen maschinenlesbaren Format; hierfür fällt kein Entgelt an.
+
+11.2 Der Anbieter kann für Betrieb und Support Unterauftragnehmer einsetzen. Der Anbieter unterrichtet den Kunden über den Einsatz neuer Unterauftragnehmer mindestens 14 Tage vorab.
+
+11.3 Die Verarbeitung personenbezogener Daten findet auch auf Servern außerhalb der Europäischen Union statt.
+
+§ 12 Form, Kommunikation und Dokumentation
+
+12.1 Erklärungen und Kündigungen beider Seiten können in Textform abgegeben werden.
+
+12.2 Technische Vorgaben, Schnittstellenbeschreibungen und Betriebszeiten werden in Anhang 1 fortgeschrieben und dem Kunden in Textform bekannt gegeben.
+
+12.3 Betriebsanfragen werden über das Ticketsystem des Anbieters gestellt.
+
+§ 13 Streitbeilegung und Schlussbestimmungen
+
+13.1 Bei Streitigkeiten über Rechnungsbeträge wird zunächst ein Sachverständigenverfahren durchgeführt. Die Kosten des Verfahrens sind vom Kunden vorzustrecken; der Rechtsweg zu den staatlichen Gerichten ist erst nach Abschluss des Verfahrens eröffnet.
+
+13.2 Es gilt österreichisches Recht unter Ausschluss des UN-Kaufrechts. Ausschließlicher Gerichtsstand für alle Streitigkeiten ist der Sitz des Anbieters in Wien.
+
+13.3 Sollte eine Bestimmung unwirksam sein oder werden, bleibt der Vertrag im Übrigen wirksam. An die Stelle der unwirksamen Bestimmung tritt diejenige Regelung, die dem wirtschaftlichen Zweck am nächsten kommt.

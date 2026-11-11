@@ -1,0 +1,78 @@
+{
+  "slug": "einkauf-017",
+  "source": "generated",
+  "domain": "Einkauf und Lieferantenrahmenvertrag, deutsches Recht",
+  "traps": [
+    {
+      "marker": "setzt sich jeweils um vierundzwanzig Monate fort",
+      "expectedType": "auto_renewal",
+      "note": "Automatische Verlaengerung ohne die Registerfloskel"
+    },
+    {
+      "marker": "Vorlaufzeit für eine Beendigung des Rahmenvertrags durch den Besteller währt",
+      "expectedType": "notice_period",
+      "note": "Kuendigungsbindung als Vorlaufzeit statt Kuendigungsfrist"
+    },
+    {
+      "marker": "Die Vergütung steigt jährlich um bis zu 8 Prozent",
+      "expectedType": "price_escalation",
+      "note": "Einseitige Preisanhebung ohne Index"
+    },
+    {
+      "marker": "Einstandspflicht der Anbieterin für mittelbare Schäden wird nicht übernommen",
+      "expectedType": "liability",
+      "note": "Freizeichnung ohne das Wort Haftung"
+    },
+    {
+      "marker": "Zuvor kommunizierte Leistungsbeschreibungen treten mit Unterzeichnung",
+      "expectedType": "entire_agreement",
+      "note": "Vollstaendigkeitsklausel"
+    },
+    {
+      "marker": "Erklärungen per E-Mail sind für die Vertragsabwicklung nicht wirksam",
+      "expectedType": "written_form_trap",
+      "note": "Formzwang durch Ausschluss elektronischer Erklaerungen"
+    },
+    {
+      "marker": "die dem wirtschaftlichen Zweck am nächsten kommt",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "Ersetzungsregel ohne gesetzlichen Vorrang"
+    },
+    {
+      "marker": "Verbot jedweder Tätigkeit für Wettbewerber gilt über die Beendigung",
+      "expectedType": "non_compete",
+      "note": "Nachvertragliches Wettbewerbsverbot ohne Entschaedigung"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Anbieterin stellt die Prüfprotokolle in Textform bereit",
+      "note": "Bereitstellung in Textform"
+    },
+    {
+      "marker": "Der Besteller wählt unter den in Anlage 3 genannten Varianten eine aus",
+      "note": "Einseitiges Wahlrecht ohne Pflichten"
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag einvernehmlich beenden",
+      "note": "Einvernehmliche Beendigung"
+    },
+    {
+      "marker": "Rechnungen sind innerhalb von dreißig Tagen ohne Abzug zu begleichen",
+      "note": "Marktueblicher Zahlungstermin"
+    },
+    {
+      "marker": "Bei berechtigter Rüge bessert die Anbieterin innerhalb von zehn Werktagen nach",
+      "note": "Nachbesserungspflicht"
+    },
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Zulaessige Haftungsklausel"
+    },
+    {
+      "marker": "Es gilt das Recht der Bundesrepublik Deutschland",
+      "note": "Neutrale Rechtswahl"
+    }
+  ],
+  "uncovered": []
+}

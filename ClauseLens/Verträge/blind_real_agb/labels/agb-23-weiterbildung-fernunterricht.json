@@ -1,0 +1,88 @@
+{
+  "slug": "agb-23-weiterbildung-fernunterricht",
+  "domain": "Akademie-, Coaching- & Online-Lehrgangs-AGB",
+  "source": "Blind Real-AGB Benchmark 2026 (vor Engine-Lauf gelabelt)",
+  "traps": [
+    {
+      "marker": "jederzeit nach freiem Ermessen einseitig zu ändern, auf reine PDF-Selbstlernlektüre umzustellen oder bis zu 60 % der Unterrichtsmodule ersatzlos zu streichen",
+      "expectedType": "unilateral_change",
+      "statutoryBasis": "§ 308 Nr. 4 BGB / § 307 BGB",
+      "note": "Einseitiger Änderungsvorbehalt, der die Streichung von 60 % der Unterrichtsmodule und den Wegfall der Live-Betreuung bei vollem Preis erlaubt, ist unzumutbar."
+    },
+    {
+      "marker": "verlängert sich der kostenpflichtige Studienvertrag automatisch jeweils um weitere 24 Monate",
+      "expectedType": "auto_renewal",
+      "statutoryBasis": "§ 309 Nr. 9b BGB / § 5 FernUSG / § 307 BGB",
+      "note": "Stillschweigende Verlängerung um 24 Monate bei sechsmonatiger Kündigungsfrist verstößt zwingend gegen § 309 Nr. 9b BGB sowie § 5 FernUSG."
+    },
+    {
+      "marker": "zwingend der eigenhändigen Unterschrift mit blauer Tinte und müssen der Akademie ausschließlich per eingeschriebenem Brief",
+      "expectedType": "written_form_trap",
+      "statutoryBasis": "§ 309 Nr. 13 BGB / § 5 Abs. 3 FernUSG",
+      "note": "Zwang zu eigenhändiger Unterschrift mit blauer Tinte und Einschreiben Eigenhändig verstößt gegen § 309 Nr. 13 BGB (Textform nach § 126b BGB genügt)."
+    },
+    {
+      "marker": "werden sämtliche noch ausstehenden Raten bis zum regulären Vertragsende (100 % der Gesamtvergütung) sofort in einer Summe zur Zahlung fällig, wobei der Abzug ersparter Aufwendungen",
+      "expectedType": "early_termination_charge",
+      "statutoryBasis": "§ 308 Nr. 7 BGB / § 5 Abs. 2 FernUSG / § 309 Nr. 5 BGB",
+      "note": "Sofortige Fälligkeit von 100 % aller künftigen Raten ohne Abzug ersparter Aufwendungen verstößt gegen § 5 Abs. 2 FernUSG und § 308 Nr. 7 BGB."
+    },
+    {
+      "marker": "räumt der Teilnehmer der Akademie unentgeltlich und unwiderruflich die ausschließlichen, zeitlich und räumlich unbeschränkten Verwertungsrechte",
+      "expectedType": "feedback_ip_grab",
+      "statutoryBasis": "§ 307 Abs. 1 und 2 Nr. 1 BGB / § 11 UrhG",
+      "note": "Unentgeltliche Entziehung sämtlicher Urheber- und Nutzungsrechte an den eigenen Projektarbeiten und Softwarecodes des Teilnehmers unter eigenem Nutzungsverbot."
+    },
+    {
+      "marker": "unwiderruflich berechtigt, den vollständigen Namen, das Lebensalter, den Arbeitgeber, das Profilbild sowie Videoausschnitte",
+      "expectedType": "marketing_reference",
+      "statutoryBasis": "§ 22 KUG / Art. 6 und 7 DSGVO / § 307 BGB",
+      "note": "Unwiderrufliche Verwendung von Teilnehmernamen, Arbeitgeber und Webinar-Videoausschnitten für Social-Media-Werbung ohne gesonderte Einwilligung verletzt das Recht am eigenen Bild und die DSGVO."
+    },
+    {
+      "marker": "an externe Auswertungszentren in beliebigen Drittstaaten außerhalb des Europäischen Wirtschaftsraums ohne Angemessenheitsbeschluss",
+      "expectedType": "international_data_processing",
+      "statutoryBasis": "Art. 44 ff. DSGVO / Art. 15, 17 DSGVO / § 307 BGB",
+      "note": "Transfer biometrischer Ausweis- und Prüfungsdaten in unsichere Drittländer unter Verzicht auf DSGVO-Betroffenenrechte ist nichtig."
+    },
+    {
+      "marker": "ausdrücklich auch mit Verbrauchern, die ihren Wohnsitz in Deutschland haben – wird als ausschließlicher Gerichtsstand der Sitz der Konzernholding der Akademie in Nikosia",
+      "expectedType": "jurisdiction",
+      "statutoryBasis": "§ 29c ZPO / § 38 ZPO / Art. 18 Brüssel-Ia-VO / § 307 BGB",
+      "note": "Ausschließlicher Auslandsgerichtsstand in Zypern gegenüber deutschen Verbrauchern verstößt zwingend gegen § 38 ZPO und Art. 18 Brüssel-Ia-VO."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "verfügen sie über die erforderliche staatliche Zulassung der Staatlichen Zentralstelle für Fernunterricht (ZFU)",
+      "note": "Zutreffender Hinweis auf die gesetzlich vorgeschriebene ZFU-Zulassung nach § 12 FernUSG."
+    },
+    {
+      "marker": "stellt dem Teilnehmer über die passwortgeschützte Online-Lernplattform digitale Studienbriefe",
+      "note": "Klare Beschreibung der vertraglichen Hauptleistung."
+    },
+    {
+      "marker": "kann der Teilnehmer mit unbestrittenen oder rechtskräftig festgestellten Forderungen jederzeit aufrechnen",
+      "note": "Gesetzeskonforme Aufrechnungsklausel."
+    },
+    {
+      "marker": "Studienbriefe, Videos und Skripte sind urheberrechtlich geschützt und dürfen vom Teilnehmer nur zum eigenen",
+      "note": "Zulässiger Schutz des geistigen Eigentums der Akademie an den Lehrmaterialien."
+    },
+    {
+      "marker": "haftet unbeschränkt für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit",
+      "note": "Gesetzeskonforme Haftungsregelung für Personenschäden sowie Vorsatz und grobe Fahrlässigkeit."
+    },
+    {
+      "marker": "Bei leicht fahrlässiger Verletzung wesentlicher Vertragspflichten (Kardinalpflichten) ist die Haftung auf den vertragstypischen",
+      "note": "Zulässige Begrenzung der Haftung bei leicht fahrlässiger Kardinalpflichtverletzung."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "behält die Akademie gleichwohl pauschal 35 % der gesamten Lehrgangsgebühr, mindestens jedoch 490,00 Euro, als nicht erstattungsfähige Storno-, Einrichtungs- und Wiedereinlagerungsgebühr",
+      "statutoryBasis": "§ 357 Abs. 1 BGB / § 361 Abs. 1 BGB / § 307 BGB",
+      "note": "Verdeckte Storno- und Wiedereinlagerungsgebühr (35 % bzw. 490 Euro) bei Ausübung des gesetzlichen Verbraucherwiderrufsrechts verstößt zwingend gegen §§ 355, 357, 361 BGB."
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+Werkvertrag über die Erstellung der Bestandsverwaltungssoftware MerkurCore
+
+zwischen der Kognita Softwarewerk GmbH, Speicherstraße 44, 60311 Frankfurt am Main (nachfolgend Anbieter), und der Merkur Versicherung AG, Rheinufer 2, 50668 Köln (nachfolgend Kunde).
+
+Präambel
+Der Kunde verwaltet Versicherungsbestände und benötigt eine neue Bestandsverwaltungssoftware. Der Anbieter entwickelt die Software nach den Vorgaben des Kunden. Die Parteien vereinbaren Folgendes.
+
+§ 1 Gegenstand
+Gegenstand ist die Erstellung und Übergabe der Bestandsverwaltungssoftware MerkurCore gemäß Anlage 1.
+
+§ 2 Leistungsumfang
+(1) Der Anbieter schuldet die Herstellung der vereinbarten Funktionalität.
+
+(2) Der Anbieter führt die Arbeiten mit der vereinbarten Sorgfalt aus.
+
+§ 3 Vergütung
+(1) Die Vergütung wird in monatlichen Raten von 12.000 EUR gezahlt.
+
+(2) Der Zinssatz beträgt zwölf Prozent jährlich.
+
+§ 4 Rechte an den Ergebnissen
+(1) The customer grants the provider a perpetual, irrevocable license to use the deliverables to train machine learning models.
+
+(2) Die Nutzungsrechte des Kunden an der Dokumentation bleiben unberührt.
+
+§ 5 Mitwirkung
+(1) Der Kunde benennt einen Projektleiter als Ansprechpartner.
+
+(2) Die Parteien treffen sich monatlich zu einem Lenkungskreis.
+
+§ 6 Abnahme
+(1) Die Abnahme erfolgt durch ein Abnahmeprotokoll.
+
+(2) Die Vergütung ist innerhalb von dreißig Tagen nach Rechnungseingang fällig.
+
+§ 7 Anregungen
+(1) Mit der Übermittlung einer Idee erfolgt deren unentgeltliche Übertragung aller daran bestehenden Rechte.
+
+(2) Der Anbieter dokumentiert die Änderungen im Änderungsprotokoll.
+
+§ 8 Vertraulichkeit
+(1) Die Vertraulichkeitspflicht endet nicht mit der Beendigung, sondern besteht bis die Information öffentlich wird.
+
+(2) Die Parteien behandeln die Vertragsverhandlung vertraulich.
+
+§ 9 Referenznennung
+(1) Der Name und das Logo des Kunden dürfen zu Referenzzwecken auf der Website verwendet werden.
+
+(2) Der Kunde kann der Nennung jederzeit widersprechen.
+
+§ 10 Wettbewerbsverbot
+(1) Der Kunde bleibt achtzehn Monate an das Wettbewerbsverbot gebunden; eine Karenzentschädigung wird nicht gezahlt.
+
+(2) Die Parteien informieren sich unverzüglich über Störungen.
+
+§ 11 Freistellung
+(1) The customer shall indemnify and hold harmless the provider against any third party claims.
+
+(2) Der Anbieter unterhält eine Berufshaftpflichtversicherung mit einer Deckungssumme von zwei Millionen EUR.
+
+§ 12 Salvatorische Klausel
+(1) Unwirksame Regelungen werden durch eine Ersatzregelung nach billigem Ermessen ersetzt.
+
+(2) Die übrigen Bestimmungen bleiben von der Unwirksamkeit unberührt.
+
+§ 13 Haftung
+(1) Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt.
+
+(2) Jede Partei trägt ihre eigenen Kosten aus der Vertragsverhandlung.
+
+§ 14 Kündigung
+(1) Die Kündigung aus wichtigem Grund bleibt beiden Parteien unbenommen.
+
+(2) Alle Fristen werden in Kalendertagen gerechnet.
+
+§ 15 Schlussbestimmungen
+(1) Änderungen dieses Vertrages können in Textform vereinbart werden.
+
+(2) Dieser Vertrag unterliegt deutschem Recht.
+
+Anlage 1: Leistungsbeschreibung
+
+Frankfurt am Main, den 19. Januar 2026
+
+Kognita Softwarewerk GmbH
+
+Merkur Versicherung AG

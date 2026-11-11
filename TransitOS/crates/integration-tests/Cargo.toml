@@ -1,0 +1,22 @@
+[package]
+name = "transit-integration-tests"
+edition = "2021"
+version = "1.0.0"
+license = "Apache-2.0"
+
+[dependencies]
+transit-state-machine = { path = "../state-machine" }
+transit-abstract-interpretation = { path = "../abstract-interpretation" }
+transit-dynamics-simulator = { path = "../dynamics-simulator" }
+transit-gas-brake-analysis = { path = "../gas-brake-analysis" }
+transit-path-constraints = { path = "../path-constraints" }
+transit-state-space = { path = "../state-space" }
+transit-smt-solver = { path = "../smt-solver" }
+transit-verification-invariants = { path = "../verification-invariants" }
+transit-taint-analysis = { path = "../taint-analysis" }
+transit-spec-generator = { path = "../spec-generator" }
+transit-deployment-gate = { path = "../deployment-gate" }
+transit-ros2-integration = { path = "../ros2-integration" }
+transit-carla-integration = { path = "../carla-integration" }
+transit-real-time = { path = "../real-time" }
+transit-monitoring = { path = "../monitoring" }

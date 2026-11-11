@@ -1,0 +1,70 @@
+Werkvertrag über das Campusverwaltungssystem
+
+zwischen Campus IT GmbH, Münster (nachfolgend Anbieter) und Bildungsforum Westfalen e.V., Dortmund (nachfolgend Kunde).
+
+Präambel
+Die Parteien beabsichtigen die in § 1 beschriebene Zusammenarbeit. Der Anbieter erbringt die Leistungen, der Kunde vergütet sie. Die Parteien vereinbaren Folgendes.
+
+§ 1 Gegenstand
+Gegenstand des Vertrages ist die Erstellung des Campusverwaltungssystems gemäß Anlage 1.
+
+§ 2 Leistungsumfang
+Der Anbieter erbringt die Leistungen gemäß Anlage 1 und dokumentiert die Ergebnisse.
+
+§ 3 Service-Level
+(3) Verfügbarkeitsangaben sind unverbindlich und begründen keine Ansprüche.
+
+§ 4 Vorzeitige Beendigung
+(4) Bei vorzeitiger Beendigung durch den Kunden wird eine pauschale Abstandszahlung von drei Monatsraten fällig.
+
+§ 5 Kündigungsfristen
+(5) Die Kündigung ist mit einer Frist von vierundzwanzig Monaten zum Laufzeitende zu erklären.
+
+§ 6 Haftung
+(6) The provider's aggregate liability shall not exceed the fees paid in the preceding six months.
+
+§ 7 Wettbewerbsverbot
+(7) Nach Auslaufen des Vertrages enthält sich der Kunde für achtzehn Monate jeder Wettbewerbstätigkeit; eine Karenzentschädigung wird nicht gezahlt.
+
+§ 8 Aufrechnung und Zurückbehaltung
+(8) Ein Zurückbehaltungsrecht des Kunden ist ausgeschlossen.
+
+§ 9 Verjährung
+(9) Ersatzansprüche erlöschen mit Ablauf von zwölf Monaten.
+
+§ 10 Anwendbares Recht und Gerichtsstand
+(10) Klagen sind ausschließlich vor den Gerichten am Sitz des Anbieters zu erheben.
+
+§ 11 Erfüllungsgehilfen
+(11) Für Handlungen von Unterauftragnehmern haftet der Anbieter nur bei Auswahlverschulden.
+
+§ 12 Störungen
+(12) Die Vertragsparteien informieren sich unverzüglich über Störungen.
+
+§ 13 Sicherheit
+(13) Der Anbieter meldet Sicherheitsvorfälle unverzüglich an den Kunden.
+
+§ 14 Vergütung
+(14) Die Vergütung ist innerhalb von dreißig Tagen nach Rechnungseingang fällig.
+
+§ 15 Haftung
+(15) Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt.
+
+§ 16 Vertraulichkeit
+(16) Beide Parteien verpflichten sich wechselseitig, die offengelegten Informationen vertraulich zu behandeln.
+
+§ 17 Unterauftragnehmer
+(17) Der Anbieter zeigt den Einsatz von Unterauftragnehmern vierzehn Tage vorher an.
+
+§ 18 Datenrückgabe
+(18) Der Kunde erhält zum Vertragsende einen kostenfreien Datenexport in einem gängigen Format.
+
+§ 19 Vollständigkeit
+(19) Der Kunde erhält Zugang zu einer Testumgebung.
+
+Anlage 1: Leistungsbeschreibung
+Anlage 2: Servicezeiten
+
+Münster, den 3. Juni 2026
+Campus IT GmbH
+Bildungsforum Westfalen e.V.

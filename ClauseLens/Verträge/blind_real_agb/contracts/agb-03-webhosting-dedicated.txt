@@ -1,0 +1,55 @@
+Allgemeine Geschäftsbedingungen für Webhosting, Domain-Registrierung und Dedicated Server-Housing der AlpenRack Datacenter GmbH
+
+§ 1 Geltungsbereich und Leistungen
+
+Die AlpenRack Datacenter GmbH (nachfolgend „Provider“) erbringt Leistungen in den Bereichen Webhosting, Verwaltung von Internet-Domains, Bereitstellung dedizierter Root-Server sowie Server-Housing (Colocation) im Rechenzentrum München.
+
+Die technischen Parameter der bereitgestellten Server und Netzwerk-Ports richten sich nach dem gewählten Tarifblatt. Wartungsarbeiten werden, soweit betrieblich möglich, in verkehrsarmen Zeiten durchgeführt und dem Kunden rechtzeitig im Voraus angekündigt.
+
+§ 2 Domain-Registrierung und Mitwirkungspflichten
+
+Bei der Verschaffung und Pflege von Internet-Domains wird der Provider im Verhältnis zwischen dem Kunden und der jeweiligen Vergabestelle (z. B. DENIC eG) lediglich als Vermittler tätig. Der Kunde versichert, dass die von ihm beantragte Domain keine Marken-, Namens- oder sonstigen Schutzrechte Dritter verletzt.
+
+§ 3 Pflichten des Kunden und Freistellung von Drittansprüchen
+
+Der Kunde ist verpflichtet, seine auf den Servern abgelegten Inhalte und Skripte regelmäßig durch Sicherheitsupdates vor Schadsoftware zu schützen und keine rechtswidrigen Inhalte oder unerbetenen Massen-E-Mails (Spam) zu verbreiten.
+
+Der Kunde stellt den Provider auf erstes Anfordern und unabhängig von einem eigenen Verschulden vollumfänglich von sämtlichen Ansprüchen Dritter, behördlichen Bußgeldern sowie sämtlichen Rechtsverteidigungskosten ohne betragsmäßige Begrenzung frei, die im Zusammenhang mit der Nutzung des Servers oder einer gehosteten Domain gegen den Provider erhoben werden, selbst wenn den Kunden hieran keinerlei Verschulden trifft.
+
+§ 4 Vergütung, Aufrechnung und Abtretungsverbot
+
+Die Nutzungsentgelte für Webhosting und Server-Housing sind monatlich im Voraus per SEPA-Lastschrift zu entrichten; Domain-Gebühren werden jährlich im Voraus abgerechnet.
+
+Eine Aufrechnung oder die Ausübung eines Zurückbehaltungsrechts durch den Kunden gegenüber Zahlungsansprüchen des Providers ist in jedem Fall vollständig ausgeschlossen; dies gilt ausdrücklich auch dann, wenn die Gegenforderungen des Kunden vom Provider unbestritten oder durch ein Gericht rechtskräftig festgestellt worden sind.
+
+Dem Kunden ist es strikt untersagt, gegen den Provider gerichtete Ansprüche – einschließlich reiner Geldforderungen aus Überzahlungen, Rückerstattungen oder Schadensersatz – ohne vorherige schriftliche Genehmigung des Providers an Dritte abzutreten oder zu verpfänden.
+
+§ 5 Höhere Gewalt und Störungen im Internet-Backbone
+
+Ereignisse höherer Gewalt, Stromausfälle, DDoS-Angriffe, Streiks, behördliche Anordnungen sowie Störungen bei Vorlieferanten oder Carrier-Netzwerken befreien den Provider für die Dauer der Störung vollständig von seinen Leistungspflichten; der Kunde bleibt während des gesamten Zeitraums der Nichtleistung jedoch uneingeschränkt zur fortlaufenden Zahlung der vollen monatlichen Hosting- und Housing-Entgelte verpflichtet und ist nicht zur Kündigung oder Minderung berechtigt.
+
+§ 6 Elektronische Kommunikation und Zugangsfiktion
+
+Sämtliche vertragsrelevanten Mitteilungen, Rechnungen, Mahnungen und Kündigungserklärungen des Providers können an die vom Kunden im Kundenmenü hinterlegte E-Mail-Adresse versandt werden. Jede vom Provider abgesandte E-Mail gilt unwiderlegbar genau zwei Stunden nach dem Absendezeitpunkt des Ausgangsservers als dem Kunden ordnungsgemäß zugegangen, völlig unabhängig davon, ob die E-Mail das Postfach des Kunden tatsächlich erreicht hat oder durch Serverfehler untergegangen ist.
+
+§ 7 Zutrittsrechte im Colocation-Bereich und Datenschutz
+
+Im Bereich des Server-Housings erhält der Kunde nach vorheriger Anmeldung und Identitätsprüfung begleiteten Zutritt zu seinem Serverschrank im Rechenzentrum. Die Verarbeitung personenbezogener Daten erfolgt nach Maßgabe der gesetzlichen Datenschutzbestimmungen.
+
+§ 8 Vertragslaufzeit, Kündigung und Insolvenzklausel
+
+Sofern im Einzelauftrag keine abweichende Laufzeit vereinbart ist, laufen Webhosting-Verträge auf unbestimmte Zeit und können von beiden Parteien mit einer Frist von einem Monat zum Monatsende in Textform gekündigt werden.
+
+Wird über das Vermögen des Kunden ein Antrag auf Eröffnung des Insolvenzverfahrens gestellt, nimmt der Kunde Verhandlungen über eine außergerichtliche Schuldenbereinigung auf oder verschlechtert sich seine Bonitätsauskunft, so endet dieses Vertragsverhältnis automatisch und fristlos im Zeitpunkt der Antragstellung, und der Provider ist berechtigt, sämtliche Server und Domains sofort abzuschalten.
+
+Beabsichtigt der Kunde bei Vertragsende den Umzug einer über den Provider verwalteten Domain zu einem anderen Provider (KK-Antrag / AuthInfo-Code), erhebt der Provider für die Freigabe des gesetzlich geschuldeten AuthInfo-Codes eine einmalige Domain-Freigabegebühr in Höhe von 250,00 Euro netto pro Domain und behält die Domain bis zur Zahlung zurück.
+
+§ 9 Haftung und Erfüllungsgehilfen
+
+Für ein Verschulden seiner gesetzlichen Vertreter sowie seiner leitenden und einfachen Erfüllungsgehilfen, Subunternehmer und Rechenzentrumstechniker – auch bei Vorsatz und grober Fahrlässigkeit dieser Personen – übernimmt der Provider keinerlei Haftung; jede Zurechnung des Verhaltens von Erfüllungsgehilfen nach § 278 BGB wird vollständig ausgeschlossen.
+
+Im Übrigen ist die Haftung des Providers für Datenverlust auf den typischen Wiederherstellungsaufwand beschränkt, der bei regelmäßiger und gefahrentsprechender Anfertigung von Sicherungskopien durch den Kunden eingetreten wäre.
+
+§ 10 Anwendbares Recht und Gerichtsstand
+
+Auf das Vertragsverhältnis findet ausschließlich deutsches Recht unter Ausschluss des UN-Kaufrechts Anwendung. Ist der Kunde Kaufmann oder juristische Person des öffentlichen Rechts, ist ausschließlicher Gerichtsstand München.

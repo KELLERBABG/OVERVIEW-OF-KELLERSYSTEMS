@@ -1,0 +1,79 @@
+{
+  "slug": "evasion-016",
+  "source": "generated",
+  "domain": "evasion",
+  "traps": [
+    {
+      "marker": "Ein Aus​gleichsanspruch nach § 89b HGB bes​teht nic​ht, der Kun​de ver​zichtet auf Ans​prüche",
+      "expectedType": "agency_goodwill_waiver",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: agency_goodwill_waiver (Technik: zwsp)."
+    },
+    {
+      "marker": "Der Kun​de darf die erh​obenen Dat​en der End​kunden auch auß​erhalb der Eur​opäischen Uni​on",
+      "expectedType": "international_data_processing",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: international_data_processing (Technik: zwsp)."
+    },
+    {
+      "marker": "Vor Ein​leitung des ger​ichtlichen Rec​htswegs ist ein Sac​hverständigenverfahren dur​chzuführen.",
+      "expectedType": "mandatory_expert_determination",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: mandatory_expert_determination (Technik: zwsp)."
+    },
+    {
+      "marker": "Der Ans​pruch auf Gut​schrift ent​fällt, wenn der Kun​de ein​en kri​tischen Sic​herheitspatch",
+      "expectedType": "service_credit_forfeiture",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: service_credit_forfeiture (Technik: zwsp)."
+    },
+    {
+      "marker": "Bei vor​zeitiger Bee​ndigung des Ver​trags dur​ch den Kun​den wird eine pau​schale Abs​tandszahlung",
+      "expectedType": "early_termination_charge",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: early_termination_charge (Technik: zwsp)."
+    },
+    {
+      "marker": "Der Anb​ieter ist ber​echtigt, die Anl​age abz​uschalten, wenn kein War​tungsvertrag für das",
+      "expectedType": "maintenance_conditional_shutdown",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: maintenance_conditional_shutdown (Technik: zwsp)."
+    },
+    {
+      "marker": "Die Lau​fzeit bet​rägt zwei Jah​re und ern​euert sich aut​omatisch um zwö​lf Mon​ate, wenn kei​ne",
+      "expectedType": "auto_renewal",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: auto_renewal (Technik: zwsp)."
+    },
+    {
+      "marker": "Der Anb​ieter kann mit ein​er Fri​st von drei Mon​aten kün​digen, der Kun​de erst mit ein​er",
+      "expectedType": "notice_period",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: notice_period (Technik: zwsp)."
+    },
+    {
+      "marker": "Die Haf​tung des Anb​ieters für Dat​enverlust und ent​gangenen Gew​inn ist aus​geschlossen,",
+      "expectedType": "liability",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: liability (Technik: zwsp)."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Für die Vertragsdauer gelten die vereinbarten Konditionen unverändert.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien halten die geltenden Datenschutzvorschriften ein und verarbeiten personenbezogene",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Anbieter benennt einen technischen Ansprechpartner für den Kunden.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde führt die ihm übertragenen Aufgaben mit der Sorgfalt eines ordentlichen Kaufmanns aus.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Die Parteien regeln Einzelheiten in den beigefügten Anlagen 1 bis 3.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde meldet vermittelte Geschäfte unverzüglich und vollständig an den Anbieter.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    }
+  ],
+  "uncovered": []
+}

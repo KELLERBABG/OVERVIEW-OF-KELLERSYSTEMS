@@ -1,0 +1,48 @@
+﻿# Build and artifact directories
+target/
+**/target/
+node_modules/
+**/node_modules/
+.venv/
+**/.venv/
+venv/
+**/venv/
+env/
+**/env/
+.keller/
+**/.keller/
+dist/
+**/dist/
+build/
+**/build/
+bin/
+**/bin/
+obj/
+**/obj/
+
+# Debug and binary files
+*.pdb
+*.exe
+*.dll
+*.so
+*.dylib
+*.iso
+*.wasm
+*.bin
+*.db
+*.db-wal
+*.db-shm
+*.pyc
+*.coverage
+*.pcap
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS files
+Thumbs.db
+Desktop.ini
+.DS_Store

@@ -1,0 +1,281 @@
+{
+  "version": 1,
+  "what": "Per-case coverage of tests/cases.txt, measured from each case's report.run.json by scripts/progress-metric.py. Counts are frozen so a case that decides less or declines more is visible as a delta; the totals are derived, never hand-edited.",
+  "recorded_at_commit": "ccc51d9",
+  "corpus_cases": 23,
+  "totals": {
+    "encountered": 105,
+    "decided": 97,
+    "proved": 71,
+    "counterexamples": 26,
+    "undecided": 6,
+    "unsupported": 2,
+    "panic_sites": 15,
+    "panic_sites_decided": 7,
+    "declined": 23,
+    "cases_measured": 23,
+    "cases_setup": 2
+  },
+  "unsupported_kinds": {
+    "ResumedAfterDrop": [
+      "async_drop_state"
+    ]
+  },
+  "cases": {
+    "safe_code": {
+      "encountered": 10,
+      "decided": 10,
+      "proved": 10,
+      "counterexamples": 0,
+      "undecided": 0,
+      "unsupported": 0,
+      "panic_sites": 0,
+      "panic_sites_decided": 0,
+      "unsupported_kinds": []
+    },
+    "overflow_fail": {
+      "encountered": 1,
+      "decided": 1,
+      "proved": 0,
+      "counterexamples": 1,
+      "undecided": 0,
+      "unsupported": 0,
+      "panic_sites": 2,
+      "panic_sites_decided": 0,
+      "unsupported_kinds": []
+    },
+    "divzero_fail": {
+      "encountered": 2,
+      "decided": 2,
+      "proved": 0,
+      "counterexamples": 2,
+      "undecided": 0,
+      "unsupported": 0,
+      "panic_sites": 2,
+      "panic_sites_decided": 0,
+      "unsupported_kinds": []
+    },
+    "branch_merge": {
+      "encountered": 1,
+      "decided": 1,
+      "proved": 0,
+      "counterexamples": 1,
+      "undecided": 0,
+      "unsupported": 0,
+      "panic_sites": 0,
+      "panic_sites_decided": 0,
+      "unsupported_kinds": []
+    },
+    "guarded": {
+      "encountered": 6,
+      "decided": 6,
+      "proved": 5,
+      "counterexamples": 1,
+      "undecided": 0,
+      "unsupported": 0,
+      "panic_sites": 0,
+      "panic_sites_decided": 0,
+      "unsupported_kinds": []
+    },
+    "workspace_multi": {
+      "encountered": 5,
+      "decided": 5,
+      "proved": 2,
+      "counterexamples": 3,
+      "undecided": 0,
+      "unsupported": 0,
+      "panic_sites": 4,
+      "panic_sites_decided": 0,
+      "unsupported_kinds": []
+    },
+    "loop_fail": {
+      "encountered": 3,
+      "decided": 3,
+      "proved": 2,
+      "counterexamples": 1,
+      "undecided": 0,
+      "unsupported": 0,
+      "panic_sites": 0,
+      "panic_sites_decided": 0,
+      "unsupported_kinds": []
+    },
+    "nested_loop": {
+      "encountered": 4,
+      "decided": 4,
+      "proved": 3,
+      "counterexamples": 1,
+      "undecided": 0,
+      "unsupported": 0,
+      "panic_sites": 0,
+      "panic_sites_decided": 0,
+      "unsupported_kinds": []
+    },
+    "shift_amount": {
+      "encountered": 3,
+      "decided": 3,
+      "proved": 2,
+      "counterexamples": 1,
+      "undecided": 0,
+      "unsupported": 0,
+      "panic_sites": 0,
+      "panic_sites_decided": 0,
+      "unsupported_kinds": []
+    },
+    "stable_pin": {
+      "encountered": 2,
+      "decided": 2,
+      "proved": 1,
+      "counterexamples": 1,
+      "undecided": 0,
+      "unsupported": 0,
+      "panic_sites": 0,
+      "panic_sites_decided": 0,
+      "unsupported_kinds": []
+    },
+    "fold_fail": {
+      "encountered": 7,
+      "decided": 7,
+      "proved": 1,
+      "counterexamples": 6,
+      "undecided": 0,
+      "unsupported": 0,
+      "panic_sites": 0,
+      "panic_sites_decided": 0,
+      "unsupported_kinds": []
+    },
+    "undecided": {
+      "encountered": 2,
+      "decided": 1,
+      "proved": 1,
+      "counterexamples": 0,
+      "undecided": 1,
+      "unsupported": 0,
+      "panic_sites": 0,
+      "panic_sites_decided": 0,
+      "unsupported_kinds": []
+    },
+    "unnamed_write": {
+      "encountered": 4,
+      "decided": 3,
+      "proved": 3,
+      "counterexamples": 0,
+      "undecided": 1,
+      "unsupported": 0,
+      "panic_sites": 0,
+      "panic_sites_decided": 0,
+      "unsupported_kinds": []
+    },
+    "statement_writes": {
+      "encountered": 12,
+      "decided": 8,
+      "proved": 8,
+      "counterexamples": 0,
+      "undecided": 4,
+      "unsupported": 0,
+      "panic_sites": 0,
+      "panic_sites_decided": 0,
+      "unsupported_kinds": []
+    },
+    "panic_sites": {
+      "encountered": 2,
+      "decided": 2,
+      "proved": 2,
+      "counterexamples": 0,
+      "undecided": 0,
+      "unsupported": 0,
+      "panic_sites": 6,
+      "panic_sites_decided": 0,
+      "unsupported_kinds": []
+    },
+    "panic_decided": {
+      "encountered": 0,
+      "decided": 0,
+      "proved": 0,
+      "counterexamples": 0,
+      "undecided": 0,
+      "unsupported": 0,
+      "panic_sites": 0,
+      "panic_sites_decided": 7,
+      "unsupported_kinds": []
+    },
+    "coroutine_state": {
+      "encountered": 2,
+      "decided": 2,
+      "proved": 2,
+      "counterexamples": 0,
+      "undecided": 0,
+      "unsupported": 0,
+      "panic_sites": 0,
+      "panic_sites_decided": 0,
+      "unsupported_kinds": []
+    },
+    "async_drop_state": {
+      "encountered": 5,
+      "decided": 3,
+      "proved": 3,
+      "counterexamples": 0,
+      "undecided": 0,
+      "unsupported": 2,
+      "panic_sites": 0,
+      "panic_sites_decided": 0,
+      "unsupported_kinds": [
+        "ResumedAfterDrop"
+      ]
+    },
+    "potency_probe": {
+      "encountered": 13,
+      "decided": 13,
+      "proved": 13,
+      "counterexamples": 0,
+      "undecided": 0,
+      "unsupported": 0,
+      "panic_sites": 0,
+      "panic_sites_decided": 0,
+      "unsupported_kinds": []
+    },
+    "precond_probe": {
+      "encountered": 5,
+      "decided": 5,
+      "proved": 3,
+      "counterexamples": 2,
+      "undecided": 0,
+      "unsupported": 0,
+      "panic_sites": 1,
+      "panic_sites_decided": 0,
+      "unsupported_kinds": []
+    },
+    "helper_summary": {
+      "encountered": 8,
+      "decided": 8,
+      "proved": 5,
+      "counterexamples": 3,
+      "undecided": 0,
+      "unsupported": 0,
+      "panic_sites": 0,
+      "panic_sites_decided": 0,
+      "unsupported_kinds": []
+    },
+    "test-crates/buggy-project": {
+      "encountered": 4,
+      "decided": 4,
+      "proved": 1,
+      "counterexamples": 3,
+      "undecided": 0,
+      "unsupported": 0,
+      "panic_sites": 0,
+      "panic_sites_decided": 0,
+      "unsupported_kinds": []
+    },
+    "test-crates/safe-project": {
+      "encountered": 4,
+      "decided": 4,
+      "proved": 4,
+      "counterexamples": 0,
+      "undecided": 0,
+      "unsupported": 0,
+      "panic_sites": 0,
+      "panic_sites_decided": 0,
+      "unsupported_kinds": []
+    }
+  }
+}

@@ -1,0 +1,281 @@
+{
+  "schema_version": 1,
+  "crate_name": "smokeshift_cli",
+  "completed": true,
+  "coverage": {
+    "functions": 23,
+    "reachable_assertions": 0,
+    "supported_assertions": 0,
+    "unsupported_assertions": 0,
+    "unsupported_kinds": [],
+    "passed": 0,
+    "failed": 0,
+    "warnings": 0,
+    "without_verdict": 0,
+    "panic_sites": 1,
+    "panic_sites_decided": 0,
+    "obligation_solver_calls": 0,
+    "solver_elapsed_ms": 0
+  },
+  "findings": [
+    {
+      "crate": "smokeshift_cli",
+      "function": "main",
+      "block": "bb54",
+      "status": "WARN",
+      "kind": "unmodelled-panic",
+      "file": "src/main.rs",
+      "line": 22,
+      "details": "Unmodelled panic site: the call to `std::result::Result::<std::string::String, serde_json::Error>::unwrap` panics when it has no value to return, and its body is not read by this analysis, so whether this site can panic was not decided."
+    }
+  ],
+  "compiler": {
+    "arguments": [
+      "--crate-name",
+      "smokeshift_cli",
+      "--edition=2024",
+      "src\\main.rs",
+      "--error-format=json",
+      "--json=diagnostic-rendered-ansi,artifacts,future-incompat",
+      "--crate-type",
+      "bin",
+      "--emit=dep-info,metadata",
+      "-C",
+      "embed-bitcode=no",
+      "-C",
+      "debuginfo=2",
+      "--check-cfg",
+      "cfg(docsrs,test)",
+      "--check-cfg",
+      "cfg(feature, values())",
+      "-C",
+      "metadata=4c4b8876cba664e3",
+      "-C",
+      "extra-filename=-5d419bc5832ad1b8",
+      "--out-dir",
+      "C:\\Users\\lukas\\DOWNLO~1\\SYSTEM~2\\AeroDose\\target\\keller\\debug\\deps",
+      "-C",
+      "incremental=C:\\Users\\lukas\\DOWNLO~1\\SYSTEM~2\\AeroDose\\target\\keller\\debug\\incremental",
+      "-L",
+      "dependency=C:\\Users\\lukas\\DOWNLO~1\\SYSTEM~2\\AeroDose\\target\\keller\\debug\\deps",
+      "--extern",
+      "chrono=C:\\Users\\lukas\\DOWNLO~1\\SYSTEM~2\\AeroDose\\target\\keller\\debug\\deps\\libchrono-5f12cc994838fb6a.rmeta",
+      "--extern",
+      "clap=C:\\Users\\lukas\\DOWNLO~1\\SYSTEM~2\\AeroDose\\target\\keller\\debug\\deps\\libclap-ac31301fb389cdf2.rmeta",
+      "--extern",
+      "ed25519_dalek=C:\\Users\\lukas\\DOWNLO~1\\SYSTEM~2\\AeroDose\\target\\keller\\debug\\deps\\libed25519_dalek-0fb1b593a36a32b7.rmeta",
+      "--extern",
+      "hex=C:\\Users\\lukas\\DOWNLO~1\\SYSTEM~2\\AeroDose\\target\\keller\\debug\\deps\\libhex-833773e4cbc67c7b.rmeta",
+      "--extern",
+      "rand=C:\\Users\\lukas\\DOWNLO~1\\SYSTEM~2\\AeroDose\\target\\keller\\debug\\deps\\librand-925f5cbfffc65555.rmeta",
+      "--extern",
+      "serde=C:\\Users\\lukas\\DOWNLO~1\\SYSTEM~2\\AeroDose\\target\\keller\\debug\\deps\\libserde-f9f62e405b86ccbc.rmeta",
+      "--extern",
+      "serde_json=C:\\Users\\lukas\\DOWNLO~1\\SYSTEM~2\\AeroDose\\target\\keller\\debug\\deps\\libserde_json-5716d889003c1951.rmeta",
+      "--extern",
+      "sha2=C:\\Users\\lukas\\DOWNLO~1\\SYSTEM~2\\AeroDose\\target\\keller\\debug\\deps\\libsha2-8aa0c43af9ad0aaf.rmeta",
+      "--extern",
+      "smokeshift=C:\\Users\\lukas\\DOWNLO~1\\SYSTEM~2\\AeroDose\\target\\keller\\debug\\deps\\libsmokeshift-841fa910197a1ccc.rmeta",
+      "--extern",
+      "thiserror=C:\\Users\\lukas\\DOWNLO~1\\SYSTEM~2\\AeroDose\\target\\keller\\debug\\deps\\libthiserror-910fe3682e4a3bcc.rmeta",
+      "--extern",
+      "uuid=C:\\Users\\lukas\\DOWNLO~1\\SYSTEM~2\\AeroDose\\target\\keller\\debug\\deps\\libuuid-30c5e20935755ea2.rmeta",
+      "-L",
+      "native=C:\\z3\\bin",
+      "--sysroot",
+      "C:\\Users\\lukas\\.rustup\\toolchains\\nightly-2026-07-24-x86_64-pc-windows-msvc"
+    ],
+    "rustc": "C:\\Users\\lukas\\.rustup\\toolchains\\nightly-2026-07-24-x86_64-pc-windows-msvc\\bin\\rustc.exe",
+    "version_verbose": "rustc 1.99.0-nightly (89c61a754 2026-07-23)\nbinary: rustc\ncommit-hash: 89c61a7545da48b06116675b888398d02a4064c7\ncommit-date: 2026-07-23\nhost: x86_64-pc-windows-msvc\nrelease: 1.99.0-nightly\nLLVM version: 22.1.8"
+  },
+  "evidence": [
+    {
+      "function": "<Cli as clap::CommandFactory>::command",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<Cli as clap::CommandFactory>::command_for_update",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<Cli as clap::FromArgMatches>::from_arg_matches",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<Cli as clap::FromArgMatches>::from_arg_matches_mut",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<Cli as clap::FromArgMatches>::from_arg_matches_mut::{closure#0}",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<Cli as clap::FromArgMatches>::from_arg_matches_mut::{closure#1}",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<Cli as clap::FromArgMatches>::from_arg_matches_mut::{closure#2}",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<Cli as clap::FromArgMatches>::update_from_arg_matches",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<Cli as clap::FromArgMatches>::update_from_arg_matches_mut",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<Cli as clap::FromArgMatches>::update_from_arg_matches_mut::{closure#0}",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<Cli as clap::FromArgMatches>::update_from_arg_matches_mut::{closure#1}",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<Cli as clap::FromArgMatches>::update_from_arg_matches_mut::{closure#2}",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<Cli as clap::Args>::group_id",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<Cli as clap::Args>::augment_args",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<Cli as clap::Args>::augment_args::{closure#0}",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<Cli as clap::Args>::augment_args::{closure#1}",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<Cli as clap::Args>::augment_args::{closure#2}",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<Cli as clap::Args>::augment_args_for_update",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<Cli as clap::Args>::augment_args_for_update::{closure#0}",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<Cli as clap::Args>::augment_args_for_update::{closure#1}",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<Cli as clap::Args>::augment_args_for_update::{closure#2}",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<Cli as std::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "main",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "cycles may use loop widening",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    }
+  ],
+  "obligations": []
+}

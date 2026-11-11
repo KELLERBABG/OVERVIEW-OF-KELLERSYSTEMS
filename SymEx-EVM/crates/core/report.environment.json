@@ -1,0 +1,17 @@
+{
+  "analysis_profile": "debug (dev profile, rustc overflow/bounds assertions enabled)",
+  "compiler_identity_source": "actual worker rustc path and -vV; full arguments in report.run.json coverage.compilers",
+  "env_source": "src/host_env.rs (discovered paths, not worker compiler identity)",
+  "host": "x86_64-pc-windows-msvc",
+  "identity_note": "rustc, host, rustlib and its PATH entry come from actual worker receipts. z3_bin is the discovered replay executable; the solver this process loaded is recorded under provenance.solver, its version asked of the loaded library itself, and provenance.config_hash digests the settings the verdict was produced under.",
+  "path_add": "C:\\Users\\lukas\\.rustup\\toolchains\\nightly-2026-07-24-x86_64-pc-windows-msvc\\bin\\..\\lib\\rustlib\\x86_64-pc-windows-msvc\\lib;C:\\Users\\lukas\\.rustup\\toolchains\\stable-x86_64-pc-windows-msvc\\bin",
+  "pointer_width": 64,
+  "rustc": "C:\\Users\\lukas\\.rustup\\toolchains\\nightly-2026-07-24-x86_64-pc-windows-msvc\\bin\\rustc.exe",
+  "rustc_version_verbose": "rustc 1.99.0-nightly (89c61a754 2026-07-23)\nbinary: rustc\ncommit-hash: 89c61a7545da48b06116675b888398d02a4064c7\ncommit-date: 2026-07-23\nhost: x86_64-pc-windows-msvc\nrelease: 1.99.0-nightly\nLLVM version: 22.1.8",
+  "rustlib": "C:\\Users\\lukas\\.rustup\\toolchains\\nightly-2026-07-24-x86_64-pc-windows-msvc\\bin\\..\\lib\\rustlib\\x86_64-pc-windows-msvc\\lib",
+  "schema_version": 1,
+  "tool_version": "1.0.0",
+  "z3_bin": "C:\\Users\\lukas\\Downloads\\SYSTEMS & CREATIONS\\Formal Verification Platform\\.z3\\current\\bin\\z3.exe",
+  "z3_source": "PATH",
+  "z3_version": "Z3 version 4.16.0 - 64 bit"
+}

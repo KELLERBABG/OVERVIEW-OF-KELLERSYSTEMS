@@ -1,0 +1,82 @@
+{
+  "slug": "einkauf-021",
+  "source": "generated",
+  "domain": "Einkauf und Lieferantenrahmenvertrag, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Bei Überschreitung des vereinbarten Liefertermins wird eine Pauschale von 2 Prozent",
+      "expectedType": "penalty",
+      "note": "Pauschale als Prozentwert ohne das Registerwort Vertragsstrafe"
+    },
+    {
+      "marker": "Einstandspflicht des Auftragnehmers für mittelbare Schäden wird nicht übernommen",
+      "expectedType": "liability",
+      "note": "Freizeichnung ohne das Wort Haftung"
+    },
+    {
+      "marker": "übernimmt der Besteller keine Verantwortung",
+      "expectedType": "vicarious_agents",
+      "note": "Freizeichnung fuer Nachunternehmer"
+    },
+    {
+      "marker": "ist berechtigt, für Teilleistungen Nachunternehmen einzusetzen",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "Unkontrollierter Unterauftragnehmereinsatz"
+    },
+    {
+      "marker": "kann der Auftragnehmer die Diagnosesoftware abschalten",
+      "expectedType": "maintenance_conditional_shutdown",
+      "note": "Abschaltung an fehlenden Wartungsvertrag gekoppelt"
+    },
+    {
+      "marker": "kann die Leistung ohne Vorwarnung aussetzen",
+      "expectedType": "service_suspension",
+      "note": "Leistungssperre ohne Vorwarnung"
+    },
+    {
+      "marker": "setzt sich jeweils um vierundzwanzig Monate fort",
+      "expectedType": "auto_renewal",
+      "note": "Automatische Verlaengerung ohne die Registerfloskel"
+    },
+    {
+      "marker": "Datenbestand wird ausschließlich im herstellereigenen Binärformat bereitgestellt",
+      "expectedType": "data_lockin",
+      "note": "Lock-in durch Proprietaerformat"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Auftragnehmer stellt die Prüfprotokolle in Textform bereit",
+      "note": "Bereitstellung in Textform"
+    },
+    {
+      "marker": "Der Einsatz von Nachunternehmen wird dem Besteller spätestens vierzehn Tage vorher angezeigt",
+      "note": "Anzeigepflicht statt unkontrolliertem Einsatz"
+    },
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Zulaessige Haftungsklausel"
+    },
+    {
+      "marker": "Prüfungen werden mit angemessener Vorlaufzeit angekündigt",
+      "note": "Ankuendigungspflicht fuer Pruefungen"
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag einvernehmlich beenden",
+      "note": "Einvernehmliche Beendigung"
+    },
+    {
+      "marker": "Der Besteller erhält seine Bestandsdaten bei Vertragsende unentgeltlich in einem gängigen Format",
+      "note": "Kostenfreier Datenexport"
+    },
+    {
+      "marker": "Rechnungen sind innerhalb von dreißig Tagen ohne Abzug zu begleichen",
+      "note": "Marktueblicher Zahlungstermin"
+    },
+    {
+      "marker": "Es gilt das Recht der Bundesrepublik Deutschland",
+      "note": "Neutrale Rechtswahl"
+    }
+  ],
+  "uncovered": []
+}

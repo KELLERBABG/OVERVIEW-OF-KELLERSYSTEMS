@@ -1,0 +1,78 @@
+{
+  "slug": "agb-18-maschinenbau-lieferbedingungen",
+  "domain": "B2B Liefer- und Montagebedingungen für Industriemaschinen",
+  "source": "Blind Real-AGB Benchmark 2026 (vor Engine-Lauf gelabelt)",
+  "traps": [
+    {
+      "marker": "sämtliche vorvertraglichen Zusagen, technischen Leistungsbeschreibungen in Angeboten sowie mündlichen",
+      "expectedType": "entire_agreement",
+      "statutoryBasis": "§ 305b BGB / § 307 Abs. 1 BGB",
+      "note": "Vollständigkeitsklausel (Entire Agreement), die vorvertragliche Zusagen und mündliche/schriftliche Nebenabreden pauschal für ungültig erklärt, verstößt gegen den Vorrang der Individualabrede (§ 305b BGB)."
+    },
+    {
+      "marker": "sowie auch die auf den Gewinn oder das Einkommen des Lieferanten entfallenden Ertragsteuern",
+      "expectedType": "tax_indemnity_shift",
+      "statutoryBasis": "§ 307 Abs. 1 und 2 BGB",
+      "note": "Pauschale Abwälzung sämtlicher nach Vertragsschluss eingeführter Steuern einschließlich der eigenen Einkommen- und Körperschaftsteuer des Lieferanten auf den Kunden ist unangemessen."
+    },
+    {
+      "marker": "bereits in dem Zeitpunkt auf den Besteller über, in dem die Einzelteile in der Fertigungshalle",
+      "expectedType": "burden_of_proof",
+      "statutoryBasis": "§ 446 BGB / § 644 BGB / § 309 Nr. 12 BGB",
+      "note": "Vorverlagerung der Gefahrtragung bereits in die Fertigungshalle des Lieferanten sowie Beweislastabwälzung für Transportverschulden eigener Werkmonteure."
+    },
+    {
+      "marker": "gilt spätestens 48 Stunden nach Anlieferung auf dem Werksgelände des Bestellers – auch ohne Durchführung",
+      "expectedType": "deemed_acceptance",
+      "statutoryBasis": "§ 308 Nr. 5 BGB / § 640 BGB / § 307 BGB",
+      "note": "Abnahmefiktion für komplexe Industriemaschinen binnen 48 Stunden nach Anlieferung ohne Probebetrieb und unter Zwang zu einem Sachverständigengutachten ist unwirksam."
+    },
+    {
+      "marker": "ein Anspruch des Bestellers auf Freigabe von Sicherheiten bei Übersicherung ist unabhängig von der Deckungshöhe ausdrücklich ausgeschlossen",
+      "expectedType": "extended_retention_of_title",
+      "statutoryBasis": "§ 307 Abs. 1 BGB / § 138 BGB",
+      "note": "Konzern-Eigentumsvorbehalt (§ 449 Abs. 3 BGB nichtig) kombiniert mit dem ausdrücklichen Ausschluss jeglicher Sicherheitenfreigabe bei Übersicherung."
+    },
+    {
+      "marker": "als Schiedsgutachter endgültig und für beide Parteien rechtsverbindlich unter vollständigem Ausschluss des ordentlichen Rechtswegs",
+      "expectedType": "mandatory_expert_determination",
+      "statutoryBasis": "§ 307 Abs. 1 BGB / § 319 BGB",
+      "note": "Verbindliches Schiedsgutachten durch einen allein vom Lieferanten benannten Gutachter unter vollständigem Ausschluss des ordentlichen Rechtswegs."
+    },
+    {
+      "marker": "einschließlich solcher wegen arglistig verschwiegener Mängel oder vorsätzlicher Pflichtverletzung – verjähren einheitlich in drei Monaten",
+      "expectedType": "statute_of_limitations",
+      "statutoryBasis": "§ 202 Abs. 1 BGB / § 438 Abs. 3 BGB / § 307 BGB",
+      "note": "Verkürzung der Verjährung auf drei Monate einschließlich arglistig verschwiegener Mängel und Vorsatz verstößt zwingend gegen § 202 Abs. 1 BGB."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Dem Besteller steht das Recht zur Aufrechnung oder Zurückbehaltung zu, soweit seine Gegenansprüche",
+      "note": "Gesetzeskonforme Zulassung von Aufrechnung und Zurückbehaltung bei unbestrittenen, rechtskräftigen oder entscheidungsreifen Ansprüchen."
+    },
+    {
+      "marker": "leistet der Lieferant nach eigener Wahl zunächst Nacherfüllung durch kostenfreie Nachbesserung",
+      "note": "Dem Werk- und Liefervertragsrecht entsprechendes Wahlrecht des Unternehmers bei der Nacherfüllung (§ 635 Abs. 1 BGB)."
+    },
+    {
+      "marker": "haftet nach den gesetzlichen Bestimmungen uneingeschränkt für Schäden aus der Verletzung des Lebens",
+      "note": "Korrekte unbeschränkte Haftung für Personenschäden sowie Vorsatz und grobe Fahrlässigkeit."
+    },
+    {
+      "marker": "bleibt die zwingende gesetzliche Haftung nach dem Produkthaftungsgesetz (ProdHaftG) sowie bei Übernahme",
+      "note": "Gesetzeskonforme Klarstellung zur Haftung nach ProdHaftG und bei Beschaffenheitsgarantien."
+    },
+    {
+      "marker": "An allen Abbildungen, Konstruktionszeichnungen, Schaltplänen und Berechnungen behalten sich beide",
+      "note": "Ausgewogener beiderseitiger Schutz von Eigentums- und Urheberrechten an technischen Unterlagen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "sobald der Besteller Verschleißteile, Schmierstoffe oder Reinigungsmittel verwendet, die nicht direkt vom Lieferanten",
+      "statutoryBasis": "§ 307 Abs. 2 Nr. 1 BGB / Art. 101 AEUV",
+      "note": "Kopplungsklausel (Erlöschen jeglicher Mängelgewährleistung bei Verwendung gleichwertiger Dritt-Betriebsmittel ohne Kausalität zum Mangel) benachteiligt den Besteller unangemessen."
+    }
+  ]
+}

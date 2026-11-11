@@ -1,0 +1,82 @@
+{
+  "slug": "agb-13-personalvermittlung-headhunter",
+  "domain": "Personalberatung & Executive-Search AGB",
+  "source": "Blind Real-AGB Benchmark 2026 (vor Engine-Lauf gelabelt)",
+  "traps": [
+    {
+      "marker": "erhält der Vermittler für sämtliche Direktgeschäfte, Eigenrekrutierungen oder",
+      "expectedType": "agency_commission_exclusion",
+      "statutoryBasis": "§ 87 Abs. 1 und 2 HGB, § 307 Abs. 2 Nr. 1 BGB",
+      "note": "Unangemessener Ausschluss sämtlicher Bezirks- und Direktgeschäftsprovisionen trotz unmittelbarer Ausnutzung der vom Vermittler geschaffenen Kontakte."
+    },
+    {
+      "marker": "ist jeglicher Ausgleichsanspruch des Vermittlers für den aufgebauten Kunden- und",
+      "expectedType": "agency_goodwill_waiver",
+      "statutoryBasis": "§ 89b Abs. 4 S. 1 HGB, § 307 Abs. 1 BGB",
+      "note": "Zwingend unwirksamer Vorab-Ausschluss des gesetzlichen Ausgleichsanspruchs nach § 89b Abs. 4 HGB."
+    },
+    {
+      "marker": "während der Zusammenarbeit sowie für einen Zeitraum von vier Jahren nach deren",
+      "expectedType": "non_solicitation",
+      "statutoryBasis": "§ 75f HGB, § 307 Abs. 1 BGB, Art. 12 GG",
+      "note": "Nachvertragliches vierjähriges Einstellungs- und Abwerbeverbot einschließlich Initiativbewerbungen entgegen § 75f HGB und § 307 BGB."
+    },
+    {
+      "marker": "unter Ausschluss des Fortsetzungszusammenhangs eine sofort fällige Vertragsstrafe in",
+      "expectedType": "penalty",
+      "statutoryBasis": "§ 307 Abs. 1 BGB, § 309 Nr. 5 BGB, § 138 BGB",
+      "note": "Maßlos überhöhte Vertragsstrafe von 250.000 Euro je Einzelfall unter Ausschluss des Fortsetzungszusammenhangs und des Gegenbeweises."
+    },
+    {
+      "marker": "während der Vertragslaufzeit sowie für zwei Jahre nach Vertragsende untersagt, für",
+      "expectedType": "non_compete",
+      "statutoryBasis": "§ 307 Abs. 1 BGB, § 138 BGB",
+      "note": "Knebelndes Wettbewerbs- und Eigenrekrutierungsverbot, das dem Auftraggeber sogar eigene Stellenanzeigen und eine eigene Personalabteilung für zwei Jahre nach Vertragsende untersagt."
+    },
+    {
+      "marker": "Während die Personalberatung berechtigt ist, sämtliche ihr im Rahmen des",
+      "expectedType": "asymmetric_confidentiality",
+      "statutoryBasis": "§ 307 Abs. 1 BGB",
+      "note": "Unangemessene einseitige Geheimhaltungsverpflichtung zulasten des Kunden bei gleichzeitiger Freigabe sensibler Betriebsinterna für die Agentur."
+    },
+    {
+      "marker": "gelten nach Beendigung dieses Vertrages für einen Zeitraum von 30 Jahren",
+      "expectedType": "excessive_survival",
+      "statutoryBasis": "§ 307 Abs. 1 BGB, § 138 BGB",
+      "note": "Exzessive 30-jährige nachvertragliche Fortwirkung von Geheimhaltungs- und Provisionspflichten ohne Kausalitätserfordernis."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die endgültige Auswahlentscheidung sowie der Abschluss des Arbeits- oder",
+      "note": "Klare und sachgerechte Abgrenzung der Verantwortlichkeiten bei der Personalvermittlung."
+    },
+    {
+      "marker": "Das Vermittlungshonorar beträgt bei erfolgreicher Einstellung eines präsentierten",
+      "note": "Branchenübliche erfolgsabhängige Honorarregelung im Executive Search (§ 652 BGB)."
+    },
+    {
+      "marker": "Reisekosten von Kandidaten zur Wahrnehmung persönlicher Vorstellungsgespräche beim",
+      "note": "Faire und transparente Auslagenregelung."
+    },
+    {
+      "marker": "Die Verarbeitung personenbezogener Bewerberdaten erfolgt unter strikter Wahrung von",
+      "note": "Gesetzeskonformer Hinweis zum Beschäftigten- und Bewerberdatenschutz."
+    },
+    {
+      "marker": "Die Personalberatung haftet unbeschränkt bei Vorsatz und grober Fahrlässigkeit sowie",
+      "note": "AGB-konforme Haftungsregelung."
+    },
+    {
+      "marker": "Für sämtliche Streitigkeiten aus oder im Zusammenhang mit diesem Vertrag ist, sofern",
+      "note": "Zulässige Gerichtsstandsvereinbarung unter Kaufleuten nach § 38 ZPO."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "schuldet der Auftraggeber der Personalberatung dennoch für jedes einzelne unverlangt",
+      "statutoryBasis": "§ 652 Abs. 1 BGB, § 305c Abs. 1 BGB, § 307 Abs. 2 Nr. 1 BGB",
+      "note": "Mit dem gesetzlichen Leitbild des Maklervertrags (§ 652 BGB: Erfolgsprinzip) unvereinbare und überraschende erfolgsunabhängige Gebühr von 4.800 Euro je zugesandtem Bewerberprofil."
+    }
+  ]
+}

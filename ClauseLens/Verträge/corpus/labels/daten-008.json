@@ -1,0 +1,87 @@
+{
+  "slug": "daten-008",
+  "source": "generated",
+  "domain": "Forschungskooperation",
+  "traps": [
+    {
+      "marker": "läuft während der Sperre unverändert weiter",
+      "expectedType": "service_suspension",
+      "note": "Paraphrase/Umstellung: nennt 'läuft während der Sperre unverändert weiter' statt der Registerwendung."
+    },
+    {
+      "marker": "erlischt der Vertrag ohne dass es einer Kündigung bedarf",
+      "expectedType": "insolvency_termination",
+      "note": "Paraphrase/Umstellung: nennt 'erlischt der Vertrag ohne dass es einer Kündi' statt der Registerwendung."
+    },
+    {
+      "marker": "The customer shall bear any taxes, interest or penalties retrospectively assessed",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Paraphrase/Umstellung: nennt 'The customer shall bear any taxes, interest o' statt der Registerwendung."
+    },
+    {
+      "marker": "The provider assumes no confidentiality obligation with respect to benchmarking data",
+      "expectedType": "asymmetric_confidentiality",
+      "note": "Paraphrase/Umstellung: nennt 'The provider assumes no confidentiality oblig' statt der Registerwendung."
+    },
+    {
+      "marker": "Es wird keine Zusage hinsichtlich der Eignung für einen bestimmten Einsatzzweck",
+      "expectedType": "as_is_software_disclaimer",
+      "note": "Paraphrase/Umstellung: nennt 'Es wird keine Zusage hinsichtlich der Eignung' statt der Registerwendung."
+    },
+    {
+      "marker": "Zusagen von Vertriebsmitarbeitern entfalten keine rechtliche Wirkung",
+      "expectedType": "entire_agreement",
+      "note": "Paraphrase/Umstellung: nennt 'Zusagen von Vertriebsmitarbeitern entfalten k' statt der Registerwendung."
+    },
+    {
+      "marker": "nennt den Namen des Kunden in Pressemitteilungen und auf Messeständen",
+      "expectedType": "marketing_reference",
+      "note": "Paraphrase/Umstellung: nennt 'nennt den Namen des Kunden in Pressemitteilun' statt der Registerwendung."
+    },
+    {
+      "marker": "überträgt alle Rechte an Verbesserungsvorschlägen unentgeltlich auf die Gesellschaft",
+      "expectedType": "feedback_ip_grab",
+      "note": "Paraphrase/Umstellung: nennt 'überträgt alle Rechte an Verbesserungsvorschl' statt der Registerwendung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "einen festen Ansprechpartner für alle Fragen der Vertragsabwicklung",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "löscht nach Beendigung der Datenverarbeitung alle personenbezogenen Daten",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "in maschinenlesbarer Form ohne Zusatzkosten",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "vollständigen Export seiner Daten in einem gängigen maschinenlesbaren Format",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "führen Gespräche auf Leitungsebene.",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Protokolle stehen beiden Parteien zur Einsicht offen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "nur nach vorheriger Anzeige an den Auftraggeber einsetzen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "können in Textform, insbesondere per E-Mail, vereinbart werden",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Mindestabnahme von fünfhundert Datensätzen je Kalendermonat",
+      "note": "Täuschende Klausel ohne passenden Detektortyp."
+    }
+  ]
+}

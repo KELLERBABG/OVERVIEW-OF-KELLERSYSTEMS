@@ -1,0 +1,87 @@
+{
+  "slug": "daten-015",
+  "source": "generated",
+  "domain": "Coproduktion",
+  "traps": [
+    {
+      "marker": "Nachweis, dass der Schaden nicht auf einer Pflichtverletzung beruht, trägt der Kunde",
+      "expectedType": "burden_of_proof",
+      "note": "Paraphrase/Umstellung: nennt 'Nachweis, dass der Schaden nicht auf einer Pf' statt der Registerwendung."
+    },
+    {
+      "marker": "published at https://finance.example.com/terms and are amended from time to time",
+      "expectedType": "dynamic_url_referral",
+      "note": "Paraphrase/Umstellung: nennt 'published at https://finance.example.com/term' statt der Registerwendung."
+    },
+    {
+      "marker": "shall not be responsible for the acts or omissions of subcontractors",
+      "expectedType": "vicarious_agents",
+      "note": "Paraphrase/Umstellung: nennt 'shall not be responsible for the acts or omis' statt der Registerwendung."
+    },
+    {
+      "marker": "die Geschäftsräume des Kunden ohne vorherige Ankündigung zu prüfen",
+      "expectedType": "unreasonable_audit",
+      "note": "Paraphrase/Umstellung: nennt 'die Geschäftsräume des Kunden ohne vorherige ' statt der Registerwendung."
+    },
+    {
+      "marker": "Der Export der Bestandsdaten ist kostenpflichtig",
+      "expectedType": "data_lockin",
+      "note": "Paraphrase/Umstellung: nennt 'Der Export der Bestandsdaten ist kostenpflich' statt der Registerwendung."
+    },
+    {
+      "marker": "hat die Gesellschaft auf erstes Anfordern hin klaglos zu stellen",
+      "expectedType": "third_party_indemnity",
+      "note": "Paraphrase/Umstellung: nennt 'hat die Gesellschaft auf erstes Anfordern hin' statt der Registerwendung."
+    },
+    {
+      "marker": "die Rechte und Pflichten ohne Zustimmung des Kunden auf einen Dritten übertragen",
+      "expectedType": "asymmetric_termination",
+      "note": "Paraphrase/Umstellung: nennt 'die Rechte und Pflichten ohne Zustimmung des ' statt der Registerwendung."
+    },
+    {
+      "marker": "Jede Zession der Vergütungsansprüche bedarf der vorherigen Zustimmung",
+      "expectedType": "assignment_restriction",
+      "note": "Paraphrase/Umstellung: nennt 'Jede Zession der Vergütungsansprüche bedarf d' statt der Registerwendung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Protokolle stehen beiden Parteien zur Einsicht offen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "nur nach vorheriger Anzeige an den Auftraggeber einsetzen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "können in Textform, insbesondere per E-Mail, vereinbart werden",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "ohne Angabe von Gründen zum Monatsende kündigen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "einfaches, nicht ausschließliches Nutzungsrecht für den vereinbarten Zweck",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "auf den in der Präambel bezeichneten Zweck beschränkt",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "zum Quartalsende ordentlich kündigen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "dieselben Datenschutzstandards einhalten",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "eine Bearbeitungsgebühr von fünfzig Euro",
+      "note": "Täuschende Klausel ohne passenden Detektortyp."
+    }
+  ]
+}

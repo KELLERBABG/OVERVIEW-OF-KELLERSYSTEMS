@@ -1,0 +1,87 @@
+{
+  "slug": "finanz-031",
+  "source": "generated",
+  "domain": "Darlehen",
+  "traps": [
+    {
+      "marker": "Der Zustimmung des Kunden bedarf es nicht, wenn Unterauftragnehmer",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "Paraphrase/Umstellung: nennt 'Der Zustimmung des Kunden bedarf es nicht, we' statt der Registerwendung."
+    },
+    {
+      "marker": "Abweichende Nachweise des Kunden bleiben ohne Bedeutung",
+      "expectedType": "audit_log_manipulation",
+      "note": "Paraphrase/Umstellung: nennt 'Abweichende Nachweise des Kunden bleiben ohne' statt der Registerwendung."
+    },
+    {
+      "marker": "läuft während der Sperre unverändert weiter",
+      "expectedType": "service_suspension",
+      "note": "Paraphrase/Umstellung: nennt 'läuft während der Sperre unverändert weiter' statt der Registerwendung."
+    },
+    {
+      "marker": "erlischt der Vertrag ohne dass es einer Kündigung bedarf",
+      "expectedType": "insolvency_termination",
+      "note": "Paraphrase/Umstellung: nennt 'erlischt der Vertrag ohne dass es einer Kündi' statt der Registerwendung."
+    },
+    {
+      "marker": "Nachträgliche Abgabenbelastungen trägt der Kunde",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Paraphrase/Umstellung: nennt 'Nachträgliche Abgabenbelastungen trägt der Ku' statt der Registerwendung."
+    },
+    {
+      "marker": "Die Verschwiegenheitsverpflichtung obliegt ausschließlich dem Kunden",
+      "expectedType": "asymmetric_confidentiality",
+      "note": "Paraphrase/Umstellung: nennt 'Die Verschwiegenheitsverpflichtung obliegt au' statt der Registerwendung."
+    },
+    {
+      "marker": "Sämtliche Zusicherungen zur Funktionsfähigkeit sind nicht Bestandteil dieses Vertrages",
+      "expectedType": "as_is_software_disclaimer",
+      "note": "Paraphrase/Umstellung: nennt 'Sämtliche Zusicherungen zur Funktionsfähigkei' statt der Registerwendung."
+    },
+    {
+      "marker": "Sämtliche zuvor kommunizierten Kostenschätzungen treten außer Kraft",
+      "expectedType": "entire_agreement",
+      "note": "Paraphrase/Umstellung: nennt 'Sämtliche zuvor kommunizierten Kostenschätzun' statt der Registerwendung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Streitigkeiten vorrangig durch Mediation zu klären",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "gesetzliche Haftung für Vorsatz und grobe Fahrlässigkeit",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "mindestens vierzehn Tage vor dem Einsatz eines Unterauftragnehmers",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "vollständigen Export seiner Daten in einem gängigen maschinenlesbaren Format",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "zum Quartalsende ordentlich kündigen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "spätestens zehn Werktage vor einer beabsichtigten Kontoauflösung",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "einen festen Ansprechpartner für alle Fragen der Vertragsabwicklung",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "ohne Angabe von Gründen zum Monatsende kündigen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "eine Bearbeitungsgebühr von fünfzehn Euro zu erheben",
+      "note": "Täuschende Klausel ohne passenden Detektortyp."
+    }
+  ]
+}

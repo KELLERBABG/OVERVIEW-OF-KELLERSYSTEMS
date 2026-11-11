@@ -1,0 +1,69 @@
+{
+  "slug": "saas-023",
+  "source": "generated",
+  "domain": "Cloud Object Storage, Schweizer Recht",
+  "traps": [
+    {
+      "marker": "Für die Rückgabe der Daten fällt ein gesondertes Entgelt an.",
+      "expectedType": "data_lockin",
+      "note": "Paraphrase. Datenrueckgabe kostenpflichtig oder ausgeschlossen"
+    },
+    {
+      "marker": "Die Aufzeichnungen der Anbieterin gelten als maßgeblich; abweichende Belege des Kunden bleiben",
+      "expectedType": "audit_log_manipulation",
+      "note": "Paraphrase. Protokolle als Vollbeweis"
+    },
+    {
+      "marker": "Führt der Kunde den Gegenbeweis nicht, gilt die Leistung als erfüllt.",
+      "expectedType": "burden_of_proof",
+      "note": "Paraphrase. Beweislast zulasten des Kunden"
+    },
+    {
+      "marker": "Die Haftung für mittelbare Schäden und entgangenen Gewinn ist abbedungen.",
+      "expectedType": "liability",
+      "note": "Paraphrase. Haftungsausschluss"
+    },
+    {
+      "marker": "Rechtsstreitigkeiten sind ausschließlich vor den Gerichten am Sitz des Anbieters auszutragen.",
+      "expectedType": "jurisdiction",
+      "note": "Paraphrase. Gerichtsstand beim Anbieter"
+    },
+    {
+      "marker": "Das Abonnement setzt sich nach Ablauf der Festlaufzeit jeweils um zwölf Monate fort, sofern es keine",
+      "expectedType": "auto_renewal",
+      "note": "Paraphrase. Stillschweigende Verlaengerung"
+    },
+    {
+      "marker": "Das Kontrollrecht des Anbieters besteht jederzeit und ohne Anlass.",
+      "expectedType": "unreasonable_audit",
+      "note": "Paraphrase. Kontrollrecht ohne Anlass oder Kostenlast"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Rechnung ist innerhalb von 30 Tagen nach Zugang ohne Abzug fällig.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Der Kunde darf die Einhaltung der Lizenzbedingungen nach vorheriger Abstimmung mit einer",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Kosten einer berechtigten Prüfung trägt die Partei, die sie veranlasst hat.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Anbieterin stellt dem Kunden bei Vertragsende eine vollständige Kopie aller Kundendaten in",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Vertragsparteien behandeln die wechselseitig offengelegten Informationen vertraulich.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Anbieterin sichert eine Verfügbarkeit von 99,5 Prozent pro Kalendermonat zu.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    }
+  ],
+  "uncovered": []
+}

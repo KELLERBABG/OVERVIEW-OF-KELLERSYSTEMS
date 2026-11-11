@@ -1,0 +1,74 @@
+{
+  "slug": "immobilien-011",
+  "source": "generated",
+  "domain": "Immobilienkauf",
+  "traps": [
+    {
+      "marker": "Bei Rücktritt des Käufers wird eine Stornogebühr pauschal geschuldet",
+      "expectedType": "early_termination_charge",
+      "note": "GAP: Pauschale Stornogebuehr bei Ruecktritt."
+    },
+    {
+      "marker": "verwirkt der Käufer eine Pauschale von 1.000 EUR",
+      "expectedType": "penalty",
+      "note": "Vertragsstrafe ohne Nachweisvorbehalt."
+    },
+    {
+      "marker": "Unwirksame Bestimmungen werden durch eine interessengerechte Ersatzregelung ersetzt",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "Ersatzregelung statt gesetzlicher Regelung."
+    },
+    {
+      "marker": "Den Nachweis der vollständigen Zahlung hat der Käufer zu führen",
+      "expectedType": "burden_of_proof",
+      "note": "GAP: Beweislast beim Kaeufer."
+    },
+    {
+      "marker": "Der Rohbau wird wie gesehen überlassen",
+      "expectedType": "as_is_software_disclaimer",
+      "note": "GAP: Kauf im Ist-Zustand."
+    },
+    {
+      "marker": "Frühere Absprachen verlieren mit Unterzeichnung ihre Gültigkeit",
+      "expectedType": "entire_agreement",
+      "note": "Fruehere Absprachen entwertet."
+    },
+    {
+      "marker": "Die Haftung für leichte Fahrlässigkeit ist ausgeschlossen",
+      "expectedType": "liability",
+      "note": "Haftungsausschluss auch bei leichter Fahrlaessigkeit."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "Symmetrische Vertraulichkeit."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform zugelassen."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhalt."
+    },
+    {
+      "marker": "Zahlungen sind innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Zahlungsfrist."
+    },
+    {
+      "marker": "Änderungen des Leistungsumfangs bedürfen der Abstimmung beider Parteien",
+      "note": "Einvernehmliche Aenderung."
+    },
+    {
+      "marker": "Nach Vertragsende erhält der Kunde die Vertragsdaten kostenfrei in einem offenen Format",
+      "note": "Kostenfreier Datenexport."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Projektgrundstück Nordpark mit aufstehendem Rohbau",
+      "note": "Kein Detektor fuer Rueckabwicklungsmodalitaeten oder Notaranderkonto."
+    }
+  ]
+}

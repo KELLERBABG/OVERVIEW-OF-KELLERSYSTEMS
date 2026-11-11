@@ -1,0 +1,29 @@
+[package]
+name = "mesh-perf"
+version = "0.1.0"
+license = "proprietary"
+edition = "2021"
+publish = false
+
+[dependencies]
+mesh-graph-core = { path = "../graph-core" }
+mesh-reputation = { path = "../reputation" }
+mesh-credit = { path = "../credit" }
+mesh-smpc = { path = "../smpc" }
+mesh-zkp = { path = "../zkp" }
+
+[dev-dependencies]
+criterion = { version = "0.5", features = ["html_reports"] }
+rand = "0.8"
+
+[[bench]]
+name = "graph"
+harness = false
+
+[[bench]]
+name = "crypto"
+harness = false
+
+[[bench]]
+name = "credit"
+harness = false

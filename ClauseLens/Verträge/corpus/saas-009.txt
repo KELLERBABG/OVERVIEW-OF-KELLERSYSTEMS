@@ -1,0 +1,63 @@
+Colocation-Vertrag über Rechenzentrumsflächen
+
+zwischen Wiener Rechenzentrum GmbH, Gutheil Schoder Gasse 17, 1100 Wien (nachfolgend "Anbieterin")
+
+und Tiroler Handels GmbH, Museumstraße 38, 6020 Innsbruck (nachfolgend "Kunde")
+
+Präambel
+
+Die Anbieterin betreibt in Wien ein Rechenzentrum und stellt dem Kunden dort Colocation-Flächen nebst Stromversorgung bereit.
+
+§ 1 Gegenstand
+
+(1) Die Anbieterin stellt dem Kunden acht Höheneinheiten in Schrank 12 des Rechenzentrums Wien-Simmering bereit.
+
+(2) Die Stromversorgung erfolgt mit 2 x 16 Ampere.
+
+§ 2 Laufzeit
+
+(1) Die feste Laufzeit beträgt sechsunddreißig Monate, eine Kündigung ist ausgeschlossen.
+
+(2) Beiden Parteien steht das Recht zu, den Vertrag mit einer Frist von sechs Monaten zum Jahresende zu kündigen.
+
+§ 3 Höhere Gewalt
+
+(1) Höhere Gewalt befreit die Anbieterin von ihrer Leistungspflicht; der Kunde bleibt zur Zahlung verpflichtet.
+
+§ 4 Nachwirkung
+
+(1) Die Vertraulichkeitspflicht überdauert die Vertragsbeendigung ohne zeitliche Beschränkung.
+
+§ 5 Aufrechnung
+
+(1) Gegenansprüche bleiben bei der Abrechnung außer Betracht.
+
+§ 6 Leistungsanpassung
+
+(1) Der Anbieter ist berechtigt, den Leistungsumfang jederzeit einzuschränken.
+
+§ 7 Abnahme
+
+(1) Mängel sind binnen fünf Werktagen nach Erhalt anzuzeigen; danach gilt die Leistung als genehmigt.
+
+§ 8 Verfügbarkeit
+
+(1) Die Anbieterin sichert eine Verfügbarkeit von 99,5 Prozent pro Kalendermonat zu.
+
+§ 9 Datenrückgabe
+
+(1) Die Anbieterin stellt dem Kunden bei Vertragsende eine vollständige Kopie aller Kundendaten in maschinenlesbarer Form kostenfrei bereit.
+
+§ 10 Kündigung durch den Anbieter
+
+(1) Der Anbieter kann den Vertrag mit einer Frist von drei Monaten zum Quartalsende kündigen.
+
+§ 11 Vertraulichkeit
+
+(1) Die Vertragsparteien behandeln die wechselseitig offengelegten Informationen vertraulich.
+
+Wien, den 18.08.2025
+
+Für die Anbieterin: gez. G. Wiener
+
+Für den Kunden: gez. H. Tiroler

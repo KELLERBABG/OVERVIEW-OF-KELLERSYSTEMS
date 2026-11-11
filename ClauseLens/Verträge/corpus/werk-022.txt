@@ -1,0 +1,70 @@
+Rahmenvertrag über die Buchungsplattform eines Reiseveranstalters
+
+zwischen TravelTech GmbH, Rostock (nachfolgend Anbieter) und Reisegruppe Nordwind GmbH, Kiel (nachfolgend Kunde).
+
+Präambel
+Die Parteien beabsichtigen die in § 1 beschriebene Zusammenarbeit. Der Anbieter erbringt die Leistungen, der Kunde vergütet sie. Die Parteien vereinbaren Folgendes.
+
+§ 1 Gegenstand
+Gegenstand des Vertrages ist die Entwicklung und den Betrieb der Buchungsplattform gemäß Anlage 1.
+
+§ 2 Leistungsumfang
+Der Anbieter erbringt die Leistungen gemäß Anlage 1 und dokumentiert die Ergebnisse.
+
+§ 3 Referenznennung
+(3) Der Anbieter ist berechtigt, den Kunden als Referenz zu nennen.
+
+§ 4 Ausgleichsanspruch
+(4) Der Kunde verzichtet auf einen Ausgleich oder eine Entschädigung.
+
+§ 5 Laufzeit und Verlängerung
+(5) Die Vertragslaufzeit erneuert sich um jeweils zwölf Monate, sofern nicht drei Monate vorher gekündigt wird.
+
+§ 6 Haftung
+(6) In no event shall the provider be liable for lost profits or indirect damages.
+
+§ 7 Nutzungsrechte und Daten
+(7) Der Kunde räumt dem Anbieter ein unwiderrufliches, weltweites und übertragbares Nutzungsrecht an den Projektartefakten ein.
+
+§ 8 Form von Erklärungen
+(8) Änderungen bedürfen der Schriftform; die Textform ist ausgeschlossen.
+
+§ 9 Datenrückgabe
+(9) Der Export erfolgt ausschließlich im herstellereigenen Binärformat.
+
+§ 10 Insolvenz
+(10) Bei einem Insolvenzantrag endet der Vertrag automatisch, ohne dass es einer Kündigung bedarf.
+
+§ 11 Vorzeitige Beendigung
+(11) Für eine vorzeitige Kündigung wird eine pauschale Stornogebühr berechnet.
+
+§ 12 Form
+(12) Änderungen dieses Vertrages können in Textform vereinbart werden.
+
+§ 13 Prüfungen
+(13) Prüfungen erfolgen nur bei konkretem Anlass und nach Ankündigung mit einer Frist von dreißig Tagen.
+
+§ 14 Recht
+(14) Dieser Vertrag unterliegt deutschem Recht.
+
+§ 15 Aufrechnung
+(15) Beide Parteien können mit unbestrittenen Forderungen aufrechnen.
+
+§ 16 Fristen
+(16) Alle Fristen werden in Kalendertagen gerechnet.
+
+§ 17 Abnahme
+(17) Für Mängel während der Gewährleistung leistet der Anbieter kostenfrei Nacherfüllung.
+
+§ 18 Sicherheit
+(18) Der Anbieter meldet Sicherheitsvorfälle unverzüglich an den Kunden.
+
+§ 19 Vollständigkeit
+(19) Der Anbieter stellt die Anwendung ab dem vereinbarten Bereitstellungstermin zur Verfügung.
+
+Anlage 1: Leistungsbeschreibung
+Anlage 2: Servicezeiten
+
+Rostock, den 17. Mai 2026
+TravelTech GmbH
+Reisegruppe Nordwind GmbH

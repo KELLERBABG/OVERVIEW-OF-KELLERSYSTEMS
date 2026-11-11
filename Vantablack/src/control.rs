@@ -1,0 +1,1201 @@
+//! Control center and telemetry HTTP server for Vantablack.
+//!
+//! Provides the REST API (/api/status, /api/peers, /api/mode, /api/connect,
+//! /api/settings, /api/scan, /api/pipeline_probe), Prometheus /metrics,
+//! and the embedded HTML dashboard.
+
+use super::*;
+use crate::vpn::daemon::{vpn_export, VpnMode};
+use std::net::SocketAddr;
+use std::path::Path;
+use std::sync::atomic::{AtomicBool, AtomicU32, Ordering};
+use std::sync::Arc;
+use std::time::Duration;
+use tokio::io::{AsyncReadExt, AsyncWriteExt};
+use vantablack::ghost::layers::l10_qel::{self, QelAnchorState, QuantumRouteResult};
+use vantablack::ghost::net::consumer::{self, ConsumerSettings};
+use vantablack::ghost::GhostNode;
+
+/// Port the HTTP control center listens on (`GHOST_WEB_PORT`, else the legacy
+/// `GHOST_METRICS_PORT`, else 2270). Shared by the node and the desktop window.
+pub fn control_port_from_env() -> u16 {
+    std::env::var("GHOST_WEB_PORT")
+        .or_else(|_| std::env::var("GHOST_METRICS_PORT"))
+        .ok()
+        .and_then(|v| v.parse().ok())
+        .unwrap_or(2270)
+}
+
+/// Parse the JSON body out of an HTTP request, ignoring headers.
+pub fn json_body(req: &str) -> serde_json::Value {
+    let body_str = req.split_once("\r\n\r\n").map(|(_, b)| b).unwrap_or("");
+    serde_json::from_str(body_str.trim()).unwrap_or(serde_json::Value::Null)
+}
+
+/// Extract and validate the `Origin` header against permitted localhost origins.
+pub fn is_origin_allowed(req: &str, port: u16) -> bool {
+    let origin = req.lines().find_map(|line| {
+        let (name, value) = line.split_once(':')?;
+        if name.trim().eq_ignore_ascii_case("origin") {
+            Some(value.trim())
+        } else {
+            None
+        }
+    });
+
+    match origin {
+        None => true, // direct curl, desktop webview, or native process
+        Some(o) => {
+            o == format!("http://127.0.0.1:{}", port)
+                || o == format!("http://localhost:{}", port)
+                || o == "null"
+        }
+    }
+}
+
+/// Extract the `X-Pin` header from an incoming HTTP request.
+pub fn header_pin(req: &str) -> Option<&str> {
+    req.lines().find_map(|line| {
+        let (name, value) = line.split_once(':')?;
+        if name.trim().eq_ignore_ascii_case("x-pin") {
+            Some(value.trim())
+        } else {
+            None
+        }
+    })
+}
+
+/// Constant-time PIN check. The length difference is folded into the result, so
+/// the compare neither short-circuits on a mismatched byte nor on a mismatched
+/// length, either of which would time the configured PIN out to the caller.
+pub fn pin_matches(expected: &str, supplied: Option<&str>) -> bool {
+    use subtle::ConstantTimeEq;
+    let supplied = supplied.unwrap_or("");
+    let n = expected.len().max(supplied.len());
+    let mut a = vec![0u8; n];
+    let mut b = vec![0u8; n];
+    a[..expected.len()].copy_from_slice(expected.as_bytes());
+    b[..supplied.len()].copy_from_slice(supplied.as_bytes());
+    let same_len = (expected.len() as u64).ct_eq(&(supplied.len() as u64));
+    bool::from(a.as_slice().ct_eq(b.as_slice()) & same_len)
+}
+
+/// Round to `places` decimals for stable JSON output.
+pub fn round(value: f64, places: i32) -> f64 {
+    let factor = 10f64.powi(places);
+    (value * factor).round() / factor
+}
+
+/// Nearest-rank percentile of an unsorted sample set.
+pub fn percentile(samples: &[f64], p: f64) -> f64 {
+    if samples.is_empty() {
+        return 0.0;
+    }
+    let mut sorted = samples.to_vec();
+    sorted.sort_by(|a, b| a.partial_cmp(b).unwrap_or(std::cmp::Ordering::Equal));
+    let idx = (((sorted.len() - 1) as f64) * p).round() as usize;
+    sorted[idx.min(sorted.len() - 1)]
+}
+
+pub fn mean(samples: &[f64]) -> f64 {
+    if samples.is_empty() {
+        0.0
+    } else {
+        samples.iter().sum::<f64>() / samples.len() as f64
+    }
+}
+
+/// Benchmark the live in-process crypto pipeline:
+/// - XChaCha20-Poly1305 authenticated encryption
+/// - 2-of-3 Reed-Solomon erasure coding
+/// - Memory scrubbing / allocation
+pub fn run_pipeline_probe(total_bytes: usize) -> serde_json::Value {
+    let chunk_size = 900;
+    let iterations = (total_bytes / chunk_size).max(10);
+    let mut payload = vec![0u8; chunk_size];
+    rand::RngCore::fill_bytes(&mut rand::thread_rng(), &mut payload);
+
+    let mut key = [0u8; 32];
+    rand::RngCore::fill_bytes(&mut rand::thread_rng(), &mut key);
+    let dummy_ctx = SealCtx {
+        key,
+        epoch: 1,
+        counter: 100,
+        nonce: [0x42; 12],
+        direction: NonceDirection::InitiatorToResponder,
+        session_hash: [0x11, 0x22, 0x33, 0x44],
+        ratchet_due: false,
+    };
+
+    let start = std::time::Instant::now();
+    let mut latencies_us = Vec::with_capacity(iterations);
+
+    for _ in 0..iterations {
+        let t0 = std::time::Instant::now();
+        let (shards, tag) = enc_split(&dummy_ctx, &payload);
+        let elapsed_us = t0.elapsed().as_micros() as f64;
+        latencies_us.push(elapsed_us);
+        std::hint::black_box((shards, tag));
+    }
+
+    let total_duration = start.elapsed();
+    let total_processed = chunk_size * iterations;
+    let mbps = (total_processed as f64 * 8.0) / total_duration.as_secs_f64() / 1_000_000.0;
+
+    serde_json::json!({
+        "status": "completed",
+        "total_bytes": total_processed,
+        "iterations": iterations,
+        "duration_ms": round(total_duration.as_secs_f64() * 1000.0, 2),
+        "throughput_mbps": round(mbps, 2),
+        "latency_us": {
+            "min": round(*latencies_us.iter().min_by(|a, b| a.partial_cmp(b).unwrap()).unwrap_or(&0.0), 1),
+            "mean": round(mean(&latencies_us), 1),
+            "p50": round(percentile(&latencies_us, 0.50), 1),
+            "p95": round(percentile(&latencies_us, 0.95), 1),
+            "p99": round(percentile(&latencies_us, 0.99), 1),
+            "max": round(*latencies_us.iter().max_by(|a, b| a.partial_cmp(b).unwrap()).unwrap_or(&0.0), 1),
+        }
+    })
+}
+
+/// Round-trip time to the public internet, from the fastest of three TCP
+/// connects.
+#[allow(dead_code)]
+pub async fn isp_rtt_ms() -> Option<f64> {
+    let mut best: Option<f64> = None;
+    for _ in 0..3 {
+        let started = std::time::Instant::now();
+        let attempt = tokio::time::timeout(
+            Duration::from_millis(700),
+            tokio::net::TcpStream::connect("1.1.1.1:443"),
+        )
+        .await;
+        match attempt {
+            Ok(Ok(_stream)) => {
+                let ms = started.elapsed().as_secs_f64() * 1000.0;
+                best = Some(best.map_or(ms, |b: f64| b.min(ms)));
+            }
+            _ => break,
+        }
+    }
+    best.map(|v| round(v, 1))
+}
+
+/// One peer entry for `/api/status` and `/api/peers`, with the consumer-facing
+/// fields the dashboard renders: friendly name, platform, presence.
+pub fn peer_entry(
+    nc: &GhostNode,
+    settings: &ConsumerSettings,
+    fingerprint: &str,
+    addr: &SocketAddr,
+) -> serde_json::Value {
+    let has_session = nc.sessions.contains_key(fingerprint);
+    serde_json::json!({
+        "fingerprint": fingerprint,
+        "name": settings.device_name(fingerprint),
+        "custom_name": settings.has_custom_name(fingerprint),
+        "os": settings.device_os(fingerprint),
+        "address": addr.to_string(),
+        "connected": has_session,
+        "status": consumer::peer_status(has_session, true),
+        "role": if has_session { "Active Mesh Peer" } else { "Discovered Peer" },
+        "latency_ms": serde_json::Value::Null,
+    })
+}
+
+/// Spawns the Ghost Web Control Center and Telemetry HTTP service.
+pub fn spawn_control_center(
+    metrics_port: u16,
+    nc: Arc<GhostNode>,
+    addrs: Arc<DashMap<String, SocketAddr>>,
+    consumer_connected: Arc<AtomicBool>,
+    consumer_mode: Arc<parking_lot::RwLock<String>>,
+    consumer_pin: Arc<parking_lot::RwLock<Option<String>>>,
+    consumer_settings: Arc<parking_lot::RwLock<ConsumerSettings>>,
+    consumer_config: String,
+    lan_host: String,
+    pair_uri: String,
+    socks_listening: bool,
+    socks_port: u16,
+    vpn_mode: Option<VpnMode>,
+    carrier: Arc<net::carrier::Carrier>,
+    pending_hs: PendingHandshakes,
+    scan_notify: Arc<tokio::sync::Notify>,
+    scan_interval_secs: Arc<AtomicU32>,
+    qel_state_ref: Arc<parking_lot::RwLock<QelAnchorState>>,
+    qel_last_route: Arc<parking_lot::RwLock<Option<QuantumRouteResult>>>,
+) {
+    let nc_m = Arc::clone(&nc);
+    let addrs_m = Arc::clone(&addrs);
+    let c_conn_m = Arc::clone(&consumer_connected);
+    let c_mode_m = Arc::clone(&consumer_mode);
+    let c_pin_m = Arc::clone(&consumer_pin);
+    let c_settings_m = Arc::clone(&consumer_settings);
+    let c_path_m = consumer_config;
+    let lan_host_m = lan_host;
+    let pair_uri_m = pair_uri;
+    let vpn_m = vpn_mode;
+    let mp = metrics_port;
+    let carrier_m = Arc::clone(&carrier);
+    let phs_m = Arc::clone(&pending_hs);
+    let scan_notify_m = Arc::clone(&scan_notify);
+    let scan_interval_m = Arc::clone(&scan_interval_secs);
+    let qel_state_m = Arc::clone(&qel_state_ref);
+    let qel_route_m = Arc::clone(&qel_last_route);
+
+    tokio::spawn(async move {
+        let bind_host =
+            std::env::var("GHOST_CONTROL_BIND").unwrap_or_else(|_| "127.0.0.1".to_string());
+        let bind_addr = format!("{}:{}", bind_host, mp);
+        match tokio::net::TcpListener::bind(&bind_addr).await {
+            Ok(listener) => {
+                tracing::info!(
+                    "Ghost Web Control Center & Telemetry listening on http://{}:{}",
+                    bind_host,
+                    mp
+                );
+                if std::env::var("GHOST_OPEN_BROWSER")
+                    .map(|v| v == "1" || v.eq_ignore_ascii_case("true"))
+                    .unwrap_or(false)
+                {
+                    tokio::spawn(async move {
+                        tokio::time::sleep(tokio::time::Duration::from_millis(600)).await;
+                        let url = format!("http://127.0.0.1:{}", mp);
+                        #[cfg(target_os = "windows")]
+                        let _ = std::process::Command::new("cmd")
+                            .args(["/C", "start", &url])
+                            .spawn();
+                        #[cfg(target_os = "macos")]
+                        let _ = std::process::Command::new("open").arg(&url).spawn();
+                        #[cfg(target_os = "linux")]
+                        let _ = std::process::Command::new("xdg-open").arg(&url).spawn();
+                    });
+                }
+                loop {
+                    match listener.accept().await {
+                        Ok((mut stream, _)) => {
+                            let nc_ref = Arc::clone(&nc_m);
+                            let addrs_ref = Arc::clone(&addrs_m);
+                            let vpn_ref = vpn_m.clone();
+                            let conn_ref = Arc::clone(&c_conn_m);
+                            let mode_ref = Arc::clone(&c_mode_m);
+                            let pin_ref = Arc::clone(&c_pin_m);
+                            let cs_ref = Arc::clone(&c_settings_m);
+                            let cp_ref = c_path_m.clone();
+                            let lan_host_ref = lan_host_m.clone();
+                            let pair_uri_ref = pair_uri_m.clone();
+                            let carrier_ref = Arc::clone(&carrier_m);
+                            let phs_ref = Arc::clone(&phs_m);
+                            let scan_notify_ref = Arc::clone(&scan_notify_m);
+                            let scan_interval_ref = Arc::clone(&scan_interval_m);
+                            let qel_state_ref = Arc::clone(&qel_state_m);
+                            let qel_last_route = Arc::clone(&qel_route_m);
+                            tokio::spawn(async move {
+                                // Read the whole request. A single `read` races the client's
+                                // TCP segmentation: a POST whose body lands in a later segment
+                                // would be parsed as body-less and rejected. Clients here do
+                                // NOT half-close their write side before reading the response
+                                // (every browser does the same), so we cannot read to EOF;
+                                // instead read until the headers are complete and then until
+                                // `Content-Length` body bytes have arrived (bounded).
+                                let mut buf: Vec<u8> = Vec::with_capacity(4096);
+                                {
+                                    let mut chunk = [0u8; 4096];
+                                    let _guard = tokio::time::timeout(
+                                        tokio::time::Duration::from_secs(10),
+                                        async {
+                                            loop {
+                                                // Headers complete?
+                                                let header_end =
+                                                    buf.windows(4).position(|w| w == b"\r\n\r\n");
+                                                let need_body = match header_end {
+                                                    Some(h) => {
+                                                        let headers =
+                                                            String::from_utf8_lossy(&buf[..h]);
+                                                        headers
+                                                            .lines()
+                                                            .find_map(|l| {
+                                                                let (k, v) = l.split_once(':')?;
+                                                                k.trim()
+                                                                    .eq_ignore_ascii_case(
+                                                                        "content-length",
+                                                                    )
+                                                                    .then(|| {
+                                                                        v.trim()
+                                                                            .parse::<usize>()
+                                                                            .ok()
+                                                                    })
+                                                                    .flatten()
+                                                            })
+                                                            .unwrap_or(0)
+                                                    }
+                                                    None => usize::MAX, // keep reading headers
+                                                };
+                                                let have = buf.len()
+                                                    - header_end.map(|h| h + 4).unwrap_or(0);
+                                                if header_end.is_some() && have >= need_body {
+                                                    break;
+                                                }
+                                                match stream.read(&mut chunk).await {
+                                                    Ok(0) | Err(_) => break,
+                                                    Ok(n) => {
+                                                        buf.extend_from_slice(&chunk[..n]);
+                                                        if buf.len() > 1_048_576 {
+                                                            break; // request size cap
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                    )
+                                    .await;
+                                }
+                                if !buf.is_empty() {
+                                    let req = String::from_utf8_lossy(&buf);
+                                    let (vpn_role, vpn_prom, vpn_json) = vpn_export(&vpn_ref);
+                                    tracing::debug!(
+                                        first = %req.lines().next().unwrap_or(""),
+                                        bytes = buf.len(),
+                                        "control: request received"
+                                    );
+                                    let vpn_available = vpn_ref.is_some();
+                                    let configured_pin = pin_ref.read().clone();
+                                    // `true` here means the caller may see identity and
+                                    // pairing material: either no PIN is configured, or it
+                                    // was supplied correctly.
+                                    let pin_ok = match configured_pin.as_deref() {
+                                        None => true,
+                                        Some(expected) => pin_matches(expected, header_pin(&req)),
+                                    };
+                                    let is_mutation = req.starts_with("POST ");
+                                    let origin_allowed = is_origin_allowed(&req, mp);
+
+                                    if is_mutation && !origin_allowed {
+                                        let resp = "HTTP/1.1 403 Forbidden\r\nContent-Type: text/plain\r\nConnection: close\r\n\r\nCross-Origin Forbidden\n";
+                                        let _ = stream.write_all(resp.as_bytes()).await;
+                                        return;
+                                    }
+
+                                    let cors_header = if origin_allowed {
+                                        format!(
+                                            "Access-Control-Allow-Origin: http://127.0.0.1:{}\r\n",
+                                            mp
+                                        )
+                                    } else {
+                                        String::new()
+                                    };
+
+                                    if req.starts_with("OPTIONS ") {
+                                        let resp = format!(
+                                        "HTTP/1.1 204 No Content\r\n{}Access-Control-Allow-Methods: GET, POST, OPTIONS\r\nAccess-Control-Allow-Headers: Content-Type, Authorization, X-Pin\r\nConnection: close\r\n\r\n",
+                                        cors_header
+                                    );
+                                        let _ = stream.write_all(resp.as_bytes()).await;
+                                        let _ = stream.flush().await;
+                                        let _ = stream.shutdown().await;
+                                        return;
+                                    }
+
+                                    let (status_line, body, content_type) = if is_mutation
+                                        && !pin_ok
+                                    {
+                                        (
+                                            "HTTP/1.1 401 Unauthorized",
+                                            serde_json::json!({
+                                                "success": false,
+                                                "error": "PIN required",
+                                                "pin_required": true
+                                            })
+                                            .to_string(),
+                                            "application/json",
+                                        )
+                                    } else if !pin_ok
+                                        && (req.starts_with("GET /api/peers")
+                                            || req.starts_with("GET /api/wan_telemetry"))
+                                    {
+                                        // These reads carry peer or node fingerprints and
+                                        // have no liveness role, so a missing PIN denies
+                                        // them outright. /api/status stays readable and
+                                        // redacts its identity fields instead.
+                                        let body = serde_json::json!({
+                                            "success": false,
+                                            "error": "PIN required",
+                                            "pin_required": true
+                                        })
+                                        .to_string();
+                                        ("HTTP/1.1 401 Unauthorized", body, "application/json")
+                                    } else if req.starts_with("GET /api/status") {
+                                        let is_conn = conn_ref.load(Ordering::Relaxed);
+                                        let current_mode = mode_ref.read().clone();
+                                        let has_pin = pin_ref.read().is_some();
+                                        let sent_bytes =
+                                            nc_ref.stats.bytes_sent.load(Ordering::Relaxed);
+                                        let recv_bytes =
+                                            nc_ref.stats.bytes_recv.load(Ordering::Relaxed);
+                                        let sent_pkts =
+                                            nc_ref.stats.packets_sent.load(Ordering::Relaxed);
+                                        let recv_pkts =
+                                            nc_ref.stats.packets_recv.load(Ordering::Relaxed);
+                                        let uptime = nc_ref.created_at.elapsed().as_secs();
+                                        let peers_count = addrs_ref.len();
+                                        let sessions_count = nc_ref.sessions.len();
+
+                                        let settings_now = cs_ref.read().clone();
+                                        let peer_entries: Vec<serde_json::Value> = addrs_ref
+                                            .iter()
+                                            .map(|entry| {
+                                                peer_entry(
+                                                    &nc_ref,
+                                                    &settings_now,
+                                                    entry.key(),
+                                                    entry.value(),
+                                                )
+                                            })
+                                            .collect();
+
+                                        let route_mode_active =
+                                            match settings_now.route_mode.as_str() {
+                                                consumer::ROUTE_MODE_SYSTEM_VPN => vpn_available,
+                                                _ => socks_listening,
+                                            };
+                                        let body = serde_json::json!({
+                                        "connected": is_conn,
+                                        "mode": current_mode,
+                                        "network_id": if pin_ok { serde_json::json!(nc_ref.fingerprint()) } else { serde_json::Value::Null },
+                                        "device_name": if pin_ok { serde_json::json!(settings_now.device_name(&nc_ref.fingerprint())) } else { serde_json::Value::Null },
+                                        "device_os": consumer::local_os(),
+                                        "host": lan_host_ref,
+                                        "pair_uri": if pin_ok { serde_json::json!(pair_uri_ref) } else { serde_json::Value::Null },
+                                        "route_mode": settings_now.route_mode,
+                                        "route_mode_active": route_mode_active,
+                                        "bypass_count": settings_now.bypass.len(),
+                                        "socks_listening": socks_listening,
+                                        "socks_port": socks_port,
+                                        "vpn_available": vpn_available,
+                                        "pin_protected": has_pin,
+                                        "pin_required": has_pin && !pin_ok,
+                                        "uptime_seconds": uptime,
+                                        "peers_count": peers_count,
+                                        "active_sessions": sessions_count,
+                                        "private_mesh": {
+                                            "active_nodes": if sessions_count > 0 { 1 + sessions_count } else { 1 },
+                                            "autonomous_local": (sessions_count + 1) >= 5,
+                                            "mode": if (sessions_count + 1) >= 5 { "autonomous_local" } else { "wan_mesh_assisted" },
+                                            "scan_interval_secs": scan_interval_ref.load(Ordering::Relaxed),
+                                        },
+                                        "latency_ms": serde_json::Value::Null,
+                                        "active_carrier_paths": if is_conn {
+                                            std::cmp::min(3, 1 + nc_ref.sessions.len().min(2))
+                                        } else {
+                                            0
+                                        },
+                                        "carrier": serde_json::json!({
+                                            "enabled": carrier_ref.enabled(),
+                                            "label": carrier_ref.label(),
+                                            "path_count": carrier_ref.path_count(),
+                                            "peer_count": carrier_ref.peer_count(),
+                                            "link_count": carrier_ref.link_count(),
+                                        }),
+                                        "skywave": serde_json::json!({
+                                            "enabled": cfg!(feature = "sdr"),
+                                            "carrier": "ABOS (Atmospheric Broadcast OS)",
+                                            "band": "2-10 MHz NVIS HF",
+                                            "propagation": "Near-Vertical Incidence Skywave (Zero Skip Zone)",
+                                        }),
+                                        "traffic": {
+                                            "bytes_sent": sent_bytes,
+                                            "bytes_recv": recv_bytes,
+                                            "packets_sent": sent_pkts,
+                                            "packets_recv": recv_pkts,
+                                            "cover_traffic_rate_hz": 2.0,
+                                            "cover_traffic_active": sessions_count > 0,
+                                        },
+                                        "throughput": {
+                                            "bytes_sent": sent_bytes,
+                                            "bytes_recv": recv_bytes,
+                                            "packets_sent": sent_pkts,
+                                            "packets_recv": recv_pkts,
+                                        },
+                                        "low_latency": vantablack::ghost::net::is_low_latency(),
+                                        "mix_batch_ms": vantablack::ghost::net::mix_batch_delay_ms(),
+                                        "zero_admin": vantablack::ghost::net::is_zero_admin(),
+                                        "vpn": vpn_role,
+                                        "vpn_stats": vpn_json,
+                                        "exit_node": vpn_role == "hub",
+                                        "peers": if pin_ok { serde_json::json!(peer_entries) } else { serde_json::json!([]) },
+                                    })
+                                    .to_string();
+                                        ("HTTP/1.1 200 OK", body, "application/json")
+                                    } else if req.starts_with("POST /api/peers/add") {
+                                        let val = json_body(&req);
+                                        let addr_str = val
+                                            .get("address")
+                                            .and_then(|v| v.as_str())
+                                            .unwrap_or("")
+                                            .trim();
+                                        match addr_str.parse::<SocketAddr>() {
+                                            Ok(target_addr) => {
+                                                initiate_handshake(
+                                                    &nc_ref,
+                                                    &nc_ref.socket,
+                                                    target_addr,
+                                                    &phs_ref,
+                                                )
+                                                .await;
+                                                let peers_cache =
+                                                    vantablack::ghost::paths::data_file(
+                                                        "peers.cache",
+                                                    );
+                                                if let Ok(mut current) =
+                                                    std::fs::read_to_string(&peers_cache)
+                                                {
+                                                    if !current.contains(addr_str) {
+                                                        if !current.ends_with('\n')
+                                                            && !current.is_empty()
+                                                        {
+                                                            current.push('\n');
+                                                        }
+                                                        current.push_str(addr_str);
+                                                        current.push('\n');
+                                                        let _ =
+                                                            std::fs::write(&peers_cache, current);
+                                                    }
+                                                } else {
+                                                    let _ = std::fs::write(
+                                                        &peers_cache,
+                                                        format!("{}\n", addr_str),
+                                                    );
+                                                }
+                                                let body = serde_json::json!({
+                                                "success": true,
+                                                "address": addr_str,
+                                                "message": format!("Handshake initiated with {}", target_addr)
+                                            })
+                                            .to_string();
+                                                ("HTTP/1.1 200 OK", body, "application/json")
+                                            }
+                                            Err(e) => {
+                                                let body = serde_json::json!({
+                                                "success": false,
+                                                "error": format!("Invalid address format '{}': {}", addr_str, e)
+                                            })
+                                            .to_string();
+                                                (
+                                                    "HTTP/1.1 400 Bad Request",
+                                                    body,
+                                                    "application/json",
+                                                )
+                                            }
+                                        }
+                                    } else if req.starts_with("GET /api/peers") {
+                                        let settings_now = cs_ref.read().clone();
+                                        let peer_entries: Vec<serde_json::Value> = addrs_ref
+                                            .iter()
+                                            .map(|entry| {
+                                                peer_entry(
+                                                    &nc_ref,
+                                                    &settings_now,
+                                                    entry.key(),
+                                                    entry.value(),
+                                                )
+                                            })
+                                            .collect();
+                                        let body = serde_json::json!({
+                                            "peers": peer_entries,
+                                            "count": peer_entries.len()
+                                        })
+                                        .to_string();
+                                        ("HTTP/1.1 200 OK", body, "application/json")
+                                    } else if req.starts_with("POST /api/connect") {
+                                        let val = json_body(&req);
+                                        let prev = conn_ref.load(Ordering::Relaxed);
+                                        let next = val
+                                            .get("connected")
+                                            .and_then(|v| v.as_bool())
+                                            .unwrap_or(!prev);
+                                        conn_ref.store(next, Ordering::Relaxed);
+                                        nc_ref.beacon_enabled.store(next, Ordering::Relaxed);
+                                        if !next {
+                                            phs_ref.clear();
+                                            broadcast_goodbye(&nc_ref, &addrs_ref);
+                                            tracing::info!(
+                                            "Mesh deactivated via control center — broadcasted GHOST_BYE to all peers"
+                                        );
+                                        } else if !prev {
+                                            scan_notify_ref.notify_waiters();
+                                            tracing::info!(
+                                            "Mesh reactivated via control center — triggering immediate LAN discovery"
+                                        );
+                                        }
+                                        let body = serde_json::json!({
+                                            "success": true,
+                                            "connected": next
+                                        })
+                                        .to_string();
+                                        ("HTTP/1.1 200 OK", body, "application/json")
+                                    } else if req.starts_with("POST /api/mode") {
+                                        let val = json_body(&req);
+                                        if let Some(m) = val.get("mode").and_then(|v| v.as_str()) {
+                                            *mode_ref.write() = m.to_string();
+                                        }
+                                        let current_mode = mode_ref.read().clone();
+                                        let body = serde_json::json!({
+                                            "success": true,
+                                            "mode": current_mode
+                                        })
+                                        .to_string();
+                                        ("HTTP/1.1 200 OK", body, "application/json")
+                                    } else if req.starts_with("POST /api/scan") {
+                                        scan_notify_ref.notify_waiters();
+                                        let body = serde_json::json!({
+                                            "success": true,
+                                            "message": "LAN discovery sweep triggered immediately"
+                                        })
+                                        .to_string();
+                                        ("HTTP/1.1 200 OK", body, "application/json")
+                                    } else if req.starts_with("POST /api/pipeline_probe") {
+                                        let val = json_body(&req);
+                                        let total_bytes = val
+                                            .get("total_bytes")
+                                            .and_then(|v| v.as_u64())
+                                            .unwrap_or(2_000_000)
+                                            as usize;
+                                        let probe_res = run_pipeline_probe(total_bytes);
+                                        (
+                                            "HTTP/1.1 200 OK",
+                                            probe_res.to_string(),
+                                            "application/json",
+                                        )
+                                    } else if req.starts_with("GET /api/settings") {
+                                        let s = cs_ref.read().clone();
+                                        let body = serde_json::json!({
+                                        "success": true,
+                                        "route_mode": s.route_mode,
+                                        "device_names": s.device_names,
+                                        "device_os": s.device_os,
+                                        "bypass": s.bypass,
+                                        "bypass_count": s.bypass.len(),
+                                        "private_mesh_scan_interval_secs": scan_interval_ref.load(Ordering::Relaxed),
+                                        "low_latency": vantablack::ghost::net::is_low_latency(),
+                                        "mix_batch_ms": vantablack::ghost::net::mix_batch_delay_ms(),
+                                        "zero_admin": vantablack::ghost::net::is_zero_admin(),
+                                        "stego_carrier_mode": s.stego_carrier_mode,
+                                        "energy_ledger_enabled": s.energy_ledger_enabled,
+                                        "jurisdiction_tag": s.jurisdiction_tag,
+                                        "abos_skywave_enabled": s.abos_skywave_enabled,
+                                        "qel_enabled": s.qel_enabled,
+                                    })
+                                    .to_string();
+                                        ("HTTP/1.1 200 OK", body, "application/json")
+                                    } else if req.starts_with("POST /api/settings") {
+                                        let val = json_body(&req);
+                                        let mut s = cs_ref.write();
+                                        if let Some(r) =
+                                            val.get("route_mode").and_then(|v| v.as_str())
+                                        {
+                                            s.set_route_mode(r);
+                                        }
+                                        if let Some(ll) =
+                                            val.get("low_latency").and_then(|v| v.as_bool())
+                                        {
+                                            vantablack::ghost::net::set_low_latency(ll);
+                                        }
+                                        if let Some(ms) =
+                                            val.get("mix_batch_ms").and_then(|v| v.as_u64())
+                                        {
+                                            vantablack::ghost::net::set_mix_batch_delay_ms(ms);
+                                        }
+                                        if let Some(za) =
+                                            val.get("zero_admin").and_then(|v| v.as_bool())
+                                        {
+                                            vantablack::ghost::net::set_zero_admin(za);
+                                        }
+                                        if let Some(add) =
+                                            val.get("bypass_add").and_then(|v| v.as_str())
+                                        {
+                                            let _ = s.add_bypass(add);
+                                        }
+                                        if let Some(rem) =
+                                            val.get("bypass_remove").and_then(|v| v.as_str())
+                                        {
+                                            s.remove_bypass(rem);
+                                        }
+                                        if let Some(secs) = val
+                                            .get("private_mesh_scan_interval_secs")
+                                            .and_then(|v| v.as_u64())
+                                        {
+                                            scan_interval_ref.store(secs as u32, Ordering::Relaxed);
+                                        }
+                                        if let Some(names) = val
+                                            .get("set_device_name")
+                                            .or_else(|| val.get("set_peer_name"))
+                                            .and_then(|v| v.as_object())
+                                        {
+                                            for (k, v) in names {
+                                                if let Some(name_str) = v.as_str() {
+                                                    let _ = s.set_device_name(k, name_str);
+                                                }
+                                            }
+                                        }
+                                        if let Some(stego) =
+                                            val.get("stego_carrier_mode").and_then(|v| v.as_bool())
+                                        {
+                                            s.stego_carrier_mode = stego;
+                                        }
+                                        if let Some(energy) = val
+                                            .get("energy_ledger_enabled")
+                                            .and_then(|v| v.as_bool())
+                                        {
+                                            s.energy_ledger_enabled = energy;
+                                        }
+                                        if let Some(juris) =
+                                            val.get("jurisdiction_tag").and_then(|v| v.as_str())
+                                        {
+                                            s.set_jurisdiction_tag(juris);
+                                        }
+                                        if let Some(abos) = val
+                                            .get("abos_skywave_enabled")
+                                            .and_then(|v| v.as_bool())
+                                        {
+                                            s.abos_skywave_enabled = abos;
+                                        }
+                                        if let Some(qel) =
+                                            val.get("qel_enabled").and_then(|v| v.as_bool())
+                                        {
+                                            s.qel_enabled = qel;
+                                        }
+                                        if !cp_ref.is_empty() {
+                                            save_consumer_settings(&cp_ref, &s);
+                                        }
+                                        let body = serde_json::json!({
+                                        "success": true,
+                                        "route_mode": s.route_mode,
+                                        "bypass_count": s.bypass.len(),
+                                        "private_mesh_scan_interval_secs": scan_interval_ref.load(Ordering::Relaxed),
+                                        "stego_carrier_mode": s.stego_carrier_mode,
+                                        "energy_ledger_enabled": s.energy_ledger_enabled,
+                                        "jurisdiction_tag": s.jurisdiction_tag,
+                                        "abos_skywave_enabled": s.abos_skywave_enabled,
+                                        "qel_enabled": s.qel_enabled,
+                                    })
+                                    .to_string();
+                                        ("HTTP/1.1 200 OK", body, "application/json")
+                                    } else if req.starts_with("GET /api/wan_telemetry") {
+                                        let sent_bytes =
+                                            nc_ref.stats.bytes_sent.load(Ordering::Relaxed);
+                                        let recv_bytes =
+                                            nc_ref.stats.bytes_recv.load(Ordering::Relaxed);
+                                        let sent_pkts =
+                                            nc_ref.stats.packets_sent.load(Ordering::Relaxed);
+                                        let recv_pkts =
+                                            nc_ref.stats.packets_recv.load(Ordering::Relaxed);
+                                        let retrans =
+                                            nc_ref.stats.retransmits.load(Ordering::Relaxed);
+                                        let drops = nc_ref.stats.drops.load(Ordering::Relaxed);
+                                        let body = serde_json::json!({
+                                        "node_fingerprint": nc_ref.fingerprint(),
+                                        "active_sessions": nc_ref.sessions.len(),
+                                        "known_peers": addrs_ref.len(),
+                                        "uptime_seconds": nc_ref.created_at.elapsed().as_secs(),
+                                        "packets_sent": sent_pkts,
+                                        "packets_recv": recv_pkts,
+                                        "bytes_sent": sent_bytes,
+                                        "bytes_recv": recv_bytes,
+                                        "retransmits": retrans,
+                                        "drops": drops,
+                                        "vpn": vpn_role,
+                                        "vpn_stats": vpn_json,
+                                        "frame_standard": "GTF 512B Privacy / 1472B Bulk + L5 Jitter",
+                                        "handshake_status": "ML-KEM-512 + X25519 Post-Quantum Hybrid",
+                                        "discovery_source": "DNS Seed + Multicast Beacon + peers.cache"
+                                    }).to_string();
+                                        ("HTTP/1.1 200 OK", body, "application/json")
+                                    } else if req.starts_with("GET /api/v1/anchors/status") {
+                                        // Physical anchors (experimental, in-simulation):
+                                        // ABOS skywave carrier + QEL quantum anchor.
+                                        let sky = net::sdr_bridge::SkywaveBridge::global()
+                                            .map(|b| b.telemetry());
+                                        let qel_state = *qel_state_ref.read();
+                                        let body = serde_json::json!({
+                                        "abos_skywave": match sky {
+                                            Some(t) => serde_json::json!({
+                                                "status": if t.sdr_active { "online" } else { "standby" },
+                                                "synthetic": !cfg!(feature = "sdr"),
+                                                "carrier_freq_hz": t.carrier_freq_hz,
+                                                "estimated_f0f2_hz": t.estimated_f0f2_hz,
+                                                "dsss_processing_gain_db": t.dsss_processing_gain_db,
+                                                "tx_packets": t.tx_packet_count,
+                                                "rx_packets": t.rx_packet_count,
+                                                "tx_dsp_bytes": t.tx_dsp_bytes,
+                                                "meteor_burst_window_open": t.meteor_burst_window_open,
+                                                "virtual_carrier": t.virtual_carrier,
+                                                "virtual_carrier_peer": t.virtual_carrier_peer,
+                                            }),
+                                            None => serde_json::json!({ "status": "offline" }),
+                                        },
+                                        "qel_quantum": {
+                                            "status": qel_state.as_str(),
+                                            "last_route": qel_last_route
+                                                .read()
+                                                .clone()
+                                                .map(|r| serde_json::json!({
+                                                    "path": r.path,
+                                                    "end_to_end_fidelity": r.end_to_end_fidelity,
+                                                    "key_fidelity": r.key_fidelity,
+                                                    "distillation_rounds": r.distillation_rounds,
+                                                    "swap_nodes": r.swap_nodes,
+                                                    "key_derived": r.qkd_key_hex.is_some(),
+                                                })),
+                                            // Which key-delivery backend this node runs, and
+                                            // whether it is a simulation or an appliance.
+                                            // Carries no key material and no token: this
+                                            // document is fetched over loopback HTTP.
+                                            "backend": l10_qel::shared_controller().backend_report(),
+                                            "routes_over_topology":
+                                                l10_qel::shared_controller().routes_over_topology(),
+                                            "note": "experimental — see docs/ANCHORS_CODEBASE_INTEGRATION.md §8 for what is and is not claimed",
+                                        },
+                                    })
+                                    .to_string();
+                                        ("HTTP/1.1 200 OK", body, "application/json")
+                                    } else if req.starts_with("POST /api/v1/anchors/qel/route") {
+                                        tracing::debug!("control: qel route endpoint entered");
+                                        // Trigger a real QEL route computation between two
+                                        // live peer fingerprints: {"from": "<fp>", "to": "<fp>"}.
+                                        // PIN-gated like every mutation above.
+                                        let parsed: Option<(String, String)> = req
+                                            .split_once("\r\n\r\n")
+                                            .and_then(|(_, body)| {
+                                                serde_json::from_str(body.trim()).ok()
+                                            })
+                                            .and_then(|v: serde_json::Value| {
+                                                let from = v.get("from")?.as_str()?.to_string();
+                                                let to = v.get("to")?.as_str()?.to_string();
+                                                Some((from, to))
+                                            });
+                                        let Some((from_fp, to_fp)) = parsed else {
+                                            let body = serde_json::json!({
+                                            "success": false,
+                                            "error": "body must be JSON: {\"from\": \"<fingerprint>\", \"to\": \"<fingerprint>\"}"
+                                        })
+                                        .to_string();
+                                            let resp = format!(
+                                            "HTTP/1.1 400 Bad Request\r\n{}Content-Type: application/json\r\nContent-Length: {}\r\nConnection: close\r\n\r\n{}",
+                                            cors_header,
+                                            body.len(),
+                                            body
+                                        );
+                                            let _ = stream.write_all(resp.as_bytes()).await;
+                                            let _ = stream.flush().await;
+                                            let _ = stream.shutdown().await;
+                                            return;
+                                        };
+                                        let topo_path = std::env::var("GHOST_QEL_TOPOLOGY")
+                                            .unwrap_or_else(|_| {
+                                                vantablack::ghost::paths::data_file_string(
+                                                    "ghost-topology.json",
+                                                )
+                                            });
+                                        let ctrl =
+                                            vantablack::ghost::layers::l10_qel::shared_controller();
+                                        let outcome = ctrl
+                                            .establish_quantum_link(
+                                                Path::new(&topo_path),
+                                                &from_fp,
+                                                &to_fp,
+                                            )
+                                            .await;
+                                        if let Some(route) = &outcome.route {
+                                            if route.success {
+                                                *qel_last_route.write() = Some(route.clone());
+                                            }
+                                        }
+                                        *qel_state_ref.write() = outcome.anchor_state;
+                                        let body = serde_json::json!({
+                                        "anchor_state": outcome.anchor_state.as_str(),
+                                        "success": outcome.route.as_ref().map(|r| r.success).unwrap_or(false),
+                                        "route": outcome.route,
+                                        "key_derived": outcome.key.is_some(),
+                                        "error": outcome.error,
+                                    })
+                                    .to_string();
+                                        ("HTTP/1.1 200 OK", body, "application/json")
+                                    } else if req.starts_with("GET /api/update/check") {
+                                        let body = match check_github_update().await {
+                                            Ok(val) => val.to_string(),
+                                            Err(e) => serde_json::json!({
+                                                "error": e,
+                                                "update_available": false,
+                                                "current_version": env!("CARGO_PKG_VERSION")
+                                            })
+                                            .to_string(),
+                                        };
+                                        ("HTTP/1.1 200 OK", body, "application/json")
+                                    } else if req.starts_with("POST /api/update/apply") {
+                                        let (status, body) = match apply_github_update().await {
+                                        Ok(msg) => (
+                                            "HTTP/1.1 200 OK",
+                                            serde_json::json!({ "success": true, "message": msg }).to_string(),
+                                        ),
+                                        Err(e) => (
+                                            "HTTP/1.1 500 Internal Server Error",
+                                            serde_json::json!({ "success": false, "error": e }).to_string(),
+                                        ),
+                                    };
+                                        (status, body, "application/json")
+                                    } else if req.starts_with("GET /dashboard")
+                                        || req.starts_with("GET / ")
+                                        || req.starts_with("GET /?")
+                                    {
+                                        let html = include_str!("../assets/wan_dashboard.html")
+                                            .replace(
+                                                "v0.7.5",
+                                                &format!("v{}", env!("CARGO_PKG_VERSION")),
+                                            )
+                                            .replace("{{VERSION}}", env!("CARGO_PKG_VERSION"));
+                                        ("HTTP/1.1 200 OK", html, "text/html; charset=utf-8")
+                                    } else if req.starts_with("GET /metrics") {
+                                        let sessions = nc_ref.sessions.len();
+                                        let peers = addrs_ref.len();
+                                        let uptime = nc_ref.created_at.elapsed().as_secs();
+                                        let sent_bytes =
+                                            nc_ref.stats.bytes_sent.load(Ordering::Relaxed);
+                                        let recv_bytes =
+                                            nc_ref.stats.bytes_recv.load(Ordering::Relaxed);
+                                        let sent_pkts =
+                                            nc_ref.stats.packets_sent.load(Ordering::Relaxed);
+                                        let recv_pkts =
+                                            nc_ref.stats.packets_recv.load(Ordering::Relaxed);
+                                        let retrans =
+                                            nc_ref.stats.retransmits.load(Ordering::Relaxed);
+                                        let drops = nc_ref.stats.drops.load(Ordering::Relaxed);
+                                        let body = format!(
+                                        "# HELP ghost_sessions_total Active peer-to-peer sessions\n# TYPE ghost_sessions_total gauge\nghost_sessions_total {}\n# HELP ghost_known_peers_total Discovered mesh peers\n# TYPE ghost_known_peers_total gauge\nghost_known_peers_total {}\n# HELP ghost_uptime_seconds Process uptime in seconds\n# TYPE ghost_uptime_seconds counter\nghost_uptime_seconds {}\n# HELP ghost_bytes_sent_total Total bytes transmitted\n# TYPE ghost_bytes_sent_total counter\nghost_bytes_sent_total {}\n# HELP ghost_bytes_recv_total Total bytes received\n# TYPE ghost_bytes_recv_total counter\nghost_bytes_recv_total {}\n# HELP ghost_packets_sent_total Total packets sent\n# TYPE ghost_packets_sent_total counter\nghost_packets_sent_total {}\n# HELP ghost_packets_recv_total Total packets received\n# TYPE ghost_packets_recv_total counter\nghost_packets_recv_total {}\n# HELP ghost_retransmits_total Total retransmissions triggered\n# TYPE ghost_retransmits_total counter\nghost_retransmits_total {}\n# HELP ghost_drops_total Total dropped or replay-rejected frames\n# TYPE ghost_drops_total counter\nghost_drops_total {}\n# HELP ghost_cover_traffic_rate_hz Nominal cover traffic emission rate in Hz\n# TYPE ghost_cover_traffic_rate_hz gauge\nghost_cover_traffic_rate_hz 2.0\n",
+                                        sessions, peers, uptime, sent_bytes, recv_bytes, sent_pkts, recv_pkts, retrans, drops
+                                    );
+                                        (
+                                            "HTTP/1.1 200 OK",
+                                            body,
+                                            "text/plain; version=0.0.4; charset=utf-8",
+                                        )
+                                    } else {
+                                        (
+                                            "HTTP/1.1 404 Not Found",
+                                            "Not Found".to_string(),
+                                            "text/plain",
+                                        )
+                                    };
+
+                                    let body = if req.starts_with("GET /metrics") {
+                                        format!("{body}{vpn_prom}")
+                                    } else {
+                                        body
+                                    };
+                                    let resp = format!(
+                                    "{}\r\n{}Access-Control-Allow-Methods: GET, POST, OPTIONS\r\nAccess-Control-Allow-Headers: Content-Type, Authorization, X-Pin\r\nContent-Type: {}\r\nContent-Length: {}\r\nConnection: close\r\n\r\n{}",
+                                    status_line, cors_header, content_type, body.len(), body
+                                );
+                                    let _ = stream.write_all(resp.as_bytes()).await;
+                                    let _ = stream.flush().await;
+                                    let _ = stream.shutdown().await;
+                                }
+                            });
+                        }
+                        Err(e) => {
+                            tracing::warn!("Control center accept error: {e}");
+                            tokio::time::sleep(tokio::time::Duration::from_millis(50)).await;
+                        }
+                    }
+                }
+            }
+            Err(e) => {
+                tracing::warn!("Failed to bind metrics HTTP endpoint on port {}: {}", mp, e);
+            }
+        }
+    });
+}
+
+/// Where the consumer settings document lives (device names, egress mode,
+/// split-tunnel list).
+pub fn consumer_config_path() -> String {
+    std::env::var("GHOST_CONSUMER_CONFIG")
+        .ok()
+        .filter(|s| !s.is_empty())
+        .unwrap_or_else(|| vantablack::ghost::paths::data_file_string("ghost-consumer.json"))
+}
+
+/// Load consumer settings. Returns `None` when the file is absent, so the
+/// caller can fall back to env-derived defaults.
+pub fn load_consumer_settings(path: &str) -> Option<ConsumerSettings> {
+    let data = std::fs::read_to_string(path).ok()?;
+    match serde_json::from_str::<ConsumerSettings>(&data) {
+        Ok(settings) => Some(settings),
+        Err(e) => {
+            tracing::warn!("Ignoring unreadable consumer config {path}: {e}");
+            None
+        }
+    }
+}
+
+/// Persist consumer settings via a temp file + rename, so a crash mid-write
+/// cannot leave a truncated document behind.
+pub fn save_consumer_settings(path: &str, settings: &ConsumerSettings) {
+    let Ok(json) = serde_json::to_string_pretty(settings) else {
+        return;
+    };
+    let tmp = format!("{path}.tmp");
+    if std::fs::write(&tmp, json).is_err() {
+        tracing::warn!("Could not write {tmp}");
+        return;
+    }
+    if std::fs::rename(&tmp, path).is_err() {
+        let _ = std::fs::remove_file(&tmp);
+        tracing::warn!("Could not replace {path}");
+    }
+}
+
+/// Compare two semver-like version strings (e.g. "v0.8.18" vs "0.8.17").
+pub fn is_newer_version(latest: &str, current: &str) -> bool {
+    let parse_parts = |s: &str| -> Vec<u32> {
+        s.trim_start_matches('v')
+            .split('.')
+            .filter_map(|p| p.parse::<u32>().ok())
+            .collect()
+    };
+    let l_parts = parse_parts(latest);
+    let c_parts = parse_parts(current);
+    let len = l_parts.len().max(c_parts.len());
+    for i in 0..len {
+        let l = l_parts.get(i).copied().unwrap_or(0);
+        let c = c_parts.get(i).copied().unwrap_or(0);
+        if l > c {
+            return true;
+        }
+        if l < c {
+            return false;
+        }
+    }
+    false
+}
+
+/// Query the latest release info from the official GitHub repository.
+pub async fn check_github_update() -> Result<serde_json::Value, String> {
+    let client = reqwest::Client::builder()
+        .user_agent("Vantablack-Updater/0.8")
+        .timeout(Duration::from_secs(6))
+        .build()
+        .map_err(|e| e.to_string())?;
+
+    let res = client
+        .get("https://api.github.com/repos/KELLERBABG/Vantablack/releases/latest")
+        .send()
+        .await
+        .map_err(|e| e.to_string())?;
+
+    if !res.status().is_success() {
+        return Err(format!("GitHub API returned HTTP {}", res.status()));
+    }
+
+    let json: serde_json::Value = res.json().await.map_err(|e| e.to_string())?;
+    let tag = json
+        .get("tag_name")
+        .and_then(|v| v.as_str())
+        .unwrap_or("")
+        .to_string();
+    let current = env!("CARGO_PKG_VERSION");
+    let has_update = is_newer_version(&tag, current);
+
+    let mut exe_url = String::new();
+    let mut zip_url = String::new();
+    let mut apk_url = String::new();
+
+    if let Some(assets) = json.get("assets").and_then(|a| a.as_array()) {
+        for asset in assets {
+            if let (Some(name), Some(url)) = (
+                asset.get("name").and_then(|n| n.as_str()),
+                asset.get("browser_download_url").and_then(|u| u.as_str()),
+            ) {
+                if name.ends_with(".exe") && (name.contains("setup") || name.starts_with("ggn-")) {
+                    exe_url = url.to_string();
+                } else if name.ends_with(".zip") && name.contains("windows") {
+                    zip_url = url.to_string();
+                } else if name.ends_with(".apk") {
+                    apk_url = url.to_string();
+                }
+            }
+        }
+    }
+
+    Ok(serde_json::json!({
+        "current_version": current,
+        "latest_version": tag.trim_start_matches('v'),
+        "tag_name": tag,
+        "update_available": has_update,
+        "html_url": json.get("html_url").and_then(|u| u.as_str()).unwrap_or(""),
+        "release_notes": json.get("body").and_then(|b| b.as_str()).unwrap_or(""),
+        "published_at": json.get("published_at").and_then(|p| p.as_str()).unwrap_or(""),
+        "windows_setup_url": exe_url,
+        "windows_zip_url": zip_url,
+        "android_apk_url": apk_url,
+    }))
+}
+
+/// Download the latest Windows release installer and execute it silently.
+pub async fn apply_github_update() -> Result<String, String> {
+    let update_info = check_github_update().await?;
+    let setup_url = update_info
+        .get("windows_setup_url")
+        .and_then(|u| u.as_str())
+        .filter(|u| !u.is_empty())
+        .ok_or_else(|| "No Windows installer (.exe) found in release".to_string())?;
+
+    let client = reqwest::Client::builder()
+        .user_agent("Vantablack-Updater/0.8")
+        .timeout(Duration::from_secs(120))
+        .build()
+        .map_err(|e| e.to_string())?;
+
+    let resp = client
+        .get(setup_url)
+        .send()
+        .await
+        .map_err(|e| e.to_string())?;
+    if !resp.status().is_success() {
+        return Err(format!("Download failed: HTTP {}", resp.status()));
+    }
+
+    let bytes = resp.bytes().await.map_err(|e| e.to_string())?;
+    let temp_installer = std::env::temp_dir().join("vantablack-latest-setup.exe");
+    std::fs::write(&temp_installer, &bytes).map_err(|e| e.to_string())?;
+
+    #[cfg(windows)]
+    {
+        let installer_path = temp_installer.to_string_lossy().to_string();
+        std::process::Command::new("cmd")
+            .args([
+                "/c",
+                "start",
+                "",
+                &installer_path,
+                "/VERYSILENT",
+                "/SUPPRESSMSGBOXES",
+                "/NORESTART",
+            ])
+            .spawn()
+            .map_err(|e| e.to_string())?;
+
+        tokio::spawn(async {
+            tokio::time::sleep(Duration::from_millis(600)).await;
+            std::process::exit(0);
+        });
+    }
+
+    #[cfg(not(windows))]
+    {
+        Err("Silent self-update is currently supported on Windows".to_string())
+    }
+
+    #[cfg(windows)]
+    Ok("Installer launched silently. Vantablack is restarting...".to_string())
+}

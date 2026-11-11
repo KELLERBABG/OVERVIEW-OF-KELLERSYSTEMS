@@ -1,0 +1,87 @@
+Rahmenvertrag über Managed Hosting
+
+zwischen der Alpenhost Betriebs GmbH, Mariahilfer Gürtel 8, 1150 Wien (nachfolgend "Anbieterin")
+
+und der Kärntner Elektrohandel GmbH, Italiener Straße 21, 9500 Villach (nachfolgend "Kunde")
+
+Präambel
+
+Die Anbieterin betreibt in Wien ein Rechenzentrum und übernimmt für den Kunden den Betrieb zweier dedizierter Server einschließlich Überwachung und Datensicherung.
+
+§ 1 Vertragsgegenstand
+
+(1) Die Anbieterin betreibt für den Kunden zwei dedizierte Server sowie die zugehörige Backupinfrastruktur in Wien.
+
+(2) Die Verantwortung für die im Kundenauftrag verarbeiteten Inhalte liegt beim Kunden.
+
+§ 2 Laufzeit
+
+(1) Die feste Laufzeit beträgt sechsunddreißig Monate, eine Kündigung ist ausgeschlossen.
+
+(2) Der Kunde kann den Vertrag danach mit dreimonatiger Frist zum Quartalsende kündigen.
+
+§ 3 Entgelte
+
+(1) Das Entgelt beträgt 4.850 EUR monatlich zuzüglich Umsatzsteuer.
+
+(2) Bei Zahlungsverzug verrechnet die Anbieterin Verzugszinsen in Höhe von 9,2 Prozent über dem Basiszinssatz.
+
+§ 4 Wiederherstellung aus Sicherungen
+
+(1) Bei Verzug schuldet der Kunde eine Aufwandspauschale von 250 EUR.
+
+(2) Der Nachweis eines geringeren Aufwands ist nicht gestattet.
+
+§ 5 Aufrechnung und Behalt
+
+(1) Gegenansprüche bleiben bei der Abrechnung außer Betracht.
+
+§ 6 Daten
+
+(1) Die Anbieterin darf die Betriebsdaten zur Weiterentwicklung ihrer Modelle nutzen.
+
+(2) Die Anbieterin verarbeitet die Betriebsdaten ausschließlich zur Erbringung der vereinbarten Leistungen.
+
+§ 7 Anregungen des Kunden
+
+(1) Anregungen und Vorschläge des Kunden verwertet die Anbieterin ohne Vergütung.
+
+§ 8 Mitteilungen
+
+(1) Mitteilungen der Anbieterin gelten nach Versand als zugegangen; auf den tatsächlichen Abruf kommt es nicht an.
+
+§ 9 Vorzeitige Beendigung
+
+(1) Die vorzeitige Auflösung des Vertrags durch den Kunden löst eine pauschale Stornogebühr aus.
+
+§ 10 Vertraulichkeit
+
+(1) Die Vertragsparteien behandeln die wechselseitig offengelegten Informationen vertraulich und verwenden sie nur für Zwecke dieses Vertrags.
+
+§ 11 Haftung
+
+(1) Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt.
+
+§ 12 Datenrückgabe
+
+(1) Die Anbieterin stellt dem Kunden bei Vertragsende eine vollständige Kopie aller Kundendaten in maschinenlesbarer Form kostenfrei bereit.
+
+§ 13 Nutzungsumfang
+
+(1) Der Kunde darf die gehostete Anwendung während der Vertragslaufzeit mit bis zu 250 benannten Nutzern verwenden.
+
+§ 14 Kosten der Verhandlungen
+
+(1) Beide Parteien tragen ihre eigenen Kosten für die Verhandlungen zu diesem Vertrag.
+
+§ 15 Schlussbestimmungen
+
+(1) Es gilt österreichisches Recht.
+
+(2) Gerichtsstand ist Wien.
+
+Ort, Datum: Wien, den 03.04.2025
+
+Für die Anbieterin: gez. R. Alpen
+
+Für den Kunden: gez. S. Kärntner

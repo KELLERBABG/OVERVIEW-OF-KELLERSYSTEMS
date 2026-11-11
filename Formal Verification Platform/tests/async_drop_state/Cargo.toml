@@ -1,0 +1,6 @@
+[package]
+name = "async_drop_state"
+version = "0.0.0"
+edition = "2021"
+
+[workspace]

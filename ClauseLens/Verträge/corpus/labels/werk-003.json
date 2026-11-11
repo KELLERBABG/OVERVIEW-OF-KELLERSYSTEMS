@@ -1,0 +1,84 @@
+{
+  "slug": "werk-003",
+  "source": "generated",
+  "domain": "Migrationsprojekt IT, schweizerisches Recht",
+  "traps": [
+    {
+      "marker": "Kundendaten dürfen in ein Drittland übermittelt werden",
+      "expectedType": "international_data_processing",
+      "note": "Drittlandtransfer als Erlaubnis formuliert, ohne das Registerwort ausserhalb der Europaeischen Union."
+    },
+    {
+      "marker": "Subunternehmer einzusetzen, ohne dies vorher anzuzeigen",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "Unkontrollierter Subunternehmereinsatz; der Nachsatz ueber die Anzeige steht in einem gesonderten Absatz."
+    },
+    {
+      "marker": "Übertragung von Rechten und Pflichten aus diesem Vertrag ist ohne Zustimmung",
+      "expectedType": "assignment_restriction",
+      "note": "Zessionsverbot ohne die Woerter Abtretung oder Abtretungsverbot."
+    },
+    {
+      "marker": "Sämtliche Steuern und Abgaben aus diesem Vertrag trägt der Kunde",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Steuerlast vollstaendig beim Kunden."
+    },
+    {
+      "marker": "Ersatzansprüche des Kunden erlöschen zwölf Monate nach der Abnahme",
+      "expectedType": "statute_of_limitations",
+      "note": "Verkuerzte Verjaehrung als Erloeschenstatbestand, ohne das Wort Verjaehrungsfrist."
+    },
+    {
+      "marker": "Gelingt dem Kunden der Gegenbeweis nicht, gilt die Abrechnung als richtig",
+      "expectedType": "burden_of_proof",
+      "note": "Beweislastumkehr zu Lasten des Kunden ohne das Wort Beweislast."
+    },
+    {
+      "marker": "Die Mitteilung gilt unabhängig vom tatsächlichen Zugang als bewirkt",
+      "expectedType": "fictitious_receipt",
+      "note": "Zugangsfiktion, umschrieben mit bewirkt statt zugegangen."
+    },
+    {
+      "marker": "The customer shall indemnify and hold harmless the provider against any third party claims",
+      "expectedType": "third_party_indemnity",
+      "note": "Englische Freistellungsklausel, umgeht die deutsche Registerformulierung."
+    },
+    {
+      "marker": "Nutzungsbedingungen in ihrer jeweils gültigen Fassung",
+      "expectedType": "dynamic_url_referral",
+      "note": "Dynamische Einbeziehung ohne URL, ueber die jeweils gueltige Fassung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Zulaessige Freizeichnung, muss still bleiben."
+    },
+    {
+      "marker": "Die Vergütung ist innerhalb von dreißig Tagen nach Rechnungseingang fällig",
+      "note": "Marktuebliche Zahlungsfrist."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten kündigen",
+      "note": "Symmetrisches Kuendigungsrecht."
+    },
+    {
+      "marker": "Die Datenübertragung erfolgt verschlüsselt über eine gesicherte Verbindung",
+      "note": "Technische Schutzmassnahme, unbedenklich."
+    },
+    {
+      "marker": "Der Anbieter zeigt den Einsatz von Unterauftragnehmern vierzehn Tage vorher an",
+      "note": "Zulaessige Ankuendigungspflicht."
+    },
+    {
+      "marker": "Der Anbieter übergibt den Quellcode nach vollständiger Zahlung der Vergütung",
+      "note": "Zulaessige Zug-um-Zug-Regelung."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Die Parteien arbeiten bei der Fehleranalyse eng zusammen",
+      "note": "Harmlose Mitwirkungsklausel ohne Detektorbezug."
+    }
+  ]
+}

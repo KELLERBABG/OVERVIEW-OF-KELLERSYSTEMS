@@ -1,0 +1,69 @@
+[
+  {
+    "crate": "buggy_project",
+    "function": "check_div",
+    "block": "bb0",
+    "status": "FAIL",
+    "kind": "divzero",
+    "defect_class": "unguarded",
+    "file": "src/main.rs",
+    "line": 10,
+    "details": "Division By Zero Analysis -> Exploit path found! [divisor (_1) = 0]",
+    "witness": [
+      {
+        "input": "divisor (_1)",
+        "symbol": "divisor",
+        "value": "0"
+      }
+    ],
+    "witness_kind": "pinned"
+  },
+  {
+    "crate": "buggy_project",
+    "function": "check_index",
+    "block": "bb0",
+    "status": "FAIL",
+    "kind": "bounds",
+    "defect_class": "unguarded",
+    "file": "src/main.rs",
+    "line": 1,
+    "details": "Slice Boundary Analysis -> Exploit path found! [idx (_1) = 3, 3_usize = 3]",
+    "witness": [
+      {
+        "input": "idx (_1)",
+        "symbol": "idx",
+        "value": "3"
+      },
+      {
+        "input": "3_usize",
+        "symbol": "len",
+        "value": "3"
+      }
+    ],
+    "witness_kind": "one-of-many"
+  },
+  {
+    "crate": "buggy_project",
+    "function": "check_overflow",
+    "block": "bb0",
+    "status": "FAIL",
+    "kind": "overflow",
+    "defect_class": "unguarded",
+    "file": "src/main.rs",
+    "line": 6,
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found! [x (_1) = 255, y (_2) = 1]",
+    "witness": [
+      {
+        "input": "x (_1)",
+        "symbol": "overflow_l",
+        "value": "255"
+      },
+      {
+        "input": "y (_2)",
+        "symbol": "overflow_r",
+        "value": "1"
+      }
+    ],
+    "witness_kind": "one-of-many"
+  }
+]

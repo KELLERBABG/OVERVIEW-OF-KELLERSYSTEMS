@@ -1,0 +1,87 @@
+{
+  "slug": "daten-024",
+  "source": "generated",
+  "domain": "Forschungskooperation",
+  "traps": [
+    {
+      "marker": "hat die Gesellschaft auf erstes Anfordern hin klaglos zu stellen",
+      "expectedType": "third_party_indemnity",
+      "note": "Paraphrase/Umstellung: nennt 'hat die Gesellschaft auf erstes Anfordern hin' statt der Registerwendung."
+    },
+    {
+      "marker": "die Rechte und Pflichten ohne Zustimmung des Kunden auf einen Dritten übertragen",
+      "expectedType": "asymmetric_termination",
+      "note": "Paraphrase/Umstellung: nennt 'die Rechte und Pflichten ohne Zustimmung des ' statt der Registerwendung."
+    },
+    {
+      "marker": "Jede Zession der Vergütungsansprüche bedarf der vorherigen Zustimmung",
+      "expectedType": "assignment_restriction",
+      "note": "Paraphrase/Umstellung: nennt 'Jede Zession der Vergütungsansprüche bedarf d' statt der Registerwendung."
+    },
+    {
+      "marker": "Ein Recht zur Vertragsauflösung besteht für den Kunden bei Betriebsstörungen nicht",
+      "expectedType": "force_majeure_asymmetry",
+      "note": "Paraphrase/Umstellung: nennt 'Ein Recht zur Vertragsauflösung besteht für d' statt der Registerwendung."
+    },
+    {
+      "marker": "Ehemalige Mitarbeiter der Gesellschaft sind zwei Jahre lang nicht zu beschäftigen",
+      "expectedType": "non_solicitation",
+      "note": "Paraphrase/Umstellung: nennt 'Ehemalige Mitarbeiter der Gesellschaft sind z' statt der Registerwendung."
+    },
+    {
+      "marker": "Der Kunde ist für die Dauer der Grundlaufzeit an die Konditionen gebunden",
+      "expectedType": "unilateral_convenience_termination",
+      "note": "Paraphrase/Umstellung: nennt 'Der Kunde ist für die Dauer der Grundlaufzeit' statt der Registerwendung."
+    },
+    {
+      "marker": "Bestimmungen zu Abrechnung und Sicherheiten entfalten auch nach Vertragsende Nachwirkung",
+      "expectedType": "excessive_survival",
+      "note": "Paraphrase/Umstellung: nennt 'Bestimmungen zu Abrechnung und Sicherheiten e' statt der Registerwendung."
+    },
+    {
+      "marker": "Eine Obergrenze für Preisanpassungen wird ausdrücklich nicht vereinbart",
+      "expectedType": "price_escalation",
+      "note": "Paraphrase/Umstellung: nennt 'Eine Obergrenze für Preisanpassungen wird aus' statt der Registerwendung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "binnen zwei Werktagen nach Eingang auf dem Geschäftskonto",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "ausschließlich auf dokumentierte Weisung des Auftraggebers",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "benennt für Datenschutzfragen eine Ansprechperson",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "innerhalb von dreißig Tagen nach Zugang ohne Abzug",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "einen festen Ansprechpartner für alle Fragen der Vertragsabwicklung",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "löscht nach Beendigung der Datenverarbeitung alle personenbezogenen Daten",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "in maschinenlesbarer Form ohne Zusatzkosten",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "vollständigen Export seiner Daten in einem gängigen maschinenlesbaren Format",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "eine Bearbeitungsgebühr von fünfzig Euro",
+      "note": "Täuschende Klausel ohne passenden Detektortyp."
+    }
+  ]
+}

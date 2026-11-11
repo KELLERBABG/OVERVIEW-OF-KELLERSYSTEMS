@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# LLM / AI reference (comment, not a crawl directive):
+# https://aureal.kellersystems.dev/llms.txt
+Sitemap: https://aureal.kellersystems.dev/sitemap.xml

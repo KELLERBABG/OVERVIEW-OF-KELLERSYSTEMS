@@ -1,0 +1,71 @@
+Vertrag über dediziertes Hosting
+
+zwischen Kärntner Server GmbH, Villacher Straße 21, 9020 Klagenfurt (nachfolgend "Anbieterin")
+
+und Grazer Softwarehaus GmbH, Herrengasse 16, 8010 Graz (nachfolgend "Kunde")
+
+Präambel
+
+Die Anbieterin stellt dem Kunden dedizierte Server in einem Rechenzentrum in Klagenfurt bereit.
+
+§ 1 Gegenstand
+
+(1) Die Anbieterin stellt dem Kunden vier dedizierte Server bereit.
+
+(2) Die Hardware verbleibt im Eigentum der Anbieterin.
+
+§ 2 Kündigungsrechte
+
+(1) Der Kunde kann den Vertrag nicht aus wichtigem Grund kündigen.
+
+(2) Nur der Anbieter ist berechtigt, den Vertrag ordentlich zu kündigen.
+
+§ 3 Insolvenz
+
+(1) Bei Zahlungsunfähigkeit des Kunden endet der Vertrag ohne weiteres, ohne dass es einer Kündigung bedarf.
+
+§ 4 Pauschalen
+
+(1) Bei Verzug schuldet der Kunde eine Aufwandspauschale von 250 EUR.
+
+§ 5 Haftung
+
+(1) Die Haftung für mittelbare Schäden und entgangenen Gewinn ist abbedungen.
+
+§ 6 Gerichtsstand
+
+(1) Rechtsstreitigkeiten sind ausschließlich vor den Gerichten am Sitz des Anbieters auszutragen.
+
+§ 7 Aufrechnung
+
+(1) Gegenansprüche bleiben bei der Abrechnung außer Betracht.
+
+§ 8 Zahlung
+
+(1) Die Rechnung ist innerhalb von 30 Tagen nach Zugang ohne Abzug fällig.
+
+§ 9 Datenrückgabe
+
+(1) Die Anbieterin stellt dem Kunden bei Vertragsende eine vollständige Kopie aller Kundendaten in maschinenlesbarer Form kostenfrei bereit.
+
+§ 10 Vertraulichkeit
+
+(1) Die Vertragsparteien behandeln die wechselseitig offengelegten Informationen vertraulich.
+
+§ 11 Verfügbarkeit
+
+(1) Die Anbieterin sichert eine Verfügbarkeit von 99,5 Prozent pro Kalendermonat zu.
+
+§ 12 Datenschutz
+
+(1) Der Anbieter trifft angemessene technische und organisatorische Maßnahmen zum Schutz der Daten.
+
+§ 13 Mängel
+
+(1) Die Anbieterin gewährleistet, dass die Anwendung im Wesentlichen der Leistungsbeschreibung entspricht.
+
+Klagenfurt, den 27.10.2025
+
+Für die Anbieterin: gez. K. Kärntner
+
+Für den Kunden: gez. G. Grazer

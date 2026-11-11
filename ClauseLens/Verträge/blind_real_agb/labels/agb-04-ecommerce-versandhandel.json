@@ -1,0 +1,76 @@
+{
+  "slug": "agb-04-ecommerce-versandhandel",
+  "domain": "B2C Online-Shop & Versandhandel AGB",
+  "source": "Blind Real-AGB Benchmark 2026 (vor Engine-Lauf gelabelt)",
+  "traps": [
+    {
+      "marker": "sämtliche vorvertraglichen Auskünfte unseres Kundenservice, Produktbeschreibungen im",
+      "expectedType": "entire_agreement",
+      "statutoryBasis": "§ 305b BGB, § 434 Abs. 3 BGB, § 307 Abs. 1 BGB",
+      "note": "Unwirksame Vollständigkeitsklausel, die den Vorrang der Individualabrede (§ 305b BGB) und die Haftung für öffentliche Produktbeschreibungen (§ 434 BGB) ausschließt."
+    },
+    {
+      "marker": "Auch bei Verkäufen an Verbraucher geht die Gefahr des zufälligen Untergangs und der",
+      "expectedType": "burden_of_proof",
+      "statutoryBasis": "§ 475 Abs. 2 BGB, § 309 Nr. 12 BGB",
+      "note": "Unzulässige Abwälzung der Transportgefahr und Beweislast auf den Verbraucher beim Verbrauchsgüterkauf."
+    },
+    {
+      "marker": "Werden etwaige Sachmängel oder Falschlieferungen nicht spätestens innerhalb von 24",
+      "expectedType": "deemed_acceptance",
+      "statutoryBasis": "§ 309 Nr. 8 lit. b ee BGB, § 476 BGB",
+      "note": "Unzulässige Genehmigungsfiktion und Ausschlussfrist von 24 Stunden für Mängelrügen gegenüber Verbrauchern und Unternehmern."
+    },
+    {
+      "marker": "ein Anspruch des Kunden auf Freigabe von Sicherheiten besteht auch dann nicht, wenn",
+      "expectedType": "extended_retention_of_title",
+      "statutoryBasis": "§ 307 Abs. 1 BGB, § 138 BGB",
+      "note": "Unwirksamer Konzern- und Kontokorrenteigentumsvorbehalt mit ausdrücklichem Ausschluss des Freigabeanspruchs bei Übersicherung."
+    },
+    {
+      "marker": "verjähren auch gegenüber Verbrauchern einheitlich in sechs Monaten ab Ablieferung der Ware",
+      "expectedType": "statute_of_limitations",
+      "statutoryBasis": "§ 476 Abs. 2 BGB, § 309 Nr. 8 lit. b ff BGB",
+      "note": "Unzulässige Verkürzung der Verjährungsfrist für Mängelansprüche auf sechs Monate bei neuen und gebrauchten Waren."
+    },
+    {
+      "marker": "ausdrücklich auch bei Klagen gegen Verbraucher mit Wohnsitz in Deutschland – wird",
+      "expectedType": "jurisdiction",
+      "statutoryBasis": "§ 38 ZPO, § 307 Abs. 1 BGB, Art. 18 EuGVVO/LugÜ",
+      "note": "Unwirksame Vereinbarung eines ausschließlichen Auslandsgerichtsstands (Zürich) gegenüber Verbrauchern."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Durch Anklicken des Buttons „Zahlungspflichtig bestellen“ gibt der Kunde ein",
+      "note": "Gesetzeskonforme Regelung des Vertragsschlusses im elektronischen Geschäftsverkehr nach § 312j BGB."
+    },
+    {
+      "marker": "Aufrechnungsrechte stehen dem Kunden nur zu, wenn seine Gegenansprüche rechtskräftig",
+      "note": "BGH-konforme Aufrechnungsklausel unter Berücksichtigung unbestrittener, rechtskräftig festgestellter und synallagmatischer Gegenforderungen."
+    },
+    {
+      "marker": "Bei Verträgen mit Verbrauchern behält sich der Verkäufer das Eigentum an der",
+      "note": "Zulässiger einfacher Eigentumsvorbehalt nach § 449 BGB."
+    },
+    {
+      "marker": "Für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit, die auf",
+      "note": "Gesetzeskonforme Haftungsregelung gemäß § 309 Nr. 7 lit. a BGB."
+    },
+    {
+      "marker": "Der Verkäufer verarbeitet personenbezogene Daten des Kunden zweckgebunden zur",
+      "note": "Rechtskonformer Datenschutzhinweis."
+    },
+    {
+      "marker": "Zur Teilnahme an einem Streitbeilegungsverfahren vor einer",
+      "note": "Pflichtgemäße Information nach § 36 VSBG."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "zieht der Verkäufer vom zu erstattenden Kaufpreis unabhängig vom Zustand der",
+      "statutoryBasis": "§§ 355, 357, 361 BGB",
+      "note": "Rechtswidrige Einschränkung des gesetzlichen Verbraucherwiderrufsrechts durch pauschale Wiedereinlagerungsgebühr (Restocking Fee) und Originalverpackungszwang."
+    }
+  ]
+}

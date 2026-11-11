@@ -1,0 +1,21 @@
+target/
+node_modules/
+.venv/
+__pycache__/
+.pytest_cache/
+*.tmp
+*.exe
+*.dll
+*.pdb
+*.rlib
+.freebuff/
+.reasonix/
+*reasonix*
+
+# Build artifacts (never commit)
+build/
+dist/
+*.egg-info/
+
+# Generated print output & local artifacts
+output/

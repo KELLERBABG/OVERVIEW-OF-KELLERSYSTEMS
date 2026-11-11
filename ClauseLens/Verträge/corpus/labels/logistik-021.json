@@ -1,0 +1,76 @@
+{
+  "slug": "logistik-021",
+  "source": "generated",
+  "domain": "Zolllager",
+  "traps": [
+    {
+      "marker": "Die Haftung des Anbieters ist der Höhe nach auf fünfzig Prozent der Jahresvergütung begrenzt.",
+      "expectedType": "liability",
+      "note": "Red-team Klausel: liability"
+    },
+    {
+      "marker": "Der Anbieter darf ein Audit ohne vorherige Ankündigung durchführen.",
+      "expectedType": "unreasonable_audit",
+      "note": "Red-team Klausel: unreasonable_audit"
+    },
+    {
+      "marker": "Die Systemprotokolle des Anbieters gelten als Vollbeweis für die Einhaltung der Kühlkette.",
+      "expectedType": "audit_log_manipulation",
+      "note": "Red-team Klausel: audit_log_manipulation"
+    },
+    {
+      "marker": "Die Herausgabe der Daten erfolgt nur gegen eine gesonderte Gebühr.",
+      "expectedType": "data_lockin",
+      "note": "Red-team Klausel: data_lockin"
+    },
+    {
+      "marker": "Die Trassenentgelte erhöhen sich automatisch um jährlich bis zu sechs Prozent.",
+      "expectedType": "price_escalation",
+      "note": "Red-team Klausel: price_escalation"
+    },
+    {
+      "marker": "Es gelten die jeweils aktuellen Transportbedingungen unter https://www.cargoflow.de/bedingungen.",
+      "expectedType": "dynamic_url_referral",
+      "note": "Red-team Klausel: dynamic_url_referral"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Bestandsführung wöchentlich ab",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Bestandsprotokolle im Portal bereit",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Protokolle während der Geschäftszeiten einsehen",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "informiert den Kunden über geplante Wartungsarbeiten",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "innerhalb von 30 Tagen ohne Abzug zahlbar",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "zur außerordentlichen Kündigung aus wichtigem Grund bleiben unberührt",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "7.3 Es gilt deutsches Recht.",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Beide Parteien behandeln die Zolldaten vertraulich",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Unterauftragnehmer mit einer Vorlaufzeit von vierzehn Tagen",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

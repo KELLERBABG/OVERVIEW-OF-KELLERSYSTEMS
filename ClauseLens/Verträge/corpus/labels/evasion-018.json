@@ -1,0 +1,79 @@
+{
+  "slug": "evasion-018",
+  "source": "generated",
+  "domain": "evasion",
+  "traps": [
+    {
+      "marker": "Ändеrungеn und Еrgänzungеn diеsеs Vеrtrаgs bеdürfеn dеr Sсhriftfоrm, diе Tехtfоrm ist аusdrüсkliсh",
+      "expectedType": "written_form_trap",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: written_form_trap (Technik: cyrillic)."
+    },
+    {
+      "marker": "Dеr Kundе trägt diе Bеwеislаst dаfür, dаss еin Аusfаll niсht аuf Störungеn in sеinеm Bеtriеb bеruht.",
+      "expectedType": "burden_of_proof",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: burden_of_proof (Technik: cyrillic)."
+    },
+    {
+      "marker": "Für diе Nutzung gеltеn diе Bеdingungеn, diе untеr dеr Аdrеssе",
+      "expectedType": "dynamic_url_referral",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: dynamic_url_referral (Technik: cyrillic)."
+    },
+    {
+      "marker": "Еinе Hаftung dеs Аnbiеtеrs für dаs Vеrsсhuldеn vоn Еrfüllungsgеhilfеn ist аusgеsсhlоssеn.",
+      "expectedType": "vicarious_agents",
+      "note": "GAP: kyrillische Homoglyphen in lateinischen Wörtern. Erwartet: vicarious_agents."
+    },
+    {
+      "marker": "Рrüfungеn wеrdеn unmittеlbаr durсhgеführt, еinе Tеrminаbstimmung еntfällt, und diе Аufwеndungеn für",
+      "expectedType": "unreasonable_audit",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: unreasonable_audit (Technik: cyrillic)."
+    },
+    {
+      "marker": "Еin Аnsрruсh аuf Bеrеitstеllung dеr Bеstаndsdаtеn in еinеm mаsсhinеnlеsbаrеn Stаndаrdfоrmаt bеstеht",
+      "expectedType": "data_lockin",
+      "note": "GAP: kyrillische Homoglyphen in lateinischen Wörtern. Erwartet: data_lockin."
+    },
+    {
+      "marker": "Dеr Kundе hält dеn Аnbiеtеr аuf еrstеs Аnfоrdеrn vоn аllеn Аnsрrüсhеn Drittеr sсhаdlоs.",
+      "expectedType": "third_party_indemnity",
+      "note": "GAP: kyrillische Homoglyphen in lateinischen Wörtern. Erwartet: third_party_indemnity."
+    },
+    {
+      "marker": "Оrdеntliсhе Kündigung durсh dеn Kundеn ist аusgеsсhlоssеn, dеr Аnbiеtеr kаnn dеn Vеrtrаg mit еinеr",
+      "expectedType": "asymmetric_termination",
+      "note": "GAP: kyrillische Homoglyphen in lateinischen Wörtern. Erwartet: asymmetric_termination."
+    },
+    {
+      "marker": "Аnsрrüсhе dеs Kundеn gеgеn dеn Аnbiеtеr sind niсht аbtrеtbаr, еinе Zеssiоn bеdаrf dеr vоrhеrigеn",
+      "expectedType": "assignment_restriction",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: assignment_restriction (Technik: cyrillic)."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Haftung beider Parteien richtet sich nach den gesetzlichen Bestimmungen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Jede Partei trägt ihre eigenen Kosten der Vertragsverhandlungen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde ist berechtigt, Rechte aus diesem Vertrag mit Zustimmung des Anbieters auf verbundene",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Für die Nutzung der bereitgestellten Software gilt die beigefügte Leistungsbeschreibung.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Ansprüche aus diesem Vertrag verjähren nach den gesetzlichen Vorschriften.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde trägt die Kosten für die von ihm gewünschten Zusatzleistungen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    }
+  ],
+  "uncovered": []
+}

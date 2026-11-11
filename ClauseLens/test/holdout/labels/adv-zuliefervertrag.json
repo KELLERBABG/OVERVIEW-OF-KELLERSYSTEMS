@@ -1,0 +1,72 @@
+{
+  "slug": "adv-zuliefervertrag",
+  "source": "generated",
+  "domain": "B2B Rahmenliefervertrag Technikkomponenten (deutsches Recht, deutschsprachig)",
+  "traps": [
+    {
+      "marker": "Die Ware gilt als genehmigt, wenn der Kunde nicht binnen zehn Werktagen nach Anlieferung schriftlich Rüge erhebt",
+      "expectedType": "deemed_acceptance",
+      "note": "Zehn-Werktage-Genehmigungsfiktion. Bewusst mit gilt als genehmigt und Rüge statt gilt als abgenommen / Mängelanzeige formuliert."
+    },
+    {
+      "marker": "bis sämtliche Ansprüche aus der gesamten Geschäftsbeziehung ausgeglichen sind",
+      "expectedType": "extended_retention_of_title",
+      "note": "Kontokorrent-Eigentumsvorbehalt: Eigentum bis Ausgleich aller Ansprüche aus der gesamten Geschäftsbeziehung (§ 449, § 307 BGB)."
+    },
+    {
+      "marker": "der Nachweis eines geringeren Schadens ist ausgeschlossen",
+      "expectedType": "penalty",
+      "note": "Pauschalierte Vertragsstrafe gegen den Kunden ohne Nachweisvorbehalt; Vertragsstrafe diesmal gegen den Kunden statt gegen den Anbieter."
+    },
+    {
+      "marker": "die Kosten der Maßnahme trägt der Kunde",
+      "expectedType": "unreasonable_audit",
+      "note": "Auditklausel: jederzeitige Kontrollen ohne Anlass und auf Kosten des Kunden."
+    },
+    {
+      "marker": "Ansprüche des Kunden gegen den Anbieter sind nicht abtretbar",
+      "expectedType": "assignment_restriction",
+      "note": "Abtretungsverbot zulasten des Kunden."
+    },
+    {
+      "marker": "Mündliche Zusagen von Vertriebsmitarbeitern des Anbieters begründen keine Ansprüche des Kunden",
+      "expectedType": "entire_agreement",
+      "note": "Vertriebsmitarbeiter-Vertrauensausschluss: mündliche Zusagen aus dem Vertrieb werden entwertet."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Ware ist in handelsüblicher Qualität zu liefern",
+      "note": "Beschaffenheitsvereinbarung ohne Ausschluss der Mängelrechte."
+    },
+    {
+      "marker": "Rechnungen sind innerhalb von 30 Tagen netto ohne Abzug fällig",
+      "note": "Übliche Zahlungsfrist."
+    },
+    {
+      "marker": "Prüfungen werden mit angemessener Vorlaufzeit angekündigt",
+      "note": "Faire Auditankündigung - Gegenstück zur schrankenlosen Kontrolle."
+    },
+    {
+      "marker": "Beide Parteien behandeln die technischen Unterlagen der anderen Seite vertraulich",
+      "note": "Wechselseitige Vertraulichkeit."
+    },
+    {
+      "marker": "Die Weitergabe an verbundene Unternehmen steht beiden Parteien frei",
+      "note": "Symmetrische Weitergabeklausel mit Verschwiegenheitsvorbehalt."
+    },
+    {
+      "marker": "Die Abtretung von Geldforderungen an Finanzierungsinstitute bleibt hiervon unberührt",
+      "note": "Kundenfreundliche Ausnahme vom Abtretungsverbot (einseitig zugunsten des Kunden) - darf nicht feuern."
+    },
+    {
+      "marker": "gilt die gesetzliche Regelung",
+      "note": "Zulässige salvatorische Klausel."
+    },
+    {
+      "marker": "die gesetzlichen Mängelrechte bleiben unberührt",
+      "note": "Rechtswahrender Hinweis."
+    }
+  ],
+  "uncovered": []
+}

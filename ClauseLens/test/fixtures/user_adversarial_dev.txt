@@ -1,0 +1,39 @@
+### Individualsoftware-Entwicklungs- und Implementierungsvertrag
+
+**§ 4 Abnahme und Produktivsetzung**
+
+(1) Der Anbieter stellt die fertiggestellten Leistungsmodule in einer abgeschlossenen Integrations- und Testumgebung zur Prüfung bereit. Der Kunde wird die Komponenten innerhalb von 5 Werktagen auf Übereinstimmung mit der Leistungsbeschreibung prüfen.
+
+(2) Lässt der Kunde diese Frist verstreichen, ohne Mängel in nachvollziehbarer Form schriftlich anzuzeigen, oder bindet der Kunde die bereitgestellten Schnittstellen ganz oder auszugsweise in eigene Vorsysteme oder Testabläufe ein, gilt das jeweilige Modul als vorbehaltlos abgenommen.
+
+**§ 7 Mitwirkungspflichten und Terminverschiebungen**
+
+(1) Der Kunde stellt die zur Durchführung erforderlichen Testdaten, Systemzugänge und Freigaben zeitgerecht bei.
+
+(2) Verzögert sich ein Meilenstein aus Gründen, die der Sphäre des Kunden zuzuordnen sind, ist der Anbieter berechtigt, die für den Projektzeitraum reservierten Entwicklerkapazitäten mit einer pauschalierten Bereitstellungsvergütung von 80 % des vereinbarten Tagessatzes abzurechnen. Dem Kunden bleibt der Nachweis vorbehalten, dass dem Anbieter durch die Reservierung überhaupt kein Aufwand entstanden ist.
+
+**§ 9 Haftung und Deckungsvorsorge**
+
+(1) Der Anbieter gewährleistet die Erfüllung seiner vertragswesentlichen Pflichten im Rahmen der branchenüblichen Sorgfalt.
+
+(2) Bei fahrlässiger Verletzung wesentlicher Vertragspflichten (Kardinalpflichten) ist die Haftung des Anbieters der Höhe nach auf die Summe der vom Kunden in den letzten zwei Monaten vor Schadenseintritt tatsächlich geleisteten Projektvergütungen beschränkt.
+
+(3) Für Datenverluste haftet der Anbieter nur in dem Umfang, wie der Schaden auch bei arbeitstäglicher, manueller externer Vollsicherung aller Anwendungsdaten durch den Kunden eingetreten wäre.
+
+**§ 12 Einräumung von Nutzungsrechten und Lizenzerhalt**
+
+(1) Sämtliche Urheber- und Nutzungsrechte an den Arbeitsergebnissen gehen mit dem vollständigen Ausgleich sämtlicher noch offener Forderungen aus der gesamten bestehenden Geschäftsbeziehung auf den Kunden über.
+
+(2) Befindet sich der Kunde mit einer fälligen Entgeltforderung für mehr als 10 Kalendertage im Verzug, ruhen sämtliche bereits vorläufig erteilten Berechtigungen zur Ausführung und Nutzung der Software automatisch bis zum Nachweis des vollständigen Zahlungsausgleichs. Die Geltendmachung eines Zurückbehaltungsrechts wegen etwaiger Restmängel lässt das Ruhen der Nutzungsrechte unberührt.
+
+**§ 15 Gewährleistung und Mängelursachen**
+
+(1) Mängelansprüche verjähren innerhalb von 12 Monaten ab Abnahme.
+
+(2) Zeigt sich nach der Abnahme eine Fehlfunktion, obliegt es dem Kunden darzulegen und nachzuweisen, dass die Ursache nicht auf zwischenzeitlichen Konfigurationsänderungen, Updates von Drittanbieter-Laufzeitumgebungen (APIs/Runtimes) oder fehlerhafter Bedienung durch Mitarbeiter des Kunden beruht.
+
+**§ 18 Leistungsanpassung und Schnittstellenänderungen**
+
+(1) Sollten im Zuge der Umsetzung technische Drittstandards oder Schnittstellen von Plattformpartnern modifiziert werden, ist der Anbieter berechtigt, die Architektur nach eigenem billigem Ermessen anzugleichen.
+
+(2) Führt eine solche Anpassung zu funktionellen Erweiterungen oder Mehraufwänden, gelten die damit verbundenen Kosten als freigegeben, sofern sie das vereinbarte Budget um nicht mehr als 20 % überschreiten.

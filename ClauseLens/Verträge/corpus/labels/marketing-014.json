@@ -1,0 +1,74 @@
+{
+  "slug": "marketing-014",
+  "source": "generated",
+  "domain": "Content-Produktion Werkvertrag, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Schweigt der Auftraggeber zehn Tage, gilt das Material als freigegeben",
+      "expectedType": "deemed_acceptance",
+      "note": "Freigabefiktion durch Schweigen."
+    },
+    {
+      "marker": "Mängelansprüche verjähren ein Jahr nach Lieferung",
+      "expectedType": "statute_of_limitations",
+      "note": "Verkürzte Verjährung auf ein Jahr."
+    },
+    {
+      "marker": "Den Nachweis eines bei Übergabe vorliegenden Mangels",
+      "expectedType": "burden_of_proof",
+      "note": "Nachweislast beim Auftraggeber; vermeidet 'Beweislast trägt der Kunde'."
+    },
+    {
+      "marker": "werden unentgeltlich Eigentum des Auftragnehmers",
+      "expectedType": "feedback_ip_grab",
+      "note": "Unentgeltlicher Eigentumsübergang von Kundenideen."
+    },
+    {
+      "marker": "nur wirksam, wenn sie notariell beglaubigt zugehen",
+      "expectedType": "written_form_trap",
+      "note": "Übersteigerte Formanforderung; vermeidet das Wort Schriftform."
+    },
+    {
+      "marker": "Rücktritt und Minderung sind ausgeschlossen",
+      "expectedType": "liability",
+      "note": "Ausschluss von Rücktritt und Minderung."
+    },
+    {
+      "marker": "Entfällt eine kritische Aktualisierung der Schnittstelle",
+      "expectedType": "service_credit_forfeiture",
+      "note": "Verfall der Gutschrift bei ausbleibendem Sicherheitsupdate."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Inhalte vertraulich",
+      "note": "Symmetrische Vertraulichkeit."
+    },
+    {
+      "marker": "erhält der Auftraggeber die Rohdaten kostenfrei in einem offenen Format",
+      "note": "Kostenfreier Datenexport."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende beenden",
+      "note": "Symmetrische Kündigung."
+    },
+    {
+      "marker": "erteilt Freigaben in Textform und begründet Ablehnungen",
+      "note": "Ordentliches Freigabeverfahren ohne Fiktion."
+    },
+    {
+      "marker": "zeigt den Einsatz von Dienstleistern vierzehn Tage vorher an; der Auftraggeber kann widersprechen",
+      "note": "Ordentliche Subunternehmerankündigung."
+    },
+    {
+      "marker": "innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Üblicher Zahlungstermin."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Auftragnehmer produziert Film- und Bildinhalte für die Markenkommunikation des Auftraggebers",
+      "note": "Kein Detektor für ungeklärte Nutzungsrechte an Rohmaterial."
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+Supportvertrag Praxissoftware
+
+zwischen der Gemeinschaftspraxis Dr. Seidel (nachfolgend "Kunde") und der MediSoft Betreuung GmbH (nachfolgend "Anbieter") wird folgender Vertrag geschlossen:
+
+Präambel
+Der Kunde benötigt Leistungen im Bereich Anwendersupport und Updates für eine Praxissoftware.
+Der Anbieter verfügt über die hierfür erforderliche Erfahrung und Ausstattung. Die Parteien vereinbaren daher Folgendes:
+
+§ 1 Gegenstand
+Gegenstand des Vertrags ist die Erbringung der in § 2 beschriebenen Leistungen im Bereich Anwendersupport und Updates für eine Praxissoftware.
+
+§ 2 Leistungsumfang
+Der Anbieter erbringt die Leistungen nach dem vereinbarten Leistungsbild und den anerkannten Regeln der Technik.
+Der Leistungsumfang ergibt sich aus diesem Vertrag und den zugehörigen Anlagen.
+§ 3 Eigentumsvorbehalt
+Das Eigentum an den Geräten bleibt beim Anbieter, bis auch Forderungen verbundener Unternehmen ausgeglichen sind, und geht erst dann auf den Kunden über.
+Die Parteien prüfen die Leistungen gemeinsam und halten das Ergebnis fest.
+
+§ 4 Nachunternehmer
+Der Anbieter setzt für die Betreuung eigene Dienstleister ein, ohne deren Auswahl dem Kunden mitzuteilen.
+Die Parteien stimmen die Einzelheiten rechtzeitig vor Leistungsbeginn ab.
+
+§ 5 Aufzeichnungen
+Aufzeichnungen über Serviceeinsätze werden vom Anbieter gepflegt und können aus technischen Gründen nachträglich berichtigt werden.
+Der jeweils benannte Ansprechpartner informiert die andere Partei unverzüglich.
+
+§ 6 Leistungssperre
+Der Anbieter kann den Zugang unterbrechen, wenn begründete Zweifel an der Zahlungsfähigkeit des Kunden bestehen.
+Der Anbieter dokumentiert seine Tätigkeit und legt die Unterlagen auf Anforderung vor.
+
+§ 7 Insolvenz
+Stellt der Kunde einen Antrag auf Eröffnung eines Verfahrens, darf der Anbieter die Leistung sofort einstellen und den Vertrag beenden.
+Beide Parteien unterstützen sich bei der Aufklärung von Rückfragen angemessen.
+
+§ 8 Steuerliche Freistellung
+Steuerliche Pflichten aus dem Vertragsverhältnis trägt wirtschaftlich der Kunde, gleich aus welchem Grund sie entstehen.
+Die Kommunikation erfolgt über die im Kopf dieses Vertrags genannten Kontaktwege.
+
+§ 9 Vertraulichkeit
+The customer shall keep all information confidential, while the provider may disclose the customer's data to partners where it deems this useful.
+Der Kunde benennt für die Abstimmung eine fachlich verantwortliche Person.
+
+§ 10 Zugang von Erklärungen
+Mitteilungen gelten drei Tage nach Absendung als zugegangen, auch wenn sie den Kunden nicht erreichen.
+Der Anbieter setzt für die Leistungserbringung geeignete Fachkräfte ein.
+
+§ 11 Servicezeiten
+Die angegebenen Reaktions- und Wiederherstellungszeiten sind unverbindliche Richtwerte.
+Die Parteien bewahren die im Rahmen der Zusammenarbeit erstellten Unterlagen sorgfältig auf.
+
+§ 12 Bestimmungen
+Der Kunde kann den Vertrag mit einer Frist von vier Wochen zum Monatsende ohne Angabe von Gründen beenden.
+Vereinbarungen der Projektverantwortlichen werden von den Parteien schriftlich dokumentiert.
+
+§ 13 Bestimmungen
+Kündigungen können in Textform, insbesondere per E-Mail, erklärt werden.
+Der Kunde stellt die für die Leistung erforderlichen Informationen rechtzeitig bereit.
+
+§ 14 Bestimmungen
+Der Anbieter kann Leistungen auf Nachunternehmer übertragen, wenn er dies dem Kunden vierzehn Tage vorher schriftlich mitteilt.
+Der Anbieter informiert den Kunden über wesentliche Änderungen im Ablauf.
+
+§ 15 Bestimmungen
+Die Vergütung ist innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig.
+Die Parteien prüfen die Leistungen gemeinsam und halten das Ergebnis fest.
+
+§ 16 Bestimmungen
+Am Ende der Laufzeit stellt der Anbieter alle Kundendaten in einem gängigen Format kostenfrei zur Verfügung.
+Die Parteien stimmen die Einzelheiten rechtzeitig vor Leistungsbeginn ab.
+
+§ 17 Bestimmungen
+Jede Partei kann den Vertrag aus wichtigem Grund ohne Einhaltung einer Frist kündigen.
+Der jeweils benannte Ansprechpartner informiert die andere Partei unverzüglich.
+
+§ 18 Bestimmungen
+Der Anbieter unterhält eine Betriebshaftpflichtversicherung mit einer Deckungssumme von fünf Millionen EUR.
+Der Anbieter dokumentiert seine Tätigkeit und legt die Unterlagen auf Anforderung vor.
+
+§ 19 Vollständigkeit
+Über die Verlängerung notwendiger Zertifizierungen entscheidet der Anbieter; die dadurch entstehenden Aufwendungen trägt der Kunde.
+Der Anbieter darf eingesetzte Fachkräfte nach Anlage 5 austauschen, ohne dass der Kunde hiergegen Einwände erheben kann.
+
+Anlage 1 zur Leistungsbeschreibung
+Die Anlage 1 wird mit Vertragsschluss ausgehändigt und ist Bestandteil dieses Vertrags.
+
+Anlage 2 zum Eskalationsweg
+Der Eskalationsweg für Störungen ist in Anlage 2 geregelt.
+
+Gemeinschaftspraxis und MediSoft bestätigen die Vollständigkeit der vorstehenden Regelungen.
+
+Ort, Datum
+
+___________________________
+Gemeinschaftspraxis Dr. Seidel
+
+___________________________
+MediSoft Betreuung GmbH

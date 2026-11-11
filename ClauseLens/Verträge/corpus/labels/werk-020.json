@@ -1,0 +1,88 @@
+{
+  "slug": "werk-020",
+  "source": "generated",
+  "domain": "Automobilzulieferer, deutsches Recht",
+  "traps": [
+    {
+      "marker": "The customer shall not solicit or hire personnel of the provider.",
+      "expectedType": "non_solicitation",
+      "note": "Verifizierte Klausel im Bereich non_solicitation."
+    },
+    {
+      "marker": "An die Stelle einer unwirksamen Bestimmung tritt diejenige Regelung, die dem wirtschaftlichen Zweck",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "Verifizierte Klausel im Bereich salvatorische_klausel_falle."
+    },
+    {
+      "marker": "Bei Zahlungsrückstand ist der Anbieter berechtigt, die Leistung sofort einzustellen.",
+      "expectedType": "service_suspension",
+      "note": "Verifizierte Klausel im Bereich service_suspension."
+    },
+    {
+      "marker": "The software is provided as is, without warranty of any kind.",
+      "expectedType": "as_is_software_disclaimer",
+      "note": "Verifizierte Klausel im Bereich as_is_software_disclaimer."
+    },
+    {
+      "marker": "Leistungsnachweise gelten als vorbehaltlos genehmigt, wenn der Kunde nicht binnen sieben Kalendertag",
+      "expectedType": "fictitious_receipt",
+      "note": "Verifizierte Klausel im Bereich fictitious_receipt."
+    },
+    {
+      "marker": "Der Service-Credit verfällt, wenn ein Sicherheitspatch nicht rechtzeitig eingespielt wird.",
+      "expectedType": "service_credit_forfeiture",
+      "note": "Verifizierte Klausel im Bereich service_credit_forfeiture."
+    },
+    {
+      "marker": "Der Kunde kann mit einer Frist von sechsunddreißig Monaten kündigen, während dem Anbieter eine Frist",
+      "expectedType": "notice_period",
+      "note": "Verifizierte Klausel im Bereich notice_period."
+    },
+    {
+      "marker": "Der Kunde verpflichtet sich, alle Informationen streng vertraulich zu behandeln; eine Vertraulichkei",
+      "expectedType": "asymmetric_confidentiality",
+      "note": "Verifizierte Klausel im Bereich asymmetric_confidentiality."
+    },
+    {
+      "marker": "Für eine vorzeitige Kündigung wird eine pauschale Stornogebühr berechnet.",
+      "expectedType": "early_termination_charge",
+      "note": "Verifizierte Klausel im Bereich early_termination_charge."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Kunde erhält zum Vertragsende einen kostenfreien Datenexport in einem gängigen Format.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Änderungen dieses Vertrages können in Textform vereinbart werden.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Monatsende kündigen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Kündigung aus wichtigem Grund bleibt beiden Parteien unbenommen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Prüfungen erfolgen nur bei konkretem Anlass und nach Ankündigung mit einer Frist von dreißig Tagen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Dieser Vertrag unterliegt deutschem Recht.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Beide Parteien können mit unbestrittenen Forderungen aufrechnen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Kunde darf die Anwendung für eigene Geschäftszwecke nutzen",
+      "note": "Nutzungsrecht ohne Sperrwirkung."
+    }
+  ]
+}

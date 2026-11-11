@@ -1,0 +1,70 @@
+Wartungsvertrag über die Gebäudeleittechnik der Chemiewerke
+
+zwischen Prozess IT GmbH, Leipzig (nachfolgend Anbieter) und Chemiewerke Lausitz GmbH, Cottbus (nachfolgend Kunde).
+
+Präambel
+Die Parteien beabsichtigen die in § 1 beschriebene Zusammenarbeit. Der Anbieter erbringt die Leistungen, der Kunde vergütet sie. Die Parteien vereinbaren Folgendes.
+
+§ 1 Gegenstand
+Gegenstand des Vertrages ist die Wartung der Gebäudeleittechnik gemäß Anlage 1 gemäß Anlage 1.
+
+§ 2 Leistungsumfang
+Der Anbieter erbringt die Leistungen gemäß Anlage 1 und dokumentiert die Ergebnisse.
+
+§ 3 Laufzeit und Verlängerung
+(3) Die Vertragslaufzeit erneuert sich um jeweils zwölf Monate, sofern nicht drei Monate vorher gekündigt wird.
+
+§ 4 Haftung
+(4) In no event shall the provider be liable for lost profits or indirect damages.
+
+§ 5 Nutzungsrechte und Daten
+(5) Der Kunde räumt dem Anbieter ein unwiderrufliches, weltweites und übertragbares Nutzungsrecht an den Projektartefakten ein.
+
+§ 6 Form von Erklärungen
+(6) Änderungen bedürfen der Schriftform; die Textform ist ausgeschlossen.
+
+§ 7 Datenrückgabe
+(7) Der Export erfolgt ausschließlich im herstellereigenen Binärformat.
+
+§ 8 Ordentliche Kündigung
+(8) Der Kunde ist für die Dauer der Grundlaufzeit gebunden.
+
+§ 9 Einsatz von Unterauftragnehmern
+(9) The provider may appoint subcontractors at its sole discretion.
+
+§ 10 Laufzeit und Verlängerung
+(10) Wird der Vertrag nicht mit einer Frist von drei Monaten zum Laufzeitende gekündigt, setzt sich die Zusammenarbeit um weitere zweiundsiebzig Monate fort.
+
+§ 11 Einbezogene Bedingungen
+(11) Es gelten die Servicebedingungen in der jeweils gültigen Fassung, veröffentlicht auf der Website des Anbieters.
+
+§ 12 Vergütung
+(12) Die Vergütung ist innerhalb von dreißig Tagen nach Rechnungseingang fällig.
+
+§ 13 Haftung
+(13) Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt.
+
+§ 14 Unterauftragnehmer
+(14) Der Anbieter zeigt den Einsatz von Unterauftragnehmern vierzehn Tage vorher an.
+
+§ 15 Datenrückgabe
+(15) Der Kunde erhält zum Vertragsende einen kostenfreien Datenexport in einem gängigen Format.
+
+§ 16 Form
+(16) Änderungen dieses Vertrages können in Textform vereinbart werden.
+
+§ 17 Prüfungen
+(17) Prüfungen erfolgen nur bei konkretem Anlass und nach Ankündigung mit einer Frist von dreißig Tagen.
+
+§ 18 Recht
+(18) Dieser Vertrag unterliegt deutschem Recht.
+
+§ 19 Vollständigkeit
+(19) Die Parteien benennen je einen Ansprechpartner für die Projektabwicklung.
+
+Anlage 1: Leistungsbeschreibung
+Anlage 2: Servicezeiten
+
+Leipzig, den 12. Januar 2026
+Prozess IT GmbH
+Chemiewerke Lausitz GmbH

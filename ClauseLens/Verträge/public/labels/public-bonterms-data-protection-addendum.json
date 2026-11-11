@@ -1,0 +1,35 @@
+{
+  "slug": "public-bonterms-data-protection-addendum",
+  "source": "https://raw.githubusercontent.com/Bonterms/Data-Protection-Addendum/main/Data-Protection-Addendum.md",
+  "license": "CC BY 4.0",
+  "retrieved": "2026-10-15",
+  "domain": "Datenverarbeitungsvertrag (Bonterms)",
+  "traps": [],
+  "benign": [
+    {
+      "marker": "This Data Protection Addendum (“DPA”)",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "1.1. “Agreement” means the Agreement",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "1.2. “Audit” and “Audit Parameters”",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "1.3. “Audit Report” is defined",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "1.4. “Controller” means the natural",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "1.5. “Customer Instructions” is",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

@@ -1,0 +1,1178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QEL — A Quantum-Network Simulator with an In-Package Surface-Code Decoder</title>
+<meta name="description" content="QEL simulates quantum communication networks end to end. The decoder is exact, needs no third-party matcher, and recovers a surface-code threshold near p = 0.007. Two of four published statements reproduce; both differences are documented.">
+<meta name="theme-color" content="#fbfaf7">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* A paper surface, not a screen surface: warm off-white, near-black ink, one
+     restrained accent. No dark mode, because this is a document and documents are
+     read on paper-white. */
+  --paper:#fbfaf7;
+  --paper-2:#f4f2ec;
+  --rule:#d9d5ca;
+  --rule-strong:#b9b3a4;
+  --ink:#1a1a18;
+  --ink-2:#43423d;
+  --ink-3:#6b6960;
+  --accent:#7a2e2e;
+  --accent-2:#0f5257;
+  --serif:"Source Serif 4",Charter,Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --measure:34rem;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--serif);font-size:17.5px;line-height:1.62;
+  font-optical-sizing:auto;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(122,46,46,.3)}
+a:hover{border-bottom-color:var(--accent)}
+code,kbd{font-family:var(--mono);font-size:.84em;background:var(--paper-2);
+  padding:.1em .3em;border:1px solid var(--rule);border-radius:2px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.25;color:var(--ink)}
+h2{font-size:1.32rem;margin:0 0 .5rem;letter-spacing:-.005em}
+h3{font-size:1.06rem;margin:1.8rem 0 .4rem}
+
+/* ── shell: a marginal navigation column and the text column ─────────── */
+.shell{max-width:1180px;margin:0 auto;padding:0 clamp(18px,4vw,44px);
+  display:grid;grid-template-columns:14rem minmax(0,1fr);gap:clamp(24px,4vw,64px)}
+.rail{position:sticky;top:0;align-self:start;max-height:100vh;overflow-y:auto;
+  padding:2.4rem 0 2rem;font-family:var(--sans);font-size:.78rem;line-height:1.5}
+.rail .brand{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-3);margin-bottom:.2rem}
+.rail .brand b{color:var(--ink);font-weight:500}
+.rail nav{margin-top:1.4rem;border-top:1px solid var(--rule);padding-top:.9rem}
+.rail nav ol{list-style:none;margin:0;padding:0;counter-reset:s}
+.rail nav li{counter-increment:s;margin:.16rem 0}
+.rail nav a{display:block;border:0;color:var(--ink-3);padding:.16rem 0;
+  border-left:2px solid transparent;padding-left:.6rem}
+.rail nav a::before{content:counter(s) ". ";font-family:var(--mono);font-size:.72em;
+  color:var(--rule-strong)}
+.rail nav a:hover{color:var(--ink)}
+.rail nav a[aria-current="true"]{color:var(--ink);border-left-color:var(--accent);
+  background:linear-gradient(90deg,rgba(122,46,46,.05),transparent)}
+.rail .meta{margin-top:1.6rem;border-top:1px solid var(--rule);padding-top:.8rem;
+  font-family:var(--mono);font-size:.66rem;letter-spacing:.04em;color:var(--ink-3)}
+.rail .meta div{margin:.25rem 0}
+
+main{padding:2.4rem 0 6rem;max-width:var(--measure)}
+
+/* ── masthead ────────────────────────────────────────────────────────── */
+.masthead{border-bottom:2px solid var(--ink);padding-bottom:1.6rem;margin-bottom:2rem}
+.masthead .kicker{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--accent);margin-bottom:.9rem}
+.masthead h1{font-size:clamp(1.5rem,3.1vw,2.05rem);margin:0 0 .9rem;letter-spacing:-.015em}
+.byline{font-family:var(--sans);font-size:.82rem;color:var(--ink-2);
+  display:flex;flex-wrap:wrap;gap:.4rem 1.1rem}
+.byline span{white-space:nowrap}
+.byline a{border-bottom-color:rgba(122,46,46,.25)}
+
+/* ── abstract and key numbers ───────────────────────────────────────── */
+.abstract{background:var(--paper-2);border:1px solid var(--rule);
+  border-left:3px solid var(--ink-3);padding:1.1rem 1.3rem;margin:0 0 1.6rem}
+.abstract h2{font-size:.78rem;font-family:var(--sans);font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin:0 0 .5rem}
+.abstract p{margin:0 0 .7rem;font-size:.95rem}
+.abstract p:last-child{margin-bottom:0}
+
+.findings{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  padding:.9rem 0;margin:0 0 2.4rem;font-family:var(--sans);font-size:.82rem}
+.findings dt{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-3);margin-top:.7rem}
+.findings dt:first-child{margin-top:0}
+.findings dd{margin:.15rem 0 0;color:var(--ink-2)}
+.findings b{color:var(--ink);font-weight:500}
+
+/* ── sections ───────────────────────────────────────────────────────── */
+section{margin:0 0 2.6rem;scroll-margin-top:1rem}
+section>p{margin:0 0 .85rem}
+.sec-no{font-family:var(--mono);font-size:.72rem;color:var(--accent);
+  letter-spacing:.1em;display:block;margin-bottom:.15rem}
+.lede{font-size:1.02rem;color:var(--ink-2)}
+
+/* ── numbered floats: figures and tables ────────────────────────────── */
+figure{margin:1.8rem 0;padding:0}
+figure .frame{border:1px solid var(--rule);background:#fff;padding:1rem}
+figure svg{display:block;width:100%;height:auto}
+figcaption{font-family:var(--sans);font-size:.78rem;line-height:1.5;color:var(--ink-2);
+  margin-top:.6rem;padding-top:.5rem;border-top:1px solid var(--rule)}
+figcaption b{color:var(--ink);font-weight:500}
+.tbl{margin:1.8rem 0}
+table{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:.8rem}
+th,td{text-align:left;padding:.4rem .55rem;border-bottom:1px solid var(--rule)}
+thead th{border-bottom:1px solid var(--rule-strong);font-weight:500;
+  font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+td.num,th.num{text-align:right;font-family:var(--mono);font-size:.76rem;
+  font-variant-numeric:tabular-nums}
+tbody tr:last-child td{border-bottom:1px solid var(--rule-strong)}
+tr.hi td{background:rgba(122,46,46,.045)}
+.ok{color:var(--accent-2)}
+.diff{color:var(--accent)}
+
+/* ── code, equations, references ────────────────────────────────────── */
+pre{margin:1.1rem 0;background:var(--paper-2);border:1px solid var(--rule);
+  border-left:3px solid var(--rule-strong);padding:.8rem 1rem;overflow-x:auto;
+  font-family:var(--mono);font-size:.76rem;line-height:1.72;color:var(--ink)}
+pre .c{color:var(--ink-3)}
+pre .hl{color:var(--accent)}
+.eq{margin:1.2rem 0;padding:.7rem 1rem;background:var(--paper-2);
+  border:1px solid var(--rule);font-family:var(--mono);font-size:.79rem;
+  line-height:1.9;overflow-x:auto}
+.eq .lbl{float:right;color:var(--ink-3)}
+.mono{font-family:var(--mono);font-size:.84em}
+ol.refs{font-family:var(--sans);font-size:.8rem;line-height:1.55;
+  padding-left:1.4rem;color:var(--ink-2)}
+ol.refs li{margin:.5rem 0}
+sup.cite{font-family:var(--mono);font-size:.64em;color:var(--accent);
+  vertical-align:super;line-height:0}
+
+/* ── result / limitation blocks ─────────────────────────────────────── */
+.note{border:1px solid var(--rule);border-left:3px solid var(--accent-2);
+  background:#fff;padding:.85rem 1rem;margin:1.4rem 0;font-size:.9rem}
+.note.warn{border-left-color:var(--accent)}
+.note h3{margin:0 0 .35rem;font-size:.92rem;font-family:var(--sans);font-weight:500}
+.note p{margin:0 0 .5rem}
+.note p:last-child{margin-bottom:0}
+ul.tight{margin:.6rem 0;padding-left:1.2rem}
+ul.tight li{margin:.3rem 0}
+
+/* ── footer ─────────────────────────────────────────────────────────── */
+footer{border-top:2px solid var(--ink);margin-top:3rem;padding:1.4rem 0 0;
+  font-family:var(--sans);font-size:.76rem;color:var(--ink-3)}
+footer .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(11rem,1fr));
+  gap:1.2rem;margin-bottom:1rem}
+footer h4{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-3);margin:0 0 .4rem;font-weight:400}
+footer ul{list-style:none;margin:0;padding:0}
+footer li{margin:.2rem 0}
+footer a{border:0;color:var(--ink-2)}
+footer a:hover{color:var(--accent)}
+
+@media (max-width:860px){
+  .shell{grid-template-columns:minmax(0,1fr);gap:0}
+  .rail{position:static;max-height:none;border-bottom:1px solid var(--rule);
+    padding:1.4rem 0 1rem}
+  .rail nav ol{columns:2;column-gap:1.4rem}
+  main{max-width:none;padding-top:1.6rem}
+  pre{font-size:.72rem}
+}
+@media print{
+  .rail{display:none}
+  .shell{grid-template-columns:1fr;max-width:none}
+  body{font-size:10.5pt;background:#fff}
+  a{color:var(--ink);border:0}
+  section{break-inside:avoid}
+  figure,table{break-inside:avoid}
+}
+
+
+/* Keller Systems Brand Lockup in Rail */
+.rail-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  margin-bottom: 0.6rem;
+  padding: 2px 0;
+}
+.rail-brand-icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  display: block;
+}
+.rail-brand-titles {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+.rail-brand-name {
+  font-family: var(--sans);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.rail-brand-parent {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 500;
+  color: var(--ink-3);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.rail-brand:hover .rail-brand-name {
+  color: var(--accent);
+}
+.rail-brand:hover .rail-brand-parent {
+  color: var(--ink);
+}
+.rail-sub {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 0.4rem;
+}
+
+</style>
+</head>
+<body>
+
+
+
+<div class="shell">
+
+<!-- ── marginal navigation ────────────────────────────────────────────── -->
+<aside class="rail">
+  <a href="https://kellersystems.dev" class="rail-brand" title="Keller Systems Portal">
+    <svg class="rail-brand-icon" viewBox="0 0 100 100" width="28" height="28" aria-hidden="true">
+      <rect x="18" y="14" width="18" height="72" rx="3" fill="var(--ink)"/>
+      <path d="M46 50 L72 16 H90 L60 54 Z" fill="var(--accent)"/>
+      <path d="M60 46 L90 84 H72 L46 50 Z" fill="var(--ink-2)"/>
+    </svg>
+    <div class="rail-brand-titles">
+      <div class="rail-brand-name">QEL</div>
+      <div class="rail-brand-parent">KELLER SYSTEMS</div>
+    </div>
+  </a>
+  <div class="rail-sub">v0.1.0 · Quantum Entanglement Link</div>
+  <nav aria-label="Sections">
+    <ol>
+      <li><a href="#abstract">Abstract</a></li>
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#method">Method</a></li>
+      <li><a href="#reproduced">Reproduced results</a></li>
+      <li><a href="#novel">Results specific to this work</a></li>
+      <li><a href="#negative">Negative results</a></li>
+      <li><a href="#limits">Limitations</a></li>
+      <li><a href="#availability">Availability</a></li>
+      <li><a href="#references">References</a></li>
+    </ol>
+  </nav>
+  <div class="meta">
+    <div>Hub <a href="https://kellersystems.dev">kellersystems.dev &rarr;</a></div>
+    <div>Licence <a href="https://github.com/KELLERBABG/QEL/blob/main/LICENSE">Apache-2.0</a></div>
+    <div>Source <a href="https://github.com/KELLERBABG/QEL">GitHub</a></div>
+    <div>Cite <a href="https://github.com/KELLERBABG/QEL/blob/main/CITATION.cff">CITATION.cff</a></div>
+    <div>Tests <span class="mono">1138 passing</span></div>
+    <div>Modules <span class="mono">61</span></div>
+  </div>
+</aside>
+
+<main>
+
+<!-- ── masthead ───────────────────────────────────────────────────────── -->
+<header class="masthead">
+  <div class="kicker">Simulation study · quantum communication networks</div>
+  <h1>QEL: a quantum-network simulator with an in-package surface-code decoder</h1>
+  <div class="byline">
+    <span><b>Lukas Negenborn</b></span>
+    <span>Keller Systems</span>
+    <span>v0.1.0</span>
+    <span>Apache-2.0</span>
+    <span><a href="https://github.com/KELLERBABG/QEL">github.com/KELLERBABG/QEL</a></span>
+  </div>
+</header>
+
+<!-- ── abstract ───────────────────────────────────────────────────────── -->
+<section id="abstract">
+  <div class="abstract">
+    <h2>Abstract</h2>
+    <p>
+      QEL simulates quantum communication networks end to end: density-matrix states under
+      depolarising, dephasing and amplitude-damping noise; distance-dependent fibre
+      attenuation; memory relaxation on T1 and T2; entanglement swapping in the Werner
+      algebra; distillation; resource contention; topology routing; repeater placement; and
+      a rotated surface code with its own exact decoder.
+    </p>
+    <p>
+      Two results are specific to this work. First, a surface-code decoder that computes an
+      exact minimum-weight T-join and <b>matches PyMatching's accuracy</b> on this package's
+      circuits: 24 against 26 logical errors over 18,000 shots at d = 3, 5 and 7, so the
+      third-party matcher is removable from the threshold path without a quality trade. It
+      recovers a threshold near <b>p ≈ 0.007</b>. It does not return the same correction, and
+      §4.2 reports the measured extent of that along with an unexplained weight discrepancy.
+      Second, the correct additive routing weight for Werner-state
+      entanglement swapping is <b>−log W</b>, not the commonly substituted −log F; the
+      substitute under-penalises low-fidelity links and selects a strictly worse path about
+      1.3% of the time on random graphs.
+    </p>
+    <p>
+      Of four statements transcribed from the decoy-state literature, <b>two reproduce</b>.
+      Both differences are reported as results in their own right in §3.4 rather than tuned
+      away. Nothing in this work has been validated against physical hardware, and the
+      measured values do not predict what hardware would achieve.
+    </p>
+  </div>
+
+  <dl class="findings">
+    <dt>Threshold</dt>
+    <dd><b>p ≈ 0.007</b>, ordering reverses above it · 20,000 shots per point</dd>
+    <dt>Decoder accuracy</dt>
+    <dd><b>24 against 26</b> logical errors over 18,000 shots — accuracy matches the reference
+      without matching its correction</dd>
+    <dt>Published reproduction</dt>
+    <dd><b>140.61 km</b> against a published <b>140.55 km</b>, a 60-metre difference</dd>
+    <dt>Routing weight</dt>
+    <dd><b>−log W</b> is exactly additive; <b>−log F</b> is not</dd>
+    <dt>Verification</dt>
+    <dd><span class="mono">1138 tests</span> · <span class="mono">py -m quantumnet validate</span> · <span class="mono">py scripts/claim_audit.py</span></dd>
+  </dl>
+</section>
+
+<!-- ── 1 introduction ─────────────────────────────────────────────────── -->
+<section id="intro">
+  <span class="sec-no">1</span>
+  <h2>Introduction</h2>
+  <p class="lede">
+    Simulation of quantum networks has a failure mode worth naming first, because this work
+    is organised around avoiding it: <b>a plausible number is indistinguishable from a
+    correct one.</b>
+  </p>
+  <p>
+    A route selected with a slightly wrong weight, a decoder returning a correction that
+    does not match the observed syndrome, an estimator dividing by the wrong count, each
+    produces output of exactly the right shape. Nothing crashes. The model has quietly
+    become a different model.
+  </p>
+  <p>
+    This repository began in precisely that state. The test suite did not run at all: a
+    single stale import made 12 of 37 modules unimportable, and the README advertised a
+    test count the suite had never produced. The planning documents that guided it
+    contained a load-bearing mathematical error in the routing weight.
+  </p>
+  <p>
+    What follows is therefore organised by <b>evidence class</b> rather than by feature.
+    Section 4 gives results that reproduce a published number under the same estimators,
+    each cited. Section 5 gives computations specific to this work, each with its
+    verification method. Section 6 gives negative results and retractions, retained
+    because they are what tells a reader how much to trust the rest. Section 7 states the
+    limits as limits.
+  </p>
+  <div class="note">
+    <h3>Method note: every number is traceable to a command</h3>
+    <p>
+      This repository maintains that as a rule rather than an aspiration, and the rule has
+      teeth: when a documented number and the code disagree, one of them is a bug.
+    </p>
+    <p>
+      The rule was adopted after it failed repeatedly. Six documented claims went stale
+      during development: a README asserting 668 tests when the suite ran 1036, a
+      website asserting 122. Each was correct when written and each silently rotted. The
+      response was not to re-read the prose more carefully but to write
+      <span class="mono">scripts/claim_audit.py</span>, which extracts every numeric claim
+      from a document and prints it beside what the repository currently measures. It
+      reports and refuses to decide: a tool that guessed which number was right would
+      produce exactly the confident-but-wrong output the rest of the project avoids.
+    </p>
+  </div>
+</section>
+
+<!-- ── 2 method ───────────────────────────────────────────────────────── -->
+<section id="method">
+  <span class="sec-no">2</span>
+  <h2>Method</h2>
+
+  <h3>2.1 Density matrices throughout</h3>
+  <p>
+    Quantum states are density matrices, not state vectors, so mixedness and decoherence
+    are represented directly rather than as an error probability attached to a pure state.
+    This is more expensive than a state-vector simulator and is the right choice here
+    because the quantities of interest, entanglement fidelity after a chain of swaps and
+    memory holds, are properties of mixed states. A stabiliser tableau runs alongside for
+    Clifford circuits, with measurement by GF(2) solving.
+  </p>
+
+  <h3>2.2 Werner states for entanglement</h3>
+  <p>
+    A two-qubit entangled pair is represented by its Werner parameter
+    <span class="mono">W = (4F−1)/3</span>, because the Werner family is closed under the
+    operations that matter here. A Bell-state measurement followed by a swap multiplies the
+    parameters of the two contributing pairs; a memory hold contracts toward the maximally
+    mixed state. Both operations are exact in this representation, which is what makes the
+    result in §4.1 possible.
+  </p>
+
+  <h3>2.3 The surface code</h3>
+  <p>
+    A rotated surface code at distance <i>d</i> with <span class="mono">d²</span> data
+    qubits and <span class="mono">d²−1</span> ancillas (weights 2 or 4). Data sit at
+    (odd, odd) coordinates and ancillas at (even, even); X-type ancillas are CNOT controls.
+    The CNOT layer order was verified against <span class="mono">stim</span> at
+    d = 3, 5, 7, 9, 11 and is a property of the <b>offset kind</b>, not of qubit
+    availability, which matters, because a transposed layer order still produces a valid
+    circuit with the wrong connectivity, and therefore plausible wrong numbers.
+  </p>
+  <p>
+    Layouts are pinned per distance: a fixed table covers d ∈ {3, 5, 7, 9} and any other
+    distance is refused rather than guessed. A guessed layout passes a qubit-count check
+    and fails silently.
+  </p>
+
+  <h3>2.4 Detector error model and decoding</h3>
+  <p>
+    <span class="mono">stim</span><sup class="cite">[1]</sup> generates the noisy circuit and
+    the decomposed detector error model. With
+    <span class="mono">decompose_errors=True</span> each mechanism is written as
+    <span class="mono">^</span>-separated graphlike components; verified: 0 of
+    556 / 3706 / 11830 components exceeded two detectors at d = 3 / 5 / 7.
+  </p>
+  <p>
+    The decoder computes an exact minimum-weight T-join on the merged graph: one edge per
+    distinct detector pair, parallel mechanisms combined by parity, log-likelihood weight
+    <span class="mono">log((1−p)/p)</span>, and observables parsed <b>per component</b>. A
+    correction is a set of edges whose odd-degree vertices are exactly the detection
+    events. The reference implementation compared against in §4.2 is Sparse
+    Blossom<sup class="cite">[2]</sup>.
+  </p>
+
+  <h3>2.5 Measurement protocol</h3>
+  <p>
+    Reported error rates are multi-seed: at least five seeds and at least 2000 shots per
+    point for rates above 10⁻³. This is not stylistic. A 400-shot single-seed sample once
+    read as “2 errors against the reference's 0, essentially solved” while the multi-seed
+    2000-shot measurement was <b>7.2× worse</b>. At these rates a single seed swings the
+    count by more than most fixes change it.
+  </p>
+  <p>
+    Verification runs with <span class="mono">pymatching</span> blocked at the import
+    system, so any hidden use of the reference becomes a hard error rather than a silent
+    fallback.
+  </p>
+</section>
+
+<!-- ── 3 reproduced ───────────────────────────────────────────────────── -->
+<section id="reproduced">
+  <span class="sec-no">3</span>
+  <h2>Reproduced results</h2>
+  <p class="lede">
+    Where a figure reproduces someone else's published result under the same estimators, it
+    is scored as such and cited. Where a comparison would measure a protocol difference
+    rather than an implementation, it is recorded and explicitly left unscored.
+  </p>
+
+  <h3>3.1 Decoy-state reach at the GYS parameters</h3>
+  <p>
+    Ma, Qi, Zhao and Lo<sup class="cite">[3]</sup> tabulate the maximum secure distance of
+    the vacuum+weak decoy method at the Gobby–Yuan–Shields parameters<sup class="cite">[4]</sup>.
+    QEL implements the same estimators and the same <span class="mono">q = 1/2</span>
+    asymptotic rate, so this is a like-for-like comparison.
+  </p>
+
+  <div class="tbl">
+    <table>
+      <thead>
+        <tr><th>Comparison</th><th class="num">Published</th><th class="num">QEL</th><th class="num">Δ</th><th>Scored as</th></tr>
+      </thead>
+      <tbody>
+        <tr class="hi">
+          <td>vacuum+weak decoy, GYS parameters</td>
+          <td class="num">140.55 km</td><td class="num">140.61 km</td>
+          <td class="num ok">+0.06 km</td><td class="ok">equality</td>
+        </tr>        <tr>
+          <td>infinite-decoy ceiling</td>
+          <td class="num">142.05 km</td><td class="num">140.61 km</td>
+          <td class="num">−1.44 km</td><td>inequality</td>
+        </tr>
+        <tr>
+          <td>Boaron 421 km record<sup class="cite">[5]</sup></td>
+          <td class="num">421 km</td><td class="num">—</td>
+          <td class="num">—</td><td>not scored</td>
+        </tr>
+      </tbody>
+    </table>
+    <figcaption>
+      <b>Table 1.</b> Published comparisons. The first row is a 60-metre difference on a
+      140 km figure. The second is the infinite-decoy ceiling, which a finite-decoy
+      estimator <i>must</i> fall below, since scoring it as an equality would fail a correct
+      model. The third is not scored because its protocol is 3-state time-bin with a
+      one-decoy finite-key bound, so comparing rates would measure the protocol difference
+      rather than the implementation.
+    </figcaption>
+  </div>
+
+  <h3>3.2 Barrett–Kok generation</h3>
+  <p>
+    The model follows Barrett and Kok<sup class="cite">[6]</sup> and is held to two published
+    properties: the ideal success probability is exactly <b>1/2</b> at zero loss (the
+    protocol's stated upper limit), and the probability is <b>quadratic in detector
+    efficiency</b> because both photons must survive and both must be detected.
+  </p>
+  <p>
+    The consequence matters when reading any rate it prints: <b>loss costs rate, not
+    fidelity.</b> A photon that fails to arrive is a failed attempt, not a corrupted pair.
+    What degrades fidelity is a dark-count coincidence, indistinguishable from a real
+    herald and contributing a maximally mixed pair, along with mode mismatch and memory
+    decoherence.
+  </p>
+
+  <h3>3.3 Calibration against a decoy-state figure</h3>
+  <p>
+    Lo, Ma and Chen<sup class="cite">[7]</sup> compute the decoy-state rate for the GYS
+    hardware and report four checkable statements. All four are measured.
+  </p>
+
+  <div class="tbl">
+    <table>
+      <thead>
+        <tr><th>Statement</th><th>Published</th><th class="num">Measured</th><th>Verdict</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>optimal signal intensity</td><td>roughly 0.5, of order O(1)</td><td class="num">0.5</td><td class="ok">reproduces</td></tr>
+        <tr><td>reach without decoys</td><td>only about 30 km</td><td class="num">27 km</td><td class="ok">reproduces</td></tr>
+        <tr><td>reach with decoys</td><td>over 140 km</td><td class="num">123.5 km</td><td class="diff">differs</td></tr>
+        <tr><td>intercept-resend crossing</td><td>208 km (where e₁ = 1/4)</td><td class="num">179 km</td><td class="diff">differs</td></tr>
+      </tbody>
+    </table>
+    <figcaption>
+      <b>Table 2.</b> Four transcribed statements, all four measured. The two that do not
+      reproduce are treated as a result in their own right in §3.4, and neither is tuned
+      away; the test suite fails if the decoy reach drifts toward <i>better</i> agreement,
+      because that would mean a bound had been loosened.
+    </figcaption>
+  </div>
+
+  <p>
+    <b>The mechanism reproduces exactly.</b> The paper's central claim is that decoy states
+    move the optimal signal intensity from <span class="mono">O(η)</span> to
+    <span class="mono">O(1)</span>, roughly 0.5, which is what raises the net rate from
+    <span class="mono">O(η²)</span> to <span class="mono">O(η)</span>. Sweeping μ recovers
+    <b>0.5</b> as a genuine maximum, not a plateau: at μ = 0.1 the reach is 105.2 km against
+    123.5 km at μ = 0.5.
+  </p>
+  <p>
+    <b>The strongest check is the no-decoy curve</b>, because it is a different calculation
+    from the rate the package normally reports: GLLP equation 12 with the pessimistic
+    untagged fraction <span class="mono">1 − Ω = p_multi / Q_μ</span>, implemented from the
+    source rather than reused. It lands on <b>27 km against the published ~30 km</b>. An
+    independent formula reaching the published number is better evidence than tuning the
+    primary one.
+  </p>
+  <p>
+    <b>A real property found while building it.</b> At the GYS demo's own 4.5% detector
+    efficiency the no-decoy bound is <b>exactly zero at every distance</b>: the total gain
+    is smaller than the multi-photon probability at μ = 0.1, so Ω goes negative and no
+    untagged fraction exists. This is <i>why</i> that experiment required decoy states, and
+    it is reported rather than hidden by choosing a kinder detector.
+  </p>
+
+  <div class="tbl">
+    <table>
+      <thead>
+        <tr><th>Detector efficiency</th><th class="num">No-decoy reach</th><th></th></tr>
+      </thead>
+      <tbody>
+        <tr class="hi"><td>0.045</td><td class="num">0 km</td><td>the GYS demo's own detector</td></tr>
+        <tr><td>0.100</td><td class="num">12 km</td><td></td></tr>
+        <tr><td>0.200</td><td class="num">27 km</td><td>the figure's ~30 km</td></tr>
+        <tr><td>0.400</td><td class="num">42 km</td><td></td></tr>
+        <tr><td>0.800</td><td class="num">57 km</td><td></td></tr>
+      </tbody>
+    </table>
+    <figcaption>
+      <b>Table 3.</b> No-decoy reach against detector efficiency. The published ~30 km
+      corresponds to a ~20%-efficient detector, not to the GYS demo's own.
+    </figcaption>
+  </div>
+
+  <h3>3.4 Two published statements that do not reproduce</h3>
+  <p>
+    Two of the four statements in Table 2 agree with the source and two do not. The
+    disagreement is the most informative part of this section, so it is stated at full
+    strength.
+  </p>
+  <p>
+    <b>The decoy reach.</b> 123.5 km measured against "over 140 km" published. The package
+    reports the reach at which the <i>finite-key</i> secret length is positive, using the
+    LCWX bound, and it bounds the single-photon yield conservatively; the source draws its
+    figure asymptotically. A finite-key result falling below an asymptotic one is the
+    expected direction, so the two numbers are probably answering slightly different
+    questions. That is an explanation rather than a demonstration, and it is the specific
+    thing a hardware measurement could settle.
+  </p>
+  <p>
+    <b>The intercept-resend crossing.</b> 179 km measured against 208 km published. The
+    crossing is where the single-photon QBER reaches 1/4, beyond which intercept-resend
+    succeeds. The quantity is model-dependent, so it is reported as measured.
+  </p>
+  <p>
+    <b>The test suite enforces the direction of both.</b> It asserts the shortfall
+    <i>stays</i> a margin, and fails if either number drifts toward better agreement,
+    because closing the gap by loosening a bound would make the model look more accurate
+    while making it worse. A difference that can only move one way is a stronger claim than
+    a number that happens to match.
+  </p>
+  <p>
+    <b>Why this is reported rather than smoothed.</b> Two of four is what calibrating looks
+    like when the disagreement is left visible. A model tuned until all four statements
+    matched would have told the reader nothing about where it stops being trustworthy.
+  </p>
+</section>
+
+<!-- ── 4 novel ────────────────────────────────────────────────────────── -->
+<section id="novel">
+  <span class="sec-no">4</span>
+  <h2>Results specific to this work</h2>
+
+  <h3>4.1 The routing weight is −log W, not −log F</h3>
+  <p>
+    Entanglement swapping multiplies the Werner parameter, so a path's parameter is
+    <span class="mono">W_path = Π W_i</span> and <span class="mono">−log W</span> is
+    <b>exactly additive</b>. Optimum-fidelity routing is therefore an ordinary
+    shortest-path problem, and Dijkstra on that weight is <i>optimal</i> rather than
+    heuristic.
+  </p>
+  <p>
+    The common substitute <span class="mono">−log F</span> is not additive. It
+    under-penalises low-fidelity links, by a factor of 1.34× at F = 0.99 and 2.25× at
+    F = 0.30. On random graphs it selects a strictly worse path about <b>1.3%</b> of the
+    time, with observed fidelity losses up to <b>0.02</b>. A worked counterexample is in
+    the test suite, and the fidelity-optimal policy is additionally confirmed against
+    exhaustive brute force on random graphs, so “optimal” is checked rather than asserted.
+  </p>
+<pre><span class="c"># where a short mediocre span competes with three short good ones</span>
+shortest-distance   F = 0.700000   1 hop
+fidelity-optimal    F = 0.970398   3 hops</pre>
+
+  <h3>4.2 An exact decoder with no third-party matcher</h3>
+  <p>
+    The decoder computes an exact minimum-weight T-join on the merged detector graph. Two
+    properties matter, and they are separate claims.
+  </p>
+  <p>
+    <b>(a) It is accurate, and the numbers carry their uncertainty.</b> Logical error rate
+    against distance, pooled over five seeds at 6000 shots each, 30,000 shots per point:
+  </p>
+<pre><span class="c"># pooled over five seeds, 6000 shots each, in-package decoder</span>
+d=3, p=0.003   0.00220  [0.00173, 0.00280]     66/30000
+d=5, p=0.003   0.00080  [0.00054, 0.00119]     24/30000
+d=7, p=0.003   0.00040  [0.00023, 0.00070]     12/30000    <span class="c">monotone in d</span></pre>
+  <div class="note warn">
+    <h3>This table used to say 0.00100 / 0.00033 / 0.00000, and those values were wrong</h3>
+    <p>
+      They were not achievable arithmetic at the stated 6000 shots: one event in 6000 is
+      0.000167, so 0.00100 would be six events and 0.00033 two, while the measured counts
+      were 10, 4 and 2. The error survived review because the three values formed a clean
+      monotone sequence, which is precisely the property they were there to demonstrate.
+      It was found by building the uncertainty layer below and asking what interval the
+      sample size can actually support.
+    </p>
+    <p>
+      <b>The ordering is real; the per-seed samples are too thin to see it.</b> Per-seed
+      counts at d = 5 were 1, 5, 10, 5 and 3 out of 6000, a tenfold spread. Any one-seed
+      table that appeared to show the effect would have been reporting luck.
+    </p>
+  </div>
+
+  <div class="note">
+    <h3>Uncertainty is reported in two kinds, and a third is kept separate</h3>
+    <p>
+      <b>Statistical</b> uncertainty comes from counted events and is bounded exactly for a
+      rate. Where nothing was observed the report gives an <i>upper bound</i> rather than
+      zero, because a zero-width interval would claim a proof no finite sample provides.
+      <b>Parameter</b> uncertainty propagates the precision of the inputs through the real
+      calculation by Monte Carlo, not by linearisation, because these quantities are not close to
+      linear in their inputs.
+    </p>
+    <p>
+      <b>Model</b> uncertainty is the two calibration differences in §5.6. It is stated as
+      text and deliberately never as a number, so it cannot be read as an interval or
+      averaged into one. An interval that appeared to cover model error would be worse than
+      no interval, because it would look like a guarantee.
+    </p>
+  </div>
+
+  <figure>
+    <div class="frame">
+      <svg viewBox="0 0 620 300" role="img"
+           aria-label="Logical error rate against physical error rate for code distances 3, 5 and 7. The three curves cross near p = 0.007; below the crossing the larger code performs better, above it the larger code performs worse.">
+        <g font-family="IBM Plex Mono, monospace" font-size="10" fill="#6b6960">
+          <line x1="70" y1="240" x2="580" y2="240" stroke="#b9b3a4" stroke-width="1"/>
+          <line x1="70" y1="240" x2="70" y2="30" stroke="#b9b3a4" stroke-width="1"/>
+          <text x="70" y="258" text-anchor="middle">0.002</text>
+          <text x="240" y="258" text-anchor="middle">0.005</text>
+          <text x="410" y="258" text-anchor="middle">0.007</text>
+          <text x="575" y="258" text-anchor="middle">0.008</text>
+          <text x="18" y="42">p_L</text>
+          <line x1="410" y1="30" x2="410" y2="240" stroke="#7a2e2e" stroke-width="1" stroke-dasharray="3 3"/>
+          <text x="416" y="44" fill="#7a2e2e">threshold ≈ 0.007</text>
+          <text x="300" y="284" text-anchor="middle" fill="#43423d">physical error rate p</text>
+        </g>
+        <polyline fill="none" stroke="#7a2e2e" stroke-width="1.9"
+          points="70,232 155,206 240,168 325,120 410,84 495,58 580,40"/>
+        <polyline fill="none" stroke="#0f5257" stroke-width="1.9"
+          points="70,236 155,218 240,176 325,130 410,90 495,52 580,28"/>
+        <polyline fill="none" stroke="#6b6960" stroke-width="1.9" stroke-dasharray="1 0"
+          points="70,238 155,226 240,186 325,138 410,96 495,48 580,20"/>
+        <g font-family="IBM Plex Mono, monospace" font-size="10">
+          <text x="300" y="112" fill="#7a2e2e">d = 3</text>
+          <text x="300" y="128" fill="#0f5257">d = 5</text>
+          <text x="300" y="144" fill="#6b6960">d = 7</text>
+        </g>
+      </svg>
+    </div>
+    <figcaption>
+      <b>Figure 1.</b> Logical error rate against physical error rate, 20,000 shots per point,
+      decoder alone. The ordering falls with distance up to p = 0.007 and <b>reverses</b>
+      above it. The reversal is the substance of the claim: a threshold is only a real
+      result if additional distance eventually hurts, and the test suite asserts the
+      ordering flips rather than checking only the sub-threshold half. The value is
+      consistent with published surface-code thresholds<sup class="cite">[8]</sup>.    </figcaption>
+  </figure>
+
+  <p>
+    <b>(b) Its accuracy matches the reference's, and that is as far as it goes.</b> Over
+    18,000 shots at d = 3, 5 and 7 the two decoders make <b>24 and 26 logical errors</b>. On a
+    threshold that is the comparison that matters, and on it the two are indistinguishable.
+  </p>
+  <div class="note warn">
+    <h3>An earlier version of this section claimed more, and it was wrong</h3>
+    <p>
+      It said the corrections were <b>identical</b>, "the same edge set at the same total
+      weight, on 4,359 of 4,359 shots at d = 3 and d = 5". Nothing in this repository
+      measured that: the comparison function counts observable errors, and no test compared
+      corrections at all. Measured properly on 1000 shots per seed:
+    </p>
+<pre>                                      d = 3              d = 5
+  non-trivial shots                     647               2239
+  edge sets agree                    1 / 647           0 / 2239
+  total weight agrees               52 / 647           1 / 2239
+  this decoder heavier                 345               1478
+  this decoder lighter                 250                760
+  maximum weight gap                 15.80              45.91</pre>
+    <p>
+      The two decoders almost always choose different edges, and this one's correction is
+      <b>heavier</b> in roughly four cases out of five. It is not the same minimum-weight
+      solution reached another way; on those shots it is not minimum-weight.
+    </p>
+    <p>
+      <b>Not a labelling artifact.</b> Both read the same detector error model and their
+      matching graphs are edge-for-edge identical (502 edges at d = 5, asserted rather than
+      assumed). The libraries address boundary edges differently, one by node <span
+      class="mono">-1</span> and the other by <span class="mono">None</span>, which produced a
+      spurious "72 edges on each side" in an earlier attempt and is normalised away above.
+    </p>
+    <p>
+      <b>The weight discrepancy is unexplained and is recorded as such.</b> A decoder that
+      returns a heavier correction on most shots while matching on logical error rate is
+      doing something this work has not characterised. "Matches on accuracy" and "computes
+      the same thing" are different claims, and only the first is demonstrated. The
+      comparison covers rotated surface-code memory-Z with uniform depolarising noise at
+      d ∈ {3, 5, 7}.
+    </p>
+  </div>
+<pre><span class="c"># pymatching blocked at the import system: hidden use becomes a hard error</span>
+HAVE_PYMATCHING = False,  pymatching in sys.modules: False
+d=3 p=0.003   4/2000      d=5   1/2000      d=7   0/2000    decoder='in-package'</pre>
+
+  <h3>4.3 Repeater placement as an exact optimisation</h3>
+  <p>
+    Given candidate sites along a span, which subset delivers the highest key rate? The
+    solver is a dynamic program over sites in position order carrying a <b>Pareto frontier</b>
+    of (rate, fidelity) per state. The frontier is necessary rather than decorative: two
+    chains reaching the same site with the same repeater count are not interchangeable,
+    because the faster one may carry lower fidelity and the slower one may be the only one
+    from which the remaining spans are feasible.
+  </p>
+<pre><span class="c"># 200 km span, eight candidates spaced 20 km apart</span>
+best: 4 sites at [40, 80, 120, 160] km
+      key rate 1.1600e5 Hz,  F = 0.96079,  longest link 40 km</pre>
+  <p>
+    Verified <b>exact</b> against constraint-matched brute force on 25 random instances: 0
+    suboptimal. (A first comparison appeared to show 43.89% suboptimality; the brute force
+    had been enumerating layouts the optimiser was forbidden to choose. See §5.4.)
+  </p>
+
+  <h3>4.4 A chance constraint over continuous uncertainty</h3>
+  <p>
+    The existing literature on repeater placement, as far as a targeted search found,
+    handles robustness through <i>discrete</i> formulations: selecting components from a
+    catalogue, or siting repeaters in a greenfield network, plus post-hoc sensitivity
+    analysis. A reliability statement over a <b>continuous</b> hardware parameter is not a
+    standard construction.
+  </p>
+  <div class="eq">
+    <span class="lbl">(1)</span>
+    Pr[ F(chain; T₁, T₂) ≥ F_req ] ≥ 1 − ε
+  </div>
+  <p>
+    Two facts reduce this without sampling. <b>Monotonicity:</b> fidelity is non-decreasing
+    in both coherence times, so better memory never makes a chain worse. <b>The isoquantile
+    principle:</b> for a non-decreasing function of one random variable,
+    <span class="mono">Q_α(φ(X)) = φ(Q_α(X))</span>, so the constraint becomes a condition
+    at a quantile with no distributional assumption beyond the quantiles themselves.
+  </p>
+  <div class="note warn">
+    <h3>The two-parameter case is conservative, not exact, and says so</h3>
+    <p>
+      The identity does not extend to two independent parameters. Both a product-margin
+      bound <span class="mono">(1 − ε/2)²</span> and a common-factor bound at
+      <span class="mono">1 − ε</span> are computed and enforced. The correlated case, where one
+      physical cause setting both coherence times, the usual hardware situation, is
+      <i>declared</i> rather than guessed, because it changes the answer: with a correlated
+      prior the quantiles come from paired draws, and a mismatched-length prior is refused.
+    </p>
+    <p>
+      The result says the layout meets the requirement at the chosen quantiles. It is not a
+      Monte-Carlo estimate of failure probability, and it says nothing about scenarios
+      outside the declared prior.
+    </p>
+  </div>
+
+  <h3>4.5 Logical key rate</h3>
+  <p>
+    “Key rate after error correction” is a number almost nobody reports, which is why it is
+    worth stating with its cost. The composition is a <b>Werner product</b>, and the
+    physical qubit cost is reported alongside:
+  </p>
+
+  <div class="tbl">
+    <table>
+      <thead>
+        <tr><th>d</th><th class="num">F_log</th><th class="num">key fraction</th><th class="num">physical qubits / logical pair</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>3</td><td class="num">0.98186</td><td class="num">0.8509</td><td class="num">34</td></tr>
+        <tr><td>5</td><td class="num">0.98556</td><td class="num">0.8765</td><td class="num">98</td></tr>
+        <tr><td>7</td><td class="num">0.98926</td><td class="num">0.9035</td><td class="num">194</td></tr>
+      </tbody>
+    </table>
+    <figcaption>
+      <b>Table 4.</b> Physical fidelity 0.99, p = 0.003, five syndrome rounds. The overhead
+      counts data <i>and</i> ancilla at both ends, because a key rate that hides the qubits
+      it cost is not an engineering figure.
+    </figcaption>
+  </div>
+</section>
+
+<!-- ── 5 negative ─────────────────────────────────────────────────────── -->
+<section id="negative">
+  <span class="sec-no">5</span>
+  <h2>Negative results and retractions</h2>
+  <p class="lede">
+    This section is the reason the rest is worth reading. Each item is a claim that was
+    made, tested, and found wrong, retained rather than deleted.
+  </p>
+
+  <h3>5.1 A retracted conclusion</h3>
+  <p>
+    An earlier phase of this work concluded that path-based observable accumulation is
+    “fundamentally incompatible” with per-edge labels, and that the label and the reduction
+    must be adopted together. <b>This is retracted.</b> The decoder that now works is
+    path-based, keeps the merged graph, and matches the reference exactly. The actual causes
+    were two specific bugs:
+  </p>
+  <ol class="tight">
+    <li>
+      <b>Observables were parsed across the whole instruction.</b>
+      <span class="mono">stim</span> binds <span class="mono">L</span> targets per
+      <span class="mono">^</span>-separated component:
+      <span class="mono">error(0.0004) D4 D6 ^ D5 L0</span> attaches
+      <span class="mono">L0</span> to the <span class="mono">D5</span> component only.
+      Attaching it to every component made pair (4, 6) falsely carry the observable.
+    </li>
+    <li>
+      <b>A missing de-duplication guard.</b> A symmetric pairing
+      <span class="mono">{a: b, b: a}</span> toggled each route twice, cancelling every
+      detector-pair observable to zero.
+    </li>
+  </ol>
+  <div class="note warn">
+    <h3>And a third defect, which is the instructive one</h3>
+    <p>
+      The <i>checker</i> had the guard the decoder lacked. It de-duplicated pairs that the
+      decoder did not, so it validated a correction the decoder never produced and reported
+      <b>0.0% violations while the decoder was wrong</b>. A checker that differs from the
+      code it checks is worse than a broken one, because it reports clean.
+    </p>
+    <p>
+      The lesson recorded is not “path-based is wrong” but: a confident structural
+      explanation is the most expensive kind of wrong answer, because it redirects the
+      search instead of merely failing. That conclusion cost five development rounds.
+    </p>
+  </div>
+
+  <h3>5.2 A weight formula that was wrong for the entire project</h3>
+  <p>
+    The edge weight was <span class="mono">−log(p)</span>. The correct quantity is the
+    log-likelihood ratio <span class="mono">log((1−p)/p)</span>, which PyMatching uses and
+    matches to 1.8e−15. The two differ by <b>0.5–0.7%</b> at the probabilities this code
+    reaches, which is enough to change which path is selected in a close call.
+  </p>
+  <p>
+    It was noticed and dismissed. An intermediate measurement recorded that the weights
+    agreed “to within 0.2%” and treated the residual as rounding. It was a systematic error,
+    and it survived because the project's own instrument-validation rule was not applied to
+    a number that looked good.
+  </p>
+
+  <h3>5.3 A fidelity composition wrong by 9%</h3>
+  <p>
+    The logical key rate combined physical fidelity and logical bit-flip probability as a
+    weighted average of fidelities,
+    <span class="mono">F = F_phys(1−q) + (1−F_phys)q</span>, which treats a bit-flip
+    <b>probability</b> as a fidelity. The correct composition is a Werner-state product.
+  </p>
+
+  <div class="tbl">
+    <table>
+      <thead>
+        <tr><th class="num">F_phys</th><th class="num">F_log</th><th class="num">q</th><th class="num">corrected</th><th class="num">old form</th><th class="num">overstatement</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="num">0.990</td><td class="num">0.996</td><td class="num">0.004</td><td class="num">0.982114</td><td class="num">0.986080</td><td class="num diff">+0.003966</td></tr>
+        <tr><td class="num">0.950</td><td class="num">0.996</td><td class="num">0.004</td><td class="num">0.942487</td><td class="num">0.946400</td><td class="num diff">+0.003913</td></tr>
+        <tr class="hi"><td class="num">0.950</td><td class="num">0.900</td><td class="num">0.050</td><td class="num">0.815500</td><td class="num">0.905000</td><td class="num diff">+0.089500</td></tr>
+      </tbody>
+    </table>
+    <figcaption>
+      <b>Table 5.</b> Error of the weighted-average composition against the Werner product.
+      Up to <b>9% absolute</b>, with the sign not even consistent across inputs. It survived
+      because at F_phys = 1 the two forms agree, and that was the input the other modules
+      used.
+    </figcaption>
+  </div>
+
+  <h3>5.4 A comparison that was wrong, not the code</h3>
+  <p>
+    A verification of the placement optimiser found <b>43.89% suboptimality</b> and nearly
+    prompted a rewrite. The dynamic program was exact; the brute force it was compared
+    against had been enumerating layouts the DP was forbidden to choose. Constraint-matched,
+    the result is 0 of 25 instances suboptimal.
+  </p>
+
+  <h3>5.5 Hypotheses removed by measurement</h3>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Hypothesis</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td>Growth order was the missing piece in the decoder</td><td>Rewrote growth as radius growth. Headline numbers changed by <b>nothing</b>.</td></tr>
+        <tr><td>The peel was correct; the growth phase was at fault</td><td>The peel scored <b>51.9% invalid on the full edge set</b>, where a correct answer provably exists.</td></tr>
+        <tr><td>Merging parallel mechanisms discards observables, so unmerge</td><td>Merging is what the reference does; its edge count matches exactly.</td></tr>
+        <tr><td>The greedy fallback caused the d=5 gap</td><td>The fallback triggers on <b>0.4%</b> of shots.</td></tr>
+        <tr><td>Boundary handling was the residual defect</td><td>Three principled changes to it each measured <b>worse</b> than the state they replaced.</td></tr>
+      </tbody>
+    </table>
+    <figcaption><b>Table 6.</b> Plausible explanations pursued and found not to hold.</figcaption>
+  </div>
+
+  <h3>5.6 Why the two calibration statements differ</h3>
+  <p class="lede">
+    The differences themselves are reported as a result in §3.4. Repeated here in one
+    sentence each, because a reader checking the limitations should not have to go looking
+    for whether they were addressed.
+  </p>
+  <ul class="tight">
+    <li>
+      <b>Decoy reach, 123.5 km against &gt;140 km.</b> The package reports the reach at
+      which the <i>finite-key</i> secret length is positive, using the tight finite-key
+      analysis of Tomamichel et al.<sup class="cite">[9]</sup>, and bounds the
+      single-photon yield conservatively; the source draws its figure asymptotically. A
+      finite-key answer below an asymptotic one is the expected direction.
+    </li>
+    <li>
+      <b>Intercept-resend crossing, 179 km against 208 km.</b> The crossing is where the
+      single-photon QBER reaches 1/4, beyond which intercept-resend succeeds. It is
+      model-dependent, so it is reported as measured rather than adjusted until it agrees.
+    </li>
+  </ul>
+</section>
+
+<!-- ── 6 limits ───────────────────────────────────────────────────────── -->
+<section id="limits">
+  <span class="sec-no">6</span>
+  <h2>Limitations</h2>
+  <p class="lede">Stated as limits, not as future work.</p>
+  <ul class="tight">
+    <li>
+      <b>No hardware validation.</b> Nothing here has been compared against a physical
+      implementation. The outputs are model outputs.
+    </li>
+    <li>
+      <b>Decoder agreement with the reference is on accuracy, not on correction.</b> Over
+      18,000 shots at d = 3, 5, 7 the two make 24 and 26 logical errors, but their edge sets
+      agree on 1 of 647 non-trivial shots at d = 3 and 0 of 2239 at d = 5, and this decoder's
+      correction is heavier in about four cases out of five. That discrepancy is unexplained
+      (§4.2). For error models where the reference's heuristics diverge from an exact
+      matching nothing here has been tested, and the module does not claim it.
+    </li>
+    <li>
+      <b>Calibration reproduces two of four published statements.</b> Both differences are
+      explained and neither is tuned; the suite fails if either drifts toward better
+      agreement.
+    </li>
+    <li>
+      <b>Placement robustness is conservative.</b> The two-parameter reduction enforces the
+      more demanding of two bounds. It is correct and it is not tight.
+    </li>
+    <li>
+      <b>Detector recovery is a minimum slot spacing</b>, not a per-detector state machine.
+      A full recovery trace would need the detector's internal curve.
+    </li>
+    <li>
+      <b>The legacy greedy decoder is an approximation with a measured gap, and it sits on
+      no public path.</b> Against the exact decoder on the same 542 syndromes at d = 3,
+      p = 0.003 they disagree on <b>10.1%</b>, and the practical cost is <b>104 logical
+      errors against 63</b> over 4000 shots. The
+      <span class="mono">decoder="greedy"</span> parameter has always returned the
+      in-package exact decoder, so the two names gave identical numbers; the branch is
+      removed and the name documented as an alias. Measuring any logical error rate also
+      requires <span class="mono">stim</span> whichever decoder is named, so no figure in
+      this document comes from the greedy path.
+    </li>
+    <li>
+      <b>Estimator scope.</b> The asymptotic decoy-state path is the standard
+      asymptotic-plus-estimator analysis, not a composable-security proof.
+    </li>
+  </ul>
+</section>
+
+<!-- ── 7 availability ─────────────────────────────────────────────────── -->
+<section id="availability">
+  <span class="sec-no">7</span>
+  <h2>Availability</h2>
+  <div class="tbl">
+    <table>
+      <tbody>
+        <tr><td>Source</td><td><a href="https://github.com/KELLERBABG/QEL">github.com/KELLERBABG/QEL</a></td></tr>
+        <tr><td>Author ORCID</td><td><a href="https://orcid.org/0009-0009-5887-4257">0009-0009-5887-4257</a></td></tr>
+        <tr><td>Licence</td><td>Apache-2.0</td></tr>
+        <tr><td>Citation</td><td><span class="mono">CITATION.cff</span></td></tr>
+        <tr><td>Documentation</td><td><span class="mono">README.md</span>, covering usage, results and scope</td></tr>
+        <tr><td>Verification</td><td><span class="mono">py -m pytest -q</span> (1138 tests) · <span class="mono">py -m quantumnet validate</span> · <span class="mono">py scripts/claim_audit.py</span></td></tr>
+        <tr><td>Environment</td><td><span class="mono">numpy</span> for the core; <span class="mono">stim</span> optional for the surface code; no third-party matcher on the decoding path</td></tr>
+      </tbody>
+    </table>
+    <figcaption>
+      <b>Table 7.</b> Availability. Third-party publication source material used during
+      development is deliberately not redistributed; the citations in §8 point at the
+      originals.
+    </figcaption>
+  </div>
+</section>
+
+<!-- ── 8 references ───────────────────────────────────────────────────── -->
+<section id="references">
+  <span class="sec-no">8</span>
+  <h2>References</h2>
+  <ol class="refs">
+    <li>C. Gidney. <i>Stim: a fast stabilizer circuit simulator.</i> Quantum <b>5</b>, 497
+      (2021). <a href="https://arxiv.org/abs/2103.02202">arXiv:2103.02202</a></li>
+    <li>O. Higgott, C. Gidney. <i>Sparse Blossom: correcting a million errors per core
+      second with minimum-weight matching.</i> Quantum <b>7</b>, 1172 (2023).
+      <a href="https://arxiv.org/abs/2303.15933">arXiv:2303.15933</a></li>
+    <li>X. Ma, B. Qi, Y. Zhao, H.-K. Lo. <i>Practical decoy state for quantum key
+      distribution.</i> Phys. Rev. A <b>72</b>, 012326 (2005).
+      <a href="https://arxiv.org/abs/quant-ph/0503005">arXiv:quant-ph/0503005</a></li>
+    <li>C. Gobby, Z. L. Yuan, A. J. Shields. <i>Quantum key distribution over 122 km of
+      standard telecom fiber.</i> Appl. Phys. Lett. <b>84</b>, 3762 (2004).
+      <a href="https://doi.org/10.1063/1.1738173">doi:10.1063/1.1738173</a></li>
+    <li>A. Boaron et al. <i>Secure quantum key distribution over 421 km of optical fiber.</i>
+      Phys. Rev. Lett. <b>121</b>, 190502 (2018).
+      <a href="https://arxiv.org/abs/1807.03222">arXiv:1807.03222</a></li>
+    <li>S. D. Barrett, P. Kok. <i>Efficient high-fidelity quantum computation using
+      matter qubits and linear optics.</i> Phys. Rev. A <b>71</b>, 060310(R) (2005).
+      <a href="https://arxiv.org/abs/quant-ph/0408040">arXiv:quant-ph/0408040</a></li>
+    <li>H.-K. Lo, X. Ma, K. Chen. <i>Decoy state quantum key distribution.</i>
+      Phys. Rev. Lett. <b>94</b>, 230504 (2005).
+      <a href="https://arxiv.org/abs/quant-ph/0411004">arXiv:quant-ph/0411004</a></li>
+    <li>E. T. Campbell, B. M. Terhal, C. Vuillot. <i>Roads towards fault-tolerant universal
+      quantum computation.</i> Nature <b>549</b>, 172 (2017).
+      <a href="https://arxiv.org/abs/1612.07330">arXiv:1612.07330</a></li>
+    <li>M. Tomamichel, C. C. W. Lim, N. Gisin, R. Renner. <i>Tight finite-key analysis for
+      quantum cryptography.</i> Nature Communications <b>3</b>, 634 (2012).
+      <a href="https://arxiv.org/abs/1103.4130">arXiv:1103.4130</a></li>
+  </ol>
+</section>
+
+<footer>
+  <div class="cols">
+    <div>
+      <h4>Repository</h4>
+      <ul>
+        <li><a href="https://github.com/KELLERBABG/QEL">Source</a></li>
+        <li><a href="https://github.com/KELLERBABG/QEL/blob/main/README.md">README</a></li>
+        <li><a href="https://github.com/KELLERBABG/QEL/blob/main/WHITEPAPER.md">Whitepaper</a></li>
+        <li><a href="https://github.com/KELLERBABG/QEL/blob/main/CITATION.cff">Cite</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Verify</h4>
+      <ul>
+        <li><span class="mono">py -m pytest -q</span></li>
+        <li><span class="mono">py -m quantumnet validate</span></li>
+        <li><span class="mono">py scripts/claim_audit.py</span></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Scope</h4>
+      <ul>
+        <li>Simulator results only</li>
+        <li>No hardware validation performed</li>
+        <li>Does not predict hardware performance</li>
+      </ul>
+    </div>
+  </div>
+  <div>
+    Part of <a href="https://kellersystems.dev">Keller Systems</a>. These are simulator
+    results; nothing here has been checked against physical hardware, and the measured
+    values do not predict what hardware would achieve.
+  </div>
+</footer>
+
+</main>
+</div>
+
+<script>
+// Progressive enhancement only: the page is complete and readable without this.
+// It highlights the current section in the marginal navigation and does nothing else.
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll('.rail nav a'));
+  if (!links.length || !('IntersectionObserver' in window)) return;
+
+  var byId = {};
+  var targets = [];
+  links.forEach(function (a) {
+    var el = document.getElementById(a.getAttribute('href').slice(1));
+    if (el) { byId[el.id] = a; targets.push(el); }
+  });
+  if (!targets.length) return;
+
+  function setCurrent(id) {
+    links.forEach(function (a) { a.removeAttribute('aria-current'); });
+    if (byId[id]) byId[id].setAttribute('aria-current', 'true');
+  }
+
+  var observer = new IntersectionObserver(function (entries) {
+    // The entry nearest the top of the viewport that is still intersecting, so the
+    // marker does not flicker between two sections at a boundary.
+    var best = null;
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      if (!best || e.boundingClientRect.top < best.boundingClientRect.top) best = e;
+    });
+    if (best) setCurrent(best.target.id);
+  }, { rootMargin: '-10% 0px -70% 0px', threshold: 0 });
+
+  targets.forEach(function (t) { observer.observe(t); });
+  setCurrent(targets[0].id);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+[package]
+name = "symbolic-execution-cli"
+version = "0.1.0"
+edition = "2021"
+description = "CLI tool for the symbolic execution engine — analyze smart contracts from the command line"
+license = "Apache-2.0"
+repository = "https://github.com/your-org/symbolic-execution-engine"
+
+[dependencies]
+symbolic-execution-core = { path = "../core" }
+clap = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+hex = { workspace = true }

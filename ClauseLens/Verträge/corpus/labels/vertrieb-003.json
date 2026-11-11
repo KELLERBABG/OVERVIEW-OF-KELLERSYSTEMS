@@ -1,0 +1,74 @@
+{
+  "slug": "vertrieb-003",
+  "source": "generated",
+  "domain": "haendler",
+  "traps": [
+    {
+      "marker": "Der Anbieter ist berechtigt, die Geschäftsräume des Kunden ohne vorherige Ankündigung zu",
+      "expectedType": "unreasonable_audit",
+      "note": "Audit ohne Ankündigung und ohne Vorlauf."
+    },
+    {
+      "marker": "Die Herausgabe der Daten erfolgt gegen eine gesonderte Aufwandspauschale, die der Kunde zu tragen",
+      "expectedType": "data_lockin",
+      "note": "Datenherausgabe nur gegen Zusatzentgelt."
+    },
+    {
+      "marker": "Der Kunde stellt den Anbieter von sämtlichen Ansprüchen Dritter frei, und zwar unabhängig davon, ob",
+      "expectedType": "third_party_indemnity",
+      "note": "Weite Freistellung von Ansprüchen Dritter."
+    },
+    {
+      "marker": "Das Recht des Anbieters zur außerordentlichen Kündigung aus wichtigem Grund wird nicht",
+      "expectedType": "asymmetric_termination",
+      "note": "Kündigungsrecht nur für den Anbieter."
+    },
+    {
+      "marker": "Die Abtretung von Forderungen des Kunden bedarf der vorherigen schriftlichen Zustimmung des",
+      "expectedType": "assignment_restriction",
+      "note": "Abtretung von Forderungen wird erschwert."
+    },
+    {
+      "marker": "Ereignisse höherer Gewalt befreien den Anbieter von seiner Leistungspflicht, während die",
+      "expectedType": "force_majeure_asymmetry",
+      "note": "Höhere Gewalt entlastet nur den Anbieter."
+    },
+    {
+      "marker": "Der Kunde verpflichtet sich, für die Dauer von 24 Monaten nach Beendigung keine Mitarbeiter des",
+      "expectedType": "non_solicitation",
+      "note": "Abwerbeverbot für Mitarbeiter des Anbieters."
+    },
+    {
+      "marker": "Der Anbieter kann mit einer Frist von drei Monaten ohne Angabe von Gründen kündigen, der Kunde ist",
+      "expectedType": "unilateral_convenience_termination",
+      "note": "Ordentliches Kündigungsrecht nur für den Anbieter."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Anbieter überlässt dem Kunden die Daten in einem gängigen Format.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag aus wichtigem Grund ohne Einhaltung einer Frist kündigen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien benennen jeweils einen Ansprechpartner für die operative Zusammenarbeit.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien sind berechtigt, gegen fällige Forderungen aufzurechnen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde erhält Schulungen und Zugang zum Systemhandbuch in der jeweils aktuellen Fassung.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde informiert den Anbieter unverzüglich über wesentliche Störungen im Vertrieb.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    }
+  ],
+  "uncovered": []
+}

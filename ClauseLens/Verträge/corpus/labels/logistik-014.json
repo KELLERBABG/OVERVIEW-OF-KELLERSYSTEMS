@@ -1,0 +1,84 @@
+{
+  "slug": "logistik-014",
+  "source": "generated",
+  "domain": "Schienenlogistik und Umschlag",
+  "traps": [
+    {
+      "marker": "mit einer Frist von sechzig Tagen ohne Angabe von Gründen zu kündigen",
+      "expectedType": "unilateral_convenience_termination",
+      "note": "Red-team Klausel: unilateral_convenience_termination"
+    },
+    {
+      "marker": "Trassenentgelte erhöhen sich automatisch um jährlich bis zu sechs Prozent",
+      "expectedType": "price_escalation",
+      "note": "Red-team Klausel: price_escalation"
+    },
+    {
+      "marker": "Bei Überschreitung der Verladezeit wird eine Pauschale",
+      "expectedType": "penalty",
+      "note": "Red-team Klausel: penalty"
+    },
+    {
+      "marker": "trägt die Beweislast dafür, dass die Ursache nicht auf einem Fehler des Anbieters beruht",
+      "expectedType": "burden_of_proof",
+      "note": "Red-team Klausel: burden_of_proof"
+    },
+    {
+      "marker": "Eine Aufrechnung des Kunden gegen Forderungen des Anbieters ist ausgeschlossen",
+      "expectedType": "setoff_restriction",
+      "note": "Red-team Klausel: setoff_restriction"
+    },
+    {
+      "marker": "Erklärungen gelten mit Absendung als zugegangen",
+      "expectedType": "fictitious_receipt",
+      "note": "Red-team Klausel: fictitious_receipt"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "stimmen die Zugverbindungen wöchentlich ab",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Anbindung an das Schienennetz sicher",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "zur außerordentlichen Kündigung aus wichtigem Grund bleiben unberührt",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "innerhalb von 30 Tagen ohne Abzug zahlbar",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "dokumentiert die Verladezeiten im Terminalprotokoll",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "dokumentieren die Prüfergebnisse der Verladung",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Rechnung innerhalb von zwanzig Tagen prüfen",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "zustellfähige Anschrift im Portal",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Beide Parteien behandeln die Umschlagsdaten vertraulich",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "Unterauftragnehmer mit einer Vorlaufzeit von vierzehn Tagen",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

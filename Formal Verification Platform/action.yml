@@ -1,0 +1,50 @@
+name: 'Keller Formal Verification'
+author: 'KELLER SYSTEMS'
+description: 'Formally verify Rust crates and workspaces using Keller-Verify and Z3'
+branding:
+  icon: 'shield'
+  color: 'blue'
+
+inputs:
+  profile:
+    description: 'Named gate contract: `advisory` (default) or `strict`'
+    required: false
+    default: 'advisory'
+  args:
+    description: 'Additional arguments passed to `keller verify`'
+    required: false
+    default: ''
+  working-directory:
+    description: 'Directory where cargo keller should run'
+    required: false
+    default: '.'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Ensure Z3 solver is installed
+      shell: bash
+      run: |
+        if ! command -v z3 &>/dev/null; then
+          if command -v apt-get &>/dev/null; then
+            sudo apt-get update && sudo apt-get install -y z3
+          elif command -v brew &>/dev/null; then
+            brew install z3
+          elif command -v choco &>/dev/null; then
+            choco install z3 -y
+          else
+            echo "::warning::Could not determine package manager to install Z3 automatically. Ensure Z3 is on PATH."
+          fi
+        fi
+
+    - name: Set up pinned nightly toolchain
+      shell: bash
+      run: |
+        rustup toolchain install nightly-2026-07-24 --component rustc-dev llvm-tools-preview
+        rustup default nightly-2026-07-24
+
+    - name: Run Keller Verification
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      run: |
+        cargo keller verify --profile "${{ inputs.profile }}" ${{ inputs.args }}

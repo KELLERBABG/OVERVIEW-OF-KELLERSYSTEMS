@@ -1,0 +1,26 @@
+[
+  {
+    "crate": "guarded",
+    "function": "sum_under_guarded",
+    "block": "bb1",
+    "status": "FAIL",
+    "kind": "overflow",
+    "defect_class": "guard-limited",
+    "file": "src/main.rs",
+    "line": 37,
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found! [x (_1) = 192, 100_u8 = 100]",
+    "witness": [
+      {
+        "input": "x (_1)",
+        "symbol": "overflow_l",
+        "value": "192"
+      },
+      {
+        "input": "100_u8",
+        "symbol": "overflow_r",
+        "value": "100"
+      }
+    ],
+    "witness_kind": "one-of-many"
+  }
+]

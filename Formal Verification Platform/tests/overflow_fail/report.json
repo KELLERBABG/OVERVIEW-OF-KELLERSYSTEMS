@@ -1,0 +1,46 @@
+[
+  {
+    "crate": "overflow_fail",
+    "function": "add",
+    "block": "bb0",
+    "status": "FAIL",
+    "kind": "overflow",
+    "defect_class": "unguarded",
+    "file": "src/main.rs",
+    "line": 5,
+    "details": "Arithmetic Overflow Detection (Add) -> Exploit path found! [a (_1) = -2147483648, b (_2) = -1]",
+    "witness": [
+      {
+        "input": "a (_1)",
+        "symbol": "overflow_l",
+        "value": "-2147483648"
+      },
+      {
+        "input": "b (_2)",
+        "symbol": "overflow_r",
+        "value": "-1"
+      }
+    ],
+    "witness_kind": "one-of-many"
+  },
+  {
+    "crate": "overflow_fail",
+    "function": "main::{closure#0}",
+    "block": "bb2",
+    "status": "WARN",
+    "kind": "unmodelled-panic",
+    "file": "src/main.rs",
+    "line": 11,
+    "details": "Unmodelled panic site: the call to `std::result::Result::<i32, std::num::ParseIntError>::unwrap` panics when it has no value to return, and its body is not read by this analysis, so whether this site can panic was not decided."
+  },
+  {
+    "crate": "overflow_fail",
+    "function": "main::{closure#1}",
+    "block": "bb2",
+    "status": "WARN",
+    "kind": "unmodelled-panic",
+    "file": "src/main.rs",
+    "line": 12,
+    "details": "Unmodelled panic site: the call to `std::result::Result::<i32, std::num::ParseIntError>::unwrap` panics when it has no value to return, and its body is not read by this analysis, so whether this site can panic was not decided."
+  }
+]

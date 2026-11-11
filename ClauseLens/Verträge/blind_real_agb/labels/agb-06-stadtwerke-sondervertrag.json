@@ -1,0 +1,82 @@
+{
+  "slug": "agb-06-stadtwerke-sondervertrag",
+  "domain": "Strom- & Gas-Sondervertrag Energieversorgung",
+  "source": "Blind Real-AGB Benchmark 2026 (vor Engine-Lauf gelabelt)",
+  "traps": [
+    {
+      "marker": "sinkende Beschaffungs- oder Netzkosten führen zu keiner Preissenkung und ein",
+      "expectedType": "price_escalation",
+      "statutoryBasis": "§ 41 Abs. 5 EnWG, § 307 Abs. 1 BGB",
+      "note": "Rechtswidrige Preisanpassungsklausel im Energiesondervertrag ohne Unterrichtung in Textform, ohne Weitergabe von Kostensenkungen und unter Ausschluss des Sonderkündigungsrechts."
+    },
+    {
+      "marker": "sowie auch allgemeine Körperschaft- und Gewerbesteuern oder Bußgelder des",
+      "expectedType": "tax_indemnity_shift",
+      "statutoryBasis": "§ 307 Abs. 1, Abs. 2 Nr. 1 BGB",
+      "note": "Unzulässige rückwirkende Abwälzung eigener Ertragsteuern (Körperschaft-/Gewerbesteuer) und Bußgelder des Lieferanten auf den Kunden."
+    },
+    {
+      "marker": "entscheidet hierüber ein vom Lieferanten bestimmter Sachverständiger als",
+      "expectedType": "mandatory_expert_determination",
+      "statutoryBasis": "§ 307 Abs. 1 BGB",
+      "note": "Unzulässige Schiedsgutachterklausel mit einseitigem Bestimmungsrecht des Lieferanten und vollständigem Ausschluss des Rechtswegs."
+    },
+    {
+      "marker": "sofort und ohne vorherige Androhung oder vierwöchige Sperrankündigung durch den",
+      "expectedType": "service_suspension",
+      "statutoryBasis": "§ 41b Abs. 2 EnWG, § 19 StromGVV, § 307 BGB",
+      "note": "Rechtswidrige sofortige Energiesperre ohne Einhaltung der gesetzlichen vierwöchigen Androhungs- und Ankündigungsfristen."
+    },
+    {
+      "marker": "schuldet er dem Lieferanten für jeden Einzelfall eine sofort fällige Vertragsstrafe",
+      "expectedType": "penalty",
+      "statutoryBasis": "§ 309 Nr. 6, Nr. 5 lit. b BGB",
+      "note": "Verbotene Vertragsstrafe gegenüber Verbrauchern und Ausschluss des Gegenbeweises eines geringeren Schadens."
+    },
+    {
+      "marker": "die Wohn- und Geschäftsräume des Kunden jederzeit bei Tag und Nacht ohne vorherige",
+      "expectedType": "unreasonable_audit",
+      "statutoryBasis": "Art. 13 GG, § 307 Abs. 1 BGB, § 21 StromGVV",
+      "note": "Schwerwiegender Eingriff in die Unverletzlichkeit der Wohnung durch verdachtsloses Betretungsrecht bei Tag und Nacht ohne Vorankündigung."
+    },
+    {
+      "marker": "gelten vierundzwanzig Stunden nach Bereitstellung auf dem Server als dem Kunden",
+      "expectedType": "fictitious_receipt",
+      "statutoryBasis": "§ 308 Nr. 6 BGB, § 130 BGB",
+      "note": "Unwirksame Zugangsfiktion durch bloßes Einstellen in ein Online-Postfach ohne Benachrichtigung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Vertrag kommt mit Zugang der schriftlichen Vertragsbestätigung des Lieferanten",
+      "note": "Gesetzeskonforme Regelung des Vertragsschlusses nach § 41 EnWG."
+    },
+    {
+      "marker": "Den Wechsel des bisherigen Versorgers sowie die Anmeldung beim örtlichen",
+      "note": "Rechtskonforme unentgeltliche Durchführung des Lieferantenwechsels gemäß § 20a EnWG."
+    },
+    {
+      "marker": "Der Kunde liest den Zählerstand auf Anforderung des Lieferanten zum Stichtag der",
+      "note": "Angemessene Ableseregelung mit vorheriger Terminankündigung."
+    },
+    {
+      "marker": "Gegen Ansprüche des Lieferanten kann der Kunde nur mit unbestrittenen oder",
+      "note": "Zulässige Aufrechnungsbeschränkung nach § 309 Nr. 3 BGB."
+    },
+    {
+      "marker": "Der Sondervertrag hat eine Erstlaufzeit von zwölf Monaten und verlängert sich danach",
+      "note": "Vollständig § 309 Nr. 9 BGB konforme Laufzeit- und Verlängerungsregelung."
+    },
+    {
+      "marker": "etwaige Ansprüche richten sich in diesem Fall nach den gesetzlichen Vorschriften",
+      "note": "Zulässige Abgrenzung zwischen Lieferantenpflicht und Netzbetrieb nach § 18 NAV / § 18 NDAV."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Ergibt die Jahresabrechnung ein Guthaben des Kunden, wird dieses erst nach Ablauf",
+      "statutoryBasis": "§ 40c Abs. 3 EnWG, § 307 Abs. 1 BGB",
+      "note": "Verstoß gegen § 40c Abs. 3 EnWG, wonach Guthaben aus der Jahresabrechnung unverzüglich (binnen zwei Wochen) auszuzahlen oder mit dem nächsten Abschlag zu verrechnen sind."
+    }
+  ]
+}

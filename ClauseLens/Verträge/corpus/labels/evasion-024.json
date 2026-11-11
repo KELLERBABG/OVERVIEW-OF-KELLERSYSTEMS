@@ -1,0 +1,79 @@
+{
+  "slug": "evasion-024",
+  "source": "generated",
+  "domain": "evasion",
+  "traps": [
+    {
+      "marker": "Das Recht des Anbieters zur außerordentlichen Kündigung aus wichtigem Grund wird nicht,",
+      "expectedType": "asymmetric_termination",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: asymmetric_termination (Technik: split)."
+    },
+    {
+      "marker": "Die Abtretung von Forderungen des Kunden bedarf der,",
+      "expectedType": "assignment_restriction",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: assignment_restriction (Technik: split)."
+    },
+    {
+      "marker": "Ereignisse höherer Gewalt befreien den Anbieter von seiner Leistungspflicht,,",
+      "expectedType": "force_majeure_asymmetry",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: force_majeure_asymmetry (Technik: split)."
+    },
+    {
+      "marker": "Der Kunde verpflichtet sich, für die Dauer von 24 Monaten nach Beendigung,",
+      "expectedType": "non_solicitation",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: non_solicitation (Technik: split)."
+    },
+    {
+      "marker": "Der Anbieter kann mit einer Frist von drei Monaten ohne Angabe von Gründen,",
+      "expectedType": "unilateral_convenience_termination",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: unilateral_convenience_termination (Technik: split)."
+    },
+    {
+      "marker": "Die Pflichten zur Verschwiegenheit bestehen zeitlich unbeschränkt,",
+      "expectedType": "excessive_survival",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: excessive_survival (Technik: split)."
+    },
+    {
+      "marker": "Der Anbieter behält sich vor, die Entgelte nach billigem,",
+      "expectedType": "price_escalation",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: price_escalation (Technik: split)."
+    },
+    {
+      "marker": "Sollte eine Bestimmung unwirksam sein, gilt eine solche Regelung als,",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: salvatorische_klausel_falle (Technik: split)."
+    },
+    {
+      "marker": "Die Ware bleibt Eigentum des Anbieters bis zur vollständigen Begleichung,",
+      "expectedType": "extended_retention_of_title",
+      "note": "GAP: Falle über zwei Absätze verteilt. Erwartet: extended_retention_of_title."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Für die Vertragsdauer gelten die vereinbarten Konditionen unverändert.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien halten die geltenden Datenschutzvorschriften ein und verarbeiten personenbezogene",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Anbieter benennt einen technischen Ansprechpartner für den Kunden.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde führt die ihm übertragenen Aufgaben mit der Sorgfalt eines ordentlichen Kaufmanns aus.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Die Parteien regeln Einzelheiten in den beigefügten Anlagen 1 bis 3.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde meldet vermittelte Geschäfte unverzüglich und vollständig an den Anbieter.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    }
+  ],
+  "uncovered": []
+}

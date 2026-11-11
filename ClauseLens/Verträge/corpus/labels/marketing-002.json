@@ -1,0 +1,74 @@
+{
+  "slug": "marketing-002",
+  "source": "generated",
+  "domain": "Sponsoring, österreichisches Recht",
+  "traps": [
+    {
+      "marker": "erhöht sich mit Beginn jeder Saison um acht Prozent",
+      "expectedType": "price_escalation",
+      "note": "Automatische Jahreserhöhung als Wortzahl, ohne Preisanpassungsklausel-Register."
+    },
+    {
+      "marker": "für den Auftragnehmer gilt dies nicht",
+      "expectedType": "asymmetric_confidentiality",
+      "note": "Einseitige Geheimhaltung durch Ausschluss der Gegenseite; vermeidet 'einseitige Geheimhaltungspflicht'."
+    },
+    {
+      "marker": "bestehen über die Beendigung dieses Vertrages hinaus unverändert fort",
+      "expectedType": "excessive_survival",
+      "note": "Unbefristete Nachwirkung als Fortbestehen umschrieben; vermeidet 'zeitlich unbegrenzt'."
+    },
+    {
+      "marker": "bedarf der vorherigen Zustimmung des Auftragnehmers",
+      "expectedType": "setoff_restriction",
+      "note": "Aufrechnung nur mit Zustimmung des Verwenders; vermeidet 'Aufrechnung ist ausgeschlossen'."
+    },
+    {
+      "marker": "dürfen in Pressemitteilungen, Angeboten und Marketingunterlagen",
+      "expectedType": "marketing_reference",
+      "note": "Marken- und Namensnutzung ohne Freigabevorbehalt; vermeidet das Wort Referenz."
+    },
+    {
+      "marker": "berechtigt, den Vertrag fristlos zu kündigen, wenn der Sponsor",
+      "expectedType": "insolvency_termination",
+      "note": "Lösungsklausel an den Insolvenzantrag geknüpft; vermeidet 'Vertrag endet automatisch'."
+    },
+    {
+      "marker": "des Auftragnehmers in Graz ist für Streitigkeiten ausschließlich zuständig",
+      "expectedType": "jurisdiction",
+      "note": "Ausschließliche Zuständigkeit am Sitz des Verwenders ohne das Wort Gerichtsstand."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Marktüblicher Zahlungstermin ohne Verzugszins."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit sowie für Personenschäden bleibt unberührt",
+      "note": "Gesetzeskonforme Haftungserhaltung."
+    },
+    {
+      "marker": "zeigt den Einsatz weiterer Dienstleister mindestens vierzehn Tage vorher an",
+      "note": "Ordnungsgemäße Subunternehmerankündigung mit Widerspruchsrecht."
+    },
+    {
+      "marker": "überlässt der Auftragnehmer dem Sponsor die überlassenen Daten kostenfrei in einem gängigen Format",
+      "note": "Kostenfreie Datenrückgabe, kein Lock-in."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Saisonende beenden",
+      "note": "Symmetrische Kündigungsfrist, die notice_period-Schwelle wird nicht überschritten."
+    },
+    {
+      "marker": "Erklärungen zu diesem Vertrag können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform ausdrücklich zugelassen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Art und Umfang der Werbeleistungen werden zu Saisonbeginn in einem Anhang festgelegt",
+      "note": "Kein Detektor für einseitig offene Leistungsbeschreibung im Anhang."
+    }
+  ]
+}

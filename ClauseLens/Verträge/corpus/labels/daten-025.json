@@ -1,0 +1,87 @@
+{
+  "slug": "daten-025",
+  "source": "generated",
+  "domain": "NDA",
+  "traps": [
+    {
+      "marker": "shall constitute conclusive evidence of any service failure",
+      "expectedType": "audit_log_manipulation",
+      "note": "Paraphrase/Umstellung: nennt 'shall constitute conclusive evidence of any s' statt der Registerwendung."
+    },
+    {
+      "marker": "may suspend the services with immediate effect for any breach",
+      "expectedType": "service_suspension",
+      "note": "Paraphrase/Umstellung: nennt 'may suspend the services with immediate effec' statt der Registerwendung."
+    },
+    {
+      "marker": "Bei drohender Zahlungsunfähigkeit endet der Vertrag ohne weiteres",
+      "expectedType": "insolvency_termination",
+      "note": "Paraphrase/Umstellung: nennt 'Bei drohender Zahlungsunfähigkeit endet der V' statt der Registerwendung."
+    },
+    {
+      "marker": "The customer shall bear any taxes, interest or penalties retrospectively assessed",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Paraphrase/Umstellung: nennt 'The customer shall bear any taxes, interest o' statt der Registerwendung."
+    },
+    {
+      "marker": "The provider assumes no confidentiality obligation with respect to benchmarking data",
+      "expectedType": "asymmetric_confidentiality",
+      "note": "Paraphrase/Umstellung: nennt 'The provider assumes no confidentiality oblig' statt der Registerwendung."
+    },
+    {
+      "marker": "Es wird keine Zusage hinsichtlich der Eignung für einen bestimmten Einsatzzweck",
+      "expectedType": "as_is_software_disclaimer",
+      "note": "Paraphrase/Umstellung: nennt 'Es wird keine Zusage hinsichtlich der Eignung' statt der Registerwendung."
+    },
+    {
+      "marker": "Zusagen von Vertriebsmitarbeitern entfalten keine rechtliche Wirkung",
+      "expectedType": "entire_agreement",
+      "note": "Paraphrase/Umstellung: nennt 'Zusagen von Vertriebsmitarbeitern entfalten k' statt der Registerwendung."
+    },
+    {
+      "marker": "nennt den Namen des Kunden in Pressemitteilungen und auf Messeständen",
+      "expectedType": "marketing_reference",
+      "note": "Paraphrase/Umstellung: nennt 'nennt den Namen des Kunden in Pressemitteilun' statt der Registerwendung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Streitigkeiten vorrangig durch Mediation zu klären",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "nur im gegenseitigen Einvernehmen.",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "alle vertraulichen Informationen der jeweils anderen Seite",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "spätestens zehn Werktage vor einer beabsichtigten Kontoauflösung",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "bleibt beiden Parteien unbenommen.",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "meldet Datenschutzverletzungen unverzüglich an den Auftraggeber",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "mindestens vierzehn Tage vor dem Einsatz eines Unterauftragnehmers",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "binnen zwei Werktagen nach Eingang auf dem Geschäftskonto",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Zweitschrift der Dokumentation gegen eine Gebühr von fünfzehn Euro",
+      "note": "Täuschende Klausel ohne passenden Detektortyp."
+    }
+  ]
+}

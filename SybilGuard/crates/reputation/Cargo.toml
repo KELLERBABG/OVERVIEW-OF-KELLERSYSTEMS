@@ -1,0 +1,13 @@
+[package]
+name = "sybil-reputation"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Graph-Embedded Reputation: scoring algorithm based on embedding depth, clustering coefficient, and community validation"
+
+[dependencies]
+sybil-core = { path = "../core" }
+serde.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+chrono = { version = "0.4", features = ["serde"] }

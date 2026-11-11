@@ -1,0 +1,46 @@
+{
+  "slug": "public-bonterms-mutual-nda",
+  "source": "https://raw.githubusercontent.com/Bonterms/Mutual-NDA/main/Mutual-NDA.md",
+  "license": "CC BY 4.0",
+  "retrieved": "2026-10-15",
+  "domain": "Geheimhaltungsvereinbarung (Bonterms)",
+  "traps": [
+    {
+      "marker": "10. Governing Law and Courts. The",
+      "expectedType": "jurisdiction",
+      "note": "Reale Klausel, Engine-Typ jurisdiction"
+    },
+    {
+      "marker": "12. General. Neither party has",
+      "expectedType": "entire_agreement",
+      "note": "Reale Klausel, Engine-Typ entire_agreement"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "1. Introduction. This Mutual Non-Disclosure",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "2. Confidential Information. “Confidential",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "3. Use and Protection of Confidential",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "4. Exceptions. Recipient’s obligations",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "- (a) Representatives. Recipient",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "- (b) Required by Law. Recipient",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

@@ -1,0 +1,63 @@
+# Rust
+target/
+**/*.rs.bk
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# React Native / Mobile
+.metro-health-check*
+*.jsbundle
+*.hbc
+ios/Pods/
+ios/build/
+android/app/build/
+android/.gradle/
+android/build/
+*.apk
+*.aab
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Environment
+.env
+.env.local
+.env.production
+
+# IDE
+.idea/
+*.swp
+*.swo
+*~
+.vscode/settings.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+*.wasm
+*.p12
+*.mobileprovision
+*.certSigningRequest
+
+# Data
+data/processed/*
+!data/samples/*
+
+# Coverage
+coverage/
+lcov.info
+# Foundry / Solidity
+contracts/out/
+contracts/cache/
+contracts/broadcast/
+
+# Python caches (used by SDK examples)
+.venv/
+__pycache__/
+*.pyc

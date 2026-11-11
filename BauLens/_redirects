@@ -1,0 +1,35 @@
+# Cloudflare Pages redirects.
+#
+# The Pages build output directory is the repository ROOT, so every path below
+# is a real path in this repo. GitHub Pages resolves the same clean URLs on its
+# own via <dir>/index.html; these rules exist so the extensionless legal and
+# pricing routes stay stable on Cloudflare.
+#
+# The web studio is retired: studio.html still exists because the desktop build
+# stages it as its engine view, but the website points at /downloads/ instead.
+#
+# Order matters: static rules first, specific before splats.
+
+# Canonical legal routes.
+/impressum    /legal/impressum/    200
+/datenschutz  /legal/datenschutz/  200
+/agb          /legal/agb/          200
+/lizenz       /legal/lizenz/       200
+/widerruf     /legal/widerruf/     200
+/legal/*      /legal/:splat        200
+
+# Historical and short forms.
+/privacy      /legal/datenschutz/  301
+/terms        /legal/agb/          301
+/legal        /legal/impressum/    301
+/success      /checkout/success/   301
+
+# Retired web studio and its aliases -> download hub.
+/studio.html   /downloads/         301
+/studio/       /downloads/         301
+/studio        /downloads/         301
+/downloads.html /downloads/        301
+
+# Canonical .html forms -> clean routes.
+/pricing.html  /pricing/           301
+/index.html    /                   301

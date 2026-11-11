@@ -1,0 +1,87 @@
+{
+  "slug": "finanz-005",
+  "source": "generated",
+  "domain": "Leasing",
+  "traps": [
+    {
+      "marker": "behält sich vor, die Konditionen dieses Rahmenvertrags einseitig anzupassen",
+      "expectedType": "unilateral_change",
+      "note": "Paraphrase/Umstellung: nennt 'behält sich vor, die Konditionen dieses Rahme' statt der Registerwendung."
+    },
+    {
+      "marker": "nur nach vorheriger schriftlicher Bestätigung durch die Bank in Ansatz gebracht werden",
+      "expectedType": "setoff_restriction",
+      "note": "Paraphrase/Umstellung: nennt 'nur nach vorheriger schriftlicher Bestätigung' statt der Registerwendung."
+    },
+    {
+      "marker": "gilt das Abnahmeprotokoll als vorbehaltlos abgenommen",
+      "expectedType": "deemed_acceptance",
+      "note": "Paraphrase/Umstellung: nennt 'gilt das Abnahmeprotokoll als vorbehaltlos ab' statt der Registerwendung."
+    },
+    {
+      "marker": "Ansprüche wegen fehlerhafter Abrechnung erlöschen zwölf Monate",
+      "expectedType": "statute_of_limitations",
+      "note": "Paraphrase/Umstellung: nennt 'Ansprüche wegen fehlerhafter Abrechnung erlös' statt der Registerwendung."
+    },
+    {
+      "marker": "ausschließlich durch handschriftlich unterzeichnete Papierform wirksam",
+      "expectedType": "written_form_trap",
+      "note": "Paraphrase/Umstellung: nennt 'ausschließlich durch handschriftlich unterzei' statt der Registerwendung."
+    },
+    {
+      "marker": "Es sei denn, der Kunde weist nach, dass die Ursache aus einem anderen Umstand stammt",
+      "expectedType": "burden_of_proof",
+      "note": "Paraphrase/Umstellung: nennt 'Es sei denn, der Kunde weist nach, dass die U' statt der Registerwendung."
+    },
+    {
+      "marker": "jederzeit abrufbaren Richtlinien zur Kontoführung unter",
+      "expectedType": "dynamic_url_referral",
+      "note": "Paraphrase/Umstellung: nennt 'jederzeit abrufbaren Richtlinien zur Kontofüh' statt der Registerwendung."
+    },
+    {
+      "marker": "Für Handlungen der von der Bank eingesetzten Nachunternehmer",
+      "expectedType": "vicarious_agents",
+      "note": "Paraphrase/Umstellung: nennt 'Für Handlungen der von der Bank eingesetzten ' statt der Registerwendung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "spätestens zehn Werktage vor einer beabsichtigten Kontoauflösung",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "einen festen Ansprechpartner für alle Fragen der Vertragsabwicklung",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "ohne Angabe von Gründen zum Monatsende kündigen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Streitigkeiten vorrangig durch Mediation zu klären",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "gesetzliche Haftung für Vorsatz und grobe Fahrlässigkeit",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "mindestens vierzehn Tage vor dem Einsatz eines Unterauftragnehmers",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "vollständigen Export seiner Daten in einem gängigen maschinenlesbaren Format",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "zum Quartalsende ordentlich kündigen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "zuerst mit Nebenforderungen und Kosten",
+      "note": "Täuschende Klausel ohne passenden Detektortyp."
+    }
+  ]
+}

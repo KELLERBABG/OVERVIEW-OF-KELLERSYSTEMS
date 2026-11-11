@@ -1,0 +1,88 @@
+VERTRAG ÜBER DIE BEREITSTELLUNG DER ANALYSEPLATTFORM SKYLINE
+(Geschäftskundenvereinbarung)
+
+zwischen
+
+Northwind Analytics GmbH, Kaistraße 14, 40221 Düsseldorf (nachfolgend „Anbieter“)
+
+und
+
+dem im Bestellschein bezeichneten Geschäftskunden (nachfolgend „Kunde“; gemeinsam die „Parteien“).
+
+§ 1 Vertragsgegenstand
+
+1.1 Der Anbieter stellt dem Kunden die Analyseplattform Skyline als gehosteten Dienst zur Auswertung betrieblicher Kennzahlen bereit. Der Kunde erhält für die Vertragslaufzeit ein einfaches, nicht ausschließliches Recht, den Dienst im Rahmen seiner Geschäftstätigkeit zu nutzen.
+
+1.2 Der Leistungsumfang ergibt sich aus dem Bestellschein und der zugehörigen Leistungsbeschreibung. Der Kunde benennt einen fachlichen Ansprechpartner und stellt die erforderlichen Zugänge bereit.
+
+1.3 Inhalte, die der Kunde in die Plattform einbringt, bleiben dessen Eigentum.
+
+§ 2 Vergütung und Zahlung
+
+2.1 Die Grundgebühr beträgt 950 EUR monatlich zuzüglich der gesetzlichen Umsatzsteuer. Rechnungen sind innerhalb von 30 Tagen nach Zugang ohne Abzug fällig.
+
+2.2 Der Anbieter ist berechtigt, die Grundgebühr mit Wirkung zum 1. Januar eines Jahres anzupassen; das Recht des Kunden, den Vertrag aus Anlass einer solchen Anpassung zu kündigen, ist ausgeschlossen.
+
+2.3 Einmalige Einrichtungsleistungen werden gesondert ausgewiesen.
+
+§ 3 Laufzeit und Beendigung
+
+3.1 Die Anfangsperiode beträgt 24 Monate. Beide Parteien können den Vertrag mit einer Frist von 30 Tagen zum Monatsende ordentlich kündigen.
+
+3.2 Der Anbieter kann den Vertrag jederzeit ohne Angabe von Gründen mit einer Frist von 30 Tagen beenden; der Kunde ist an die vereinbarte Laufzeit gebunden.
+
+3.3 Das Recht beider Parteien zur Kündigung aus wichtigem Grund bleibt unberührt.
+
+§ 4 Nutzungsdaten und Auswertungen
+
+4.1 Der Anbieter darf die aus der Nutzung des Dienstes gewonnenen aggregierten Auswertungen unentgeltlich und zeitlich unbegrenzt für eigene Zwecke verwenden.
+
+4.2 Eine Beteiligung des Kunden an Erlösen aus diesen Auswertungen ist nicht vorgesehen.
+
+4.3 Die Auswertungen werden ohne Bezug zu personenbezogenen Daten erstellt.
+
+§ 5 Bereitstellung und Betrieb
+
+5.1 Der Anbieter stellt eine monatliche Verfügbarkeit des Dienstes von 99,5 % bereit.
+
+5.2 Wartungsfenster kündigt der Anbieter spätestens sieben Tage im Voraus an.
+
+5.3 Störungen werden über das Ticketsystem gemeldet und nach Priorität bearbeitet.
+
+§ 6 Abnahme von Arbeitsergebnissen
+
+6.1 Erklärt der Kunde Bedenken nicht innerhalb von sieben Werktagen nach Bereitstellung einer neuen Auswertungsvorlage schriftlich, gilt diese als verbindlich übernommen.
+
+6.2 Die Abnahme setzt die Bereitstellung der vereinbarten Testdaten durch den Kunden voraus.
+
+§ 7 Vertraulichkeit
+
+7.1 Beide Parteien behandeln die von der anderen Seite offengelegten Informationen vertraulich und verwenden sie ausschließlich für Zwecke dieses Vertrags.
+
+7.2 Die Weitergabe an Berater ist beiden Parteien gestattet, soweit diese zur Verschwiegenheit verpflichtet sind.
+
+§ 8 Daten und Datenherausgabe
+
+8.1 Der Kunde erhält seine Daten jederzeit in einem maschinenlesbaren Standardformat; hierfür fällt kein gesondertes Entgelt an.
+
+8.2 Nach Vertragsende werden die Daten nur gegen Erstattung des damit verbundenen Aufwands und frühestens 90 Tage nach Wirksamwerden der Beendigung herausgegeben.
+
+§ 9 Haftung
+
+9.1 Die Haftung für Vorsatz und grobe Fahrlässigkeit sowie bei Verletzung von Leben, Körper und Gesundheit bleibt unberührt; im Übrigen gelten die gesetzlichen Bestimmungen.
+
+9.2 Der Anbieter haftet nicht für Entscheidungen, die der Kunde auf Grundlage der Auswertungen trifft.
+
+§ 10 Form und Kommunikation
+
+10.1 Änderungen und Ergänzungen dieses Vertrags sowie sämtliche Kündigungen bedürfen der handschriftlichen Unterzeichnung.
+
+10.2 Kündigungen per Telefax oder E-Mail entfalten ausdrücklich keine Rechtswirkung.
+
+10.3 Betriebsanfragen werden über das Ticketsystem gestellt.
+
+§ 11 Recht, Gerichtsstand und Schlussbestimmungen
+
+11.1 Es gilt irisches Recht; ausschließlicher Gerichtsstand für alle Streitigkeiten aus diesem Vertrag ist der Sitz des Anbieters in Dublin.
+
+11.2 Sollten einzelne Bestimmungen dieses Vertrags unwirksam sein, bleibt der übrige Vertrag wirksam; es gilt die gesetzliche Regelung.

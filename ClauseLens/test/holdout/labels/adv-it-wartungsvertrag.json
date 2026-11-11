@@ -1,0 +1,64 @@
+{
+  "slug": "adv-it-wartungsvertrag",
+  "source": "generated",
+  "domain": "B2B IT-Wartungsvertrag (deutsches Recht, deutschsprachig)",
+  "traps": [
+    {
+      "marker": "strebt eine Reaktionszeit von vier Stunden an; die Einhaltung dieses Ziels begründet keine einklagbaren Ansprüche",
+      "expectedType": "unverbindliche_sla_falle",
+      "note": "Unverbindliches Serviceziel: angestrebte Reaktionszeit ohne Rechtsanspruch."
+    },
+    {
+      "marker": "Zuvor kommunizierte Servicebeschreibungen treten außer Kraft",
+      "expectedType": "entire_agreement",
+      "note": "Integration clause: vorvertragliche Servicebeschreibungen werden entwertet."
+    },
+    {
+      "marker": "abrufbaren Bedingungen in ihrer jeweils gültigen Fassung",
+      "expectedType": "dynamic_url_referral",
+      "note": "Dynamischer Verweis auf online abrufbare Bedingungen in jeweils gültiger Fassung."
+    },
+    {
+      "marker": "Ansprüche auf Anpassung an einen bestimmten Einsatzzweck bestehen nicht",
+      "expectedType": "as_is_software_disclaimer",
+      "note": "Eignungsausschluss; Software wird im Ist-Stand gewartet."
+    },
+    {
+      "marker": "Kündigungen gelten mit Absendung als zugegangen",
+      "expectedType": "fictitious_receipt",
+      "note": "Zugangsfiktion auf Absendung."
+    },
+    {
+      "marker": "die Aufwendungen für Prüfungshandlungen gehen zufolge dieser Regelung zulasten des Kunden",
+      "expectedType": "unreasonable_audit",
+      "note": "Unangekündigte Lizenzkontrolle auf Kosten des Kunden."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Anbieter behebt Störungen innerhalb der vereinbarten Servicezeiten",
+      "note": "Positive Leistungspflicht ohne Entwertung."
+    },
+    {
+      "marker": "Die Vergütung wird jährlich einvernehmlich überprüft",
+      "note": "Einvernehmliche Preisüberprüfung - kein einseitiges Anpassungsrecht."
+    },
+    {
+      "marker": "Rechnungen sind innerhalb von 30 Tagen ohne Abzug fällig",
+      "note": "Übliche Zahlungsfrist."
+    },
+    {
+      "marker": "Beide Parteien behandeln die Informationen der anderen Seite vertraulich",
+      "note": "Wechselseitige Vertraulichkeit."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Laufzeitende kündigen",
+      "note": "Symmetrisches Kündigungsrecht."
+    },
+    {
+      "marker": "gewährleistet eine Verfügbarkeit der Wartungsannahme von 99,0 % während der Servicezeiten",
+      "note": "Positive Verfügbarkeitszusage - Gegenstück zum unverbindlichen Serviceziel."
+    }
+  ],
+  "uncovered": []
+}

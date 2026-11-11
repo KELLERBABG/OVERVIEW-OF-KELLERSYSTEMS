@@ -1,0 +1,88 @@
+{
+  "slug": "werk-019",
+  "source": "generated",
+  "domain": "Wehrtechnik, deutsches Recht",
+  "traps": [
+    {
+      "marker": "Die Auditkosten trägt der Kunde.",
+      "expectedType": "unreasonable_audit",
+      "note": "Verifizierte Klausel im Bereich unreasonable_audit."
+    },
+    {
+      "marker": "Ein Recht zur Kündigung wegen höherer Gewalt besteht für den Kunden nicht.",
+      "expectedType": "force_majeure_asymmetry",
+      "note": "Verifizierte Klausel im Bereich force_majeure_asymmetry."
+    },
+    {
+      "marker": "An die Stelle einer unwirksamen Bestimmung tritt diejenige Regelung, die dem wirtschaftlichen Zweck",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "Verifizierte Klausel im Bereich salvatorische_klausel_falle."
+    },
+    {
+      "marker": "Steuerliche Mehrbelastungen werden vollumfänglich dem Kunden belastet.",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Verifizierte Klausel im Bereich tax_indemnity_shift."
+    },
+    {
+      "marker": "Die Mitteilung gilt unabhängig vom tatsächlichen Zugang als bewirkt.",
+      "expectedType": "fictitious_receipt",
+      "note": "Verifizierte Klausel im Bereich fictitious_receipt."
+    },
+    {
+      "marker": "Für Meinungsverschiedenheiten über die Abnahme gilt ein gutachterliches Verfahren; die Verfahrenskos",
+      "expectedType": "mandatory_expert_determination",
+      "note": "Verifizierte Klausel im Bereich mandatory_expert_determination."
+    },
+    {
+      "marker": "Für die Kündigung gilt eine Vorlaufzeit von zweiundsiebzig Monaten zum Periodenende.",
+      "expectedType": "notice_period",
+      "note": "Verifizierte Klausel im Bereich notice_period."
+    },
+    {
+      "marker": "Für Handlungen von Unterauftragnehmern haftet der Anbieter nur bei Auswahlverschulden.",
+      "expectedType": "vicarious_agents",
+      "note": "Verifizierte Klausel im Bereich vicarious_agents."
+    },
+    {
+      "marker": "Bereits gezahlte Entgelte werden bei einer Sperrung nicht erstattet.",
+      "expectedType": "service_suspension",
+      "note": "Verifizierte Klausel im Bereich service_suspension."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Anbieter meldet Sicherheitsvorfälle unverzüglich an den Kunden.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Vertragsparteien informieren sich unverzüglich über Störungen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Parteien treffen sich monatlich zu einem Lenkungskreis.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Der Anbieter führt die Arbeiten mit der vereinbarten Sorgfalt aus.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Der Anbieter schult die Mitarbeiter des Kunden in der Anwendung.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Der Anbieter übergibt eine Dokumentation der Schnittstellen.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "Die Vergütung ist innerhalb von dreißig Tagen nach Rechnungseingang fällig.",
+      "note": "Kontrollklausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Anbieter übergibt den Quellcode nach vollständiger Zahlung der Vergütung",
+      "note": "Rechtefolge ohne eigenen Detektor."
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+Vertrag über die Teilnahme am Mozart API-Marktplatz
+
+zwischen Mozart API Marktplatz GmbH, Kärntner Ring 5, 1010 Wien (nachfolgend "Anbieterin")
+
+und Linzer Handel GmbH, Landstraße 44, 4020 Linz (nachfolgend "Kunde")
+
+Präambel
+
+Die Anbieterin betreibt einen Marktplatz für Programmierschnittstellen und schaltet den Kunden für die Nutzung frei.
+
+§ 1 Gegenstand
+
+(1) Die Anbieterin schaltet den Kunden für die Nutzung des Mozart API-Marktplatzes frei.
+
+(2) Die verfügbaren Schnittstellen ergeben sich aus Anlage 2.
+
+§ 2 Regelwerke
+
+(1) Ergänzend gelten die jeweils aktuellen Nutzungsbedingungen, abrufbar unter https://cloud.example.com/agb.
+
+§ 3 Vollständigkeit
+
+(1) Nebenabreden haben keine Geltung.
+
+§ 4 Anregungen
+
+(1) Anregungen und Vorschläge des Kunden verwertet die Anbieterin ohne Vergütung.
+
+§ 5 Referenzen
+
+(1) Die Nennung als Referenzkunde erfolgt ohne gesonderte Zustimmung.
+
+§ 6 Laufzeit
+
+(1) Die feste Laufzeit beträgt sechsunddreißig Monate, eine Kündigung ist ausgeschlossen.
+
+(2) Das Abonnement setzt sich nach Ablauf der Festlaufzeit jeweils um zwölf Monate fort, sofern es keine Partei kündigt.
+
+§ 7 Pauschalen
+
+(1) Bei Verzug schuldet der Kunde eine Aufwandspauschale von 250 EUR.
+
+§ 8 Änderungen
+
+(1) Änderungen dieses Vertrags bedürfen der Textform.
+
+§ 9 Verfügbarkeit
+
+(1) Die Anbieterin sichert eine Verfügbarkeit von 99,5 Prozent pro Kalendermonat zu.
+
+§ 10 Datenrückgabe
+
+(1) Die Anbieterin stellt dem Kunden bei Vertragsende eine vollständige Kopie aller Kundendaten in maschinenlesbarer Form kostenfrei bereit.
+
+§ 11 Vertraulichkeit
+
+(1) Die Vertragsparteien behandeln die wechselseitig offengelegten Informationen vertraulich.
+
+§ 12 Datenschutz
+
+(1) Die Verarbeitung erfolgt ausschließlich in Rechenzentren innerhalb der Europäischen Union.
+
+§ 13 Vergütung
+
+(1) Der Kunde bleibt zur Zahlung des anteiligen Entgelts für bereits erbrachte Leistungen verpflichtet.
+
+Wien, den 17.11.2025
+
+Für die Anbieterin: gez. W. Mozart
+
+Für den Kunden: gez. L. Linzer

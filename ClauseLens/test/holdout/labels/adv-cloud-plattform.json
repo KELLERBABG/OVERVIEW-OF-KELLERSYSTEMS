@@ -1,0 +1,95 @@
+{
+  "slug": "adv-cloud-plattform",
+  "source": "generated",
+  "domain": "B2B Cloud-Plattform (SaaS, deutsches Recht, deutschsprachig)",
+  "traps": [
+    {
+      "marker": "das Recht des Kunden, den Vertrag aus Anlass einer solchen Anpassung zu kündigen, ist ausgeschlossen",
+      "expectedType": "price_escalation",
+      "note": "Einseitige jährliche Preisanpassung bei ausgeschlossenem Sonderkündigungsrecht. Bewusst als Ausschluss des Kündigungsrechts formuliert (nicht ohne Kündigungsrecht / kein Sonderkündigungsrecht), um den FP-Guard des Severity-Pfads zu prüfen."
+    },
+    {
+      "marker": "Der Anbieter kann den Vertrag jederzeit ohne Angabe von Gründen mit einer Frist von 30 Tagen beenden",
+      "expectedType": "unilateral_convenience_termination",
+      "note": "Einseitiges Beendigungsrecht des Anbieters ohne Grund; der Kunde bleibt gebunden (asymmetrisch zu Ziffer 3.1)."
+    },
+    {
+      "marker": "unentgeltlich und zeitlich unbegrenzt für eigene Zwecke verwenden",
+      "expectedType": "data_grant",
+      "note": "Unentgeltliche, zeitlich unbegrenzte Eigennutzung aggregierter Auswertungen."
+    },
+    {
+      "marker": "Eine Beteiligung des Kunden an Erlösen aus diesen Auswertungen ist nicht vorgesehen",
+      "expectedType": "data_grant",
+      "note": "Ausgeschlossene Erlösbeteiligung als zweiter, eigenständiger Grant-Ast."
+    },
+    {
+      "marker": "gilt diese als verbindlich übernommen",
+      "expectedType": "deemed_acceptance",
+      "note": "Genehmigungsfiktion durch Schweigen mit Sieben-Werktage-Frist."
+    },
+    {
+      "marker": "nur gegen Erstattung des damit verbundenen Aufwands",
+      "expectedType": "data_lockin",
+      "note": "Kostenpflichtige Datenherausgabe nach Vertragsende."
+    },
+    {
+      "marker": "bedürfen der handschriftlichen Unterzeichnung",
+      "expectedType": "written_form_trap",
+      "note": "Formerfordernis handschriftliche Unterzeichnung für Änderungen und Kündigungen (§ 309 Nr. 13 BGB)."
+    },
+    {
+      "marker": "Kündigungen per Telefax oder E-Mail entfalten ausdrücklich keine Rechtswirkung",
+      "expectedType": "written_form_trap",
+      "note": "Elektronische Kündigung ausdrücklich wirkungslos; zweites eigenständiges Form-Problem."
+    },
+    {
+      "marker": "ist der Sitz des Anbieters in Dublin",
+      "expectedType": "jurisdiction",
+      "note": "Ausschließlicher Gerichtsstand am Anbietersitz plus ausländisches Recht."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "ein einfaches, nicht ausschließliches Recht, den Dienst im Rahmen seiner Geschäftstätigkeit zu nutzen",
+      "note": "Einfaches Nutzungsrecht - Gegenstück zum Grant. Darf nicht feuern."
+    },
+    {
+      "marker": "Rechnungen sind innerhalb von 30 Tagen nach Zugang ohne Abzug fällig",
+      "note": "Übliche Zahlungsfrist ohne Verzugszinsregel."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von 30 Tagen zum Monatsende ordentlich kündigen",
+      "note": "Symmetrisches Kündigungsrecht mit gleicher Frist für beide Seiten."
+    },
+    {
+      "marker": "eine monatliche Verfügbarkeit des Dienstes von 99,5 % bereit",
+      "note": "Positive Verfügbarkeitszusage ohne rechtliche Entwertung."
+    },
+    {
+      "marker": "Wartungsfenster kündigt der Anbieter spätestens sieben Tage im Voraus an",
+      "note": "Ankündigungspraxis, kein Eingriff in Rechte."
+    },
+    {
+      "marker": "Beide Parteien behandeln die von der anderen Seite offengelegten Informationen vertraulich",
+      "note": "Wechselseitige Vertraulichkeit."
+    },
+    {
+      "marker": "Die Weitergabe an Berater ist beiden Parteien gestattet",
+      "note": "Symmetrische Beraterklausel mit Verschwiegenheitsvorbehalt."
+    },
+    {
+      "marker": "hierfür fällt kein gesondertes Entgelt an",
+      "note": "Kostenfreie Datenherausgabe - Gegenstück zum Lockin."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit sowie bei Verletzung von Leben, Körper und Gesundheit bleibt unberührt",
+      "note": "Gesetzlicher Haftungskern."
+    },
+    {
+      "marker": "es gilt die gesetzliche Regelung",
+      "note": "Zulässige salvatorische Klausel mit gesetzlicher Rechtsfolge (§ 306 Abs. 2 BGB)."
+    }
+  ],
+  "uncovered": []
+}

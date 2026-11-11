@@ -1,0 +1,79 @@
+{
+  "slug": "personal-019",
+  "source": "generated",
+  "domain": "Arbeitsvertrag",
+  "traps": [
+    {
+      "marker": "nur mit einer Frist von sechs Monaten zum Periodenende kündigen",
+      "expectedType": "notice_period",
+      "note": "sechsmonatige Kündigungsfrist nur für die Arbeitnehmerin"
+    },
+    {
+      "marker": "Eine K​arenzentschädigung ist nicht zugesagt",
+      "expectedType": "non_compete",
+      "note": "Wettbewerbsverbot ohne Karenzentschädigung"
+    },
+    {
+      "marker": "verwirkt die Arbeitnehmerin eine Aufwandspauschale von 2.500,00 EUR",
+      "expectedType": "penalty",
+      "note": "pauschalierte Vertragsstrafe zulasten der Arbeitnehmerin"
+    },
+    {
+      "marker": "Die Haftung der Arbeitgeberin für Erfüllungsgehilfen ist auf Auswahlverschulden beschränkt",
+      "expectedType": "vicarious_agents",
+      "note": "Haftung für Erfüllungsgehilfen auf Auswahlverschulden begrenzt"
+    },
+    {
+      "marker": "Die Geheimhaltungspflichten bestehen zeitlich unbeschränkt fort",
+      "expectedType": "excessive_survival",
+      "note": "Geheimhaltung ohne zeitliche Beschränkung"
+    },
+    {
+      "marker": "Ansprüche der Arbeitnehmerin können nicht abgetreten werden",
+      "expectedType": "assignment_restriction",
+      "note": "Abtretungsverbot für Ansprüche der Arbeitnehmerin"
+    },
+    {
+      "marker": "Änderungen und Ergänzungen dieses Vertrages bedürfen der Schriftform",
+      "expectedType": "written_form_trap",
+      "note": "Schriftform für Änderungen und Ergänzungen"
+    },
+    {
+      "marker": "Frühere Absprachen verlieren mit Unterzeichnung ihre Gültigkeit",
+      "expectedType": "entire_agreement",
+      "note": "frühere Absprachen verlieren ihre Gültigkeit"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die ersten sechs Monate gelten als Probezeit",
+      "note": "Probezeit von sechs Monaten"
+    },
+    {
+      "marker": "Die regelmäßige wöchentliche Arbeitszeit beträgt 40 Stunden",
+      "note": "regelmäßige Arbeitszeit"
+    },
+    {
+      "marker": "Das Bruttojahresgehalt beträgt 78.000,00 EUR",
+      "note": "Bruttojahresgehalt"
+    },
+    {
+      "marker": "Der Urlaubsanspruch beträgt 30 Arbeitstage je Kalenderjahr",
+      "note": "Urlaubsanspruch je Kalenderjahr"
+    },
+    {
+      "marker": "Die Arbeitnehmerin meldet die Arbeitsunfähigkeit unverzüglich",
+      "note": "unverzügliche Krankmeldung"
+    },
+    {
+      "marker": "Das Recht zur Kündigung aus wichtigem Grund bleibt unberührt",
+      "note": "Kündigung aus wichtigem Grund bleibt unberührt"
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Arbeitsort ist Berlin",
+      "note": "Arbeitsort ohne Versetzungsklausel, vom Detektor nicht erfasst"
+    }
+  ]
+}

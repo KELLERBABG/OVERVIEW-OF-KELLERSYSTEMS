@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TerraFlux — Precision Agronomy & Soil Telemetry (FieldSense Engine)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    .chat-bubble-out { background-color: #d9fdd3; color: #111b21; border-radius: 8px 8px 0px 8px; }
+    .chat-bubble-in { background-color: #ffffff; color: #111b21; border-radius: 8px 8px 8px 0px; }
+    .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: #f1f1f1; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col antialiased">
+
+  <!-- Header -->
+  <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-16 py-2.5 flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-400 flex items-center justify-center shadow-lg shadow-emerald-500/20 shrink-0">
+          <i class="fa-solid fa-seedling text-white text-lg"></i>
+        </div>
+        <div>
+          <div class="flex items-center space-x-2">
+            <h1 class="font-bold text-lg text-white tracking-tight">TerraFlux</h1>
+            <span class="px-2 py-0.5 text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-full">v1.0 Deployable</span>
+          </div>
+          <p class="text-xs text-slate-400">Precision Agronomy & Zero-App Telegram/WhatsApp Advisory Platform</p>
+        </div>
+      </div>
+
+      <div class="flex items-center flex-wrap gap-3">
+        <!-- Field Selector -->
+        <div class="flex items-center space-x-2 bg-slate-800/80 border border-slate-700 px-3 py-1.5 rounded-lg text-xs">
+          <i class="fa-solid fa-location-dot text-emerald-400"></i>
+          <select id="fieldSelect" onchange="loadFieldData()" class="bg-transparent text-slate-200 focus:outline-none cursor-pointer" disabled>
+            <option value="" class="bg-slate-800 text-slate-100">Sign in to load your fields</option>
+          </select>
+        </div>
+
+        <button onclick="triggerAdvisory()" class="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold rounded-lg shadow-sm transition flex items-center space-x-1.5">
+          <i class="fa-solid fa-paper-plane"></i>
+          <span>Dispatch Advisory</span>
+        </button>
+
+        <!-- Auth Status Container -->
+        <div id="authContainer" class="flex items-center space-x-2">
+          <!-- Unauthenticated State -->
+          <button id="loginBtn" onclick="openAuthModal()" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-xs font-semibold rounded-lg transition flex items-center space-x-1.5 shadow-sm">
+            <i class="fa-solid fa-arrow-right-to-bracket text-sky-400"></i>
+            <span>Sign In</span>
+          </button>
+          
+          <!-- Authenticated State (Hidden by default) -->
+          <div id="userProfileBadge" class="hidden items-center space-x-2 bg-slate-800/90 border border-slate-700 px-3 py-1.5 rounded-lg text-xs">
+            <i class="fa-solid fa-circle-user text-sky-400"></i>
+            <span id="userFullName" class="font-medium text-slate-200">Admin</span>
+            <span id="userRoleBadge" class="text-[9px] bg-sky-500/10 text-sky-400 border border-sky-500/20 px-1.5 py-0.5 rounded font-mono uppercase">admin</span>
+            <button onclick="handleLogout()" title="Sign Out" class="text-slate-400 hover:text-red-400 ml-1.5 text-xs transition">
+              <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Grid -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1 w-full space-y-6">
+
+    <!-- Authentication Notice -->
+    <div id="authNotice" class="hidden p-4 rounded-xl border border-sky-500/30 bg-sky-500/10 text-sm text-sky-100 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <i class="fa-solid fa-lock text-sky-400"></i>
+        <span><strong class="text-white">Sign in required.</strong> Field data, probe telemetry and advisory dispatch are restricted to the owning farm account.</span>
+      </div>
+      <button onclick="openAuthModal()" class="px-3 py-1.5 bg-sky-600 hover:bg-sky-500 text-white text-xs font-semibold rounded-lg transition shrink-0">
+        <i class="fa-solid fa-right-to-bracket mr-1"></i>Sign In
+      </button>
+    </div>
+
+    <!-- Top KPI Row -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-4 flex flex-col justify-between">
+        <div class="flex items-center justify-between text-slate-400 text-xs font-medium">
+          <span>ROOT-ZONE MOISTURE</span>
+          <i class="fa-solid fa-droplet text-blue-400"></i>
+        </div>
+        <div class="mt-2 flex items-baseline space-x-2">
+          <span id="currentMoistureVal" class="text-2xl font-bold text-white font-mono">19.4%</span>
+          <span class="text-xs text-slate-400">VWC</span>
+        </div>
+        <div class="mt-2">
+          <div class="w-full bg-slate-700 h-1.5 rounded-full overflow-hidden">
+            <div id="moistureBar" class="bg-blue-500 h-full rounded-full" style="width: 48%;"></div>
+          </div>
+          <div class="flex justify-between text-[10px] text-slate-400 mt-1 font-mono">
+            <span>WP: <span id="wpVal">10.0%</span></span>
+            <span class="text-amber-400">RAW: <span id="threshVal">16.6%</span></span>
+            <span>FC: <span id="fcVal">22.0%</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-4 flex flex-col justify-between">
+        <div class="flex items-center justify-between text-slate-400 text-xs font-medium">
+          <span>REFERENCE ET₀ & RAIN</span>
+          <i class="fa-solid fa-cloud-sun text-amber-400"></i>
+        </div>
+        <div class="mt-2 flex items-baseline space-x-2">
+          <span id="et0Val" class="text-2xl font-bold text-amber-400 font-mono">4.8 mm</span>
+          <span class="text-xs text-slate-400">tomorrow</span>
+        </div>
+        <div class="mt-2 flex items-center justify-between text-xs text-slate-300">
+          <span>Rain (48h): <strong id="rainVal" class="text-emerald-400">0.0 mm</strong></span>
+          <span id="tempVal" class="text-slate-400">27.5°C max</span>
+        </div>
+      </div>
+
+      <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-4 flex flex-col justify-between">
+        <div class="flex items-center justify-between text-slate-400 text-xs font-medium">
+          <span>PROBE & TELEMETRY</span>
+          <i class="fa-solid fa-tower-broadcast text-emerald-400"></i>
+        </div>
+        <div class="mt-2 flex items-baseline space-x-2">
+          <span id="batteryVal" class="text-2xl font-bold text-emerald-400 font-mono">3.64 V</span>
+          <span class="text-xs text-emerald-400/80">Solar OK</span>
+        </div>
+        <div class="mt-2 flex items-center justify-between text-xs text-slate-400 font-mono">
+          <span id="probeName">Dragino LSE01</span>
+          <span class="text-[10px] bg-slate-700 px-1.5 py-0.5 rounded">EU868 LoRa</span>
+        </div>
+      </div>
+
+      <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-4 flex flex-col justify-between">
+        <div class="flex items-center justify-between text-slate-400 text-xs font-medium">
+          <span>IRRIGATION STATUS</span>
+          <i class="fa-solid fa-clock text-purple-400"></i>
+        </div>
+        <div class="mt-2 flex items-baseline space-x-2">
+          <span id="actionRequiredBadge" class="text-lg font-bold text-amber-400">Action Recommended</span>
+        </div>
+        <div class="mt-2 flex items-center justify-between text-xs text-slate-300">
+          <span id="suggestedWatering">Target: <strong>12.0 mm</strong></span>
+          <span class="text-slate-400 text-[11px] flex items-center space-x-1 font-mono">
+            <i class="fa-solid fa-globe text-[10px] text-sky-400"></i>
+            <span id="fieldTimezone">Europe/Berlin</span> (<span id="fieldAlertHour">19:00</span>)
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Workspace Split: Left Telemetry/Sim + Right WhatsApp Mockup -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+      <!-- Left Column: Graphs, Sim Playground & BOM Calculator (8 cols) -->
+      <div class="lg:col-span-7 space-y-6">
+
+        <!-- Chart Card -->
+        <div class="bg-slate-800/50 border border-slate-700/70 rounded-xl p-5 shadow-sm">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-700">
+            <div>
+              <h2 class="text-sm font-semibold text-white">Soil Moisture Depletion & Water Balance Timeline</h2>
+              <p class="text-xs text-slate-400">Hourly VWC % vs. FAO-56 Readily Available Water (RAW) threshold</p>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                <span class="w-1.5 h-1.5 mr-1 rounded-full bg-blue-400"></span> Sensor VWC
+              </span>
+              <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                RAW Threshold
+              </span>
+            </div>
+          </div>
+          <div class="mt-4 h-64">
+            <canvas id="moistureChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Simulation Playground -->
+        <div class="bg-slate-800/50 border border-slate-700/70 rounded-xl p-5 shadow-sm">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-700">
+            <div>
+              <h2 class="text-sm font-semibold text-white flex items-center space-x-2">
+                <i class="fa-solid fa-flask text-emerald-400"></i>
+                <span>Fast-Forward Simulation Playground</span>
+              </h2>
+              <p class="text-xs text-slate-400">Test physical sensor response & alert triggering under extreme weather</p>
+            </div>
+          </div>
+
+          <div class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <button onclick="runScenario('drought')" class="p-3 bg-slate-900/80 hover:bg-slate-700/60 border border-slate-700 rounded-lg text-left transition group">
+              <div class="text-xs font-semibold text-amber-400 flex items-center space-x-1.5">
+                <i class="fa-solid fa-sun"></i>
+                <span>14-Day Drought Spell</span>
+              </div>
+              <p class="text-[11px] text-slate-400 mt-1">Simulates high ET₀ (5.5mm/d), zero rain, soil crossing RAW threshold on Day 6.</p>
+            </button>
+
+            <button onclick="runScenario('heatwave_with_storm')" class="p-3 bg-slate-900/80 hover:bg-slate-700/60 border border-slate-700 rounded-lg text-left transition group">
+              <div class="text-xs font-semibold text-blue-400 flex items-center space-x-1.5">
+                <i class="fa-solid fa-cloud-bolt"></i>
+                <span>Heatwave + Storm (18mm)</span>
+              </div>
+              <p class="text-[11px] text-slate-400 mt-1">Tests rain suppression logic: alert delayed due to forecasted heavy storm.</p>
+            </button>
+
+            <button onclick="runScenario('normal')" class="p-3 bg-slate-900/80 hover:bg-slate-700/60 border border-slate-700 rounded-lg text-left transition group">
+              <div class="text-xs font-semibold text-emerald-400 flex items-center space-x-1.5">
+                <i class="fa-solid fa-leaf"></i>
+                <span>Normal Summer Season</span>
+              </div>
+              <p class="text-[11px] text-slate-400 mt-1">Balanced drying with periodic light rainfall maintaining optimal reserve.</p>
+            </button>
+          </div>
+        </div>
+
+        <!-- Operational History -->
+        <div class="bg-slate-800/50 border border-slate-700/70 rounded-xl p-5 shadow-sm">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-700">
+            <div>
+              <h2 class="text-sm font-semibold text-white flex items-center space-x-2">
+                <i class="fa-solid fa-clock-rotate-left text-purple-400"></i>
+                <span>Advisory & Irrigation History</span>
+              </h2>
+              <p class="text-xs text-slate-400">What the engine advised, what was applied, and whether the message reached the grower</p>
+            </div>
+            <button onclick="loadHistory()" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] font-medium rounded-lg border border-slate-700 transition">
+              <i class="fa-solid fa-rotate mr-1"></i>Refresh
+            </button>
+          </div>
+
+          <div class="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <div class="bg-slate-900/80 border border-slate-800 rounded-lg p-3 text-center">
+              <div class="text-[10px] text-slate-400 uppercase tracking-wider">Advisories</div>
+              <div id="histAdvisories" class="text-lg font-bold text-white font-mono">–</div>
+            </div>
+            <div class="bg-slate-900/80 border border-slate-800 rounded-lg p-3 text-center">
+              <div class="text-[10px] text-slate-400 uppercase tracking-wider">Irrigations</div>
+              <div id="histIrrigations" class="text-lg font-bold text-white font-mono">–</div>
+            </div>
+            <div class="bg-slate-900/80 border border-slate-800 rounded-lg p-3 text-center">
+              <div class="text-[10px] text-slate-400 uppercase tracking-wider">Applied (net)</div>
+              <div id="histApplied" class="text-lg font-bold text-blue-400 font-mono">–</div>
+            </div>
+            <div class="bg-slate-900/80 border border-slate-800 rounded-lg p-3 text-center">
+              <div class="text-[10px] text-slate-400 uppercase tracking-wider">Failed sends</div>
+              <div id="histFailed" class="text-lg font-bold text-red-400 font-mono">–</div>
+            </div>
+          </div>
+
+          <div class="mt-4 overflow-x-auto">
+            <table class="w-full text-left text-xs text-slate-300">
+              <thead class="bg-slate-900/60 text-slate-400 font-medium">
+                <tr>
+                  <th class="p-2">When</th>
+                  <th class="p-2">Advisory</th>
+                  <th class="p-2">Depth</th>
+                  <th class="p-2">Status</th>
+                </tr>
+              </thead>
+              <tbody id="historyRows" class="divide-y divide-slate-800 text-[11px] font-mono">
+                <tr><td colspan="4" class="p-3 text-center text-slate-500">No history yet.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Hardware BOM & ROI Economics Calculator -->
+        <div class="bg-slate-800/50 border border-slate-700/70 rounded-xl p-5 shadow-sm">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-700">
+            <div>
+              <h2 class="text-sm font-semibold text-white flex items-center space-x-2">
+                <i class="fa-solid fa-calculator text-teal-400"></i>
+                <span>Hardware BOM & Farmer ROI Economics</span>
+              </h2>
+              <p class="text-xs text-slate-400">Validating if the €89 hardware kit yields positive economic payback for field deployment</p>
+            </div>
+            <span class="px-2 py-0.5 text-xs font-mono font-semibold bg-teal-500/10 text-teal-400 border border-teal-500/20 rounded">BOM Target: €89</span>
+          </div>
+
+          <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-5">
+            <!-- Sliders -->
+            <div class="space-y-4">
+              <div>
+                <div class="flex justify-between text-xs text-slate-300 mb-1">
+                  <span>Farm Area: <strong id="haSliderVal" class="text-white">20 ha</strong></span>
+                  <span class="text-slate-400">Small/Mid Vineyard</span>
+                </div>
+                <input type="range" id="haSlider" min="5" max="100" value="20" step="5" oninput="calculateEconomics()" class="w-full h-1.5 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-emerald-500" />
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs text-slate-300 mb-1">
+                  <span>Water Tariff: <strong id="waterTariffSliderVal" class="text-white">€1.20 / m³</strong></span>
+                  <span class="text-slate-400">DACH Commercial</span>
+                </div>
+                <input type="range" id="waterTariffSlider" min="0.40" max="3.00" value="1.20" step="0.10" oninput="calculateEconomics()" class="w-full h-1.5 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-emerald-500" />
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs text-slate-300 mb-1">
+                  <span>Probes Installed: <strong id="probesSliderVal" class="text-white">3 Probes</strong></span>
+                  <span class="text-slate-400">€89 Kit Capex</span>
+                </div>
+                <input type="range" id="probesSlider" min="1" max="10" value="3" step="1" oninput="calculateEconomics()" class="w-full h-1.5 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-emerald-500" />
+              </div>
+
+              <div class="flex flex-wrap items-center gap-x-5 gap-y-2 pt-1">
+                <label class="flex items-center gap-2 text-xs text-slate-300 cursor-pointer">
+                  <input type="checkbox" id="cotsToggle" onchange="calculateEconomics()" class="accent-teal-500" />
+                  <span>COTS starter kit (€195/probe)</span>
+                </label>
+                <label class="flex items-center gap-2 text-xs text-slate-300 cursor-pointer">
+                  <input type="checkbox" id="gatewayToggle" onchange="calculateEconomics()" class="accent-teal-500" />
+                  <span>Include LoRaWAN gateway (€185)</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Financial Output Box -->
+            <div class="bg-slate-900/90 border border-slate-700 rounded-xl p-4 flex flex-col justify-between">
+              <div class="space-y-2">
+                <div class="flex justify-between text-xs text-slate-400">
+                  <span>Baseline Water Bill:</span>
+                  <span id="baselineBill" class="font-mono text-slate-200">–</span>
+                </div>
+                <div class="flex justify-between text-xs text-emerald-400 font-semibold">
+                  <span>Estimated Water Saved (<span id="waterSavedPct">18</span>%):</span>
+                  <span id="savedM3" class="font-mono">–</span>
+                </div>
+                <div class="flex justify-between text-xs text-sky-400">
+                  <span>Labour Saved (no block walk):</span>
+                  <span id="laborSaved" class="font-mono">–</span>
+                </div>
+                <div class="flex justify-between text-xs text-emerald-400 font-bold border-t border-slate-800 pt-2">
+                  <span>Annual Financial Savings:</span>
+                  <span id="annualSavings" class="font-mono text-base text-emerald-400">–</span>
+                </div>
+                <p class="text-[10px] text-slate-500 leading-snug pt-1">
+                  Water savings modelled at 18 % (FAO regulated deficit irrigation field studies report
+                  15–22 %). Baseline: 450 m³/ha supplemental irrigation for vineyards.
+                </p>
+              </div>
+
+              <div class="mt-4 pt-3 border-t border-slate-800 grid grid-cols-2 gap-2 text-center">
+                <div class="bg-slate-800/80 p-2 rounded-lg">
+                  <div class="text-[10px] text-slate-400 uppercase tracking-wider">Payback Period</div>
+                  <div id="paybackMonths" class="text-lg font-bold text-teal-400 font-mono">–</div>
+                  <div id="paybackNote" class="text-[9px] text-slate-400">computed live</div>
+                </div>
+                <div class="bg-slate-800/80 p-2 rounded-lg">
+                  <div class="text-[10px] text-slate-400 uppercase tracking-wider">3-Year ROI</div>
+                  <div id="roiPct" class="text-lg font-bold text-emerald-400 font-mono">–</div>
+                  <div class="text-[9px] text-slate-400">hardware + subscription</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BOM Component Table -->
+          <div class="mt-4 overflow-x-auto">
+            <table class="w-full text-left text-xs text-slate-300">
+              <thead class="bg-slate-900/60 text-slate-400 font-medium">
+                <tr>
+                  <th class="p-2">Component</th>
+                  <th class="p-2">Reference Part</th>
+                  <th class="p-2">Cost (€)</th>
+                  <th class="p-2">Outdoor Suitability</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800 text-[11px] font-mono">
+                <tr>
+                  <td class="p-2 text-slate-200">Capacitive Moisture + Temp</td>
+                  <td class="p-2 text-slate-400">RS-WS-N01-TR (Modbus)</td>
+                  <td class="p-2 text-emerald-400">€16.50</td>
+                  <td class="p-2 text-slate-400">IP68 Epoxy, 316 Stainless</td>
+                </tr>
+                <tr>
+                  <td class="p-2 text-slate-200">LoRaWAN MCU Transceiver</td>
+                  <td class="p-2 text-slate-400">Seeed Wio-E5 / Ra-08H</td>
+                  <td class="p-2 text-emerald-400">€12.20</td>
+                  <td class="p-2 text-slate-400">&lt;15µA Deep Sleep, EU868</td>
+                </tr>
+                <tr>
+                  <td class="p-2 text-slate-200">LiFePO4 18650 Battery + BMS</td>
+                  <td class="p-2 text-slate-400">IFR18650-1500 / TP5000</td>
+                  <td class="p-2 text-emerald-400">€4.80</td>
+                  <td class="p-2 text-slate-400">-20°C to +60°C Safe</td>
+                </tr>
+                <tr>
+                  <td class="p-2 text-slate-200">0.6W ETFE Mini Solar Panel</td>
+                  <td class="p-2 text-slate-400">5V 120mA Laminated</td>
+                  <td class="p-2 text-emerald-400">€3.40</td>
+                  <td class="p-2 text-slate-400">UV-Proof 5yr Longevity</td>
+                </tr>
+                <tr>
+                  <td class="p-2 text-slate-200">IP67 Enclosure + Ground Stake</td>
+                  <td class="p-2 text-slate-400">ABS Box + ePTFE Vent</td>
+                  <td class="p-2 text-emerald-400">€8.50</td>
+                  <td class="p-2 text-slate-400">Breather Vent Anti-Condens.</td>
+                </tr>
+                <tr class="bg-slate-900/40 font-bold text-white">
+                  <td class="p-2" colspan="2">Manufacturing BOM Total (Target Retail Kit €89)</td>
+                  <td class="p-2 text-teal-300">€55.00</td>
+                  <td class="p-2 text-teal-400">38% Gross Margin Buffer</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Interactive WhatsApp Virtual Smartphone (5 cols) -->
+      <div class="lg:col-span-5 flex flex-col items-center">
+        
+        <div class="w-full max-w-sm bg-[#111b21] rounded-[36px] p-3 shadow-2xl border-4 border-slate-700 ring-1 ring-slate-600/50">
+          <!-- Phone Speaker & Camera Notch -->
+          <div class="w-full flex justify-center items-center py-1">
+            <div class="w-16 h-3 bg-slate-800 rounded-full"></div>
+          </div>
+
+          <!-- Telegram App Window -->
+          <div class="bg-[#0e1621] rounded-[26px] overflow-hidden flex flex-col h-[600px] text-white">
+            
+            <!-- Telegram Top Bar -->
+            <div class="bg-[#17212b] px-3.5 py-2.5 flex items-center justify-between border-b border-[#242f3d]">
+              <div class="flex items-center space-x-2.5">
+                <div class="w-9 h-9 rounded-full bg-sky-500 flex items-center justify-center font-bold text-white text-base shadow-sm">
+                  <i class="fa-brands fa-telegram"></i>
+                </div>
+                <div>
+                  <div class="font-semibold text-xs text-slate-100 flex items-center space-x-1.5">
+                    <span>TerraFlux Bot</span>
+                    <i class="fa-solid fa-circle-check text-[11px] text-sky-400"></i>
+                  </div>
+                  <div class="text-[10px] text-sky-400">bot • @terraflux_bot</div>
+                </div>
+              </div>
+              <div class="flex items-center space-x-3 text-slate-400 text-xs">
+                <i class="fa-solid fa-bell"></i>
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </div>
+            </div>
+
+            <!-- Telegram Message Thread -->
+            <div id="chatMessages" class="flex-1 p-3 overflow-y-auto custom-scrollbar space-y-2.5 text-xs bg-[#0e1621]">
+              
+              <!-- System Timestamp -->
+              <div class="flex justify-center my-1">
+                <span class="bg-[#182533] text-slate-400 text-[10px] px-2.5 py-0.5 rounded-full font-medium">Today</span>
+              </div>
+
+              <!-- Message from Bot -->
+              <div class="flex flex-col items-start max-w-[90%]">
+                <div class="bg-[#182533] text-slate-100 p-2.5 rounded-lg rounded-tl-none shadow text-[11.5px] leading-relaxed border border-[#242f3d] whitespace-pre-line" id="latestBotMessage">
+💧 <b>TerraFlux Daily Advisory</b>
+📍 <b>Kaiserstuhl Vineyard</b> (Grapevine • 14.5ha)
+
+🌱 <b>Soil Moisture:</b> 19.4% (Threshold: 16.6%)
+☀️ <b>Tomorrow's ET₀:</b> 4.8mm | <b>Rain:</b> 0.0mm
+
+👉 <b>ACTION:</b> Water <b>12.0mm</b> tomorrow at <b>06:00</b>
+⏱️ <b>Drip Run Time:</b> ~2h 15m
+
+<i>Tap an inline action button below to confirm:</i>
+                </div>
+                <span class="text-[9px] text-slate-400 mt-0.5 ml-1 font-mono">19:00</span>
+              </div>
+
+            </div>
+
+            <!-- Telegram Interactive Inline Keyboard Chips -->
+            <div class="bg-[#17212b] px-2.5 py-2 border-t border-[#242f3d] flex items-center space-x-1.5 overflow-x-auto custom-scrollbar">
+              <button onclick="sendQuickReply('DONE')" class="px-2.5 py-1 bg-[#2b5278] hover:bg-[#346392] text-sky-200 rounded-lg text-[10px] font-semibold border border-sky-400/30 whitespace-nowrap shadow-sm flex items-center space-x-1">
+                <i class="fa-solid fa-check text-[9px]"></i>
+                <span>Confirm Done</span>
+              </button>
+              <button onclick="sendQuickReply('STATUS')" class="px-2.5 py-1 bg-[#242f3d] hover:bg-[#2d3a4b] text-slate-200 rounded-lg text-[10px] font-medium border border-slate-600 whitespace-nowrap flex items-center space-x-1">
+                <i class="fa-solid fa-chart-line text-[9px] text-sky-400"></i>
+                <span>Live Status</span>
+              </button>
+              <button onclick="sendQuickReply('DELAY 1D')" class="px-2.5 py-1 bg-[#242f3d] hover:bg-[#2d3a4b] text-amber-300 rounded-lg text-[10px] font-medium border border-amber-500/30 whitespace-nowrap flex items-center space-x-1">
+                <i class="fa-solid fa-clock text-[9px]"></i>
+                <span>Delay 24h</span>
+              </button>
+              <button onclick="sendQuickReply('HELP')" class="px-2.5 py-1 bg-[#242f3d] hover:bg-[#2d3a4b] text-slate-300 rounded-lg text-[10px] font-medium border border-slate-700 whitespace-nowrap">
+                ❓ Help
+              </button>
+            </div>
+
+            <!-- Chat Input Box -->
+            <form onsubmit="handleUserChatSubmit(event)" class="bg-[#17212b] p-2 flex items-center space-x-2 border-t border-[#242f3d]">
+              <input type="text" id="chatInput" placeholder="Message @terraflux_bot..." class="flex-1 bg-[#242f3d] text-white text-xs px-3 py-2 rounded-full focus:outline-none placeholder-slate-400 border border-slate-700" />
+              <button type="submit" class="w-8 h-8 bg-sky-500 hover:bg-sky-400 rounded-full flex items-center justify-center text-white text-xs transition shadow">
+                <i class="fa-solid fa-paper-plane text-[11px]"></i>
+              </button>
+            </form>
+
+          </div>
+        </div>
+
+        <!-- Telegram Onboarding Link Box -->
+        <div class="mt-3 p-3 bg-slate-800/80 border border-slate-700/80 rounded-xl text-xs max-w-xs w-full space-y-1.5">
+          <div class="flex items-center justify-between text-slate-300">
+            <span class="font-semibold text-[11px] text-sky-400 flex items-center space-x-1.5">
+              <i class="fa-brands fa-telegram text-sky-400"></i>
+              <span>Telegram /start Invite Link</span>
+            </span>
+            <span id="inviteTokenBadge" class="font-mono text-[9px] bg-sky-950/80 text-sky-300 px-1.5 py-0.5 rounded border border-sky-800">kaiser_alpha</span>
+          </div>
+          <div class="flex items-center space-x-1.5">
+            <input id="inviteLinkInput" readonly class="bg-slate-900 border border-slate-700 text-[10.5px] text-slate-300 rounded px-2 py-1 w-full font-mono select-all focus:outline-none" value="https://t.me/TerraFluxBot?start=kaiser_alpha" />
+            <button onclick="copyInviteLink()" title="Copy link" class="px-2 py-1 bg-slate-700 hover:bg-slate-600 rounded text-[10px] text-white transition">
+              <i class="fa-solid fa-copy"></i>
+            </button>
+          </div>
+          <p class="text-[10px] text-slate-400 text-center">Share with growers: 1-click self-serve onboarding binds chat ID.</p>
+        </div>
+
+        <p class="text-xs text-slate-400 mt-2 text-center max-w-xs">
+          Farmers interact 100% via Telegram Bot. Interactive 1-click buttons, zero dashboards, zero API fees.
+        </p>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <script>
+    let moistureChart = null;
+    let currentFieldPhone = '+4915123456789';
+
+    function copyInviteLink() {
+      const el = document.getElementById('inviteLinkInput');
+      if (el) {
+        el.select();
+        navigator.clipboard.writeText(el.value);
+        const originalVal = el.value;
+        el.value = 'Copied to clipboard!';
+        setTimeout(() => { el.value = originalVal; }, 1800);
+      }
+    }
+
+    function getAuthHeaders() {
+      const token = localStorage.getItem('terraflux_token');
+      return token ? { 'Authorization': `Bearer ${token}` } : {};
+    }
+
+    // A request that was sent before a sign-in must not be able to sign the user out
+    // again when its (now stale) 401 response arrives.
+    function isStaleAuthResponse(tokenUsed) {
+      return localStorage.getItem('terraflux_token') !== tokenUsed;
+    }
+
+    async function loadFieldData(forceReloadDropdown = false) {
+      const fieldSelectEl = document.getElementById('fieldSelect');
+      let fieldId = fieldSelectEl.value;
+      const tokenUsed = localStorage.getItem('terraflux_token');
+      try {
+        const res = await fetch('/api/v1/fields', { headers: getAuthHeaders() });
+        if (res.status === 401) {
+          // Not signed in (or the token expired): stop cleanly instead of recursing.
+          if (!isStaleAuthResponse(tokenUsed)) {
+            handleLogout(false);
+            showAuthRequired();
+          }
+          return;
+        }
+        const fields = await res.json();
+
+        // Populate field selector dropdown dynamically
+        if (fields && fields.length > 0 && (fieldSelectEl.dataset.initialized !== 'true' || forceReloadDropdown)) {
+          fieldSelectEl.innerHTML = fields.map(f => 
+            `<option value="${f.id}" class="bg-slate-800 text-slate-100" ${f.id == fieldId ? 'selected' : ''}>
+              ${f.name} (${f.crop_key} - ${f.area_ha}ha)
+            </option>`
+          ).join('');
+          fieldSelectEl.dataset.initialized = 'true';
+          fieldSelectEl.disabled = false;
+          fieldId = fieldSelectEl.value;
+        }
+        clearAuthRequired();
+
+        const field = fields.find(f => f.id == fieldId) || fields[0];
+
+        if (field) {
+          currentFieldPhone = field.farmer_phone;
+          if (field.invite_token) {
+            document.getElementById('inviteTokenBadge').innerText = field.invite_token;
+            document.getElementById('inviteLinkInput').value = field.telegram_deep_link || `https://t.me/TerraFluxBot?start=${field.invite_token}`;
+          }
+          if (field.timezone) {
+            document.getElementById('fieldTimezone').innerText = field.timezone;
+          }
+          if (field.daily_alert_hour !== undefined) {
+            document.getElementById('fieldAlertHour').innerText = String(field.daily_alert_hour).padStart(2, '0') + ':00';
+          }
+          document.getElementById('currentMoistureVal').innerText = field.soil_status.current_moisture_pct.toFixed(1) + '%';
+          document.getElementById('wpVal').innerText = field.soil_status.wilting_point_pct.toFixed(1) + '%';
+          document.getElementById('threshVal').innerText = field.soil_status.threshold_moisture_pct.toFixed(1) + '%';
+          document.getElementById('fcVal').innerText = field.soil_status.field_capacity_pct.toFixed(1) + '%';
+          
+          // Progress bar scaled relative to field capacity (plus 15% head-room)
+          const maxScale = (field.soil_status.field_capacity_pct || 25.0) * 1.15;
+          const pct = Math.min(100, Math.max(0, (field.soil_status.current_moisture_pct / maxScale) * 100));
+          const barEl = document.getElementById('moistureBar');
+          barEl.style.width = pct + '%';
+          
+          if (field.soil_status.is_stressed) {
+            barEl.className = 'bg-red-500 h-full rounded-full transition-all duration-500';
+            document.getElementById('actionRequiredBadge').innerText = 'Urgent Irrigation Needed';
+            document.getElementById('actionRequiredBadge').className = 'text-lg font-bold text-red-400';
+          } else if (field.soil_status.current_moisture_pct <= field.soil_status.threshold_moisture_pct + 1.5) {
+            barEl.className = 'bg-amber-500 h-full rounded-full transition-all duration-500';
+            document.getElementById('actionRequiredBadge').innerText = 'Action Recommended';
+            document.getElementById('actionRequiredBadge').className = 'text-lg font-bold text-amber-400';
+          } else {
+            barEl.className = 'bg-blue-500 h-full rounded-full transition-all duration-500';
+            document.getElementById('actionRequiredBadge').innerText = 'Moisture Optimal';
+            document.getElementById('actionRequiredBadge').className = 'text-lg font-bold text-emerald-400';
+          }
+
+          if (field.sensor) {
+            document.getElementById('batteryVal').innerText = field.sensor.battery_volts.toFixed(2) + ' V';
+            document.getElementById('probeName').innerText = field.sensor.name;
+          }
+        }
+
+        // Fetch telemetry history
+        const telRes = await fetch(`/api/v1/fields/${fieldId}/telemetry?limit=40`, { headers: getAuthHeaders() });
+        if (telRes.status === 401) {
+          if (!isStaleAuthResponse(tokenUsed)) {
+            handleLogout(false);
+            showAuthRequired();
+          }
+          return;
+        }
+        const telData = await telRes.json();
+        renderChart(telData.readings || [], field ? field.soil_status.threshold_moisture_pct : 16.6);
+        loadHistory();
+
+      } catch (err) {
+        console.error('Error loading field data:', err);
+      }
+    }
+
+    function showAuthRequired() {
+      const notice = document.getElementById('authNotice');
+      if (notice) notice.classList.remove('hidden');
+      const sel = document.getElementById('fieldSelect');
+      if (sel) {
+        sel.disabled = true;
+        sel.innerHTML = '<option value="" class="bg-slate-800 text-slate-100">Sign in to load your fields</option>';
+        sel.dataset.initialized = 'false';
+      }
+    }
+
+    function clearAuthRequired() {
+      const notice = document.getElementById('authNotice');
+      if (notice) notice.classList.add('hidden');
+    }
+
+    function formatTimestamp(iso) {
+      if (!iso) return '–';
+      const d = new Date(iso);
+      if (isNaN(d.getTime())) return iso;
+      return d.toLocaleString([], { month: 'short', day: '2-digit', hour: '2-digit', minute: '2-digit' });
+    }
+
+    function statusBadgeClass(status) {
+      switch (status) {
+        case 'ACCEPTED':
+        case 'sent':
+        case 'simulated':
+          return 'text-emerald-400';
+        case 'PENDING':
+          return 'text-amber-400';
+        case 'SNOOZED':
+        case 'skipped':
+          return 'text-slate-400';
+        case 'REJECTED':
+        case 'failed':
+        case 'error':
+        case 'exception':
+          return 'text-red-400';
+        default:
+          return 'text-slate-300';
+      }
+    }
+
+    async function loadHistory() {
+      const fieldId = document.getElementById('fieldSelect').value;
+      const rows = document.getElementById('historyRows');
+      if (!fieldId || !rows) return;
+      try {
+        const res = await fetch(`/api/v1/fields/${fieldId}/history?limit=25`, { headers: getAuthHeaders() });
+        if (!res.ok) return;
+        const data = await res.json();
+        const s = data.summary || {};
+
+        document.getElementById('histAdvisories').innerText = s.advisories ?? 0;
+        document.getElementById('histIrrigations').innerText = s.irrigations ?? 0;
+        document.getElementById('histApplied').innerText = (s.applied_net_depth_mm ?? 0).toFixed(1) + ' mm';
+        const failed = s.failed_dispatches ?? 0;
+        const failedEl = document.getElementById('histFailed');
+        failedEl.innerText = failed;
+        failedEl.className = 'text-lg font-bold font-mono ' + (failed > 0 ? 'text-red-400' : 'text-emerald-400');
+
+        const entries = [];
+        (data.advisories || []).forEach(a => entries.push({
+          when: a.timestamp,
+          kind: 'Advisory',
+          depth: a.net_depth_mm > 0 ? `${a.net_depth_mm.toFixed(1)} mm net / ${(a.gross_depth_mm || 0).toFixed(1)} mm gross` : '–',
+          status: a.status
+        }));
+        (data.irrigations || []).forEach(i => entries.push({
+          when: i.timestamp,
+          kind: 'Irrigation',
+          depth: `${i.net_depth_mm.toFixed(1)} mm net`,
+          status: i.source
+        }));
+        (data.dispatches || []).forEach(d => entries.push({
+          when: d.created_at,
+          kind: `Dispatch (${d.channel})`,
+          depth: `${d.attempts} attempt(s)`,
+          status: d.status
+        }));
+
+        entries.sort((a, b) => new Date(b.when) - new Date(a.when));
+
+        if (entries.length === 0) {
+          rows.innerHTML = '<tr><td colspan="4" class="p-3 text-center text-slate-500">No history yet.</td></tr>';
+          return;
+        }
+        rows.innerHTML = entries.slice(0, 25).map(e => `
+          <tr>
+            <td class="p-2 text-slate-400">${escapeHtml(formatTimestamp(e.when))}</td>
+            <td class="p-2 text-slate-200">${escapeHtml(e.kind)}</td>
+            <td class="p-2 text-slate-300">${escapeHtml(e.depth)}</td>
+            <td class="p-2 ${statusBadgeClass(e.status)}">${escapeHtml(e.status)}</td>
+          </tr>
+        `).join('');
+      } catch (err) {
+        console.error('History load error:', err);
+      }
+    }
+
+    function renderChart(readings, threshold) {
+      const ctx = document.getElementById('moistureChart').getContext('2d');
+      // Resilient timestamp parsing supporting both ISO 'T' and space ' '
+      const labels = readings.map(r => {
+        if (!r.timestamp) return '';
+        const parts = r.timestamp.split(/[T ]/);
+        return parts[1] ? parts[1].substring(0, 5) : r.timestamp;
+      });
+      const moistures = readings.map(r => r.soil_moisture_pct);
+      const thresholds = Array(readings.length).fill(threshold);
+
+      if (moistureChart) {
+        moistureChart.destroy();
+      }
+
+      moistureChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: labels.length > 0 ? labels : ['00:00', '06:00', '12:00', '18:00', '24:00'],
+          datasets: [
+            {
+              label: 'Soil Moisture (% VWC)',
+              data: moistures.length > 0 ? moistures : [23.5, 22.8, 21.9, 20.6, 19.4],
+              borderColor: '#3b82f6',
+              backgroundColor: 'rgba(59, 130, 246, 0.15)',
+              borderWidth: 2.5,
+              fill: true,
+              tension: 0.35,
+              pointRadius: 3
+            },
+            {
+              label: 'RAW Threshold (%)',
+              data: thresholds.length > 0 ? thresholds : [16.6, 16.6, 16.6, 16.6, 16.6],
+              borderColor: '#f59e0b',
+              borderDash: [5, 5],
+              borderWidth: 1.8,
+              pointRadius: 0,
+              fill: false
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false }
+          },
+          scales: {
+            x: {
+              grid: { color: '#334155' },
+              ticks: { color: '#94a3b8', font: { size: 10 } }
+            },
+            y: {
+              grid: { color: '#334155' },
+              ticks: { color: '#94a3b8', font: { size: 10 } },
+              suggestedMin: 8,
+              suggestedMax: 30
+            }
+          }
+        }
+      });
+    }
+
+    async function triggerAdvisory() {
+      const fieldId = document.getElementById('fieldSelect').value;
+      if (!fieldId) { showAuthRequired(); return; }
+      const tokenUsed = localStorage.getItem('terraflux_token');
+      try {
+        const res = await fetch(`/api/v1/advisory/evaluate/${fieldId}`, { method: 'POST', headers: getAuthHeaders() });
+        if (res.status === 401) {
+          if (!isStaleAuthResponse(tokenUsed)) { handleLogout(false); showAuthRequired(); }
+          return;
+        }
+        if (!res.ok) {
+          const err = await res.json().catch(() => ({}));
+          alert('Advisory dispatch error: ' + (err.detail || res.status));
+          return;
+        }
+        const data = await res.json();
+        
+        // Update KPI cards dynamically from decision & weather
+        if (data.weather) {
+          document.getElementById('et0Val').innerText = data.weather.et0_tomorrow_mm.toFixed(1) + ' mm';
+          document.getElementById('rainVal').innerText = data.weather.rain_48h_mm.toFixed(1) + ' mm';
+          document.getElementById('tempVal').innerText = data.weather.max_temp_c.toFixed(1) + '°C max';
+        }
+        if (data.decision) {
+          if (data.decision.should_irrigate) {
+            document.getElementById('actionRequiredBadge').innerText = 'Action Recommended';
+            document.getElementById('actionRequiredBadge').className = 'text-lg font-bold text-amber-400';
+            document.getElementById('suggestedWatering').innerHTML = `Target: <strong>${data.decision.target_depth_mm.toFixed(1)} mm</strong>`;
+          } else {
+            document.getElementById('actionRequiredBadge').innerText = 'No Watering Needed';
+            document.getElementById('actionRequiredBadge').className = 'text-lg font-bold text-emerald-400';
+            document.getElementById('suggestedWatering').innerHTML = `Target: <strong>0.0 mm</strong>`;
+          }
+        }
+
+        // Append bot message to WhatsApp simulator
+        appendMessage('bot', data.whatsapp_message);
+      } catch (e) {
+        alert('Advisory trigger error: ' + e.message);
+      }
+    }
+
+    async function runScenario(type) {
+      const fieldId = document.getElementById('fieldSelect').value;
+      if (!fieldId) { showAuthRequired(); return; }
+      const tokenUsed = localStorage.getItem('terraflux_token');
+      try {
+        const res = await fetch(`/api/v1/simulation/run?field_id=${fieldId}&days=14&scenario=${type}`, { method: 'POST', headers: getAuthHeaders() });
+        if (res.status === 401) {
+          if (!isStaleAuthResponse(tokenUsed)) { handleLogout(false); showAuthRequired(); }
+          return;
+        }
+        if (!res.ok) {
+          const err = await res.json().catch(() => ({}));
+          alert('Simulation error: ' + (err.detail || res.status));
+          return;
+        }
+        const data = await res.json();
+        
+        // Update chart with simulated timeline
+        const readings = data.timeline.slice(-30).map(t => ({
+          timestamp: t.timestamp,
+          soil_moisture_pct: t.soil_moisture_pct
+        }));
+        renderChart(readings, data.final_status.threshold_pct);
+        
+        document.getElementById('currentMoistureVal').innerText = data.final_status.moisture_pct.toFixed(1) + '%';
+        
+        // Trigger advisory evaluation post-scenario
+        triggerAdvisory();
+      } catch (e) {
+        alert('Simulation error: ' + e.message);
+      }
+    }
+
+    function appendMessage(sender, text) {
+      const container = document.getElementById('chatMessages');
+      const timeStr = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+      if (sender === 'user') {
+        const msgHtml = `
+          <div class="flex flex-col items-end max-w-[85%] self-end ml-auto">
+            <div class="bg-[#005c4b] text-white p-2.5 rounded-lg rounded-tr-none shadow text-[11.5px] leading-relaxed">
+              ${escapeHtml(text)}
+            </div>
+            <span class="text-[9px] text-slate-400 mt-0.5 mr-1 font-mono">${timeStr} ✓✓</span>
+          </div>
+        `;
+        container.insertAdjacentHTML('beforeend', msgHtml);
+      } else {
+        const msgHtml = `
+          <div class="flex flex-col items-start max-w-[90%]">
+            <div class="bg-[#202c33] text-slate-100 p-2.5 rounded-lg rounded-tl-none shadow text-[11.5px] leading-relaxed border border-[#2a3942] whitespace-pre-line">
+              ${escapeHtml(text)}
+            </div>
+            <span class="text-[9px] text-slate-400 mt-0.5 ml-1 font-mono">${timeStr}</span>
+          </div>
+        `;
+        container.insertAdjacentHTML('beforeend', msgHtml);
+      }
+      container.scrollTop = container.scrollHeight;
+    }
+
+    function escapeHtml(str) {
+      return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br/>');
+    }
+
+    async function sendQuickReply(action) {
+      appendMessage('user', action);
+      try {
+        const payload = {
+          update_id: Date.now(),
+          callback_query: {
+            id: 'query_' + Date.now(),
+            message: { chat: { id: currentFieldPhone || "+4915123456789" } },
+            data: action
+          }
+        };
+
+        const res = await fetch('/api/v1/telegram/webhook', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+        
+        setTimeout(() => {
+          appendMessage('bot', data.reply);
+          loadFieldData(); // refresh chart and moisture stats
+        }, 300);
+      } catch (err) {
+        console.error('Quick reply error:', err);
+      }
+    }
+
+    async function handleUserChatSubmit(e) {
+      e.preventDefault();
+      const input = document.getElementById('chatInput');
+      const text = input.value.trim();
+      if (!text) return;
+
+      appendMessage('user', text);
+      input.value = '';
+
+      try {
+        const payload = {
+          update_id: Date.now(),
+          message: {
+            message_id: Math.floor(Math.random() * 10000),
+            chat: { id: currentFieldPhone || "+4915123456789" },
+            text: text
+          }
+        };
+
+        const res = await fetch('/api/v1/telegram/webhook', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+        
+        setTimeout(() => {
+          appendMessage('bot', data.reply);
+          loadFieldData(); // refresh chart and moisture stats
+        }, 300);
+      } catch (err) {
+        console.error('Chat error:', err);
+      }
+    }
+
+    async function calculateEconomics() {
+      const ha = document.getElementById('haSlider').value;
+      const tariff = document.getElementById('waterTariffSlider').value;
+      const probes = document.getElementById('probesSlider').value;
+      const cots = document.getElementById('cotsToggle') ? document.getElementById('cotsToggle').checked : false;
+      const gateway = document.getElementById('gatewayToggle') ? document.getElementById('gatewayToggle').checked : false;
+
+      document.getElementById('haSliderVal').innerText = ha + ' ha';
+      document.getElementById('waterTariffSliderVal').innerText = '€' + parseFloat(tariff).toFixed(2) + ' / m³';
+      document.getElementById('probesSliderVal').innerText = probes + ' Probes';
+
+      try {
+        const params = new URLSearchParams({
+          farm_area_ha: ha,
+          probes_count: probes,
+          water_tariff_eur_m3: tariff,
+          crop_type: 'grapevine',
+          hardware_tier: cots ? 'cots' : 'diy',
+          include_gateway: gateway ? 'true' : 'false'
+        });
+        const res = await fetch(`/api/v1/economics/evaluate?${params.toString()}`, { method: 'POST' });
+        const data = await res.json();
+
+        document.getElementById('baselineBill').innerText = '€' + Math.round(data.baseline_water_bill_eur_yr).toLocaleString() + ' / yr';
+        document.getElementById('waterSavedPct').innerText = Math.round(data.water_saved_pct);
+        document.getElementById('savedM3').innerText = Math.round(data.water_saved_m3_yr).toLocaleString() + ' m³';
+        document.getElementById('laborSaved').innerText =
+          Math.round(data.labor_hours_saved_yr || 0) + ' h / yr · €' + Math.round(data.labor_savings_eur_yr || 0).toLocaleString();
+        document.getElementById('annualSavings').innerText = '€' + Math.round(data.annual_financial_savings_eur).toLocaleString() + ' / yr';
+        document.getElementById('paybackMonths').innerText = data.payback_period_months.toFixed(1) + ' mo';
+        document.getElementById('roiPct').innerText = Math.round(data.three_year_roi_pct).toLocaleString() + '%';
+      } catch (e) {
+        console.error('Economics error:', e);
+      }
+    }
+
+    // Auth State and Modal Logic
+    let currentAuthTab = 'signin';
+
+    function openAuthModal() {
+      document.getElementById('authAlert').classList.add('hidden');
+      document.getElementById('authModal').classList.remove('hidden');
+    }
+
+    function closeAuthModal() {
+      document.getElementById('authModal').classList.add('hidden');
+    }
+
+    function switchAuthTab(tab) {
+      currentAuthTab = tab;
+      const isSignIn = tab === 'signin';
+      document.getElementById('tabSignIn').className = isSignIn
+        ? 'flex-1 py-2 text-sky-400 border-b-2 border-sky-400 transition font-semibold text-center'
+        : 'flex-1 py-2 text-slate-400 hover:text-slate-200 border-b-2 border-transparent transition font-semibold text-center';
+      document.getElementById('tabRegister').className = !isSignIn
+        ? 'flex-1 py-2 text-sky-400 border-b-2 border-sky-400 transition font-semibold text-center'
+        : 'flex-1 py-2 text-slate-400 hover:text-slate-200 border-b-2 border-transparent transition font-semibold text-center';
+      
+      document.getElementById('authModalTitle').innerText = isSignIn ? 'Sign In to TerraFlux' : 'Create Grower Account';
+      document.getElementById('fullNameGroup').classList.toggle('hidden', isSignIn);
+      document.getElementById('authSubmitBtn').innerText = isSignIn ? 'Sign In' : 'Register Account';
+      document.getElementById('authAlert').classList.add('hidden');
+    }
+
+    async function handleAuthSubmit(e) {
+      e.preventDefault();
+      const email = document.getElementById('authEmail').value.trim();
+      const password = document.getElementById('authPassword').value;
+      const fullName = document.getElementById('authFullName').value.trim();
+      const alertEl = document.getElementById('authAlert');
+      alertEl.classList.add('hidden');
+
+      const isSignIn = currentAuthTab === 'signin';
+      const endpoint = isSignIn ? '/api/v1/auth/login' : '/api/v1/auth/register';
+      const payload = isSignIn ? { email, password } : { email, password, full_name: fullName || 'Grower', role: 'grower' };
+
+      try {
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+        if (!res.ok) {
+          alertEl.innerText = data.detail || 'Authentication failed. Please check credentials.';
+          alertEl.classList.remove('hidden');
+          return;
+        }
+
+        // Store Bearer Token
+        localStorage.setItem('terraflux_token', data.access_token);
+        localStorage.setItem('terraflux_user', JSON.stringify({
+          id: data.user_id,
+          email: data.email,
+          role: data.role,
+          full_name: data.full_name
+        }));
+
+        closeAuthModal();
+        updateAuthUI(data);
+        loadFieldData(true);
+      } catch (err) {
+        alertEl.innerText = 'Connection error: ' + err.message;
+        alertEl.classList.remove('hidden');
+      }
+    }
+
+    async function handleLogout(refresh = true) {
+      // Revoke the token server-side before dropping it locally.
+      const token = localStorage.getItem('terraflux_token');
+      if (token) {
+        try {
+          await fetch('/api/v1/auth/logout', {
+            method: 'POST',
+            headers: { 'Authorization': `Bearer ${token}` }
+          });
+        } catch (e) {
+          console.warn('Server-side logout failed, clearing local session anyway:', e);
+        }
+      }
+      localStorage.removeItem('terraflux_token');
+      localStorage.removeItem('terraflux_user');
+      document.getElementById('loginBtn').classList.remove('hidden');
+      const badge = document.getElementById('userProfileBadge');
+      badge.classList.add('hidden');
+      badge.classList.remove('flex');
+      showAuthRequired();
+      if (refresh) {
+        loadFieldData(true);
+      }
+    }
+
+    function updateAuthUI(user) {
+      if (user) {
+        document.getElementById('loginBtn').classList.add('hidden');
+        const badge = document.getElementById('userProfileBadge');
+        badge.classList.remove('hidden');
+        badge.classList.add('flex');
+        document.getElementById('userFullName').innerText = user.full_name || user.email;
+        document.getElementById('userRoleBadge').innerText = user.role || 'grower';
+      } else {
+        document.getElementById('loginBtn').classList.remove('hidden');
+        const badge = document.getElementById('userProfileBadge');
+        badge.classList.add('hidden');
+        badge.classList.remove('flex');
+      }
+    }
+
+    async function checkAuthStatus() {
+      const token = localStorage.getItem('terraflux_token');
+      if (!token) {
+        updateAuthUI(null);
+        return;
+      }
+      try {
+        const res = await fetch('/api/v1/auth/me', { headers: { 'Authorization': `Bearer ${token}` } });
+        if (res.ok) {
+          const user = await res.json();
+          updateAuthUI(user);
+          loadFieldData(true);
+        } else {
+          handleLogout(false);
+        }
+      } catch {
+        const cached = localStorage.getItem('terraflux_user');
+        if (cached) updateAuthUI(JSON.parse(cached));
+      }
+    }
+
+    // Init on load
+    window.addEventListener('DOMContentLoaded', () => {
+      checkAuthStatus();
+      loadFieldData();
+      calculateEconomics();
+    });
+  </script>
+
+  <!-- Auth Modal -->
+  <div id="authModal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+    <div class="bg-slate-900 border border-slate-700 rounded-2xl w-full max-w-md p-6 shadow-2xl relative">
+      <button onclick="closeAuthModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-lg">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="flex items-center space-x-3 mb-5">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-500 to-emerald-400 flex items-center justify-center text-white shadow">
+          <i class="fa-solid fa-shield-halved text-lg"></i>
+        </div>
+        <div>
+          <h3 id="authModalTitle" class="text-base font-bold text-white">Sign In to TerraFlux</h3>
+          <p class="text-xs text-slate-400">Access your private farm blocks & sensor analytics</p>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="flex border-b border-slate-800 mb-4 text-xs font-semibold">
+        <button id="tabSignIn" onclick="switchAuthTab('signin')" class="flex-1 py-2 text-sky-400 border-b-2 border-sky-400 transition text-center">Sign In</button>
+        <button id="tabRegister" onclick="switchAuthTab('register')" class="flex-1 py-2 text-slate-400 hover:text-slate-200 border-b-2 border-transparent transition text-center">Register Grower</button>
+      </div>
+
+      <div id="authAlert" class="hidden mb-3 p-2.5 rounded-lg text-xs bg-red-500/10 border border-red-500/30 text-red-400"></div>
+
+      <form id="authForm" onsubmit="handleAuthSubmit(event)" class="space-y-3.5">
+        <div id="fullNameGroup" class="hidden space-y-1">
+          <label class="block text-xs font-medium text-slate-300">Full Name</label>
+          <input type="text" id="authFullName" placeholder="e.g. Stefan Becker" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-sky-500" />
+        </div>
+
+        <div class="space-y-1">
+          <label class="block text-xs font-medium text-slate-300">Email Address</label>
+          <input type="email" id="authEmail" required placeholder="grower@farm.ag" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-sky-500" />
+        </div>
+
+        <div class="space-y-1">
+          <label class="block text-xs font-medium text-slate-300">Password</label>
+          <input type="password" id="authPassword" required placeholder="••••••••" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-sky-500" />
+        </div>
+
+        <button type="submit" id="authSubmitBtn" class="w-full py-2.5 bg-sky-500 hover:bg-sky-400 text-white font-semibold text-xs rounded-lg transition shadow-lg shadow-sky-500/20 mt-2">
+          Sign In
+        </button>
+      </form>
+
+      <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-400 text-center">
+        <span>Admin Demo Credentials:</span>
+        <code class="text-sky-300 ml-1">admin@terraflux.ag / kaiserstuhl2026</code>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

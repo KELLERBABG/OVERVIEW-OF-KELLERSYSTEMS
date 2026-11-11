@@ -1,0 +1,82 @@
+{
+  "slug": "einkauf-006",
+  "source": "generated",
+  "domain": "Einkauf und Lieferantenrahmenvertrag, deutsches und oesterreichisches Recht",
+  "traps": [
+    {
+      "marker": "Verarbeitung personenbezogener Daten erfolgt außerhalb der Europäischen Union",
+      "expectedType": "international_data_processing",
+      "note": "Drittlandverarbeitung beschrieben, ohne die Woerter Drittland oder Datenexport"
+    },
+    {
+      "marker": "Datenbestand wird ausschließlich im herstellereigenen Binärformat bereitgestellt",
+      "expectedType": "data_lockin",
+      "note": "Lock-in durch Proprietaerformat, ohne Gebuehren- oder Herausgabeklausel"
+    },
+    {
+      "marker": "Mit der Einstellung in das Benachrichtigungsportal sind Mitteilungen bekannt",
+      "expectedType": "fictitious_receipt",
+      "note": "Zugangsfiktion ohne die Woerter Zugangsfiktion oder gilt als zugegangen"
+    },
+    {
+      "marker": "Nachträgliche Abgabenbelastungen trägt der Kunde unabhängig davon",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Steuerlastverlagerung ohne Verschulden, ohne die Formel Steuern trägt der Kunde"
+    },
+    {
+      "marker": "Der Auftragnehmer kann den Rahmenvertrag mit einer Frist von sechzig Tagen beenden",
+      "expectedType": "unilateral_convenience_termination",
+      "note": "Einseitiges Kuendigungsrecht ohne Grund; Registerwort Kuendigung vermieden"
+    },
+    {
+      "marker": "The customer shall not solicit the supplier's personnel for a period of twenty-four months",
+      "expectedType": "non_solicitation",
+      "note": "Abwerbeverbot auf Englisch, um das Registerwort Abwerbeverbot zu vermeiden"
+    },
+    {
+      "marker": "im Kundenportal hinterlegten Qualitätsrichtlinien in der dort jeweils abrufbaren Fassung",
+      "expectedType": "dynamic_url_referral",
+      "note": "Dynamische Bezugnahme ohne URL und ohne das Wort Verweis"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Kunde erhält Auskunft über die eingesetzten Unterauftragnehmer",
+      "note": "Transparenz ueber Unterauftragnehmer, kein unkontrollierter Einsatz"
+    },
+    {
+      "marker": "Bei Störungen unterrichtet der Auftragnehmer den Kunden unverzüglich",
+      "note": "Informationspflicht ohne Sanktion"
+    },
+    {
+      "marker": "Der Kunde erhält seine Bestandsdaten bei Vertragsende unentgeltlich in einem gängigen Format",
+      "note": "Kostenfreier Datenexport trotz Lock-in-Klausel"
+    },
+    {
+      "marker": "Mitteilungen des Kunden werden zusätzlich per E-Mail bestätigt",
+      "note": "Zusaetzliche Bestaetigung, keine Zugangsfiktion"
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag einvernehmlich beenden",
+      "note": "Einvernehmliche Beendigung, kein einseitiges Recht"
+    },
+    {
+      "marker": "Die im Portal eingestellten Formulare werden von beiden Parteien genutzt",
+      "note": "Gemeinsame Nutzung ohne einseitige Aenderungsbefugnis"
+    },
+    {
+      "marker": "Die Parteien arbeiten bei der Personalplanung zusammen",
+      "note": "Zusammenarbeit statt Abwerbeverbot"
+    },
+    {
+      "marker": "Änderungen dieses Vertrags bedürfen der Zustimmung beider Parteien in Textform",
+      "note": "Symmetrische Aenderungsklausel"
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Die Parteien benennen jeweils eine verantwortliche Person für den Datenaustausch",
+      "note": "Benennung einer verantwortlichen Person ohne Haftungsfolge, kein Detektor"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "slug": "public-commonpaper-design-partner-agreement",
+  "source": "https://raw.githubusercontent.com/CommonPaper/Design-Partner-Agreement/main/design-partner-agreement.md",
+  "license": "CC BY 4.0 (Common Paper Standard Agreement)",
+  "retrieved": "2026-10-15",
+  "domain": "Design-Partner-Vereinbarung (Common Paper)",
+  "traps": [
+    {
+      "marker": "1. Entire Agreement. This Agreement",
+      "expectedType": "entire_agreement",
+      "note": "Reale Klausel, Engine-Typ entire_agreement"
+    },
+    {
+      "marker": "3. Governing Law and Chosen Courts.",
+      "expectedType": "jurisdiction",
+      "note": "Reale Klausel, Engine-Typ jurisdiction"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "1. Product Access. Partner would",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "2. Program and Feedback. The purpose",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "3. Product Improvement. Provider",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "1. Partner will pay Provider the",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "1. Agreement Term. This Agreement",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "2. Termination. Either party may",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

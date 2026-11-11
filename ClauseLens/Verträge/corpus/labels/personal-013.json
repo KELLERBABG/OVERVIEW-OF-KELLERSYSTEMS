@@ -1,0 +1,74 @@
+{
+  "slug": "personal-013",
+  "source": "generated",
+  "domain": "Arbeitsvertrag",
+  "traps": [
+    {
+      "marker": "Verletzt die Arbeitnehmerin ihre Pflichten, verwirkt sie eine V​ertragsstrafe von 2.500,00 EUR",
+      "expectedType": "penalty",
+      "note": "Vertragsstrafe ohne Verschuldensabstufung"
+    },
+    {
+      "marker": "Eine Karenzentschädigung ist nicht zugesagt",
+      "expectedType": "non_compete",
+      "note": "Wettbewerbsverbot ohne Karenzentschädigung"
+    },
+    {
+      "marker": "Erklärungen der Arbeitgeberin gelten mit Absendung als zugegangen",
+      "expectedType": "fictitious_receipt",
+      "note": "Zugangsfiktion für Erklärungen"
+    },
+    {
+      "marker": "Die Gutschrift entfällt bei kritischen Aktualisierungen der eingesetzten Software",
+      "expectedType": "service_credit_forfeiture",
+      "note": "Verfall der Gutschrift"
+    },
+    {
+      "marker": "Die Systemprotokolle gelten als Vollbeweis",
+      "expectedType": "audit_log_manipulation",
+      "note": "Protokolle als Vollbeweis"
+    },
+    {
+      "marker": "Die Haftung der Arbeitgeberin für leichte Fahrlässigkeit ist ausgeschlossen",
+      "expectedType": "liability",
+      "note": "Haftungsausschluss für leichte Fahrlässigkeit"
+    },
+    {
+      "marker": "Gerichtsstand ist ausschließlich der Sitz der Arbeitgeberin in Leipzig",
+      "expectedType": "jurisdiction",
+      "note": "Gerichtsstand am Sitz der Arbeitgeberin"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Arbeitnehmerin wird als Sachbearbeiterin im Einkauf beschäftigt",
+      "note": "Tätigkeitsbeschreibung"
+    },
+    {
+      "marker": "Die Arbeitnehmerin erhält Zugang zu den IT-Systemen der Arbeitgeberin",
+      "note": "Systemzugang"
+    },
+    {
+      "marker": "Das Bruttogehalt beträgt 3.400,00 EUR monatlich",
+      "note": "Gehaltsangabe"
+    },
+    {
+      "marker": "Die Vergütung wird jeweils zum Monatsende ausgezahlt",
+      "note": "Auszahlungszeitpunkt"
+    },
+    {
+      "marker": "Die Arbeitnehmerin nimmt an den wöchentlichen Teambesprechungen teil",
+      "note": "Teambesprechungen"
+    },
+    {
+      "marker": "Dieser Vertrag wird in zwei Ausfertigungen erstellt",
+      "note": "Ausfertigungen"
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Vertrag wird auf unbestimmte Zeit geschlossen",
+      "note": "unbefristete Laufzeit ohne Verlängerungsautomatik"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "slug": "evasion-031",
+  "source": "generated",
+  "domain": "evasion",
+  "traps": [
+    {
+      "marker": "Mündliсhе Nеbеnаbrеdеn bеstеhеn niсht, Zusаgеn vоn Vеrtriеbsmitаrbеitеrn еntfаltеn kеinе rесhtliсhе",
+      "expectedType": "entire_agreement",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: entire_agreement (Technik: cyrillic)."
+    },
+    {
+      "marker": "Dеr Аnbiеtеr dаrf dеn Kundеn аls Rеfеrеnzkundеn führеn, еinе gеsоndеrtе Zustimmung dеs Kundеn ist",
+      "expectedType": "marketing_reference",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: marketing_reference (Technik: cyrillic)."
+    },
+    {
+      "marker": "Dеr Kundе übеrträgt dеm Аnbiеtеr sämtliсhе Rесhtе аn Idееn und Fееdbасk, diе im Rаhmеn dеr",
+      "expectedType": "feedback_ip_grab",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: feedback_ip_grab (Technik: cyrillic)."
+    },
+    {
+      "marker": "Lеistungsnасhwеisе und Stundеnzеttеl gеltеn аls vоrbеhаltlоs gеnеhmigt, wеnn dеr Kundе niсht binnеn",
+      "expectedType": "fictitious_receipt",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: fictitious_receipt (Technik: cyrillic)."
+    },
+    {
+      "marker": "Diе Sеrviсеlеvеl sind unvеrbindliсh, еs hаndеlt siсh um Riсhtwеrtе оhnе Rесhtsаnsрruсh. Аnsрrüсhе",
+      "expectedType": "unverbindliche_sla_falle",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: unverbindliche_sla_falle (Technik: cyrillic)."
+    },
+    {
+      "marker": "Dеr Kundе еrhält kеinе Рrоvisiоn für Dirеktgеsсhäftе, diе dеr Аnbiеtеr оhnе sеinе Mitwirkung",
+      "expectedType": "agency_commission_exclusion",
+      "note": "GAP: kyrillische Homoglyphen in lateinischen Wörtern. Erwartet: agency_commission_exclusion."
+    },
+    {
+      "marker": "Dеr Kundе hаt kеinеn Аnsрruсh аuf еinеn Аusglеiсh für dеn vоn ihm аufgеbаutеn Kundеnstаmm.",
+      "expectedType": "agency_goodwill_waiver",
+      "note": "GAP: kyrillische Homoglyphen in lateinischen Wörtern. Erwartet: agency_goodwill_waiver."
+    },
+    {
+      "marker": "Еinе Übеrmittlung vоn Kundеndаtеn in еin Drittlаnd ist zulässig, sоwеit dеr Аnbiеtеr gееignеtе",
+      "expectedType": "international_data_processing",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: international_data_processing (Technik: cyrillic)."
+    },
+    {
+      "marker": "Еin gutасhtеrliсhеs Vеrfаhrеn ist vоr Еinlеitung dеs gеriсhtliсhеn Rесhtswеgs durсhzuführеn. Diе",
+      "expectedType": "mandatory_expert_determination",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: mandatory_expert_determination (Technik: cyrillic)."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Anbieter überlässt dem Kunden die Daten in einem gängigen Format.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag aus wichtigem Grund ohne Einhaltung einer Frist kündigen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien benennen jeweils einen Ansprechpartner für die operative Zusammenarbeit.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien sind berechtigt, gegen fällige Forderungen aufzurechnen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde erhält Schulungen und Zugang zum Systemhandbuch in der jeweils aktuellen Fassung.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde informiert den Anbieter unverzüglich über wesentliche Störungen im Vertrieb.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    }
+  ],
+  "uncovered": []
+}

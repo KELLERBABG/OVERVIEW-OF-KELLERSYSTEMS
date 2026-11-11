@@ -1,0 +1,95 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    name: Ruff lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install ruff
+        run: python -m pip install "ruff>=0.9"
+      - name: Ruff check
+        run: ruff check holoforge tests
+
+  typecheck:
+    name: Mypy type check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install mypy and runtime dependencies
+        run: python -m pip install "mypy>=1.10" numpy pillow
+      - name: Mypy
+        run: mypy
+
+  test:
+    name: Pytest (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12", "3.13", "3.14"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install package and pytest
+        run: python -m pip install -e . pytest
+      - name: Run test suite
+        run: python -m pytest -q
+
+  build:
+    name: Build wheel and sdist
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install build
+        run: python -m pip install build
+      - name: Build distributions
+        run: python -m build
+      - name: Verify wheel version matches holoforge.__version__
+        run: |
+          PKG_VERSION="$(sed -n 's/^__version__ = "\(.*\)"/\1/p' holoforge/__init__.py)"
+          WHEEL="$(ls dist/holoforge_opt-"$PKG_VERSION"-*.whl 2>/dev/null || true)"
+          if [ -z "$WHEEL" ]; then
+            echo "::error::No wheel matches single-sourced version $PKG_VERSION. Built: $(ls dist)"
+            exit 1
+          fi
+          echo "Wheel $WHEEL matches version $PKG_VERSION"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+  verify:
+    name: Evidence harness (published claims vs code)
+    needs: [test]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install package
+        run: python -m pip install -e .
+      - name: Regenerate published claims from the pinned seed
+        run: python -m holoforge.cli verify

@@ -1,0 +1,56 @@
+{
+  "slug": "public-commonpaper-professional-services-agreement",
+  "source": "https://raw.githubusercontent.com/CommonPaper/PSA/main/psa.md",
+  "license": "CC BY 4.0 (Common Paper Standard Agreement)",
+  "retrieved": "2026-10-15",
+  "domain": "Dienstleistungsvertrag (Common Paper)",
+  "traps": [
+    {
+      "marker": "3. Pre-Existing Materials. To the",
+      "expectedType": "data_grant",
+      "note": "Reale Klausel, Engine-Typ data_grant"
+    },
+    {
+      "marker": "1. Protection by Provider. Provider",
+      "expectedType": "third_party_indemnity",
+      "note": "Reale Klausel, Engine-Typ third_party_indemnity"
+    },
+    {
+      "marker": "1. Entire Agreement. This Agreement",
+      "expectedType": "entire_agreement",
+      "note": "Reale Klausel, Engine-Typ entire_agreement"
+    },
+    {
+      "marker": "3. Governing Law and Chosen Courts.",
+      "expectedType": "jurisdiction",
+      "note": "Reale Klausel, Engine-Typ jurisdiction"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Professional Services Agreement",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "1. Providing Services. Customer",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "2. Cooperation. Customer will reasonably",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "3. Change Orders. Provider or Customer",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "4. Acceptance. If according to",
+      "note": "Unauffällige Klausel"
+    },
+    {
+      "marker": "5. Subcontractors. Provider may",
+      "note": "Unauffällige Klausel"
+    }
+  ],
+  "uncovered": []
+}

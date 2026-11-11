@@ -1,0 +1,311 @@
+{
+  "generatedBy": "build.mjs",
+  "cases": [
+    {
+      "id": "pdf-flate-literal",
+      "file": "fixtures/flate.pdf",
+      "format": "auto",
+      "expectedText": "Die Haftung des Anbieters für Datenverlust ist ausgeschlossen.",
+      "expectedTypes": [
+        "liability"
+      ],
+      "note": "FlateDecode stream inflated through inflateSync"
+    },
+    {
+      "id": "pdf-tj-kerning",
+      "file": "fixtures/tj-kerning.pdf",
+      "format": "auto",
+      "expectedText": "Die Haftung des Anbieters für Datenverlust ist ausgeschlossen.",
+      "expectedTypes": [
+        "liability"
+      ],
+      "note": "TJ array, kerning offsets <= -120 become word spaces"
+    },
+    {
+      "id": "pdf-winansi-octal",
+      "file": "fixtures/winansi.pdf",
+      "format": "auto",
+      "expectedText": "Ansprüche des Kunden verjähren innerhalb von sechs Monaten.",
+      "expectedTypes": [
+        "statute_of_limitations"
+      ],
+      "note": "WinAnsi umlauts as octal escapes, latin1 decode"
+    },
+    {
+      "id": "pdf-utf16be-strings",
+      "file": "fixtures/utf16be.pdf",
+      "format": "auto",
+      "expectedText": "Die Haftung des Anbieters für Datenverlust ist ausgeschlossen.\nAusschließlicher Gerichtsstand für alle Streitigkeiten ist der Sitz des Anbieters.",
+      "expectedTypes": [
+        "liability",
+        "jurisdiction"
+      ],
+      "note": "literal and hex strings with UTF-16BE BOM"
+    },
+    {
+      "id": "pdf-multipage",
+      "file": "fixtures/multipage.pdf",
+      "format": "auto",
+      "expectedText": "Die Haftung des Anbieters für Datenverlust ist ausgeschlossen.\n\nAusschließlicher Gerichtsstand für alle Streitigkeiten ist der Sitz des Anbieters.",
+      "expectedTypes": [
+        "liability",
+        "jurisdiction"
+      ],
+      "note": "two content streams joined with a blank line"
+    },
+    {
+      "id": "pdf-linewrap-dehyphenation",
+      "file": "fixtures/linewrap.pdf",
+      "format": "auto",
+      "expectedText": "Die Haftung des Anbieters für Datenverlust ist ausgeschlossen.",
+      "expectedTypes": [
+        "liability"
+      ],
+      "note": "Td/T*/Td line breaks and hyphen join at line end"
+    },
+    {
+      "id": "pdf-hidden-text-contradiction",
+      "file": "fixtures/hidden-text.pdf",
+      "format": "auto",
+      "expectedText": "Haftung des Anbieters: unbeschränkt\nDie Haftung des Anbieters für Datenverlust ist ausgeschlossen.",
+      "expectedTypes": [
+        "liability"
+      ],
+      "defect": "invisible text (render mode 3) is extracted like visible text and the visible label contradicts the text layer; extraction cannot tell them apart",
+      "note": "visible label plus hidden clause in the text layer"
+    },
+    {
+      "id": "pdf-flate-trailing-byte",
+      "file": "fixtures/flate-trailing.pdf",
+      "format": "auto",
+      "expectedText": "Die Haftung des Anbieters für Datenverlust ist ausgeschlossen.",
+      "expectedTypes": [
+        "liability"
+      ],
+      "note": "trailing CR before endstream, inflateData falls back to dropping the last byte"
+    },
+    {
+      "id": "pdf-flate-corrupt",
+      "file": "fixtures/flate-broken.pdf",
+      "format": "auto",
+      "expectedErrorIncludes": "Kein Text im PDF gefunden",
+      "expectedErrorClass": "PdfError",
+      "note": "corrupt FlateDecode stream yields the no-text diagnosis"
+    },
+    {
+      "id": "pdf-scanned-image-only",
+      "file": "fixtures/scanned.pdf",
+      "format": "auto",
+      "expectedError": "PDF enthält nur Rasterbilder/Scans (Bildseiten) und keine durchsuchbare Textebene. OCR-Texterkennung ist für gescannte PDFs erforderlich.",
+      "expectedErrorClass": "PdfError",
+      "note": "image-only PDF gets the scan diagnosis"
+    },
+    {
+      "id": "pdf-encrypted",
+      "file": "fixtures/encrypted.pdf",
+      "format": "auto",
+      "expectedError": "PDF ist passwortgeschützt (verschlüsselt) und kann nicht gelesen werden.",
+      "expectedErrorClass": "PdfError",
+      "note": "encryption dictionary is detected before parsing"
+    },
+    {
+      "id": "pdf-truncated-no-endstream",
+      "file": "fixtures/no-endstream.pdf",
+      "format": "auto",
+      "expectedErrorIncludes": "Kein Text im PDF gefunden",
+      "expectedErrorClass": "PdfError",
+      "note": "missing endstream yields the no-text diagnosis"
+    },
+    {
+      "id": "pdf-missing-signature",
+      "file": "fixtures/not-pdf.pdf",
+      "format": "auto",
+      "expectedError": "Datei ist kein PDF (fehlende %PDF-Signatur).",
+      "expectedErrorClass": "PdfError",
+      "note": "extension says pdf, bytes do not"
+    },
+    {
+      "id": "pdf-cmap-stream-skipped",
+      "file": "fixtures/cmap.pdf",
+      "format": "auto",
+      "expectedContains": [
+        "Die Haftung des Anbieters für Datenverlust ist ausgeschlossen."
+      ],
+      "expectedTypes": [
+        "liability"
+      ],
+      "note": "ToUnicode CMap content stream retains text layer"
+    },
+    {
+      "id": "docx-stored-entities",
+      "file": "fixtures/stored.docx",
+      "format": "auto",
+      "expectedText": "Die Haftung des Anbieters für Datenverlust ist ausgeschlossen & bleibt bestehen.\nDer Kunde trägt\tdie Beweislast für die Vollständigkeit aller Angaben.",
+      "expectedTypes": [
+        "liability"
+      ],
+      "note": "stored ZIP entry, decimal and hex entities, w:tab"
+    },
+    {
+      "id": "docx-deflate",
+      "file": "fixtures/deflate.docx",
+      "format": "auto",
+      "expectedText": "Der Anbieter kann mit einer Frist von drei Monaten kündigen, der Kunde erst mit einer Vorlaufzeit von 36 Monaten.",
+      "expectedTypes": [
+        "notice_period"
+      ],
+      "note": "deflated document.xml"
+    },
+    {
+      "id": "docx-deleted-text-included",
+      "file": "fixtures/deleted-text.docx",
+      "format": "auto",
+      "expectedText": "Die Parteien arbeiten vertrauensvoll zusammen.",
+      "expectedTypes": [],
+      "expectedNotContains": [
+        "Die Haftung des Anbieters für Datenverlust ist ausgeschlossen."
+      ],
+      "note": "tracked deletions (w:delText) are ignored"
+    },
+    {
+      "id": "docx-footnote-member-ignored",
+      "file": "fixtures/footnote-member.docx",
+      "format": "auto",
+      "expectedContains": [
+        "Die Parteien regeln ihre Zusammenarbeit in dieser Vereinbarung.",
+        "Die Haftung des Anbieters für Datenverlust ist ausgeschlossen."
+      ],
+      "expectedTypes": [
+        "liability"
+      ],
+      "note": "clauses in word/footnotes.xml are extracted and analysed"
+    },
+    {
+      "id": "docx-no-eocd",
+      "file": "fixtures/no-eocd.docx",
+      "format": "auto",
+      "expectedError": "Kein gültiger ZIP-Abschluss gefunden.",
+      "expectedErrorClass": "DocxError",
+      "note": "PK header without end of central directory"
+    },
+    {
+      "id": "docx-missing-member",
+      "file": "fixtures/missing-member.docx",
+      "format": "auto",
+      "expectedError": "word/document.xml nicht im Dokument gefunden.",
+      "expectedErrorClass": "DocxError",
+      "note": "valid ZIP without the main document part"
+    },
+    {
+      "id": "docx-unsupported-method",
+      "file": "fixtures/bad-method.docx",
+      "format": "auto",
+      "expectedError": "Nicht unterstützte ZIP-Kompression (Methode 12).",
+      "expectedErrorClass": "DocxError",
+      "note": "compression method other than store/deflate"
+    },
+    {
+      "id": "docx-missing-pk-signature",
+      "file": "fixtures/not-zip.docx",
+      "format": "auto",
+      "expectedError": "Datei ist kein DOCX/ZIP (fehlende PK-Signatur).",
+      "expectedErrorClass": "DocxError",
+      "note": "extension says docx, bytes are not a ZIP"
+    },
+    {
+      "id": "txt-huge-single-line",
+      "file": "fixtures/huge.txt",
+      "format": "auto",
+      "expectedContains": [
+        "Die Haftung des Anbieters für Datenverlust ist ausgeschlossen."
+      ],
+      "expectedLengthMin": 120000,
+      "expectedTypes": [
+        "liability"
+      ],
+      "note": "single line above 120k characters"
+    },
+    {
+      "id": "txt-nbsp-zero-width",
+      "file": "fixtures/noise.txt",
+      "format": "auto",
+      "expectedText": "Die Haftung des Anbieters für Datenverlust ist ausgeschlossen.",
+      "expectedTypes": [
+        "liability"
+      ],
+      "note": "soft hyphen, NBSP, zero width space and joiner"
+    },
+    {
+      "id": "txt-utf16le-bom",
+      "file": "fixtures/utf16le.txt",
+      "format": "auto",
+      "expectedText": "Die Haftung des Anbieters für Datenverlust ist ausgeschlossen.",
+      "expectedTypes": [
+        "liability"
+      ],
+      "note": "UTF-16LE with BOM"
+    },
+    {
+      "id": "txt-mojibake",
+      "file": "fixtures/mojibake.txt",
+      "format": "auto",
+      "expectedText": "Die Haftung des Anbieters für Datenverlust ist ausgeschlossen.",
+      "expectedTypes": [
+        "liability"
+      ],
+      "note": "UTF-8 read as latin1, repaired by repairMojibake"
+    },
+    {
+      "id": "txt-transliteration",
+      "file": "fixtures/translit.txt",
+      "format": "auto",
+      "expectedText": "Die Haftung des Anbieters für Datenverlust ist ausgeschlossen.",
+      "expectedTypes": [
+        "liability"
+      ],
+      "note": "ASCII transliteration fuer becomes für"
+    },
+    {
+      "id": "txt-linewrap-dehyphenation",
+      "file": "fixtures/wrap.txt",
+      "format": "auto",
+      "expectedText": "Die Haftung des Anbieters für Datenverlust ist ausgeschlossen.",
+      "expectedTypes": [
+        "liability"
+      ],
+      "note": "hyphen at line end join after normalizeText"
+    }
+  ],
+  "calibration": [
+    {
+      "id": "pdf-flate-literal",
+      "first": "expected text, got PdfError (no text)",
+      "actual": "L1 after fixing the fixture",
+      "classification": "bad fixture: PDF stream used raw deflate, src/pdfextract.js inflateSync needs a zlib wrapper (deflateSync)"
+    },
+    {
+      "id": "pdf-multipage",
+      "first": "expected L1 + blank line + JU, got L1 only",
+      "actual": "L1 + blank line + JU after fixing the fixture",
+      "classification": "bad fixture: second stream used raw deflate"
+    },
+    {
+      "id": "pdf-flate-truncated-one-byte",
+      "first": "expected recovery from a shortened stream, got the no-text error",
+      "actual": "recovery from a trailing CR byte",
+      "classification": "bad fixture: inflateData drops the last byte, so the trigger is an extra trailing byte, not a missing one"
+    },
+    {
+      "id": "pdf-tj-kerning",
+      "first": "L1 including the final period, got the string without it",
+      "actual": "period added inside the TJ literal",
+      "classification": "bad expectation: the fixture literal was missing the period"
+    },
+    {
+      "id": "txt-nbsp-zero-width",
+      "first": "L1, got fr where fuer was intended",
+      "actual": "L1 after adding the missing umlaut",
+      "classification": "bad fixture: typo dropped the umlaut"
+    }
+  ]
+}

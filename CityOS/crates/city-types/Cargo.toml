@@ -1,0 +1,9 @@
+[package]
+name = "city-types"
+description = "Shared wire types for City OS: Bytes32, CityMsg, GeoTag, NodeId, CapSlot"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]

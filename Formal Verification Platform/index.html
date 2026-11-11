@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Keller-Verify &middot; Formal SMT Verification for Rust</title>
+  <meta name="description" content="Keller-Verify is a formal verification system embedded in the Rust compiler. It inspects optimized MIR to prove the absence of panics, arithmetic overflows, division-by-zero, and memory bounds violations using Z3.">
+  <meta name="theme-color" content="#0e1117">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Keller-Verify &middot; Formal SMT Verification for Rust">
+  <meta property="og:description" content="Formal verification embedded in the Rust compiler. Proves bounds checks, arithmetic overflows and division guards at compile time using Z3.">
+  <meta property="og:url" content="https://veritas.kellersystems.dev/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0c0f17;
+      --bg-surface: #131722;
+      --bg-code: #080a0f;
+      --border: #212638;
+      --border-subtle: #191e2e;
+      --text-main: #e6edf3;
+      --text-muted: #8b949e;
+      --text-dim: #545d68;
+      --accent: #58a6ff;
+      --accent-muted: #388bfd33;
+      --pass: #3fb950;
+      --fail: #f85149;
+      --warn: #d29922;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Consolas, monospace;
+    }
+
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      font-size: 15px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--accent); text-decoration: none; text-underline-offset: 3px; }
+    a:hover { text-decoration: underline; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Minimalist Header */
+    header.site-header {
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 54px;
+    }
+    .brand-title {
+      font-family: var(--font-mono);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-main);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand-title img { width: 18px; height: 18px; display: block; border-radius: 3px; }
+    .brand-title span.sub {
+      color: var(--text-dim);
+      font-weight: 400;
+      font-size: 0.85rem;
+    }
+    nav.site-nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 0.86rem;
+    }
+    nav.site-nav a {
+      color: var(--text-muted);
+    }
+    nav.site-nav a:hover {
+      color: var(--text-main);
+      text-decoration: none;
+    }
+    .nav-source {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-main) !important;
+      font-weight: 500;
+      padding: 4px 10px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      transition: all 0.15s ease;
+    }
+    .nav-source:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--text-muted);
+      text-decoration: none !important;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 56px 0 44px;
+      border-bottom: 1px solid var(--border);
+    }
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.025em;
+      margin: 0 0 16px;
+      color: #ffffff;
+    }
+    .hero-lead {
+      font-size: 1.08rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+      max-width: 760px;
+      margin: 0;
+    }
+
+    /* Content Layout */
+    main {
+      padding-bottom: 72px;
+    }
+    section {
+      padding: 44px 0;
+      border-bottom: 1px solid var(--border-subtle);
+      scroll-margin-top: 80px;
+    }
+    [id] {
+      scroll-margin-top: 80px;
+    }
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+      margin: 0 0 16px;
+      color: #ffffff;
+    }
+    p {
+      margin: 0 0 16px;
+      max-width: 760px;
+      color: var(--text-muted);
+    }
+    p strong {
+      color: var(--text-main);
+    }
+
+    /* Technical Pipeline Steps */
+    .pipeline-list {
+      list-style: none;
+      padding: 0;
+      margin: 24px 0 0;
+      border-top: 1px solid var(--border);
+    }
+    .pipeline-item {
+      display: grid;
+      grid-template-columns: 80px 220px 1fr;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 0.92rem;
+      align-items: baseline;
+      gap: 16px;
+    }
+    .pipeline-num {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-dim);
+    }
+    .pipeline-name {
+      font-family: var(--font-mono);
+      font-weight: 600;
+      color: var(--text-main);
+      font-size: 0.88rem;
+    }
+    .pipeline-desc {
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* Specification Table */
+    .table-frame {
+      width: 100%;
+      overflow-x: auto;
+      margin: 20px 0;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      text-align: left;
+    }
+    th {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-dim);
+      background: var(--bg-surface);
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      font-weight: 500;
+    }
+    td {
+      padding: 11px 14px;
+      border-bottom: 1px solid var(--border-subtle);
+      vertical-align: top;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+    tr:last-child td { border-bottom: none; }
+    td.col-name {
+      font-family: var(--font-mono);
+      font-weight: 500;
+      color: var(--text-main);
+      white-space: nowrap;
+    }
+
+    /* Code & Terminal Blocks */
+    pre {
+      background: var(--bg-code);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 14px 18px;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      line-height: 1.65;
+      color: #c9d1d9;
+      overflow-x: auto;
+      margin: 16px 0;
+      position: relative;
+    }
+    code {
+      font-family: var(--font-mono);
+      font-size: 0.88em;
+      background: rgba(110, 118, 129, 0.2);
+      padding: 0.15em 0.4em;
+      border-radius: 3px;
+      color: #c9d1d9;
+    }
+    pre code {
+      background: transparent;
+      padding: 0;
+      border-radius: 0;
+    }
+
+    /* Code highlights */
+    .tok-comment { color: #6e7681; }
+    .tok-pass { color: var(--pass); font-weight: 600; }
+    .tok-fail { color: var(--fail); font-weight: 600; }
+    .tok-warn { color: var(--warn); }
+    .tok-kw { color: #79c0ff; }
+    .tok-fn { color: #d2a8ff; }
+
+    /* Lists */
+    ul {
+      margin: 14px 0;
+      padding-left: 20px;
+      color: var(--text-muted);
+    }
+    li {
+      margin: 6px 0;
+    }
+    li strong {
+      color: var(--text-main);
+    }
+
+    /* Footer */
+    footer.site-footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+      font-size: 0.84rem;
+      color: var(--text-dim);
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer-links {
+      display: flex;
+      gap: 18px;
+    }
+    .footer-links a {
+      color: var(--text-muted);
+    }
+    .footer-links a:hover {
+      color: var(--text-main);
+    }
+
+    @media (max-width: 760px) {
+      .pipeline-item {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+      .pipeline-num { display: none; }
+      h1 { font-size: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-title" href="https://kellersystems.dev" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;">
+        <svg viewBox="0 0 100 100" width="22" height="22" aria-hidden="true">
+          <rect x="18" y="14" width="18" height="72" rx="3" fill="#e2e8f0"/>
+          <path d="M46 50 L72 16 H90 L60 54 Z" fill="#34d399"/>
+          <path d="M60 46 L90 84 H72 L46 50 Z" fill="#059669"/>
+        </svg>
+        <span style="display:inline-flex;flex-direction:column;line-height:1.1;">
+          <b style="font-size:14px;color:#ffffff;">Veritas</b>
+          <span style="font-family:monospace;font-size:8.5px;color:#94a3b8;letter-spacing:0.12em;text-transform:uppercase;">KELLER SYSTEMS</span>
+        </span>
+      </a>
+      <nav class="site-nav">
+        <a href="#pipeline">Pipeline</a>
+        <a href="#specifications">Semantics</a>
+        <a href="#evidence">Evidence</a>
+        <a href="#boundaries">Boundaries</a>
+        <a href="#usage">Usage</a>
+        <a class="nav-source" href="https://github.com/KELLERBABG/Formal-Verification" target="_blank" rel="noopener">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          <span>Source</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <!-- Hero Header -->
+      <section class="hero" id="top" style="border-bottom: 1px solid var(--border);">
+        <h1>Mathematical certainty inside the Rust compiler</h1>
+        <p class="hero-lead">
+          Keller-Verify is an offline formal verification engine embedded in rustc. It intercepts optimized 
+          Mid-level Intermediate Representation (MIR) to mathematically prove the absence of panics, 
+          integer overflows, division-by-zero, and memory slice bounds violations via Z3 SMT-LIB solving.
+        </p>
+      </section>
+
+      <!-- Terminal Output Example -->
+      <section id="verification-log">
+        <h2>Verification Output</h2>
+        <p>
+          Keller operates as a drop-in <code>RUSTC_WRAPPER</code> during <code>cargo check</code>. When an invariant holds over all reaching inputs, it is mathematically proven (<code>PASS</code>). When a violation is possible, the exact witness valuation is recorded:
+        </p>
+        <pre><code><span class="tok-comment">$ keller verify --crate wan_mesh</span>
+<span class="tok-pass">[PASS]</span> Verified formal integrity: sum_guarded (bb1)
+<span class="tok-pass">[PASS]</span> Verified formal integrity: slice_guarded (bb1)
+<span class="tok-pass">[PASS]</span> Pointer provenance valid: NonNull non-null &amp; aligned (bb6)
+<span class="tok-fail">[FAIL]</span> Arithmetic Overflow Detection (AddWithOverflow)
+       -&gt; Counterexample: [x (_1) = 192, 100_u8 = 100] in sum_under_guarded (bb1)
+<span class="tok-fail">[FAIL]</span> Slice Index Out of Bounds
+       -&gt; Counterexample: shards.len() = 1 at index = 2 in dec_join_tamper_resistant (bb7)
+
+Total assertions checked: 498 | PASS: 394 | FAIL: 104 | WARN: 0
+Generated obligations: obligations/wan_mesh/*.smt2</code></pre>
+      </section>
+
+      <!-- Pipeline Specification -->
+      <section id="pipeline">
+        <h2>Verification Pipeline</h2>
+        <p>
+          The system operates deterministically in five distinct stages without inserting runtime instrumentation into target binaries:
+        </p>
+
+        <ol class="pipeline-list">
+          <li class="pipeline-item">
+            <span class="pipeline-num">Stage 01</span>
+            <span class="pipeline-name">RUSTC_WRAPPER Hook</span>
+            <span class="pipeline-desc">Captures the compiler build invocation transparently. No modifications to <code>Cargo.toml</code> or source files are required.</span>
+          </li>
+          <li class="pipeline-item">
+            <span class="pipeline-num">Stage 02</span>
+            <span class="pipeline-name">MIR CFG Inspection</span>
+            <span class="pipeline-desc">During rustc's <code>after_analysis</code> callback, the verifier traverses the Control Flow Graph (CFG), basic blocks, and terminators of each local function.</span>
+          </li>
+          <li class="pipeline-item">
+            <span class="pipeline-num">Stage 03</span>
+            <span class="pipeline-name">Formula Construction</span>
+            <span class="pipeline-desc">Branch conditions and assertion guards are translated into path-sensitive SMT-LIB constraints using unbounded integer arithmetic and bit-width boundaries.</span>
+          </li>
+          <li class="pipeline-item">
+            <span class="pipeline-num">Stage 04</span>
+            <span class="pipeline-name">SMT Solving (Z3)</span>
+            <span class="pipeline-desc">Queries the Z3 solver: <code>unsat</code> constitutes a formal proof of safety; <code>sat</code> extracts a counterexample model. Undecided queries yield a disclosed <code>WARN</code>.</span>
+          </li>
+          <li class="pipeline-item">
+            <span class="pipeline-num">Stage 05</span>
+            <span class="pipeline-name">Artifact &amp; Test Synthesis</span>
+            <span class="pipeline-desc">Writes deterministic SMT-LIB 2.6 obligations (<code>.smt2</code>) and generates native, reproducible <code>#[should_panic]</code> regression tests via <code>keller testgen</code>.</span>
+          </li>
+        </ol>
+      </section>
+
+      <!-- Specification Table -->
+      <section id="specifications">
+        <h2>Formal Assertion Semantics</h2>
+        <p>
+          Rust inserts explicit runtime checks to enforce language invariants. Keller proves them at compile time:
+        </p>
+
+        <div class="table-frame">
+          <table>
+            <thead>
+              <tr>
+                <th>Assertion Kind</th>
+                <th>Formal Encoding</th>
+                <th>Guarantee Proved</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="col-name">Slice Bounds</td>
+                <td>Type-aware bounds over index expressions <code>v[i]</code> against inferred capacity.</td>
+                <td>Proves <code>i &lt; len</code> across all reachable execution branches.</td>
+              </tr>
+              <tr>
+                <td class="col-name">Arithmetic Overflow</td>
+                <td>Integer arithmetic (<code>Add</code>, <code>Sub</code>, <code>Mul</code>, <code>Neg</code>) bounded by exact bit-widths (<code>u8</code> through <code>u128</code>).</td>
+                <td>Guarantees operations cannot exceed type boundaries or panic under debug checks.</td>
+              </tr>
+              <tr>
+                <td class="col-name">Division &amp; Remainder</td>
+                <td>Symbolic denominator checking including signed <code>MIN / -1</code> overflow.</td>
+                <td>Proves the divisor is strictly non-zero.</td>
+              </tr>
+              <tr>
+                <td class="col-name">Bitwise Shifts</td>
+                <td>Validates shift operands against the target integer width.</td>
+                <td>Guarantees shift count is strictly less than <code>T::BITS</code>.</td>
+              </tr>
+              <tr>
+                <td class="col-name">Option / Result Unwrap</td>
+                <td>Decides enum variant discriminants when statically reachable in the compiler CFG.</td>
+                <td>Flags ground <code>None</code>/<code>Err</code> as bugs; proves <code>Some</code>/<code>Ok</code> safe.</td>
+              </tr>
+              <tr>
+                <td class="col-name">Pointer Provenance</td>
+                <td>Non-null and memory alignment constraints constructed from <code>std::ptr::NonNull</code>.</td>
+                <td>Proves raw pointer operations maintain valid alignment invariants.</td>
+              </tr>
+              <tr>
+                <td class="col-name">Async Drop Invariant</td>
+                <td>Coroutine state machine invariant checking (<code>ResumedAfterDrop</code>).</td>
+                <td>Proves futures and async tasks are not polled after completion or cancellation.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Evidence Section -->
+      <section id="evidence">
+        <h2>Auditable Proof Obligations</h2>
+        <p>
+          Every decision emitted by Keller is accompanied by an independent SMT-LIB 2.6 obligation file. 
+          Verdicts do not require trusting Keller: any third party can independently re-discharge the obligation 
+          directly using <code>z3 -smt2 &lt;file&gt;</code>.
+        </p>
+        <p>
+          Below is a verbatim obligation generated from an overflow finding in a branch-merge test case:
+        </p>
+        <pre><code><span class="tok-comment">; keller-verify proof obligation (SMT-LIB 2.6)
+; crate:    branch_merge
+; function: bump
+; block:    bb3
+; kind:     overflow
+; verdict:  FAIL (sat)
+; witness:  overflow_l = 255 (_3), overflow_r = 100, flag (_1) = true</span>
+(<span class="tok-kw">declare-fun</span> phi_bb3_2 () Int)
+(<span class="tok-kw">declare-fun</span> overflow_l () Int)
+(<span class="tok-kw">declare-fun</span> overflow_r () Int)
+(<span class="tok-kw">declare-fun</span> mir_1 () Int)
+(<span class="tok-kw">assert</span> (= overflow_l phi_bb3_2))
+(<span class="tok-kw">assert</span> (= overflow_r 100))
+(<span class="tok-kw">assert</span> (or (&gt; (+ overflow_l overflow_r) 255) (&lt; (+ overflow_l overflow_r) 0)))
+(<span class="tok-kw">assert</span> (or (= mir_1 0) (not (= mir_1 0))))
+(<span class="tok-kw">assert</span> (or (and (= mir_1 0) (= phi_bb3_2 0)) (and (not (= mir_1 0)) (= phi_bb3_2 255))))
+(<span class="tok-kw">assert</span> (&gt;= mir_1 0))
+(<span class="tok-kw">assert</span> (&lt;= mir_1 1))
+(<span class="tok-kw">check-sat</span>)
+<span class="tok-fail">sat</span></code></pre>
+
+        <p>
+          When Z3 returns <code>sat</code>, the solver model is written to a companion <code>.witness.smt2</code> file. 
+          Executing <code>keller testgen</code> automatically turns this counterexample into a native Rust unit test:
+        </p>
+        <pre><code><span class="tok-comment">$ keller testgen obligations/branch_merge/bump_bb3.witness.smt2</span>
+Synthesized unit test for 'bump' (bb3) -&gt; src/tests/generated_keller_tests.rs
+
+<span class="tok-kw">#[test]</span>
+<span class="tok-kw">#[should_panic(expected = "attempt to add with overflow")]</span>
+<span class="tok-kw">fn</span> <span class="tok-fn">test_keller_witness_bump_bb3</span>() {
+    <span class="tok-kw">let</span> flag = <span class="tok-kw">true</span>;
+    <span class="tok-kw">let</span> _ = bump(flag);
+}</code></pre>
+      </section>
+
+      <!-- Limitations & Scope -->
+      <section id="boundaries">
+        <h2>Soundness Boundaries &amp; Limits</h2>
+        <p>
+          Rigorous verification requires explicit disclosure of analytical boundaries. Keller operates under the following design constraints:
+        </p>
+        <ul>
+          <li><strong>Debug Profile Semantics</strong>: Analyzes debug semantics where rustc emits assertion checks. In release builds without <code>overflow-checks = true</code>, integer operations wrap rather than abort.</li>
+          <li><strong>Intra-Procedural Scope</strong>: Reasoning operates on individual functions. External crates and dynamic dispatch boundaries are treated as unconstrained symbolic return values unless pinned.</li>
+          <li><strong>Bounded Loop Unrolling</strong>: Loops are unrolled up to a bounded trip threshold. Inductive loop-carried variables beyond the threshold are widened to their full type domains.</li>
+          <li><strong>Opaque Bit-Casts</strong>: Non-linear bitwise twiddling and narrowing pointer-casts yield unconstrained type-bounded symbols.</li>
+        </ul>
+      </section>
+
+      <!-- Usage & Installation -->
+      <section id="usage">
+        <h2>Installation &amp; Integration</h2>
+        <p>
+          Keller is distributed as standard Rust tooling and requires a pinned nightly compiler (with <code>rustc-dev</code>) and Z3 4.16.0 installed.
+        </p>
+        <pre><code><span class="tok-comment"># 1. Clone and compile the toolchain</span>
+git clone https://github.com/KELLERBABG/Formal-Verification.git
+cd Formal-Verification
+cargo build --release
+
+<span class="tok-comment"># 2. Verify a target crate</span>
+cd /path/to/your/crate
+keller verify
+
+<span class="tok-comment"># 3. Continuous Integration: Gate Pull Requests with SARIF</span>
+keller verify --baseline .keller-baseline.json --sarif keller.sarif</code></pre>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>Keller-Verify</strong> &mdash; Formal Verification Engine for the Rust Compiler.
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/KELLERBABG/Formal-Verification" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/KELLERBABG/Formal-Verification/blob/main/docs/USAGE.md" target="_blank" rel="noopener">Usage Guide</a>
+        <a href="https://github.com/KELLERBABG/Formal-Verification/blob/main/docs/ARCHITECTURE.md" target="_blank" rel="noopener">Architecture</a>
+        <a href="https://github.com/KELLERBABG/Formal-Verification/blob/main/LICENSE-MIT" target="_blank" rel="noopener">MIT</a>
+        <a href="https://github.com/KELLERBABG/Formal-Verification/blob/main/LICENSE-APACHE" target="_blank" rel="noopener">Apache-2.0</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+{
+  "slug": "vertrieb-013",
+  "source": "generated",
+  "domain": "distributor",
+  "traps": [
+    {
+      "marker": "Die Haftung des Anbieters für leicht fahrlässig verursachte Schäden ist ausgeschlossen, für",
+      "expectedType": "liability",
+      "note": "Weitgehender Haftungsausschluss zulasten des Kunden."
+    },
+    {
+      "marker": "Für jeden Verstoß gegen die Vertraulichkeitspflichten verpflichtet sich der Kunde zur Zahlung einer",
+      "expectedType": "penalty",
+      "note": "Vertragsstrafe trifft nur den Kunden."
+    },
+    {
+      "marker": "Ausschließlicher Gerichtsstand für alle Streitigkeiten aus diesem Vertrag ist der Sitz des",
+      "expectedType": "jurisdiction",
+      "note": "Gerichtsstand am Sitz des Anbieters."
+    },
+    {
+      "marker": "Für die Dauer von achtzehn Monaten nach Auslaufen der Zusammenarbeit ist der Kunde im gesamten",
+      "expectedType": "non_compete",
+      "note": "Nachvertragliches Wettbewerbsverbot ohne Ausgleich."
+    },
+    {
+      "marker": "Der Kunde räumt dem Anbieter ein unwiderrufliches Nutzungsrecht an allen Kundendaten und",
+      "expectedType": "data_grant",
+      "note": "Umfassende, unwiderrufliche Datennutzungsrechte für den Anbieter."
+    },
+    {
+      "marker": "Bei Zahlungsverzug schuldet der Kunde Verzugszinsen in Höhe von vierzehn Prozent über dem",
+      "expectedType": "default_interest",
+      "note": "Überhöhter Verzugszinssatz."
+    },
+    {
+      "marker": "Der Anbieter behält sich vor, die Preise sowie das Systemhandbuch jederzeit anzupassen und die",
+      "expectedType": "unilateral_change",
+      "note": "Einseitiges Änderungsrecht des Anbieters."
+    },
+    {
+      "marker": "Der Kunde ist nicht berechtigt, gegen Forderungen des Anbieters aufzurechnen oder Zahlungen",
+      "expectedType": "setoff_restriction",
+      "note": "Aufrechnungsverbot zulasten des Kunden."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende kündigen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Zahlungen sind innerhalb von 30 Tagen nach Rechnungsstellung fällig.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde erhält für vermittelte Geschäfte eine Provision von fünf Prozent des Nettoumsatzes.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Anbieter stellt dem Kunden die vereinbarten Unterlagen unentgeltlich zur Verfügung.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Vertrag wird für die Dauer von zwei Jahren geschlossen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Beide Parteien behandeln die ausgetauschten Informationen vertraulich, die Pflicht gilt für die",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    }
+  ],
+  "uncovered": []
+}

@@ -1,0 +1,482 @@
+{
+  "slice": "marketing",
+  "patterns": [
+    {
+      "type": "marketing_reference",
+      "regex": "(?:f(?:ü|ue)hrt|nennt|bezeichnet|verwendet|nutzt|erw(?:ä|ae)hnt|darf)[^.!?;:\\n]{0,70}?(?:den\\s+|die\\s+)?(?:auftraggeber|auftragnehmer|kunden|sponsor|lizenznehmer|lizenzgeber|partner|verein)[^.!?;:\\n]{0,80}?(?:als\\s+referenz\\w*|als\\s+kunden|in\\s+(?:angeboten|fallstudien|case\\s*studies|pressemitteilungen|marketingunterlagen|werbetr(?:ä|ae)gern|werbung|kundenlisten|prospekten))",
+      "flags": "i",
+      "closes": [
+        "marketing-001:L45",
+        "marketing-008:L19",
+        "marketing-015:L25",
+        "marketing-018:L19",
+        "marketing-028:L19",
+        "marketing-032:L34"
+      ],
+      "evidence": "führt/nennt ... Kunden ... als Referenz oder in Angeboten/Fallstudien",
+      "risk": "medium"
+    },
+    {
+      "type": "marketing_reference",
+      "regex": "(?:firmenname|bildmarke|marke|marken|logo)\\b[^.!?;:\\n]{0,70}?(?:in|auf)[^.!?;:\\n]{0,25}?(?:werbung|werbetr(?:ä|ae)gern|marketingunterlagen|pressemitteilungen|angeboten|fallstudien|case\\s*studies|website|kundenliste|prospekten)",
+      "flags": "i",
+      "closes": [
+        "marketing-002:L39",
+        "marketing-019:L19"
+      ],
+      "evidence": "Firmenname/Bildmarke erscheint in Werbung oder Marketingunterlagen",
+      "risk": "medium"
+    },
+    {
+      "type": "asymmetric_confidentiality",
+      "regex": "(?:nur|allein|ausschlie(?:ß|ss)lich)\\s+(?:der|den|die|dem)?\\s*(?:kunde|auftraggeber|besteller|mieter|sponsor|lizenznehmer|partner|creator|auftragnehmer)[^.!?;:\\n]{0,80}?(?:vertraulich|geheimhaltung|verschwiegenheit|geheim)\\w*",
+      "flags": "i",
+      "closes": [
+        "marketing-017:L22"
+      ],
+      "evidence": "nur der Kunde ist zur Vertraulichkeit verpflichtet",
+      "risk": "medium"
+    },
+    {
+      "type": "asymmetric_confidentiality",
+      "regex": "(?:vertraulichkeits|geheimhaltungs|verschwiegenheits)pflicht[^.!?;:\\n]{0,60}?(?:trifft\\s+nur|obliegt\\s+nur|nur\\s+(?:den|der|dem))",
+      "flags": "i",
+      "closes": [
+        "marketing-024:L25"
+      ],
+      "evidence": "Vertraulichkeitspflicht trifft nur den Auftraggeber",
+      "risk": "medium"
+    },
+    {
+      "type": "asymmetric_confidentiality",
+      "regex": "f(?:ü|ue)r\\s+(?:den\\s+|die\\s+)?(?:anbieter|auftragnehmer|dienstleister|vermieter|lizenzgeber|agentur)[^.!?;:\\n]{0,50}?(?:besteht\\s+keine|gilt\\s+(?:dies|das)\\s+nicht|trifft\\s+keine)",
+      "flags": "i",
+      "closes": [
+        "marketing-002:L30",
+        "marketing-028:L22"
+      ],
+      "evidence": "für den Anbieter gilt die Vertraulichkeit nicht",
+      "risk": "medium"
+    },
+    {
+      "type": "asymmetric_confidentiality",
+      "regex": "(?:den\\s+|die\\s+)?(?:anbieter|auftragnehmer|dienstleister)[^.!?;:\\n]{0,40}?trifft\\s+keine\\s+(?:entsprechende\\s+)?pflicht",
+      "flags": "i",
+      "closes": [
+        "marketing-008:L22"
+      ],
+      "evidence": "den Anbieter trifft keine entsprechende Pflicht",
+      "risk": "medium"
+    },
+    {
+      "type": "excessive_survival",
+      "regex": "(?:besteh\\w+|gilt|gelten|wirkt|wirken|wird|werden|ist|sind)[^.!?;:\\n]{0,60}?\\b(?:auf\\s+dauer|unbegrenzt|unbefristet|unver(?:ä|ae)ndert|dauerhaft|zeitlich\\s+unbegrenzt)\\b",
+      "flags": "i",
+      "closes": [
+        "marketing-002:L33",
+        "marketing-016:L34",
+        "marketing-032:L37"
+      ],
+      "evidence": "gilt unbegrenzt / auf Dauer geschuldet",
+      "risk": "medium"
+    },
+    {
+      "type": "excessive_survival",
+      "regex": "(?:ü|ue)berdauern[^.!?;:\\n]{0,70}?(?:beendigung|vertragsende|auslaufen|ende)",
+      "flags": "i",
+      "closes": [
+        "marketing-011:L28"
+      ],
+      "evidence": "Rechte überdauern die Beendigung",
+      "risk": "medium"
+    },
+    {
+      "type": "setoff_restriction",
+      "regex": "(?:aufrechnung|verrechnung|einbehalt\\w*|zur(?:ü|ue)ckbehaltung\\w*|gegenforderung\\w*|gegenanspruch|gegenanspr(?:ü|ue)che)[^.!?;:\\n]{0,80}?(?:bedarf\\s+der|nur\\s+mit|ist\\s+nicht\\s+m(?:ö|oe)glich|sind\\s+nicht\\s+m(?:ö|oe)glich|ist\\s+ausgeschlossen|sind\\s+ausgeschlossen|bleiben[^.!?;:\\n]{0,40}?(?:unber(?:ü|ue)cksichtigt|au(?:ß|ss)er\\s+betracht)|kein\\s+zur(?:ü|ue)ckbehaltungsrecht|begr(?:ü|ue)nden\\s+kein|ist\\s+kein\\s+recht)",
+      "flags": "i",
+      "closes": [
+        "marketing-002:L36",
+        "marketing-012:L28",
+        "marketing-019:L37",
+        "marketing-021:L37",
+        "marketing-022:L34"
+      ],
+      "evidence": "Aufrechnung bedarf der Zustimmung, Gegenforderungen bleiben außer Betracht",
+      "risk": "medium"
+    },
+    {
+      "type": "setoff_restriction",
+      "regex": "(?:kein\\s+recht\\s+(?:auf|zu|zum)\\s+einbehalt|f(?:ü|ue)r\\s+einbehalte\\s+steht[^.!?;:\\n]{0,40}?kein\\s+recht)",
+      "flags": "i",
+      "closes": [
+        "marketing-011:L31"
+      ],
+      "evidence": "für Einbehalte steht kein Recht zu",
+      "risk": "medium"
+    },
+    {
+      "type": "setoff_restriction",
+      "regex": "verzicht\\w*[^.!?;:\\n]{0,60}?(?:auf\\s+)?(?:die\\s+)?(?:aufrechnung|verrechnung|einbehalt|zur(?:ü|ue)ckbehaltung)",
+      "flags": "i",
+      "closes": [
+        "marketing-016:L28"
+      ],
+      "evidence": "Kunde verzichtet auf die Aufrechnung",
+      "risk": "medium"
+    },
+    {
+      "type": "force_majeure_asymmetry",
+      "regex": "h(?:ö|oe)here\\w?\\s+gewalt[^.!?;:\\n]{0,130}?(?:entbind\\w+|entf(?:ä|ae)llt|befreit|freigestellt)[^.!?;:\\n]{0,80}?(?:auftragnehmer|anbieter|dienstleister|veranstalter)",
+      "flags": "i",
+      "closes": [
+        "marketing-005:L24",
+        "marketing-022:L19"
+      ],
+      "evidence": "höhere Gewalt entbindet nur den Auftragnehmer",
+      "risk": "medium"
+    },
+    {
+      "type": "subcontractor_uncontrolled",
+      "regex": "(?:darf|d(?:ü|ue)rfen|ist\\s+berechtigt|sind\\s+berechtigt|kann|k(?:ö|oe)nnen)[^.!?;:\\n]{0,70}?(?:nachunternehmen|nachunternehmer|subunternehmer|medienpartner|partnerunternehmen|werbepl(?:ä|ae)tze|dritte)[^.!?;:\\n]{0,60}?(?:einsetzen|weiterverkaufen|beauftragen|(?:ü|ue)bertragen|einbeziehen)",
+      "flags": "i",
+      "closes": [
+        "marketing-005:L30",
+        "marketing-018:L28",
+        "marketing-026:L25"
+      ],
+      "evidence": "darf Nachunternehmer/Dritte nach eigenem Ermessen einsetzen",
+      "risk": "medium"
+    },
+    {
+      "type": "subcontractor_uncontrolled",
+      "regex": "(?:setzt|setzen|beauftragt|beauftragen|greift)[^.!?;:\\n]{0,60}?(?:nachunternehmen|nachunternehmer|subunternehmer|medienpartner|dritte)[^.!?;:\\n]{0,50}?(?:ohne\\s+(?:vorherige\\s+)?(?:ank(?:ü|ue)ndigung|zustimmung|information)|einer\\s+zustimmung\\s+bedarf\\s+es\\s+nicht)",
+      "flags": "i",
+      "closes": [
+        "marketing-023:L36"
+      ],
+      "evidence": "setzt Medienpartner ohne Ankündigung ein",
+      "risk": "medium"
+    },
+    {
+      "type": "liability",
+      "regex": "(?:haftung|schadensersatz|anspr(?:ü|ue)che)[^.!?;:\\n]{0,80}?(?:ist|sind|werden|wird)[^.!?;:\\n]{0,25}?auf\\s+(?:h(?:ö|oe)chstens\\s+|maximal\\s+)?\\d[\\d.,]*\\s*(?:EUR|Euro|CHF)[^.!?;:\\n]{0,20}?(?:begrenzt|beschr(?:ä|ae)nkt|gedeckelt)",
+      "flags": "i",
+      "closes": [],
+      "evidence": "severity-blocked: Haftung ist auf 5.000 EUR begrenzt",
+      "risk": "medium"
+    },
+    {
+      "type": "liability",
+      "regex": "(?:weitergehende|s(?:ä|ae)mtliche|alle)\\s+anspr(?:ü|ue)che[^.!?;:\\n]{0,80}?(?:sind|werden|ist)[^.!?;:\\n]{0,60}?(?:abgegolten|abgefunden|erledigt)",
+      "flags": "i",
+      "closes": [
+        "marketing-005:L36"
+      ],
+      "evidence": "weitergehende Ansprüche sind mit der Vergütung abgegolten",
+      "risk": "medium"
+    },
+    {
+      "type": "maintenance_conditional_shutdown",
+      "regex": "(?:mangels|ohne)\\s+(?:abgeschlossenen\\s+|g(?:ü|ue)ltigen\\s+|bestehenden\\s+)?wartungs(?:vertrag|vertrags|vereinbarung)\\w*[^.!?;:\\n]{0,80}?(?:wird|werden|darf|kann|ist|sind)[^.!?;:\\n]{0,50}?(?:stillgelegt|abgeschaltet|au(?:ß|ss)er\\s+betrieb|gesperrt|eingestellt|unterbrochen)",
+      "flags": "i",
+      "closes": [
+        "marketing-005:L42",
+        "marketing-013:L19",
+        "marketing-027:L19"
+      ],
+      "evidence": "Mangels Wartungsvertrag wird die Anlage stillgelegt",
+      "risk": "medium"
+    },
+    {
+      "type": "price_escalation",
+      "regex": "(?:entgelt\\w*|verg(?:ü|ue)tung\\w*|pauschale\\w*|miete\\b|raummiete|geb(?:ü|ue)hr\\w*|honorar\\w*|preis\\w*|monatspauschale)[^.!?;:\\n]{0,60}?(?:steigt|steigen|erh(?:ö|oe)ht\\s+sich|erh(?:ö|oe)hen\\s+sich|wird\\s+erh(?:ö|oe)ht|werden\\s+erh(?:ö|oe)ht)[^.!?;:\\n]{0,70}?(?:um\\s+(?:\\d|[a-zäöüß]{3,20})|j(?:ä|ae)hrlich|kalenderjahr|prozent)",
+      "flags": "i",
+      "closes": [
+        "marketing-006:L27",
+        "marketing-013:L28",
+        "marketing-019:L22"
+      ],
+      "evidence": "Monatspauschale steigt mit jedem Kalenderjahr um fünf Prozent",
+      "risk": "medium"
+    },
+    {
+      "type": "price_escalation",
+      "regex": "sonderk(?:ü|ue)ndigungsrecht[^.!?;:\\n]{0,30}?(?:besteht\\s+nicht|ist\\s+ausgeschlossen|wird\\s+nicht\\s+gew(?:ä|ae)hrt|ist\\s+nicht\\s+vorgesehen)",
+      "flags": "i",
+      "closes": [
+        "marketing-023:L30"
+      ],
+      "evidence": "Sonderkündigungsrecht besteht nicht",
+      "risk": "medium"
+    },
+    {
+      "type": "entire_agreement",
+      "regex": "(?:fr(?:ü|ue)here|bisherige|vorherige|m(?:ü|ue)ndliche)\\s+(?:absprachen|vereinbarungen|zusagen|abreden|abmachungen)[^.!?;:\\n]{0,60}?(?:treten|tritt|verlieren|verliert|werden|wird|sind)[^.!?;:\\n]{0,50}?(?:au(?:ß|ss)er\\s+kraft|unwirksam|gegenstandslos|aufgehoben|nicht\\s+mehr\\s+bestand)",
+      "flags": "i",
+      "closes": [
+        "marketing-007:L33"
+      ],
+      "evidence": "frühere Absprachen treten außer Kraft",
+      "risk": "medium"
+    },
+    {
+      "type": "vicarious_agents",
+      "regex": "f(?:ü|ue)r\\s+(?:das\\s+verhalten|die\\s+handlungen|handlungen)[^.!?;:\\n]{0,60}?(?:beauftragter\\s+dritter|dritter|unterlizenznehmer\\w*|erf(?:ü|ue)llungsgehilfen|nachunternehmer\\w*)[^.!?;:\\n]{0,80}?wird\\s+keine\\s+(?:verantwortung|einstandspflicht|haftung)\\b",
+      "flags": "i",
+      "closes": [
+        "marketing-020:L37",
+        "marketing-024:L37"
+      ],
+      "evidence": "für das Verhalten beauftragter Dritter wird keine Verantwortung übernommen",
+      "risk": "medium"
+    },
+    {
+      "type": "vicarious_agents",
+      "regex": "(?:verantwortung|einstandspflicht|haftung)[^.!?;:\\n]{0,50}?f(?:ü|ue)r\\s+(?:handlungen|das\\s+verhalten)[^.!?;:\\n]{0,60}?(?:beauftragter\\s+)?dritter[^.!?;:\\n]{0,60}?(?:wird\\s+nicht|ist\\s+nicht|keine)[^.!?;:\\n]{0,30}?(?:ü|ue)bernommen",
+      "flags": "i",
+      "closes": [
+        "marketing-007:L42"
+      ],
+      "evidence": "Eine Verantwortung für Handlungen Dritter wird nicht übernommen",
+      "risk": "medium"
+    },
+    {
+      "type": "assignment_restriction",
+      "regex": "(?:abtretung|(?:ü|ue)bertragung|weitergabe|weiterreichen|zession|abtreten)[^.!?;:\\n]{0,80}?(?:bedarf|nur\\s+mit|nur\\s+nach|nicht\\s+ohne)[^.!?;:\\n]{0,40}?(?:zustimmung|einverst(?:ä|ae)ndnis|genehmigung|schriftlicher)",
+      "flags": "i",
+      "closes": [
+        "marketing-008:L28",
+        "marketing-011:L37"
+      ],
+      "evidence": "Übertragung von Rechten bedarf der Zustimmung",
+      "risk": "medium"
+    },
+    {
+      "type": "fictitious_receipt",
+      "regex": "(?:erkl(?:ä|ae)rungen|mitteilungen|k(?:ü|ue)ndigungen|anzeigen|schreiben)[^.!?;:\\n]{0,70}?gelten[^.!?;:\\n]{0,60}?als\\s+zugegangen",
+      "flags": "i",
+      "closes": [
+        "marketing-008:L34",
+        "marketing-026:L37"
+      ],
+      "evidence": "Erklärungen gelten mit Einstellung ins Portal als zugegangen",
+      "risk": "medium"
+    },
+    {
+      "type": "mandatory_expert_determination",
+      "regex": "verfahrenskosten[^.!?;:\\n]{0,60}?(?:kunde|besteller|auftraggeber|antragsteller)[^.!?;:\\n]{0,40}?(?:vorzustrecken|vorauszuzahlen|zu\\s+tragen)",
+      "flags": "i",
+      "closes": [
+        "marketing-009:L31"
+      ],
+      "evidence": "Die Verfahrenskosten hat der Kunde vorzustrecken",
+      "risk": "medium"
+    },
+    {
+      "type": "non_compete",
+      "regex": "nach\\s+(?:dem\\s+ende|beendigung|vertragsende|auslaufen|ablauf)[^.!?;:\\n]{0,60}?(?:bleibt|ist|wird|sind|werden)[^.!?;:\\n]{0,60}?(?:unt(?:ä|ae)tig|nicht\\s+(?:t(?:ä|ae)tig|beratend|werblich|vermittelnd|konkurrierend)|nicht\\s+mehr\\s+t(?:ä|ae)tig)",
+      "flags": "i",
+      "closes": [
+        "marketing-010:L27",
+        "marketing-017:L28",
+        "marketing-021:L25",
+        "marketing-031:L31"
+      ],
+      "evidence": "Nach dem Ende der Zusammenarbeit bleibt der Creator untätig",
+      "risk": "medium"
+    },
+    {
+      "type": "default_interest",
+      "regex": "(?:zinsen|zinssatz|verzinsung|verzugszins\\w*)[^.!?;:\\n]{0,60}?(?:\\d{1,2}(?:[.,]\\d+)?\\s*%|[a-zäöüß]{3,20}\\s+prozent|prozent)[^.!?;:\\n]{0,40}?(?:monatlich|pro\\s+monat|je\\s+monat|w(?:ö|oe)chentlich|t(?:ä|ae)glich)",
+      "flags": "i",
+      "closes": [],
+      "evidence": "severity-blocked: Zinsen von acht Prozent monatlich",
+      "risk": "medium"
+    },
+    {
+      "type": "service_suspension",
+      "regex": "(?:sperrt|sperren|unterbricht|unterbrechen|stellt|stellen|setzt|setzen|stoppt|stoppen)[^.!?;:\\n]{0,60}?(?:den\\s+|die\\s+|das\\s+)?(?:zugang|betreuung|leistung|plakatierung|lieferung|service|belieferung)[^.!?;:\\n]{0,60}?(?:unverz(?:ü|ue)glich|ohne\\s+(?:vorank(?:ü|ue)ndigung|abmahnung)|fristlos|sofort|jederzeit|ohne\\s+grund)",
+      "flags": "i",
+      "closes": [
+        "marketing-013:L22"
+      ],
+      "evidence": "sperrt den Zugang unverzüglich",
+      "risk": "medium"
+    },
+    {
+      "type": "service_suspension",
+      "regex": "(?:zugang|betreuung|leistung|plakatierung|lieferung|service|belieferung)[^.!?;:\\n]{0,60}?(?:ohne\\s+(?:vorank(?:ü|ue)ndigung|abmahnung)|fristlos|sofort)[^.!?;:\\n]{0,40}?(?:sperren|unterbrechen|einstellen|aussetzen|stoppen)",
+      "flags": "i",
+      "closes": [
+        "marketing-022:L22",
+        "marketing-026:L28"
+      ],
+      "evidence": "Betreuung ohne Vorankündigung unterbrechen",
+      "risk": "medium"
+    },
+    {
+      "type": "deemed_acceptance",
+      "regex": "m(?:ä|ae)ngel\\w*[^.!?;:\\n]{0,50}?nicht\\s+binnen[^.!?;:\\n]{0,40}?(?:ger(?:ü|ue)gt|angezeigt|gemeldet|beanstandet)[^.!?;:\\n]{0,70}?gilt[^.!?;:\\n]{0,40}?als\\s+(?:vertragsgem(?:ä|ae)(?:ß|ss)|abgenommen|genehmigt|freigegeben)",
+      "flags": "i",
+      "closes": [
+        "marketing-013:L25"
+      ],
+      "evidence": "Mängel nicht binnen achtundvierzig Stunden gerügt, gilt als vertragsgemäß",
+      "risk": "medium"
+    },
+    {
+      "type": "deemed_acceptance",
+      "regex": "(?:schweigt|schweigen|widerspricht\\s+nicht|erhebt\\s+keine\\s+einw(?:ä|ae)nde)[^.!?;:\\n]{0,70}?gilt[^.!?;:\\n]{0,40}?als\\s+(?:freigegeben|abgenommen|genehmigt|vertragsgem(?:ä|ae)(?:ß|ss))",
+      "flags": "i",
+      "closes": [
+        "marketing-014:L19"
+      ],
+      "evidence": "Schweigt der Auftraggeber, gilt das Material als freigegeben",
+      "risk": "medium"
+    },
+    {
+      "type": "statute_of_limitations",
+      "regex": "(?:verj(?:ä|ae)hr\\w*|verwirk\\w*)[^.!?;:\\n]{0,60}?(?<!\\d)(?:[1-9]|1[0-8]|ein|eine|einer|zwei|drei|sechs|zw(?:ö|oe)lf|achtzehn)\\s*monat\\w*",
+      "flags": "i",
+      "closes": [
+        "marketing-014:L22"
+      ],
+      "evidence": "Mängelansprüche verjähren ein Jahr nach Lieferung",
+      "risk": "medium"
+    },
+    {
+      "type": "burden_of_proof",
+      "regex": "nachweis\\w*[^.!?;:\\n]{0,80}?hat\\s+(?:der|die|das)\\s+(?:kunde|auftraggeber|besteller|k(?:ä|ae)ufer|mieter|auftragnehmer)[^.!?;:\\n]{0,40}?zu\\s+f(?:ü|ue)hren",
+      "flags": "i",
+      "closes": [
+        "marketing-014:L25",
+        "marketing-030:L28"
+      ],
+      "evidence": "Den Nachweis hat der Auftraggeber zu führen",
+      "risk": "medium"
+    },
+    {
+      "type": "feedback_ip_grab",
+      "regex": "(?:verbesserungsvorschl(?:ä|ae)ge|anregungen|ideen|r(?:ü|ue)ckmeldungen)[^.!?;:\\n]{0,70}?(?:werden|gehen|sind|wird)[^.!?;:\\n]{0,60}?(?:unentgeltlich\\s+)?(?:eigentum|bestandteil)[^.!?;:\\n]{0,40}?(?:des|der)\\s+(?:auftragnehmers|anbieters|dienstleisters|agentur)",
+      "flags": "i",
+      "closes": [
+        "marketing-014:L28"
+      ],
+      "evidence": "Verbesserungsvorschläge werden unentgeltlich Eigentum des Auftragnehmers",
+      "risk": "medium"
+    },
+    {
+      "type": "unilateral_change",
+      "regex": "(?:einseitig\\w*|nach\\s+billigem\\s+ermessen)[^.!?;:\\n]{0,80}?(?:(?:ä|ae)nder\\w*|angleich\\w+|anpass\\w+|einschr(?:ä|ae)nk\\w+)",
+      "flags": "i",
+      "closes": [
+        "marketing-028:L25"
+      ],
+      "evidence": "Leistungsumfang nach billigem Ermessen angleichen",
+      "risk": "medium"
+    },
+    {
+      "type": "unilateral_change",
+      "regex": "(?:(?:ä|ae)nder\\w*|angleich\\w+|anpass\\w+|einschr(?:ä|ae)nk\\w+)[^.!?;:\\n]{0,60}?(?:einseitig|nach\\s+billigem\\s+ermessen|ohne\\s+zustimmung)",
+      "flags": "i",
+      "closes": [
+        "marketing-015:L19"
+      ],
+      "evidence": "ändert den Redaktionsplan einseitig",
+      "risk": "medium"
+    },
+    {
+      "type": "agency_commission_exclusion",
+      "regex": "direkt(?:verk(?:ä|ae)ufe|auftr(?:ä|ae)ge|gesch(?:ä|ae)ft\\w*|verkauf\\w*)[^.!?;:\\n]{0,80}?(?:l(?:ö|oe)sen|l(?:ö|oe)st)[^.!?;:\\n]{0,30}?kein\\w*\\s+(?:provision|provisionsanspruch|verg(?:ü|ue)tung|anspruch)",
+      "flags": "i",
+      "closes": [
+        "marketing-016:L19",
+        "marketing-023:L19"
+      ],
+      "evidence": "Direktaufträge lösen keinen Provisionsanspruch aus",
+      "risk": "medium"
+    },
+    {
+      "type": "agency_goodwill_waiver",
+      "regex": "ausgleich\\w*[^.!?;:\\n]{0,80}?(?:ist|wird|sind|werden)[^.!?;:\\n]{0,30}?(?:ausgeschlossen|abbedungen|nicht\\s+geschuldet|verzichtet)",
+      "flags": "i",
+      "closes": [
+        "marketing-016:L22",
+        "marketing-023:L22"
+      ],
+      "evidence": "Ausgleichsanspruch nach Vertragsende ist ausgeschlossen",
+      "risk": "medium"
+    },
+    {
+      "type": "non_solicitation",
+      "regex": "(?:stellt|stellen|wird|werden|darf|d(?:ü|ue)rfen)[^.!?;:\\n]{0,70}?keine\\s+(?:ehemaligen|fr(?:ü|ue)heren|aktuellen)?\\s*(?:mitarbeiter|besch(?:ä|ae)ftigte)[^.!?;:\\n]{0,40}?ein\\b",
+      "flags": "i",
+      "closes": [
+        "marketing-017:L25"
+      ],
+      "evidence": "stellt keine ehemaligen Mitarbeiter des Kunden ein",
+      "risk": "medium"
+    },
+    {
+      "type": "unreasonable_audit",
+      "regex": "(?:pr(?:ü|ue)fung\\w*|audit\\w*|kontroll\\w*|einsicht\\w*|zutritt)[^.!?;:\\n]{0,80}?(?:ohne\\s+(?:anlass|vorank(?:ü|ue)ndigung|terminabstimmung)|anlasslos|jederzeit)",
+      "flags": "i",
+      "closes": [
+        "marketing-017:L31"
+      ],
+      "evidence": "Prüfungen ohne Anlass durchführen",
+      "risk": "medium"
+    },
+    {
+      "type": "dynamic_url_referral",
+      "regex": "gelten\\s+die[^.!?;:\\n]{0,80}?(?:abrufbar\\w*|hinterlegt\\w*|jeweils\\s+g(?:ü|ue)ltig\\w*|jeweils\\s+aktuell\\w*)[^.!?;:\\n]{0,60}?(?:fassung\\w*|bedingung\\w*|richtlinie\\w*|version\\w*|einkaufsbedingungen)",
+      "flags": "i",
+      "closes": [
+        "marketing-018:L37",
+        "marketing-023:L39"
+      ],
+      "evidence": "gelten die im Kundenportal hinterlegten Einkaufsbedingungen",
+      "risk": "medium"
+    },
+    {
+      "type": "as_is_software_disclaimer",
+      "regex": "(?:ohne\\s+m(?:ä|ae)ngelgew(?:ä|ae)hr|im\\s+ist-zustand|wie\\s+gesehen)[^.!?;:\\n]{0,80}?(?:ohne|und\\s+ohne|keine)\\s+(?:jegliche\\s+)?(?:zusicherung|gew(?:ä|ae)hrleistung|garantie|m(?:ä|ae)ngelhaftung)",
+      "flags": "i",
+      "closes": [
+        "marketing-020:L34"
+      ],
+      "evidence": "ohne Mängelgewähr und ohne Zusicherung der Marktgängigkeit",
+      "risk": "medium"
+    },
+    {
+      "type": "written_form_trap",
+      "regex": "m(?:ü|ue)ndliche\\s+(?:absprachen|abreden|vereinbarungen|zusagen)[^.!?;:\\n]{0,70}?(?:sind|ist|bleiben|entfalten)[^.!?;:\\n]{0,40}?(?:ohne\\s+rechtswirkung|unwirksam|unverbindlich|keine\\s+wirkung)",
+      "flags": "i",
+      "closes": [
+        "marketing-021:L31"
+      ],
+      "evidence": "mündliche Absprachen sind ohne Rechtswirkung",
+      "risk": "medium"
+    },
+    {
+      "type": "written_form_trap",
+      "regex": "(?:nur\\s+g(?:ü|ue)ltig|nur\\s+wirksam|nur\\s+in\\s+schriftform)[^.!?;:\\n]{0,60}?in\\s+(?:papierform|schriftform)[^.!?;:\\n]{0,60}?(?:originalunterschrift|eigenh(?:ä|ae)ndig|handschriftlich)",
+      "flags": "i",
+      "closes": [
+        "marketing-026:L34"
+      ],
+      "evidence": "Änderungen nur in Papierform mit Originalunterschrift",
+      "risk": "medium"
+    },
+    {
+      "type": "statute_of_limitations",
+      "regex": "(?:verj(?:ä|ae)hr\\w*|verwirk\\w*)[^.!?;:\\n]{0,60}?(?<!\\d)(?:ein|eine|einer)\\s*jahr\\w*",
+      "flags": "i",
+      "closes": [
+        "marketing-014:L22"
+      ],
+      "evidence": "Mängelansprüche verjähren ein Jahr nach Lieferung",
+      "risk": "medium"
+    }
+  ]
+}

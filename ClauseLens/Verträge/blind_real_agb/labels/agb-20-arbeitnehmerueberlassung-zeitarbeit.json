@@ -1,0 +1,90 @@
+{
+  "slug": "agb-20-arbeitnehmerueberlassung-zeitarbeit",
+  "domain": "AGB für Arbeitnehmerüberlassung & Personaldienstleistung",
+  "source": "Blind Real-AGB Benchmark 2026 (vor Engine-Lauf gelabelt)",
+  "traps": [
+    {
+      "marker": "innerhalb der ersten zwei Stunden nach Arbeitsantritt des Leiharbeitnehmers am ersten Einsatztag",
+      "expectedType": "deemed_acceptance",
+      "statutoryBasis": "§ 308 Nr. 5 BGB / § 307 BGB",
+      "note": "Genehmigungsfiktion und Präklusion sämtlicher Qualifikationsmängel nach nur zwei Stunden Einsatzzeit unter Zwang zu einem Einschreiben ist unangemessen."
+    },
+    {
+      "marker": "jederzeit nach freiem Ermessen einseitig um bis zu 20 % pro Quartal anzuheben",
+      "expectedType": "price_escalation",
+      "statutoryBasis": "§ 307 Abs. 1 BGB",
+      "note": "Einseitige Stundensatzerhöhung um bis zu 20 % pro Quartal nach freiem Ermessen ohne Tarifbezug, ohne Sonderkündigungsrecht und ohne Weitergabe von Kostensenkungen."
+    },
+    {
+      "marker": "gelten als unwiderlegbarer Beweis für den tatsächlichen Arbeitsumfang der Leiharbeitnehmer; der Gegenbeweis",
+      "expectedType": "audit_log_manipulation",
+      "statutoryBasis": "§ 309 Nr. 12 BGB / § 307 BGB",
+      "note": "Unwiderlegbare Beweiskraft eigener Zeiterfassungsbuchungen unter Ausschluss des Gegenbeweises durch Zutrittsprotokolle oder Zeugen."
+    },
+    {
+      "marker": "berechnet der Verleiher ab dem ersten Verzugstag Verzugszinsen in Höhe von 21 % pro Jahr über dem jeweiligen Basiszinssatz",
+      "expectedType": "default_interest",
+      "statutoryBasis": "§ 288 Abs. 2 BGB / § 307 BGB",
+      "note": "Verzugszinssatz von 21 Prozentpunkten über dem Basiszinssatz überschreitet den gesetzlichen Zinssatz des § 288 Abs. 2 BGB (9 Prozentpunkte) mehr als das Doppelte."
+    },
+    {
+      "marker": "für einen Zeitraum von 36 Monaten nach Beendigung der Überlassung strengstens untersagt, einen vorgestellten oder überlassenen Leiharbeitnehmer",
+      "expectedType": "non_solicitation",
+      "statutoryBasis": "§ 9 Abs. 1 Nr. 3 AÜG / § 307 BGB",
+      "note": "Ein Übernahmeverbot mit 60.000 Euro Vertragsstrafe ohne degressive Staffelung verstößt zwingend gegen § 9 Abs. 1 Nr. 3 AÜG (Unwirksamkeit von Übernahmeverboten in der Zeitarbeit)."
+    },
+    {
+      "marker": "ist die Haftung des Verleihers auch bei grober Fahrlässigkeit seiner Erfüllungsgehilfen vollständig ausgeschlossen",
+      "expectedType": "vicarious_agents",
+      "statutoryBasis": "§ 309 Nr. 7b BGB / § 278 BGB / § 307 BGB",
+      "note": "Haftungsausschluss für grobes Verschulden von Erfüllungsgehilfen ist nach § 309 Nr. 7b BGB und § 307 BGB unwirksam."
+    },
+    {
+      "marker": "selbst wenn die Rechtsverletzung ausschließlich auf einem Berechnungs- oder Vertragsfehler des Verleihers beruht",
+      "expectedType": "third_party_indemnity",
+      "statutoryBasis": "§ 307 Abs. 2 Nr. 1 BGB",
+      "note": "Verschuldensunabhängige Freistellung des Verleihers selbst für dessen eigene Berechnungs- und Vertragsfehler."
+    },
+    {
+      "marker": "verlängern sich jeweils automatisch um weitere zwei Jahre, wenn sie nicht spätestens sechs Monate",
+      "expectedType": "auto_renewal",
+      "statutoryBasis": "§ 309 Nr. 9 BGB / § 307 BGB",
+      "note": "Automatische Verlängerung um jeweils zwei Jahre bei sechsmonatiger Kündigungsfrist bindet den Entleiher übermäßig lang."
+    },
+    {
+      "marker": "nur wirksam, wenn sie mittels notariell beglaubigter Urkunde per Gerichtsvollzieher",
+      "expectedType": "written_form_trap",
+      "statutoryBasis": "§ 309 Nr. 13 BGB / § 307 BGB",
+      "note": "Erfordernis einer notariellen Beglaubigung und Zustellung per Gerichtsvollzieher für eine Vertragskündigung verstößt eklatant gegen § 309 Nr. 13 BGB und § 307 BGB."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Verleiher verfügt über eine unbefristete Erlaubnis zur Arbeitnehmerüberlassung gemäß § 1 AÜG",
+      "note": "Gesetzlich vorgeschriebene Angabe der Erlaubnis zur Arbeitnehmerüberlassung nach dem AÜG."
+    },
+    {
+      "marker": "Unfallverhütungs- und Arbeitsschutzvorschriften gemäß § 11 Abs. 6 AÜG einzuhalten",
+      "note": "Zutreffende Wiedergabe der gesetzlichen Arbeitsschutzpflichten des Entleihers nach § 11 Abs. 6 AÜG."
+    },
+    {
+      "marker": "soweit seine Gegenforderungen unbestritten oder rechtskräftig festgestellt sind",
+      "note": "Gesetzeskonforme Aufrechnungs- und Zurückbehaltungsklausel."
+    },
+    {
+      "marker": "haftet im Hinblick auf die überlassenen Leiharbeitnehmer nur für die ordnungsgemäße Auswahl",
+      "note": "Dem Leitbild der Arbeitnehmerüberlassung entsprechende Haftung für Auswahlverschulden sowie unbeschränkte Haftung bei Vorsatz, grober Fahrlässigkeit und Personenschäden."
+    },
+    {
+      "marker": "Einzelüberlassungsverträge können von beiden Parteien mit einer Frist von fünf Arbeitstagen",
+      "note": "Symmetrische, branchenübliche Kündigungsfrist für Einzelüberlassungen in Textform."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Änderung seines Handelsregistereintrags oder die Anschrift einer neuen Betriebsstätte innerhalb von drei Werktagen",
+      "statutoryBasis": "§ 307 Abs. 1 BGB",
+      "note": "Unverhältnismäßige Strafgebühr von 5.000 Euro für die bloße Versäumung einer rein administrativen Adress- oder Registermitteilung ohne Schadenseintritt."
+    }
+  ]
+}

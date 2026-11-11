@@ -1,0 +1,38 @@
+{
+  "projekt": "Neubau Mehrfamilienhaus mit 6 Wohneinheiten und Tiefgarage",
+  "adresse": "Sendlinger Str. 44, 80331 München",
+  "bundesland": "BY",
+  "grundstueck": {
+    "flurstuecksnummer": "742/12",
+    "gemarkung": "Sendling",
+    "flaeche_m2": 920.0,
+    "grenzabstaende": {
+      "norden": 5.4,
+      "sueden": 4.8,
+      "osten": 4.2,
+      "westen": 4.0
+    }
+  },
+  "gebaeude": {
+    "bezeichnung": "Wohngebäude Haus A",
+    "hoehe_m": 8.4,
+    "geschosse_ueber_grund": 3,
+    "wohnungen_anzahl": 6,
+    "grz_ist": 0.31,
+    "gfz_ist": 0.88,
+    "stellplaetze_ist": 6,
+    "fahrradstellplaetze_ist": 12,
+    "zweiter_rettungsweg_vorhanden": true,
+    "treppenraum_vorhanden": true,
+    "aufenthaltsraeume": [
+      { "name": "Wohnen/Kochen WE 01", "flaeche_m2": 38.5, "fenster_flaeche_m2": 6.2, "lichte_hoehe_m": 2.60 },
+      { "name": "Schlafen WE 01", "flaeche_m2": 16.2, "fenster_flaeche_m2": 2.4, "lichte_hoehe_m": 2.60 },
+      { "name": "Wohnen/Kochen WE 02", "flaeche_m2": 42.0, "fenster_flaeche_m2": 7.0, "lichte_hoehe_m": 2.60 },
+      { "name": "Wohnen WE 03 (DG)", "flaeche_m2": 35.0, "fenster_flaeche_m2": 5.0, "lichte_hoehe_m": 2.50 }
+    ]
+  },
+  "einstellungen": {
+    "grz_limit": 0.35,
+    "gfz_limit": 1.00
+  }
+}

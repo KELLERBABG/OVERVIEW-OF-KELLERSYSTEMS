@@ -1,0 +1,31 @@
+// index.js — public API surface of the auralwatermark core engine.
+
+export { embedWatermark } from "./embed.js";
+export { detectWatermark } from "./detect.js";
+export { parseWav, writeWav, readWavFile, writeWavFile, WavError } from "./wav.js";
+export { synthesizeSpeechLike } from "./synth.js";
+export { crc16, packCodeword, unpackCodeword, isValidPayloadId } from "./payload.js";
+export { DEFAULT_BAND, BITS_PER_CODEWORD } from "./signal.js";
+export {
+  validatePolarKey,
+  activatePolarKey,
+  loadLocalLicense,
+  saveLocalLicense,
+  clearLocalLicense,
+  getLicenseStatus,
+  maskKey,
+  POLAR_ORGANIZATION_ID
+} from "./license.js";
+export {
+  generateForensicReport,
+  verifyForensicReport,
+  canonicalReportBody,
+  formatForensicReportText,
+  REPORT_SCHEMA_VERSION,
+  ENGINE_NAME,
+  ENGINE_VERSION
+} from "./report.js";
+export {
+  generateTardosCodebook,
+  accuseCoalition
+} from "./tardos.js";

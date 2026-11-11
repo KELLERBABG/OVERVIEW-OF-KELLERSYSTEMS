@@ -1,0 +1,70 @@
+{
+  "slug": "personal-020",
+  "source": "generated",
+  "domain": "Zeitarbeit und ANUE",
+  "traps": [
+    {
+      "marker": "Die B​eweislast für die Richtigkeit der übermittelten Stundennachweise trägt der Kunde",
+      "expectedType": "burden_of_proof",
+      "note": "Beweislast trägt der Kunde"
+    },
+    {
+      "marker": "den Zugang des Kunden ohne Vorankündigung zu sperren",
+      "expectedType": "service_suspension",
+      "note": "Sperrung des Zugangs ohne Vorankündigung"
+    },
+    {
+      "marker": "Der Anbieter ist berechtigt, Subunternehmer ohne Zustimmung des Kunden einzusetzen",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "Subunternehmer ohne Zustimmung des Kunden"
+    },
+    {
+      "marker": "Die Haftung des Anbieters ist insoweit ausgeschlossen",
+      "expectedType": "liability",
+      "note": "Haftungsausschluss des Anbieters"
+    },
+    {
+      "marker": "Eine Aufrechnung des Kunden ist ausgeschlossen",
+      "expectedType": "setoff_restriction",
+      "note": "Aufrechnung des Kunden ausgeschlossen"
+    },
+    {
+      "marker": "Steuernachforderungen aus der Überlassung sind vollumfänglich vom Kunden zu tragen",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Steuernachforderungen trägt der Kunde"
+    },
+    {
+      "marker": "Bei Insolvenz des Kunden endet der Vertrag mit sofortiger Wirkung",
+      "expectedType": "insolvency_termination",
+      "note": "automatische Beendigung bei Insolvenz des Kunden"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Abrechnung erfolgt monatlich auf Grundlage der freigegebenen Stundennachweise",
+      "note": "Abrechnung nach Stundennachweisen"
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende beenden",
+      "note": "symmetrische Beendigungsfrist"
+    },
+    {
+      "marker": "Die Anlagen 1 und 2 sind Bestandteil dieses Vertrages",
+      "note": "Anlagen als Vertragsbestandteil"
+    },
+    {
+      "marker": "Der Kunde stellt die erforderliche Schutzausrüstung bereit",
+      "note": "Schutzausrüstung durch den Kunden"
+    },
+    {
+      "marker": "Die Parteien benennen je einen Ansprechpartner",
+      "note": "wechselseitige Ansprechpartner"
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Anbieter überlässt dem Kunden gewerbliche Arbeitnehmer zur Arbeitsleistung",
+      "note": "Überlassung ohne feste Höchstüberlassungsdauer, vom Detektor nicht erfasst"
+    }
+  ]
+}

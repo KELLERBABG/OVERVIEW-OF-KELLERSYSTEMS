@@ -1,0 +1,131 @@
+[
+  {
+    "crate": "fold_fail",
+    "function": "folded_add",
+    "block": "bb0",
+    "status": "FAIL",
+    "kind": "overflow",
+    "defect_class": "constant-folded",
+    "file": "src/main.rs",
+    "line": 24,
+    "details": "Arithmetic Overflow: 200 Add 100 [_1 = 200, _2 = 100] -> Counterexample found by constant folding!",
+    "witness": [
+      {
+        "input": "_1",
+        "symbol": "folded_l",
+        "value": "200"
+      },
+      {
+        "input": "_2",
+        "symbol": "folded_r",
+        "value": "100"
+      }
+    ],
+    "witness_kind": "pinned"
+  },
+  {
+    "crate": "fold_fail",
+    "function": "folded_bounds",
+    "block": "bb0",
+    "status": "FAIL",
+    "kind": "bounds",
+    "defect_class": "constant-folded",
+    "file": "src/main.rs",
+    "line": 32,
+    "details": "Slice Boundary Analysis: constant index 5 >= len 3 [_2 = 5, 3_usize = 3] -> Counterexample found by constant folding!",
+    "witness": [
+      {
+        "input": "_2",
+        "symbol": "folded_index",
+        "value": "5"
+      },
+      {
+        "input": "3_usize",
+        "symbol": "folded_len",
+        "value": "3"
+      }
+    ],
+    "witness_kind": "pinned"
+  },
+  {
+    "crate": "fold_fail",
+    "function": "folded_div",
+    "block": "bb0",
+    "status": "FAIL",
+    "kind": "divzero",
+    "defect_class": "constant-folded",
+    "file": "src/main.rs",
+    "line": 54,
+    "details": "Division By Zero: constant zero divisor [_2 = 0] -> Counterexample found by constant folding!",
+    "witness": [
+      {
+        "input": "_2",
+        "symbol": "folded_divisor",
+        "value": "0"
+      }
+    ],
+    "witness_kind": "pinned"
+  },
+  {
+    "crate": "fold_fail",
+    "function": "folded_div_overflow",
+    "block": "bb1",
+    "status": "FAIL",
+    "kind": "overflow",
+    "defect_class": "constant-folded",
+    "file": "src/main.rs",
+    "line": 46,
+    "details": "Arithmetic Overflow: -2147483648 Div -1 [_1 = -2147483648, _2 = -1] -> Counterexample found by constant folding!",
+    "witness": [
+      {
+        "input": "_1",
+        "symbol": "folded_l",
+        "value": "-2147483648"
+      },
+      {
+        "input": "_2",
+        "symbol": "folded_r",
+        "value": "-1"
+      }
+    ],
+    "witness_kind": "pinned"
+  },
+  {
+    "crate": "fold_fail",
+    "function": "folded_neg",
+    "block": "bb0",
+    "status": "FAIL",
+    "kind": "overflow-neg",
+    "defect_class": "constant-folded",
+    "file": "src/main.rs",
+    "line": 39,
+    "details": "Arithmetic Overflow: negation of MIN [_1 = -128] -> Counterexample found by constant folding!",
+    "witness": [
+      {
+        "input": "_1",
+        "symbol": "folded_operand",
+        "value": "-128"
+      }
+    ],
+    "witness_kind": "pinned"
+  },
+  {
+    "crate": "fold_fail",
+    "function": "folded_rem",
+    "block": "bb0",
+    "status": "FAIL",
+    "kind": "remainder",
+    "defect_class": "constant-folded",
+    "file": "src/main.rs",
+    "line": 61,
+    "details": "Remainder By Zero: constant zero divisor [_2 = 0] -> Counterexample found by constant folding!",
+    "witness": [
+      {
+        "input": "_2",
+        "symbol": "folded_divisor",
+        "value": "0"
+      }
+    ],
+    "witness_kind": "pinned"
+  }
+]

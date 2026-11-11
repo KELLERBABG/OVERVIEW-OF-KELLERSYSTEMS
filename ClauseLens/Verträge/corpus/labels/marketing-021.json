@@ -1,0 +1,74 @@
+{
+  "slug": "marketing-021",
+  "source": "generated",
+  "domain": "Influencer-Kooperation, deutsches Recht",
+  "traps": [
+    {
+      "marker": "hält den Auftragnehmer für sämtliche Ansprüche Dritter aus der Kampagne schadlos",
+      "expectedType": "third_party_indemnity",
+      "note": "Kunde stellt Anbieter schadlos; vermeidet freizustellen."
+    },
+    {
+      "marker": "ein unwiderrufliches Nutzungsrecht an den erstellten Inhalten",
+      "expectedType": "data_grant",
+      "note": "Unwiderrufliches Nutzungsrecht am Content."
+    },
+    {
+      "marker": "für konkurrierende Marken nicht werblich tätig",
+      "expectedType": "non_compete",
+      "note": "Nachvertragliches Werbeverbot fuer Wettbewerber."
+    },
+    {
+      "marker": "für einfache Fahrlässigkeit ist auf 5.000 EUR begrenzt",
+      "expectedType": "liability",
+      "note": "Haftungsdeckel bei einfacher Fahrlässigkeit."
+    },
+    {
+      "marker": "Mündliche Absprachen über Zusatzleistungen sind ohne Rechtswirkung",
+      "expectedType": "written_form_trap",
+      "note": "Mündliche Abreden ohne Wirkung."
+    },
+    {
+      "marker": "nennt den Kunden in künftigen Fallstudien als Referenzkunden",
+      "expectedType": "marketing_reference",
+      "note": "Referenznutzung ohne Zustandsvorbehalt."
+    },
+    {
+      "marker": "Verrechnung mit Gegenforderungen des Kunden ist nicht möglich",
+      "expectedType": "setoff_restriction",
+      "note": "Verrechnungsverbot; vermeidet Aufrechnung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Informationen vertraulich",
+      "note": "Symmetrische Vertraulichkeit."
+    },
+    {
+      "marker": "erhält der Kunde die Kampagnendaten kostenfrei in einem offenen Format",
+      "note": "Kostenfreier Datenexport."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende beenden",
+      "note": "Symmetrische Kündigung."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform zugelassen."
+    },
+    {
+      "marker": "innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Üblicher Zahlungstermin."
+    },
+    {
+      "marker": "Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt",
+      "note": "Haftungserhaltung."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Der Auftragnehmer erstellt mit eigenen Creatorn werbliche Inhalte für die Kollektion des Kunden",
+      "note": "Kein Detektor fuer fehlende Kennzeichnungspflicht bei Werbung."
+    }
+  ]
+}

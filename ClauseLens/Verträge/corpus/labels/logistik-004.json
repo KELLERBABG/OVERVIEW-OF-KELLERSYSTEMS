@@ -1,0 +1,68 @@
+{
+  "slug": "logistik-004",
+  "source": "generated",
+  "domain": "Gefahrgutlogistik / ADR (CH)",
+  "traps": [
+    {
+      "marker": "Die Haftung des Auftragnehmers für leichte Fahrlässigkeit ist vollständig ausgeschlossen",
+      "expectedType": "liability",
+      "note": "Haftungsausschluss leichte Fahrlaessigkeit"
+    },
+    {
+      "marker": "Der Auftragnehmer darf Subunternehmer ohne vorherige Ankündigung einsetzen",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "unkontrollierter Subunternehmer"
+    },
+    {
+      "marker": "Der Auftragnehmer schließt jegliche Haftung für Erfüllungsgehilfen aus",
+      "expectedType": "vicarious_agents",
+      "note": "Haftung fuer Gehilfen ausgeschlossen"
+    },
+    {
+      "marker": "Die Verfahrenskosten sind vom Kunden vorauszuzahlen",
+      "expectedType": "mandatory_expert_determination",
+      "note": "Kosten des Sachverstaendigenverfahrens beim Kunden"
+    },
+    {
+      "marker": "für die Dauer von zwei Jahren nach Vertragsende nicht im Gefahrgutverkehr tätig zu werden",
+      "expectedType": "non_compete",
+      "note": "nachvertragliches Wettbewerbsverbot"
+    },
+    {
+      "marker": "Änderungen und Ergänzungen dieses Vertrages bedürfen der Schriftform",
+      "expectedType": "written_form_trap",
+      "note": "Textform ausgeschlossen"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beide Parteien unterrichten einander unverzüglich über sicherheitsrelevante Vorkommnisse",
+      "note": "Informationspflicht"
+    },
+    {
+      "marker": "Rechnungen sind innerhalb von 30 Tagen ohne Abzug zahlbar",
+      "note": "normale Zahlungsfrist"
+    },
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "gesetzliche Haftung"
+    },
+    {
+      "marker": "Beide Parteien behandeln die Angaben des jeweils anderen vertraulich",
+      "note": "beidseitige Vertraulichkeit"
+    },
+    {
+      "marker": "gesetzlichen Rechte beider Parteien zur Kündigung aus wichtigem Grund",
+      "note": "wichtiger Grund"
+    },
+    {
+      "marker": "Der Auftragnehmer benennt Nachunternehmer mit einer Vorlaufzeit von vierzehn Tagen",
+      "note": "transparenter Subunternehmereinsatz"
+    },
+    {
+      "marker": "Der Auftraggeber erhält eine Kopie des Beförderungspapiers",
+      "note": "Dokumentenausgabe"
+    }
+  ],
+  "uncovered": []
+}

@@ -1,0 +1,204 @@
+{
+  "schema_version": 1,
+  "crate_name": "city_types",
+  "completed": true,
+  "coverage": {
+    "functions": 20,
+    "reachable_assertions": 0,
+    "supported_assertions": 0,
+    "unsupported_assertions": 0,
+    "unsupported_kinds": [],
+    "passed": 0,
+    "failed": 0,
+    "warnings": 0,
+    "without_verdict": 0,
+    "panic_sites": 0,
+    "panic_sites_decided": 0,
+    "obligation_solver_calls": 0,
+    "solver_elapsed_ms": 0
+  },
+  "findings": [],
+  "compiler": {
+    "arguments": [
+      "--crate-name",
+      "city_types",
+      "--edition=2021",
+      "crates\\city-types\\src\\lib.rs",
+      "--error-format=json",
+      "--json=diagnostic-rendered-ansi,artifacts,future-incompat",
+      "--crate-type",
+      "lib",
+      "--emit=dep-info,metadata",
+      "-C",
+      "opt-level=1",
+      "-C",
+      "embed-bitcode=no",
+      "-C",
+      "debuginfo=2",
+      "-C",
+      "debug-assertions=on",
+      "--check-cfg",
+      "cfg(docsrs,test)",
+      "--check-cfg",
+      "cfg(feature, values())",
+      "-C",
+      "metadata=5f147aead3d282b8",
+      "-C",
+      "extra-filename=-2832f025dcc8201d",
+      "--out-dir",
+      "C:\\Users\\lukas\\Downloads\\SYSTEMS & CREATIONS\\CityOS\\crates\\city-types\\target\\keller\\debug\\deps",
+      "-C",
+      "incremental=C:\\Users\\lukas\\Downloads\\SYSTEMS & CREATIONS\\CityOS\\crates\\city-types\\target\\keller\\debug\\incremental",
+      "-L",
+      "dependency=C:\\Users\\lukas\\Downloads\\SYSTEMS & CREATIONS\\CityOS\\crates\\city-types\\target\\keller\\debug\\deps",
+      "-L",
+      "native=C:\\z3\\bin",
+      "--sysroot",
+      "C:\\Users\\lukas\\.rustup\\toolchains\\nightly-2026-07-24-x86_64-pc-windows-msvc"
+    ],
+    "rustc": "C:\\Users\\lukas\\.rustup\\toolchains\\nightly-2026-07-24-x86_64-pc-windows-msvc\\bin\\rustc.exe",
+    "version_verbose": "rustc 1.99.0-nightly (89c61a754 2026-07-23)\nbinary: rustc\ncommit-hash: 89c61a7545da48b06116675b888398d02a4064c7\ncommit-date: 2026-07-23\nhost: x86_64-pc-windows-msvc\nrelease: 1.99.0-nightly\nLLVM version: 22.1.8"
+  },
+  "evidence": [
+    {
+      "function": "<Bytes32 as core::clone::Clone>::clone",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<Bytes32 as core::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<Bytes32 as core::cmp::PartialEq>::eq",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<Bytes32 as core::cmp::Eq>::assert_fields_are_eq",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "Bytes32::new",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "Bytes32::from_slice",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "Bytes32::as_slice",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "Bytes32::is_zero",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<Bytes32 as core::default::Default>::default",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<CityMsg as core::clone::Clone>::clone",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<CityMsg as core::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<CityMsg as core::cmp::PartialEq>::eq",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<CityMsg as core::cmp::Eq>::assert_fields_are_eq",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "CityMsg::new",
+      "disclosures": [
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "CityMsg::with_body",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<SlotBudget as core::clone::Clone>::clone",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<SlotBudget as core::fmt::Debug>::fmt",
+      "disclosures": [
+        "callee behavior/return values may be abstracted",
+        "concrete execution not checked",
+        "memory/aggregate/unhandled values may be abstracted"
+      ]
+    },
+    {
+      "function": "<SlotBudget as core::cmp::PartialEq>::eq",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "<SlotBudget as core::cmp::Eq>::assert_fields_are_eq",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    },
+    {
+      "function": "SlotBudget::ok",
+      "disclosures": [
+        "concrete execution not checked"
+      ]
+    }
+  ],
+  "obligations": []
+}

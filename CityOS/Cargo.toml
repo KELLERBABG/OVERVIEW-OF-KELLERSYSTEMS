@@ -1,0 +1,65 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/city-types",
+    "crates/city-crypto",
+    "crates/city-caps",
+    "crates/city-ipc",
+    "crates/city-brp",
+    "crates/city-dag",
+    "crates/city-p2p",
+    "crates/city-shard",
+    "crates/city-deaddrop",
+    "crates/city-alloc",
+    "crates/city-vote",
+    "crates/city-heal",
+    "crates/city-interop",
+    "crates/city-incentive",
+    "crates/city-entropy",
+    "crates/city-syscall",
+    "crates/city-sim",
+    "crates/city-node",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/example/city-os"
+description = "Decentralized urban operating system: DAG ledger, edge computing, identity-less service access, and autonomous resource allocation"
+keywords = ["os", "iot", "edge-computing", "dag", "decentralized"]
+categories = ["os", "no-std", "network-programming"]
+
+[workspace.dependencies]
+city-types = { path = "crates/city-types", version = "0.1.0" }
+city-crypto = { path = "crates/city-crypto", version = "0.1.0" }
+city-caps = { path = "crates/city-caps", version = "0.1.0" }
+city-ipc = { path = "crates/city-ipc", version = "0.1.0" }
+city-brp = { path = "crates/city-brp", version = "0.1.0" }
+city-dag = { path = "crates/city-dag", version = "0.1.0" }
+city-p2p = { path = "crates/city-p2p", version = "0.1.0" }
+city-shard = { path = "crates/city-shard", version = "0.1.0" }
+city-deaddrop = { path = "crates/city-deaddrop", version = "0.1.0" }
+city-alloc = { path = "crates/city-alloc", version = "0.1.0" }
+city-vote = { path = "crates/city-vote", version = "0.1.0" }
+city-heal = { path = "crates/city-heal", version = "0.1.0" }
+city-interop = { path = "crates/city-interop", version = "0.1.0" }
+city-incentive = { path = "crates/city-incentive", version = "0.1.0" }
+city-entropy = { path = "crates/city-entropy", version = "0.1.0" }
+city-syscall = { path = "crates/city-syscall", version = "0.1.0" }
+city-sim = { path = "crates/city-sim", version = "0.1.0" }
+
+# ── Release profile (deployment) ──────────────────────────────────────
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+strip = true
+panic = "abort"
+
+# ── Dev profile (faster builds for local work) ────────────────────────
+[profile.dev]
+opt-level = 1
+
+[profile.dev.package."*"]
+opt-level = 2

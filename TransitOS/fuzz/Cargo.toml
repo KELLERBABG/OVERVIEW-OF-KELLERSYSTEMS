@@ -1,0 +1,36 @@
+[package]
+name = "transit-fuzz"
+version = "0.0.0"
+authors = ["Automatically generated"]
+publish = false
+edition = "2021"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+
+[dependencies.transit-can-bus]
+path = "../crates/can-bus"
+
+[dependencies.transit-smt-solver]
+path = "../crates/smt-solver"
+
+[[bin]]
+name = "fuzz_can_frame_parse"
+path = "fuzz_targets/fuzz_can_frame_parse.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "fuzz_isotp_reassemble"
+path = "fuzz_targets/fuzz_isotp_reassemble.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "fuzz_z3_collision"
+path = "fuzz_targets/fuzz_z3_collision.rs"
+test = false
+doc = false

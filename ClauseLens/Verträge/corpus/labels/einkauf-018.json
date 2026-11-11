@@ -1,0 +1,86 @@
+{
+  "slug": "einkauf-018",
+  "source": "generated",
+  "domain": "Einkauf und Lieferantenrahmenvertrag, deutsches Recht",
+  "traps": [
+    {
+      "marker": "wird die Lieferung als vertragsgemäß behandelt",
+      "expectedType": "deemed_acceptance",
+      "note": "Fiktionswirkung ohne die Registerformel"
+    },
+    {
+      "marker": "bis alle Ansprüche aus der gesamten Geschäftsbeziehung ausgeglichen sind",
+      "expectedType": "extended_retention_of_title",
+      "note": "Kontokorrentvorbehalt"
+    },
+    {
+      "marker": "nur nach vorheriger schriftlicher Bestätigung durch den Lieferanten in Ansatz gebracht",
+      "expectedType": "setoff_restriction",
+      "note": "Aufrechnungsausschluss ohne das Wort Aufrechnung"
+    },
+    {
+      "marker": "ohne Zustimmung des Bestellers unwirksam",
+      "expectedType": "assignment_restriction",
+      "note": "Zessionsverbot ohne die Registerwoerter Abtretung"
+    },
+    {
+      "marker": "ist berechtigt, für Teilleistungen Nachunternehmen einzusetzen",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "Unkontrollierter Unterauftragnehmereinsatz"
+    },
+    {
+      "marker": "übernimmt der Besteller keine Verantwortung",
+      "expectedType": "vicarious_agents",
+      "note": "Freizeichnung fuer Nachunternehmer"
+    },
+    {
+      "marker": "shall not solicit the supplier personnel for a period of twenty-four months",
+      "expectedType": "non_solicitation",
+      "note": "Abwerbeverbot auf Englisch statt in der Registersprache"
+    },
+    {
+      "marker": "Datenbestand wird ausschließlich im herstellereigenen Binärformat bereitgestellt",
+      "expectedType": "data_lockin",
+      "note": "Lock-in durch Proprietaerformat"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Lieferant stellt die Prüfprotokolle in Textform bereit",
+      "note": "Bereitstellung in Textform"
+    },
+    {
+      "marker": "Der Besteller wählt unter den in Anlage 3 genannten Varianten eine aus",
+      "note": "Einseitiges Wahlrecht ohne Pflichten"
+    },
+    {
+      "marker": "Bei berechtigter Rüge bessert der Lieferant innerhalb von zehn Werktagen nach",
+      "note": "Nachbesserungspflicht"
+    },
+    {
+      "marker": "Rechnungen sind innerhalb von dreißig Tagen ohne Abzug zu begleichen",
+      "note": "Marktueblicher Zahlungstermin"
+    },
+    {
+      "marker": "Es gilt das Recht der Bundesrepublik Deutschland",
+      "note": "Neutrale Rechtswahl"
+    },
+    {
+      "marker": "Der Einsatz von Nachunternehmen wird dem Besteller spätestens vierzehn Tage vorher angezeigt",
+      "note": "Anzeigepflicht statt unkontrolliertem Einsatz"
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag einvernehmlich beenden",
+      "note": "Einvernehmliche Beendigung"
+    },
+    {
+      "marker": "Der Besteller erhält seine Bestandsdaten bei Vertragsende unentgeltlich in einem gängigen Format",
+      "note": "Kostenfreier Datenexport"
+    },
+    {
+      "marker": "Die Haftung für Vorsatz und grobe Fahrlässigkeit bleibt unberührt",
+      "note": "Zulaessige Haftungsklausel"
+    }
+  ],
+  "uncovered": []
+}

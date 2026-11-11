@@ -1,0 +1,12 @@
+[package]
+name = "sca-smpc"
+version = "0.1.0"
+edition = "2024"
+description = "SMPC price discovery on encrypted shares — fair market price computation without revealing private data"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+uuid = { version = "1", features = ["v4", "serde"] }
+rand = "0.8"
+thiserror = "2"

@@ -1,0 +1,74 @@
+{
+  "slug": "vertrieb-018",
+  "source": "generated",
+  "domain": "franchise",
+  "traps": [
+    {
+      "marker": "Der Kunde darf die erhobenen Daten der Endkunden auch außerhalb der Europäischen Union verarbeiten,",
+      "expectedType": "international_data_processing",
+      "note": "Datenübermittlung außerhalb der EU ohne Schutzgarantie."
+    },
+    {
+      "marker": "Vor Einleitung des gerichtlichen Rechtswegs ist ein Sachverständigenverfahren durchzuführen. Die",
+      "expectedType": "mandatory_expert_determination",
+      "note": "Rechtsweg erst nach kostenpflichtigem Gutachterverfahren."
+    },
+    {
+      "marker": "Der Anspruch auf Gutschrift entfällt, wenn der Kunde einen kritischen Sicherheitspatch nicht",
+      "expectedType": "service_credit_forfeiture",
+      "note": "Gutschrift entfällt bei formalen Verstößen."
+    },
+    {
+      "marker": "Bei vorzeitiger Beendigung des Vertrags durch den Kunden wird eine pauschale Abstandszahlung in",
+      "expectedType": "early_termination_charge",
+      "note": "Pauschale Abstandszahlung bei vorzeitiger Beendigung."
+    },
+    {
+      "marker": "Der Anbieter ist berechtigt, die Anlage abzuschalten, wenn kein Wartungsvertrag für das laufende",
+      "expectedType": "maintenance_conditional_shutdown",
+      "note": "Abschaltung ohne Wartungsvertrag."
+    },
+    {
+      "marker": "Die Laufzeit beträgt zwei Jahre und erneuert sich automatisch um zwölf Monate, wenn keine Partei",
+      "expectedType": "auto_renewal",
+      "note": "Automatische Verlängerung bindet den Kunden, ohne dass er aktiv werden muss."
+    },
+    {
+      "marker": "Der Anbieter kann mit einer Frist von drei Monaten kündigen, der Kunde erst mit einer Vorlaufzeit",
+      "expectedType": "notice_period",
+      "note": "Lange Bindungsdauer bei kurzer Kündigungsfrist der Gegenseite."
+    },
+    {
+      "marker": "Die Haftung des Anbieters für Datenverlust und entgangenen Gewinn ist ausgeschlossen, Ansprüche",
+      "expectedType": "liability",
+      "note": "Weitgehender Haftungsausschluss zulasten des Kunden."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Haftung beider Parteien richtet sich nach den gesetzlichen Bestimmungen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Jede Partei trägt ihre eigenen Kosten der Vertragsverhandlungen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde ist berechtigt, Rechte aus diesem Vertrag mit Zustimmung des Anbieters auf verbundene",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Für die Nutzung der bereitgestellten Software gilt die beigefügte Leistungsbeschreibung.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Ansprüche aus diesem Vertrag verjähren nach den gesetzlichen Vorschriften.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde trägt die Kosten für die von ihm gewünschten Zusatzleistungen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    }
+  ],
+  "uncovered": []
+}

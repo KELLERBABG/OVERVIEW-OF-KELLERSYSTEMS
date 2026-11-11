@@ -1,0 +1,83 @@
+{
+  "slug": "marketing-001",
+  "source": "generated",
+  "domain": "Marketingagentur, deutsches Recht",
+  "traps": [
+    {
+      "marker": "setzt sich nach Ablauf der Periode jeweils um zwölf Monate fort",
+      "expectedType": "auto_renewal",
+      "note": "Automatische Verlängerung ohne 'verlängert sich automatisch' und ohne das Wort Verlängerung; vermeidet die Registerformel."
+    },
+    {
+      "marker": "unter Einhaltung einer Vorlaufzeit von achtzehn Monaten vorgesehen",
+      "expectedType": "notice_period",
+      "note": "18 Monate Bindung als Vorlaufzeit und Loslösung umschrieben; vermeidet Kündigungsfrist."
+    },
+    {
+      "marker": "auf den dreifachen Wert des jeweiligen Einzelauftrags begrenzt",
+      "expectedType": "liability",
+      "note": "Haftungsdeckel auf Auftragswert; vermeidet 'Haftung beschränkt auf' im Standardwortlaut."
+    },
+    {
+      "marker": "nach eigenem billigem Ermessen angleichen",
+      "expectedType": "unilateral_change",
+      "note": "Einseitige Leistungs- und Preisbestimmung ohne Zustimmung; vermeidet 'Änderungsvorbehalt'."
+    },
+    {
+      "marker": "in Angeboten, Fallstudien und auf ihrer Website als Kunden",
+      "expectedType": "marketing_reference",
+      "note": "Referenznutzung als Aufzählung ohne das Wort Referenz oder Logo."
+    },
+    {
+      "marker": "Auswertungen darf die Agentur zeitlich unbeschränkt eigenständig verwerten",
+      "expectedType": "data_grant",
+      "note": "Verwertungsrecht an Projektdaten ohne Vergütung; vermeidet Nutzungsrecht und KI-Training."
+    },
+    {
+      "marker": "Aufwandspauschale in Höhe von zwei Prozent des Abrufvolumens",
+      "expectedType": "penalty",
+      "note": "Getarnte Vertragsstrafe als Aufwandspauschale; vermeidet Vertragsstrafe."
+    },
+    {
+      "marker": "supersedes all prior quotations, presentations and oral statements",
+      "expectedType": "entire_agreement",
+      "note": "Englische Vollständigkeitsklausel; vermeidet die deutsche Nebenabreden-Formel."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Vergütung ist innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig",
+      "note": "Üblicher 30-Tage-Zahlungstermin, kein Verzugszins und kein Aufrechnungsausschluss."
+    },
+    {
+      "marker": "Die Agentur haftet unbeschränkt für Vorsatz und grobe Fahrlässigkeit",
+      "note": "Gesetzeskonforme Haftungserhaltungsklausel, kein Ausschluss."
+    },
+    {
+      "marker": "alle vertraulichen Informationen der anderen Partei streng vertraulich",
+      "note": "Wechselseitige Geheimhaltung, keine Asymmetrie."
+    },
+    {
+      "marker": "mindestens vierzehn Tage vor dem Einsatz neuer Subunternehmer",
+      "note": "Ordnungsgemäße Vorabinformation mit Widerspruchsrecht (Art. 28 DSGVO)."
+    },
+    {
+      "marker": "innerhalb von vierzehn Tagen kostenfrei in einem offenen, maschinenlesbaren Format bereit",
+      "note": "Kostenfreier Datenexport, kein Lock-in."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag aus wichtigem Grund ohne",
+      "note": "Beidseitiges Recht zur außerordentlichen Kündigung, § 314 BGB bleibt erhalten."
+    },
+    {
+      "marker": "Kündigungen und Änderungen dieses Vertrages bedürfen der Textform",
+      "note": "Textform ist ausdrücklich zugelassen, keine Formfalle."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Ein Abruf ist die schriftliche Beauftragung einzelner Leistungen durch den Auftraggeber",
+      "note": "Kein Detektor für einseitige Abrufvolumina ohne Mindestabnahme."
+    }
+  ]
+}

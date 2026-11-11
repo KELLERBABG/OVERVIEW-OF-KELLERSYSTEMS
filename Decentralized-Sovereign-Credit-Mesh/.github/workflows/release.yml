@@ -1,0 +1,69 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+    name: Build ${{ matrix.artifact }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            artifact: mesh-linux-x86_64
+          - os: ubuntu-24.04-arm
+            artifact: mesh-linux-aarch64
+          - os: windows-latest
+            artifact: mesh-windows-x86_64
+          - os: macos-latest
+            artifact: mesh-macos-aarch64
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          key: release-${{ matrix.os }}
+      - name: Build release binaries (native)
+        run: cargo build --release --bin mesh-cli --bin mesh-api-server
+      - name: Package artifacts
+        shell: bash
+        run: |
+          EXE=""
+          [ "${{ runner.os }}" = "Windows" ] && EXE=".exe"
+          mkdir -p dist
+          cp "target/release/mesh-cli$EXE" dist/
+          cp "target/release/mesh-api-server$EXE" dist/
+          cp README.md dist/ 2>/dev/null || true
+          cd dist && tar -czf "../${{ matrix.artifact }}.tar.gz" . && cd ..
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact }}
+          path: ${{ matrix.artifact }}.tar.gz
+
+  release:
+    name: Publish GitHub Release
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+      - name: Collect packages + checksums
+        run: |
+          mkdir -p release
+          find artifacts -name "*.tar.gz" -exec cp {} release/ \;
+          cd release && for f in *.tar.gz; do sha256sum "$f" > "$f.sha256"; done && ls -la
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: release/*
+          generate_release_notes: true
+          fail_on_unmatched_files: true

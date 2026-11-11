@@ -1,0 +1,50 @@
+{
+  "project": "SMPC-Dark-Pool",
+  "language": "Rust",
+  "summary": "An 8-crate Rust decentralized exchange workspace (`matching-engine`, `commitments`, `front-running`, `homomorphic-compare`, `bft`, `node`, `api-server`, `tests`) implementing threshold cryptography, Shamir's Secret Sharing order fragmentation, Pedersen commitments, and PBFT validator consensus.",
+  "tasks": [
+    {
+      "id": "TASK-01",
+      "title": "Harden secure multiparty comparison protocol for private limit order matching",
+      "status": "pending",
+      "target_files": [
+        "crates/homomorphic-compare/src/order.rs",
+        "crates/homomorphic-compare/src/priority.rs"
+      ],
+      "context_files": [
+        "crates/matching-engine/src/engine.rs",
+        "crates/commitments/src/pedersen.rs"
+      ],
+      "spec": "Upgrade `crates/homomorphic-compare` so that evaluating `bid_price >= ask_price` across secret-shared orders executes via a verified 2-party/3-party comparison protocol (e.g. DGK or Beaver-triple bit-decomposition) without reconstructing the plain prices.\n\n1. Output only a 1-bit encrypted share indicating whether a trade crossed.\n2. Add unit tests proving that order books match correctly at the exact market clearing price while individual order prices remain hidden from all participating nodes.",
+      "verify_cmd": "cargo test -p smpc-homomorphic-compare --quiet"
+    },
+    {
+      "id": "TASK-02",
+      "title": "Enforce cryptographic commit-reveal timelocks and mempool anti-front-running invariants",
+      "status": "pending",
+      "target_files": [
+        "crates/front-running/src/commit_reveal.rs",
+        "crates/front-running/src/mempool.rs"
+      ],
+      "context_files": [
+        "crates/commitments/src/hash_commitment.rs"
+      ],
+      "spec": "Strengthen `crates/front-running/src/commit_reveal.rs` so that orders must be committed as $C = \\text{Pedersen}(P, Q, r)$ within epoch $T$.\n\n1. The mempool must reject any reveal phase message submitted before the commit phase has closed and been locked by a PBFT block header.\n2. Reject any reveal whose commitment opening fails or whose timestamp exceeds the reveal deadline.\n3. Add unit tests for front-running insertion attempts and late reveal cancellations.",
+      "verify_cmd": "cargo test -p smpc-front-running --quiet"
+    },
+    {
+      "id": "TASK-03",
+      "title": "Enforce strict conservation of asset balances in matching-engine settlement",
+      "status": "pending",
+      "target_files": [
+        "crates/matching-engine/src/engine.rs",
+        "crates/matching-engine/src/book.rs"
+      ],
+      "context_files": [
+        "crates/matching-engine/src/types.rs"
+      ],
+      "spec": "Ensure `crates/matching-engine/src/engine.rs` enforces exact integer conservation: for every matched fill of base quantity $Q$ at price $P$, buyer base asset balance increases by $Q - \\text{fee}_{\\text{base}}$, seller quote asset balance increases by $(Q \\cdot P) - \\text{fee}_{\\text{quote}}$, and the sum of all balances plus exchange fee vault equals the pre-trade total exactly.\n\n1. Add unit and fuzz tests verifying zero underflow or balance drift.",
+      "verify_cmd": "cargo test -p smpc-matching-engine --quiet"
+    }
+  ]
+}

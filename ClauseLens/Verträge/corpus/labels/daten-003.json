@@ -1,0 +1,87 @@
+{
+  "slug": "daten-003",
+  "source": "generated",
+  "domain": "Lizenzvertrag",
+  "traps": [
+    {
+      "marker": "achtzehn Monaten nach Beendigung keine Mitarbeiter der Gesellschaft abzuwerben",
+      "expectedType": "non_solicitation",
+      "note": "Paraphrase/Umstellung: nennt 'achtzehn Monaten nach Beendigung keine Mitarb' statt der Registerwendung."
+    },
+    {
+      "marker": "Nur der Anbieter ist berechtigt, den Vertrag mit einer Frist von vier Wochen",
+      "expectedType": "unilateral_convenience_termination",
+      "note": "Paraphrase/Umstellung: nennt 'Nur der Anbieter ist berechtigt, den Vertrag ' statt der Registerwendung."
+    },
+    {
+      "marker": "überdauert die Vertragsbeendigung ohne zeitliche Beschränkung",
+      "expectedType": "excessive_survival",
+      "note": "Paraphrase/Umstellung: nennt 'überdauert die Vertragsbeendigung ohne zeitli' statt der Registerwendung."
+    },
+    {
+      "marker": "behält sich vor, die Vergütung nach billigem Ermessen anzupassen",
+      "expectedType": "price_escalation",
+      "note": "Paraphrase/Umstellung: nennt 'behält sich vor, die Vergütung nach billigem ' statt der Registerwendung."
+    },
+    {
+      "marker": "An die Stelle einer nichtigen Klausel tritt diejenige Gestaltung",
+      "expectedType": "salvatorische_klausel_falle",
+      "note": "Paraphrase/Umstellung: nennt 'An die Stelle einer nichtigen Klausel tritt d' statt der Registerwendung."
+    },
+    {
+      "marker": "bis zur vollständigen Erfüllung aller Ansprüche aus der Geschäftsverbindung",
+      "expectedType": "extended_retention_of_title",
+      "note": "Paraphrase/Umstellung: nennt 'bis zur vollständigen Erfüllung aller Ansprüc' statt der Registerwendung."
+    },
+    {
+      "marker": "Der Zustimmung des Kunden bedarf es nicht, wenn Unterauftragnehmer",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "Paraphrase/Umstellung: nennt 'Der Zustimmung des Kunden bedarf es nicht, we' statt der Registerwendung."
+    },
+    {
+      "marker": "Abweichende Nachweise des Kunden bleiben ohne Bedeutung",
+      "expectedType": "audit_log_manipulation",
+      "note": "Paraphrase/Umstellung: nennt 'Abweichende Nachweise des Kunden bleiben ohne' statt der Registerwendung."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "ohne Angabe von Gründen zum Monatsende kündigen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "einfaches, nicht ausschließliches Nutzungsrecht für den vereinbarten Zweck",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "auf den in der Präambel bezeichneten Zweck beschränkt",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "zum Quartalsende ordentlich kündigen",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "dieselben Datenschutzstandards einhalten",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "mit ihren jeweiligen Lizenzen aufgeführt",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "gesetzliche Haftung für Vorsatz und grobe Fahrlässigkeit",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    },
+    {
+      "marker": "aus wichtigem Grund jederzeit fristlos beenden",
+      "note": "Konforme Klausel, darf keinen Befund auslösen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "eine Bearbeitungsgebühr von fünfzig Euro",
+      "note": "Täuschende Klausel ohne passenden Detektortyp."
+    }
+  ]
+}

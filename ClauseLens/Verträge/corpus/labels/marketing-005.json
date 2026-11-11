@@ -1,0 +1,74 @@
+{
+  "slug": "marketing-005",
+  "source": "generated",
+  "domain": "Eventmanagement, deutsches Recht",
+  "traps": [
+    {
+      "marker": "entbinden den Auftragnehmer von der Leistungspflicht",
+      "expectedType": "force_majeure_asymmetry",
+      "note": "Einseitige Befreiung nur des Auftragnehmers bei unveränderter Zahlungspflicht; vermeidet 'höhere Gewalt befreit den Anbieter'."
+    },
+    {
+      "marker": "gilt die Leistung als vorbehaltlos abgenommen",
+      "expectedType": "deemed_acceptance",
+      "note": "Abnahmefiktion durch produktive Nutzung; vermeidet 'gilt als genehmigt'."
+    },
+    {
+      "marker": "jederzeit Nachunternehmen einsetzen; einer Zustimmung bedarf es nicht",
+      "expectedType": "subcontractor_uncontrolled",
+      "note": "Unbeschränkter Subunternehmereinsatz ohne Zustimmung."
+    },
+    {
+      "marker": "ohne Vorankündigung jederzeit die Geschäftsräume inspizieren",
+      "expectedType": "unreasonable_audit",
+      "note": "Audit ohne Ankündigung; vermeidet 'Audit ohne Vorankündigung' als Nominalphrase."
+    },
+    {
+      "marker": "Weitergehende Ansprüche des Auftraggebers wegen einfacher Fahrlässigkeit",
+      "expectedType": "liability",
+      "note": "Abgeltung weitergehender Ansprüche; vermeidet 'Haftung ausgeschlossen'."
+    },
+    {
+      "marker": "Sämtliche Steuern und Abgaben im Zusammenhang mit der Veranstaltung",
+      "expectedType": "tax_indemnity_shift",
+      "note": "Steuerabwälzung auf den Auftraggeber ohne Verschulden."
+    },
+    {
+      "marker": "Mangels Wartungsvertrag wird die Anlage des Auftragnehmers stillgelegt",
+      "expectedType": "maintenance_conditional_shutdown",
+      "note": "Abschaltung an fehlenden Wartungsvertrag geknüpft; vermeidet 'außer Betrieb setzen'."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "spätestens sechs Wochen vor dem Termin einen Ablaufplan zur Freigabe vor",
+      "note": "Ordentliche Vorlauffrist ohne Fiktion."
+    },
+    {
+      "marker": "Beide Parteien behandeln die wechselseitig offengelegten Unterlagen vertraulich",
+      "note": "Symmetrische Vertraulichkeit."
+    },
+    {
+      "marker": "erhält der Auftraggeber die Gästedaten kostenfrei in einem offenen Format",
+      "note": "Kostenfreier Datenexport."
+    },
+    {
+      "marker": "Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende beenden",
+      "note": "Symmetrische Beendigung."
+    },
+    {
+      "marker": "Erklärungen können in Textform, auch per E-Mail, abgegeben werden",
+      "note": "Textform zugelassen."
+    },
+    {
+      "marker": "Die Unwirksamkeit einzelner Bestimmungen lässt die übrigen Bestimmungen unberührt",
+      "note": "Bereinigte Salvatorische Klausel."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "Die Freigabe erfolgt durch die Projektleitung des Auftraggebers in Textform",
+      "note": "Kein Detektor für fehlende Gegenzeichnung."
+    }
+  ]
+}

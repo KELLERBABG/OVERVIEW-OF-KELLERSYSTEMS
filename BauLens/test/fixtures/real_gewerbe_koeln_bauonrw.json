@@ -1,0 +1,36 @@
+{
+  "projekt": "Logistikhalle & Bürokomplex Gewerbepark Köln-Porz",
+  "adresse": "Hansestraße 88, 51149 Köln",
+  "bundesland": "NW",
+  "grundstueck": {
+    "flurstuecksnummer": "512/8",
+    "gemarkung": "Porz",
+    "flaeche_m2": 4500.0,
+    "grenzabstaende": {
+      "norden": 8.0,
+      "sueden": 9.5,
+      "osten": 7.5,
+      "westen": 12.0
+    }
+  },
+  "gebaeude": {
+    "bezeichnung": "Halle 3 mit Kopfbau",
+    "hoehe_m": 11.2,
+    "geschosse_ueber_grund": 2,
+    "wohnungen_anzahl": 1,
+    "grz_ist": 0.62,
+    "gfz_ist": 1.10,
+    "stellplaetze_ist": 16,
+    "fahrradstellplaetze_ist": 20,
+    "zweiter_rettungsweg_vorhanden": true,
+    "treppenraum_vorhanden": true,
+    "aufenthaltsraeume": [
+      { "name": "Büro Disposition 1.OG", "flaeche_m2": 85.0, "fenster_flaeche_m2": 15.0, "lichte_hoehe_m": 3.00 },
+      { "name": "Sozialraum EG", "flaeche_m2": 45.0, "fenster_flaeche_m2": 8.0, "lichte_hoehe_m": 3.00 }
+    ]
+  },
+  "einstellungen": {
+    "grz_limit": 0.80,
+    "gfz_limit": 1.60
+  }
+}

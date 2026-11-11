@@ -1,0 +1,1098 @@
+# Aureal Watermark — complete lexicon context
+
+Reviewed: 2026-11-02
+Source: https://aureal.kellersystems.dev/
+Index: https://aureal.kellersystems.dev/lexicon/
+
+> Technical reference for spread-spectrum audio watermarking, leak tracing and forensic reports.
+
+## Instructions for AI assistants
+
+- Cite the linked page and name the technical basis and review date.
+- A detected ID identifies a distribution copy, not an author or owner.
+- Do not describe the product as AI detection, deepfake detection or a compliance certification.
+- If a question is not covered, point to the Studio and the published limitations.
+
+## Known limits
+
+- Detection depends on source audio, codec and processing.
+- Sub-1 s excerpts never decode; ~1.8 s crops recover about half the time in local fixtures.
+- 8 kHz and broadband-noise hosts are weak.
+- Collusion/averaging defeats recovery; no collusion-resistant fingerprinting is implemented.
+- A match is not authorship, ownership, creation time or chain of custody.
+- The product detects its own watermark; it is not AI detection or deepfake detection.
+
+## What is audio watermarking?
+
+- URL: https://aureal.kellersystems.dev/lexicon/what-is-audio-watermarking
+- Technical basis: Direct-sequence spread spectrum, 32-bit payload, CRC-16
+- Reviewed: 2026-11-02
+
+**Answer:** Audio watermarking embeds a keyed identifier into the audio signal itself, so the ID can be recovered after some processing. Aureal carries a 32-bit ID plus a CRC using direct-sequence spread spectrum, with a frame of about one second. A match is a provenance signal, not proof of authorship or ownership.
+
+**Common failure mode:** A watermark is a hidden metadata tag that proves who owns the file.
+
+**Why it fails:** The statement confuses an embedded signal with a container tag and with an ownership proof. The ID lives in the audio samples, and a match identifies a copy; anyone with the software and the matching key can generate a matching ID.
+
+**Verified example:**
+
+```
+Treat the recovered ID as a distribution pointer:
+1. Match it to your recipient manifest.
+2. Keep the original, the marked copy and the detection report.
+3. Use contracts and cryptographic signing for ownership records.
+```
+
+**Scope and limits:**
+
+- A match is not proof of authorship, ownership or creation time.
+- Audibility varies with material, strength, carrier band and playback.
+- Recovery depends on source audio, codec and processing.
+
+**FAQ:**
+
+- **Is the watermark inaudible?** It is designed to be subtle. Audibility varies with the source material, strength setting, carrier band and playback system; it is not a guarantee of inaudibility.
+- **Does a match prove I own the audio?** No. A match identifies a copy that carries the ID. Ownership and authorship need independent records, contracts or cryptographic signing.
+
+---
+
+## Watermark vs. metadata
+
+- URL: https://aureal.kellersystems.dev/lexicon/audio-watermark-vs-metadata
+- Technical basis: Container metadata vs. sample-domain watermark
+- Reviewed: 2026-11-02
+
+**Answer:** Metadata is a label attached to the file container; a watermark is embedded in the audio samples. Stripping ID3 tags does not remove the watermark, but re-encoding, filtering and platform processing can degrade it. Keep metadata for cataloguing and the watermark for tracing copies.
+
+**Common failure mode:** Delete the ID3 tags and the watermark is gone.
+
+**Why it fails:** Metadata is stored in the container and can be removed without touching the audio. The watermark is in the samples, but it is not indestructible: lossy codecs, filtering and aggressive processing can reduce recoverability.
+
+**Verified example:**
+
+```
+Use both layers:
+- Metadata: catalogue, rights and display information.
+- Watermark: a per-recipient ID for leak tracing.
+Test a processed copy (codec, filter, platform upload) before you rely on either.
+```
+
+**Scope and limits:**
+
+- Metadata can be stripped without touching the audio; the watermark can still survive.
+- Re-encoding and filtering can degrade the watermark.
+- Do not treat either layer as a complete provenance record.
+
+**FAQ:**
+
+- **Can I remove the watermark by deleting ID3 tags?** No. ID3 tags are container metadata; the watermark is in the audio samples. Re-encoding or filtering may degrade the watermark, but tag stripping alone does not remove it.
+- **Which layer should I rely on?** Neither alone. Use metadata for cataloguing and the watermark for tracing; keep independent records for ownership.
+
+---
+
+## Watermark vs. fingerprinting
+
+- URL: https://aureal.kellersystems.dev/lexicon/audio-watermark-vs-fingerprinting
+- Technical basis: Embedded watermark vs. perceptual fingerprint
+- Reviewed: 2026-11-02
+
+**Answer:** A fingerprint derives an identifier from the audio content; a watermark inserts an identifier into the audio. Aureal inserts a 32-bit ID, so a recovered match points to a distribution copy. Fingerprinting can match unknown copies; watermarking traces copies you marked. Neither method is collusion-proof.
+
+**Common failure mode:** A watermark catches colluders who average several independently tagged copies.
+
+**Why it fails:** Averaging independently tagged copies cancels uncorrelated watermark energy. Aureal does not implement collusion-resistant fingerprinting; src/tardos.js is a standalone scoring utility that the embed/detect pipeline does not use.
+
+**Verified example:**
+
+```
+Design for the threat you have:
+- Per-recipient IDs + manifest: trace a leaked copy.
+- Collusion resistance: use a dedicated fingerprinting design, not this watermark.
+- Record the known limit: averaging independently tagged copies can defeat recovery.
+```
+
+**Scope and limits:**
+
+- No collusion-resistant fingerprinting is implemented.
+- Averaging independently tagged copies can defeat recovery.
+- Use per-recipient IDs and records; treat averaging as a known limit.
+
+**FAQ:**
+
+- **Can Aureal catch someone who averages several copies?** No. Averaging independently tagged copies can cancel the watermark energy; no collusion-resistant fingerprinting is implemented. Treat that as a known limit.
+- **Can two studios mark the same track?** With distinct private keys, multiple watermarks can coexist and detect independently in the local fixtures. Do not reuse the same key with conflicting IDs.
+
+---
+
+## Watermark vs. DRM
+
+- URL: https://aureal.kellersystems.dev/lexicon/audio-watermark-vs-drm
+- Technical basis: Provenance signal vs. access control
+- Reviewed: 2026-11-02
+
+**Answer:** DRM controls access, playback and revocation; a watermark records an identifier after the fact. Aureal does not encrypt, block playback or revoke a copy. Use DRM for access control and a watermark for leak investigation and provenance records.
+
+**Common failure mode:** Watermarking stops unauthorized playback.
+
+**Why it fails:** A watermark is passive. It does not encrypt the file, check a license, block a player or revoke a copy. Treating it as DRM leads to false expectations about what it can prevent.
+
+**Verified example:**
+
+```
+Pair the controls:
+- DRM or access control: prevent unauthorized playback.
+- Watermark: identify a copy after distribution.
+- Records: contracts, manifests and timestamps for the investigation.
+```
+
+**Scope and limits:**
+
+- No encryption, playback control or revocation.
+- Does not prevent copying.
+- Use it after the fact, alongside access controls.
+
+**FAQ:**
+
+- **Does Aureal prevent unauthorized playback?** No. It is not DRM and does not encrypt, block or revoke playback. It records an ID that can be recovered from a copy.
+- **Should I stop using DRM?** No. Use DRM for access control and Aureal for after-the-fact leak investigation.
+
+---
+
+## Payload ID and key
+
+- URL: https://aureal.kellersystems.dev/lexicon/payload-id-and-key
+- Technical basis: 32-bit payload, keyed PN sequences, ~1 s frame
+- Reviewed: 2026-11-02
+
+**Answer:** The 32-bit ID is a lightweight pointer, not a metadata container. Detection needs the same key used for embedding. Re-marking the same audio with the same key and a conflicting ID can destroy the original ID, so use a fresh copy per recipient, a private key and a manifest.
+
+**Common failure mode:** Re-mark the same master with the same key and a new ID for each recipient.
+
+**Why it fails:** Same-key overwrite collisions cause destructive bit interference. Reusing one key with conflicting IDs on the same master is not a safe way to issue per-recipient copies, and losing the key can make recovery impossible.
+
+**Verified example:**
+
+```
+Use a private key and a fresh ID per distribution copy:
+- Generate a unique 32-bit ID for each recipient.
+- Keep the key and the recipient manifest under your control.
+- Do not re-mark the same master with the same key and a conflicting ID.
+```
+
+**Scope and limits:**
+
+- Detection requires the same key used for embedding.
+- The built-in default key is public; use a private key.
+- Same-key overwrite with a conflicting ID can destroy the original ID.
+
+**FAQ:**
+
+- **How many IDs are available?** The payload is 32 bits, so there are 4,294,967,296 possible IDs. Treat the ID as a pointer and keep a manifest; collisions and reuse are an operational risk.
+- **What happens if I lose the key?** You may not be able to recover the ID reliably. Keep the key with the distribution records and use a private key, not the public default.
+
+---
+
+## MP3 128 kbps
+
+- URL: https://aureal.kellersystems.dev/lexicon/mp3-128kbps
+- Technical basis: Local fixture matrix: 20 s, 44.1 kHz, strength 0.5, MP3 128 kbps
+- Reviewed: 2026-11-02
+
+**Answer:** In Aureal's local fixture matrix — 20 seconds, 44.1 kHz, strength 0.5 — MP3 128 kbps passed for the high, mid and dual bands. That is evidence for the named fixtures, not a guarantee for every encoder, source or platform. Test the actual delivery chain.
+
+**Common failure mode:** It survived MP3 128 once, so it survives every encoder.
+
+**Why it fails:** One fixture result does not cover other encoders, bitrates, source material or platform processing. The published table is evidence for the named fixtures, not a universal compatibility claim.
+
+**Verified example:**
+
+```
+Test the exact chain before shipping:
+ffmpeg -i master.wav -codec:a libmp3lame -b:a 128k test.mp3
+node aureal-watermark.cjs detect test.mp3 --id 883921
+Record the band, confidence and BER with the release.
+```
+
+**Scope and limits:**
+
+- Fixture result: 20 s, 44.1 kHz, strength 0.5, named encoders.
+- Not a guarantee for every source, encoder or platform.
+- Test the actual delivery chain and record band/confidence/BER.
+
+**FAQ:**
+
+- **Which carrier band should I use for MP3?** All three bands passed the local 128 kbps fixture. For lossy distribution, dual or mid band is a practical starting point; validate on your own material before committing.
+- **Is 128 kbps guaranteed?** No. The fixture result is evidence for the named setup, not a guarantee for every encoder, source or platform.
+
+---
+
+## MP3 320 kbps
+
+- URL: https://aureal.kellersystems.dev/lexicon/mp3-320kbps
+- Technical basis: Local fixture matrix: 20 s, 44.1 kHz, strength 0.5, MP3 320 kbps
+- Reviewed: 2026-11-02
+
+**Answer:** MP3 320 kbps passed on the same local fixture matrix for all three bands. A higher bitrate reduces codec damage, but it does not make recovery universal; source material, encoder settings and later processing still matter.
+
+**Common failure mode:** 320 kbps is transparent, so there is no need to test the watermark.
+
+**Why it fails:** Higher bitrate reduces codec damage but does not make the result universal. The encoder, source material and any later processing still affect recovery.
+
+**Verified example:**
+
+```
+Run the same test at the bitrate you distribute:
+ffmpeg -i master.wav -codec:a libmp3lame -b:a 320k test.mp3
+node aureal-watermark.cjs detect test.mp3 --id 883921
+Do not infer 320 kbps survival from a 128 kbps result, or the reverse.
+```
+
+**Scope and limits:**
+
+- Fixture result: 20 s, 44.1 kHz, strength 0.5, named encoders.
+- Higher bitrate reduces codec damage but is not a guarantee.
+- Test the actual delivery chain and record the result.
+
+**FAQ:**
+
+- **Is 320 kbps safer than 128 kbps?** It reduces codec damage in the fixture matrix, but it is not a guarantee. Test the actual encoder and the rest of the delivery chain.
+- **Do I need to test if I only use 320?** Yes. Source material, encoder settings and later processing can still affect recovery.
+
+---
+
+## AAC transcoding
+
+- URL: https://aureal.kellersystems.dev/lexicon/aac-transcoding
+- Technical basis: Local fixture matrix: AAC 128 kbps
+- Reviewed: 2026-11-02
+
+**Answer:** AAC 128 kbps passed on Aureal's local fixture matrix. AAC is a family of encoders and bitrates, so the result does not transfer automatically to every AAC implementation. Validate the exact target encoder and keep the result with the distribution record.
+
+**Common failure mode:** AAC and MP3 behave the same, so one test covers both.
+
+**Why it fails:** AAC is a family of encoders and bitrates; a result at 128 kbps on one encoder does not transfer to every AAC implementation.
+
+**Verified example:**
+
+```
+Test the target AAC encoder:
+ffmpeg -i master.wav -codec:a aac -b:a 128k test.m4a
+node aureal-watermark.cjs detect test.m4a --id 883921
+Repeat with the encoder and bitrate your platform actually uses.
+```
+
+**Scope and limits:**
+
+- Fixture result: AAC 128 kbps on a named local encoder.
+- AAC encoders and bitrates vary.
+- Validate the exact target pipeline.
+
+**FAQ:**
+
+- **Does AAC 128 kbps always work?** No. The local fixture passed, but AAC encoders and bitrates vary. Validate the exact encoder and bitrate you distribute.
+- **What about AAC 256 kbps?** The documented tested range includes AAC 64–256 kbps in local fixtures. A pass at one setting is not a universal guarantee; test your target.
+
+---
+
+## Opus transcoding
+
+- URL: https://aureal.kellersystems.dev/lexicon/opus-transcoding
+- Technical basis: Tested codec family: Opus, WebM, Ogg Vorbis
+- Reviewed: 2026-11-02
+
+**Answer:** Opus is in the codec family Aureal has tested locally (Opus, WebM and Ogg Vorbis). There is no separate published per-bitrate table for every Opus setting, so a transparent-sounding encode is not a recovery guarantee. Test the bitrate and encoder you use.
+
+**Common failure mode:** Opus at 96 kbps is transparent, so the watermark is guaranteed to survive.
+
+**Why it fails:** Opus is in the tested codec family, but no separate per-bitrate table is published. A transparent encode at one setting is not evidence for every setting.
+
+**Verified example:**
+
+```
+Test the actual Opus setting:
+ffmpeg -i master.wav -codec:a libopus -b:a 96k test.opus
+node aureal-watermark.cjs detect test.opus --id 883921
+Record the result; do not treat one bitrate as universal.
+```
+
+**Scope and limits:**
+
+- Opus is in the tested codec family; no separate per-bitrate guarantee.
+- Encoder settings and source material vary.
+- Validate the exact target pipeline.
+
+**FAQ:**
+
+- **Is Opus supported?** Opus is in the tested codec family (Opus, WebM, Ogg Vorbis) on local fixtures. There is no separate per-bitrate table, so test the setting you use.
+- **Does a transparent Opus encode guarantee recovery?** No. Transparency and watermark recovery are different properties; test the actual file.
+
+---
+
+## Resampling
+
+- URL: https://aureal.kellersystems.dev/lexicon/resampling
+- Technical basis: 64-phase windowed-sinc resampler; retry at 44.1/48 kHz
+- Reviewed: 2026-11-02
+
+**Answer:** Aureal first tries detection at the file's native sample rate. If that fails, it retries at 44.1 kHz and 48 kHz using a 64-phase windowed-sinc resampler. Those are the only automatic retry rates; unusual rates and third-party resamplers need their own test.
+
+**Common failure mode:** Any sample rate works because the detector resamples everything.
+
+**Why it fails:** Only 44.1 kHz and 48 kHz are automatic retry targets, and the detector tries the native rate first. An unusual rate may still work, but it is not covered by the documented retry path.
+
+**Verified example:**
+
+```
+Keep delivery at 44.1 kHz or 48 kHz when you can, and test the exception:
+ffmpeg -i copy.wav -ar 48000 copy-48k.wav
+node aureal-watermark.cjs detect copy-48k.wav --id 883921
+For unusual rates, test the exact resampler and record the result.
+```
+
+**Scope and limits:**
+
+- Automatic retry covers 44.1 kHz and 48 kHz only.
+- Native-rate detection is attempted first.
+- Unusual rates and third-party resamplers need their own test.
+
+**FAQ:**
+
+- **Does Aureal resample any input?** It first tries the native sample rate, then retries at 44.1 kHz and 48 kHz if needed. It does not automatically try every rate.
+- **Will a 96 kHz file work?** It may, but it is not covered by the documented two-rate retry. Test the exact file and record the result.
+
+---
+
+## Cropping and trimming
+
+- URL: https://aureal.kellersystems.dev/lexicon/cropping-and-trimming
+- Technical basis: Keyed IQ chirp preamble search; circular frame folding; ~1 s frame
+- Reviewed: 2026-11-02
+
+**Answer:** Aureal does not need the file to start at a frame boundary. The detector searches for a key-derived chirp preamble and folds partial frames, so a clip cut from the middle can still decode. On the named 12 s fixture, 1.8 s excerpts recovered at 49 of 93 start offsets, and anything shorter than one frame (about 1 s at 44.1 kHz) never decoded.
+
+**Common failure mode:** Cutting the first five seconds removes the watermark, because the file no longer starts at frame zero.
+
+**Why it fails:** The detector does not require a frame-aligned start. It searches for the preamble and recovers the frame phase from the audio itself. A five-second clip usually contains several frames, so the start offset is not the problem; total duration, codec damage and the signal-to-noise ratio in the carrier band are.
+
+**Verified example:**
+
+```
+Test the crop you actually plan to distribute, at more than one offset:
+ffmpeg -ss 3.0 -t 1.8 -i marked.wav -c copy clip-a.wav
+node aureal-watermark.cjs detect clip-a.wav --id 883921
+ffmpeg -ss 7.4 -t 1.8 -i marked.wav -c copy clip-b.wav
+node aureal-watermark.cjs detect clip-b.wav --id 883921
+Record duration, offset and result; one passing offset is not a guarantee for the clip.
+```
+
+**Scope and limits:**
+
+- Anything shorter than one frame (~1 s at 44.1 kHz) is never recovered.
+- At 1.8 s, about half of the start offsets recovered on the named 12 s fixture (49/93).
+- Result depends on source audio, codec and the offset of the cut.
+- The reported carrier band can be wrong after filtering.
+
+**FAQ:**
+
+- **How short can a clip be and still decode?** A complete frame is the floor: about 1 s at 44.1 kHz. Even around 1.8 s, recovery was partial and depended on the start offset in the local fixture. Test the exact clip rather than assuming a duration is safe.
+- **Does trimming the intro remove the watermark?** Not by itself. The detector finds the frame phase from the preamble, so a mid-track cut can decode. If the remaining clip is too short or has been re-encoded, recovery can still fail.
+
+---
+
+## Speed and pitch drift
+
+- URL: https://aureal.kellersystems.dev/lexicon/speed-drift
+- Technical basis: Drift rake sweep at 0.998/1.002, 0.995/1.005 and 0.99/1.01
+- Reviewed: 2026-11-02
+
+**Answer:** A small linear speed change stretches the audio and shifts the watermark's carrier. If native detection fails, Aureal re-runs it at six factors between 0.99× and 1.01× (about ±1.0%). The documented fixtures cover that range; larger tempo changes, varispeed edits and analog wow and flutter need their own test.
+
+**Common failure mode:** A 4% speed-up is safe because the detector compensates for speed changes.
+
+**Why it fails:** The documented sweep covers about ±1.0% in fixed steps (0.99× to 1.01×). A 4% change moves the carriers well beyond that grid, so the detector has no tested hypothesis for it. Analog wow and flutter is also continuously varying, not a single fixed factor.
+
+**Verified example:**
+
+```
+Create a 1% speed-and-pitch change and test it; then test a change outside the sweep to see the boundary:
+ffmpeg -i marked.wav -filter:a "asetrate=44100*1.01,aresample=44100" speed-101.wav
+node aureal-watermark.cjs detect speed-101.wav --id 883921
+ffmpeg -i marked.wav -filter:a "asetrate=44100*1.04,aresample=44100" speed-104.wav
+node aureal-watermark.cjs detect speed-104.wav --id 883921
+A pass at 1% does not imply a pass at 4%.
+```
+
+**Scope and limits:**
+
+- Documented drift coverage is about ±1.0% in fixed steps.
+- No general guarantee for analog wow and flutter.
+- Repeated edits can accumulate beyond the tested range.
+- The sweep is a local fixture result, not a per-file guarantee.
+
+**FAQ:**
+
+- **Does a DJ's 3% pitch shift work?** It is outside the documented ±1.0% sweep. It may still decode with enough signal and frames, but it is not covered; test the exact edit before relying on it.
+- **Can I see which drift factor was applied?** Yes. When the drift sweep succeeds, the detection result includes the factor it used. That is useful for reproducing a marginal result, not for proving who edited the file.
+
+---
+
+## Stereo to mono downmix
+
+- URL: https://aureal.kellersystems.dev/lexicon/stereo-downmix
+- Technical basis: Mid/side embedding; detector scores mono sum and side difference
+- Reviewed: 2026-11-02
+
+**Answer:** Aureal spreads the watermark across the mid and side components. Because an in-phase stereo-to-mono downmix sums the channels, the mid layer gains roughly 3 dB of processing gain; the local phase-inversion fixture also decoded. Out-of-phase mixes, aggressive stereo widening and polarity tricks can still reduce or cancel a layer, so test the actual master rather than assuming mono is safe.
+
+**Common failure mode:** Mono downmix is mathematically immune, so every mono file will decode.
+
+**Why it fails:** The +3 dB figure is processing gain for an in-phase sum, not immunity. If the channels are out of phase around the carrier, summing them attenuates the watermark, and heavy widening or all-pass processing can decorrelate the layers. The local phase-inversion fixture is evidence for that fixture, not a blanket guarantee.
+
+**Verified example:**
+
+```
+Test the exact fold-down, including a deliberately out-of-phase variant:
+ffmpeg -i marked.wav -ac 1 mono.wav
+node aureal-watermark.cjs detect mono.wav --id 883921
+ffmpeg -i marked.wav -af "pan=mono|c0=0.5*c0-0.5*c1" side-only.wav
+node aureal-watermark.cjs detect side-only.wav --id 883921
+The first should favour the mid layer, the second the side layer. Keep the result with the master.
+```
+
+**Scope and limits:**
+
+- In-phase downmix adds about +3 dB, not immunity.
+- Out-of-phase content and stereo widening can attenuate a layer.
+- The phase-inversion result is a local synthetic fixture.
+- Detection scores the mono sum and the side difference, not every possible matrix.
+
+**FAQ:**
+
+- **Does distributing in mono hurt recovery?** An in-phase L+R fold-down preserves the mid layer and adds about 3 dB of processing gain in the current detector. A mix with substantial out-of-phase energy is the case to test.
+- **What about a vocal remover that subtracts the channels?** An L−R extraction removes the mid layer and leaves the side layer. The detector can score the difference, and the local phase-inversion fixture decoded, but treat that as a fixture result and test your processing chain.
+
+---
+
+## Clipping and limiting
+
+- URL: https://aureal.kellersystems.dev/lexicon/clipping-and-limiting
+- Technical basis: +12 dB hard-clip fixture; one heavy limiter fixture; embed limiter ≤0.995
+- Reviewed: 2026-11-02
+
+**Answer:** In a local synthetic fixture, +12 dB of hard clipping did not corrupt the symbol signs, and one heavy compressor and limiter fixture still decoded. That is not a guarantee. Clipping is nonlinear, aggressive limiting changes gain over time, and a low-strength watermark has less margin; test the master after the loudness stage, not before it.
+
+**Common failure mode:** If it survives +12 dB of clipping, any limiter setting is fine.
+
+**Why it fails:** The fixture covers one hard-clip case and one compressor case on local material. A limiter's release time, look-ahead and gain reduction interact with the host signal, and the watermark sits far below the program level. A different master, strength or limiter can produce a different result.
+
+**Verified example:**
+
+```
+Test the release master after limiting, at the loudness you will ship:
+ffmpeg -i marked.wav -af "alimiter=limit=0.9:attack=5:release=50" limited.wav
+node aureal-watermark.cjs detect limited.wav --id 883921
+ffmpeg -i marked.wav -af "volume=12dB" -c:a pcm_s16le clipped.wav
+node aureal-watermark.cjs detect clipped.wav --id 883921
+If the result is marginal, lower the limiter gain reduction or raise the embedding strength before distribution.
+```
+
+**Scope and limits:**
+
+- The +12 dB clipping and heavy-limiter results are local fixtures.
+- Clipping is nonlinear and can add broadband distortion.
+- A limiter's time-varying gain can reduce the watermark margin.
+- Test after the final loudness stage, not on the pre-master.
+
+**FAQ:**
+
+- **Does the embedder clip the audio?** It includes a sample-peak limiter that engages only above 0.999 and scales the whole buffer to a peak of at most 0.995. It does not replace a mastering limiter, and it does not protect the mark from later clipping.
+- **Is clipping safer than limiting, or the reverse?** There is no general ordering. Both are nonlinear and programme-dependent; the only useful answer is a test on the final master at its release settings.
+
+---
+
+## Background noise
+
+- URL: https://aureal.kellersystems.dev/lexicon/background-noise
+- Technical basis: Additive noise fixtures: −30 dBFS matrix, −20 dB pink noise
+- Reviewed: 2026-11-02
+
+**Answer:** The local fixture matrix records additive noise at −30 dBFS for all three bands, and the README's adversarial table names a −20 dB pink-noise fixture. Both are local results. Recovery depends on the signal-to-noise ratio inside the carrier band, not only on the file's overall loudness; broadband noise and 8 kHz paths are weak hosts.
+
+**Common failure mode:** A −20 dB noise floor is fine because the fixture passed at −30 dBFS.
+
+**Why it fails:** Overall dBFS and in-band SNR are different measurements. Pink noise concentrates energy at low frequencies, while the carrier sits in the mid or high band; the result also depends on how many frames the file provides and on any codec that follows. A level that passed on one fixture says little about a different noise spectrum.
+
+**Verified example:**
+
+```
+Measure the result at two noise levels on the actual master, and keep the carrier band in the record:
+ffmpeg -i marked.wav -f lavfi -i "anoisesrc=color=pink:amplitude=0.01" -filter_complex "[0:a][1:a]amix=inputs=2:duration=first" noisy.wav
+node aureal-watermark.cjs detect noisy.wav --id 883921
+Repeat at a higher amplitude and compare confidence and BER rather than a single pass/fail.
+```
+
+**Scope and limits:**
+
+- The noise results are local fixtures, not platform guarantees.
+- Broadband noise is a known weak host.
+- The embedder mutes the watermark in near-silence (≤ about −54 dBFS).
+- Codec damage after the noise compounds the loss.
+
+**FAQ:**
+
+- **What SNR do I need?** There is no single number that holds across content. Detection integrates repeated frames, and the useful margin is the in-band SNR at the carrier. Test the actual noise spectrum and codec, and record confidence and BER.
+- **Does noise erase the ID?** It raises the bit error rate and can push a marginal file below the detection threshold. With enough frames and a strong enough mark it may still decode; the fixture results show the direction, not a guarantee.
+
+---
+
+## 8 kHz telephony
+
+- URL: https://aureal.kellersystems.dev/lexicon/8khz-telephony
+- Technical basis: Nyquist-safe fallback band at 8 kHz; standard presets need higher rates
+- Reviewed: 2026-11-02
+
+**Answer:** Aureal accepts audio from 8 kHz, but the standard 4.5–13.5 kHz and 17–19.5 kHz carriers cannot exist under an 8 kHz Nyquist limit. The embedder therefore uses a single fallback band inside the available spectrum (roughly 2.1–3.9 kHz), a weak speech-band host. A 44.1 kHz marked file downsampled to 8 kHz loses both standard carriers; do not expect recovery from that path.
+
+**Common failure mode:** Downsample the marked promo to 8 kHz for the phone and the ID will still trace the call.
+
+**Why it fails:** A true 8 kHz downsample discards everything above 4 kHz, which includes both standard carrier bands. Only a file embedded after the 8 kHz conversion uses the fallback band, and even that path is a documented weak case once a telephony codec and network noise are applied.
+
+**Verified example:**
+
+```
+Compare the two paths instead of assuming they are equivalent:
+ffmpeg -i marked-44k.wav -ar 8000 -ac 1 downsampled.wav
+node aureal-watermark.cjs detect downsampled.wav --id 883921
+ffmpeg -i master.wav -ar 8000 -ac 1 master-8k.wav
+node aureal-watermark.cjs embed master-8k.wav marked-8k.wav --id 883921
+node aureal-watermark.cjs detect marked-8k.wav --id 883921
+Then test the actual telephony codec; a pass on the WAV is not a pass on the call.
+```
+
+**Scope and limits:**
+
+- Standard mid and high carriers do not fit at 8 kHz.
+- Only the fallback band (roughly 2.1–3.9 kHz) is available at 8 kHz.
+- Downsampling a 44.1 kHz marked file destroys both standard carriers.
+- 8 kHz is a documented weak case; telephony codecs make it weaker.
+
+**FAQ:**
+
+- **Will a phone recording decode?** Only if the mark was embedded at 8 kHz with the fallback band and survived the telephony codec and noise. That is a weak, test-every-time path, not a guarantee. A downsampled 44.1 kHz mark should be treated as gone.
+- **Can I upsample the 8 kHz file back to 44.1 kHz?** You can, but resampling cannot recreate energy that was removed. The standard carriers are still absent; the file remains an 8 kHz-bandwidth recording for watermark purposes.
+
+---
+
+## Short excerpts
+
+- URL: https://aureal.kellersystems.dev/lexicon/short-excerpts
+- Technical basis: ~1 s repeated frame; circular folding; 49/93 offsets at 1.8 s
+- Reviewed: 2026-11-02
+
+**Answer:** Aureal repeats a frame about once per second, and detection needs enough of that frame to rebuild the codeword. On the named 12 s fixture, 1.8 s excerpts recovered at 49 of 93 start offsets and 1.0 s excerpts at about half; anything shorter than one frame (about 1 s at 44.1 kHz) never decoded. A short clip is not reliably traceable.
+
+**Common failure mode:** A 0.5 s snippet is enough to support a leak claim.
+
+**Why it fails:** Half a second is below one frame at 44.1 kHz, so there is no complete codeword to decode. Even at 1.8 s the local fixture recovered only about half the offsets, and a lossy encode on top can remove the marginal cases.
+
+**Verified example:**
+
+```
+Sweep the offset instead of testing one lucky clip:
+ffmpeg -ss 3.0 -t 1.8 -i marked.wav -c copy clip-a.wav
+ffmpeg -ss 7.4 -t 1.8 -i marked.wav -c copy clip-b.wav
+node aureal-watermark.cjs detect clip-a.wav --id 883921
+node aureal-watermark.cjs detect clip-b.wav --id 883921
+Record each duration and offset. A single pass is not evidence that short clips are reliable.
+```
+
+**Scope and limits:**
+
+- Anything shorter than one frame (~1 s at 44.1 kHz) is never recovered.
+- At 1.8 s, about half the offsets recovered on the named fixture (49/93).
+- The result depends on the start offset, source audio and codec.
+- More frames help, but do not guarantee a specific clip.
+
+**FAQ:**
+
+- **Can I detect a 5 s clip?** Usually there are several frames to integrate, so the odds are better than at 1.8 s. It is still a test on the actual file: codec, noise and the cut offset all matter.
+- **Why did a 2 s clip fail when a 1.8 s clip passed?** Recovery depends on which fragments of the codeword the cut leaves and on the local signal, not on duration alone. The fixture's 49/93 result is a warning against treating any short duration as safe.
+
+---
+
+## HMAC seal vs. signature
+
+- URL: https://aureal.kellersystems.dev/lexicon/hmac-seal-vs-signature
+- Technical basis: HMAC-SHA256 over sorted-keys JSON; shared secret; public default
+- Reviewed: 2026-11-02
+
+**Answer:** The forensic report carries an HMAC-SHA256 seal over its canonical JSON body. It is a shared-secret message authentication code, not a public-key signature: anyone with the same key can create or verify it, so it cannot by itself prove who produced the report or when. If you omit the key, the built-in default secret is public; use the --key option and protect that secret.
+
+**Common failure mode:** The HMAC seal is a cryptographic signature that proves the label produced the report.
+
+**Why it fails:** An HMAC is symmetric. It proves that someone with the secret produced the seal and that the covered bytes have not changed, not who that someone was. With the public default, even the first part is weak. Identity needs a public-key signature or an independent chain of custody, neither of which the seal provides.
+
+**Verified example:**
+
+```
+Seal with a private secret, verify with the same secret, and store the key separately from the report:
+node aureal-watermark.cjs detect evidence.mp3 --id 883921 --report proof.json --key "$AUREAL_SEAL_KEY"
+node aureal-watermark.cjs verify-report proof.json --key "$AUREAL_SEAL_KEY"
+# exit 0 = body unchanged and same key; 1 = modified or wrong key
+The report does not identify its author, and the sealed timestamp is self-asserted.
+```
+
+**Scope and limits:**
+
+- Shared secret, not a public-key signature.
+- The built-in default secret is public; use the --key option.
+- A valid seal does not establish authorship, ownership or scan time.
+- Anyone holding the key can create a valid seal over a different report.
+
+**FAQ:**
+
+- **Can I publish the report and the key together?** You can, but then anyone can re-seal a modified report and the seal stops distinguishing your version. Publish the report; keep the key with the party that is supposed to verify it.
+- **Does a valid seal prove the scan happened?** It proves the covered fields match the secret. The timestamp is written by the generating machine and is covered by the seal, but nothing independently attests that the clock was correct or that the scan occurred at that moment.
+
+---
+
+## Verify a forensic report
+
+- URL: https://aureal.kellersystems.dev/lexicon/verify-forensic-report
+- Technical basis: verify-report CLI; HMAC-SHA256; exit 0/1
+- Reviewed: 2026-11-02
+
+**Answer:** Run auralwatermark verify-report proof.json --key <secret>. It recomputes the HMAC over the report body and compares it in constant time. Exit code 0 means the seal matches; 1 means the report changed or the key is wrong. Verification needs the same shared secret that sealed the report, and it checks the report, not the authorship of the audio.
+
+**Common failure mode:** A successful verify-report proves the audio is authentic and the report is conclusive.
+
+**Why it fails:** The command checks a shared-secret seal over the report body. It does not hash the audio file again, does not establish who ran the scan, and does not provide a trusted timestamp or chain of custody. Re-hash the evidence file and compare it with the recorded values before drawing any conclusion about the file.
+
+**Verified example:**
+
+```
+Verify the seal, then verify the evidence file independently:
+node aureal-watermark.cjs verify-report proof.json --key "$AUREAL_SEAL_KEY"
+# exit 0 = seal valid; 1 = modified or wrong key
+sha256sum evidence.mp3
+# compare with targetFile.hashes.sha256 in proof.json
+Use the JSON for the full SHA-512; the text certificate shortens it for display.
+```
+
+**Scope and limits:**
+
+- Requires the same shared secret used to seal the report.
+- A valid seal does not establish authorship, ownership or scan time.
+- The command does not re-hash the audio file; compare the recorded hashes yourself.
+- The public default key makes the seal reproducible by anyone.
+
+**FAQ:**
+
+- **What if I lost the key?** You cannot verify the existing seal. You can regenerate a report with a new key, but that is a new seal, not a recovery of the old one. Keep the key with the verification record.
+- **Can I verify with the default key?** Yes, if the report was sealed with the default. That confirms the body matches the public constant, which anyone can reproduce; it is not evidence that a particular party produced the report.
+
+---
+
+## SHA-256 and SHA-512
+
+- URL: https://aureal.kellersystems.dev/lexicon/sha-256-sha-512
+- Technical basis: SHA-256 and SHA-512 over raw file bytes; full digests in JSON
+- Reviewed: 2026-11-02
+
+**Answer:** The report records SHA-256 and SHA-512 digests of the target file's bytes. Re-hashing the same file and comparing the values shows whether the bytes changed after the scan. The hashes say nothing about who created the audio, who owns it, or when it was made; they are an integrity record, not a provenance proof.
+
+**Common failure mode:** A matching SHA-256 proves this file is the original master.
+
+**Why it fails:** A hash identifies bytes, not origin. Any copy with identical bytes has the same digest, and anyone can compute a hash of any file. A match only shows that the file you hashed is byte-identical to the file described in the report; it does not show who made either one or when.
+
+**Verified example:**
+
+```
+Compare the evidence file with the record, using both digests:
+sha256sum evidence.mp3
+sha512sum evidence.mp3
+# compare with targetFile.hashes in proof.json
+On Windows: certutil -hashfile evidence.mp3 SHA256
+If the values differ, stop and establish why before relying on the report.
+```
+
+**Scope and limits:**
+
+- Integrity of the recorded bytes only.
+- A tag or container edit changes the hash without changing the audio.
+- No authorship, ownership, creation time or chain of custody.
+- The text certificate shortens SHA-512; use the JSON for the full digest.
+
+**FAQ:**
+
+- **Why record both SHA-256 and SHA-512?** They are independent digests of the same bytes. SHA-256 is sufficient for accidental-change detection in normal use; SHA-512 adds a second, longer value at little cost. A mismatch in either is a signal to investigate.
+- **Does a different hash mean the file was tampered with?** Not necessarily. A re-encode, a metadata edit or a different export produces a different hash with no malicious intent. Compare the provenance and the audio, not just the digest.
+
+---
+
+## A match is not authorship
+
+- URL: https://aureal.kellersystems.dev/lexicon/watermark-match-not-authorship
+- Technical basis: CRC-valid 32-bit ID + key + recipient manifest
+- Reviewed: 2026-11-02
+
+**Answer:** A match means the detector found a CRC-valid codeword under your key. If that ID is in your manifest, it points to a distribution record. It does not establish authorship, ownership, creation time, intent or who leaked the copy; anyone with the tool and the key can embed the same ID, and an ID can be reused.
+
+**Common failure mode:** A matching ID proves the recipient leaked the file.
+
+**Why it fails:** The ID identifies a copy and a record, not a person or an act. The recipient's copy can be shared or stolen, the ID can be reused, and anyone with the key can embed it in another file. The audit tool's own verdict says a match is not proof of who leaked it.
+
+**Verified example:**
+
+```
+Write the finding at the level the evidence supports:
+1. Report the CRC-valid ID, key and confidence.
+2. Report the manifest record (name, filename, SHA-256, date).
+3. Compare the leaked file hash with the recorded hash.
+4. Preserve the original, the copy and the detection report.
+Say "the file carries ID X, which maps to record Y", not "Y leaked it".
+```
+
+**Scope and limits:**
+
+- A match is not authorship, ownership, creation time or chain of custody.
+- It does not prove who leaked a copy or that a leak occurred.
+- Anyone with the key can embed or reuse an ID.
+- Averaging independently tagged copies can defeat recovery.
+
+**FAQ:**
+
+- **Can I name the recipient in a report?** You can name the record the ID maps to and the file hash you matched. You cannot conclude from the watermark alone that the recipient leaked the file; state the limit explicitly and keep the other evidence separate.
+- **Can someone forge my watermark?** Anyone who has the key and the tool can embed the same ID. The ID is not signed, and the 32-bit space is a pointer rather than an identity. Keep the key private and use contracts and independent records for attribution.
+
+---
+
+## BER and confidence
+
+- URL: https://aureal.kellersystems.dev/lexicon/ber-and-confidence
+- Technical basis: 48-bit codeword; BER in verify mode; confidence = clamp((z − 3) / 27); CRC-16
+- Reviewed: 2026-11-02
+
+**Answer:** BER is the fraction of the 48 codeword bits that differ from the expected codeword in verify mode. Confidence is a normalized matched-filter score, not a probability. In blind mode BER is always 0 because the hard decisions are compared with themselves; use confidence, CRC validity and the z-score there.
+
+**Common failure mode:** A confidence of 100% means the match is certain, and a BER of 0 proves the copy is perfect.
+
+**Why it fails:** Confidence is a capped normalisation of a correlation score, not a probability of authorship. In blind mode BER is 0 by construction, so it says nothing about quality. A CRC-valid codeword shows a consistent signal, not a perfect copy or a truthful claim about the file.
+
+**Verified example:**
+
+```
+Read the result in this order:
+1. crcOk and recoveredPayloadId
+2. confidence and z
+3. ber only when you supplied --id (verify mode)
+4. reps, Eb/N0 and SQNR for margin
+A valid CRC plus the expected ID is the match. Report BER as signal quality, not as proof of anything.
+```
+
+**Scope and limits:**
+
+- Blind-mode BER is always 0; it is not a quality metric there.
+- Confidence is a normalized z-score, not a probability.
+- CRC-16 detects many errors but is not cryptographic.
+- A passing threshold is a signal result, not an authorship finding.
+
+**FAQ:**
+
+- **Why is BER 0 in blind mode?** Without an expected ID, the hard decisions are compared against themselves, so no bits differ. Use confidence, CRC validity and z instead; BER becomes meaningful in verify mode when you supply the expected ID.
+- **What confidence is good enough?** Detection needs at least 0.5, or 0.35 when the CRC passes. A marginal pass is still a pass, but record the margin (confidence, z, reps) so a later reviewer can see how close it was.
+
+---
+
+## Blind vs. verify mode
+
+- URL: https://aureal.kellersystems.dev/lexicon/blind-vs-verify-mode
+- Technical basis: payloadId omitted = blind; supplied = verify; CRC-16 gates both
+- Reviewed: 2026-11-02
+
+**Answer:** In blind mode you supply the key but no expected ID; the detector recovers whatever CRC-valid codeword it finds. In verify mode you also supply the expected ID, so it can confirm the match and compute BER against that codeword. Blind mode is for intake; verify mode is for a known distribution record.
+
+**Common failure mode:** Blind mode is weaker because it has no expected ID, and its BER of 0 means a perfect match.
+
+**Why it fails:** Blind mode is not weaker at finding a signal; it simply has no reference ID to compare against. The BER of 0 is a definitional artifact, not evidence of quality. Use confidence, CRC and z in blind mode, and use verify mode when you have the expected ID.
+
+**Verified example:**
+
+```
+Blind intake on an unknown file:
+node aureal-watermark.cjs detect leaked.mp3
+# then look up recoveredPayloadId in recipients.json
+Verify a known copy:
+node aureal-watermark.cjs detect copy.wav --id 883921 --key "$AUREAL_KEY"
+Record the mode and key with the result; a blind result and a verify result answer different questions.
+```
+
+**Scope and limits:**
+
+- Both modes need the same key used for embedding.
+- Blind-mode BER is always 0 and carries no quality signal.
+- Verify mode needs the correct expected ID.
+- A CRC-valid ID does not establish authorship or ownership.
+
+**FAQ:**
+
+- **Which mode should I use for a leak?** Start blind: you usually do not know which recipient's ID is present. Recover the ID, then look it up in the private manifest. Use verify mode when you have a candidate copy and want to confirm a specific ID.
+- **Can blind mode find any Aureal ID?** It can recover a CRC-valid ID embedded with the same key. It cannot see IDs embedded under a different key, and it cannot tell you who owns the file.
+
+---
+
+## Batch distribution
+
+- URL: https://aureal.kellersystems.dev/lexicon/batch-distribution
+- Technical basis: batch_distribute.js; aureal-recipients/1 manifest; per-copy SHA-256
+- Reviewed: 2026-11-02
+
+**Answer:** Use the batch script with a recipient list: it embeds a distinct ID in each copy, names the files after the master and recipient, and writes a private recipients.json mapping IDs, names, filenames and SHA-256 hashes. The manifest also records the watermark key, so treat it like the promos; averaging copies from several recipients still defeats recovery.
+
+**Common failure mode:** Publish recipients.json so every recipient can check their own ID.
+
+**Why it fails:** The manifest contains the key and the full ID-to-recipient mapping. Anyone who has it can embed a matching ID in another file, and the whole distribution is exposed. Recipients do not need the manifest; they need their copy and, at most, their own ID.
+
+**Verified example:**
+
+```
+Tag the batch with a private key and keep the manifest offline:
+node scripts/batch_distribute.js master.wav --recipients "A, B" --out-dir ./promos --key "$AUREAL_KEY"
+sha256sum ./promos/*.wav > promos.sha256
+# Store recipients.json and the key separately from the promos.
+# Encode delivery formats afterwards, then re-test detection.
+```
+
+**Scope and limits:**
+
+- The manifest is private: it contains the key and the mapping.
+- Averaging copies from several recipients defeats recovery.
+- The batch script reads and writes WAV; re-test after encoding.
+- An ID maps to a recipient record, not to a person or a proven leak.
+
+**FAQ:**
+
+- **Random or sequential IDs?** Random is the default because sequential IDs are guessable and follow the order of the recipient list. Use --start-id only when you need a pinned range, and still keep the manifest private.
+- **Can every recipient get the same ID?** You can, but then a match cannot distinguish recipients. The point of per-recipient IDs is to narrow a leaked copy to one distribution record.
+
+---
+
+## Leak audit
+
+- URL: https://aureal.kellersystems.dev/lexicon/leak-audit
+- Technical basis: audit_leak.js; blind detection + manifest ID lookup; ffmpeg when needed
+- Reviewed: 2026-11-02
+
+**Answer:** Run the leak audit with the leaked file and your private recipients.json. It normalises the input to WAV when needed, runs blind detection with the manifest key, and looks up the recovered ID. A hit names the recipient record and shows the original filename and SHA-256; the verdict is a lead, not proof of who leaked the copy.
+
+**Common failure mode:** The audit names the leaker, so the report is ready to send as a complaint.
+
+**Why it fails:** The report names the record whose ID was recovered. It cannot show who copied, shared or leaked the file, whether the ID was reused, or how the file was handled. Use the result as one lead among contracts, delivery records, hashes and other evidence; state the limitation in the report.
+
+**Verified example:**
+
+```
+Hash the evidence, then audit it:
+sha256sum leaked.mp3
+node scripts/audit_leak.js leaked.mp3 --manifest ./private/recipients.json --json
+# exit 0 = watermark detected; 1 = none
+# Record the tool version, key reference, manifest hash and the full output.
+# Describe the hit as an ID-to-record match, not as proof of leaking.
+```
+
+**Scope and limits:**
+
+- A match names a distribution record, not a person or an act.
+- The manifest must be private, intact and the same one used for distribution.
+- Short clips, codecs and wrong keys can produce a false negative.
+- The audit does not establish chain of custody.
+
+**FAQ:**
+
+- **What if no watermark is found?** That is not proof of innocence. The mark may have been removed by processing, the clip may be shorter than a frame, the wrong key or manifest may be in use, or the file may never have carried a mark. Record the negative result and its conditions.
+- **Can I audit without the manifest?** You can run blind detection and recover an ID, but without the manifest you cannot map it to a recipient record or a filename. The manifest is the private lookup table; detection alone is not attribution.
+
+---
+
+## Key management
+
+- URL: https://aureal.kellersystems.dev/lexicon/key-management
+- Technical basis: FNV-1a seeded PN sequences; shared secret; fixed public default
+- Reviewed: 2026-11-02
+
+**Answer:** The key seeds the spreading sequence used to embed and detect the ID. It is obfuscation-grade, not a cryptographic passkey: a wrong key produces noise rather than an authentication error, and it does not encrypt the audio. Keep one strong secret per campaign, store it with the private manifest, and never ship it with the promos.
+
+**Common failure mode:** The key encrypts the audio, so a leaked promo is unreadable without it.
+
+**Why it fails:** Watermarking does not encrypt or restrict playback; the audio is fully listenable. The key only controls the spreading sequence and the detection result. A wrong key yields noise, not a decryption failure, and the default key is public.
+
+**Verified example:**
+
+```
+Use a unique, high-entropy key per campaign and separate it from the audio:
+1. Generate the key in a secret manager, not in a shell history.
+2. Pass it to the batch tool from the environment.
+3. Store it with the private manifest, not in the promo folder.
+4. Back it up; losing it means the old copies cannot be detected.
+Never commit the key or include it in a public report.
+```
+
+**Scope and limits:**
+
+- Obfuscation-grade seed, not encryption or authentication.
+- The built-in default key is public; use it only for tests.
+- No rotation or revocation; changing the key requires re-embedding.
+- The manifest contains the key and must stay private.
+
+**FAQ:**
+
+- **Can I change the key later?** New copies can use a new key, but old copies still need the old key to detect. There is no in-file rotation or revocation, so keep the old key for as long as the old distribution matters, and re-embed if you need one key across everything.
+- **What happens if I use the default key?** Anyone can detect files marked with it, and anyone can embed a matching ID. It is a test default, not a distribution secret. Use the --key option for real work.
+
+---
+
+## EU AI Act Article 50
+
+- URL: https://aureal.kellersystems.dev/lexicon/eu-ai-act-article-50
+- Technical basis: Regulation (EU) 2024/1689, Articles 50 and 111(4); Commission Article 50 FAQ (2026)
+- Reviewed: 2026-11-02
+
+**Answer:** Article 50 of the EU AI Act requires providers of generative AI systems to mark synthetic audio in a machine-readable, detectable way, and deployers to disclose deepfakes. It applies from 2 August 2026. A watermark can be part of that, but Aureal does not certify compliance, and a mark that can be removed or missed is not sufficient on its own.
+
+**Common failure mode:** Adding an Aureal watermark makes the product Article 50 compliant.
+
+**Why it fails:** Article 50 places duties on providers and deployers, not on a file format. The marking must be effective, reliable, robust and interoperable, and deployers still owe a separate disclosure. A watermark that can be stripped, missed on a short clip, or lost at 8 kHz is one measure among several; Aureal issues no compliance determination.
+
+**Verified example:**
+
+```
+Map the obligation before choosing the control:
+1. Identify whether you are a provider, a deployer or both.
+2. Identify the synthetic output and where it is placed on the EU market.
+3. Document the marking method and test it across the delivery chain.
+4. Keep the deployer disclosure separate from the machine-readable mark.
+5. Get qualified legal advice; do not print "Article 50 compliant" without it.
+```
+
+**Scope and limits:**
+
+- Context only; Aureal does not certify Article 50 compliance.
+- A watermark is not sufficient on its own.
+- Short clips, codecs and 8 kHz paths can lose the mark.
+- Duties depend on your role, system and jurisdiction; get legal advice.
+
+**FAQ:**
+
+- **Is a watermark enough for Article 50?** It can be part of a marking measure, but the obligation is on the provider or deployer and requires more than a single technique. The mark must be effective, reliable, robust and interoperable for the system, and deployers have a separate disclosure duty.
+- **Does Aureal certify compliance?** No. Aureal is a watermarking tool, not a conformity assessment or a legal opinion. It can produce technical evidence; the compliance determination belongs to your counsel and, where applicable, the market-surveillance framework.
+
+---
+
+## C2PA and watermarking
+
+- URL: https://aureal.kellersystems.dev/lexicon/c2pa-and-audio-watermarking
+- Technical basis: C2PA manifest (metadata/provenance) vs. sample-domain watermark
+- Reviewed: 2026-11-02
+
+**Answer:** C2PA Content Credentials are cryptographically signed provenance records attached to an asset. An audio watermark is embedded in the samples. C2PA can be stripped with metadata; a watermark can survive some processing but carries only a small ID. Aureal does not create, validate or recover C2PA manifests, and the repository's bridge example is illustrative.
+
+**Common failure mode:** Aureal recovers the C2PA manifest after a platform strips the metadata.
+
+**Why it fails:** Aureal recovers its own watermark ID. It does not store, validate or reconstruct a C2PA manifest, and the repository's bridge example is illustrative rather than a certified implementation. A recovered ID can point to a record, not to a signed C2PA claim.
+
+**Verified example:**
+
+```
+Keep the two layers separate in the record:
+1. Sign and attach the C2PA manifest at export.
+2. Embed the watermark ID in the audio.
+3. Store the ID-to-record mapping privately.
+4. If metadata is stripped, look up the ID in your record; do not claim the manifest survived.
+Test both layers on the actual platform.
+```
+
+**Scope and limits:**
+
+- Aureal is not a C2PA implementation.
+- A watermark carries a 32-bit ID, not a provenance manifest.
+- Both layers can be removed or degraded by processing.
+- No regulatory or standards certification is included.
+
+**FAQ:**
+
+- **Does Aureal support C2PA?** No. The repository contains an illustrative bridge example, but Aureal does not create, validate or recover C2PA manifests. The ID can be used alongside an independently maintained provenance record.
+- **Which layer survives social platforms?** Neither is guaranteed. Metadata is routinely stripped, and a watermark can be lost to short clips, heavy processing or narrowband delivery. Test the actual platform and keep the two layers independent.
+
+---
+
+## AI audio and deepfakes
+
+- URL: https://aureal.kellersystems.dev/lexicon/deepfake-detection
+- Technical basis: Known-signal watermark detection, not generative-content classification
+- Reviewed: 2026-11-02
+
+**Answer:** No. Aureal is not a synthetic-speech or deepfake classifier. It detects a keyed watermark that someone embedded in the audio, so it can trace marked copies. A missing watermark does not show the audio is human, and a present one does not show it is AI-generated; it only shows the mark is there.
+
+**Common failure mode:** Aureal can tell whether a voice is AI-generated by scanning for its watermark.
+
+**Why it fails:** The detector only knows its own keyed codeword. It has no model of synthetic speech and cannot classify unmarked audio. A marked human recording would match; an unmarked synthetic recording would not. The result describes the presence of a mark, not the origin of the voice.
+
+**Verified example:**
+
+```
+Write the result at signal level:
+"The file carries watermark ID 883921 under the supplied key"
+or
+"No watermark was detected under the supplied key".
+Do not write "AI-generated", "human" or "deepfake" from a watermark result.
+If origin matters, use a provenance record, a classifier evaluated for that task, and the applicable disclosure rules.
+```
+
+**Scope and limits:**
+
+- No synthetic-speech or deepfake classification.
+- Only detects an Aureal-compatible mark under the matching key.
+- A missing mark does not prove the audio is human.
+- A present mark does not prove the audio is AI-generated.
+
+**FAQ:**
+
+- **Can it detect audio from a specific AI voice vendor?** Only if that vendor embedded an Aureal-compatible watermark with the key you hold, or the file carries one from another step in the chain. Aureal has no vendor-specific classifier and cannot identify a model from an unmarked file.
+- **Does a missing watermark prove the audio is real?** No. The mark may never have been embedded, may have been removed by processing, or the clip may be too short. Absence is not evidence of human origin; it is only the absence of this signal under this key.
+
+---
+
+## AI voice providers
+
+- URL: https://aureal.kellersystems.dev/lexicon/ai-voice-providers
+- Technical basis: Post-synthesis embedding; per-generation ID; private manifest
+- Reviewed: 2026-11-02
+
+**Answer:** A provider of synthetic speech can embed a distinct ID in each generated file, keep a private mapping from ID to generation record, and use detection to trace copies. That is an integration pattern, not a compliance certification. Vocoders, denoisers, codecs and narrowband paths can remove or weaken the mark, so test the actual output chain.
+
+**Common failure mode:** Embed once in the model, and every output is automatically marked and compliant.
+
+**Why it fails:** The watermark is applied to audio, not to model weights, and later processing can remove it. Short outputs, 8 kHz delivery and aggressive denoising are known weak paths. Marking is also only one part of a transparency obligation; it is not a compliance certificate.
+
+**Verified example:**
+
+```
+Integrate at the audio boundary and test the real chain:
+1. Render the final speech, including the vocoder.
+2. Embed a per-generation ID with a private campaign key.
+3. Store ID, generation record, key reference and SHA-256 privately.
+4. Test the delivered format, including the 8 kHz path if you offer one.
+5. Re-test after any change to the renderer, codec or platform.
+```
+
+**Scope and limits:**
+
+- Post-synthesis integration, not model-level marking.
+- Short outputs, 8 kHz and heavy denoising are weak paths.
+- No Article 50 certification or legal determination.
+- Per-generation key and manifest management are the provider's responsibility.
+
+**FAQ:**
+
+- **Where in the pipeline should I embed?** After synthesis and the final audio processing, before distribution. If you re-render, denoise or transcode afterwards, test the result; a mark added before a vocoder may not survive it.
+- **Does this satisfy Article 50?** It can be one technical measure. Article 50 puts duties on providers and deployers, requires effective and robust marking, and adds a separate disclosure duty for deepfakes. Aureal does not certify compliance; assess the whole system with counsel.

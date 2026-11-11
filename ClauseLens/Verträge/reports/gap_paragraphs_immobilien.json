@@ -1,0 +1,576 @@
+[
+ {
+  "slug": "immobilien-001",
+  "type": "unilateral_convenience_termination",
+  "line": 24,
+  "tech": "Ordentliches Kuendigungsrecht nur fuer den Vermieter.",
+  "para": "Nur der Vermieter ist berechtigt, ordentlich zu kündigen."
+ },
+ {
+  "slug": "immobilien-001",
+  "type": "liability",
+  "line": 40,
+  "tech": "Haftungsdeckel auf eine Monatsmiete.",
+  "para": "Die Haftung des Vermieters für einfache Fahrlässigkeit ist auf eine Monatsmiete begrenzt."
+ },
+ {
+  "slug": "immobilien-002",
+  "type": "maintenance_conditional_shutdown",
+  "line": 24,
+  "tech": "Abschaltung an den Abschluss eines Wartungsvertrags gekoppelt.",
+  "para": "Mangels abgeschlossenem Wartungsvertrag wird die Küchenanlage abgeschaltet."
+ },
+ {
+  "slug": "immobilien-002",
+  "type": "service_suspension",
+  "line": 28,
+  "tech": "Fristlose Sperre ohne Abmahnung.",
+  "para": "Der Verpächter darf die Nutzung ohne Abmahnung fristlos einstellen."
+ },
+ {
+  "slug": "immobilien-002",
+  "type": "tax_indemnity_shift",
+  "line": 36,
+  "tech": "Steuernachforderungen vollstaendig auf den Paecher verlagert.",
+  "para": "Nachträgliche Grundsteuernachforderungen trägt der Pächter vollumfänglich."
+ },
+ {
+  "slug": "immobilien-002",
+  "type": "third_party_indemnity",
+  "line": 40,
+  "tech": "Freistellung des Verpaechers von Bussgeldern Dritter.",
+  "para": "Der Pächter hält den Verpächter für Bußgelder der Aufsichtsbehörde schadlos."
+ },
+ {
+  "slug": "immobilien-003",
+  "type": "liability",
+  "line": 16,
+  "tech": "Haftungsbegrenzung auch bei leichter Fahrlaessigkeit.",
+  "para": "Die Haftung des Vermieters für leichte Fahrlässigkeit ist auf zwei Monatsmieten begrenzt."
+ },
+ {
+  "slug": "immobilien-003",
+  "type": "fictitious_receipt",
+  "line": 28,
+  "tech": "Zugangsfiktion bereits bei Absendung.",
+  "para": "Mitteilungen gelten nach Absenderübergabe an den Versanddienstleister als zugegangen."
+ },
+ {
+  "slug": "immobilien-003",
+  "type": "unilateral_change",
+  "line": 40,
+  "tech": "Einseitige Anpassung der Nebenkosten.",
+  "para": "Der Vermieter darf die Nebenkosten nach billigem Ermessen angleichen."
+ },
+ {
+  "slug": "immobilien-004",
+  "type": "subcontractor_uncontrolled",
+  "line": 16,
+  "tech": "Nachunternehmereinsatz ohne Ankuendigung oder Zustimmung.",
+  "para": "Der Vermieter darf ohne vorherige Ankündigung Nachunternehmer einsetzen."
+ },
+ {
+  "slug": "immobilien-004",
+  "type": "audit_log_manipulation",
+  "line": 20,
+  "tech": "Protokolle des Anbieters als unwiderlegbarer Beweis.",
+  "para": "Die Aufzeichnungen des Vermieters gelten als unwiderlegbarer Nachweis."
+ },
+ {
+  "slug": "immobilien-004",
+  "type": "asymmetric_confidentiality",
+  "line": 28,
+  "tech": "Vertraulichkeit nur einseitig zulasten des Mieters.",
+  "para": "Die Verschwiegenheitspflicht obliegt ausschließlich dem Mieter."
+ },
+ {
+  "slug": "immobilien-005",
+  "type": "burden_of_proof",
+  "line": 20,
+  "tech": "Beweislast fuer Mangelfreiheit beim Kaeufer.",
+  "para": "Den lückenlosen Nachweis der Mangelfreiheit hat der Käufer zu führen."
+ },
+ {
+  "slug": "immobilien-006",
+  "type": "price_escalation",
+  "line": 20,
+  "tech": "Automatische Erhoehung ohne Sonderkündigungsrecht.",
+  "para": "Die Erschließungsbeiträge erhöhen sich jährlich um vier Prozent."
+ },
+ {
+  "slug": "immobilien-006",
+  "type": "third_party_indemnity",
+  "line": 24,
+  "tech": "Freistellung des Verkaeufers durch den Kaeufer.",
+  "para": "Der Käufer stellt den Verkäufer von Ansprüchen Dritter aus Altlasten frei."
+ },
+ {
+  "slug": "immobilien-007",
+  "type": "price_escalation",
+  "line": 16,
+  "tech": "Automatische Erhoehung des Erbbauzinses.",
+  "para": "Der Erbbauzins erhöht sich jährlich um drei Prozent."
+ },
+ {
+  "slug": "immobilien-007",
+  "type": "tax_indemnity_shift",
+  "line": 40,
+  "tech": "Nachtraegliche Abgaben vollstaendig beim Erbbauberechtigten.",
+  "para": "Nachträgliche Abgabenbelastungen trägt der Erbbauberechtigte vollumfänglich."
+ },
+ {
+  "slug": "immobilien-008",
+  "type": "unverbindliche_sla_falle",
+  "line": 16,
+  "tech": "Unverbindliche Zusage zur Vermietungsquote.",
+  "para": "Der Verkäufer bemüht sich um eine Vermietungsquote von 95 Prozent, ohne eine Zusage zu geben."
+ },
+ {
+  "slug": "immobilien-008",
+  "type": "price_escalation",
+  "line": 20,
+  "tech": "Automatische Kaufpreiserhoehung bis zur Uebergabe.",
+  "para": "Der Kaufpreis erhöht sich jährlich um zwei Prozent bis zur Übergabe."
+ },
+ {
+  "slug": "immobilien-008",
+  "type": "burden_of_proof",
+  "line": 24,
+  "tech": "Beweislast beim Kaeufer.",
+  "para": "Den lückenlosen Nachweis der vertragsgemäßen Vermietung hat der Käufer zu führen."
+ },
+ {
+  "slug": "immobilien-008",
+  "type": "written_form_trap",
+  "line": 28,
+  "tech": "Schriftformzwang mit eigenhaendiger Unterzeichnung.",
+  "para": "Änderungen des Vertrags bedürfen der eigenhändigen Unterzeichnung beider Parteien."
+ },
+ {
+  "slug": "immobilien-008",
+  "type": "liability",
+  "line": 32,
+  "tech": "Haftungsdeckel auf zehn Prozent.",
+  "para": "Die Haftung des Verkäufers ist auf zehn Prozent des Kaufpreises begrenzt."
+ },
+ {
+  "slug": "immobilien-008",
+  "type": "jurisdiction",
+  "line": 36,
+  "tech": "Ausschliessliche Zustaendigkeit am Sitz des Verkaeufers.",
+  "para": "Ausschließliche Zuständigkeit liegt beim Handelsgericht Wien."
+ },
+ {
+  "slug": "immobilien-009",
+  "type": "agency_goodwill_waiver",
+  "line": 20,
+  "tech": "Ausgleich fuer den Kundenstamm ausgeschlossen.",
+  "para": "Ein Ausgleich für den vom Kunden geworbenen Kundenstamm ist ausgeschlossen."
+ },
+ {
+  "slug": "immobilien-010",
+  "type": "agency_goodwill_waiver",
+  "line": 20,
+  "tech": "Kein Ausgleich fuer den Kundenstamm.",
+  "para": "Für den Aufbau des Kundenstamms steht dem Kunden kein Ausgleich zu."
+ },
+ {
+  "slug": "immobilien-010",
+  "type": "written_form_trap",
+  "line": 24,
+  "tech": "Schriftformzwang mit Originaldokument.",
+  "para": "Mündliche Abreden ohne Originaldokument sind unverbindlich."
+ },
+ {
+  "slug": "immobilien-011",
+  "type": "early_termination_charge",
+  "line": 16,
+  "tech": "Pauschale Stornogebuehr bei Ruecktritt.",
+  "para": "Bei Rücktritt des Käufers wird eine Stornogebühr pauschal geschuldet."
+ },
+ {
+  "slug": "immobilien-011",
+  "type": "burden_of_proof",
+  "line": 28,
+  "tech": "Beweislast beim Kaeufer.",
+  "para": "Den Nachweis der vollständigen Zahlung hat der Käufer zu führen."
+ },
+ {
+  "slug": "immobilien-012",
+  "type": "price_escalation",
+  "line": 16,
+  "tech": "Einseitige Kaufpreiserhoehung ohne Sonderkündigungsrecht.",
+  "para": "Der Bauträger behält sich vor, den Kaufpreis um bis zu acht Prozent zu erhöhen."
+ },
+ {
+  "slug": "immobilien-012",
+  "type": "statute_of_limitations",
+  "line": 24,
+  "tech": "Verkuerzung der Maengelverjaehrung auf ein Jahr.",
+  "para": "Ansprüche wegen Mängeln verjähren innerhalb von einem Jahr nach Abnahme."
+ },
+ {
+  "slug": "immobilien-013",
+  "type": "unilateral_change",
+  "line": 24,
+  "tech": "Aenderung durch Veroeffentlichung ohne Zustimmung.",
+  "para": "Änderungen der Leistungsbeschreibung werden mit der Veröffentlichung im Eigentümerportal wirksam."
+ },
+ {
+  "slug": "immobilien-013",
+  "type": "subcontractor_uncontrolled",
+  "line": 28,
+  "tech": "Subunternehmer ohne Ankuendigung oder Zustimmung.",
+  "para": "Der Verwalter setzt ohne vorherige Ankündigung Dienstleister für Hausmeisterservice ein."
+ },
+ {
+  "slug": "immobilien-013",
+  "type": "price_escalation",
+  "line": 40,
+  "tech": "Kostensteigerungen ohne Sonderkündigungsrecht weitergegeben.",
+  "para": "Kostensteigerungen bei Dienstleistern werden vollumfänglich an die Eigentümergemeinschaft weitergegeben."
+ },
+ {
+  "slug": "immobilien-014",
+  "type": "liability",
+  "line": 28,
+  "tech": "Haftungsdeckel auf das Honorar.",
+  "para": "Die Haftung des Architekten ist auf die Höhe des Architektenhonorars gedeckelt."
+ },
+ {
+  "slug": "immobilien-014",
+  "type": "entire_agreement",
+  "line": 36,
+  "tech": "Vorvertragliche Absprachen entwertet.",
+  "para": "Frühere Planungsabsprachen treten mit Unterzeichnung außer Kraft."
+ },
+ {
+  "slug": "immobilien-015",
+  "type": "service_suspension",
+  "line": 20,
+  "tech": "Sperrung ohne Vorankuendigung.",
+  "para": "Der Auftragnehmer kann die Baustellenzufahrt ohne Vorankündigung sperren."
+ },
+ {
+  "slug": "immobilien-016",
+  "type": "unilateral_convenience_termination",
+  "line": 24,
+  "tech": "Ordentliche Kuendigung nur fuer die Vermieterin.",
+  "para": "Eine ordentliche Kündigung steht ausschließlich der Vermieterin zu."
+ },
+ {
+  "slug": "immobilien-016",
+  "type": "price_escalation",
+  "line": 28,
+  "tech": "Indexierung der Grundmiete ohne Opt-out.",
+  "para": "Bei steigendem Umsatz erhöht sich die monatliche Grundmiete jährlich um zwei Prozent."
+ },
+ {
+  "slug": "immobilien-016",
+  "type": "asymmetric_confidentiality",
+  "line": 32,
+  "tech": "Vertraulichkeit nur einseitig.",
+  "para": "Die Geheimhaltungspflicht trifft allein den Mieter."
+ },
+ {
+  "slug": "immobilien-016",
+  "type": "third_party_indemnity",
+  "line": 40,
+  "tech": "Freistellung der Vermieterin durch den Mieter.",
+  "para": "Der Mieter stellt die Vermieterin von Ansprüchen Dritter frei."
+ },
+ {
+  "slug": "immobilien-017",
+  "type": "force_majeure_asymmetry",
+  "line": 16,
+  "tech": "Force majeure befreit nur den Bautraeger, Zahlungspflicht bleibt.",
+  "para": "Bei höherer Gewalt ist allein der Bauträger von seinen Pflichten entbunden, während die Zahlungspflicht der Erwerber unberührt bleibt."
+ },
+ {
+  "slug": "immobilien-017",
+  "type": "marketing_reference",
+  "line": 28,
+  "tech": "Referenznutzung ohne Einzelfallzustimmung.",
+  "para": "Der Bauträger darf die Erwerber als Referenzkunden in Verkaufsprospekten benennen, ohne dass es einer gesonderten Zustimmung bedarf."
+ },
+ {
+  "slug": "immobilien-018",
+  "type": "data_grant",
+  "line": 16,
+  "tech": "Nutzungsrecht an Betriebsdaten fuer eigene Modelle.",
+  "para": "Der Auftraggeber räumt dem Dienstleister das Recht ein, die Betriebsdaten der Anlagentechnik für die Entwicklung eigener Prognosemodelle zu verwenden."
+ },
+ {
+  "slug": "immobilien-018",
+  "type": "subcontractor_uncontrolled",
+  "line": 36,
+  "tech": "Systempartner ohne Zustimmung oder Ankuendigung.",
+  "para": "Die Beauftragung von Systempartnern bedarf keiner vorherigen Zustimmung des Auftraggebers."
+ },
+ {
+  "slug": "immobilien-019",
+  "type": "mandatory_expert_determination",
+  "line": 16,
+  "tech": "Sachverstaendigenverfahren mit Vorschusspflicht vor dem Rechtsweg.",
+  "para": "Streitigkeiten über die Bauqualität entscheidet ein Sachverständigengutachten. Die Kosten des Verfahrens hat der Besteller vorzustrecken. Der gerichtliche Rechtsweg ist erst nach Abschluss des Verfahrens zulässig."
+ },
+ {
+  "slug": "immobilien-019",
+  "type": "force_majeure_asymmetry",
+  "line": 24,
+  "tech": "Zahlungspflicht bleibt trotz Befreiung der Entwicklerin.",
+  "para": "Erfüllungspflichten der Entwicklerin entfallen bei Ereignissen höherer Gewalt, die Vorauszahlungspflicht der Bestellerin besteht unverändert fort."
+ },
+ {
+  "slug": "immobilien-019",
+  "type": "non_compete",
+  "line": 28,
+  "tech": "Exklusivitaetsbindung der Bestellerin.",
+  "para": "Die Bestellerin wird für vier Jahre im Stadtgebiet keine weiteren Projektentwicklungen anderer Entwickler betreuen."
+ },
+ {
+  "slug": "immobilien-019",
+  "type": "feedback_ip_grab",
+  "line": 32,
+  "tech": "Anregungen ohne Verguetung verwertbar.",
+  "para": "Anregungen der Anwohner, die die Planung verbessern, darf die Entwicklerin ohne Vergütung verwerten."
+ },
+ {
+  "slug": "immobilien-020",
+  "type": "force_majeure_asymmetry",
+  "line": 16,
+  "tech": "Naturereignis befreit nur den Verpaechter, Zins bleibt geschuldet.",
+  "para": "Bei Überschwemmung oder Tierseuche ist der Verpächter von der Überlassungspflicht befreit, während der Pachtzins ungekürzt weiter zu entrichten ist."
+ },
+ {
+  "slug": "immobilien-020",
+  "type": "data_grant",
+  "line": 20,
+  "tech": "Datenverwertung fuer eigene Zwecke.",
+  "para": "Der Verpächter darf die aus dem Betrieb gewonnenen Ertrags- und Bodendaten für eigene Zwecke verwerten."
+ },
+ {
+  "slug": "immobilien-020",
+  "type": "international_data_processing",
+  "line": 24,
+  "tech": "Datenuebermittlung ausserhalb der EU.",
+  "para": "Die Bestandsdaten der Pächter werden an einen Dienstleister außerhalb der Europäischen Union übermittelt."
+ },
+ {
+  "slug": "immobilien-021",
+  "type": "setoff_restriction",
+  "line": 28,
+  "tech": "Aufrechnung nur nach Bestaetigung.",
+  "para": "Der Untermieter kann mit Gegenforderungen nur nach vorheriger Bestätigung durch die Hauptmieterin aufrechnen."
+ },
+ {
+  "slug": "immobilien-022",
+  "type": "data_lockin",
+  "line": 16,
+  "tech": "Mieterdaten nur gegen Gebuehr im herstellereigenen Format.",
+  "para": "Die Mieterdatenbank wird nur gegen eine gesonderte Gebühr von 3.000 EUR in einem herstellereigenen Format übergeben."
+ },
+ {
+  "slug": "immobilien-022",
+  "type": "assignment_restriction",
+  "line": 32,
+  "tech": "Abtretung nur mit Zustimmung des Verkaeufers.",
+  "para": "Der Käufer kann Ansprüche aus diesem Vertrag nur mit Zustimmung des Verkäufers abtreten."
+ },
+ {
+  "slug": "immobilien-022",
+  "type": "marketing_reference",
+  "line": 40,
+  "tech": "Referenznutzung ohne zeitliche oder raeumliche Grenze.",
+  "para": "Der Verkäufer darf den Käufer zeitlich unbeschränkt als Referenzkunden führen."
+ },
+ {
+  "slug": "immobilien-023",
+  "type": "non_compete",
+  "line": 32,
+  "tech": "Wettbewerbsverbot fuer die Eigentuemerin.",
+  "para": "Die Eigentümerin betreibt für die Laufzeit keine eigene Stromerzeugung auf dem Dach."
+ },
+ {
+  "slug": "immobilien-023",
+  "type": "third_party_indemnity",
+  "line": 36,
+  "tech": "Freistellung der Eigentuemerin fuer Drittansprueche.",
+  "para": "Die Erzeugerin hält die Eigentümerin von Ansprüchen Dritter wegen Dachschäden schadlos."
+ },
+ {
+  "slug": "immobilien-023",
+  "type": "excessive_survival",
+  "line": 40,
+  "tech": "Unbefristete Nachwirkung der Verkehrssicherungspflichten.",
+  "para": "Die Verkehrssicherungspflichten gelten zeitlich unbeschränkt fort, auch nach Rückbau der Anlage."
+ },
+ {
+  "slug": "immobilien-024",
+  "type": "subcontractor_uncontrolled",
+  "line": 40,
+  "tech": "Nachunternehmer ohne Ankuendigung.",
+  "para": "Der Generalunternehmer beauftragt Nachunternehmer ohne Ankündigung an den Besteller."
+ },
+ {
+  "slug": "immobilien-025",
+  "type": "tax_indemnity_shift",
+  "line": 20,
+  "tech": "Nachtraegliche Steuerbelastung auf den Mieter verlagert.",
+  "para": "Nachträgliche Belastungen aus der Grundsteuer trägt der Mieter vollständig."
+ },
+ {
+  "slug": "immobilien-025",
+  "type": "price_escalation",
+  "line": 24,
+  "tech": "Mieterhoehung ohne Sonderkündigungsrecht.",
+  "para": "Die Grundmiete wird zum 1. Januar um 4 Prozent angehoben und der Mieter hat kein Recht, deswegen zu kündigen."
+ },
+ {
+  "slug": "immobilien-025",
+  "type": "insolvency_termination",
+  "line": 28,
+  "tech": "Automatisches Erloeschen bei Insolvenzantrag.",
+  "para": "Bei Antrag auf Insolvenz des Mieters erlischt der Vertrag automatisch."
+ },
+ {
+  "slug": "immobilien-025",
+  "type": "non_compete",
+  "line": 36,
+  "tech": "Sortimentsbindung als wettbewerbliche Beschraenkung.",
+  "para": "Der Mieter verkauft im Fachmarktzentrum ausschließlich Textilien."
+ },
+ {
+  "slug": "immobilien-026",
+  "type": "subcontractor_uncontrolled",
+  "line": 28,
+  "tech": "Verbundene Gesellschaften ohne Zustimmung.",
+  "para": "Der Verwalter greift auf verbundene Gesellschaften zurück; die Zustimmung der Gemeinschaft bedarf es nicht."
+ },
+ {
+  "slug": "immobilien-026",
+  "type": "service_credit_forfeiture",
+  "line": 32,
+  "tech": "Gutschrift entfaellt ersatzlos.",
+  "para": "Für versäumte kritische Sicherheitsupdates entfällt die Gutschrift ersatzlos."
+ },
+ {
+  "slug": "immobilien-026",
+  "type": "excessive_survival",
+  "line": 36,
+  "tech": "Nachwirkung ohne Endzeitpunkt.",
+  "para": "Die Haftungsfreistellungen wirken über das Vertragsende hinaus, ohne Endzeitpunkt."
+ },
+ {
+  "slug": "immobilien-027",
+  "type": "force_majeure_asymmetry",
+  "line": 20,
+  "tech": "Zahlungspflicht trotz vollstaendiger Befreiung der Bautraegerin.",
+  "para": "Ereignisse höherer Gewalt befreien die Bauträgerin zur Gänze, die Kaufpreisraten sind dennoch zu leisten."
+ },
+ {
+  "slug": "immobilien-027",
+  "type": "liability",
+  "line": 28,
+  "tech": "Nachbesserung als ausschliessliche Kompensation.",
+  "para": "Weitergehende Ansprüche der Erwerber sind mit der Verbesserung abgegolten."
+ },
+ {
+  "slug": "immobilien-027",
+  "type": "deemed_acceptance",
+  "line": 36,
+  "tech": "Mangelfreiheitsfiktion bei Schluesseluebernahme.",
+  "para": "Die Wohnung gilt mit Übernahme der Schlüssel als mangelfrei übernommen."
+ },
+ {
+  "slug": "immobilien-027",
+  "type": "entire_agreement",
+  "line": 40,
+  "tech": "Baubeschreibung verliert mit Unterzeichnung ihre Gueltigkeit.",
+  "para": "Die Baubeschreibung vom 3. Februar tritt mit Unterzeichnung dieses Vertrages außer Kraft."
+ },
+ {
+  "slug": "immobilien-028",
+  "type": "tax_indemnity_shift",
+  "line": 28,
+  "tech": "Freistellung von saemtlichen Steuernachforderungen.",
+  "para": "Die Käuferin stellt die Verkäuferin von sämtlichen Steuernachforderungen frei."
+ },
+ {
+  "slug": "immobilien-028",
+  "type": "third_party_indemnity",
+  "line": 32,
+  "tech": "Freistellung fuer Drittansprueche aus Altlasten.",
+  "para": "Die Käuferin hält die Verkäuferin von Ansprüchen Dritter aus Altlasten schadlos."
+ },
+ {
+  "slug": "immobilien-029",
+  "type": "unilateral_change",
+  "line": 20,
+  "tech": "Fiktion der Genehmigung von Mehrstunden.",
+  "para": "Mehrstunden des Auftragnehmers gelten mit Ausführung als genehmigt."
+ },
+ {
+  "slug": "immobilien-029",
+  "type": "subcontractor_uncontrolled",
+  "line": 24,
+  "tech": "Nachunternehmer ohne Information des Bestellers.",
+  "para": "Der Auftragnehmer setzt Nachunternehmer ein, ohne den Besteller zu informieren."
+ },
+ {
+  "slug": "immobilien-029",
+  "type": "dynamic_url_referral",
+  "line": 40,
+  "tech": "Planunterlagen nur im Portal in wechselnder Fassung.",
+  "para": "Die Ausführungspläne sind im Kundenportal hinterlegt und werden dort fortlaufend aktualisiert."
+ },
+ {
+  "slug": "immobilien-030",
+  "type": "price_escalation",
+  "line": 20,
+  "tech": "Entgelterhoehung in Zahlwortform.",
+  "para": "Das Nutzungsentgelt wird zum Jahreswechsel um fünf Prozent erhöht."
+ },
+ {
+  "slug": "immobilien-030",
+  "type": "service_suspension",
+  "line": 28,
+  "tech": "Unterbrechung ohne Vorankuendigung.",
+  "para": "Die Vermieterin kann die Einfahrt ohne Vorankündigung unterbrechen."
+ },
+ {
+  "slug": "immobilien-031",
+  "type": "international_data_processing",
+  "line": 20,
+  "tech": "Speicherung in einem Drittland.",
+  "para": "Die Bewohnerdaten werden auf Servern in einem Drittland gespeichert."
+ },
+ {
+  "slug": "immobilien-031",
+  "type": "data_lockin",
+  "line": 24,
+  "tech": "Lizenz erlischt, Export nicht geschuldet.",
+  "para": "Bei Beendigung erlischt die Nutzungslizenz und ein Export ist nicht Bestandteil des Vertrages."
+ },
+ {
+  "slug": "immobilien-031",
+  "type": "audit_log_manipulation",
+  "line": 28,
+  "tech": "Aufzeichnungen des Betreibers massgeblich, Gegenbeweis ausgeschlossen.",
+  "para": "Über die erbrachten Leistungen entscheiden die Aufzeichnungen des Betreibers; ein Gegenbeweis ist ausgeschlossen."
+ },
+ {
+  "slug": "immobilien-032",
+  "type": "liability",
+  "line": 36,
+  "tech": "Haftungsdeckel je Schadensfall.",
+  "para": "Die Haftung für Schäden an der Fassade ist auf 2.000 EUR je Schadensfall begrenzt."
+ },
+ {
+  "slug": "immobilien-032",
+  "type": "third_party_indemnity",
+  "line": 40,
+  "tech": "Freistellung der Eigentuemerin fuer Drittansprueche.",
+  "para": "Die Werbegesellschaft stellt die Eigentümerin von Ansprüchen Dritter frei."
+ }
+]

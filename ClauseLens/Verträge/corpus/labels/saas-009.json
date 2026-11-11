@@ -1,0 +1,60 @@
+{
+  "slug": "saas-009",
+  "source": "generated",
+  "domain": "Colocation und Hosting, oesterreichisches Recht",
+  "traps": [
+    {
+      "marker": "Die feste Laufzeit beträgt sechsunddreißig Monate, eine Kündigung ist ausgeschlossen.",
+      "expectedType": "notice_period",
+      "note": "Paraphrase. Lange Mindestlaufzeit mit Kuendigungsausschluss"
+    },
+    {
+      "marker": "Höhere Gewalt befreit die Anbieterin von ihrer Leistungspflicht; der Kunde bleibt zur Zahlung",
+      "expectedType": "force_majeure_asymmetry",
+      "note": "Einseitige Force-Majeure-Wirkung"
+    },
+    {
+      "marker": "Die Vertraulichkeitspflicht überdauert die Vertragsbeendigung ohne zeitliche Beschränkung.",
+      "expectedType": "excessive_survival",
+      "note": "Unbegrenzte Nachwirkung"
+    },
+    {
+      "marker": "Gegenansprüche bleiben bei der Abrechnung außer Betracht.",
+      "expectedType": "setoff_restriction",
+      "note": "Paraphrase. Aufrechnungsverbot"
+    },
+    {
+      "marker": "Der Anbieter ist berechtigt, den Leistungsumfang jederzeit einzuschränken.",
+      "expectedType": "unilateral_change",
+      "note": "Paraphrase. Einseitiger Aenderungsvorbehalt"
+    },
+    {
+      "marker": "Mängel sind binnen fünf Werktagen nach Erhalt anzuzeigen; danach gilt die Leistung als genehmigt.",
+      "expectedType": "deemed_acceptance",
+      "note": "Paraphrase. Abnahmefiktion"
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Beiden Parteien steht das Recht zu, den Vertrag mit einer Frist von sechs Monaten zum Jahresende zu",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Anbieterin sichert eine Verfügbarkeit von 99,5 Prozent pro Kalendermonat zu.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Anbieterin stellt dem Kunden bei Vertragsende eine vollständige Kopie aller Kundendaten in",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Der Anbieter kann den Vertrag mit einer Frist von drei Monaten zum Quartalsende kündigen.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    },
+    {
+      "marker": "Die Vertragsparteien behandeln die wechselseitig offengelegten Informationen vertraulich.",
+      "note": "Kontrollklausel, darf nicht ausloesen"
+    }
+  ],
+  "uncovered": []
+}

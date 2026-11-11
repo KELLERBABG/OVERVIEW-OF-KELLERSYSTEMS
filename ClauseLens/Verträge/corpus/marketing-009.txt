@@ -1,0 +1,67 @@
+Rahmenvertrag Programmatischer Mediaeinkauf
+
+zwischen
+
+Europa Retail Holding S.A., Luxemburg
+
+nachfolgend "Kunde" genannt
+
+und
+
+Adflow Networks GmbH, Berlin
+
+nachfolgend "Anbieter" genannt
+
+§ 1 Gegenstand
+Der Anbieter betreibt für den Kunden den programmatischen Einkauf digitaler Werbeplätze.
+
+§ 2 Datenverarbeitung
+Die Verarbeitung von Nutzungsdaten findet teilweise außerhalb der Europäischen Union statt.
+
+§ 3 Protokolle
+Die Systemprotokolle des Anbieters gelten als Vollbeweis; der Kunde unterwirft sich dieser Feststellung.
+
+§ 4 Nachunternehmer
+Der Anbieter haftet nicht für Handlungen von Nachunternehmern.
+
+§ 5 Prüfungen
+Der Anbieter muss jederzeit Audits ohne Vorankündigung dulden.
+
+§ 6 Streitbeilegung
+Streitigkeiten werden zunächst durch ein gutachterliches Verfahren geklärt. Die Verfahrenskosten hat der Kunde vorzustrecken. Der gerichtliche Rechtsweg ist erst nach Abschluss des Verfahrens zulässig.
+
+§ 7 Verwertung
+Der Anbieter darf Telemetriedaten kommerziell verwerten.
+
+§ 8 Anwendbares Recht
+This agreement shall be governed by the laws of the State of Delaware.
+
+§ 9 Auftragsverarbeitung
+Der Anbieter setzt Subunternehmer nur nach vorheriger Bestellung ein; der Kunde kann aus wichtigem Grund widersprechen.
+
+§ 10 Geheimhaltung
+Beide Parteien wahren über die wechselseitig ausgetauschten Informationen Stillschweigen.
+
+§ 11 Datenherausgabe
+Nach Vertragsende erhält der Kunde alle Kampagnendaten kostenfrei in einem offenen Format.
+
+§ 12 Kündigung
+Beide Parteien können den Vertrag mit einer Frist von drei Monaten zum Quartalsende beenden.
+
+§ 13 Form
+Erklärungen können in Textform, auch per E-Mail, abgegeben werden.
+
+§ 14 Vergütung
+Die Vergütung ist innerhalb von dreißig Tagen nach Rechnungszugang ohne Abzug fällig.
+
+§ 15 Haftung
+Die Haftung für Vorsatz, grobe Fahrlässigkeit und Personenschäden bleibt unberührt.
+
+§ 16 Schlussbestimmungen
+Die Unwirksamkeit einzelner Bestimmungen lässt die übrigen Bestimmungen unberührt.
+
+Ort, Datum
+
+Für den Kunden
+
+Für den Anbieter

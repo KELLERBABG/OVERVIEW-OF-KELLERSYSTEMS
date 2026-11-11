@@ -1,0 +1,20 @@
+# City OS — cross-compilation target configuration
+#
+# Install a target with:
+#   rustup target add aarch64-unknown-linux-gnu
+#   rustup target add thumbv7em-none-eabihf   (Cortex-M with FPU)
+#
+# Build for a specific target:
+#   cargo build --target aarch64-unknown-linux-gnu --release
+#   cargo build --target thumbv7em-none-eabihf --release
+
+[build]
+# Default: native host. Override with --target flag.
+# target = "x86_64-unknown-linux-gnu"
+
+[target.aarch64-unknown-linux-gnu]
+linker = "aarch64-linux-gnu-gcc"
+
+[target.thumbv7em-none-eabihf]
+# Bare-metal Cortex-M (Raspberry Pi Pico / RP2040)
+runner = "probe-rs run"

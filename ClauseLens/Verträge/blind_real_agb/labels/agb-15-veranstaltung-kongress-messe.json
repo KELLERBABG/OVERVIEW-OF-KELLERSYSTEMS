@@ -1,0 +1,90 @@
+{
+  "slug": "agb-15-veranstaltung-kongress-messe",
+  "domain": "Messe-, Kongress- & Event-Teilnahmebedingungen",
+  "source": "Blind Real-AGB Benchmark 2026 (vor Engine-Lauf gelabelt)",
+  "traps": [
+    {
+      "marker": "jederzeit nach billigem Ermessen einseitig zu ändern oder bis zu 35 % zu verkleinern",
+      "expectedType": "unilateral_change",
+      "statutoryBasis": "§ 308 Nr. 4 BGB / § 307 BGB",
+      "note": "Einseitiger Änderungsvorbehalt hinsichtlich Ort, Termin und bis zu 35 % Flächenverkleinerung ohne Minderung oder Rücktrittsrecht ist unzumutbar."
+    },
+    {
+      "marker": "schuldet er ab dem Fälligkeitstag Verzugszinsen in Höhe von 18,5 % per annum",
+      "expectedType": "default_interest",
+      "statutoryBasis": "§ 288 BGB / § 309 Nr. 5 BGB / § 307 BGB",
+      "note": "Pauschaler Verzugszinssatz von 18,5 % p.a. sowie überhöhte Mahnpauschale von 75 Euro übersteigen den gesetzlichen Verzugszins und den gewöhnlichen Schaden erheblich."
+    },
+    {
+      "marker": "sofortigen Zahlung von 100 % der vereinbarten Gesamtvergütung und sämtlicher gebuchter",
+      "expectedType": "early_termination_charge",
+      "statutoryBasis": "§ 308 Nr. 7 BGB / § 309 Nr. 5 BGB / § 307 BGB",
+      "note": "Sofortige Fälligkeit von 100 % der Vergütung bei Stornierung unter Ausschluss der Anrechnung ersparter Aufwendungen und anderweitiger Weitervermietung ist unwirksam."
+    },
+    {
+      "marker": "während der Teilnehmer weiterhin zur ungekürzten Zahlung der vollen Standmiete",
+      "expectedType": "force_majeure_asymmetry",
+      "statutoryBasis": "§ 326 Abs. 1 BGB / § 307 Abs. 2 Nr. 1 BGB",
+      "note": "Einseitige Abwälzung des Risikos höherer Gewalt auf den Teilnehmer bei voller Fortzahlungspflicht trotz Leistungsfreiheit des Veranstalters widerspricht § 326 BGB."
+    },
+    {
+      "marker": "sofort fällige Vertragsstrafe in Höhe von 10.000,00 Euro, mindestens jedoch das Dreifache",
+      "expectedType": "penalty",
+      "statutoryBasis": "§ 307 Abs. 1 BGB / § 309 Nr. 6 BGB",
+      "note": "Unverhältnismäßig hohe Vertragsstrafe ohne Verschuldensbezug und ohne Obergrenze benachteiligt den Aussteller unangemessen."
+    },
+    {
+      "marker": "Für sämtliche durch Erfüllungsgehilfen, Subunternehmer, Standbauer oder das eingesetzte",
+      "expectedType": "vicarious_agents",
+      "statutoryBasis": "§ 309 Nr. 7b BGB / § 278 BGB / § 307 BGB",
+      "note": "Vollständiger Haftungsausschluss für Erfüllungsgehilfen auch bei grober Fahrlässigkeit verstößt gegen § 309 Nr. 7b BGB und das Leitbild des § 278 BGB."
+    },
+    {
+      "marker": "Firmennamen, die eingetragenen Marken, Unternehmenslogos sowie Porträtaufnahmen",
+      "expectedType": "marketing_reference",
+      "statutoryBasis": "§ 307 Abs. 1 BGB",
+      "note": "Unwiderrufliche, unbeschränkte Einräumung von Marken-, Logo- und Mitarbeiter-Bildrechten zu Werbezwecken ohne Einwilligung oder Widerrufsmöglichkeit."
+    },
+    {
+      "marker": "verjähren innerhalb von zwei Monaten nach dem letzten Tag der Veranstaltung",
+      "expectedType": "statute_of_limitations",
+      "statutoryBasis": "§ 309 Nr. 8b ff BGB / § 307 BGB",
+      "note": "Drastische Verkürzung der Verjährungsfrist für sämtliche Ansprüche auf zwei Monate ist unangemessen kurz."
+    },
+    {
+      "marker": "auch gegenüber Verbrauchern und Nichtkaufleuten – der Sitz der Muttergesellschaft des Veranstalters in Zürich",
+      "expectedType": "jurisdiction",
+      "statutoryBasis": "§ 38 ZPO / § 307 BGB",
+      "note": "Vereinbarung eines ausschließlichen Auslandsgerichtsstands auch gegenüber Nichtkaufleuten und Verbrauchern verstößt gegen § 38 ZPO und § 307 BGB."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Der Vertrag kommt durch die Buchungsbestätigung des Veranstalters in Textform zustande",
+      "note": "Standardmäßige Regelung zum Vertragsschluss durch Angebot und Annahme in Textform."
+    },
+    {
+      "marker": "innerhalb von 14 Tagen nach Rechnungsstellung ohne Abzug zur Zahlung fällig",
+      "note": "Übliches Zahlungsziel von 14 Tagen nach Rechnungsstellung."
+    },
+    {
+      "marker": "Das gesetzliche Recht beider Parteien zur außerordentlichen Kündigung aus wichtigem Grund",
+      "note": "Gesetzeskonforme Beibehaltung des außerordentlichen Kündigungsrechts nach § 314 BGB."
+    },
+    {
+      "marker": "Der Veranstalter haftet unbeschränkt für Schäden aus der Verletzung des Lebens, des Körpers",
+      "note": "Zutreffende unbeschränkte Haftung für Personenschäden sowie Vorsatz und grobe Fahrlässigkeit."
+    },
+    {
+      "marker": "Die Vertragsparteien können mit unbestrittenen oder rechtskräftig festgestellten Forderungen",
+      "note": "Gesetzeskonforme Zulassung der Aufrechnung mit unbestrittenen und rechtskräftig festgestellten Forderungen."
+    }
+  ],
+  "uncovered": [
+    {
+      "marker": "jederzeit ohne Zustimmung des Teilnehmers mit schuldbefreiender Wirkung auf ein beliebiges anderes Messe-",
+      "statutoryBasis": "§ 309 Nr. 10 BGB / § 307 BGB",
+      "note": "Unzulässige Vertragsübernahmeklausel (Eintritt eines unbenannten Dritten in den gesamten Vertrag ohne Zustimmung und ohne Kündigungsrecht des Vertragspartners)."
+    }
+  ]
+}

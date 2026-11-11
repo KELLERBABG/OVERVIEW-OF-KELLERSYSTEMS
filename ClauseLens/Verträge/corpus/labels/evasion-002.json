@@ -1,0 +1,79 @@
+{
+  "slug": "evasion-002",
+  "source": "generated",
+  "domain": "evasion",
+  "traps": [
+    {
+      "marker": "Der Kunde ist nicht ber­echtigt, gegen For­derungen des Anb­ieters auf­zurechnen oder Zah­lungen",
+      "expectedType": "setoff_restriction",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: setoff_restriction (Technik: shy)."
+    },
+    {
+      "marker": "Die Abr­echnung gilt als gen­ehmigt, wenn der Kunde nicht bin­nen sie­ben Kal­endertagen nach",
+      "expectedType": "deemed_acceptance",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: deemed_acceptance (Technik: shy)."
+    },
+    {
+      "marker": "Alle Ans­prüche aus die­sem Ver­trag ver­jähren inn­erhalb von 540 Tagen ab Ent­stehung des",
+      "expectedType": "statute_of_limitations",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: statute_of_limitations (Technik: shy)."
+    },
+    {
+      "marker": "Kün­digungen bed­ürfen der Sch­riftform und sind per ein­geschriebenem Brief an den Anb­ieter zu",
+      "expectedType": "written_form_trap",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: written_form_trap (Technik: shy)."
+    },
+    {
+      "marker": "Es obl­iegt dem Kun­den, dar­zulegen und nac­hzuweisen, dass die Urs­ache nicht auf Ums­tänden aus",
+      "expectedType": "burden_of_proof",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: burden_of_proof (Technik: shy)."
+    },
+    {
+      "marker": "Erg­änzend gel­ten die jew­eils unter www.anb­ieter-sys­temhaus.de/bed­ingungen abr­ufbaren",
+      "expectedType": "dynamic_url_referral",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: dynamic_url_referral (Technik: shy)."
+    },
+    {
+      "marker": "Der Anb­ieter haf­tet für Erf­üllungsgehilfen nur bei einem eig­enen Aus­wahlverschulden.",
+      "expectedType": "vicarious_agents",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: vicarious_agents (Technik: shy)."
+    },
+    {
+      "marker": "Der Anb­ieter ist ber­echtigt, die Ges­chäftsräume des Kun­den ohne vor­herige Ank­ündigung zu",
+      "expectedType": "unreasonable_audit",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: unreasonable_audit (Technik: shy)."
+    },
+    {
+      "marker": "Die Her­ausgabe der Daten erf­olgt gegen eine ges­onderte Auf­wandspauschale, die der Kunde zu",
+      "expectedType": "data_lockin",
+      "note": "Verdeckte Benachteiligung, erwarteter Treffer: data_lockin (Technik: shy)."
+    }
+  ],
+  "benign": [
+    {
+      "marker": "Die Haftung beider Parteien richtet sich nach den gesetzlichen Bestimmungen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Jede Partei trägt ihre eigenen Kosten der Vertragsverhandlungen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde ist berechtigt, Rechte aus diesem Vertrag mit Zustimmung des Anbieters auf verbundene",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Für die Nutzung der bereitgestellten Software gilt die beigefügte Leistungsbeschreibung.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Ansprüche aus diesem Vertrag verjähren nach den gesetzlichen Vorschriften.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    },
+    {
+      "marker": "Der Kunde trägt die Kosten für die von ihm gewünschten Zusatzleistungen.",
+      "note": "Ausgewogene Standardklausel, die bei der Analyse keinen Treffer auslösen soll."
+    }
+  ],
+  "uncovered": []
+}

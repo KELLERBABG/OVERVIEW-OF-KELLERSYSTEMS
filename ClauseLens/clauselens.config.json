@@ -1,0 +1,78 @@
+{
+  "$schema": "./schema/config.schema.json",
+  "version": "1.0.0",
+  "profile": "default",
+  "weights": {
+    "niedrig": 2,
+    "mittel": 7,
+    "hoch": 15
+  },
+  "thresholds": {
+    "hoch": 70,
+    "mittel": 35
+  },
+  "activeDetectors": [
+    "auto_renewal",
+    "notice_period",
+    "liability",
+    "penalty",
+    "jurisdiction",
+    "non_compete",
+    "data_grant",
+    "default_interest",
+    "unilateral_change",
+    "setoff_restriction",
+    "deemed_acceptance",
+    "statute_of_limitations",
+    "written_form_trap",
+    "burden_of_proof",
+    "dynamic_url_referral",
+    "vicarious_agents",
+    "unreasonable_audit",
+    "data_lockin",
+    "third_party_indemnity",
+    "asymmetric_termination",
+    "assignment_restriction",
+    "force_majeure_asymmetry",
+    "non_solicitation",
+    "unilateral_convenience_termination",
+    "excessive_survival",
+    "price_escalation",
+    "salvatorische_klausel_falle",
+    "extended_retention_of_title",
+    "subcontractor_uncontrolled",
+    "audit_log_manipulation",
+    "service_suspension",
+    "insolvency_termination",
+    "tax_indemnity_shift",
+    "asymmetric_confidentiality",
+    "as_is_software_disclaimer",
+    "entire_agreement",
+    "marketing_reference",
+    "feedback_ip_grab",
+    "fictitious_receipt",
+    "unverbindliche_sla_falle",
+    "agency_commission_exclusion",
+    "agency_goodwill_waiver",
+    "international_data_processing",
+    "mandatory_expert_determination",
+    "service_credit_forfeiture",
+    "early_termination_charge",
+    "maintenance_conditional_shutdown"
+  ],
+  "customRules": [
+    {
+      "type": "custom_exclusivity",
+      "title": "Exklusivitätsbindung des Kunden",
+      "patterns": [
+        "ausschließlich bei uns beziehen",
+        "exklusiv über den anbieter",
+        "keine drittanbieter beauftragen"
+      ],
+      "severity": "hoch",
+      "why": "Eine vertragliche Ausschließlichkeitsbindung hindert Sie daran, Konkurrenzangebote einzuholen oder Teilleistungen fremd zu vergeben.",
+      "suggestion": "Streichen Sie Exklusivitätsklauseln und vereinbaren Sie stattdessen eine freie Dienstleisterwahl.",
+      "tags": ["custom-rule", "exklusivitaet", "bindung"]
+    }
+  ]
+}

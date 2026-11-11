@@ -1,0 +1,36 @@
+{
+  "projekt": "Wohn- und Geschäftshochhaus Spreeufer",
+  "adresse": "Holzmarktstraße 25, 10243 Berlin",
+  "bundesland": "BE",
+  "grundstueck": {
+    "flurstuecksnummer": "410/5",
+    "gemarkung": "Friedrichshain",
+    "flaeche_m2": 2400.0,
+    "grenzabstaende": {
+      "norden": 11.0,
+      "sueden": 12.5,
+      "osten": 10.5,
+      "westen": 14.0
+    }
+  },
+  "gebaeude": {
+    "bezeichnung": "Hochhausturm B",
+    "hoehe_m": 26.5,
+    "geschosse_ueber_grund": 8,
+    "wohnungen_anzahl": 24,
+    "grz_ist": 0.38,
+    "gfz_ist": 2.45,
+    "stellplaetze_ist": 24,
+    "fahrradstellplaetze_ist": 48,
+    "zweiter_rettungsweg_vorhanden": true,
+    "treppenraum_vorhanden": true,
+    "aufenthaltsraeume": [
+      { "name": "Musterwohnung 3-Zimmer 4.OG", "flaeche_m2": 78.0, "fenster_flaeche_m2": 14.0, "lichte_hoehe_m": 2.75 },
+      { "name": "Penthouse 8.OG", "flaeche_m2": 130.0, "fenster_flaeche_m2": 26.0, "lichte_hoehe_m": 2.85 }
+    ]
+  },
+  "einstellungen": {
+    "grz_limit": 0.40,
+    "gfz_limit": 2.50
+  }
+}

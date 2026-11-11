@@ -1,0 +1,152 @@
+syntax = "proto3";
+
+package dfip.core.v1;
+
+// ─── Patent Graph ────────────────────────────────────────────────────────────
+
+message PatentNode {
+  string id = 1;                     // UUID v4
+  string title = 2;
+  PatentType type = 3;
+  repeated string authors = 4;
+  int64 created_at_unix = 5;
+  bytes content_hash = 6;            // SHA-256 of the invention artifact
+  SymbolicExpression invariant = 7;  // formal invariant of this node
+  repeated string tags = 8;
+  License license = 9;
+  bytes meta_commitment = 10;        // Merkle commitment to full metadata
+}
+
+enum PatentType {
+  PATENT_TYPE_UNSPECIFIED = 0;
+  PATENT_TYPE_SOFTWARE = 1;
+  PATENT_TYPE_CHEMICAL = 2;
+  PATENT_TYPE_MECHANICAL = 3;
+}
+
+enum License {
+  LICENSE_UNSPECIFIED = 0;
+  LICENSE_OPEN = 1;
+  LICENSE_PROTECTED = 2;
+  LICENSE_SECRET = 3;
+}
+
+message Edge {
+  string id = 1;
+  string parent_id = 2;
+  string child_id = 3;
+  EdgeKind kind = 4;
+  DeltaConstraint delta = 5;         // Δ = ¬Original ∧ Derivative
+  double contribution_weight = 6;    // fraction of value added (0..1)
+  bytes signature = 7;               // author signature over the edge
+}
+
+enum EdgeKind {
+  EDGE_KIND_UNSPECIFIED = 0;
+  EDGE_KIND_DERIVATIVE = 1;
+  EDGE_KIND_IMPROVEMENT = 2;
+  EDGE_KIND_FORK = 3;
+  EDGE_KIND_MERGE = 4;
+}
+
+// ─── Symbolic / Logical Layer ───────────────────────────────────────────────
+
+message SymbolicExpression {
+  ExpressionFormat format = 1;
+  bytes encoded_ir = 2;              // serialized IR bytecode
+  repeated string free_variables = 3;
+  repeated string assumptions = 4;   // contextual axioms
+}
+
+enum ExpressionFormat {
+  EXPRESSION_FORMAT_UNSPECIFIED = 0;
+  EXPRESSION_FORMAT_SSA_TRACE = 1;   // software
+  EXPRESSION_FORMAT_MOLECULAR = 2;   // chemical
+  EXPRESSION_FORMAT_GEOMETRIC = 3;   // mechanical
+  EXPRESSION_FORMAT_SMT_LIB2 = 4;    // generic SMT-LIB 2.0
+}
+
+message DeltaConstraint {
+  string original_node_id = 1;
+  string derivative_node_id = 2;
+  bytes original_invariant_hash = 3;
+  bytes formula_smt_lib2 = 4;        // Δ = ¬Original ∧ Derivative in SMT-LIB2
+  repeated string assumptions = 5;
+}
+
+// ─── SMT Verification ───────────────────────────────────────────────────────
+
+message VerificationResult {
+  string edge_id = 1;
+  SatResult sat = 2;
+  bytes model = 3;                   // satisfying assignment if SAT
+  repeated bytes unsat_core = 4;     // minimal conflicting constraints if UNSAT
+  double severity_score = 5;         // 0.0 = identical, 1.0 = completely novel
+  double solver_time_ms = 6;
+  bytes proof_commitment = 7;        // ZK proof of correct solver execution
+}
+
+enum SatResult {
+  SAT_RESULT_UNSPECIFIED = 0;
+  SAT_RESULT_SAT = 1;                // infringement possible
+  SAT_RESULT_UNSAT = 2;              // no infringement (or dependent)
+  SAT_RESULT_UNKNOWN = 3;            // timeout / resource bound
+}
+
+// ─── Royalties ───────────────────────────────────────────────────────────────
+
+message RoyaltyInvariant {
+  string patent_node_id = 1;
+  repeated ShareEntry shares = 2;    // sum(weights) == 1.0
+  repeated string upstream_nodes = 3;
+}
+
+message ShareEntry {
+  string node_id = 1;
+  double weight = 2;                 // fraction 0..1
+}
+
+// ─── Taint Tracking ──────────────────────────────────────────────────────────
+
+message TaintLabel {
+  string id = 1;
+  License origin_license = 2;
+  repeated string derivation_chain = 3;
+}
+
+message TaintPropagationRule {
+  string operator = 1;               // e.g. "sequence", "condition", "loop"
+  TaintLatticeJoin join_semantics = 2;
+}
+
+enum TaintLatticeJoin {
+  TAINT_LATTICE_JOIN_UNSPECIFIED = 0;
+  TAINT_LATTICE_JOIN_MEET = 1;       // intersection
+  TAINT_LATTICE_JOIN_JOIN = 2;       // union
+  TAINT_LATTICE_JOIN_LEAST_UPPER = 3;
+}
+
+// ─── Homomorphic Contributions ───────────────────────────────────────────────
+
+message EncryptedShare {
+  bytes ciphertext = 1;
+  string scheme = 2;                 // "TFHE", "BFV", "BGV"
+  bytes public_key_hash = 3;
+}
+
+message ContributionProof {
+  bytes proof = 1;                   // ZK proof (Bulletproofs / Groth16)
+  string proof_type = 2;
+}
+
+// ─── IP Specification ────────────────────────────────────────────────────────
+
+message IPSpecification {
+  string node_id = 1;
+  repeated string preconditions = 2;
+  repeated string postconditions = 3;
+  repeated string invariants = 4;
+  repeated string resource_bounds = 5;
+  string spec_language = 6;          // e.g. "Dafny", "Why3", "dfip-ir"
+  bytes spec_bytes = 7;              // full serialized spec
+}
