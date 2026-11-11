@@ -2,17 +2,18 @@
 > Central repository and comprehensive technology portfolio indexing all 36 **KellerSystems** engineering projects.
 
 [![Total Projects](https://img.shields.io/badge/Projects-36-blue.svg?style=flat-square)](#-project-index)
-[![Rust](https://img.shields.io/badge/Rust-78.8%25-orange.svg?style=flat-square&logo=rust)](#-language-distribution)
-[![Python](https://img.shields.io/badge/Python-9.5%25-blue.svg?style=flat-square&logo=python)](#-language-distribution)
-[![C%2FC%2B%2B](https://img.shields.io/badge/C%2FC%2B%2B-1.8%25-informational.svg?style=flat-square&logo=c)](#-language-distribution)
-[![Lines of Code](https://img.shields.io/badge/Total_Lines_of_Code-~904k-success.svg?style=flat-square)](#-language-breakdown)
+[![Rust](https://img.shields.io/badge/Rust-78.8%25_(LOC)_%7C_55.8%25_(Linguist)-DEA584.svg?style=flat-square&logo=rust)](#-language-distribution)
+[![Python](https://img.shields.io/badge/Python-9.5%25_(LOC)_%7C_20.1%25_(Linguist)-3572A5.svg?style=flat-square&logo=python)](#-language-distribution)
+[![C / C++](https://img.shields.io/badge/C%20%2F%20C%2B%2B-1.8%25_(LOC)-f34b7d.svg?style=flat-square&logo=c%2B%2B)](#-language-distribution)
+[![Lines of Code](https://img.shields.io/badge/Total_LOC-~904k-success.svg?style=flat-square)](#-detailed-code-metrics)
 
 ---
 
 ## 📊 Language Distribution
 
-This repository tracks the entire source code across all KellerSystems projects. The breakdown below is calculated across all active source files (excluding third-party binaries, build caches, and generated artifacts):
+This repository tracks the complete codebase across all KellerSystems projects.
 
+### 1. By Lines of Code (LOC)
 ```
 Rust          ████████████████████████████████████████   78.83% (712,579 LOC)
 Python        █████                                       9.53%  (86,150 LOC)
@@ -22,22 +23,31 @@ C / C++       █                                           1.81%  (16,324 LOC)
 Shell / Other ▏                                           0.73%   (6,555 LOC)
 ```
 
-### 📈 Detailed Code Metrics
+### 2. By GitHub Linguist (Language Bar at top of Repo)
+```
+Rust          ██████████████████████████                  55.78% (9.55 MB)
+Python        ██████████                                  20.06% (3.44 MB)
+JavaScript    ████████                                    17.32% (2.97 MB)
+TypeScript    ██                                           3.40% (0.58 MB)
+Shell / C++   █                                            3.44% (0.59 MB)
+```
 
-| Language | Files | Lines of Code (LOC) | % of Lines | Source Size (MB) | % of Bytes |
-|:---------|:-----:|:-------------------:|:----------:|:----------------:|:----------:|
-| **🦀 Rust** | 2,705 | 712,579 | 78.83% | 25.88 MB | 76.77% |
-| **🐍 Python** | 465 | 86,150 | 9.53% | 3.34 MB | 9.92% |
-| **⚡ JavaScript** | 292 | 64,481 | 7.13% | 3.02 MB | 8.96% |
-| **🔷 TypeScript** | 224 | 17,814 | 1.97% | 0.60 MB | 1.78% |
-| **⚙️ C / C++ & Firmware** | 16 | 16,324 | 1.81% | 0.60 MB | 1.76% |
-| **🐚 Shell Scripts** | 25 | 3,410 | 0.38% | 0.15 MB | 0.45% |
-| **💻 PowerShell** | 17 | 1,400 | 0.15% | 0.06 MB | 0.18% |
-| **💎 Solidity** | 12 | 1,182 | 0.13% | 0.04 MB | 0.12% |
-| **🔒 Circom (ZK-SNARKs)** | 6 | 563 | 0.06% | 0.02 MB | 0.06% |
-| **Total** | **3,762** | **903,903** | **100.0%** | **33.71 MB** | **100.0%** |
+---
 
-> **GitHub Language Bar:** GitHub natively calculates and displays this breakdown at the top of the repository based on GitHub Linguist rules configured in `.gitattributes`.
+## 📈 Detailed Code Metrics
+
+| Language | Files | Lines of Code (LOC) | % of Lines | Linguist Bytes | % of Bytes |
+|:---------|:-----:|:-------------------:|:----------:|:--------------:|:----------:|
+| **🦀 Rust** | 2,705 | 712,579 | 78.83% | 9.55 MB | 55.78% |
+| **🐍 Python** | 465 | 86,150 | 9.53% | 3.44 MB | 20.06% |
+| **⚡ JavaScript** | 292 | 64,481 | 7.13% | 2.97 MB | 17.32% |
+| **🔷 TypeScript** | 224 | 17,814 | 1.97% | 0.58 MB | 3.40% |
+| **⚙️ C / C++ & Firmware** | 16 | 16,324 | 1.81% | 0.02 MB | 0.10% |
+| **🐚 Shell Scripts** | 25 | 3,410 | 0.38% | 0.16 MB | 0.94% |
+| **💻 PowerShell** | 17 | 1,400 | 0.15% | 0.07 MB | 0.38% |
+| **💎 Solidity** | 12 | 1,182 | 0.13% | 0.04 MB | 0.25% |
+| **🔒 Circom (ZK-SNARKs)** | 6 | 563 | 0.06% | 0.02 MB | 0.11% |
+| **Total** | **3,762** | **903,903** | **100.0%** | **17.13 MB** | **100.0%** |
 
 ---
 
@@ -91,13 +101,12 @@ All 36 projects included in this monorepo overview:
 To synchronize all local project edits from `SYSTEMS & CREATIONS` into this overview repository at any time:
 
 ```powershell
-# From the SYSTEMS & CREATIONS directory:
+# In the SYSTEMS & CREATIONS folder:
 .\Sync-Overview.ps1
 ```
 
 The script automatically:
 1. Mirrors the latest code across all 36 repositories.
-2. Strips out build caches (`target/`, `.venv/`, `.keller/`, binaries).
+2. Filters build caches (`target/`, `.venv/`, `.keller/`, binaries).
 3. Re-calculates language percentages for Rust, Python, C, and all other languages.
-4. Updates this `README.md` with new metrics.
-5. Commits and pushes the updates directly to GitHub.
+4. Commits and pushes the updates directly to GitHub.
