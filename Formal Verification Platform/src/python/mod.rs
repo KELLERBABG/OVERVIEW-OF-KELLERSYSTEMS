@@ -279,7 +279,7 @@ pub fn run_python_verify(options: &VerifyOptions, target_path: &Path) -> i32 {
         };
 
         let obl = PythonObligation::from_raw_with_extra_guards(raw.clone(), &extra_guards);
-        let verdict = obl.solve(&z3_bin, timeout_ms);
+        let verdict = obl.solve_with_options(options, &z3_bin, timeout_ms);
 
         let module_dir = obligations_root.join(&raw.module);
         let _ = fs::create_dir_all(&module_dir);

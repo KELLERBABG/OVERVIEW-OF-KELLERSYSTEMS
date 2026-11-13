@@ -6,7 +6,7 @@
     {
       "id": "TASK-01",
       "title": "Implement cross-function reentrancy detection with state-write after call constraint matching",
-      "status": "pending",
+      "status": "failed",
       "target_files": [
         "crates/core/src/vulnerabilities/mod.rs",
         "crates/core/src/evm/executor.rs"
@@ -21,7 +21,7 @@
     {
       "id": "TASK-02",
       "title": "Add quadratic memory expansion gas accounting and unbounded loop DoS solver",
-      "status": "pending",
+      "status": "failed",
       "target_files": [
         "crates/core/src/evm/gas.rs",
         "crates/core/src/analysis/mod.rs"

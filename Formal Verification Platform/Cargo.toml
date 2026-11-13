@@ -49,6 +49,17 @@ libc = "0.2"
 
 [features]
 default = []
+# Language frontends. Each is feature-gated until it compiles clean and passes its
+# own tests; the gate is then flipped into default.
+lang-c = []
+lang-cpp = []
+lang-asm = []
+lang-go = []
+lang-java = []
+lang-csharp = []
+lang-ts = []
+lang-sql = []
+all-langs = ["lang-c", "lang-cpp", "lang-asm", "lang-go", "lang-java", "lang-csharp", "lang-ts", "lang-sql"]
 
 # Z3 path is now configured via the Z3_HOME environment variable at build time
 # See build.rs for details.

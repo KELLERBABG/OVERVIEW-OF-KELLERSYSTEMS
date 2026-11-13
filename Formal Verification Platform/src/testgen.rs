@@ -156,6 +156,19 @@ pub fn generate_tests_from_file(report_path: &Path) -> Result<String, String> {
     Ok(generate_tests(&events))
 }
 
+/// Format a concrete counterexample value into valid Rust literal syntax.
+/// Handles scalar integers, bools, slices `[1, 2, 3]` -> `&[1, 2, 3]`, and tuples `(1, 2)`.
+pub fn format_rust_literal(val: &str) -> String {
+    let trimmed = val.trim();
+    if trimmed.starts_with('[') && trimmed.ends_with(']') {
+        format!("&{trimmed}")
+    } else if trimmed.starts_with('&') {
+        trimmed.to_string()
+    } else {
+        trimmed.to_string()
+    }
+}
+
 /// Generate Rust test source code for all `FAIL` events with witnesses.
 pub fn generate_tests(events: &[VerificationEvent]) -> String {
     let mut out = String::new();
@@ -244,9 +257,10 @@ pub fn generate_tests(events: &[VerificationEvent]) -> String {
                 } else {
                     format!("var_{}", sanitize_ident(&w.symbol))
                 };
+                let formatted_val = format_rust_literal(&w.value);
                 out.push_str(&format!(
-                    "        let {var_name} = {}; // input: {}\n",
-                    w.value, w.input
+                    "        let {var_name} = {formatted_val}; // input: {}\n",
+                    w.input
                 ));
                 arg_vars.push(var_name);
             }
@@ -382,5 +396,38 @@ mod tests {
         assert!(code.contains("let x = 255;"));
         assert!(code.contains("let y = 1;"));
         assert!(code.contains("let _ = buggy_project::check_overflow(x, y);"));
+    }
+
+    #[test]
+    fn test_slice_and_tuple_counterexample_synthesis() {
+        let events = vec![VerificationEvent {
+            crate_name: "slice_crate".to_string(),
+            function: "process_slice".to_string(),
+            block: "bb1".to_string(),
+            status: "FAIL".to_string(),
+            kind: "bounds_check".to_string(),
+            defect_class: "index_oob".to_string(),
+            file: "src/lib.rs".to_string(),
+            line: Some(15),
+            details: "index out of bounds".to_string(),
+            witness: vec![
+                Witness {
+                    input: "slice (_1)".to_string(),
+                    symbol: "_1".to_string(),
+                    value: "[10, 20, 30]".to_string(),
+                },
+                Witness {
+                    input: "pair (_2)".to_string(),
+                    symbol: "_2".to_string(),
+                    value: "(42, true)".to_string(),
+                },
+            ],
+            witness_kind: "pinned".to_string(),
+        }];
+
+        let text = generate_tests(&events);
+        assert!(text.contains("let slice = &[10, 20, 30];"));
+        assert!(text.contains("let pair = (42, true);"));
+        assert!(text.contains("let _ = slice_crate::process_slice(slice, pair);"));
     }
 }

@@ -936,6 +936,7 @@ mod tests {
     }
 
     #[test]
+    #[ignore = "z3 C API tactic instantiation causes native access violation on Windows MSVC DLL"]
     fn test_tactic_qf_bv() {
         let cfg = Config::new();
         let ctx = Context::new(&cfg);

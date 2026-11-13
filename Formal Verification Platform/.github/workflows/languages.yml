@@ -1,0 +1,131 @@
+name: languages
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  workflow_dispatch:
+
+env:
+  Z3_VERSION: "4.16.0"
+  Z3_DIR: "z3-4.16.0-x64-glibc-2.39"
+  NIGHTLY: "nightly-2026-07-24"
+
+jobs:
+  lang-matrix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install pinned nightly with rustc-dev
+        run: |
+          set -euo pipefail
+          rustup toolchain install "$NIGHTLY" \
+            --component rustc-dev \
+            --component llvm-tools-preview \
+            --component rustfmt \
+            --component clippy
+
+      - name: Cache Z3
+        id: z3-cache
+        uses: actions/cache@v4
+        with:
+          path: .z3
+          key: "z3-${{ env.Z3_VERSION }}-linux-x64"
+
+      - name: Install Z3
+        if: steps.z3-cache.outputs.cache-hit != 'true'
+        run: |
+          set -euo pipefail
+          mkdir -p .z3
+          curl -sSL --retry 3 -o /tmp/z3.zip \
+            "https://github.com/Z3Prover/z3/releases/download/z3-${Z3_VERSION}/${Z3_DIR}.zip"
+          unzip -q /tmp/z3.zip -d .z3
+          ln -sfn "${Z3_DIR}" .z3/current
+          test -f ".z3/current/bin/libz3.so"
+
+      - name: Configure Z3 environment
+        run: |
+          set -euo pipefail
+          echo "Z3_HOME=$PWD/.z3/${Z3_DIR}" >> "$GITHUB_ENV"
+          echo "Z3_SYS_Z3_HEADER=$PWD/.z3/${Z3_DIR}/include/z3.h" >> "$GITHUB_ENV"
+          echo "$PWD/.z3/${Z3_DIR}/bin" >> "$GITHUB_PATH"
+          ln -sfn "${Z3_DIR}" .z3/current
+
+      - name: Build all frontends
+        run: |
+          set -euo pipefail
+          export Z3_HOME="$PWD/.z3/${Z3_DIR}"
+          export Z3_SYS_Z3_HEADER="$Z3_HOME/include/z3.h"
+          export PATH="$Z3_HOME/bin:$PATH"
+          cargo build --features all-langs
+
+      - name: Configure runtime environment
+        run: |
+          eval "$($PWD/target/debug/keller-env --shell sh --manifest-dir "$PWD")"
+          echo "PATH=$PATH_ADD:$PATH" >> "$GITHUB_ENV"
+          echo "LD_LIBRARY_PATH=${RUSTLIB:+${RUSTLIB}:}${PATH_ADD:+${PATH_ADD}:}${LD_LIBRARY_PATH:-}" >> "$GITHUB_ENV"
+
+      - name: Run unit tests
+        run: |
+          set -euo pipefail
+          export Z3_HOME="$PWD/.z3/${Z3_DIR}"
+          export Z3_SYS_Z3_HEADER="$Z3_HOME/include/z3.h"
+          export PATH="$Z3_HOME/bin:$PATH"
+          cargo test --all-features
+
+      - name: Audit smoke tests
+        run: |
+          set -euo pipefail
+          export Z3_HOME="$PWD/.z3/${Z3_DIR}"
+          export Z3_SYS_Z3_HEADER="$Z3_HOME/include/z3.h"
+          export PATH="$Z3_HOME/bin:$PATH"
+
+          declare -A lang_dirs=(
+            [ts]="typescript_cases"
+            [sql]="sql_cases"
+            [c]="c_cases"
+            [cpp]="cpp_cases"
+            [asm]="asm_cases"
+            [go]="go_cases"
+            [java]="java_cases"
+            [csharp]="csharp_cases"
+          )
+
+          for lang in ts sql c cpp asm go java csharp; do
+            dir="${lang_dirs[$lang]}"
+            echo "=== Auditing language: $lang (dir: $dir) ==="
+            ./target/debug/keller-verify audit --lang "$lang" "tests/$dir" \
+              --out "$RUNNER_TEMP/$lang.json"
+
+            python3 -c "import json; d = json.load(open('$RUNNER_TEMP/$lang.json')); assert d['files_scanned'] > 0; assert len(d['findings']) > 0; assert d['obligations_proved_safe'] <= d['obligations_total']; print('  OK:', d['files_scanned'], 'files,', len(d['findings']), 'findings')"
+          done
+
+      - name: Negative contract checks
+        run: |
+          set -euo pipefail
+          export Z3_HOME="$PWD/.z3/${Z3_DIR}"
+          export Z3_SYS_Z3_HEADER="$Z3_HOME/include/z3.h"
+          export PATH="$Z3_HOME/bin:$PATH"
+
+          # Bogus language must exit 2
+          set +e
+          ./target/debug/keller-verify audit --lang bogus tests/c_cases
+          rc=$?
+          set -e
+          if [ "$rc" -ne 2 ]; then
+            echo "FAIL: expected exit code 2 for bogus lang, got $rc" >&2
+            exit 1
+          fi
+          echo "OK: bogus lang exited with code 2"
+
+          # Non-existent directory must exit 2
+          set +e
+          ./target/debug/keller-verify audit --lang c tests/does_not_exist
+          rc=$?
+          set -e
+          if [ "$rc" -ne 2 ]; then
+            echo "FAIL: expected exit code 2 for missing dir, got $rc" >&2
+            exit 1
+          fi
+          echo "OK: missing dir exited with code 2"

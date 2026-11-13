@@ -8,8 +8,27 @@ extern crate rustc_middle;
 extern crate rustc_session;
 extern crate rustc_span;
 
+mod langaudit;
+#[cfg(feature = "lang-asm")]
+mod asm;
+#[cfg(feature = "lang-c")]
+mod c;
+#[cfg(feature = "lang-cpp")]
+mod cpp;
+#[cfg(feature = "lang-csharp")]
+mod csharp;
+#[cfg(feature = "lang-go")]
+mod go;
+#[cfg(feature = "lang-java")]
+mod java;
+#[cfg(feature = "lang-sql")]
+mod sql;
+#[cfg(feature = "lang-ts")]
+mod typescript;
 mod cache;
 mod compiler;
+#[allow(dead_code)]
+#[allow(dead_code)]
 mod config;
 mod constant_prop;
 mod constraint;
@@ -22,6 +41,7 @@ mod diagnostics;
 #[path = "host_env.rs"]
 mod host_env;
 mod html_report;
+#[allow(dead_code)]
 mod path_state;
 mod pointer;
 mod provenance;
@@ -34,6 +54,7 @@ mod summary;
 mod testgen;
 mod types;
 mod verifier;
+pub mod vir;
 
 use std::path::{Path, PathBuf};
 use std::process::Command;
@@ -72,6 +93,7 @@ const WRAPPER_COMPILER_FAILED: i32 = 1;
 const USAGE: &str = "\
 Usage: keller verify [OPTIONS]
        keller watch [OPTIONS]
+       keller heal [OPTIONS] [REPORT_FILE]
        keller init [--force]
        keller explain <OBLIGATION.smt2>
        keller replay <OBLIGATION.smt2>
@@ -93,6 +115,10 @@ Options:
   --profile <NAME>         named gate contract: `advisory` (default) gates only on a
                            counterexample, `strict` also fails on unsupported checks
                            and undecided verdicts. Explicit flags below still win.
+  --solver <NAME>          SMT solver backend: `z3` (default), `cvc5`, `bitwuzla`,
+                           or `portfolio` (races all available solvers concurrently)
+  --python                 verify Python codebase directly (auto-detected if python files present)
+  --lang <NAME>            explicit language frontend target (`rust`, `python`, etc.)
   --no-cache               use a private cold build rather than the dependency cache
   --verify-deps            also verify external dependencies (default: verify workspace only)
   --release                run verification in release profile mode (cargo --release)
@@ -118,9 +144,6 @@ Options:
   --write-baseline <FILE>  record the current findings in FILE and exit 0
   --sarif <FILE>           also write a SARIF 2.1.0 log of the gated findings
   --html <FILE>            write an interactive HTML verification dashboard
-  --python                 verify Python project (auto-detected if pyproject.toml present)
-  --rust                   verify Rust crate or workspace
-  --lang <python|rust>     explicitly select frontend analysis target
   --error-format <FORMAT>  compiler diagnostics format: `human` (default) or `json`
   --json                   print the summary (counts and findings) as JSON
   --quiet                  print findings and the verdict, not progress
@@ -160,6 +183,17 @@ pub enum Invocation {
         obligation: PathBuf,
         out: Option<PathBuf>,
     },
+    Heal {
+        report: PathBuf,
+        out: Option<PathBuf>,
+    },
+    /// Audit-only run of a non-Rust language engine; writes one report file and
+    /// never touches the audited tree.
+    Audit {
+        lang: String,
+        path: PathBuf,
+        out: Option<PathBuf>,
+    },
     Help,
     Version,
 }
@@ -175,6 +209,8 @@ fn is_command_invocation(argument: &str) -> bool {
         "keller"
             | "verify"
             | "watch"
+            | "heal"
+            | "audit"
             | "explain"
             | "replay"
             | "init"
@@ -298,6 +334,57 @@ pub fn parse_args_with_base(args: &[String], base: VerifyOptions) -> Result<Invo
                 .ok_or_else(|| "reproduce expects exactly one obligation file.".to_string())?;
             return Ok(Invocation::Reproduce { obligation, out });
         }
+        Some(&"audit") => {
+            let mut lang: Option<String> = None;
+            let mut path: Option<PathBuf> = None;
+            let mut out: Option<PathBuf> = None;
+            let mut cursor = index + 1;
+            while let Some(arg) = rest.get(cursor) {
+                cursor += 1;
+                match *arg {
+                    "--lang" | "-l" => {
+                        let v = rest.get(cursor).ok_or_else(|| "--lang expects a language".to_string())?;
+                        cursor += 1;
+                        lang = Some(v.to_string());
+                    }
+                    "--out" | "-o" => {
+                        let v = rest.get(cursor).ok_or_else(|| "--out expects a file path".to_string())?;
+                        cursor += 1;
+                        out = Some(PathBuf::from(v));
+                    }
+                    // Accepted so CI files can state the policy; audits are always audit-only.
+                    "--audit-only" => {}
+                    other if !other.starts_with('-') => path = Some(PathBuf::from(other)),
+                    other => return Err(format!("Unknown option for audit: '{other}'")),
+                }
+            }
+            let lang = lang.ok_or_else(|| {
+                format!("audit expects --lang <{}>.", crate::langaudit::LANGS.join("|"))
+            })?;
+            let path = path.ok_or_else(|| "audit expects a path to scan.".to_string())?;
+            return Ok(Invocation::Audit { lang, path, out });
+        }
+        Some(&"heal") => {            let mut report = PathBuf::from("report.json");
+            let mut out = None;
+            let mut cursor = index + 1;
+            while let Some(arg) = rest.get(cursor) {
+                cursor += 1;
+                match *arg {
+                    "--out" | "-o" => {
+                        let val = rest
+                            .get(cursor)
+                            .ok_or_else(|| "--out expects a file or directory path".to_string())?;
+                        cursor += 1;
+                        out = Some(PathBuf::from(val));
+                    }
+                    other if !other.starts_with('-') => {
+                        report = PathBuf::from(other);
+                    }
+                    other => return Err(format!("Unknown option for heal: '{other}'")),
+                }
+            }
+            return Ok(Invocation::Heal { report, out });
+        }
         Some(&"schema") => {
             let target = rest.get(index + 1).copied().unwrap_or("report").to_string();
             return Ok(Invocation::Schema { target });
@@ -368,6 +455,17 @@ pub fn parse_args_with_base(args: &[String], base: VerifyOptions) -> Result<Invo
                 options.gate_profile = Some(raw.to_string());
             }
             "--only" => options.only = Some(take_value(&rest, &mut index, "--only")?.to_string()),
+            "--solver" => {
+                let s = take_value(&rest, &mut index, "--solver")?;
+                options.solver = Some(s.to_string());
+            }
+            "--python" => {
+                options.error_format = Some("python".to_string());
+            }
+            "--lang" => {
+                let lang = take_value(&rest, &mut index, "--lang")?;
+                options.error_format = Some(lang.to_string());
+            }
             "--max-findings" => {
                 let raw = take_value(&rest, &mut index, "--max-findings")?;
                 // `0` is refused rather than read as "list nothing": a cap of zero
@@ -443,19 +541,6 @@ pub fn parse_args_with_base(args: &[String], base: VerifyOptions) -> Result<Invo
                 // linear run to finish has to be able to say so.
                 options.run_timeout_seconds = Some(seconds);
             }
-            "--python" => options.language = Some("python".to_string()),
-            "--rust" => options.language = Some("rust".to_string()),
-            "--lang" => {
-                let val = take_value(&rest, &mut index, "--lang")?;
-                options.language = Some(val.to_string());
-            }
-            other if !other.starts_with('-') => {
-                if options.target_path.is_none() {
-                    options.target_path = Some(PathBuf::from(other));
-                } else {
-                    return Err(format!("Unexpected additional argument '{other}'."));
-                }
-            }
             // Refused rather than ignored: a misspelled flag that silently leaves
             // the stricter gate switched off is worse than no flag at all.
             other => {
@@ -516,6 +601,10 @@ fn main() {
             Ok(Invocation::Init { force }) => run_init(force),
             Ok(Invocation::Schema { target }) => run_schema(&target),
             Ok(Invocation::TestGen { report, out }) => run_testgen(&report, out.as_deref()),
+            Ok(Invocation::Heal { report, out }) => run_heal(&report, out.as_deref()),
+            Ok(Invocation::Audit { lang, path, out }) => {
+                std::process::exit(crate::langaudit::run_audit(&lang, &path, out.as_deref()))
+            }
             Ok(Invocation::Reproduce { obligation, out }) => {
                 run_reproduce(&obligation, out.as_deref())
             }
@@ -690,6 +779,10 @@ fn main() {
 /// A setup failure is never reported as a verdict — "could not check" and
 /// "checked and found a counterexample" send the reader to different places.
 fn run_single_verify(options: &VerifyOptions) -> i32 {
+    let current_dir = std::env::current_dir().expect("Failed to detect active working directory");
+    if options.error_format.as_deref() == Some("python") || crate::python::detect_python_project(&current_dir) {
+        return crate::python::run_python_verify(options, &current_dir);
+    }
     if !options.quiet && !options.json {
         println!("[Keller-Pipeline] Initiating Automated Verification Infrastructure...");
     }
@@ -1214,22 +1307,6 @@ fn run_watch(options: &VerifyOptions) {
 }
 
 fn run_verify(options: &VerifyOptions) {
-    let target = options
-        .target_path
-        .clone()
-        .unwrap_or_else(|| std::env::current_dir().unwrap_or_else(|_| PathBuf::from(".")));
-
-    let is_python = match options.language.as_deref() {
-        Some("python") | Some("py") => true,
-        Some("rust") | Some("rs") => false,
-        _ => python::detect_python_project(&target),
-    };
-
-    if is_python {
-        let code = python::run_python_verify(options, &target);
-        std::process::exit(code);
-    }
-
     if options.watch {
         run_watch(options);
     } else {
@@ -1699,6 +1776,73 @@ fn run_testgen(report_path: &Path, out_path: Option<&Path>) -> ! {
             std::process::exit(EXIT_USAGE);
         }
     }
+}
+
+fn run_heal(report_path: &Path, out_path: Option<&Path>) -> ! {
+    let content = match std::fs::read_to_string(report_path) {
+        Ok(c) => c,
+        Err(e) => {
+            eprintln!("[Keller-Heal] Could not read report file '{}': {e}", report_path.display());
+            std::process::exit(EXIT_SETUP);
+        }
+    };
+
+    let events: Vec<crate::types::VerificationEvent> = match serde_json::from_str(&content) {
+        Ok(ev) => ev,
+        Err(_) => {
+            if let Ok(val) = serde_json::from_str::<serde_json::Value>(&content) {
+                val.get("findings")
+                    .and_then(|f| serde_json::from_value(f.clone()).ok())
+                    .unwrap_or_default()
+            } else {
+                Vec::new()
+            }
+        }
+    };
+
+    let fail_events: Vec<&crate::types::VerificationEvent> = events.iter().filter(|e| e.status == "FAIL").collect();
+    if fail_events.is_empty() {
+        println!("[Keller-Heal] No FAIL findings requiring repair found in report.");
+        std::process::exit(EXIT_OK);
+    }
+
+    println!("[Keller-Heal] Synthesizing neuro-symbolic defensive patches for {} failure(s)...", fail_events.len());
+    let mut patches = Vec::new();
+
+    for ev in fail_events {
+        let mut model = std::collections::HashMap::new();
+        for w in &ev.witness {
+            model.insert(w.symbol.clone(), w.value.clone());
+        }
+        let lang = if ev.file.ends_with(".py") {
+            crate::vir::heal::TargetLanguage::Python
+        } else {
+            crate::vir::heal::TargetLanguage::Rust
+        };
+        let patch = crate::vir::heal::synthesize_patch(
+            &ev.file,
+            ev.line.unwrap_or(1),
+            &ev.defect_class,
+            &model,
+            lang,
+            None,
+        );
+        patches.push(patch);
+    }
+
+    let output_text = patches.iter().map(|p| format!("=== Patch for {} (line {}) ===\n{}\n{}\n", p.file, p.line, p.patch_code, p.unified_diff)).collect::<Vec<_>>().join("\n");
+
+    if let Some(dest) = out_path {
+        if let Err(e) = std::fs::write(dest, &output_text) {
+            eprintln!("[Keller-Heal] Failed to write patch file '{}': {e}", dest.display());
+            std::process::exit(EXIT_SETUP);
+        }
+        println!("[Keller-Heal] Wrote certified defensive patches to '{}'.", dest.display());
+    } else {
+        println!("{output_text}");
+    }
+
+    std::process::exit(EXIT_OK);
 }
 
 /// Explain metadata without pretending an SMT model is a concrete execution.

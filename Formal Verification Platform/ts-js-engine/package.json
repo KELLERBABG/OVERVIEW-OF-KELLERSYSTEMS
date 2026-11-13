@@ -1,0 +1,21 @@
+{
+  "name": "keller-vir-ts-js-engine",
+  "version": "0.1.0",
+  "description": "TypeScript/JavaScript Frontend Engine for Keller-VIR Formal Verification Platform",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "audit": "node dist/index.js --mode audit"
+  },
+  "dependencies": {
+    "typescript": "^5.4.0",
+    "commander": "^12.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "ts-node": "^10.9.2",
+    "vitest": "^1.6.0"
+  }
+}

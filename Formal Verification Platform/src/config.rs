@@ -51,6 +51,7 @@ pub struct Config {
     pub keep_runs: Option<usize>,
     pub verify_deps: Option<bool>,
     pub release: Option<bool>,
+    pub solver: Option<String>,
     pub policies: Vec<Policy>,
 }
 
@@ -126,6 +127,9 @@ pub fn base_options(config: &Config) -> VerifyOptions {
     }
     if let Some(value) = config.release {
         options.release = value;
+    }
+    if let Some(value) = &config.solver {
+        options.solver = Some(value.clone());
     }
     options.policies = config.policies.clone();
     options
@@ -281,6 +285,7 @@ pub fn parse(text: &str) -> Result<Config, String> {
             "keep_runs" => config.keep_runs = Some(parse_u64(value, line_no)? as usize),
             "verify_deps" => config.verify_deps = Some(parse_bool(value, line_no)?),
             "release" => config.release = Some(parse_bool(value, line_no)?),
+            "solver" => config.solver = Some(parse_string(value, line_no)?),
             other => return Err(format!("{CONFIG_FILE}:{line_no}: unknown key '{other}'")),
         }
     }

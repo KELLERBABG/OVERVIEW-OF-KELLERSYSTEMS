@@ -41,3 +41,11 @@ __pycache__/
 .freebuff/
 .reasonix/
 *reasonix*
+
+# External benchmark repos (pulled on demand, audit-only; reports under reports/benchmarks are kept)
+benchmarks/repos/
+# Per-agent cargo target dirs
+target-*/
+
+# Verification and benchmark audit reports
+reports/

@@ -1,5 +1,8 @@
 # Modularisierungs- und Multi-Language-Architektur für Keller-Verify
 
+> **Status: Plan, nicht implementiert.**
+> Dieses Dokument beschreibt eine geplante Architektur (Ruff-Parser, `keller verify --lang`, Feature-Layout `default = ["rust"]`). Der aktuelle Stand ist: Acht Sprach-Frontends existieren als feature-gated Heuristik-Scanner (`cargo build --features all-langs`, `keller-verify audit --lang <id> <pfad>`); sie senken nicht nach Keller-VIR, erzeugen keine SMT-Obligations und sind nicht Teil von `keller verify`. Verbindlich sind `docs/RELEASE.md` und der Audit in `DEV/AUDIT.md` (lokal, gitignored); die Frontends sind in `docs/LANGUAGES.md` beschrieben.
+
 Dieses Dokument beschreibt die Architekturstrategie, um Keller-Verify modular für weitere Sprachen (insb. Python) zu öffnen, **ohne** die bestehende Rust-Kernfunktionalität zu beschneiden, zu verlangsamen oder durch übergroße Binaries aufzublähen.
 
 ---

@@ -641,8 +641,21 @@ impl PythonObligation {
         Self { raw, smt_content }
     }
 
+    pub fn to_vir(&self, extra_guards: &[PyExpr]) -> (crate::vir::VirFunction, crate::vir::SmtEmitter) {
+        crate::vir::lower_obligation_to_vir(&self.raw, extra_guards)
+    }
+
     pub fn solve(&self, z3_bin: &Path, timeout_ms: u64) -> SolverVerdict {
         solve_smt_content(&self.smt_content, z3_bin, timeout_ms)
+    }
+
+    pub fn solve_with_options(
+        &self,
+        _options: &crate::report::VerifyOptions,
+        z3_bin: &Path,
+        timeout_ms: u64,
+    ) -> SolverVerdict {
+        self.solve(z3_bin, timeout_ms)
     }
 
     pub fn generate_pinned_witness_smt2(&self, model: &HashMap<String, String>) -> String {

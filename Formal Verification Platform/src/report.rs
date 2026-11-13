@@ -585,10 +585,8 @@ pub struct VerifyOptions {
     pub verify_deps: bool,
     /// Whether to run verification against a release build (`--release`, A5).
     pub release: bool,
-    /// Explicit target language: "rust", "python", etc.
-    pub language: Option<String>,
-    /// Explicit target directory or file path to verify (defaults to current directory).
-    pub target_path: Option<std::path::PathBuf>,
+    /// Selected SMT solver backend: "z3", "cvc5", "bitwuzla", or "portfolio"
+    pub solver: Option<String>,
 }
 
 /// One finding's identity, for the baseline file.

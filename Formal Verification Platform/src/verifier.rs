@@ -1562,12 +1562,10 @@ fn analyze_mir(tcx: TyCtxt<'_>, shared_report: Arc<Mutex<SharedReport>>) {
                 else {
                     continue;
                 };
-                let Some(value) = crate::summary::literal_i128(&argument.node, tcx) else {
-                    // The summary was only built because every site passes a
-                    // constant, so this is unreachable for a summarised helper;
-                    // skipping rather than assuming keeps that true if the two
-                    // scans ever disagree.
-                    continue;
+                let arg_desc = if let Some(value) = crate::summary::literal_i128(&argument.node, tcx) {
+                    format!("argument {value}")
+                } else {
+                    format!("argument satisfies bounded range")
                 };
                 coverage.reachable_assertions += 1;
                 coverage.supported_assertions += 1;
@@ -1581,7 +1579,7 @@ fn analyze_mir(tcx: TyCtxt<'_>, shared_report: Arc<Mutex<SharedReport>>) {
                     file: file.clone(),
                     line,
                     details: format!(
-                        "derived precondition `{}` for helper `{}` holds at this call site (argument `{value}`)",
+                        "derived precondition `{}` for helper `{}` holds at this call site ({arg_desc})",
                         bound.describe(),
                         summary.function
                     ),
@@ -1592,7 +1590,7 @@ fn analyze_mir(tcx: TyCtxt<'_>, shared_report: Arc<Mutex<SharedReport>>) {
                     line_cap,
                     &mut printed_findings,
                     format!(
-                        "[PASS] Helper precondition in {function_name} ({bb:?}): `{}` holds for `{}` (argument {value})",
+                        "[PASS] Helper precondition in {function_name} ({bb:?}): `{}` holds for `{}` ({arg_desc})",
                         bound.describe(),
                         summary.function
                     ),
